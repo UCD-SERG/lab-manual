@@ -2,7 +2,8 @@ Package: labmanual
 Type: Book
 Title: UCD-SERG Lab Manual
 Version: 0.0.1
-Authors@R: person("UCD-SERG", role = c("aut", "cre"), email = "serg@ucdavis.edu")
+Maintainer: UCD-SERG <serg@ucdavis.edu>
+Author: UCD-SERG
 Imports: bookdown
 Remotes: rstudio/bookdown
 Language: en-US
