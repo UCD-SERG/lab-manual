@@ -29,10 +29,11 @@ One benefit of the academic environment is its schedule flexibility. This means 
 
 - We mostly use Google Drive to create shared documents with longer descriptions of tasks. These documents are linked to in Trello. Lab leadership often shares these with the whole team since tasks are overlapping, and even if a task is assigned to one person, others may have valuable insights. 
 
-## UC Davis Box
+## UC Davis Box and SharePoint
 
-- Human subjects data for research studies are generally stored in UC Davis Box. Please check with lab leadership about whether there are special storage and transfer requirements for the datasets you are working with for each study. 
-- You can access Box via your UC Davis credentials. For more information, visit [UC Davis Box Support](https://kb.ucdavis.edu/?id=6485). 
+- Human subjects data for research studies are generally stored in UC Davis Box or SharePoint. Please check with lab leadership about whether there are special storage and transfer requirements for the datasets you are working with for each study. 
+- You can access Box via your UC Davis credentials. For more information, visit [UC Davis Box Support](https://kb.ucdavis.edu/?id=6485).
+- SharePoint is also used for collaborative document storage and team file sharing. Access SharePoint through your UC Davis Microsoft 365 account. 
 
 ## Meetings
 
