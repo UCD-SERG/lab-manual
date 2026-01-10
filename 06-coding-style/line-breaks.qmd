@@ -17,6 +17,12 @@ Here are the requirements:
 - Second item
 ```
 
+Here's what happens if you don't add the blank line:
+
+Here are the requirements:
+- First item
+- Second item
+
 **Line Breaks in Code**
 
 - For `ggplot` calls and `dplyr` pipelines, do not crowd single lines. Here are some nontrivial examples of "beautiful" pipelines, where beauty is defined by coherence:
