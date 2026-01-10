@@ -720,11 +720,21 @@
     ]
   },
   {
+    "objectID": "09-github.html#repeated-amend-workflow",
+    "href": "09-github.html#repeated-amend-workflow",
+    "title": "10  Github",
+    "section": "10.7 Repeated Amend Workflow",
+    "text": "10.7 Repeated Amend Workflow\nWhen working on a complex task, you may want to make frequent incremental commits to protect your progress, but avoid cluttering your Git history with many tiny “work in progress” commits. The Repeated Amend pattern lets you build up a polished commit gradually.\n\n10.7.1 Basic Workflow\nStart with a clean working tree in a functional state. Then:\n\nMake a small change and verify your project still works\nStage and commit with a temporary message like “WIP” (work in progress)\nDo not push yet\nMake another small change and verify it works\nStage and amend the previous commit: git commit --amend --no-edit\nRepeat steps 4-5 as needed\nWhen finished, amend one final time with a proper commit message\nPush your completed work\n\nIn RStudio, you can use the “Amend previous commit” checkbox when committing.\n\n\n10.7.2 Key Points\n\nEach amend replaces the previous commit rather than creating a new one\nThis keeps your history clean while letting you work incrementally\nOnly use this pattern before pushing - never amend commits that others may have pulled\nIf you need to undo changes, use git reset --hard to return to your last commit state\nThink of commits as climbing protection: use them when in uncertain territory\n\nFor more details and troubleshooting scenarios, see the Repeated Amend chapter in Happy Git with R.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Github</span>"
+    ]
+  },
+  {
     "objectID": "09-github.html#what-should-be-pushed-to-github",
     "href": "09-github.html#what-should-be-pushed-to-github",
     "title": "10  Github",
-    "section": "10.7 What should be pushed to Github?",
-    "text": "10.7 What should be pushed to Github?\nNever push .Rout files! If someone else runs an R script and creates an .Rout file at the same time and both of you try to push to github, it is incredibly difficult to reconcile these two logs. If you run logs, keep them on your own system or (preferably) set up a shared directory where all logs are name and date timestamped.\nThere is a standardized .gitignore for R which you can download and add to your project. This ensures you’re not committing log files or things that would otherwise best be left ignored to GitHub. This is a great discussion of project-oriented workflows, extolling the virtues of a self-contained, portable projects, for your reference.",
+    "section": "10.8 What should be pushed to Github?",
+    "text": "10.8 What should be pushed to Github?\nNever push .Rout files! If someone else runs an R script and creates an .Rout file at the same time and both of you try to push to github, it is incredibly difficult to reconcile these two logs. If you run logs, keep them on your own system or (preferably) set up a shared directory where all logs are name and date timestamped.\nThere is a standardized .gitignore for R which you can download and add to your project. This ensures you’re not committing log files or things that would otherwise best be left ignored to GitHub. This is a great discussion of project-oriented workflows, extolling the virtues of a self-contained, portable projects, for your reference.",
     "crumbs": [
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Github</span>"
     ]
