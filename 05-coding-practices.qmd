@@ -1,9 +1,230 @@
 # R Coding Practices {#sec-r-coding-practices}
 
-{{< include _includes/r-coding/01-lab-protocols.qmd >}}
+## Lab Protocols for Code and Data
 
-{{< include _includes/r-coding/02-package-structure.qmd >}}
+Just as wet labs have strict safety protocols to ensure reproducible results and prevent contamination, our computational lab has protocols for coding and data management. These protocols are not suggestions—they are essential practices that:
 
-{{< include _includes/r-coding/03-development-tools.qmd >}}
+- **Ensure reproducibility**: Others (including your future self) can recreate your analysis
+- **Prevent errors**: Systematic approaches reduce the risk of mistakes
+- **Enable collaboration**: Consistent practices allow team members to work together efficiently
+- **Maintain data integrity**: Proper handling prevents data corruption and loss
+- **Support publication**: Well-documented, reproducible code is increasingly required for publication
 
-{{< include _includes/r-coding/04-workflow.qmd >}}
+**Violating these protocols can have serious consequences**, including invalid results, wasted time, inability to publish, and damage to scientific credibility. Treat coding and data management protocols with the same seriousness as you would safety protocols in a wet lab.
+
+## Essential R Package Development Tools {#sec-r-package-tools}
+
+The following tools are essential for R package development in our lab:
+
+### usethis: Package Setup and Management
+
+`usethis` automates common package development tasks:
+
+```r
+# Install usethis
+install.packages("usethis")
+
+# Create a new package
+usethis::create_package("~/myproject")
+
+# Add common components
+usethis::use_mit_license()          # Add a license
+usethis::use_git()                  # Initialize git
+usethis::use_github()               # Connect to GitHub
+usethis::use_testthat()             # Set up testing infrastructure
+usethis::use_vignette("intro")      # Create a vignette (shipped with package)
+usethis::use_article("case-study")  # Create an article (website-only)
+usethis::use_data_raw("dataset")    # Create data processing script
+usethis::use_package("dplyr")       # Add a dependency
+usethis::use_pipe()                 # Import pipe operator
+
+# Increment version
+usethis::use_version()              # Increment package version
+```
+
+### devtools: Development Workflow
+
+`devtools` provides the core development workflow:
+
+```r
+# Install devtools
+install.packages("devtools")
+
+# Load your package for interactive development
+devtools::load_all()                # Like library(), but for development
+
+# Documentation
+devtools::document()                # Generate documentation from roxygen2
+
+# Testing
+devtools::test()                    # Run all tests
+devtools::test_active_file()        # Run tests in current file
+
+# Checking
+devtools::check()                   # R CMD check (comprehensive validation)
+devtools::check_man()               # Check documentation only
+
+# Dependencies
+devtools::install_dev_deps()        # Install all development dependencies
+
+# Building
+devtools::build()                   # Build package bundle
+devtools::install()                 # Install package locally
+```
+
+### pkgdown: Package Websites
+
+`pkgdown` builds beautiful documentation websites from your package:
+
+```r
+# Install pkgdown
+install.packages("pkgdown")
+
+# Set up pkgdown
+usethis::use_pkgdown()
+
+# Build website locally
+pkgdown::build_site()
+
+# Preview in browser
+pkgdown::build_site(preview = TRUE)
+
+# Build components separately
+pkgdown::build_reference()          # Function reference
+pkgdown::build_articles()           # Vignettes
+pkgdown::build_home()               # Home page from README
+```
+
+**Configure your pkgdown site** with `_pkgdown.yml`:
+
+```yaml
+url: https://ucd-serg.github.io/myproject
+
+template:
+  bootstrap: 5
+
+reference:
+  - title: "Data Preparation"
+    desc: "Functions for preparing and cleaning data"
+    contents:
+    - prep_study_data
+    - validate_data
+  
+  - title: "Analysis"
+    desc: "Core analysis functions"
+    contents:
+    - run_primary_analysis
+    - sensitivity_analysis
+
+articles:
+  - title: "Analysis Workflow"
+    navbar: Analysis
+    contents:
+    - 01-data-preparation
+    - 02-primary-analysis
+    - 03-sensitivity-analysis
+```
+
+## Complete Package Development Workflow {#sec-r-workflow}
+
+Here's the typical workflow for developing an R package in our lab:
+
+### 1. Initial Setup
+
+```r
+# Create package structure
+usethis::create_package("~/myproject")
+
+# Set up infrastructure
+usethis::use_git()
+usethis::use_github()
+usethis::use_testthat()
+usethis::use_pkgdown()
+usethis::use_mit_license()
+usethis::use_readme_rmd()
+```
+
+### 2. Add Dependencies
+
+```r
+# Add packages your project depends on
+usethis::use_package("dplyr")
+usethis::use_package("ggplot2")
+usethis::use_package("readr")
+
+# Add packages only needed for development/testing
+usethis::use_package("testthat", type = "Suggests")
+```
+
+### 3. Write Functions
+
+Create functions in `R/` directory with roxygen2 documentation:
+
+```r
+#' Prepare Study Data
+#'
+#' Clean and prepare raw study data for analysis.
+#'
+#' @param raw_data A data frame containing raw study data
+#' @param validate Logical; whether to run validation checks
+#'
+#' @returns A cleaned data frame ready for analysis
+#'
+#' @examples
+#' raw_data <- read_csv("data.csv")
+#' clean_data <- prep_study_data(raw_data)
+#'
+#' @export
+prep_study_data <- function(raw_data, validate = TRUE) {
+  # Function implementation
+}
+```
+
+### 4. Document
+
+```r
+# Generate documentation from roxygen2 comments
+devtools::document()
+```
+
+### 5. Test
+
+Create tests in `tests/testthat/`:
+
+```r
+# tests/testthat/test-data_prep.R
+test_that("prep_study_data handles missing values", {
+  raw_data <- data.frame(x = c(1, NA, 3))
+  result <- prep_study_data(raw_data)
+  expect_false(anyNA(result$x))
+})
+```
+
+Run tests:
+
+```r
+devtools::test()
+```
+
+### 6. Check
+
+```r
+# Comprehensive package check
+devtools::check()
+```
+
+Fix any warnings or errors before proceeding.
+
+### 7. Build Documentation Site
+
+```r
+pkgdown::build_site()
+```
+
+### 8. Share and Publish
+
+```r
+# Push to GitHub
+# The pkgdown site can be automatically deployed to GitHub Pages
+# using GitHub Actions
+```

@@ -1,19 +1,598 @@
 # R Code Style {#sec-r-code-style}
 
-{{< include _includes/r-coding/05-code-style.qmd >}}
+Follow these code style guidelines for all R code:
 
-{{< include _includes/r-coding/06-testing.qmd >}}
+## General Principles
 
-{{< include _includes/r-coding/07-iteration.qmd >}}
+- **Follow tidyverse style guide**: https://style.tidyverse.org
+- **Use native pipe**: `|>` not `%>%` (available in R >= 4.1.0)
+- **Naming**: Use `snake_case` for functions and variables; acronyms may be uppercase (e.g., `prep_IDs_data`)
+- **Write tidy code**: Keep code clean, readable, and well-organized
 
-{{< include _includes/r-coding/08-data-io.qmd >}}
+## File Organization
 
-{{< include _includes/r-coding/09-version-control.qmd >}}
+Just as your data "flows" through your project, code should flow naturally through files in the package structure:
 
-{{< include _includes/r-coding/10-qa-checklist.qmd >}}
+1. **In `R/` files**: Put reusable functions with roxygen2 documentation
+2. **In vignettes**: Put narrative analysis with calls to those functions
+3. **In `data-raw/`**: Put scripts that create data objects saved to `data/`
+4. **In `inst/analyses/`**: Put analyses using restricted data
 
-{{< include _includes/r-coding/11-ci.qmd >}}
+## Function Structure and Documentation
 
-{{< include _includes/r-coding/12-auto-styling.qmd >}}
+Every function should follow this pattern:
 
-{{< include _includes/r-coding/13-resources.qmd >}}
+```r
+#' Short Title (One Line)
+#'
+#' Longer description providing details about what the function does,
+#' when to use it, and important considerations.
+#'
+#' @param param1 Description of first parameter, including type and constraints
+#' @param param2 Description of second parameter
+#'
+#' @returns Description of return value, including type and structure
+#'
+#' @examples
+#' # Example usage
+#' result <- my_function(param1 = "value", param2 = 10)
+#'
+#' @export
+my_function <- function(param1, param2) {
+  # Implementation
+}
+```
+
+## Comments
+
+Use comments to explain *why*, not *what*:
+
+```r
+# Good: Explains reasoning
+# Use log scale because distribution is highly skewed
+ggplot(data, aes(x = log10(income))) + geom_histogram()
+
+# Bad: States the obvious
+# Create a histogram
+ggplot(data, aes(x = income)) + geom_histogram()
+```
+
+**File headers** (for scripts in `data-raw/` or `inst/analyses/`):
+
+```r
+################################################################################
+# @Project - Myproject
+# @Description - Process raw survey data and create analysis dataset
+################################################################################
+```
+
+**Sections and subsections** in longer files:
+
+```r
+# Data Loading -------
+
+## Read survey data -------
+
+## Read lab results -------
+
+# Data Cleaning -------
+```
+
+## Messaging and User Communication
+
+Use `cli` package functions for all user-facing messages in package functions:
+
+```r
+# Good
+cli::cli_inform("Analysis complete")
+cli::cli_warn("Missing data detected")
+cli::cli_abort("Invalid input: {x}")
+
+# Bad - don't use these in package code
+message("Analysis complete")
+warning("Missing data detected")
+stop("Invalid input")
+```
+
+## Package Code Practices
+
+- **No `library()` in package code**: Use `::` notation or declare in DESCRIPTION Imports
+- **Document all exports**: Use roxygen2 (@title, @description, @param, @returns, @examples)
+- **Avoid code duplication**: Extract repeated logic into helper functions
+
+## Line Breaks and Formatting
+
+For readability, use line breaks in function calls and pipelines:
+
+```r
+# Good: Named arguments on separate lines
+mean_Y <- calc_fluseas_mean(
+  data = flu_data, 
+  yname = "maari_yn",
+  silent = FALSE
+)
+
+# Good: Pipeline with clear flow
+cleaned_data <- raw_data |>
+  filter(!is.na(outcome)) |>
+  mutate(
+    log_value = log10(value),
+    category = case_when(
+      value < 10 ~ "low",
+      value < 100 ~ "medium",
+      TRUE ~ "high"
+    )
+  ) |>
+  group_by(category) |>
+  summarize(
+    n = n(),
+    mean = mean(log_value)
+  )
+```
+
+For complex `ggplot` calls:
+
+```r
+ggplot(data, aes(x = year, y = rate, group = group)) +
+  geom_point(
+    aes(col = group, shape = group),
+    position = position_dodge(width = 0.2),
+    size = 2.5
+  ) +
+  geom_errorbar(
+    aes(ymin = lb, ymax = ub, col = group),
+    position = position_dodge(width = 0.2),
+    width = 0.2
+  ) +
+  scale_y_continuous(
+    limits = c(0, 100),
+    breaks = seq(0, 100, 25)
+  ) +
+  scale_color_manual(values = colors) +
+  theme_minimal() +
+  labs(
+    title = "Title",
+    x = "Year",
+    y = "Rate (%)"
+  )
+```
+
+## Tidyverse Replacements
+
+Use modern tidyverse/alternatives for base R functions:
+
+```r
+# Data structures
+tibble::tibble()           # instead of data.frame()
+tibble::tribble()          # instead of manual data.frame creation
+
+# I/O
+readr::read_csv()          # instead of read.csv()
+readr::write_csv()         # instead of write.csv()
+readr::read_rds()          # instead of readRDS()
+readr::write_rds()         # instead of saveRDS()
+
+# Data manipulation
+dplyr::bind_rows()         # instead of rbind()
+dplyr::bind_cols()         # instead of cbind()
+
+# String operations
+stringr::str_which()       # instead of grep()
+stringr::str_replace()     # instead of gsub()
+
+# Session info
+sessioninfo::session_info() # instead of sessionInfo()
+```
+
+## The here Package
+
+The `here` package helps manage file paths in projects:
+
+```r
+library(here)
+
+# Automatically finds project root and builds paths
+data <- readr::read_csv(here("data-raw", "survey.csv"))
+saveRDS(results, here("inst", "analyses", "results.rds"))
+```
+
+This works regardless of where collaborators clone the repository.
+
+## Object Naming
+
+Use descriptive names that are both expressive and explicit:
+
+```r
+# Good
+vaccination_coverage_2017_18
+absentee_flu_residuals
+
+# Less good
+vaxcov_1718
+flu_res
+```
+
+Prefer nouns for objects and verbs for functions:
+
+```r
+# Good
+clean_data <- prep_study_data(raw_data)  # verb for function, noun for object
+
+# Less clear
+data <- process(input)
+```
+
+## Testing Requirements {#sec-r-testing}
+
+**ALWAYS establish tests BEFORE modifying functions.** This ensures changes preserve existing behavior and new behavior is correctly validated.
+
+### When to Use Snapshot Tests
+
+Use snapshot tests (`expect_snapshot()`, `expect_snapshot_value()`) when:
+
+- Testing complex data structures (data frames, lists, model outputs)
+- Validating statistical results where exact values may vary slightly
+- Output format stability is important
+
+```r
+test_that("prep_study_data produces expected structure", {
+  result <- prep_study_data(raw_data)
+  expect_snapshot_value(result, style = "serialize")
+})
+```
+
+### When to Use Explicit Value Tests
+
+Use explicit tests (`expect_equal()`, `expect_identical()`) when:
+
+- Testing simple scalar outputs
+- Validating specific numeric thresholds
+- Testing Boolean returns or categorical outputs
+
+```r
+test_that("calculate_mean returns correct value", {
+  expect_equal(calculate_mean(c(1, 2, 3)), 2)
+  expect_equal(calculate_ratio(3, 7), 0.4285714, tolerance = 1e-6)
+})
+```
+
+### Testing Best Practices
+
+- **Seed randomness**: Use `withr::local_seed()` for reproducible tests
+- **Use small test cases**: Keep tests fast
+- **Test edge cases**: Missing values, empty inputs, boundary conditions
+- **Test errors**: Verify functions fail appropriately with invalid input
+
+```r
+test_that("prep_study_data handles edge cases", {
+  # Empty input
+  expect_error(prep_study_data(data.frame()))
+  
+  # Missing required columns
+  expect_error(prep_study_data(data.frame(x = 1)))
+  
+  # Valid input with missing values
+  result <- prep_study_data(data.frame(id = 1:3, value = c(1, NA, 3)))
+  expect_true(all(!is.na(result$value)))
+})
+```
+
+## Iterative Operations {#sec-iteration}
+
+When applying analyses with different variations (outcomes, exposures, subgroups), use functional programming approaches:
+
+### `lapply()` and `sapply()`
+
+```r
+# Apply function to each element
+results <- lapply(outcomes, function(y) {
+  run_analysis(data, outcome = y)
+})
+
+# Simplify to vector if possible
+summary_stats <- sapply(data_list, mean)
+```
+
+### `purrr::map()` Family
+
+The `purrr` package provides type-stable alternatives:
+
+```r
+library(purrr)
+
+# Always returns a list
+results <- map(outcomes, ~ run_analysis(data, outcome = .x))
+
+# Type-specific variants
+means <- map_dbl(data_list, mean)        # Returns numeric vector
+models <- map(splits, ~ lm(y ~ x, data = .x))  # Returns list of models
+```
+
+### `purrr::pmap()` for Multiple Arguments
+
+When iterating over multiple parameter lists:
+
+```r
+params <- tibble(
+  outcome = c("outcome1", "outcome2", "outcome3"),
+  exposure = c("exp1", "exp2", "exp3"),
+  covariate_set = list(c("age", "sex"), c("age"), c("age", "sex", "bmi"))
+)
+
+results <- pmap(params, function(outcome, exposure, covariate_set) {
+  run_analysis(
+    data = study_data,
+    outcome = outcome,
+    exposure = exposure,
+    covariates = covariate_set
+  )
+})
+```
+
+### Parallel Processing
+
+For computationally intensive work, use `future` and `furrr`:
+
+```r
+library(future)
+library(furrr)
+
+# Set up parallel processing
+plan(multisession, workers = availableCores() - 1)
+
+# Parallel version of map()
+results <- future_map(large_list, time_consuming_function, .progress = TRUE)
+```
+
+## Reading and Saving Data {#sec-data-io}
+
+### RDS Files (Preferred)
+
+Use RDS format for R objects:
+
+```r
+# Save single object
+readr::write_rds(analysis_results, here("results", "analysis.rds"))
+
+# Read back
+results <- readr::read_rds(here("results", "analysis.rds"))
+```
+
+**Avoid `.RData` files** because:
+- You can't control object names when loading
+- Can't load individual objects
+- Creates confusion in older code
+
+### CSV Files
+
+For tabular data that may be shared with non-R users:
+
+```r
+# Write
+readr::write_csv(data, here("data-raw", "clean_data.csv"))
+
+# Read
+data <- readr::read_csv(here("data-raw", "clean_data.csv"))
+
+# For very large files, use data.table
+data.table::fwrite(large_data, "big_file.csv")
+data <- data.table::fread("big_file.csv")
+```
+
+## Version Control and Collaboration {#sec-r-version-control}
+
+### Version Numbers
+
+Follow semantic versioning (MAJOR.MINOR.PATCH):
+
+- Development versions: `0.0.0.9000`, `0.0.0.9001`, etc.
+- First release: `0.1.0`
+- Bug fixes: increment PATCH (e.g., `0.1.0` → `0.1.1`)
+- New features: increment MINOR (e.g., `0.1.1` → `0.2.0`)
+- Breaking changes: increment MAJOR (e.g., `0.2.0` → `1.0.0`)
+
+```r
+# Increment version
+usethis::use_version()
+```
+
+### NEWS File
+
+Document all user-facing changes in `NEWS.md`:
+
+```markdown
+# myproject 0.2.0
+
+## New Features
+
+* Added `prep_study_data()` function for data preparation
+* Implemented sensitivity analysis in `sensitivity_analysis()`
+
+## Bug Fixes
+
+* Fixed handling of missing values in `calculate_mean()`
+
+## Breaking Changes
+
+* Renamed `old_function()` to `new_function()`
+```
+
+### Git Workflow
+
+```r
+# Set up Git and GitHub
+usethis::use_git()
+usethis::use_github()
+
+# Before committing changes
+devtools::document()        # Update documentation
+devtools::test()            # Run tests
+devtools::check()           # Full package check
+```
+
+### Managing Dependencies with renv {#sec-renv}
+
+**Use `renv` to tightly control dependency versions during development.** The `renv` package creates a project-specific library that isolates your package dependencies, ensuring reproducibility across different machines and over time.
+
+#### When to Use renv
+
+- **During active development**: Use `renv` to lock down specific versions of dependencies
+- **For collaborative projects**: Ensure all team members use the same package versions
+- **For long-term reproducibility**: Preserve the exact dependency environment
+
+#### Setting Up renv
+
+```r
+# Install renv
+install.packages("renv")
+
+# Initialize renv in your package
+renv::init()
+
+# This creates:
+# - renv/ directory with package library
+# - renv.lock file with exact package versions
+# - .Rprofile to activate renv on startup
+```
+
+#### Using renv in Package Development
+
+```r
+# Install/update packages (renv tracks changes)
+install.packages("dplyr")
+renv::install("tidyr@1.3.0")  # Install specific version
+
+# Save the current state
+renv::snapshot()
+
+# Restore packages from lockfile
+renv::restore()
+
+# Update packages
+renv::update()
+```
+
+#### Preparing for CRAN Release
+
+**For packages ready for CRAN submission, disable renv and test with latest dependency versions:**
+
+1. **Remove renv** before CRAN submission:
+   ```r
+   renv::deactivate()
+   # Delete renv/ directory and renv.lock
+   # Remove .Rprofile modifications
+   ```
+
+2. **Test with latest versions**:
+   ```r
+   # Install latest versions of all dependencies
+   devtools::install_dev_deps()
+   
+   # Run comprehensive checks
+   devtools::check()
+   ```
+
+3. **Why disable renv for CRAN**: CRAN tests packages against the latest versions of dependencies. Your package should work with current CRAN versions, not pinned older versions.
+
+**Workflow summary:**
+
+- **Development phase**: Use `renv` for stability and reproducibility
+- **Pre-CRAN release**: Disable `renv`, test with latest dependency versions
+- **After CRAN release**: Can re-enable `renv` for continued development if desired
+
+#### Additional Resources
+
+For comprehensive guidance on using renv with R packages, see:
+- [Using renv with R Packages](https://rstudio.github.io/renv/articles/packages.html)
+- [renv documentation](https://rstudio.github.io/renv/)
+
+## Quality Assurance Checklist {#sec-r-qa-checklist}
+
+Before submitting a pull request or finalizing analysis, verify:
+
+- [ ] All functions have complete roxygen2 documentation
+- [ ] All functions have corresponding tests
+- [ ] `devtools::document()` has been run
+- [ ] `devtools::test()` passes with no failures
+- [ ] `devtools::check()` passes with no errors, warnings, or notes
+- [ ] `lintr::lint_package()` shows no issues (or only acceptable ones)
+- [ ] `spelling::spell_check_package()` passes
+- [ ] Version number has been incremented
+- [ ] `NEWS.md` has been updated with changes
+- [ ] `README.Rmd` has been updated (if needed) and `README.md` regenerated
+- [ ] `pkgdown::build_site()` builds successfully
+- [ ] All changes committed and pushed to GitHub
+
+## Continuous Integration {#sec-r-ci}
+
+Set up automated checks using GitHub Actions:
+
+```r
+# Add standard R package CI workflows
+usethis::use_github_action("check-standard")    # R CMD check
+usethis::use_github_action("test-coverage")     # Code coverage
+usethis::use_github_action("pkgdown")           # Deploy website
+```
+
+These workflows automatically:
+
+- Run R CMD check on multiple platforms (Linux, macOS, Windows)
+- Calculate test coverage
+- Build and deploy your pkgdown website
+- Ensure code quality before merging
+
+## Automated Code Styling {#sec-auto-styling}
+
+### RStudio Built-in Formatting
+
+Use RStudio's built-in autoformatter (keyboard shortcut: `CMD-Shift-A` or `Ctrl-Shift-A`) to quickly format highlighted code.
+
+### styler Package
+
+For automated styling of entire projects:
+
+```r
+# Install styler
+install.packages("styler")
+
+# Style all files in R/ directory
+styler::style_dir("R/")
+
+# Style entire package
+styler::style_pkg()
+
+# Note: styler modifies files in-place
+# Always use with version control so you can review changes
+```
+
+### lintr Package
+
+For checking code style without modifying files:
+
+```r
+# Install lintr
+install.packages("lintr")
+
+# Lint the entire package
+lintr::lint_package()
+
+# Lint a specific file
+lintr::lint("R/my_function.R")
+```
+
+The linter checks for:
+- Unused variables
+- Improper whitespace
+- Line length issues
+- Style guide violations
+
+You can customize linting rules by creating a `.lintr` file in your project root.
+
+## Additional Resources {#sec-r-resources}
+
+- [R Packages book](https://r-pkgs.org/) by Hadley Wickham and Jenny Bryan
+- [Tidyverse style guide](https://style.tidyverse.org/)
+- [usethis documentation](https://usethis.r-lib.org/)
+- [devtools documentation](https://devtools.r-lib.org/)
+- [pkgdown documentation](https://pkgdown.r-lib.org/)
+- [testthat documentation](https://testthat.r-lib.org/)
