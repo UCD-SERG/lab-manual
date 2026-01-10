@@ -17,6 +17,7 @@ book:
     - 04-code-repositories.qmd
     - 05-coding-practices.qmd
     - 06-coding-style.qmd
+    - 06a-r-guidelines.qmd
     - 07-big-data.qmd
     - 08-data-masking.qmd
     - 09-github.qmd
