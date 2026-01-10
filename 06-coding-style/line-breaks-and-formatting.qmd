@@ -29,7 +29,8 @@ cleaned_data <- raw_data |>
 For complex `ggplot` calls:
 
 ```r
-ggplot(data, aes(x = year, y = rate, group = group)) +
+ggplot(data) +
+  aes(x = year, y = rate, group = group) +
   geom_point(
     aes(col = group, shape = group),
     position = position_dodge(width = 0.2),
