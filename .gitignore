@@ -37,6 +37,7 @@ placeholder*.tgz
 
 # Quarto
 /.quarto/
-
+/docs/*
+!/docs/assets/
 
 **/*.quarto_ipynb
