@@ -474,7 +474,7 @@
     "href": "05-coding-practices.html#sec-r-resources",
     "title": "6  R Coding Practices",
     "section": "6.19 Additional Resources",
-    "text": "6.19 Additional Resources\n\nR Packages book by Hadley Wickham and Jenny Bryan\nusethis documentation\ndevtools documentation\npkgdown documentation\ntestthat documentation",
+    "text": "6.19 Additional Resources\n\n6.19.1 R Package Development\n\nR Packages book by Hadley Wickham and Jenny Bryan - comprehensive guide to R package development\nusethis documentation - workflow automation for R projects\ndevtools documentation - essential development tools\npkgdown documentation - create package websites\ntestthat documentation - unit testing framework\n\n\n\n6.19.2 General R Programming\n\nR for Data Science by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund - learn data science with the tidyverse\nAdvanced R by Hadley Wickham - deep dive into R programming and internals\n\n\n\n6.19.3 Shiny Development\n\nMastering Shiny by Hadley Wickham - comprehensive guide to building web applications with Shiny\nEngineering Production-Grade Shiny Apps by Colin Fay, Sébastien Rochette, Vincent Guyader, and Cervan Girard - best practices for production Shiny applications\n\n\n\n6.19.4 Git and Version Control\n\nHappy Git and GitHub for the useR by Jenny Bryan - essential guide to using Git and GitHub with R",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>R Coding Practices</span>"
     ]
@@ -1154,7 +1154,7 @@
     "href": "16-resources.html#resources-for-r",
     "title": "17  Resources",
     "section": "",
-    "text": "dplyr and tidyr cheat sheet\nggplot cheat sheet\ndata table cheat sheet\nRMarkdown cheat sheet\nHadley Wickham’s R Style Guide\nJade’s R-for-epi course\nTidy Eval in 5 Minutes (video)\nTidy Evaluation (e-book)\nData Frame Columns as Arguments to Dplyr Functions (blog)\nStandard Evaluation for *_join (stackoverflow)\nProgramming with dplyr (package vignette)",
+    "text": "17.1.1 Books and Comprehensive Guides\n\nR for Data Science by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund - comprehensive introduction to doing data science with R\nR Packages by Hadley Wickham and Jenny Bryan - complete guide to R package development\nAdvanced R by Hadley Wickham - deep dive into R programming and internals\nMastering Shiny by Hadley Wickham - comprehensive guide to building web applications with Shiny\nEngineering Production-Grade Shiny Apps by Colin Fay, Sébastien Rochette, Vincent Guyader, and Cervan Girard - best practices for production Shiny applications\nHappy Git and GitHub for the useR by Jenny Bryan - guide to using Git and GitHub with R\nJade’s R-for-epi course\n\n\n\n17.1.2 Cheat Sheets\n\ndplyr and tidyr cheat sheet\nggplot cheat sheet\ndata table cheat sheet\nRMarkdown cheat sheet\n\n\n\n17.1.3 Style and Best Practices\n\nHadley Wickham’s R Style Guide\n\n\n\n17.1.4 Tidy Evaluation Resources\n\nTidy Eval in 5 Minutes (video)\nTidy Evaluation (e-book)\nData Frame Columns as Arguments to Dplyr Functions (blog)\nStandard Evaluation for *_join (stackoverflow)\nProgramming with dplyr (package vignette)",
     "crumbs": [
       "<span class='chapter-number'>17</span>  <span class='chapter-title'>Resources</span>"
     ]
@@ -1164,7 +1164,7 @@
     "href": "16-resources.html#resources-for-git-github",
     "title": "17  Resources",
     "section": "17.2 Resources for Git & Github",
-    "text": "17.2 Resources for Git & Github\n\nData Camp introduction to Git\nIntroduction to Github",
+    "text": "17.2 Resources for Git & Github\n\nHappy Git and GitHub for the useR by Jenny Bryan - comprehensive guide to using Git and GitHub with R\nData Camp introduction to Git\nIntroduction to Github",
     "crumbs": [
       "<span class='chapter-number'>17</span>  <span class='chapter-title'>Resources</span>"
     ]
