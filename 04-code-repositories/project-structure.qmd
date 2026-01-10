@@ -42,3 +42,15 @@ We recommend the following subdirectory structure for `data-raw`:
 ```
 
 For brevity, not every directory is "expanded", but we can glean some important takeaways from what we _do_ see.
+
+### Configuration ('config') File
+
+{{< include 04-code-repositories/config-file.qmd >}}
+
+### Order Files and Directories
+
+{{< include 04-code-repositories/order-files-directories.qmd >}}
+
+### Using Bash scripts to ensure reproducibility
+
+{{< include 04-code-repositories/bash-scripts.qmd >}}
