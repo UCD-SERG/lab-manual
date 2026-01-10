@@ -1,8 +1,12 @@
 # Code repositories
 
-UCD-SeRG projects use R package structure for all R-based work. This chapter outlines the standard organization for R packages in our lab, which provides benefits for reproducibility, collaboration, and code quality even for analysis-only projects.
+Adapted by UCD-SeRG team from [original by Kunal Mishra, Jade Benjamin-Chung, and Stephanie Djajadi](https://jadebc.github.io/lab-manual/code-repositories.html)
 
-## R Package Structure for All Projects {#sec-r-package-structure}
+Each study has at least one code repository that typically holds R code, shell scripts with Unix code, and research outputs (results .RDS files, tables, figures). Repositories may also include datasets. This chapter outlines how to organize these files. Adhering to a standard format makes it easier for us to efficiently collaborate across projects. 
+
+UCD-SeRG projects use R package structure for all R-based work. This provides benefits for reproducibility, collaboration, and code quality even for analysis-only projects.
+
+## Project Structure
 
 **All R projects in our lab should be structured as R packages**, even if they are primarily analysis projects and not intended for distribution on CRAN or Bioconductor. This standardized structure provides numerous benefits:
 
@@ -36,11 +40,11 @@ myproject/
 │   ├── process_survey_data.R
 │   └── clean_lab_results.R
 ├── vignettes/          # Long-form documentation
-│   ├── intro.Rmd       # Main vignettes (shipped with package)
-│   ├── tutorial.Rmd
+│   ├── intro.qmd       # Main vignettes (shipped with package)
+│   ├── tutorial.qmd
 │   └── articles/       # Website-only articles (not shipped)
-│       ├── advanced-topics.Rmd
-│       └── case-studies.Rmd
+│       ├── advanced-topics.qmd
+│       └── case-studies.qmd
 ├── inst/               # Additional files to include in package
 │   ├── extdata/        # External data files and .RDS results
 │   │   ├── analysis_results.rds
@@ -60,7 +64,7 @@ myproject/
 
 #### Vignettes vs Articles
 
-**Vignettes** (`vignettes/*.Rmd`):
+**Vignettes** (`vignettes/*.qmd`):
 - **Shipped with the package** when installed
 - Accessible via `vignette()` and `browseVignettes()` in R
 - Displayed on CRAN
@@ -68,7 +72,7 @@ myproject/
 - Use for core package documentation and tutorials
 - Created with `usethis::use_vignette("name")`
 
-**Articles** (`vignettes/articles/*.Rmd`):
+**Articles** (`vignettes/articles/*.qmd`):
 - **Website-only** (not shipped with the package)
 - Only appear on the pkgdown website
 - Not accessible via `vignette()` in R
@@ -98,7 +102,7 @@ All vignettes and articles will be rendered by `pkgdown::build_site()` on your p
 
 #### Analyses with Restricted Data (inst/analyses/)
 
-For analyses that rely on **private, sensitive, or restricted data**, place `.qmd` or `.Rmd` files in `inst/analyses/`:
+For analyses that rely on **private, sensitive, or restricted data**, place `.qmd` or `.qmd` files in `inst/analyses/`:
 
 ```
 myproject/
@@ -109,8 +113,8 @@ myproject/
 │   │   └── README.md  # Document data access requirements
 │   └── extdata/
 └── vignettes/
-    ├── 01-public-analysis.Rmd
-    └── 02-demo-with-simulated-data.Rmd
+    ├── 01-public-analysis.qmd
+    └── 02-demo-with-simulated-data.qmd
 ```
 
 **Benefits of this approach:**
@@ -146,9 +150,9 @@ myproject/
    - Aggregated/de-identified summaries
 
 4. **Add to .Rbuildignore**: Ensure `inst/analyses/` doesn't cause package checks to fail:
-   ```
-   # In .Rbuildignore
-   ^inst/analyses$
+   ```r
+   # Use usethis to add to .Rbuildignore
+   usethis::use_build_ignore("inst/analyses")
    ```
 
 ### Keep Analysis Workbooks Tidy
