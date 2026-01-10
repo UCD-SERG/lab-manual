@@ -347,7 +347,7 @@ readr::write_rds()         # instead of saveRDS()
 sessioninfo::session_info() # instead of sessionInfo()
 ```
 
-See the Coding practices and Coding style chapters for more detailed style guidelines.
+See @sec-coding-practices and @sec-coding-style for more detailed style guidelines.
 
 ## Testing Requirements {#sec-r-testing}
 

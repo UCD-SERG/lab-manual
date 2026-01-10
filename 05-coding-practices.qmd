@@ -1,4 +1,4 @@
-# Coding practices
+# Coding practices {#sec-coding-practices}
 
 Adapted by UCD-SeRG team from [original by Kunal Mishra, Jade Benjamin-Chung, Stephanie Djajadi, and Iris Tong](https://jadebc.github.io/lab-manual/coding-practices.html)
 

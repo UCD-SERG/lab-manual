@@ -1,4 +1,4 @@
-# Coding style
+# Coding style {#sec-coding-style}
 
 Adapted by UCD-SeRG team from [original by Kunal Mishra, Jade Benjamin-Chung, and Stephanie Djajadi](https://jadebc.github.io/lab-manual/coding-style.html)
 
