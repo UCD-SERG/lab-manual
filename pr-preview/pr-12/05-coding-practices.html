@@ -621,7 +621,7 @@ window.Quarto = {
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_article</span>(<span class="st">"case-study"</span>)  <span class="co"># Create an article (website-only)</span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_data_raw</span>(<span class="st">"dataset"</span>)    <span class="co"># Create data processing script</span></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_package</span>(<span class="st">"dplyr"</span>)       <span class="co"># Add a dependency</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_pipe</span>()                 <span class="co"># Import pipe operator</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_pipe</span>()                 <span class="co"># Import magrittr pipe operator (no longer recommended)</span></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Increment version</span></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_version</span>()              <span class="co"># Increment package version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1214,23 +1214,23 @@ drop_auth(rdstoken = "/path/to/tokenfile.RDS")
 </tr>
 <tr class="even">
 <td><code>df$some_column</code></td>
-<td><code>df %&gt;% dplyr::pull(some_column)</code></td>
+<td><code>df |&gt; dplyr::pull(some_column)</code></td>
 </tr>
 <tr class="odd">
 <td><code>df$some_column = ...</code></td>
-<td><code>df %&gt;% dplyr::mutate(some_column = ...)</code></td>
+<td><code>df |&gt; dplyr::mutate(some_column = ...)</code></td>
 </tr>
 <tr class="even">
 <td><code>df[get_rows_condition,]</code></td>
-<td><code>df %&gt;% dplyr::filter(get_rows_condition)</code></td>
+<td><code>df |&gt; dplyr::filter(get_rows_condition)</code></td>
 </tr>
 <tr class="odd">
 <td><code>df[,c(col1, col2)]</code></td>
-<td><code>df %&gt;% dplyr::select(col1, col2)</code></td>
+<td><code>df |&gt; dplyr::select(col1, col2)</code></td>
 </tr>
 <tr class="even">
 <td><code>merge(df1, df2, by = ..., all.x = ..., all.y = ...)</code></td>
-<td><code>df1 %&gt;% dplyr::left_join(df2, by = ...)</code> or <code>dplyr::full_join</code> or <code>dplyr::inner_join</code> or <code>dplyr::right_join</code></td>
+<td><code>df1 |&gt; dplyr::left_join(df2, by = ...)</code> or <code>dplyr::full_join</code> or <code>dplyr::inner_join</code> or <code>dplyr::right_join</code></td>
 </tr>
 <tr class="odd">
 <td>_</td>
