@@ -16,7 +16,7 @@ jobs:
     permissions:
       contents: read
     container:
-      image: rocker/tidyverse:4.1.2
+      image: rocker/verse:latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
