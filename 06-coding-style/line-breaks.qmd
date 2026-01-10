@@ -26,7 +26,8 @@ Here are the requirements:
 **Line Breaks in Code**
 
 - For `ggplot` calls and `dplyr` pipelines, do not crowd single lines. Here are some nontrivial examples of "beautiful" pipelines, where beauty is defined by coherence:
-```
+
+```r
 # Example 1
 school_names = list(
   OUSD_school_names = absentee_all %>%
@@ -43,7 +44,7 @@ school_names = list(
 )
 ```
 
-```
+```r
 # Example 2
 absentee_all = fread(file = raw_data_path) %>%
   mutate(program = case_when(schoolyr %in% pre_program_schoolyrs ~ 0,
@@ -56,7 +57,7 @@ absentee_all = fread(file = raw_data_path) %>%
 
 And of a complex `ggplot` call:
   
-```
+```r
 # Example 3
 ggplot(data=data,
        mapping=aes_string(x="year", y="rd", group=group)) +
