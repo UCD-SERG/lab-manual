@@ -10,11 +10,12 @@ When you need to run a script that requires a large amount of RAM, large files, 
 
 **UC Davis HPC Clusters:**
 - **Farm Cluster** ([hpc.ucdavis.edu](https://hpc.ucdavis.edu/)): UC Davis's primary HPC cluster providing shared computing resources for research
-- **Shiva** (shiva.ucdavis.edu): SLURM-based cluster for computational work
-- **Mercury** (mercury.ucdavis.edu): RStudio GUI computing environment
 
 **PHS Shared Compute Environments:**
 For lab members affiliated with the School of Public Health Sciences (PHS), additional shared computing environments are available. These environments provide secure, HIPAA-compliant computing resources suitable for working with sensitive health data.
+
+- **Shiva** (shiva.ucdavis.edu): SLURM-based cluster for computational work
+- **Mercury** (mercury.ucdavis.edu): RStudio GUI computing environment
 
 For detailed information about PHS shared compute environments, including access procedures, security guidelines, and usage policies, please refer to the [PHS Shared Compute Environments Guide](assets/files/PHS_Shared_Compute_Environments.pdf).
 
@@ -25,8 +26,6 @@ Contact lab leadership for assistance with:
 
 
 ## Getting started with SLURM clusters
-
-UC Davis provides SLURM-based computing clusters at shiva.ucdavis.edu. For detailed documentation, visit the [UC Davis HPC website](https://hpc.ucdavis.edu/). Below, we include general tips for working with Slurm-based computing clusters.
 
 To access a UC Davis HPC cluster, in terminal, log in using SSH. For example, to access shiva:
 
