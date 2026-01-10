@@ -255,8 +255,7 @@ An "R Project" can be created within RStudio by going to `File >> New Project`. 
 # Organizing the `data-raw` folder
 
 The `data-raw` folder serves as a catch-all for scripts that do not (yet) fit into the package structure described above. The `data-raw` folder should still be organized. 
-
-We recommend the following directory structure for `data-raw`:
+We recommend the following directory structure:
 
 ```
 0-run-project.sh
@@ -296,7 +295,6 @@ We recommend the following directory structure for `data-raw`:
         6-absentee-mean-cdph3.RDS
     ...
 .gitignore
-.Rproj
 ```
 
 For brevity, not every directory is "expanded", but we can glean some important takeaways from what we _do_ see.
