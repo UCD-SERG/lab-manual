@@ -43,3 +43,4 @@ placeholder*.tgz
 *.epub
 
 **/*.quarto_ipynb
+*.tex
