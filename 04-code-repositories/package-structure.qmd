@@ -3,7 +3,7 @@
 ### Why Use R Package Structure?
 
 1. **Organized code**: Clear separation of functions (`R/`), documentation (`man/`), tests (`tests/`), data (`data/`), and vignettes/analyses
-2. **Dependency management**: `DESCRIPTION` file explicitly declares all package dependencies and versions
+2. **Dependency management**: `DESCRIPTION` file explicitly declares all package dependencies and version restrictions, which simplifies installing those dependencies.
 3. **Automatic documentation**: `roxygen2` generates help files from inline comments
 4. **Built-in testing**: `testthat` framework integrates seamlessly with package structure
 5. **Code quality**: Tools like `devtools::check()` and `lintr` enforce best practices
