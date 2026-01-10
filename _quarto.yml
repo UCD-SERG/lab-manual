@@ -50,7 +50,8 @@ book:
     - 13-data-publication.qmd
     - 14-slurm.qmd
     - 15-checklists.qmd
-    - 16-resources.qmd
+    - 15-ai-tools.qmd
+    - 17-resources.qmd
     - 17-professional-development.qmd
     - 18-manuscript-preparation.qmd
   page-navigation: true
