@@ -4,7 +4,17 @@
     "href": "index.html",
     "title": "Benjamin-Chung Lab Manual",
     "section": "",
-    "text": "0.1 About the lab\nWelcome to the lab of Dr. Jade Benjamin-Chung, Assistant Professor in Epidemiology & Population Health at Stanford University. Our mission is to improve population health by creating high quality evidence about what health interventions work in whom and where, when, and how to implement them. Most of our research is focused on infectious diseases, including malaria, diarrhea, soil-transmitted helminths, and influenza. Our focus is on improving the health of vulnerable populations from low-resource settings, both domestically and internationally. We use a variety of epidemiologic, computational, and statistical methods, including causal inference and machine learning methods, in pursuit of our mission. To learn more about the lab, visit jadebc.net.",
+    "text": "1 Welcome to the Benjamin-Chung Lab!",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Welcome to the Benjamin-Chung Lab!</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#about-the-lab",
+    "href": "index.html#about-the-lab",
+    "title": "Benjamin-Chung Lab Manual",
+    "section": "1.1 About the lab",
+    "text": "1.1 About the lab\nWelcome to the lab of Dr. Jade Benjamin-Chung, Assistant Professor in Epidemiology & Population Health at Stanford University. Our mission is to improve population health by creating high quality evidence about what health interventions work in whom and where, when, and how to implement them. Most of our research is focused on infectious diseases, including malaria, diarrhea, soil-transmitted helminths, and influenza. Our focus is on improving the health of vulnerable populations from low-resource settings, both domestically and internationally. We use a variety of epidemiologic, computational, and statistical methods, including causal inference and machine learning methods, in pursuit of our mission. To learn more about the lab, visit jadebc.net.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Welcome to the Benjamin-Chung Lab!</span>"
     ]
@@ -13,8 +23,8 @@
     "objectID": "index.html#about-this-lab-manual",
     "href": "index.html#about-this-lab-manual",
     "title": "Benjamin-Chung Lab Manual",
-    "section": "0.2 About this lab manual",
-    "text": "0.2 About this lab manual\nThis lab manual covers our communication strategy, code of conduct, and best practices for reproducibility of computational workflows. It is a living document that is updated regularly.\nThis manual was created with input from a large number of team members and with inspiration from other scientists’ lab manuals. Contributors include Jade Benjamin-Chung, Kunal Mishra, Stephanie Djajadi, Nolan Pokpongkiat, Anna Nguyen, Iris Tong, and Gabby Barratt Heitmann.\nFeel free to draw from this manual (and please cite it if you do!).\n\n\n  This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
+    "section": "1.2 About this lab manual",
+    "text": "1.2 About this lab manual\nThis lab manual covers our communication strategy, code of conduct, and best practices for reproducibility of computational workflows. It is a living document that is updated regularly.\nThis manual was created with input from a large number of team members and with inspiration from other scientists’ lab manuals. Contributors include Jade Benjamin-Chung, Kunal Mishra, Stephanie Djajadi, Nolan Pokpongkiat, Anna Nguyen, Iris Tong, and Gabby Barratt Heitmann.\nFeel free to draw from this manual (and please cite it if you do!).\n\n\n  This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Welcome to the Benjamin-Chung Lab!</span>"
     ]
