@@ -1,0 +1,92 @@
+# Professional Development
+
+Adapted by UCD-SeRG team from [original by Jade Benjamin-Chung](https://jadebc.github.io/lab-manual/)
+
+## Mentoring Philosophy
+
+We believe in individualized mentoring that supports each person's unique career goals. Effective mentoring requires:
+
+- Regular, open communication between mentees and mentors
+- Mutual respect and trust
+- Clear expectations and goals
+- Constructive feedback
+- Support for both research and career development
+
+## Individual Development Plans
+
+All graduate students and postdocs should maintain an Individual Development Plan (IDP) that outlines:
+
+- Short-term and long-term career goals
+- Skills to develop
+- Training needs and opportunities
+- Timeline and milestones
+- Progress toward goals
+
+Update your IDP at least annually and discuss it with your PI. Useful resources:
+
+- [myIDP - Individual Development Plan tool](https://myidp.sciencecareers.org/)
+- [NIH OITE Career Resources](https://www.training.nih.gov/career_resources)
+
+## Presentations and Conferences
+
+We encourage lab members to present their work at conferences and seminars:
+
+- Discuss conference opportunities with PIs early
+- Submit abstracts with PI approval
+- Practice presentations in lab meeting before the conference
+- Funding for conferences depends on availability and should be discussed in advance
+
+**Resources for effective presentations:**
+
+- [How to tell a compelling story in scientific presentations](https://www.nature.com/articles/d41586-021-03603-2)
+- [How to give a killer narratively-driven scientific talk](https://www.sciencedirect.com/science/article/pii/S1471491423000928)
+- [How to make a better poster](https://www.youtube.com/watch?v=1RwJbhkCA58)
+- [How to make an even better poster](https://mitcommlab.mit.edu/be/2023/09/27/toward-an-evenbetterposter-improving-the-betterposter-template/)
+
+## Scientific Figures
+
+Creating clear, effective figures is essential for communicating research findings:
+
+- Label x-axis and y-axis clearly
+- Use panel labels when including multiple subplots
+- Include sufficient tick marks and labels
+- Use appropriate font sizes (readable but not distracting)
+- Use colorblind-friendly palettes (see [ColorBrewer](http://colorbrewer2.org/) or [iwanthue](https://medialab.github.io/iwanthue/))
+- Define colors, shapes, and line types in legends
+- Minimize abbreviations in labels and legends
+- Use transparency to show overlapping data
+- Show measures of precision (e.g., 95% confidence intervals)
+
+**Resources:**
+
+- [Ten Simple Rules for Better Figures](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833)
+
+## Grant Writing
+
+- Graduate students and postdocs are encouraged to apply for fellowships (e.g., NIH F31, NSF GRFP, K awards)
+- PIs will support fellowship applications with feedback, letters of support, and mentoring
+- Start planning fellowship applications well in advance of deadlines (typically 3-6 months)
+- Attend grant writing workshops and seek feedback from multiple sources
+
+**Resources:**
+
+- [Building Your Funding Train](https://grantwriting.stanford.edu/funding-train/)
+- [NIH Funding Opportunities](https://grants.nih.gov)
+- [NIH Grant Writing Resources](https://www.niaid.nih.gov/grants-contracts/write-grant-application)
+
+## Teaching and Outreach
+
+Teaching and outreach are valuable professional development opportunities:
+
+- Graduate students are encouraged to gain teaching experience
+- We support science communication and outreach activities
+- Discuss opportunities with PIs
+
+## Networking
+
+Building a professional network is important for your career:
+
+- Attend seminars and departmental events
+- Connect with researchers in your field
+- Join professional societies
+- Use social media professionally (e.g., Twitter/X for science)
