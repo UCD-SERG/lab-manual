@@ -1,5 +1,3 @@
-## Project Structure
-
 We recommend the following directory structure:
 
 ```

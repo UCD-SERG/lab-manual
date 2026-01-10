@@ -1,4 +1,3 @@
-## Repeating analyses with different variations
 
 In many cases, we will need to apply our modeling on different combinations of interests (outcomes, exposures, etc.). We can certainly use a `for` loop to repeat the execution of a wrapper function, but generally, `for` loops request high memory usage and produce the results in long computation time. 
 

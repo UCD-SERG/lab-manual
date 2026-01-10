@@ -1,4 +1,3 @@
-## Line breaks
 
 - For `ggplot` calls and `dplyr` pipelines, do not crowd single lines. Here are some nontrivial examples of "beautiful" pipelines, where beauty is defined by coherence:
   ```

@@ -1,4 +1,3 @@
-## Automated Tools for Style and Project Workflow
 
 ### Styling
 1. **Code Autoformatting** - RStudio includes a fantastic built-in utility (keyboard shortcut: `CMD-Shift-A`) for autoformatting highlighted chunks of code to fit many of the best practices listed here. It generally makes code more readable and fixes a lot of the small things you may not feel like fixing yourself. Try it out as a "first pass" on some code of yours that _doesn't_ follow many of these best practices!

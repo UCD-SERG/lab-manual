@@ -1,4 +1,3 @@
-## Function calls
 In a function call, use "named arguments" and put each argument on a separate line to make your code more readable. 
 
 Here's an example of what not to do when calling the function a function `calc_fluseas_mean` (defined above):

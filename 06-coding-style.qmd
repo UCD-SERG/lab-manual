@@ -2,8 +2,14 @@
 
 Adapted by UCD-SeRG team from [original by Kunal Mishra, Jade Benjamin-Chung, and Stephanie Djajadi](https://jadebc.github.io/lab-manual/coding-style.html)
 
+## Comments
+
 {{< include 06-coding-style/comments.qmd >}}
 
+## Line breaks
+
 {{< include 06-coding-style/line-breaks.qmd >}}
+
+## Automated Tools for Style and Project Workflow
 
 {{< include 06-coding-style/automated-tools.qmd >}}

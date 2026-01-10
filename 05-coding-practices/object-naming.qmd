@@ -1,4 +1,3 @@
-## Object naming
 
 Generally we recommend using nouns for objects and verbs for functions. This is because functions are performing actions, while objects are not. 
 
