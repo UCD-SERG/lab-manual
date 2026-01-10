@@ -1,0 +1,110 @@
+The following tools are essential for R package development in our lab:
+
+### usethis: Package Setup and Management
+
+`usethis` automates common package development tasks:
+
+```r
+# Install usethis
+install.packages("usethis")
+
+# Create a new package
+usethis::create_package("~/myproject")
+
+# Add common components
+usethis::use_mit_license()          # Add a license
+usethis::use_git()                  # Initialize git
+usethis::use_github()               # Connect to GitHub
+usethis::use_testthat()             # Set up testing infrastructure
+usethis::use_vignette("intro")      # Create a vignette (shipped with package)
+usethis::use_article("case-study")  # Create an article (website-only)
+usethis::use_data_raw("dataset")    # Create data processing script
+usethis::use_package("dplyr")       # Add a dependency
+usethis::use_pipe()                 # Import magrittr pipe operator (no longer recommended)
+
+# Increment version
+usethis::use_version()              # Increment package version
+```
+
+### devtools: Development Workflow
+
+`devtools` provides the core development workflow:
+
+```r
+# Install devtools
+install.packages("devtools")
+
+# Load your package for interactive development
+devtools::load_all()                # Like library(), but for development
+
+# Documentation
+devtools::document()                # Generate documentation from roxygen2
+
+# Testing
+devtools::test()                    # Run all tests
+devtools::test_active_file()        # Run tests in current file
+
+# Checking
+devtools::check()                   # R CMD check (comprehensive validation)
+devtools::check_man()               # Check documentation only
+
+# Dependencies
+devtools::install_dev_deps()        # Install all development dependencies
+
+# Building
+devtools::build()                   # Build package bundle
+devtools::install()                 # Install package locally
+```
+
+### pkgdown: Package Websites
+
+`pkgdown` builds beautiful documentation websites from your package:
+
+```r
+# Install pkgdown
+install.packages("pkgdown")
+
+# Set up pkgdown
+usethis::use_pkgdown()
+
+# Build website locally
+pkgdown::build_site()
+
+# Preview in browser
+pkgdown::build_site(preview = TRUE)
+
+# Build components separately
+pkgdown::build_reference()          # Function reference
+pkgdown::build_articles()           # Vignettes
+pkgdown::build_home()               # Home page from README
+```
+
+**Configure your pkgdown site** with `_pkgdown.yml`:
+
+```yaml
+url: https://ucd-serg.github.io/myproject
+
+template:
+  bootstrap: 5
+
+reference:
+  - title: "Data Preparation"
+    desc: "Functions for preparing and cleaning data"
+    contents:
+    - prep_study_data
+    - validate_data
+  
+  - title: "Analysis"
+    desc: "Core analysis functions"
+    contents:
+    - run_primary_analysis
+    - sensitivity_analysis
+
+articles:
+  - title: "Analysis Workflow"
+    navbar: Analysis
+    contents:
+    - 01-data-preparation
+    - 02-primary-analysis
+    - 03-sensitivity-analysis
+```

@@ -1,0 +1,13 @@
+Use `cli` package functions for all user-facing messages in package functions:
+
+```r
+# Good
+cli::cli_inform("Analysis complete")
+cli::cli_warn("Missing data detected")
+cli::cli_abort("Invalid input: {x}")
+
+# Bad - don't use these in package code
+message("Analysis complete")
+warning("Missing data detected")
+stop("Invalid input")
+```

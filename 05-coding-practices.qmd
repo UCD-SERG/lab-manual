@@ -1,10 +1,51 @@
-# Coding practices
+# R Coding Practices {#sec-r-coding-practices}
 
 Adapted by UCD-SeRG team from [original by Kunal Mishra, Jade Benjamin-Chung, Stephanie Djajadi, and Iris Tong](https://jadebc.github.io/lab-manual/coding-practices.html)
+
+## Lab Protocols for Code and Data
+
+{{< include 05-coding-practices/lab-protocols-for-code-and-data.qmd >}}
+
+## Essential R Package Development Tools {#sec-r-package-tools}
+
+{{< include 05-coding-practices/essential-r-package-development-tools.qmd >}}
+
+## Complete Package Development Workflow {#sec-r-workflow}
+
+{{< include 05-coding-practices/complete-package-development-workflow.qmd >}}
 
 ## Organizing scripts
 
 {{< include 05-coding-practices/organizing-scripts.qmd >}}
+
+## Testing Requirements {#sec-r-testing}
+
+{{< include 05-coding-practices/testing-requirements.qmd >}}
+
+## Iterative Operations {#sec-iteration}
+
+{{< include 05-coding-practices/iterative-operations.qmd >}}
+
+## Reading and Saving Data {#sec-data-io}
+
+{{< include 05-coding-practices/reading-and-saving-data.qmd >}}
+
+## Version Control and Collaboration {#sec-r-version-control}
+
+{{< include 05-coding-practices/version-control-and-collaboration.qmd >}}
+
+## Continuous Integration {#sec-r-ci}
+
+{{< include 05-coding-practices/continuous-integration.qmd >}}
+
+## Quality Assurance Checklist {#sec-r-qa-checklist}
+
+{{< include 05-coding-practices/quality-assurance-checklist.qmd >}}
+
+## Automated Code Styling {#sec-auto-styling}
+
+{{< include 05-coding-practices/automated-code-styling.qmd >}}
+
 
 ## Documenting your code
 
@@ -45,3 +86,7 @@ Adapted by UCD-SeRG team from [original by Kunal Mishra, Jade Benjamin-Chung, St
 ## Reviewing Code
 
 {{< include 05-coding-practices/reviewing-code.qmd >}}
+
+## Additional Resources {#sec-r-resources}
+
+{{< include 05-coding-practices/additional-resources.qmd >}}

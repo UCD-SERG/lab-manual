@@ -1,0 +1,24 @@
+Use modern tidyverse/alternatives for base R functions:
+
+```r
+# Data structures
+tibble::tibble()           # instead of data.frame()
+tibble::tribble()          # instead of manual data.frame creation
+
+# I/O
+readr::read_csv()          # instead of read.csv()
+readr::write_csv()         # instead of write.csv()
+readr::read_rds()          # instead of readRDS()
+readr::write_rds()         # instead of saveRDS()
+
+# Data manipulation
+dplyr::bind_rows()         # instead of rbind()
+dplyr::bind_cols()         # instead of cbind()
+
+# String operations
+stringr::str_which()       # instead of grep()
+stringr::str_replace()     # instead of gsub()
+
+# Session info
+sessioninfo::session_info() # instead of sessionInfo()
+```
