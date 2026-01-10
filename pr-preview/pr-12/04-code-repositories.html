@@ -691,7 +691,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="organizing-the-data-raw-folder" class="level1" data-number="6">
 <h1 data-number="6"><span class="header-section-number">6</span> Organizing the <code>data-raw</code> folder</h1>
-<p>The <code>data-raw</code> folder serves as a catch-all for scripts that do not (yet) fit into the package structure described above. The <code>data-raw</code> folder should still be organized, using the following guidelines.</p>
+<p>The <code>data-raw</code> folder serves as a catch-all for scripts that do not (yet) fit into the package structure described above. The <code>data-raw</code> folder should still be organized. We recommend the following directory structure for <code>data-raw</code>:</p>
+<pre><code>0-run-project.sh
+0-config.R
+1 - Data-Management/
+    0-prep-data.sh
+    1-prep-cdph-fluseas.R
+    2a-prep-absentee.R
+    2b-prep-absentee-weighted.R
+    3a-prep-absentee-adj.R
+    3b-prep-absentee-adj-weighted.R
+2 - Analysis/
+    0-run-analysis.sh
+    1 - Absentee-Mean/
+        1-absentee-mean-primary.R
+        2-absentee-mean-negative-control.R
+        3-absentee-mean-CDC.R
+        4-absentee-mean-peakwk.R
+        5-absentee-mean-cdph2.R
+        6-absentee-mean-cdph3.R
+    2 - Absentee-Positivity-Check/
+    3 - Absentee-P1/
+    4 - Absentee-P2/
+3 - Figures/
+    0-run-figures.sh
+    ...
+4 - Tables/
+    0-run-tables.sh
+    ...
+5 - Results/
+    1 - Absentee-Mean/
+        1-absentee-mean-primary.RDS
+        2-absentee-mean-negative-control.RDS
+        3-absentee-mean-CDC.RDS
+        4-absentee-mean-peakwk.RDS
+        5-absentee-mean-cdph2.RDS
+        6-absentee-mean-cdph3.RDS
+    ...
+.gitignore
+.Rproj</code></pre>
+<p>For brevity, not every directory is “expanded”, but we can glean some important takeaways from what we <em>do</em> see.</p>
 <section id="configuration-config-file" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="configuration-config-file"><span class="header-section-number">6.1</span> Configuration (‘config’) File</h2>
 <p>This is the single most important file for your project. It will be responsible for a variety of common tasks, declare global variables, load functions, declare paths, and more. <em>Every other file in the project</em> will begin with <code>source("0-config")</code>, and its role is to reduce redundancy and create an abstraction layer that allows you to make changes in one place (<code>0-config.R</code>) rather than 5 different files. To this end, paths which will be reference in multiple scripts (i.e.&nbsp;a <code>merged_data_path</code>) can be declared in <code>0-config.R</code> and simply referred to by its variable name in scripts. If you ever want to change things, rename them, or even switch from a downsample to the full data, all you would then to need to do is modify the path in one place and the change will automatically update throughout your project. See the example config file for more details. The paths defined in the <code>0-config.R</code> file assume that users have opened the <code>.Rproj</code> file, which sets the directory to the top level of the project.</p>
