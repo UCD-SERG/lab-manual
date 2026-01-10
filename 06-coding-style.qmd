@@ -8,10 +8,6 @@ Follow these code style guidelines for all R code:
 
 {{< include 06-coding-style/general-principles.qmd >}}
 
-## File Organization
-
-{{< include 06-coding-style/file-organization.qmd >}}
-
 ## Function Structure and Documentation
 
 {{< include 06-coding-style/function-structure-and-documentation.qmd >}}
