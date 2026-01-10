@@ -126,13 +126,14 @@ myproject/
    - How to set up data paths
 
 2. **Use relative paths carefully**: Structure your code so data paths can be configured:
-   ```r
-   # In inst/analyses/01-analysis.qmd
-   # Users should set this based on their local setup
-   data_dir <- Sys.getenv("MYPROJECT_DATA", 
-                          default = "~/restricted_data/myproject")
-   raw_data <- readr::read_csv(file.path(data_dir, "sensitive.csv"))
-   ```
+
+```r
+# In inst/analyses/01-analysis.qmd
+# Users should set this based on their local setup
+data_dir <- Sys.getenv("MYPROJECT_DATA", 
+                       default = "~/restricted_data/myproject")
+raw_data <- readr::read_csv(file.path(data_dir, "sensitive.csv"))
+```
 
 3. **Create public alternatives**: When possible, create companion vignettes in `vignettes/` using:
    - Simulated data that mimics the structure
@@ -140,10 +141,11 @@ myproject/
    - Aggregated/de-identified summaries
 
 4. **Add to .Rbuildignore**: Ensure `inst/analyses/` doesn't cause package checks to fail:
-   ```r
-   # Use usethis to add to .Rbuildignore
-   usethis::use_build_ignore("inst/analyses")
-   ```
+
+```r
+# Use usethis to add to .Rbuildignore
+usethis::use_build_ignore("inst/analyses")
+```
 
 ### Keep Analysis Workbooks Tidy
 
