@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>14&nbsp; Data Publication – Benjamin-Chung Lab Manual</title>
+<title>14&nbsp; Data Publication – UCD-SeRG Lab Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -265,7 +265,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Benjamin-Chung Lab Manual</a> 
+      <a href="./">UCD-SeRG Lab Manual</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/UCD-SERG/lab-manual" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
@@ -282,7 +282,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome to the Benjamin-Chung Lab!</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome to UCD-SeRG!</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -324,7 +324,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07-big-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Working with Big Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Big data</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -342,7 +342,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./10-unix.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Unix commands</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Unix</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -366,7 +366,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./14-slurm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Slurm and cluster computing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">High-performance computing (HPC)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -442,7 +442,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="14.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">14.1</span> Overview</h2>
 <hr>
 <blockquote class="blockquote">
-<p><em><strong>Warning! </strong> <strong>NEVER</strong> push a dataset into the public domain (e.g., GitHub, OSF) without first checking with Jade to ensure that it is appropriately de-identified and we have approval from the sponsor and/or human subjects review board to do so. For example, we will need to re-code participant IDs (even if they contain no identifying information) before making data public to completely break the link between IDs and identifiable information stored on our servers. </em></p>
+<p><em><strong>Warning! </strong> <strong>NEVER</strong> push a dataset into the public domain (e.g., GitHub, OSF) without first checking with lab leadership to ensure that it is appropriately de-identified and we have approval from the sponsor and/or human subjects review board to do so. For example, we will need to re-code participant IDs (even if they contain no identifying information) before making data public to completely break the link between IDs and identifiable information stored on our servers. </em></p>
 </blockquote>
 <hr>
 <p>If you are releasing data into the public domain, then consider making available <em>at minimum</em> a <code>.csv</code> file and a codebook of the same name (note: you should have a codebook for internal data as well). We often also make available <code>.rds</code> files as well. For example, your <code>mystudy/data/public</code> directory could include three files for a single dataset, two with the actual data in <code>.rds</code> and <code>.csv</code> formats, and a third that describes their contents:</p>
@@ -450,12 +450,12 @@ ul.task-list li input[type="checkbox"] {
 analysis_data_public.rds
 analysis_data_public_codebook.txt</code></pre>
 <p>In general, datasets are usually too big to save on GitHub, but occasionally they are small. Here is an example of where we actually pushed the data directly to GitHub: https://github.com/ben-arnold/enterics-seroepi/tree/master/data .</p>
-<p>If the data are bigger, then maintaining them under version control in your git repository can be unweildy. Instead, we recommend using another stable repository that has version control, such as the Open Science Framework (<a href="https://osf.io">osf.io</a>). For example, all of the data from the WASH Benefits trials (led by investigators at Berkeley, icddr,b, IPA-Kenya and others) are all stored through data components nested within in OSF projects: https://osf.io/tprw2/. Another good option is Dryad (<a href="https://datadryad.org/">datadryad.org</a>) or the (Stanford Digital Repository)[https://sdr.stanford.edu/].</p>
-<p>We recommend cross-linking public files in GitHub (scripts/notebooks only) and OSF/Dryad/Stanford Digital Repository.</p>
+<p>If the data are bigger, then maintaining them under version control in your git repository can be unwieldy. Instead, we recommend using another stable repository that has version control, such as the Open Science Framework (<a href="https://osf.io">osf.io</a>). For example, all of the data from the WASH Benefits trials (led by investigators at Berkeley, icddr,b, IPA-Kenya and others) are all stored through data components nested within in OSF projects: https://osf.io/tprw2/. Another good option is Dryad (<a href="https://datadryad.org/">datadryad.org</a>) or institutional digital repositories.</p>
+<p>We recommend cross-linking public files in GitHub (scripts/notebooks only) and OSF/Dryad/institutional digital repositories.</p>
 <p>Below are the main steps to making data public, after finalizing the analysis datasets and scripts:<br>
 1. Remove Protected Health Information (PHI)<br>
 2. Create public IDs or join already created public IDs to the data<br>
-3. Create an OSF repository and/or Dryad/Stanford Digital Repository<br>
+3. Create an OSF repository and/or Dryad/institutional digital repository<br>
 4. Edit analysis scripts to run using the public datasets and test (optional)<br>
 5. Create a public github page for analysis scripts and link to OSF and/or Dryad/Zenodo<br>
 6. Go live</p>
@@ -482,7 +482,7 @@ analysis_data_public_codebook.txt</code></pre>
 </section>
 <section id="geographic-information" class="level3" data-number="14.2.3">
 <h3 data-number="14.2.3" class="anchored" data-anchor-id="geographic-information"><span class="header-section-number">14.2.3</span> Geographic information</h3>
-<p>Do not include GPS coordinates (longitude, latitude) except in special circumstances where they have been obfuscated/shifted. Reach out to Jade before doing this because it can be complicated.</p>
+<p>Do not include GPS coordinates (longitude, latitude) except in special circumstances where they have been obfuscated/shifted. Reach out to lab leadership before doing this because it can be complicated.</p>
 <p>Do not include place names or codes (e.g., US Zip Codes) if the place contains &lt;20,000 people. For villages or neighborhoods, code them with uninformative IDs. For sub-districts or districts, names are fine.</p>
 <p>If an analysis requires GPS locations (e.g., to make a map), then typically we include a disclaimer in the article’s data availability statement that explains we cannot make GPS locations public to protect participant confidentiality. As a middle ground, we typically make our <em>code</em> public that runs on the geo-located data for transparency, even if independent researchers can’t actually run that code (although please be careful to ensure the code itself does not in any way include geographic identifiers).</p>
 <p>For more examples of what constitutes PHI, please refer to this link: https://cphs.berkeley.edu/hipaa/hipaa18.html</p>
@@ -492,7 +492,7 @@ analysis_data_public_codebook.txt</code></pre>
 <h2 data-number="14.3" class="anchored" data-anchor-id="create-public-ids"><span class="header-section-number">14.3</span> Create public IDs</h2>
 <section id="rationale" class="level3" data-number="14.3.1">
 <h3 data-number="14.3.1" class="anchored" data-anchor-id="rationale"><span class="header-section-number">14.3.1</span> Rationale</h3>
-<p>The Stanford IRB requires that public datasets not include the original study IDs to identify participants or other units in the study (such as village IDs). The reason is that those IDs are linked in our private datasets to PHI. By creating a new set of public IDs, the public dataset is one step further removed from the potential to link to PHI.</p>
+<p>The UC Davis IRB requires that public datasets not include the original study IDs to identify participants or other units in the study (such as village IDs). The reason is that those IDs are linked in our private datasets to PHI. By creating a new set of public IDs, the public dataset is one step further removed from the potential to link to PHI.</p>
 </section>
 <section id="a-single-set-of-public-ids-for-each-study" class="level3" data-number="14.3.2">
 <h3 data-number="14.3.2" class="anchored" data-anchor-id="a-single-set-of-public-ids-for-each-study"><span class="header-section-number">14.3.2</span> A single set of public IDs for each study</h3>
@@ -985,8 +985,8 @@ analysis_data_public_codebook.txt</code></pre>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./14-slurm.html" class="pagination-link" aria-label="Slurm and cluster computing">
-        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Slurm and cluster computing</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./14-slurm.html" class="pagination-link" aria-label="High-performance computing (HPC)">
+        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">High-performance computing (HPC)</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

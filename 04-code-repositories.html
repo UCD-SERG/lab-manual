@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Code repositories – Benjamin-Chung Lab Manual</title>
+<title>5&nbsp; Code repositories – UCD-SeRG Lab Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -265,7 +265,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Benjamin-Chung Lab Manual</a> 
+      <a href="./">UCD-SeRG Lab Manual</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/UCD-SERG/lab-manual" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
@@ -282,7 +282,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome to the Benjamin-Chung Lab!</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome to UCD-SeRG!</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -324,7 +324,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07-big-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Working with Big Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Big data</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -342,7 +342,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./10-unix.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Unix commands</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Unix</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -366,7 +366,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./14-slurm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Slurm and cluster computing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">High-performance computing (HPC)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -422,7 +422,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>By Kunal Mishra, Jade Benjamin-Chung, and Stephanie Djajadi</p>
+<p>Adapted by UCD-SeRG team from <a href="https://jadebc.github.io/lab-manual/code-repositories.html">original by Kunal Mishra, Jade Benjamin-Chung, and Stephanie Djajadi</a></p>
 <p>Each study has at least one code repository that typically holds R code, shell scripts with Unix code, and research outputs (results .RDS files, tables, figures). Repositories may also include datasets. This chapter outlines how to organize these files. Adhering to a standard format makes it easier for us to efficiently collaborate across projects.</p>
 <section id="project-structure" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="project-structure"><span class="header-section-number">5.1</span> Project Structure</h2>
@@ -481,7 +481,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="using-bash-scripts-to-ensure-reproducibility" class="level2" data-number="5.5">
 <h2 data-number="5.5" class="anchored" data-anchor-id="using-bash-scripts-to-ensure-reproducibility"><span class="header-section-number">5.5</span> Using Bash scripts to ensure reproducibility</h2>
-<p>Bash scripts are useful components of a reproducible workflow. At many of the directory levels (i.e.&nbsp;in <code>3 - Analysis</code>), there is a bash script that runs each of the analysis scripts. This is exceptionally useful when data “upstream” changes – you simply run the bash script. See the <a href="10-unix.html">Unix Chapter</a> for further details.</p>
+<p>Bash scripts are useful components of a reproducible workflow. At many of the directory levels (i.e.&nbsp;in <code>3 - Analysis</code>), there is a bash script that runs each of the analysis scripts. This is exceptionally useful when data “upstream” changes – you simply run the bash script. See <a href="10-unix.html" class="quarto-xref"><span>Chapter 11</span></a> for further details.</p>
 <p>After running bash scripts, <code>.Rout</code> log files will be generated for each script that has been executed. It is important to check these files. Scripts may appear to have run correctly in the terminal, but checking the log files is the only way to ensure that everything has run completely.</p>
 
 
