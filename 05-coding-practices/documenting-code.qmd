@@ -55,7 +55,7 @@ Every function you write must include a header to document its purpose, inputs, 
 # Returns: the dataframe as described above
 # Output: prints the data frame described above if silent is not True
 
-calc_fluseas_mean = function(data, yname, silent = TRUE) {
+calc_fluseas_mean <- function(data, yname, silent = TRUE) {
  ### function code here 
 
 }
