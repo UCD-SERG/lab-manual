@@ -15,15 +15,9 @@ ggplot(data, aes(x = income)) + geom_histogram()
 ```r
 ################################################################################
 # @Organization - Example Organization
-# @Project - Myproject
-# @Description - Process raw survey data and create analysis dataset
+# @Project - Example Project
+# @Description - This file is responsible for [...]
 ################################################################################
-```
-
-**Sections and subsections** in longer files:
-
-```r
-# Data Loading -------
 ```
 
 **File Structure** - Just as your data "flows" through your project, data should flow naturally through a script. Very generally, you want to 
