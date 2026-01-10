@@ -46,8 +46,4 @@ Follow these code style guidelines for all R code:
 
 ## Additional Resources {#sec-r-resources-style}
 
-The tidyverse project provides comprehensive guides for writing high-quality R code:
-
 - [Tidyverse style guide](https://style.tidyverse.org/): Detailed coding style conventions for writing clear, consistent R code. Covers naming, syntax, pipes, functions, and more.
-- [Tidyverse design guide](https://design.tidyverse.org/): Principles for designing R packages and APIs that are intuitive, composable, and consistent with tidyverse philosophy.
-- [Tidyverse code review guide](https://code-review.tidyverse.org/): Best practices for reviewing R code, including what to look for and how to provide constructive feedback.
