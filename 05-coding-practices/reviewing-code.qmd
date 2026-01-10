@@ -1,0 +1,35 @@
+## Reviewing Code
+
+Before publishing new changes, it is important to ensure that the code has been tested and well-documented. GitHub makes it possible to document all of these changes in a pull request. Pull requests can be used to describe changes in a branch that are ready to be merged with the base branch (more information in the [GitHub](#Github) section). Github allows users to create a pull request template in a repository to standardize and customize the information in a pull request. When you add a pull request template to your repository, everyone will automatically see the template's contents in the pull request body.
+
+
+### Creating a Pull Request Template
+
+Follow the instructions below to add a pull request template to a repository. More details can be found at this [GitHub link](https://help.github.com/en/github/building-a-strong-community/creating-a-pull-request-template-for-your-repository).
+
+1. On GitHub, navigate to the main page of the repository.
+2. Above the file list, click `Create new file`.
+3. Name the file `pull_request_template.md`. GitHub will not recognize this as the template if it is named anything else. The file must be on the `master` branch.
+    1. To store the file in a hidden directory instead of the main directory, name the file `.github/pull_request_template.md`.
+4. In the body of the new file, add your pull request template. This could include:
+    - A summary of the changes proposed in the pull request
+    - How the change has been tested
+    - \@mentions of the person or team responsible for reviewing proposed changes
+
+
+Here is an example pull request template.
+```text
+# Description
+
+## Summary of change
+
+Please include a summary of the change, including any new functions added and example usage. 
+
+## Link to Spec
+
+Please include a link to the Trello card or Google document with details of the task. 
+
+## Who should review the pull request?
+@ ...
+
+```
