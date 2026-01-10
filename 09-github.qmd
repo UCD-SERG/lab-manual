@@ -66,7 +66,37 @@ Other helpful commands are listed below.
 | `git fetch --all --prune`                           | untrack deleted remote branches   |
 
 ## How often should I commit? 
-It is good practice to commit every 15 minutes, or every time you make a significant change. It is better to commit more rather than less. 
+
+It is good practice to commit every 15 minutes, or every time you make a significant change. It is better to commit more rather than less.
+
+## Repeated Amend Workflow
+
+When working on a complex task, you may want to make frequent incremental commits to protect your progress, but avoid cluttering your Git history with many tiny "work in progress" commits. The **Repeated Amend** pattern lets you build up a polished commit gradually.
+
+### Basic Workflow
+
+Start with a clean working tree in a functional state. Then:
+
+1. Make a small change and verify your project still works
+2. Stage and commit with a temporary message like "WIP" (work in progress)
+3. **Do not push yet**
+4. Make another small change and verify it works
+5. Stage and amend the previous commit: `git commit --amend --no-edit`
+6. Repeat steps 4-5 as needed
+7. When finished, amend one final time with a proper commit message
+8. Push your completed work
+
+In RStudio, you can use the "Amend previous commit" checkbox when committing.
+
+### Key Points
+
+- Each amend replaces the previous commit rather than creating a new one
+- This keeps your history clean while letting you work incrementally
+- Only use this pattern before pushing - never amend commits that others may have pulled
+- If you need to undo changes, use `git reset --hard` to return to your last commit state
+- Think of commits as climbing protection: use them when in uncertain territory
+
+For more details and troubleshooting scenarios, see the [Repeated Amend chapter](https://happygitwithr.com/repeated-amend.html) in Happy Git with R. 
 
 ## What should be pushed to Github?
 
