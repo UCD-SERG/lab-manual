@@ -59,14 +59,15 @@ And of a complex `ggplot` call:
   
 ```r
 # Example 3
-ggplot(data=data,
-       mapping=aes_string(x="year", y="rd", group=group)) +
+ggplot(data=data) +
+  
+  aes(x=.data[["year"]], y=.data[["rd"]], group=.data[[group]]) +
 
-  geom_point(mapping=aes_string(col=group, shape=group),
+  geom_point(mapping = aes(col = .data[[group]], shape = .data[[group]]),
              position=position_dodge(width=0.2),
              size=2.5) +
 
-  geom_errorbar(mapping=aes_string(ymin="lb", ymax="ub", col=group),
+  geom_errorbar(mapping = aes(ymin=.data[["lb"]], ymax= .data[["ub"]], col= .data[[group]]),
                 position=position_dodge(width=0.2),
                 width=0.2) +
 
