@@ -110,6 +110,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -458,7 +487,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#tidyverse-replacements" id="toc-tidyverse-replacements" class="nav-link" data-scroll-target="#tidyverse-replacements"><span class="header-section-number">7.7</span> Tidyverse Replacements</a></li>
   <li><a href="#the-here-package" id="toc-the-here-package" class="nav-link" data-scroll-target="#the-here-package"><span class="header-section-number">7.8</span> The here Package</a></li>
   <li><a href="#object-naming" id="toc-object-naming" class="nav-link" data-scroll-target="#object-naming"><span class="header-section-number">7.9</span> Object Naming</a></li>
-  <li><a href="#sec-r-resources-style" id="toc-sec-r-resources-style" class="nav-link" data-scroll-target="#sec-r-resources-style"><span class="header-section-number">7.10</span> Additional Resources</a></li>
+  <li><a href="#before" id="toc-before" class="nav-link" data-scroll-target="#before"><span class="header-section-number">8</span> Before</a></li>
+  <li><a href="#after" id="toc-after" class="nav-link" data-scroll-target="#after"><span class="header-section-number">9</span> After</a>
+  <ul class="collapse">
+  <li><a href="#sec-r-resources-style" id="toc-sec-r-resources-style" class="nav-link" data-scroll-target="#sec-r-resources-style"><span class="header-section-number">9.1</span> Additional Resources</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/06-coding-style.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/06-coding-style.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -709,39 +742,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="do">### Styling</span></span>
 <span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="fl">1.</span> <span class="sc">**</span>Code Autoformatting<span class="sc">**</span> <span class="sc">-</span> RStudio includes a fantastic built<span class="sc">-</span><span class="cf">in</span> <span class="fu">utility</span> (keyboard shortcut<span class="sc">:</span> <span class="st">`</span><span class="at">CMD-Shift-A</span><span class="st">`</span>) <span class="cf">for</span> autoformatting highlighted chunks of code to fit many of the best practices listed here. It generally makes code more readable and fixes a lot of the small things you may not feel like fixing yourself. Try it out as a <span class="st">"first pass"</span> on some code of yours that _doesn<span class="st">'t_ follow many of these best practices!</span></span>
 <span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="st">2. **Assignment Aligner** - A [cool R package](https://www.r-bloggers.com/align-assign-rstudio-addin-to-align-assignment-operators/) allows you to very powerfully format large chunks of assignment code to be much cleaner and much more readable. Follow the linked instructions and create a keyboard shortcut of your choosing (recommendation: `CMD-Shift-Z`). Here is an example of how assignment aligning can dramatically improve code readability:</span></span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="st">```r</span></span>
-<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a><span class="st"># Before</span></span>
-<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a><span class="st">OUSD_not_found_aliases = list(</span></span>
-<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a><span class="st">  "Brookfield Village Elementary" = str_subset(string = OUSD_school_shapes$schnam, pattern = "Brookfield"),</span></span>
-<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a><span class="st">  "Carl Munck Elementary" = str_subset(string = OUSD_school_shapes$schnam, pattern = "Munck"),</span></span>
-<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a><span class="st">  "Community United Elementary School" = str_subset(string = OUSD_school_shapes$schnam, pattern = "Community United"),</span></span>
-<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a><span class="st">  "East Oakland PRIDE Elementary" = str_subset(string = OUSD_school_shapes$schnam, pattern = "East Oakland Pride"),</span></span>
-<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a><span class="st">  "EnCompass Academy" = str_subset(string = OUSD_school_shapes$schnam, pattern = "EnCompass"),</span></span>
-<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a><span class="st">  "Global Family School" = str_subset(string = OUSD_school_shapes$schnam, pattern = "Global"),</span></span>
-<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a><span class="st">  "International Community School" = str_subset(string = OUSD_school_shapes$schnam, pattern = "International Community"),</span></span>
-<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a><span class="st">  "Madison Park Lower Campus" = "Madison Park Academy TK-5",</span></span>
-<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a><span class="st">  "Manzanita Community School" = str_subset(string = OUSD_school_shapes$schnam, pattern = "Manzanita Community"),</span></span>
-<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a><span class="st">  "Martin Luther King Jr Elementary" = str_subset(string = OUSD_school_shapes$schnam, pattern = "King"),</span></span>
-<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a><span class="st">  "PLACE @ Prescott" = "Preparatory Literary Academy of Cultural Excellence",</span></span>
-<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a><span class="st">  "RISE Community School" = str_subset(string = OUSD_school_shapes$schnam, pattern = "Rise Community")</span></span>
-<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a><span class="st">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># After</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>OUSD_not_found_aliases <span class="ot">=</span> <span class="fu">list</span>(</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Brookfield Village Elementary"</span>      <span class="ot">=</span> <span class="fu">str_subset</span>(<span class="at">string =</span> OUSD_school_shapes<span class="sc">$</span>schnam, <span class="at">pattern =</span> <span class="st">"Brookfield"</span>),</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Carl Munck Elementary"</span>              <span class="ot">=</span> <span class="fu">str_subset</span>(<span class="at">string =</span> OUSD_school_shapes<span class="sc">$</span>schnam, <span class="at">pattern =</span> <span class="st">"Munck"</span>),</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Community United Elementary School"</span> <span class="ot">=</span> <span class="fu">str_subset</span>(<span class="at">string =</span> OUSD_school_shapes<span class="sc">$</span>schnam, <span class="at">pattern =</span> <span class="st">"Community United"</span>),</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"East Oakland PRIDE Elementary"</span>      <span class="ot">=</span> <span class="fu">str_subset</span>(<span class="at">string =</span> OUSD_school_shapes<span class="sc">$</span>schnam, <span class="at">pattern =</span> <span class="st">"East Oakland Pride"</span>),</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"EnCompass Academy"</span>                  <span class="ot">=</span> <span class="fu">str_subset</span>(<span class="at">string =</span> OUSD_school_shapes<span class="sc">$</span>schnam, <span class="at">pattern =</span> <span class="st">"EnCompass"</span>),</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Global Family School"</span>               <span class="ot">=</span> <span class="fu">str_subset</span>(<span class="at">string =</span> OUSD_school_shapes<span class="sc">$</span>schnam, <span class="at">pattern =</span> <span class="st">"Global"</span>),</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"International Community School"</span>     <span class="ot">=</span> <span class="fu">str_subset</span>(<span class="at">string =</span> OUSD_school_shapes<span class="sc">$</span>schnam, <span class="at">pattern =</span> <span class="st">"International Community"</span>),</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Madison Park Lower Campus"</span>          <span class="ot">=</span> <span class="st">"Madison Park Academy TK-5"</span>,</span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Manzanita Community School"</span>         <span class="ot">=</span> <span class="fu">str_subset</span>(<span class="at">string =</span> OUSD_school_shapes<span class="sc">$</span>schnam, <span class="at">pattern =</span> <span class="st">"Manzanita Community"</span>),</span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Martin Luther King Jr Elementary"</span>   <span class="ot">=</span> <span class="fu">str_subset</span>(<span class="at">string =</span> OUSD_school_shapes<span class="sc">$</span>schnam, <span class="at">pattern =</span> <span class="st">"King"</span>),</span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">"PLACE @ Prescott"</span>                   <span class="ot">=</span> <span class="st">"Preparatory Literary Academy of Cultural Excellence"</span>,</span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">"RISE Community School"</span>              <span class="ot">=</span> <span class="fu">str_subset</span>(<span class="at">string =</span> OUSD_school_shapes<span class="sc">$</span>schnam, <span class="at">pattern =</span> <span class="st">"Rise Community"</span>)</span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="st">2. **Assignment Aligner** - A [cool R package](https://www.r-bloggers.com/align-assign-rstudio-addin-to-align-assignment-operators/) allows you to very powerfully format large chunks of assignment code to be much cleaner and much more readable. Follow the linked instructions and create a keyboard shortcut of your choosing (recommendation: `CMD-Shift-Z`). Here is an example of how assignment aligning can dramatically improve code readability:</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="before" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Before</h1>
+<p>OUSD_not_found_aliases = list( “Brookfield Village Elementary” = str_subset(string = OUSD_school_shapes<span class="math inline">\(schnam, pattern = "Brookfield"),
+  "Carl Munck Elementary" = str_subset(string = OUSD_school_shapes\)</span>schnam, pattern = “Munck”), “Community United Elementary School” = str_subset(string = OUSD_school_shapes<span class="math inline">\(schnam, pattern = "Community United"),
+  "East Oakland PRIDE Elementary" = str_subset(string = OUSD_school_shapes\)</span>schnam, pattern = “East Oakland Pride”), “EnCompass Academy” = str_subset(string = OUSD_school_shapes<span class="math inline">\(schnam, pattern = "EnCompass"),
+  "Global Family School" = str_subset(string = OUSD_school_shapes\)</span>schnam, pattern = “Global”), “International Community School” = str_subset(string = OUSD_school_shapes<span class="math inline">\(schnam, pattern = "International Community"),
+  "Madison Park Lower Campus" = "Madison Park Academy TK-5",
+  "Manzanita Community School" = str_subset(string = OUSD_school_shapes\)</span>schnam, pattern = “Manzanita Community”), “Martin Luther King Jr Elementary” = str_subset(string = OUSD_school_shapes<span class="math inline">\(schnam, pattern = "King"),
+  "PLACE @ Prescott" = "Preparatory Literary Academy of Cultural Excellence",
+  "RISE Community School" = str_subset(string = OUSD_school_shapes\)</span>schnam, pattern = “Rise Community”) )</p>
+<pre><code></code></pre>
+</section>
+<section id="after" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> After</h1>
+<p>OUSD_not_found_aliases = list( “Brookfield Village Elementary” = str_subset(string = OUSD_school_shapes<span class="math inline">\(schnam, pattern = "Brookfield"),
+  "Carl Munck Elementary"              = str_subset(string = OUSD_school_shapes\)</span>schnam, pattern = “Munck”), “Community United Elementary School” = str_subset(string = OUSD_school_shapes<span class="math inline">\(schnam, pattern = "Community United"),
+  "East Oakland PRIDE Elementary"      = str_subset(string = OUSD_school_shapes\)</span>schnam, pattern = “East Oakland Pride”), “EnCompass Academy” = str_subset(string = OUSD_school_shapes<span class="math inline">\(schnam, pattern = "EnCompass"),
+  "Global Family School"               = str_subset(string = OUSD_school_shapes\)</span>schnam, pattern = “Global”), “International Community School” = str_subset(string = OUSD_school_shapes<span class="math inline">\(schnam, pattern = "International Community"),
+  "Madison Park Lower Campus"          = "Madison Park Academy TK-5",
+  "Manzanita Community School"         = str_subset(string = OUSD_school_shapes\)</span>schnam, pattern = “Manzanita Community”), “Martin Luther King Jr Elementary” = str_subset(string = OUSD_school_shapes<span class="math inline">\(schnam, pattern = "King"),
+  "PLACE @ Prescott"                   = "Preparatory Literary Academy of Cultural Excellence",
+  "RISE Community School"              = str_subset(string = OUSD_school_shapes\)</span>schnam, pattern = “Rise Community”) ) ```</p>
 <ol start="3" type="1">
 <li><strong>StyleR</strong> - Another <a href="https://www.tidyverse.org/articles/2017/12/styler-1.0.0/">cool R package from the Tidyverse</a> that can be powerful and used as a first pass on entire projects that need refactoring. The most useful function of the package is the <code>style_dir</code> function, which will style all files within a given directory. See the <a href="https://www.rdocumentation.org/packages/styler/versions/1.1.0/topics/style_dir">function’s documentation</a> and the vignette linked above for more details.
 <ul>
@@ -754,14 +778,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Note</strong>: The <code>lintr</code> package goes hand in hand with the <code>styler</code> package. The styler can be used to automatically fix the problems that the lintr catches.</li>
 </ul></li>
 </ol>
-</section>
-<section id="sec-r-resources-style" class="level2" data-number="7.10">
-<h2 data-number="7.10" class="anchored" data-anchor-id="sec-r-resources-style"><span class="header-section-number">7.10</span> Additional Resources</h2>
+<section id="sec-r-resources-style" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="sec-r-resources-style"><span class="header-section-number">9.1</span> Additional Resources</h2>
 <ul>
 <li><a href="https://style.tidyverse.org/">Tidyverse style guide</a></li>
 </ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
