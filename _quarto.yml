@@ -1,47 +1,33 @@
 project:
-  type: website
+  type: book
   output-dir: docs
 
-website:
+book:
   title: "Benjamin-Chung Lab Manual"
+  author: "Dr. Jade Benjamin-Chung"
+  date: last-modified
+  date-format: "[Last updated:] YYYY-MM-DD"
   repo-url: https://github.com/UCD-SERG/lab-manual
   repo-actions: [edit, source, issue]
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - href: 01-culture-and-conduct.qmd
-        text: Culture and Conduct
-      - href: 02-communication.qmd
-        text: Communication
-      - href: 03-reproducibility.qmd
-        text: Reproducibility
-      - href: 04-code-repositories.qmd
-        text: Code Repositories
-      - href: 05-coding-practices.qmd
-        text: Coding Practices
-      - href: 06-coding-style.qmd
-        text: Coding Style
-      - href: 07-big-data.qmd
-        text: Big Data
-      - href: 08-data-masking.qmd
-        text: Data Masking
-      - href: 09-github.qmd
-        text: GitHub
-      - href: 10-unix.qmd
-        text: Unix
-      - href: 11-reproducible-environments.qmd
-        text: Reproducible Environments
-      - href: 12-code-publication.qmd
-        text: Code Publication
-      - href: 13-data-publication.qmd
-        text: Data Publication
-      - href: 14-slurm.qmd
-        text: Slurm
-      - href: 15-checklists.qmd
-        text: Checklists
-      - href: 16-resources.qmd
-        text: Resources
+  chapters:
+    - index.qmd
+    - 01-culture-and-conduct.qmd
+    - 02-communication.qmd
+    - 03-reproducibility.qmd
+    - 04-code-repositories.qmd
+    - 05-coding-practices.qmd
+    - 06-coding-style.qmd
+    - 07-big-data.qmd
+    - 08-data-masking.qmd
+    - 09-github.qmd
+    - 10-unix.qmd
+    - 11-reproducible-environments.qmd
+    - 12-code-publication.qmd
+    - 13-data-publication.qmd
+    - 14-slurm.qmd
+    - 15-checklists.qmd
+    - 16-resources.qmd
+  page-navigation: true
 
 format:
   html:
@@ -50,5 +36,6 @@ format:
       dark: darkly
     css: styles.css
     toc: true
+    number-sections: true
 
 editor: source
