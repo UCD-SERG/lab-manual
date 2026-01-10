@@ -38,6 +38,7 @@ format:
     css: styles.css
     toc: true
     number-sections: true
+    embed-resources: false
   pdf:
     geometry:
       - top=15mm
@@ -65,21 +66,5 @@ format:
   epub:
     toc: true
     number-sections: true
-  revealjs:
-    theme: dark
-    embed-resources: true
-    smaller: true
-    number-sections: true
-    progress: true
-    incremental: false
-    number-depth: 2
-    slide-number: true
-    shift-heading-level-by: -1
-    slide-level: 2
-    scrollable: true
-    code-fold: true
-    code-link: true
-    code-summary: "[Code]"
-    auto-stretch: true
 
 editor: source
