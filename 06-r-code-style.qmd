@@ -1,12 +1,4 @@
-# R Coding {#sec-r-coding}
-
-{{< include _includes/r-coding/01-lab-protocols.qmd >}}
-
-{{< include _includes/r-coding/02-package-structure.qmd >}}
-
-{{< include _includes/r-coding/03-development-tools.qmd >}}
-
-{{< include _includes/r-coding/04-workflow.qmd >}}
+# R Code Style {#sec-r-code-style}
 
 {{< include _includes/r-coding/05-code-style.qmd >}}
 

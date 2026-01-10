@@ -1,0 +1,9 @@
+# R Coding Practices {#sec-r-coding-practices}
+
+{{< include _includes/r-coding/01-lab-protocols.qmd >}}
+
+{{< include _includes/r-coding/02-package-structure.qmd >}}
+
+{{< include _includes/r-coding/03-development-tools.qmd >}}
+
+{{< include _includes/r-coding/04-workflow.qmd >}}
