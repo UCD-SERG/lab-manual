@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,7 +65,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./05-r-coding.html" rel="next">
+<link href="./05-coding-practices.html" rel="next">
 <link href="./03-reproducibility.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -334,68 +369,74 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-r-coding.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">R Coding</span></span></a>
+  <a href="./05-coding-practices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">R Coding Practices</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-coding-style.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">R Code Style</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07-big-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Big data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Big data</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08-data-masking.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data masking</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data masking</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./09-github.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Github</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Github</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./10-unix.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Unix</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Unix</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./11-reproducible-environments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Reproducible Environments</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Reproducible Environments</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./12-code-publication.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Code Publication</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Code Publication</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./13-data-publication.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Data Publication</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Data Publication</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./14-slurm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">High-performance computing (HPC)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">High-performance computing (HPC)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15-checklists.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Checklists</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Checklists</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./16-resources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Resources</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Resources</span></span></a>
   </div>
 </li>
     </ul>
@@ -408,7 +449,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#project-structure" id="toc-project-structure" class="nav-link active" data-scroll-target="#project-structure"><span class="header-section-number">5.1</span> Project Structure</a></li>
+  <li><a href="#project-structure" id="toc-project-structure" class="nav-link active" data-scroll-target="#project-structure"><span class="header-section-number">5.1</span> Project Structure</a>
+  <ul class="collapse">
+  <li><a href="#why-use-r-package-structure" id="toc-why-use-r-package-structure" class="nav-link" data-scroll-target="#why-use-r-package-structure"><span class="header-section-number">5.1.1</span> Why Use R Package Structure?</a></li>
+  <li><a href="#basic-package-structure" id="toc-basic-package-structure" class="nav-link" data-scroll-target="#basic-package-structure"><span class="header-section-number">5.1.2</span> Basic Package Structure</a></li>
+  <li><a href="#sec-analysis-file-placement" id="toc-sec-analysis-file-placement" class="nav-link" data-scroll-target="#sec-analysis-file-placement"><span class="header-section-number">5.1.3</span> Where to Place Analysis Files</a></li>
+  <li><a href="#keep-analysis-workbooks-tidy" id="toc-keep-analysis-workbooks-tidy" class="nav-link" data-scroll-target="#keep-analysis-workbooks-tidy"><span class="header-section-number">5.1.4</span> Keep Analysis Workbooks Tidy</a></li>
+  <li><a href="#shell-scripts-and-automation" id="toc-shell-scripts-and-automation" class="nav-link" data-scroll-target="#shell-scripts-and-automation"><span class="header-section-number">5.1.5</span> Shell Scripts and Automation</a></li>
+  <li><a href="#storing-analysis-outputs" id="toc-storing-analysis-outputs" class="nav-link" data-scroll-target="#storing-analysis-outputs"><span class="header-section-number">5.1.6</span> Storing Analysis Outputs</a></li>
+  </ul></li>
   <li><a href="#rproj-files" id="toc-rproj-files" class="nav-link" data-scroll-target="#rproj-files"><span class="header-section-number">5.2</span> <code>.Rproj</code> files</a></li>
   <li><a href="#configuration-config-file" id="toc-configuration-config-file" class="nav-link" data-scroll-target="#configuration-config-file"><span class="header-section-number">5.3</span> Configuration (‘config’) File</a></li>
   <li><a href="#order-files-and-directories" id="toc-order-files-and-directories" class="nav-link" data-scroll-target="#order-files-and-directories"><span class="header-section-number">5.4</span> Order Files and Directories</a></li>
@@ -446,48 +495,192 @@ ul.task-list li input[type="checkbox"] {
 
 <p>Adapted by UCD-SeRG team from <a href="https://jadebc.github.io/lab-manual/code-repositories.html">original by Kunal Mishra, Jade Benjamin-Chung, and Stephanie Djajadi</a></p>
 <p>Each study has at least one code repository that typically holds R code, shell scripts with Unix code, and research outputs (results .RDS files, tables, figures). Repositories may also include datasets. This chapter outlines how to organize these files. Adhering to a standard format makes it easier for us to efficiently collaborate across projects.</p>
+<p>UCD-SeRG projects use R package structure for all R-based work. This provides benefits for reproducibility, collaboration, and code quality even for analysis-only projects.</p>
 <section id="project-structure" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="project-structure"><span class="header-section-number">5.1</span> Project Structure</h2>
-<p>We recommend the following directory structure:</p>
-<pre><code>0-run-project.sh
-0-config.R
-1 - Data-Management/
-    0-prep-data.sh
-    1-prep-cdph-fluseas.R
-    2a-prep-absentee.R
-    2b-prep-absentee-weighted.R
-    3a-prep-absentee-adj.R
-    3b-prep-absentee-adj-weighted.R
-2 - Analysis/
-    0-run-analysis.sh
-    1 - Absentee-Mean/
-        1-absentee-mean-primary.R
-        2-absentee-mean-negative-control.R
-        3-absentee-mean-CDC.R
-        4-absentee-mean-peakwk.R
-        5-absentee-mean-cdph2.R
-        6-absentee-mean-cdph3.R
-    2 - Absentee-Positivity-Check/
-    3 - Absentee-P1/
-    4 - Absentee-P2/
-3 - Figures/
-    0-run-figures.sh
-    ...
-4 - Tables/
-    0-run-tables.sh
-    ...
-5 - Results/
-    1 - Absentee-Mean/
-        1-absentee-mean-primary.RDS
-        2-absentee-mean-negative-control.RDS
-        3-absentee-mean-CDC.RDS
-        4-absentee-mean-peakwk.RDS
-        5-absentee-mean-cdph2.RDS
-        6-absentee-mean-cdph3.RDS
-    ...
-.gitignore
-.Rproj</code></pre>
-<p>For brevity, not every directory is “expanded”, but we can glean some important takeaways from what we <em>do</em> see.</p>
+<p><strong>All R projects in our lab should be structured as R packages</strong>, even if they are primarily analysis projects and not intended for distribution on CRAN or Bioconductor. This standardized structure provides numerous benefits:</p>
+<section id="why-use-r-package-structure" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="why-use-r-package-structure"><span class="header-section-number">5.1.1</span> Why Use R Package Structure?</h3>
+<ol type="1">
+<li><strong>Organized code</strong>: Clear separation of functions (<code>R/</code>), documentation (<code>man/</code>), tests (<code>tests/</code>), data (<code>data/</code>), and vignettes/analyses</li>
+<li><strong>Dependency management</strong>: <code>DESCRIPTION</code> file explicitly declares all package dependencies and versions</li>
+<li><strong>Automatic documentation</strong>: <code>roxygen2</code> generates help files from inline comments</li>
+<li><strong>Built-in testing</strong>: <code>testthat</code> framework integrates seamlessly with package structure</li>
+<li><strong>Code quality</strong>: Tools like <code>devtools::check()</code> and <code>lintr</code> enforce best practices</li>
+<li><strong>Reproducibility</strong>: Package structure makes it easy to share and reproduce analyses</li>
+<li><strong>Reusable functions</strong>: Decompose complex analyses into well-documented, testable functions</li>
+<li><strong>Version control</strong>: Track changes to code, documentation, and data together</li>
+</ol>
+</section>
+<section id="basic-package-structure" class="level3" data-number="5.1.2">
+<h3 data-number="5.1.2" class="anchored" data-anchor-id="basic-package-structure"><span class="header-section-number">5.1.2</span> Basic Package Structure</h3>
+<pre><code>myproject/
+├── DESCRIPTION          # Package metadata and dependencies
+├── NAMESPACE            # Auto-generated, don't edit manually
+├── R/                   # All R functions (reusable code)
+│   ├── analysis_functions.R
+│   ├── data_prep.R
+│   └── plotting.R
+├── man/                 # Auto-generated documentation
+├── tests/              
+│   └── testthat/       # Unit tests
+├── data/               # Processed data objects (.rda files)
+├── data-raw/           # Raw data and data processing scripts
+│   ├── 0-prep-data.sh  # Shell scripts for data preparation
+│   ├── process_survey_data.R
+│   └── clean_lab_results.R
+├── vignettes/          # Long-form documentation
+│   ├── intro.qmd       # Main vignettes (shipped with package)
+│   ├── tutorial.qmd
+│   └── articles/       # Website-only articles (not shipped)
+│       ├── advanced-topics.qmd
+│       └── case-studies.qmd
+├── inst/               # Additional files to include in package
+│   ├── extdata/        # External data files and .RDS results
+│   │   ├── analysis_results.rds
+│   │   └── processed_data.rds
+│   ├── output/         # Figure and table outputs
+│   │   ├── figures/
+│   │   │   ├── fig1.pdf
+│   │   │   └── fig2.png
+│   │   └── tables/
+│   │       ├── table1.csv
+│   │       └── table2.xlsx
+│   └── analyses/       # Analyses using restricted data (see below)
+└── .Rproj              # RStudio project file</code></pre>
+</section>
+<section id="sec-analysis-file-placement" class="level3" data-number="5.1.3">
+<h3 data-number="5.1.3" class="anchored" data-anchor-id="sec-analysis-file-placement"><span class="header-section-number">5.1.3</span> Where to Place Analysis Files</h3>
+<section id="vignettes-vs-articles" class="level4" data-number="5.1.3.1">
+<h4 data-number="5.1.3.1" class="anchored" data-anchor-id="vignettes-vs-articles"><span class="header-section-number">5.1.3.1</span> Vignettes vs Articles</h4>
+<p><strong>Vignettes</strong> (<code>vignettes/*.qmd</code>): - <strong>Shipped with the package</strong> when installed - Accessible via <code>vignette()</code> and <code>browseVignettes()</code> in R - Displayed on CRAN - Built at package build time - Use for core package documentation and tutorials - Created with <code>usethis::use_vignette("name")</code></p>
+<p><strong>Articles</strong> (<code>vignettes/articles/*.qmd</code>): - <strong>Website-only</strong> (not shipped with the package) - Only appear on the pkgdown website - Not accessible via <code>vignette()</code> in R - Not displayed on CRAN - Use for supplementary content, blog posts, extended tutorials, or frequently updated material - Created with <code>usethis::use_article("name")</code> - Automatically added to <code>.Rbuildignore</code></p>
+<p><strong>When to use each:</strong> - <strong>Vignette</strong>: Essential tutorials users need offline, core package workflows - <strong>Article</strong>: Supplementary material, case studies, advanced topics, blog-style content</p>
+</section>
+<section id="public-analyses-vignettes" class="level4" data-number="5.1.3.2">
+<h4 data-number="5.1.3.2" class="anchored" data-anchor-id="public-analyses-vignettes"><span class="header-section-number">5.1.3.2</span> Public Analyses (vignettes/)</h4>
+<p>Use <code>vignettes/</code> for analysis workbooks that: - Use publicly available data - Should be accessible to all package users - Are core to understanding the package</p>
+<p>Use <code>vignettes/articles/</code> for: - Extended case studies - Blog-style posts - Supplementary analyses - Material that updates frequently</p>
+<p>All vignettes and articles will be rendered by <code>pkgdown::build_site()</code> on your package website.</p>
+</section>
+<section id="analyses-with-restricted-data-instanalyses" class="level4" data-number="5.1.3.3">
+<h4 data-number="5.1.3.3" class="anchored" data-anchor-id="analyses-with-restricted-data-instanalyses"><span class="header-section-number">5.1.3.3</span> Analyses with Restricted Data (inst/analyses/)</h4>
+<p>For analyses that rely on <strong>private, sensitive, or restricted data</strong>, place <code>.qmd</code> or <code>.qmd</code> files in <code>inst/analyses/</code>:</p>
+<pre><code>myproject/
+├── inst/
+│   ├── analyses/
+│   │   ├── 01-confidential-data-analysis.qmd
+│   │   ├── 02-unpublished-results.qmd
+│   │   └── README.md  # Document data access requirements
+│   └── extdata/
+└── vignettes/
+    ├── 01-public-analysis.qmd
+    └── 02-demo-with-simulated-data.qmd</code></pre>
+<p><strong>Benefits of this approach:</strong></p>
+<ul>
+<li>Analyses with restricted data are included in version control alongside your code</li>
+<li>They’re clearly separated from public documentation</li>
+<li><code>inst/analyses/</code> is <strong>excluded from <code>pkgdown</code> builds</strong> and package documentation</li>
+<li>Collaborators with data access can still run these analyses</li>
+<li>You maintain a complete record of all project work</li>
+</ul>
+<p><strong>Note on privacy:</strong> Files in <code>inst/analyses/</code> are not inherently private—they will be visible if your repository is public. Use this folder for analyses that rely on restricted data that is stored separately, not for storing the restricted data itself. If you need to keep the analysis code private, use a private repository.</p>
+<p><strong>Best practices for analyses with restricted data:</strong></p>
+<ol type="1">
+<li><p><strong>Document data requirements</strong>: Include a README.md in <code>inst/analyses/</code> explaining:</p>
+<ul>
+<li>What data is required</li>
+<li>Where to obtain it (if permissible)</li>
+<li>Data access restrictions</li>
+<li>How to set up data paths</li>
+</ul></li>
+<li><p><strong>Use relative paths carefully</strong>: Structure your code so data paths can be configured:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># In inst/analyses/01-analysis.qmd</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Users should set this based on their local setup</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>data_dir <span class="ot">&lt;-</span> <span class="fu">Sys.getenv</span>(<span class="st">"MYPROJECT_DATA"</span>, </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                       <span class="at">default =</span> <span class="st">"~/restricted_data/myproject"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>raw_data <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="fu">file.path</span>(data_dir, <span class="st">"sensitive.csv"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p><strong>Create public alternatives</strong>: When possible, create companion vignettes in <code>vignettes/</code> using:</p>
+<ul>
+<li>Simulated data that mimics the structure</li>
+<li>Publicly available datasets</li>
+<li>Aggregated/de-identified summaries</li>
+</ul></li>
+<li><p><strong>Add to .Rbuildignore</strong>: Ensure <code>inst/analyses/</code> doesn’t cause package checks to fail:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use usethis to add to .Rbuildignore</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_build_ignore</span>(<span class="st">"inst/analyses"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+</ol>
+</section>
+</section>
+<section id="keep-analysis-workbooks-tidy" class="level3" data-number="5.1.4">
+<h3 data-number="5.1.4" class="anchored" data-anchor-id="keep-analysis-workbooks-tidy"><span class="header-section-number">5.1.4</span> Keep Analysis Workbooks Tidy</h3>
+<p><strong>Decompose reusable functions</strong> from your analysis notebooks into the <code>R/</code> directory. Your vignettes should:</p>
+<ul>
+<li>Be clean, readable narratives of your analysis</li>
+<li>Call well-documented functions from your package</li>
+<li>Focus on the “what” and “why” rather than implementation details</li>
+<li>Be reproducible by others with a single click (or with documented data access for private analyses)</li>
+</ul>
+<p><strong>Example of what NOT to do</strong> (all code in vignette):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bad: 100 lines of data manipulation in vignette</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>raw_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data.csv"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ... 100 lines of cleaning, transforming, reshaping ...</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>cleaned_data <span class="ot">&lt;-</span> final_result</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Example of what TO do</strong> (functions in R/, simple calls in vignette):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Good: Clean vignette calling documented functions</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>raw_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data.csv"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>cleaned_data <span class="ot">&lt;-</span> <span class="fu">prep_study_data</span>(raw_data)  <span class="co"># Function in R/data_prep.R</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="shell-scripts-and-automation" class="level3" data-number="5.1.5">
+<h3 data-number="5.1.5" class="anchored" data-anchor-id="shell-scripts-and-automation"><span class="header-section-number">5.1.5</span> Shell Scripts and Automation</h3>
+<p>Shell scripts are useful for automating workflows and ensuring reproducibility. Place shell scripts in <code>data-raw/</code> alongside the R scripts they coordinate:</p>
+<pre><code>data-raw/
+├── 0-prep-data.sh          # Shell script to run all data prep
+├── 01-load-survey.R
+├── 02-clean-survey.R
+├── 03-merge-datasets.R
+└── 04-create-analysis-data.R</code></pre>
+<p><strong>Using shell scripts:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># data-raw/0-prep-data.sh</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Rscript</span> data-raw/01-load-survey.R</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Rscript</span> data-raw/02-clean-survey.R</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Rscript</span> data-raw/03-merge-datasets.R</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="ex">Rscript</span> data-raw/04-create-analysis-data.R</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This is especially useful when data upstream changes — you can simply run the shell script to reproduce everything. After running shell scripts, <code>.Rout</code> log files will be generated for each script. It is important to check these files to ensure everything has run correctly.</p>
+</section>
+<section id="storing-analysis-outputs" class="level3" data-number="5.1.6">
+<h3 data-number="5.1.6" class="anchored" data-anchor-id="storing-analysis-outputs"><span class="header-section-number">5.1.6</span> Storing Analysis Outputs</h3>
+<p><strong>Results files (.RDS)</strong>: Save analysis results in <code>inst/extdata/</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save results</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">write_rds</span>(analysis_results, <span class="fu">here</span>(<span class="st">"inst"</span>, <span class="st">"extdata"</span>, <span class="st">"analysis_results.rds"</span>))</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Load results later</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_rds</span>(<span class="fu">here</span>(<span class="st">"inst"</span>, <span class="st">"extdata"</span>, <span class="st">"analysis_results.rds"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Figures and tables</strong>: Save publication outputs in <code>inst/output/</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save figure</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="fu">here</span>(<span class="st">"inst"</span>, <span class="st">"output"</span>, <span class="st">"figures"</span>, <span class="st">"fig1_incidence_trends.pdf"</span>), </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">width =</span> <span class="dv">8</span>, <span class="at">height =</span> <span class="dv">6</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Save table</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">write_csv</span>(summary_table, </span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">here</span>(<span class="st">"inst"</span>, <span class="st">"output"</span>, <span class="st">"tables"</span>, <span class="st">"table1_demographics.csv"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Organization:</strong></p>
+<pre><code>inst/
+├── extdata/
+│   ├── analysis_results.rds
+│   ├── model_fits.rds
+│   └── processed_data.rds
+└── output/
+    ├── figures/
+    │   ├── fig1_incidence_trends.pdf
+    │   ├── fig2_risk_factors.png
+    │   └── figS1_sensitivity.pdf
+    └── tables/
+        ├── table1_demographics.csv
+        ├── table2_main_results.xlsx
+        └── tableS1_detailed_results.csv</code></pre>
+</section>
 </section>
 <section id="rproj-files" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="rproj-files"><span class="header-section-number">5.2</span> <code>.Rproj</code> files</h2>
@@ -503,7 +696,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="using-bash-scripts-to-ensure-reproducibility" class="level2" data-number="5.5">
 <h2 data-number="5.5" class="anchored" data-anchor-id="using-bash-scripts-to-ensure-reproducibility"><span class="header-section-number">5.5</span> Using Bash scripts to ensure reproducibility</h2>
-<p>Bash scripts are useful components of a reproducible workflow. At many of the directory levels (i.e.&nbsp;in <code>3 - Analysis</code>), there is a bash script that runs each of the analysis scripts. This is exceptionally useful when data “upstream” changes – you simply run the bash script. See <a href="10-unix.html" class="quarto-xref"><span>Chapter 10</span></a> for further details.</p>
+<p>Bash scripts are useful components of a reproducible workflow. At many of the directory levels (i.e.&nbsp;in <code>3 - Analysis</code>), there is a bash script that runs each of the analysis scripts. This is exceptionally useful when data “upstream” changes – you simply run the bash script. See <a href="10-unix.html" class="quarto-xref"><span>Chapter 11</span></a> for further details.</p>
 <p>After running bash scripts, <code>.Rout</code> log files will be generated for each script that has been executed. It is important to check these files. Scripts may appear to have run correctly in the terminal, but checking the log files is the only way to ensure that everything has run completely.</p>
 
 
@@ -930,8 +1123,8 @@ ul.task-list li input[type="checkbox"] {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./05-r-coding.html" class="pagination-link" aria-label="R Coding">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">R Coding</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./05-coding-practices.html" class="pagination-link" aria-label="R Coding Practices">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">R Coding Practices</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
