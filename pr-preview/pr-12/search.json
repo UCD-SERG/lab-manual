@@ -273,8 +273,8 @@
     "objectID": "04-code-repositories.html#configuration-config-file",
     "href": "04-code-repositories.html#configuration-config-file",
     "title": "5  Code repositories",
-    "section": "5.3 Configuration (‘config’) File",
-    "text": "5.3 Configuration (‘config’) File\nThis is the single most important file for your project. It will be responsible for a variety of common tasks, declare global variables, load functions, declare paths, and more. Every other file in the project will begin with source(\"0-config\"), and its role is to reduce redundancy and create an abstraction layer that allows you to make changes in one place (0-config.R) rather than 5 different files. To this end, paths which will be reference in multiple scripts (i.e. a merged_data_path) can be declared in 0-config.R and simply referred to by its variable name in scripts. If you ever want to change things, rename them, or even switch from a downsample to the full data, all you would then to need to do is modify the path in one place and the change will automatically update throughout your project. See the example config file for more details. The paths defined in the 0-config.R file assume that users have opened the .Rproj file, which sets the directory to the top level of the project.",
+    "section": "6.1 Configuration (‘config’) File",
+    "text": "6.1 Configuration (‘config’) File\nThis is the single most important file for your project. It will be responsible for a variety of common tasks, declare global variables, load functions, declare paths, and more. Every other file in the project will begin with source(\"0-config\"), and its role is to reduce redundancy and create an abstraction layer that allows you to make changes in one place (0-config.R) rather than 5 different files. To this end, paths which will be reference in multiple scripts (i.e. a merged_data_path) can be declared in 0-config.R and simply referred to by its variable name in scripts. If you ever want to change things, rename them, or even switch from a downsample to the full data, all you would then to need to do is modify the path in one place and the change will automatically update throughout your project. See the example config file for more details. The paths defined in the 0-config.R file assume that users have opened the .Rproj file, which sets the directory to the top level of the project.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Code repositories</span>"
     ]
@@ -283,8 +283,8 @@
     "objectID": "04-code-repositories.html#order-files-and-directories",
     "href": "04-code-repositories.html#order-files-and-directories",
     "title": "5  Code repositories",
-    "section": "5.4 Order Files and Directories",
-    "text": "5.4 Order Files and Directories\nThis makes the jumble of alphabetized filenames much more coherent and places similar code and files next to one another. This also helps us understand how data flows from start to finish and allows us to easily map a script to its output (i.e. 2 - Analysis/1 - Absentee-Mean/1-absentee-mean-primary.R =&gt; 5 - Results/1 - Absentee-Mean/1-absentee-mean-primary.RDS). If you take nothing else away from this guide, this is the single most helpful suggestion to make your workflow more coherent. Often the particular order of files will be in flux until an analysis is close to completion. At that time it is important to review file order and naming and reproduce everything prior to drafting a manuscript.",
+    "section": "6.2 Order Files and Directories",
+    "text": "6.2 Order Files and Directories\nThis makes the jumble of alphabetized filenames much more coherent and places similar code and files next to one another. This also helps us understand how data flows from start to finish and allows us to easily map a script to its output (i.e. 2 - Analysis/1 - Absentee-Mean/1-absentee-mean-primary.R =&gt; 5 - Results/1 - Absentee-Mean/1-absentee-mean-primary.RDS). If you take nothing else away from this guide, this is the single most helpful suggestion to make your workflow more coherent. Often the particular order of files will be in flux until an analysis is close to completion. At that time it is important to review file order and naming and reproduce everything prior to drafting a manuscript.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Code repositories</span>"
     ]
@@ -293,8 +293,8 @@
     "objectID": "04-code-repositories.html#using-bash-scripts-to-ensure-reproducibility",
     "href": "04-code-repositories.html#using-bash-scripts-to-ensure-reproducibility",
     "title": "5  Code repositories",
-    "section": "5.5 Using Bash scripts to ensure reproducibility",
-    "text": "5.5 Using Bash scripts to ensure reproducibility\nBash scripts are useful components of a reproducible workflow. At many of the directory levels (i.e. in 3 - Analysis), there is a bash script that runs each of the analysis scripts. This is exceptionally useful when data “upstream” changes – you simply run the bash script. See Chapter 11 for further details.\nAfter running bash scripts, .Rout log files will be generated for each script that has been executed. It is important to check these files. Scripts may appear to have run correctly in the terminal, but checking the log files is the only way to ensure that everything has run completely.",
+    "section": "6.3 Using Bash scripts to ensure reproducibility",
+    "text": "6.3 Using Bash scripts to ensure reproducibility\nBash scripts are useful components of a reproducible workflow. At many of the directory levels (i.e. in 3 - Analysis), there is a bash script that runs each of the analysis scripts. This is exceptionally useful when data “upstream” changes – you simply run the bash script. See Chapter 11 for further details.\nAfter running bash scripts, .Rout log files will be generated for each script that has been executed. It is important to check these files. Scripts may appear to have run correctly in the terminal, but checking the log files is the only way to ensure that everything has run completely.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Code repositories</span>"
     ]
