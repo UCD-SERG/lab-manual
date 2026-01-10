@@ -1,0 +1,9 @@
+Just as wet labs have strict safety protocols to ensure reproducible results and prevent contamination, our computational lab has protocols for coding and data management. These protocols are not suggestions—they are essential practices that:
+
+- **Ensure reproducibility**: Others (including your future self) can recreate your analysis
+- **Prevent errors**: Systematic approaches reduce the risk of mistakes
+- **Enable collaboration**: Consistent practices allow team members to work together efficiently
+- **Maintain data integrity**: Proper handling prevents data corruption and loss
+- **Support publication**: Well-documented, reproducible code is increasingly required for publication
+
+**Violating these protocols can have serious consequences**, including invalid results, wasted time, inability to publish, and damage to scientific credibility. Treat coding and data management protocols with the same seriousness as you would safety protocols in a wet lab.
