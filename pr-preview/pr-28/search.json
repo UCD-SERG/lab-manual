@@ -144,7 +144,7 @@
     "href": "02-communication.html#code-review",
     "title": "3  Communication and coordination",
     "section": "3.7 Code Review",
-    "text": "3.7 Code Review\nWhen reviewing code from colleagues, use best practices to provide constructive feedback:\n\nTidyverse code review guide: Best practices for reviewing R code, including what to look for and how to provide constructive feedback.",
+    "text": "3.7 Code Review\nWhen submitting code to or reviewing code from colleagues, use best practices to provide and receive constructive feedback:\n\nTidyverse code review guide: Best practices for reviewing R code, including what to look for and how to provide constructive feedback.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Communication and coordination</span>"
     ]
