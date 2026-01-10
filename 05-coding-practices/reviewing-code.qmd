@@ -1,34 +1,129 @@
+Before publishing new changes, it is important to ensure that the code has been tested and well-documented. GitHub makes it possible to document all of these changes in a pull request. Pull requests can be used to describe changes in a branch that are ready to be merged with the base branch (more information in the [GitHub](#Github) section).
 
-Before publishing new changes, it is important to ensure that the code has been tested and well-documented. GitHub makes it possible to document all of these changes in a pull request. Pull requests can be used to describe changes in a branch that are ready to be merged with the base branch (more information in the [GitHub](#Github) section). Github allows users to create a pull request template in a repository to standardize and customize the information in a pull request. When you add a pull request template to your repository, everyone will automatically see the template's contents in the pull request body.
+This section provides guidance on both constructing effective pull requests and reviewing code submitted by others. Much of the content in this section is adapted from the [tidyverse code review guide](https://code-review.tidyverse.org/), which provides excellent principles for code review in R package development.
 
+## Constructing Pull Requests
 
-### Creating a Pull Request Template
+### Write Focused PRs
 
-Follow the instructions below to add a pull request template to a repository. More details can be found at this [GitHub link](https://help.github.com/en/github/building-a-strong-community/creating-a-pull-request-template-for-your-repository).
+A focused pull request is **one self-contained change** that addresses just one thing. Writing focused PRs has several benefits:
+
+- **Faster reviews**: It's easier for a reviewer to find 5-10 minutes to review a single bug fix than to set aside an hour for one large PR implementing many features.
+- **More thorough reviews**: Large PRs with many changes can overwhelm reviewers, leading to important points being missed.
+- **Fewer bugs**: Smaller changes make it easier to reason about impacts and identify potential issues.
+- **Easier to merge**: Large PRs take longer and are more likely to have merge conflicts.
+- **Less wasted work**: If the overall direction is wrong, you've wasted less time on a small PR.
+
+As a guideline, 100 lines is usually a reasonable size for a PR, and 1000 lines is usually too large. However, the number of files affected also matters—a 200-line change in one file might be fine, but the same change spread across 50 files is usually too large.
+
+### Writing PR Descriptions
+
+When you submit a pull request, include a detailed PR title and description. A comprehensive description helps your reviewer and provides valuable historical context.
+
+**PR Title**: The title should be a short summary (ideally under 72 characters) of what is being done. It should be informative enough that future developers can understand what the PR did without reading the full description.
+
+Poor titles that lack context:
+
+- "Fix bug"
+- "Add patch"
+- "Moving code from A to B"
+
+Better titles that summarize the actual change:
+
+- "Fix missing value handling in data processing function"
+- "Add support for custom date formats in import functions"
+
+**PR Description Body**: The description should provide context that helps the reviewer understand your PR. Consider including:
+
+- A brief description of the problem being solved
+- Links to related issues (e.g., "Closes #123" or "Related to #456")
+- A before/after example showing changed behavior
+- Possible shortcomings of the approach being used
+- For complex PRs, a suggested reading order for the reviewer
+
+### Add Tests
+
+Focused PRs should include related test code. A PR that adds or changes logic should be accompanied by new or updated tests for the new behavior. Pure refactoring PRs should also be covered by tests—if tests don't exist for code you're refactoring, add them in a separate PR first to validate that behavior is unchanged.
+
+### Separate Out Refactorings
+
+It's usually best to do refactorings in a separate PR from feature changes or bug fixes. For example, moving and renaming a function should be in a different PR from fixing a bug in that function. This makes it much easier for reviewers to understand the changes introduced by each PR.
+
+Small cleanups (like fixing a local variable name) can be included in a feature change or bug fix PR, but large refactorings should be separate.
+
+## Reviewing Pull Requests
+
+### Purpose of Code Review
+
+The primary purpose of code review is to ensure that the overall code health of our projects improves over time. Reviewers should balance the need to make forward progress with the importance of maintaining code quality.
+
+**Key principle**: Reviewers should favor approving a PR once it is in a state where it definitely improves the overall code health of the system, even if the PR isn't perfect. There is no such thing as "perfect" code—there is only better code. Rather than seeking perfection, seek continuous improvement.
+
+### Writing Review Comments
+
+When reviewing code, maintain courtesy and respect while being clear and helpful:
+
+- Comment on the **code**, not the author
+- Explain **why** you're making suggestions (reference best practices, design patterns, or how the suggestion improves code health)
+- Balance pointing out problems with providing guidance (help authors learn while being constructive)
+- Highlight positive aspects too—if you see good practices, comment on those to reinforce them
+
+**Poor comment**: "Why did you use this approach when there's obviously a better way?"
+
+**Better comment**: "This approach adds complexity without clear benefits. Consider using [alternative approach] instead, which would simplify the logic and improve readability."
+
+### Mentoring Through Review
+
+Code review is an excellent opportunity for mentoring. As a reviewer:
+
+- Leave comments that help authors learn something new
+- Link to relevant sections of style guides or best practices documentation
+- Consider pair programming for complex reviews—live review sessions can be very effective for teaching
+
+### Giving Constructive Feedback
+
+In general, it is the author's responsibility to fix a PR, not the reviewer's. Strike a balance between pointing out problems and providing direct guidance. Sometimes pointing out issues and letting the author decide on a solution helps them learn and may result in a better solution since they are closer to the code.
+
+For very small tweaks (typos, comment additions), use GitHub's suggestion feature to allow authors to quickly accept changes directly in the UI.
+
+## Creating a Pull Request Template
+
+GitHub allows you to create a pull request template in a repository to standardize the information in pull requests. When you add a template, everyone will automatically see its contents in the pull request body.
+
+Follow these steps to add a pull request template:
 
 1. On GitHub, navigate to the main page of the repository.
 2. Above the file list, click `Create new file`.
-3. Name the file `pull_request_template.md`. GitHub will not recognize this as the template if it is named anything else. The file must be on the `master` branch.
-    1. To store the file in a hidden directory instead of the main directory, name the file `.github/pull_request_template.md`.
-4. In the body of the new file, add your pull request template. This could include:
-    - A summary of the changes proposed in the pull request
-    - How the change has been tested
-    - \@mentions of the person or team responsible for reviewing proposed changes
+3. Name the file `pull_request_template.md`. GitHub will not recognize this as the template if it is named anything else. The file must be on the default branch.
+    - To store the file in a hidden directory, name it `.github/pull_request_template.md`.
+4. In the body of the new file, add your pull request template.
 
+Here is an example pull request template:
 
-Here is an example pull request template.
 ```text
 # Description
 
 ## Summary of change
 
-Please include a summary of the change, including any new functions added and example usage. 
+Please include a summary of the change, including any new functions added and example usage.
 
-## Link to Spec
+## Related Issues
 
-Please include a link to the Trello card or Google document with details of the task. 
+Closes #(issue number)
+Related to #(issue number)
+
+## Testing
+
+Describe how this change has been tested.
+
+## Checklist
+
+- [ ] Tests added/updated
+- [ ] Documentation updated
+- [ ] Code follows project style guidelines
 
 ## Who should review the pull request?
-@ ...
+
+@username
 
 ```
