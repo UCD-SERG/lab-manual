@@ -1,5 +1,3 @@
-## Tidyverse Replacements
-
 Use modern tidyverse/alternatives for base R functions:
 
 ```r

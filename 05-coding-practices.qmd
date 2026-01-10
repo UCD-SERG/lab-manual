@@ -1,23 +1,45 @@
 # R Coding Practices {#sec-r-coding-practices}
 
-{{< include _includes/coding-practices/lab-protocols-for-code-and-data.qmd >}}
+## Lab Protocols for Code and Data
 
-{{< include _includes/coding-practices/essential-r-package-development-tools.qmd >}}
+{{< include 05-coding-practices/lab-protocols-for-code-and-data.qmd >}}
 
-{{< include _includes/coding-practices/complete-package-development-workflow.qmd >}}
+## Essential R Package Development Tools {#sec-r-package-tools}
 
-{{< include _includes/coding-practices/testing-requirements.qmd >}}
+{{< include 05-coding-practices/essential-r-package-development-tools.qmd >}}
 
-{{< include _includes/coding-practices/iterative-operations.qmd >}}
+## Complete Package Development Workflow {#sec-r-workflow}
 
-{{< include _includes/coding-practices/reading-and-saving-data.qmd >}}
+{{< include 05-coding-practices/complete-package-development-workflow.qmd >}}
 
-{{< include _includes/coding-practices/version-control-and-collaboration.qmd >}}
+## Testing Requirements {#sec-r-testing}
 
-{{< include _includes/coding-practices/continuous-integration.qmd >}}
+{{< include 05-coding-practices/testing-requirements.qmd >}}
 
-{{< include _includes/coding-practices/quality-assurance-checklist.qmd >}}
+## Iterative Operations {#sec-iteration}
 
-{{< include _includes/coding-practices/automated-code-styling.qmd >}}
+{{< include 05-coding-practices/iterative-operations.qmd >}}
 
-{{< include _includes/coding-practices/additional-resources.qmd >}}
+## Reading and Saving Data {#sec-data-io}
+
+{{< include 05-coding-practices/reading-and-saving-data.qmd >}}
+
+## Version Control and Collaboration {#sec-r-version-control}
+
+{{< include 05-coding-practices/version-control-and-collaboration.qmd >}}
+
+## Continuous Integration {#sec-r-ci}
+
+{{< include 05-coding-practices/continuous-integration.qmd >}}
+
+## Quality Assurance Checklist {#sec-r-qa-checklist}
+
+{{< include 05-coding-practices/quality-assurance-checklist.qmd >}}
+
+## Automated Code Styling {#sec-auto-styling}
+
+{{< include 05-coding-practices/automated-code-styling.qmd >}}
+
+## Additional Resources {#sec-r-resources}
+
+{{< include 05-coding-practices/additional-resources.qmd >}}

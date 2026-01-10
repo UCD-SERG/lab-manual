@@ -1,5 +1,3 @@
-## Function Structure and Documentation
-
 Every function should follow this pattern:
 
 ```r

@@ -1,5 +1,3 @@
-## Automated Code Styling {#sec-auto-styling}
-
 ### RStudio Built-in Formatting
 
 Use RStudio's built-in autoformatter (keyboard shortcut: `CMD-Shift-A` or `Ctrl-Shift-A`) to quickly format highlighted code.

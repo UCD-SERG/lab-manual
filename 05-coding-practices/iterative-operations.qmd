@@ -1,5 +1,3 @@
-## Iterative Operations {#sec-iteration}
-
 When applying analyses with different variations (outcomes, exposures, subgroups), use functional programming approaches:
 
 ### `lapply()` and `sapply()`

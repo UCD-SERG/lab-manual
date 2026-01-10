@@ -1,5 +1,3 @@
-## Continuous Integration {#sec-r-ci}
-
 Set up automated checks using GitHub Actions:
 
 ```r

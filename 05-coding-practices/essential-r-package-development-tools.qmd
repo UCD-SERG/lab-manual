@@ -1,5 +1,3 @@
-## Essential R Package Development Tools {#sec-r-package-tools}
-
 The following tools are essential for R package development in our lab:
 
 ### usethis: Package Setup and Management

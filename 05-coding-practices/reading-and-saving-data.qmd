@@ -1,5 +1,3 @@
-## Reading and Saving Data {#sec-data-io}
-
 ### RDS Files (Preferred)
 
 Use RDS format for R objects:

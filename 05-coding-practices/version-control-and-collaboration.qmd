@@ -1,5 +1,3 @@
-## Version Control and Collaboration {#sec-r-version-control}
-
 ### Version Numbers
 
 Follow semantic versioning (MAJOR.MINOR.PATCH):

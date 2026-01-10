@@ -4,24 +4,44 @@ Adapted by UCD-SeRG team from [original by Kunal Mishra, Jade Benjamin-Chung, an
 
 Follow these code style guidelines for all R code:
 
-{{< include _includes/coding-style/general-principles.qmd >}}
+## General Principles
 
-{{< include _includes/coding-style/file-organization.qmd >}}
+{{< include 06-coding-style/general-principles.qmd >}}
 
-{{< include _includes/coding-style/function-structure-and-documentation.qmd >}}
+## File Organization
 
-{{< include _includes/coding-style/comments.qmd >}}
+{{< include 06-coding-style/file-organization.qmd >}}
+
+## Function Structure and Documentation
+
+{{< include 06-coding-style/function-structure-and-documentation.qmd >}}
+
+## Comments
+
+{{< include 06-coding-style/comments.qmd >}}
 
 
 
-{{< include _includes/coding-style/messaging-and-user-communication.qmd >}}
+## Messaging and User Communication
 
-{{< include _includes/coding-style/package-code-practices.qmd >}}
+{{< include 06-coding-style/messaging-and-user-communication.qmd >}}
 
-{{< include _includes/coding-style/line-breaks-and-formatting.qmd >}}
+## Package Code Practices
 
-{{< include _includes/coding-style/tidyverse-replacements.qmd >}}
+{{< include 06-coding-style/package-code-practices.qmd >}}
 
-{{< include _includes/coding-style/the-here-package.qmd >}}
+## Line Breaks and Formatting
 
-{{< include _includes/coding-style/object-naming.qmd >}}
+{{< include 06-coding-style/line-breaks-and-formatting.qmd >}}
+
+## Tidyverse Replacements
+
+{{< include 06-coding-style/tidyverse-replacements.qmd >}}
+
+## The here Package
+
+{{< include 06-coding-style/the-here-package.qmd >}}
+
+## Object Naming
+
+{{< include 06-coding-style/object-naming.qmd >}}

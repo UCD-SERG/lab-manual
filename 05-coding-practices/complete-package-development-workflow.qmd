@@ -1,5 +1,3 @@
-## Complete Package Development Workflow {#sec-r-workflow}
-
 Here's the typical workflow for developing an R package in our lab:
 
 ### 1. Initial Setup

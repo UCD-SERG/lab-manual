@@ -1,5 +1,3 @@
-## Additional Resources {#sec-r-resources}
-
 - [R Packages book](https://r-pkgs.org/) by Hadley Wickham and Jenny Bryan
 - [Tidyverse style guide](https://style.tidyverse.org/)
 - [usethis documentation](https://usethis.r-lib.org/)

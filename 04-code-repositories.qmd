@@ -6,12 +6,22 @@ Each study has at least one code repository that typically holds R code, shell s
 
 UCD-SeRG projects use R package structure for all R-based work. This provides benefits for reproducibility, collaboration, and code quality even for analysis-only projects.
 
-{{< include _includes/code-repositories/project-structure.qmd >}}
+## Project Structure
 
-{{< include _includes/code-repositories/rproj-files.qmd >}}
+{{< include 04-code-repositories/project-structure.qmd >}}
 
-{{< include _includes/code-repositories/configuration-config-file.qmd >}}
+## `.Rproj` files
 
-{{< include _includes/code-repositories/order-files-and-directories.qmd >}}
+{{< include 04-code-repositories/rproj-files.qmd >}}
 
-{{< include _includes/code-repositories/using-bash-scripts-to-ensure-reproducibility.qmd >}}
+## Configuration ('config') File
+
+{{< include 04-code-repositories/configuration-config-file.qmd >}}
+
+## Order Files and Directories
+
+{{< include 04-code-repositories/order-files-and-directories.qmd >}}
+
+## Using Bash scripts to ensure reproducibility
+
+{{< include 04-code-repositories/using-bash-scripts-to-ensure-reproducibility.qmd >}}

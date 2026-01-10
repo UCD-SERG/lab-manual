@@ -1,5 +1,3 @@
-## Line Breaks and Formatting
-
 For readability, use line breaks in function calls and pipelines:
 
 ```r

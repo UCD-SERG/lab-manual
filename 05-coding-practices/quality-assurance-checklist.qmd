@@ -1,5 +1,3 @@
-## Quality Assurance Checklist {#sec-r-qa-checklist}
-
 Before submitting a pull request or finalizing analysis, verify:
 
 - [ ] All functions have complete roxygen2 documentation

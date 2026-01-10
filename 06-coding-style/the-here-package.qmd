@@ -1,5 +1,3 @@
-## The here Package
-
 The `here` package helps manage file paths in projects:
 
 ```r
