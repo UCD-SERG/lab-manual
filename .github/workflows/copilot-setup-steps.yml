@@ -78,6 +78,10 @@ jobs:
         with:
           tinytex: true
       
+      # Explicitly install TinyTeX to ensure it's available
+      - name: Install TinyTeX
+        run: quarto install tinytex
+      
       # # Install R dependencies using renv (disabled for now - no renv.lock file yet)
       # - name: Install R dependencies via renv
       #   uses: r-lib/actions/setup-renv@v2

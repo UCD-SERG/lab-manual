@@ -1,0 +1,21 @@
+- [ ] `devtools::document()` has been run
+- [ ] `devtools::test()` passes with no failures
+- [ ] `devtools::check()` passes with no errors, warnings, or notes
+- [ ] `lintr::lint_package()` shows no issues (or only acceptable ones)
+- [ ] `spelling::spell_check_package()` passes
+- [ ] Version number has been incremented
+- [ ] `NEWS.md` has been updated with changes
+- [ ] `README.Rmd` has been updated (if needed) and `README.md` regenerated
+- [ ] `pkgdown::build_site()` builds successfully
+- [ ] All changes committed and pushed to GitHub
+
+## Continuous Integration {#sec-r-ci}
+
+Set up automated checks using GitHub Actions:
+
+```r
+# Add standard R package CI workflows
+usethis::use_github_action("check-standard")    # R CMD check
+usethis::use_github_action("test-coverage")     # Code coverage
+usethis::use_github_action("pkgdown")           # Deploy website
+```

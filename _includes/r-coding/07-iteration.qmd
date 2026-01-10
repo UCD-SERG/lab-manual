@@ -1,0 +1,66 @@
+## Iterative Operations {#sec-iteration}
+
+When applying analyses with different variations (outcomes, exposures, subgroups), use functional programming approaches:
+
+### `lapply()` and `sapply()`
+
+```r
+# Apply function to each element
+results <- lapply(outcomes, function(y) {
+  run_analysis(data, outcome = y)
+})
+
+# Simplify to vector if possible
+summary_stats <- sapply(data_list, mean)
+```
+
+### `purrr::map()` Family
+
+The `purrr` package provides type-stable alternatives:
+
+```r
+library(purrr)
+
+# Always returns a list
+results <- map(outcomes, ~ run_analysis(data, outcome = .x))
+
+# Type-specific variants
+means <- map_dbl(data_list, mean)        # Returns numeric vector
+models <- map(splits, ~ lm(y ~ x, data = .x))  # Returns list of models
+```
+
+### `purrr::pmap()` for Multiple Arguments
+
+When iterating over multiple parameter lists:
+
+```r
+params <- tibble(
+  outcome = c("outcome1", "outcome2", "outcome3"),
+  exposure = c("exp1", "exp2", "exp3"),
+  covariate_set = list(c("age", "sex"), c("age"), c("age", "sex", "bmi"))
+)
+
+results <- pmap(params, function(outcome, exposure, covariate_set) {
+  run_analysis(
+    data = study_data,
+    outcome = outcome,
+    exposure = exposure,
+    covariates = covariate_set
+  )
+})
+```
+
+### Parallel Processing
+
+For computationally intensive work, use `future` and `furrr`:
+
+```r
+library(future)
+library(furrr)
+
+# Set up parallel processing
+plan(multisession, workers = availableCores() - 1)
+
+# Parallel version of map()
+results <- future_map(large_list, time_consuming_function, .progress = TRUE)
+```

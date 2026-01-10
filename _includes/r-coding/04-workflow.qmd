@@ -1,0 +1,103 @@
+## Complete Package Development Workflow {#sec-r-workflow}
+
+Here's the typical workflow for developing an R package in our lab:
+
+### 1. Initial Setup
+
+```r
+# Create package structure
+usethis::create_package("~/myproject")
+
+# Set up infrastructure
+usethis::use_git()
+usethis::use_github()
+usethis::use_testthat()
+usethis::use_pkgdown()
+usethis::use_mit_license()
+usethis::use_readme_rmd()
+```
+
+### 2. Add Dependencies
+
+```r
+# Add packages your project depends on
+usethis::use_package("dplyr")
+usethis::use_package("ggplot2")
+usethis::use_package("readr")
+
+# Add packages only needed for development/testing
+usethis::use_package("testthat", type = "Suggests")
+```
+
+### 3. Write Functions
+
+Create functions in `R/` directory with roxygen2 documentation:
+
+```r
+#' Prepare Study Data
+#'
+#' Clean and prepare raw study data for analysis.
+#'
+#' @param raw_data A data frame containing raw study data
+#' @param validate Logical; whether to run validation checks
+#'
+#' @returns A cleaned data frame ready for analysis
+#'
+#' @examples
+#' raw_data <- read_csv("data.csv")
+#' clean_data <- prep_study_data(raw_data)
+#'
+#' @export
+prep_study_data <- function(raw_data, validate = TRUE) {
+  # Function implementation
+}
+```
+
+### 4. Document
+
+```r
+# Generate documentation from roxygen2 comments
+devtools::document()
+```
+
+### 5. Test
+
+Create tests in `tests/testthat/`:
+
+```r
+# tests/testthat/test-data_prep.R
+test_that("prep_study_data handles missing values", {
+  raw_data <- data.frame(x = c(1, NA, 3))
+  result <- prep_study_data(raw_data)
+  expect_false(anyNA(result$x))
+})
+```
+
+Run tests:
+
+```r
+devtools::test()
+```
+
+### 6. Check
+
+```r
+# Comprehensive package check
+devtools::check()
+```
+
+Fix any warnings or errors before proceeding.
+
+### 7. Build Documentation Site
+
+```r
+pkgdown::build_site()
+```
+
+### 8. Share and Publish
+
+```r
+# Push to GitHub
+# The pkgdown site can be automatically deployed to GitHub Pages
+# using GitHub Actions
+```

@@ -1,0 +1,120 @@
+## Version Control and Collaboration {#sec-r-version-control}
+
+### Version Numbers
+
+Follow semantic versioning (MAJOR.MINOR.PATCH):
+
+- Development versions: `0.0.0.9000`, `0.0.0.9001`, etc.
+- First release: `0.1.0`
+- Bug fixes: increment PATCH (e.g., `0.1.0` → `0.1.1`)
+- New features: increment MINOR (e.g., `0.1.1` → `0.2.0`)
+- Breaking changes: increment MAJOR (e.g., `0.2.0` → `1.0.0`)
+
+```r
+# Increment version
+usethis::use_version()
+```
+
+### NEWS File
+
+Document all user-facing changes in `NEWS.md`:
+
+```markdown
+# myproject 0.2.0
+
+## New Features
+
+* Added `prep_study_data()` function for data preparation
+* Implemented sensitivity analysis in `sensitivity_analysis()`
+
+## Bug Fixes
+
+* Fixed handling of missing values in `calculate_mean()`
+
+## Breaking Changes
+
+* Renamed `old_function()` to `new_function()`
+```
+
+### Git Workflow
+
+```r
+# Set up Git and GitHub
+usethis::use_git()
+usethis::use_github()
+
+# Before committing changes
+devtools::document()        # Update documentation
+devtools::test()            # Run tests
+devtools::check()           # Full package check
+```
+
+### Managing Dependencies with renv {#sec-renv}
+
+**Use `renv` to tightly control dependency versions during development.** The `renv` package creates a project-specific library that isolates your package dependencies, ensuring reproducibility across different machines and over time.
+
+#### When to Use renv
+
+- **During active development**: Use `renv` to lock down specific versions of dependencies
+- **For collaborative projects**: Ensure all team members use the same package versions
+- **For long-term reproducibility**: Preserve the exact dependency environment
+
+#### Setting Up renv
+
+```r
+# Install renv
+install.packages("renv")
+
+# Initialize renv in your package
+renv::init()
+
+# This creates:
+# - renv/ directory with package library
+# - renv.lock file with exact package versions
+# - .Rprofile to activate renv on startup
+```
+
+#### Using renv in Package Development
+
+```r
+# Install/update packages (renv tracks changes)
+install.packages("dplyr")
+renv::install("tidyr@1.3.0")  # Install specific version
+
+# Save the current state
+renv::snapshot()
+
+# Restore packages from lockfile
+renv::restore()
+
+# Update packages
+renv::update()
+```
+
+#### Preparing for CRAN Release
+
+**For packages ready for CRAN submission, disable renv and test with latest dependency versions:**
+
+1. **Remove renv** before CRAN submission:
+   ```r
+   renv::deactivate()
+   # Delete renv/ directory and renv.lock
+   # Remove .Rprofile modifications
+   ```
+
+2. **Test with latest versions**:
+   ```r
+   # Install latest versions of all dependencies
+   devtools::install_dev_deps()
+   
+   # Run comprehensive checks
+   devtools::check()
+   ```
+
+3. **Why disable renv for CRAN**: CRAN tests packages against the latest versions of dependencies. Your package should work with current CRAN versions, not pinned older versions.
+
+**Workflow summary:**
+
+- **Development phase**: Use `renv` for stability and reproducibility
+- **Pre-CRAN release**: Disable `renv`, test with latest dependency versions
+- **After CRAN release**: Can re-enable `renv` for continued development if desired

@@ -1,0 +1,4411 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode,bookmarksnumbered=true}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  twoside=off]{scrbook}
+\usepackage{xcolor}
+\usepackage[top=15mm,bottom=20mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{3}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+% Make links footnotes instead of hotlinks:
+\DeclareRobustCommand{\href}[2]{#2\footnote{\url{#1}}}
+\hypersetup{
+  pdftitle={UCD-SeRG Lab Manual},
+  pdfauthor={Kristen Aiemjoy; Ezra Morrison},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{UCD-SeRG Lab Manual}
+\author{Kristen Aiemjoy \and Ezra Morrison}
+\date{Last updated: 2026-01-10}
+\begin{document}
+\frontmatter
+\maketitle
+
+\renewcommand*\contentsname{Contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+
+\mainmatter
+\bookmarksetup{startatroot}
+
+\chapter{Welcome to UCD-SeRG!}\label{welcome-to-ucd-serg}
+
+\section{About the lab}\label{about-the-lab}
+
+Welcome to the Seroepidemiology Research Group (SeRG) at the University
+of California, Davis, led by Drs. Kristen Aiemjoy and Ezra Morrison.
+Accurate methods to measure infectious disease burden are essential for
+guiding public health decisions, yet many infectious diseases remain
+under-recognized due to limited diagnostics and costly,
+resource-intensive surveillance systems. Our work addresses this gap by
+developing seroepidemiologic methods to characterize infection burden in
+populations. Currently, we focus on enteric fever (Salmonella Typhi and
+Paratyphi), Scrub Typhus (Orientia tsutsugamushi), Melioidosis
+(Burkholderia pseudomallei), Shigella (Shigella spp.), and Cholera
+(Vibrio cholerae). We are supported by the US National Institutes of
+Health, the Bill and Melinda Gates Foundation, and the Department of
+Defense, and collaborate with partners around the world. To learn more
+about the lab, visit
+\href{https://ucdserg.ucdavis.edu}{ucdserg.ucdavis.edu}.
+
+\section{About this lab manual}\label{about-this-lab-manual}
+
+This lab manual covers our communication strategy, code of conduct, and
+best practices for reproducibility of computational workflows. It is a
+living document that is updated regularly.
+
+This manual is a fork of the
+\href{https://github.com/jadebc/lab-manual}{Benjamin-Chung Lab's
+manual}, adapted for UCD-SeRG. We are grateful to Dr.~Jade
+Benjamin-Chung and her team for developing and openly sharing their
+excellent lab manual. You can view the original manual at
+\href{https://jadebc.github.io/lab-manual/index.html}{jadebc.github.io/lab-manual}.
+Original contributors include Jade Benjamin-Chung, Kunal Mishra,
+Stephanie Djajadi, Nolan Pokpongkiat, Anna Nguyen, Iris Tong, and Gabby
+Barratt Heitmann.
+
+Feel free to draw from this manual (and please cite it if you do!).
+
+This work is licensed under a Creative Commons Attribution-NonCommercial
+4.0 International License.
+
+\bookmarksetup{startatroot}
+
+\chapter{Culture and conduct}\label{culture-and-conduct}
+
+Adapted by UCD-SeRG team from
+\href{https://jadebc.github.io/lab-manual/culture-and-conduct.html}{original
+by Jade Benjamin-Chung}
+
+\section{Lab culture}\label{lab-culture}
+
+We are committed to a lab culture that is collaborative, supportive,
+inclusive, open, and free from discrimination and harassment.
+
+We encourage students / staff of all experience levels to respectfully
+share their honest opinions and ideas on any topic. Our group has
+thrived upon such respectful honest input from team members over the
+years, and this document is a product of years of student and staff
+input (and even debate) that has gradually improved our productivity and
+overall quality of our work.
+
+\section{Diversity, equity, and
+inclusion}\label{diversity-equity-and-inclusion}
+
+UCD-SeRG recognizes the importance of and is committed to cultivating a
+culture of diversity, equity, and inclusion. This means being a safe,
+supportive, and anti-racist environment in which students from diverse
+backgrounds are equally and inclusively supported in their education and
+training. Diversity takes many forms, and includes, but is not limited
+to, differences in race, ethnicity, gender, sexuality, socioeconomic
+status, religion, disability, and political affiliation.
+
+\section{Protecting human subjects}\label{protecting-human-subjects}
+
+All lab members must complete
+\href{https://research.ucdavis.edu/policiescompliance/irb-admin/education/}{CITI
+Human Subjects Biomedical Group 1} training and share their certificate
+with the lab leadership. Team members will be added to relevant
+Institutional Review Board protocols prior to their start date to ensure
+they have permission to work with identifiable datasets.
+
+One of the most relevant aspects of protecting human subjects in our
+work is maintaining confidentiality. For students supporting our data
+science efforts, in practice this means:
+
+\begin{itemize}
+\tightlist
+\item
+  Be sure to understand and comply with project-specific policies about
+  where data can be saved, particularly if the data include personal
+  identifiers.
+\item
+  Do not share data with anyone without permission, including to other
+  members of the group, who might not be on the same IRB protocol as you
+  (check with lab leadership first).
+\end{itemize}
+
+Remember, data that looks like it does not contain identifiers to you
+might still be classified as data that requires special protection by
+our IRB or under HIPAA, so always proceed with caution and ask for help
+if you have any concerns about how to maintain study participant
+confidentiality.
+
+\section{Authorship}\label{authorship}
+
+We adhere to the
+\href{http://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html}{ICMJE
+Definition of authorship} and are happy for team members who meet the
+definition of authorship to be included as co-authors on scientific
+manuscripts.
+
+\bookmarksetup{startatroot}
+
+\chapter{Communication and
+coordination}\label{communication-and-coordination}
+
+Adapted by UCD-SeRG team from
+\href{https://jadebc.github.io/lab-manual/communication-and-coordination.html}{original
+by Jade Benjamin-Chung}
+
+One benefit of the academic environment is its schedule flexibility.
+This means that lab members may choose to work in the early morning,
+evening, or weekends. That said, we do not expect lab members to respond
+outside of business hours (unless there are special circumstances).
+
+\section{Microsoft Teams}\label{microsoft-teams}
+
+\begin{itemize}
+\tightlist
+\item
+  Use Microsoft Teams for scheduling, coding related questions, quick
+  check ins, etc. If your Teams message exceeds 200 words, it might be
+  time to use email.
+\item
+  Use channels instead of direct messages unless you need to discuss
+  something private.
+\item
+  Please make an effort to respond to messages that mention you (e.g.,
+  \texttt{@username}) as quickly as possible and always within 24 hours.
+\item
+  If you are unusually busy (e.g., taking MCAT/GRE, taking many exams)
+  or on vacation please alert the team in advance so we can expect you
+  not to respond at all / as quickly as usual and also set your status
+  in Teams (e.g., it could say ``On vacation'') so we know not to expect
+  to see you online.
+\item
+  Please thread messages in Teams as much as possible.
+\end{itemize}
+
+\section{Email}\label{email}
+
+\begin{itemize}
+\tightlist
+\item
+  Use email for longer messages (\textgreater200 words) or messages that
+  merit preservation.
+\item
+  Generally, strive to respond within 24 hours hours. As noted above, if
+  you are unusually busy or on vacation please alert the team in advance
+  so we can expect you not to respond at all / as quickly as usual.
+\end{itemize}
+
+\section{Trello}\label{trello}
+
+\begin{itemize}
+\tightlist
+\item
+  Lab leadership will add new cards within our shared Trello board that
+  outline your tasks.
+\item
+  The higher a card is within your list, the higher priority it is.
+\item
+  Generally, strive to complete the tasks in your card by the date
+  listed.
+\item
+  Use checklists to break down a task into smaller chunks. Sometimes
+  leadership will write this for you, but you can also add this
+  yourself.
+\item
+  Lab leadership will move your card to the ``Completed'' list when it
+  is done.
+\end{itemize}
+
+\section{Google Drive}\label{google-drive}
+
+\begin{itemize}
+\tightlist
+\item
+  We mostly use Google Drive to create shared documents with longer
+  descriptions of tasks. These documents are linked to in Trello. Lab
+  leadership often shares these with the whole team since tasks are
+  overlapping, and even if a task is assigned to one person, others may
+  have valuable insights.
+\end{itemize}
+
+\section{UC Davis Box and SharePoint}\label{uc-davis-box-and-sharepoint}
+
+\begin{itemize}
+\tightlist
+\item
+  Human subjects data for research studies are generally stored in UC
+  Davis Box or SharePoint. Please check with lab leadership about
+  whether there are special storage and transfer requirements for the
+  datasets you are working with for each study.
+\item
+  You can access Box via your UC Davis credentials. For more
+  information, visit \href{https://kb.ucdavis.edu/?id=6485}{UC Davis Box
+  Support}.
+\item
+  SharePoint is also used for collaborative document storage and team
+  file sharing. Access SharePoint through your UC Davis Microsoft 365
+  account.
+\end{itemize}
+
+\section{Meetings}\label{meetings}
+
+\begin{itemize}
+\tightlist
+\item
+  Our meetings start on the hour.
+\item
+  If you are going to be late, please send a message in our Teams
+  channel.
+\item
+  If you are regularly not able to come on the hour, notify the team and
+  we might choose the modify the agenda order or the start time.
+\end{itemize}
+
+\bookmarksetup{startatroot}
+
+\chapter{Reproducibility}\label{reproducibility}
+
+Adapted by UCD-SeRG team from
+\href{https://jadebc.github.io/lab-manual/reproducibility.html}{original
+by Jade Benjamin-Chung}
+
+Our lab adopts the following practices to maximize the reproducibility
+of our work.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Design studies with appropriate methodology and adherence to best
+  practices in epidemiology and biostatistics
+\item
+  Register study protocols
+\item
+  Write and register pre-analysis plans
+\item
+  Create reproducible workflows
+\item
+  Process and analyze data with internal replication and masking
+\item
+  Use reporting checklists with manuscripts
+\item
+  Publish preprints
+\item
+  Publish data (when possible) and replication scripts
+\end{enumerate}
+
+\section{What is the reproducibility
+crisis?}\label{what-is-the-reproducibility-crisis}
+
+In the past decade, an increasing number of studies have found that
+published study findings could not be reproduced. Researchers found that
+it was not possible to reproduce estimates from published studies: 1)
+with the same data and same or similar code and 2) with newly collected
+data using the same (or similar) study design. These ``failures'' of
+reproducibility were frequent enough and broad enough in scope,
+occurring across a range of disciplines (epidemiology, psychology,
+economics, and others) to be deeply troubling. Program and policy
+decisions based on erroneous research findings could lead to wasted
+resources, and at worst, could harm intended beneficiaries. This crisis
+has motivated new practices in reproducibility, transparency, and
+openness. Our lab is committed to adopting these best practices, and
+much of the remainder of the lab manual focuses on how to do so.
+
+Recommended readings on the ``reproducibility crisis'':
+
+\begin{itemize}
+\item
+  Nuzzo R. How scientists fool themselves -- and how they can stop.
+  2015. \href{}{https://www.nature.com/articles/526182a}
+\item
+  Stoddart C. Is there a reproducibility crisis in science? 2016.
+  \url{https://www.nature.com/articles/d41586-019-00067-3}
+\item
+  Munafo MR, et al.~A manifesto for reproducible science. \emph{Nature
+  Human Behavior} 2017 \url{http://dx.doi.org/10.1038/s41562-016-0021}
+\end{itemize}
+
+\section{Study design}\label{study-design}
+
+Appropriate study design is beyond the scope of this lab manual and is
+something trainees develop through their coursework and mentoring.
+
+\section{Register study protocols}\label{register-study-protocols}
+
+We register all randomized trials on \url{clinicaltrials.gov}, and in
+some cases register observational studies as well.
+
+\section{Write and register pre-analysis
+plans}\label{write-and-register-pre-analysis-plans}
+
+We write pre-analysis plans for most original research projects that are
+not exploratory in nature, although in some cases, we write pre-analysis
+plans for exploratory studies as well. The format and content of
+pre-analysis plans can vary from project to project. Here is an example
+of one: \url{https://osf.io/tgbxr/}. Generally, these include:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Brief background on the study (a condensed version of the introduction
+  section of the paper)
+\item
+  Hypotheses / objectives
+\item
+  Study design
+\item
+  Description of data
+\item
+  Definition of outcomes
+\item
+  Definition of interventions / exposures
+\item
+  Definition of covariates
+\item
+  Statistical power calculation
+\item
+  Statistical analysis:
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Type of model
+\item
+  Covariate selection / screening
+\item
+  Standard error estimation method
+\item
+  Missing data analysis
+\item
+  Assessment of effect modification / subgroup analyses
+\item
+  Sensitivity analyses
+\item
+  Negative control analyses
+\end{itemize}
+
+\section{Create reproducible
+workflows}\label{create-reproducible-workflows}
+
+Reproducible workflows allow a user to reproduce study estimates and
+ideally figures and tables with a ``single click''. In practice, this
+typically means running a single bash script that sources all
+replication scripts in a repository. These replication scripts complete
+data processing, data analysis, and figure/table generation. The
+following chapters provide detailed guidance on this topic:
+
+\begin{itemize}
+\tightlist
+\item
+  Chapter 5: Code repositories
+\item
+  Chapter 6: Coding practices
+\item
+  Chapter 7: Coding style
+\item
+  Chapter 8: Code publication
+\item
+  Chapter 9: Working with big data
+\item
+  Chapter 10: Github
+\item
+  Chapter 11: Unix
+\end{itemize}
+
+\section{Process and analyze data with internal replication and
+masking}\label{process-and-analyze-data-with-internal-replication-and-masking}
+
+See my video on this topic:
+\url{https://www.youtube.com/watch?v=WoYkY9MkbRE}
+
+\section{Use reporting checklists with
+manuscripts}\label{use-reporting-checklists-with-manuscripts}
+
+Using reporting checklists helps ensure that peer-reviewed articles
+contain the information needed for readers to assess the validity of
+your work and/or attempt to reproduce it. A collection of reporting
+checklists is available here:
+\href{https://www.equator-network.org/about-us/what-is-a-reporting-guideline/}{https://www.equator-network.org/about-us/what-is-a-reporting-guideline/)}
+
+\section{Publish preprints}\label{publish-preprints}
+
+A preprint is a scientific manuscript that has not been peer reviewed.
+Preprint servers create digital object identifiers (DOIs) and can be
+cited in other articles and in grant applications. Because the peer
+review process can take many months, publishing preprints prior to or
+during peer review enables other scientists to immediately learn from
+and build on your work. Importantly, NIH allows applicants to include
+preprint citations in their biosketches. In most cases, we publish
+preprints on \href{https://www.medrxiv.org/}{medRxiv}.
+
+\section{Publish data (when possible) and replication
+scripts}\label{publish-data-when-possible-and-replication-scripts}
+
+Publishing data and replication scripts allows other scientists to
+reproduce your work and to build upon it. We typically publish data on
+\href{osf.io}{Open Science Framework}, share links to
+\href{github.com}{Github} repositories, and archive code on
+\href{zenodo.org}{Zenodo}.
+
+\bookmarksetup{startatroot}
+
+\chapter{Code repositories}\label{code-repositories}
+
+Adapted by UCD-SeRG team from
+\href{https://jadebc.github.io/lab-manual/code-repositories.html}{original
+by Kunal Mishra, Jade Benjamin-Chung, and Stephanie Djajadi}
+
+Each study has at least one code repository that typically holds R code,
+shell scripts with Unix code, and research outputs (results .RDS files,
+tables, figures). Repositories may also include datasets. This chapter
+outlines how to organize these files. Adhering to a standard format
+makes it easier for us to efficiently collaborate across projects.
+
+\section{Project Structure}\label{project-structure}
+
+We recommend the following directory structure:
+
+\begin{verbatim}
+0-run-project.sh
+0-config.R
+1 - Data-Management/
+    0-prep-data.sh
+    1-prep-cdph-fluseas.R
+    2a-prep-absentee.R
+    2b-prep-absentee-weighted.R
+    3a-prep-absentee-adj.R
+    3b-prep-absentee-adj-weighted.R
+2 - Analysis/
+    0-run-analysis.sh
+    1 - Absentee-Mean/
+        1-absentee-mean-primary.R
+        2-absentee-mean-negative-control.R
+        3-absentee-mean-CDC.R
+        4-absentee-mean-peakwk.R
+        5-absentee-mean-cdph2.R
+        6-absentee-mean-cdph3.R
+    2 - Absentee-Positivity-Check/
+    3 - Absentee-P1/
+    4 - Absentee-P2/
+3 - Figures/
+    0-run-figures.sh
+    ...
+4 - Tables/
+    0-run-tables.sh
+    ...
+5 - Results/
+    1 - Absentee-Mean/
+        1-absentee-mean-primary.RDS
+        2-absentee-mean-negative-control.RDS
+        3-absentee-mean-CDC.RDS
+        4-absentee-mean-peakwk.RDS
+        5-absentee-mean-cdph2.RDS
+        6-absentee-mean-cdph3.RDS
+    ...
+.gitignore
+.Rproj
+\end{verbatim}
+
+For brevity, not every directory is ``expanded'', but we can glean some
+important takeaways from what we \emph{do} see.
+
+\section{\texorpdfstring{\texttt{.Rproj}
+files}{.Rproj files}}\label{rproj-files}
+
+An ``R Project'' can be created within RStudio by going to
+\texttt{File\ \textgreater{}\textgreater{}\ New\ Project}. Depending on
+where you are with your research, choose the most appropriate option.
+This will save preferences, working directories, and even the results of
+running code/data (though I'd recommend starting from scratch each time
+you open your project, in general). Then, ensure that whenever you are
+working on that specific research project, you open your created project
+to enable the full utility of \texttt{.Rproj} files. This also
+automatically sets the directory to the top level of the project.
+
+\section{Configuration (`config') File}\label{configuration-config-file}
+
+This is the single most important file for your project. It will be
+responsible for a variety of common tasks, declare global variables,
+load functions, declare paths, and more. \emph{Every other file in the
+project} will begin with \texttt{source("0-config")}, and its role is to
+reduce redundancy and create an abstraction layer that allows you to
+make changes in one place (\texttt{0-config.R}) rather than 5 different
+files. To this end, paths which will be reference in multiple scripts
+(i.e.~a \texttt{merged\_data\_path}) can be declared in
+\texttt{0-config.R} and simply referred to by its variable name in
+scripts. If you ever want to change things, rename them, or even switch
+from a downsample to the full data, all you would then to need to do is
+modify the path in one place and the change will automatically update
+throughout your project. See the example config file for more details.
+The paths defined in the \texttt{0-config.R} file assume that users have
+opened the \texttt{.Rproj} file, which sets the directory to the top
+level of the project.
+
+\section{Order Files and Directories}\label{order-files-and-directories}
+
+This makes the jumble of alphabetized filenames much more coherent and
+places similar code and files next to one another. This also helps us
+understand how data flows from start to finish and allows us to easily
+map a script to its output
+(i.e.~\texttt{2\ -\ Analysis/1\ -\ Absentee-Mean/1-absentee-mean-primary.R}
+=\textgreater{}
+\texttt{5\ -\ Results/1\ -\ Absentee-Mean/1-absentee-mean-primary.RDS}).
+If you take nothing else away from this guide, this is the single most
+helpful suggestion to make your workflow more coherent. Often the
+particular order of files will be in flux until an analysis is close to
+completion. At that time it is important to review file order and naming
+and reproduce everything prior to drafting a manuscript.
+
+\section{Using Bash scripts to ensure
+reproducibility}\label{using-bash-scripts-to-ensure-reproducibility}
+
+Bash scripts are useful components of a reproducible workflow. At many
+of the directory levels (i.e.~in \texttt{3\ -\ Analysis}), there is a
+bash script that runs each of the analysis scripts. This is
+exceptionally useful when data ``upstream'' changes -- you simply run
+the bash script. See Chapter~\ref{sec-unix} for further details.
+
+After running bash scripts, \texttt{.Rout} log files will be generated
+for each script that has been executed. It is important to check these
+files. Scripts may appear to have run correctly in the terminal, but
+checking the log files is the only way to ensure that everything has run
+completely.
+
+\bookmarksetup{startatroot}
+
+\chapter{R Coding}\label{sec-r-coding}
+
+\section{Lab Protocols for Code and
+Data}\label{lab-protocols-for-code-and-data}
+
+Just as wet labs have strict safety protocols to ensure reproducible
+results and prevent contamination, our computational lab has protocols
+for coding and data management. These protocols are not
+suggestions---they are essential practices that:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Ensure reproducibility}: Others (including your future self)
+  can recreate your analysis
+\item
+  \textbf{Prevent errors}: Systematic approaches reduce the risk of
+  mistakes
+\item
+  \textbf{Enable collaboration}: Consistent practices allow team members
+  to work together efficiently
+\item
+  \textbf{Maintain data integrity}: Proper handling prevents data
+  corruption and loss
+\item
+  \textbf{Support publication}: Well-documented, reproducible code is
+  increasingly required for publication
+\end{itemize}
+
+\textbf{Violating these protocols can have serious consequences},
+including invalid results, wasted time, inability to publish, and damage
+to scientific credibility. Treat coding and data management protocols
+with the same seriousness as you would safety protocols in a wet lab.
+
+\section{R Package Structure for All
+Projects}\label{sec-r-package-structure}
+
+\textbf{All R projects in our lab should be structured as R packages},
+even if they are primarily analysis projects and not intended for
+distribution on CRAN or Bioconductor. This standardized structure
+provides numerous benefits:
+
+\subsection{Why Use R Package
+Structure?}\label{why-use-r-package-structure}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Organized code}: Clear separation of functions (\texttt{R/}),
+  documentation (\texttt{man/}), tests (\texttt{tests/}), data
+  (\texttt{data/}), and vignettes/analyses
+\item
+  \textbf{Dependency management}: \texttt{DESCRIPTION} file explicitly
+  declares all package dependencies and versions
+\item
+  \textbf{Automatic documentation}: \texttt{roxygen2} generates help
+  files from inline comments
+\item
+  \textbf{Built-in testing}: \texttt{testthat} framework integrates
+  seamlessly with package structure
+\item
+  \textbf{Code quality}: Tools like \texttt{devtools::check()} and
+  \texttt{lintr} enforce best practices
+\item
+  \textbf{Reproducibility}: Package structure makes it easy to share and
+  reproduce analyses
+\item
+  \textbf{Reusable functions}: Decompose complex analyses into
+  well-documented, testable functions
+\item
+  \textbf{Version control}: Track changes to code, documentation, and
+  data together
+\end{enumerate}
+
+\subsection{Basic Package Structure}\label{basic-package-structure}
+
+\begin{verbatim}
+myproject/
+├── DESCRIPTION          # Package metadata and dependencies
+├── NAMESPACE            # Auto-generated, don't edit manually
+├── R/                   # All R functions (reusable code)
+│   ├── analysis_functions.R
+│   ├── data_prep.R
+│   └── plotting.R
+├── man/                 # Auto-generated documentation
+├── tests/              
+│   └── testthat/       # Unit tests
+├── data/               # Processed data objects (.rda files)
+├── data-raw/           # Raw data and data processing scripts
+├── vignettes/          # Analysis workbooks and tutorials
+│   ├── 01-data-preparation.Rmd
+│   ├── 02-primary-analysis.Rmd
+│   └── 03-sensitivity-analysis.Rmd
+├── inst/               # Additional files to include in package
+│   ├── extdata/        # External data files
+│   └── analyses/       # Analyses using restricted data (see below)
+└── .Rproj              # RStudio project file
+\end{verbatim}
+
+\subsection{Where to Place Analysis
+Files}\label{sec-analysis-file-placement}
+
+\subsubsection{Public Analyses
+(vignettes/)}\label{public-analyses-vignettes}
+
+Use \texttt{vignettes/} for analysis workbooks that: - Use publicly
+available data - Can be shared with collaborators - Should be built into
+the package documentation - Will be rendered by
+\texttt{pkgdown::build\_site()}
+
+These vignettes become part of your package's documentation website.
+
+\subsubsection{Analyses with Restricted Data
+(inst/analyses/)}\label{analyses-with-restricted-data-instanalyses}
+
+For analyses that rely on \textbf{private, sensitive, or restricted
+data}, place \texttt{.qmd} or \texttt{.Rmd} files in
+\texttt{inst/analyses/}:
+
+\begin{verbatim}
+myproject/
+├── inst/
+│   ├── analyses/
+│   │   ├── 01-confidential-data-analysis.qmd
+│   │   ├── 02-unpublished-results.qmd
+│   │   └── README.md  # Document data access requirements
+│   └── extdata/
+└── vignettes/
+    ├── 01-public-analysis.Rmd
+    └── 02-demo-with-simulated-data.Rmd
+\end{verbatim}
+
+\textbf{Benefits of this approach:}
+
+\begin{itemize}
+\tightlist
+\item
+  Analyses with restricted data are included in version control
+  alongside your code
+\item
+  They're clearly separated from public documentation
+\item
+  \texttt{inst/analyses/} is \textbf{excluded from \texttt{pkgdown}
+  builds} and package documentation
+\item
+  Collaborators with data access can still run these analyses
+\item
+  You maintain a complete record of all project work
+\end{itemize}
+
+\textbf{Note on privacy:} Files in \texttt{inst/analyses/} are not
+inherently private---they will be visible if your repository is public.
+Use this folder for analyses that rely on restricted data that is stored
+separately, not for storing the restricted data itself. If you need to
+keep the analysis code private, use a private repository.
+
+\textbf{Best practices for analyses with restricted data:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Document data requirements}: Include a README.md in
+  \texttt{inst/analyses/} explaining:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    What data is required
+  \item
+    Where to obtain it (if permissible)
+  \item
+    Data access restrictions
+  \item
+    How to set up data paths
+  \end{itemize}
+\item
+  \textbf{Use relative paths carefully}: Structure your code so data
+  paths can be configured:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# In inst/analyses/01{-}analysis.qmd}
+\CommentTok{\# Users should set this based on their local setup}
+\NormalTok{data\_dir }\OtherTok{\textless{}{-}} \FunctionTok{Sys.getenv}\NormalTok{(}\StringTok{"MYPROJECT\_DATA"}\NormalTok{, }
+                       \AttributeTok{default =} \StringTok{"\textasciitilde{}/restricted\_data/myproject"}\NormalTok{)}
+\NormalTok{raw\_data }\OtherTok{\textless{}{-}}\NormalTok{ readr}\SpecialCharTok{::}\FunctionTok{read\_csv}\NormalTok{(}\FunctionTok{file.path}\NormalTok{(data\_dir, }\StringTok{"sensitive.csv"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+\item
+  \textbf{Create public alternatives}: When possible, create companion
+  vignettes in \texttt{vignettes/} using:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Simulated data that mimics the structure
+  \item
+    Publicly available datasets
+  \item
+    Aggregated/de-identified summaries
+  \end{itemize}
+\item
+  \textbf{Add to .Rbuildignore}: Ensure \texttt{inst/analyses/} doesn't
+  cause package checks to fail:
+
+\begin{verbatim}
+# In .Rbuildignore
+^inst/analyses$
+\end{verbatim}
+\end{enumerate}
+
+\subsection{Keep Analysis Workbooks
+Tidy}\label{keep-analysis-workbooks-tidy}
+
+\textbf{Decompose reusable functions} from your analysis notebooks into
+the \texttt{R/} directory. Your vignettes should:
+
+\begin{itemize}
+\tightlist
+\item
+  Be clean, readable narratives of your analysis
+\item
+  Call well-documented functions from your package
+\item
+  Focus on the ``what'' and ``why'' rather than implementation details
+\item
+  Be reproducible by others with a single click (or with documented data
+  access for private analyses)
+\end{itemize}
+
+\textbf{Example of what NOT to do} (all code in vignette):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Bad: 100 lines of data manipulation in vignette}
+\NormalTok{raw\_data }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"data.csv"}\NormalTok{)}
+\CommentTok{\# ... 100 lines of cleaning, transforming, reshaping ...}
+\NormalTok{cleaned\_data }\OtherTok{\textless{}{-}}\NormalTok{ final\_result}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Example of what TO do} (functions in R/, simple calls in
+vignette):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Good: Clean vignette calling documented functions}
+\NormalTok{raw\_data }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"data.csv"}\NormalTok{)}
+\NormalTok{cleaned\_data }\OtherTok{\textless{}{-}} \FunctionTok{prep\_study\_data}\NormalTok{(raw\_data)  }\CommentTok{\# Function in R/data\_prep.R}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Essential R Package Development
+Tools}\label{sec-r-package-tools}
+
+The following tools are essential for R package development in our lab:
+
+\subsection{usethis: Package Setup and
+Management}\label{usethis-package-setup-and-management}
+
+\texttt{usethis} automates common package development tasks:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Install usethis}
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"usethis"}\NormalTok{)}
+
+\CommentTok{\# Create a new package}
+\NormalTok{usethis}\SpecialCharTok{::}\FunctionTok{create\_package}\NormalTok{(}\StringTok{"\textasciitilde{}/myproject"}\NormalTok{)}
+
+\CommentTok{\# Add common components}
+\NormalTok{usethis}\SpecialCharTok{::}\FunctionTok{use\_mit\_license}\NormalTok{()          }\CommentTok{\# Add a license}
+\NormalTok{usethis}\SpecialCharTok{::}\FunctionTok{use\_git}\NormalTok{()                  }\CommentTok{\# Initialize git}
+\NormalTok{usethis}\SpecialCharTok{::}\FunctionTok{use\_github}\NormalTok{()               }\CommentTok{\# Connect to GitHub}
+\NormalTok{usethis}\SpecialCharTok{::}\FunctionTok{use\_testthat}\NormalTok{()             }\CommentTok{\# Set up testing infrastructure}
+\NormalTok{usethis}\SpecialCharTok{::}\FunctionTok{use\_vignette}\NormalTok{(}\StringTok{"analysis"}\NormalTok{)   }\CommentTok{\# Create an analysis vignette}
+\NormalTok{usethis}\SpecialCharTok{::}\FunctionTok{use\_data\_raw}\NormalTok{(}\StringTok{"dataset"}\NormalTok{)    }\CommentTok{\# Create data processing script}
+\NormalTok{usethis}\SpecialCharTok{::}\FunctionTok{use\_package}\NormalTok{(}\StringTok{"dplyr"}\NormalTok{)       }\CommentTok{\# Add a dependency}
+\NormalTok{usethis}\SpecialCharTok{::}\FunctionTok{use\_pipe}\NormalTok{()                 }\CommentTok{\# Import pipe operator}
+
+\CommentTok{\# Increment version}
+\NormalTok{usethis}\SpecialCharTok{::}\FunctionTok{use\_version}\NormalTok{()              }\CommentTok{\# Increment package version}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{devtools: Development
+Workflow}\label{devtools-development-workflow}
+
+\texttt{devtools} provides the core development workflow:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Install devtools}
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"devtools"}\NormalTok{)}
+
+\CommentTok{\# Load your package for interactive development}
+\NormalTok{devtools}\SpecialCharTok{::}\FunctionTok{load\_all}\NormalTok{()                }\CommentTok{\# Like library(), but for development}
+
+\CommentTok{\# Documentation}
+\NormalTok{devtools}\SpecialCharTok{::}\FunctionTok{document}\NormalTok{()                }\CommentTok{\# Generate documentation from roxygen2}
+
+\CommentTok{\# Testing}
+\NormalTok{devtools}\SpecialCharTok{::}\FunctionTok{test}\NormalTok{()                    }\CommentTok{\# Run all tests}
+\NormalTok{devtools}\SpecialCharTok{::}\FunctionTok{test\_active\_file}\NormalTok{()        }\CommentTok{\# Run tests in current file}
+
+\CommentTok{\# Checking}
+\NormalTok{devtools}\SpecialCharTok{::}\FunctionTok{check}\NormalTok{()                   }\CommentTok{\# R CMD check (comprehensive validation)}
+\NormalTok{devtools}\SpecialCharTok{::}\FunctionTok{check\_man}\NormalTok{()               }\CommentTok{\# Check documentation only}
+
+\CommentTok{\# Dependencies}
+\NormalTok{devtools}\SpecialCharTok{::}\FunctionTok{install\_dev\_deps}\NormalTok{()        }\CommentTok{\# Install all development dependencies}
+
+\CommentTok{\# Building}
+\NormalTok{devtools}\SpecialCharTok{::}\FunctionTok{build}\NormalTok{()                   }\CommentTok{\# Build package bundle}
+\NormalTok{devtools}\SpecialCharTok{::}\FunctionTok{install}\NormalTok{()                 }\CommentTok{\# Install package locally}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{pkgdown: Package Websites}\label{pkgdown-package-websites}
+
+\texttt{pkgdown} builds beautiful documentation websites from your
+package:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Install pkgdown}
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"pkgdown"}\NormalTok{)}
+
+\CommentTok{\# Set up pkgdown}
+\NormalTok{usethis}\SpecialCharTok{::}\FunctionTok{use\_pkgdown}\NormalTok{()}
+
+\CommentTok{\# Build website locally}
+\NormalTok{pkgdown}\SpecialCharTok{::}\FunctionTok{build\_site}\NormalTok{()}
+
+\CommentTok{\# Preview in browser}
+\NormalTok{pkgdown}\SpecialCharTok{::}\FunctionTok{build\_site}\NormalTok{(}\AttributeTok{preview =} \ConstantTok{TRUE}\NormalTok{)}
+
+\CommentTok{\# Build components separately}
+\NormalTok{pkgdown}\SpecialCharTok{::}\FunctionTok{build\_reference}\NormalTok{()          }\CommentTok{\# Function reference}
+\NormalTok{pkgdown}\SpecialCharTok{::}\FunctionTok{build\_articles}\NormalTok{()           }\CommentTok{\# Vignettes}
+\NormalTok{pkgdown}\SpecialCharTok{::}\FunctionTok{build\_home}\NormalTok{()               }\CommentTok{\# Home page from README}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Configure your pkgdown site} with \texttt{\_pkgdown.yml}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{url}\KeywordTok{:}\AttributeTok{ https://ucd{-}serg.github.io/myproject}
+
+\FunctionTok{template}\KeywordTok{:}
+\AttributeTok{  }\FunctionTok{bootstrap}\KeywordTok{:}\AttributeTok{ }\DecValTok{5}
+
+\FunctionTok{reference}\KeywordTok{:}
+\AttributeTok{  }\KeywordTok{{-}}\AttributeTok{ }\FunctionTok{title}\KeywordTok{:}\AttributeTok{ }\StringTok{"Data Preparation"}
+\AttributeTok{    }\FunctionTok{desc}\KeywordTok{:}\AttributeTok{ }\StringTok{"Functions for preparing and cleaning data"}
+\AttributeTok{    }\FunctionTok{contents}\KeywordTok{:}
+\AttributeTok{    }\KeywordTok{{-}}\AttributeTok{ prep\_study\_data}
+\AttributeTok{    }\KeywordTok{{-}}\AttributeTok{ validate\_data}
+\AttributeTok{  }
+\AttributeTok{  }\KeywordTok{{-}}\AttributeTok{ }\FunctionTok{title}\KeywordTok{:}\AttributeTok{ }\StringTok{"Analysis"}
+\AttributeTok{    }\FunctionTok{desc}\KeywordTok{:}\AttributeTok{ }\StringTok{"Core analysis functions"}
+\AttributeTok{    }\FunctionTok{contents}\KeywordTok{:}
+\AttributeTok{    }\KeywordTok{{-}}\AttributeTok{ run\_primary\_analysis}
+\AttributeTok{    }\KeywordTok{{-}}\AttributeTok{ sensitivity\_analysis}
+
+\FunctionTok{articles}\KeywordTok{:}
+\AttributeTok{  }\KeywordTok{{-}}\AttributeTok{ }\FunctionTok{title}\KeywordTok{:}\AttributeTok{ }\StringTok{"Analysis Workflow"}
+\AttributeTok{    }\FunctionTok{navbar}\KeywordTok{:}\AttributeTok{ Analysis}
+\AttributeTok{    }\FunctionTok{contents}\KeywordTok{:}
+\AttributeTok{    }\KeywordTok{{-}}\AttributeTok{ 01{-}data{-}preparation}
+\AttributeTok{    }\KeywordTok{{-}}\AttributeTok{ 02{-}primary{-}analysis}
+\AttributeTok{    }\KeywordTok{{-}}\AttributeTok{ 03{-}sensitivity{-}analysis}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Complete Package Development Workflow}\label{sec-r-workflow}
+
+Here's the typical workflow for developing an R package in our lab:
+
+\subsection{1. Initial Setup}\label{initial-setup}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Create package structure}
+\NormalTok{usethis}\SpecialCharTok{::}\FunctionTok{create\_package}\NormalTok{(}\StringTok{"\textasciitilde{}/myproject"}\NormalTok{)}
+
+\CommentTok{\# Set up infrastructure}
+\NormalTok{usethis}\SpecialCharTok{::}\FunctionTok{use\_git}\NormalTok{()}
+\NormalTok{usethis}\SpecialCharTok{::}\FunctionTok{use\_github}\NormalTok{()}
+\NormalTok{usethis}\SpecialCharTok{::}\FunctionTok{use\_testthat}\NormalTok{()}
+\NormalTok{usethis}\SpecialCharTok{::}\FunctionTok{use\_pkgdown}\NormalTok{()}
+\NormalTok{usethis}\SpecialCharTok{::}\FunctionTok{use\_mit\_license}\NormalTok{()}
+\NormalTok{usethis}\SpecialCharTok{::}\FunctionTok{use\_readme\_rmd}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{2. Add Dependencies}\label{add-dependencies}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Add packages your project depends on}
+\NormalTok{usethis}\SpecialCharTok{::}\FunctionTok{use\_package}\NormalTok{(}\StringTok{"dplyr"}\NormalTok{)}
+\NormalTok{usethis}\SpecialCharTok{::}\FunctionTok{use\_package}\NormalTok{(}\StringTok{"ggplot2"}\NormalTok{)}
+\NormalTok{usethis}\SpecialCharTok{::}\FunctionTok{use\_package}\NormalTok{(}\StringTok{"readr"}\NormalTok{)}
+
+\CommentTok{\# Add packages only needed for development/testing}
+\NormalTok{usethis}\SpecialCharTok{::}\FunctionTok{use\_package}\NormalTok{(}\StringTok{"testthat"}\NormalTok{, }\AttributeTok{type =} \StringTok{"Suggests"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{3. Write Functions}\label{write-functions}
+
+Create functions in \texttt{R/} directory with roxygen2 documentation:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#\textquotesingle{} Prepare Study Data}
+\CommentTok{\#\textquotesingle{}}
+\CommentTok{\#\textquotesingle{} Clean and prepare raw study data for analysis.}
+\CommentTok{\#\textquotesingle{}}
+\CommentTok{\#\textquotesingle{} @param raw\_data A data frame containing raw study data}
+\CommentTok{\#\textquotesingle{} @param validate Logical; whether to run validation checks}
+\CommentTok{\#\textquotesingle{}}
+\CommentTok{\#\textquotesingle{} @returns A cleaned data frame ready for analysis}
+\CommentTok{\#\textquotesingle{}}
+\CommentTok{\#\textquotesingle{} @examples}
+\CommentTok{\#\textquotesingle{} raw\_data \textless{}{-} read\_csv("data.csv")}
+\CommentTok{\#\textquotesingle{} clean\_data \textless{}{-} prep\_study\_data(raw\_data)}
+\CommentTok{\#\textquotesingle{}}
+\CommentTok{\#\textquotesingle{} @export}
+\NormalTok{prep\_study\_data }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(raw\_data, }\AttributeTok{validate =} \ConstantTok{TRUE}\NormalTok{) \{}
+  \CommentTok{\# Function implementation}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{4. Document}\label{document}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Generate documentation from roxygen2 comments}
+\NormalTok{devtools}\SpecialCharTok{::}\FunctionTok{document}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{5. Test}\label{test}
+
+Create tests in \texttt{tests/testthat/}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# tests/testthat/test{-}data\_prep.R}
+\FunctionTok{test\_that}\NormalTok{(}\StringTok{"prep\_study\_data handles missing values"}\NormalTok{, \{}
+\NormalTok{  raw\_data }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{x =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\ConstantTok{NA}\NormalTok{, }\DecValTok{3}\NormalTok{))}
+\NormalTok{  result }\OtherTok{\textless{}{-}} \FunctionTok{prep\_study\_data}\NormalTok{(raw\_data)}
+  \FunctionTok{expect\_false}\NormalTok{(}\FunctionTok{anyNA}\NormalTok{(result}\SpecialCharTok{$}\NormalTok{x))}
+\NormalTok{\})}
+\end{Highlighting}
+\end{Shaded}
+
+Run tests:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{devtools}\SpecialCharTok{::}\FunctionTok{test}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{6. Check}\label{check}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Comprehensive package check}
+\NormalTok{devtools}\SpecialCharTok{::}\FunctionTok{check}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+Fix any warnings or errors before proceeding.
+
+\subsection{7. Build Documentation Site}\label{build-documentation-site}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pkgdown}\SpecialCharTok{::}\FunctionTok{build\_site}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{8. Share and Publish}\label{share-and-publish}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Push to GitHub}
+\CommentTok{\# The pkgdown site can be automatically deployed to GitHub Pages}
+\CommentTok{\# using GitHub Actions}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Code Style Guidelines}\label{sec-r-code-style}
+
+Follow these code style guidelines for all R code:
+
+\subsection{General Principles}\label{general-principles}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Follow tidyverse style guide}: https://style.tidyverse.org
+\item
+  \textbf{Use native pipe}: \texttt{\textbar{}\textgreater{}} not
+  \texttt{\%\textgreater{}\%} (available in R \textgreater= 4.1.0)
+\item
+  \textbf{Naming}: Use \texttt{snake\_case} for functions and variables;
+  acronyms may be uppercase (e.g., \texttt{prep\_IDs\_data})
+\item
+  \textbf{Write tidy code}: Keep code clean, readable, and
+  well-organized
+\end{itemize}
+
+\subsection{File Organization}\label{file-organization}
+
+Just as your data ``flows'' through your project, code should flow
+naturally through files in the package structure:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{In \texttt{R/} files}: Put reusable functions with roxygen2
+  documentation
+\item
+  \textbf{In vignettes}: Put narrative analysis with calls to those
+  functions
+\item
+  \textbf{In \texttt{data-raw/}}: Put scripts that create data objects
+  saved to \texttt{data/}
+\item
+  \textbf{In \texttt{inst/analyses/}}: Put analyses using restricted
+  data
+\end{enumerate}
+
+\subsection{Function Structure and
+Documentation}\label{function-structure-and-documentation}
+
+Every function should follow this pattern:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#\textquotesingle{} Short Title (One Line)}
+\CommentTok{\#\textquotesingle{}}
+\CommentTok{\#\textquotesingle{} Longer description providing details about what the function does,}
+\CommentTok{\#\textquotesingle{} when to use it, and important considerations.}
+\CommentTok{\#\textquotesingle{}}
+\CommentTok{\#\textquotesingle{} @param param1 Description of first parameter, including type and constraints}
+\CommentTok{\#\textquotesingle{} @param param2 Description of second parameter}
+\CommentTok{\#\textquotesingle{}}
+\CommentTok{\#\textquotesingle{} @returns Description of return value, including type and structure}
+\CommentTok{\#\textquotesingle{}}
+\CommentTok{\#\textquotesingle{} @examples}
+\CommentTok{\#\textquotesingle{} \# Example usage}
+\CommentTok{\#\textquotesingle{} result \textless{}{-} my\_function(param1 = "value", param2 = 10)}
+\CommentTok{\#\textquotesingle{}}
+\CommentTok{\#\textquotesingle{} @export}
+\NormalTok{my\_function }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(param1, param2) \{}
+  \CommentTok{\# Implementation}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Comments}\label{comments}
+
+Use comments to explain \emph{why}, not \emph{what}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Good: Explains reasoning}
+\CommentTok{\# Use log scale because distribution is highly skewed}
+\FunctionTok{ggplot}\NormalTok{(data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =} \FunctionTok{log10}\NormalTok{(income))) }\SpecialCharTok{+} \FunctionTok{geom\_histogram}\NormalTok{()}
+
+\CommentTok{\# Bad: States the obvious}
+\CommentTok{\# Create a histogram}
+\FunctionTok{ggplot}\NormalTok{(data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ income)) }\SpecialCharTok{+} \FunctionTok{geom\_histogram}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{File headers} (for scripts in \texttt{data-raw/} or
+\texttt{inst/analyses/}):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}
+\CommentTok{\# @Project {-} Myproject}
+\CommentTok{\# @Description {-} Process raw survey data and create analysis dataset}
+\DocumentationTok{\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Sections and subsections} in longer files:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Data Loading {-}{-}{-}{-}{-}{-}{-}}
+
+\DocumentationTok{\#\# Read survey data {-}{-}{-}{-}{-}{-}{-}}
+
+\DocumentationTok{\#\# Read lab results {-}{-}{-}{-}{-}{-}{-}}
+
+\CommentTok{\# Data Cleaning {-}{-}{-}{-}{-}{-}{-}}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Messaging and User
+Communication}\label{messaging-and-user-communication}
+
+Use \texttt{cli} package functions for all user-facing messages in
+package functions:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Good}
+\NormalTok{cli}\SpecialCharTok{::}\FunctionTok{cli\_inform}\NormalTok{(}\StringTok{"Analysis complete"}\NormalTok{)}
+\NormalTok{cli}\SpecialCharTok{::}\FunctionTok{cli\_warn}\NormalTok{(}\StringTok{"Missing data detected"}\NormalTok{)}
+\NormalTok{cli}\SpecialCharTok{::}\FunctionTok{cli\_abort}\NormalTok{(}\StringTok{"Invalid input: \{x\}"}\NormalTok{)}
+
+\CommentTok{\# Bad {-} don\textquotesingle{}t use these in package code}
+\FunctionTok{message}\NormalTok{(}\StringTok{"Analysis complete"}\NormalTok{)}
+\FunctionTok{warning}\NormalTok{(}\StringTok{"Missing data detected"}\NormalTok{)}
+\FunctionTok{stop}\NormalTok{(}\StringTok{"Invalid input"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Package Code Practices}\label{package-code-practices}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{No \texttt{library()} in package code}: Use \texttt{::}
+  notation or declare in DESCRIPTION Imports
+\item
+  \textbf{Document all exports}: Use roxygen2 (@title, @description,
+  @param, @returns, @examples)
+\item
+  \textbf{Avoid code duplication}: Extract repeated logic into helper
+  functions
+\end{itemize}
+
+\subsection{Line Breaks and
+Formatting}\label{line-breaks-and-formatting}
+
+For readability, use line breaks in function calls and pipelines:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Good: Named arguments on separate lines}
+\NormalTok{mean\_Y }\OtherTok{\textless{}{-}} \FunctionTok{calc\_fluseas\_mean}\NormalTok{(}
+  \AttributeTok{data =}\NormalTok{ flu\_data, }
+  \AttributeTok{yname =} \StringTok{"maari\_yn"}\NormalTok{,}
+  \AttributeTok{silent =} \ConstantTok{FALSE}
+\NormalTok{)}
+
+\CommentTok{\# Good: Pipeline with clear flow}
+\NormalTok{cleaned\_data }\OtherTok{\textless{}{-}}\NormalTok{ raw\_data }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(outcome)) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{mutate}\NormalTok{(}
+    \AttributeTok{log\_value =} \FunctionTok{log10}\NormalTok{(value),}
+    \AttributeTok{category =} \FunctionTok{case\_when}\NormalTok{(}
+\NormalTok{      value }\SpecialCharTok{\textless{}} \DecValTok{10} \SpecialCharTok{\textasciitilde{}} \StringTok{"low"}\NormalTok{,}
+\NormalTok{      value }\SpecialCharTok{\textless{}} \DecValTok{100} \SpecialCharTok{\textasciitilde{}} \StringTok{"medium"}\NormalTok{,}
+      \ConstantTok{TRUE} \SpecialCharTok{\textasciitilde{}} \StringTok{"high"}
+\NormalTok{    )}
+\NormalTok{  ) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{group\_by}\NormalTok{(category) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{summarize}\NormalTok{(}
+    \AttributeTok{n =} \FunctionTok{n}\NormalTok{(),}
+    \AttributeTok{mean =} \FunctionTok{mean}\NormalTok{(log\_value)}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+For complex \texttt{ggplot} calls:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ year, }\AttributeTok{y =}\NormalTok{ rate, }\AttributeTok{group =}\NormalTok{ group)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}
+    \FunctionTok{aes}\NormalTok{(}\AttributeTok{col =}\NormalTok{ group, }\AttributeTok{shape =}\NormalTok{ group),}
+    \AttributeTok{position =} \FunctionTok{position\_dodge}\NormalTok{(}\AttributeTok{width =} \FloatTok{0.2}\NormalTok{),}
+    \AttributeTok{size =} \FloatTok{2.5}
+\NormalTok{  ) }\SpecialCharTok{+}
+  \FunctionTok{geom\_errorbar}\NormalTok{(}
+    \FunctionTok{aes}\NormalTok{(}\AttributeTok{ymin =}\NormalTok{ lb, }\AttributeTok{ymax =}\NormalTok{ ub, }\AttributeTok{col =}\NormalTok{ group),}
+    \AttributeTok{position =} \FunctionTok{position\_dodge}\NormalTok{(}\AttributeTok{width =} \FloatTok{0.2}\NormalTok{),}
+    \AttributeTok{width =} \FloatTok{0.2}
+\NormalTok{  ) }\SpecialCharTok{+}
+  \FunctionTok{scale\_y\_continuous}\NormalTok{(}
+    \AttributeTok{limits =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{100}\NormalTok{),}
+    \AttributeTok{breaks =} \FunctionTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{100}\NormalTok{, }\DecValTok{25}\NormalTok{)}
+\NormalTok{  ) }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_manual}\NormalTok{(}\AttributeTok{values =}\NormalTok{ colors) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}
+    \AttributeTok{title =} \StringTok{"Title"}\NormalTok{,}
+    \AttributeTok{x =} \StringTok{"Year"}\NormalTok{,}
+    \AttributeTok{y =} \StringTok{"Rate (\%)"}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Tidyverse Replacements}\label{tidyverse-replacements}
+
+Use modern tidyverse/alternatives for base R functions:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Data structures}
+\NormalTok{tibble}\SpecialCharTok{::}\FunctionTok{tibble}\NormalTok{()           }\CommentTok{\# instead of data.frame()}
+\NormalTok{tibble}\SpecialCharTok{::}\FunctionTok{tribble}\NormalTok{()          }\CommentTok{\# instead of manual data.frame creation}
+
+\CommentTok{\# I/O}
+\NormalTok{readr}\SpecialCharTok{::}\FunctionTok{read\_csv}\NormalTok{()          }\CommentTok{\# instead of read.csv()}
+\NormalTok{readr}\SpecialCharTok{::}\FunctionTok{write\_csv}\NormalTok{()         }\CommentTok{\# instead of write.csv()}
+\NormalTok{readr}\SpecialCharTok{::}\FunctionTok{read\_rds}\NormalTok{()          }\CommentTok{\# instead of readRDS()}
+\NormalTok{readr}\SpecialCharTok{::}\FunctionTok{write\_rds}\NormalTok{()         }\CommentTok{\# instead of saveRDS()}
+
+\CommentTok{\# Data manipulation}
+\NormalTok{dplyr}\SpecialCharTok{::}\FunctionTok{bind\_rows}\NormalTok{()         }\CommentTok{\# instead of rbind()}
+\NormalTok{dplyr}\SpecialCharTok{::}\FunctionTok{bind\_cols}\NormalTok{()         }\CommentTok{\# instead of cbind()}
+
+\CommentTok{\# String operations}
+\NormalTok{stringr}\SpecialCharTok{::}\FunctionTok{str\_which}\NormalTok{()       }\CommentTok{\# instead of grep()}
+\NormalTok{stringr}\SpecialCharTok{::}\FunctionTok{str\_replace}\NormalTok{()     }\CommentTok{\# instead of gsub()}
+
+\CommentTok{\# Session info}
+\NormalTok{sessioninfo}\SpecialCharTok{::}\FunctionTok{session\_info}\NormalTok{() }\CommentTok{\# instead of sessionInfo()}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{The here Package}\label{the-here-package}
+
+The \texttt{here} package helps manage file paths in projects:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(here)}
+
+\CommentTok{\# Automatically finds project root and builds paths}
+\NormalTok{data }\OtherTok{\textless{}{-}}\NormalTok{ readr}\SpecialCharTok{::}\FunctionTok{read\_csv}\NormalTok{(}\FunctionTok{here}\NormalTok{(}\StringTok{"data{-}raw"}\NormalTok{, }\StringTok{"survey.csv"}\NormalTok{))}
+\FunctionTok{saveRDS}\NormalTok{(results, }\FunctionTok{here}\NormalTok{(}\StringTok{"inst"}\NormalTok{, }\StringTok{"analyses"}\NormalTok{, }\StringTok{"results.rds"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+This works regardless of where collaborators clone the repository.
+
+\subsection{Object Naming}\label{object-naming}
+
+Use descriptive names that are both expressive and explicit:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Good}
+\NormalTok{vaccination\_coverage\_2017\_18}
+\NormalTok{absentee\_flu\_residuals}
+
+\CommentTok{\# Less good}
+\NormalTok{vaxcov\_1718}
+\NormalTok{flu\_res}
+\end{Highlighting}
+\end{Shaded}
+
+Prefer nouns for objects and verbs for functions:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Good}
+\NormalTok{clean\_data }\OtherTok{\textless{}{-}} \FunctionTok{prep\_study\_data}\NormalTok{(raw\_data)  }\CommentTok{\# verb for function, noun for object}
+
+\CommentTok{\# Less clear}
+\NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{process}\NormalTok{(input)}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Testing Requirements}\label{sec-r-testing}
+
+\textbf{ALWAYS establish tests BEFORE modifying functions.} This ensures
+changes preserve existing behavior and new behavior is correctly
+validated.
+
+\subsection{When to Use Snapshot
+Tests}\label{when-to-use-snapshot-tests}
+
+Use snapshot tests (\texttt{expect\_snapshot()},
+\texttt{expect\_snapshot\_value()}) when:
+
+\begin{itemize}
+\tightlist
+\item
+  Testing complex data structures (data frames, lists, model outputs)
+\item
+  Validating statistical results where exact values may vary slightly
+\item
+  Output format stability is important
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{test\_that}\NormalTok{(}\StringTok{"prep\_study\_data produces expected structure"}\NormalTok{, \{}
+\NormalTok{  result }\OtherTok{\textless{}{-}} \FunctionTok{prep\_study\_data}\NormalTok{(raw\_data)}
+  \FunctionTok{expect\_snapshot\_value}\NormalTok{(result, }\AttributeTok{style =} \StringTok{"serialize"}\NormalTok{)}
+\NormalTok{\})}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{When to Use Explicit Value
+Tests}\label{when-to-use-explicit-value-tests}
+
+Use explicit tests (\texttt{expect\_equal()},
+\texttt{expect\_identical()}) when:
+
+\begin{itemize}
+\tightlist
+\item
+  Testing simple scalar outputs
+\item
+  Validating specific numeric thresholds
+\item
+  Testing Boolean returns or categorical outputs
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{test\_that}\NormalTok{(}\StringTok{"calculate\_mean returns correct value"}\NormalTok{, \{}
+  \FunctionTok{expect\_equal}\NormalTok{(}\FunctionTok{calculate\_mean}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{)), }\DecValTok{2}\NormalTok{)}
+  \FunctionTok{expect\_equal}\NormalTok{(}\FunctionTok{calculate\_ratio}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DecValTok{7}\NormalTok{), }\FloatTok{0.4285714}\NormalTok{, }\AttributeTok{tolerance =} \FloatTok{1e{-}6}\NormalTok{)}
+\NormalTok{\})}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Testing Best Practices}\label{testing-best-practices}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Seed randomness}: Use \texttt{withr::local\_seed()} for
+  reproducible tests
+\item
+  \textbf{Use small test cases}: Keep tests fast
+\item
+  \textbf{Test edge cases}: Missing values, empty inputs, boundary
+  conditions
+\item
+  \textbf{Test errors}: Verify functions fail appropriately with invalid
+  input
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{test\_that}\NormalTok{(}\StringTok{"prep\_study\_data handles edge cases"}\NormalTok{, \{}
+  \CommentTok{\# Empty input}
+  \FunctionTok{expect\_error}\NormalTok{(}\FunctionTok{prep\_study\_data}\NormalTok{(}\FunctionTok{data.frame}\NormalTok{()))}
+  
+  \CommentTok{\# Missing required columns}
+  \FunctionTok{expect\_error}\NormalTok{(}\FunctionTok{prep\_study\_data}\NormalTok{(}\FunctionTok{data.frame}\NormalTok{(}\AttributeTok{x =} \DecValTok{1}\NormalTok{)))}
+  
+  \CommentTok{\# Valid input with missing values}
+\NormalTok{  result }\OtherTok{\textless{}{-}} \FunctionTok{prep\_study\_data}\NormalTok{(}\FunctionTok{data.frame}\NormalTok{(}\AttributeTok{id =} \DecValTok{1}\SpecialCharTok{:}\DecValTok{3}\NormalTok{, }\AttributeTok{value =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\ConstantTok{NA}\NormalTok{, }\DecValTok{3}\NormalTok{)))}
+  \FunctionTok{expect\_true}\NormalTok{(}\FunctionTok{all}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(result}\SpecialCharTok{$}\NormalTok{value)))}
+\NormalTok{\})}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Iterative Operations}\label{sec-iteration}
+
+When applying analyses with different variations (outcomes, exposures,
+subgroups), use functional programming approaches:
+
+\subsection{\texorpdfstring{\texttt{lapply()} and
+\texttt{sapply()}}{lapply() and sapply()}}\label{lapply-and-sapply}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Apply function to each element}
+\NormalTok{results }\OtherTok{\textless{}{-}} \FunctionTok{lapply}\NormalTok{(outcomes, }\ControlFlowTok{function}\NormalTok{(y) \{}
+  \FunctionTok{run\_analysis}\NormalTok{(data, }\AttributeTok{outcome =}\NormalTok{ y)}
+\NormalTok{\})}
+
+\CommentTok{\# Simplify to vector if possible}
+\NormalTok{summary\_stats }\OtherTok{\textless{}{-}} \FunctionTok{sapply}\NormalTok{(data\_list, mean)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{\texorpdfstring{\texttt{purrr::map()}
+Family}{purrr::map() Family}}\label{purrrmap-family}
+
+The \texttt{purrr} package provides type-stable alternatives:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(purrr)}
+
+\CommentTok{\# Always returns a list}
+\NormalTok{results }\OtherTok{\textless{}{-}} \FunctionTok{map}\NormalTok{(outcomes, }\SpecialCharTok{\textasciitilde{}} \FunctionTok{run\_analysis}\NormalTok{(data, }\AttributeTok{outcome =}\NormalTok{ .x))}
+
+\CommentTok{\# Type{-}specific variants}
+\NormalTok{means }\OtherTok{\textless{}{-}} \FunctionTok{map\_dbl}\NormalTok{(data\_list, mean)        }\CommentTok{\# Returns numeric vector}
+\NormalTok{models }\OtherTok{\textless{}{-}} \FunctionTok{map}\NormalTok{(splits, }\SpecialCharTok{\textasciitilde{}} \FunctionTok{lm}\NormalTok{(y }\SpecialCharTok{\textasciitilde{}}\NormalTok{ x, }\AttributeTok{data =}\NormalTok{ .x))  }\CommentTok{\# Returns list of models}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{\texorpdfstring{\texttt{purrr::pmap()} for Multiple
+Arguments}{purrr::pmap() for Multiple Arguments}}\label{purrrpmap-for-multiple-arguments}
+
+When iterating over multiple parameter lists:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{params }\OtherTok{\textless{}{-}} \FunctionTok{tibble}\NormalTok{(}
+  \AttributeTok{outcome =} \FunctionTok{c}\NormalTok{(}\StringTok{"outcome1"}\NormalTok{, }\StringTok{"outcome2"}\NormalTok{, }\StringTok{"outcome3"}\NormalTok{),}
+  \AttributeTok{exposure =} \FunctionTok{c}\NormalTok{(}\StringTok{"exp1"}\NormalTok{, }\StringTok{"exp2"}\NormalTok{, }\StringTok{"exp3"}\NormalTok{),}
+  \AttributeTok{covariate\_set =} \FunctionTok{list}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"age"}\NormalTok{, }\StringTok{"sex"}\NormalTok{), }\FunctionTok{c}\NormalTok{(}\StringTok{"age"}\NormalTok{), }\FunctionTok{c}\NormalTok{(}\StringTok{"age"}\NormalTok{, }\StringTok{"sex"}\NormalTok{, }\StringTok{"bmi"}\NormalTok{))}
+\NormalTok{)}
+
+\NormalTok{results }\OtherTok{\textless{}{-}} \FunctionTok{pmap}\NormalTok{(params, }\ControlFlowTok{function}\NormalTok{(outcome, exposure, covariate\_set) \{}
+  \FunctionTok{run\_analysis}\NormalTok{(}
+    \AttributeTok{data =}\NormalTok{ study\_data,}
+    \AttributeTok{outcome =}\NormalTok{ outcome,}
+    \AttributeTok{exposure =}\NormalTok{ exposure,}
+    \AttributeTok{covariates =}\NormalTok{ covariate\_set}
+\NormalTok{  )}
+\NormalTok{\})}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Parallel Processing}\label{parallel-processing}
+
+For computationally intensive work, use \texttt{future} and
+\texttt{furrr}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(future)}
+\FunctionTok{library}\NormalTok{(furrr)}
+
+\CommentTok{\# Set up parallel processing}
+\FunctionTok{plan}\NormalTok{(multisession, }\AttributeTok{workers =} \FunctionTok{availableCores}\NormalTok{() }\SpecialCharTok{{-}} \DecValTok{1}\NormalTok{)}
+
+\CommentTok{\# Parallel version of map()}
+\NormalTok{results }\OtherTok{\textless{}{-}} \FunctionTok{future\_map}\NormalTok{(large\_list, time\_consuming\_function, }\AttributeTok{.progress =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Reading and Saving Data}\label{sec-data-io}
+
+\subsection{RDS Files (Preferred)}\label{rds-files-preferred}
+
+Use RDS format for R objects:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Save single object}
+\NormalTok{readr}\SpecialCharTok{::}\FunctionTok{write\_rds}\NormalTok{(analysis\_results, }\FunctionTok{here}\NormalTok{(}\StringTok{"results"}\NormalTok{, }\StringTok{"analysis.rds"}\NormalTok{))}
+
+\CommentTok{\# Read back}
+\NormalTok{results }\OtherTok{\textless{}{-}}\NormalTok{ readr}\SpecialCharTok{::}\FunctionTok{read\_rds}\NormalTok{(}\FunctionTok{here}\NormalTok{(}\StringTok{"results"}\NormalTok{, }\StringTok{"analysis.rds"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Avoid \texttt{.RData} files} because: - You can't control object
+names when loading - Can't load individual objects - Creates confusion
+in older code
+
+\subsection{CSV Files}\label{csv-files}
+
+For tabular data that may be shared with non-R users:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Write}
+\NormalTok{readr}\SpecialCharTok{::}\FunctionTok{write\_csv}\NormalTok{(data, }\FunctionTok{here}\NormalTok{(}\StringTok{"data{-}raw"}\NormalTok{, }\StringTok{"clean\_data.csv"}\NormalTok{))}
+
+\CommentTok{\# Read}
+\NormalTok{data }\OtherTok{\textless{}{-}}\NormalTok{ readr}\SpecialCharTok{::}\FunctionTok{read\_csv}\NormalTok{(}\FunctionTok{here}\NormalTok{(}\StringTok{"data{-}raw"}\NormalTok{, }\StringTok{"clean\_data.csv"}\NormalTok{))}
+
+\CommentTok{\# For very large files, use data.table}
+\NormalTok{data.table}\SpecialCharTok{::}\FunctionTok{fwrite}\NormalTok{(large\_data, }\StringTok{"big\_file.csv"}\NormalTok{)}
+\NormalTok{data }\OtherTok{\textless{}{-}}\NormalTok{ data.table}\SpecialCharTok{::}\FunctionTok{fread}\NormalTok{(}\StringTok{"big\_file.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Version Control and Collaboration}\label{sec-r-version-control}
+
+\subsection{Version Numbers}\label{version-numbers}
+
+Follow semantic versioning (MAJOR.MINOR.PATCH):
+
+\begin{itemize}
+\tightlist
+\item
+  Development versions: \texttt{0.0.0.9000}, \texttt{0.0.0.9001}, etc.
+\item
+  First release: \texttt{0.1.0}
+\item
+  Bug fixes: increment PATCH (e.g., \texttt{0.1.0} → \texttt{0.1.1})
+\item
+  New features: increment MINOR (e.g., \texttt{0.1.1} → \texttt{0.2.0})
+\item
+  Breaking changes: increment MAJOR (e.g., \texttt{0.2.0} →
+  \texttt{1.0.0})
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Increment version}
+\NormalTok{usethis}\SpecialCharTok{::}\FunctionTok{use\_version}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{NEWS File}\label{news-file}
+
+Document all user-facing changes in \texttt{NEWS.md}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\# myproject 0.2.0}
+
+\FunctionTok{\#\# New Features}
+
+\SpecialStringTok{* }\NormalTok{Added }\InformationTok{\textasciigrave{}prep\_study\_data()\textasciigrave{}}\NormalTok{ function for data preparation}
+\SpecialStringTok{* }\NormalTok{Implemented sensitivity analysis in }\InformationTok{\textasciigrave{}sensitivity\_analysis()\textasciigrave{}}
+
+\FunctionTok{\#\# Bug Fixes}
+
+\SpecialStringTok{* }\NormalTok{Fixed handling of missing values in }\InformationTok{\textasciigrave{}calculate\_mean()\textasciigrave{}}
+
+\FunctionTok{\#\# Breaking Changes}
+
+\SpecialStringTok{* }\NormalTok{Renamed }\InformationTok{\textasciigrave{}old\_function()\textasciigrave{}}\NormalTok{ to }\InformationTok{\textasciigrave{}new\_function()\textasciigrave{}}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Git Workflow}\label{git-workflow}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Set up Git and GitHub}
+\NormalTok{usethis}\SpecialCharTok{::}\FunctionTok{use\_git}\NormalTok{()}
+\NormalTok{usethis}\SpecialCharTok{::}\FunctionTok{use\_github}\NormalTok{()}
+
+\CommentTok{\# Before committing changes}
+\NormalTok{devtools}\SpecialCharTok{::}\FunctionTok{document}\NormalTok{()        }\CommentTok{\# Update documentation}
+\NormalTok{devtools}\SpecialCharTok{::}\FunctionTok{test}\NormalTok{()            }\CommentTok{\# Run tests}
+\NormalTok{devtools}\SpecialCharTok{::}\FunctionTok{check}\NormalTok{()           }\CommentTok{\# Full package check}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Managing Dependencies with renv}\label{sec-renv}
+
+\textbf{Use \texttt{renv} to tightly control dependency versions during
+development.} The \texttt{renv} package creates a project-specific
+library that isolates your package dependencies, ensuring
+reproducibility across different machines and over time.
+
+\subsubsection{When to Use renv}\label{when-to-use-renv}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{During active development}: Use \texttt{renv} to lock down
+  specific versions of dependencies
+\item
+  \textbf{For collaborative projects}: Ensure all team members use the
+  same package versions
+\item
+  \textbf{For long-term reproducibility}: Preserve the exact dependency
+  environment
+\end{itemize}
+
+\subsubsection{Setting Up renv}\label{setting-up-renv}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Install renv}
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"renv"}\NormalTok{)}
+
+\CommentTok{\# Initialize renv in your package}
+\NormalTok{renv}\SpecialCharTok{::}\FunctionTok{init}\NormalTok{()}
+
+\CommentTok{\# This creates:}
+\CommentTok{\# {-} renv/ directory with package library}
+\CommentTok{\# {-} renv.lock file with exact package versions}
+\CommentTok{\# {-} .Rprofile to activate renv on startup}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Using renv in Package
+Development}\label{using-renv-in-package-development}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Install/update packages (renv tracks changes)}
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"dplyr"}\NormalTok{)}
+\NormalTok{renv}\SpecialCharTok{::}\FunctionTok{install}\NormalTok{(}\StringTok{"tidyr@1.3.0"}\NormalTok{)  }\CommentTok{\# Install specific version}
+
+\CommentTok{\# Save the current state}
+\NormalTok{renv}\SpecialCharTok{::}\FunctionTok{snapshot}\NormalTok{()}
+
+\CommentTok{\# Restore packages from lockfile}
+\NormalTok{renv}\SpecialCharTok{::}\FunctionTok{restore}\NormalTok{()}
+
+\CommentTok{\# Update packages}
+\NormalTok{renv}\SpecialCharTok{::}\FunctionTok{update}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Preparing for CRAN
+Release}\label{preparing-for-cran-release}
+
+\textbf{For packages ready for CRAN submission, disable renv and test
+with latest dependency versions:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Remove renv} before CRAN submission:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{renv}\SpecialCharTok{::}\FunctionTok{deactivate}\NormalTok{()}
+\CommentTok{\# Delete renv/ directory and renv.lock}
+\CommentTok{\# Remove .Rprofile modifications}
+\end{Highlighting}
+\end{Shaded}
+\item
+  \textbf{Test with latest versions}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Install latest versions of all dependencies}
+\NormalTok{devtools}\SpecialCharTok{::}\FunctionTok{install\_dev\_deps}\NormalTok{()}
+
+\CommentTok{\# Run comprehensive checks}
+\NormalTok{devtools}\SpecialCharTok{::}\FunctionTok{check}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+\item
+  \textbf{Why disable renv for CRAN}: CRAN tests packages against the
+  latest versions of dependencies. Your package should work with current
+  CRAN versions, not pinned older versions.
+\end{enumerate}
+
+\textbf{Workflow summary:}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Development phase}: Use \texttt{renv} for stability and
+  reproducibility
+\item
+  \textbf{Pre-CRAN release}: Disable \texttt{renv}, test with latest
+  dependency versions
+\item
+  \textbf{After CRAN release}: Can re-enable \texttt{renv} for continued
+  development if desired
+\end{itemize}
+
+\subsubsection{Additional Resources}\label{additional-resources}
+
+For comprehensive guidance on using renv with R packages, see: -
+\href{https://rstudio.github.io/renv/articles/packages.html}{Using renv
+with R Packages} - \href{https://rstudio.github.io/renv/}{renv
+documentation}
+
+\section{Quality Assurance Checklist}\label{sec-r-qa-checklist}
+
+Before submitting a pull request or finalizing analysis, verify:
+
+\begin{itemize}
+\tightlist
+\item[$\square$]
+  All functions have complete roxygen2 documentation
+\item[$\square$]
+  All functions have corresponding tests
+\item[$\square$]
+  \texttt{devtools::document()} has been run
+\item[$\square$]
+  \texttt{devtools::test()} passes with no failures
+\item[$\square$]
+  \texttt{devtools::check()} passes with no errors, warnings, or notes
+\item[$\square$]
+  \texttt{lintr::lint\_package()} shows no issues (or only acceptable
+  ones)
+\item[$\square$]
+  \texttt{spelling::spell\_check\_package()} passes
+\item[$\square$]
+  Version number has been incremented
+\item[$\square$]
+  \texttt{NEWS.md} has been updated with changes
+\item[$\square$]
+  \texttt{README.Rmd} has been updated (if needed) and
+  \texttt{README.md} regenerated
+\item[$\square$]
+  \texttt{pkgdown::build\_site()} builds successfully
+\item[$\square$]
+  All changes committed and pushed to GitHub
+\end{itemize}
+
+\section{Continuous Integration}\label{sec-r-ci}
+
+Set up automated checks using GitHub Actions:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Add standard R package CI workflows}
+\NormalTok{usethis}\SpecialCharTok{::}\FunctionTok{use\_github\_action}\NormalTok{(}\StringTok{"check{-}standard"}\NormalTok{)    }\CommentTok{\# R CMD check}
+\NormalTok{usethis}\SpecialCharTok{::}\FunctionTok{use\_github\_action}\NormalTok{(}\StringTok{"test{-}coverage"}\NormalTok{)     }\CommentTok{\# Code coverage}
+\NormalTok{usethis}\SpecialCharTok{::}\FunctionTok{use\_github\_action}\NormalTok{(}\StringTok{"pkgdown"}\NormalTok{)           }\CommentTok{\# Deploy website}
+\end{Highlighting}
+\end{Shaded}
+
+These workflows automatically:
+
+\begin{itemize}
+\tightlist
+\item
+  Run R CMD check on multiple platforms (Linux, macOS, Windows)
+\item
+  Calculate test coverage
+\item
+  Build and deploy your pkgdown website
+\item
+  Ensure code quality before merging
+\end{itemize}
+
+\section{Automated Code Styling}\label{sec-auto-styling}
+
+\subsection{RStudio Built-in
+Formatting}\label{rstudio-built-in-formatting}
+
+Use RStudio's built-in autoformatter (keyboard shortcut:
+\texttt{CMD-Shift-A} or \texttt{Ctrl-Shift-A}) to quickly format
+highlighted code.
+
+\subsection{styler Package}\label{styler-package}
+
+For automated styling of entire projects:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Install styler}
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"styler"}\NormalTok{)}
+
+\CommentTok{\# Style all files in R/ directory}
+\NormalTok{styler}\SpecialCharTok{::}\FunctionTok{style\_dir}\NormalTok{(}\StringTok{"R/"}\NormalTok{)}
+
+\CommentTok{\# Style entire package}
+\NormalTok{styler}\SpecialCharTok{::}\FunctionTok{style\_pkg}\NormalTok{()}
+
+\CommentTok{\# Note: styler modifies files in{-}place}
+\CommentTok{\# Always use with version control so you can review changes}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{lintr Package}\label{lintr-package}
+
+For checking code style without modifying files:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Install lintr}
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"lintr"}\NormalTok{)}
+
+\CommentTok{\# Lint the entire package}
+\NormalTok{lintr}\SpecialCharTok{::}\FunctionTok{lint\_package}\NormalTok{()}
+
+\CommentTok{\# Lint a specific file}
+\NormalTok{lintr}\SpecialCharTok{::}\FunctionTok{lint}\NormalTok{(}\StringTok{"R/my\_function.R"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+The linter checks for: - Unused variables - Improper whitespace - Line
+length issues - Style guide violations
+
+You can customize linting rules by creating a \texttt{.lintr} file in
+your project root.
+
+\section{Additional Resources}\label{sec-r-resources}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://r-pkgs.org/}{R Packages book} by Hadley Wickham and
+  Jenny Bryan
+\item
+  \href{https://style.tidyverse.org/}{Tidyverse style guide}
+\item
+  \href{https://usethis.r-lib.org/}{usethis documentation}
+\item
+  \href{https://devtools.r-lib.org/}{devtools documentation}
+\item
+  \href{https://pkgdown.r-lib.org/}{pkgdown documentation}
+\item
+  \href{https://testthat.r-lib.org/}{testthat documentation}
+\end{itemize}
+
+\bookmarksetup{startatroot}
+
+\chapter{Big data}\label{big-data}
+
+Adapted by UCD-SeRG team from
+\href{https://jadebc.github.io/lab-manual/big-data.html}{original by
+Kunal Mishra and Jade Benjamin-Chung}
+
+\section{The data.table package}\label{the-data.table-package}
+
+It may also be the case that you're working with very large datasets.
+Generally I would define this as 10+ million rows. As is outlined in
+this document, the 3 main players in the data analysis space are Base R,
+\texttt{Tidvyerse} (more specificially, \texttt{dplyr}), and
+\texttt{data.table}. For a majority of things, Base R is inferior to
+both \texttt{dplyr} and \texttt{data.table}, with concise but less clear
+syntax and less speed. \texttt{Dplyr} is architected for medium and
+smaller data, and while its very fast for everyday usage, it trades off
+maximum performance for ease of use and syntax compared to
+\texttt{data.table}. An overview of the \texttt{dplyr} vs
+\texttt{data.table} debate can be found in
+\href{https://stackoverflow.com/questions/21435339/data-table-vs-dplyr-can-one-do-something-well-the-other-cant-or-does-poorly/27840349\#27840349}{this
+stackoverflow post} and all 3 answers are worth a read.
+
+You can also achieve a performance boost by running \texttt{dplyr}
+commands on \texttt{data.table}s, which I find to be the best of both
+worlds, given that a \texttt{data.table} is a special type of
+\texttt{data.frame} and fairly easy to convert with the
+\texttt{as.data.table()} function. The speedup is due to
+\texttt{dplyr}'s use of the \texttt{data.table} backend and in the
+future this coupling should become even more natural.
+
+If you want to test whether using a certain coding approach increases
+speed, consider the \texttt{tictoc} package. Run \texttt{tic()} before a
+code chunk and \texttt{toc()} after to measure the amount of system time
+it takes to run the chunk. For example, you might use this to decide if
+you \emph{really} need to switch a code chunk from \texttt{dplyr} to
+\texttt{data.table}.
+
+\section{Using downsampled data}\label{using-downsampled-data}
+
+In our studies with very large datasets, we save ``downsampled'' data
+that usually includes a 1\% random sample stratified by any important
+variables, such as year or household id. This allows us to efficiently
+write and test our code without having to load in large, slow datasets
+that can cause RStudio to freeze. Be very careful to be sure which
+dataset you are working with and to label results output accordingly.
+
+\section{Optimal RStudio set up}\label{optimal-rstudio-set-up}
+
+Using the following settings will help ensure a smooth experience when
+working with big data. In RStudio, go to the ``Tools'' menu, then select
+``Global Options''. Under ``General'':
+
+\textbf{Workspace}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Uncheck} Restore RData into workspace at startup
+\item
+  Save workspace to RData on exit -- choose \textbf{never}
+\end{itemize}
+
+\textbf{History}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Uncheck} Always save history
+\end{itemize}
+
+Unfortunately RStudio often gets slow and/or freezes after hours working
+with big datasets. Sometimes it is much more efficient to just use
+Terminal / gitbash to run code and make updates in git.
+
+\bookmarksetup{startatroot}
+
+\chapter{Data masking}\label{data-masking}
+
+Adapted by UCD-SeRG team from
+\href{https://jadebc.github.io/lab-manual/data-masking.html}{original by
+Anna Nguyen, Jade Benjamin-Chung, and Gabby Barratt Heitmann}
+
+For information about UC Davis computing resources for data-intensive
+work, see Chapter~\ref{sec-slurm}.
+
+\section{General Overview}\label{general-overview}
+
+This chapter covers data masking, a unique process in R in which columns
+are treated as distinct objects within their dataframe's environment. In
+our lab, data masking most frequently comes up when writing wrapper
+functions where arguments to indicate column names are supplied as
+strings. We often do this when we repeat the same code on multiple
+columns, and want to apply a function to a vector of strings that
+correspond to column names in a dataframe. For example, we might want to
+clean multiple columns using the same function or estimate the same
+model under different feature sets. Here, we try to break down what data
+masking is, why this error comes up, and common approaches to solve this
+problem.
+
+\subsection{What is Data Masking?}\label{what-is-data-masking}
+
+Within certain tidyverse operations, columns are called as if they were
+variables. For example, while running
+\texttt{df\ \%\textgreater{}\%\ mutate(X\ =\ …)} R recognizes that
+\texttt{X} specifically references a column in \texttt{df} without
+explicitly stating its membership
+\texttt{df\ \%\textgreater{}\%\ mutate(df\$X\ =\ …)} or calling the
+column name as a string
+\texttt{df\ \%\textgreater{}\%\ mutate(“X”\ =\ …)}.
+
+\includegraphics[width=0.5\linewidth,height=\textheight,keepaspectratio]{assets/images/data-masking.PNG}
+
+However, this behavior may introduce errors when we attempt to
+incorporate variables from the global environment within these tidyverse
+pipelines. In the example above, \texttt{column\_name\ =\ “X”} followed
+by \texttt{df\ \%\textgreater{}\%\ mutate(X2\ =\ column\_name\ +\ 1)}
+would yield an error, since \texttt{column\_name} is not a column in
+\texttt{df} and the variable \texttt{column\_name} is not defined within
+the environment of \texttt{df}
+
+\subsection{Using tidy evaluation for data
+masking}\label{using-tidy-evaluation-for-data-masking}
+
+In dplyr-based R programming, we make use of tidy evaluation. This
+allows us to avoid using base R syntax to reference specific columns in
+a data frame. By leveraging Tidy evaluation-based data masking, we can
+employ long pipes with several dplyr verbs to manipulate our data using
+stand-alone variables that store column names as strings.
+
+For example, consider a data frame ``df'' that contains a column called
+``heavyrain'' that we want to manipulate. Suppose we wanted to convert
+the values of ``heavyrain'' into a factor.
+
+Using base R, which does not mask data, heavyrain must have quotes to be
+treated as a data-variable:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df[[“outcome”]] }\OtherTok{=} \FunctionTok{as.factor}\NormalTok{(df[[“heavyrain”]])}
+\end{Highlighting}
+\end{Shaded}
+
+In a dplyr pipe, heavyrain is being masked using tidy evaluation and
+will be correctly interpreted as a column because it is recognized as a
+data-variable: df \%\textgreater\% mutate(outcome =
+as.factor(heavyrain))
+
+With modified data masking, heavyrain is a string that is coerced into
+being recognized as a data-variable:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{var\_name }\OtherTok{=}\NormalTok{ “heavyrain”}
+\NormalTok{df }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate}\NormalTok{(}\AttributeTok{outcome =} \FunctionTok{as.factor}\NormalTok{(}\SpecialCharTok{!!}\FunctionTok{sym}\NormalTok{(var\_name)) }
+\end{Highlighting}
+\end{Shaded}
+
+While cleaner and often more convenient, the data frame that var\_name
+is in is now ``masked'' and we refer to the vectors in the dataframe
+(data-variables) as though it is an object of its own (an
+environmental-variable). This is why we can just say the variable's name
+in the context of a pipe -- we treat it as though it's an object defined
+in our environment. Within normal scripts, this is usually fine, because
+the data frame is ``held on to'' in the pipe. However, it can cause some
+programming hurdles when writing functions that take strings of
+variable/column names as arguments. In the next section, we briefly
+describe how to troubleshoot common errors in data masking, as relevant
+to our lab's work.
+
+\section{Technical Overview}\label{technical-overview}
+
+This section covers the R functions and tools that we often use in the
+context of data masking, focusing on the bang bang operator
+(\texttt{!!}) with symbol coercion (\texttt{sym()}) and the Walrus
+operator (\texttt{:=}).
+
+The combined use of \texttt{!!} and \texttt{sym()} allows us to use
+strings, rather than data-variables, to reference column names within
+dplyr. Together, \texttt{!!sym(“column\_name”)} forces dplyr to
+recognize ``column\_name'' as a data-variable prior to evaluating the
+rest of the expression, enabling the ability to perform calculations on
+the column while referring to it as a string. \texttt{sym()} is a
+function that turns strings into symbols. In the context of a dplyr
+pipe, these symbols are interpreted as data-variables. The \texttt{!!}
+(bang bang) operator tells dplyr to evaluate the sym() expression first,
+e.g.~to unquote its expression (e.g.~``column\_name'') and evaluate it
+as a pre-existing object, first. This is helpful because often we use
+\texttt{sym(“column\_name”)} within a larger expression, and dplyr might
+evaluate other elements of the expression first without !!, causing
+errors.
+
+When we want to create a new column (via mutate or summarize), the
+Walrus operator (\texttt{:=}) allows us to specify the new column's name
+using a string. For example, while
+\texttt{df\ \%\textgreater{}\%\ mutate(“new\_column”\ =\ values)} would
+yield an error,
+\texttt{df\ \%\textgreater{}\%\ mutate(“new\_column”\ :=\ values)} will
+correctly create a new column called ``new\_column''. If we want to use
+a variable representing a string, we can use !! to force the variable to
+be evaluated before using \texttt{:=} to assign the value of the new
+column.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{col\_name }\OtherTok{=}\NormalTok{ “new\_column”}
+\NormalTok{df }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate}\NormalTok{(}\SpecialCharTok{!!}\AttributeTok{col\_name :=}\NormalTok{ values)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Example}\label{example}
+
+Suppose we want to write a function ``generate\_descriptive\_table'' to
+summarize how the prevalence of ``outcome'' varies under different
+levels of a ``risk\_factor'' in a data frame ``df''
+
+We can start by writing the function shell:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{generate\_descriptive\_table }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{ (df, outcome, rf) \{}
+\NormalTok{outcome\_dist\_by\_rf }\OtherTok{\textless{}{-}}\NormalTok{ ….}
+\FunctionTok{return}\NormalTok{(outcome\_dist\_by\_rf)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Next, we can filter the data frame for only rows in which ``rf'' and
+``outcome'' are not missing. We can use !! and sym() within filter to
+evaluate the strings stored in ``rf'' and ``outcome''. Note that
+defining \texttt{!!sym(outcome)} or \texttt{!!sym(outcome)} in variables
+\emph{outside of the dplyr pipeline} will \emph{not} work.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{generate\_descriptive\_table }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{ (df, outcome, rf,) \{}
+\NormalTok{  outcome\_dist\_by\_rf }\OtherTok{\textless{}{-}}\NormalTok{ df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(}\SpecialCharTok{!!}\FunctionTok{sym}\NormalTok{(outcome)), }\SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(}\SpecialCharTok{!!}\FunctionTok{sym}\NormalTok{(rf))) }\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{  ….}
+  \FunctionTok{return}\NormalTok{(outcome\_dist\_by\_rf)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Similarly, we use !! and sym() in group\_by to evaluate column name,
+stored as a string in the argument ``rf''
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{generate\_descriptive\_table }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{ (df, outcome, rf,) \{}
+\NormalTok{  outcome\_dist\_by\_rf }\OtherTok{\textless{}{-}}\NormalTok{ df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(}\SpecialCharTok{!!}\FunctionTok{sym}\NormalTok{(outcome)), }\SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(}\SpecialCharTok{!!}\FunctionTok{sym}\NormalTok{(rf))) }\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{  ….}
+  \FunctionTok{return}\NormalTok{(outcome\_dist\_by\_rf)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Finally, we can use the walrus operator, !! and sym() with ``summarize''
+to create a new column that takes the mean of the column referenced in
+``rf''. We also use ``glue'' or ``paste'' to give the new column an
+informative name that includes the ``outcome'' it describes.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{generate\_descriptive\_table }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{ (df, outcome, rf,) \{}
+\NormalTok{  outcome\_dist\_by\_rf }\OtherTok{\textless{}{-}}\NormalTok{ df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(}\SpecialCharTok{!!}\FunctionTok{sym}\NormalTok{(outcome)), }\SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(}\SpecialCharTok{!!}\FunctionTok{sym}\NormalTok{(rf))) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(}\SpecialCharTok{!!}\FunctionTok{sym}\NormalTok{(rf)) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarize}\NormalTok{(}\SpecialCharTok{!!}\NormalTok{(glue}\SpecialCharTok{::}\FunctionTok{glue}\NormalTok{(“\{outcome\}\_prev”)) }\SpecialCharTok{:}\ErrorTok{=} \FunctionTok{mean}\NormalTok{(}\SpecialCharTok{!!}\FunctionTok{sym}\NormalTok{(outcome))) }
+  \FunctionTok{return}\NormalTok{(outcome\_dist\_by\_rf)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+OR
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{generate\_descriptive\_table }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{ (df, outcome, rf,) \{}
+\NormalTok{  outcome\_dist\_by\_rf }\OtherTok{\textless{}{-}}\NormalTok{ df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(}\SpecialCharTok{!!}\FunctionTok{sym}\NormalTok{(outcome)), }\SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(}\SpecialCharTok{!!}\FunctionTok{sym}\NormalTok{(rf))) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(}\SpecialCharTok{!!}\FunctionTok{sym}\NormalTok{(rf)) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarize}\NormalTok{(}\SpecialCharTok{!!}\NormalTok{(}\FunctionTok{paste0}\NormalTok{(outcome, ”\_prev”)) }\SpecialCharTok{:}\ErrorTok{=} \FunctionTok{mean}\NormalTok{(}\SpecialCharTok{!!}\FunctionTok{sym}\NormalTok{(outcome)))}
+  \FunctionTok{return}\NormalTok{(outcome\_dist\_by\_rf)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+OR
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{generate\_descriptive\_table }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{ (df, outcome, rf,) \{}
+\NormalTok{  new\_column\_name }\OtherTok{=} \FunctionTok{paste0}\NormalTok{(outcome, ”\_prev”)}
+\NormalTok{  outcome\_dist\_by\_rf }\OtherTok{\textless{}{-}}\NormalTok{ df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(}\SpecialCharTok{!!}\FunctionTok{sym}\NormalTok{(outcome)), }\SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(}\SpecialCharTok{!!}\FunctionTok{sym}\NormalTok{(rf))) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(}\SpecialCharTok{!!}\FunctionTok{sym}\NormalTok{(rf)) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarize}\NormalTok{(}\SpecialCharTok{!!}\NormalTok{(new\_column\_name) }\SpecialCharTok{:}\ErrorTok{=} \FunctionTok{mean}\NormalTok{(}\SpecialCharTok{!!}\FunctionTok{sym}\NormalTok{(outcome))) }
+  \FunctionTok{return}\NormalTok{(outcome\_dist\_by\_rf)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\bookmarksetup{startatroot}
+
+\chapter{Github}\label{sec-github}
+
+Adapted by UCD-SeRG team from
+\href{https://jadebc.github.io/lab-manual/github.html}{original by
+Stephanie Djajadi and Nolan Pokpongkiat}
+
+\section{Basics}\label{basics}
+
+\begin{itemize}
+\tightlist
+\item
+  A detailed tutorial of Git can be found
+  \href{https://sp19.datastructur.es/materials/guides/using-git\#b-local-repositories-narrative-introduction}{here
+  on the CS61B website}.
+\item
+  If you are already familiar with Git, you can reference the summary at
+  the end of
+  \href{https://sp19.datastructur.es/materials/guides/using-git\#b-local-repositories-narrative-introduction}{Section
+  B}.
+\item
+  If you have made a mistake in Git, you can refer to this
+  \href{https://sethrobertson.github.io/GitFixUm/fixup.html}{article} to
+  undo, fix, or remove commits in git.
+\end{itemize}
+
+\section{Github Desktop}\label{github-desktop}
+
+While knowing how to use Git on the command line will always be useful
+since the full power of Git and its customizations and flexibilty is
+designed for use with the command line, Github also provides
+\href{https://desktop.github.com/}{Github Desktop} as an graphical
+interface to do basic git commands; you can do all of the basic
+functions of Git using this desktop app. Feel free to use this as an
+alternative to Git on the command line if you prefer.
+
+\section{Git Branching}\label{git-branching}
+
+Branches allow you to keep track of multiple versions of your work
+simultaneously, and you can easily switch between versions and merge
+branches together once you've finished working on a section and want it
+to join the rest of your code. Here are some cases when it may be a good
+idea to branch:
+
+\begin{itemize}
+\tightlist
+\item
+  You may want to make a dramatic change to your existing code (called
+  refactoring) but it will break other parts of your project. But you
+  want to be able to simultaneously work on other parts or you are
+  collaborating with others, and you don't want to break the code for
+  them.
+\item
+  You want to start working on a new part of the project, but you aren't
+  sure yet if your changes will work and make it to the final product.
+\item
+  You are working with others and don't want to mix up your current work
+  with theirs, even if you want to bring your work together later in the
+  future.
+\end{itemize}
+
+A detailed tutorial on Git Branching can be found
+\href{https://sp19.datastructur.es/materials/guides/using-git\#e-git-branching-advanced-git-optional}{here}.
+You can also find instructions on how to handle merge conflicts when
+joining branches together.
+
+\section{Example Workflow}\label{example-workflow}
+
+A standard workflow when starting on a new project and contributing code
+looks like this:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.3600}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.6400}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Command
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Description
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+SETUP: FIRST TIME ONLY:
+\texttt{git\ clone\ \textless{}url\textgreater{}\ \textless{}directory\_name\textgreater{}}
+& Clone the repo. This copies of all the project files in its current
+state on Github to your local computer. \\
+1. \texttt{git\ pull\ origin\ master} & update the state of your files
+to match the most current version on GitHub \\
+2.
+\texttt{git\ checkout\ -b\ \textless{}new\_branch\_name\textgreater{}} &
+create new branch that you'll be working on and go to it \\
+3. Make some file changes & work on your feature/implementation \\
+4. \texttt{git\ add\ -p} & add changes to stage for commit, going
+through changes line by line \\
+5. \texttt{git\ commit\ -m\ \textless{}commit\ message\textgreater{}} &
+commit files with a message \\
+6. \texttt{git\ push\ -u\ origin\ \textless{}branch\_name\textgreater{}}
+& push branch to remote and set to track (-u only needed if this is
+first push) \\
+7. Repeat step 4-5. & work and commit often \\
+8. \texttt{git\ push} & push work to remote branch for others to view \\
+9. Follow the link given from the \texttt{git\ push} command to
+\href{https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request\#creating-the-pull-request}{submit
+a pull request (PR) on GitHub online} & PR merges in work from your
+branch into master \\
+(10.) Your changes and PR get approved, your reviewer deletes your
+remote branch upon merging & \\
+11. \texttt{git\ fetch\ -\/-all\ -\/-prune} & clean up your local git by
+untracking deleted remote branches \\
+\end{longtable}
+
+Other helpful commands are listed below.
+
+\section{Commonly Used Git Commands}\label{commonly-used-git-commands}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.3600}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.6400}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Command
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Description
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{git\ clone\ \textless{}url\textgreater{}\ \textless{}directory\_name\textgreater{}}
+& clone a repository, only needs to be done the first time \\
+\texttt{git\ pull\ origin\ master} & pull from \texttt{master} before
+making any changes \\
+\texttt{git\ branch} & check what branch you are on \\
+\texttt{git\ branch\ -a} & check what branch you are on + all remote
+branches \\
+\texttt{git\ checkout\ -b\ \textless{}new\_branch\_name\textgreater{}} &
+create new branch and go to it (only necessary when you create a new
+branch) \\
+\texttt{git\ checkout\ \textless{}branch\ name\textgreater{}} & switch
+to branch \\
+\texttt{git\ add\ \textless{}file\ name\textgreater{}} & add file to
+stage for commit \\
+\texttt{git\ add\ -p} & adds changes to commit, showing you changes one
+by one \\
+\texttt{git\ commit\ -m\ \textless{}commit\ message\textgreater{}} &
+commit file with a message \\
+\texttt{git\ push\ -u\ origin\ \textless{}branch\_name\textgreater{}} &
+push branch to remote and set to track (-u only works if this is first
+push) \\
+\texttt{git\ branch\ -\/-set-upstream-to\ origin\ \textless{}branch\_name\textgreater{}}
+& set upstream to \texttt{origin/\textless{}branch\_name\textgreater{}}
+(use if you forgot -u on first push) \\
+\texttt{git\ push\ origin\ \textless{}branch\_name\textgreater{}} & push
+work to branch \\
+\texttt{git\ checkout\ \textless{}branch\_name\textgreater{}}
+~\texttt{git\ merge\ master} & switch to branch and merge changes from
+\texttt{master} into \texttt{\textless{}branch\_name\textgreater{}} (two
+commands) \\
+\texttt{git\ merge\ \textless{}branch\_name\textgreater{}\ master} &
+switch to branch and merge changes from \texttt{master} into
+\texttt{\textless{}branch\_name\textgreater{}} (one command) \\
+\texttt{git\ checkout\ -\/-track\ origin/\textless{}branch\_name\textgreater{}}
+& pulls a remote branch and creates a local branch to track it (use when
+trying to pull someone else's branch onto your local computer) \\
+\texttt{git\ push\ -\/-delete\ \textless{}remote\_name\textgreater{}\ \textless{}branch\_name\textgreater{}}
+& delete remote branch \\
+\texttt{git\ branch\ -d\ \textless{}branch\_name\textgreater{}} &
+deletes local branch, -D to force \\
+\texttt{git\ fetch\ -\/-all\ -\/-prune} & untrack deleted remote
+branches \\
+\end{longtable}
+
+\section{How often should I commit?}\label{how-often-should-i-commit}
+
+It is good practice to commit every 15 minutes, or every time you make a
+significant change. It is better to commit more rather than less.
+
+\section{What should be pushed to
+Github?}\label{what-should-be-pushed-to-github}
+
+Never push .Rout files! If someone else runs an R script and creates an
+.Rout file at the same time and both of you try to push to github, it is
+incredibly difficult to reconcile these two logs. If you run logs, keep
+them on your own system or (preferably) set up a shared directory where
+all logs are name and date timestamped.
+
+There is a standardized \texttt{.gitignore} for \texttt{R} which you
+\href{https://github.com/github/gitignore/blob/master/R.gitignore}{can
+download} and add to your project. This ensures you're not committing
+log files or things that would otherwise best be left ignored to GitHub.
+This is a
+\href{https://www.tidyverse.org/articles/2017/12/workflow-vs-script/}{great
+discussion of project-oriented workflows}, extolling the virtues of a
+self-contained, portable projects, for your reference.
+
+\bookmarksetup{startatroot}
+
+\chapter{Unix}\label{sec-unix}
+
+Adapted by UCD-SeRG team from
+\href{https://jadebc.github.io/lab-manual/unix.html}{original by
+Stephanie Djajadi, Kunal Mishra, Anna Nguyen, and Jade Benjamin-Chung}
+
+We typically use Unix commands in Terminal (for Mac users) or Git Bash
+(for Windows users) to
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Run a series of scripts in parallel or in a specific order to
+  reproduce our work
+\item
+  To check on the progress of a batch of jobs
+\item
+  To use git and push to github
+\end{enumerate}
+
+\section{Basics}\label{basics-1}
+
+On the computer, there is a desktop with two folders, \texttt{folder1}
+and \texttt{folder2}, and a file called \texttt{file1.} Inside
+\texttt{folder1}, we have a file called \texttt{file2.} Mac users can
+run these commands on their terminal; it is recommended that Windows
+users use Git Bash, not Windows PowerShell.
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{assets/images/ex-desktop.jpg}}
+
+}
+
+\caption{Here is our example desktop.}
+
+\end{figure}%
+
+\section{Syntax for both Mac/Windows}\label{syntax-for-both-macwindows}
+
+When typing in directories or file names, quotes are necessary if the
+name includes spaces.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.4348}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5652}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Command
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Description
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{cd\ desktop/folder1} & Change directory to \texttt{folder1} \\
+\texttt{pwd} & Print working directory \\
+\texttt{ls} & List files in the directory \\
+\texttt{cp\ "file2"\ "newfile2"} & Copy file (remember to include file
+extensions when typing in file names like \texttt{.pdf} or
+\texttt{.R}) \\
+\texttt{mv\ “newfile2”\ “file3”} & Rename \texttt{newfile2} to
+\texttt{file3} \\
+\texttt{cd\ ..} & Go to parent of the working directory (in this case,
+\texttt{desktop}) \\
+\texttt{mv\ “file1”\ folder2} & Move \texttt{file1} to
+\texttt{folder2} \\
+\texttt{mkdir\ folder3} & Make a new folder in \texttt{folder2} \\
+\texttt{rm\ \textless{}filename\textgreater{}} & Remove files \\
+\texttt{rm\ -rf\ folder3} & Remove directories (\texttt{-r} will attempt
+to remove the directory recursively, \texttt{-rf} will force removal of
+the directory) \\
+\texttt{clear} & Clear terminal screen of all previous commands \\
+\end{longtable}
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{assets/images/ex-terminal.PNG}}
+
+}
+
+\caption{Here is an example of what your terminal might look like after
+executing the commands in the order listed above.}
+
+\end{figure}%
+
+\section{Running Bash Scripts}\label{running-bash-scripts}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.2571}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3714}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3714}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Windows
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Mac / Linux
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Description
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{chmod\ +750\ \textless{}filename.sh\textgreater{}} &
+\texttt{chmod\ +x\ \textless{}filename.sh\textgreater{}} & Change access
+permissions for a file (only needs to be done once) \\
+\texttt{./\textless{}filename.sh\textgreater{}} &
+\texttt{./\textless{}filename.sh\textgreater{}} & Run file (\texttt{./}
+to run any executable file) \\
+\texttt{bash\ bash\_script\_name.sh\ \&} &
+\texttt{bash\ bash\_script\_name.sh\ \&} & Run shell script in the
+background \\
+\end{longtable}
+
+\section{Running Rscripts in Windows}\label{running-rscripts-in-windows}
+
+\textbf{Note: This code seems to work only with Windows Command Prompt,
+not with Git Bash.}
+
+When R is installed, it comes with a utility called Rscript. This allows
+you to run R commands from the command line. If Rscript is in your
+\texttt{PATH,} then typing Rscript into the command line, and pressing
+enter, will not error. Otherwise, to use Rscript, you will either need
+to add it to your PATH (as an environment variable), or append the full
+directory of the location of Rscript on your machine. To find the full
+directory, search for where R is installed your computer. For instance,
+it may be something like below (this will vary depending on what version
+of R you have installed):
+
+\texttt{C:\textbackslash{}Program\ Files\textbackslash{}R\textbackslash{}R-3.6.0\textbackslash{}bin}
+
+For appending the \texttt{PATH} variable, please view
+\href{https://www.howtogeek.com/118594/how-to-edit-your-system-path-for-easy-command-line-access/}{this
+link}. I strongly recommend completing this option.
+
+If you add the PATH as an environment variable, then you can run this
+line of code to test: \texttt{Rscript\ -e\ “cat(‘this\ is\ a\ test’)"},
+where the \texttt{-e} flag refers to the expression that will be
+executed.
+
+If you do not add the PATH as an environment variable, then you can run
+this line of code to replicate the results from above:
+\texttt{“C:\textbackslash{}Program\ Files\textbackslash{}R\textbackslash{}R-3.6.0\textbackslash{}bin”\ -e\ “cat(‘this\ is\ a\ test’)”}
+
+To run an R script from the command line, we can say:
+\texttt{Rscript\ -e\ “source(‘C:/path/to/script/some\_code.R’)”}
+
+\subsection{Common Mistakes}\label{common-mistakes}
+
+\begin{itemize}
+\tightlist
+\item
+  Remember to include all of the quotation marks around file paths that
+  have a spaces.
+\item
+  If you attempt to run an R script but run into
+  \texttt{Error:\ \textquotesingle{}\textbackslash{}U\textquotesingle{}\ used\ without\ hex\ digits\ in\ character\ string\ starting\ "\textquotesingle{}C:\textbackslash{}U"},
+  try replacing all \texttt{\textbackslash{}} with
+  \texttt{\textbackslash{}\textbackslash{}} or \texttt{/}.
+\end{itemize}
+
+\section{Checking tasks and killing
+jobs}\label{checking-tasks-and-killing-jobs}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.2571}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3714}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3714}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Windows
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Mac / Linux
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Description
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{tasklist} & \texttt{ps\ -v} & List all processes on the command
+line \\
+& \texttt{top\ -o\ {[}cpu/rsize{]}} & List all running processes, sorted
+by CPU or memory usage \\
+\texttt{taskkill\ /F\ /PID\ pid\_number} &
+\texttt{kill\ \textless{}PID\_number\textgreater{}} & Kill a process by
+its process ID \\
+\texttt{taskkill\ /IM\ "process\ name"\ /F} & & Kill a process by its
+name \\
+\texttt{start\ /b\ program.exe} & & Runs jobs in the background (exclude
+\texttt{/b} if you want the program to run in a new console) \\
+& \texttt{nohup} & Prevents jobs from stopping \\
+& \texttt{disown} & Keeps jobs running in the background even if you
+close R \\
+\texttt{taskkill\ /?} & & Help, lists out other commands \\
+\end{longtable}
+
+To kill a task in Windows, you can also go to Task Manager
+\textgreater{} More details \textgreater{} Select your desired app
+\textgreater{} Click on End Task.
+
+\section{Running big jobs}\label{running-big-jobs}
+
+For big data workflows, the concept of ``backgrounding'' a bash script
+allows you to start a ``job'' (i.e.~run the script) and leave it
+overnight to run. At the top level, a bash script
+(\texttt{0-run-project.sh}) that simply calls the directory-level bash
+scripts (i.e.~\texttt{0-prep-data.sh}, \texttt{0-run-analysis.sh},
+\texttt{0-run-figures.sh}, etc.) is a powerful tool to rerun every
+script in your project. See the included example bash scripts for more
+details.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Running Bash Scripts in Background}: Running a long bash
+  script is not trivial. Normally you would run a bash script by opening
+  a terminal and typing something like \texttt{./run-project.sh}. But
+  what if you leave your computer, log out of your server, or close the
+  terminal? Normally, the bash script will exit and fail to complete. To
+  run it in background, type \texttt{./run-project.sh\ \&;\ disown}. You
+  can see the job running (and CPU utilization) with the command
+  \texttt{top} or \texttt{ps\ -v} and check your memory with
+  \texttt{free\ -h}.
+\end{itemize}
+
+Alternatively, to keep code running in the background even when an SSH
+connection is broken, you can use \texttt{tmux}. In terminal or gitbash
+follow the steps below. This
+\href{https://medium.com/@jeongwhanchoi/install-tmux-on-osx-and-basics-commands-for-beginners-be22520fd95e}{site}
+has useful tips on using \texttt{tmux}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# create a new tmux session called session\_name}
+\ExtensionTok{tmux}\NormalTok{ new }\AttributeTok{{-}ssession\_name}
+
+\CommentTok{\# run your job of interest}
+\ExtensionTok{R}\NormalTok{ CMD BATCH myjob.R }\KeywordTok{\&} 
+  
+\CommentTok{\# check that it is running}
+\FunctionTok{ps} \AttributeTok{{-}v}
+
+\CommentTok{\# to exit the tmux session (Mac)}
+\ExtensionTok{ctrl}\NormalTok{ + b }
+\ExtensionTok{d}
+
+\CommentTok{\# to reopen the tmux session to kill the job or }
+\CommentTok{\# start another job}
+\ExtensionTok{tmux}\NormalTok{ attach }\AttributeTok{{-}tsession\_name} 
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\item
+  \textbf{Deleting Previously Computed Results}: One helpful lesson
+  we've learned is that your bash scripts should remove previous results
+  (computed and saved by scripts run at a previous time) so that you
+  never mix results from one run with a previous run. This can happen
+  when an R script errors out before saving its result, and can be
+  difficult to catch because your previously saved result exists
+  (leading you to believe everything ran correctly).
+\item
+  \textbf{Ensuring Things Ran Correctly}: You should check the
+  \texttt{.Rout} files generated by the R scripts run by your bash
+  scripts for errors once things are run. A utility file is include in
+  this repository, called \texttt{runFileSaveLogs}, and is used by the
+  example bash scripts to\ldots{} run files and save the generated logs.
+  It is an awesome utility and one I definitely recommend using. Before
+  using \texttt{runFileSaveLogs}, it is necessary to put the file in the
+  home working directory. For help and documentation, you can use the
+  command \texttt{./runFileSaveLogs\ -h}. See example code and example
+  usage for \texttt{runFileSaveLogs} below.
+\end{itemize}
+
+\subsection{\texorpdfstring{Example code for
+\texttt{runfileSaveLogs}}{Example code for runfileSaveLogs}}\label{example-code-for-runfilesavelogs}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#!/usr/bin/env python3}
+\CommentTok{\# Type "./runFileSaveLogs {-}h" for help}
+
+\ImportTok{import}\NormalTok{ os}
+\ImportTok{import}\NormalTok{ sys}
+\ImportTok{import}\NormalTok{ argparse}
+\ImportTok{import}\NormalTok{ getpass}
+\ImportTok{import}\NormalTok{ datetime}
+\ImportTok{import}\NormalTok{ shutil}
+\ImportTok{import}\NormalTok{ glob}
+\ImportTok{import}\NormalTok{ pathlib}
+
+\CommentTok{\# Setting working directory to this script\textquotesingle{}s current directory}
+\NormalTok{os.chdir(os.path.dirname(os.path.abspath(}\VariableTok{\_\_file\_\_}\NormalTok{)))}
+
+\CommentTok{\# Setting up argument parser}
+\NormalTok{parser }\OperatorTok{=}\NormalTok{ argparse.ArgumentParser(description}\OperatorTok{=}\StringTok{\textquotesingle{}Runs the argument R script(s) {-} in parallel if specified {-} and moves the subsequent generated .Rout log files to a timestamped directory.\textquotesingle{}}\NormalTok{)}
+
+\CommentTok{\# Function ensuring that the file is valid}
+\KeywordTok{def}\NormalTok{ is\_valid\_file(parser, arg):}
+    \ControlFlowTok{if} \KeywordTok{not}\NormalTok{ os.path.exists(arg):}
+\NormalTok{        parser.error(}\StringTok{"The file }\SpecialCharTok{\%s}\StringTok{ does not exist!"} \OperatorTok{\%}\NormalTok{ arg)}
+    \ControlFlowTok{else}\NormalTok{:}
+        \ControlFlowTok{return}\NormalTok{ arg}
+
+\CommentTok{\# Function ensuring that the directory is valid}
+\KeywordTok{def}\NormalTok{ is\_valid\_directory(parser, arg):}
+    \ControlFlowTok{if} \KeywordTok{not}\NormalTok{ os.path.isdir(arg):}
+\NormalTok{        parser.error(}\StringTok{"The specified path (}\SpecialCharTok{\%s}\StringTok{) is not a directory!"} \OperatorTok{\%}\NormalTok{ arg)}
+    \ControlFlowTok{else}\NormalTok{:}
+        \ControlFlowTok{return}\NormalTok{ arg}
+
+\CommentTok{\# Additional arguments that can be added when running runFileSaveLogs}
+\NormalTok{parser.add\_argument(}\StringTok{\textquotesingle{}{-}p\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}{-}{-}parallel\textquotesingle{}}\NormalTok{, action}\OperatorTok{=}\StringTok{\textquotesingle{}store\_true\textquotesingle{}}\NormalTok{, }\BuiltInTok{help}\OperatorTok{=}\StringTok{"Runs the argument R scripts in parallel if specified"}\NormalTok{)}
+\NormalTok{parser.add\_argument(}\StringTok{"{-}i"}\NormalTok{, }\StringTok{"{-}{-}identifier"}\NormalTok{, }\BuiltInTok{help}\OperatorTok{=}\StringTok{"Adds an identifier to the directory name where this is saved"}\NormalTok{)}
+\NormalTok{parser.add\_argument(}\StringTok{\textquotesingle{}filenames\textquotesingle{}}\NormalTok{, nargs}\OperatorTok{=}\StringTok{\textquotesingle{}+\textquotesingle{}}\NormalTok{, }\BuiltInTok{type}\OperatorTok{=}\KeywordTok{lambda}\NormalTok{ x: is\_valid\_file(parser, x))}
+
+\NormalTok{args }\OperatorTok{=}\NormalTok{ parser.parse\_args()}
+\NormalTok{args\_dict }\OperatorTok{=} \BuiltInTok{vars}\NormalTok{(args)}
+
+\BuiltInTok{print}\NormalTok{(args\_dict)}
+
+\CommentTok{\# Run given R Scripts}
+\ControlFlowTok{for}\NormalTok{ filename }\KeywordTok{in}\NormalTok{ args\_dict[}\StringTok{"filenames"}\NormalTok{]:}
+\NormalTok{  system\_call }\OperatorTok{=} \StringTok{"R CMD BATCH"} \OperatorTok{+} \StringTok{" "} \OperatorTok{+}\NormalTok{ filename}
+  \ControlFlowTok{if}\NormalTok{ args\_dict[}\StringTok{"parallel"}\NormalTok{]: }
+\NormalTok{    system\_call }\OperatorTok{=} \StringTok{"nohup"} \OperatorTok{+} \StringTok{" "} \OperatorTok{+}\NormalTok{ system\_call }\OperatorTok{+} \StringTok{" \&"}
+
+\NormalTok{  os.system(system\_call)}
+
+\CommentTok{\# Create the directory (and any parents) of the log files}
+\NormalTok{currentUser }\OperatorTok{=}\NormalTok{ getpass.getuser()}
+\NormalTok{currentTime }\OperatorTok{=}\NormalTok{ datetime.datetime.now().strftime(}\StringTok{"\%Y{-}\%m{-}}\SpecialCharTok{\%d}\StringTok{ \%H:\%M:\%S"}\NormalTok{)}
+\NormalTok{logDirPrefix }\OperatorTok{=} \StringTok{"/home/kaiserData/logs/"} \CommentTok{\# Change to the directory where the logs should be saved}
+\NormalTok{logDir }\OperatorTok{=}\NormalTok{ logDirPrefix }\OperatorTok{+}\NormalTok{ currentTime }\OperatorTok{+} \StringTok{"{-}"} \OperatorTok{+}\NormalTok{ currentUser }
+
+\CommentTok{\# If specified, adds the identifier to the filename of the log}
+\ControlFlowTok{if}\NormalTok{ args.identifier }\KeywordTok{is} \KeywordTok{not} \VariableTok{None}\NormalTok{:}
+\NormalTok{  logDir }\OperatorTok{+=} \StringTok{"{-}"} \OperatorTok{+}\NormalTok{ args.identifier}
+
+\NormalTok{logDir }\OperatorTok{+=} \StringTok{"/"}
+
+\NormalTok{pathlib.Path(logDir).mkdir(parents}\OperatorTok{=}\VariableTok{True}\NormalTok{, exist\_ok}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+
+\CommentTok{\# Find and move all logs to this new directory}
+\NormalTok{currentLogPaths }\OperatorTok{=}\NormalTok{ glob.glob(}\StringTok{\textquotesingle{}./*.Rout\textquotesingle{}}\NormalTok{)}
+
+\ControlFlowTok{for}\NormalTok{ currentLogPath }\KeywordTok{in}\NormalTok{ currentLogPaths:}
+\NormalTok{  filename }\OperatorTok{=}\NormalTok{ currentLogPath.split(}\StringTok{"/"}\NormalTok{)[}\OperatorTok{{-}}\DecValTok{1}\NormalTok{]}
+\NormalTok{  shutil.move(currentLogPath, logDir }\OperatorTok{+}\NormalTok{ filename)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{\texorpdfstring{Example usage for
+\texttt{runfileSaveLogs}}{Example usage for runfileSaveLogs}}\label{example-usage-for-runfilesavelogs}
+
+This example bash script runs files and generates logs for five scripts
+in the \texttt{kaiserflu/3-figures} folder. Note that the \texttt{-i}
+flag is used as an identifier to add \texttt{figures} to the filename of
+each log.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#!/bin/bash}
+
+\CommentTok{\# Copy utility run script into this folder for concision in call}
+\FunctionTok{cp}\NormalTok{ \textasciitilde{}/kaiserflu/runFileSaveLogs \textasciitilde{}/kaiserflu/3{-}figures/}
+
+\CommentTok{\# Run folder scripts and produce output}
+\BuiltInTok{cd}\NormalTok{ \textasciitilde{}/kaiserflu/3{-}figures/}
+\ExtensionTok{./runFileSaveLogs} \AttributeTok{{-}i} \StringTok{"figures"} \DataTypeTok{\textbackslash{}}
+\NormalTok{fig{-}mean{-}season{-}age.R }\DataTypeTok{\textbackslash{}}
+\NormalTok{fig{-}monthly{-}rate.R }\DataTypeTok{\textbackslash{}}
+\NormalTok{fig{-}point{-}estimates{-}combined.R }\DataTypeTok{\textbackslash{}}
+\NormalTok{fig{-}point{-}estimates.R }\DataTypeTok{\textbackslash{}}
+\NormalTok{fig{-}weekly{-}rate.R}
+
+\CommentTok{\# Remove copied utility run script}
+\FunctionTok{rm}\NormalTok{ runFileSaveLogs}
+\end{Highlighting}
+\end{Shaded}
+
+\bookmarksetup{startatroot}
+
+\chapter{Reproducible Environments}\label{reproducible-environments}
+
+Adapted by UCD-SeRG team from
+\href{https://jadebc.github.io/lab-manual/reproducible-environments.html}{original
+by Anna Nguyen}
+
+\section{Package Version Control with
+renv}\label{package-version-control-with-renv}
+
+\subsection{Introduction}\label{introduction}
+
+Replicable code should produce the same results, regardless of when or
+where it's run. However, our analyses often leverage open-source R
+packages that are developed by other teams. These packages continue to
+be developed after research projects are completed, which may include
+changes to analysis functions that could impact how code runs for both
+other team members and external replicators.
+
+For example, suppose we had used a function that took in one argument,
+such that our code contained \texttt{example\_function(arg\_a\ =\ “a”)}.
+A few months after we publish our code, the package developers update
+the function to take in another mandatory argument \texttt{arg\_b}. If
+someone runs our code, but has the most recent version of the package,
+they'll receive an error message that the argument \texttt{arg\_b} is
+missing and will not be able to full reproduce our results.
+
+To ensure that the right functions are used in replication efforts, it
+is important for us to keep track of package versions used in each
+project.
+
+\texttt{renv} can be to promote reproducible environments within R
+projects. \texttt{renv} creates individual package libraries for each
+project instead of having all projects, which may use different versions
+of the same package, share the same package library. However, for
+projects that use many packages, this process can be memory intensive
+and increase the time needed for a new users to start running code.
+
+In this lab manual chapter, we provide a quick tutorial for integrating
+\texttt{renv} into research workflows. For more detailed instructions,
+please refer to the \texttt{renv} package vignette.
+
+\subsection{Implementing renv in
+projects}\label{implementing-renv-in-projects}
+
+Ideally, \texttt{renv} should be initiated at the start of projects and
+updated continuously when new packages are introduced in the codebase.
+However, this process can be initated at any point in a project
+
+To add \texttt{renv} to your workflow, follow these steps:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Install the \texttt{renv} package by running
+  \texttt{install.packages(“renv”)}
+\item
+  Create an RProject file and ensure that your working directory is set
+  to the correct folder
+\item
+  In the R console, run \texttt{renv::init()} to intiialize renv in your
+  R Project
+\item
+  This will create the following files: \texttt{renv.lock},
+  .\texttt{Rprofile}, \texttt{renv/settings.json} and
+  \texttt{renv/activate.R}. Commit and push these files to GitHub so
+  that they're accessible to other users.
+\item
+  As you write code, update the project's R library by running
+  \texttt{renv::snapshot()} in the R console
+\item
+  Add \texttt{renv::restore()} to the head of your config file, to make
+  sure that all users that run your code are on the same package
+  versions.
+\end{enumerate}
+
+\subsection{Using projects with renv}\label{using-projects-with-renv}
+
+If you're starting to work on an ongoing project that already has
+\texttt{renv} set up, follow these steps to ensure that you're using the
+same project versions.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Install the \texttt{renv} package by running
+  \texttt{install.packages(“renv”)}
+\item
+  Pull the most updated version of the project from GitHub
+\item
+  Open the project's RProject file
+\item
+  Run \texttt{renv::restore()}. In our lab's projects, this is often
+  already found at the top of the config file, so you can just run
+  scripts as is.
+\item
+  This will pull up a list of the project's packages that need to be
+  updated for you to be consistent with the project. The console will
+  ask if you want to proceed with updating these packages - type ``Y''
+  to continue.
+\item
+  Wait for the correct versions of each package to install/update. This
+  may take some time, depending on how many packages the project uses.
+\item
+  Your R environment should now be using the same package versions as
+  specified in the \texttt{renv} lock file. You should now be able to
+  replicate the code.
+\item
+  If you make edits to the code and introduce new/updated packages, see
+  the section above for instructions on how to make updates.
+\end{enumerate}
+
+\bookmarksetup{startatroot}
+
+\chapter{Code Publication}\label{code-publication}
+
+Adapted by UCD-SeRG team from
+\href{https://jadebc.github.io/lab-manual/code-publication.html}{original
+by Nolan Pokpongkiat}
+
+\section{Checklist overview}\label{checklist-overview}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \hyperref[fill-out-file-headers]{Fill out file headers}
+\item
+  \hyperref[clean-up-comments]{Clean up comments}
+\item
+  \hyperref[document-functions]{Document functions}
+\item
+  \hyperref[remove-deprecated-filepaths]{Remove deprecated filepaths}
+\item
+  \hyperref[ensure-project-runs-via-bash]{Ensure project runs via bash}
+\item
+  \hyperref[complete-the-readme]{Complete the README}
+\item
+  \hyperref[clean-up-feature-branches]{Clean up feature branches}
+\item
+  \hyperref[create-github-release]{Create Github release}
+\end{enumerate}
+
+\section{Fill out file headers}\label{fill-out-file-headers}
+
+Every file in a project should have a header that allows it to be
+interpreted on its own. It should include the name of the project and a
+short description for what this file (among the many in your project)
+does specifically. See template
+\href{https://jadebc.github.io/lab-manual/coding-practices.html\#file-headers}{here.}
+
+\section{Clean up comments}\label{clean-up-comments}
+
+Make sure comments in the code are for code documentation purposes only.
+Do not leave comments to self in the final script files.
+
+\section{Document functions}\label{document-functions}
+
+Every function you write must include a header to document its purpose,
+inputs, and outputs. See template for the function documentation
+\href{https://jadebc.github.io/lab-manual/coding-practices.html\#function-documentation}{here.}
+
+\section{Remove deprecated filepaths}\label{remove-deprecated-filepaths}
+
+All file paths should be defined in 0-config.R, and should be set
+relative to the project working directory. All absolute file paths from
+your local computer should be removed, and replaced with a relative
+path. If a third party were to re-run this analysis, if they need to
+download data from a separate source and change a filepath in the
+0-config.R to match, make sure to specify in the README which line of
+0-config.R needs to be substituted.
+
+\section{Ensure project runs via
+bash}\label{ensure-project-runs-via-bash}
+
+The project should be configured to be entirely reproducible by running
+a master bash script, run-project.sh, which should live at the top
+directory. This bash script can call other bash scripts in subfolders,
+if necessary. Bash scripts should use the runFileSaveLogs utility
+script, which is a wrapper around the Rscript command, allowing you to
+specify where .Rout log files are moved after the R scripts are run.
+
+See usage and documentation
+\href{https://jadebc.github.io/lab-manual/unix.html\#example-code-for-runfilesavelogs}{here.}
+
+\section{Complete the README}\label{complete-the-readme}
+
+A README.md should live at the top directory of the project. This
+usually includes a Project Overview and a Directory Structure, along
+with the names of the contributors and the Creative Commons License. See
+below for a template:
+
+\begin{quote}
+\textbf{Overview}
+
+To date, coronavirus testing in the US has been extremely limited.
+Confirmed COVID-19 case counts underestimate the total number of
+infections in the population. We estimated the total COVID-19 infections
+-- both symptomatic and asymptomatic -- in the US in March 2020. We used
+a semi-Bayesian approach to correct for bias due to incomplete testing
+and imperfect test performance.
+
+\textbf{Directory structure}
+
+\begin{itemize}
+\item
+  0-config.R: configuration file that sets data directories, sources
+  base functions, and loads required libraries
+\item
+  0-base-functions: folder containing scripts with functions used in the
+  analysis
+
+  \begin{itemize}
+  \item
+    0-base-functions.R: R script containing general functions used
+    across the analysis
+  \item
+    0-bias-corr-functions.R: R script containing functions used in bias
+    correction
+  \item
+    0-bias-corr-functions-undertesting.R: R script containing functions
+    used in bias correction to estimate the percentage of
+    underestimation due to incomplete testing vs.~imperfect test
+    accuracy
+  \item
+    0-prior-functions.R: R script containing functions to generate
+    priors
+  \end{itemize}
+\item
+  1-data: folder containing data processing scripts NOTE: some scripts
+  are deprecated
+\item
+  2-analysis: folder containing analysis scripts. To rerun all scripts
+  in this subdirectory, run the bash script 0-run-analysis.sh.
+
+  \begin{itemize}
+  \item
+    1-obtain-priors-state.R: obtain priors for each state
+  \item
+    2-est-expected-cases-state.R: estimate expected cases in each state
+  \item
+    3-est-expected-cases-state-perf-testing.R: estimate expected cases
+    in each state, estimate the percentage of underestimation due to
+    incomplete testing vs.~imperfect test accuracy
+  \item
+    4-obtain-testing-protocols.R: find testing protocols for each state.
+  \item
+    5-summarize-results.R: summarize results; obtain results for in text
+    numerical results.
+  \end{itemize}
+\item
+  3-figure-table-scripts: folder containing figure scripts. To rerun all
+  scripts in this subdirectory, run the bash script 0-run-figs.sh.
+
+  \begin{itemize}
+  \item
+    1-fig-testing.R: creates plot of testing patterns by state over time
+  \item
+    2-fig-cases-usa-state-bar.R: creates bar plot of confirmed
+    vs.~estimated infections by state
+  \item
+    3a-fig-map-usa-state.R: creates map of confirmed vs.~estimated
+    infections by state
+  \item
+    3b-fig-map-usa-state-shiny.R: creates map of confirmed vs.~estimated
+    infections by state with search functionality by state
+  \item
+    4-fig-priors.R: creates figure with priors for US as a whole
+  \item
+    5-fig-density-usa.R: creates figure of distribution of estimated
+    cases in the US
+  \item
+    6-table-data-quality.R: creates table of data quality grading from
+    COVID Tracking Project
+  \item
+    7-fig-testpos.R: creates figure of the probability of testing
+    positive among those tested by state
+  \item
+    8-fig-percent-undertesting-state.R: creates figure of the percentage
+    of under estimation due to incomplete testing
+  \end{itemize}
+\item
+  4-figures: folder containing figure files.
+\item
+  5-results: folder containing analysis results objects.
+\item
+  6-sensitivity: folder containing scripts to run the sensitivity
+  analyses
+\end{itemize}
+
+\textbf{Contributors:} UCD-SeRG team (adapted from original
+contributors: Jade Benjamin-Chung, Sean L. Wu, Anna Nguyen, Stephanie
+Djajadi, Nolan N. Pokpongkiat, Anmol Seth, Andrew Mertens)
+
+Wu SL, Mertens A, Crider YS, Nguyen A, Pokpongkiat NN, Djajadi S, et
+al.~Substantial underestimation of SARS-CoV-2 infection in the United
+States due to incomplete testing and imperfect test accuracy. medRxiv.
+2020; 2020.05.12.20091744. doi:10.1101/2020.05.12.20091744
+\end{quote}
+
+When possible, also include a description of the RDS results that are
+generated, detailing what data sources were used, where the script lives
+that creates it, and what information the RDS results hold.
+
+\section{Clean up feature branches}\label{clean-up-feature-branches}
+
+In the remote repository on Github, all feature branches aside from
+master should be merged in and deleted. All outstanding PRs should be
+closed.
+
+\section{Create Github release}\label{create-github-release}
+
+Once all of these items are verified, create a tag to make a Github
+release, which will tag the repository, creating a marker at this
+specific point in time.
+
+Detailed instructions
+\href{https://docs.github.com/en/enterprise/2.13/user/articles/creating-releases}{here.}
+
+\bookmarksetup{startatroot}
+
+\chapter{Data Publication}\label{data-publication}
+
+Adapted from Fanice Nyatigo and Ben Arnold's chapter in the
+\href{https://urlisolation.com/browser?clickId=524DE241-3F8F-4C98-B619-3C278374BF64&traceToken=1728923499\%3Bucsfmed_hosted\%3Bhttps\%3A\%2F\%2Fproctor-ucsf.github.io\%2Fd&url=https\%3A\%2F\%2Fproctor-ucsf.github.io\%2Fdcc-handbook\%2Fpublicdata.html}{Proctor-UCSF
+Lab Manual}
+
+\section{Overview}\label{overview}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{quote}
+\emph{\textbf{Warning! } \textbf{NEVER} push a dataset into the public
+domain (e.g., GitHub, OSF) without first checking with lab leadership to
+ensure that it is appropriately de-identified and we have approval from
+the sponsor and/or human subjects review board to do so. For example, we
+will need to re-code participant IDs (even if they contain no
+identifying information) before making data public to completely break
+the link between IDs and identifiable information stored on our servers.
+}
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+If you are releasing data into the public domain, then consider making
+available \emph{at minimum} a \texttt{.csv} file and a codebook of the
+same name (note: you should have a codebook for internal data as well).
+We often also make available \texttt{.rds} files as well. For example,
+your \texttt{mystudy/data/public} directory could include three files
+for a single dataset, two with the actual data in \texttt{.rds} and
+\texttt{.csv} formats, and a third that describes their contents:
+
+\begin{verbatim}
+analysis_data_public.csv
+analysis_data_public.rds
+analysis_data_public_codebook.txt
+\end{verbatim}
+
+In general, datasets are usually too big to save on GitHub, but
+occasionally they are small. Here is an example of where we actually
+pushed the data directly to GitHub:
+https://github.com/ben-arnold/enterics-seroepi/tree/master/data .
+
+If the data are bigger, then maintaining them under version control in
+your git repository can be unwieldy. Instead, we recommend using another
+stable repository that has version control, such as the Open Science
+Framework (\href{https://osf.io}{osf.io}). For example, all of the data
+from the WASH Benefits trials (led by investigators at Berkeley,
+icddr,b, IPA-Kenya and others) are all stored through data components
+nested within in OSF projects: https://osf.io/tprw2/. Another good
+option is Dryad (\href{https://datadryad.org/}{datadryad.org}) or
+institutional digital repositories.
+
+We recommend cross-linking public files in GitHub (scripts/notebooks
+only) and OSF/Dryad/institutional digital repositories.
+
+Below are the main steps to making data public, after finalizing the
+analysis datasets and scripts:\\
+1. Remove Protected Health Information (PHI)\\
+2. Create public IDs or join already created public IDs to the data\\
+3. Create an OSF repository and/or Dryad/institutional digital
+repository\\
+4. Edit analysis scripts to run using the public datasets and test
+(optional)\\
+5. Create a public github page for analysis scripts and link to OSF
+and/or Dryad/Zenodo\\
+6. Go live
+
+\section{Removing PHI}\label{removing-phi}
+
+Once the data is finalized for analysis, the first step is to strip it
+of Protected Health Information (PHI), or any other data that could be
+used to link back to specific participants, such as names, birth dates,
+or GPS coordinates at the village/neighborhood level or below. PHI
+includes, but is not limited to:
+
+\subsection{Personal information}\label{personal-information}
+
+These are identifiers that directly point to specific individuals, such
+as:\\
+- Names, addresses, photographs, date of birth\\
+- A combination of age, sex, and geographic location (below population
+20,000) is considered identifiable
+
+\subsection{Dates}\label{dates}
+
+Any specific dates (e.g., study visit dates, birth dates, treatment
+dates) are usually problematic.\\
+- If a dataset requires high resolution temporal information, coarsen
+visit or measurement dates to be two variables: year and week of the
+year (1-52).\\
+- If a dataset requires age, provide that information without a birth
+date (typically month resolution is sufficient)
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{quote}
+\emph{\textbf{Caution!} If making changes to the format of dates or
+ages, make sure your analysis code runs on these modified versions of
+the data (step 3)! }
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{Geographic information}\label{geographic-information}
+
+Do not include GPS coordinates (longitude, latitude) except in special
+circumstances where they have been obfuscated/shifted. Reach out to lab
+leadership before doing this because it can be complicated.
+
+Do not include place names or codes (e.g., US Zip Codes) if the place
+contains \textless20,000 people. For villages or neighborhoods, code
+them with uninformative IDs. For sub-districts or districts, names are
+fine.
+
+If an analysis requires GPS locations (e.g., to make a map), then
+typically we include a disclaimer in the article's data availability
+statement that explains we cannot make GPS locations public to protect
+participant confidentiality. As a middle ground, we typically make our
+\emph{code} public that runs on the geo-located data for transparency,
+even if independent researchers can't actually run that code (although
+please be careful to ensure the code itself does not in any way include
+geographic identifiers).
+
+For more examples of what constitutes PHI, please refer to this link:
+https://cphs.berkeley.edu/hipaa/hipaa18.html
+
+\section{Create public IDs}\label{create-public-ids}
+
+\subsection{Rationale}\label{rationale}
+
+The UC Davis IRB requires that public datasets not include the original
+study IDs to identify participants or other units in the study (such as
+village IDs). The reason is that those IDs are linked in our private
+datasets to PHI. By creating a new set of public IDs, the public dataset
+is one step further removed from the potential to link to PHI.
+
+\subsection{A single set of public IDs for each
+study}\label{a-single-set-of-public-ids-for-each-study}
+
+For each study, it is ideal to create a single set of public IDs
+whenever possible. We could create a new set of public IDs for every
+public dataset, but the downside is that independent researchers could
+no longer link data that might be related. By creating a single set of
+public IDs associated with each internal study ID, public files retain
+the link.
+
+Maintaining a single set of public IDs requires a shared ``bridge''
+dataset, that includes a row for each study ID and has the associated
+public ID. For studies with multiple levels of ID, we would typically
+have separate bridge datasets for each type of ID (e.g,. cluster ID,
+participant ID, etc.)
+
+Create a public ID that can be used to uniquely identify participants
+and that can internally be linked to the original study IDs. We
+recommend creating a subdirectory in the study's shared data directory
+to store the public IDs. The shared location enables multiple projects
+to use the same IDs. Create the IDs using a script that reads in the
+study IDs, creates a unique (uninformative) public ID for the study IDs,
+and then saves the bridge dataset. The script should be saved in the
+same directory as the public ID files.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{quote}
+\emph{\textbf{Caution!} Note that small differences may arise if the new
+public IDs do not necessarily order participants in the same way as the
+internal IDs. The small differences are all in estimates that rely on
+resampling, such as Bootstrap CIs, permutation P-values, and TMLE, as
+the resampling process may lead tp slightly different re-samples. The
+key here, to ensure the results are consistent irrespective of the
+dataset used, is simply to not assign public IDs randomly. Use
+\texttt{rank()} on the internal ID instead of \texttt{row\_number()} to
+ensure that the order is always the same. }
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{Example scripts}\label{example-scripts}
+
+We have created a self-contained and reproducible example that you can
+run and replicate when making data public for your projects. It contains
+the following files and folders:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{data/final/}- folder containing the projects final data in
+  both csv and rds formats\\
+\item
+  \texttt{code/DEMO\_generate\_public\_IDs.R}- creates randomly
+  generated public IDs that can be matched to the trial's assigned
+  patient IDs.\\
+\item
+  \texttt{data/make\_public/DEMO\_internal\_to\_publicID.csv}- the
+  output from step \#2, a bridge dataset with two variables- the new
+  public ID and the patient's assigned ID.\\
+\item
+  \texttt{code/DEMO\_create\_public\_datasets.R}- joins the public IDs
+  to the trial's full dataset, and strips it of the assigned patient ID.
+\item
+  \texttt{data/public/}- folder containing the output from step \#3-
+  de-identified public dataset, in csv and rds formats, with uniquely
+  identifying public IDs that cannot be easily linked back to the
+  patient's ID.
+\end{enumerate}
+
+The example workflow is accessible via GitHub:
+https://github.com/proctor-ucsf/dcc-handbook/tree/master/templates/making-data-public
+
+\section{Create a data repository}\label{create-a-data-repository}
+
+First, ensure that you create a codebook and metadata file for each
+public dataset
+\href{https://proctor-ucsf.github.io/dcc-handbook/datawrangling.html\#documenting-datasets}{See
+the DCC guide on Documenting datasets}. Use the same name as the
+datasets, but with ``-codebook.txt'' / ``-codebook.html'' /
+``-codebook.csv'' at the end (depending on the file format for the
+codebook). One nice option is the R codebook package, which also
+generates JSON output that is machine-readable.
+
+\subsection{Steps for creating an Open Science Framework (OSF)
+repository:}\label{steps-for-creating-an-open-science-framework-osf-repository}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Create a new OSF project per these instructions:
+  https://help.osf.io/article/252-create-a-project
+\item
+  Create a data component and upload the datasets in .csv and .rds
+  format along with the codebooks. The primary format for public
+  dissemination is .csv but we make the .rds files available too as
+  auxiliary files for convenience.
+\item
+  Create a notebook component and upload the final .html files (which
+  will not be on github\ldots{} but see optional item below)
+\item
+  On the OSF landing Wiki, provide some context. Here is a recent
+  example: https://osf.io/954bt/
+\item
+  Create a Digital Object Identifier (DOI) for the repository. A DOI is
+  a unique identifier that provides a persistent link to content, such
+  as a dataset in this case.
+  \href{https://researchdata.princeton.edu/research-lifecycle-guide/whats-doi-and-what-should-i-know-about-citing-datasets}{Learn
+  more about DOIs}
+\item
+  Optional: Complete the software checklist and system requirement guide
+  for the analysis to guide others. Include it on the GitHub README for
+  the project: https://github.com/proctor-ucsf/mordor-antibody
+\end{enumerate}
+
+\section{Edit and test analysis
+scripts}\label{edit-and-test-analysis-scripts}
+
+Make minor changes to the analysis scripts so that they run on public
+data. If using version control in GitHub, the most straight-forward way
+is to create a branch from the main git branch that reads in the public
+files, and then renames the new public ID variable, e.g., ``id\_public''
+to the internally recognized ID variable name, e.g.~``recordID'', when
+reading in the public data. Re-run all the analysis scripts to ensure
+that they still work with the public version of the dataset.
+
+\section{Create a public GitHub page for public
+scripts}\label{create-a-public-github-page-for-public-scripts}
+
+At minimum, we should include all of the scripts required to run the
+analyses. \textbf{IMPORTANT}: ensure you have taken a snapshot and saved
+your computing environment using the \texttt{renv} package
+(\hyperref[renv]{\texttt{renv}}).
+
+See examples:\\
+- ACTION - https://github.com/proctor-ucsf/ACTION-public\\
+- NAITRE - https://github.com/proctor-ucsf/NAITRE-primary
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{quote}
+\emph{\textbf{Caution!} Read through the scripts carefully to ensure
+there is no PHI in the code itself }
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+Once a public GitHub page exists, you can create a new component on an
+OSF project (step 3, above) and link it to the public version of the
+GitHub repo.
+
+\section{Go live}\label{go-live}
+
+On GitHub, it is useful to create an official ``release'' version to
+freeze the repository, where you can have ``associated files'' with each
+version. Include the .html notebook output as additional files --- since
+they aren't tracked in GitHub, it does provide a way of freezing /
+saving the HTML output for us and others. OSF examples of a studies from
+UCSF's Proctor Foundation:\\
+- ACTION - https://osf.io/ca3pe/\\
+- NAITRE - https://osf.io/ujeyb/\\
+- MORDOR Niger antibody study - https://osf.io/dgsq3/
+
+Further reading on end-to-end data management:
+\href{https://plos.org/resource/how-to-store-and-manage-your-data/\#data-management-plan}{How
+to Store and Manage Your Data - PLOS}
+
+\bookmarksetup{startatroot}
+
+\chapter{High-performance computing (HPC)}\label{sec-slurm}
+
+Adapted by UCD-SeRG team from
+\href{https://jadebc.github.io/lab-manual/slurm.html}{original by Anna
+Nguyen, Jade Benjamin-Chung, and Gabby Barratt Heitmann}
+
+When you need to run a script that requires a large amount of RAM, large
+files, or that uses parallelization, UC Davis provides several
+high-performance computing (HPC) resources.
+
+\section{UC Davis Computing
+Resources}\label{uc-davis-computing-resources}
+
+\subsection{Available Resources}\label{available-resources}
+
+\textbf{UC Davis HPC Clusters:} - \textbf{Farm Cluster}
+(\href{https://hpc.ucdavis.edu/}{hpc.ucdavis.edu}): UC Davis's primary
+HPC cluster providing shared computing resources for research
+
+\textbf{PHS Shared Compute Environments:} For lab members affiliated
+with the School of Public Health Sciences (PHS), additional shared
+computing environments are available. These environments provide secure,
+HIPAA-compliant computing resources suitable for working with sensitive
+health data.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Shiva} (shiva.ucdavis.edu): SLURM-based cluster for
+  computational work
+\item
+  \textbf{Mercury} (mercury.ucdavis.edu): RStudio GUI computing
+  environment
+\end{itemize}
+
+For detailed information about PHS shared compute environments,
+including access procedures, security guidelines, and usage policies,
+please refer to the
+\href{assets/files/PHS_Shared_Compute_Environments.pdf}{PHS Shared
+Compute Environments Guide}.
+
+Contact lab leadership for assistance with: - Requesting access to
+computing resources - Choosing the appropriate computing environment for
+your project - Setting up your computing environment
+
+\section{Getting started with SLURM
+clusters}\label{getting-started-with-slurm-clusters}
+
+To access a UC Davis HPC cluster, in terminal, log in using SSH. For
+example, to access shiva:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ssh}\NormalTok{ USERNAME@shiva.ucdavis.edu}
+\end{Highlighting}
+\end{Shaded}
+
+You will be prompted to enter your UC Davis credentials and may need to
+complete two-factor authentication.
+
+Once you log in, you can view the contents of your home directory in
+command line by entering \texttt{cd\ \$HOME}. You can create subfolders
+within this directory using the \texttt{mkdir} command. For example, you
+could make a ``code'' subdirectory and clone a Github repository there
+using the following code:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{cd} \VariableTok{$HOME}
+\FunctionTok{mkdir}\NormalTok{ code}
+\FunctionTok{git}\NormalTok{ clone https://github.com/jadebc/covid19{-}infections.git}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{One-Time System Set-Up}\label{one-time-system-set-up}
+
+To keep the install packages consistent across different nodes, you will
+need to explicitly set the pathway to your R library directory.
+
+Open your \texttt{\textasciitilde{}/.Renviron} file
+(\texttt{vi\ \textasciitilde{}/.Renviron}) and append the following
+line:
+
+\emph{Note: Once you open the file using \texttt{vi\ {[}file\_name{]}},
+you must press \texttt{i} (on Mac OS) or \texttt{Insert} (on Windows) to
+make edits. After you finish, hit \texttt{Esc} to exit editing mode and
+type \texttt{:wq} to save and close the file.}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\VariableTok{R\_LIBS}\OperatorTok{=}\NormalTok{\textasciitilde{}/R/x86\_64{-}pc{-}linux{-}gnu{-}library/4.0.2}
+\end{Highlighting}
+\end{Shaded}
+
+Alternatively, run an R script with the following code on the cluster:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{r\_environ\_file\_path}\NormalTok{ = file.path}\ErrorTok{(}\ExtensionTok{Sys.getenv}\ErrorTok{(}\StringTok{"HOME"}\KeywordTok{)}\ExtensionTok{,} \StringTok{".Renviron"}\KeywordTok{)}
+\ControlFlowTok{if} \KeywordTok{(}\ExtensionTok{!file.exists}\ErrorTok{(}\ExtensionTok{r\_environ\_file\_path}\KeywordTok{))} \ExtensionTok{file.create}\ErrorTok{(}\ExtensionTok{r\_environ\_file\_path}\KeywordTok{)}
+
+\FunctionTok{cat}\ErrorTok{(}\StringTok{"\textbackslash{}nR\_LIBS=\textasciitilde{}/R/x86\_64{-}pc{-}linux{-}gnu{-}library/4.0.2"}\ExtensionTok{,}
+    \FunctionTok{file}\NormalTok{ = r\_environ\_file\_path, sep = }\StringTok{"\textbackslash{}n"}\NormalTok{, append = TRUE}\KeywordTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+To load packages that run off of C++, you'll need to set the correct
+compiler options in your R environment.
+
+Open the Makevars file (\texttt{vi\ \textasciitilde{}/.R/Makevars}) and
+append the following lines
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\VariableTok{CXX14FLAGS}\OperatorTok{=}\NormalTok{{-}O3 }\ExtensionTok{{-}march=native} \AttributeTok{{-}mtune}\OperatorTok{=}\NormalTok{native }\AttributeTok{{-}fPIC}
+\VariableTok{CXX14}\OperatorTok{=}\NormalTok{g++}
+\end{Highlighting}
+\end{Shaded}
+
+Alternatively, create an R script with the following code, and run it on
+the cluster:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{dotR}\NormalTok{ = file.path}\ErrorTok{(}\ExtensionTok{Sys.getenv}\ErrorTok{(}\StringTok{"HOME"}\KeywordTok{)}\ExtensionTok{,} \StringTok{".R"}\KeywordTok{)}
+\ControlFlowTok{if} \KeywordTok{(}\ExtensionTok{!file.exists}\ErrorTok{(}\ExtensionTok{dotR}\KeywordTok{))} \ExtensionTok{dir.create}\ErrorTok{(}\ExtensionTok{dotR}\KeywordTok{)}
+
+\ExtensionTok{M}\NormalTok{ = file.path}\ErrorTok{(}\ExtensionTok{dotR,} \StringTok{"Makevars"}\KeywordTok{)}
+\ControlFlowTok{if} \KeywordTok{(}\ExtensionTok{!file.exists}\ErrorTok{(}\ExtensionTok{M}\KeywordTok{))} \ExtensionTok{file.create}\ErrorTok{(}\ExtensionTok{M}\KeywordTok{)}
+
+\FunctionTok{cat}\ErrorTok{(}\StringTok{"\textbackslash{}nCXX14FLAGS={-}O3 {-}march=native {-}mtune=native {-}fPIC"}\ExtensionTok{,}
+    \StringTok{"CXX14=g++"}\ExtensionTok{,}
+    \FunctionTok{file}\NormalTok{ = M, sep = }\StringTok{"\textbackslash{}n"}\NormalTok{, append = TRUE}\KeywordTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Moving files to the cluster}\label{moving-files-to-the-cluster}
+
+The \texttt{\$HOME} directory is a good place to store code and small
+test files. Save large files to the \texttt{\$SCRATCH} directory or
+other designated storage areas. Check with the
+\href{https://hpc.ucdavis.edu/}{UC Davis HPC documentation} for specific
+quotas and retention policies. It's best to create a bash script that
+records the file transfer process for a given project. See example code
+below:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# note: the following steps should be done from your local }
+\CommentTok{\# (not after ssh{-}ing into the cluster)}
+
+\CommentTok{\# securely transfer folders from Box to cluster home directory}
+\CommentTok{\# note: the {-}r option is for folders and is not needed for files}
+\FunctionTok{scp} \AttributeTok{{-}r} \StringTok{"Box/project{-}folder/folder{-}1/"}\NormalTok{ USERNAME@shiva.ucdavis.edu:/home/users/USERNAME/}
+
+\CommentTok{\# securely transfer folders from Box to your cluster scratch directory}
+\FunctionTok{scp} \AttributeTok{{-}r} \StringTok{"Box/project{-}folder/folder{-}2/"}\NormalTok{ USERNAME@shiva.ucdavis.edu:/scratch/users/USERNAME/}
+
+\CommentTok{\# securely transfer folders from Box to shared scratch directory}
+\FunctionTok{scp} \AttributeTok{{-}r} \StringTok{"Box/project{-}folder/folder{-}3/"}\NormalTok{ USERNAME@shiva.ucdavis.edu:/scratch/group/GROUPNAME/}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Installing packages on the
+cluster}\label{installing-packages-on-the-cluster}
+
+When you begin working on a cluster, you will most likely encounter
+problems with installing packages. To install packages, login to the
+cluster on the command line and open a development node. Do not attempt
+to do this in RStudio Server, as you will have to re-do it for every new
+session you open.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ssh}\NormalTok{ USERNAME@shiva.ucdavis.edu}
+
+\ExtensionTok{sdev}
+\end{Highlighting}
+\end{Shaded}
+
+You should only have to install packages once. The cluster may require
+that you specify the repository where the package is downloaded from.
+You may also need to add an additional argument to install.packages to
+prevent the packages from locking after installation:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{install.packages}\NormalTok{(}\SpecialCharTok{\textless{}}\NormalTok{PACKAGE NAME}\SpecialCharTok{\textgreater{}}\NormalTok{, }\AttributeTok{repos=}\NormalTok{“http}\SpecialCharTok{:}\ErrorTok{//}\NormalTok{cran.us.ur}\SpecialCharTok{{-}}\NormalTok{project.org”, }
+                  \AttributeTok{INSTALL\_opts =} \StringTok{"{-}{-}no{-}lock"")}
+\end{Highlighting}
+\end{Shaded}
+
+In order for some R packages to work on clusters, it is necessary to
+load specific software modules before running R. These must be loaded
+each time you want to use the package in R. For example, for spatial and
+random effects analyses, you may need the modules/packages below. These
+modules must also be loaded on the command line prior to opening R in
+order for package installation to work.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{module} \AttributeTok{{-}{-}force}\NormalTok{ purge }\CommentTok{\# remove any previously loaded modules, including math and devel}
+\ExtensionTok{module}\NormalTok{ load math}
+\ExtensionTok{module}\NormalTok{ load math gmp/6.1.2}
+\ExtensionTok{module}\NormalTok{ load devel}
+\ExtensionTok{module}\NormalTok{ load gcc/10}
+\ExtensionTok{module}\NormalTok{ load system}
+\ExtensionTok{module}\NormalTok{ load json{-}glib/1.4.4}
+\ExtensionTok{module}\NormalTok{ load curl/7.81.0}
+\ExtensionTok{module}\NormalTok{ load physics}
+\ExtensionTok{module}\NormalTok{ load physics udunits geos}
+\ExtensionTok{module}\NormalTok{ load physics gdal/2.2.1 }\CommentTok{\# for R/4.0.2}
+\ExtensionTok{module}\NormalTok{ load physics proj/4.9.3 }\CommentTok{\# for R/4.0.2}
+\ExtensionTok{module}\NormalTok{ load pandoc/2.7.3}
+
+\ExtensionTok{module}\NormalTok{ load R/4.0.2}
+
+\ExtensionTok{R} \CommentTok{\# Open R in the Shell window to install individual packages or test code}
+\ExtensionTok{Rscript}\NormalTok{ install{-}packages.R }\CommentTok{\# Alternatively, run a package installation script in the Shell window}
+\end{Highlighting}
+\end{Shaded}
+
+Figuring out the issues with some packages will require some trial and
+error. If you are still encountering problems installing a package, you
+may have to install other dependencies manually by reading through the
+error messages. If you try to install a dependency from CRAN and it
+isn't working, it may be a module. You can search for it using the
+\texttt{module\ spider} command:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{module}\NormalTok{ spider DEPENDENCY NAME}
+\end{Highlighting}
+\end{Shaded}
+
+You can also reach out to UC Davis HPC support for help. Visit
+\href{https://hpc.ucdavis.edu/}{hpc.ucdavis.edu} for support
+information.
+
+\section{Testing your code}\label{testing-your-code}
+
+Both of the following ways to test code on a cluster are recommended for
+making small changes, such as editing file paths and making sure the
+packages and source files load. You should write and test the
+functionality of your script locally, only testing on the cluster once
+major bugs are out.
+
+\subsection{The command line}\label{the-command-line}
+
+There are two main ways to explore and test code on computing clusters.
+The first way is best for users who are comfortable working on the
+command line and editing code in base R. Even if you are not comfortable
+yet, this is probably the better way because these commands will
+transfer between different cluster computers using Slurm.
+
+Typically, you will want to initially test your scripts by initiating a
+development node using the command \texttt{sdev}. This will allocate a
+small amount of computing resources for 1 hour. You can access R via
+command line using the following code.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# open development node}
+\ExtensionTok{sdev}
+
+\CommentTok{\# Load all the modules required by the packages you are using}
+\ExtensionTok{module}\NormalTok{ load MODULE NAME  }
+
+\CommentTok{\# Load R (default version)*}
+\ExtensionTok{module}\NormalTok{ load R }
+
+\CommentTok{\# initiate R in command line}
+\ExtensionTok{R}
+\end{Highlighting}
+\end{Shaded}
+
+*Note: for collaboration purposes, it's best for everyone to work with
+one version of R. Check what version is being used for the project you
+are working on. Some packages only work with some versions of R, so it's
+best to keep it consistent.
+
+\subsection{RStudio Server}\label{rstudio-server}
+
+For RStudio GUI computing, UC Davis provides mercury.ucdavis.edu. This
+is accessed through a web browser and provides an RStudio interface. You
+will be prompted to authenticate with your UC Davis credentials. This is
+the best way to work with R for people who are not comfortable accessing
+\& editing in base R in a Shell application.
+
+Note that mercury does not have SLURM, so it's best suited for
+interactive work and smaller computations. For large-scale computations
+requiring SLURM job scheduling, use shiva.ucdavis.edu instead.
+
+When using RStudio Server, you can test your code interactively.
+However, do NOT use the RStudio Server's Terminal to install packages
+and configure your environment for SLURM-based clusters, as you will
+likely need to re-do it for every session/project. For SLURM clusters,
+use the command line approach described earlier.
+
+\subsection{Filepaths \& configuration on the
+cluster}\label{filepaths-configuration-on-the-cluster}
+
+In most cases, you will want to test that the file paths work correctly
+on the cluster. You will likely need to add code to the configuration
+file in the project repository that specifies cluster-specific file
+paths. Here is an example:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# set cluster{-}specific file paths}
+\ControlFlowTok{if}\KeywordTok{(}\ExtensionTok{Sys.getenv}\ErrorTok{(}\StringTok{"LMOD\_SYSHOST"}\KeywordTok{)}\ExtensionTok{!=}\StringTok{""}\KeywordTok{)\{}
+  
+  \ExtensionTok{cluster\_path}\NormalTok{ = paste0}\ErrorTok{(}\ExtensionTok{Sys.getenv}\ErrorTok{(}\StringTok{"HOME"}\KeywordTok{)}\ExtensionTok{,} \StringTok{"/project{-}name/"}\KeywordTok{)}
+  
+  \ExtensionTok{data\_path}\NormalTok{ = paste0}\ErrorTok{(}\ExtensionTok{cluster\_path,} \StringTok{"data/"}\KeywordTok{)}
+  \ExtensionTok{results\_path}\NormalTok{ = paste0}\ErrorTok{(}\ExtensionTok{cluster\_path,} \StringTok{"results/"}\KeywordTok{)}
+\KeywordTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Storage \& group storage
+access}\label{storage-group-storage-access}
+
+\subsection{Individual storage}\label{individual-storage}
+
+There are multiple places to store your files on computing clusters.
+Each user has their own \texttt{\$HOME} directory as well as a
+\texttt{\$SCRATCH} directory. These are directories that can be accessed
+via the command line once you've logged in to the cluster:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{cd} \VariableTok{$HOME} 
+\BuiltInTok{cd}\NormalTok{ /home/users/USERNAME }\CommentTok{\# Alternatively, use the full path}
+
+\BuiltInTok{cd} \VariableTok{$SCRATCH}
+\BuiltInTok{cd}\NormalTok{ /scratch/users/USERNAME }\CommentTok{\# Full path}
+\end{Highlighting}
+\end{Shaded}
+
+You can also navigate to these using the File Explorer if available
+through a web interface.
+
+\texttt{\$HOME} typically has a volume quota (e.g., 15 GB).
+\texttt{\$SCRATCH} typically has a larger volume quota (e.g., 100 TB),
+but files here may get deleted after a certain period of inactivity.
+Thus, use \texttt{\$SCRATCH} for test files, exploratory analyses, and
+temporary storage. Use \texttt{\$HOME} for long-term storage of
+important files and more finalized analyses.
+
+Check with the \href{https://hpc.ucdavis.edu/}{UC Davis HPC
+documentation} for specific storage options and quotas.
+
+\subsection{Group storage}\label{group-storage}
+
+The lab may have shared \texttt{\$GROUP\_HOME} and
+\texttt{\$GROUP\_SCRATCH} directories to store files for collaborative
+use. These typically have larger quotas and may have different retention
+policies. You can access these via the command line or navigate to them
+using the File Explorer:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{cd} \VariableTok{$GROUP\_HOME}
+\BuiltInTok{cd}\NormalTok{ /home/groups/GROUPNAME}
+
+\BuiltInTok{cd} \VariableTok{$GROUP\_SCRATCH}
+\BuiltInTok{cd}\NormalTok{ /scratch/groups/GROUPNAME}
+\end{Highlighting}
+\end{Shaded}
+
+However, saving files to group storage can be tricky. You can try using
+the scp command in the section ``Moving files to the cluster'' to see if
+you have permission to add files to group directories. Read the next
+section to ensure any directories you create have the right permissions.
+
+\subsection{Folder permissions}\label{folder-permissions}
+
+Generally, when we put folders in \texttt{\$GROUP\_HOME} or
+\texttt{\$GROUP\_SCRATCH}, it is so that we can collaborate on an
+analysis within the research group, so multiple people need to be able
+to access the folders. If you create a new folder in
+\texttt{\$GROUP\_HOME} or \texttt{\$GROUP\_SCRATCH}, please check the
+folder's permissions to ensure that other group members are able to
+access its contents. To check the permissions of a folder, navigate to
+the level above it, and enter \texttt{ls\ -l}. You will see output like
+this:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{drwxrwxrwx}\NormalTok{ 2 jadebc jadebc  2204 Jun 17 13:12 myfolder}
+\end{Highlighting}
+\end{Shaded}
+
+Please review
+\href{https://www.chriswrites.com/how-to-change-file-permissions-using-the-terminal/}{this
+website} to learn how to interpret the code on the left side of this
+output. The website also tells you how to change folder permissions. In
+order to ensure that all users and group members are able to access a
+folder's contents, you can use the following command:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{chmod}\NormalTok{ ugo+rwx FOLDER\_NAME}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Running big jobs}\label{running-big-jobs-1}
+
+Once your test scripts run successfully, you can submit an sbatch script
+for larger jobs. These are text files with a \texttt{.sh} suffix. Use a
+text editor like Sublime to create such a script. Documentation on
+sbatch options is available
+\href{https://slurm.schedmd.com/sbatch.html}{here}. Here is an example
+of an sbatch script with the following options:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{job-name=run\_inc}: Job name that will show up in the SLURM
+  system
+\item
+  \texttt{begin=now}: Requests to start the job as soon as the requested
+  resources are available
+\item
+  \texttt{dependency=singleton}: Jobs can begin after all previously
+  launched jobs with the same name and user have ended.
+\item
+  \texttt{mail-type=ALL}: Receive all types of email notification (e.g.,
+  when job starts, fails, ends)
+\item
+  \texttt{cpus-per-task=16}: Request 16 processors per task. The default
+  is one processor per task.
+\item
+  \texttt{mem=64G}: Request 64 GB memory per node.
+\item
+  \texttt{output=00-run\_inc\_log.out}: Create a log file called
+  \texttt{00-run\_inc\_log.out} that contains information about the
+  Slurm session
+\item
+  \texttt{time=47:59:00}: Set maximum run time to 47 hours and 59
+  minutes. If you don't include this option, the cluster will
+  automatically exit scripts after 2 hours of run time (default may vary
+  by cluster).
+\end{itemize}
+
+The file \texttt{analysis.out} will contain the log file for the R
+script \texttt{analysis.R}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#!/bin/bash}
+
+\CommentTok{\#SBATCH {-}{-}job{-}name=run\_inc}
+\CommentTok{\#SBATCH {-}{-}begin=now}
+\CommentTok{\#SBATCH {-}{-}dependency=singleton}
+\CommentTok{\#SBATCH {-}{-}mail{-}type=ALL}
+\CommentTok{\#SBATCH {-}{-}cpus{-}per{-}task=16}
+\CommentTok{\#SBATCH {-}{-}mem=64G}
+\CommentTok{\#SBATCH {-}{-}mem=64G}
+\CommentTok{\#SBATCH {-}{-}output=00{-}run\_inc\_log.out}
+\CommentTok{\#SBATCH {-}{-}time=47:59:00}
+
+\BuiltInTok{cd} \VariableTok{$HOME}\NormalTok{/project{-}code{-}repo/2{-}analysis/}
+
+\ExtensionTok{module}\NormalTok{ purge }
+
+\CommentTok{\# load R version 4.0.2 (required for certain packages)}
+\ExtensionTok{module}\NormalTok{ load R/4.0.2}
+
+\CommentTok{\# load gcc, a C++ compiler (required for certain packages)}
+\ExtensionTok{module}\NormalTok{ load gcc/10}
+
+\CommentTok{\# load software required for spatial analyses in R}
+\ExtensionTok{module}\NormalTok{ load physics gdal}
+\ExtensionTok{module}\NormalTok{ load physics proj}
+
+\ExtensionTok{R}\NormalTok{ CMD BATCH }\AttributeTok{{-}{-}no{-}save}\NormalTok{ analysis.R analysis.out}
+\end{Highlighting}
+\end{Shaded}
+
+To submit this job, save the code in the chunk above in a script called
+\texttt{myjob.sh} and then enter the following command into terminal:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{sbatch}\NormalTok{ myjob.sh }
+\end{Highlighting}
+\end{Shaded}
+
+To check on the status of your job, enter the following code into
+terminal:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{squeue} \AttributeTok{{-}u} \VariableTok{$USERNAME}
+\end{Highlighting}
+\end{Shaded}
+
+\bookmarksetup{startatroot}
+
+\chapter{Checklists}\label{checklists}
+
+Adapted by UCD-SeRG team from
+\href{https://jadebc.github.io/lab-manual/checklists.html}{original by
+Jade Benjamin-Chung}
+
+\section{Pre-analysis plan checklist}\label{pre-analysis-plan-checklist}
+
+\begin{itemize}
+\tightlist
+\item
+  Brief background on the study (a condensed version of the introduction
+  section of the paper)
+\item
+  Hypotheses / objectives
+\item
+  Study design
+\item
+  Description of data
+\item
+  Definition of outcomes
+\item
+  Definition of interventions / exposures
+\item
+  Definition of covariates
+\item
+  Statistical power calculation
+\item
+  Statistical model description
+\item
+  Covariate selection / screening
+\item
+  Standard error estimation method
+\item
+  Missing data analysis
+\item
+  Assessment of effect modification / subgroup analyses
+\item
+  Sensitivity analyses
+\item
+  Negative control analyses
+\end{itemize}
+
+\section{Code checklist}\label{code-checklist}
+
+\begin{itemize}
+\tightlist
+\item
+  Does the script run without errors?
+\item
+  Is code self-contained within repo and/or associated Box folder?
+\item
+  Is all commented out code / remarks removed?
+\item
+  Does the header accurately describe the process completed in the
+  script?
+\item
+  Is the script pushed to its github repository?
+\item
+  Does the code adhere to the
+  \href{https://jadebc.github.io/lab-manual/coding-style.html}{coding
+  style guide}?
+\item
+  Are all warnings ignorable? Should any warnings be intentionally
+  suppressed or addressed?
+\end{itemize}
+
+\section{Manuscript checklist}\label{manuscript-checklist}
+
+\emph{This is adapted in part from
+\href{https://www.nature.com/articles/d41586-019-01431-z}{this
+article}.}
+
+\begin{itemize}
+\tightlist
+\item
+  Have you completed the relevant reporting checklist, if applicable?
+  (\href{https://www.equator-network.org/about-us/what-is-a-reporting-guideline/}{Collection
+  of checklists})
+\item
+  Are the study results within the manuscript replicable (i.e., if you
+  rerun the code in the study's repository, the tables and figures will
+  be exactly replicated?)
+\item
+  Is a target journal selected?
+\item
+  Is the title declarative, in other words, does it state the
+  object/findings rather than suggest them?
+\item
+  Is the word count of the manuscript close to the target journal's
+  allowance?
+\item
+  Does the manuscript adhere to the formatting guide of the target
+  journal?
+\item
+  Does the manuscript use a consistent voice (passive or active --
+  usually active is preferred \ldots{} pun intended)?
+\item
+  Is each figure and table (including supplementary material) referenced
+  in the main text?
+\item
+  Is there a caption for each figure and table (including supplementary
+  material)?
+\item
+  Are tables/figures and supplementary material numbered in accordance
+  with their appearance in the main text?
+\item
+  Does the text use past tense if it is reporting research findings or
+  future tense if it is a study protocol?
+\item
+  Does the text avoid subjective wording (e.g., ``interesting'',
+  ``dramatic'')?
+\item
+  Does the text use minimal abbreviations, and are all abbreviations
+  defined at first use?
+\item
+  Does the text avoid directionless words? (e.g., instead of writing,
+  `Precipitation influences disease risk', write, `Precipitation was
+  associated with increased disease risk').
+\item
+  Does the text avoid making causal claims that are not supported by the
+  study design? Be careful about the words ``effect'', ``increase'', and
+  ``decrease'', which are often interpreted as causal.
+\item
+  Does the text avoid describing results with the word ``significant'',
+  which can easily be confused with statistical significance? (see
+  references on this topic
+  \href{https://journals.lww.com/epidem/Fulltext/2001/05000/The_Value_of_P.2.aspx}{here})
+\item
+  Have you drafted author contributions? Do they follow the
+  \href{https://journals.plos.org/plosone/s/authorship/?utm_source=plos&utm_medium=blog&utm_campaign=plos-1607-credit\#loc-author-contributions}{CRediT
+  Taxonomy} for author contributions?
+\end{itemize}
+
+\section{Figure checklist}\label{figure-checklist}
+
+\begin{itemize}
+\tightlist
+\item
+  Are the x-axis and y-axis labeled?
+\item
+  If the figure includes panels, is each panel labeled?
+\item
+  Are there sufficient numerical / text labels and breaks on the x-axis
+  and y-axis?
+\item
+  Is the font size appropriate (i.e., large enough to read, not so large
+  that it distracts from the data presented in the figure?)
+\item
+  Are the colors used colorblind friendly? See a colorblind-friendly
+  palette
+  \href{http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/\#a-colorblind-friendly-palette}{here},
+  a neat palette generator with colorblind options
+  \href{https://medialab.github.io/iwanthue/?utm_source=Nature+Briefing&utm_campaign=2c68711076-briefing-dy-20211006&utm_medium=email&utm_term=0_c9dfd39373-2c68711076-44335685}{here},
+  and an article on why this matters
+  \href{https://www.nature.com/articles/d41586-021-02696-z}{here}
+\item
+  Are colors/shapes/line types defined in a legend?
+\item
+  Are the legends and other labels easy to understand with minimal
+  abbreviations?
+\item
+  If there is overplotting, is transparency used to show overlapping
+  data?
+\item
+  Are 95\% confidence intervals or other measures of precision shown, if
+  applicable?
+\end{itemize}
+
+\bookmarksetup{startatroot}
+
+\chapter{Resources}\label{resources}
+
+Adapted by UCD-SeRG team from
+\href{https://jadebc.github.io/lab-manual/resources.html}{original by
+Jade Benjamin-Chung and Kunal Mishra}
+
+\section{Resources for R}\label{resources-for-r}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf}{dplyr
+  and tidyr cheat sheet}
+\item
+  \href{https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf}{ggplot
+  cheat sheet}
+\item
+  \href{https://s3.amazonaws.com/assets.datacamp.com/blog_assets/datatable_Cheat_Sheet_R.pdf}{data
+  table cheat sheet}
+\item
+  \href{https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf}{RMarkdown
+  cheat sheet}
+\item
+  \href{http://adv-r.had.co.nz/Style.html}{Hadley Wickham's R Style
+  Guide}
+\item
+  \href{https://ucb-epi-r.github.io}{Jade's R-for-epi course}
+\item
+  \href{https://www.youtube.com/watch?v=nERXS3ssntw}{Tidy Eval in 5
+  Minutes} (video)
+\item
+  \href{https://tidyeval.tidyverse.org/index.html}{Tidy Evaluation}
+  (e-book)
+\item
+  \href{https://www.brodrigues.co/blog/2016-07-18-data-frame-columns-as-arguments-to-dplyr-functions/}{Data
+  Frame Columns as Arguments to Dplyr Functions} (blog)
+\item
+  \href{https://stackoverflow.com/questions/28125816/r-standard-evaluation-for-join-dplyr}{Standard
+  Evaluation for *\_join} (stackoverflow)
+\item
+  \href{https://dplyr.tidyverse.org/articles/programming.html}{Programming
+  with dplyr} (package vignette)
+\end{itemize}
+
+\section{Resources for Git \& Github}\label{resources-for-git-github}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://www.datacamp.com/courses/introduction-to-git-for-data-science}{Data
+  Camp introduction to Git}
+\item
+  \href{https://lab.github.com/githubtraining/introduction-to-github}{Introduction
+  to Github}
+\end{itemize}
+
+\section{Scientific figures}\label{scientific-figures}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833}{Ten
+  Simple Rules for Better Figures}
+\end{itemize}
+
+\section{Writing}\label{writing}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://www.nature.com/articles/d41586-019-02918-5}{Tips on how
+  to write a great science paper}
+\item
+  \href{http://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html}{ICMJE
+  Definition of authorship}
+\item
+  \href{https://www.nature.com/articles/nphys724}{Nature article on
+  elements of style for scientific writing}
+\item
+  \href{https://link.springer.com/book/10.1007/978-3-030-98175-4}{The
+  Pathway to Publishing: A Guide to Quantitative Writing in the Health
+  Sciences}
+\item
+  \href{https://x.com/acagamic/status/1680381737816424450}{Secret,
+  actionable writing tips}
+\end{itemize}
+
+\section{Presentations}\label{presentations}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://www.nature.com/articles/d41586-021-03603-2}{How to tell
+  a compelling story in scientific presentations}
+\item
+  \href{https://www.sciencedirect.com/science/article/pii/S1471491423000928}{How
+  to give a killer narratively-driven scientific talk}
+\item
+  \href{https://www.youtube.com/watch?v=1RwJbhkCA58&t=1171s}{How to make
+  a better poster}
+\item
+  \href{https://mitcommlab.mit.edu/be/2023/09/27/toward-an-evenbetterposter-improving-the-betterposter-template/}{How
+  to make an even better poster}
+\end{itemize}
+
+\section{Professional advice}\label{professional-advice}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://docs.google.com/document/d/1ckgRCcr7FFPyymyMA6Y_-cB_vftOyrrxT28c6gRg0PI/edit}{Professional
+  advice, especially for your first job}
+\end{itemize}
+
+\section{Funding}\label{funding}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://grantwriting.stanford.edu/funding-train/\#ep}{Building
+  Your Funding Train}
+\item
+  \href{https://www.niaid.nih.gov/grants-contracts/write-grant-application}{NIH
+  Grant Writing Resources}
+\end{itemize}
+
+\section{Ethics and global health
+research}\label{ethics-and-global-health-research}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://www.globalcodeofconduct.org/wp-content/uploads/2018/05/Global-Code-of-Conduct-Brochure.pdf}{Global
+  Code of Conduct For Research in Resource-Poor Settings}
+\item
+  \href{https://journals.plos.org/globalpublichealth/article?id=10.1371/journal.pgph.0002269}{Who
+  is a global health expert? Advice for aspiring global health experts}
+\item
+  \href{https://link.springer.com/book/9783031537929}{Transforming
+  Global Health Partnerships}
+\end{itemize}
+
+
+\backmatter
+
+
+\end{document}

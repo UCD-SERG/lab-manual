@@ -1,0 +1,223 @@
+## Code Style Guidelines {#sec-r-code-style}
+
+Follow these code style guidelines for all R code:
+
+### General Principles
+
+- **Follow tidyverse style guide**: https://style.tidyverse.org
+- **Use native pipe**: `|>` not `%>%` (available in R >= 4.1.0)
+- **Naming**: Use `snake_case` for functions and variables; acronyms may be uppercase (e.g., `prep_IDs_data`)
+- **Write tidy code**: Keep code clean, readable, and well-organized
+
+### File Organization
+
+Just as your data "flows" through your project, code should flow naturally through files in the package structure:
+
+1. **In `R/` files**: Put reusable functions with roxygen2 documentation
+2. **In vignettes**: Put narrative analysis with calls to those functions
+3. **In `data-raw/`**: Put scripts that create data objects saved to `data/`
+4. **In `inst/analyses/`**: Put analyses using restricted data
+
+### Function Structure and Documentation
+
+Every function should follow this pattern:
+
+```r
+#' Short Title (One Line)
+#'
+#' Longer description providing details about what the function does,
+#' when to use it, and important considerations.
+#'
+#' @param param1 Description of first parameter, including type and constraints
+#' @param param2 Description of second parameter
+#'
+#' @returns Description of return value, including type and structure
+#'
+#' @examples
+#' # Example usage
+#' result <- my_function(param1 = "value", param2 = 10)
+#'
+#' @export
+my_function <- function(param1, param2) {
+  # Implementation
+}
+```
+
+### Comments
+
+Use comments to explain *why*, not *what*:
+
+```r
+# Good: Explains reasoning
+# Use log scale because distribution is highly skewed
+ggplot(data, aes(x = log10(income))) + geom_histogram()
+
+# Bad: States the obvious
+# Create a histogram
+ggplot(data, aes(x = income)) + geom_histogram()
+```
+
+**File headers** (for scripts in `data-raw/` or `inst/analyses/`):
+
+```r
+################################################################################
+# @Project - Myproject
+# @Description - Process raw survey data and create analysis dataset
+################################################################################
+```
+
+**Sections and subsections** in longer files:
+
+```r
+# Data Loading -------
+
+## Read survey data -------
+
+## Read lab results -------
+
+# Data Cleaning -------
+```
+
+### Messaging and User Communication
+
+Use `cli` package functions for all user-facing messages in package functions:
+
+```r
+# Good
+cli::cli_inform("Analysis complete")
+cli::cli_warn("Missing data detected")
+cli::cli_abort("Invalid input: {x}")
+
+# Bad - don't use these in package code
+message("Analysis complete")
+warning("Missing data detected")
+stop("Invalid input")
+```
+
+### Package Code Practices
+
+- **No `library()` in package code**: Use `::` notation or declare in DESCRIPTION Imports
+- **Document all exports**: Use roxygen2 (@title, @description, @param, @returns, @examples)
+- **Avoid code duplication**: Extract repeated logic into helper functions
+
+### Line Breaks and Formatting
+
+For readability, use line breaks in function calls and pipelines:
+
+```r
+# Good: Named arguments on separate lines
+mean_Y <- calc_fluseas_mean(
+  data = flu_data, 
+  yname = "maari_yn",
+  silent = FALSE
+)
+
+# Good: Pipeline with clear flow
+cleaned_data <- raw_data |>
+  filter(!is.na(outcome)) |>
+  mutate(
+    log_value = log10(value),
+    category = case_when(
+      value < 10 ~ "low",
+      value < 100 ~ "medium",
+      TRUE ~ "high"
+    )
+  ) |>
+  group_by(category) |>
+  summarize(
+    n = n(),
+    mean = mean(log_value)
+  )
+```
+
+For complex `ggplot` calls:
+
+```r
+ggplot(data, aes(x = year, y = rate, group = group)) +
+  geom_point(
+    aes(col = group, shape = group),
+    position = position_dodge(width = 0.2),
+    size = 2.5
+  ) +
+  geom_errorbar(
+    aes(ymin = lb, ymax = ub, col = group),
+    position = position_dodge(width = 0.2),
+    width = 0.2
+  ) +
+  scale_y_continuous(
+    limits = c(0, 100),
+    breaks = seq(0, 100, 25)
+  ) +
+  scale_color_manual(values = colors) +
+  theme_minimal() +
+  labs(
+    title = "Title",
+    x = "Year",
+    y = "Rate (%)"
+  )
+```
+
+### Tidyverse Replacements
+
+Use modern tidyverse/alternatives for base R functions:
+
+```r
+# Data structures
+tibble::tibble()           # instead of data.frame()
+tibble::tribble()          # instead of manual data.frame creation
+
+# I/O
+readr::read_csv()          # instead of read.csv()
+readr::write_csv()         # instead of write.csv()
+readr::read_rds()          # instead of readRDS()
+readr::write_rds()         # instead of saveRDS()
+
+# Data manipulation
+dplyr::bind_rows()         # instead of rbind()
+dplyr::bind_cols()         # instead of cbind()
+
+# String operations
+stringr::str_which()       # instead of grep()
+stringr::str_replace()     # instead of gsub()
+
+# Session info
+sessioninfo::session_info() # instead of sessionInfo()
+```
+
+### The here Package
+
+The `here` package helps manage file paths in projects:
+
+```r
+library(here)
+
+# Automatically finds project root and builds paths
+data <- readr::read_csv(here("data-raw", "survey.csv"))
+saveRDS(results, here("inst", "analyses", "results.rds"))
+```
+
+This works regardless of where collaborators clone the repository.
+
+### Object Naming
+
+Use descriptive names that are both expressive and explicit:
+
+```r
+# Good
+vaccination_coverage_2017_18
+absentee_flu_residuals
+
+# Less good
+vaxcov_1718
+flu_res
+```
+
+Prefer nouns for objects and verbs for functions:
+
+```r
+# Good
+clean_data <- prep_study_data(raw_data)  # verb for function, noun for object
+
+# Less clear
+data <- process(input)
+```

@@ -1,0 +1,11 @@
+#### Additional Resources
+
+For comprehensive guidance on using renv with R packages, see:
+- [Using renv with R Packages](https://rstudio.github.io/renv/articles/packages.html)
+- [renv documentation](https://rstudio.github.io/renv/)
+
+## Quality Assurance Checklist {#sec-r-qa-checklist}
+
+Before submitting a pull request or finalizing analysis, verify:
+
+- [ ] All functions have complete roxygen2 documentation
