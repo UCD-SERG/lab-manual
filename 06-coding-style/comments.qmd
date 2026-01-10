@@ -24,6 +24,7 @@ ggplot(data, aes(x = income)) + geom_histogram()
 
 ```r
 # Data Loading -------
+```
 
 1. **File Headers** - Every file in a project should have a header that allows it to be interpreted on its own. It should include the name of the project and a short description for what this file (among the many in your project) does specifically. You may optionally wish to include the inputs and outputs of the script as well, though the next section makes this significantly less necessary.
   ```
