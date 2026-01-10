@@ -30,28 +30,28 @@ Here are the requirements:
 ```r
 # Example 1
 school_names = list(
-  OUSD_school_names = absentee_all %>%
-    filter(dist.n == 1) %>%
-    pull(school) %>%
-    unique %>%
+  OUSD_school_names = absentee_all |>
+    filter(dist.n == 1) |>
+    pull(school) |>
+    unique |>
     sort,
 
-  WCCSD_school_names = absentee_all %>%
-    filter(dist.n == 0) %>%
-    pull(school) %>%
-    unique %>%
+  WCCSD_school_names = absentee_all |>
+    filter(dist.n == 0) |>
+    pull(school) |>
+    unique |>
     sort
 )
 ```
 
 ```r
 # Example 2
-absentee_all = fread(file = raw_data_path) %>%
+absentee_all = fread(file = raw_data_path) |>
   mutate(program = case_when(schoolyr %in% pre_program_schoolyrs ~ 0,
-                             schoolyr %in% program_schoolyrs ~ 1)) %>%
+                             schoolyr %in% program_schoolyrs ~ 1)) |>
   mutate(period = case_when(schoolyr %in% pre_program_schoolyrs ~ 0,
                             schoolyr %in% LAIV_schoolyrs ~ 1,
-                            schoolyr %in% IIV_schoolyrs ~ 2)) %>%
+                            schoolyr %in% IIV_schoolyrs ~ 2)) |>
   filter(schoolyr != "2017-18")
 ```
 

@@ -16,11 +16,11 @@ _|_
 `data.frame()` | `tibble::tibble()` or `data.table::data.table()`
 `rbind()` | `dplyr::bind_rows()`
 `cbind()` | `dplyr::bind_cols()`
-`df$some_column` | `df %>% dplyr::pull(some_column)`
-`df$some_column = ...` | `df %>% dplyr::mutate(some_column = ...)`
-`df[get_rows_condition,]` | `df %>% dplyr::filter(get_rows_condition)`
-`df[,c(col1, col2)]` | `df %>% dplyr::select(col1, col2)`
-`merge(df1, df2, by = ..., all.x = ..., all.y = ...)` | `df1 %>% dplyr::left_join(df2, by = ...)` or `dplyr::full_join` or `dplyr::inner_join` or `dplyr::right_join`
+`df$some_column` | `df |> dplyr::pull(some_column)`
+`df$some_column = ...` | `df |> dplyr::mutate(some_column = ...)`
+`df[get_rows_condition,]` | `df |> dplyr::filter(get_rows_condition)`
+`df[,c(col1, col2)]` | `df |> dplyr::select(col1, col2)`
+`merge(df1, df2, by = ..., all.x = ..., all.y = ...)` | `df1 |> dplyr::left_join(df2, by = ...)` or `dplyr::full_join` or `dplyr::inner_join` or `dplyr::right_join`
 _|_
 `str()` | `dplyr::glimpse()`
 `grep(pattern, x)` | `stringr::str_which(string, pattern)`

@@ -20,7 +20,7 @@ usethis::use_vignette("intro")      # Create a vignette (shipped with package)
 usethis::use_article("case-study")  # Create an article (website-only)
 usethis::use_data_raw("dataset")    # Create data processing script
 usethis::use_package("dplyr")       # Add a dependency
-usethis::use_pipe()                 # Import pipe operator
+usethis::use_pipe()                 # Import magrittr pipe operator (no longer recommended)
 
 # Increment version
 usethis::use_version()              # Increment package version
