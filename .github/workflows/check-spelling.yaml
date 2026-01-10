@@ -13,6 +13,8 @@ jobs:
   check:
     runs-on: ubuntu-latest
     name: Spellcheck
+    permissions:
+      contents: read
     container:
       image: rocker/tidyverse:4.1.2
     steps:
