@@ -52,8 +52,8 @@ book:
     - 15-checklists.qmd
     - 15-ai-tools.qmd
     - 17-resources.qmd
-    - 17-professional-development.qmd
-    - 18-manuscript-preparation.qmd
+    - 18-professional-development.qmd
+    - 19-manuscript-preparation.qmd
   page-navigation: true
 
 format:
