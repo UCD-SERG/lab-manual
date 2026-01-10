@@ -1,6 +1,6 @@
 # Code Publication
 
-by Nolan Pokpongkiat
+Adapted by UCD-SeRG team from [original by Nolan Pokpongkiat](https://jadebc.github.io/lab-manual/code-publication.html)
 
 ## Checklist overview
 

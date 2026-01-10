@@ -1,6 +1,6 @@
 # Reproducibility
 
-by UCD-SeRG team
+Adapted by UCD-SeRG team from [original by Jade Benjamin-Chung](https://jadebc.github.io/lab-manual/reproducibility.html)
 
 Our lab adopts the following practices to maximize the reproducibility of our work. 
 

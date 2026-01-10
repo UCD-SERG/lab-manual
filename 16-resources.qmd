@@ -1,6 +1,6 @@
 # Resources
 
-by UCD-SeRG team
+Adapted by UCD-SeRG team from [original by Jade Benjamin-Chung and Kunal Mishra](https://jadebc.github.io/lab-manual/resources.html)
 
 ## Resources for R
 

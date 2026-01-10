@@ -1,6 +1,6 @@
 # Checklists
 
-by UCD-SeRG team
+Adapted by UCD-SeRG team from [original by Jade Benjamin-Chung](https://jadebc.github.io/lab-manual/checklists.html)
 
 ## Pre-analysis plan checklist
 

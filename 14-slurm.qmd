@@ -1,6 +1,6 @@
 # Slurm and cluster computing {#slurm}
 
-by UCD-SeRG team
+Adapted by UCD-SeRG team from [original by Anna Nguyen, Jade Benjamin-Chung, and Gabby Barratt Heitmann](https://jadebc.github.io/lab-manual/slurm.html)
 
 When you need to run a script that requires a large amount of RAM, large files, or that uses parallelization, you can use UC Davis high-performance computing (HPC) resources. UC Davis provides SLURM-based computing clusters at [hpc.ucdavis.edu](https://hpc.ucdavis.edu/) and shiva.ucdavis.edu. For RStudio GUI computing, mercury.ucdavis.edu is available. Please contact lab leadership to get access to the appropriate computing resources. For detailed documentation, visit the [UC Davis HPC website](https://hpc.ucdavis.edu/). Below, we include general tips for working with Slurm-based computing clusters. 
 

@@ -1,6 +1,6 @@
 # Github {#github}
 
-by Stephanie Djajadi and Nolan Pokpongkiat
+Adapted by UCD-SeRG team from [original by Stephanie Djajadi and Nolan Pokpongkiat](https://jadebc.github.io/lab-manual/github.html)
 
 ## Basics
 - A detailed tutorial of Git can be found [here on the CS61B website](https://sp19.datastructur.es/materials/guides/using-git#b-local-repositories-narrative-introduction).
