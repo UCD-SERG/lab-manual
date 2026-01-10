@@ -140,6 +140,16 @@
     ]
   },
   {
+    "objectID": "02-communication.html#code-review",
+    "href": "02-communication.html#code-review",
+    "title": "3  Communication and coordination",
+    "section": "3.7 Code Review",
+    "text": "3.7 Code Review\nWhen submitting code to or reviewing code from colleagues, use best practices to provide and receive constructive feedback:\n\nTidyverse code review guide: Best practices for reviewing R code, including what to look for and how to provide constructive feedback.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Communication and coordination</span>"
+    ]
+  },
+  {
     "objectID": "03-reproducibility.html",
     "href": "03-reproducibility.html",
     "title": "4  Reproducibility",
@@ -474,7 +484,7 @@
     "href": "05-coding-practices.html#sec-r-resources",
     "title": "6  R Coding Practices",
     "section": "6.19 Additional Resources",
-    "text": "6.19 Additional Resources\n\n6.19.1 R Package Development\n\nR Packages book by Hadley Wickham and Jenny Bryan - comprehensive guide to R package development\nusethis documentation - workflow automation for R projects\ndevtools documentation - essential development tools\npkgdown documentation - create package websites\ntestthat documentation - unit testing framework\n\n\n\n6.19.2 General R Programming\n\nR for Data Science by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund - learn data science with the tidyverse\nAdvanced R by Hadley Wickham - deep dive into R programming and internals\n\n\n\n6.19.3 Shiny Development\n\nMastering Shiny by Hadley Wickham - comprehensive guide to building web applications with Shiny\nEngineering Production-Grade Shiny Apps by Colin Fay, Sébastien Rochette, Vincent Guyader, and Cervan Girard - best practices for production Shiny applications\n\n\n\n6.19.4 Git and Version Control\n\nHappy Git and GitHub for the useR by Jenny Bryan - essential guide to using Git and GitHub with R",
+    "text": "6.19 Additional Resources\n\n6.19.1 R Package Development\n\nR Packages book by Hadley Wickham and Jenny Bryan - comprehensive guide to R package development\nTidyverse design guide - principles for designing R packages and APIs that are intuitive, composable, and consistent with tidyverse philosophy\nusethis documentation - workflow automation for R projects\ndevtools documentation - essential development tools\npkgdown documentation - create package websites\ntestthat documentation - unit testing framework\n\n\n\n6.19.2 General R Programming\n\nR for Data Science by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund - learn data science with the tidyverse\nAdvanced R by Hadley Wickham - deep dive into R programming and internals\n\n\n\n6.19.3 Shiny Development\n\nMastering Shiny by Hadley Wickham - comprehensive guide to building web applications with Shiny\nEngineering Production-Grade Shiny Apps by Colin Fay, Sébastien Rochette, Vincent Guyader, and Cervan Girard - best practices for production Shiny applications\n\n\n\n6.19.4 Git and Version Control\n\nHappy Git and GitHub for the useR by Jenny Bryan - essential guide to using Git and GitHub with R",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>R Coding Practices</span>"
     ]
@@ -584,7 +594,7 @@
     "href": "06-coding-style.html#sec-r-resources-style",
     "title": "7  R Code Style",
     "section": "7.10 Additional Resources",
-    "text": "7.10 Additional Resources\n\nTidyverse style guide",
+    "text": "7.10 Additional Resources\n\nTidyverse style guide: Detailed coding style conventions for writing clear, consistent R code. Covers naming, syntax, pipes, functions, and more.",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>R Code Style</span>"
     ]
