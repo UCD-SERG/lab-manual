@@ -1,8 +1,9 @@
-Package: placeholder
+Package: labmanual
 Type: Book
-Title: Does not matter.
+Title: UCD-SERG Lab Manual
 Version: 0.0.1
+Authors@R: person("UCD-SERG", role = c("aut", "cre"), email = "serg@ucdavis.edu")
 Imports: bookdown
 Remotes: rstudio/bookdown
-Author: UCD-SERG
 Language: en-US
+Encoding: UTF-8
