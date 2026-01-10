@@ -8,11 +8,16 @@ UCD-SeRG projects use R package structure for all R-based work. This provides be
 
 ## Project Structure
 
-{{< include 04-code-repositories/project-structure.qmd >}}
+{{< include 04-code-repositories/package-structure.qmd >}}
 
 ## `.Rproj` files
 
 {{< include 04-code-repositories/rproj-files.qmd >}}
+
+
+## Organizing the `data-raw` folder
+
+{{< include 04-code-repositories/project-structure.qmd ?}}
 
 ## Configuration ('config') File
 
