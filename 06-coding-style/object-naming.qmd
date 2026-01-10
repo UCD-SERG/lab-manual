@@ -18,3 +18,4 @@ clean_data <- prep_study_data(raw_data)  # verb for function, noun for object
 
 # Less clear
 data <- process(input)
+```
