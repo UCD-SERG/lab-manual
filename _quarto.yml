@@ -1,0 +1,41 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Benjamin-Chung Lab Manual"
+  author: "Dr. Jade Benjamin-Chung"
+  date: last-modified
+  date-format: "[Last updated:] YYYY-MM-DD"
+  repo-url: https://github.com/UCD-SERG/lab-manual
+  repo-actions: [edit, source, issue]
+  chapters:
+    - index.qmd
+    - 01-culture-and-conduct.qmd
+    - 02-communication.qmd
+    - 03-reproducibility.qmd
+    - 04-code-repositories.qmd
+    - 05-coding-practices.qmd
+    - 06-coding-style.qmd
+    - 07-big-data.qmd
+    - 08-data-masking.qmd
+    - 09-github.qmd
+    - 10-unix.qmd
+    - 11-reproducible-environments.qmd
+    - 12-code-publication.qmd
+    - 13-data-publication.qmd
+    - 14-slurm.qmd
+    - 15-checklists.qmd
+    - 16-resources.qmd
+  page-navigation: true
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    css: styles.css
+    toc: true
+    number-sections: true
+
+editor: source

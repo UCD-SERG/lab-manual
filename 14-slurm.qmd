@@ -9,13 +9,13 @@ When you need to run a script that requires a large amount of RAM, large files, 
 
 To access Sherlock, in terminal, log in using the following syntax and replace "USERNAME" with your Stanford alias. You will be prompted to enter your Stanford password (the same one you use for your email and other accounts) and to complete two-factor authentication. 
 
-```{code1, eval=FALSE}
+```bash
 ssh USERNAME@login.sherlock.stanford.edu
 ```
 
 Once you log in, you can view the contents of your home directory in command line by entering `cd $HOME`. You can create subfolders within this directory using the `mkdir` command. For example, you could make a  "code" subdirectory and clone a Github repository there using the following code: 
 
-```{code2, eval=FALSE}
+```bash
 cd $HOME
 mkdir code
 git clone https://github.com/jadebc/covid19-infections.git
@@ -29,13 +29,13 @@ Open your `~/.Renviron` file (`vi ~/.Renviron`) and append the following line:
 
 *Note: Once you open the file using `vi [file_name]`, you must press `i` (on Mac OS) or `Insert` (on Windows) to make edits. After you finish, hit `Esc` to exit editing mode and type `:wq` to save and close the file.*
 
-```{bash, eval=FALSE}
+```bash
 R_LIBS=~/R/x86_64-pc-linux-gnu-library/4.0.2
 ```
 
 Alternatively, run an R script with the following code on Sherlock:
 
-```{code3, eval=FALSE}
+```bash
 r_environ_file_path = file.path(Sys.getenv("HOME"), ".Renviron")
 if (!file.exists(r_environ_file_path)) file.create(r_environ_file_path)
 
@@ -47,14 +47,14 @@ To load packages that run off of C++, you'll need to set the correct compiler op
 
 Open the Makevars file in Sherlock (`vi ~/.R/Makevars`) and append the following lines
 
-```{bash, eval=FALSE}
+```bash
 CXX14FLAGS=-O3 -march=native -mtune=native -fPIC
 CXX14=g++
 ```
 
 Alternatively, create an R script with the following code, and run it on Sherlock: 
 
-```{code4, eval=FALSE}
+```bash
 dotR = file.path(Sys.getenv("HOME"), ".R")
 if (!file.exists(dotR)) dir.create(dotR)
 
@@ -69,7 +69,7 @@ cat("\nCXX14FLAGS=-O3 -march=native -mtune=native -fPIC",
 ## Moving files to Sherlock
 The `$HOME` directory is a good place to store code and small test files (quota: 15 GB per user). Save large files to the `$SCRATCH` directory (quota: 100 TB per user). You can read more about storage options on Sherlock [here](https://www.sherlock.stanford.edu/docs/storage/). On the `$SCRATCH` directory, files that are not modified after 90 days are automatically deleted. For this reason, it's best to create a bash script that records the file transfer process for a given project. See example code below: 
 
-```{bash, eval=FALSE}
+```bash
 # note: the following steps should be done from your local 
 # (not after ssh-ing into sherlock)
 
@@ -88,7 +88,7 @@ scp -r "Box/malaria-project/folder-3/" USERNAME@login.sherlock.stanford.edu:/scr
 
 When you begin working on Sherlock, you will most likely encounter problems with installing packages. To install packages, login to Sherlock on the command line and open a development node using the command `sdev`. Do not attempt to do this in the RStudio Server (see next section), as you will have to re-do it for every new  session you open. 
 
-```{bash, eval = FALSE}
+```bash
 ssh USERNAME@login.sherlock.stanford.edu
 
 sdev
@@ -96,14 +96,14 @@ sdev
 
 There is a package installation [file](https://drive.google.com/file/d/1eybh4j_G-r3pMZBCVA4QHoWZBo_cW5zb/view) explicitly written for Sherlock that you should run before testing any code and sourcing the configuration file. You should only have to install packages once. Sherlock requires that you specify the repository where the package is downloaded from. You may also need to add an additional argument to install.packages to prevent the packages from locking after installation:
 
-```{R, eval= FALSE}
+```r
 install.packages(<PACKAGE NAME>, repos=“http://cran.us.ur-project.org”, 
                   INSTALL_opts = "--no-lock"")
 ```
 
 In order for some R packages to work on Sherlock, it is necessary to load specific software modules before running R. These must be loaded in Sherlock each time you want to use the package in R. For example, for spatial and random effects analyses, you may need the modules/packages below. These modules must also be loaded on the command line prior to opening R in order for package installation to work. 
 
-```{bash, eval=FALSE}
+```bash
 module --force purge # remove any previously loaded modules, including math and devel
 module load math
 module load math gmp/6.1.2
@@ -126,7 +126,7 @@ Rscript install-packages-sherlock.R # Alternatively, run the entire package inst
 
 Figuring out the issues with some packages will require some trial and error. If you are still encountering problems installing a package, you may have to install other dependencies manually by reading through the error messages. If you try to install a dependency from CRAN and it isn't working, it may be a module. You can search for it using the `module spider` command: 
 
-```{bash, eval=FALSE}
+```bash
 module spider DEPENDENCY NAME
 ```
 
@@ -140,7 +140,7 @@ There are two main ways to explore and test code on Sherlock. The first way is b
 
 Typically, you will want to initially test your scripts by initiating a development node using the command `sdev`. This will allocate a small amount of computing resources for 1 hour. You can access R via command line using the following code.
 
-```{bash, eval=FALSE}
+```bash
 # open development node
 sdev
 
@@ -165,7 +165,7 @@ Do NOT use the RStudio Server's Terminal to install packages, set your R environ
 ### Filepaths & configuration on Sherlock
 In most cases, you will want to test that the file paths work correctly on Sherlock. You will likely need to add code to the configuration file in the project repository that specifies Sherlock-specific file paths. Here is an example: 
 
-```{bash, eval=FALSE}
+```bash
 # set sherlock-specific file paths
 if(Sys.getenv("LMOD_SYSHOST")=="sherlock"){
   
@@ -180,7 +180,7 @@ if(Sys.getenv("LMOD_SYSHOST")=="sherlock"){
 
 ### Individual storage
 There are multiple places to store your files on Sherlock. Each user has their own `$HOME` directory as well as a `$SCRATCH` directory. These are directories that can be accessed via the command line once you've logged in to Sherlock: 
-```{bash, eval=FALSE}
+```bash
 cd $HOME 
 cd /home/users/USERNAME # Alternatively, use the full path
 
@@ -195,7 +195,7 @@ You can read more about storage options on Sherlock [here](https://www.sherlock.
 
 ### Group storage
 The lab also has a `$GROUP_HOME` and a `$GROUP_SCRATCH` to store files for collaborative use. `$GROUP_HOME` has a volume quota of 1 TB and infinite retention time, whereas `$GROUP_SCRATCH` has a volume quota of 100 TB and the same 90-day retention limit. You can access these via the command line or navigate to them using the File Explorer:
-```{bash, eval=FALSE}
+```bash
 cd $GROUP_HOME
 cd /home/groups/jadebc
 
@@ -207,13 +207,13 @@ However, saving files to group storage can be tricky. You can try using the scp 
 ### Folder permissions
 Generally, when we put folders in `$GROUP_HOME` or `$GROUP_SCRATCH`, it is so that we can collaborate on an analysis within the research group, so multiple people need to be able to access the folders. If you create a new folder in `$GROUP_HOME` or `$GROUP_SCRATCH`, please check the folder's permissions to ensure that other group members are able to access its contents. To check the permissions of a folder, navigate to the level above it, and enter `ls -l`. You will see output like this: 
 
-```{bash, eval=FALSE}
+```bash
 drwxrwxrwx 2 jadebc jadebc  2204 Jun 17 13:12 myfolder
 ```
 
 Please review [this website](https://www.chriswrites.com/how-to-change-file-permissions-using-the-terminal/) to learn how to interpret the code on the left side of this output. The website also tells you how to change folder permissions. In order to ensure that all users and group members are able to access a folder's contents, you can use the following command: 
 
-```{bash, eval=FALSE}
+```bash
 chmod ugo+rwx FOLDER_NAME
 ```
 
@@ -233,7 +233,7 @@ Once your test scripts run successfully, you can submit an sbatch script for lar
 
 The file `analysis.out` will contain the log file for the R script `analysis.R`. 
 
-```{bash, eval=FALSE}
+```bash
 #!/bin/bash
 
 #SBATCH --job-name=run_inc
@@ -265,12 +265,12 @@ R CMD BATCH --no-save analysis.R analysis.out
 
 To submit this job, save the code in the chunk above in a script called `myjob.sh` and then enter the following command into terminal: 
 
-```{bash, eval=FALSE}
+```bash
 sbatch myjob.sh 
 ```
 
 To check on the status of your job, enter the following code into terminal: 
 
-```{bash, eval=FALSE}
+```bash
 squeue -u $USERNAME
 ```

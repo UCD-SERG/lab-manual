@@ -11,9 +11,7 @@ This chapter covers data masking, a unique process in R in which columns are tre
 ### What is Data Masking? 
 Within certain tidyverse operations, columns are called as if they were variables. For example, while running `df %>% mutate(X = …)` R recognizes that `X` specifically references a column in ` df` without explicitly stating its membership ` df %>% mutate(df$X = …)` or calling the column name as a string ` df %>% mutate(“X” = …)`. 
 
-```{r, echo=FALSE, out.width="50%"}
-knitr::include_graphics("assets/images/data-masking.PNG")
-```
+![](assets/images/data-masking.PNG){width="50%"}
 
 However, this behavior may introduce errors when we attempt to incorporate variables from the global environment within these tidyverse pipelines. In the example above, ` column_name = “X”` followed by ` df %>% mutate(X2 = column_name + 1)` would yield an error, since ` column_name` is not a column in ` df` and the variable ` column_name` is not defined within the environment of ` df`
 
@@ -24,7 +22,7 @@ In dplyr-based R programming, we make use of tidy evaluation. This allows us to 
 For example, consider a data frame “df” that contains a column called “heavyrain” that we want to manipulate. Suppose we wanted to convert the values of “heavyrain” into a factor.
 
 Using base R, which does not mask data, heavyrain must have quotes to be treated as a data-variable:
-```{r, eval = F}
+```r
 df[[“outcome”]] = as.factor(df[[“heavyrain”]])
 ```
 
@@ -32,7 +30,7 @@ In a dplyr pipe,  heavyrain is being masked using tidy evaluation and will be co
 df %>% mutate(outcome = as.factor(heavyrain))
 
 With modified data masking, heavyrain is a string that is coerced into being recognized as a data-variable:
-```{r, eval = F}
+```r
 var_name = “heavyrain”
 df %>% mutate(outcome = as.factor(!!sym(var_name)) 
 ```
@@ -49,7 +47,7 @@ The ` !!` (bang bang) operator tells dplyr to evaluate the sym() expression firs
 
 When we want to create a new column (via mutate or summarize), the Walrus operator (` :=`) allows us to specify the new column’s name using a string. For example, while ` df %>% mutate(“new_column” = values)` would yield an error, ` df %>% mutate(“new_column” := values)` will correctly create a new column called “new_column”. 
 If we want to use a variable representing a string, we can use !! to force the variable to be evaluated before using ` :=` to assign the value of the new column. 
-```{r, eval = F}
+```r
 col_name = “new_column”
 df %>% mutate(!!col_name := values)
 ```
@@ -59,7 +57,7 @@ df %>% mutate(!!col_name := values)
 Suppose we want to write a function “generate_descriptive_table” to summarize how the prevalence of “outcome” varies under different levels of a “risk_factor” in a data frame “df” 
 
 We can start by writing the function shell:
-```{r, eval = F}
+```r
 generate_descriptive_table <- function (df, outcome, rf) {
 outcome_dist_by_rf <- ….
 return(outcome_dist_by_rf)
@@ -67,7 +65,7 @@ return(outcome_dist_by_rf)
 ```
 Next, we can filter the data frame for only rows in which “rf” and “outcome” are not missing. We can use !! and sym() within filter to evaluate the strings stored in “rf” and “outcome”. Note that defining ` !!sym(outcome)` or ` !!sym(outcome)` in variables _outside of the dplyr pipeline_ will *not* work.
 
-```{r, eval = F}
+```r
 generate_descriptive_table <- function (df, outcome, rf,) {
   outcome_dist_by_rf <- df %>% 
   filter(!is.na(!!sym(outcome)), !is.na(!!sym(rf))) %>%
@@ -77,7 +75,7 @@ generate_descriptive_table <- function (df, outcome, rf,) {
 ```
 Similarly, we use !! and sym() in group_by to evaluate column name, stored as a string in the argument “rf”
 
-```{r, eval = F}
+```r
 generate_descriptive_table <- function (df, outcome, rf,) {
   outcome_dist_by_rf <- df %>% 
   filter(!is.na(!!sym(outcome)), !is.na(!!sym(rf))) %>%
@@ -86,7 +84,7 @@ generate_descriptive_table <- function (df, outcome, rf,) {
 }
 ```
 Finally, we can use the walrus operator, !! and sym() with “summarize” to create a new column that takes the mean of the column referenced in “rf”. We also use “glue” or “paste” to give the new column an informative name that includes the “outcome” it describes. 
-```{r, eval = F}
+```r
 generate_descriptive_table <- function (df, outcome, rf,) {
   outcome_dist_by_rf <- df %>% 
   filter(!is.na(!!sym(outcome)), !is.na(!!sym(rf))) %>% 
@@ -96,7 +94,7 @@ generate_descriptive_table <- function (df, outcome, rf,) {
 }
 ```
 OR
-```{r, eval = F}
+```r
 generate_descriptive_table <- function (df, outcome, rf,) {
   outcome_dist_by_rf <- df %>% 
   filter(!is.na(!!sym(outcome)), !is.na(!!sym(rf))) %>% 
@@ -106,7 +104,7 @@ generate_descriptive_table <- function (df, outcome, rf,) {
 }
 ```
 OR
-```{r, eval = F}
+```r
 generate_descriptive_table <- function (df, outcome, rf,) {
   new_column_name = paste0(outcome, ”_prev”)
   outcome_dist_by_rf <- df %>% 

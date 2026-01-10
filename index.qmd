@@ -1,16 +1,3 @@
---- 
-title: "Benjamin-Chung Lab Manual"
-date: "Updated: `r Sys.Date()`"
-site: bookdown::bookdown_site
-output: bookdown::gitbook
-documentclass: book
-bibliography: [book.bib, packages.bib]
-biblio-style: apalike
-link-citations: yes
-github-repo: jadebc/lab-manual
-description: "Lab practices and data science best practices"
----
-
 # Welcome to the Benjamin-Chung Lab!
 
 ## About the lab
