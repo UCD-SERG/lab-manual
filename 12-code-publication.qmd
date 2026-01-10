@@ -15,7 +15,7 @@ Adapted by UCD-SeRG team from [original by Nolan Pokpongkiat](https://jadebc.git
 
 ## Fill out file headers
 
-Every file in a project should have a header that allows it to be interpreted on its own. It should include the name of the project and a short description for what this file (among the many in your project) does specifically. See template [here.](https://jadebc.github.io/lab-manual/coding-practices.html#file-headers)
+Every file in a project should have a header that allows it to be interpreted on its own. It should include the name of the project and a short description for what this file (among the many in your project) does specifically. See template [here.](https://ucd-serg.github.io/lab-manual/05-coding-practices.html#file-headers)
 
 ## Clean up comments
 
@@ -23,7 +23,7 @@ Make sure comments in the code are for code documentation purposes only. Do not 
 
 ## Document functions
 
-Every function you write must include a header to document its purpose, inputs, and outputs. See template for the function documentation [here.](https://jadebc.github.io/lab-manual/coding-practices.html#function-documentation) 
+Every function you write must include a header to document its purpose, inputs, and outputs. See template for the function documentation [here.](https://ucd-serg.github.io/lab-manual/05-coding-practices.html#function-documentation) 
 
 ## Remove deprecated filepaths
 
@@ -33,7 +33,7 @@ All file paths should be defined in 0-config.R, and should be set relative to th
 
 The project should be configured to be entirely reproducible by running a master bash script, run-project.sh, which should live at the top directory. This bash script can call other bash scripts in subfolders, if necessary. Bash scripts should use the runFileSaveLogs utility script, which is a wrapper around the Rscript command, allowing you to specify where .Rout log files are moved after the R scripts are run.
 
-See usage and documentation [here.](https://jadebc.github.io/lab-manual/unix.html#example-code-for-runfilesavelogs)
+See usage and documentation [here.](https://ucd-serg.github.io/lab-manual/10-unix.html#example-code-for-runfilesavelogs)
 
 ## Complete the README
 
