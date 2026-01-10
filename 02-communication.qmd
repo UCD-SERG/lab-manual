@@ -39,4 +39,10 @@ One benefit of the academic environment is its schedule flexibility. This means 
 
 - Our meetings start on the hour.
 - If you are going to be late, please send a message in our Teams channel. 
-- If you are regularly not able to come on the hour, notify the team and we might choose the modify the agenda order or the start time. 
+- If you are regularly not able to come on the hour, notify the team and we might choose the modify the agenda order or the start time.
+
+## Code Review
+
+When submitting code to or reviewing code from colleagues, use best practices to provide and receive constructive feedback:
+
+- [Tidyverse code review guide](https://code-review.tidyverse.org/): Best practices for reviewing R code, including what to look for and how to provide constructive feedback. 
