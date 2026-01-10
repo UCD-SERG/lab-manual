@@ -2,6 +2,7 @@ Package: labmanual
 Type: Book
 Title: UCD-SERG Lab Manual
 Version: 0.0.1
+Description: Lab manual for the UCD-SERG research group at UC Davis
 Maintainer: UCD-SERG <serg@ucdavis.edu>
 Author: UCD-SERG
 Imports: bookdown
