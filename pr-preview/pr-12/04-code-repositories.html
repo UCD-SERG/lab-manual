@@ -503,7 +503,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="5.1.1" class="anchored" data-anchor-id="why-use-r-package-structure"><span class="header-section-number">5.1.1</span> Why Use R Package Structure?</h3>
 <ol type="1">
 <li><strong>Organized code</strong>: Clear separation of functions (<code>R/</code>), documentation (<code>man/</code>), tests (<code>tests/</code>), data (<code>data/</code>), and vignettes/analyses</li>
-<li><strong>Dependency management</strong>: <code>DESCRIPTION</code> file explicitly declares all package dependencies and versions</li>
+<li><strong>Dependency management</strong>: <code>DESCRIPTION</code> file explicitly declares all package dependencies and version restrictions, which simplifies installing those dependencies.</li>
 <li><strong>Automatic documentation</strong>: <code>roxygen2</code> generates help files from inline comments</li>
 <li><strong>Built-in testing</strong>: <code>testthat</code> framework integrates seamlessly with package structure</li>
 <li><strong>Code quality</strong>: Tools like <code>devtools::check()</code> and <code>lintr</code> enforce best practices</li>
