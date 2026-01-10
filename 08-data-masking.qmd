@@ -1,9 +1,8 @@
 # Data masking
 
-by Anna Nguyen, Jade Benjamin-Chung, and Gabby Barratt Heitmann
+Adapted by UCD-SeRG team from [original by Anna Nguyen, Jade Benjamin-Chung, and Gabby Barratt Heitmann](https://jadebc.github.io/lab-manual/data-masking.html)
 
-When you need to run a script that requires a large amount of RAM, large files, or that uses parallelization, you can use Sherlock, Stanford's computing cluster. Sherlock uses Slurm, an open source, scalable cluster management and job scheduling system for computing clusters. Jade can email Sherlock managers to get you an account. Please refer to the [Sherlock user guide](https://www.sherlock.stanford.edu/docs/overview/introduction/) to learn about the system and how to use it. Below, we include a few tips specific to how we use Sherlock in our lab. 
-
+For information about UC Davis computing resources for data-intensive work, see @sec-slurm.
 
 ## General Overview
 This chapter covers data masking, a unique process in R in which columns are treated as distinct objects within their dataframe’s environment. In our lab, data masking most frequently comes up when writing wrapper functions where arguments to indicate column names  are supplied as strings. We often do this when we repeat the same code on multiple columns, and want to apply a function to a vector of strings that correspond to column names in a dataframe. For example, we might want to clean multiple columns using the same function or estimate the same model under different feature sets. Here, we try to break down what data masking is, why this error comes up, and common approaches to solve this problem.

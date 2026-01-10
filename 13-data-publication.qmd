@@ -6,7 +6,7 @@ Adapted from Fanice Nyatigo and Ben Arnold's chapter in the [Proctor-UCSF Lab Ma
 
 ---
 
-> _**Warning! ** **NEVER** push a dataset into the public domain (e.g., GitHub, OSF) without first checking with Jade to ensure that it is appropriately de-identified and we have approval from the sponsor and/or human subjects review board to do so.  For example, we will need to re-code participant IDs (even if they contain no identifying information) before making data public to completely break the link between IDs and identifiable information stored on our servers. _
+> _**Warning! ** **NEVER** push a dataset into the public domain (e.g., GitHub, OSF) without first checking with lab leadership to ensure that it is appropriately de-identified and we have approval from the sponsor and/or human subjects review board to do so.  For example, we will need to re-code participant IDs (even if they contain no identifying information) before making data public to completely break the link between IDs and identifiable information stored on our servers. _
 
 ---
 
@@ -20,14 +20,14 @@ analysis_data_public_codebook.txt
 
 In general, datasets are usually too big to save on GitHub, but occasionally they are small. Here is an example of where we actually pushed the data directly to GitHub: https://github.com/ben-arnold/enterics-seroepi/tree/master/data . 
 
-If the data are bigger, then maintaining them under version control in your git repository can be unweildy. Instead, we recommend using another stable repository that has version control, such as the Open Science Framework ([osf.io](https://osf.io)).  For example, all of the data from the WASH Benefits trials (led by investigators at Berkeley, icddr,b, IPA-Kenya and others) are all stored through data components nested within in OSF projects: https://osf.io/tprw2/. Another good option is Dryad ([datadryad.org](https://datadryad.org/)) or the (Stanford Digital Repository)[https://sdr.stanford.edu/]. 
+If the data are bigger, then maintaining them under version control in your git repository can be unwieldy. Instead, we recommend using another stable repository that has version control, such as the Open Science Framework ([osf.io](https://osf.io)).  For example, all of the data from the WASH Benefits trials (led by investigators at Berkeley, icddr,b, IPA-Kenya and others) are all stored through data components nested within in OSF projects: https://osf.io/tprw2/. Another good option is Dryad ([datadryad.org](https://datadryad.org/)) or institutional digital repositories. 
 
-We recommend cross-linking public files in GitHub (scripts/notebooks only) and OSF/Dryad/Stanford Digital Repository.
+We recommend cross-linking public files in GitHub (scripts/notebooks only) and OSF/Dryad/institutional digital repositories.
 
 Below are the main steps to making data public, after finalizing the analysis datasets and scripts:   
 1. Remove Protected Health Information (PHI)   
 2. Create public IDs or join already created public IDs to the data   
-3. Create an OSF repository and/or Dryad/Stanford Digital Repository   
+3. Create an OSF repository and/or Dryad/institutional digital repository   
 4. Edit analysis scripts to run using the public datasets and test (optional)    
 5. Create a public github page for analysis scripts and link to OSF and/or Dryad/Zenodo    
 6. Go live    
@@ -55,7 +55,7 @@ Any specific dates (e.g., study visit dates, birth dates, treatment dates) are u
 
 ### Geographic information
 
-Do not include GPS coordinates (longitude, latitude) except in special circumstances where they have been obfuscated/shifted. Reach out to Jade  before doing this because it can be complicated. 
+Do not include GPS coordinates (longitude, latitude) except in special circumstances where they have been obfuscated/shifted. Reach out to lab leadership before doing this because it can be complicated. 
 
 Do not include place names or codes (e.g., US Zip Codes)  if the place contains <20,000 people.  For villages or neighborhoods, code them with uninformative IDs.  For sub-districts or districts, names are fine.
 
@@ -66,7 +66,7 @@ For more examples of what constitutes PHI, please refer to this link: https://cp
 ## Create public IDs
 
 ### Rationale
-The Stanford IRB requires that public datasets not include the original study IDs to identify participants or other units in the study (such as village IDs). The reason is that those IDs are linked in our private datasets to PHI.  By creating a new set of public IDs, the public dataset is one step further removed from the potential to link to PHI.  
+The UC Davis IRB requires that public datasets not include the original study IDs to identify participants or other units in the study (such as village IDs). The reason is that those IDs are linked in our private datasets to PHI.  By creating a new set of public IDs, the public dataset is one step further removed from the potential to link to PHI.  
 
 ### A single set of public IDs for each study
 For each study, it is ideal to create a single set of public IDs whenever possible. We could create a new set of public IDs for every public dataset, but the downside is that independent researchers could no longer link data that might be related. By creating a single set of public IDs associated with each internal study ID, public files retain the link.

@@ -1,6 +1,6 @@
-# Unix commands {#unix}
+# Unix {#sec-unix}
 
-by Stephanie Djajadi, Kunal Mishra, Anna Nguyen, and Jade Benjamin-Chung
+Adapted by UCD-SeRG team from [original by Stephanie Djajadi, Kunal Mishra, Anna Nguyen, and Jade Benjamin-Chung](https://jadebc.github.io/lab-manual/unix.html)
 
 We typically use Unix commands in Terminal (for Mac users) or Git Bash (for Windows users) to 
 

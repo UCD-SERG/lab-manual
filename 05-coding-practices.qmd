@@ -1,6 +1,6 @@
 # Coding practices
 
-by Kunal Mishra, Jade Benjamin-Chung, Stephanie Djajadi, and Iris Tong
+Adapted by UCD-SeRG team from [original by Kunal Mishra, Jade Benjamin-Chung, Stephanie Djajadi, and Iris Tong](https://jadebc.github.io/lab-manual/coding-practices.html)
 
 ## Organizing scripts
 

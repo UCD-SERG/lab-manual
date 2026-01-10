@@ -1,19 +1,41 @@
-# Slurm and cluster computing {#slurm}
+# High-performance computing (HPC) {#sec-slurm}
 
-by Anna Nguyen, Jade Benjamin-Chung, and Gabby Barratt Heitmann
+Adapted by UCD-SeRG team from [original by Anna Nguyen, Jade Benjamin-Chung, and Gabby Barratt Heitmann](https://jadebc.github.io/lab-manual/slurm.html)
 
-When you need to run a script that requires a large amount of RAM, large files, or that uses parallelization, you can use Sherlock, Stanford's computing cluster. Sherlock uses Slurm, an open source, scalable cluster management and job scheduling system for computing clusters. Jade can email Sherlock managers to get you an account. Please refer to the [Sherlock user guide](https://www.sherlock.stanford.edu/docs/overview/introduction/) to learn about the system and how to use it. Below, we include a few tips specific to how we use Sherlock in our lab. 
+When you need to run a script that requires a large amount of RAM, large files, or that uses parallelization, UC Davis provides several high-performance computing (HPC) resources.
+
+## UC Davis Computing Resources
+
+### Available Resources
+
+**UC Davis HPC Clusters:**
+- **Farm Cluster** ([hpc.ucdavis.edu](https://hpc.ucdavis.edu/)): UC Davis's primary HPC cluster providing shared computing resources for research
+
+**PHS Shared Compute Environments:**
+For lab members affiliated with the School of Public Health Sciences (PHS), additional shared computing environments are available. These environments provide secure, HIPAA-compliant computing resources suitable for working with sensitive health data.
+
+- **Shiva** (shiva.ucdavis.edu): SLURM-based cluster for computational work
+- **Mercury** (mercury.ucdavis.edu): RStudio GUI computing environment
+
+For detailed information about PHS shared compute environments, including access procedures, security guidelines, and usage policies, please refer to the [PHS Shared Compute Environments Guide](assets/files/PHS_Shared_Compute_Environments.pdf).
+
+Contact lab leadership for assistance with:
+- Requesting access to computing resources
+- Choosing the appropriate computing environment for your project
+- Setting up your computing environment
 
 
-## Getting started
+## Getting started with SLURM clusters
 
-To access Sherlock, in terminal, log in using the following syntax and replace "USERNAME" with your Stanford alias. You will be prompted to enter your Stanford password (the same one you use for your email and other accounts) and to complete two-factor authentication. 
+To access a UC Davis HPC cluster, in terminal, log in using SSH. For example, to access shiva:
 
 ```bash
-ssh USERNAME@login.sherlock.stanford.edu
+ssh USERNAME@shiva.ucdavis.edu
 ```
 
-Once you log in, you can view the contents of your home directory in command line by entering `cd $HOME`. You can create subfolders within this directory using the `mkdir` command. For example, you could make a  "code" subdirectory and clone a Github repository there using the following code: 
+You will be prompted to enter your UC Davis credentials and may need to complete two-factor authentication. 
+
+Once you log in, you can view the contents of your home directory in command line by entering `cd $HOME`. You can create subfolders within this directory using the `mkdir` command. For example, you could make a "code" subdirectory and clone a Github repository there using the following code: 
 
 ```bash
 cd $HOME
@@ -33,7 +55,7 @@ Open your `~/.Renviron` file (`vi ~/.Renviron`) and append the following line:
 R_LIBS=~/R/x86_64-pc-linux-gnu-library/4.0.2
 ```
 
-Alternatively, run an R script with the following code on Sherlock:
+Alternatively, run an R script with the following code on the cluster:
 
 ```bash
 r_environ_file_path = file.path(Sys.getenv("HOME"), ".Renviron")
@@ -45,14 +67,14 @@ cat("\nR_LIBS=~/R/x86_64-pc-linux-gnu-library/4.0.2",
 
 To load packages that run off of C++, you'll need to set the correct compiler options in your R environment. 
 
-Open the Makevars file in Sherlock (`vi ~/.R/Makevars`) and append the following lines
+Open the Makevars file (`vi ~/.R/Makevars`) and append the following lines
 
 ```bash
 CXX14FLAGS=-O3 -march=native -mtune=native -fPIC
 CXX14=g++
 ```
 
-Alternatively, create an R script with the following code, and run it on Sherlock: 
+Alternatively, create an R script with the following code, and run it on the cluster: 
 
 ```bash
 dotR = file.path(Sys.getenv("HOME"), ".R")
@@ -66,42 +88,42 @@ cat("\nCXX14FLAGS=-O3 -march=native -mtune=native -fPIC",
     file = M, sep = "\n", append = TRUE)
 ```
 
-## Moving files to Sherlock
-The `$HOME` directory is a good place to store code and small test files (quota: 15 GB per user). Save large files to the `$SCRATCH` directory (quota: 100 TB per user). You can read more about storage options on Sherlock [here](https://www.sherlock.stanford.edu/docs/storage/). On the `$SCRATCH` directory, files that are not modified after 90 days are automatically deleted. For this reason, it's best to create a bash script that records the file transfer process for a given project. See example code below: 
+## Moving files to the cluster
+The `$HOME` directory is a good place to store code and small test files. Save large files to the `$SCRATCH` directory or other designated storage areas. Check with the [UC Davis HPC documentation](https://hpc.ucdavis.edu/) for specific quotas and retention policies. It's best to create a bash script that records the file transfer process for a given project. See example code below: 
 
 ```bash
 # note: the following steps should be done from your local 
-# (not after ssh-ing into sherlock)
+# (not after ssh-ing into the cluster)
 
-# securely transfer folders from Box to sherlock home directory
+# securely transfer folders from Box to cluster home directory
 # note: the -r option is for folders and is not needed for files
-scp -r "Box/malaria-project/folder-1/" USERNAME@login.sherlock.stanford.edu:/home/users/USERNAME/
+scp -r "Box/project-folder/folder-1/" USERNAME@shiva.ucdavis.edu:/home/users/USERNAME/
 
-# securely transfer folders from Box to your sherlock scratch directory
-scp -r "Box/malaria-project/folder-2/" USERNAME@login.sherlock.stanford.edu:/scratch/users/USERNAME/
+# securely transfer folders from Box to your cluster scratch directory
+scp -r "Box/project-folder/folder-2/" USERNAME@shiva.ucdavis.edu:/scratch/users/USERNAME/
 
-# securely transfer folders from Box to our shared scratch directory
-scp -r "Box/malaria-project/folder-3/" USERNAME@login.sherlock.stanford.edu:/scratch/group/jadebc/
+# securely transfer folders from Box to shared scratch directory
+scp -r "Box/project-folder/folder-3/" USERNAME@shiva.ucdavis.edu:/scratch/group/GROUPNAME/
 ```
 
-## Installing packages on Sherlock
+## Installing packages on the cluster
 
-When you begin working on Sherlock, you will most likely encounter problems with installing packages. To install packages, login to Sherlock on the command line and open a development node using the command `sdev`. Do not attempt to do this in the RStudio Server (see next section), as you will have to re-do it for every new  session you open. 
+When you begin working on a cluster, you will most likely encounter problems with installing packages. To install packages, login to the cluster on the command line and open a development node. Do not attempt to do this in RStudio Server, as you will have to re-do it for every new session you open. 
 
 ```bash
-ssh USERNAME@login.sherlock.stanford.edu
+ssh USERNAME@shiva.ucdavis.edu
 
 sdev
 ```
 
-There is a package installation [file](https://drive.google.com/file/d/1eybh4j_G-r3pMZBCVA4QHoWZBo_cW5zb/view) explicitly written for Sherlock that you should run before testing any code and sourcing the configuration file. You should only have to install packages once. Sherlock requires that you specify the repository where the package is downloaded from. You may also need to add an additional argument to install.packages to prevent the packages from locking after installation:
+You should only have to install packages once. The cluster may require that you specify the repository where the package is downloaded from. You may also need to add an additional argument to install.packages to prevent the packages from locking after installation:
 
 ```r
 install.packages(<PACKAGE NAME>, repos=“http://cran.us.ur-project.org”, 
                   INSTALL_opts = "--no-lock"")
 ```
 
-In order for some R packages to work on Sherlock, it is necessary to load specific software modules before running R. These must be loaded in Sherlock each time you want to use the package in R. For example, for spatial and random effects analyses, you may need the modules/packages below. These modules must also be loaded on the command line prior to opening R in order for package installation to work. 
+In order for some R packages to work on clusters, it is necessary to load specific software modules before running R. These must be loaded each time you want to use the package in R. For example, for spatial and random effects analyses, you may need the modules/packages below. These modules must also be loaded on the command line prior to opening R in order for package installation to work. 
 
 ```bash
 module --force purge # remove any previously loaded modules, including math and devel
@@ -121,7 +143,7 @@ module load pandoc/2.7.3
 module load R/4.0.2
 
 R # Open R in the Shell window to install individual packages or test code
-Rscript install-packages-sherlock.R # Alternatively, run the entire package installation script in the Shell window
+Rscript install-packages.R # Alternatively, run a package installation script in the Shell window
 ```
 
 Figuring out the issues with some packages will require some trial and error. If you are still encountering problems installing a package, you may have to install other dependencies manually by reading through the error messages. If you try to install a dependency from CRAN and it isn't working, it may be a module. You can search for it using the `module spider` command: 
@@ -130,13 +152,13 @@ Figuring out the issues with some packages will require some trial and error. If
 module spider DEPENDENCY NAME
 ```
 
-However, you can also reach out to the Sherlock team for help. You can email them at srcc-support@stanford.edu. They also hold [office hours](https://jumpstartsrcc.sites.stanford.edu/events/series/sherlock-office-hours).
+You can also reach out to UC Davis HPC support for help. Visit [hpc.ucdavis.edu](https://hpc.ucdavis.edu/) for support information.
 
 ## Testing your code
-Both of the following ways to test code on Sherlock are recommended for making small changes, such as editing file paths and making sure the packages and source files load. You should write and test the functionality of your script locally, only testing on Sherlock once major bugs are out.
+Both of the following ways to test code on a cluster are recommended for making small changes, such as editing file paths and making sure the packages and source files load. You should write and test the functionality of your script locally, only testing on the cluster once major bugs are out.
 
 ### The command line
-There are two main ways to explore and test code on Sherlock. The first way is best for users who are comfortable working on the command line and editing code in base R. Even if you are not comfortable yet, this is probably the better way because these commands will transfer between Sherlock and other cluster computers using Slurm. 
+There are two main ways to explore and test code on computing clusters. The first way is best for users who are comfortable working on the command line and editing code in base R. Even if you are not comfortable yet, this is probably the better way because these commands will transfer between different cluster computers using Slurm. 
 
 Typically, you will want to initially test your scripts by initiating a development node using the command `sdev`. This will allocate a small amount of computing resources for 1 hour. You can access R via command line using the following code.
 
@@ -155,31 +177,31 @@ R
 ```
 *Note: for collaboration purposes, it's best for everyone to work with one version of R. Check what version is being used for the project you are working on. Some packages only work with some versions of R, so it's best to keep it consistent.
 
-### The Sherlock OnDemand Dashboard 
-The second way to test and edit code is to use the Sherlock OnDemand Dashboard, accessed by typing [login.sherlock.stanford.edu](login.sherlock.stanford.edu) into a web browser. You will be prompted to authenticate the way you would for any Stanford website. This is the best way to edit code for people who are not comfortable accessing & editing in base R in a Shell application.
+### RStudio Server
+For RStudio GUI computing, UC Davis provides mercury.ucdavis.edu. This is accessed through a web browser and provides an RStudio interface. You will be prompted to authenticate with your UC Davis credentials. This is the best way to work with R for people who are not comfortable accessing & editing in base R in a Shell application.
 
-You can test your code via the [Rstudio server on Sherlock](https://www.sherlock.stanford.edu/docs/user-guide/ondemand/#rstudio). To access this, login to the Dashboard, then click on Interactive Apps in the menu bar and choose R Studio Server. Similar to the sdev node, you have to set various parameters for your session. Choose a version of R and set the time -- max. 2 hours. You can play with the other configurations, but this is likely unnecessary, as you should not need huge computing power to test small amounts of code. Keep in mind the more computing power you request, the lower priority your request becomes. You will then wait for the resources to become available, and you will be able to click "Launch" when they are (if you don't mess with the CPU or GPU, this is usually less than 2 minutes). The screen that opens will look very similar to the RStudio on your local. 
+Note that mercury does not have SLURM, so it's best suited for interactive work and smaller computations. For large-scale computations requiring SLURM job scheduling, use shiva.ucdavis.edu instead.
 
-Do NOT use the RStudio Server's Terminal to install packages, set your R environment, and do everything else needed to configure Sherlock because you will likely need to re-do it for every session/project. It's best to use the Dashboard/RStudio Server if you are more comfortable testing & editing in RStudio rather than through base R in a Shell application.
+When using RStudio Server, you can test your code interactively. However, do NOT use the RStudio Server's Terminal to install packages and configure your environment for SLURM-based clusters, as you will likely need to re-do it for every session/project. For SLURM clusters, use the command line approach described earlier.
 
-### Filepaths & configuration on Sherlock
-In most cases, you will want to test that the file paths work correctly on Sherlock. You will likely need to add code to the configuration file in the project repository that specifies Sherlock-specific file paths. Here is an example: 
+### Filepaths & configuration on the cluster
+In most cases, you will want to test that the file paths work correctly on the cluster. You will likely need to add code to the configuration file in the project repository that specifies cluster-specific file paths. Here is an example: 
 
 ```bash
-# set sherlock-specific file paths
-if(Sys.getenv("LMOD_SYSHOST")=="sherlock"){
+# set cluster-specific file paths
+if(Sys.getenv("LMOD_SYSHOST")!=""){
   
-  sherlock_path = paste0(Sys.getenv("HOME"), "/malaria-project/")
+  cluster_path = paste0(Sys.getenv("HOME"), "/project-name/")
   
-  data_path = paste0(sherlock_path, "data/")
-  results_path = paste0(sherlock_path, "results/")
+  data_path = paste0(cluster_path, "data/")
+  results_path = paste0(cluster_path, "results/")
 }
 ```
 
 ## Storage & group storage access
 
 ### Individual storage
-There are multiple places to store your files on Sherlock. Each user has their own `$HOME` directory as well as a `$SCRATCH` directory. These are directories that can be accessed via the command line once you've logged in to Sherlock: 
+There are multiple places to store your files on computing clusters. Each user has their own `$HOME` directory as well as a `$SCRATCH` directory. These are directories that can be accessed via the command line once you've logged in to the cluster: 
 ```bash
 cd $HOME 
 cd /home/users/USERNAME # Alternatively, use the full path
@@ -187,22 +209,22 @@ cd /home/users/USERNAME # Alternatively, use the full path
 cd $SCRATCH
 cd /scratch/users/USERNAME # Full path
 ```
-You can also navigate to these using the File Explorer on Sherlock OnDemand.
+You can also navigate to these using the File Explorer if available through a web interface.
 
-`$HOME` has a volume quota of 15 GB. `$SCRATCH` has a volume quota of 100 TB, but files here get deleted 90 days after their last modification. Thus, use `$SCRACTH` for test files, exploratory analyses, and temporary storage. Use `$HOME` for long-term storage of important files and more finalized analyses.
+`$HOME` typically has a volume quota (e.g., 15 GB). `$SCRATCH` typically has a larger volume quota (e.g., 100 TB), but files here may get deleted after a certain period of inactivity. Thus, use `$SCRATCH` for test files, exploratory analyses, and temporary storage. Use `$HOME` for long-term storage of important files and more finalized analyses.
 
-You can read more about storage options on Sherlock [here](https://www.sherlock.stanford.edu/docs/storage/).
+Check with the [UC Davis HPC documentation](https://hpc.ucdavis.edu/) for specific storage options and quotas.
 
 ### Group storage
-The lab also has a `$GROUP_HOME` and a `$GROUP_SCRATCH` to store files for collaborative use. `$GROUP_HOME` has a volume quota of 1 TB and infinite retention time, whereas `$GROUP_SCRATCH` has a volume quota of 100 TB and the same 90-day retention limit. You can access these via the command line or navigate to them using the File Explorer:
+The lab may have shared `$GROUP_HOME` and `$GROUP_SCRATCH` directories to store files for collaborative use. These typically have larger quotas and may have different retention policies. You can access these via the command line or navigate to them using the File Explorer:
 ```bash
 cd $GROUP_HOME
-cd /home/groups/jadebc
+cd /home/groups/GROUPNAME
 
 cd $GROUP_SCRATCH
-cd /scratch/groups/jadebc
+cd /scratch/groups/GROUPNAME
 ```
-However, saving files to group storage can be tricky. You can try using the scp command in the section "Moving files to Sherlock" to see if you have permission to add files to group directories. Read the next section to ensure any directories you create have the right permissions.
+However, saving files to group storage can be tricky. You can try using the scp command in the section "Moving files to the cluster" to see if you have permission to add files to group directories. Read the next section to ensure any directories you create have the right permissions.
 
 ### Folder permissions
 Generally, when we put folders in `$GROUP_HOME` or `$GROUP_SCRATCH`, it is so that we can collaborate on an analysis within the research group, so multiple people need to be able to access the folders. If you create a new folder in `$GROUP_HOME` or `$GROUP_SCRATCH`, please check the folder's permissions to ensure that other group members are able to access its contents. To check the permissions of a folder, navigate to the level above it, and enter `ls -l`. You will see output like this: 
@@ -222,14 +244,14 @@ chmod ugo+rwx FOLDER_NAME
 
 Once your test scripts run successfully, you can submit an sbatch script for larger jobs. These are text files with a `.sh` suffix. Use a text editor like Sublime to create such a script. Documentation on sbatch options is available [here](https://slurm.schedmd.com/sbatch.html). Here is an example of an sbatch script with the following options: 
 
-- `job-name=run_inc`: Job name that will show up in the Sherlock system
+- `job-name=run_inc`: Job name that will show up in the SLURM system
 - `begin=now`: Requests to start the job as soon as the requested resources are available
 - `dependency=singleton`: Jobs can begin after all previously launched jobs with the same name and user have ended. 
 - `mail-type=ALL`: Receive all types of email notification (e.g., when job starts, fails, ends)
 - `cpus-per-task=16`: Request 16 processors per task. The default is one processor per task.
 - `mem=64G`: Request 64 GB memory per node. 
 - `output=00-run_inc_log.out`: Create a log file called `00-run_inc_log.out` that contains information about the Slurm session
-- `time=47:59:00`: Set maximum run time to 47 hours and 59 minutes. If you don't include this option, Sherlock will automatically exit scripts after 2 hours of run time. 
+- `time=47:59:00`: Set maximum run time to 47 hours and 59 minutes. If you don't include this option, the cluster will automatically exit scripts after 2 hours of run time (default may vary by cluster). 
 
 The file `analysis.out` will contain the log file for the R script `analysis.R`. 
 
@@ -246,7 +268,7 @@ The file `analysis.out` will contain the log file for the R script `analysis.R`.
 #SBATCH --output=00-run_inc_log.out
 #SBATCH --time=47:59:00
 
-cd $HOME/malaria-code-repo/2-analysis/
+cd $HOME/project-code-repo/2-analysis/
 
 module purge 
 

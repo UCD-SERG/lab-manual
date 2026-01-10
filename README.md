@@ -1,6 +1,6 @@
-# Benjamin-Chung Lab Manual
+# UCD-SeRG Lab Manual
 
-This is a lab manual for students and staff working with Jade Benjamin-Chung at Stanford University.
+This is a lab manual for students and staff working with the Seroepidemiology Research Group (SeRG) at the University of California, Davis.
 
 The manual is built with [Quarto](https://quarto.org/) and published as a website.
 

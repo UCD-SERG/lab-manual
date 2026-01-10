@@ -1,6 +1,6 @@
 # Coding style
 
-by Kunal Mishra, Jade Benjamin-Chung, and Stephanie Djajadi
+Adapted by UCD-SeRG team from [original by Kunal Mishra, Jade Benjamin-Chung, and Stephanie Djajadi](https://jadebc.github.io/lab-manual/coding-style.html)
 
 ## Comments
 
