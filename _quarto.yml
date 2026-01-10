@@ -9,6 +9,7 @@ book:
   date-format: "[Last updated:] YYYY-MM-DD"
   repo-url: https://github.com/UCD-SERG/lab-manual
   repo-actions: [edit, source, issue]
+  downloads: [pdf, epub, docx]
   chapters:
     - index.qmd
     - 01-culture-and-conduct.qmd
@@ -36,6 +37,34 @@ format:
       light: cosmo
       dark: darkly
     css: styles.css
+    toc: true
+    number-sections: true
+    embed-resources: false
+  pdf:
+    geometry:
+      - top=15mm
+      - bottom=20mm
+    keep-md: false
+    keep-tex: false
+    toc: true
+    fig-pos: "H"
+    hyperrefoptions:
+    - bookmarksnumbered=true
+    toc-title: Contents
+    df-print: tibble
+    links-as-notes: true
+    documentclass: scrbook
+    classoption: [twoside=off]
+    shift-heading-level-by: 0
+    toc-depth: 2
+    number-sections: true
+    number-depth: 3
+    colorlinks: true
+  docx:
+    toc: true
+    number-sections: true
+    highlight-style: github
+  epub:
     toc: true
     number-sections: true
 
