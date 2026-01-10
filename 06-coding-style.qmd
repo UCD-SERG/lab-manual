@@ -53,3 +53,7 @@ Follow these code style guidelines for all R code:
 ## Automated Tools for Style and Project Workflow
 
 {{< include 06-coding-style/automated-tools.qmd >}}
+
+## Additional Resources {#sec-r-resources}
+
+- [Tidyverse style guide](https://style.tidyverse.org/)
