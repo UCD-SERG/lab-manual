@@ -1100,143 +1100,183 @@
     ]
   },
   {
-    "objectID": "15-checklists.html",
-    "href": "15-checklists.html",
-    "title": "16  Checklists",
+    "objectID": "15-ai-tools.html",
+    "href": "15-ai-tools.html",
+    "title": "16  Use of AI",
     "section": "",
-    "text": "16.1 Pre-analysis plan checklist\nAdapted by UCD-SeRG team from original by Jade Benjamin-Chung",
+    "text": "16.1 Responsibility for validation\nAI-powered coding assistants can be valuable tools for accelerating your work, but they require careful and responsible use. Lab members who use AI tools must adhere to the following guidelines:\nYou are fully responsible for checking and validating all AI-generated code and content. AI tools can make mistakes, generate insecure code, produce incorrect logic, or suggest approaches that are inappropriate for our specific research context. Before using any AI-generated code:\nNever blindly copy and paste AI-generated code without understanding it. If you don’t understand what the AI has suggested, take the time to learn or ask a colleague for help.",
     "crumbs": [
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Checklists</span>"
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Use of AI</span>"
     ]
   },
   {
-    "objectID": "15-checklists.html#pre-analysis-plan-checklist",
-    "href": "15-checklists.html#pre-analysis-plan-checklist",
-    "title": "16  Checklists",
+    "objectID": "15-ai-tools.html#responsibility-for-validation",
+    "href": "15-ai-tools.html#responsibility-for-validation",
+    "title": "16  Use of AI",
+    "section": "",
+    "text": "Carefully review the code to ensure you understand what it does\nTest the code thoroughly to verify it works as expected\nVerify that the logic is appropriate for your specific use case\nCheck that the code follows our lab’s coding standards and best practices\nEnsure the code does not introduce security vulnerabilities or data privacy issues",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Use of AI</span>"
+    ]
+  },
+  {
+    "objectID": "15-ai-tools.html#disclosure-of-ai-use",
+    "href": "15-ai-tools.html#disclosure-of-ai-use",
+    "title": "16  Use of AI",
+    "section": "16.2 Disclosure of AI use",
+    "text": "16.2 Disclosure of AI use\nYou must clearly state whenever you have used AI tools in your work. This is essential for transparency and reproducibility. Specifically:\n\nIn code comments, note when AI tools were used to generate or significantly modify code\nIn commit messages, mention if AI tools assisted with the changes\nIn manuscripts and reports, acknowledge AI tool usage in the methods or acknowledgments section\nIn presentations, disclose AI assistance when relevant\n\nExample code comment:\n# The following function was generated with assistance from GitHub Copilot\n# and has been reviewed and tested to ensure correctness",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Use of AI</span>"
+    ]
+  },
+  {
+    "objectID": "15-ai-tools.html#recommended-tools",
+    "href": "15-ai-tools.html#recommended-tools",
+    "title": "16  Use of AI",
+    "section": "16.3 Recommended tools",
+    "text": "16.3 Recommended tools\nWe recommend using GitHub Copilot for AI-assisted coding. GitHub Copilot offers several advantages:\n\nBuilt-in transparency: When used through GitHub’s Coding Agent interface, Copilot creates a clear record of its role in your work through commit history and code suggestions\nContext-aware suggestions: Copilot understands your codebase and can make contextually relevant suggestions\nIntegration with version control: Using Copilot within GitHub ensures that AI-assisted changes are tracked alongside all other code changes\nInteractive workflow: Copilot’s interactive nature encourages you to review and modify suggestions rather than blindly accepting them\n\nWhen using GitHub Copilot or similar tools, work interactively with the AI suggestions—review, modify, and test them rather than accepting them wholesale. This interactive approach helps ensure code quality and deepens your understanding of the code.\nRemember: AI tools are assistants, not replacements for your expertise and judgment. The quality and correctness of your work remains your responsibility.",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Use of AI</span>"
+    ]
+  },
+  {
+    "objectID": "16-checklists.html",
+    "href": "16-checklists.html",
+    "title": "17  Checklists",
+    "section": "",
+    "text": "17.1 Pre-analysis plan checklist\nAdapted by UCD-SeRG team from original by Jade Benjamin-Chung",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Checklists</span>"
+    ]
+  },
+  {
+    "objectID": "16-checklists.html#pre-analysis-plan-checklist",
+    "href": "16-checklists.html#pre-analysis-plan-checklist",
+    "title": "17  Checklists",
     "section": "",
     "text": "Brief background on the study (a condensed version of the introduction section of the paper)\nHypotheses / objectives\nStudy design\nDescription of data\nDefinition of outcomes\nDefinition of interventions / exposures\nDefinition of covariates\nStatistical power calculation\nStatistical model description\nCovariate selection / screening\nStandard error estimation method\nMissing data analysis\nAssessment of effect modification / subgroup analyses\nSensitivity analyses\nNegative control analyses",
     "crumbs": [
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Checklists</span>"
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Checklists</span>"
     ]
   },
   {
-    "objectID": "15-checklists.html#code-checklist",
-    "href": "15-checklists.html#code-checklist",
-    "title": "16  Checklists",
-    "section": "16.2 Code checklist",
-    "text": "16.2 Code checklist\n\nDoes the script run without errors?\nIs code self-contained within repo and/or associated Box folder?\nIs all commented out code / remarks removed?\nDoes the header accurately describe the process completed in the script?\nIs the script pushed to its github repository?\nDoes the code adhere to the coding style guide?\nAre all warnings ignorable? Should any warnings be intentionally suppressed or addressed?",
+    "objectID": "16-checklists.html#code-checklist",
+    "href": "16-checklists.html#code-checklist",
+    "title": "17  Checklists",
+    "section": "17.2 Code checklist",
+    "text": "17.2 Code checklist\n\nDoes the script run without errors?\nIs code self-contained within repo and/or associated Box folder?\nIs all commented out code / remarks removed?\nDoes the header accurately describe the process completed in the script?\nIs the script pushed to its github repository?\nDoes the code adhere to the coding style guide?\nAre all warnings ignorable? Should any warnings be intentionally suppressed or addressed?",
     "crumbs": [
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Checklists</span>"
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Checklists</span>"
     ]
   },
   {
-    "objectID": "15-checklists.html#manuscript-checklist",
-    "href": "15-checklists.html#manuscript-checklist",
-    "title": "16  Checklists",
-    "section": "16.3 Manuscript checklist",
-    "text": "16.3 Manuscript checklist\nThis is adapted in part from this article.\n\nHave you completed the relevant reporting checklist, if applicable? (Collection of checklists)\nAre the study results within the manuscript replicable (i.e., if you rerun the code in the study’s repository, the tables and figures will be exactly replicated?)\nIs a target journal selected?\nIs the title declarative, in other words, does it state the object/findings rather than suggest them?\nIs the word count of the manuscript close to the target journal’s allowance?\nDoes the manuscript adhere to the formatting guide of the target journal?\nDoes the manuscript use a consistent voice (passive or active – usually active is preferred … pun intended)?\nIs each figure and table (including supplementary material) referenced in the main text?\nIs there a caption for each figure and table (including supplementary material)?\nAre tables/figures and supplementary material numbered in accordance with their appearance in the main text?\nDoes the text use past tense if it is reporting research findings or future tense if it is a study protocol?\nDoes the text avoid subjective wording (e.g., “interesting”, “dramatic”)?\nDoes the text use minimal abbreviations, and are all abbreviations defined at first use?\nDoes the text avoid directionless words? (e.g., instead of writing, ‘Precipitation influences disease risk’, write, ‘Precipitation was associated with increased disease risk’).\nDoes the text avoid making causal claims that are not supported by the study design? Be careful about the words “effect”, “increase”, and “decrease”, which are often interpreted as causal.\nDoes the text avoid describing results with the word “significant”, which can easily be confused with statistical significance? (see references on this topic here)\nHave you drafted author contributions? Do they follow the CRediT Taxonomy for author contributions?",
+    "objectID": "16-checklists.html#manuscript-checklist",
+    "href": "16-checklists.html#manuscript-checklist",
+    "title": "17  Checklists",
+    "section": "17.3 Manuscript checklist",
+    "text": "17.3 Manuscript checklist\nThis is adapted in part from this article.\n\nHave you completed the relevant reporting checklist, if applicable? (Collection of checklists)\nAre the study results within the manuscript replicable (i.e., if you rerun the code in the study’s repository, the tables and figures will be exactly replicated?)\nIs a target journal selected?\nIs the title declarative, in other words, does it state the object/findings rather than suggest them?\nIs the word count of the manuscript close to the target journal’s allowance?\nDoes the manuscript adhere to the formatting guide of the target journal?\nDoes the manuscript use a consistent voice (passive or active – usually active is preferred … pun intended)?\nIs each figure and table (including supplementary material) referenced in the main text?\nIs there a caption for each figure and table (including supplementary material)?\nAre tables/figures and supplementary material numbered in accordance with their appearance in the main text?\nDoes the text use past tense if it is reporting research findings or future tense if it is a study protocol?\nDoes the text avoid subjective wording (e.g., “interesting”, “dramatic”)?\nDoes the text use minimal abbreviations, and are all abbreviations defined at first use?\nDoes the text avoid directionless words? (e.g., instead of writing, ‘Precipitation influences disease risk’, write, ‘Precipitation was associated with increased disease risk’).\nDoes the text avoid making causal claims that are not supported by the study design? Be careful about the words “effect”, “increase”, and “decrease”, which are often interpreted as causal.\nDoes the text avoid describing results with the word “significant”, which can easily be confused with statistical significance? (see references on this topic here)\nHave you drafted author contributions? Do they follow the CRediT Taxonomy for author contributions?",
     "crumbs": [
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Checklists</span>"
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Checklists</span>"
     ]
   },
   {
-    "objectID": "15-checklists.html#figure-checklist",
-    "href": "15-checklists.html#figure-checklist",
-    "title": "16  Checklists",
-    "section": "16.4 Figure checklist",
-    "text": "16.4 Figure checklist\n\nAre the x-axis and y-axis labeled?\nIf the figure includes panels, is each panel labeled?\nAre there sufficient numerical / text labels and breaks on the x-axis and y-axis?\nIs the font size appropriate (i.e., large enough to read, not so large that it distracts from the data presented in the figure?)\nAre the colors used colorblind friendly? See a colorblind-friendly palette here, a neat palette generator with colorblind options here, and an article on why this matters here\nAre colors/shapes/line types defined in a legend?\nAre the legends and other labels easy to understand with minimal abbreviations?\nIf there is overplotting, is transparency used to show overlapping data?\nAre 95% confidence intervals or other measures of precision shown, if applicable?",
+    "objectID": "16-checklists.html#figure-checklist",
+    "href": "16-checklists.html#figure-checklist",
+    "title": "17  Checklists",
+    "section": "17.4 Figure checklist",
+    "text": "17.4 Figure checklist\n\nAre the x-axis and y-axis labeled?\nIf the figure includes panels, is each panel labeled?\nAre there sufficient numerical / text labels and breaks on the x-axis and y-axis?\nIs the font size appropriate (i.e., large enough to read, not so large that it distracts from the data presented in the figure?)\nAre the colors used colorblind friendly? See a colorblind-friendly palette here, a neat palette generator with colorblind options here, and an article on why this matters here\nAre colors/shapes/line types defined in a legend?\nAre the legends and other labels easy to understand with minimal abbreviations?\nIf there is overplotting, is transparency used to show overlapping data?\nAre 95% confidence intervals or other measures of precision shown, if applicable?",
     "crumbs": [
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Checklists</span>"
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Checklists</span>"
     ]
   },
   {
-    "objectID": "16-resources.html",
-    "href": "16-resources.html",
-    "title": "17  Resources",
+    "objectID": "17-resources.html",
+    "href": "17-resources.html",
+    "title": "18  Resources",
     "section": "",
-    "text": "17.1 Resources for R\nAdapted by UCD-SeRG team from original by Jade Benjamin-Chung and Kunal Mishra",
+    "text": "18.1 Resources for R\nAdapted by UCD-SeRG team from original by Jade Benjamin-Chung and Kunal Mishra",
     "crumbs": [
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Resources</span>"
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Resources</span>"
     ]
   },
   {
-    "objectID": "16-resources.html#resources-for-r",
-    "href": "16-resources.html#resources-for-r",
-    "title": "17  Resources",
+    "objectID": "17-resources.html#resources-for-r",
+    "href": "17-resources.html#resources-for-r",
+    "title": "18  Resources",
     "section": "",
-    "text": "17.1.1 Books and Comprehensive Guides\n\nR for Data Science by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund - comprehensive introduction to doing data science with R\nR Packages by Hadley Wickham and Jenny Bryan - complete guide to R package development\nAdvanced R by Hadley Wickham - deep dive into R programming and internals\nMastering Shiny by Hadley Wickham - comprehensive guide to building web applications with Shiny\nEngineering Production-Grade Shiny Apps by Colin Fay, Sébastien Rochette, Vincent Guyader, and Cervan Girard - best practices for production Shiny applications\nHappy Git and GitHub for the useR by Jenny Bryan - guide to using Git and GitHub with R\nJade’s R-for-epi course\n\n\n\n17.1.2 Cheat Sheets\n\ndplyr and tidyr cheat sheet\nggplot cheat sheet\ndata table cheat sheet\nRMarkdown cheat sheet\n\n\n\n17.1.3 Style and Best Practices\n\nHadley Wickham’s R Style Guide\n\n\n\n17.1.4 Tidy Evaluation Resources\n\nTidy Eval in 5 Minutes (video)\nTidy Evaluation (e-book)\nData Frame Columns as Arguments to Dplyr Functions (blog)\nStandard Evaluation for *_join (stackoverflow)\nProgramming with dplyr (package vignette)",
+    "text": "18.1.1 Books and Comprehensive Guides\n\nR for Data Science by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund - comprehensive introduction to doing data science with R\nR Packages by Hadley Wickham and Jenny Bryan - complete guide to R package development\nAdvanced R by Hadley Wickham - deep dive into R programming and internals\nMastering Shiny by Hadley Wickham - comprehensive guide to building web applications with Shiny\nEngineering Production-Grade Shiny Apps by Colin Fay, Sébastien Rochette, Vincent Guyader, and Cervan Girard - best practices for production Shiny applications\nHappy Git and GitHub for the useR by Jenny Bryan - guide to using Git and GitHub with R\nJade’s R-for-epi course\n\n\n\n18.1.2 Cheat Sheets\n\ndplyr and tidyr cheat sheet\nggplot cheat sheet\ndata table cheat sheet\nRMarkdown cheat sheet\n\n\n\n18.1.3 Style and Best Practices\n\nHadley Wickham’s R Style Guide\n\n\n\n18.1.4 Tidy Evaluation Resources\n\nTidy Eval in 5 Minutes (video)\nTidy Evaluation (e-book)\nData Frame Columns as Arguments to Dplyr Functions (blog)\nStandard Evaluation for *_join (stackoverflow)\nProgramming with dplyr (package vignette)",
     "crumbs": [
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Resources</span>"
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Resources</span>"
     ]
   },
   {
-    "objectID": "16-resources.html#resources-for-git-github",
-    "href": "16-resources.html#resources-for-git-github",
-    "title": "17  Resources",
-    "section": "17.2 Resources for Git & Github",
-    "text": "17.2 Resources for Git & Github\n\nHappy Git and GitHub for the useR by Jenny Bryan - comprehensive guide to using Git and GitHub with R\nData Camp introduction to Git\nIntroduction to Github",
+    "objectID": "17-resources.html#resources-for-git-github",
+    "href": "17-resources.html#resources-for-git-github",
+    "title": "18  Resources",
+    "section": "18.2 Resources for Git & Github",
+    "text": "18.2 Resources for Git & Github\n\nHappy Git and GitHub for the useR by Jenny Bryan - comprehensive guide to using Git and GitHub with R\nData Camp introduction to Git\nIntroduction to Github",
     "crumbs": [
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Resources</span>"
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Resources</span>"
     ]
   },
   {
-    "objectID": "16-resources.html#scientific-figures",
-    "href": "16-resources.html#scientific-figures",
-    "title": "17  Resources",
-    "section": "17.3 Scientific figures",
-    "text": "17.3 Scientific figures\n\nTen Simple Rules for Better Figures",
+    "objectID": "17-resources.html#scientific-figures",
+    "href": "17-resources.html#scientific-figures",
+    "title": "18  Resources",
+    "section": "18.3 Scientific figures",
+    "text": "18.3 Scientific figures\n\nTen Simple Rules for Better Figures",
     "crumbs": [
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Resources</span>"
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Resources</span>"
     ]
   },
   {
-    "objectID": "16-resources.html#writing",
-    "href": "16-resources.html#writing",
-    "title": "17  Resources",
-    "section": "17.4 Writing",
-    "text": "17.4 Writing\n\nTips on how to write a great science paper\nICMJE Definition of authorship\nNature article on elements of style for scientific writing\nThe Pathway to Publishing: A Guide to Quantitative Writing in the Health Sciences\nSecret, actionable writing tips",
+    "objectID": "17-resources.html#writing",
+    "href": "17-resources.html#writing",
+    "title": "18  Resources",
+    "section": "18.4 Writing",
+    "text": "18.4 Writing\n\nTips on how to write a great science paper\nICMJE Definition of authorship\nNature article on elements of style for scientific writing\nThe Pathway to Publishing: A Guide to Quantitative Writing in the Health Sciences\nSecret, actionable writing tips",
     "crumbs": [
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Resources</span>"
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Resources</span>"
     ]
   },
   {
-    "objectID": "16-resources.html#presentations",
-    "href": "16-resources.html#presentations",
-    "title": "17  Resources",
-    "section": "17.5 Presentations",
-    "text": "17.5 Presentations\n\nHow to tell a compelling story in scientific presentations\nHow to give a killer narratively-driven scientific talk\nHow to make a better poster\nHow to make an even better poster",
+    "objectID": "17-resources.html#presentations",
+    "href": "17-resources.html#presentations",
+    "title": "18  Resources",
+    "section": "18.5 Presentations",
+    "text": "18.5 Presentations\n\nHow to tell a compelling story in scientific presentations\nHow to give a killer narratively-driven scientific talk\nHow to make a better poster\nHow to make an even better poster",
     "crumbs": [
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Resources</span>"
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Resources</span>"
     ]
   },
   {
-    "objectID": "16-resources.html#professional-advice",
-    "href": "16-resources.html#professional-advice",
-    "title": "17  Resources",
-    "section": "17.6 Professional advice",
-    "text": "17.6 Professional advice\n\nProfessional advice, especially for your first job",
+    "objectID": "17-resources.html#professional-advice",
+    "href": "17-resources.html#professional-advice",
+    "title": "18  Resources",
+    "section": "18.6 Professional advice",
+    "text": "18.6 Professional advice\n\nProfessional advice, especially for your first job",
     "crumbs": [
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Resources</span>"
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Resources</span>"
     ]
   },
   {
-    "objectID": "16-resources.html#funding",
-    "href": "16-resources.html#funding",
-    "title": "17  Resources",
-    "section": "17.7 Funding",
-    "text": "17.7 Funding\n\nBuilding Your Funding Train\nNIH Grant Writing Resources",
+    "objectID": "17-resources.html#funding",
+    "href": "17-resources.html#funding",
+    "title": "18  Resources",
+    "section": "18.7 Funding",
+    "text": "18.7 Funding\n\nBuilding Your Funding Train\nNIH Grant Writing Resources",
     "crumbs": [
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Resources</span>"
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Resources</span>"
     ]
   },
   {
-    "objectID": "16-resources.html#ethics-and-global-health-research",
-    "href": "16-resources.html#ethics-and-global-health-research",
-    "title": "17  Resources",
-    "section": "17.8 Ethics and global health research",
-    "text": "17.8 Ethics and global health research\n\nGlobal Code of Conduct For Research in Resource-Poor Settings\nWho is a global health expert? Advice for aspiring global health experts\nTransforming Global Health Partnerships",
+    "objectID": "17-resources.html#ethics-and-global-health-research",
+    "href": "17-resources.html#ethics-and-global-health-research",
+    "title": "18  Resources",
+    "section": "18.8 Ethics and global health research",
+    "text": "18.8 Ethics and global health research\n\nGlobal Code of Conduct For Research in Resource-Poor Settings\nWho is a global health expert? Advice for aspiring global health experts\nTransforming Global Health Partnerships",
     "crumbs": [
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Resources</span>"
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Resources</span>"
     ]
   }
 ]
