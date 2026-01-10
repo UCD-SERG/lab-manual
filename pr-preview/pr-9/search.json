@@ -34,7 +34,7 @@
     "href": "01-culture-and-conduct.html",
     "title": "2  Culture and conduct",
     "section": "",
-    "text": "2.1 Lab culture\nby UCD-SeRG team\nWe are committed to a lab culture that is collaborative, supportive, inclusive, open, and free from discrimination and harassment.\nWe encourage students / staff of all experience levels to respectfully share their honest opinions and ideas on any topic. Our group has thrived upon such respectful honest input from team members over the years, and this document is a product of years of student and staff input (and even debate) that has gradually improved our productivity and overall quality of our work.",
+    "text": "2.1 Lab culture\nAdapted by UCD-SeRG team from original by Jade Benjamin-Chung\nWe are committed to a lab culture that is collaborative, supportive, inclusive, open, and free from discrimination and harassment.\nWe encourage students / staff of all experience levels to respectfully share their honest opinions and ideas on any topic. Our group has thrived upon such respectful honest input from team members over the years, and this document is a product of years of student and staff input (and even debate) that has gradually improved our productivity and overall quality of our work.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Culture and conduct</span>"
     ]
@@ -74,7 +74,7 @@
     "href": "02-communication.html",
     "title": "3  Communication and coordination",
     "section": "",
-    "text": "3.1 Microsoft Teams\nby UCD-SeRG team\nOne benefit of the academic environment is its schedule flexibility. This means that lab members may choose to work in the early morning, evening, or weekends. That said, we do not expect lab members to respond outside of business hours (unless there are special circumstances).",
+    "text": "3.1 Microsoft Teams\nAdapted by UCD-SeRG team from original by Jade Benjamin-Chung\nOne benefit of the academic environment is its schedule flexibility. This means that lab members may choose to work in the early morning, evening, or weekends. That said, we do not expect lab members to respond outside of business hours (unless there are special circumstances).",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Communication and coordination</span>"
     ]
@@ -144,7 +144,7 @@
     "href": "03-reproducibility.html",
     "title": "4  Reproducibility",
     "section": "",
-    "text": "4.1 What is the reproducibility crisis?\nby UCD-SeRG team\nOur lab adopts the following practices to maximize the reproducibility of our work.\nIn the past decade, an increasing number of studies have found that published study findings could not be reproduced. Researchers found that it was not possible to reproduce estimates from published studies: 1) with the same data and same or similar code and 2) with newly collected data using the same (or similar) study design. These “failures” of reproducibility were frequent enough and broad enough in scope, occurring across a range of disciplines (epidemiology, psychology, economics, and others) to be deeply troubling. Program and policy decisions based on erroneous research findings could lead to wasted resources, and at worst, could harm intended beneficiaries. This crisis has motivated new practices in reproducibility, transparency, and openness. Our lab is committed to adopting these best practices, and much of the remainder of the lab manual focuses on how to do so.\nRecommended readings on the “reproducibility crisis”:",
+    "text": "4.1 What is the reproducibility crisis?\nAdapted by UCD-SeRG team from original by Jade Benjamin-Chung\nOur lab adopts the following practices to maximize the reproducibility of our work.\nIn the past decade, an increasing number of studies have found that published study findings could not be reproduced. Researchers found that it was not possible to reproduce estimates from published studies: 1) with the same data and same or similar code and 2) with newly collected data using the same (or similar) study design. These “failures” of reproducibility were frequent enough and broad enough in scope, occurring across a range of disciplines (epidemiology, psychology, economics, and others) to be deeply troubling. Program and policy decisions based on erroneous research findings could lead to wasted resources, and at worst, could harm intended beneficiaries. This crisis has motivated new practices in reproducibility, transparency, and openness. Our lab is committed to adopting these best practices, and much of the remainder of the lab manual focuses on how to do so.\nRecommended readings on the “reproducibility crisis”:",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Reproducibility</span>"
     ]
@@ -244,7 +244,7 @@
     "href": "04-code-repositories.html",
     "title": "5  Code repositories",
     "section": "",
-    "text": "5.1 Project Structure\nBy UCD-SeRG team\nEach study has at least one code repository that typically holds R code, shell scripts with Unix code, and research outputs (results .RDS files, tables, figures). Repositories may also include datasets. This chapter outlines how to organize these files. Adhering to a standard format makes it easier for us to efficiently collaborate across projects.\nWe recommend the following directory structure:\nFor brevity, not every directory is “expanded”, but we can glean some important takeaways from what we do see.",
+    "text": "5.1 Project Structure\nAdapted by UCD-SeRG team from original by Kunal Mishra, Jade Benjamin-Chung, and Stephanie Djajadi\nEach study has at least one code repository that typically holds R code, shell scripts with Unix code, and research outputs (results .RDS files, tables, figures). Repositories may also include datasets. This chapter outlines how to organize these files. Adhering to a standard format makes it easier for us to efficiently collaborate across projects.\nWe recommend the following directory structure:\nFor brevity, not every directory is “expanded”, but we can glean some important takeaways from what we do see.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Code repositories</span>"
     ]
@@ -304,7 +304,7 @@
     "href": "05-coding-practices.html",
     "title": "6  Coding practices",
     "section": "",
-    "text": "6.1 Organizing scripts\nby UCD-SeRG team\nJust as your data “flows” through your project, data should flow naturally through a script. Very generally, you want to:\nEach of these sections should be “chunked together” using comments. See this file for a good example of how to cleanly organize a file in a way that follows this “flow” and functionally separate pieces of code that are doing different things.",
+    "text": "6.1 Organizing scripts\nAdapted by UCD-SeRG team from original by Kunal Mishra, Jade Benjamin-Chung, Stephanie Djajadi, and Iris Tong\nJust as your data “flows” through your project, data should flow naturally through a script. Very generally, you want to:\nEach of these sections should be “chunked together” using comments. See this file for a good example of how to cleanly organize a file in a way that follows this “flow” and functionally separate pieces of code that are doing different things.",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Coding practices</span>"
     ]
@@ -424,7 +424,7 @@
     "href": "06-coding-style.html",
     "title": "7  Coding style",
     "section": "",
-    "text": "7.1 Comments\nby UCD-SeRG team\n# This is a comment -- first letter is capitalized and spaced away from the pound sign",
+    "text": "7.1 Comments\nAdapted by UCD-SeRG team from original by Kunal Mishra, Jade Benjamin-Chung, and Stephanie Djajadi\n# This is a comment -- first letter is capitalized and spaced away from the pound sign",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Coding style</span>"
     ]
@@ -462,31 +462,31 @@
   {
     "objectID": "07-big-data.html",
     "href": "07-big-data.html",
-    "title": "8  Working with Big Data",
+    "title": "8  Big data",
     "section": "",
-    "text": "8.1 The data.table package\nby UCD-SeRG team\nIt may also be the case that you’re working with very large datasets. Generally I would define this as 10+ million rows. As is outlined in this document, the 3 main players in the data analysis space are Base R, Tidvyerse (more specificially, dplyr), and data.table. For a majority of things, Base R is inferior to both dplyr and data.table, with concise but less clear syntax and less speed. Dplyr is architected for medium and smaller data, and while its very fast for everyday usage, it trades off maximum performance for ease of use and syntax compared to data.table. An overview of the dplyr vs data.table debate can be found in this stackoverflow post and all 3 answers are worth a read.\nYou can also achieve a performance boost by running dplyr commands on data.tables, which I find to be the best of both worlds, given that a data.table is a special type of data.frame and fairly easy to convert with the as.data.table() function. The speedup is due to dplyr’s use of the data.table backend and in the future this coupling should become even more natural.\nIf you want to test whether using a certain coding approach increases speed, consider the tictoc package. Run tic() before a code chunk and toc() after to measure the amount of system time it takes to run the chunk. For example, you might use this to decide if you really need to switch a code chunk from dplyr to data.table.",
+    "text": "8.1 The data.table package\nAdapted by UCD-SeRG team from original by Kunal Mishra and Jade Benjamin-Chung\nIt may also be the case that you’re working with very large datasets. Generally I would define this as 10+ million rows. As is outlined in this document, the 3 main players in the data analysis space are Base R, Tidvyerse (more specificially, dplyr), and data.table. For a majority of things, Base R is inferior to both dplyr and data.table, with concise but less clear syntax and less speed. Dplyr is architected for medium and smaller data, and while its very fast for everyday usage, it trades off maximum performance for ease of use and syntax compared to data.table. An overview of the dplyr vs data.table debate can be found in this stackoverflow post and all 3 answers are worth a read.\nYou can also achieve a performance boost by running dplyr commands on data.tables, which I find to be the best of both worlds, given that a data.table is a special type of data.frame and fairly easy to convert with the as.data.table() function. The speedup is due to dplyr’s use of the data.table backend and in the future this coupling should become even more natural.\nIf you want to test whether using a certain coding approach increases speed, consider the tictoc package. Run tic() before a code chunk and toc() after to measure the amount of system time it takes to run the chunk. For example, you might use this to decide if you really need to switch a code chunk from dplyr to data.table.",
     "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Working with Big Data</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Big data</span>"
     ]
   },
   {
     "objectID": "07-big-data.html#using-downsampled-data",
     "href": "07-big-data.html#using-downsampled-data",
-    "title": "8  Working with Big Data",
+    "title": "8  Big data",
     "section": "8.2 Using downsampled data",
     "text": "8.2 Using downsampled data\nIn our studies with very large datasets, we save “downsampled” data that usually includes a 1% random sample stratified by any important variables, such as year or household id. This allows us to efficiently write and test our code without having to load in large, slow datasets that can cause RStudio to freeze. Be very careful to be sure which dataset you are working with and to label results output accordingly.",
     "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Working with Big Data</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Big data</span>"
     ]
   },
   {
     "objectID": "07-big-data.html#optimal-rstudio-set-up",
     "href": "07-big-data.html#optimal-rstudio-set-up",
-    "title": "8  Working with Big Data",
+    "title": "8  Big data",
     "section": "8.3 Optimal RStudio set up",
     "text": "8.3 Optimal RStudio set up\nUsing the following settings will help ensure a smooth experience when working with big data. In RStudio, go to the “Tools” menu, then select “Global Options”. Under “General”:\nWorkspace\n\nUncheck Restore RData into workspace at startup\nSave workspace to RData on exit – choose never\n\nHistory\n\nUncheck Always save history\n\nUnfortunately RStudio often gets slow and/or freezes after hours working with big datasets. Sometimes it is much more efficient to just use Terminal / gitbash to run code and make updates in git.",
     "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Working with Big Data</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Big data</span>"
     ]
   },
   {
@@ -494,7 +494,17 @@
     "href": "08-data-masking.html",
     "title": "9  Data masking",
     "section": "",
-    "text": "9.1 General Overview\nby UCD-SeRG team\nThis chapter covers data masking, a unique process in R in which columns are treated as distinct objects within their dataframe’s environment. In our lab, data masking most frequently comes up when writing wrapper functions where arguments to indicate column names are supplied as strings. We often do this when we repeat the same code on multiple columns, and want to apply a function to a vector of strings that correspond to column names in a dataframe. For example, we might want to clean multiple columns using the same function or estimate the same model under different feature sets. Here, we try to break down what data masking is, why this error comes up, and common approaches to solve this problem.",
+    "text": "9.1 UC Davis Computing Resources\nAdapted by UCD-SeRG team from original by Anna Nguyen, Jade Benjamin-Chung, and Gabby Barratt Heitmann\nWhen you need to run a script that requires a large amount of RAM, large files, or that uses parallelization, UC Davis provides several high-performance computing (HPC) resources:",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data masking</span>"
+    ]
+  },
+  {
+    "objectID": "08-data-masking.html#uc-davis-computing-resources",
+    "href": "08-data-masking.html#uc-davis-computing-resources",
+    "title": "9  Data masking",
+    "section": "",
+    "text": "9.1.1 Available Resources\nUC Davis HPC Clusters: - Farm Cluster (hpc.ucdavis.edu): UC Davis’s primary HPC cluster providing shared computing resources for research - Shiva (shiva.ucdavis.edu): SLURM-based cluster for computational work - Mercury (mercury.ucdavis.edu): RStudio GUI computing environment\nPHS Shared Compute Environments: For lab members affiliated with the School of Public Health Sciences (PHS), additional shared computing environments are available. These environments provide secure, HIPAA-compliant computing resources suitable for working with sensitive health data.\nFor detailed information about PHS shared compute environments, including access procedures, security guidelines, and usage policies, please refer to the PHS Shared Compute Environments Guide.\nContact lab leadership for assistance with: - Requesting access to computing resources - Choosing the appropriate computing environment for your project - Setting up your computing environment\nFor general information about SLURM-based cluster computing, see the Slurm and cluster computing chapter.",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data masking</span>"
     ]
@@ -503,8 +513,8 @@
     "objectID": "08-data-masking.html#general-overview",
     "href": "08-data-masking.html#general-overview",
     "title": "9  Data masking",
-    "section": "",
-    "text": "9.1.1 What is Data Masking?\nWithin certain tidyverse operations, columns are called as if they were variables. For example, while running df %&gt;% mutate(X = …) R recognizes that X specifically references a column in df without explicitly stating its membership df %&gt;% mutate(df$X = …) or calling the column name as a string df %&gt;% mutate(“X” = …).\n\nHowever, this behavior may introduce errors when we attempt to incorporate variables from the global environment within these tidyverse pipelines. In the example above, column_name = “X” followed by df %&gt;% mutate(X2 = column_name + 1) would yield an error, since column_name is not a column in df and the variable column_name is not defined within the environment of df\n\n\n9.1.2 Using tidy evaluation for data masking\nIn dplyr-based R programming, we make use of tidy evaluation. This allows us to avoid using base R syntax to reference specific columns in a data frame. By leveraging Tidy evaluation-based data masking, we can employ long pipes with several dplyr verbs to manipulate our data using stand-alone variables that store column names as strings.\nFor example, consider a data frame “df” that contains a column called “heavyrain” that we want to manipulate. Suppose we wanted to convert the values of “heavyrain” into a factor.\nUsing base R, which does not mask data, heavyrain must have quotes to be treated as a data-variable:\ndf[[“outcome”]] = as.factor(df[[“heavyrain”]])\nIn a dplyr pipe, heavyrain is being masked using tidy evaluation and will be correctly interpreted as a column because it is recognized as a data-variable: df %&gt;% mutate(outcome = as.factor(heavyrain))\nWith modified data masking, heavyrain is a string that is coerced into being recognized as a data-variable:\nvar_name = “heavyrain”\ndf %&gt;% mutate(outcome = as.factor(!!sym(var_name)) \nWhile cleaner and often more convenient, the data frame that var_name is in is now “masked” and we refer to the vectors in the dataframe (data-variables) as though it is an object of its own (an environmental-variable). This is why we can just say the variable’s name in the context of a pipe – we treat it as though it’s an object defined in our environment. Within normal scripts, this is usually fine, because the data frame is “held on to” in the pipe. However, it can cause some programming hurdles when writing functions that take strings of variable/column names as arguments. In the next section, we briefly describe how to troubleshoot common errors in data masking, as relevant to our lab’s work.",
+    "section": "9.2 General Overview",
+    "text": "9.2 General Overview\nThis chapter covers data masking, a unique process in R in which columns are treated as distinct objects within their dataframe’s environment. In our lab, data masking most frequently comes up when writing wrapper functions where arguments to indicate column names are supplied as strings. We often do this when we repeat the same code on multiple columns, and want to apply a function to a vector of strings that correspond to column names in a dataframe. For example, we might want to clean multiple columns using the same function or estimate the same model under different feature sets. Here, we try to break down what data masking is, why this error comes up, and common approaches to solve this problem.\n\n9.2.1 What is Data Masking?\nWithin certain tidyverse operations, columns are called as if they were variables. For example, while running df %&gt;% mutate(X = …) R recognizes that X specifically references a column in df without explicitly stating its membership df %&gt;% mutate(df$X = …) or calling the column name as a string df %&gt;% mutate(“X” = …).\n\nHowever, this behavior may introduce errors when we attempt to incorporate variables from the global environment within these tidyverse pipelines. In the example above, column_name = “X” followed by df %&gt;% mutate(X2 = column_name + 1) would yield an error, since column_name is not a column in df and the variable column_name is not defined within the environment of df\n\n\n9.2.2 Using tidy evaluation for data masking\nIn dplyr-based R programming, we make use of tidy evaluation. This allows us to avoid using base R syntax to reference specific columns in a data frame. By leveraging Tidy evaluation-based data masking, we can employ long pipes with several dplyr verbs to manipulate our data using stand-alone variables that store column names as strings.\nFor example, consider a data frame “df” that contains a column called “heavyrain” that we want to manipulate. Suppose we wanted to convert the values of “heavyrain” into a factor.\nUsing base R, which does not mask data, heavyrain must have quotes to be treated as a data-variable:\ndf[[“outcome”]] = as.factor(df[[“heavyrain”]])\nIn a dplyr pipe, heavyrain is being masked using tidy evaluation and will be correctly interpreted as a column because it is recognized as a data-variable: df %&gt;% mutate(outcome = as.factor(heavyrain))\nWith modified data masking, heavyrain is a string that is coerced into being recognized as a data-variable:\nvar_name = “heavyrain”\ndf %&gt;% mutate(outcome = as.factor(!!sym(var_name)) \nWhile cleaner and often more convenient, the data frame that var_name is in is now “masked” and we refer to the vectors in the dataframe (data-variables) as though it is an object of its own (an environmental-variable). This is why we can just say the variable’s name in the context of a pipe – we treat it as though it’s an object defined in our environment. Within normal scripts, this is usually fine, because the data frame is “held on to” in the pipe. However, it can cause some programming hurdles when writing functions that take strings of variable/column names as arguments. In the next section, we briefly describe how to troubleshoot common errors in data masking, as relevant to our lab’s work.",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data masking</span>"
     ]
@@ -513,8 +523,8 @@
     "objectID": "08-data-masking.html#technical-overview",
     "href": "08-data-masking.html#technical-overview",
     "title": "9  Data masking",
-    "section": "9.2 Technical Overview",
-    "text": "9.2 Technical Overview\nThis section covers the R functions and tools that we often use in the context of data masking, focusing on the bang bang operator (!!) with symbol coercion (sym()) and the Walrus operator (:=).\nThe combined use of !! and sym() allows us to use strings, rather than data-variables, to reference column names within dplyr. Together, !!sym(“column_name”) forces dplyr to recognize “column_name” as a data-variable prior to evaluating the rest of the expression, enabling the ability to perform calculations on the column while referring to it as a string. sym() is a function that turns strings into symbols. In the context of a dplyr pipe, these symbols are interpreted as data-variables. The !! (bang bang) operator tells dplyr to evaluate the sym() expression first, e.g. to unquote its expression (e.g. “column_name”) and evaluate it as a pre-existing object, first. This is helpful because often we use sym(“column_name”) within a larger expression, and dplyr might evaluate other elements of the expression first without !!, causing errors.\nWhen we want to create a new column (via mutate or summarize), the Walrus operator (:=) allows us to specify the new column’s name using a string. For example, while df %&gt;% mutate(“new_column” = values) would yield an error, df %&gt;% mutate(“new_column” := values) will correctly create a new column called “new_column”. If we want to use a variable representing a string, we can use !! to force the variable to be evaluated before using := to assign the value of the new column.\ncol_name = “new_column”\ndf %&gt;% mutate(!!col_name := values)\n\n9.2.1 Example\nSuppose we want to write a function “generate_descriptive_table” to summarize how the prevalence of “outcome” varies under different levels of a “risk_factor” in a data frame “df”\nWe can start by writing the function shell:\ngenerate_descriptive_table &lt;- function (df, outcome, rf) {\noutcome_dist_by_rf &lt;- ….\nreturn(outcome_dist_by_rf)\n}\nNext, we can filter the data frame for only rows in which “rf” and “outcome” are not missing. We can use !! and sym() within filter to evaluate the strings stored in “rf” and “outcome”. Note that defining !!sym(outcome) or !!sym(outcome) in variables outside of the dplyr pipeline will not work.\ngenerate_descriptive_table &lt;- function (df, outcome, rf,) {\n  outcome_dist_by_rf &lt;- df %&gt;% \n  filter(!is.na(!!sym(outcome)), !is.na(!!sym(rf))) %&gt;%\n  ….\n  return(outcome_dist_by_rf)\n}\nSimilarly, we use !! and sym() in group_by to evaluate column name, stored as a string in the argument “rf”\ngenerate_descriptive_table &lt;- function (df, outcome, rf,) {\n  outcome_dist_by_rf &lt;- df %&gt;% \n  filter(!is.na(!!sym(outcome)), !is.na(!!sym(rf))) %&gt;%\n  ….\n  return(outcome_dist_by_rf)\n}\nFinally, we can use the walrus operator, !! and sym() with “summarize” to create a new column that takes the mean of the column referenced in “rf”. We also use “glue” or “paste” to give the new column an informative name that includes the “outcome” it describes.\ngenerate_descriptive_table &lt;- function (df, outcome, rf,) {\n  outcome_dist_by_rf &lt;- df %&gt;% \n  filter(!is.na(!!sym(outcome)), !is.na(!!sym(rf))) %&gt;% \n  group_by(!!sym(rf)) %&gt;%\n  summarize(!!(glue::glue(“{outcome}_prev”)) := mean(!!sym(outcome))) \n  return(outcome_dist_by_rf)\n}\nOR\ngenerate_descriptive_table &lt;- function (df, outcome, rf,) {\n  outcome_dist_by_rf &lt;- df %&gt;% \n  filter(!is.na(!!sym(outcome)), !is.na(!!sym(rf))) %&gt;% \n  group_by(!!sym(rf)) %&gt;%\n  summarize(!!(paste0(outcome, ”_prev”)) := mean(!!sym(outcome)))\n  return(outcome_dist_by_rf)\n}\nOR\ngenerate_descriptive_table &lt;- function (df, outcome, rf,) {\n  new_column_name = paste0(outcome, ”_prev”)\n  outcome_dist_by_rf &lt;- df %&gt;% \n  filter(!is.na(!!sym(outcome)), !is.na(!!sym(rf))) %&gt;% \n  group_by(!!sym(rf)) %&gt;%\n  summarize(!!(new_column_name) := mean(!!sym(outcome))) \n  return(outcome_dist_by_rf)\n}",
+    "section": "9.3 Technical Overview",
+    "text": "9.3 Technical Overview\nThis section covers the R functions and tools that we often use in the context of data masking, focusing on the bang bang operator (!!) with symbol coercion (sym()) and the Walrus operator (:=).\nThe combined use of !! and sym() allows us to use strings, rather than data-variables, to reference column names within dplyr. Together, !!sym(“column_name”) forces dplyr to recognize “column_name” as a data-variable prior to evaluating the rest of the expression, enabling the ability to perform calculations on the column while referring to it as a string. sym() is a function that turns strings into symbols. In the context of a dplyr pipe, these symbols are interpreted as data-variables. The !! (bang bang) operator tells dplyr to evaluate the sym() expression first, e.g. to unquote its expression (e.g. “column_name”) and evaluate it as a pre-existing object, first. This is helpful because often we use sym(“column_name”) within a larger expression, and dplyr might evaluate other elements of the expression first without !!, causing errors.\nWhen we want to create a new column (via mutate or summarize), the Walrus operator (:=) allows us to specify the new column’s name using a string. For example, while df %&gt;% mutate(“new_column” = values) would yield an error, df %&gt;% mutate(“new_column” := values) will correctly create a new column called “new_column”. If we want to use a variable representing a string, we can use !! to force the variable to be evaluated before using := to assign the value of the new column.\ncol_name = “new_column”\ndf %&gt;% mutate(!!col_name := values)\n\n9.3.1 Example\nSuppose we want to write a function “generate_descriptive_table” to summarize how the prevalence of “outcome” varies under different levels of a “risk_factor” in a data frame “df”\nWe can start by writing the function shell:\ngenerate_descriptive_table &lt;- function (df, outcome, rf) {\noutcome_dist_by_rf &lt;- ….\nreturn(outcome_dist_by_rf)\n}\nNext, we can filter the data frame for only rows in which “rf” and “outcome” are not missing. We can use !! and sym() within filter to evaluate the strings stored in “rf” and “outcome”. Note that defining !!sym(outcome) or !!sym(outcome) in variables outside of the dplyr pipeline will not work.\ngenerate_descriptive_table &lt;- function (df, outcome, rf,) {\n  outcome_dist_by_rf &lt;- df %&gt;% \n  filter(!is.na(!!sym(outcome)), !is.na(!!sym(rf))) %&gt;%\n  ….\n  return(outcome_dist_by_rf)\n}\nSimilarly, we use !! and sym() in group_by to evaluate column name, stored as a string in the argument “rf”\ngenerate_descriptive_table &lt;- function (df, outcome, rf,) {\n  outcome_dist_by_rf &lt;- df %&gt;% \n  filter(!is.na(!!sym(outcome)), !is.na(!!sym(rf))) %&gt;%\n  ….\n  return(outcome_dist_by_rf)\n}\nFinally, we can use the walrus operator, !! and sym() with “summarize” to create a new column that takes the mean of the column referenced in “rf”. We also use “glue” or “paste” to give the new column an informative name that includes the “outcome” it describes.\ngenerate_descriptive_table &lt;- function (df, outcome, rf,) {\n  outcome_dist_by_rf &lt;- df %&gt;% \n  filter(!is.na(!!sym(outcome)), !is.na(!!sym(rf))) %&gt;% \n  group_by(!!sym(rf)) %&gt;%\n  summarize(!!(glue::glue(“{outcome}_prev”)) := mean(!!sym(outcome))) \n  return(outcome_dist_by_rf)\n}\nOR\ngenerate_descriptive_table &lt;- function (df, outcome, rf,) {\n  outcome_dist_by_rf &lt;- df %&gt;% \n  filter(!is.na(!!sym(outcome)), !is.na(!!sym(rf))) %&gt;% \n  group_by(!!sym(rf)) %&gt;%\n  summarize(!!(paste0(outcome, ”_prev”)) := mean(!!sym(outcome)))\n  return(outcome_dist_by_rf)\n}\nOR\ngenerate_descriptive_table &lt;- function (df, outcome, rf,) {\n  new_column_name = paste0(outcome, ”_prev”)\n  outcome_dist_by_rf &lt;- df %&gt;% \n  filter(!is.na(!!sym(outcome)), !is.na(!!sym(rf))) %&gt;% \n  group_by(!!sym(rf)) %&gt;%\n  summarize(!!(new_column_name) := mean(!!sym(outcome))) \n  return(outcome_dist_by_rf)\n}",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data masking</span>"
     ]
@@ -524,7 +534,7 @@
     "href": "09-github.html",
     "title": "10  Github",
     "section": "",
-    "text": "10.1 Basics\nby Stephanie Djajadi and Nolan Pokpongkiat",
+    "text": "10.1 Basics\nAdapted by UCD-SeRG team from original by Stephanie Djajadi and Nolan Pokpongkiat",
     "crumbs": [
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Github</span>"
     ]
@@ -602,71 +612,71 @@
   {
     "objectID": "10-unix.html",
     "href": "10-unix.html",
-    "title": "11  Unix commands",
+    "title": "11  Unix",
     "section": "",
-    "text": "11.1 Basics\nby UCD-SeRG team\nWe typically use Unix commands in Terminal (for Mac users) or Git Bash (for Windows users) to\nOn the computer, there is a desktop with two folders, folder1 and folder2, and a file called file1. Inside folder1, we have a file called file2. Mac users can run these commands on their terminal; it is recommended that Windows users use Git Bash, not Windows PowerShell.",
+    "text": "11.1 Basics\nAdapted by UCD-SeRG team from original by Stephanie Djajadi, Kunal Mishra, Anna Nguyen, and Jade Benjamin-Chung\nWe typically use Unix commands in Terminal (for Mac users) or Git Bash (for Windows users) to\nOn the computer, there is a desktop with two folders, folder1 and folder2, and a file called file1. Inside folder1, we have a file called file2. Mac users can run these commands on their terminal; it is recommended that Windows users use Git Bash, not Windows PowerShell.",
     "crumbs": [
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Unix commands</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Unix</span>"
     ]
   },
   {
     "objectID": "10-unix.html#basics",
     "href": "10-unix.html#basics",
-    "title": "11  Unix commands",
+    "title": "11  Unix",
     "section": "",
     "text": "Here is our example desktop.",
     "crumbs": [
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Unix commands</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Unix</span>"
     ]
   },
   {
     "objectID": "10-unix.html#syntax-for-both-macwindows",
     "href": "10-unix.html#syntax-for-both-macwindows",
-    "title": "11  Unix commands",
+    "title": "11  Unix",
     "section": "11.2 Syntax for both Mac/Windows",
     "text": "11.2 Syntax for both Mac/Windows\nWhen typing in directories or file names, quotes are necessary if the name includes spaces.\n\n\n\n\n\n\n\nCommand\nDescription\n\n\n\n\ncd desktop/folder1\nChange directory to folder1\n\n\npwd\nPrint working directory\n\n\nls\nList files in the directory\n\n\ncp \"file2\" \"newfile2\"\nCopy file (remember to include file extensions when typing in file names like .pdf or .R)\n\n\nmv “newfile2” “file3”\nRename newfile2 to file3\n\n\ncd ..\nGo to parent of the working directory (in this case, desktop)\n\n\nmv “file1” folder2\nMove file1 to folder2\n\n\nmkdir folder3\nMake a new folder in folder2\n\n\nrm &lt;filename&gt;\nRemove files\n\n\nrm -rf folder3\nRemove directories (-r will attempt to remove the directory recursively, -rf will force removal of the directory)\n\n\nclear\nClear terminal screen of all previous commands\n\n\n\n\n\n\nHere is an example of what your terminal might look like after executing the commands in the order listed above.",
     "crumbs": [
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Unix commands</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Unix</span>"
     ]
   },
   {
     "objectID": "10-unix.html#running-bash-scripts",
     "href": "10-unix.html#running-bash-scripts",
-    "title": "11  Unix commands",
+    "title": "11  Unix",
     "section": "11.3 Running Bash Scripts",
     "text": "11.3 Running Bash Scripts\n\n\n\n\n\n\n\n\nWindows\nMac / Linux\nDescription\n\n\n\n\nchmod +750 &lt;filename.sh&gt;\nchmod +x &lt;filename.sh&gt;\nChange access permissions for a file (only needs to be done once)\n\n\n./&lt;filename.sh&gt;\n./&lt;filename.sh&gt;\nRun file (./ to run any executable file)\n\n\nbash bash_script_name.sh &\nbash bash_script_name.sh &\nRun shell script in the background",
     "crumbs": [
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Unix commands</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Unix</span>"
     ]
   },
   {
     "objectID": "10-unix.html#running-rscripts-in-windows",
     "href": "10-unix.html#running-rscripts-in-windows",
-    "title": "11  Unix commands",
+    "title": "11  Unix",
     "section": "11.4 Running Rscripts in Windows",
     "text": "11.4 Running Rscripts in Windows\nNote: This code seems to work only with Windows Command Prompt, not with Git Bash.\nWhen R is installed, it comes with a utility called Rscript. This allows you to run R commands from the command line. If Rscript is in your PATH, then typing Rscript into the command line, and pressing enter, will not error. Otherwise, to use Rscript, you will either need to add it to your PATH (as an environment variable), or append the full directory of the location of Rscript on your machine. To find the full directory, search for where R is installed your computer. For instance, it may be something like below (this will vary depending on what version of R you have installed):\nC:\\Program Files\\R\\R-3.6.0\\bin\nFor appending the PATH variable, please view this link. I strongly recommend completing this option.\nIf you add the PATH as an environment variable, then you can run this line of code to test: Rscript -e “cat(‘this is a test’)\", where the -e flag refers to the expression that will be executed.\nIf you do not add the PATH as an environment variable, then you can run this line of code to replicate the results from above: “C:\\Program Files\\R\\R-3.6.0\\bin” -e “cat(‘this is a test’)”\nTo run an R script from the command line, we can say: Rscript -e “source(‘C:/path/to/script/some_code.R’)”\n\n11.4.1 Common Mistakes\n\nRemember to include all of the quotation marks around file paths that have a spaces.\nIf you attempt to run an R script but run into Error: '\\U' used without hex digits in character string starting \"'C:\\U\", try replacing all \\ with \\\\ or /.",
     "crumbs": [
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Unix commands</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Unix</span>"
     ]
   },
   {
     "objectID": "10-unix.html#checking-tasks-and-killing-jobs",
     "href": "10-unix.html#checking-tasks-and-killing-jobs",
-    "title": "11  Unix commands",
+    "title": "11  Unix",
     "section": "11.5 Checking tasks and killing jobs",
     "text": "11.5 Checking tasks and killing jobs\n\n\n\n\n\n\n\n\nWindows\nMac / Linux\nDescription\n\n\n\n\ntasklist\nps -v\nList all processes on the command line\n\n\n\ntop -o [cpu/rsize]\nList all running processes, sorted by CPU or memory usage\n\n\ntaskkill /F /PID pid_number\nkill &lt;PID_number&gt;\nKill a process by its process ID\n\n\ntaskkill /IM \"process name\" /F\n\nKill a process by its name\n\n\nstart /b program.exe\n\nRuns jobs in the background (exclude /b if you want the program to run in a new console)\n\n\n\nnohup\nPrevents jobs from stopping\n\n\n\ndisown\nKeeps jobs running in the background even if you close R\n\n\ntaskkill /?\n\nHelp, lists out other commands\n\n\n\nTo kill a task in Windows, you can also go to Task Manager &gt; More details &gt; Select your desired app &gt; Click on End Task.",
     "crumbs": [
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Unix commands</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Unix</span>"
     ]
   },
   {
     "objectID": "10-unix.html#running-big-jobs",
     "href": "10-unix.html#running-big-jobs",
-    "title": "11  Unix commands",
+    "title": "11  Unix",
     "section": "11.6 Running big jobs",
     "text": "11.6 Running big jobs\nFor big data workflows, the concept of “backgrounding” a bash script allows you to start a “job” (i.e. run the script) and leave it overnight to run. At the top level, a bash script (0-run-project.sh) that simply calls the directory-level bash scripts (i.e. 0-prep-data.sh, 0-run-analysis.sh, 0-run-figures.sh, etc.) is a powerful tool to rerun every script in your project. See the included example bash scripts for more details.\n\nRunning Bash Scripts in Background: Running a long bash script is not trivial. Normally you would run a bash script by opening a terminal and typing something like ./run-project.sh. But what if you leave your computer, log out of your server, or close the terminal? Normally, the bash script will exit and fail to complete. To run it in background, type ./run-project.sh &; disown. You can see the job running (and CPU utilization) with the command top or ps -v and check your memory with free -h.\n\nAlternatively, to keep code running in the background even when an SSH connection is broken, you can use tmux. In terminal or gitbash follow the steps below. This site has useful tips on using tmux.\n# create a new tmux session called session_name\ntmux new -ssession_name\n\n# run your job of interest\nR CMD BATCH myjob.R & \n  \n# check that it is running\nps -v\n\n# to exit the tmux session (Mac)\nctrl + b \nd\n\n# to reopen the tmux session to kill the job or \n# start another job\ntmux attach -tsession_name \n\nDeleting Previously Computed Results: One helpful lesson we’ve learned is that your bash scripts should remove previous results (computed and saved by scripts run at a previous time) so that you never mix results from one run with a previous run. This can happen when an R script errors out before saving its result, and can be difficult to catch because your previously saved result exists (leading you to believe everything ran correctly).\nEnsuring Things Ran Correctly: You should check the .Rout files generated by the R scripts run by your bash scripts for errors once things are run. A utility file is include in this repository, called runFileSaveLogs, and is used by the example bash scripts to… run files and save the generated logs. It is an awesome utility and one I definitely recommend using. Before using runFileSaveLogs, it is necessary to put the file in the home working directory. For help and documentation, you can use the command ./runFileSaveLogs -h. See example code and example usage for runFileSaveLogs below.\n\n\n11.6.1 Example code for runfileSaveLogs\n#!/usr/bin/env python3\n# Type \"./runFileSaveLogs -h\" for help\n\nimport os\nimport sys\nimport argparse\nimport getpass\nimport datetime\nimport shutil\nimport glob\nimport pathlib\n\n# Setting working directory to this script's current directory\nos.chdir(os.path.dirname(os.path.abspath(__file__)))\n\n# Setting up argument parser\nparser = argparse.ArgumentParser(description='Runs the argument R script(s) - in parallel if specified - and moves the subsequent generated .Rout log files to a timestamped directory.')\n\n# Function ensuring that the file is valid\ndef is_valid_file(parser, arg):\n    if not os.path.exists(arg):\n        parser.error(\"The file %s does not exist!\" % arg)\n    else:\n        return arg\n\n# Function ensuring that the directory is valid\ndef is_valid_directory(parser, arg):\n    if not os.path.isdir(arg):\n        parser.error(\"The specified path (%s) is not a directory!\" % arg)\n    else:\n        return arg\n\n# Additional arguments that can be added when running runFileSaveLogs\nparser.add_argument('-p', '--parallel', action='store_true', help=\"Runs the argument R scripts in parallel if specified\")\nparser.add_argument(\"-i\", \"--identifier\", help=\"Adds an identifier to the directory name where this is saved\")\nparser.add_argument('filenames', nargs='+', type=lambda x: is_valid_file(parser, x))\n\nargs = parser.parse_args()\nargs_dict = vars(args)\n\nprint(args_dict)\n\n# Run given R Scripts\nfor filename in args_dict[\"filenames\"]:\n  system_call = \"R CMD BATCH\" + \" \" + filename\n  if args_dict[\"parallel\"]: \n    system_call = \"nohup\" + \" \" + system_call + \" &\"\n\n  os.system(system_call)\n\n# Create the directory (and any parents) of the log files\ncurrentUser = getpass.getuser()\ncurrentTime = datetime.datetime.now().strftime(\"%Y-%m-%d %H:%M:%S\")\nlogDirPrefix = \"/home/kaiserData/logs/\" # Change to the directory where the logs should be saved\nlogDir = logDirPrefix + currentTime + \"-\" + currentUser \n\n# If specified, adds the identifier to the filename of the log\nif args.identifier is not None:\n  logDir += \"-\" + args.identifier\n\nlogDir += \"/\"\n\npathlib.Path(logDir).mkdir(parents=True, exist_ok=True)\n\n# Find and move all logs to this new directory\ncurrentLogPaths = glob.glob('./*.Rout')\n\nfor currentLogPath in currentLogPaths:\n  filename = currentLogPath.split(\"/\")[-1]\n  shutil.move(currentLogPath, logDir + filename)\n\n\n11.6.2 Example usage for runfileSaveLogs\nThis example bash script runs files and generates logs for five scripts in the kaiserflu/3-figures folder. Note that the -i flag is used as an identifier to add figures to the filename of each log.\n#!/bin/bash\n\n# Copy utility run script into this folder for concision in call\ncp ~/kaiserflu/runFileSaveLogs ~/kaiserflu/3-figures/\n\n# Run folder scripts and produce output\ncd ~/kaiserflu/3-figures/\n./runFileSaveLogs -i \"figures\" \\\nfig-mean-season-age.R \\\nfig-monthly-rate.R \\\nfig-point-estimates-combined.R \\\nfig-point-estimates.R \\\nfig-weekly-rate.R\n\n# Remove copied utility run script\nrm runFileSaveLogs",
     "crumbs": [
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Unix commands</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Unix</span>"
     ]
   },
   {
@@ -674,7 +684,7 @@
     "href": "11-reproducible-environments.html",
     "title": "12  Reproducible Environments",
     "section": "",
-    "text": "12.1 Package Version Control with renv\nby Anna Nguyen",
+    "text": "12.1 Package Version Control with renv\nAdapted by UCD-SeRG team from original by Anna Nguyen",
     "crumbs": [
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>Reproducible Environments</span>"
     ]
@@ -694,7 +704,7 @@
     "href": "12-code-publication.html",
     "title": "13  Code Publication",
     "section": "",
-    "text": "13.1 Checklist overview\nby Nolan Pokpongkiat",
+    "text": "13.1 Checklist overview\nAdapted by UCD-SeRG team from original by Nolan Pokpongkiat",
     "crumbs": [
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>Code Publication</span>"
     ]
@@ -874,7 +884,7 @@
     "href": "14-slurm.html",
     "title": "15  Slurm and cluster computing",
     "section": "",
-    "text": "15.1 Getting started\nby UCD-SeRG team\nWhen you need to run a script that requires a large amount of RAM, large files, or that uses parallelization, you can use UC Davis high-performance computing (HPC) resources. UC Davis provides SLURM-based computing clusters at hpc.ucdavis.edu and shiva.ucdavis.edu. For RStudio GUI computing, mercury.ucdavis.edu is available. Please contact lab leadership to get access to the appropriate computing resources. For detailed documentation, visit the UC Davis HPC website. Below, we include general tips for working with Slurm-based computing clusters.\nTo access a UC Davis HPC cluster, in terminal, log in using SSH. For example, to access shiva:\nYou will be prompted to enter your UC Davis credentials and may need to complete two-factor authentication.\nOnce you log in, you can view the contents of your home directory in command line by entering cd $HOME. You can create subfolders within this directory using the mkdir command. For example, you could make a “code” subdirectory and clone a Github repository there using the following code:",
+    "text": "15.1 Getting started\nAdapted by UCD-SeRG team from original by Anna Nguyen, Jade Benjamin-Chung, and Gabby Barratt Heitmann\nWhen you need to run a script that requires a large amount of RAM, large files, or that uses parallelization, you can use UC Davis high-performance computing (HPC) resources. UC Davis provides SLURM-based computing clusters at hpc.ucdavis.edu and shiva.ucdavis.edu. For RStudio GUI computing, mercury.ucdavis.edu is available. Please contact lab leadership to get access to the appropriate computing resources. For detailed documentation, visit the UC Davis HPC website. Below, we include general tips for working with Slurm-based computing clusters.\nTo access a UC Davis HPC cluster, in terminal, log in using SSH. For example, to access shiva:\nYou will be prompted to enter your UC Davis credentials and may need to complete two-factor authentication.\nOnce you log in, you can view the contents of your home directory in command line by entering cd $HOME. You can create subfolders within this directory using the mkdir command. For example, you could make a “code” subdirectory and clone a Github repository there using the following code:",
     "crumbs": [
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>Slurm and cluster computing</span>"
     ]
@@ -944,7 +954,7 @@
     "href": "15-checklists.html",
     "title": "16  Checklists",
     "section": "",
-    "text": "16.1 Pre-analysis plan checklist\nby UCD-SeRG team",
+    "text": "16.1 Pre-analysis plan checklist\nAdapted by UCD-SeRG team from original by Jade Benjamin-Chung",
     "crumbs": [
       "<span class='chapter-number'>16</span>  <span class='chapter-title'>Checklists</span>"
     ]
@@ -994,7 +1004,7 @@
     "href": "16-resources.html",
     "title": "17  Resources",
     "section": "",
-    "text": "17.1 Resources for R\nby UCD-SeRG team",
+    "text": "17.1 Resources for R\nAdapted by UCD-SeRG team from original by Jade Benjamin-Chung and Kunal Mishra",
     "crumbs": [
       "<span class='chapter-number'>17</span>  <span class='chapter-title'>Resources</span>"
     ]
