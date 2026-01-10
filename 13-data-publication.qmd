@@ -6,7 +6,7 @@ Adapted from Fanice Nyatigo and Ben Arnold's chapter in the [Proctor-UCSF Lab Ma
 
 ---
 
-> _**Warning! ** **NEVER** push a dataset into the public domain (e.g., GitHub, OSF) without first checking with Jade to ensure that it is appropriately de-identified and we have approval from the sponsor and/or human subjects review board to do so.  For example, we will need to re-code participant IDs (even if they contain no identifying information) before making data public to completely break the link between IDs and identifiable information stored on our servers. _
+> _**Warning! ** **NEVER** push a dataset into the public domain (e.g., GitHub, OSF) without first checking with lab leadership to ensure that it is appropriately de-identified and we have approval from the sponsor and/or human subjects review board to do so.  For example, we will need to re-code participant IDs (even if they contain no identifying information) before making data public to completely break the link between IDs and identifiable information stored on our servers. _
 
 ---
 
@@ -55,7 +55,7 @@ Any specific dates (e.g., study visit dates, birth dates, treatment dates) are u
 
 ### Geographic information
 
-Do not include GPS coordinates (longitude, latitude) except in special circumstances where they have been obfuscated/shifted. Reach out to Jade  before doing this because it can be complicated. 
+Do not include GPS coordinates (longitude, latitude) except in special circumstances where they have been obfuscated/shifted. Reach out to lab leadership before doing this because it can be complicated. 
 
 Do not include place names or codes (e.g., US Zip Codes)  if the place contains <20,000 people.  For villages or neighborhoods, code them with uninformative IDs.  For sub-districts or districts, names are fine.
 
