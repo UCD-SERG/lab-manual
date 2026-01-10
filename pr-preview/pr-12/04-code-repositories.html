@@ -587,29 +587,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Note on privacy:</strong> Files in <code>inst/analyses/</code> are not inherently private—they will be visible if your repository is public. Use this folder for analyses that rely on restricted data that is stored separately, not for storing the restricted data itself. If you need to keep the analysis code private, use a private repository.</p>
 <p><strong>Best practices for analyses with restricted data:</strong></p>
 <ol type="1">
-<li><p><strong>Document data requirements</strong>: Include a README.md in <code>inst/analyses/</code> explaining:</p>
+<li><strong>Document data requirements</strong>: Include a README.md in <code>inst/analyses/</code> explaining:
 <ul>
 <li>What data is required</li>
 <li>Where to obtain it (if permissible)</li>
 <li>Data access restrictions</li>
 <li>How to set up data paths</li>
 </ul></li>
-<li><p><strong>Use relative paths carefully</strong>: Structure your code so data paths can be configured:</p>
+<li><strong>Use relative paths carefully</strong>: Structure your code so data paths can be configured:</li>
+</ol>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># In inst/analyses/01-analysis.qmd</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Users should set this based on their local setup</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>data_dir <span class="ot">&lt;-</span> <span class="fu">Sys.getenv</span>(<span class="st">"MYPROJECT_DATA"</span>, </span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                       <span class="at">default =</span> <span class="st">"~/restricted_data/myproject"</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>raw_data <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="fu">file.path</span>(data_dir, <span class="st">"sensitive.csv"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p><strong>Create public alternatives</strong>: When possible, create companion vignettes in <code>vignettes/</code> using:</p>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>raw_data <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="fu">file.path</span>(data_dir, <span class="st">"sensitive.csv"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="3" type="1">
+<li><strong>Create public alternatives</strong>: When possible, create companion vignettes in <code>vignettes/</code> using:
 <ul>
 <li>Simulated data that mimics the structure</li>
 <li>Publicly available datasets</li>
 <li>Aggregated/de-identified summaries</li>
 </ul></li>
-<li><p><strong>Add to .Rbuildignore</strong>: Ensure <code>inst/analyses/</code> doesn’t cause package checks to fail:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use usethis to add to .Rbuildignore</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_build_ignore</span>(<span class="st">"inst/analyses"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><strong>Add to .Rbuildignore</strong>: Ensure <code>inst/analyses/</code> doesn’t cause package checks to fail:</li>
 </ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use usethis to add to .Rbuildignore</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_build_ignore</span>(<span class="st">"inst/analyses"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="keep-analysis-workbooks-tidy" class="level3" data-number="5.1.4">
