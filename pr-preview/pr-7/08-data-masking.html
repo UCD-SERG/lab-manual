@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>data-masking – Benjamin-Chung Lab Manual</title>
+<title>9&nbsp; Data masking – Benjamin-Chung Lab Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,6 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./09-github.html" rel="next">
+<link href="./07-big-data.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -77,15 +79,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-0b37c64f34216b628666a8dac638b53b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-e7f4145358ce1d0cd37d8d374dbb44f9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-0b37c64f34216b628666a8dac638b53b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-0dd2bd5de344125cf763a379ddc3eb04.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-7e34ecb6a0e7991f0346b0751d4a7c3f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-0dd2bd5de344125cf763a379ddc3eb04.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
+  "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
+  "panel-placement": "start",
+  "type": "textbox",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -112,7 +114,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -278,141 +280,200 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Benjamin-Chung Lab Manual</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./01-culture-and-conduct.html"> 
-<span class="menu-text">Culture and Conduct</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./02-communication.html"> 
-<span class="menu-text">Communication</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./03-reproducibility.html"> 
-<span class="menu-text">Reproducibility</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./04-code-repositories.html"> 
-<span class="menu-text">Code Repositories</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./05-coding-practices.html"> 
-<span class="menu-text">Coding Practices</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./06-coding-style.html"> 
-<span class="menu-text">Coding Style</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./07-big-data.html"> 
-<span class="menu-text">Big Data</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="./08-data-masking.html" aria-current="page"> 
-<span class="menu-text">Data Masking</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./09-github.html"> 
-<span class="menu-text">GitHub</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./10-unix.html"> 
-<span class="menu-text">Unix</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./11-reproducible-environments.html"> 
-<span class="menu-text">Reproducible Environments</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./12-code-publication.html"> 
-<span class="menu-text">Code Publication</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./13-data-publication.html"> 
-<span class="menu-text">Data Publication</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./14-slurm.html"> 
-<span class="menu-text">Slurm</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./15-checklists.html"> 
-<span class="menu-text">Checklists</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./16-resources.html"> 
-<span class="menu-text">Resources</span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-</div>
-      </div> <!-- /container-fluid -->
-    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-data-masking.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data masking</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Benjamin-Chung Lab Manual</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/UCD-SERG/lab-manual" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome to the Benjamin-Chung Lab!</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-culture-and-conduct.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Culture and conduct</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-communication.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Communication and coordination</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-reproducibility.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Reproducibility</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-code-repositories.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Code repositories</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-coding-practices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Coding practices</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-coding-style.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Coding style</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-big-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Working with Big Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-data-masking.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data masking</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-github.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Github</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-unix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Unix commands</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-reproducible-environments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Reproducible Environments</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-code-publication.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Code Publication</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-data-publication.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Data Publication</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-slurm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Slurm and cluster computing</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-checklists.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Checklists</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Resources</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#data-masking" id="toc-data-masking" class="nav-link active" data-scroll-target="#data-masking">Data masking</a>
+  <li><a href="#general-overview" id="toc-general-overview" class="nav-link active" data-scroll-target="#general-overview"><span class="header-section-number">9.1</span> General Overview</a>
   <ul class="collapse">
-  <li><a href="#general-overview" id="toc-general-overview" class="nav-link" data-scroll-target="#general-overview">General Overview</a>
-  <ul class="collapse">
-  <li><a href="#what-is-data-masking" id="toc-what-is-data-masking" class="nav-link" data-scroll-target="#what-is-data-masking">What is Data Masking?</a></li>
-  <li><a href="#using-tidy-evaluation-for-data-masking" id="toc-using-tidy-evaluation-for-data-masking" class="nav-link" data-scroll-target="#using-tidy-evaluation-for-data-masking">Using tidy evaluation for data masking</a></li>
+  <li><a href="#what-is-data-masking" id="toc-what-is-data-masking" class="nav-link" data-scroll-target="#what-is-data-masking"><span class="header-section-number">9.1.1</span> What is Data Masking?</a></li>
+  <li><a href="#using-tidy-evaluation-for-data-masking" id="toc-using-tidy-evaluation-for-data-masking" class="nav-link" data-scroll-target="#using-tidy-evaluation-for-data-masking"><span class="header-section-number">9.1.2</span> Using tidy evaluation for data masking</a></li>
   </ul></li>
-  <li><a href="#technical-overview" id="toc-technical-overview" class="nav-link" data-scroll-target="#technical-overview">Technical Overview</a>
+  <li><a href="#technical-overview" id="toc-technical-overview" class="nav-link" data-scroll-target="#technical-overview"><span class="header-section-number">9.2</span> Technical Overview</a>
   <ul class="collapse">
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
-  </ul></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">9.2.1</span> Example</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/08-data-masking.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/08-data-masking.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data masking</span></h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
-<section id="data-masking" class="level1">
-<h1>Data masking</h1>
+</header>
+
+
 <p>by Anna Nguyen, Jade Benjamin-Chung, and Gabby Barratt Heitmann</p>
 <p>When you need to run a script that requires a large amount of RAM, large files, or that uses parallelization, you can use Sherlock, Stanford’s computing cluster. Sherlock uses Slurm, an open source, scalable cluster management and job scheduling system for computing clusters. Jade can email Sherlock managers to get you an account. Please refer to the <a href="https://www.sherlock.stanford.edu/docs/overview/introduction/">Sherlock user guide</a> to learn about the system and how to use it. Below, we include a few tips specific to how we use Sherlock in our lab.</p>
-<section id="general-overview" class="level2">
-<h2 class="anchored" data-anchor-id="general-overview">General Overview</h2>
+<section id="general-overview" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="general-overview"><span class="header-section-number">9.1</span> General Overview</h2>
 <p>This chapter covers data masking, a unique process in R in which columns are treated as distinct objects within their dataframe’s environment. In our lab, data masking most frequently comes up when writing wrapper functions where arguments to indicate column names are supplied as strings. We often do this when we repeat the same code on multiple columns, and want to apply a function to a vector of strings that correspond to column names in a dataframe. For example, we might want to clean multiple columns using the same function or estimate the same model under different feature sets. Here, we try to break down what data masking is, why this error comes up, and common approaches to solve this problem.</p>
-<section id="what-is-data-masking" class="level3">
-<h3 class="anchored" data-anchor-id="what-is-data-masking">What is Data Masking?</h3>
+<section id="what-is-data-masking" class="level3" data-number="9.1.1">
+<h3 data-number="9.1.1" class="anchored" data-anchor-id="what-is-data-masking"><span class="header-section-number">9.1.1</span> What is Data Masking?</h3>
 <p>Within certain tidyverse operations, columns are called as if they were variables. For example, while running <code>df %&gt;% mutate(X = …)</code> R recognizes that <code>X</code> specifically references a column in <code>df</code> without explicitly stating its membership <code>df %&gt;% mutate(df$X = …)</code> or calling the column name as a string <code>df %&gt;% mutate(“X” = …)</code>.</p>
 <p><img src="assets/images/data-masking.PNG" class="img-fluid" style="width:50.0%"></p>
 <p>However, this behavior may introduce errors when we attempt to incorporate variables from the global environment within these tidyverse pipelines. In the example above, <code>column_name = “X”</code> followed by <code>df %&gt;% mutate(X2 = column_name + 1)</code> would yield an error, since <code>column_name</code> is not a column in <code>df</code> and the variable <code>column_name</code> is not defined within the environment of <code>df</code></p>
 </section>
-<section id="using-tidy-evaluation-for-data-masking" class="level3">
-<h3 class="anchored" data-anchor-id="using-tidy-evaluation-for-data-masking">Using tidy evaluation for data masking</h3>
+<section id="using-tidy-evaluation-for-data-masking" class="level3" data-number="9.1.2">
+<h3 data-number="9.1.2" class="anchored" data-anchor-id="using-tidy-evaluation-for-data-masking"><span class="header-section-number">9.1.2</span> Using tidy evaluation for data masking</h3>
 <p>In dplyr-based R programming, we make use of tidy evaluation. This allows us to avoid using base R syntax to reference specific columns in a data frame. By leveraging Tidy evaluation-based data masking, we can employ long pipes with several dplyr verbs to manipulate our data using stand-alone variables that store column names as strings.</p>
 <p>For example, consider a data frame “df” that contains a column called “heavyrain” that we want to manipulate. Suppose we wanted to convert the values of “heavyrain” into a factor.</p>
 <p>Using base R, which does not mask data, heavyrain must have quotes to be treated as a data-variable:</p>
@@ -424,15 +485,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>While cleaner and often more convenient, the data frame that var_name is in is now “masked” and we refer to the vectors in the dataframe (data-variables) as though it is an object of its own (an environmental-variable). This is why we can just say the variable’s name in the context of a pipe – we treat it as though it’s an object defined in our environment. Within normal scripts, this is usually fine, because the data frame is “held on to” in the pipe. However, it can cause some programming hurdles when writing functions that take strings of variable/column names as arguments. In the next section, we briefly describe how to troubleshoot common errors in data masking, as relevant to our lab’s work.</p>
 </section>
 </section>
-<section id="technical-overview" class="level2">
-<h2 class="anchored" data-anchor-id="technical-overview">Technical Overview</h2>
+<section id="technical-overview" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="technical-overview"><span class="header-section-number">9.2</span> Technical Overview</h2>
 <p>This section covers the R functions and tools that we often use in the context of data masking, focusing on the bang bang operator (<code>!!</code>) with symbol coercion (<code>sym()</code>) and the Walrus operator (<code>:=</code>).</p>
 <p>The combined use of <code>!!</code> and <code>sym()</code> allows us to use strings, rather than data-variables, to reference column names within dplyr. Together, <code>!!sym(“column_name”)</code> forces dplyr to recognize “column_name” as a data-variable prior to evaluating the rest of the expression, enabling the ability to perform calculations on the column while referring to it as a string. <code>sym()</code> is a function that turns strings into symbols. In the context of a dplyr pipe, these symbols are interpreted as data-variables. The <code>!!</code> (bang bang) operator tells dplyr to evaluate the sym() expression first, e.g.&nbsp;to unquote its expression (e.g.&nbsp;“column_name”) and evaluate it as a pre-existing object, first. This is helpful because often we use <code>sym(“column_name”)</code> within a larger expression, and dplyr might evaluate other elements of the expression first without !!, causing errors.</p>
 <p>When we want to create a new column (via mutate or summarize), the Walrus operator (<code>:=</code>) allows us to specify the new column’s name using a string. For example, while <code>df %&gt;% mutate(“new_column” = values)</code> would yield an error, <code>df %&gt;% mutate(“new_column” := values)</code> will correctly create a new column called “new_column”. If we want to use a variable representing a string, we can use !! to force the variable to be evaluated before using <code>:=</code> to assign the value of the new column.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>col_name <span class="ot">=</span> “new_column”</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="sc">!!</span><span class="at">col_name :=</span> values)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<section id="example" class="level3">
-<h3 class="anchored" data-anchor-id="example">Example</h3>
+<section id="example" class="level3" data-number="9.2.1">
+<h3 data-number="9.2.1" class="anchored" data-anchor-id="example"><span class="header-section-number">9.2.1</span> Example</h3>
 <p>Suppose we want to write a function “generate_descriptive_table” to summarize how the prevalence of “outcome” varies under different levels of a “risk_factor” in a data frame “df”</p>
 <p>We can start by writing the function shell:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>generate_descriptive_table <span class="ot">&lt;-</span> <span class="cf">function</span> (df, outcome, rf) {</span>
@@ -480,7 +541,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
-</section>
 </section>
 </section>
 
@@ -898,6 +958,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./07-big-data.html" class="pagination-link" aria-label="Working with Big Data">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Working with Big Data</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./09-github.html" class="pagination-link" aria-label="Github">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Github</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 

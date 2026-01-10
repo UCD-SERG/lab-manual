@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>slurm – Benjamin-Chung Lab Manual</title>
+<title>15&nbsp; Slurm and cluster computing – Benjamin-Chung Lab Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,6 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./15-checklists.html" rel="next">
+<link href="./13-data-publication.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -77,15 +79,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-0b37c64f34216b628666a8dac638b53b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-e7f4145358ce1d0cd37d8d374dbb44f9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-0b37c64f34216b628666a8dac638b53b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-0dd2bd5de344125cf763a379ddc3eb04.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-7e34ecb6a0e7991f0346b0751d4a7c3f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-0dd2bd5de344125cf763a379ddc3eb04.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
+  "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
+  "panel-placement": "start",
+  "type": "textbox",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -112,7 +114,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -278,150 +280,209 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Benjamin-Chung Lab Manual</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./01-culture-and-conduct.html"> 
-<span class="menu-text">Culture and Conduct</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./02-communication.html"> 
-<span class="menu-text">Communication</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./03-reproducibility.html"> 
-<span class="menu-text">Reproducibility</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./04-code-repositories.html"> 
-<span class="menu-text">Code Repositories</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./05-coding-practices.html"> 
-<span class="menu-text">Coding Practices</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./06-coding-style.html"> 
-<span class="menu-text">Coding Style</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./07-big-data.html"> 
-<span class="menu-text">Big Data</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./08-data-masking.html"> 
-<span class="menu-text">Data Masking</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./09-github.html"> 
-<span class="menu-text">GitHub</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./10-unix.html"> 
-<span class="menu-text">Unix</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./11-reproducible-environments.html"> 
-<span class="menu-text">Reproducible Environments</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./12-code-publication.html"> 
-<span class="menu-text">Code Publication</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./13-data-publication.html"> 
-<span class="menu-text">Data Publication</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="./14-slurm.html" aria-current="page"> 
-<span class="menu-text">Slurm</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./15-checklists.html"> 
-<span class="menu-text">Checklists</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./16-resources.html"> 
-<span class="menu-text">Resources</span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-</div>
-      </div> <!-- /container-fluid -->
-    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./14-slurm.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Slurm and cluster computing</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Benjamin-Chung Lab Manual</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/UCD-SERG/lab-manual" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome to the Benjamin-Chung Lab!</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-culture-and-conduct.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Culture and conduct</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-communication.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Communication and coordination</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-reproducibility.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Reproducibility</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-code-repositories.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Code repositories</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-coding-practices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Coding practices</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-coding-style.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Coding style</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-big-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Working with Big Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-data-masking.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data masking</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-github.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Github</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-unix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Unix commands</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-reproducible-environments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Reproducible Environments</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-code-publication.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Code Publication</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-data-publication.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Data Publication</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-slurm.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Slurm and cluster computing</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-checklists.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Checklists</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Resources</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#slurm" id="toc-slurm" class="nav-link active" data-scroll-target="#slurm">Slurm and cluster computing</a>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started"><span class="header-section-number">15.1</span> Getting started</a>
   <ul class="collapse">
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting started</a>
+  <li><a href="#one-time-system-set-up" id="toc-one-time-system-set-up" class="nav-link" data-scroll-target="#one-time-system-set-up"><span class="header-section-number">15.1.1</span> One-Time System Set-Up</a></li>
+  </ul></li>
+  <li><a href="#moving-files-to-sherlock" id="toc-moving-files-to-sherlock" class="nav-link" data-scroll-target="#moving-files-to-sherlock"><span class="header-section-number">15.2</span> Moving files to Sherlock</a></li>
+  <li><a href="#installing-packages-on-sherlock" id="toc-installing-packages-on-sherlock" class="nav-link" data-scroll-target="#installing-packages-on-sherlock"><span class="header-section-number">15.3</span> Installing packages on Sherlock</a></li>
+  <li><a href="#testing-your-code" id="toc-testing-your-code" class="nav-link" data-scroll-target="#testing-your-code"><span class="header-section-number">15.4</span> Testing your code</a>
   <ul class="collapse">
-  <li><a href="#one-time-system-set-up" id="toc-one-time-system-set-up" class="nav-link" data-scroll-target="#one-time-system-set-up">One-Time System Set-Up</a></li>
+  <li><a href="#the-command-line" id="toc-the-command-line" class="nav-link" data-scroll-target="#the-command-line"><span class="header-section-number">15.4.1</span> The command line</a></li>
+  <li><a href="#the-sherlock-ondemand-dashboard" id="toc-the-sherlock-ondemand-dashboard" class="nav-link" data-scroll-target="#the-sherlock-ondemand-dashboard"><span class="header-section-number">15.4.2</span> The Sherlock OnDemand Dashboard</a></li>
+  <li><a href="#filepaths-configuration-on-sherlock" id="toc-filepaths-configuration-on-sherlock" class="nav-link" data-scroll-target="#filepaths-configuration-on-sherlock"><span class="header-section-number">15.4.3</span> Filepaths &amp; configuration on Sherlock</a></li>
   </ul></li>
-  <li><a href="#moving-files-to-sherlock" id="toc-moving-files-to-sherlock" class="nav-link" data-scroll-target="#moving-files-to-sherlock">Moving files to Sherlock</a></li>
-  <li><a href="#installing-packages-on-sherlock" id="toc-installing-packages-on-sherlock" class="nav-link" data-scroll-target="#installing-packages-on-sherlock">Installing packages on Sherlock</a></li>
-  <li><a href="#testing-your-code" id="toc-testing-your-code" class="nav-link" data-scroll-target="#testing-your-code">Testing your code</a>
+  <li><a href="#storage-group-storage-access" id="toc-storage-group-storage-access" class="nav-link" data-scroll-target="#storage-group-storage-access"><span class="header-section-number">15.5</span> Storage &amp; group storage access</a>
   <ul class="collapse">
-  <li><a href="#the-command-line" id="toc-the-command-line" class="nav-link" data-scroll-target="#the-command-line">The command line</a></li>
-  <li><a href="#the-sherlock-ondemand-dashboard" id="toc-the-sherlock-ondemand-dashboard" class="nav-link" data-scroll-target="#the-sherlock-ondemand-dashboard">The Sherlock OnDemand Dashboard</a></li>
-  <li><a href="#filepaths-configuration-on-sherlock" id="toc-filepaths-configuration-on-sherlock" class="nav-link" data-scroll-target="#filepaths-configuration-on-sherlock">Filepaths &amp; configuration on Sherlock</a></li>
+  <li><a href="#individual-storage" id="toc-individual-storage" class="nav-link" data-scroll-target="#individual-storage"><span class="header-section-number">15.5.1</span> Individual storage</a></li>
+  <li><a href="#group-storage" id="toc-group-storage" class="nav-link" data-scroll-target="#group-storage"><span class="header-section-number">15.5.2</span> Group storage</a></li>
+  <li><a href="#folder-permissions" id="toc-folder-permissions" class="nav-link" data-scroll-target="#folder-permissions"><span class="header-section-number">15.5.3</span> Folder permissions</a></li>
   </ul></li>
-  <li><a href="#storage-group-storage-access" id="toc-storage-group-storage-access" class="nav-link" data-scroll-target="#storage-group-storage-access">Storage &amp; group storage access</a>
-  <ul class="collapse">
-  <li><a href="#individual-storage" id="toc-individual-storage" class="nav-link" data-scroll-target="#individual-storage">Individual storage</a></li>
-  <li><a href="#group-storage" id="toc-group-storage" class="nav-link" data-scroll-target="#group-storage">Group storage</a></li>
-  <li><a href="#folder-permissions" id="toc-folder-permissions" class="nav-link" data-scroll-target="#folder-permissions">Folder permissions</a></li>
-  </ul></li>
-  <li><a href="#running-big-jobs" id="toc-running-big-jobs" class="nav-link" data-scroll-target="#running-big-jobs">Running big jobs</a></li>
-  </ul></li>
+  <li><a href="#running-big-jobs" id="toc-running-big-jobs" class="nav-link" data-scroll-target="#running-big-jobs"><span class="header-section-number">15.6</span> Running big jobs</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/14-slurm.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/14-slurm.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="slurm" class="quarto-section-identifier"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Slurm and cluster computing</span></span></h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
-<section id="slurm" class="level1">
-<h1>Slurm and cluster computing</h1>
+</header>
+
+
 <p>by Anna Nguyen, Jade Benjamin-Chung, and Gabby Barratt Heitmann</p>
 <p>When you need to run a script that requires a large amount of RAM, large files, or that uses parallelization, you can use Sherlock, Stanford’s computing cluster. Sherlock uses Slurm, an open source, scalable cluster management and job scheduling system for computing clusters. Jade can email Sherlock managers to get you an account. Please refer to the <a href="https://www.sherlock.stanford.edu/docs/overview/introduction/">Sherlock user guide</a> to learn about the system and how to use it. Below, we include a few tips specific to how we use Sherlock in our lab.</p>
-<section id="getting-started" class="level2">
-<h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
+<section id="getting-started" class="level2" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="getting-started"><span class="header-section-number">15.1</span> Getting started</h2>
 <p>To access Sherlock, in terminal, log in using the following syntax and replace “USERNAME” with your Stanford alias. You will be prompted to enter your Stanford password (the same one you use for your email and other accounts) and to complete two-factor authentication.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> USERNAME@login.sherlock.stanford.edu</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Once you log in, you can view the contents of your home directory in command line by entering <code>cd $HOME</code>. You can create subfolders within this directory using the <code>mkdir</code> command. For example, you could make a “code” subdirectory and clone a Github repository there using the following code:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="va">$HOME</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> code</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/jadebc/covid19-infections.git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<section id="one-time-system-set-up" class="level3">
-<h3 class="anchored" data-anchor-id="one-time-system-set-up">One-Time System Set-Up</h3>
+<section id="one-time-system-set-up" class="level3" data-number="15.1.1">
+<h3 data-number="15.1.1" class="anchored" data-anchor-id="one-time-system-set-up"><span class="header-section-number">15.1.1</span> One-Time System Set-Up</h3>
 <p>To keep the install packages consistent across different nodes, you will need to explicitly set the pathway to your R library directory.</p>
 <p>Open your <code>~/.Renviron</code> file (<code>vi ~/.Renviron</code>) and append the following line:</p>
 <p><em>Note: Once you open the file using <code>vi [file_name]</code>, you must press <code>i</code> (on Mac OS) or <code>Insert</code> (on Windows) to make edits. After you finish, hit <code>Esc</code> to exit editing mode and type <code>:wq</code> to save and close the file.</em></p>
@@ -448,8 +509,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">file</span> = M, sep = <span class="st">"\n"</span>, append = TRUE<span class="kw">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
-<section id="moving-files-to-sherlock" class="level2">
-<h2 class="anchored" data-anchor-id="moving-files-to-sherlock">Moving files to Sherlock</h2>
+<section id="moving-files-to-sherlock" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="moving-files-to-sherlock"><span class="header-section-number">15.2</span> Moving files to Sherlock</h2>
 <p>The <code>$HOME</code> directory is a good place to store code and small test files (quota: 15 GB per user). Save large files to the <code>$SCRATCH</code> directory (quota: 100 TB per user). You can read more about storage options on Sherlock <a href="https://www.sherlock.stanford.edu/docs/storage/">here</a>. On the <code>$SCRATCH</code> directory, files that are not modified after 90 days are automatically deleted. For this reason, it’s best to create a bash script that records the file transfer process for a given project. See example code below:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># note: the following steps should be done from your local </span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># (not after ssh-ing into sherlock)</span></span>
@@ -464,8 +525,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co"># securely transfer folders from Box to our shared scratch directory</span></span>
 <span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> <span class="st">"Box/malaria-project/folder-3/"</span> USERNAME@login.sherlock.stanford.edu:/scratch/group/jadebc/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="installing-packages-on-sherlock" class="level2">
-<h2 class="anchored" data-anchor-id="installing-packages-on-sherlock">Installing packages on Sherlock</h2>
+<section id="installing-packages-on-sherlock" class="level2" data-number="15.3">
+<h2 data-number="15.3" class="anchored" data-anchor-id="installing-packages-on-sherlock"><span class="header-section-number">15.3</span> Installing packages on Sherlock</h2>
 <p>When you begin working on Sherlock, you will most likely encounter problems with installing packages. To install packages, login to Sherlock on the command line and open a development node using the command <code>sdev</code>. Do not attempt to do this in the RStudio Server (see next section), as you will have to re-do it for every new session you open.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> USERNAME@login.sherlock.stanford.edu</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -496,11 +557,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> spider DEPENDENCY NAME</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>However, you can also reach out to the Sherlock team for help. You can email them at srcc-support@stanford.edu. They also hold <a href="https://jumpstartsrcc.sites.stanford.edu/events/series/sherlock-office-hours">office hours</a>.</p>
 </section>
-<section id="testing-your-code" class="level2">
-<h2 class="anchored" data-anchor-id="testing-your-code">Testing your code</h2>
+<section id="testing-your-code" class="level2" data-number="15.4">
+<h2 data-number="15.4" class="anchored" data-anchor-id="testing-your-code"><span class="header-section-number">15.4</span> Testing your code</h2>
 <p>Both of the following ways to test code on Sherlock are recommended for making small changes, such as editing file paths and making sure the packages and source files load. You should write and test the functionality of your script locally, only testing on Sherlock once major bugs are out.</p>
-<section id="the-command-line" class="level3">
-<h3 class="anchored" data-anchor-id="the-command-line">The command line</h3>
+<section id="the-command-line" class="level3" data-number="15.4.1">
+<h3 data-number="15.4.1" class="anchored" data-anchor-id="the-command-line"><span class="header-section-number">15.4.1</span> The command line</h3>
 <p>There are two main ways to explore and test code on Sherlock. The first way is best for users who are comfortable working on the command line and editing code in base R. Even if you are not comfortable yet, this is probably the better way because these commands will transfer between Sherlock and other cluster computers using Slurm.</p>
 <p>Typically, you will want to initially test your scripts by initiating a development node using the command <code>sdev</code>. This will allocate a small amount of computing resources for 1 hour. You can access R via command line using the following code.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># open development node</span></span>
@@ -516,14 +577,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>*Note: for collaboration purposes, it’s best for everyone to work with one version of R. Check what version is being used for the project you are working on. Some packages only work with some versions of R, so it’s best to keep it consistent.</p>
 </section>
-<section id="the-sherlock-ondemand-dashboard" class="level3">
-<h3 class="anchored" data-anchor-id="the-sherlock-ondemand-dashboard">The Sherlock OnDemand Dashboard</h3>
+<section id="the-sherlock-ondemand-dashboard" class="level3" data-number="15.4.2">
+<h3 data-number="15.4.2" class="anchored" data-anchor-id="the-sherlock-ondemand-dashboard"><span class="header-section-number">15.4.2</span> The Sherlock OnDemand Dashboard</h3>
 <p>The second way to test and edit code is to use the Sherlock OnDemand Dashboard, accessed by typing <a href="login.sherlock.stanford.edu">login.sherlock.stanford.edu</a> into a web browser. You will be prompted to authenticate the way you would for any Stanford website. This is the best way to edit code for people who are not comfortable accessing &amp; editing in base R in a Shell application.</p>
 <p>You can test your code via the <a href="https://www.sherlock.stanford.edu/docs/user-guide/ondemand/#rstudio">Rstudio server on Sherlock</a>. To access this, login to the Dashboard, then click on Interactive Apps in the menu bar and choose R Studio Server. Similar to the sdev node, you have to set various parameters for your session. Choose a version of R and set the time – max. 2 hours. You can play with the other configurations, but this is likely unnecessary, as you should not need huge computing power to test small amounts of code. Keep in mind the more computing power you request, the lower priority your request becomes. You will then wait for the resources to become available, and you will be able to click “Launch” when they are (if you don’t mess with the CPU or GPU, this is usually less than 2 minutes). The screen that opens will look very similar to the RStudio on your local.</p>
 <p>Do NOT use the RStudio Server’s Terminal to install packages, set your R environment, and do everything else needed to configure Sherlock because you will likely need to re-do it for every session/project. It’s best to use the Dashboard/RStudio Server if you are more comfortable testing &amp; editing in RStudio rather than through base R in a Shell application.</p>
 </section>
-<section id="filepaths-configuration-on-sherlock" class="level3">
-<h3 class="anchored" data-anchor-id="filepaths-configuration-on-sherlock">Filepaths &amp; configuration on Sherlock</h3>
+<section id="filepaths-configuration-on-sherlock" class="level3" data-number="15.4.3">
+<h3 data-number="15.4.3" class="anchored" data-anchor-id="filepaths-configuration-on-sherlock"><span class="header-section-number">15.4.3</span> Filepaths &amp; configuration on Sherlock</h3>
 <p>In most cases, you will want to test that the file paths work correctly on Sherlock. You will likely need to add code to the configuration file in the project repository that specifies Sherlock-specific file paths. Here is an example:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set sherlock-specific file paths</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span><span class="kw">(</span><span class="ex">Sys.getenv</span><span class="er">(</span><span class="st">"LMOD_SYSHOST"</span><span class="kw">)</span><span class="ex">==</span><span class="st">"sherlock"</span><span class="kw">){</span></span>
@@ -535,10 +596,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="kw">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
-<section id="storage-group-storage-access" class="level2">
-<h2 class="anchored" data-anchor-id="storage-group-storage-access">Storage &amp; group storage access</h2>
-<section id="individual-storage" class="level3">
-<h3 class="anchored" data-anchor-id="individual-storage">Individual storage</h3>
+<section id="storage-group-storage-access" class="level2" data-number="15.5">
+<h2 data-number="15.5" class="anchored" data-anchor-id="storage-group-storage-access"><span class="header-section-number">15.5</span> Storage &amp; group storage access</h2>
+<section id="individual-storage" class="level3" data-number="15.5.1">
+<h3 data-number="15.5.1" class="anchored" data-anchor-id="individual-storage"><span class="header-section-number">15.5.1</span> Individual storage</h3>
 <p>There are multiple places to store your files on Sherlock. Each user has their own <code>$HOME</code> directory as well as a <code>$SCRATCH</code> directory. These are directories that can be accessed via the command line once you’ve logged in to Sherlock:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="va">$HOME</span> </span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /home/users/USERNAME <span class="co"># Alternatively, use the full path</span></span>
@@ -549,8 +610,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><code>$HOME</code> has a volume quota of 15 GB. <code>$SCRATCH</code> has a volume quota of 100 TB, but files here get deleted 90 days after their last modification. Thus, use <code>$SCRACTH</code> for test files, exploratory analyses, and temporary storage. Use <code>$HOME</code> for long-term storage of important files and more finalized analyses.</p>
 <p>You can read more about storage options on Sherlock <a href="https://www.sherlock.stanford.edu/docs/storage/">here</a>.</p>
 </section>
-<section id="group-storage" class="level3">
-<h3 class="anchored" data-anchor-id="group-storage">Group storage</h3>
+<section id="group-storage" class="level3" data-number="15.5.2">
+<h3 data-number="15.5.2" class="anchored" data-anchor-id="group-storage"><span class="header-section-number">15.5.2</span> Group storage</h3>
 <p>The lab also has a <code>$GROUP_HOME</code> and a <code>$GROUP_SCRATCH</code> to store files for collaborative use. <code>$GROUP_HOME</code> has a volume quota of 1 TB and infinite retention time, whereas <code>$GROUP_SCRATCH</code> has a volume quota of 100 TB and the same 90-day retention limit. You can access these via the command line or navigate to them using the File Explorer:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="va">$GROUP_HOME</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /home/groups/jadebc</span>
@@ -559,16 +620,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /scratch/groups/jadebc</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>However, saving files to group storage can be tricky. You can try using the scp command in the section “Moving files to Sherlock” to see if you have permission to add files to group directories. Read the next section to ensure any directories you create have the right permissions.</p>
 </section>
-<section id="folder-permissions" class="level3">
-<h3 class="anchored" data-anchor-id="folder-permissions">Folder permissions</h3>
+<section id="folder-permissions" class="level3" data-number="15.5.3">
+<h3 data-number="15.5.3" class="anchored" data-anchor-id="folder-permissions"><span class="header-section-number">15.5.3</span> Folder permissions</h3>
 <p>Generally, when we put folders in <code>$GROUP_HOME</code> or <code>$GROUP_SCRATCH</code>, it is so that we can collaborate on an analysis within the research group, so multiple people need to be able to access the folders. If you create a new folder in <code>$GROUP_HOME</code> or <code>$GROUP_SCRATCH</code>, please check the folder’s permissions to ensure that other group members are able to access its contents. To check the permissions of a folder, navigate to the level above it, and enter <code>ls -l</code>. You will see output like this:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxrwxrwx</span> 2 jadebc jadebc  2204 Jun 17 13:12 myfolder</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Please review <a href="https://www.chriswrites.com/how-to-change-file-permissions-using-the-terminal/">this website</a> to learn how to interpret the code on the left side of this output. The website also tells you how to change folder permissions. In order to ensure that all users and group members are able to access a folder’s contents, you can use the following command:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> ugo+rwx FOLDER_NAME</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
-<section id="running-big-jobs" class="level2">
-<h2 class="anchored" data-anchor-id="running-big-jobs">Running big jobs</h2>
+<section id="running-big-jobs" class="level2" data-number="15.6">
+<h2 data-number="15.6" class="anchored" data-anchor-id="running-big-jobs"><span class="header-section-number">15.6</span> Running big jobs</h2>
 <p>Once your test scripts run successfully, you can submit an sbatch script for larger jobs. These are text files with a <code>.sh</code> suffix. Use a text editor like Sublime to create such a script. Documentation on sbatch options is available <a href="https://slurm.schedmd.com/sbatch.html">here</a>. Here is an example of an sbatch script with the following options:</p>
 <ul>
 <li><code>job-name=run_inc</code>: Job name that will show up in the Sherlock system</li>
@@ -614,7 +675,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">squeue</span> <span class="at">-u</span> <span class="va">$USERNAME</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1031,6 +1091,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./13-data-publication.html" class="pagination-link" aria-label="Data Publication">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Data Publication</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./15-checklists.html" class="pagination-link" aria-label="Checklists">
+        <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Checklists</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 

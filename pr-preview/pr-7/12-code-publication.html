@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>code-publication – Benjamin-Chung Lab Manual</title>
+<title>13&nbsp; Code Publication – Benjamin-Chung Lab Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./13-data-publication.html" rel="next">
+<link href="./11-reproducible-environments.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -42,15 +44,15 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-0b37c64f34216b628666a8dac638b53b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-e7f4145358ce1d0cd37d8d374dbb44f9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-0b37c64f34216b628666a8dac638b53b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-0dd2bd5de344125cf763a379ddc3eb04.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-7e34ecb6a0e7991f0346b0751d4a7c3f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-0dd2bd5de344125cf763a379ddc3eb04.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
+  "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
+  "panel-placement": "start",
+  "type": "textbox",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -77,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -243,131 +245,190 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Benjamin-Chung Lab Manual</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./01-culture-and-conduct.html"> 
-<span class="menu-text">Culture and Conduct</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./02-communication.html"> 
-<span class="menu-text">Communication</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./03-reproducibility.html"> 
-<span class="menu-text">Reproducibility</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./04-code-repositories.html"> 
-<span class="menu-text">Code Repositories</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./05-coding-practices.html"> 
-<span class="menu-text">Coding Practices</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./06-coding-style.html"> 
-<span class="menu-text">Coding Style</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./07-big-data.html"> 
-<span class="menu-text">Big Data</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./08-data-masking.html"> 
-<span class="menu-text">Data Masking</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./09-github.html"> 
-<span class="menu-text">GitHub</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./10-unix.html"> 
-<span class="menu-text">Unix</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./11-reproducible-environments.html"> 
-<span class="menu-text">Reproducible Environments</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="./12-code-publication.html" aria-current="page"> 
-<span class="menu-text">Code Publication</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./13-data-publication.html"> 
-<span class="menu-text">Data Publication</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./14-slurm.html"> 
-<span class="menu-text">Slurm</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./15-checklists.html"> 
-<span class="menu-text">Checklists</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./16-resources.html"> 
-<span class="menu-text">Resources</span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-</div>
-      </div> <!-- /container-fluid -->
-    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./12-code-publication.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Code Publication</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Benjamin-Chung Lab Manual</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/UCD-SERG/lab-manual" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome to the Benjamin-Chung Lab!</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-culture-and-conduct.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Culture and conduct</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-communication.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Communication and coordination</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-reproducibility.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Reproducibility</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-code-repositories.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Code repositories</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-coding-practices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Coding practices</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-coding-style.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Coding style</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-big-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Working with Big Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-data-masking.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data masking</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-github.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Github</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-unix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Unix commands</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-reproducible-environments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Reproducible Environments</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-code-publication.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Code Publication</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-data-publication.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Data Publication</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-slurm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Slurm and cluster computing</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-checklists.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Checklists</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Resources</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#code-publication" id="toc-code-publication" class="nav-link active" data-scroll-target="#code-publication">Code Publication</a>
-  <ul class="collapse">
-  <li><a href="#checklist-overview" id="toc-checklist-overview" class="nav-link" data-scroll-target="#checklist-overview">Checklist overview</a></li>
-  <li><a href="#fill-out-file-headers" id="toc-fill-out-file-headers" class="nav-link" data-scroll-target="#fill-out-file-headers">Fill out file headers</a></li>
-  <li><a href="#clean-up-comments" id="toc-clean-up-comments" class="nav-link" data-scroll-target="#clean-up-comments">Clean up comments</a></li>
-  <li><a href="#document-functions" id="toc-document-functions" class="nav-link" data-scroll-target="#document-functions">Document functions</a></li>
-  <li><a href="#remove-deprecated-filepaths" id="toc-remove-deprecated-filepaths" class="nav-link" data-scroll-target="#remove-deprecated-filepaths">Remove deprecated filepaths</a></li>
-  <li><a href="#ensure-project-runs-via-bash" id="toc-ensure-project-runs-via-bash" class="nav-link" data-scroll-target="#ensure-project-runs-via-bash">Ensure project runs via bash</a></li>
-  <li><a href="#complete-the-readme" id="toc-complete-the-readme" class="nav-link" data-scroll-target="#complete-the-readme">Complete the README</a></li>
-  <li><a href="#clean-up-feature-branches" id="toc-clean-up-feature-branches" class="nav-link" data-scroll-target="#clean-up-feature-branches">Clean up feature branches</a></li>
-  <li><a href="#create-github-release" id="toc-create-github-release" class="nav-link" data-scroll-target="#create-github-release">Create Github release</a></li>
-  </ul></li>
+  <li><a href="#checklist-overview" id="toc-checklist-overview" class="nav-link active" data-scroll-target="#checklist-overview"><span class="header-section-number">13.1</span> Checklist overview</a></li>
+  <li><a href="#fill-out-file-headers" id="toc-fill-out-file-headers" class="nav-link" data-scroll-target="#fill-out-file-headers"><span class="header-section-number">13.2</span> Fill out file headers</a></li>
+  <li><a href="#clean-up-comments" id="toc-clean-up-comments" class="nav-link" data-scroll-target="#clean-up-comments"><span class="header-section-number">13.3</span> Clean up comments</a></li>
+  <li><a href="#document-functions" id="toc-document-functions" class="nav-link" data-scroll-target="#document-functions"><span class="header-section-number">13.4</span> Document functions</a></li>
+  <li><a href="#remove-deprecated-filepaths" id="toc-remove-deprecated-filepaths" class="nav-link" data-scroll-target="#remove-deprecated-filepaths"><span class="header-section-number">13.5</span> Remove deprecated filepaths</a></li>
+  <li><a href="#ensure-project-runs-via-bash" id="toc-ensure-project-runs-via-bash" class="nav-link" data-scroll-target="#ensure-project-runs-via-bash"><span class="header-section-number">13.6</span> Ensure project runs via bash</a></li>
+  <li><a href="#complete-the-readme" id="toc-complete-the-readme" class="nav-link" data-scroll-target="#complete-the-readme"><span class="header-section-number">13.7</span> Complete the README</a></li>
+  <li><a href="#clean-up-feature-branches" id="toc-clean-up-feature-branches" class="nav-link" data-scroll-target="#clean-up-feature-branches"><span class="header-section-number">13.8</span> Clean up feature branches</a></li>
+  <li><a href="#create-github-release" id="toc-create-github-release" class="nav-link" data-scroll-target="#create-github-release"><span class="header-section-number">13.9</span> Create Github release</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/12-code-publication.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/12-code-publication.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Code Publication</span></h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
-<section id="code-publication" class="level1">
-<h1>Code Publication</h1>
+</header>
+
+
 <p>by Nolan Pokpongkiat</p>
-<section id="checklist-overview" class="level2">
-<h2 class="anchored" data-anchor-id="checklist-overview">Checklist overview</h2>
+<section id="checklist-overview" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="checklist-overview"><span class="header-section-number">13.1</span> Checklist overview</h2>
 <ol type="1">
 <li><a href="#fill-out-file-headers">Fill out file headers</a></li>
 <li><a href="#clean-up-comments">Clean up comments</a></li>
@@ -379,29 +440,29 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="#create-github-release">Create Github release</a></li>
 </ol>
 </section>
-<section id="fill-out-file-headers" class="level2">
-<h2 class="anchored" data-anchor-id="fill-out-file-headers">Fill out file headers</h2>
+<section id="fill-out-file-headers" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="fill-out-file-headers"><span class="header-section-number">13.2</span> Fill out file headers</h2>
 <p>Every file in a project should have a header that allows it to be interpreted on its own. It should include the name of the project and a short description for what this file (among the many in your project) does specifically. See template <a href="https://jadebc.github.io/lab-manual/coding-practices.html#file-headers">here.</a></p>
 </section>
-<section id="clean-up-comments" class="level2">
-<h2 class="anchored" data-anchor-id="clean-up-comments">Clean up comments</h2>
+<section id="clean-up-comments" class="level2" data-number="13.3">
+<h2 data-number="13.3" class="anchored" data-anchor-id="clean-up-comments"><span class="header-section-number">13.3</span> Clean up comments</h2>
 <p>Make sure comments in the code are for code documentation purposes only. Do not leave comments to self in the final script files.</p>
 </section>
-<section id="document-functions" class="level2">
-<h2 class="anchored" data-anchor-id="document-functions">Document functions</h2>
+<section id="document-functions" class="level2" data-number="13.4">
+<h2 data-number="13.4" class="anchored" data-anchor-id="document-functions"><span class="header-section-number">13.4</span> Document functions</h2>
 <p>Every function you write must include a header to document its purpose, inputs, and outputs. See template for the function documentation <a href="https://jadebc.github.io/lab-manual/coding-practices.html#function-documentation">here.</a></p>
 </section>
-<section id="remove-deprecated-filepaths" class="level2">
-<h2 class="anchored" data-anchor-id="remove-deprecated-filepaths">Remove deprecated filepaths</h2>
+<section id="remove-deprecated-filepaths" class="level2" data-number="13.5">
+<h2 data-number="13.5" class="anchored" data-anchor-id="remove-deprecated-filepaths"><span class="header-section-number">13.5</span> Remove deprecated filepaths</h2>
 <p>All file paths should be defined in 0-config.R, and should be set relative to the project working directory. All absolute file paths from your local computer should be removed, and replaced with a relative path. If a third party were to re-run this analysis, if they need to download data from a separate source and change a filepath in the 0-config.R to match, make sure to specify in the README which line of 0-config.R needs to be substituted.</p>
 </section>
-<section id="ensure-project-runs-via-bash" class="level2">
-<h2 class="anchored" data-anchor-id="ensure-project-runs-via-bash">Ensure project runs via bash</h2>
+<section id="ensure-project-runs-via-bash" class="level2" data-number="13.6">
+<h2 data-number="13.6" class="anchored" data-anchor-id="ensure-project-runs-via-bash"><span class="header-section-number">13.6</span> Ensure project runs via bash</h2>
 <p>The project should be configured to be entirely reproducible by running a master bash script, run-project.sh, which should live at the top directory. This bash script can call other bash scripts in subfolders, if necessary. Bash scripts should use the runFileSaveLogs utility script, which is a wrapper around the Rscript command, allowing you to specify where .Rout log files are moved after the R scripts are run.</p>
 <p>See usage and documentation <a href="https://jadebc.github.io/lab-manual/unix.html#example-code-for-runfilesavelogs">here.</a></p>
 </section>
-<section id="complete-the-readme" class="level2">
-<h2 class="anchored" data-anchor-id="complete-the-readme">Complete the README</h2>
+<section id="complete-the-readme" class="level2" data-number="13.7">
+<h2 data-number="13.7" class="anchored" data-anchor-id="complete-the-readme"><span class="header-section-number">13.7</span> Complete the README</h2>
 <p>A README.md should live at the top directory of the project. This usually includes a Project Overview and a Directory Structure, along with the names of the contributors and the Creative Commons License. See below for a template:</p>
 <blockquote class="blockquote">
 <p><strong>Overview</strong></p>
@@ -446,17 +507,16 @@ ul.task-list li input[type="checkbox"] {
 </blockquote>
 <p>When possible, also include a description of the RDS results that are generated, detailing what data sources were used, where the script lives that creates it, and what information the RDS results hold.</p>
 </section>
-<section id="clean-up-feature-branches" class="level2">
-<h2 class="anchored" data-anchor-id="clean-up-feature-branches">Clean up feature branches</h2>
+<section id="clean-up-feature-branches" class="level2" data-number="13.8">
+<h2 data-number="13.8" class="anchored" data-anchor-id="clean-up-feature-branches"><span class="header-section-number">13.8</span> Clean up feature branches</h2>
 <p>In the remote repository on Github, all feature branches aside from master should be merged in and deleted. All outstanding PRs should be closed.</p>
 </section>
-<section id="create-github-release" class="level2">
-<h2 class="anchored" data-anchor-id="create-github-release">Create Github release</h2>
+<section id="create-github-release" class="level2" data-number="13.9">
+<h2 data-number="13.9" class="anchored" data-anchor-id="create-github-release"><span class="header-section-number">13.9</span> Create Github release</h2>
 <p>Once all of these items are verified, create a tag to make a Github release, which will tag the repository, creating a marker at this specific point in time.</p>
 <p>Detailed instructions <a href="https://docs.github.com/en/enterprise/2.13/user/articles/creating-releases">here.</a></p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -873,6 +933,18 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./11-reproducible-environments.html" class="pagination-link" aria-label="Reproducible Environments">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Reproducible Environments</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./13-data-publication.html" class="pagination-link" aria-label="Data Publication">
+        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Data Publication</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 
