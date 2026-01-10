@@ -114,7 +114,7 @@ Example code comment:
 
 We recommend using **[GitHub Copilot](https://github.com/features/copilot)** for AI-assisted coding. GitHub Copilot offers several advantages:
 
-- **Built-in transparency**: When used through GitHub's interface, Copilot creates a clear record of its role in your work through commit history and code suggestions
+- **Built-in transparency**: When used through GitHub's [Coding Agent interface](https://github.com/features/copilot/agents), Copilot creates a clear record of its role in your work through commit history and code suggestions
 - **Context-aware suggestions**: Copilot understands your codebase and can make contextually relevant suggestions
 - **Integration with version control**: Using Copilot within GitHub ensures that AI-assisted changes are tracked alongside all other code changes
 - **Interactive workflow**: Copilot's interactive nature encourages you to review and modify suggestions rather than blindly accepting them
