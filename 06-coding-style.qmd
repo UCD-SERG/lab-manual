@@ -44,6 +44,6 @@ Follow these code style guidelines for all R code:
 
 {{< include 06-coding-style/automated-tools.qmd >}}
 
-## Additional Resources {#sec-r-resources}
+## Additional Resources {#sec-r-resources-style}
 
 - [Tidyverse style guide](https://style.tidyverse.org/)
