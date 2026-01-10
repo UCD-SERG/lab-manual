@@ -49,7 +49,7 @@ book:
     - 12-code-publication.qmd
     - 13-data-publication.qmd
     - 14-slurm.qmd
-    - 16-ai-tools.qmd
+    - 15-ai-tools.qmd
     - 16-checklists.qmd
     - 17-resources.qmd
     - 18-professional-development.qmd
