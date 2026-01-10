@@ -40,7 +40,6 @@ book:
     - 03-reproducibility.qmd
     - 04-code-repositories.qmd
     - 05-coding-practices.qmd
-    - 06-ai-tools.qmd
     - 07-coding-style.qmd
     - 08-big-data.qmd
     - 09-data-masking.qmd
@@ -50,6 +49,7 @@ book:
     - 13-code-publication.qmd
     - 14-data-publication.qmd
     - 15-slurm.qmd
+    - 06-ai-tools.qmd
     - 16-checklists.qmd
     - 17-resources.qmd
   page-navigation: true
