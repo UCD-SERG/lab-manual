@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Welcome to the Benjamin-Chung Lab! – Benjamin-Chung Lab Manual</title>
+<title>checklists – Benjamin-Chung Lab Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -257,7 +257,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -317,7 +317,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Slurm</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./15-checklists.html"> 
+    <a class="nav-link active" href="./15-checklists.html" aria-current="page"> 
 <span class="menu-text">Checklists</span></a>
   </li>  
   <li class="nav-item">
@@ -341,48 +341,97 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#about-the-lab" id="toc-about-the-lab" class="nav-link active" data-scroll-target="#about-the-lab">About the lab</a></li>
-  <li><a href="#about-this-lab-manual" id="toc-about-this-lab-manual" class="nav-link" data-scroll-target="#about-this-lab-manual">About this lab manual</a></li>
+  <li><a href="#checklists" id="toc-checklists" class="nav-link active" data-scroll-target="#checklists">Checklists</a>
+  <ul class="collapse">
+  <li><a href="#pre-analysis-plan-checklist" id="toc-pre-analysis-plan-checklist" class="nav-link" data-scroll-target="#pre-analysis-plan-checklist">Pre-analysis plan checklist</a></li>
+  <li><a href="#code-checklist" id="toc-code-checklist" class="nav-link" data-scroll-target="#code-checklist">Code checklist</a></li>
+  <li><a href="#manuscript-checklist" id="toc-manuscript-checklist" class="nav-link" data-scroll-target="#manuscript-checklist">Manuscript checklist</a></li>
+  <li><a href="#figure-checklist" id="toc-figure-checklist" class="nav-link" data-scroll-target="#figure-checklist">Figure checklist</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/index.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/15-checklists.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/15-checklists.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Welcome to the Benjamin-Chung Lab!</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
 
 
-</header>
-
-
-<section id="about-the-lab" class="level2">
-<h2 class="anchored" data-anchor-id="about-the-lab">About the lab</h2>
-<p>Welcome to the lab of Dr.&nbsp;Jade Benjamin-Chung, Assistant Professor in Epidemiology &amp; Population Health at Stanford University. Our mission is to improve population health by creating high quality evidence about what health interventions work in whom and where, when, and how to implement them. Most of our research is focused on infectious diseases, including malaria, diarrhea, soil-transmitted helminths, and influenza. Our focus is on improving the health of vulnerable populations from low-resource settings, both domestically and internationally. We use a variety of epidemiologic, computational, and statistical methods, including causal inference and machine learning methods, in pursuit of our mission. To learn more about the lab, visit <a href="https://jadebc.net">jadebc.net</a>.</p>
+<section id="checklists" class="level1">
+<h1>Checklists</h1>
+<p>by Jade Benjamin-Chung</p>
+<section id="pre-analysis-plan-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="pre-analysis-plan-checklist">Pre-analysis plan checklist</h2>
+<ul>
+<li>Brief background on the study (a condensed version of the introduction section of the paper)</li>
+<li>Hypotheses / objectives</li>
+<li>Study design</li>
+<li>Description of data</li>
+<li>Definition of outcomes</li>
+<li>Definition of interventions / exposures</li>
+<li>Definition of covariates</li>
+<li>Statistical power calculation</li>
+<li>Statistical model description</li>
+<li>Covariate selection / screening</li>
+<li>Standard error estimation method</li>
+<li>Missing data analysis</li>
+<li>Assessment of effect modification / subgroup analyses</li>
+<li>Sensitivity analyses</li>
+<li>Negative control analyses</li>
+</ul>
 </section>
-<section id="about-this-lab-manual" class="level2">
-<h2 class="anchored" data-anchor-id="about-this-lab-manual">About this lab manual</h2>
-<p>This lab manual covers our communication strategy, code of conduct, and best practices for reproducibility of computational workflows. It is a living document that is updated regularly.</p>
-<p>This manual was created with input from a large number of team members and with inspiration from <a href="https://github.com/alylab/labmanual/blob/master/aly-lab-manual.pdf">other scientists’ lab manuals</a>. Contributors include Jade Benjamin-Chung, Kunal Mishra, Stephanie Djajadi, Nolan Pokpongkiat, Anna Nguyen, Iris Tong, and Gabby Barratt Heitmann.</p>
-<p>Feel free to draw from this manual (and please cite it if you do!).</p>
-<!-- https://beierlab.com/lab-antiracism-statement/ -->
-<!-- https://ib.berkeley.edu/labs/stillman/images/Stillman%20Lab%20Anti.pdf -->
-<p><br> <br> <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"></a><br>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.</p>
+<section id="code-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="code-checklist">Code checklist</h2>
+<ul>
+<li>Does the script run without errors?</li>
+<li>Is code self-contained within repo and/or associated Box folder?</li>
+<li>Is all commented out code / remarks removed?</li>
+<li>Does the header accurately describe the process completed in the script?</li>
+<li>Is the script pushed to its github repository?</li>
+<li>Does the code adhere to the <a href="https://jadebc.github.io/lab-manual/coding-style.html">coding style guide</a>?</li>
+<li>Are all warnings ignorable? Should any warnings be intentionally suppressed or addressed?</li>
+</ul>
+</section>
+<section id="manuscript-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="manuscript-checklist">Manuscript checklist</h2>
+<p><em>This is adapted in part from <a href="https://www.nature.com/articles/d41586-019-01431-z">this article</a>.</em></p>
+<ul>
+<li>Have you completed the relevant reporting checklist, if applicable? (<a href="https://www.equator-network.org/about-us/what-is-a-reporting-guideline/">Collection of checklists</a>)</li>
+<li>Are the study results within the manuscript replicable (i.e., if you rerun the code in the study’s repository, the tables and figures will be exactly replicated?)</li>
+<li>Is a target journal selected?</li>
+<li>Is the title declarative, in other words, does it state the object/findings rather than suggest them?</li>
+<li>Is the word count of the manuscript close to the target journal’s allowance?</li>
+<li>Does the manuscript adhere to the formatting guide of the target journal?</li>
+<li>Does the manuscript use a consistent voice (passive or active – usually active is preferred … pun intended)?</li>
+<li>Is each figure and table (including supplementary material) referenced in the main text?</li>
+<li>Is there a caption for each figure and table (including supplementary material)?</li>
+<li>Are tables/figures and supplementary material numbered in accordance with their appearance in the main text?</li>
+<li>Does the text use past tense if it is reporting research findings or future tense if it is a study protocol?</li>
+<li>Does the text avoid subjective wording (e.g., “interesting”, “dramatic”)?</li>
+<li>Does the text use minimal abbreviations, and are all abbreviations defined at first use?</li>
+<li>Does the text avoid directionless words? (e.g., instead of writing, ‘Precipitation influences disease risk’, write, ‘Precipitation was associated with increased disease risk’).</li>
+<li>Does the text avoid making causal claims that are not supported by the study design? Be careful about the words “effect”, “increase”, and “decrease”, which are often interpreted as causal.</li>
+<li>Does the text avoid describing results with the word “significant”, which can easily be confused with statistical significance? (see references on this topic <a href="https://journals.lww.com/epidem/Fulltext/2001/05000/The_Value_of_P.2.aspx">here</a>)</li>
+<li>Have you drafted author contributions? Do they follow the <a href="https://journals.plos.org/plosone/s/authorship/?utm_source=plos&amp;utm_medium=blog&amp;utm_campaign=plos-1607-credit#loc-author-contributions">CRediT Taxonomy</a> for author contributions?</li>
+</ul>
+</section>
+<section id="figure-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="figure-checklist">Figure checklist</h2>
+<ul>
+<li>Are the x-axis and y-axis labeled?</li>
+<li>If the figure includes panels, is each panel labeled?</li>
+<li>Are there sufficient numerical / text labels and breaks on the x-axis and y-axis?</li>
+<li>Is the font size appropriate (i.e., large enough to read, not so large that it distracts from the data presented in the figure?)</li>
+<li>Are the colors used colorblind friendly? See a colorblind-friendly palette <a href="http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/#a-colorblind-friendly-palette">here</a>, a neat palette generator with colorblind options <a href="https://medialab.github.io/iwanthue/?utm_source=Nature+Briefing&amp;utm_campaign=2c68711076-briefing-dy-20211006&amp;utm_medium=email&amp;utm_term=0_c9dfd39373-2c68711076-44335685">here</a>, and an article on why this matters <a href="https://www.nature.com/articles/d41586-021-02696-z">here</a></li>
+<li>Are colors/shapes/line types defined in a legend?</li>
+<li>Are the legends and other labels easy to understand with minimal abbreviations?</li>
+<li>If there is overplotting, is transparency used to show overlapping data?</li>
+<li>Are 95% confidence intervals or other measures of precision shown, if applicable?</li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -804,4 +853,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/index.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/15-checklists.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/15-checklists.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

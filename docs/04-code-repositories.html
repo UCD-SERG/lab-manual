@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Welcome to the Benjamin-Chung Lab! – Benjamin-Chung Lab Manual</title>
+<title>code-repositories – Benjamin-Chung Lab Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -257,7 +257,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -273,7 +273,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Reproducibility</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./04-code-repositories.html"> 
+    <a class="nav-link active" href="./04-code-repositories.html" aria-current="page"> 
 <span class="menu-text">Code Repositories</span></a>
   </li>  
   <li class="nav-item">
@@ -341,48 +341,90 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#about-the-lab" id="toc-about-the-lab" class="nav-link active" data-scroll-target="#about-the-lab">About the lab</a></li>
-  <li><a href="#about-this-lab-manual" id="toc-about-this-lab-manual" class="nav-link" data-scroll-target="#about-this-lab-manual">About this lab manual</a></li>
+  <li><a href="#code-repositories" id="toc-code-repositories" class="nav-link active" data-scroll-target="#code-repositories">Code repositories</a>
+  <ul class="collapse">
+  <li><a href="#project-structure" id="toc-project-structure" class="nav-link" data-scroll-target="#project-structure">Project Structure</a></li>
+  <li><a href="#rproj-files" id="toc-rproj-files" class="nav-link" data-scroll-target="#rproj-files"><code>.Rproj</code> files</a></li>
+  <li><a href="#configuration-config-file" id="toc-configuration-config-file" class="nav-link" data-scroll-target="#configuration-config-file">Configuration (‘config’) File</a></li>
+  <li><a href="#order-files-and-directories" id="toc-order-files-and-directories" class="nav-link" data-scroll-target="#order-files-and-directories">Order Files and Directories</a></li>
+  <li><a href="#using-bash-scripts-to-ensure-reproducibility" id="toc-using-bash-scripts-to-ensure-reproducibility" class="nav-link" data-scroll-target="#using-bash-scripts-to-ensure-reproducibility">Using Bash scripts to ensure reproducibility</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/index.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/04-code-repositories.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/04-code-repositories.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Welcome to the Benjamin-Chung Lab!</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
 
 
-</header>
-
-
-<section id="about-the-lab" class="level2">
-<h2 class="anchored" data-anchor-id="about-the-lab">About the lab</h2>
-<p>Welcome to the lab of Dr.&nbsp;Jade Benjamin-Chung, Assistant Professor in Epidemiology &amp; Population Health at Stanford University. Our mission is to improve population health by creating high quality evidence about what health interventions work in whom and where, when, and how to implement them. Most of our research is focused on infectious diseases, including malaria, diarrhea, soil-transmitted helminths, and influenza. Our focus is on improving the health of vulnerable populations from low-resource settings, both domestically and internationally. We use a variety of epidemiologic, computational, and statistical methods, including causal inference and machine learning methods, in pursuit of our mission. To learn more about the lab, visit <a href="https://jadebc.net">jadebc.net</a>.</p>
+<section id="code-repositories" class="level1">
+<h1>Code repositories</h1>
+<p>By Kunal Mishra, Jade Benjamin-Chung, and Stephanie Djajadi</p>
+<p>Each study has at least one code repository that typically holds R code, shell scripts with Unix code, and research outputs (results .RDS files, tables, figures). Repositories may also include datasets. This chapter outlines how to organize these files. Adhering to a standard format makes it easier for us to efficiently collaborate across projects.</p>
+<section id="project-structure" class="level2">
+<h2 class="anchored" data-anchor-id="project-structure">Project Structure</h2>
+<p>We recommend the following directory structure:</p>
+<pre><code>0-run-project.sh
+0-config.R
+1 - Data-Management/
+    0-prep-data.sh
+    1-prep-cdph-fluseas.R
+    2a-prep-absentee.R
+    2b-prep-absentee-weighted.R
+    3a-prep-absentee-adj.R
+    3b-prep-absentee-adj-weighted.R
+2 - Analysis/
+    0-run-analysis.sh
+    1 - Absentee-Mean/
+        1-absentee-mean-primary.R
+        2-absentee-mean-negative-control.R
+        3-absentee-mean-CDC.R
+        4-absentee-mean-peakwk.R
+        5-absentee-mean-cdph2.R
+        6-absentee-mean-cdph3.R
+    2 - Absentee-Positivity-Check/
+    3 - Absentee-P1/
+    4 - Absentee-P2/
+3 - Figures/
+    0-run-figures.sh
+    ...
+4 - Tables/
+    0-run-tables.sh
+    ...
+5 - Results/
+    1 - Absentee-Mean/
+        1-absentee-mean-primary.RDS
+        2-absentee-mean-negative-control.RDS
+        3-absentee-mean-CDC.RDS
+        4-absentee-mean-peakwk.RDS
+        5-absentee-mean-cdph2.RDS
+        6-absentee-mean-cdph3.RDS
+    ...
+.gitignore
+.Rproj</code></pre>
+<p>For brevity, not every directory is “expanded”, but we can glean some important takeaways from what we <em>do</em> see.</p>
 </section>
-<section id="about-this-lab-manual" class="level2">
-<h2 class="anchored" data-anchor-id="about-this-lab-manual">About this lab manual</h2>
-<p>This lab manual covers our communication strategy, code of conduct, and best practices for reproducibility of computational workflows. It is a living document that is updated regularly.</p>
-<p>This manual was created with input from a large number of team members and with inspiration from <a href="https://github.com/alylab/labmanual/blob/master/aly-lab-manual.pdf">other scientists’ lab manuals</a>. Contributors include Jade Benjamin-Chung, Kunal Mishra, Stephanie Djajadi, Nolan Pokpongkiat, Anna Nguyen, Iris Tong, and Gabby Barratt Heitmann.</p>
-<p>Feel free to draw from this manual (and please cite it if you do!).</p>
-<!-- https://beierlab.com/lab-antiracism-statement/ -->
-<!-- https://ib.berkeley.edu/labs/stillman/images/Stillman%20Lab%20Anti.pdf -->
-<p><br> <br> <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"></a><br>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.</p>
+<section id="rproj-files" class="level2">
+<h2 class="anchored" data-anchor-id="rproj-files"><code>.Rproj</code> files</h2>
+<p>An “R Project” can be created within RStudio by going to <code>File &gt;&gt; New Project</code>. Depending on where you are with your research, choose the most appropriate option. This will save preferences, working directories, and even the results of running code/data (though I’d recommend starting from scratch each time you open your project, in general). Then, ensure that whenever you are working on that specific research project, you open your created project to enable the full utility of <code>.Rproj</code> files. This also automatically sets the directory to the top level of the project.</p>
+</section>
+<section id="configuration-config-file" class="level2">
+<h2 class="anchored" data-anchor-id="configuration-config-file">Configuration (‘config’) File</h2>
+<p>This is the single most important file for your project. It will be responsible for a variety of common tasks, declare global variables, load functions, declare paths, and more. <em>Every other file in the project</em> will begin with <code>source("0-config")</code>, and its role is to reduce redundancy and create an abstraction layer that allows you to make changes in one place (<code>0-config.R</code>) rather than 5 different files. To this end, paths which will be reference in multiple scripts (i.e.&nbsp;a <code>merged_data_path</code>) can be declared in <code>0-config.R</code> and simply referred to by its variable name in scripts. If you ever want to change things, rename them, or even switch from a downsample to the full data, all you would then to need to do is modify the path in one place and the change will automatically update throughout your project. See the example config file for more details. The paths defined in the <code>0-config.R</code> file assume that users have opened the <code>.Rproj</code> file, which sets the directory to the top level of the project.</p>
+</section>
+<section id="order-files-and-directories" class="level2">
+<h2 class="anchored" data-anchor-id="order-files-and-directories">Order Files and Directories</h2>
+<p>This makes the jumble of alphabetized filenames much more coherent and places similar code and files next to one another. This also helps us understand how data flows from start to finish and allows us to easily map a script to its output (i.e.&nbsp;<code>2 - Analysis/1 - Absentee-Mean/1-absentee-mean-primary.R</code> =&gt; <code>5 - Results/1 - Absentee-Mean/1-absentee-mean-primary.RDS</code>). If you take nothing else away from this guide, this is the single most helpful suggestion to make your workflow more coherent. Often the particular order of files will be in flux until an analysis is close to completion. At that time it is important to review file order and naming and reproduce everything prior to drafting a manuscript.</p>
+</section>
+<section id="using-bash-scripts-to-ensure-reproducibility" class="level2">
+<h2 class="anchored" data-anchor-id="using-bash-scripts-to-ensure-reproducibility">Using Bash scripts to ensure reproducibility</h2>
+<p>Bash scripts are useful components of a reproducible workflow. At many of the directory levels (i.e.&nbsp;in <code>3 - Analysis</code>), there is a bash script that runs each of the analysis scripts. This is exceptionally useful when data “upstream” changes – you simply run the bash script. See the <a href="#unix">Unix Chapter</a> for further details.</p>
+<p>After running bash scripts, <code>.Rout</code> log files will be generated for each script that has been executed. It is important to check these files. Scripts may appear to have run correctly in the terminal, but checking the log files is the only way to ensure that everything has run completely.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -804,4 +846,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/index.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/04-code-repositories.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/04-code-repositories.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

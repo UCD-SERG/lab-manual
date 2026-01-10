@@ -34,3 +34,9 @@ vignettes/*.pdf
 placeholder.Rcheck/
 placeholder*.tar.gz
 placeholder*.tgz
+
+# Quarto
+/.quarto/
+
+
+**/*.quarto_ipynb

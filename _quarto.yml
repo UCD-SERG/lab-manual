@@ -1,0 +1,54 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Benjamin-Chung Lab Manual"
+  repo-url: https://github.com/UCD-SERG/lab-manual
+  repo-actions: [edit, source, issue]
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: 01-culture-and-conduct.qmd
+        text: Culture and Conduct
+      - href: 02-communication.qmd
+        text: Communication
+      - href: 03-reproducibility.qmd
+        text: Reproducibility
+      - href: 04-code-repositories.qmd
+        text: Code Repositories
+      - href: 05-coding-practices.qmd
+        text: Coding Practices
+      - href: 06-coding-style.qmd
+        text: Coding Style
+      - href: 07-big-data.qmd
+        text: Big Data
+      - href: 08-data-masking.qmd
+        text: Data Masking
+      - href: 09-github.qmd
+        text: GitHub
+      - href: 10-unix.qmd
+        text: Unix
+      - href: 11-reproducible-environments.qmd
+        text: Reproducible Environments
+      - href: 12-code-publication.qmd
+        text: Code Publication
+      - href: 13-data-publication.qmd
+        text: Data Publication
+      - href: 14-slurm.qmd
+        text: Slurm
+      - href: 15-checklists.qmd
+        text: Checklists
+      - href: 16-resources.qmd
+        text: Resources
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    css: styles.css
+    toc: true
+
+editor: source

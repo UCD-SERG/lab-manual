@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Welcome to the Benjamin-Chung Lab! – Benjamin-Chung Lab Manual</title>
+<title>reproducibility – Benjamin-Chung Lab Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -257,7 +257,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -269,7 +269,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Communication</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./03-reproducibility.html"> 
+    <a class="nav-link active" href="./03-reproducibility.html" aria-current="page"> 
 <span class="menu-text">Reproducibility</span></a>
   </li>  
   <li class="nav-item">
@@ -341,48 +341,115 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#about-the-lab" id="toc-about-the-lab" class="nav-link active" data-scroll-target="#about-the-lab">About the lab</a></li>
-  <li><a href="#about-this-lab-manual" id="toc-about-this-lab-manual" class="nav-link" data-scroll-target="#about-this-lab-manual">About this lab manual</a></li>
+  <li><a href="#reproducibility" id="toc-reproducibility" class="nav-link active" data-scroll-target="#reproducibility">Reproducibility</a>
+  <ul class="collapse">
+  <li><a href="#what-is-the-reproducibility-crisis" id="toc-what-is-the-reproducibility-crisis" class="nav-link" data-scroll-target="#what-is-the-reproducibility-crisis">What is the reproducibility crisis?</a></li>
+  <li><a href="#study-design" id="toc-study-design" class="nav-link" data-scroll-target="#study-design">Study design</a></li>
+  <li><a href="#register-study-protocols" id="toc-register-study-protocols" class="nav-link" data-scroll-target="#register-study-protocols">Register study protocols</a></li>
+  <li><a href="#write-and-register-pre-analysis-plans" id="toc-write-and-register-pre-analysis-plans" class="nav-link" data-scroll-target="#write-and-register-pre-analysis-plans">Write and register pre-analysis plans</a></li>
+  <li><a href="#create-reproducible-workflows" id="toc-create-reproducible-workflows" class="nav-link" data-scroll-target="#create-reproducible-workflows">Create reproducible workflows</a></li>
+  <li><a href="#process-and-analyze-data-with-internal-replication-and-masking" id="toc-process-and-analyze-data-with-internal-replication-and-masking" class="nav-link" data-scroll-target="#process-and-analyze-data-with-internal-replication-and-masking">Process and analyze data with internal replication and masking</a></li>
+  <li><a href="#use-reporting-checklists-with-manuscripts" id="toc-use-reporting-checklists-with-manuscripts" class="nav-link" data-scroll-target="#use-reporting-checklists-with-manuscripts">Use reporting checklists with manuscripts</a></li>
+  <li><a href="#publish-preprints" id="toc-publish-preprints" class="nav-link" data-scroll-target="#publish-preprints">Publish preprints</a></li>
+  <li><a href="#publish-data-when-possible-and-replication-scripts" id="toc-publish-data-when-possible-and-replication-scripts" class="nav-link" data-scroll-target="#publish-data-when-possible-and-replication-scripts">Publish data (when possible) and replication scripts</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/index.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/03-reproducibility.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/03-reproducibility.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Welcome to the Benjamin-Chung Lab!</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
 
 
-</header>
-
-
-<section id="about-the-lab" class="level2">
-<h2 class="anchored" data-anchor-id="about-the-lab">About the lab</h2>
-<p>Welcome to the lab of Dr.&nbsp;Jade Benjamin-Chung, Assistant Professor in Epidemiology &amp; Population Health at Stanford University. Our mission is to improve population health by creating high quality evidence about what health interventions work in whom and where, when, and how to implement them. Most of our research is focused on infectious diseases, including malaria, diarrhea, soil-transmitted helminths, and influenza. Our focus is on improving the health of vulnerable populations from low-resource settings, both domestically and internationally. We use a variety of epidemiologic, computational, and statistical methods, including causal inference and machine learning methods, in pursuit of our mission. To learn more about the lab, visit <a href="https://jadebc.net">jadebc.net</a>.</p>
+<section id="reproducibility" class="level1">
+<h1>Reproducibility</h1>
+<p>by Jade Benjamin-Chung</p>
+<p>Our lab adopts the following practices to maximize the reproducibility of our work.</p>
+<ol type="1">
+<li>Design studies with appropriate methodology and adherence to best practices in epidemiology and biostatistics</li>
+<li>Register study protocols</li>
+<li>Write and register pre-analysis plans</li>
+<li>Create reproducible workflows</li>
+<li>Process and analyze data with internal replication and masking</li>
+<li>Use reporting checklists with manuscripts</li>
+<li>Publish preprints</li>
+<li>Publish data (when possible) and replication scripts</li>
+</ol>
+<section id="what-is-the-reproducibility-crisis" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-the-reproducibility-crisis">What is the reproducibility crisis?</h2>
+<p>In the past decade, an increasing number of studies have found that published study findings could not be reproduced. Researchers found that it was not possible to reproduce estimates from published studies: 1) with the same data and same or similar code and 2) with newly collected data using the same (or similar) study design. These “failures” of reproducibility were frequent enough and broad enough in scope, occurring across a range of disciplines (epidemiology, psychology, economics, and others) to be deeply troubling. Program and policy decisions based on erroneous research findings could lead to wasted resources, and at worst, could harm intended beneficiaries. This crisis has motivated new practices in reproducibility, transparency, and openness. Our lab is committed to adopting these best practices, and much of the remainder of the lab manual focuses on how to do so.</p>
+<p>Recommended readings on the “reproducibility crisis”:</p>
+<ul>
+<li><p>Nuzzo R. How scientists fool themselves – and how they can stop. 2015. <a href="">https://www.nature.com/articles/526182a</a></p></li>
+<li><p>Stoddart C. Is there a reproducibility crisis in science? 2016. <a href="https://www.nature.com/articles/d41586-019-00067-3">https://www.nature.com/articles/d41586-019-00067-3</a></p></li>
+<li><p>Munafo MR, et al.&nbsp;A manifesto for reproducible science. <em>Nature Human Behavior</em> 2017 <a href="http://dx.doi.org/10.1038/s41562-016-0021">http://dx.doi.org/10.1038/s41562-016-0021</a></p></li>
+</ul>
 </section>
-<section id="about-this-lab-manual" class="level2">
-<h2 class="anchored" data-anchor-id="about-this-lab-manual">About this lab manual</h2>
-<p>This lab manual covers our communication strategy, code of conduct, and best practices for reproducibility of computational workflows. It is a living document that is updated regularly.</p>
-<p>This manual was created with input from a large number of team members and with inspiration from <a href="https://github.com/alylab/labmanual/blob/master/aly-lab-manual.pdf">other scientists’ lab manuals</a>. Contributors include Jade Benjamin-Chung, Kunal Mishra, Stephanie Djajadi, Nolan Pokpongkiat, Anna Nguyen, Iris Tong, and Gabby Barratt Heitmann.</p>
-<p>Feel free to draw from this manual (and please cite it if you do!).</p>
-<!-- https://beierlab.com/lab-antiracism-statement/ -->
-<!-- https://ib.berkeley.edu/labs/stillman/images/Stillman%20Lab%20Anti.pdf -->
-<p><br> <br> <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"></a><br>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.</p>
+<section id="study-design" class="level2">
+<h2 class="anchored" data-anchor-id="study-design">Study design</h2>
+<p>Appropriate study design is beyond the scope of this lab manual and is something trainees develop through their coursework and mentoring.</p>
+</section>
+<section id="register-study-protocols" class="level2">
+<h2 class="anchored" data-anchor-id="register-study-protocols">Register study protocols</h2>
+<p>We register all randomized trials on <a href="clinicaltrials.gov">clinicaltrials.gov</a>, and in some cases register observational studies as well.</p>
+</section>
+<section id="write-and-register-pre-analysis-plans" class="level2">
+<h2 class="anchored" data-anchor-id="write-and-register-pre-analysis-plans">Write and register pre-analysis plans</h2>
+<p>We write pre-analysis plans for most original research projects that are not exploratory in nature, although in some cases, we write pre-analysis plans for exploratory studies as well. The format and content of pre-analysis plans can vary from project to project. Here is an example of one: <a href="https://osf.io/tgbxr/">https://osf.io/tgbxr/</a>. Generally, these include:</p>
+<ol type="1">
+<li>Brief background on the study (a condensed version of the introduction section of the paper)</li>
+<li>Hypotheses / objectives</li>
+<li>Study design</li>
+<li>Description of data</li>
+<li>Definition of outcomes</li>
+<li>Definition of interventions / exposures</li>
+<li>Definition of covariates</li>
+<li>Statistical power calculation</li>
+<li>Statistical analysis:</li>
+</ol>
+<ul>
+<li>Type of model</li>
+<li>Covariate selection / screening</li>
+<li>Standard error estimation method</li>
+<li>Missing data analysis</li>
+<li>Assessment of effect modification / subgroup analyses</li>
+<li>Sensitivity analyses</li>
+<li>Negative control analyses</li>
+</ul>
+</section>
+<section id="create-reproducible-workflows" class="level2">
+<h2 class="anchored" data-anchor-id="create-reproducible-workflows">Create reproducible workflows</h2>
+<p>Reproducible workflows allow a user to reproduce study estimates and ideally figures and tables with a “single click”. In practice, this typically means running a single bash script that sources all replication scripts in a repository. These replication scripts complete data processing, data analysis, and figure/table generation. The following chapters provide detailed guidance on this topic:</p>
+<ul>
+<li>Chapter 5: Code repositories</li>
+<li>Chapter 6: Coding practices</li>
+<li>Chapter 7: Coding style</li>
+<li>Chapter 8: Code publication</li>
+<li>Chapter 9: Working with big data</li>
+<li>Chapter 10: Github</li>
+<li>Chapter 11: Unix</li>
+</ul>
+</section>
+<section id="process-and-analyze-data-with-internal-replication-and-masking" class="level2">
+<h2 class="anchored" data-anchor-id="process-and-analyze-data-with-internal-replication-and-masking">Process and analyze data with internal replication and masking</h2>
+<p>See my video on this topic: <a href="https://www.youtube.com/watch?v=WoYkY9MkbRE">https://www.youtube.com/watch?v=WoYkY9MkbRE</a></p>
+</section>
+<section id="use-reporting-checklists-with-manuscripts" class="level2">
+<h2 class="anchored" data-anchor-id="use-reporting-checklists-with-manuscripts">Use reporting checklists with manuscripts</h2>
+<p>Using reporting checklists helps ensure that peer-reviewed articles contain the information needed for readers to assess the validity of your work and/or attempt to reproduce it. A collection of reporting checklists is available here: <a href="https://www.equator-network.org/about-us/what-is-a-reporting-guideline/">https://www.equator-network.org/about-us/what-is-a-reporting-guideline/)</a></p>
+</section>
+<section id="publish-preprints" class="level2">
+<h2 class="anchored" data-anchor-id="publish-preprints">Publish preprints</h2>
+<p>A preprint is a scientific manuscript that has not been peer reviewed. Preprint servers create digital object identifiers (DOIs) and can be cited in other articles and in grant applications. Because the peer review process can take many months, publishing preprints prior to or during peer review enables other scientists to immediately learn from and build on your work. Importantly, NIH allows applicants to include preprint citations in their biosketches. In most cases, we publish preprints on <a href="https://www.medrxiv.org/">medRxiv</a>.</p>
+</section>
+<section id="publish-data-when-possible-and-replication-scripts" class="level2">
+<h2 class="anchored" data-anchor-id="publish-data-when-possible-and-replication-scripts">Publish data (when possible) and replication scripts</h2>
+<p>Publishing data and replication scripts allows other scientists to reproduce your work and to build upon it. We typically publish data on <a href="osf.io">Open Science Framework</a>, share links to <a href="github.com">Github</a> repositories, and archive code on <a href="zenodo.org">Zenodo</a>.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -804,4 +871,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/index.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/03-reproducibility.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/03-reproducibility.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
