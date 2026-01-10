@@ -18,7 +18,8 @@ usethis::use_mit_license()          # Add a license
 usethis::use_git()                  # Initialize git
 usethis::use_github()               # Connect to GitHub
 usethis::use_testthat()             # Set up testing infrastructure
-usethis::use_vignette("analysis")   # Create an analysis vignette
+usethis::use_vignette("intro")      # Create a vignette (shipped with package)
+usethis::use_article("case-study")  # Create an article (website-only)
 usethis::use_data_raw("dataset")    # Create data processing script
 usethis::use_package("dplyr")       # Add a dependency
 usethis::use_pipe()                 # Import pipe operator

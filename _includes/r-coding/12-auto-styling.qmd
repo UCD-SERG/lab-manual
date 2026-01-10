@@ -1,10 +1,3 @@
-These workflows automatically:
-
-- Run R CMD check on multiple platforms (Linux, macOS, Windows)
-- Calculate test coverage
-- Build and deploy your pkgdown website
-- Ensure code quality before merging
-
 ## Automated Code Styling {#sec-auto-styling}
 
 ### RStudio Built-in Formatting
@@ -51,11 +44,3 @@ The linter checks for:
 - Style guide violations
 
 You can customize linting rules by creating a `.lintr` file in your project root.
-
-## Additional Resources {#sec-r-resources}
-
-- [R Packages book](https://r-pkgs.org/) by Hadley Wickham and Jenny Bryan
-- [Tidyverse style guide](https://style.tidyverse.org/)
-- [usethis documentation](https://usethis.r-lib.org/)
-- [devtools documentation](https://devtools.r-lib.org/)
-- [pkgdown documentation](https://pkgdown.r-lib.org/)

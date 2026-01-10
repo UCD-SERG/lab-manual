@@ -28,10 +28,12 @@ myproject/
 │   └── testthat/       # Unit tests
 ├── data/               # Processed data objects (.rda files)
 ├── data-raw/           # Raw data and data processing scripts
-├── vignettes/          # Analysis workbooks and tutorials
-│   ├── 01-data-preparation.Rmd
-│   ├── 02-primary-analysis.Rmd
-│   └── 03-sensitivity-analysis.Rmd
+├── vignettes/          # Long-form documentation
+│   ├── intro.Rmd       # Main vignettes (shipped with package)
+│   ├── tutorial.Rmd
+│   └── articles/       # Website-only articles (not shipped)
+│       ├── advanced-topics.Rmd
+│       └── case-studies.Rmd
 ├── inst/               # Additional files to include in package
 │   ├── extdata/        # External data files
 │   └── analyses/       # Analyses using restricted data (see below)
@@ -40,15 +42,43 @@ myproject/
 
 ### Where to Place Analysis Files {#sec-analysis-file-placement}
 
+#### Vignettes vs Articles
+
+**Vignettes** (`vignettes/*.Rmd`):
+- **Shipped with the package** when installed
+- Accessible via `vignette()` and `browseVignettes()` in R
+- Displayed on CRAN
+- Built at package build time
+- Use for core package documentation and tutorials
+- Created with `usethis::use_vignette("name")`
+
+**Articles** (`vignettes/articles/*.Rmd`):
+- **Website-only** (not shipped with the package)
+- Only appear on the pkgdown website
+- Not accessible via `vignette()` in R
+- Not displayed on CRAN
+- Use for supplementary content, blog posts, extended tutorials, or frequently updated material
+- Created with `usethis::use_article("name")`
+- Automatically added to `.Rbuildignore`
+
+**When to use each:**
+- **Vignette**: Essential tutorials users need offline, core package workflows
+- **Article**: Supplementary material, case studies, advanced topics, blog-style content
+
 #### Public Analyses (vignettes/)
 
 Use `vignettes/` for analysis workbooks that:
 - Use publicly available data
-- Can be shared with collaborators
-- Should be built into the package documentation
-- Will be rendered by `pkgdown::build_site()`
+- Should be accessible to all package users
+- Are core to understanding the package
 
-These vignettes become part of your package's documentation website.
+Use `vignettes/articles/` for:
+- Extended case studies
+- Blog-style posts
+- Supplementary analyses
+- Material that updates frequently
+
+All vignettes and articles will be rendered by `pkgdown::build_site()` on your package website.
 
 #### Analyses with Restricted Data (inst/analyses/)
 
