@@ -28,5 +28,5 @@ jobs:
         uses: rossjrw/pr-preview-action@main
         with:
           source-dir: ./docs/
-          pages-base-url: ucd-serg.github.io
+          pages-base-url: lab-manual
         

@@ -1,15 +1,14 @@
-# GitHub Copilot Setup Steps for ucd-serg.github.io
+# GitHub Copilot Setup Steps for lab-manual
 #
 # This workflow configures the GitHub Copilot coding agent's environment
-# by preinstalling Quarto and TinyTeX for website rendering.
+# by preinstalling R, Quarto and TinyTeX for rendering the Bookdown manual.
 #
 # See: https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-environment
 #
 # This workflow sets up:
-# - Quarto CLI for rendering the website
+# - R for running Bookdown
+# - Quarto CLI for rendering
 # - TinyTeX for PDF output
-#
-# Note: R and renv setup steps are disabled for now as we don't have any R code to run yet.
 
 name: "Copilot Setup Steps"
 
