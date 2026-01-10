@@ -38,5 +38,8 @@ placeholder*.tgz
 # Quarto
 /.quarto/
 /docs/
+*.pdf
+*.docx
+*.epub
 
 **/*.quarto_ipynb
