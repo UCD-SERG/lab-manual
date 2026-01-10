@@ -1,0 +1,52 @@
+**ALWAYS establish tests BEFORE modifying functions.** This ensures changes preserve existing behavior and new behavior is correctly validated.
+
+### When to Use Snapshot Tests
+
+Use snapshot tests (`expect_snapshot()`, `expect_snapshot_value()`) when:
+
+- Testing complex data structures (data frames, lists, model outputs)
+- Validating statistical results where exact values may vary slightly
+- Output format stability is important
+
+```r
+test_that("prep_study_data produces expected structure", {
+  result <- prep_study_data(raw_data)
+  expect_snapshot_value(result, style = "serialize")
+})
+```
+
+### When to Use Explicit Value Tests
+
+Use explicit tests (`expect_equal()`, `expect_identical()`) when:
+
+- Testing simple scalar outputs
+- Validating specific numeric thresholds
+- Testing Boolean returns or categorical outputs
+
+```r
+test_that("calculate_mean returns correct value", {
+  expect_equal(calculate_mean(c(1, 2, 3)), 2)
+  expect_equal(calculate_ratio(3, 7), 0.4285714, tolerance = 1e-6)
+})
+```
+
+### Testing Best Practices
+
+- **Seed randomness**: Use `withr::local_seed()` for reproducible tests
+- **Use small test cases**: Keep tests fast
+- **Test edge cases**: Missing values, empty inputs, boundary conditions
+- **Test errors**: Verify functions fail appropriately with invalid input
+
+```r
+test_that("prep_study_data handles edge cases", {
+  # Empty input
+  expect_error(prep_study_data(data.frame()))
+  
+  # Missing required columns
+  expect_error(prep_study_data(data.frame(x = 1)))
+  
+  # Valid input with missing values
+  result <- prep_study_data(data.frame(id = 1:3, value = c(1, NA, 3)))
+  expect_true(all(!is.na(result$value)))
+})
+```

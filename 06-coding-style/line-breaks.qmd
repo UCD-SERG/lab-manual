@@ -1,0 +1,97 @@
+**Blank Lines Before Lists**
+
+Always include a blank line before starting a bullet list or numbered list in markdown/Quarto documents. This ensures proper rendering and readability.
+
+**Correct:**
+```markdown
+Here are the requirements:
+
+- First item
+- Second item
+```
+
+**Incorrect:**
+```markdown
+Here are the requirements:
+- First item
+- Second item
+```
+
+Here's what happens if you don't add the blank line:
+
+Here are the requirements:
+- First item
+- Second item
+
+**Line Breaks in Code**
+
+- For `ggplot` calls and `dplyr` pipelines, do not crowd single lines. Here are some nontrivial examples of "beautiful" pipelines, where beauty is defined by coherence:
+
+```r
+# Example 1
+school_names = list(
+  OUSD_school_names = absentee_all |>
+    filter(dist.n == 1) |>
+    pull(school) |>
+    unique |>
+    sort,
+
+  WCCSD_school_names = absentee_all |>
+    filter(dist.n == 0) |>
+    pull(school) |>
+    unique |>
+    sort
+)
+```
+
+```r
+# Example 2
+absentee_all = fread(file = raw_data_path) |>
+  mutate(program = case_when(schoolyr %in% pre_program_schoolyrs ~ 0,
+                             schoolyr %in% program_schoolyrs ~ 1)) |>
+  mutate(period = case_when(schoolyr %in% pre_program_schoolyrs ~ 0,
+                            schoolyr %in% LAIV_schoolyrs ~ 1,
+                            schoolyr %in% IIV_schoolyrs ~ 2)) |>
+  filter(schoolyr != "2017-18")
+```
+
+And of a complex `ggplot` call:
+  
+```r
+# Example 3
+ggplot(data=data) +
+  
+  aes(x=.data[["year"]], y=.data[["rd"]], group=.data[[group]]) +
+
+  geom_point(mapping = aes(col = .data[[group]], shape = .data[[group]]),
+             position=position_dodge(width=0.2),
+             size=2.5) +
+
+  geom_errorbar(mapping = aes(ymin=.data[["lb"]], ymax= .data[["ub"]], col= .data[[group]]),
+                position=position_dodge(width=0.2),
+                width=0.2) +
+
+  geom_point(position=position_dodge(width=0.2),
+             size=2.5) +
+
+  geom_errorbar(mapping=aes(ymin=lb, ymax=ub),
+                position=position_dodge(width=0.2),
+                width=0.1) +
+
+  scale_y_continuous(limits=limits,
+                     breaks=breaks,
+                     labels=breaks) +
+
+  scale_color_manual(std_legend_title,values=cols,labels=legend_label) +
+  scale_shape_manual(std_legend_title,values=shapes, labels=legend_label) +
+  geom_hline(yintercept=0, linetype="dashed") +
+  xlab("Program year") +
+  ylab(yaxis_lab) +
+  theme_complete_bw() +
+  theme(strip.text.x = element_text(size = 14),
+        axis.text.x = element_text(size = 12)) +
+  ggtitle(title)
+```
+
+  Imagine (or perhaps mournfully recall) the mess that can occur when you don't strictly style a complicated `ggplot` call. Trying to fix bugs and ensure your code is working can be a nightmare. Now imagine trying to do it with the same code 6 months after you've written it. Invest the time now and reap the rewards as the code practically explains itself, line by line.
+

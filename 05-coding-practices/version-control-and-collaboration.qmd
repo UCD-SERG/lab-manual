@@ -1,0 +1,21 @@
+### Version Numbers
+
+Follow semantic versioning (MAJOR.MINOR.PATCH):
+
+- Development versions: `0.0.0.9000`, `0.0.0.9001`, etc.
+- First release: `0.1.0`
+- Bug fixes: increment PATCH (e.g., `0.1.0` → `0.1.1`)
+- New features: increment MINOR (e.g., `0.1.1` → `0.2.0`)
+- Breaking changes: increment MAJOR (e.g., `0.2.0` → `1.0.0`)
+
+```r
+# Increment version
+usethis::use_version()
+```
+
+### NEWS File
+
+Document all user-facing changes in `NEWS.md`:
+
+```markdown
+# myproject 0.2.0
