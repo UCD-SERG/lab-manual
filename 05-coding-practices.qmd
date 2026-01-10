@@ -1,6 +1,6 @@
 # Coding practices
 
-by Kunal Mishra, Jade Benjamin-Chung, Stephanie Djajadi, and Iris Tong
+by UCD-SeRG team
 
 ## Organizing scripts
 

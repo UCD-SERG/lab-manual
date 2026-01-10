@@ -1,6 +1,6 @@
 # Coding style
 
-by Kunal Mishra, Jade Benjamin-Chung, and Stephanie Djajadi
+by UCD-SeRG team
 
 ## Comments
 

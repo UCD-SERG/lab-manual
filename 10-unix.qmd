@@ -1,6 +1,6 @@
 # Unix commands {#unix}
 
-by Stephanie Djajadi, Kunal Mishra, Anna Nguyen, and Jade Benjamin-Chung
+by UCD-SeRG team
 
 We typically use Unix commands in Terminal (for Mac users) or Git Bash (for Windows users) to 
 

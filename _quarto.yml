@@ -3,8 +3,8 @@ project:
   output-dir: docs
 
 book:
-  title: "Benjamin-Chung Lab Manual"
-  author: "Dr. Jade Benjamin-Chung"
+  title: "UCD-SeRG Lab Manual"
+  author: "Drs. Kristen Aiemjoy and Ezra Morrison"
   date: last-modified
   date-format: "[Last updated:] YYYY-MM-DD"
   repo-url: https://github.com/UCD-SERG/lab-manual

@@ -1,6 +1,6 @@
 # Culture and conduct
 
-by Jade Benjamin-Chung
+by UCD-SeRG team
 
 ## Lab culture
 
@@ -10,16 +10,16 @@ We encourage students / staff of all experience levels to respectfully share the
 
 ## Diversity, equity, and inclusion
 
-The Benjamin-Chung lab recognizes the importance of and is committed to cultivating a culture of diversity, equity, and inclusion. This means being a safe, supportive, and anti-racist environment in which students from diverse backgrounds are equally and inclusively supported in their education and training. Diversity takes many forms, and includes, but is not limited to, differences in race, ethnicity, gender, sexuality, socioeconomic status, religion, disability, and political affiliation. 
+UCD-SeRG recognizes the importance of and is committed to cultivating a culture of diversity, equity, and inclusion. This means being a safe, supportive, and anti-racist environment in which students from diverse backgrounds are equally and inclusively supported in their education and training. Diversity takes many forms, and includes, but is not limited to, differences in race, ethnicity, gender, sexuality, socioeconomic status, religion, disability, and political affiliation. 
 
 ## Protecting human subjects
 
-All lab members must complete [CITI Human Subjects Biomedical Group 1](https://researchcompliance.stanford.edu/panels/hs/forms/training/citi) training and share their certificate with Jade. She will add team members to relevant Institutional Review Board protocols prior to their start date to ensure they have permission to work with identifiable datasets. 
+All lab members must complete [CITI Human Subjects Biomedical Group 1](https://research.ucdavis.edu/policiescompliance/irb-admin/education/) training and share their certificate with the lab leadership. Team members will be added to relevant Institutional Review Board protocols prior to their start date to ensure they have permission to work with identifiable datasets. 
 
 One of the most relevant aspects of protecting human subjects in our work is maintaining confidentiality. For students supporting our data science efforts, in practice this means: 
 
 - Be sure to understand and comply with project-specific policies about where data can be saved, particularly if the data include personal identifiers.
-- Do not share data with anyone without permission, including to other members of the group, who might not be on the same IRB protocol as you (check with Jade first).
+- Do not share data with anyone without permission, including to other members of the group, who might not be on the same IRB protocol as you (check with lab leadership first).
 
 Remember, data that looks like it does not contain identifiers to you might still be classified as data that requires special protection by our IRB or under HIPAA, so always proceed with caution and ask for help if you have any concerns about how to maintain study participant confidentiality. 
 

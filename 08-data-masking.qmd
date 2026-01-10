@@ -1,8 +1,6 @@
 # Data masking
 
-by Anna Nguyen, Jade Benjamin-Chung, and Gabby Barratt Heitmann
-
-When you need to run a script that requires a large amount of RAM, large files, or that uses parallelization, you can use Sherlock, Stanford's computing cluster. Sherlock uses Slurm, an open source, scalable cluster management and job scheduling system for computing clusters. Jade can email Sherlock managers to get you an account. Please refer to the [Sherlock user guide](https://www.sherlock.stanford.edu/docs/overview/introduction/) to learn about the system and how to use it. Below, we include a few tips specific to how we use Sherlock in our lab. 
+by UCD-SeRG team
 
 
 ## General Overview

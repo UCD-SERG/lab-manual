@@ -1,6 +1,6 @@
 # Reproducibility
 
-by Jade Benjamin-Chung
+by UCD-SeRG team
 
 Our lab adopts the following practices to maximize the reproducibility of our work. 
 

@@ -1,16 +1,16 @@
 # Communication and coordination
 
-by Jade Benjamin-Chung
+by UCD-SeRG team
 
 One benefit of the academic environment is its schedule flexibility. This means that lab members may choose to work in the early morning, evening, or weekends. That said, we do not expect lab members to respond outside of business hours (unless there are special circumstances).
 
-## Slack
+## Microsoft Teams
 
-- Use Slack for scheduling, coding related questions, quick check ins, etc. If your Slack message exceeds 200 words, it might be time to use email. 
+- Use Microsoft Teams for scheduling, coding related questions, quick check ins, etc. If your Teams message exceeds 200 words, it might be time to use email. 
 - Use channels instead of direct messages unless you need to discuss something private. 
-- Please make an effort to respond to messages that message you (e.g., `@jade`) as quickly as possible and always within 24 hours. 
-- If you are unusually busy (e.g., taking MCAT/GRE, taking many exams) or on vacation please alert the team in advance so we can expect you not to respond at all / as quickly as usual and also [set your status in Slack](https://get.slack.help/hc/en-us/articles/201864558-Set-your-Slack-status-and-availability) (e.g., it could say "On vacation") so we know not to expect to see you online. 
-- Please thread messages in Slack as much as possible. 
+- Please make an effort to respond to messages that mention you (e.g., `@username`) as quickly as possible and always within 24 hours. 
+- If you are unusually busy (e.g., taking MCAT/GRE, taking many exams) or on vacation please alert the team in advance so we can expect you not to respond at all / as quickly as usual and also set your status in Teams (e.g., it could say "On vacation") so we know not to expect to see you online. 
+- Please thread messages in Teams as much as possible. 
 
 ## Email
 
@@ -19,23 +19,23 @@ One benefit of the academic environment is its schedule flexibility. This means 
 
 ## Trello
 
-- Jade will add new cards within our shared Trello board that outline your tasks. 
+- Lab leadership will add new cards within our shared Trello board that outline your tasks. 
 - The higher a card is within your list, the higher priority it is.
 - Generally, strive to complete the tasks in your card by the date listed. 
-- Use checklists to break down a task into smaller chunks. Sometimes Jade will write this for you, but you can also add this yourself. 
-- Jade will move your card to the "Completed" list when it is done. 
+- Use checklists to break down a task into smaller chunks. Sometimes leadership will write this for you, but you can also add this yourself. 
+- Lab leadership will move your card to the "Completed" list when it is done. 
 
 ## Google Drive
 
-- We mostly use Google Drive to create shared documents with longer descriptions of tasks. These documents are linked to in Trello. Jade often shares these with the whole team since tasks are overlapping, and even if a task is assigned to one person, others may have valuable insights. 
+- We mostly use Google Drive to create shared documents with longer descriptions of tasks. These documents are linked to in Trello. Lab leadership often shares these with the whole team since tasks are overlapping, and even if a task is assigned to one person, others may have valuable insights. 
 
-## Stanford Medicine Box
+## UC Davis Box
 
-- Human subjects data for research studies are generally stored in Stanford Medicine Box. Please check with Jade about whether there are special storage and transfer requirements for the datasets you are working with for each study. 
-- If you are in the School of Medicine, you can access Box via your SUNet ID. If you are no in the School of Medicine, please follow [these instructions](https://docs.google.com/document/d/1R3Ngpi8LsezHU0KhgllSKh_XJtQafczrZe3pmeWH2jY/edit?usp=sharing) to get a Box account. 
+- Human subjects data for research studies are generally stored in UC Davis Box. Please check with lab leadership about whether there are special storage and transfer requirements for the datasets you are working with for each study. 
+- You can access Box via your UC Davis credentials. For more information, visit [UC Davis Box Support](https://kb.ucdavis.edu/?id=6485). 
 
 ## Meetings
 
 - Our meetings start on the hour.
-- If you are going to be late, please send a message in our Slack channel. 
+- If you are going to be late, please send a message in our Teams channel. 
 - If you are regularly not able to come on the hour, notify the team and we might choose the modify the agenda order or the start time. 
