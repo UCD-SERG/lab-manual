@@ -40,17 +40,18 @@ book:
     - 03-reproducibility.qmd
     - 04-code-repositories.qmd
     - 05-coding-practices.qmd
-    - 06-coding-style.qmd
-    - 07-big-data.qmd
-    - 08-data-masking.qmd
-    - 09-github.qmd
-    - 10-unix.qmd
-    - 11-reproducible-environments.qmd
-    - 12-code-publication.qmd
-    - 13-data-publication.qmd
-    - 14-slurm.qmd
-    - 15-checklists.qmd
-    - 16-resources.qmd
+    - 06-ai-tools.qmd
+    - 07-coding-style.qmd
+    - 08-big-data.qmd
+    - 09-data-masking.qmd
+    - 10-github.qmd
+    - 11-unix.qmd
+    - 12-reproducible-environments.qmd
+    - 13-code-publication.qmd
+    - 14-data-publication.qmd
+    - 15-slurm.qmd
+    - 16-checklists.qmd
+    - 17-resources.qmd
   page-navigation: true
 
 format:

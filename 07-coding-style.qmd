@@ -6,43 +6,43 @@ Follow these code style guidelines for all R code:
 
 ## General Principles
 
-{{< include 06-coding-style/general-principles.qmd >}}
+{{< include 07-coding-style/general-principles.qmd >}}
 
 ## Function Structure and Documentation
 
-{{< include 06-coding-style/function-structure-and-documentation.qmd >}}
+{{< include 07-coding-style/function-structure-and-documentation.qmd >}}
 
 ## Comments
 
-{{< include 06-coding-style/comments.qmd >}}
+{{< include 07-coding-style/comments.qmd >}}
 
 ## Line Breaks and Formatting
 
-{{< include 06-coding-style/line-breaks.qmd >}}
+{{< include 07-coding-style/line-breaks.qmd >}}
 
 ## Messaging and User Communication
 
-{{< include 06-coding-style/messaging-and-user-communication.qmd >}}
+{{< include 07-coding-style/messaging-and-user-communication.qmd >}}
 
 ## Package Code Practices
 
-{{< include 06-coding-style/package-code-practices.qmd >}}
+{{< include 07-coding-style/package-code-practices.qmd >}}
 
 ## Tidyverse Replacements
 
-{{< include 06-coding-style/tidyverse-replacements.qmd >}}
+{{< include 07-coding-style/tidyverse-replacements.qmd >}}
 
 ## The here Package
 
-{{< include 06-coding-style/the-here-package.qmd >}}
+{{< include 07-coding-style/the-here-package.qmd >}}
 
 ## Object Naming
 
-{{< include 06-coding-style/object-naming.qmd >}}
+{{< include 07-coding-style/object-naming.qmd >}}
 
 ## Automated Tools for Style and Project Workflow
 
-{{< include 06-coding-style/automated-tools.qmd >}}
+{{< include 07-coding-style/automated-tools.qmd >}}
 
 ## Additional Resources {#sec-r-resources-style}
 
