@@ -48,7 +48,7 @@ myproject/
 │   └── 03-sensitivity-analysis.Rmd
 ├── inst/               # Additional files to include in package
 │   ├── extdata/        # External data files
-│   └── private/        # Private analyses (see below)
+│   └── analyses/       # Analyses using restricted data (see below)
 └── .Rproj              # RStudio project file
 ```
 
@@ -64,14 +64,14 @@ Use `vignettes/` for analysis workbooks that:
 
 These vignettes become part of your package's documentation website.
 
-#### Private Analyses (inst/private/)
+#### Analyses with Restricted Data (inst/analyses/)
 
-For analyses that rely on **private, sensitive, or restricted data**, place `.qmd` or `.Rmd` files in `inst/private/`:
+For analyses that rely on **private, sensitive, or restricted data**, place `.qmd` or `.Rmd` files in `inst/analyses/`:
 
 ```
 myproject/
 ├── inst/
-│   ├── private/
+│   ├── analyses/
 │   │   ├── 01-confidential-data-analysis.qmd
 │   │   ├── 02-unpublished-results.qmd
 │   │   └── README.md  # Document data access requirements
@@ -83,15 +83,17 @@ myproject/
 
 **Benefits of this approach:**
 
-- Private analyses are included in version control alongside your code
+- Analyses with restricted data are included in version control alongside your code
 - They're clearly separated from public documentation
-- `inst/private/` is **excluded from `pkgdown` builds** and package documentation
+- `inst/analyses/` is **excluded from `pkgdown` builds** and package documentation
 - Collaborators with data access can still run these analyses
 - You maintain a complete record of all project work
 
-**Best practices for private analyses:**
+**Note on privacy:** Files in `inst/analyses/` are not inherently private—they will be visible if your repository is public. Use this folder for analyses that rely on restricted data that is stored separately, not for storing the restricted data itself. If you need to keep the analysis code private, use a private repository.
 
-1. **Document data requirements**: Include a README.md in `inst/private/` explaining:
+**Best practices for analyses with restricted data:**
+
+1. **Document data requirements**: Include a README.md in `inst/analyses/` explaining:
    - What data is required
    - Where to obtain it (if permissible)
    - Data access restrictions
@@ -99,10 +101,10 @@ myproject/
 
 2. **Use relative paths carefully**: Structure your code so data paths can be configured:
    ```r
-   # In inst/private/01-analysis.qmd
+   # In inst/analyses/01-analysis.qmd
    # Users should set this based on their local setup
-   data_dir <- Sys.getenv("MYPROJECT_PRIVATE_DATA", 
-                          default = "~/private_data/myproject")
+   data_dir <- Sys.getenv("MYPROJECT_DATA", 
+                          default = "~/restricted_data/myproject")
    raw_data <- readr::read_csv(file.path(data_dir, "sensitive.csv"))
    ```
 
@@ -111,10 +113,10 @@ myproject/
    - Publicly available datasets
    - Aggregated/de-identified summaries
 
-4. **Add to .Rbuildignore**: Ensure `inst/private/` doesn't cause package checks to fail:
+4. **Add to .Rbuildignore**: Ensure `inst/analyses/` doesn't cause package checks to fail:
    ```
    # In .Rbuildignore
-   ^inst/private$
+   ^inst/analyses$
    ```
 
 ### Keep Analysis Workbooks Tidy
@@ -377,7 +379,7 @@ Just as your data "flows" through your project, code should flow naturally throu
 1. **In `R/` files**: Put reusable functions with roxygen2 documentation
 2. **In vignettes**: Put narrative analysis with calls to those functions
 3. **In `data-raw/`**: Put scripts that create data objects saved to `data/`
-4. **In `inst/private/`**: Put analyses using private/restricted data
+4. **In `inst/analyses/`**: Put analyses using restricted data
 
 ### Function Structure and Documentation
 
@@ -418,7 +420,7 @@ ggplot(data, aes(x = log10(income))) + geom_histogram()
 ggplot(data, aes(x = income)) + geom_histogram()
 ```
 
-**File headers** (for scripts in `data-raw/` or `inst/private/`):
+**File headers** (for scripts in `data-raw/` or `inst/analyses/`):
 
 ```r
 ################################################################################
@@ -554,7 +556,7 @@ library(here)
 
 # Automatically finds project root and builds paths
 data <- readr::read_csv(here("data-raw", "survey.csv"))
-saveRDS(results, here("inst", "private", "results.rds"))
+saveRDS(results, here("inst", "analyses", "results.rds"))
 ```
 
 This works regardless of where collaborators clone the repository.
