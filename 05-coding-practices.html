@@ -1107,10 +1107,32 @@ calc_fluseas_mean = function(data, yname, silent = TRUE) {
 
 }</code></pre>
 <p>The header tells you what the function does, its various inputs, and how you might go about using the function to do what you want. Also notice that all optional arguments (i.e.&nbsp;ones with pre-specified defaults) follow arguments that require user input.</p>
-<ul>
-<li><p><strong>Note</strong>: As someone trying to call a function, it is possible to access a function’s documentation (and internal code) by <code>CMD-Left-Click</code>ing the function’s name in RStudio</p></li>
-<li><p><strong>Note</strong>: Depending on how important your function is, the complexity of your function code, and the complexity of different types of data in your project, you can also add “type-checking” to your function with the <code>assertthat::assert_that()</code> function. You can, for example, <code>assert_that(is.data.frame(statistical_input))</code>, which will ensure that collaborators or reviewers of your project attempting to use your function are using it in the way that it is intended by calling it with (at the minimum) the correct type of arguments. You can extend this to ensure that certain assumptions regarding the inputs are fulfilled as well (i.e.&nbsp;that <code>time_column</code>, <code>location_column</code>, <code>value_column</code>, and <code>population_column</code> all exist within the <code>statistical_input</code> tibble).</p></li>
-</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>As someone trying to call a function, it is possible to access a function’s documentation (and internal code) by <code>CMD-Left-Click</code>ing the function’s name in RStudio</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Depending on how important your function is, the complexity of your function code, and the complexity of different types of data in your project, you can also add “type-checking” to your function with the <code>assertthat::assert_that()</code> function. You can, for example, <code>assert_that(is.data.frame(statistical_input))</code>, which will ensure that collaborators or reviewers of your project attempting to use your function are using it in the way that it is intended by calling it with (at the minimum) the correct type of arguments. You can extend this to ensure that certain assumptions regarding the inputs are fulfilled as well (i.e.&nbsp;that <code>time_column</code>, <code>location_column</code>, <code>value_column</code>, and <code>population_column</code> all exist within the <code>statistical_input</code> tibble).</p>
+</div>
+</div>
 </section>
 </section>
 <section id="object-naming" class="level2" data-number="6.10">
@@ -1122,10 +1144,34 @@ calc_fluseas_mean = function(data, yname, silent = TRUE) {
 </ul>
 <p>We recommend you use <strong>Snake_Case</strong>.</p>
 <ul>
-<li><p>Base R allows <code>.</code> in variable names and functions (such as <code>read.csv()</code>), but this goes against best practices for variable naming in many other coding languages. For consistency’s sake, <code>snake_case</code> has been adopted across languages, and modern packages and functions typically use it (i.e.&nbsp;<code>readr::read_csv()</code>). As a very general rule of thumb, if a package you’re using doesn’t use <code>snake_case</code>, there may be an updated version or more modern package that <em>does</em>, bringing with it the variety of performance improvements and bug fixes inherent in more mature and modern software.</p></li>
-<li><p><strong>Note</strong>: you may also see <code>camelCase</code> throughout the R code you come across. This is <em>okay</em> but not ideal – try to stay consistent across all your code with <code>snake_case</code>.</p></li>
-<li><p><strong>Note</strong>: again, its also worth noting there’s nothing inherently wrong with using <code>.</code> in variable names, just that it goes against style best practices that are cropping up in data science, so its worth getting rid of these bad habits now.</p></li>
+<li>Base R allows <code>.</code> in variable names and functions (such as <code>read.csv()</code>), but this goes against best practices for variable naming in many other coding languages. For consistency’s sake, <code>snake_case</code> has been adopted across languages, and modern packages and functions typically use it (i.e.&nbsp;<code>readr::read_csv()</code>). As a very general rule of thumb, if a package you’re using doesn’t use <code>snake_case</code>, there may be an updated version or more modern package that <em>does</em>, bringing with it the variety of performance improvements and bug fixes inherent in more mature and modern software.</li>
 </ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You may also see <code>camelCase</code> throughout the R code you come across. This is <em>okay</em> but not ideal – try to stay consistent across all your code with <code>snake_case</code>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Again, its also worth noting there’s nothing inherently wrong with using <code>.</code> in variable names, just that it goes against style best practices that are cropping up in data science, so its worth getting rid of these bad habits now.</p>
+</div>
+</div>
 </section>
 <section id="function-calls" class="level2" data-number="6.11">
 <h2 data-number="6.11" class="anchored" data-anchor-id="function-calls"><span class="header-section-number">6.11</span> Function calls</h2>
@@ -1148,9 +1194,19 @@ calc_fluseas_mean = function(data, yname, silent = TRUE) {
 <section id="rds-vs-.rdata-files" class="level3" data-number="6.13.1">
 <h3 data-number="6.13.1" class="anchored" data-anchor-id="rds-vs-.rdata-files"><span class="header-section-number">6.13.1</span> <code>.RDS</code> vs <code>.RData</code> Files</h3>
 <p>One of the most common ways to load and save data in Base R is with the <code>load()</code> and <code>save()</code> functions to serialize multiple objects in a single <code>.RData</code> file. The biggest problems with this practice include an inability to control the names of things getting loaded in, the inherent confusion this creates in understanding older code, and the inability to load individual elements of a saved file. For this, we recommend using the RDS format to save R objects.</p>
-<ul>
-<li><strong>Note</strong>: if you have many related R objects you would have otherwise saved all together using the <code>save</code> function, the functional equivalent with <code>RDS</code> would be to create a (named) list containing each of these objects, and saving it.</li>
-</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you have many related R objects you would have otherwise saved all together using the <code>save</code> function, the functional equivalent with <code>RDS</code> would be to create a (named) list containing each of these objects, and saving it.</p>
+</div>
+</div>
 </section>
 <section id="csvs" class="level3" data-number="6.13.2">
 <h3 data-number="6.13.2" class="anchored" data-anchor-id="csvs"><span class="header-section-number">6.13.2</span> CSVs</h3>
