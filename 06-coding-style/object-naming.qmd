@@ -1,4 +1,4 @@
-Use descriptive names that are both expressive and explicit:
+Use descriptive names that are both expressive and explicit. Being verbose is useful and easy in the age of autocompletion:
 
 ```r
 # Good
@@ -19,3 +19,5 @@ clean_data <- prep_study_data(raw_data)  # verb for function, noun for object
 # Less clear
 data <- process(input)
 ```
+
+Use `snake_case` for all variable and function names. Avoid using `.` in names (as in base R's `read.csv()`), as this goes against best practices in modern R and other languages. Modern packages like `readr::read_csv()` follow this convention.

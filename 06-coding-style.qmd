@@ -28,10 +28,6 @@ Follow these code style guidelines for all R code:
 
 {{< include 06-coding-style/package-code-practices.qmd >}}
 
-## Tidyverse Replacements
-
-{{< include 06-coding-style/tidyverse-replacements.qmd >}}
-
 ## The here Package
 
 {{< include 06-coding-style/the-here-package.qmd >}}
