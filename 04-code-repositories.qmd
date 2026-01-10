@@ -4,7 +4,7 @@ Adapted by UCD-SeRG team from [original by Kunal Mishra, Jade Benjamin-Chung, an
 
 Each study has at least one code repository that typically holds R code, shell scripts with Unix code, and research outputs (results .RDS files, tables, figures). Repositories may also include datasets. This chapter outlines how to organize these files. Adhering to a standard format makes it easier for us to efficiently collaborate across projects. 
 
-UCD-SeRG projects use R package structure for all R-based work. This provides benefits for reproducibility, collaboration, and code quality even for analysis-only projects.
+UCD-SeRG projects use R package structure for most R-based work. This provides benefits for reproducibility, collaboration, and code quality even for analysis-only projects.
 
 ## Project Structure
 
