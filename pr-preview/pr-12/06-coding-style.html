@@ -479,16 +479,15 @@ window.Quarto = {
    
   <ul>
   <li><a href="#general-principles" id="toc-general-principles" class="nav-link active" data-scroll-target="#general-principles"><span class="header-section-number">7.1</span> General Principles</a></li>
-  <li><a href="#file-organization" id="toc-file-organization" class="nav-link" data-scroll-target="#file-organization"><span class="header-section-number">7.2</span> File Organization</a></li>
-  <li><a href="#function-structure-and-documentation" id="toc-function-structure-and-documentation" class="nav-link" data-scroll-target="#function-structure-and-documentation"><span class="header-section-number">7.3</span> Function Structure and Documentation</a></li>
-  <li><a href="#comments" id="toc-comments" class="nav-link" data-scroll-target="#comments"><span class="header-section-number">7.4</span> Comments</a></li>
-  <li><a href="#messaging-and-user-communication" id="toc-messaging-and-user-communication" class="nav-link" data-scroll-target="#messaging-and-user-communication"><span class="header-section-number">7.5</span> Messaging and User Communication</a></li>
-  <li><a href="#package-code-practices" id="toc-package-code-practices" class="nav-link" data-scroll-target="#package-code-practices"><span class="header-section-number">7.6</span> Package Code Practices</a></li>
-  <li><a href="#line-breaks-and-formatting" id="toc-line-breaks-and-formatting" class="nav-link" data-scroll-target="#line-breaks-and-formatting"><span class="header-section-number">7.7</span> Line Breaks and Formatting</a></li>
-  <li><a href="#tidyverse-replacements" id="toc-tidyverse-replacements" class="nav-link" data-scroll-target="#tidyverse-replacements"><span class="header-section-number">7.8</span> Tidyverse Replacements</a></li>
-  <li><a href="#the-here-package" id="toc-the-here-package" class="nav-link" data-scroll-target="#the-here-package"><span class="header-section-number">7.9</span> The here Package</a></li>
-  <li><a href="#object-naming" id="toc-object-naming" class="nav-link" data-scroll-target="#object-naming"><span class="header-section-number">7.10</span> Object Naming</a></li>
-  <li><a href="#sec-r-resources" id="toc-sec-r-resources" class="nav-link" data-scroll-target="#sec-r-resources"><span class="header-section-number">7.11</span> Additional Resources</a></li>
+  <li><a href="#function-structure-and-documentation" id="toc-function-structure-and-documentation" class="nav-link" data-scroll-target="#function-structure-and-documentation"><span class="header-section-number">7.2</span> Function Structure and Documentation</a></li>
+  <li><a href="#comments" id="toc-comments" class="nav-link" data-scroll-target="#comments"><span class="header-section-number">7.3</span> Comments</a></li>
+  <li><a href="#messaging-and-user-communication" id="toc-messaging-and-user-communication" class="nav-link" data-scroll-target="#messaging-and-user-communication"><span class="header-section-number">7.4</span> Messaging and User Communication</a></li>
+  <li><a href="#package-code-practices" id="toc-package-code-practices" class="nav-link" data-scroll-target="#package-code-practices"><span class="header-section-number">7.5</span> Package Code Practices</a></li>
+  <li><a href="#line-breaks-and-formatting" id="toc-line-breaks-and-formatting" class="nav-link" data-scroll-target="#line-breaks-and-formatting"><span class="header-section-number">7.6</span> Line Breaks and Formatting</a></li>
+  <li><a href="#tidyverse-replacements" id="toc-tidyverse-replacements" class="nav-link" data-scroll-target="#tidyverse-replacements"><span class="header-section-number">7.7</span> Tidyverse Replacements</a></li>
+  <li><a href="#the-here-package" id="toc-the-here-package" class="nav-link" data-scroll-target="#the-here-package"><span class="header-section-number">7.8</span> The here Package</a></li>
+  <li><a href="#object-naming" id="toc-object-naming" class="nav-link" data-scroll-target="#object-naming"><span class="header-section-number">7.9</span> Object Naming</a></li>
+  <li><a href="#sec-r-resources" id="toc-sec-r-resources" class="nav-link" data-scroll-target="#sec-r-resources"><span class="header-section-number">7.10</span> Additional Resources</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/06-coding-style.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/06-coding-style.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -531,18 +530,8 @@ window.Quarto = {
 <li><strong>Write tidy code</strong>: Keep code clean, readable, and well-organized</li>
 </ul>
 </section>
-<section id="file-organization" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="file-organization"><span class="header-section-number">7.2</span> File Organization</h2>
-<p>Just as your data “flows” through your project, code should flow naturally through files in the package structure:</p>
-<ol type="1">
-<li><strong>In <code>R/</code> files</strong>: Put reusable functions with roxygen2 documentation</li>
-<li><strong>In vignettes</strong>: Put narrative analysis with calls to those functions</li>
-<li><strong>In <code>data-raw/</code></strong>: Put scripts that create data objects saved to <code>data/</code></li>
-<li><strong>In <code>inst/analyses/</code></strong>: Put analyses using restricted data</li>
-</ol>
-</section>
-<section id="function-structure-and-documentation" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="function-structure-and-documentation"><span class="header-section-number">7.3</span> Function Structure and Documentation</h2>
+<section id="function-structure-and-documentation" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="function-structure-and-documentation"><span class="header-section-number">7.2</span> Function Structure and Documentation</h2>
 <p>Every function should follow this pattern:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#' Short Title (One Line)</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
@@ -563,8 +552,8 @@ window.Quarto = {
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Implementation</span></span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="comments" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="comments"><span class="header-section-number">7.4</span> Comments</h2>
+<section id="comments" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="comments"><span class="header-section-number">7.3</span> Comments</h2>
 <p>Use comments to explain <em>why</em>, not <em>what</em>:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Good: Explains reasoning</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Use log scale because distribution is highly skewed</span></span>
@@ -606,8 +595,8 @@ window.Quarto = {
 <li><strong>Multi-Line Comments</strong> - Occasionally, multi-line comments are necessary. Don’t add line breaks manually to a single-line comment for the purpose of making it “fit” on the screen. Instead, in RStudio &gt; Tools &gt; Global Options &gt; Code &gt; “Soft-wrap R source files” to have lines wrap around. Format your multi-line comments like the file header from above.</li>
 </ol>
 </section>
-<section id="messaging-and-user-communication" class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="messaging-and-user-communication"><span class="header-section-number">7.5</span> Messaging and User Communication</h2>
+<section id="messaging-and-user-communication" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="messaging-and-user-communication"><span class="header-section-number">7.4</span> Messaging and User Communication</h2>
 <p>Use <code>cli</code> package functions for all user-facing messages in package functions:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Good</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>cli<span class="sc">::</span><span class="fu">cli_inform</span>(<span class="st">"Analysis complete"</span>)</span>
@@ -619,16 +608,16 @@ window.Quarto = {
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">warning</span>(<span class="st">"Missing data detected"</span>)</span>
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">stop</span>(<span class="st">"Invalid input"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="package-code-practices" class="level2" data-number="7.6">
-<h2 data-number="7.6" class="anchored" data-anchor-id="package-code-practices"><span class="header-section-number">7.6</span> Package Code Practices</h2>
+<section id="package-code-practices" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="package-code-practices"><span class="header-section-number">7.5</span> Package Code Practices</h2>
 <ul>
 <li><strong>No <code>library()</code> in package code</strong>: Use <code>::</code> notation or declare in DESCRIPTION Imports</li>
 <li><strong>Document all exports</strong>: Use roxygen2 (<span class="citation" data-cites="title">@title</span>, <span class="citation" data-cites="description">@description</span>, <span class="citation" data-cites="param">@param</span>, <span class="citation" data-cites="returns">@returns</span>, <span class="citation" data-cites="examples">@examples</span>)</li>
 <li><strong>Avoid code duplication</strong>: Extract repeated logic into helper functions</li>
 </ul>
 </section>
-<section id="line-breaks-and-formatting" class="level2" data-number="7.7">
-<h2 data-number="7.7" class="anchored" data-anchor-id="line-breaks-and-formatting"><span class="header-section-number">7.7</span> Line Breaks and Formatting</h2>
+<section id="line-breaks-and-formatting" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="line-breaks-and-formatting"><span class="header-section-number">7.6</span> Line Breaks and Formatting</h2>
 <p>For readability, use line breaks in function calls and pipelines:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Good: Named arguments on separate lines</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>mean_Y <span class="ot">&lt;-</span> <span class="fu">calc_fluseas_mean</span>(</span>
@@ -737,8 +726,8 @@ ggplot(data=data,
 <p>Imagine (or perhaps mournfully recall) the mess that can occur when you don’t strictly style a complicated <code>ggplot</code> call. Trying to fix bugs and ensure your code is working can be a nightmare. Now imagine trying to do it with the same code 6 months after you’ve written it. Invest the time now and reap the rewards as the code practically explains itself, line by line.</p></li>
 </ul>
 </section>
-<section id="tidyverse-replacements" class="level2" data-number="7.8">
-<h2 data-number="7.8" class="anchored" data-anchor-id="tidyverse-replacements"><span class="header-section-number">7.8</span> Tidyverse Replacements</h2>
+<section id="tidyverse-replacements" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="tidyverse-replacements"><span class="header-section-number">7.7</span> Tidyverse Replacements</h2>
 <p>Use modern tidyverse/alternatives for base R functions:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Data structures</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">tibble</span>()           <span class="co"># instead of data.frame()</span></span>
@@ -761,8 +750,8 @@ ggplot(data=data,
 <span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Session info</span></span>
 <span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>sessioninfo<span class="sc">::</span><span class="fu">session_info</span>() <span class="co"># instead of sessionInfo()</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="the-here-package" class="level2" data-number="7.9">
-<h2 data-number="7.9" class="anchored" data-anchor-id="the-here-package"><span class="header-section-number">7.9</span> The here Package</h2>
+<section id="the-here-package" class="level2" data-number="7.8">
+<h2 data-number="7.8" class="anchored" data-anchor-id="the-here-package"><span class="header-section-number">7.8</span> The here Package</h2>
 <p>The <code>here</code> package helps manage file paths in projects:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -771,8 +760,8 @@ ggplot(data=data,
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(results, <span class="fu">here</span>(<span class="st">"inst"</span>, <span class="st">"analyses"</span>, <span class="st">"results.rds"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This works regardless of where collaborators clone the repository.</p>
 </section>
-<section id="object-naming" class="level2" data-number="7.10">
-<h2 data-number="7.10" class="anchored" data-anchor-id="object-naming"><span class="header-section-number">7.10</span> Object Naming</h2>
+<section id="object-naming" class="level2" data-number="7.9">
+<h2 data-number="7.9" class="anchored" data-anchor-id="object-naming"><span class="header-section-number">7.9</span> Object Naming</h2>
 <p>Use descriptive names that are both expressive and explicit:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Good</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>vaccination_coverage_2017_18</span>
@@ -824,8 +813,8 @@ ggplot(data=data,
 </ul></li>
 </ol>
 </section>
-<section id="sec-r-resources" class="level2" data-number="7.11">
-<h2 data-number="7.11" class="anchored" data-anchor-id="sec-r-resources"><span class="header-section-number">7.11</span> Additional Resources</h2>
+<section id="sec-r-resources" class="level2" data-number="7.10">
+<h2 data-number="7.10" class="anchored" data-anchor-id="sec-r-resources"><span class="header-section-number">7.10</span> Additional Resources</h2>
 <ul>
 <li><a href="https://style.tidyverse.org/">Tidyverse style guide</a></li>
 </ul>
