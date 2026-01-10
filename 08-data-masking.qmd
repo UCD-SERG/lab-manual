@@ -2,28 +2,7 @@
 
 Adapted by UCD-SeRG team from [original by Anna Nguyen, Jade Benjamin-Chung, and Gabby Barratt Heitmann](https://jadebc.github.io/lab-manual/data-masking.html)
 
-## UC Davis Computing Resources
-
-When you need to run a script that requires a large amount of RAM, large files, or that uses parallelization, UC Davis provides several high-performance computing (HPC) resources:
-
-### Available Resources
-
-**UC Davis HPC Clusters:**
-- **Farm Cluster** ([hpc.ucdavis.edu](https://hpc.ucdavis.edu/)): UC Davis's primary HPC cluster providing shared computing resources for research
-- **Shiva** (shiva.ucdavis.edu): SLURM-based cluster for computational work
-- **Mercury** (mercury.ucdavis.edu): RStudio GUI computing environment
-
-**PHS Shared Compute Environments:**
-For lab members affiliated with the School of Public Health Sciences (PHS), additional shared computing environments are available. These environments provide secure, HIPAA-compliant computing resources suitable for working with sensitive health data.
-
-For detailed information about PHS shared compute environments, including access procedures, security guidelines, and usage policies, please refer to the [PHS Shared Compute Environments Guide](assets/files/PHS_Shared_Compute_Environments.pdf).
-
-Contact lab leadership for assistance with:
-- Requesting access to computing resources
-- Choosing the appropriate computing environment for your project
-- Setting up your computing environment
-
-For general information about SLURM-based cluster computing, see the [Slurm and cluster computing](#slurm) chapter.
+For information about UC Davis computing resources for data-intensive work, see @sec-slurm.
 
 ## General Overview
 This chapter covers data masking, a unique process in R in which columns are treated as distinct objects within their dataframe’s environment. In our lab, data masking most frequently comes up when writing wrapper functions where arguments to indicate column names  are supplied as strings. We often do this when we repeat the same code on multiple columns, and want to apply a function to a vector of strings that correspond to column names in a dataframe. For example, we might want to clean multiple columns using the same function or estimate the same model under different feature sets. Here, we try to break down what data masking is, why this error comes up, and common approaches to solve this problem.

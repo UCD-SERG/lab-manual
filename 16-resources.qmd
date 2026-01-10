@@ -42,6 +42,7 @@ Adapted by UCD-SeRG team from [original by Jade Benjamin-Chung and Kunal Mishra]
 - [Professional advice, especially for your first job](https://docs.google.com/document/d/1ckgRCcr7FFPyymyMA6Y_-cB_vftOyrrxT28c6gRg0PI/edit)
 
 ## Funding
+- [Building Your Funding Train](https://grantwriting.stanford.edu/funding-train/#ep)
 - [NIH Grant Writing Resources](https://www.niaid.nih.gov/grants-contracts/write-grant-application)
 
 ## Ethics and global health research

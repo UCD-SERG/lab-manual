@@ -1,4 +1,4 @@
-# Github {#github}
+# Github {#sec-github}
 
 Adapted by UCD-SeRG team from [original by Stephanie Djajadi and Nolan Pokpongkiat](https://jadebc.github.io/lab-manual/github.html)
 
