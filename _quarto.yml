@@ -1,14 +1,3 @@
-authors:
-  - name: Kristen Aiemjoy
-    affiliations:
-      - ref: ucdphs-epi
-    email: kaiemjoy@health.ucdavis.edu
-
-  - name: Ezra Morrison
-    affiliations:
-      - ref: ucdphs-biostats
-    email: demorrison@ucdavis.edu
-
 affiliations:
   - id: ucdphs-epi
     name: Division of Epidemiology, Department of Public Health Sciences, School of Medicine, University of California, Davis, CA, United States
@@ -29,6 +18,16 @@ project:
 
 book:
   title: "UCD-SeRG Lab Manual"
+  author:
+    - name: Kristen Aiemjoy
+      affiliations:
+        - ref: ucdphs-epi
+      email: kaiemjoy@health.ucdavis.edu
+
+    - name: Ezra Morrison
+      affiliations:
+        - ref: ucdphs-biostats
+      email: demorrison@ucdavis.edu
   date: last-modified
   date-format: "[Last updated:] YYYY-MM-DD"
   repo-url: https://github.com/UCD-SERG/lab-manual
