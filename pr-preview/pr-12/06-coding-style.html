@@ -481,9 +481,9 @@ window.Quarto = {
   <li><a href="#general-principles" id="toc-general-principles" class="nav-link active" data-scroll-target="#general-principles"><span class="header-section-number">7.1</span> General Principles</a></li>
   <li><a href="#function-structure-and-documentation" id="toc-function-structure-and-documentation" class="nav-link" data-scroll-target="#function-structure-and-documentation"><span class="header-section-number">7.2</span> Function Structure and Documentation</a></li>
   <li><a href="#comments" id="toc-comments" class="nav-link" data-scroll-target="#comments"><span class="header-section-number">7.3</span> Comments</a></li>
-  <li><a href="#messaging-and-user-communication" id="toc-messaging-and-user-communication" class="nav-link" data-scroll-target="#messaging-and-user-communication"><span class="header-section-number">7.4</span> Messaging and User Communication</a></li>
-  <li><a href="#package-code-practices" id="toc-package-code-practices" class="nav-link" data-scroll-target="#package-code-practices"><span class="header-section-number">7.5</span> Package Code Practices</a></li>
-  <li><a href="#line-breaks-and-formatting" id="toc-line-breaks-and-formatting" class="nav-link" data-scroll-target="#line-breaks-and-formatting"><span class="header-section-number">7.6</span> Line Breaks and Formatting</a></li>
+  <li><a href="#line-breaks-and-formatting" id="toc-line-breaks-and-formatting" class="nav-link" data-scroll-target="#line-breaks-and-formatting"><span class="header-section-number">7.4</span> Line Breaks and Formatting</a></li>
+  <li><a href="#messaging-and-user-communication" id="toc-messaging-and-user-communication" class="nav-link" data-scroll-target="#messaging-and-user-communication"><span class="header-section-number">7.5</span> Messaging and User Communication</a></li>
+  <li><a href="#package-code-practices" id="toc-package-code-practices" class="nav-link" data-scroll-target="#package-code-practices"><span class="header-section-number">7.6</span> Package Code Practices</a></li>
   <li><a href="#tidyverse-replacements" id="toc-tidyverse-replacements" class="nav-link" data-scroll-target="#tidyverse-replacements"><span class="header-section-number">7.7</span> Tidyverse Replacements</a></li>
   <li><a href="#the-here-package" id="toc-the-here-package" class="nav-link" data-scroll-target="#the-here-package"><span class="header-section-number">7.8</span> The here Package</a></li>
   <li><a href="#object-naming" id="toc-object-naming" class="nav-link" data-scroll-target="#object-naming"><span class="header-section-number">7.9</span> Object Naming</a></li>
@@ -585,29 +585,8 @@ window.Quarto = {
 <li><strong>Multi-Line Comments</strong> - Occasionally, multi-line comments are necessary. Don’t add line breaks manually to a single-line comment for the purpose of making it “fit” on the screen. Instead, in RStudio &gt; Tools &gt; Global Options &gt; Code &gt; “Soft-wrap R source files” to have lines wrap around. Format your multi-line comments like the file header from above.</li>
 </ol>
 </section>
-<section id="messaging-and-user-communication" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="messaging-and-user-communication"><span class="header-section-number">7.4</span> Messaging and User Communication</h2>
-<p>Use <code>cli</code> package functions for all user-facing messages in package functions:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Good</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>cli<span class="sc">::</span><span class="fu">cli_inform</span>(<span class="st">"Analysis complete"</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>cli<span class="sc">::</span><span class="fu">cli_warn</span>(<span class="st">"Missing data detected"</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>cli<span class="sc">::</span><span class="fu">cli_abort</span>(<span class="st">"Invalid input: {x}"</span>)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Bad - don't use these in package code</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">"Analysis complete"</span>)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">warning</span>(<span class="st">"Missing data detected"</span>)</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="fu">stop</span>(<span class="st">"Invalid input"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="package-code-practices" class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="package-code-practices"><span class="header-section-number">7.5</span> Package Code Practices</h2>
-<ul>
-<li><strong>No <code>library()</code> in package code</strong>: Use <code>::</code> notation or declare in DESCRIPTION Imports</li>
-<li><strong>Document all exports</strong>: Use roxygen2 (<span class="citation" data-cites="title">@title</span>, <span class="citation" data-cites="description">@description</span>, <span class="citation" data-cites="param">@param</span>, <span class="citation" data-cites="returns">@returns</span>, <span class="citation" data-cites="examples">@examples</span>)</li>
-<li><strong>Avoid code duplication</strong>: Extract repeated logic into helper functions</li>
-</ul>
-</section>
-<section id="line-breaks-and-formatting" class="level2" data-number="7.6">
-<h2 data-number="7.6" class="anchored" data-anchor-id="line-breaks-and-formatting"><span class="header-section-number">7.6</span> Line Breaks and Formatting</h2>
+<section id="line-breaks-and-formatting" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="line-breaks-and-formatting"><span class="header-section-number">7.4</span> Line Breaks and Formatting</h2>
 <ul>
 <li>For <code>ggplot</code> calls and <code>dplyr</code> pipelines, do not crowd single lines. Here are some nontrivial examples of “beautiful” pipelines, where beauty is defined by coherence:</li>
 </ul>
@@ -667,6 +646,27 @@ ggplot(data=data,
         axis.text.x = element_text(size = 12)) +
   ggtitle(title)</code></pre>
 <p>Imagine (or perhaps mournfully recall) the mess that can occur when you don’t strictly style a complicated <code>ggplot</code> call. Trying to fix bugs and ensure your code is working can be a nightmare. Now imagine trying to do it with the same code 6 months after you’ve written it. Invest the time now and reap the rewards as the code practically explains itself, line by line.</p>
+</section>
+<section id="messaging-and-user-communication" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="messaging-and-user-communication"><span class="header-section-number">7.5</span> Messaging and User Communication</h2>
+<p>Use <code>cli</code> package functions for all user-facing messages in package functions:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Good</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>cli<span class="sc">::</span><span class="fu">cli_inform</span>(<span class="st">"Analysis complete"</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>cli<span class="sc">::</span><span class="fu">cli_warn</span>(<span class="st">"Missing data detected"</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>cli<span class="sc">::</span><span class="fu">cli_abort</span>(<span class="st">"Invalid input: {x}"</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Bad - don't use these in package code</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">"Analysis complete"</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="fu">warning</span>(<span class="st">"Missing data detected"</span>)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="fu">stop</span>(<span class="st">"Invalid input"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="package-code-practices" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="package-code-practices"><span class="header-section-number">7.6</span> Package Code Practices</h2>
+<ul>
+<li><strong>No <code>library()</code> in package code</strong>: Use <code>::</code> notation or declare in DESCRIPTION Imports</li>
+<li><strong>Document all exports</strong>: Use roxygen2 (<span class="citation" data-cites="title">@title</span>, <span class="citation" data-cites="description">@description</span>, <span class="citation" data-cites="param">@param</span>, <span class="citation" data-cites="returns">@returns</span>, <span class="citation" data-cites="examples">@examples</span>)</li>
+<li><strong>Avoid code duplication</strong>: Extract repeated logic into helper functions</li>
+</ul>
 </section>
 <section id="tidyverse-replacements" class="level2" data-number="7.7">
 <h2 data-number="7.7" class="anchored" data-anchor-id="tidyverse-replacements"><span class="header-section-number">7.7</span> Tidyverse Replacements</h2>
