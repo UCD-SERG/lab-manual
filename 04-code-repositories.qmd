@@ -32,6 +32,9 @@ myproject/
 │   └── testthat/       # Unit tests
 ├── data/               # Processed data objects (.rda files)
 ├── data-raw/           # Raw data and data processing scripts
+│   ├── 0-prep-data.sh  # Shell scripts for data preparation
+│   ├── process_survey_data.R
+│   └── clean_lab_results.R
 ├── vignettes/          # Long-form documentation
 │   ├── intro.Rmd       # Main vignettes (shipped with package)
 │   ├── tutorial.Rmd
@@ -39,7 +42,16 @@ myproject/
 │       ├── advanced-topics.Rmd
 │       └── case-studies.Rmd
 ├── inst/               # Additional files to include in package
-│   ├── extdata/        # External data files
+│   ├── extdata/        # External data files and .RDS results
+│   │   ├── analysis_results.rds
+│   │   └── processed_data.rds
+│   ├── output/         # Figure and table outputs
+│   │   ├── figures/
+│   │   │   ├── fig1.pdf
+│   │   │   └── fig2.png
+│   │   └── tables/
+│   │       ├── table1.csv
+│   │       └── table2.xlsx
 │   └── analyses/       # Analyses using restricted data (see below)
 └── .Rproj              # RStudio project file
 ```
@@ -163,6 +175,74 @@ cleaned_data <- final_result
 # Good: Clean vignette calling documented functions
 raw_data <- read_csv("data.csv")
 cleaned_data <- prep_study_data(raw_data)  # Function in R/data_prep.R
+```
+
+### Shell Scripts and Automation
+
+Shell scripts are useful for automating workflows and ensuring reproducibility. Place shell scripts in `data-raw/` alongside the R scripts they coordinate:
+
+```
+data-raw/
+├── 0-prep-data.sh          # Shell script to run all data prep
+├── 01-load-survey.R
+├── 02-clean-survey.R
+├── 03-merge-datasets.R
+└── 04-create-analysis-data.R
+```
+
+**Using shell scripts:**
+
+```bash
+# data-raw/0-prep-data.sh
+#!/bin/bash
+Rscript data-raw/01-load-survey.R
+Rscript data-raw/02-clean-survey.R
+Rscript data-raw/03-merge-datasets.R
+Rscript data-raw/04-create-analysis-data.R
+```
+
+This is especially useful when data upstream changes — you can simply run the shell script to reproduce everything. After running shell scripts, `.Rout` log files will be generated for each script. It is important to check these files to ensure everything has run correctly.
+
+### Storing Analysis Outputs
+
+**Results files (.RDS)**: Save analysis results in `inst/extdata/`:
+
+```r
+# Save results
+readr::write_rds(analysis_results, here("inst", "extdata", "analysis_results.rds"))
+
+# Load results later
+results <- readr::read_rds(here("inst", "extdata", "analysis_results.rds"))
+```
+
+**Figures and tables**: Save publication outputs in `inst/output/`:
+
+```r
+# Save figure
+ggsave(here("inst", "output", "figures", "fig1_incidence_trends.pdf"), 
+       width = 8, height = 6)
+
+# Save table
+readr::write_csv(summary_table, 
+                 here("inst", "output", "tables", "table1_demographics.csv"))
+```
+
+**Organization:**
+```
+inst/
+├── extdata/
+│   ├── analysis_results.rds
+│   ├── model_fits.rds
+│   └── processed_data.rds
+└── output/
+    ├── figures/
+    │   ├── fig1_incidence_trends.pdf
+    │   ├── fig2_risk_factors.png
+    │   └── figS1_sensitivity.pdf
+    └── tables/
+        ├── table1_demographics.csv
+        ├── table2_main_results.xlsx
+        └── tableS1_detailed_results.csv
 ```
 
 ## `.Rproj` files
