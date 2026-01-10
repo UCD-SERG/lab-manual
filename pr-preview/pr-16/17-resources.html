@@ -419,7 +419,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#resources-for-r" id="toc-resources-for-r" class="nav-link active" data-scroll-target="#resources-for-r"><span class="header-section-number">18.1</span> Resources for R</a></li>
+  <li><a href="#resources-for-r" id="toc-resources-for-r" class="nav-link active" data-scroll-target="#resources-for-r"><span class="header-section-number">18.1</span> Resources for R</a>
+  <ul class="collapse">
+  <li><a href="#books-and-comprehensive-guides" id="toc-books-and-comprehensive-guides" class="nav-link" data-scroll-target="#books-and-comprehensive-guides"><span class="header-section-number">18.1.1</span> Books and Comprehensive Guides</a></li>
+  <li><a href="#cheat-sheets" id="toc-cheat-sheets" class="nav-link" data-scroll-target="#cheat-sheets"><span class="header-section-number">18.1.2</span> Cheat Sheets</a></li>
+  <li><a href="#style-and-best-practices" id="toc-style-and-best-practices" class="nav-link" data-scroll-target="#style-and-best-practices"><span class="header-section-number">18.1.3</span> Style and Best Practices</a></li>
+  <li><a href="#tidy-evaluation-resources" id="toc-tidy-evaluation-resources" class="nav-link" data-scroll-target="#tidy-evaluation-resources"><span class="header-section-number">18.1.4</span> Tidy Evaluation Resources</a></li>
+  </ul></li>
   <li><a href="#resources-for-git-github" id="toc-resources-for-git-github" class="nav-link" data-scroll-target="#resources-for-git-github"><span class="header-section-number">18.2</span> Resources for Git &amp; Github</a></li>
   <li><a href="#scientific-figures" id="toc-scientific-figures" class="nav-link" data-scroll-target="#scientific-figures"><span class="header-section-number">18.3</span> Scientific figures</a></li>
   <li><a href="#writing" id="toc-writing" class="nav-link" data-scroll-target="#writing"><span class="header-section-number">18.4</span> Writing</a></li>
@@ -461,13 +467,36 @@ ul.task-list li input[type="checkbox"] {
 <p>Adapted by UCD-SeRG team from <a href="https://jadebc.github.io/lab-manual/resources.html">original by Jade Benjamin-Chung and Kunal Mishra</a></p>
 <section id="resources-for-r" class="level2" data-number="18.1">
 <h2 data-number="18.1" class="anchored" data-anchor-id="resources-for-r"><span class="header-section-number">18.1</span> Resources for R</h2>
+<section id="books-and-comprehensive-guides" class="level3" data-number="18.1.1">
+<h3 data-number="18.1.1" class="anchored" data-anchor-id="books-and-comprehensive-guides"><span class="header-section-number">18.1.1</span> Books and Comprehensive Guides</h3>
+<ul>
+<li><a href="https://r4ds.hadley.nz/">R for Data Science</a> by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund - comprehensive introduction to doing data science with R</li>
+<li><a href="https://r-pkgs.org/">R Packages</a> by Hadley Wickham and Jenny Bryan - complete guide to R package development</li>
+<li><a href="https://adv-r.hadley.nz/">Advanced R</a> by Hadley Wickham - deep dive into R programming and internals</li>
+<li><a href="https://mastering-shiny.org/">Mastering Shiny</a> by Hadley Wickham - comprehensive guide to building web applications with Shiny</li>
+<li><a href="https://engineering-shiny.org/">Engineering Production-Grade Shiny Apps</a> by Colin Fay, Sébastien Rochette, Vincent Guyader, and Cervan Girard - best practices for production Shiny applications</li>
+<li><a href="https://happygitwithr.com/">Happy Git and GitHub for the useR</a> by Jenny Bryan - guide to using Git and GitHub with R</li>
+<li><a href="https://ucb-epi-r.github.io">Jade’s R-for-epi course</a></li>
+</ul>
+</section>
+<section id="cheat-sheets" class="level3" data-number="18.1.2">
+<h3 data-number="18.1.2" class="anchored" data-anchor-id="cheat-sheets"><span class="header-section-number">18.1.2</span> Cheat Sheets</h3>
 <ul>
 <li><a href="https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf">dplyr and tidyr cheat sheet</a></li>
 <li><a href="https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf">ggplot cheat sheet</a></li>
 <li><a href="https://s3.amazonaws.com/assets.datacamp.com/blog_assets/datatable_Cheat_Sheet_R.pdf">data table cheat sheet</a></li>
 <li><a href="https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf">RMarkdown cheat sheet</a></li>
+</ul>
+</section>
+<section id="style-and-best-practices" class="level3" data-number="18.1.3">
+<h3 data-number="18.1.3" class="anchored" data-anchor-id="style-and-best-practices"><span class="header-section-number">18.1.3</span> Style and Best Practices</h3>
+<ul>
 <li><a href="http://adv-r.had.co.nz/Style.html">Hadley Wickham’s R Style Guide</a></li>
-<li><a href="https://ucb-epi-r.github.io">Jade’s R-for-epi course</a></li>
+</ul>
+</section>
+<section id="tidy-evaluation-resources" class="level3" data-number="18.1.4">
+<h3 data-number="18.1.4" class="anchored" data-anchor-id="tidy-evaluation-resources"><span class="header-section-number">18.1.4</span> Tidy Evaluation Resources</h3>
+<ul>
 <li><a href="https://www.youtube.com/watch?v=nERXS3ssntw">Tidy Eval in 5 Minutes</a> (video)</li>
 <li><a href="https://tidyeval.tidyverse.org/index.html">Tidy Evaluation</a> (e-book)</li>
 <li><a href="https://www.brodrigues.co/blog/2016-07-18-data-frame-columns-as-arguments-to-dplyr-functions/">Data Frame Columns as Arguments to Dplyr Functions</a> (blog)</li>
@@ -475,9 +504,11 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://dplyr.tidyverse.org/articles/programming.html">Programming with dplyr</a> (package vignette)</li>
 </ul>
 </section>
+</section>
 <section id="resources-for-git-github" class="level2" data-number="18.2">
 <h2 data-number="18.2" class="anchored" data-anchor-id="resources-for-git-github"><span class="header-section-number">18.2</span> Resources for Git &amp; Github</h2>
 <ul>
+<li><a href="https://happygitwithr.com/">Happy Git and GitHub for the useR</a> by Jenny Bryan - comprehensive guide to using Git and GitHub with R</li>
 <li><a href="https://www.datacamp.com/courses/introduction-to-git-for-data-science">Data Camp introduction to Git</a></li>
 <li><a href="https://lab.github.com/githubtraining/introduction-to-github">Introduction to Github</a></li>
 </ul>

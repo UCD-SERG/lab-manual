@@ -426,7 +426,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#example-workflow" id="toc-example-workflow" class="nav-link" data-scroll-target="#example-workflow"><span class="header-section-number">11.4</span> Example Workflow</a></li>
   <li><a href="#commonly-used-git-commands" id="toc-commonly-used-git-commands" class="nav-link" data-scroll-target="#commonly-used-git-commands"><span class="header-section-number">11.5</span> Commonly Used Git Commands</a></li>
   <li><a href="#how-often-should-i-commit" id="toc-how-often-should-i-commit" class="nav-link" data-scroll-target="#how-often-should-i-commit"><span class="header-section-number">11.6</span> How often should I commit?</a></li>
-  <li><a href="#what-should-be-pushed-to-github" id="toc-what-should-be-pushed-to-github" class="nav-link" data-scroll-target="#what-should-be-pushed-to-github"><span class="header-section-number">11.7</span> What should be pushed to Github?</a></li>
+  <li><a href="#repeated-amend-workflow" id="toc-repeated-amend-workflow" class="nav-link" data-scroll-target="#repeated-amend-workflow"><span class="header-section-number">11.7</span> Repeated Amend Workflow</a>
+  <ul class="collapse">
+  <li><a href="#basic-workflow" id="toc-basic-workflow" class="nav-link" data-scroll-target="#basic-workflow"><span class="header-section-number">11.7.1</span> Basic Workflow</a></li>
+  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points"><span class="header-section-number">11.7.2</span> Key Points</a></li>
+  </ul></li>
+  <li><a href="#what-should-be-pushed-to-github" id="toc-what-should-be-pushed-to-github" class="nav-link" data-scroll-target="#what-should-be-pushed-to-github"><span class="header-section-number">11.8</span> What should be pushed to Github?</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/10-github.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/10-github.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -637,8 +642,38 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="11.6" class="anchored" data-anchor-id="how-often-should-i-commit"><span class="header-section-number">11.6</span> How often should I commit?</h2>
 <p>It is good practice to commit every 15 minutes, or every time you make a significant change. It is better to commit more rather than less.</p>
 </section>
-<section id="what-should-be-pushed-to-github" class="level2" data-number="11.7">
-<h2 data-number="11.7" class="anchored" data-anchor-id="what-should-be-pushed-to-github"><span class="header-section-number">11.7</span> What should be pushed to Github?</h2>
+<section id="repeated-amend-workflow" class="level2" data-number="11.7">
+<h2 data-number="11.7" class="anchored" data-anchor-id="repeated-amend-workflow"><span class="header-section-number">11.7</span> Repeated Amend Workflow</h2>
+<p>When working on a complex task, you may want to make frequent incremental commits to protect your progress, but avoid cluttering your Git history with many tiny “work in progress” commits. The <strong>Repeated Amend</strong> pattern lets you build up a polished commit gradually.</p>
+<section id="basic-workflow" class="level3" data-number="11.7.1">
+<h3 data-number="11.7.1" class="anchored" data-anchor-id="basic-workflow"><span class="header-section-number">11.7.1</span> Basic Workflow</h3>
+<p>Start with a clean working tree in a functional state. Then:</p>
+<ol type="1">
+<li>Make a small change and verify your project still works</li>
+<li>Stage and commit with a temporary message like “WIP” (work in progress)</li>
+<li><strong>Do not push yet</strong></li>
+<li>Make another small change and verify it works</li>
+<li>Stage and amend the previous commit: <code>git commit --amend --no-edit</code></li>
+<li>Repeat steps 4-5 as needed</li>
+<li>When finished, amend one final time with a proper commit message</li>
+<li>Push your completed work</li>
+</ol>
+<p>In RStudio, you can use the “Amend previous commit” checkbox when committing.</p>
+</section>
+<section id="key-points" class="level3" data-number="11.7.2">
+<h3 data-number="11.7.2" class="anchored" data-anchor-id="key-points"><span class="header-section-number">11.7.2</span> Key Points</h3>
+<ul>
+<li>Each amend replaces the previous commit rather than creating a new one</li>
+<li>This keeps your history clean while letting you work incrementally</li>
+<li>Only use this pattern before pushing - never amend commits that others may have pulled</li>
+<li>If you need to undo changes, use <code>git reset --hard</code> to return to your last commit state</li>
+<li>Think of commits as climbing protection: use them when in uncertain territory</li>
+</ul>
+<p>For more details and troubleshooting scenarios, see the <a href="https://happygitwithr.com/repeated-amend.html">Repeated Amend chapter</a> in Happy Git with R.</p>
+</section>
+</section>
+<section id="what-should-be-pushed-to-github" class="level2" data-number="11.8">
+<h2 data-number="11.8" class="anchored" data-anchor-id="what-should-be-pushed-to-github"><span class="header-section-number">11.8</span> What should be pushed to Github?</h2>
 <p>Never push .Rout files! If someone else runs an R script and creates an .Rout file at the same time and both of you try to push to github, it is incredibly difficult to reconcile these two logs. If you run logs, keep them on your own system or (preferably) set up a shared directory where all logs are name and date timestamped.</p>
 <p>There is a standardized <code>.gitignore</code> for <code>R</code> which you <a href="https://github.com/github/gitignore/blob/master/R.gitignore">can download</a> and add to your project. This ensures you’re not committing log files or things that would otherwise best be left ignored to GitHub. This is a <a href="https://www.tidyverse.org/articles/2017/12/workflow-vs-script/">great discussion of project-oriented workflows</a>, extolling the virtues of a self-contained, portable projects, for your reference.</p>
 
