@@ -16,7 +16,9 @@ Follow these code style guidelines for all R code:
 
 {{< include 06-coding-style/comments.qmd >}}
 
+## Line Breaks and Formatting
 
+{{< include 06-coding-style/line-breaks.qmd >}}
 
 ## Messaging and User Communication
 
@@ -25,10 +27,6 @@ Follow these code style guidelines for all R code:
 ## Package Code Practices
 
 {{< include 06-coding-style/package-code-practices.qmd >}}
-
-## Line Breaks and Formatting
-
-{{< include 06-coding-style/line-breaks.qmd >}}
 
 ## Tidyverse Replacements
 
