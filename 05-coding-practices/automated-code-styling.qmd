@@ -36,6 +36,7 @@ lintr::lint("R/my_function.R")
 ```
 
 The linter checks for:
+
 - Unused variables
 - Improper whitespace
 - Line length issues

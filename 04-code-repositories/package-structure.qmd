@@ -78,11 +78,13 @@ myproject/
 #### Public Analyses (vignettes/)
 
 Use `vignettes/` for analysis workbooks that:
+
 - Use publicly available data
 - Should be accessible to all package users
 - Are core to understanding the package
 
 Use `vignettes/articles/` for:
+
 - Extended case studies
 - Blog-style posts
 - Supplementary analyses

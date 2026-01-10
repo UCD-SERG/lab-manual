@@ -1,3 +1,23 @@
+**Blank Lines Before Lists**
+
+Always include a blank line before starting a bullet list or numbered list in markdown/Quarto documents. This ensures proper rendering and readability.
+
+**Correct:**
+```markdown
+Here are the requirements:
+
+- First item
+- Second item
+```
+
+**Incorrect:**
+```markdown
+Here are the requirements:
+- First item
+- Second item
+```
+
+**Line Breaks in Code**
 
 - For `ggplot` calls and `dplyr` pipelines, do not crowd single lines. Here are some nontrivial examples of "beautiful" pipelines, where beauty is defined by coherence:
 ```
