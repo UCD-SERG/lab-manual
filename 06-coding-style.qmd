@@ -32,7 +32,7 @@ Follow these code style guidelines for all R code:
 
 ## Line Breaks and Formatting
 
-{{< include 06-coding-style/line-breaks-and-formatting.qmd >}}
+{{< include 06-coding-style/line-breaks.qmd >}}
 
 ## Tidyverse Replacements
 
