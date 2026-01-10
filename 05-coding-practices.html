@@ -557,16 +557,28 @@ window.Quarto = {
   <li><a href="#mapply-and-pmap" id="toc-mapply-and-pmap" class="nav-link" data-scroll-target="#mapply-and-pmap"><span class="header-section-number">6.17.2</span> <code>mapply()</code> and <code>pmap()</code></a></li>
   <li><a href="#parallel-processing-with-parallel-and-future-packages" id="toc-parallel-processing-with-parallel-and-future-packages" class="nav-link" data-scroll-target="#parallel-processing-with-parallel-and-future-packages"><span class="header-section-number">6.17.3</span> Parallel processing with <code>parallel</code> and <code>future</code> packages</a></li>
   </ul></li>
-  <li><a href="#reviewing-code" id="toc-reviewing-code" class="nav-link" data-scroll-target="#reviewing-code"><span class="header-section-number">6.18</span> Reviewing Code</a>
+  <li><a href="#reviewing-code" id="toc-reviewing-code" class="nav-link" data-scroll-target="#reviewing-code"><span class="header-section-number">6.18</span> Reviewing Code</a></li>
+  <li><a href="#constructing-pull-requests" id="toc-constructing-pull-requests" class="nav-link" data-scroll-target="#constructing-pull-requests"><span class="header-section-number">6.19</span> Constructing Pull Requests</a>
   <ul class="collapse">
-  <li><a href="#creating-a-pull-request-template" id="toc-creating-a-pull-request-template" class="nav-link" data-scroll-target="#creating-a-pull-request-template"><span class="header-section-number">6.18.1</span> Creating a Pull Request Template</a></li>
+  <li><a href="#write-focused-prs" id="toc-write-focused-prs" class="nav-link" data-scroll-target="#write-focused-prs"><span class="header-section-number">6.19.1</span> Write Focused PRs</a></li>
+  <li><a href="#writing-pr-descriptions" id="toc-writing-pr-descriptions" class="nav-link" data-scroll-target="#writing-pr-descriptions"><span class="header-section-number">6.19.2</span> Writing PR Descriptions</a></li>
+  <li><a href="#add-tests" id="toc-add-tests" class="nav-link" data-scroll-target="#add-tests"><span class="header-section-number">6.19.3</span> Add Tests</a></li>
+  <li><a href="#separate-out-refactorings" id="toc-separate-out-refactorings" class="nav-link" data-scroll-target="#separate-out-refactorings"><span class="header-section-number">6.19.4</span> Separate Out Refactorings</a></li>
   </ul></li>
-  <li><a href="#sec-r-resources" id="toc-sec-r-resources" class="nav-link" data-scroll-target="#sec-r-resources"><span class="header-section-number">6.19</span> Additional Resources</a>
+  <li><a href="#reviewing-pull-requests" id="toc-reviewing-pull-requests" class="nav-link" data-scroll-target="#reviewing-pull-requests"><span class="header-section-number">6.20</span> Reviewing Pull Requests</a>
   <ul class="collapse">
-  <li><a href="#r-package-development" id="toc-r-package-development" class="nav-link" data-scroll-target="#r-package-development"><span class="header-section-number">6.19.1</span> R Package Development</a></li>
-  <li><a href="#general-r-programming" id="toc-general-r-programming" class="nav-link" data-scroll-target="#general-r-programming"><span class="header-section-number">6.19.2</span> General R Programming</a></li>
-  <li><a href="#shiny-development" id="toc-shiny-development" class="nav-link" data-scroll-target="#shiny-development"><span class="header-section-number">6.19.3</span> Shiny Development</a></li>
-  <li><a href="#git-and-version-control" id="toc-git-and-version-control" class="nav-link" data-scroll-target="#git-and-version-control"><span class="header-section-number">6.19.4</span> Git and Version Control</a></li>
+  <li><a href="#purpose-of-code-review" id="toc-purpose-of-code-review" class="nav-link" data-scroll-target="#purpose-of-code-review"><span class="header-section-number">6.20.1</span> Purpose of Code Review</a></li>
+  <li><a href="#writing-review-comments" id="toc-writing-review-comments" class="nav-link" data-scroll-target="#writing-review-comments"><span class="header-section-number">6.20.2</span> Writing Review Comments</a></li>
+  <li><a href="#mentoring-through-review" id="toc-mentoring-through-review" class="nav-link" data-scroll-target="#mentoring-through-review"><span class="header-section-number">6.20.3</span> Mentoring Through Review</a></li>
+  <li><a href="#giving-constructive-feedback" id="toc-giving-constructive-feedback" class="nav-link" data-scroll-target="#giving-constructive-feedback"><span class="header-section-number">6.20.4</span> Giving Constructive Feedback</a></li>
+  </ul></li>
+  <li><a href="#creating-a-pull-request-template" id="toc-creating-a-pull-request-template" class="nav-link" data-scroll-target="#creating-a-pull-request-template"><span class="header-section-number">6.21</span> Creating a Pull Request Template</a></li>
+  <li><a href="#sec-r-resources" id="toc-sec-r-resources" class="nav-link" data-scroll-target="#sec-r-resources"><span class="header-section-number">6.22</span> Additional Resources</a>
+  <ul class="collapse">
+  <li><a href="#r-package-development" id="toc-r-package-development" class="nav-link" data-scroll-target="#r-package-development"><span class="header-section-number">6.22.1</span> R Package Development</a></li>
+  <li><a href="#general-r-programming" id="toc-general-r-programming" class="nav-link" data-scroll-target="#general-r-programming"><span class="header-section-number">6.22.2</span> General R Programming</a></li>
+  <li><a href="#shiny-development" id="toc-shiny-development" class="nav-link" data-scroll-target="#shiny-development"><span class="header-section-number">6.22.3</span> Shiny Development</a></li>
+  <li><a href="#git-and-version-control" id="toc-git-and-version-control" class="nav-link" data-scroll-target="#git-and-version-control"><span class="header-section-number">6.22.4</span> Git and Version Control</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/05-coding-practices.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/05-coding-practices.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -1387,44 +1399,135 @@ future_lapply(x = mylist, FUN = func)</code></pre>
 </section>
 <section id="reviewing-code" class="level2" data-number="6.18">
 <h2 data-number="6.18" class="anchored" data-anchor-id="reviewing-code"><span class="header-section-number">6.18</span> Reviewing Code</h2>
-<p>Before publishing new changes, it is important to ensure that the code has been tested and well-documented. GitHub makes it possible to document all of these changes in a pull request. Pull requests can be used to describe changes in a branch that are ready to be merged with the base branch (more information in the <a href="#Github">GitHub</a> section). Github allows users to create a pull request template in a repository to standardize and customize the information in a pull request. When you add a pull request template to your repository, everyone will automatically see the template’s contents in the pull request body.</p>
-<section id="creating-a-pull-request-template" class="level3" data-number="6.18.1">
-<h3 data-number="6.18.1" class="anchored" data-anchor-id="creating-a-pull-request-template"><span class="header-section-number">6.18.1</span> Creating a Pull Request Template</h3>
-<p>Follow the instructions below to add a pull request template to a repository. More details can be found at this <a href="https://help.github.com/en/github/building-a-strong-community/creating-a-pull-request-template-for-your-repository">GitHub link</a>.</p>
+<p>Before publishing new changes, it is important to ensure that the code has been tested and well-documented. GitHub makes it possible to document all of these changes in a pull request. Pull requests can be used to describe changes in a branch that are ready to be merged with the base branch (more information in the <a href="#Github">GitHub</a> section).</p>
+<p>This section provides guidance on both constructing effective pull requests and reviewing code submitted by others. Much of the content in this section is adapted from the <a href="https://code-review.tidyverse.org/">tidyverse code review guide</a>, which provides excellent principles for code review in R package development.</p>
+</section>
+<section id="constructing-pull-requests" class="level2" data-number="6.19">
+<h2 data-number="6.19" class="anchored" data-anchor-id="constructing-pull-requests"><span class="header-section-number">6.19</span> Constructing Pull Requests</h2>
+<section id="write-focused-prs" class="level3" data-number="6.19.1">
+<h3 data-number="6.19.1" class="anchored" data-anchor-id="write-focused-prs"><span class="header-section-number">6.19.1</span> Write Focused PRs</h3>
+<p>A focused pull request is <strong>one self-contained change</strong> that addresses just one thing. Writing focused PRs has several benefits:</p>
+<ul>
+<li><strong>Faster reviews</strong>: It’s easier for a reviewer to find 5-10 minutes to review a single bug fix than to set aside an hour for one large PR implementing many features.</li>
+<li><strong>More thorough reviews</strong>: Large PRs with many changes can overwhelm reviewers, leading to important points being missed.</li>
+<li><strong>Fewer bugs</strong>: Smaller changes make it easier to reason about impacts and identify potential issues.</li>
+<li><strong>Easier to merge</strong>: Large PRs take longer and are more likely to have merge conflicts.</li>
+<li><strong>Less wasted work</strong>: If the overall direction is wrong, you’ve wasted less time on a small PR.</li>
+</ul>
+<p>As a guideline, 100 lines is usually a reasonable size for a PR, and 1000 lines is usually too large. However, the number of files affected also matters—a 200-line change in one file might be fine, but the same change spread across 50 files is usually too large.</p>
+</section>
+<section id="writing-pr-descriptions" class="level3" data-number="6.19.2">
+<h3 data-number="6.19.2" class="anchored" data-anchor-id="writing-pr-descriptions"><span class="header-section-number">6.19.2</span> Writing PR Descriptions</h3>
+<p>When you submit a pull request, include a detailed PR title and description. A comprehensive description helps your reviewer and provides valuable historical context.</p>
+<p><strong>PR Title</strong>: The title should be a short summary (ideally under 72 characters) of what is being done. It should be informative enough that future developers can understand what the PR did without reading the full description.</p>
+<p>Poor titles that lack context:</p>
+<ul>
+<li>“Fix bug”</li>
+<li>“Add patch”</li>
+<li>“Moving code from A to B”</li>
+</ul>
+<p>Better titles that summarize the actual change:</p>
+<ul>
+<li>“Fix missing value handling in data processing function”</li>
+<li>“Add support for custom date formats in import functions”</li>
+</ul>
+<p><strong>PR Description Body</strong>: The description should provide context that helps the reviewer understand your PR. Consider including:</p>
+<ul>
+<li>A brief description of the problem being solved</li>
+<li>Links to related issues (e.g., “Closes #123” or “Related to #456”)</li>
+<li>A before/after example showing changed behavior</li>
+<li>Possible shortcomings of the approach being used</li>
+<li>For complex PRs, a suggested reading order for the reviewer</li>
+</ul>
+</section>
+<section id="add-tests" class="level3" data-number="6.19.3">
+<h3 data-number="6.19.3" class="anchored" data-anchor-id="add-tests"><span class="header-section-number">6.19.3</span> Add Tests</h3>
+<p>Focused PRs should include related test code. A PR that adds or changes logic should be accompanied by new or updated tests for the new behavior. Pure refactoring PRs should also be covered by tests—if tests don’t exist for code you’re refactoring, add them in a separate PR first to validate that behavior is unchanged.</p>
+</section>
+<section id="separate-out-refactorings" class="level3" data-number="6.19.4">
+<h3 data-number="6.19.4" class="anchored" data-anchor-id="separate-out-refactorings"><span class="header-section-number">6.19.4</span> Separate Out Refactorings</h3>
+<p>It’s usually best to do refactorings in a separate PR from feature changes or bug fixes. For example, moving and renaming a function should be in a different PR from fixing a bug in that function. This makes it much easier for reviewers to understand the changes introduced by each PR.</p>
+<p>Small cleanups (like fixing a local variable name) can be included in a feature change or bug fix PR, but large refactorings should be separate.</p>
+</section>
+</section>
+<section id="reviewing-pull-requests" class="level2" data-number="6.20">
+<h2 data-number="6.20" class="anchored" data-anchor-id="reviewing-pull-requests"><span class="header-section-number">6.20</span> Reviewing Pull Requests</h2>
+<section id="purpose-of-code-review" class="level3" data-number="6.20.1">
+<h3 data-number="6.20.1" class="anchored" data-anchor-id="purpose-of-code-review"><span class="header-section-number">6.20.1</span> Purpose of Code Review</h3>
+<p>The primary purpose of code review is to ensure that the overall code health of our projects improves over time. Reviewers should balance the need to make forward progress with the importance of maintaining code quality.</p>
+<p><strong>Key principle</strong>: Reviewers should favor approving a PR once it is in a state where it definitely improves the overall code health of the system, even if the PR isn’t perfect. There is no such thing as “perfect” code—there is only better code. Rather than seeking perfection, seek continuous improvement.</p>
+</section>
+<section id="writing-review-comments" class="level3" data-number="6.20.2">
+<h3 data-number="6.20.2" class="anchored" data-anchor-id="writing-review-comments"><span class="header-section-number">6.20.2</span> Writing Review Comments</h3>
+<p>When reviewing code, maintain courtesy and respect while being clear and helpful:</p>
+<ul>
+<li>Comment on the <strong>code</strong>, not the author</li>
+<li>Explain <strong>why</strong> you’re making suggestions (reference best practices, design patterns, or how the suggestion improves code health)</li>
+<li>Balance pointing out problems with providing guidance (help authors learn while being constructive)</li>
+<li>Highlight positive aspects too—if you see good practices, comment on those to reinforce them</li>
+</ul>
+<p><strong>Poor comment</strong>: “Why did you use this approach when there’s obviously a better way?”</p>
+<p><strong>Better comment</strong>: “This approach adds complexity without clear benefits. Consider using [alternative approach] instead, which would simplify the logic and improve readability.”</p>
+</section>
+<section id="mentoring-through-review" class="level3" data-number="6.20.3">
+<h3 data-number="6.20.3" class="anchored" data-anchor-id="mentoring-through-review"><span class="header-section-number">6.20.3</span> Mentoring Through Review</h3>
+<p>Code review is an excellent opportunity for mentoring. As a reviewer:</p>
+<ul>
+<li>Leave comments that help authors learn something new</li>
+<li>Link to relevant sections of style guides or best practices documentation</li>
+<li>Consider pair programming for complex reviews—live review sessions can be very effective for teaching</li>
+</ul>
+</section>
+<section id="giving-constructive-feedback" class="level3" data-number="6.20.4">
+<h3 data-number="6.20.4" class="anchored" data-anchor-id="giving-constructive-feedback"><span class="header-section-number">6.20.4</span> Giving Constructive Feedback</h3>
+<p>In general, it is the author’s responsibility to fix a PR, not the reviewer’s. Strike a balance between pointing out problems and providing direct guidance. Sometimes pointing out issues and letting the author decide on a solution helps them learn and may result in a better solution since they are closer to the code.</p>
+<p>For very small tweaks (typos, comment additions), use GitHub’s suggestion feature to allow authors to quickly accept changes directly in the UI.</p>
+</section>
+</section>
+<section id="creating-a-pull-request-template" class="level2" data-number="6.21">
+<h2 data-number="6.21" class="anchored" data-anchor-id="creating-a-pull-request-template"><span class="header-section-number">6.21</span> Creating a Pull Request Template</h2>
+<p>GitHub allows you to create a pull request template in a repository to standardize the information in pull requests. When you add a template, everyone will automatically see its contents in the pull request body.</p>
+<p>Follow these steps to add a pull request template:</p>
 <ol type="1">
 <li>On GitHub, navigate to the main page of the repository.</li>
 <li>Above the file list, click <code>Create new file</code>.</li>
-<li>Name the file <code>pull_request_template.md</code>. GitHub will not recognize this as the template if it is named anything else. The file must be on the <code>master</code> branch.
-<ol type="1">
-<li>To store the file in a hidden directory instead of the main directory, name the file <code>.github/pull_request_template.md</code>.</li>
-</ol></li>
-<li>In the body of the new file, add your pull request template. This could include:
+<li>Name the file <code>pull_request_template.md</code>. GitHub will not recognize this as the template if it is named anything else. The file must be on the default branch.
 <ul>
-<li>A summary of the changes proposed in the pull request</li>
-<li>How the change has been tested</li>
-<li>@mentions of the person or team responsible for reviewing proposed changes</li>
+<li>To store the file in a hidden directory, name it <code>.github/pull_request_template.md</code>.</li>
 </ul></li>
+<li>In the body of the new file, add your pull request template.</li>
 </ol>
-<p>Here is an example pull request template.</p>
+<p>Here is an example pull request template:</p>
 <pre class="text"><code># Description
 
 ## Summary of change
 
-Please include a summary of the change, including any new functions added and example usage. 
+Please include a summary of the change, including any new functions added and example usage.
 
-## Link to Spec
+## Related Issues
 
-Please include a link to the Trello card or Google document with details of the task. 
+Closes #(issue number)
+Related to #(issue number)
+
+## Testing
+
+Describe how this change has been tested.
+
+## Checklist
+
+- [ ] Tests added/updated
+- [ ] Documentation updated
+- [ ] Code follows project style guidelines
 
 ## Who should review the pull request?
-@ ...
+
+@username
 </code></pre>
 </section>
-</section>
-<section id="sec-r-resources" class="level2" data-number="6.19">
-<h2 data-number="6.19" class="anchored" data-anchor-id="sec-r-resources"><span class="header-section-number">6.19</span> Additional Resources</h2>
-<section id="r-package-development" class="level3" data-number="6.19.1">
-<h3 data-number="6.19.1" class="anchored" data-anchor-id="r-package-development"><span class="header-section-number">6.19.1</span> R Package Development</h3>
+<section id="sec-r-resources" class="level2" data-number="6.22">
+<h2 data-number="6.22" class="anchored" data-anchor-id="sec-r-resources"><span class="header-section-number">6.22</span> Additional Resources</h2>
+<section id="r-package-development" class="level3" data-number="6.22.1">
+<h3 data-number="6.22.1" class="anchored" data-anchor-id="r-package-development"><span class="header-section-number">6.22.1</span> R Package Development</h3>
 <ul>
 <li><a href="https://r-pkgs.org/">R Packages book</a> by Hadley Wickham and Jenny Bryan - comprehensive guide to R package development</li>
 <li><a href="https://design.tidyverse.org/">Tidyverse design guide</a> - principles for designing R packages and APIs that are intuitive, composable, and consistent with tidyverse philosophy</li>
@@ -1434,22 +1537,22 @@ Please include a link to the Trello card or Google document with details of the 
 <li><a href="https://testthat.r-lib.org/">testthat documentation</a> - unit testing framework</li>
 </ul>
 </section>
-<section id="general-r-programming" class="level3" data-number="6.19.2">
-<h3 data-number="6.19.2" class="anchored" data-anchor-id="general-r-programming"><span class="header-section-number">6.19.2</span> General R Programming</h3>
+<section id="general-r-programming" class="level3" data-number="6.22.2">
+<h3 data-number="6.22.2" class="anchored" data-anchor-id="general-r-programming"><span class="header-section-number">6.22.2</span> General R Programming</h3>
 <ul>
 <li><a href="https://r4ds.hadley.nz/">R for Data Science</a> by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund - learn data science with the tidyverse</li>
 <li><a href="https://adv-r.hadley.nz/">Advanced R</a> by Hadley Wickham - deep dive into R programming and internals</li>
 </ul>
 </section>
-<section id="shiny-development" class="level3" data-number="6.19.3">
-<h3 data-number="6.19.3" class="anchored" data-anchor-id="shiny-development"><span class="header-section-number">6.19.3</span> Shiny Development</h3>
+<section id="shiny-development" class="level3" data-number="6.22.3">
+<h3 data-number="6.22.3" class="anchored" data-anchor-id="shiny-development"><span class="header-section-number">6.22.3</span> Shiny Development</h3>
 <ul>
 <li><a href="https://mastering-shiny.org/">Mastering Shiny</a> by Hadley Wickham - comprehensive guide to building web applications with Shiny</li>
 <li><a href="https://engineering-shiny.org/">Engineering Production-Grade Shiny Apps</a> by Colin Fay, Sébastien Rochette, Vincent Guyader, and Cervan Girard - best practices for production Shiny applications</li>
 </ul>
 </section>
-<section id="git-and-version-control" class="level3" data-number="6.19.4">
-<h3 data-number="6.19.4" class="anchored" data-anchor-id="git-and-version-control"><span class="header-section-number">6.19.4</span> Git and Version Control</h3>
+<section id="git-and-version-control" class="level3" data-number="6.22.4">
+<h3 data-number="6.22.4" class="anchored" data-anchor-id="git-and-version-control"><span class="header-section-number">6.22.4</span> Git and Version Control</h3>
 <ul>
 <li><a href="https://happygitwithr.com/">Happy Git and GitHub for the useR</a> by Jenny Bryan - essential guide to using Git and GitHub with R</li>
 </ul>
