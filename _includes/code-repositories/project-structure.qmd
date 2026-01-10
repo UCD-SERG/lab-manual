@@ -1,0 +1,242 @@
+## Project Structure
+
+**All R projects in our lab should be structured as R packages**, even if they are primarily analysis projects and not intended for distribution on CRAN or Bioconductor. This standardized structure provides numerous benefits:
+
+### Why Use R Package Structure?
+
+1. **Organized code**: Clear separation of functions (`R/`), documentation (`man/`), tests (`tests/`), data (`data/`), and vignettes/analyses
+2. **Dependency management**: `DESCRIPTION` file explicitly declares all package dependencies and versions
+3. **Automatic documentation**: `roxygen2` generates help files from inline comments
+4. **Built-in testing**: `testthat` framework integrates seamlessly with package structure
+5. **Code quality**: Tools like `devtools::check()` and `lintr` enforce best practices
+6. **Reproducibility**: Package structure makes it easy to share and reproduce analyses
+7. **Reusable functions**: Decompose complex analyses into well-documented, testable functions
+8. **Version control**: Track changes to code, documentation, and data together
+
+### Basic Package Structure
+
+```
+myproject/
+├── DESCRIPTION          # Package metadata and dependencies
+├── NAMESPACE            # Auto-generated, don't edit manually
+├── R/                   # All R functions (reusable code)
+│   ├── analysis_functions.R
+│   ├── data_prep.R
+│   └── plotting.R
+├── man/                 # Auto-generated documentation
+├── tests/              
+│   └── testthat/       # Unit tests
+├── data/               # Processed data objects (.rda files)
+├── data-raw/           # Raw data and data processing scripts
+│   ├── 0-prep-data.sh  # Shell scripts for data preparation
+│   ├── process_survey_data.R
+│   └── clean_lab_results.R
+├── vignettes/          # Long-form documentation
+│   ├── intro.qmd       # Main vignettes (shipped with package)
+│   ├── tutorial.qmd
+│   └── articles/       # Website-only articles (not shipped)
+│       ├── advanced-topics.qmd
+│       └── case-studies.qmd
+├── inst/               # Additional files to include in package
+│   ├── extdata/        # External data files and .RDS results
+│   │   ├── analysis_results.rds
+│   │   └── processed_data.rds
+│   ├── output/         # Figure and table outputs
+│   │   ├── figures/
+│   │   │   ├── fig1.pdf
+│   │   │   └── fig2.png
+│   │   └── tables/
+│   │       ├── table1.csv
+│   │       └── table2.xlsx
+│   └── analyses/       # Analyses using restricted data (see below)
+└── .Rproj              # RStudio project file
+```
+
+### Where to Place Analysis Files {#sec-analysis-file-placement}
+
+#### Vignettes vs Articles
+
+**Vignettes** (`vignettes/*.qmd`):
+- **Shipped with the package** when installed
+- Accessible via `vignette()` and `browseVignettes()` in R
+- Displayed on CRAN
+- Built at package build time
+- Use for core package documentation and tutorials
+- Created with `usethis::use_vignette("name")`
+
+**Articles** (`vignettes/articles/*.qmd`):
+- **Website-only** (not shipped with the package)
+- Only appear on the pkgdown website
+- Not accessible via `vignette()` in R
+- Not displayed on CRAN
+- Use for supplementary content, blog posts, extended tutorials, or frequently updated material
+- Created with `usethis::use_article("name")`
+- Automatically added to `.Rbuildignore`
+
+**When to use each:**
+- **Vignette**: Essential tutorials users need offline, core package workflows
+- **Article**: Supplementary material, case studies, advanced topics, blog-style content
+
+#### Public Analyses (vignettes/)
+
+Use `vignettes/` for analysis workbooks that:
+- Use publicly available data
+- Should be accessible to all package users
+- Are core to understanding the package
+
+Use `vignettes/articles/` for:
+- Extended case studies
+- Blog-style posts
+- Supplementary analyses
+- Material that updates frequently
+
+All vignettes and articles will be rendered by `pkgdown::build_site()` on your package website.
+
+#### Analyses with Restricted Data (inst/analyses/)
+
+For analyses that rely on **private, sensitive, or restricted data**, place `.qmd` or `.qmd` files in `inst/analyses/`:
+
+```
+myproject/
+├── inst/
+│   ├── analyses/
+│   │   ├── 01-confidential-data-analysis.qmd
+│   │   ├── 02-unpublished-results.qmd
+│   │   └── README.md  # Document data access requirements
+│   └── extdata/
+└── vignettes/
+    ├── 01-public-analysis.qmd
+    └── 02-demo-with-simulated-data.qmd
+```
+
+**Benefits of this approach:**
+
+- Analyses with restricted data are included in version control alongside your code
+- They're clearly separated from public documentation
+- `inst/analyses/` is **excluded from `pkgdown` builds** and package documentation
+- Collaborators with data access can still run these analyses
+- You maintain a complete record of all project work
+
+**Note on privacy:** Files in `inst/analyses/` are not inherently private—they will be visible if your repository is public. Use this folder for analyses that rely on restricted data that is stored separately, not for storing the restricted data itself. If you need to keep the analysis code private, use a private repository.
+
+**Best practices for analyses with restricted data:**
+
+1. **Document data requirements**: Include a README.md in `inst/analyses/` explaining:
+   - What data is required
+   - Where to obtain it (if permissible)
+   - Data access restrictions
+   - How to set up data paths
+
+2. **Use relative paths carefully**: Structure your code so data paths can be configured:
+   ```r
+   # In inst/analyses/01-analysis.qmd
+   # Users should set this based on their local setup
+   data_dir <- Sys.getenv("MYPROJECT_DATA", 
+                          default = "~/restricted_data/myproject")
+   raw_data <- readr::read_csv(file.path(data_dir, "sensitive.csv"))
+   ```
+
+3. **Create public alternatives**: When possible, create companion vignettes in `vignettes/` using:
+   - Simulated data that mimics the structure
+   - Publicly available datasets
+   - Aggregated/de-identified summaries
+
+4. **Add to .Rbuildignore**: Ensure `inst/analyses/` doesn't cause package checks to fail:
+   ```r
+   # Use usethis to add to .Rbuildignore
+   usethis::use_build_ignore("inst/analyses")
+   ```
+
+### Keep Analysis Workbooks Tidy
+
+**Decompose reusable functions** from your analysis notebooks into the `R/` directory. Your vignettes should:
+
+- Be clean, readable narratives of your analysis
+- Call well-documented functions from your package
+- Focus on the "what" and "why" rather than implementation details
+- Be reproducible by others with a single click (or with documented data access for private analyses)
+
+**Example of what NOT to do** (all code in vignette):
+
+```r
+# Bad: 100 lines of data manipulation in vignette
+raw_data <- read_csv("data.csv")
+# ... 100 lines of cleaning, transforming, reshaping ...
+cleaned_data <- final_result
+```
+
+**Example of what TO do** (functions in R/, simple calls in vignette):
+
+```r
+# Good: Clean vignette calling documented functions
+raw_data <- read_csv("data.csv")
+cleaned_data <- prep_study_data(raw_data)  # Function in R/data_prep.R
+```
+
+### Shell Scripts and Automation
+
+Shell scripts are useful for automating workflows and ensuring reproducibility. Place shell scripts in `data-raw/` alongside the R scripts they coordinate:
+
+```
+data-raw/
+├── 0-prep-data.sh          # Shell script to run all data prep
+├── 01-load-survey.R
+├── 02-clean-survey.R
+├── 03-merge-datasets.R
+└── 04-create-analysis-data.R
+```
+
+**Using shell scripts:**
+
+```bash
+# data-raw/0-prep-data.sh
+#!/bin/bash
+Rscript data-raw/01-load-survey.R
+Rscript data-raw/02-clean-survey.R
+Rscript data-raw/03-merge-datasets.R
+Rscript data-raw/04-create-analysis-data.R
+```
+
+This is especially useful when data upstream changes — you can simply run the shell script to reproduce everything. After running shell scripts, `.Rout` log files will be generated for each script. It is important to check these files to ensure everything has run correctly.
+
+### Storing Analysis Outputs
+
+**Results files (.RDS)**: Save analysis results in `inst/extdata/`:
+
+```r
+# Save results
+readr::write_rds(analysis_results, here("inst", "extdata", "analysis_results.rds"))
+
+# Load results later
+results <- readr::read_rds(here("inst", "extdata", "analysis_results.rds"))
+```
+
+**Figures and tables**: Save publication outputs in `inst/output/`:
+
+```r
+# Save figure
+ggsave(here("inst", "output", "figures", "fig1_incidence_trends.pdf"), 
+       width = 8, height = 6)
+
+# Save table
+readr::write_csv(summary_table, 
+                 here("inst", "output", "tables", "table1_demographics.csv"))
+```
+
+**Organization:**
+```
+inst/
+├── extdata/
+│   ├── analysis_results.rds
+│   ├── model_fits.rds
+│   └── processed_data.rds
+└── output/
+    ├── figures/
+    │   ├── fig1_incidence_trends.pdf
+    │   ├── fig2_risk_factors.png
+    │   └── figS1_sensitivity.pdf
+    └── tables/
+        ├── table1_demographics.csv
+        ├── table2_main_results.xlsx
+        └── tableS1_detailed_results.csv
+```

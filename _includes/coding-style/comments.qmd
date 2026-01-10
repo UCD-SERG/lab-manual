@@ -1,0 +1,27 @@
+## Comments
+
+Use comments to explain *why*, not *what*:
+
+```r
+# Good: Explains reasoning
+# Use log scale because distribution is highly skewed
+ggplot(data, aes(x = log10(income))) + geom_histogram()
+
+# Bad: States the obvious
+# Create a histogram
+ggplot(data, aes(x = income)) + geom_histogram()
+```
+
+**File headers** (for scripts in `data-raw/` or `inst/analyses/`):
+
+```r
+################################################################################
+# @Project - Myproject
+# @Description - Process raw survey data and create analysis dataset
+################################################################################
+```
+
+**Sections and subsections** in longer files:
+
+```r
+# Data Loading -------

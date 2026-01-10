@@ -1,0 +1,8 @@
+## Additional Resources {#sec-r-resources}
+
+- [R Packages book](https://r-pkgs.org/) by Hadley Wickham and Jenny Bryan
+- [Tidyverse style guide](https://style.tidyverse.org/)
+- [usethis documentation](https://usethis.r-lib.org/)
+- [devtools documentation](https://devtools.r-lib.org/)
+- [pkgdown documentation](https://pkgdown.r-lib.org/)
+- [testthat documentation](https://testthat.r-lib.org/)

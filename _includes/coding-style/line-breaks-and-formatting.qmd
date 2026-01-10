@@ -1,0 +1,56 @@
+## Line Breaks and Formatting
+
+For readability, use line breaks in function calls and pipelines:
+
+```r
+# Good: Named arguments on separate lines
+mean_Y <- calc_fluseas_mean(
+  data = flu_data, 
+  yname = "maari_yn",
+  silent = FALSE
+)
+
+# Good: Pipeline with clear flow
+cleaned_data <- raw_data |>
+  filter(!is.na(outcome)) |>
+  mutate(
+    log_value = log10(value),
+    category = case_when(
+      value < 10 ~ "low",
+      value < 100 ~ "medium",
+      TRUE ~ "high"
+    )
+  ) |>
+  group_by(category) |>
+  summarize(
+    n = n(),
+    mean = mean(log_value)
+  )
+```
+
+For complex `ggplot` calls:
+
+```r
+ggplot(data, aes(x = year, y = rate, group = group)) +
+  geom_point(
+    aes(col = group, shape = group),
+    position = position_dodge(width = 0.2),
+    size = 2.5
+  ) +
+  geom_errorbar(
+    aes(ymin = lb, ymax = ub, col = group),
+    position = position_dodge(width = 0.2),
+    width = 0.2
+  ) +
+  scale_y_continuous(
+    limits = c(0, 100),
+    breaks = seq(0, 100, 25)
+  ) +
+  scale_color_manual(values = colors) +
+  theme_minimal() +
+  labs(
+    title = "Title",
+    x = "Year",
+    y = "Rate (%)"
+  )
+```

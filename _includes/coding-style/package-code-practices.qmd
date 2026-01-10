@@ -1,0 +1,5 @@
+## Package Code Practices
+
+- **No `library()` in package code**: Use `::` notation or declare in DESCRIPTION Imports
+- **Document all exports**: Use roxygen2 (@title, @description, @param, @returns, @examples)
+- **Avoid code duplication**: Extract repeated logic into helper functions

@@ -1,0 +1,6 @@
+## General Principles
+
+- **Follow tidyverse style guide**: https://style.tidyverse.org
+- **Use native pipe**: `|>` not `%>%` (available in R >= 4.1.0)
+- **Naming**: Use `snake_case` for functions and variables; acronyms may be uppercase (e.g., `prep_IDs_data`)
+- **Write tidy code**: Keep code clean, readable, and well-organized

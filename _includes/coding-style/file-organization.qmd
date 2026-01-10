@@ -1,0 +1,8 @@
+## File Organization
+
+Just as your data "flows" through your project, code should flow naturally through files in the package structure:
+
+1. **In `R/` files**: Put reusable functions with roxygen2 documentation
+2. **In vignettes**: Put narrative analysis with calls to those functions
+3. **In `data-raw/`**: Put scripts that create data objects saved to `data/`
+4. **In `inst/analyses/`**: Put analyses using restricted data
