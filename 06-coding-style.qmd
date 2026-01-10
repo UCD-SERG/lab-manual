@@ -46,14 +46,4 @@ Follow these code style guidelines for all R code:
 
 {{< include 06-coding-style/object-naming.qmd >}}
 
-## Line breaks
 
-{{< include 06-coding-style/line-breaks.qmd >}}
-
-## Automated Tools for Style and Project Workflow
-
-{{< include 06-coding-style/automated-tools.qmd >}}
-
-## Additional Resources {#sec-r-resources}
-
-- [Tidyverse style guide](https://style.tidyverse.org/)

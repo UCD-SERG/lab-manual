@@ -48,42 +48,4 @@
 
 {{< include 05-coding-practices/additional-resources.qmd >}}
 
-## Documenting your code
 
-{{< include 05-coding-practices/documenting-code.qmd >}}
-
-## Object naming
-
-{{< include 05-coding-practices/object-naming.qmd >}}
-
-## Function calls
-
-{{< include 05-coding-practices/function-calls.qmd >}}
-
-## The here package
-
-{{< include 05-coding-practices/here-package.qmd >}}
-
-## Reading/Saving Data
-
-{{< include 05-coding-practices/reading-saving-data.qmd >}}
-
-## Integrating Box and Dropbox
-
-{{< include 05-coding-practices/integrating-box-dropbox.qmd >}}
-
-## Tidyverse
-
-{{< include 05-coding-practices/tidyverse.qmd >}}
-
-## Coding with R and Python
-
-{{< include 05-coding-practices/coding-r-python.qmd >}}
-
-## Repeating analyses with different variations
-
-{{< include 05-coding-practices/repeating-analyses.qmd >}}
-
-## Reviewing Code
-
-{{< include 05-coding-practices/reviewing-code.qmd >}}
