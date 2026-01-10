@@ -25,7 +25,7 @@ UCD-SeRG projects use R package structure for all R-based work. This provides be
 
 ## Order Files and Directories
 
-{{< include 04-code-repositories/order-files-and-directories.qmd >}}
+{{< include 04-code-repositories/order-files-directories.qmd >}}
 
 ## Using Bash scripts to ensure reproducibility
 
