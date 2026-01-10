@@ -88,27 +88,22 @@ template:
   bootstrap: 5
 
 reference:
-
   - title: "Data Preparation"
     desc: "Functions for preparing and cleaning data"
     contents:
-
     - prep_study_data
     - validate_data
   
   - title: "Analysis"
     desc: "Core analysis functions"
     contents:
-
     - run_primary_analysis
     - sensitivity_analysis
 
 articles:
-
   - title: "Analysis Workflow"
     navbar: Analysis
     contents:
-
     - 01-data-preparation
     - 02-primary-analysis
     - 03-sensitivity-analysis
