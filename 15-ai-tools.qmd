@@ -158,7 +158,7 @@ Simultaneous edits can produce conflicting diffs that:
 
 - Need to be manually resolved
 - May confuse both human and AI collaborators
-- Could result in lost work or merged conflicts
+- Could result in lost work or merge conflicts
 
 **Best practice**: Wait for the agent to complete its current iteration
 (indicated by the PR being updated)
