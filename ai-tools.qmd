@@ -189,13 +189,8 @@ see [GitHub Copilot coding agent documentation](https://docs.github.com/en/copil
 ### Benefits and Hazards
 
 Science fiction has long explored the promises and perils of artificial intelligence.
-Like the Agents in the Matrix films [@matrix_agents],
-Skynet in Terminator [@skynet],
-HAL 9000 in 2001: A Space Odyssey [@hal9000],
-the Replicants in Blade Runner [@blade_runner],
-Ender commanding his simulation in Ender's Game [@enders_game],
-and the warnings about thinking machines in Dune's Butlerian Jihad [@butlerian_jihad],
-coding agents are powerful programs that can work autonomously.
+[@matrix_agents; @skynet; @hal9000; @blade_runner; @enders_game; @butlerian_jihad]
+Coding agents are powerful programs that can work autonomously.
 Coding agents can manipulate code,
 including their own configuration files.
 They can work on your behalf,
