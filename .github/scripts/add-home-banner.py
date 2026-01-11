@@ -55,6 +55,8 @@ def add_home_page_banner(index_html_path, changed_chapters):
         <strong>📋 Changes in this PR:</strong> The following chapters have been modified: {links_html}
         <br>
         <strong>📄 DOCX with tracked changes:</strong> <a href="{docx_filename}" download>Download {docx_filename}</a>
+        <br>
+        <strong>💡 Tip:</strong> If change highlighting is glitchy, add the <code>no-preview-highlights</code> label to this PR to disable it.
     </p>
 </div>
 '''
