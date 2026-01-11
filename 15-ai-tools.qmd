@@ -47,12 +47,50 @@ For example: "Please quote from and paraphrase [source], with proper attribution
 
 We recommend using **[Coding Agents](https://github.com/features/copilot/agents)** 
 for AI-assisted coding. 
-Coding Agents offer several advantages:
+
+### Benefits and Hazards
+
+Like the agents in the Matrix films, coding agents are powerful entities that can work on your behalf—but they require careful oversight and control to ensure they serve your interests.
+
+![Agents from the Matrix films: powerful entities that require careful oversight](https://github.com/user-attachments/assets/c7bcd1e3-5eda-42ae-a90e-f127ad4bc20d){fig-alt="Three agents in suits and sunglasses from the Matrix films"}
+
+Coding agents offer several advantages:
 
 - **Built-in transparency**: Coding agents create a clear record of their role in your work through commit history and code suggestions
 - **Context-aware suggestions**: Coding agents understand your codebase and can make contextually relevant suggestions
-- **Integration with version control**: Using Coding agents within GitHub ensures that AI-assisted changes are tracked alongside all other code changes
+- **Integration with version control**: Using coding agents within GitHub ensures that AI-assisted changes are tracked alongside all other code changes
 - **Interactive workflow**: Coding agents' interactive nature encourages you to review and modify suggestions rather than blindly accepting them
+- **Accelerated development**: Coding agents can help you write boilerplate code, refactor existing code, and implement common patterns more quickly
+- **Learning opportunities**: Coding agents can suggest approaches or techniques you may not have considered, helping you expand your coding knowledge
+
+However, coding agents also come with significant hazards:
+
+- **Over-reliance**: Depending too heavily on coding agents can atrophy your coding skills and understanding
+- **Subtle bugs**: AI-generated code may contain logic errors that are not immediately obvious
+- **Security vulnerabilities**: Coding agents may introduce insecure patterns or fail to follow security best practices
+- **Inappropriate solutions**: AI may suggest solutions that work but are not optimal for your specific research context or constraints
+- **Hidden biases**: Coding agents may perpetuate coding patterns or approaches that reflect biases in their training data
+- **False confidence**: Well-formatted, professional-looking code from AI can mask underlying problems and reduce critical review
+
+### Best Practices for Safe and Successful Use
+
+To work with coding agents safely and successfully:
+
+1. **Maintain active supervision**: Never assume AI-generated code is correct. Review every line critically.
+
+2. **Understand before accepting**: If you don't understand what the code does, don't use it. Take time to learn or ask a colleague.
+
+3. **Test thoroughly**: AI-generated code must be tested as rigorously as code you write yourself. Don't skip testing because "the AI wrote it."
+
+4. **Start small**: Begin with small, well-defined tasks to build confidence and understanding of the agent's capabilities and limitations.
+
+5. **Verify logic and assumptions**: Check that the AI hasn't made incorrect assumptions about your data, requirements, or scientific context.
+
+6. **Review for security**: Explicitly check for security issues, especially when handling sensitive data or user input.
+
+7. **Iterate and refine**: Use coding agents as a starting point, not an endpoint. Refine and improve the generated code.
+
+8. **Maintain coding practice**: Regularly write code yourself to maintain and develop your skills. Don't let the agent do everything.
 
 When using coding agents, work interactively with the AI suggestions:
 review, modify, and test them rather than accepting them wholesale. 
