@@ -380,7 +380,7 @@ def main():
     html_dir = os.getenv('HTML_DIR', './docs')
     
     # Get list of changed HTML files (derived from changed .qmd files)
-    changed_files = os.getenv('PREVIEW_CHANGED_FILES', '').strip()
+    changed_files = os.getenv('PREVIEW_CHANGED_CHAPTERS', '').strip()
     
     if not changed_files:
         print("No changed files to process")

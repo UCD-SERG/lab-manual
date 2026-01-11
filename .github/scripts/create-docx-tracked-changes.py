@@ -150,7 +150,7 @@ def main():
     docx_dir = os.getenv('DOCX_DIR', './docs')
     
     # Get list of changed files
-    changed_files = os.getenv('PREVIEW_CHANGED_FILES', '').strip()
+    changed_files = os.getenv('PREVIEW_CHANGED_CHAPTERS', '').strip()
     
     if not changed_files:
         print("No changed files to process for DOCX")

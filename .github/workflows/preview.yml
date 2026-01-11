@@ -20,15 +20,6 @@ jobs:
         with:
           fetch-depth: 0  # Fetch full history for git diff
 
-      - name: Detect changed files
-        run: |
-          chmod +x .github/scripts/detect-changed-files.sh
-          .github/scripts/detect-changed-files.sh
-
-      - name: Inject preview metadata
-        if: env.PREVIEW_SHOW_HIGHLIGHTS == 'true'
-        run: python3 .github/scripts/inject-preview-metadata.py
-
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
@@ -37,7 +28,21 @@ jobs:
       - name: Render
         uses: quarto-dev/quarto-actions/render@v2
 
+      - name: Detect changed chapters (based on rendered files)
+        run: python3 .github/scripts/detect-changed-chapters.py
+        env:
+          HTML_DIR: ./docs
+
+      - name: Inject preview metadata
+        if: env.PREVIEW_SHOW_HIGHLIGHTS == 'true'
+        run: python3 .github/scripts/inject-preview-metadata.py
+
+      - name: Re-render with metadata
+        if: env.PREVIEW_SHOW_HIGHLIGHTS == 'true'
+        uses: quarto-dev/quarto-actions/render@v2
+
       - name: Install python-docx for DOCX comparison
+        if: env.PREVIEW_SHOW_HIGHLIGHTS == 'true'
         run: pip install python-docx
 
       - name: Highlight HTML content changes
@@ -45,14 +50,20 @@ jobs:
         run: python3 .github/scripts/highlight-html-changes.py
         env:
           HTML_DIR: ./docs
-          PREVIEW_CHANGED_FILES: ${{ env.PREVIEW_CHANGED_FILES }}
+          PREVIEW_CHANGED_CHAPTERS: ${{ env.PREVIEW_CHANGED_CHAPTERS }}
 
       - name: Create DOCX with tracked changes
         if: env.PREVIEW_SHOW_HIGHLIGHTS == 'true'
         run: python3 .github/scripts/create-docx-tracked-changes.py
         env:
           DOCX_DIR: ./docs
-          PREVIEW_CHANGED_FILES: ${{ env.PREVIEW_CHANGED_FILES }}
+          PREVIEW_CHANGED_CHAPTERS: ${{ env.PREVIEW_CHANGED_CHAPTERS }}
+
+      - name: Add home page banner
+        if: env.PREVIEW_SHOW_HIGHLIGHTS == 'true'
+        run: python3 .github/scripts/add-home-banner.py
+        env:
+          HTML_DIR: ./docs
 
       - name: Deploy PR Preview
         uses: rossjrw/pr-preview-action@main
