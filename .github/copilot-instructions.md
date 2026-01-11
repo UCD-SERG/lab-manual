@@ -126,16 +126,19 @@ The heading must be in the main file, followed by a blank line, then the include
 
 **When reordering sections:**
 ```diff
-## Object naming
+-## Object naming
++## Function calls
+ 
 -{{< include 05-coding-practices/object-naming.qmd >}}
--
++{{< include 05-coding-practices/function-calls.qmd >}}
+ 
 -## Function calls
- {{< include 05-coding-practices/function-calls.qmd >}}
-+
 +## Object naming
+ 
+-{{< include 05-coding-practices/function-calls.qmd >}}
 +{{< include 05-coding-practices/object-naming.qmd >}}
 ```
-This diff clearly shows a reordering with no content changes.
+This diff clearly shows a reordering (swapping two sections) with no content changes—only the main chapter file changes.
 
 **When editing content:**
 Only the specific include file (e.g., `05-coding-practices/function-calls.qmd`) appears in the git diff, making it easy to review the actual content changes without distraction.
