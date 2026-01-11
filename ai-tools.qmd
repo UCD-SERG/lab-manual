@@ -189,14 +189,14 @@ see [GitHub Copilot coding agent documentation](https://docs.github.com/en/copil
 ### Benefits and Hazards
 
 Science fiction has long explored the promises and perils of artificial intelligence.
-[@matrix_agents; @skynet; @hal9000; @blade_runner; @enders_game; @butlerian_jihad]
+[@matrix; @terminator; @space_odyssey; @blade_runner; @enders_game; @i_robot; @wargames; @humans_are_dead; @butlerian_jihad]
 Coding agents are powerful programs that can work autonomously.
 Coding agents can manipulate code,
 including their own configuration files.
 They can work on your behalf,
 but they require careful oversight and control to ensure they serve your interests and that you understand the consequences of their actions.
 
-![[Agents](https://en.wikipedia.org/wiki/Agent_(The_Matrix))](assets/images/matrix-agents.png){fig-alt="Three agents in suits and sunglasses from the Matrix films"}
+![[Agents from The Matrix](https://en.wikipedia.org/wiki/The_Matrix)](assets/images/matrix-agents.png){fig-alt="Three agents in suits and sunglasses from the Matrix films"}
 
 Coding agents offer several advantages:
 

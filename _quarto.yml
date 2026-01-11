@@ -16,8 +16,6 @@ project:
   type: book
   output-dir: docs
 
-bibliography: book.bib
-
 book:
   title: "UCD-SeRG Lab Manual"
   author:
