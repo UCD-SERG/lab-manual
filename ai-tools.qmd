@@ -373,9 +373,7 @@ When using this workflow, make sure to explicitly instruct the coding agent to:
 
 This approach makes it easier for collaborators who are more comfortable with Word to contribute to the lab manual while maintaining the source files in Quarto format.
 
-## Further reading
-
-Science fiction has long explored the promises and perils of artificial intelligence:
+## Further reading/viewing
 
 - @i_robot
 - @butlerian_jihad
