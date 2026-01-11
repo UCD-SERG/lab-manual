@@ -27,9 +27,7 @@ jobs:
 
       - name: Inject preview metadata
         if: env.PREVIEW_SHOW_HIGHLIGHTS == 'true'
-        run: |
-          chmod +x .github/scripts/inject-preview-metadata.py
-          python3 .github/scripts/inject-preview-metadata.py
+        run: python3 .github/scripts/inject-preview-metadata.py
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2

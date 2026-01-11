@@ -14,21 +14,25 @@ def inject_preview_metadata(filepath):
         content = f.read()
     
     # Check if file has YAML front matter
-    if content.startswith('---'):
-        # Find the end of the front matter
-        parts = content.split('---', 2)
-        if len(parts) >= 3:
-            # Already has front matter
-            front_matter = parts[1]
-            rest = parts[2]
+    # Valid YAML front matter must start with --- at the very beginning
+    if content.startswith('---\n'):
+        # Find the closing --- (must be on its own line)
+        # Search for the second occurrence of \n---\n
+        match = re.search(r'\n---\n', content[4:])  # Skip first ---\n
+        
+        if match:
+            # Found valid front matter
+            end_pos = match.start() + 4  # Position relative to start of content
+            front_matter = content[4:end_pos]  # Extract front matter (without delimiters)
+            rest = content[end_pos + 4:]  # Rest of content after closing ---
             
             # Add our metadata if not already there
             if 'preview-changed:' not in front_matter:
                 front_matter = front_matter.rstrip() + '\npreview-changed: true\n'
             
-            new_content = f'---{front_matter}---{rest}'
+            new_content = f'---\n{front_matter}---{rest}'
         else:
-            # Malformed, just prepend
+            # Has opening --- but no closing ---, treat as no front matter
             new_content = f'---\npreview-changed: true\n---\n{content}'
     else:
         # No front matter, add it
