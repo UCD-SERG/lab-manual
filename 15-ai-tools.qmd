@@ -56,7 +56,13 @@ coding agents can manipulate your code, including their own configuration files.
 They can work on your behalf,
 but they require careful oversight and control to ensure they serve your interests.
 
+::: {.content-visible when-format="html"}
 ![Agents from the Matrix films: powerful programs that require careful oversight](https://github.com/user-attachments/assets/c7bcd1e3-5eda-42ae-a90e-f127ad4bc20d){fig-alt="Three agents in suits and sunglasses from the Matrix films"}
+:::
+
+::: {.content-visible unless-format="html"}
+*[Image: Agents from the Matrix films - three agents in suits and sunglasses]*
+:::
 
 Coding agents offer several advantages:
 
@@ -75,6 +81,7 @@ However, coding agents also come with significant hazards:
 - **Inappropriate solutions**: AI may suggest solutions that work but are not optimal for your specific research context or constraints
 - **Hidden biases**: Coding agents may perpetuate coding patterns or approaches that reflect biases in their training data
 - **False confidence**: Well-formatted, professional-looking code from AI can mask underlying problems and reduce critical review
+- **Workflow manipulation risks**: Coding agents that modify CI/CD workflows (`.github/workflows/*.yml`) or setup configurations can inadvertently or maliciously compromise repository security, expose secrets, or execute harmful commands
 
 ### Best Practices for Safe and Successful Use
 
@@ -96,12 +103,67 @@ To work with coding agents safely and successfully:
 
 8. **Maintain coding practice**: Regularly write code yourself to maintain and develop your skills. Don't let the agent do everything.
 
+9. **Exercise extreme caution with workflow files**: Be especially careful when allowing coding agents to edit GitHub Actions workflows or CI/CD configurations. These files control automated processes that can:
+   - Access secrets and credentials
+   - Deploy code to production
+   - Execute arbitrary commands in your repository
+   
+   **Never** allow a coding agent to edit workflow files (especially `.github/workflows/*.yml` or `copilot-setup-step.yml`) without thorough manual review. Before approving any workflow run, always check if the workflow files themselves have been modified. Malicious or erroneous changes to workflows can compromise your entire repository and its secrets.
+
 When using coding agents, work interactively with the AI suggestions:
 review, modify, and test them rather than accepting them wholesale. 
 This interactive approach helps ensure code quality and deepens your understanding of the code.
 
 Remember: AI tools are assistants, not replacements for your expertise and judgment. 
 The quality and correctness of your work remains your responsibility.
+
+### Firewall and Network Configuration
+
+GitHub Copilot coding agents require specific network access to function properly. If you're working behind a corporate firewall or on a restricted network, you may need to configure allowlists to enable coding agent functionality.
+
+#### Built-in Agent Firewall
+
+Coding agents run in a GitHub Actions environment with a built-in firewall that limits internet access by default. This firewall helps protect against:
+
+- Data exfiltration
+- Accidental leaks of sensitive information
+- Execution of malicious instructions
+
+By default, the agent's firewall allows access to:
+
+- Common OS package repositories (Debian, Ubuntu, Red Hat, etc.)
+- Popular container registries (Docker Hub, Azure Container Registry, AWS ECR, etc.)
+- Language-specific package registries (npm, PyPI, Maven, RubyGems, etc.)
+- Common certificate authorities for SSL validation
+
+For the complete list of allowed hosts, see the [Copilot allowlist reference](https://docs.github.com/en/copilot/reference/copilot-allowlist-reference).
+
+#### Corporate Firewall Requirements
+
+If your organization uses a corporate firewall, network administrators should allow the following domains (over HTTPS, port 443):
+
+- `github.com`
+- `api.github.com`
+- `copilot-proxy.githubusercontent.com`
+- `*.githubcopilot.com`
+- `*.business.githubcopilot.com` (for Copilot Business)
+- `*.enterprise.githubcopilot.com` (for Copilot Enterprise)
+- `*.githubusercontent.com` (for accessing GitHub-hosted content)
+- `*.s3.amazonaws.com` (for GitHub user-uploaded content)
+
+Note that some Copilot features use WebSockets, so ensure `copilot-proxy.githubusercontent.com` allows WebSocket traffic.
+
+#### Customizing Agent Firewall Settings
+
+In your repository's "Coding agent" settings page, you can:
+
+- Add custom hosts to the allowlist (for internal dependencies or additional registries)
+- Opt out of the default recommended allowlist for stricter security
+- Disable the firewall entirely (not recommended)
+
+If a coding agent's request is blocked by the firewall, a warning will be added to the pull request or comment, detailing the blocked address and the command that triggered it.
+
+For more information, see [Customizing or disabling the firewall for GitHub Copilot coding agent](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-firewall).
 
 ### When to use a coding agent
 
