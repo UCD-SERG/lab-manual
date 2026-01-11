@@ -1,4 +1,5 @@
-The `here` package helps manage file paths in projects by automatically finding the project root and building paths relative to it.
+The `here` package helps manage file paths in projects 
+by automatically finding the project root and building paths relative to it:
 
 ```r
 library(here)
