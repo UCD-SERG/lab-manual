@@ -217,35 +217,44 @@ class HTMLDiffer:
         
         return diff_lines if changes > 0 else None, similarity
     
-    def inject_change_notice(self, html, num_changes, similarity):
-        """Add a notice about content changes to the HTML."""
+    def inject_combined_banner(self, html, num_changes, similarity, filename):
+        """Add a combined banner about all changes to the HTML."""
         # Calculate change percentage
         change_pct = int((1 - similarity) * 100)
         
-        # Create notice HTML - using CSS class defined in styles.css
+        # Determine the DOCX filename
+        # Extract base filename without extension
+        base_name = Path(filename).stem
+        docx_filename = f"{base_name}-tracked-changes.docx"
+        
+        # Create combined notice HTML - using CSS class defined in styles.css
         notice = f'''
-<div class="preview-content-changed-notice">
-    <p style="margin: 0;"><strong>🔍 Content Changes:</strong> This page has been modified in this pull request (~{change_pct}% of content changed).</p>
+<div class="preview-combined-banner">
+    <p style="margin: 0;">
+        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~{change_pct}% of content changed).
+        <br>
+        <strong>📄 DOCX with tracked changes:</strong> <a href="{docx_filename}" download>Download {docx_filename}</a>
+    </p>
 </div>
 '''
         
-        # Find insertion point (after the page changed banner if it exists, or at start of main)
-        # Look for existing preview-changed-banner
-        banner_match = re.search(r'(<div class="preview-changed-banner"[^>]*>.*?</div>)', html, re.DOTALL)
-        if banner_match:
-            # Insert after the preview-changed-banner
-            insertion_point = banner_match.end()
+        # Replace the placeholder banner if it exists
+        placeholder_pattern = r'<div class="preview-changed-banner"[^>]*>.*?PREVIEW_BANNER_PLACEHOLDER.*?</div>'
+        if re.search(placeholder_pattern, html, re.DOTALL):
+            html = re.sub(placeholder_pattern, notice, html, flags=re.DOTALL)
         else:
-            # Insert at the start of main content
+            # No placeholder, insert at the start of main content
             main_match = re.search(r'(<main[^>]*>)', html)
             if main_match:
                 insertion_point = main_match.end()
-            else:
-                # Can't find insertion point, skip
-                return html
+                html = html[:insertion_point] + notice + html[insertion_point:]
         
-        html = html[:insertion_point] + notice + html[insertion_point:]
-        
+        return html
+    
+    def inject_change_notice(self, html, num_changes, similarity):
+        """Add a notice about content changes to the HTML (deprecated - now using combined banner)."""
+        # This method is kept for backward compatibility but is no longer used
+        # The inject_combined_banner method is used instead
         return html
     
     def highlight_toc_entries(self, html, changed_files):
@@ -303,14 +312,14 @@ class HTMLDiffer:
                     print(f"  Highlighted {inline_changes} changed element(s) inline")
                     new_html = highlighted_html
                 
-                # Add change notice banner
-                new_html = self.inject_change_notice(new_html, num_changes, similarity)
+                # Add combined banner with DOCX link
+                new_html = self.inject_combined_banner(new_html, num_changes, similarity, local_filepath)
                 
                 # Write back
                 with open(local_filepath, 'w', encoding='utf-8') as f:
                     f.write(new_html)
                 
-                print(f"  Added content change notice and inline highlights to {local_filepath}")
+                print(f"  Added combined banner and inline highlights to {local_filepath}")
             else:
                 print(f"  No significant content changes detected (similarity: {similarity:.2%})")
         else:

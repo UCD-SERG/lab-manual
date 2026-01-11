@@ -9,15 +9,13 @@ function Pandoc(doc)
     is_changed = true
   end
   
-  -- If changed and rendering HTML, add a banner
+  -- If changed and rendering HTML, add a placeholder banner
+  -- The Python script will replace this with the full combined banner
   if is_changed and FORMAT:match("html") then
     local banner = pandoc.Div(
       {
         pandoc.Para({
-          pandoc.Str("📝 "),
-          pandoc.Strong({pandoc.Str("Preview:")}),
-          pandoc.Space(),
-          pandoc.Str("This page contains changes in this pull request")
+          pandoc.Str("PREVIEW_BANNER_PLACEHOLDER")
         })
       },
       {class = "preview-changed-banner"}
