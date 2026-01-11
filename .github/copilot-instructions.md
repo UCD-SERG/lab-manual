@@ -4,6 +4,15 @@ This file contains guidelines for GitHub Copilot and other AI assistants when wo
 
 ## Markdown and Quarto Formatting
 
+### Talking about code
+
+When talking about code in prose sections, 
+use backticks to apply code formatting:
+for example, `dplyr::mutate()`
+When talking about packages, use backticks and curly-braces:
+for example, `{dplyr}`
+
+
 ### Blank Lines Before Lists
 
 **ALWAYS include a blank line before bullet lists and numbered lists** in markdown and Quarto (.qmd) files.

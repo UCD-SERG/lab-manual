@@ -22,6 +22,16 @@ Follow these code style guidelines for all R code:
 
 {{< include 06-coding-style/line-breaks.qmd >}}
 
+## Markdown and Quarto Formatting
+
+## Writing about code in Quarto documents
+
+When writing about code in prose sections of quarto documents, 
+use backticks to apply a code style:
+for example, `dplyr::mutate()`.
+When talking about packages, use backticks and curly-braces:
+for example, `{dplyr}`.
+
 ## Messaging and User Communication
 
 {{< include 06-coding-style/messaging-and-user-communication.qmd >}}
