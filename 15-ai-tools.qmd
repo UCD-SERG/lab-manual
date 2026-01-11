@@ -83,3 +83,20 @@ the way we want it to do it.
 You should exercise your own coding skills regularly,
 just like you would for any other skill you want to maintain.
 
+### Editing with DOCX files
+
+GitHub Copilot coding agents can read Microsoft Word (`.docx`) files, including tracked changes and comments.
+This enables a hybrid editing workflow where:
+
+1. Lab members can export Quarto content to Word format for review
+2. Reviewers can make edits, add tracked changes, and insert comments in Word
+3. Coding agents can read the DOCX file and translate the edits back to Quarto format
+
+When using this workflow, make sure to explicitly instruct the coding agent to:
+
+- Examine and apply all tracked changes in the DOCX file
+- Read and address all comments in the DOCX file
+- Translate edits from Word formatting to appropriate Quarto/markdown syntax
+
+This approach makes it easier for collaborators who are more comfortable with Word to contribute to the lab manual while maintaining the source files in Quarto format.
+
