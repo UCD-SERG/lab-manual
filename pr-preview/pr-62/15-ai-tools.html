@@ -322,7 +322,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-reproducibility.html" class="sidebar-item-text sidebar-link">
+  <a href="./03-reproducibility.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Reproducibility</span></span></a>
   </div>
 </li>
@@ -426,6 +426,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#coding-agents" id="toc-coding-agents" class="nav-link" data-scroll-target="#coding-agents"><span class="header-section-number">16.4</span> Coding Agents</a>
   <ul class="collapse">
   <li><a href="#when-to-use-a-coding-agent" id="toc-when-to-use-a-coding-agent" class="nav-link" data-scroll-target="#when-to-use-a-coding-agent"><span class="header-section-number">16.4.1</span> When to use a coding agent</a></li>
+  <li><a href="#editing-with-.docx-files" id="toc-editing-with-.docx-files" class="nav-link" data-scroll-target="#editing-with-.docx-files"><span class="header-section-number">16.4.2</span> Editing with <code>.docx</code> files</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/15-ai-tools.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/15-ai-tools.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -434,7 +435,7 @@ ul.task-list li input[type="checkbox"] {
 <main class="content" id="quarto-document-content">
 <div class="preview-home-changes-banner">
     <p style="margin: 0;">
-        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="02-communication.html">3. &nbsp; <span class="chapter-title">Communication and coordination</span></a>
+        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="02-communication.html">3. &nbsp; <span class="chapter-title">Communication and coordination</span></a>, <a href="03-reproducibility.html">4. &nbsp; <span class="chapter-title">Reproducibility</span></a>
         <br>
         <strong>📄 DOCX with tracked changes:</strong> <a href="UCD-SeRG-Lab-Manual-tracked-changes.docx" download>Download UCD-SeRG-Lab-Manual-tracked-changes.docx</a>
         <br>
@@ -520,6 +521,22 @@ ul.task-list li input[type="checkbox"] {
 <h3 data-number="16.4.1" class="anchored" data-anchor-id="when-to-use-a-coding-agent"><span class="header-section-number">16.4.1</span> When to use a coding agent</h3>
 <p>Coding agent sessions are currently<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> considered “premium requests”, which are limited resources; see <a href="https://github.com/features/copilot/plans" class="uri">https://github.com/features/copilot/plans</a> for details. So, use coding agents sparingly. Use them for complex changes that would be difficult or time-consuming for you to complete by hand. Coding agents also take time to get configured for work, every time you make a request. See <a href="https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-environment#preinstalling-tools-or-dependencies-in-copilots-environment" class="uri">https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-environment#preinstalling-tools-or-dependencies-in-copilots-environment</a> for ways to reduce that startup time, but it will never be 0. If you can complete the task faster than the coding agent can, you should probably do it yourself.</p>
 <p>Also, the less we practice, the weaker our skills get, and the harder it is for us to supervise the agents and make sure they are actually doing what we want it to do, the way we want it to do it. You should exercise your own coding skills regularly, just like you would for any other skill you want to maintain.</p>
+</section>
+<section id="editing-with-.docx-files" class="level3" data-number="16.4.2">
+<h3 data-number="16.4.2" class="anchored" data-anchor-id="editing-with-.docx-files"><span class="header-section-number">16.4.2</span> Editing with <code>.docx</code> files</h3>
+<p>GitHub Copilot coding agents can read Microsoft Word (<code>.docx</code>) files, including tracked changes and comments. This enables a hybrid editing workflow where:</p>
+<ol type="1">
+<li>Lab members can export Quarto content to Word format for review</li>
+<li>Reviewers can make edits, add tracked changes, and insert comments in Word</li>
+<li>Coding agents can read the <code>.docx</code> file and translate the edits back to Quarto format</li>
+</ol>
+<p>When using this workflow, make sure to explicitly instruct the coding agent to:</p>
+<ul>
+<li>Examine and apply all tracked changes in the <code>.docx</code> file</li>
+<li>Read and address all comments in the <code>.docx</code> file</li>
+<li>Translate edits from Word formatting to appropriate Quarto/markdown syntax</li>
+</ul>
+<p>This approach makes it easier for collaborators who are more comfortable with Word to contribute to the lab manual while maintaining the source files in Quarto format.</p>
 
 
 </section>
