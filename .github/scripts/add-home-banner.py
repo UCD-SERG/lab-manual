@@ -46,10 +46,15 @@ def add_home_page_banner(index_html_path, changed_chapters):
         
         links_html = ', '.join(chapter_links)
         
+        # Add DOCX link to the banner
+        docx_filename = "UCD-SeRG-Lab-Manual-tracked-changes.docx"
+        
         banner = f'''
 <div class="preview-home-changes-banner">
     <p style="margin: 0;">
         <strong>📋 Changes in this PR:</strong> The following chapters have been modified: {links_html}
+        <br>
+        <strong>📄 DOCX with tracked changes:</strong> <a href="{docx_filename}" download>Download {docx_filename}</a>
     </p>
 </div>
 '''
@@ -71,11 +76,6 @@ def add_home_page_banner(index_html_path, changed_chapters):
 def main():
     # Get the HTML directory
     html_dir = Path(os.getenv('HTML_DIR', './docs'))
-    index_html = html_dir / 'index.html'
-    
-    if not index_html.exists():
-        print("index.html does not exist")
-        return
     
     # Read changed chapters from JSON file or environment variable
     changed_chapters_file = html_dir / 'changed-chapters.json'
@@ -95,8 +95,12 @@ def main():
         else:
             print("No changed chapters found")
     
-    # Always add banner (shows "no changes" message if no changes detected)
-    add_home_page_banner(index_html, changed_chapters)
+    # Add banner to ALL HTML files in the directory, not just index.html
+    html_files = list(html_dir.glob('*.html'))
+    print(f"Found {len(html_files)} HTML files to process")
+    
+    for html_file in html_files:
+        add_home_page_banner(html_file, changed_chapters)
 
 if __name__ == '__main__':
     main()

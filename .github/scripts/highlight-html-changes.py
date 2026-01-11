@@ -315,17 +315,12 @@ class HTMLDiffer:
                 num_changes = len([l for l in diff_lines if l.startswith('+') or l.startswith('-')]) if diff_lines else 0
                 print(f"  Adding combined banner (changes: {num_changes}, similarity: {similarity:.2%})")
                 new_html = self.inject_combined_banner(new_html, num_changes, similarity, local_filepath)
-                
-                # Write back
+            
+            # Always write back if we made ANY changes (inline or banner)
+            if diff_lines or has_placeholder or inline_changes > 0:
                 with open(local_filepath, 'w', encoding='utf-8') as f:
                     f.write(new_html)
-                
                 print(f"  ✓ Updated {local_filepath}")
-            elif inline_changes > 0:
-                # We made inline changes even if no banner needed - still write back
-                with open(local_filepath, 'w', encoding='utf-8') as f:
-                    f.write(new_html)
-                print(f"  ✓ Updated {local_filepath} with inline highlights")
             else:
                 print(f"  No changes to write")
         elif has_placeholder:
