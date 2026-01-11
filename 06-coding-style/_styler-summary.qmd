@@ -6,7 +6,12 @@
 :::
 
 ::: {.callout-note}
-   As is mentioned in the package vignette linked above, `{styler}` modifies things _in-place_, meaning it overwrites your existing code and replaces it with the updated, properly styled code. This makes it a good fit on projects _with version control_, but if you don't have backups or a good way to revert back to the intial code, I wouldn't recommend going this route.
+   As is mentioned in the package vignette linked above, 
+   `{styler}` modifies things _in-place_, 
+   meaning it overwrites your existing code and replaces it with the updated, properly styled code. 
+   This makes it a good fit on projects _with version control_, 
+   but if you don't have backups or a good way to revert back to the initial code, 
+   I wouldn't recommend going this route.
 :::
 
 ::: callout-tip
