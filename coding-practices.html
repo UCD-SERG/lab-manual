@@ -55,7 +55,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -1058,28 +1078,31 @@ test_that("prep_study_data produces expected structure", {
 <h2 data-number="6.9" class="anchored" data-anchor-id="sec-documenting-code"><span class="header-section-number">6.9</span> Documenting your code</h2>
 <section id="function-headers" class="level3" data-number="6.9.1">
 <h3 data-number="6.9.1" class="anchored" data-anchor-id="function-headers"><span class="header-section-number">6.9.1</span> Function headers</h3>
-<p>Every function you write must include a header to document its purpose, inputs, and outputs. For any reproducible workflows, they are essential, because R is dynamically typed. This means, you can pass a <code>string</code> into an argument that is meant to be a <code>data.table</code>, or a <code>list</code> into an argument meant for a <code>tibble</code>. It is the responsibility of a function’s author to document what each argument is meant to do and its basic type. This is an example for documenting a function (inspired by <a href="https://www.oracle.com/technetwork/java/javase/documentation/index-137868.html#format">JavaDocs</a> and R’s <a href="https://blog.rstudio.com/2018/10/23/rstudio-1-2-preview-plumber-integration/">Plumber API docs</a>):</p>
-<pre><code>##############################################
-##############################################
-# Documentation: calc_fluseas_mean
-# Usage: calc_fluseas_mean(data, yname)
-# Description: Make a dataframe with rows for flu season and site
-# and the number of patients with an outcome, the total patients,
-# and the percent of patients with the outcome
-
-# Args/Options:
-# data: a data frame with variables flu_season, site, studyID, and yname
-# yname: a string for the outcome name
-# silent: a boolean specifying whether the function shouldn't output anything to the console (DEFAULT: TRUE)
-
-# Returns: the dataframe as described above
-# Output: prints the data frame described above if silent is not True
-
-calc_fluseas_mean &lt;- function(data, yname, silent = TRUE) {
- ### function code here
-
-}</code></pre>
-<p>The header tells you what the function does, its various inputs, and how you might go about using the function to do what you want. Also notice that all optional arguments (i.e.&nbsp;ones with pre-specified defaults) follow arguments that require user input.</p>
+<p>Every function you write must include documentation to describe its purpose, inputs, and outputs. For any reproducible workflows, this is essential, because R is dynamically typed. This means you can pass a <code>string</code> into an argument that is meant to be a <code>data.table</code>, or a <code>list</code> into an argument meant for a <code>tibble</code>. It is the responsibility of a function’s author to document what each argument is meant to do and its basic type.</p>
+<p>We use <code>{roxygen2}</code> <span class="citation" data-cites="R-roxygen2">(<a href="#ref-R-roxygen2" role="doc-biblioref">Wickham et al. 2024</a>)</span> for function documentation. Roxygen2 allows you to describe your functions in special comments next to their definitions, and automatically generates R documentation files (<code>.Rd</code> files) and helps manage your package <code>NAMESPACE</code>. The roxygen2 format uses <code>#'</code> comments placed immediately before the function definition.</p>
+<p>Here is an example of documenting a function using roxygen2:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">#' Calculate flu season means by site</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co">#' Make a dataframe with rows for flu season and site</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co">#' containing the number of patients with an outcome, the total patients,</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="co">#' and the percent of patients with the outcome.</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param data A data frame with variables flu_season, site, studyID, and yname</span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param yname A string for the outcome name</span></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param silent A boolean specifying whether to suppress console output </span></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="co">#'   (default: TRUE)</span></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a><span class="co">#' @returns A dataframe as described above</span></span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a><span class="co">#' @examples</span></span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a><span class="co">#' calc_fluseas_mean(my_data, "hospitalized", silent = FALSE)</span></span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>calc_fluseas_mean <span class="ot">&lt;-</span> <span class="cf">function</span>(data, yname, <span class="at">silent =</span> <span class="cn">TRUE</span>) {</span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>  <span class="do">### function code here</span></span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The roxygen2 header tells you what the function does, its various inputs, and how you might use it. Also notice that all optional arguments (i.e.&nbsp;ones with pre-specified defaults) follow arguments that require user input.</p>
+<p>For more information on roxygen2 syntax and features, see <a href="https://roxygen2.r-lib.org/" class="uri">https://roxygen2.r-lib.org/</a>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1628,6 +1651,11 @@ Describe how this change has been tested.
 </ul>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-R-roxygen2" class="csl-entry" role="listitem">
+Wickham, Hadley, Peter Danenberg, Gábor Csárdi, and Manuel Eugster. 2024. <em>Roxygen2: In-Line Documentation for r</em>. <a href="https://roxygen2.r-lib.org/">https://roxygen2.r-lib.org/</a>.
+</div>
+</div>
 </section>
 </section>
 
