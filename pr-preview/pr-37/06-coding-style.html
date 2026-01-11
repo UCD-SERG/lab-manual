@@ -465,7 +465,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#package-code-practices" id="toc-package-code-practices" class="nav-link" data-scroll-target="#package-code-practices"><span class="header-section-number">7.8</span> Package Code Practices</a></li>
   <li><a href="#sec-here-package-style" id="toc-sec-here-package-style" class="nav-link" data-scroll-target="#sec-here-package-style"><span class="header-section-number">7.9</span> The here Package</a></li>
   <li><a href="#object-naming" id="toc-object-naming" class="nav-link" data-scroll-target="#object-naming"><span class="header-section-number">7.10</span> Object Naming</a></li>
-  <li><a href="#automated-tools-for-style-and-project-workflow" id="toc-automated-tools-for-style-and-project-workflow" class="nav-link" data-scroll-target="#automated-tools-for-style-and-project-workflow"><span class="header-section-number">7.11</span> Automated Tools for Style and Project Workflow</a>
+  <li><a href="#sec-style-auto-style" id="toc-sec-style-auto-style" class="nav-link" data-scroll-target="#sec-style-auto-style"><span class="header-section-number">7.11</span> Automated Tools for Style and Project Workflow</a>
   <ul class="collapse">
   <li><a href="#styling" id="toc-styling" class="nav-link" data-scroll-target="#styling"><span class="header-section-number">7.11.1</span> Styling</a></li>
   </ul></li>
@@ -514,7 +514,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="sec-function-docs" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="sec-function-docs"><span class="header-section-number">7.2</span> Function Structure and Documentation</h2>
-<p><em>See also <a href="05-coding-practices.html#sec-documenting-code" class="quarto-xref"><span>Section 6.8</span></a> for general code documentation practices.</em></p>
+<p><em>See also <a href="05-coding-practices.html#sec-documenting-code" class="quarto-xref"><span>Section 6.9</span></a> for general code documentation practices.</em></p>
 <p>Every function should follow this pattern:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#' Short Title (One Line)</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
@@ -692,7 +692,7 @@ Note
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"data-raw"</span>, <span class="st">"survey.csv"</span>))</span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(results, <span class="fu">here</span>(<span class="st">"inst"</span>, <span class="st">"analyses"</span>, <span class="st">"results.rds"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This works regardless of where collaborators clone the repository. For more details, see the <a href="https://github.com/jennybc/here_here">here package vignette</a>.</p>
-<p><em>See also <a href="05-coding-practices.html#sec-here-package-practices" class="quarto-xref"><span>Section 6.10</span></a> for detailed explanation of the here package.</em></p>
+<p><em>See also <a href="05-coding-practices.html#sec-here-package-practices" class="quarto-xref"><span>Section 6.11</span></a> for detailed explanation of the here package.</em></p>
 </section>
 <section id="object-naming" class="level2" data-number="7.10">
 <h2 data-number="7.10" class="anchored" data-anchor-id="object-naming"><span class="header-section-number">7.10</span> Object Naming</h2>
@@ -746,8 +746,8 @@ Note
 <hr>
 <p>For more help, check out <a href="https://spin.atomicobject.com/2017/11/01/good-variable-names/">Be Expressive: How to Give Your Variables Better Names</a></p>
 </section>
-<section id="automated-tools-for-style-and-project-workflow" class="level2" data-number="7.11">
-<h2 data-number="7.11" class="anchored" data-anchor-id="automated-tools-for-style-and-project-workflow"><span class="header-section-number">7.11</span> Automated Tools for Style and Project Workflow</h2>
+<section id="sec-style-auto-style" class="level2" data-number="7.11">
+<h2 data-number="7.11" class="anchored" data-anchor-id="sec-style-auto-style"><span class="header-section-number">7.11</span> Automated Tools for Style and Project Workflow</h2>
 <section id="styling" class="level3" data-number="7.11.1">
 <h3 data-number="7.11.1" class="anchored" data-anchor-id="styling"><span class="header-section-number">7.11.1</span> Styling</h3>
 <section id="rstudio-shortcuts" class="level4" data-number="7.11.1.1">
