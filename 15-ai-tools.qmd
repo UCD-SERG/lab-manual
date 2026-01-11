@@ -50,9 +50,13 @@ for AI-assisted coding.
 
 ### Benefits and Hazards
 
-Like the Agents in the [Matrix films](https://en.wikipedia.org/wiki/Agent_(The_Matrix)), coding agents are powerful programs that can work on your behalf—but they require careful oversight and control to ensure they serve your interests.
+Like the [Agents in the Matrix films](https://en.wikipedia.org/wiki/Agent_(The_Matrix)), 
+coding agents are powerful programs; 
+coding agents can manipulate your code, including their own configuration files.
+They can work on your behalf,
+but they require careful oversight and control to ensure they serve your interests.
 
-![Agents from the Matrix films: powerful entities that require careful oversight](https://github.com/user-attachments/assets/c7bcd1e3-5eda-42ae-a90e-f127ad4bc20d){fig-alt="Three agents in suits and sunglasses from the Matrix films"}
+![Agents from the Matrix films: powerful programs that require careful oversight](https://github.com/user-attachments/assets/c7bcd1e3-5eda-42ae-a90e-f127ad4bc20d){fig-alt="Three agents in suits and sunglasses from the Matrix films"}
 
 Coding agents offer several advantages:
 
