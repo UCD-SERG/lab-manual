@@ -10,7 +10,6 @@ import re
 import difflib
 import subprocess
 from pathlib import Path
-from html.parser import HTMLParser
 
 class HTMLDiffer:
     """Compare HTML files and inject highlighting for changed sections."""
@@ -93,9 +92,9 @@ class HTMLDiffer:
         # Calculate change percentage
         change_pct = int((1 - similarity) * 100)
         
-        # Create notice HTML
+        # Create notice HTML - using CSS class defined in styles.css
         notice = f'''
-<div class="preview-content-changed-notice" style="background-color: #e7f3ff; border-left: 4px solid #2196F3; padding: 12px 16px; margin-bottom: 20px; border-radius: 4px; font-size: 14px;">
+<div class="preview-content-changed-notice">
     <p style="margin: 0;"><strong>🔍 Content Changes:</strong> This page has been modified in this pull request (~{change_pct}% of content changed).</p>
 </div>
 '''
@@ -187,11 +186,12 @@ def checkout_base_html(base_ref='origin/gh-pages', target_dir='/tmp/base-html'):
                     output_path = target_path / file
                     output_path.parent.mkdir(parents=True, exist_ok=True)
                     
-                    subprocess.run(
-                        ['git', 'show', f'{base_ref}:{file}'],
-                        stdout=open(output_path, 'wb'),
-                        check=False
-                    )
+                    with open(output_path, 'wb') as f:
+                        subprocess.run(
+                            ['git', 'show', f'{base_ref}:{file}'],
+                            stdout=f,
+                            check=False
+                        )
                 
                 return target_path if files else None
         
