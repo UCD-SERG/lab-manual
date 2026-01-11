@@ -71,7 +71,7 @@ for AI-assisted coding.
 
 Like the [Agents in the Matrix films](https://en.wikipedia.org/wiki/Agent_(The_Matrix)), 
 coding agents are powerful programs;
-coding agents can manipulate your code,
+coding agents can manipulate code,
 including their own configuration files.
 They can work on your behalf,
 but they require careful oversight and control
