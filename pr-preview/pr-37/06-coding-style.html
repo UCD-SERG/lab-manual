@@ -462,14 +462,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#markdown-and-quarto-formatting" id="toc-markdown-and-quarto-formatting" class="nav-link" data-scroll-target="#markdown-and-quarto-formatting"><span class="header-section-number">7.5</span> Markdown and Quarto Formatting</a></li>
   <li><a href="#writing-about-code-in-quarto-documents" id="toc-writing-about-code-in-quarto-documents" class="nav-link" data-scroll-target="#writing-about-code-in-quarto-documents"><span class="header-section-number">7.6</span> Writing about code in Quarto documents</a></li>
   <li><a href="#messaging-and-user-communication" id="toc-messaging-and-user-communication" class="nav-link" data-scroll-target="#messaging-and-user-communication"><span class="header-section-number">7.7</span> Messaging and User Communication</a></li>
-  <li><a href="#package-code-practices" id="toc-package-code-practices" class="nav-link" data-scroll-target="#package-code-practices"><span class="header-section-number">7.8</span> Package Code Practices</a></li>
-  <li><a href="#sec-here-package-style" id="toc-sec-here-package-style" class="nav-link" data-scroll-target="#sec-here-package-style"><span class="header-section-number">7.9</span> The here Package</a></li>
-  <li><a href="#sec-object-naming" id="toc-sec-object-naming" class="nav-link" data-scroll-target="#sec-object-naming"><span class="header-section-number">7.10</span> Object Naming</a></li>
-  <li><a href="#sec-style-auto-style" id="toc-sec-style-auto-style" class="nav-link" data-scroll-target="#sec-style-auto-style"><span class="header-section-number">7.11</span> Automated Tools for Style and Project Workflow</a>
+  <li><a href="#tidyverse-replacements" id="toc-tidyverse-replacements" class="nav-link" data-scroll-target="#tidyverse-replacements"><span class="header-section-number">7.8</span> Tidyverse Replacements</a></li>
+  <li><a href="#package-code-practices" id="toc-package-code-practices" class="nav-link" data-scroll-target="#package-code-practices"><span class="header-section-number">7.9</span> Package Code Practices</a></li>
+  <li><a href="#sec-here-package-style" id="toc-sec-here-package-style" class="nav-link" data-scroll-target="#sec-here-package-style"><span class="header-section-number">7.10</span> The here Package</a></li>
+  <li><a href="#sec-object-naming" id="toc-sec-object-naming" class="nav-link" data-scroll-target="#sec-object-naming"><span class="header-section-number">7.11</span> Object Naming</a></li>
+  <li><a href="#sec-style-auto-style" id="toc-sec-style-auto-style" class="nav-link" data-scroll-target="#sec-style-auto-style"><span class="header-section-number">7.12</span> Automated Tools for Style and Project Workflow</a>
   <ul class="collapse">
-  <li><a href="#styling" id="toc-styling" class="nav-link" data-scroll-target="#styling"><span class="header-section-number">7.11.1</span> Styling</a></li>
+  <li><a href="#styling" id="toc-styling" class="nav-link" data-scroll-target="#styling"><span class="header-section-number">7.12.1</span> Styling</a></li>
   </ul></li>
-  <li><a href="#sec-r-resources-style" id="toc-sec-r-resources-style" class="nav-link" data-scroll-target="#sec-r-resources-style"><span class="header-section-number">7.12</span> Additional Resources</a></li>
+  <li><a href="#sec-r-resources-style" id="toc-sec-r-resources-style" class="nav-link" data-scroll-target="#sec-r-resources-style"><span class="header-section-number">7.13</span> Additional Resources</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/06-coding-style.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/06-coding-style.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -674,16 +675,20 @@ Note
 <span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="fu">warning</span>(<span class="st">"Missing data detected"</span>)</span>
 <span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="fu">stop</span>(<span class="st">"Invalid input"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="package-code-practices" class="level2" data-number="7.8">
-<h2 data-number="7.8" class="anchored" data-anchor-id="package-code-practices"><span class="header-section-number">7.8</span> Package Code Practices</h2>
+<section id="tidyverse-replacements" class="level2" data-number="7.8">
+<h2 data-number="7.8" class="anchored" data-anchor-id="tidyverse-replacements"><span class="header-section-number">7.8</span> Tidyverse Replacements</h2>
+<p>See <a href="05-coding-practices.html#sec-tidyverse" class="quarto-xref"><span>Section 6.15</span></a>.</p>
+</section>
+<section id="package-code-practices" class="level2" data-number="7.9">
+<h2 data-number="7.9" class="anchored" data-anchor-id="package-code-practices"><span class="header-section-number">7.9</span> Package Code Practices</h2>
 <ul>
 <li><strong>No <code>library()</code> in package code</strong>: Use <code>::</code> notation or declare in DESCRIPTION Imports</li>
 <li><strong>Document all exports</strong>: Use roxygen2 (<span class="citation" data-cites="title">@title</span>, <span class="citation" data-cites="description">@description</span>, <span class="citation" data-cites="param">@param</span>, <span class="citation" data-cites="returns">@returns</span>, <span class="citation" data-cites="examples">@examples</span>)</li>
 <li><strong>Avoid code duplication</strong>: Extract repeated logic into helper functions</li>
 </ul>
 </section>
-<section id="sec-here-package-style" class="level2" data-number="7.9">
-<h2 data-number="7.9" class="anchored" data-anchor-id="sec-here-package-style"><span class="header-section-number">7.9</span> The here Package</h2>
+<section id="sec-here-package-style" class="level2" data-number="7.10">
+<h2 data-number="7.10" class="anchored" data-anchor-id="sec-here-package-style"><span class="header-section-number">7.10</span> The here Package</h2>
 <p>The <code>here</code> package helps manage file paths in projects by automatically finding the project root and building paths relative to it.</p>
 <p>This solves the problem of different working directory paths across collaborators. For example, one person might have the project at <code>/home/oski/Some-R-Project</code> while another has it at <code>/home/bear/R-Code/Some-R-Project</code>. The <code>here</code> package handles this automatically.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
@@ -694,8 +699,8 @@ Note
 <p>This works regardless of where collaborators clone the repository. For more details, see the <a href="https://github.com/jennybc/here_here">here package vignette</a>.</p>
 <p><em>See also <a href="05-coding-practices.html#sec-here-package-practices" class="quarto-xref"><span>Section 6.12</span></a> for detailed explanation of the here package.</em></p>
 </section>
-<section id="sec-object-naming" class="level2" data-number="7.10">
-<h2 data-number="7.10" class="anchored" data-anchor-id="sec-object-naming"><span class="header-section-number">7.10</span> Object Naming</h2>
+<section id="sec-object-naming" class="level2" data-number="7.11">
+<h2 data-number="7.11" class="anchored" data-anchor-id="sec-object-naming"><span class="header-section-number">7.11</span> Object Naming</h2>
 <p>Use descriptive names that are both expressive and explicit. Being verbose is useful and easy in the age of autocompletion:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Good</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>vaccination_coverage_2017_18</span>
@@ -746,12 +751,12 @@ Note
 <hr>
 <p>For more help, check out <a href="https://spin.atomicobject.com/2017/11/01/good-variable-names/">Be Expressive: How to Give Your Variables Better Names</a></p>
 </section>
-<section id="sec-style-auto-style" class="level2" data-number="7.11">
-<h2 data-number="7.11" class="anchored" data-anchor-id="sec-style-auto-style"><span class="header-section-number">7.11</span> Automated Tools for Style and Project Workflow</h2>
-<section id="styling" class="level3" data-number="7.11.1">
-<h3 data-number="7.11.1" class="anchored" data-anchor-id="styling"><span class="header-section-number">7.11.1</span> Styling</h3>
-<section id="rstudio-shortcuts" class="level4" data-number="7.11.1.1">
-<h4 data-number="7.11.1.1" class="anchored" data-anchor-id="rstudio-shortcuts"><span class="header-section-number">7.11.1.1</span> RStudio shortcuts</h4>
+<section id="sec-style-auto-style" class="level2" data-number="7.12">
+<h2 data-number="7.12" class="anchored" data-anchor-id="sec-style-auto-style"><span class="header-section-number">7.12</span> Automated Tools for Style and Project Workflow</h2>
+<section id="styling" class="level3" data-number="7.12.1">
+<h3 data-number="7.12.1" class="anchored" data-anchor-id="styling"><span class="header-section-number">7.12.1</span> Styling</h3>
+<section id="rstudio-shortcuts" class="level4" data-number="7.12.1.1">
+<h4 data-number="7.12.1.1" class="anchored" data-anchor-id="rstudio-shortcuts"><span class="header-section-number">7.12.1.1</span> RStudio shortcuts</h4>
 <ol type="1">
 <li><p><strong>Code Autoformatting</strong> - RStudio includes a fantastic built-in utility (keyboard shortcut: <code>CMD-Shift-A</code> (Mac) or <code>Ctrl-Shift-A</code> (Windows/Linux)) for autoformatting highlighted chunks of code to fit many of the best practices listed here. It generally makes code more readable and fixes a lot of the small things you may not feel like fixing yourself. Try it out as a “first pass” on some code of yours that <em>doesn’t</em> follow many of these best practices!</p></li>
 <li><p><strong>Assignment Aligner</strong> - A <a href="https://www.r-bloggers.com/align-assign-rstudio-addin-to-align-assignment-operators/">cool R package</a> allows you to very powerfully format large chunks of assignment code to be much cleaner and much more readable. Follow the linked instructions and create a keyboard shortcut of your choosing (recommendation: <code>CMD-Shift-Z</code>). Here is an example of how assignment aligning can dramatically improve code readability:</p></li>
@@ -787,8 +792,8 @@ Note
 <span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">"RISE Community School"</span>              <span class="ot">=</span> <span class="fu">str_subset</span>(<span class="at">string =</span> OUSD_school_shapes<span class="sc">$</span>schnam, <span class="at">pattern =</span> <span class="st">"Rise Community"</span>)</span>
 <span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="styler" class="level4" data-number="7.11.1.2">
-<h4 data-number="7.11.1.2" class="anchored" data-anchor-id="styler"><span class="header-section-number">7.11.1.2</span> <code>styleR</code></h4>
+<section id="styler" class="level4" data-number="7.12.1.2">
+<h4 data-number="7.12.1.2" class="anchored" data-anchor-id="styler"><span class="header-section-number">7.12.1.2</span> <code>styleR</code></h4>
 <p><code>{styleR}</code> is another <a href="https://www.tidyverse.org/articles/2017/12/styler-1.0.0/">cool R package from the Tidyverse</a> that can be powerful and used as a first pass on entire projects that need refactoring. The most useful function of the package is the <code>style_dir</code> function, which will style all files within a given directory. See the <a href="https://www.rdocumentation.org/packages/styler/versions/1.1.0/topics/style_dir">function’s documentation</a> and the vignette linked above for more details.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -841,8 +846,8 @@ Note
 </div>
 </div>
 </section>
-<section id="lintr" class="level4" data-number="7.11.1.3">
-<h4 data-number="7.11.1.3" class="anchored" data-anchor-id="lintr"><span class="header-section-number">7.11.1.3</span> <code>lintr</code></h4>
+<section id="lintr" class="level4" data-number="7.12.1.3">
+<h4 data-number="7.12.1.3" class="anchored" data-anchor-id="lintr"><span class="header-section-number">7.12.1.3</span> <code>lintr</code></h4>
 <p>Linters are programming tools that check adherence to a given style, syntax errors, and possible semantic issues. The R linter, called <code>lintr</code>, can be found in this <a href="https://www.rdocumentation.org/packages/lintr/versions/1.0.3">package</a>. It helps keep files consistent across different authors and even different organizations. For example, it notifies you if you have unused variables, global variables with no visible binding, not enough or superflous whitespace, and improper use of parentheses or brackets. A list of its other purposes can be found <a href="https://cran.r-project.org/web/packages/lintr/readme/README.html#available-linters">in this link</a>, and most guidelines are based on <a href="http://r-pkgs.had.co.nz/style.html">Hadley Wickham’s R Style Guide</a>.</p>
 <p>::: {.callout-note} You can customize your settings to set defaults or to exclude files. More details can be found <a href="https://cran.r-project.org/web/packages/lintr/readme/README.html#project-configuration">here</a>. :::</p>
 <p>::: {.callout-note} The <code>lintr</code> package goes hand in hand with the <code>styler</code> package. The styler can be used to automatically fix the problems that the lintr catches. :::</p>
@@ -878,8 +883,8 @@ Note
 </section>
 </section>
 </section>
-<section id="sec-r-resources-style" class="level2" data-number="7.12">
-<h2 data-number="7.12" class="anchored" data-anchor-id="sec-r-resources-style"><span class="header-section-number">7.12</span> Additional Resources</h2>
+<section id="sec-r-resources-style" class="level2" data-number="7.13">
+<h2 data-number="7.13" class="anchored" data-anchor-id="sec-r-resources-style"><span class="header-section-number">7.13</span> Additional Resources</h2>
 <ul>
 <li><a href="https://style.tidyverse.org/">Tidyverse style guide</a>: Detailed coding style conventions for writing clear, consistent R code. Covers naming, syntax, pipes, functions, and more.</li>
 </ul>
