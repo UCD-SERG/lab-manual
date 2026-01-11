@@ -374,7 +374,7 @@
     "href": "05-coding-practices.html#sec-auto-styling",
     "title": "6  R Coding Practices",
     "section": "6.8 Automated Code Styling",
-    "text": "6.8 Automated Code Styling\nSee Section 7.12.",
+    "text": "6.8 Automated Code Styling\n\n6.8.1 RStudio Built-in Formatting\nUse RStudio’s built-in autoformatter (keyboard shortcut: CMD-Shift-A or Ctrl-Shift-A) to quickly format highlighted code.\n\n\n6.8.2 styler Package\nFor automated styling of entire projects:\n# Install styler\ninstall.packages(\"styler\")\n\n# Style all files in R/ directory\nstyler::style_dir(\"R/\")\n\n# Style entire package\nstyler::style_pkg()\n\n# Note: styler modifies files in-place\n# Always use with version control so you can review changes\n\n\n6.8.3 lintr Package\nFor checking code style without modifying files:\n# Install lintr\ninstall.packages(\"lintr\")\n\n# Lint the entire package\nlintr::lint_package()\n\n# Lint a specific file\nlintr::lint(\"R/my_function.R\")\nThe linter checks for:\n\nUnused variables\nImproper whitespace\nLine length issues\nStyle guide violations\n\nYou can customize linting rules by creating a .lintr file in your project root.\nSee also Section 7.12.",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>R Coding Practices</span>"
     ]
@@ -394,7 +394,7 @@
     "href": "05-coding-practices.html#object-naming",
     "title": "6  R Coding Practices",
     "section": "6.10 Object naming",
-    "text": "6.10 Object naming\nSee Section 7.11.",
+    "text": "6.10 Object naming\nGenerally we recommend using nouns for objects and verbs for functions. This is because functions are performing actions, while objects are not.\nTry to make your variable names both more expressive and more explicit. Being a bit more verbose is useful and easy in the age of autocompletion! For example, instead of naming a variable vaxcov_1718, try naming it vaccination_coverage_2017_18. Similarly, flu_res could be named absentee_flu_residuals, making your code more readable and explicit.\n\nFor more help, check out Be Expressive: How to Give Your Variables Better Names\n\nWe recommend you use snake_case.\n\nBase R allows . in variable names and functions (such as read.csv()), but this goes against best practices for variable naming in many other coding languages. For consistency’s sake, snake_case has been adopted across languages, and modern packages and functions typically use it (i.e. readr::read_csv()). As a very general rule of thumb, if a package you’re using doesn’t use snake_case, there may be an updated version or more modern package that does, bringing with it the variety of performance improvements and bug fixes inherent in more mature and modern software.\n\n\n\n\n\n\n\nNote\n\n\n\nYou may also see camelCase throughout the R code you come across. This is okay but not ideal – try to stay consistent across all your code with snake_case.\n\n\n\n\n\n\n\n\nNote\n\n\n\nAgain, its also worth noting there’s nothing inherently wrong with using . in variable names, just that it goes against style best practices that are cropping up in data science, so its worth getting rid of these bad habits now.\n\n\nSee also Section 7.11.",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>R Coding Practices</span>"
     ]
@@ -624,7 +624,7 @@
     "href": "06-coding-style.html#sec-here-package-style",
     "title": "7  R Code Style",
     "section": "7.10 The here Package",
-    "text": "7.10 The here Package\nThe here package helps manage file paths in projects by automatically finding the project root and building paths relative to it.\nThis solves the problem of different working directory paths across collaborators. For example, one person might have the project at /home/oski/Some-R-Project while another has it at /home/bear/R-Code/Some-R-Project. The here package handles this automatically.\nlibrary(here)\n\n# Automatically finds project root and builds paths\ndata &lt;- readr::read_csv(here(\"data-raw\", \"survey.csv\"))\nsaveRDS(results, here(\"inst\", \"analyses\", \"results.rds\"))\nThis works regardless of where collaborators clone the repository. For more details, see the here package vignette.\nSee also Section 6.12 for detailed explanation of the here package.",
+    "text": "7.10 The here Package\nThe here package helps manage file paths in projects by automatically finding the project root and building paths relative to it:\nlibrary(here)\n\n# Automatically finds project root and builds paths\ndata &lt;- readr::read_csv(here(\"data-raw\", \"survey.csv\"))\nsaveRDS(results, here(\"inst\", \"analyses\", \"results.rds\"))\nThis solves the problem of different working directory paths across collaborators. For example, one person might have the project at /home/oski/Some-R-Project while another has it at /home/bear/R-Code/Some-R-Project. The here package handles this automatically.\nThis works regardless of where collaborators clone the repository. For more details, see the here package vignette.\nSee also Section 6.12 for detailed explanation of the here package.",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>R Code Style</span>"
     ]

@@ -522,7 +522,12 @@ window.Quarto = {
   <li><a href="#news-file" id="toc-news-file" class="nav-link" data-scroll-target="#news-file"><span class="header-section-number">6.6.2</span> NEWS File</a></li>
   </ul></li>
   <li><a href="#sec-r-qa-checklist" id="toc-sec-r-qa-checklist" class="nav-link" data-scroll-target="#sec-r-qa-checklist"><span class="header-section-number">6.7</span> Quality Assurance Checklist</a></li>
-  <li><a href="#sec-auto-styling" id="toc-sec-auto-styling" class="nav-link" data-scroll-target="#sec-auto-styling"><span class="header-section-number">6.8</span> Automated Code Styling</a></li>
+  <li><a href="#sec-auto-styling" id="toc-sec-auto-styling" class="nav-link" data-scroll-target="#sec-auto-styling"><span class="header-section-number">6.8</span> Automated Code Styling</a>
+  <ul class="collapse">
+  <li><a href="#rstudio-built-in-formatting" id="toc-rstudio-built-in-formatting" class="nav-link" data-scroll-target="#rstudio-built-in-formatting"><span class="header-section-number">6.8.1</span> RStudio Built-in Formatting</a></li>
+  <li><a href="#styler-package" id="toc-styler-package" class="nav-link" data-scroll-target="#styler-package"><span class="header-section-number">6.8.2</span> styler Package</a></li>
+  <li><a href="#lintr-package" id="toc-lintr-package" class="nav-link" data-scroll-target="#lintr-package"><span class="header-section-number">6.8.3</span> lintr Package</a></li>
+  </ul></li>
   <li><a href="#sec-documenting-code" id="toc-sec-documenting-code" class="nav-link" data-scroll-target="#sec-documenting-code"><span class="header-section-number">6.9</span> Documenting your code</a>
   <ul class="collapse">
   <li><a href="#function-headers" id="toc-function-headers" class="nav-link" data-scroll-target="#function-headers"><span class="header-section-number">6.9.1</span> Function headers</a></li>
@@ -1008,7 +1013,46 @@ test_that("prep_study_data produces expected structure", {
 </section>
 <section id="sec-auto-styling" class="level2" data-number="6.8">
 <h2 data-number="6.8" class="anchored" data-anchor-id="sec-auto-styling"><span class="header-section-number">6.8</span> Automated Code Styling</h2>
-<p>See <a href="06-coding-style.html#sec-style-auto-style" class="quarto-xref"><span>Section 7.12</span></a>.</p>
+<section id="rstudio-built-in-formatting" class="level3" data-number="6.8.1">
+<h3 data-number="6.8.1" class="anchored" data-anchor-id="rstudio-built-in-formatting"><span class="header-section-number">6.8.1</span> RStudio Built-in Formatting</h3>
+<p>Use RStudio’s built-in autoformatter (keyboard shortcut: <code>CMD-Shift-A</code> or <code>Ctrl-Shift-A</code>) to quickly format highlighted code.</p>
+</section>
+<section id="styler-package" class="level3" data-number="6.8.2">
+<h3 data-number="6.8.2" class="anchored" data-anchor-id="styler-package"><span class="header-section-number">6.8.2</span> styler Package</h3>
+<p>For automated styling of entire projects:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install styler</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"styler"</span>)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Style all files in R/ directory</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>styler<span class="sc">::</span><span class="fu">style_dir</span>(<span class="st">"R/"</span>)</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Style entire package</span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>styler<span class="sc">::</span><span class="fu">style_pkg</span>()</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Note: styler modifies files in-place</span></span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Always use with version control so you can review changes</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="lintr-package" class="level3" data-number="6.8.3">
+<h3 data-number="6.8.3" class="anchored" data-anchor-id="lintr-package"><span class="header-section-number">6.8.3</span> lintr Package</h3>
+<p>For checking code style without modifying files:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install lintr</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"lintr"</span>)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Lint the entire package</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>lintr<span class="sc">::</span><span class="fu">lint_package</span>()</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Lint a specific file</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>lintr<span class="sc">::</span><span class="fu">lint</span>(<span class="st">"R/my_function.R"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The linter checks for:</p>
+<ul>
+<li>Unused variables</li>
+<li>Improper whitespace</li>
+<li>Line length issues</li>
+<li>Style guide violations</li>
+</ul>
+<p>You can customize linting rules by creating a <code>.lintr</code> file in your project root.</p>
+<p>See also <a href="06-coding-style.html#sec-style-auto-style" class="quarto-xref"><span>Section 7.12</span></a>.</p>
+</section>
 </section>
 <section id="sec-documenting-code" class="level2" data-number="6.9">
 <h2 data-number="6.9" class="anchored" data-anchor-id="sec-documenting-code"><span class="header-section-number">6.9</span> Documenting your code</h2>
@@ -1095,7 +1139,42 @@ Note
 </section>
 <section id="object-naming" class="level2" data-number="6.10">
 <h2 data-number="6.10" class="anchored" data-anchor-id="object-naming"><span class="header-section-number">6.10</span> Object naming</h2>
-<p>See <a href="06-coding-style.html#sec-object-naming" class="quarto-xref"><span>Section 7.11</span></a>.</p>
+<p>Generally we recommend using nouns for objects and verbs for functions. This is because functions are performing actions, while objects are not.</p>
+<p>Try to make your variable names both more expressive and more explicit. Being a bit more verbose is useful and easy in the age of autocompletion! For example, instead of naming a variable <code>vaxcov_1718</code>, try naming it <code>vaccination_coverage_2017_18</code>. Similarly, <code>flu_res</code> could be named <code>absentee_flu_residuals</code>, making your code more readable and explicit.</p>
+<ul>
+<li>For more help, check out <a href="https://spin.atomicobject.com/2017/11/01/good-variable-names/">Be Expressive: How to Give Your Variables Better Names</a></li>
+</ul>
+<p>We recommend you use <strong>snake_case</strong>.</p>
+<ul>
+<li>Base R allows <code>.</code> in variable names and functions (such as <code>read.csv()</code>), but this goes against best practices for variable naming in many other coding languages. For consistency’s sake, <code>snake_case</code> has been adopted across languages, and modern packages and functions typically use it (i.e.&nbsp;<code>readr::read_csv()</code>). As a very general rule of thumb, if a package you’re using doesn’t use <code>snake_case</code>, there may be an updated version or more modern package that <em>does</em>, bringing with it the variety of performance improvements and bug fixes inherent in more mature and modern software.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You may also see <code>camelCase</code> throughout the R code you come across. This is <em>okay</em> but not ideal – try to stay consistent across all your code with <code>snake_case</code>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Again, its also worth noting there’s nothing inherently wrong with using <code>.</code> in variable names, just that it goes against style best practices that are cropping up in data science, so its worth getting rid of these bad habits now.</p>
+</div>
+</div>
+<p>See also <a href="06-coding-style.html#sec-object-naming" class="quarto-xref"><span>Section 7.11</span></a>.</p>
 </section>
 <section id="function-calls" class="level2" data-number="6.11">
 <h2 data-number="6.11" class="anchored" data-anchor-id="function-calls"><span class="header-section-number">6.11</span> Function calls</h2>

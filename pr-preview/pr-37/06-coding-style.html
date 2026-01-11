@@ -689,13 +689,13 @@ Note
 </section>
 <section id="sec-here-package-style" class="level2" data-number="7.10">
 <h2 data-number="7.10" class="anchored" data-anchor-id="sec-here-package-style"><span class="header-section-number">7.10</span> The here Package</h2>
-<p>The <code>here</code> package helps manage file paths in projects by automatically finding the project root and building paths relative to it.</p>
-<p>This solves the problem of different working directory paths across collaborators. For example, one person might have the project at <code>/home/oski/Some-R-Project</code> while another has it at <code>/home/bear/R-Code/Some-R-Project</code>. The <code>here</code> package handles this automatically.</p>
+<p>The <code>here</code> package helps manage file paths in projects by automatically finding the project root and building paths relative to it:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Automatically finds project root and builds paths</span></span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"data-raw"</span>, <span class="st">"survey.csv"</span>))</span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(results, <span class="fu">here</span>(<span class="st">"inst"</span>, <span class="st">"analyses"</span>, <span class="st">"results.rds"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This solves the problem of different working directory paths across collaborators. For example, one person might have the project at <code>/home/oski/Some-R-Project</code> while another has it at <code>/home/bear/R-Code/Some-R-Project</code>. The <code>here</code> package handles this automatically.</p>
 <p>This works regardless of where collaborators clone the repository. For more details, see the <a href="https://github.com/jennybc/here_here">here package vignette</a>.</p>
 <p><em>See also <a href="05-coding-practices.html#sec-here-package-practices" class="quarto-xref"><span>Section 6.12</span></a> for detailed explanation of the here package.</em></p>
 </section>
