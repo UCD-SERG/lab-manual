@@ -70,3 +70,47 @@ body.quarto-dark .preview-content-changed-notice {
   border-left-color: #64b5f6;
   color: #90caf9;
 }
+
+/* Inline text highlighting for changed content */
+mark.preview-text-changed {
+  background-color: #ffeb3b;
+  border-bottom: 2px solid #ffc107;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+mark.preview-text-added {
+  background-color: #a5d6a7;
+  border-bottom: 2px solid #66bb6a;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+mark.preview-element-added {
+  background-color: #bbdefb;
+  border-left: 4px solid #42a5f5;
+  padding-left: 8px;
+  display: inline;
+  font-weight: 500;
+}
+
+/* Dark mode support for inline highlights */
+body.quarto-dark mark.preview-text-changed {
+  background-color: #fdd835;
+  border-bottom-color: #fbc02d;
+  color: #000;
+}
+
+body.quarto-dark mark.preview-text-added {
+  background-color: #66bb6a;
+  border-bottom-color: #43a047;
+  color: #000;
+}
+
+body.quarto-dark mark.preview-element-added {
+  background-color: #42a5f5;
+  border-left-color: #1e88e5;
+  color: #000;
+}
