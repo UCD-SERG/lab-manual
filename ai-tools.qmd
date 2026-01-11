@@ -1,5 +1,7 @@
 # Working with AI
 
+![[Agents](https://en.wikipedia.org/wiki/Agent_(The_Matrix))](assets/images/matrix-agents.png){fig-alt="Three agents in suits and sunglasses from the Matrix films"}
+
 [AI-powered coding assistants](https://en.wikipedia.org/wiki/AI-assisted_software_development) 
 can dramatically accelerate and improve your work,
 but they require careful and responsible use.
@@ -193,8 +195,6 @@ They can manipulate code,
 including their own configuration files.
 They can work on your behalf,
 but they require careful oversight and control to ensure they serve your interests and that you understand the consequences of their actions.
-
-![[Agents](https://en.wikipedia.org/wiki/Agent_(The_Matrix))](assets/images/matrix-agents.png){fig-alt="Three agents in suits and sunglasses from the Matrix films"}
 
 Coding agents offer several advantages:
 
