@@ -578,9 +578,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> income)) <span class="sc">+</span> <span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>File headers</strong> (for scripts in <code>data-raw/</code> or <code>inst/analyses/</code>):</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">################################################################################</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># @Organization - Example Organization</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># @Project - Example Project</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># @Description - This file is responsible for [...]</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Organization - Example Organization</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Project - Example Project</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Description - This file is responsible for [...]</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="do">################################################################################</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>File Structure</strong> - Just as your data “flows” through your project, data should flow naturally through a script. Very generally, you want to</p>
 <ol type="1">
@@ -709,7 +709,7 @@ Note
 <h2 data-number="7.7" class="anchored" data-anchor-id="package-code-practices"><span class="header-section-number">7.7</span> Package Code Practices</h2>
 <ul>
 <li><strong>No <code>library()</code> in package code</strong>: Use <code>::</code> notation or declare in DESCRIPTION Imports</li>
-<li><strong>Document all exports</strong>: Use roxygen2 (<span class="citation" data-cites="title">(<a href="references.html#ref-title" role="doc-biblioref"><strong>title?</strong></a>)</span>, <span class="citation" data-cites="description">(<a href="references.html#ref-description" role="doc-biblioref"><strong>description?</strong></a>)</span>, <span class="citation" data-cites="param">(<a href="references.html#ref-param" role="doc-biblioref"><strong>param?</strong></a>)</span>, <span class="citation" data-cites="returns">(<a href="references.html#ref-returns" role="doc-biblioref"><strong>returns?</strong></a>)</span>, <span class="citation" data-cites="examples">(<a href="references.html#ref-examples" role="doc-biblioref"><strong>examples?</strong></a>)</span>)</li>
+<li><strong>Document all exports</strong>: Use roxygen2 <mark class="preview-text-changed">(</mark><code><mark class="preview-text-changed">@title</mark></code><mark class="preview-text-changed">,</mark> <code><mark class="preview-text-changed">@description</mark></code><mark class="preview-text-changed">,</mark> <code><mark class="preview-text-changed">@param</mark></code><mark class="preview-text-changed">,</mark> <code><mark class="preview-text-changed">@returns</mark></code><mark class="preview-text-changed">,</mark> <code><mark class="preview-text-changed">@examples</mark></code><mark class="preview-text-changed">)</mark></li>
 <li><strong>Avoid code duplication</strong>: Extract repeated logic into helper functions</li>
 </ul>
 </section>
