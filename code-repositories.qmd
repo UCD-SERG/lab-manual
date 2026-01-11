@@ -9,12 +9,12 @@ This provides benefits for reproducibility, collaboration, and code quality even
 
 ## Package Structure
 
-{{< include 04-code-repositories/package-structure.qmd >}}
+{{< include code-repositories/package-structure.qmd >}}
 
 ## `.Rproj` files
 
-{{< include 04-code-repositories/rproj-files.qmd >}}
+{{< include code-repositories/rproj-files.qmd >}}
 
 ## Organizing the `data-raw` folder
 
-{{< include 04-code-repositories/project-structure.qmd >}}
+{{< include code-repositories/project-structure.qmd >}}
