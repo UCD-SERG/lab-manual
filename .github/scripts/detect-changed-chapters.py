@@ -144,6 +144,7 @@ def main():
         env_file = os.getenv('GITHUB_ENV')
         if env_file:
             with open(env_file, 'a') as f:
+                f.write("PREVIEW_CHANGED_CHAPTERS=\n")
                 f.write("PREVIEW_SHOW_HIGHLIGHTS=false\n")
         return
     
