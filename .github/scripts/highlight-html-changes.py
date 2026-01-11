@@ -299,34 +299,35 @@ class HTMLDiffer:
             # Find what changed
             diff_lines, similarity = self.find_changed_sections(old_html, new_html)
             
-            if diff_lines:
-                num_changes = len([l for l in diff_lines if l.startswith('+') or l.startswith('-')])
-                print(f"  Found content changes (similarity: {similarity:.2%})")
-                
-                # Apply inline highlighting to changed elements
-                highlighted_html, inline_changes = self.highlight_changed_elements(old_html, new_html)
-                
-                if inline_changes > 0:
-                    print(f"  Highlighted {inline_changes} changed element(s) inline")
-                    new_html = highlighted_html
-                
+            # Always try to apply inline highlighting, regardless of similarity
+            # This catches paragraph-level changes even when overall similarity is high
+            print(f"  Checking for inline changes (overall similarity: {similarity:.2%})...")
+            highlighted_html, inline_changes = self.highlight_changed_elements(old_html, new_html)
+            
+            if inline_changes > 0:
+                print(f"  ✓ Highlighted {inline_changes} changed element(s) inline")
+                new_html = highlighted_html
+            else:
+                print(f"  No inline changes detected")
+            
+            if diff_lines or has_placeholder:
                 # Add combined banner with DOCX link
+                num_changes = len([l for l in diff_lines if l.startswith('+') or l.startswith('-')]) if diff_lines else 0
+                print(f"  Adding combined banner (changes: {num_changes}, similarity: {similarity:.2%})")
                 new_html = self.inject_combined_banner(new_html, num_changes, similarity, local_filepath)
                 
                 # Write back
                 with open(local_filepath, 'w', encoding='utf-8') as f:
                     f.write(new_html)
                 
-                print(f"  Added combined banner and inline highlights to {local_filepath}")
-            elif has_placeholder:
-                # No significant changes but placeholder exists - replace it with a simple banner
-                print(f"  No significant content changes detected (similarity: {similarity:.2%})")
-                print(f"  Replacing placeholder with simple banner")
-                new_html = self.inject_combined_banner(new_html, 0, similarity, local_filepath)
+                print(f"  ✓ Updated {local_filepath}")
+            elif inline_changes > 0:
+                # We made inline changes even if no banner needed - still write back
                 with open(local_filepath, 'w', encoding='utf-8') as f:
                     f.write(new_html)
+                print(f"  ✓ Updated {local_filepath} with inline highlights")
             else:
-                print(f"  No significant content changes detected (similarity: {similarity:.2%})")
+                print(f"  No changes to write")
         elif has_placeholder:
             # Could not fetch base version but placeholder exists - replace with new file banner
             print(f"  Could not fetch base version (file may be new)")
@@ -335,6 +336,7 @@ class HTMLDiffer:
             new_html = self.inject_combined_banner(new_html, 1, 0.0, local_filepath)
             with open(local_filepath, 'w', encoding='utf-8') as f:
                 f.write(new_html)
+            print(f"  ✓ Updated {local_filepath}")
         else:
             print(f"  Could not fetch base version (file may be new)")
 
