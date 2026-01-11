@@ -230,6 +230,7 @@ class HTMLDiffer:
 <div class="preview-combined-banner">
     <p style="margin: 0;">
         <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~{change_pct}% of content changed).
+        Changed text is temporarily highlighted below in <mark class="preview-text-modified" style="display: inline; padding: 1px 3px;">yellow</mark>, <mark class="preview-text-added" style="display: inline; padding: 1px 3px;">green</mark>, or <mark class="preview-element-added" style="display: inline; padding: 1px 3px;">blue</mark>.
         <br>
         <strong>📄 DOCX with tracked changes:</strong> <a href="{docx_filename}" download>Download {docx_filename}</a>
     </p>
@@ -283,18 +284,25 @@ class HTMLDiffer:
     def process_file(self, local_filepath):
         """Process a single HTML file: fetch old version, compare, and highlight."""
         print(f"Processing {local_filepath}...")
+        print(f"  File path: {local_filepath}")
+        print(f"  File exists: {local_filepath.exists()}")
         
         # Read the new (PR) version
         with open(local_filepath, 'r', encoding='utf-8') as f:
             new_html = f.read()
         
+        print(f"  HTML length: {len(new_html)} chars")
+        
         # Check if there's a placeholder that needs replacing
         has_placeholder = 'PREVIEW_BANNER_PLACEHOLDER' in new_html
+        print(f"  Has placeholder: {has_placeholder}")
         
         # Fetch the published (main) version
         old_html = self.fetch_base_html(local_filepath)
         
         if old_html:
+            print(f"  Old HTML length: {len(old_html)} chars")
+            
             # Find what changed
             diff_lines, similarity = self.find_changed_sections(old_html, new_html)
             
@@ -305,6 +313,11 @@ class HTMLDiffer:
             
             if inline_changes > 0:
                 print(f"  ✓ Highlighted {inline_changes} changed element(s) inline")
+                # Verify the highlighting was actually applied
+                if '<mark class="preview-' in highlighted_html:
+                    print(f"  ✓ Confirmed <mark> tags present in highlighted HTML")
+                else:
+                    print(f"  ✗ WARNING: No <mark> tags found after highlighting!")
                 new_html = highlighted_html
             else:
                 print(f"  No inline changes detected")
@@ -317,9 +330,18 @@ class HTMLDiffer:
             
             # Always write back if we made ANY changes (inline or banner)
             if diff_lines or has_placeholder or inline_changes > 0:
+                print(f"  Writing changes back to file...")
                 with open(local_filepath, 'w', encoding='utf-8') as f:
                     f.write(new_html)
                 print(f"  ✓ Updated {local_filepath}")
+                
+                # Verify the file was written correctly
+                with open(local_filepath, 'r', encoding='utf-8') as f:
+                    verify_html = f.read()
+                if '<mark class="preview-' in verify_html:
+                    print(f"  ✓ Verified <mark> tags in written file")
+                else:
+                    print(f"  ✗ WARNING: No <mark> tags in written file!")
             else:
                 print(f"  No changes to write")
         elif has_placeholder:
