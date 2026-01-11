@@ -325,11 +325,8 @@ class HTMLDiffer:
         # Calculate change percentage
         change_pct = int((1 - similarity) * 100)
         
-        # The book creates a single DOCX file, not per-chapter
-        # Link to the main book DOCX with tracked changes
-        docx_filename = "UCD-SeRG-Lab-Manual-tracked-changes.docx"
-        
         # Create combined notice HTML - using CSS class defined in styles.css
+        # Note: DOCX link removed from chapter banners - it's only in the home page banner
         notice = f'''
 <div class="preview-combined-banner">
     <p style="margin: 0;">
@@ -339,8 +336,6 @@ class HTMLDiffer:
         <mark class="preview-text-changed" style="display: inline; padding: 1px 3px;">Modified text (yellow)</mark> shows changed words/phrases with tooltips of original text, 
         <mark class="preview-text-added" style="display: inline; padding: 1px 3px;">added text (green)</mark> shows new content, and 
         <mark class="preview-element-added" style="display: inline; padding: 1px 3px;">new sections (blue)</mark> highlight entirely new paragraphs.
-        <br>
-        <strong>📄 DOCX with tracked changes:</strong> <a href="{docx_filename}" download>Download {docx_filename}</a>
     </p>
 </div>
 '''

@@ -7,6 +7,8 @@ on:
       - reopened
       - synchronize
       - closed
+      - labeled
+      - unlabeled
 
 jobs:
   build-deploy:
@@ -28,10 +30,14 @@ jobs:
       - name: Render
         uses: quarto-dev/quarto-actions/render@v2
 
+      # Detect which chapters have changed and optionally disable highlighting
+      # based on the 'no-preview-highlights' PR label
       - name: Detect changed chapters (based on rendered files)
         run: python3 .github/scripts/detect-changed-chapters.py
         env:
           HTML_DIR: ./docs
+          # Set to 'true' if PR has 'no-preview-highlights' label
+          DISABLE_PREVIEW_HIGHLIGHTS: ${{ contains(github.event.pull_request.labels.*.name, 'no-preview-highlights') }}
 
       - name: Inject preview metadata
         if: env.PREVIEW_SHOW_HIGHLIGHTS == 'true'
@@ -70,4 +76,7 @@ jobs:
         uses: rossjrw/pr-preview-action@main
         with:
           source-dir: ./docs/
+          # Deploy on label changes too, not just open/reopen/synchronize
+          # The 'auto' action ignores label events, so we explicitly set 'deploy' for non-closed PRs
+          action: ${{ github.event.action == 'closed' && 'remove' || 'deploy' }}
         

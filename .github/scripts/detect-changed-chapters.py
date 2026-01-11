@@ -166,7 +166,13 @@ def main():
             f.write("PREVIEW_CHANGED_CHAPTERS<<EOF\n")
             f.write('\n'.join(changed_chapters) + '\n')
             f.write("EOF\n")
-            f.write("PREVIEW_SHOW_HIGHLIGHTS=true\n")
+            # Check if highlighting should be disabled via environment variable
+            # (This can be set based on PR labels in the workflow)
+            disable_highlights = os.getenv('DISABLE_PREVIEW_HIGHLIGHTS', 'false').lower() == 'true'
+            if disable_highlights:
+                f.write("PREVIEW_SHOW_HIGHLIGHTS=false\n")
+            else:
+                f.write("PREVIEW_SHOW_HIGHLIGHTS=true\n")
     
     # Also create a JSON file for easy access
     import json
