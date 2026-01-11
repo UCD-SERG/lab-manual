@@ -1,0 +1,55 @@
+p.caption {
+  color: #777;
+  margin-top: 10px;
+}
+p code {
+  white-space: inherit;
+}
+pre {
+  word-break: normal;
+  word-wrap: normal;
+}
+pre code {
+  white-space: inherit;
+}
+
+
+/* Whole document: */
+body{
+  font-family: Source Sans Pro;
+  font-size: 12pt;
+}
+/* Headers */
+h1{
+  font-size: 18pt;
+  font-weight: bold;
+}
+h2{
+  font-size: 15pt;
+  font-weight: bold;
+}
+h3{
+  font-size: 13pt;
+  font-weight: bold;
+}
+h4,h5,h6{
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+/* Preview changed banner */
+.preview-changed-banner {
+  background-color: #fff3cd;
+  border-left: 4px solid #ffc107;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Dark mode support for preview banner */
+body.quarto-dark .preview-changed-banner {
+  background-color: #3d3d00;
+  border-left-color: #ffeb3b;
+  color: #ffd700;
+}
