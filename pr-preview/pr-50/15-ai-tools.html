@@ -525,8 +525,20 @@ ul.task-list li input[type="checkbox"] {
 <li><p><strong>Review and Iteration</strong>: You review the PR and can request changes; the agent will iterate based on your feedback</p></li>
 </ol>
 </section>
-<section id="directly-prompting-for-pull-requests" class="level4" data-number="16.4.1.3">
-<h4 data-number="16.4.1.3" class="anchored" data-anchor-id="directly-prompting-for-pull-requests"><span class="header-section-number">16.4.1.3</span> Directly Prompting for Pull Requests</h4>
+<section id="example-this-document" class="level4" data-number="16.4.1.3">
+<h4 data-number="16.4.1.3" class="anchored" data-anchor-id="example-this-document"><span class="header-section-number">16.4.1.3</span> Example: This Document</h4>
+<p>This very section you’re reading was created through the coding agent workflow:</p>
+<ol type="1">
+<li><p><strong>Issue created</strong>: <a href="https://github.com/UCD-SERG/lab-manual/issues/42">Issue #42</a> requested adding discussion about benefits and hazards of coding agents, including a Matrix film connection and best practices</p></li>
+<li><p><strong>Agent assigned</strong>: The issue was assigned to <code>@copilot</code></p></li>
+<li><p><strong>Work completed</strong>: The agent analyzed the requirements, reviewed the repository structure, and implemented the changes across multiple files</p></li>
+<li><p><strong>Pull request</strong>: <a href="https://github.com/UCD-SERG/lab-manual/pull/50">PR #50</a> was created with comprehensive content about coding agents, including this “How to Work with Coding Agents” section, benefits and hazards discussion, best practices, and firewall configuration details</p></li>
+<li><p><strong>Iteration</strong>: The PR received feedback comments requesting additional links, improved wording, and this example section—all of which the agent addressed through follow-up commits</p></li>
+</ol>
+<p>This demonstrates the full lifecycle of working with a coding agent on a real documentation task.</p>
+</section>
+<section id="directly-prompting-for-pull-requests" class="level4" data-number="16.4.1.4">
+<h4 data-number="16.4.1.4" class="anchored" data-anchor-id="directly-prompting-for-pull-requests"><span class="header-section-number">16.4.1.4</span> Directly Prompting for Pull Requests</h4>
 <p>You can also prompt Copilot to create pull requests without first creating an issue:</p>
 <ul>
 <li>Use Copilot Chat in your editor to describe the changes you want</li>
@@ -534,8 +546,8 @@ ul.task-list li input[type="checkbox"] {
 <li>This is useful for quick fixes or well-defined tasks</li>
 </ul>
 </section>
-<section id="important-safeguards" class="level4" data-number="16.4.1.4">
-<h4 data-number="16.4.1.4" class="anchored" data-anchor-id="important-safeguards"><span class="header-section-number">16.4.1.4</span> Important Safeguards</h4>
+<section id="important-safeguards" class="level4" data-number="16.4.1.5">
+<h4 data-number="16.4.1.5" class="anchored" data-anchor-id="important-safeguards"><span class="header-section-number">16.4.1.5</span> Important Safeguards</h4>
 <ul>
 <li><strong>Human approval required</strong>: Coding agents cannot merge their own changes</li>
 <li><strong>Branch restrictions</strong>: Agents can only push to their own branches (e.g., <code>copilot/*</code>)</li>
