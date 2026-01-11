@@ -103,12 +103,17 @@ To work with coding agents safely and successfully:
 
 8. **Maintain coding practice**: Regularly write code yourself to maintain and develop your skills. Don't let the agent do everything.
 
-9. **Exercise extreme caution with workflow files**: Be especially careful when allowing coding agents to edit GitHub Actions workflows or CI/CD configurations. These files control automated processes that can:
-   - Access secrets and credentials
-   - Deploy code to production
-   - Execute arbitrary commands in your repository
-   
-   **Never** allow a coding agent to edit workflow files (especially `.github/workflows/*.yml` or `copilot-setup-step.yml`) without thorough manual review. Before approving any workflow run, always check if the workflow files themselves have been modified. Malicious or erroneous changes to workflows can compromise your entire repository and its secrets.
+::: {.callout-warning}
+## Critical: Exercise Extreme Caution with Workflow Files
+
+Be especially careful when allowing coding agents to edit GitHub Actions workflows or CI/CD configurations. These files control automated processes that can:
+
+- Access secrets and credentials
+- Deploy code to production
+- Execute arbitrary commands in your repository
+
+**Never** allow a coding agent to edit workflow files (especially `.github/workflows/*.yml` or `copilot-setup-step.yml`) without thorough manual review. Before approving any workflow run, always check if the workflow files themselves have been modified. Malicious or erroneous changes to workflows can compromise your entire repository and its secrets.
+:::
 
 When using coding agents, work interactively with the AI suggestions:
 review, modify, and test them rather than accepting them wholesale. 
