@@ -567,7 +567,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="firewall-and-network-configuration" class="level3" data-number="16.4.3">
 <h3 data-number="16.4.3" class="anchored" data-anchor-id="firewall-and-network-configuration"><span class="header-section-number">16.4.3</span> Firewall and Network Configuration</h3>
-<p>GitHub Copilot coding agents require specific network access to function properly. If you’re working behind a corporate firewall or on a restricted network, you may need to configure allowlists to enable coding agent functionality.</p>
+<p>GitHub Copilot coding agents require specific network access to function properly.</p>
 <section id="built-in-agent-firewall" class="level4" data-number="16.4.3.1">
 <h4 data-number="16.4.3.1" class="anchored" data-anchor-id="built-in-agent-firewall"><span class="header-section-number">16.4.3.1</span> Built-in Agent Firewall</h4>
 <p>Coding agents run in a GitHub Actions environment with a built-in firewall that limits internet access by default. This firewall helps protect against:</p>
@@ -585,23 +585,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>For the complete list of allowed hosts, see the <a href="https://docs.github.com/en/copilot/reference/copilot-allowlist-reference">Copilot allowlist reference</a>.</p>
 </section>
-<section id="corporate-firewall-requirements" class="level4" data-number="16.4.3.2">
-<h4 data-number="16.4.3.2" class="anchored" data-anchor-id="corporate-firewall-requirements"><span class="header-section-number">16.4.3.2</span> Corporate Firewall Requirements</h4>
-<p>If your organization uses a corporate firewall, network administrators should allow the following domains (over HTTPS, port 443):</p>
-<ul>
-<li><code>github.com</code></li>
-<li><code>api.github.com</code></li>
-<li><code>copilot-proxy.githubusercontent.com</code></li>
-<li><code>*.githubcopilot.com</code></li>
-<li><code>*.business.githubcopilot.com</code> (for Copilot Business)</li>
-<li><code>*.enterprise.githubcopilot.com</code> (for Copilot Enterprise)</li>
-<li><code>*.githubusercontent.com</code> (for accessing GitHub-hosted content)</li>
-<li><code>*.s3.amazonaws.com</code> (for GitHub user-uploaded content)</li>
-</ul>
-<p>Note that some Copilot features use WebSockets, so ensure <code>copilot-proxy.githubusercontent.com</code> allows WebSocket traffic.</p>
-</section>
-<section id="customizing-agent-firewall-settings" class="level4" data-number="16.4.3.3">
-<h4 data-number="16.4.3.3" class="anchored" data-anchor-id="customizing-agent-firewall-settings"><span class="header-section-number">16.4.3.3</span> Customizing Agent Firewall Settings</h4>
+<section id="customizing-agent-firewall-settings" class="level4" data-number="16.4.3.2">
+<h4 data-number="16.4.3.2" class="anchored" data-anchor-id="customizing-agent-firewall-settings"><span class="header-section-number">16.4.3.2</span> Customizing Agent Firewall Settings</h4>
 <p>In your repository’s “Coding agent” settings page, you can:</p>
 <ul>
 <li>Add custom hosts to the allowlist (for internal dependencies or additional registries)</li>
