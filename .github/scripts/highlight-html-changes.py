@@ -101,23 +101,30 @@ class HTMLDiffer:
         if not old_html:
             return new_html, 0
         
+        # Constants for similarity matching
+        SIMILARITY_THRESHOLD_MIN = 0.5  # Minimum similarity to consider elements related
+        SIMILARITY_THRESHOLD_MAX = 0.99  # Maximum similarity to still highlight differences
+        
         # Extract main content for both versions
         old_content = self.extract_main_content(old_html)
         new_content = self.extract_main_content(new_html)
         
-        # Find all paragraphs, headings, and list items
-        # We'll compare these element by element
-        element_pattern = r'(<(?:p|h[1-6]|li|blockquote)[^>]*>.*?</(?:p|h[1-6]|li|blockquote)>)'
+        # Define element types to compare
+        COMPARABLE_ELEMENTS = 'p|h[1-6]|li|blockquote'
+        element_pattern = f'(<(?:{COMPARABLE_ELEMENTS})[^>]*>.*?</(?:{COMPARABLE_ELEMENTS})>)'
         
         old_elements = re.findall(element_pattern, old_content, re.DOTALL)
         new_elements = re.findall(element_pattern, new_content, re.DOTALL)
         
-        # Create a mapping of element text to full element HTML
-        old_elem_map = {}
+        # Create a list of (text, element) tuples to handle duplicates
+        old_elem_list = []
         for elem in old_elements:
             text = self.extract_text_from_element(elem)
             if text:  # Only store non-empty elements
-                old_elem_map[text] = elem
+                old_elem_list.append((text, elem))
+        
+        # Track which old elements have been matched to avoid reuse
+        used_old_indices = set()
         
         # Process each new element and check if it changed
         highlighted_new_html = new_html
@@ -129,37 +136,44 @@ class HTMLDiffer:
                 continue
             
             # Try to find a matching old element
-            best_match = None
+            best_match_idx = None
             best_ratio = 0.0
             
-            for old_text, old_elem in old_elem_map.items():
+            for idx, (old_text, old_elem) in enumerate(old_elem_list):
+                if idx in used_old_indices:
+                    continue  # Already matched this element
+                    
                 ratio = difflib.SequenceMatcher(None, old_text, new_text).ratio()
                 if ratio > best_ratio:
                     best_ratio = ratio
-                    best_match = old_text
+                    best_match_idx = idx
             
             # If we found a similar element and it's not identical, highlight the differences
-            if best_match and best_ratio > 0.5 and best_ratio < 0.99:
+            if best_match_idx is not None and best_ratio > SIMILARITY_THRESHOLD_MIN and best_ratio < SIMILARITY_THRESHOLD_MAX:
+                used_old_indices.add(best_match_idx)
+                old_text, old_elem = old_elem_list[best_match_idx]
+                
                 # Extract the inner text from the new element
                 tag_match = re.match(r'(<[^>]+>)(.*)(</[^>]+>)', new_elem, re.DOTALL)
                 if tag_match:
                     open_tag, inner_content, close_tag = tag_match.groups()
                     
-                    # Get the old text for comparison
-                    old_inner = self.extract_text_from_element(old_elem_map[best_match])
+                    # Get the old and new text for comparison
                     new_inner = self.extract_text_from_element(new_elem)
                     
                     # Highlight the differences
-                    highlighted_inner = self.highlight_text_diff(old_inner, new_inner)
+                    highlighted_inner = self.highlight_text_diff(old_text, new_inner)
                     
                     # Reconstruct the element with highlighting
                     highlighted_elem = f'{open_tag}{highlighted_inner}{close_tag}'
                     
-                    # Replace in the HTML
-                    highlighted_new_html = highlighted_new_html.replace(new_elem, highlighted_elem, 1)
+                    # Replace in the HTML - use a unique marker to ensure we replace the right instance
+                    # We escape the element for regex safety
+                    escaped_elem = re.escape(new_elem)
+                    highlighted_new_html = re.sub(escaped_elem, highlighted_elem, highlighted_new_html, count=1)
                     changes_made += 1
             
-            elif best_match is None and new_text:
+            elif best_match_idx is None and new_text:
                 # This is a completely new element - highlight the whole thing
                 tag_match = re.match(r'(<[^>]+>)(.*)(</[^>]+>)', new_elem, re.DOTALL)
                 if tag_match:
@@ -168,7 +182,10 @@ class HTMLDiffer:
                     
                     # Mark the entire element as new
                     highlighted_elem = f'{open_tag}<mark class="preview-element-added">{new_inner}</mark>{close_tag}'
-                    highlighted_new_html = highlighted_new_html.replace(new_elem, highlighted_elem, 1)
+                    
+                    # Replace in the HTML using regex with escaping
+                    escaped_elem = re.escape(new_elem)
+                    highlighted_new_html = re.sub(escaped_elem, highlighted_elem, highlighted_new_html, count=1)
                     changes_made += 1
         
         return highlighted_new_html, changes_made
