@@ -46,7 +46,7 @@ for example, `{dplyr}`.
 
 *See also @sec-here-package-practices for detailed explanation of the here package.*
 
-## Object Naming
+## Object Naming {#sec-object-naming}
 
 {{< include 06-coding-style/object-naming.qmd >}}
 

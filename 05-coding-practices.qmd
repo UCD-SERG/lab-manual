@@ -52,6 +52,10 @@ See @sec-style-auto-style.
 
 *See also @sec-function-docs for function documentation style guidelines.*
 
+## Object naming
+
+See @sec-object-naming.
+
 ## Function calls
 
 {{< include 05-coding-practices/function-calls.qmd >}}
