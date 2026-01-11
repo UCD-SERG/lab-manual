@@ -384,3 +384,8 @@ This approach makes it easier for collaborators who are more comfortable with Wo
 - @wargames
 - @enders_game
 - @humans_are_dead
+
+## References {.unnumbered}
+
+::: {#refs}
+:::
