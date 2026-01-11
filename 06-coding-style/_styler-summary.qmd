@@ -14,7 +14,7 @@
    I wouldn't recommend going this route.
 :::
 
-::: callout-tip
+::: {.callout-tip}
 
 #### styler Package
 
