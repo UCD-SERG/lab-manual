@@ -67,7 +67,7 @@ rather than simply asking it to summarize information on a topic.
 
 We recommend using **[Coding Agents](https://github.com/features/copilot/agents)** 
 ([AI agents](https://en.wikipedia.org/wiki/AI_agent) specialized for coding)
-for AI-assisted coding.
+for [AI-assisted coding](https://en.wikipedia.org/wiki/AI-assisted_software_development).
 
 ### How to Work with Coding Agents
 
