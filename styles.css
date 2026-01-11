@@ -199,3 +199,9 @@ body.quarto-dark .preview-home-changes-banner a {
 body.quarto-dark .preview-home-changes-banner a:hover {
   color: #bbdefb;
 }
+
+/* Inline code styling for dark mode */
+body.quarto-dark code:not(pre > code) {
+  background-color: #404040;
+  color: #e6e6e6;
+}
