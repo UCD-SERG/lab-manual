@@ -100,11 +100,11 @@
     ]
   },
   {
-    "objectID": "communication.html#trello",
-    "href": "communication.html#trello",
+    "objectID": "communication.html#task-management",
+    "href": "communication.html#task-management",
     "title": "3  Communication and coordination",
-    "section": "3.3 Trello",
-    "text": "3.3 Trello\n\nLab leadership will add new cards within our shared Trello board that outline your tasks.\nThe higher a card is within your list, the higher priority it is.\nGenerally, strive to complete the tasks in your card by the date listed.\nUse checklists to break down a task into smaller chunks. Sometimes leadership will write this for you, but you can also add this yourself.\nLab leadership will move your card to the “Completed” list when it is done.",
+    "section": "3.3 Task Management",
+    "text": "3.3 Task Management\nWe use a combination of tools to track and manage project tasks:\n\nGitHub Issues and Projects: For code-related tasks, feature requests, and bug tracking. Lab leadership will assign issues and organize them in GitHub Projects. Issues are prioritized within projects, and you can track your assigned tasks there.\nMicrosoft To-Do and other M365 task tracking tools: For general lab tasks and personal task management. Lab leadership may assign tasks through these tools, which integrate with Microsoft Teams.\nGenerally, strive to complete assigned tasks by the date listed.\nUse checklists to break down tasks into smaller chunks. Sometimes leadership will create these for you, but you can also add them yourself.\nUpdate task status as you make progress so the team can stay coordinated.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Communication and coordination</span>"
     ]
@@ -114,7 +114,7 @@
     "href": "communication.html#google-drive",
     "title": "3  Communication and coordination",
     "section": "3.4 Google Drive",
-    "text": "3.4 Google Drive\n\nWe mostly use Google Drive to create shared documents with longer descriptions of tasks. These documents are linked to in Trello. Lab leadership often shares these with the whole team since tasks are overlapping, and even if a task is assigned to one person, others may have valuable insights.",
+    "text": "3.4 Google Drive\n\nWe mostly use Google Drive to create shared documents with longer descriptions of tasks. These documents may be linked to in GitHub Issues or other task tracking tools. Lab leadership often shares these with the whole team since tasks are overlapping, and even if a task is assigned to one person, others may have valuable insights.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Communication and coordination</span>"
     ]
