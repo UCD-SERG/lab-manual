@@ -36,13 +36,13 @@ for example, `{dplyr}`.
 
 {{< include 06-coding-style/messaging-and-user-communication.qmd >}}
 
-## Tidyverse Replacements
-
-See @sec-tidyverse.
-
 ## Package Code Practices
 
 {{< include 06-coding-style/package-code-practices.qmd >}}
+
+## Tidyverse Replacements
+
+See @sec-tidyverse.
 
 ## The here Package {#sec-here-package-style}
 
