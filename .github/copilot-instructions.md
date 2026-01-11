@@ -80,6 +80,73 @@ When talking about code in prose sections, use backticks to apply code formattin
 - Prevents rendering issues in Quarto books
 - Follows markdown best practices
 
+### Cross-References for Figures and Tables
+
+**ALWAYS use Quarto's cross-reference system for figures, tables, and other captioned content.**
+See [Quarto Cross-References documentation](https://quarto.org/docs/authoring/cross-references.html) for complete details.
+
+**Required label prefixes:**
+
+- Figures: `#fig-` (e.g., `#fig-data-masking`, `#fig-workflow-diagram`)
+- Tables: `#tbl-` (e.g., `#tbl-git-commands`, `#tbl-summary-stats`)
+- Equations: `#eq-` (e.g., `#eq-regression-model`)
+- Sections: `#sec-` (e.g., `#sec-introduction`) - already in use throughout manual
+- Theorems: `#thm-` (e.g., `#thm-central-limit`)
+- Lemmas: `#lem-` (e.g., `#lem-auxiliary-result`)
+- Corollaries: `#cor-` (e.g., `#cor-special-case`)
+- Propositions: `#prp-` (e.g., `#prp-main-result`)
+- Examples: `#exm-` (e.g., `#exm-simple-case`)
+- Exercises: `#exr-` (e.g., `#exr-practice-problem`)
+
+**For figures (images):**
+
+```markdown
+![Caption text](path/to/image.png){#fig-label}
+```
+
+**For tables (markdown tables):**
+
+```markdown
+| Column 1 | Column 2 |
+|----------|----------|
+| Data     | Data     |
+
+: Caption text {#tbl-label}
+```
+
+**For code-generated figures:**
+
+```{{r}}
+#| label: fig-plot-name
+#| fig-cap: "Caption text"
+
+# R code to generate plot
+```
+
+**For code-generated tables:**
+
+```{{r}}
+#| label: tbl-table-name
+#| tbl-cap: "Caption text"
+
+# R code to generate table
+```
+
+**Referencing in text:**
+
+- Figures: `@fig-label` produces "Figure X"
+- Tables: `@tbl-label` produces "Table X"
+- Equations: `@eq-label` produces "Equation X"
+- Sections: `@sec-label` produces "Section X"
+
+**Benefits:**
+
+- Automatic numbering of figures, tables, and equations
+- Automatic updates when content is reordered
+- Clickable cross-references in HTML and PDF output
+- Consistent formatting across all output formats
+- Better accessibility for screen readers
+
 ## R Code Style
 
 - Follow the tidyverse style guide: https://style.tidyverse.org

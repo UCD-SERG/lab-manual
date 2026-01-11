@@ -196,7 +196,7 @@ They can work on your behalf,
 but they require careful oversight and control
 to ensure they serve your interests.
 
-![Agents from the Matrix films: powerful programs that require careful oversight](assets/images/matrix-agents.png){fig-alt="Three agents in suits and sunglasses from the Matrix films"}
+![Agents from the Matrix films: powerful programs that require careful oversight](assets/images/matrix-agents.png){#fig-matrix-agents fig-alt="Three agents in suits and sunglasses from the Matrix films"}
 
 Coding agents offer several advantages:
 
