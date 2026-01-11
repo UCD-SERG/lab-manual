@@ -37,11 +37,21 @@ jobs:
       - name: Render
         uses: quarto-dev/quarto-actions/render@v2
 
+      - name: Install python-docx for DOCX comparison
+        run: pip install python-docx
+
       - name: Highlight HTML content changes
         if: env.PREVIEW_SHOW_HIGHLIGHTS == 'true'
         run: python3 .github/scripts/highlight-html-changes.py
         env:
           HTML_DIR: ./docs
+          PREVIEW_CHANGED_FILES: ${{ env.PREVIEW_CHANGED_FILES }}
+
+      - name: Create DOCX with tracked changes
+        if: env.PREVIEW_SHOW_HIGHLIGHTS == 'true'
+        run: python3 .github/scripts/create-docx-tracked-changes.py
+        env:
+          DOCX_DIR: ./docs
           PREVIEW_CHANGED_FILES: ${{ env.PREVIEW_CHANGED_FILES }}
 
       - name: Deploy PR Preview
