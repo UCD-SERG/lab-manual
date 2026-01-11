@@ -1,7 +1,7 @@
 
 ### Function documentation
 
-{{< include function-documentation.qmd >}}
+{{< include 05-coding-practices/function-documentation.qmd >}}
 
 ### Script headers
 
