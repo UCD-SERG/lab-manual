@@ -189,20 +189,19 @@ see [GitHub Copilot coding agent documentation](https://docs.github.com/en/copil
 ### Benefits and Hazards
 
 Science fiction has long explored the promises and perils of artificial intelligence.
-Like the [Agents in the Matrix films](https://en.wikipedia.org/wiki/Agent_(The_Matrix)),
-[Skynet in Terminator](https://en.wikipedia.org/wiki/Skynet_(Terminator)),
-[HAL 9000 in 2001: A Space Odyssey](https://en.wikipedia.org/wiki/HAL_9000),
-the [Replicants in Blade Runner](https://en.wikipedia.org/wiki/Blade_Runner),
-and the warnings about thinking machines in [Dune's Butlerian Jihad](https://en.wikipedia.org/wiki/Butlerian_Jihad),
+Like the Agents in the Matrix films [@matrix_agents],
+Skynet in Terminator [@skynet],
+HAL 9000 in 2001: A Space Odyssey [@hal9000],
+the Replicants in Blade Runner [@blade_runner],
+Ender commanding his simulation in Ender's Game [@enders_game],
+and the warnings about thinking machines in Dune's Butlerian Jihad [@butlerian_jihad],
 coding agents are powerful programs that can work autonomously.
 Coding agents can manipulate code,
 including their own configuration files.
 They can work on your behalf,
-but they require careful oversight and control to ensure they serve your interests.
-Like [Ender commanding his simulation in Ender's Game](https://en.wikipedia.org/wiki/Ender%27s_Game),
-you must understand the consequences of their actions.
+but they require careful oversight and control to ensure they serve your interests and that you understand the consequences of their actions.
 
-![Agents from the Matrix films: powerful programs that require careful oversight](assets/images/matrix-agents.png){fig-alt="Three agents in suits and sunglasses from the Matrix films"}
+![[Agents](https://en.wikipedia.org/wiki/Agent_(The_Matrix))](assets/images/matrix-agents.png){fig-alt="Three agents in suits and sunglasses from the Matrix films"}
 
 Coding agents offer several advantages:
 
