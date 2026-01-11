@@ -10,8 +10,6 @@ Follow these code style guidelines for all R code:
 
 ## Function Structure and Documentation {#sec-function-docs}
 
-*See also @sec-documenting-code for general code documentation practices.*
-
 {{< include 06-coding-style/function-structure-and-documentation.qmd >}}
 
 ## Comments
@@ -47,8 +45,6 @@ See @sec-tidyverse.
 ## The here Package {#sec-here-package-style}
 
 {{< include 06-coding-style/the-here-package.qmd >}}
-
-*See also @sec-here-package-practices for detailed explanation of the here package.*
 
 ## Object Naming {#sec-object-naming}
 

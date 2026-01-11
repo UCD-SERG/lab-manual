@@ -20,3 +20,6 @@ my_function <- function(param1, param2) {
   # Implementation
 }
 ```
+
+*See also @sec-documenting-code for general code documentation practices.*
+

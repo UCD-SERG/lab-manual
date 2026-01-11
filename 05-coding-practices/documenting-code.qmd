@@ -42,3 +42,4 @@ Commenting your code is an important part of reproducibility and helps document 
 # This is a comment -- first letter is capitalized and spaced away from the pound sign
 ```
 
+*See also @sec-function-docs for function documentation style guidelines.*

@@ -11,3 +11,5 @@ saveRDS(results, here("inst", "analyses", "results.rds"))
 ```
 
 This works regardless of where collaborators clone the repository. For more details, see the [here package vignette](https://github.com/jennybc/here_here).
+
+*See also @sec-here-package-practices for detailed explanation of the here package.*
