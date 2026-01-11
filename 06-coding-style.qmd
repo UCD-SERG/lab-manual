@@ -22,7 +22,7 @@ Follow these code style guidelines for all R code:
 
 ## Markdown and Quarto Formatting
 
-## Writing about code in Quarto documents
+### Writing about code in Quarto documents
 
 When writing about code in prose sections of quarto documents, 
 use backticks to apply a code style:
