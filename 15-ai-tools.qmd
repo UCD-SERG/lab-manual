@@ -175,8 +175,6 @@ The quality and correctness of your work remains your responsibility.
 ### Firewall and Network Configuration
 
 GitHub Copilot coding agents require specific network access to function properly.
-If you're working behind a corporate firewall or on a restricted network,
-you may need to configure allowlists to enable coding agent functionality.
 
 #### Built-in Agent Firewall
 
@@ -197,23 +195,6 @@ By default, the agent's firewall allows access to:
 
 For the complete list of allowed hosts,
 see the [Copilot allowlist reference](https://docs.github.com/en/copilot/reference/copilot-allowlist-reference).
-
-#### Corporate Firewall Requirements
-
-If your organization uses a corporate firewall,
-network administrators should allow the following domains (over HTTPS, port 443):
-
-- `github.com`
-- `api.github.com`
-- `copilot-proxy.githubusercontent.com`
-- `*.githubcopilot.com`
-- `*.business.githubcopilot.com` (for Copilot Business)
-- `*.enterprise.githubcopilot.com` (for Copilot Enterprise)
-- `*.githubusercontent.com` (for accessing GitHub-hosted content)
-- `*.s3.amazonaws.com` (for GitHub user-uploaded content)
-
-Note that some Copilot features use WebSockets,
-so ensure `copilot-proxy.githubusercontent.com` allows WebSocket traffic.
 
 #### Customizing Agent Firewall Settings
 
