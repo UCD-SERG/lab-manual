@@ -114,3 +114,18 @@ body.quarto-dark mark.preview-element-added {
   border-left-color: #1e88e5;
   color: #000;
 }
+
+/* Table of contents highlighting for changed chapters */
+a.preview-toc-changed {
+  background-color: #fff3cd;
+  border-left: 3px solid #ffc107;
+  padding-left: 4px;
+  font-weight: 600;
+}
+
+/* Dark mode support for TOC highlighting */
+body.quarto-dark a.preview-toc-changed {
+  background-color: #3d3d00;
+  border-left-color: #ffeb3b;
+  color: #ffd700;
+}

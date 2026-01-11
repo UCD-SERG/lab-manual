@@ -248,6 +248,35 @@ class HTMLDiffer:
         
         return html
     
+    def highlight_toc_entries(self, html, changed_files):
+        """Highlight table of contents entries for changed files."""
+        if not changed_files:
+            return html
+        
+        # Convert .qmd files to their corresponding HTML fragment IDs
+        # For example, "01-culture-and-conduct.qmd" maps to link containing "01-culture-and-conduct.html"
+        changed_html_files = set()
+        for qmd_file in changed_files:
+            html_file = qmd_file.replace('.qmd', '.html')
+            changed_html_files.add(html_file)
+        
+        # Find all TOC links and add highlighting class to those that point to changed files
+        # TOC links are typically in the sidebar navigation
+        for html_file in changed_html_files:
+            # Pattern to match TOC links - look for links in the sidebar navigation
+            # that point to the changed file
+            pattern = rf'(<a[^>]*href="[^"]*{re.escape(html_file)}[^"]*"[^>]*class="[^"]*")([^"]*"[^>]*>)'
+            
+            def add_toc_highlight_class(match):
+                prefix = match.group(1)
+                suffix = match.group(2)
+                # Add our highlighting class
+                return f'{prefix} preview-toc-changed{suffix}'
+            
+            html = re.sub(pattern, add_toc_highlight_class, html)
+        
+        return html
+    
     def process_file(self, local_filepath):
         """Process a single HTML file: fetch old version, compare, and highlight."""
         print(f"Processing {local_filepath}...")
@@ -360,9 +389,11 @@ def main():
     
     # Convert .qmd files to .html files
     html_files = []
+    changed_qmd_files = []
     for qmd_file in changed_files.split('\n'):
         qmd_file = qmd_file.strip()
         if qmd_file:
+            changed_qmd_files.append(qmd_file)
             # Convert .qmd to .html
             html_file = qmd_file.replace('.qmd', '.html')
             html_path = Path(html_dir) / html_file
@@ -378,6 +409,26 @@ def main():
     
     for html_file in html_files:
         differ.process_file(html_file)
+    
+    # Highlight TOC entries in all HTML files (not just changed ones)
+    print("\nHighlighting table of contents entries for changed chapters...")
+    all_html_files = list(Path(html_dir).glob("*.html"))
+    
+    for html_path in all_html_files:
+        try:
+            with open(html_path, 'r', encoding='utf-8') as f:
+                html = f.read()
+            
+            # Add TOC highlighting
+            highlighted_html = differ.highlight_toc_entries(html, changed_qmd_files)
+            
+            # Only write back if something changed
+            if highlighted_html != html:
+                with open(html_path, 'w', encoding='utf-8') as f:
+                    f.write(highlighted_html)
+                print(f"  Added TOC highlighting to {html_path.name}")
+        except Exception as e:
+            print(f"  Error processing {html_path}: {e}", file=sys.stderr)
 
 if __name__ == '__main__':
     main()
