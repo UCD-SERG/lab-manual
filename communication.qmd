@@ -45,4 +45,4 @@ One benefit of the academic environment is its schedule flexibility and autonomy
 
 When submitting code to or reviewing code from colleagues, use best practices to provide and receive constructive feedback:
 
-- @tidyverse2023codereview: Best practices for reviewing R code, including what to look for and how to provide constructive feedback. 
+- Tidyverse code review principles [@tidyverse2023codereview]: Best practices for reviewing R code, including what to look for and how to provide constructive feedback. 

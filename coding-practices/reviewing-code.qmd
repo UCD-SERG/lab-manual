@@ -1,6 +1,6 @@
 Before publishing new changes, it is important to ensure that the code has been tested and well-documented. GitHub makes it possible to document all of these changes in a pull request. Pull requests can be used to describe changes in a branch that are ready to be merged with the base branch (more information in the [GitHub](#Github) section).
 
-This section provides guidance on both constructing effective pull requests and reviewing code submitted by others. Much of the content in this section is adapted from @tidyverse2023codereview, which provides excellent principles for code review in R package development.
+This section provides guidance on both constructing effective pull requests and reviewing code submitted by others. Much of the content in this section is adapted from the Tidyverse code review principles [@tidyverse2023codereview], which provides excellent principles for code review in R package development.
 
 ## Constructing Pull Requests
 

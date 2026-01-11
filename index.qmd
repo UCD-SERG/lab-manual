@@ -6,7 +6,7 @@ Welcome to the Seroepidemiology Research Group (SeRG) at the University of Calif
 ## About this lab manual
 This lab manual covers our communication strategy, code of conduct, and best practices for reproducibility of computational workflows. It is a living document that is updated regularly. 
 
-This manual is a fork of @benjaminchunglab, adapted for UCD-SeRG. We are grateful to Dr. Jade Benjamin-Chung and her team for developing and openly sharing their excellent lab manual. You can view the original manual at [jadebc.github.io/lab-manual](https://jadebc.github.io/lab-manual/index.html). Original contributors include Jade Benjamin-Chung, Kunal Mishra, Stephanie Djajadi, Nolan Pokpongkiat, Anna Nguyen, Iris Tong, and Gabby Barratt Heitmann.
+This manual is a fork of the Benjamin-Chung Lab Manual [@benjaminchunglab], adapted for UCD-SeRG. We are grateful to Dr. Jade Benjamin-Chung and her team for developing and openly sharing their excellent lab manual. You can view the original manual at [jadebc.github.io/lab-manual](https://jadebc.github.io/lab-manual/index.html). Original contributors include Jade Benjamin-Chung, Kunal Mishra, Stephanie Djajadi, Nolan Pokpongkiat, Anna Nguyen, Iris Tong, and Gabby Barratt Heitmann.
 
 Feel free to draw from this manual (and please cite it if you do!).  
 
@@ -14,4 +14,4 @@ Feel free to draw from this manual (and please cite it if you do!).
 <!-- https://ib.berkeley.edu/labs/stillman/images/Stillman%20Lab%20Anti.pdf -->
 <br>
 <br>
-This work is licensed under @creativecommons.
+This work is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License [@creativecommons].
