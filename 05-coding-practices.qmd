@@ -75,7 +75,7 @@ See @sec-object-naming.
 
 {{< include 05-coding-practices/integrating-box-dropbox.qmd >}}
 
-## Tidyverse
+## Tidyverse {#sec-tidyverse}
 
 {{< include 05-coding-practices/tidyverse.qmd >}}
 
