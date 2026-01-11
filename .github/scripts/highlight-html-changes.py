@@ -62,6 +62,109 @@ class HTMLDiffer:
         html = re.sub(r'<!--.*?-->', '', html, flags=re.DOTALL)
         return html.strip()
     
+    def highlight_html_diff(self, old_html, new_html):
+        """Highlight differences between old and new HTML content, preserving HTML tags."""
+        # Extract text for comparison, but keep track of HTML structure
+        old_text = self.extract_text_from_element(f'<div>{old_html}</div>')
+        new_text = self.extract_text_from_element(f'<div>{new_html}</div>')
+        
+        # If the HTML is very different or one is empty, fall back to simple comparison
+        if not old_text or not new_text:
+            return new_html
+        
+        # Split into words for both text versions
+        old_words = re.findall(r'\S+|\s+', old_text)
+        new_words = re.findall(r'\S+|\s+', new_text)
+        
+        # Use SequenceMatcher to find differences at word level
+        matcher = difflib.SequenceMatcher(None, old_words, new_words)
+        
+        # Build a set of word positions that changed
+        changed_ranges = []
+        for tag, i1, i2, j1, j2 in matcher.get_opcodes():
+            if tag in ('replace', 'insert'):
+                # Track the character positions of changed words in new_text
+                start_pos = len(''.join(new_words[:j1]))
+                end_pos = len(''.join(new_words[:j2]))
+                changed_ranges.append((start_pos, end_pos, tag))
+        
+        # If no changes detected, return original
+        if not changed_ranges:
+            return new_html
+        
+        # Now apply highlighting to the HTML, preserving tags
+        # We'll use a simple approach: wrap changed text segments with <mark> tags
+        # This is tricky with HTML, so we'll use a token-based approach
+        
+        # Parse HTML into tokens (tags and text)
+        html_tokens = re.findall(r'(<[^>]+>|[^<]+)', new_html)
+        
+        result = []
+        text_pos = 0  # Track position in the plain text
+        
+        for token in html_tokens:
+            if token.startswith('<'):
+                # It's a tag, keep it as-is
+                result.append(token)
+            else:
+                # It's text content - check if any part needs highlighting
+                token_len = len(token)
+                token_end = text_pos + token_len
+                
+                # Check which parts of this token overlap with changed ranges
+                highlighted = self.apply_highlights_to_text(token, text_pos, changed_ranges)
+                result.append(highlighted)
+                
+                text_pos = token_end
+        
+        return ''.join(result)
+    
+    def apply_highlights_to_text(self, text, text_start_pos, changed_ranges):
+        """Apply highlight marks to a text segment based on changed ranges."""
+        if not text.strip():
+            return text  # Don't highlight whitespace-only
+        
+        # Find which changed ranges overlap with this text segment
+        text_end_pos = text_start_pos + len(text)
+        overlapping = []
+        
+        for start, end, change_type in changed_ranges:
+            if start < text_end_pos and end > text_start_pos:
+                # Calculate overlap within this text segment
+                overlap_start = max(0, start - text_start_pos)
+                overlap_end = min(len(text), end - text_start_pos)
+                overlapping.append((overlap_start, overlap_end, change_type))
+        
+        if not overlapping:
+            return text
+        
+        # Sort by start position
+        overlapping.sort()
+        
+        # Build result with highlights
+        result = []
+        last_end = 0
+        
+        for overlap_start, overlap_end, change_type in overlapping:
+            # Add unchanged text before this highlight
+            if overlap_start > last_end:
+                result.append(text[last_end:overlap_start])
+            
+            # Add highlighted text
+            highlighted_text = text[overlap_start:overlap_end]
+            if change_type == 'replace':
+                result.append(f'<mark class="preview-text-modified">{highlighted_text}</mark>')
+            elif change_type == 'insert':
+                result.append(f'<mark class="preview-text-added">{highlighted_text}</mark>')
+            
+            last_end = overlap_end
+        
+        # Add any remaining text
+        if last_end < len(text):
+            result.append(text[last_end:])
+        
+        return ''.join(result)
+    
     def highlight_text_diff(self, old_text, new_text):
         """Highlight differences between old and new text at word/phrase level."""
         # Split into words while preserving spaces
@@ -158,11 +261,12 @@ class HTMLDiffer:
                 if tag_match:
                     open_tag, inner_content, close_tag = tag_match.groups()
                     
-                    # Get the old and new text for comparison
-                    new_inner = self.extract_text_from_element(new_elem)
+                    # Get the old element's inner content
+                    old_tag_match = re.match(r'(<[^>]+>)(.*)(</[^>]+>)', old_elem, re.DOTALL)
+                    old_inner_content = old_tag_match.group(2) if old_tag_match else ""
                     
-                    # Highlight the differences
-                    highlighted_inner = self.highlight_text_diff(old_text, new_inner)
+                    # Highlight the differences using inner HTML (preserves formatting)
+                    highlighted_inner = self.highlight_html_diff(old_inner_content, inner_content)
                     
                     # Reconstruct the element with highlighting
                     highlighted_elem = f'{open_tag}{highlighted_inner}{close_tag}'
