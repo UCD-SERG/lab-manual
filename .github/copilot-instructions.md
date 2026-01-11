@@ -57,4 +57,4 @@ This applies to:
 - Maintain consistency with existing code style
 - Preserve all existing content when refactoring
 - Add blank lines before all lists
-- Follow the lab's R package development workflow
+- Follow the lab's R package development workflow (as described throughout this repo)
