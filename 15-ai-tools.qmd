@@ -1,6 +1,7 @@
-# Use of AI
+# Working with AI
 
-[AI-powered coding assistants](https://en.wikipedia.org/wiki/AI-assisted_software_development) can be valuable tools for accelerating your work,
+[AI-powered coding assistants](https://en.wikipedia.org/wiki/AI-assisted_software_development) 
+can dramatically accelerate and improve your work,
 but they require careful and responsible use.
 Lab members who use AI tools must adhere to the following guidelines:
 
