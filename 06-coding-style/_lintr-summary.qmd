@@ -5,16 +5,16 @@ For example, it notifies you if you have unused variables, global variables with
 A list of its other purposes can be found [in this link](https://cran.r-project.org/web/packages/lintr/readme/README.html#available-linters), 
 and most guidelines are based on [Hadley Wickham’s R Style Guide](http://r-pkgs.had.co.nz/style.html).
 
-   ::: {.callout-note}
-   You can customize your settings to set defaults or to exclude files. More details can be found [here](https://cran.r-project.org/web/packages/lintr/readme/README.html#project-configuration).
-   :::
+::: {.callout-note}
+You can customize your settings to set defaults or to exclude files. More details can be found [here](https://cran.r-project.org/web/packages/lintr/readme/README.html#project-configuration).
+:::
 
-   ::: {.callout-note}
-   The `lintr` package goes hand in hand with the `styler` package. The styler can be used to automatically fix the problems that the lintr catches.
-   :::
+::: {.callout-note}
+The `lintr` package goes hand in hand with the `styler` package. The styler can be used to automatically fix the problems that the lintr catches.
+:::
 
 
-::: callout-tip
+::: {.callout-tip}
 
 ### `lintr` package
 
