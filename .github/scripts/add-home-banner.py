@@ -11,35 +11,42 @@ from pathlib import Path
 
 def add_home_page_banner(index_html_path, changed_chapters):
     """Add a banner to the home page with links to changed chapters."""
-    if not changed_chapters:
-        return
-    
     with open(index_html_path, 'r', encoding='utf-8') as f:
         html = f.read()
     
-    # Create the banner HTML
-    chapter_links = []
-    for chapter_id in changed_chapters:
-        # Convert chapter ID to readable title
-        # E.g., "01-culture-and-conduct" -> "Culture and conduct"
-        # First try to extract the title from the actual HTML file
-        chapter_html = index_html_path.parent / f"{chapter_id}.html"
-        title = chapter_id
-        if chapter_html.exists():
-            with open(chapter_html, 'r', encoding='utf-8') as cf:
-                content = cf.read()
-                # Look for the h1 heading
-                h1_match = re.search(r'<h1[^>]*>.*?<span class="chapter-number">(\d+)</span>\s*(.*?)</h1>', content, re.DOTALL)
-                if h1_match:
-                    title = h1_match.group(2).strip()
-                    chapter_num = h1_match.group(1)
-                    title = f"{chapter_num}. {title}"
+    if not changed_chapters:
+        # No changes detected - show a different message
+        banner = '''
+<div class="preview-home-changes-banner">
+    <p style="margin: 0;">
+        <strong>📋 Changes in this PR:</strong> No changes were detected in the rendered book.
+    </p>
+</div>
+'''
+    else:
+        # Create the banner HTML with links to changed chapters
+        chapter_links = []
+        for chapter_id in changed_chapters:
+            # Convert chapter ID to readable title
+            # E.g., "01-culture-and-conduct" -> "Culture and conduct"
+            # First try to extract the title from the actual HTML file
+            chapter_html = index_html_path.parent / f"{chapter_id}.html"
+            title = chapter_id
+            if chapter_html.exists():
+                with open(chapter_html, 'r', encoding='utf-8') as cf:
+                    content = cf.read()
+                    # Look for the h1 heading
+                    h1_match = re.search(r'<h1[^>]*>.*?<span class="chapter-number">(\d+)</span>\s*(.*?)</h1>', content, re.DOTALL)
+                    if h1_match:
+                        title = h1_match.group(2).strip()
+                        chapter_num = h1_match.group(1)
+                        title = f"{chapter_num}. {title}"
+            
+            chapter_links.append(f'<a href="{chapter_id}.html">{title}</a>')
         
-        chapter_links.append(f'<a href="{chapter_id}.html">{title}</a>')
-    
-    links_html = ', '.join(chapter_links)
-    
-    banner = f'''
+        links_html = ', '.join(chapter_links)
+        
+        banner = f'''
 <div class="preview-home-changes-banner">
     <p style="margin: 0;">
         <strong>📋 Changes in this PR:</strong> The following chapters have been modified: {links_html}
@@ -80,10 +87,8 @@ def main():
         data = json.load(f)
         changed_chapters = data.get('changed_chapters', [])
     
-    if changed_chapters:
-        add_home_page_banner(index_html, changed_chapters)
-    else:
-        print("No changed chapters to display on home page")
+    # Always add banner (shows "no changes" message if no changes detected)
+    add_home_page_banner(index_html, changed_chapters)
 
 if __name__ == '__main__':
     main()

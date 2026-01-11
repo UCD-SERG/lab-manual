@@ -222,10 +222,9 @@ class HTMLDiffer:
         # Calculate change percentage
         change_pct = int((1 - similarity) * 100)
         
-        # Determine the DOCX filename
-        # Extract base filename without extension
-        base_name = Path(filename).stem
-        docx_filename = f"{base_name}-tracked-changes.docx"
+        # The book creates a single DOCX file, not per-chapter
+        # Link to the main book DOCX with tracked changes
+        docx_filename = "UCD-SeRG-Lab-Manual-tracked-changes.docx"
         
         # Create combined notice HTML - using CSS class defined in styles.css
         notice = f'''

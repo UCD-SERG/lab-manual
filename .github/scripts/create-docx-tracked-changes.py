@@ -104,11 +104,14 @@ def create_docx_with_tracked_changes(old_docx_path, new_docx_path, output_path):
         if has_changes:
             # Save the document with tracked changes
             output_doc.save(output_path)
-            print(f"  Created DOCX with tracked changes: {output_path}")
+            print(f"  ✓ Created DOCX with tracked changes: {output_path}")
             return True
         else:
-            print(f"  No significant changes detected in DOCX")
-            return False
+            # Even if no significant paragraph-level changes, still create the file
+            # because there might be formatting or minor changes
+            output_doc.save(output_path)
+            print(f"  ✓ Created DOCX (no significant paragraph changes detected): {output_path}")
+            return True
             
     except ImportError:
         # python-docx not available, use simpler text-based approach
@@ -137,7 +140,10 @@ def process_docx_file(new_docx_path, base_docx_dir):
         return
     
     # Create output path with tracked changes
+    # For the main book DOCX, create UCD-SeRG-Lab-Manual-tracked-changes.docx
     output_path = new_path.parent / f"{new_path.stem}-tracked-changes.docx"
+    
+    print(f"  Output will be: {output_path}")
     
     # Create the tracked changes version
     success = create_docx_with_tracked_changes(base_path, new_path, output_path)
@@ -149,47 +155,43 @@ def main():
     # Get the local DOCX directory
     docx_dir = os.getenv('DOCX_DIR', './docs')
     
-    # Get list of changed files
-    changed_files = os.getenv('PREVIEW_CHANGED_CHAPTERS', '').strip()
-    
-    if not changed_files:
-        print("No changed files to process for DOCX")
-        return
+    print("="*60)
+    print("DOCX Tracked Changes Creation")
+    print("="*60)
     
     # Check out base DOCX from gh-pages
-    print("Checking out base DOCX files from gh-pages...")
+    print("\n1. Checking out base DOCX files from gh-pages...")
     base_docx_dir = checkout_base_docx()
     
     if not base_docx_dir:
-        print("Warning: Could not check out base DOCX files")
-        print("(This is normal for new files or if gh-pages doesn't have DOCX files yet)")
+        print("⚠ Warning: Could not check out base DOCX files")
+        print("   (This is normal for:")
+        print("    - First PR to a new repository")
+        print("    - If gh-pages branch doesn't have DOCX files yet)")
+        print("   Skipping DOCX tracked changes creation.")
         return
     else:
-        print(f"Base DOCX checked out to {base_docx_dir}")
+        print(f"✓ Base DOCX checked out to {base_docx_dir}")
     
-    # Convert .qmd files to .docx files
-    docx_files = []
-    for qmd_file in changed_files.split('\n'):
-        qmd_file = qmd_file.strip()
-        if qmd_file:
-            # The book DOCX is a single file, not per-chapter
-            # So we'll look for the main book DOCX file
-            book_docx = Path(docx_dir) / "UCD-SeRG-Lab-Manual.docx"
-            if book_docx.exists() and book_docx not in docx_files:
-                docx_files.append(book_docx)
-    
-    # Also check for a generic manual.docx or similar
-    for docx_path in Path(docx_dir).glob("*.docx"):
-        if docx_path not in docx_files:
-            docx_files.append(docx_path)
+    # Find all DOCX files in the output directory
+    docx_files = list(Path(docx_dir).glob("*.docx"))
     
     if not docx_files:
-        print("No DOCX files found to process")
+        print("\n⚠ No DOCX files found in output directory")
         return
     
+    print(f"\n2. Found {len(docx_files)} DOCX file(s) to process:")
+    for docx_file in docx_files:
+        print(f"   - {docx_file.name}")
+    
     # Process each DOCX file
+    print("\n3. Creating tracked changes versions:")
     for docx_file in docx_files:
         process_docx_file(docx_file, base_docx_dir)
+    
+    print("\n" + "="*60)
+    print("DOCX processing complete")
+    print("="*60)
 
 if __name__ == '__main__':
     main()

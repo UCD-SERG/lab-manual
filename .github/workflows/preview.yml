@@ -53,14 +53,11 @@ jobs:
           PREVIEW_CHANGED_CHAPTERS: ${{ env.PREVIEW_CHANGED_CHAPTERS }}
 
       - name: Create DOCX with tracked changes
-        if: env.PREVIEW_SHOW_HIGHLIGHTS == 'true'
         run: python3 .github/scripts/create-docx-tracked-changes.py
         env:
           DOCX_DIR: ./docs
-          PREVIEW_CHANGED_CHAPTERS: ${{ env.PREVIEW_CHANGED_CHAPTERS }}
 
       - name: Add home page banner
-        if: env.PREVIEW_SHOW_HIGHLIGHTS == 'true'
         run: python3 .github/scripts/add-home-banner.py
         env:
           HTML_DIR: ./docs
