@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -476,7 +496,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="preview-combined-banner">
     <p style="margin: 0;">
-        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~2% of content changed).
+        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~8% of content changed).
         <br>
         <strong>🎨 Highlighting Legend:</strong> 
         <mark class="preview-text-changed" style="display: inline; padding: 1px 3px;">Modified text (yellow)</mark> shows changed words/phrases with tooltips of original text, 
@@ -596,11 +616,11 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="benefits-and-hazards" class="level3" data-number="16.4.2">
 <h3 data-number="16.4.2" class="anchored" data-anchor-id="benefits-and-hazards"><span class="header-section-number">16.4.2</span> Benefits and Hazards</h3>
-<p><mark class="preview-element-added">Science fiction has long explored the promises and perils of artificial intelligence. Like the <a href="https://en.wikipedia.org/wiki/Agent_(The_Matrix)">Agents in the Matrix films</a>, <a href="https://en.wikipedia.org/wiki/Skynet_(Terminator)">Skynet in Terminator</a>, <a href="https://en.wikipedia.org/wiki/HAL_9000">HAL 9000 in 2001: A Space Odyssey</a>, the <a href="https://en.wikipedia.org/wiki/Blade_Runner">Replicants in Blade Runner</a>, and the warnings about thinking machines in <a href="https://en.wikipedia.org/wiki/Butlerian_Jihad">Dune’s Butlerian Jihad</a>, coding agents are powerful programs that can work autonomously. Coding agents can manipulate code, including their own configuration files. They can work on your behalf, but they require careful oversight and control to ensure they serve your interests. Like <a href="https://en.wikipedia.org/wiki/Ender%27s_Game">Ender commanding his simulation in Ender’s Game</a>, you must understand the consequences of their actions.</mark></p>
+<p><mark class="preview-element-added">Science fiction has long explored the promises and perils of artificial intelligence. <span class="citation" data-cites="matrix terminator space_odyssey blade_runner enders_game i_robot wargames humans_are_dead butlerian_jihad">(<a href="#ref-matrix" role="doc-biblioref"><span>“The Matrix”</span> 1999</a>; <a href="#ref-terminator" role="doc-biblioref"><span>“The Terminator”</span> 1984</a>; <a href="#ref-space_odyssey" role="doc-biblioref"><span>“2001: A Space Odyssey”</span> 1968</a>; <a href="#ref-blade_runner" role="doc-biblioref"><span>“Blade Runner”</span> 1982</a>; <a href="#ref-enders_game" role="doc-biblioref">Card 1985</a>; <a href="#ref-i_robot" role="doc-biblioref">Asimov 1950</a>; <a href="#ref-wargames" role="doc-biblioref"><span>“WarGames”</span> 1983</a>; <a href="#ref-humans_are_dead" role="doc-biblioref">Flight of the Conchords 2007</a>; <a href="#ref-butlerian_jihad" role="doc-biblioref">Herbert 1965</a>)</span> Coding agents are powerful programs that can work autonomously. Coding agents can manipulate code, including their own configuration files. They can work on your behalf, but they require careful oversight and control to ensure they serve your interests and that you understand the consequences of their actions.</mark></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="assets/images/matrix-agents.png" class="img-fluid figure-img" alt="Three agents in suits and sunglasses from the Matrix films"></p>
-<figcaption>Agents from the Matrix films: powerful programs that require careful oversight</figcaption>
+<figcaption><a href="https://en.wikipedia.org/wiki/The_Matrix">Agents from The Matrix</a></figcaption>
 </figure>
 </div>
 <p>Coding agents offer several advantages:</p>
@@ -712,6 +732,35 @@ ul.task-list li input[type="checkbox"] {
 <p>This approach makes it easier for collaborators who are more comfortable with Word to contribute to the lab manual while maintaining the source files in Quarto format.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-space_odyssey" class="csl-entry" role="listitem">
+<span>“2001: A Space Odyssey.”</span> 1968. Film. <a href="https://en.wikipedia.org/wiki/2001:_A_Space_Odyssey_(film)">https://en.wikipedia.org/wiki/2001:_A_Space_Odyssey_(film)</a>.
+</div>
+<div id="ref-i_robot" class="csl-entry" role="listitem">
+Asimov, Isaac. 1950. <em>I, Robot</em>. New York: Gnome Press. <a href="https://search.library.ucdavis.edu/permalink/01UCD_INST/9fle3i/alma990000226350403126">https://search.library.ucdavis.edu/permalink/01UCD_INST/9fle3i/alma990000226350403126</a>.
+</div>
+<div id="ref-blade_runner" class="csl-entry" role="listitem">
+<span>“Blade Runner.”</span> 1982. Film. <a href="https://en.wikipedia.org/wiki/Blade_Runner">https://en.wikipedia.org/wiki/Blade_Runner</a>.
+</div>
+<div id="ref-enders_game" class="csl-entry" role="listitem">
+Card, Orson Scott. 1985. <em>Ender’s Game</em>. Novel; Tor Books. <a href="https://en.wikipedia.org/wiki/Ender%27s_Game">https://en.wikipedia.org/wiki/Ender%27s_Game</a>.
+</div>
+<div id="ref-humans_are_dead" class="csl-entry" role="listitem">
+Flight of the Conchords. 2007. <span>“The Humans Are Dead.”</span> Song. <a href="https://www.youtube.com/watch?v=B1BdQcJ2ZYY">https://www.youtube.com/watch?v=B1BdQcJ2ZYY</a>.
+</div>
+<div id="ref-butlerian_jihad" class="csl-entry" role="listitem">
+Herbert, Frank. 1965. <em>Dune</em>. <a href="https://en.wikipedia.org/wiki/Butlerian_Jihad">https://en.wikipedia.org/wiki/Butlerian_Jihad</a>.
+</div>
+<div id="ref-matrix" class="csl-entry" role="listitem">
+<span>“The Matrix.”</span> 1999. Film. <a href="https://en.wikipedia.org/wiki/The_Matrix">https://en.wikipedia.org/wiki/The_Matrix</a>.
+</div>
+<div id="ref-terminator" class="csl-entry" role="listitem">
+<span>“The Terminator.”</span> 1984. Film. <a href="https://en.wikipedia.org/wiki/The_Terminator">https://en.wikipedia.org/wiki/The_Terminator</a>.
+</div>
+<div id="ref-wargames" class="csl-entry" role="listitem">
+<span>“WarGames.”</span> 1983. Film. <a href="https://en.wikipedia.org/wiki/WarGames">https://en.wikipedia.org/wiki/WarGames</a>.
+</div>
+</div>
 </section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
