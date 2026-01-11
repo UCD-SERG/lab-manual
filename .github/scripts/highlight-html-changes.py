@@ -334,7 +334,11 @@ class HTMLDiffer:
 <div class="preview-combined-banner">
     <p style="margin: 0;">
         <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~{change_pct}% of content changed).
-        Changed text is temporarily highlighted below in <mark class="preview-text-changed" style="display: inline; padding: 1px 3px;">yellow</mark>, <mark class="preview-text-added" style="display: inline; padding: 1px 3px;">green</mark>, or <mark class="preview-element-added" style="display: inline; padding: 1px 3px;">blue</mark>.
+        <br>
+        <strong>🎨 Highlighting Legend:</strong> 
+        <mark class="preview-text-changed" style="display: inline; padding: 1px 3px;">Modified text (yellow)</mark> shows changed words/phrases with tooltips of original text, 
+        <mark class="preview-text-added" style="display: inline; padding: 1px 3px;">added text (green)</mark> shows new content, and 
+        <mark class="preview-element-added" style="display: inline; padding: 1px 3px;">new sections (blue)</mark> highlight entirely new paragraphs.
         <br>
         <strong>📄 DOCX with tracked changes:</strong> <a href="{docx_filename}" download>Download {docx_filename}</a>
     </p>
