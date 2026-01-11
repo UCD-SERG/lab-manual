@@ -54,9 +54,9 @@ Adapted by UCD-SeRG team from [original by Kunal Mishra, Jade Benjamin-Chung, St
 
 ## The here package {#sec-here-package-practices}
 
-*See also @sec-here-package-style for code style guidelines on using the here package.*
-
 {{< include 05-coding-practices/here-package.qmd >}}
+
+*See also @sec-here-package-style for code style guidelines on using the here package.*
 
 ## Reading/Saving Data
 
