@@ -178,10 +178,9 @@ class HTMLDiffer:
                 tag_match = re.match(r'(<[^>]+>)(.*)(</[^>]+>)', new_elem, re.DOTALL)
                 if tag_match:
                     open_tag, inner_content, close_tag = tag_match.groups()
-                    new_inner = self.extract_text_from_element(new_elem)
                     
-                    # Mark the entire element as new
-                    highlighted_elem = f'{open_tag}<mark class="preview-element-added">{new_inner}</mark>{close_tag}'
+                    # Mark the entire element as new, but preserve the inner HTML
+                    highlighted_elem = f'{open_tag}<mark class="preview-element-added">{inner_content}</mark>{close_tag}'
                     
                     # Replace in the HTML using regex with escaping
                     escaped_elem = re.escape(new_elem)
