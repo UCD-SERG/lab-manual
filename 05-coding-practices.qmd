@@ -50,6 +50,14 @@ Adapted by UCD-SeRG team from [original by Kunal Mishra, Jade Benjamin-Chung, St
 
 {{< include 05-coding-practices/function-calls.qmd >}}
 
+## The here package
+
+{{< include 05-coding-practices/here-package.qmd >}}
+
+## Reading/Saving Data
+
+{{< include 05-coding-practices/reading-saving-data.qmd >}}
+
 ## Integrating Box and Dropbox
 
 {{< include 05-coding-practices/integrating-box-dropbox.qmd >}}
