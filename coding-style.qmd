@@ -6,19 +6,19 @@ Follow these code style guidelines for all R code:
 
 ## General Principles
 
-{{< include 06-coding-style/general-principles.qmd >}}
+{{< include coding-style/general-principles.qmd >}}
 
 ## Function Structure and Documentation {#sec-function-docs}
 
-{{< include 06-coding-style/function-structure-and-documentation.qmd >}}
+{{< include coding-style/function-structure-and-documentation.qmd >}}
 
 ## Comments
 
-{{< include 06-coding-style/comments.qmd >}}
+{{< include coding-style/comments.qmd >}}
 
 ## Line Breaks and Formatting
 
-{{< include 06-coding-style/line-breaks.qmd >}}
+{{< include coding-style/line-breaks.qmd >}}
 
 ## Markdown and Quarto Formatting
 
@@ -32,27 +32,27 @@ for example, `{dplyr}`.
 
 ## Messaging and User Communication
 
-{{< include 06-coding-style/messaging-and-user-communication.qmd >}}
+{{< include coding-style/messaging-and-user-communication.qmd >}}
 
 ## Package Code Practices
 
-{{< include 06-coding-style/package-code-practices.qmd >}}
+{{< include coding-style/package-code-practices.qmd >}}
 
 ## Tidyverse Replacements {#sec-tidyverse-replacements}
 
-{{< include 06-coding-style/tidyverse-replacements.qmd >}}
+{{< include coding-style/tidyverse-replacements.qmd >}}
 
 ## The here Package {#sec-here-package-style}
 
-{{< include 06-coding-style/the-here-package.qmd >}}
+{{< include coding-style/the-here-package.qmd >}}
 
 ## Object Naming {#sec-object-naming}
 
-{{< include 06-coding-style/object-naming.qmd >}}
+{{< include coding-style/object-naming.qmd >}}
 
 ## Automated Tools for Style and Project Workflow {#sec-style-auto-style}
 
-{{< include 06-coding-style/automated-tools.qmd >}}
+{{< include coding-style/automated-tools.qmd >}}
 
 ## Additional Resources {#sec-r-resources-style}
 

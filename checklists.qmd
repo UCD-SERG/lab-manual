@@ -26,7 +26,7 @@ Adapted by UCD-SeRG team from [original by Jade Benjamin-Chung](https://jadebc.g
 - Is all commented out code / remarks removed? 
 - Does the header accurately describe the process completed in the script? 
 - Is the script pushed to its github repository?
-- Does the code adhere to the [coding style guide](https://ucd-serg.github.io/lab-manual/06-coding-style.html)? 
+- Does the code adhere to the [coding style guide](https://ucd-serg.github.io/lab-manual/coding-style.html)? 
 - Are all warnings ignorable? Should any warnings be intentionally suppressed or addressed?
 
 

@@ -1,0 +1,13 @@
+### Styling
+
+#### RStudio shortcuts
+
+{{< include coding-style/_rstudio-styling-shortcuts.qmd >}}
+
+#### `{styler}`
+   
+{{< include coding-style/_styler-summary.qmd >}}   
+   
+#### `{lintr}`
+
+{{< include coding-style/_lintr-summary.qmd >}} 
