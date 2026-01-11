@@ -43,3 +43,5 @@ The linter checks for:
 - Style guide violations
 
 You can customize linting rules by creating a `.lintr` file in your project root.
+
+See also @sec-style-auto-style.

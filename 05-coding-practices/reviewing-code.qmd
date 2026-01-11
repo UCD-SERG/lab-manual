@@ -40,6 +40,11 @@ Better titles that summarize the actual change:
 - A before/after example showing changed behavior
 - Possible shortcomings of the approach being used
 - For complex PRs, a suggested reading order for the reviewer
+- The `Files` tab of a Pull Request page on GitHub allows you to annotate 
+your pull request with inline comments. 
+These comments are not part of the source files; they only exist in GitHub's metadata.
+Use these comments to explain *changes* whose reasoning might not be self-apparent
+to a reviewer.
 
 ### Add Tests
 

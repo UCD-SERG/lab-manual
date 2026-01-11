@@ -13,7 +13,7 @@ _|_
 `readRDS` | `readr::read_rds()`
 `saveRDS()` | `readr::write_rds()`
 _|_
-`data.frame()` | `tibble::tibble()` or `data.table::data.table()`
+`data.frame()` | `tibble::tibble()` or `tibble::tribble()`
 `rbind()` | `dplyr::bind_rows()`
 `cbind()` | `dplyr::bind_cols()`
 `df$some_column` | `df |> dplyr::pull(some_column)`
@@ -29,6 +29,8 @@ _|_
 Nested: `ifelse(test_expression1, yes1, ifelse(test_expression2, yes2, ifelse(test_expression3, yes3, no)))` | `case_when(test_expression1 ~ yes1,  test_expression2 ~ yes2, test_expression3 ~ yes3, TRUE ~ no)`
 `proc.time()` | `tictoc::tic()` and `tictoc::toc()`
 `stopifnot()` | `assertthat::assert_that()` or `assertthat::see_if()` or `assertthat::validate_that()`
+_|_
+`sessionInfo()` | `sessioninfo::session_info()`
 
 For a more extensive set of syntactical translations to Tidyverse, you can check out [this document](https://tavareshugo.github.io/data_carpentry_extras/base-r_tidyverse_equivalents/base-r_tidyverse_equivalents.html#reshaping_data).
 
@@ -41,3 +43,4 @@ Working with Tidyverse within functions can be somewhat of a pain due to non-sta
 - [Standard Evaluation for *_join](https://stackoverflow.com/questions/28125816/r-standard-evaluation-for-join-dplyr) (stackoverflow)
 - [Programming with dplyr](https://dplyr.tidyverse.org/articles/programming.html) (package vignette)
 
+See also @sec-tidyverse-replacements

@@ -7,7 +7,7 @@ mean_Y = calc_fluseas_mean(flu_data, "maari_yn", FALSE)
 
 And here it is again using the best practices we've outlined:
 ```
-mean_Y = calc_fluseas_mean(
+mean_Y <- calc_fluseas_mean(
   data = flu_data, 
   yname = "maari_yn",
   silent = FALSE

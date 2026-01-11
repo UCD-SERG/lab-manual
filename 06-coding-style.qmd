@@ -8,7 +8,7 @@ Follow these code style guidelines for all R code:
 
 {{< include 06-coding-style/general-principles.qmd >}}
 
-## Function Structure and Documentation
+## Function Structure and Documentation {#sec-function-docs}
 
 {{< include 06-coding-style/function-structure-and-documentation.qmd >}}
 
@@ -20,6 +20,16 @@ Follow these code style guidelines for all R code:
 
 {{< include 06-coding-style/line-breaks.qmd >}}
 
+## Markdown and Quarto Formatting
+
+### Writing about code in Quarto documents
+
+When writing about code in prose sections of quarto documents, 
+use backticks to apply a code style:
+for example, `dplyr::mutate()`.
+When talking about packages, use backticks and curly-braces:
+for example, `{dplyr}`.
+
 ## Messaging and User Communication
 
 {{< include 06-coding-style/messaging-and-user-communication.qmd >}}
@@ -28,19 +38,19 @@ Follow these code style guidelines for all R code:
 
 {{< include 06-coding-style/package-code-practices.qmd >}}
 
-## Tidyverse Replacements
+## Tidyverse Replacements {#sec-tidyverse-replacements}
 
 {{< include 06-coding-style/tidyverse-replacements.qmd >}}
 
-## The here Package
+## The here Package {#sec-here-package-style}
 
 {{< include 06-coding-style/the-here-package.qmd >}}
 
-## Object Naming
+## Object Naming {#sec-object-naming}
 
 {{< include 06-coding-style/object-naming.qmd >}}
 
-## Automated Tools for Style and Project Workflow
+## Automated Tools for Style and Project Workflow {#sec-style-auto-style}
 
 {{< include 06-coding-style/automated-tools.qmd >}}
 

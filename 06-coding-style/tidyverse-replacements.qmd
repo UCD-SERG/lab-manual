@@ -22,3 +22,5 @@ stringr::str_replace()     # instead of gsub()
 # Session info
 sessioninfo::session_info() # instead of sessionInfo()
 ```
+
+See also @sec-tidyverse.

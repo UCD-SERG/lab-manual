@@ -46,8 +46,7 @@ Adapted by UCD-SeRG team from [original by Kunal Mishra, Jade Benjamin-Chung, St
 
 {{< include 05-coding-practices/automated-code-styling.qmd >}}
 
-
-## Documenting your code
+## Documenting your code {#sec-documenting-code}
 
 {{< include 05-coding-practices/documenting-code.qmd >}}
 
@@ -59,7 +58,7 @@ Adapted by UCD-SeRG team from [original by Kunal Mishra, Jade Benjamin-Chung, St
 
 {{< include 05-coding-practices/function-calls.qmd >}}
 
-## The here package
+## The here package {#sec-here-package-practices}
 
 {{< include 05-coding-practices/here-package.qmd >}}
 
@@ -71,7 +70,7 @@ Adapted by UCD-SeRG team from [original by Kunal Mishra, Jade Benjamin-Chung, St
 
 {{< include 05-coding-practices/integrating-box-dropbox.qmd >}}
 
-## Tidyverse
+## Tidyverse {#sec-tidyverse}
 
 {{< include 05-coding-practices/tidyverse.qmd >}}
 
