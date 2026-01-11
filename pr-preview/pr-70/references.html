@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>8&nbsp; Big data – UCD-SeRG Lab Manual</title>
+<title>References – UCD-SeRG Lab Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -30,8 +49,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./data-masking.html" rel="next">
-<link href="./coding-style.html" rel="prev">
+<link href="./resources.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -250,7 +268,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./big-data.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Big data</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">References</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -346,7 +364,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./big-data.html" class="sidebar-item-text sidebar-link active" preview-toc-changed>
+  <a href="./big-data.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Big data</span></span></a>
   </div>
 </li>
@@ -412,7 +430,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
+  <a href="./references.html" class="sidebar-item-text sidebar-link active" preview-toc-changed>
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -421,16 +439,8 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#the-data.table-package" id="toc-the-data.table-package" class="nav-link active" data-scroll-target="#the-data.table-package"><span class="header-section-number">8.1</span> The data.table package</a></li>
-  <li><a href="#using-downsampled-data" id="toc-using-downsampled-data" class="nav-link" data-scroll-target="#using-downsampled-data"><span class="header-section-number">8.2</span> Using downsampled data</a></li>
-  <li><a href="#optimal-rstudio-set-up" id="toc-optimal-rstudio-set-up" class="nav-link" data-scroll-target="#optimal-rstudio-set-up"><span class="header-section-number">8.3</span> Optimal RStudio set up</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/big-data.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/big-data.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -448,7 +458,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Big data</span></h1>
+<h1 class="title">References</h1>
 </div>
 
 
@@ -473,7 +483,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="preview-combined-banner">
     <p style="margin: 0;">
-        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~0% of content changed).
+        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~100% of content changed).
         <br>
         <strong>🎨 Highlighting Legend:</strong> 
         <mark class="preview-text-changed" style="display: inline; padding: 1px 3px;">Modified text (yellow)</mark> shows changed words/phrases with tooltips of original text, 
@@ -482,33 +492,44 @@ ul.task-list li input[type="checkbox"] {
     </p>
 </div>
 
-<p>Adapted by UCD-SeRG team from <a href="https://jadebc.github.io/lab-manual/big-data.html">original by Kunal Mishra and Jade Benjamin-Chung</a></p>
-<section id="the-data.table-package" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="the-data.table-package"><span class="header-section-number">8.1</span> The data.table package</h2>
-<p>It may also be the case that you’re working with very large datasets. Generally I would define this as 10+ million rows. As is outlined in this document, the 3 main players in the data analysis space are Base R, <code>Tidvyerse</code> (more specificially, <code>dplyr</code>), and <code>data.table</code>. For a majority of things, Base R is inferior to both <code>dplyr</code> and <code>data.table</code>, with concise but less clear syntax and less speed. <code>Dplyr</code> is architected for medium and smaller data, and while its very fast for everyday usage, it trades off maximum performance for ease of use and syntax compared to <code>data.table</code>. An overview of the <code>dplyr</code> vs <code>data.table</code> debate can be found in <a href="https://stackoverflow.com/questions/21435339/data-table-vs-dplyr-can-one-do-something-well-the-other-cant-or-does-poorly/27840349#27840349">this stackoverflow post</a> and all 3 answers are worth a read.</p>
-<p>You can also achieve a performance boost by running <code>dplyr</code> commands on <code>data.table</code>s, which I find to be the best of both worlds, given that a <code>data.table</code> is a special type of <code>data.frame</code> and fairly easy to convert with the <code>as.data.table()</code> function. The speedup is due to <code>dplyr</code>’s use of the <code>data.table</code> backend and in the future this coupling should become even more natural.</p>
-<p>If you want to test whether using a certain coding approach increases speed, consider the <code>tictoc</code> package. Run <code>tic()</code> before a code chunk and <code>toc()</code> after to measure the amount of system time it takes to run the chunk. For example, you might use this to decide if you <em>really</em> need to switch a code chunk from <code>dplyr</code> to <code>data.table</code>.</p>
-</section>
-<section id="using-downsampled-data" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="using-downsampled-data"><span class="header-section-number">8.2</span> Using downsampled data</h2>
-<p>In our studies with very large datasets, we save “downsampled” data that usually includes a 1% random sample stratified by any important variables, such as year or household id. This allows us to efficiently write and test our code without having to load in large, slow datasets that can cause RStudio to freeze. Be very careful to be sure which dataset you are working with and to label results output accordingly.</p>
-</section>
-<section id="optimal-rstudio-set-up" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="optimal-rstudio-set-up"><span class="header-section-number">8.3</span> Optimal RStudio set up</h2>
-<p>Using the following settings will help ensure a smooth experience when working with big data. In RStudio, go to the “Tools” menu, then select “Global Options”. Under “General”:</p>
-<p><strong>Workspace</strong></p>
-<ul>
-<li><strong>Uncheck</strong> Restore RData into workspace at startup</li>
-<li>Save workspace to RData on exit – choose <strong>never</strong></li>
-</ul>
-<p><strong>History</strong></p>
-<ul>
-<li><strong>Uncheck</strong> Always save history</li>
-</ul>
-<p>Unfortunately RStudio often gets slow and/or freezes after hours working with big datasets. Sometimes it is much more efficient to just use Terminal / gitbash to run code and make updates in git.</p>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-space_odyssey" class="csl-entry" role="listitem">
+<span>“2001: A Space Odyssey.”</span> 1968. Film. <a href="https://en.wikipedia.org/wiki/2001:_A_Space_Odyssey_(film)">https://en.wikipedia.org/wiki/2001:_A_Space_Odyssey_(film)</a>.
+</div>
+<div id="ref-i_robot" class="csl-entry" role="listitem">
+Asimov, Isaac. 1950. <span>“I, Robot.”</span> New York: Novel; Gnome
+Press. <a href="https://search.library.ucdavis.edu/permalink/01UCD_INST/9fle3i/alma990000226350403126">https://search.library.ucdavis.edu/permalink/01UCD_INST/9fle3i/alma990000226350403126</a>.
+</div>
+<div id="ref-blade_runner" class="csl-entry" role="listitem">
+<span>“Blade Runner.”</span> 1982. Film. <a href="https://en.wikipedia.org/wiki/Blade_Runner">https://en.wikipedia.org/wiki/Blade_Runner</a>.
+</div>
+<div id="ref-enders_game" class="csl-entry" role="listitem">
+Card, Orson Scott. 1985. <span>“Ender’s Game.”</span> Novel; Tor Books.
+<a href="https://en.wikipedia.org/wiki/Ender%27s_Game">https://en.wikipedia.org/wiki/Ender%27s_Game</a>.
+</div>
+<div id="ref-humans_are_dead" class="csl-entry" role="listitem">
+Flight of the Conchords. 2007. <span>“The Humans Are Dead.”</span> Music
+Video. <a href="https://www.youtube.com/watch?v=B1BdQcJ2ZYY">https://www.youtube.com/watch?v=B1BdQcJ2ZYY</a>.
+</div>
+<div id="ref-butlerian_jihad" class="csl-entry" role="listitem">
+Herbert, Frank. 1965. <span>“Dune.”</span> Novel. <a href="https://en.wikipedia.org/wiki/Butlerian_Jihad">https://en.wikipedia.org/wiki/Butlerian_Jihad</a>.
+</div>
+<div id="ref-matrix" class="csl-entry" role="listitem">
+<span>“The Matrix.”</span> 1999. Film. <a href="https://en.wikipedia.org/wiki/The_Matrix">https://en.wikipedia.org/wiki/The_Matrix</a>.
+</div>
+<div id="ref-terminator" class="csl-entry" role="listitem">
+<span>“The Terminator.”</span> 1984. Film. <a href="https://en.wikipedia.org/wiki/The_Terminator">https://en.wikipedia.org/wiki/The_Terminator</a>.
+</div>
+<div id="ref-wargames" class="csl-entry" role="listitem">
+<span>“WarGames.”</span> 1983. Film. <a href="https://en.wikipedia.org/wiki/WarGames">https://en.wikipedia.org/wiki/WarGames</a>.
+</div>
+<div id="ref-R-roxygen2" class="csl-entry" role="listitem">
+Wickham, Hadley, Peter Danenberg, Gábor Csárdi, and Manuel Eugster.
+2024. <em>Roxygen2: In-Line Documentation for r</em>. <a href="https://roxygen2.r-lib.org/">https://roxygen2.r-lib.org/</a>.
+</div>
+</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -926,14 +947,11 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./coding-style.html" class="pagination-link" preview-toc-changed aria-label="R Code Style">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">R Code Style</span></span>
+      <a href="./resources.html" class="pagination-link" preview-toc-changed aria-label="Resources">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Resources</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./data-masking.html" class="pagination-link" preview-toc-changed aria-label="Data masking">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data masking</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -941,4 +959,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/big-data.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/big-data.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/references.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/references.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
