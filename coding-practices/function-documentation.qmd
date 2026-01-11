@@ -20,8 +20,8 @@ Here is an example of documenting a function using roxygen2:
 #'
 #' @param data A data frame with variables flu_season, site, studyID, and yname
 #' @param yname A string for the outcome name
-#' @param silent A boolean specifying whether the function shouldn't output 
-#'   anything to the console (default: TRUE)
+#' @param silent A boolean specifying whether to suppress console output 
+#'   (default: TRUE)
 #'
 #' @returns A dataframe as described above
 #'
