@@ -188,8 +188,6 @@ see [GitHub Copilot coding agent documentation](https://docs.github.com/en/copil
 
 ### Benefits and Hazards
 
-Science fiction has long explored the promises and perils of artificial intelligence.
-[@matrix; @terminator; @space_odyssey; @blade_runner; @enders_game; @i_robot; @wargames; @humans_are_dead; @butlerian_jihad]
 Coding agents are powerful programs that can work autonomously.
 Coding agents can manipulate code,
 including their own configuration files.
@@ -375,3 +373,16 @@ When using this workflow, make sure to explicitly instruct the coding agent to:
 
 This approach makes it easier for collaborators who are more comfortable with Word to contribute to the lab manual while maintaining the source files in Quarto format.
 
+## Further reading
+
+Science fiction has long explored the promises and perils of artificial intelligence:
+
+- @i_robot
+- @butlerian_jihad
+- @space_odyssey
+- @terminator
+- @matrix
+- @blade_runner
+- @wargames
+- @enders_game
+- @humans_are_dead
