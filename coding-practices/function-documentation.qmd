@@ -1,28 +1,43 @@
-Every function you write must include a header to document its purpose, inputs, and outputs.  For any reproducible workflows, they are essential, because R is dynamically typed. This means, you can pass a `string` into an argument that is meant to be a `data.table`, or a `list` into an argument meant for a `tibble`. It is the responsibility of a function's author to document what each argument is meant to do and its basic type. This is an example for documenting a function (inspired by [JavaDocs](https://www.oracle.com/technetwork/java/javase/documentation/index-137868.html#format) and R's [Plumber API docs](https://blog.rstudio.com/2018/10/23/rstudio-1-2-preview-plumber-integration/)):
+Every function you write must include documentation to describe its purpose, inputs, and outputs.
+For any reproducible workflows, this is essential, because R is dynamically typed.
+This means you can pass a `string` into an argument that is meant to be a `data.table`,
+or a `list` into an argument meant for a `tibble`.
+It is the responsibility of a function's author to document what each argument is meant to do and its basic type.
 
-```
-##############################################
-##############################################
-# Documentation: calc_fluseas_mean
-# Usage: calc_fluseas_mean(data, yname)
-# Description: Make a dataframe with rows for flu season and site
-# and the number of patients with an outcome, the total patients,
-# and the percent of patients with the outcome
+We use `{roxygen2}` [@R-roxygen2] for function documentation.
+Roxygen2 allows you to describe your functions in special comments next to their definitions,
+and automatically generates R documentation files (`.Rd` files) and helps manage your package `NAMESPACE`.
+The roxygen2 format uses `#'` comments placed immediately before the function definition.
 
-# Args/Options:
-# data: a data frame with variables flu_season, site, studyID, and yname
-# yname: a string for the outcome name
-# silent: a boolean specifying whether the function shouldn't output anything to the console (DEFAULT: TRUE)
+Here is an example of documenting a function using roxygen2:
 
-# Returns: the dataframe as described above
-# Output: prints the data frame described above if silent is not True
-
+```r
+#' Calculate flu season means by site
+#'
+#' Make a dataframe with rows for flu season and site
+#' containing the number of patients with an outcome, the total patients,
+#' and the percent of patients with the outcome.
+#'
+#' @param data A data frame with variables flu_season, site, studyID, and yname
+#' @param yname A string for the outcome name
+#' @param silent A boolean specifying whether the function shouldn't output 
+#'   anything to the console (default: TRUE)
+#'
+#' @returns A dataframe as described above
+#'
+#' @examples
+#' calc_fluseas_mean(my_data, "hospitalized", silent = FALSE)
+#'
 calc_fluseas_mean <- function(data, yname, silent = TRUE) {
- ### function code here
-
+  ### function code here
+  
 }
 ```
-The header tells you what the function does, its various inputs, and how you might go about using the function to do what you want. Also notice that all optional arguments (i.e. ones with pre-specified defaults) follow arguments that require user input.
+
+The roxygen2 header tells you what the function does, its various inputs, and how you might use it.
+Also notice that all optional arguments (i.e. ones with pre-specified defaults) follow arguments that require user input.
+
+For more information on roxygen2 syntax and features, see <https://roxygen2.r-lib.org/>.
 
 ::: {.callout-note}
 As someone trying to call a function, it is possible to access a function's documentation (and internal code) by `CMD-Left-Click`ing the function's name in RStudio
