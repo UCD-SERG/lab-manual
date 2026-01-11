@@ -140,6 +140,31 @@ This very section you're reading was created through the coding agent workflow:
 
 This demonstrates the full lifecycle of working with a coding agent on a real documentation task.
 
+#### Collaborating with Coding Agents
+
+Between iterations of asking coding agents to extend a PR,
+human collaborators can also push changes directly to the PR branch.
+This allows for a collaborative workflow where both humans and agents contribute:
+
+- **Human contributions**: You can make quick fixes,
+  add content,
+  or refine the agent's work by pushing commits to the same branch
+  
+- **Agent iterations**: After your changes,
+  you can ask the agent to continue working on additional requirements
+
+**Important**: Try to avoid pushing changes while the coding agent is actively working.
+Simultaneous edits can produce conflicting diffs that:
+
+- Need to be manually resolved
+- May confuse both human and AI collaborators
+- Could result in lost work or merged conflicts
+
+**Best practice**: Wait for the agent to complete its current iteration
+(indicated by the PR being updated)
+before pushing your own changes to the branch.
+Then assign new work to the agent for the next iteration.
+
 #### Directly Prompting for Pull Requests
 
 You can also prompt Copilot to create pull requests without first creating an issue:
