@@ -1,6 +1,6 @@
 # Use of AI
 
-AI-powered coding assistants can be valuable tools for accelerating your work,
+[AI-powered coding assistants](https://en.wikipedia.org/wiki/AI-assisted_software_development) can be valuable tools for accelerating your work,
 but they require careful and responsible use.
 Lab members who use AI tools must adhere to the following guidelines:
 
@@ -65,7 +65,75 @@ rather than simply asking it to summarize information on a topic.
 ## Coding Agents
 
 We recommend using **[Coding Agents](https://github.com/features/copilot/agents)** 
-for AI-assisted coding. 
+([AI agents](https://en.wikipedia.org/wiki/AI_agent) specialized for coding)
+for AI-assisted coding.
+
+### How to Work with Coding Agents
+
+GitHub Copilot coding agents can be used in several ways to automate development tasks:
+
+#### Assigning Issues to Copilot
+
+You can assign GitHub Issues directly to `@copilot` just like you would assign to a human collaborator:
+
+1. **On GitHub.com**:
+   Navigate to an issue and assign it to Copilot in the assignees section
+   
+2. **In VS Code**:
+   In the GitHub Pull Requests or Issues view,
+   right-click an issue and select "Assign to Copilot"
+   
+3. **From Copilot Chat**:
+   Delegate tasks to Copilot directly from the chat interface in supported editors
+
+#### The Agent Workflow
+
+Once assigned an issue,
+the coding agent follows an autonomous workflow:
+
+1. **Analysis**:
+   Reviews the issue description,
+   related discussions,
+   repository instructions,
+   and codebase context
+   
+2. **Planning**:
+   Determines what changes are needed and creates a work plan
+   
+3. **Development**:
+   Works in an isolated GitHub Actions environment,
+   modifies code,
+   runs tests and linters,
+   and validates changes
+   
+4. **Pull Request Creation**:
+   Creates a draft pull request with implemented changes,
+   audit logs,
+   and a summary of modifications
+   
+5. **Review and Iteration**:
+   You review the PR and can request changes;
+   the agent will iterate based on your feedback
+
+#### Directly Prompting for Pull Requests
+
+You can also prompt Copilot to create pull requests without first creating an issue:
+
+- Use Copilot Chat in your editor to describe the changes you want
+- The agent will analyze your request and create a pull request
+- This is useful for quick fixes or well-defined tasks
+
+#### Important Safeguards
+
+- **Human approval required**:
+  Coding agents cannot merge their own changes
+- **Branch restrictions**:
+  Agents can only push to their own branches (e.g., `copilot/*`)
+- **Full transparency**:
+  All agent actions are logged and visible in the PR
+
+For detailed instructions,
+see [GitHub Copilot coding agent documentation](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent).
 
 ### Benefits and Hazards
 
@@ -174,7 +242,9 @@ The quality and correctness of your work remains your responsibility.
 
 ### Firewall and Network Configuration
 
-GitHub Copilot coding agents require specific network access to function properly.
+Coding agents require specific network access to function properly.
+If a coding agent is running behind a corporate firewall or on a restricted network,
+you may need to configure allowlists to enable coding agent functionality.
 
 #### Built-in Agent Firewall
 
