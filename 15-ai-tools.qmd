@@ -1,10 +1,17 @@
 # Use of AI
 
-AI-powered coding assistants can be valuable tools for accelerating your work, but they require careful and responsible use. Lab members who use AI tools must adhere to the following guidelines:
+AI-powered coding assistants can be valuable tools for accelerating your work,
+but they require careful and responsible use.
+Lab members who use AI tools must adhere to the following guidelines:
 
 ## Responsibility for validation
 
-**You are fully responsible for checking and validating all AI-generated code and content.** AI tools can make mistakes, generate insecure code, produce incorrect logic, or suggest approaches that are inappropriate for our specific research context. Before using any AI-generated code:
+**You are fully responsible for checking and validating all AI-generated code and content.**
+AI tools can make mistakes,
+generate insecure code,
+produce incorrect logic,
+or suggest approaches that are inappropriate for our specific research context.
+Before using any AI-generated code:
 
 - Carefully review the code to ensure you understand what it does
 - Test the code thoroughly to verify it works as expected
@@ -12,11 +19,15 @@ AI-powered coding assistants can be valuable tools for accelerating your work, b
 - Check that the code follows our lab's coding standards and best practices
 - Ensure the code does not introduce security vulnerabilities or data privacy issues
 
-Never blindly copy and paste AI-generated code without understanding it. If you don't understand what the AI has suggested, take the time to learn or ask a colleague for help.
+Never blindly copy and paste AI-generated code without understanding it.
+If you don't understand what the AI has suggested,
+take the time to learn or ask a colleague for help.
 
 ## Disclosure of AI use
 
-**You must clearly state whenever you have used AI tools in your work.** This is essential for transparency and reproducibility. Specifically:
+**You must clearly state whenever you have used AI tools in your work.**
+This is essential for transparency and reproducibility.
+Specifically:
 
 - In code comments, note when AI tools were used to generate or significantly modify code
 - In commit messages, mention if AI tools assisted with the changes
@@ -24,6 +35,7 @@ Never blindly copy and paste AI-generated code without understanding it. If you 
 - In presentations, disclose AI assistance when relevant
 
 Example code comment:
+
 ```
 # The following function was generated with assistance from GitHub Copilot
 # and has been reviewed and tested to ensure correctness
@@ -31,8 +43,11 @@ Example code comment:
 
 ## Attribution of sources
 
-**When using AI tools to generate content that borrows from or adapts existing sources, you must ensure proper attribution.** 
-AI tools sometimes paraphrase or adapt content from documentation, guides, or other resources without clearly indicating the original source. 
+**When using AI tools to generate content that borrows from or adapts existing sources,
+you must ensure proper attribution.**
+AI tools sometimes paraphrase or adapt content from documentation,
+guides,
+or other resources without clearly indicating the original source.
 It is your responsibility to:
 
 - Ask the AI tool to identify and properly cite sources when it borrows or adapts content
@@ -40,8 +55,12 @@ It is your responsibility to:
 - Add citations yourself if the AI fails to do so
 - Follow appropriate attribution practices for the type of content (code comments, documentation, academic writing, etc.)
 
-When instructing AI tools to create documentation or written content, explicitly request that they provide proper attribution for any borrowed or adapted material. 
-For example: "Please quote from and paraphrase [source], with proper attribution" rather than simply asking it to summarize information on a topic.
+When instructing AI tools to create documentation or written content,
+explicitly request that they provide proper attribution for any borrowed or adapted material.
+For example:
+"Please quote from and paraphrase [source],
+with proper attribution"
+rather than simply asking it to summarize information on a topic.
 
 ## Coding Agents
 
@@ -51,18 +70,14 @@ for AI-assisted coding.
 ### Benefits and Hazards
 
 Like the [Agents in the Matrix films](https://en.wikipedia.org/wiki/Agent_(The_Matrix)), 
-coding agents are powerful programs; 
-coding agents can manipulate your code, including their own configuration files.
+coding agents are powerful programs;
+coding agents can manipulate your code,
+including their own configuration files.
 They can work on your behalf,
-but they require careful oversight and control to ensure they serve your interests.
+but they require careful oversight and control
+to ensure they serve your interests.
 
-::: {.content-visible when-format="html"}
-![Agents from the Matrix films: powerful programs that require careful oversight](https://github.com/user-attachments/assets/c7bcd1e3-5eda-42ae-a90e-f127ad4bc20d){fig-alt="Three agents in suits and sunglasses from the Matrix films"}
-:::
-
-::: {.content-visible unless-format="html"}
-*[Image: Agents from the Matrix films - three agents in suits and sunglasses]*
-:::
+![Agents from the Matrix films: powerful programs that require careful oversight](assets/images/matrix-agents.png){fig-alt="Three agents in suits and sunglasses from the Matrix films"}
 
 Coding agents offer several advantages:
 
@@ -87,48 +102,87 @@ However, coding agents also come with significant hazards:
 
 To work with coding agents safely and successfully:
 
-1. **Maintain active supervision**: Never assume AI-generated code is correct. Review every line critically.
+1. **Maintain active supervision**:
+   Never assume AI-generated code is correct.
+   Review every line critically.
 
-2. **Understand before accepting**: If you don't understand what the code does, don't use it. Take time to learn or ask a colleague.
+2. **Understand before accepting**:
+   If you don't understand what the code does,
+   don't use it.
+   Take time to learn or ask a colleague.
 
-3. **Test thoroughly**: AI-generated code must be tested as rigorously as code you write yourself. Don't skip testing because "the AI wrote it."
+3. **Test thoroughly**:
+   AI-generated code must be tested as rigorously as code you write yourself.
+   Don't skip testing because "the AI wrote it."
 
-4. **Start small**: Begin with small, well-defined tasks to build confidence and understanding of the agent's capabilities and limitations.
+4. **Start small**:
+   Begin with small,
+   well-defined tasks to build confidence and understanding
+   of the agent's capabilities and limitations.
 
-5. **Verify logic and assumptions**: Check that the AI hasn't made incorrect assumptions about your data, requirements, or scientific context.
+5. **Verify logic and assumptions**:
+   Check that the AI hasn't made incorrect assumptions
+   about your data,
+   requirements,
+   or scientific context.
 
-6. **Review for security**: Explicitly check for security issues, especially when handling sensitive data or user input.
+6. **Review for security**:
+   Explicitly check for security issues,
+   especially when handling sensitive data or user input.
 
-7. **Iterate and refine**: Use coding agents as a starting point, not an endpoint. Refine and improve the generated code.
+7. **Iterate and refine**:
+   Use coding agents as a starting point,
+   not an endpoint.
+   Refine and improve the generated code.
 
-8. **Maintain coding practice**: Regularly write code yourself to maintain and develop your skills. Don't let the agent do everything.
+8. **Maintain coding practice**:
+   Regularly write code yourself to maintain and develop your skills.
+   Don't let the agent do everything.
 
 ::: {.callout-warning}
 ## Critical: Exercise Extreme Caution with Workflow Files
 
-Be especially careful when allowing coding agents to edit GitHub Actions workflows or CI/CD configurations. These files control automated processes that can:
+Be especially careful when allowing coding agents
+to edit GitHub Actions workflows or CI/CD configurations.
+These files control automated processes that can:
 
 - Access secrets and credentials
 - Deploy code to production
 - Execute arbitrary commands in your repository
 
-**Never** allow a coding agent to edit workflow files (especially `.github/workflows/*.yml` or `copilot-setup-step.yml`) without thorough manual review. Before approving any workflow run, always check if the workflow files themselves have been modified. Malicious or erroneous changes to workflows can compromise your entire repository and its secrets.
+**Never** allow a coding agent to edit workflow files
+(especially `.github/workflows/*.yml` or `copilot-setup-step.yml`)
+without thorough manual review.
+Before approving any workflow run,
+always check if the workflow files themselves have been modified.
+Malicious or erroneous changes to workflows
+can compromise your entire repository and its secrets.
 :::
 
-When using coding agents, work interactively with the AI suggestions:
-review, modify, and test them rather than accepting them wholesale. 
-This interactive approach helps ensure code quality and deepens your understanding of the code.
+When using coding agents,
+work interactively with the AI suggestions:
+review,
+modify,
+and test them rather than accepting them wholesale.
+This interactive approach helps ensure code quality
+and deepens your understanding of the code.
 
-Remember: AI tools are assistants, not replacements for your expertise and judgment. 
+Remember:
+AI tools are assistants,
+not replacements for your expertise and judgment.
 The quality and correctness of your work remains your responsibility.
 
 ### Firewall and Network Configuration
 
-GitHub Copilot coding agents require specific network access to function properly. If you're working behind a corporate firewall or on a restricted network, you may need to configure allowlists to enable coding agent functionality.
+GitHub Copilot coding agents require specific network access to function properly.
+If you're working behind a corporate firewall or on a restricted network,
+you may need to configure allowlists to enable coding agent functionality.
 
 #### Built-in Agent Firewall
 
-Coding agents run in a GitHub Actions environment with a built-in firewall that limits internet access by default. This firewall helps protect against:
+Coding agents run in a GitHub Actions environment
+with a built-in firewall that limits internet access by default.
+This firewall helps protect against:
 
 - Data exfiltration
 - Accidental leaks of sensitive information
@@ -141,11 +195,13 @@ By default, the agent's firewall allows access to:
 - Language-specific package registries (npm, PyPI, Maven, RubyGems, etc.)
 - Common certificate authorities for SSL validation
 
-For the complete list of allowed hosts, see the [Copilot allowlist reference](https://docs.github.com/en/copilot/reference/copilot-allowlist-reference).
+For the complete list of allowed hosts,
+see the [Copilot allowlist reference](https://docs.github.com/en/copilot/reference/copilot-allowlist-reference).
 
 #### Corporate Firewall Requirements
 
-If your organization uses a corporate firewall, network administrators should allow the following domains (over HTTPS, port 443):
+If your organization uses a corporate firewall,
+network administrators should allow the following domains (over HTTPS, port 443):
 
 - `github.com`
 - `api.github.com`
@@ -156,36 +212,44 @@ If your organization uses a corporate firewall, network administrators should al
 - `*.githubusercontent.com` (for accessing GitHub-hosted content)
 - `*.s3.amazonaws.com` (for GitHub user-uploaded content)
 
-Note that some Copilot features use WebSockets, so ensure `copilot-proxy.githubusercontent.com` allows WebSocket traffic.
+Note that some Copilot features use WebSockets,
+so ensure `copilot-proxy.githubusercontent.com` allows WebSocket traffic.
 
 #### Customizing Agent Firewall Settings
 
-In your repository's "Coding agent" settings page, you can:
+In your repository's "Coding agent" settings page,
+you can:
 
 - Add custom hosts to the allowlist (for internal dependencies or additional registries)
 - Opt out of the default recommended allowlist for stricter security
 - Disable the firewall entirely (not recommended)
 
-If a coding agent's request is blocked by the firewall, a warning will be added to the pull request or comment, detailing the blocked address and the command that triggered it.
+If a coding agent's request is blocked by the firewall,
+a warning will be added to the pull request or comment,
+detailing the blocked address and the command that triggered it.
 
-For more information, see [Customizing or disabling the firewall for GitHub Copilot coding agent](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-firewall).
+For more information,
+see [Customizing or disabling the firewall for GitHub Copilot coding agent](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-firewall).
 
 ### When to use a coding agent
 
-Coding agent sessions are currently^[2026-01-10] considered
-"premium requests", which are limited resources; 
+Coding agent sessions are currently^[2026-01-10] considered "premium requests",
+which are limited resources;
 see <https://github.com/features/copilot/plans> for details.
-So, use coding agents sparingly.
+So,
+use coding agents sparingly.
 Use them for complex changes that would be difficult or time-consuming
 for you to complete by hand.
 Coding agents also take time to get configured for work,
 every time you make a request.
 See <https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-environment#preinstalling-tools-or-dependencies-in-copilots-environment> for ways to reduce that startup time,
 but it will never be 0.
-If you can complete the task faster than the coding agent can, 
+If you can complete the task faster than the coding agent can,
 you should probably do it yourself.
 
-Also, the less we practice, the weaker our skills get,
+Also,
+the less we practice,
+the weaker our skills get,
 and the harder it is for us to supervise the agents
 and make sure they are actually doing what we want it to do,
 the way we want it to do it.
