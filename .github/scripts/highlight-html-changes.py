@@ -10,6 +10,8 @@ import re
 import difflib
 import subprocess
 from pathlib import Path
+from html.parser import HTMLParser
+from html import escape, unescape
 
 class HTMLDiffer:
     """Compare HTML files and inject highlighting for changed sections."""
@@ -59,6 +61,117 @@ class HTMLDiffer:
         # Remove comments
         html = re.sub(r'<!--.*?-->', '', html, flags=re.DOTALL)
         return html.strip()
+    
+    def highlight_text_diff(self, old_text, new_text):
+        """Highlight differences between old and new text at word/phrase level."""
+        # Split into words while preserving spaces
+        old_words = re.findall(r'\S+|\s+', old_text)
+        new_words = re.findall(r'\S+|\s+', new_text)
+        
+        # Use SequenceMatcher to find differences
+        matcher = difflib.SequenceMatcher(None, old_words, new_words)
+        
+        result = []
+        for tag, i1, i2, j1, j2 in matcher.get_opcodes():
+            if tag == 'equal':
+                # No change, keep as is
+                result.extend(new_words[j1:j2])
+            elif tag == 'replace':
+                # Text was changed - highlight the new text
+                changed_text = ''.join(new_words[j1:j2])
+                result.append(f'<mark class="preview-text-changed" title="Modified from: {escape("".join(old_words[i1:i2]))}">{changed_text}</mark>')
+            elif tag == 'insert':
+                # Text was added - highlight as insertion
+                added_text = ''.join(new_words[j1:j2])
+                result.append(f'<mark class="preview-text-added">{added_text}</mark>')
+            elif tag == 'delete':
+                # Text was deleted - we don't show deletions in the new version
+                pass
+        
+        return ''.join(result)
+    
+    def extract_text_from_element(self, element_html):
+        """Extract plain text from an HTML element, preserving basic structure."""
+        # Remove inner HTML tags but keep the text
+        text = re.sub(r'<[^>]+>', '', element_html)
+        return unescape(text).strip()
+    
+    def highlight_changed_elements(self, old_html, new_html):
+        """Find and highlight changed paragraphs and sections in the HTML."""
+        if not old_html:
+            return new_html, 0
+        
+        # Extract main content for both versions
+        old_content = self.extract_main_content(old_html)
+        new_content = self.extract_main_content(new_html)
+        
+        # Find all paragraphs, headings, and list items
+        # We'll compare these element by element
+        element_pattern = r'(<(?:p|h[1-6]|li|blockquote)[^>]*>.*?</(?:p|h[1-6]|li|blockquote)>)'
+        
+        old_elements = re.findall(element_pattern, old_content, re.DOTALL)
+        new_elements = re.findall(element_pattern, new_content, re.DOTALL)
+        
+        # Create a mapping of element text to full element HTML
+        old_elem_map = {}
+        for elem in old_elements:
+            text = self.extract_text_from_element(elem)
+            if text:  # Only store non-empty elements
+                old_elem_map[text] = elem
+        
+        # Process each new element and check if it changed
+        highlighted_new_html = new_html
+        changes_made = 0
+        
+        for new_elem in new_elements:
+            new_text = self.extract_text_from_element(new_elem)
+            if not new_text:
+                continue
+            
+            # Try to find a matching old element
+            best_match = None
+            best_ratio = 0.0
+            
+            for old_text, old_elem in old_elem_map.items():
+                ratio = difflib.SequenceMatcher(None, old_text, new_text).ratio()
+                if ratio > best_ratio:
+                    best_ratio = ratio
+                    best_match = old_text
+            
+            # If we found a similar element and it's not identical, highlight the differences
+            if best_match and best_ratio > 0.5 and best_ratio < 0.99:
+                # Extract the inner text from the new element
+                tag_match = re.match(r'(<[^>]+>)(.*)(</[^>]+>)', new_elem, re.DOTALL)
+                if tag_match:
+                    open_tag, inner_content, close_tag = tag_match.groups()
+                    
+                    # Get the old text for comparison
+                    old_inner = self.extract_text_from_element(old_elem_map[best_match])
+                    new_inner = self.extract_text_from_element(new_elem)
+                    
+                    # Highlight the differences
+                    highlighted_inner = self.highlight_text_diff(old_inner, new_inner)
+                    
+                    # Reconstruct the element with highlighting
+                    highlighted_elem = f'{open_tag}{highlighted_inner}{close_tag}'
+                    
+                    # Replace in the HTML
+                    highlighted_new_html = highlighted_new_html.replace(new_elem, highlighted_elem, 1)
+                    changes_made += 1
+            
+            elif best_match is None and new_text:
+                # This is a completely new element - highlight the whole thing
+                tag_match = re.match(r'(<[^>]+>)(.*)(</[^>]+>)', new_elem, re.DOTALL)
+                if tag_match:
+                    open_tag, inner_content, close_tag = tag_match.groups()
+                    new_inner = self.extract_text_from_element(new_elem)
+                    
+                    # Mark the entire element as new
+                    highlighted_elem = f'{open_tag}<mark class="preview-element-added">{new_inner}</mark>{close_tag}'
+                    highlighted_new_html = highlighted_new_html.replace(new_elem, highlighted_elem, 1)
+                    changes_made += 1
+        
+        return highlighted_new_html, changes_made
     
     def find_changed_sections(self, old_html, new_html):
         """Find sections that changed between old and new HTML."""
@@ -137,14 +250,21 @@ class HTMLDiffer:
                 num_changes = len([l for l in diff_lines if l.startswith('+') or l.startswith('-')])
                 print(f"  Found content changes (similarity: {similarity:.2%})")
                 
-                # Add change notice
+                # Apply inline highlighting to changed elements
+                highlighted_html, inline_changes = self.highlight_changed_elements(old_html, new_html)
+                
+                if inline_changes > 0:
+                    print(f"  Highlighted {inline_changes} changed element(s) inline")
+                    new_html = highlighted_html
+                
+                # Add change notice banner
                 new_html = self.inject_change_notice(new_html, num_changes, similarity)
                 
                 # Write back
                 with open(local_filepath, 'w', encoding='utf-8') as f:
                     f.write(new_html)
                 
-                print(f"  Added content change notice to {local_filepath}")
+                print(f"  Added content change notice and inline highlights to {local_filepath}")
             else:
                 print(f"  No significant content changes detected (similarity: {similarity:.2%})")
         else:
