@@ -1,7 +1,5 @@
 # Working with AI
 
-![[Agents](https://en.wikipedia.org/wiki/Agent_(The_Matrix))](assets/images/matrix-agents.png){fig-alt="Three agents in suits and sunglasses from the Matrix films"}
-
 [AI-powered coding assistants](https://en.wikipedia.org/wiki/AI-assisted_software_development) 
 can dramatically accelerate and improve your work,
 but they require careful and responsible use.
@@ -384,3 +382,6 @@ This approach makes it easier for collaborators who are more comfortable with Wo
 - @wargames
 - *Ender's Game* [@enders_game]
 - "The Humans are Dead" [@humans_are_dead]
+
+![[Agents](https://en.wikipedia.org/wiki/Agent_(The_Matrix))](assets/images/matrix-agents.png){fig-alt="Three agents in suits and sunglasses from the Matrix films"}
+
