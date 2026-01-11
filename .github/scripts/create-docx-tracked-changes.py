@@ -52,75 +52,122 @@ def checkout_base_docx(base_ref='origin/gh-pages', target_dir='/tmp/base-docx'):
 def create_docx_with_tracked_changes(old_docx_path, new_docx_path, output_path):
     """
     Create a DOCX file with tracked changes showing differences.
-    This uses python-docx if available, otherwise uses docx2txt for text comparison.
+    This uses python-docx to enable track changes and show revisions.
     """
     try:
         from docx import Document
         from docx.oxml import OxmlElement
         from docx.oxml.ns import qn
+        from docx.opc.constants import RELATIONSHIP_TYPE as RT
         import difflib
+        import shutil
         
-        # Load both documents
+        # First, copy the new document to the output path
+        shutil.copy2(new_docx_path, output_path)
+        
+        # Load the output document
+        output_doc = Document(output_path)
+        
+        # Enable track changes in the document settings
+        settings = output_doc.settings
+        settings_element = settings.element
+        
+        # Add trackRevisions element if it doesn't exist
+        track_revisions = settings_element.find(qn('w:trackRevisions'))
+        if track_revisions is None:
+            track_revisions = OxmlElement('w:trackRevisions')
+            settings_element.append(track_revisions)
+        
+        # Load old and new documents for comparison
         old_doc = Document(old_docx_path)
         new_doc = Document(new_docx_path)
-        
-        # Create output document based on new version
-        output_doc = Document(new_docx_path)
         
         # Get paragraphs from both documents
         old_paragraphs = [p.text for p in old_doc.paragraphs]
         new_paragraphs = [p.text for p in new_doc.paragraphs]
         
-        # Use difflib to find differences
-        differ = difflib.Differ()
-        diff = list(differ.compare(old_paragraphs, new_paragraphs))
-        
-        # Track if we made any changes
+        # Use difflib to find differences at paragraph level
+        matcher = difflib.SequenceMatcher(None, old_paragraphs, new_paragraphs)
         has_changes = False
         
-        # Process the output document to add tracked changes
-        para_index = 0
-        for line in diff:
-            if line.startswith('  '):
-                # Unchanged paragraph
-                para_index += 1
-            elif line.startswith('+ '):
-                # Added paragraph - mark as insertion
-                if para_index < len(output_doc.paragraphs):
-                    para = output_doc.paragraphs[para_index]
-                    # Add revision tracking
-                    for run in para.runs:
-                        run.font.color.rgb = None  # Use default color
-                        # Mark as insertion (this is simplified)
-                    para_index += 1
+        # Process each operation
+        for tag, i1, i2, j1, j2 in matcher.get_opcodes():
+            if tag == 'replace':
+                # Paragraphs were modified
                 has_changes = True
-            elif line.startswith('- '):
-                # Deleted paragraph - we skip but note the change
+                # Mark the changed paragraphs in the output document
+                for idx in range(j1, j2):
+                    if idx < len(output_doc.paragraphs):
+                        para = output_doc.paragraphs[idx]
+                        # Add revision marks to all runs in this paragraph
+                        for run in para.runs:
+                            # Create an insertion revision mark
+                            ins = OxmlElement('w:ins')
+                            ins.set(qn('w:id'), str(idx))
+                            ins.set(qn('w:author'), 'PR Preview')
+                            ins.set(qn('w:date'), '2024-01-01T00:00:00Z')
+                            
+                            # Wrap the run's content in the insertion mark
+                            run_element = run._element
+                            parent = run_element.getparent()
+                            parent.insert(parent.index(run_element), ins)
+                            parent.remove(run_element)
+                            ins.append(run_element)
+                            
+            elif tag == 'insert':
+                # New paragraphs were added
                 has_changes = True
-            elif line.startswith('? '):
-                # Hints about differences within a line
-                pass
+                for idx in range(j1, j2):
+                    if idx < len(output_doc.paragraphs):
+                        para = output_doc.paragraphs[idx]
+                        # Mark as inserted
+                        for run in para.runs:
+                            ins = OxmlElement('w:ins')
+                            ins.set(qn('w:id'), str(1000 + idx))
+                            ins.set(qn('w:author'), 'PR Preview')
+                            ins.set(qn('w:date'), '2024-01-01T00:00:00Z')
+                            
+                            run_element = run._element
+                            parent = run_element.getparent()
+                            parent.insert(parent.index(run_element), ins)
+                            parent.remove(run_element)
+                            ins.append(run_element)
+                            
+            elif tag == 'delete':
+                # Paragraphs were deleted
+                has_changes = True
+                # Note: We can't easily show deletions in the new document
+                # but we mark that changes exist
+        
+        # Save the document with tracked changes enabled
+        output_doc.save(output_path)
         
         if has_changes:
-            # Save the document with tracked changes
-            output_doc.save(output_path)
             print(f"  ✓ Created DOCX with tracked changes: {output_path}")
-            return True
         else:
-            # Even if no significant paragraph-level changes, still create the file
-            # because there might be formatting or minor changes
-            output_doc.save(output_path)
-            print(f"  ✓ Created DOCX (no significant paragraph changes detected): {output_path}")
-            return True
+            print(f"  ✓ Created DOCX with track changes enabled (no paragraph-level changes found): {output_path}")
+        
+        return True
             
     except ImportError:
-        # python-docx not available, use simpler text-based approach
-        print("  Warning: python-docx not available, skipping DOCX tracked changes")
-        print("  Install python-docx in the workflow to enable this feature")
-        return False
+        print("  ⚠ Warning: python-docx not available")
+        print("    Copying new DOCX without tracked changes markup")
+        # Just copy the file without tracked changes
+        import shutil
+        shutil.copy2(new_docx_path, output_path)
+        return True
     except Exception as e:
-        print(f"  Error creating tracked changes DOCX: {e}", file=sys.stderr)
-        return False
+        print(f"  ✗ Error creating tracked changes DOCX: {e}", file=sys.stderr)
+        import traceback
+        traceback.print_exc()
+        # Still try to copy the file
+        try:
+            import shutil
+            shutil.copy2(new_docx_path, output_path)
+            print(f"  ✓ Copied DOCX without tracked changes as fallback")
+            return True
+        except:
+            return False
 
 def process_docx_file(new_docx_path, base_docx_dir):
     """Process a single DOCX file: fetch old version, compare, and create tracked changes version."""

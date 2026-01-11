@@ -146,6 +146,15 @@ def main():
             with open(env_file, 'a') as f:
                 f.write("PREVIEW_CHANGED_CHAPTERS=\n")
                 f.write("PREVIEW_SHOW_HIGHLIGHTS=false\n")
+        
+        # Still create the JSON file for home banner
+        import json
+        with open('./docs/changed-chapters.json', 'w') as f:
+            json.dump({
+                'changed_chapters': [],
+                'count': 0
+            }, f)
+        print("Created empty changed-chapters.json file")
         return
     
     print(f"\nChanged chapters: {', '.join(changed_chapters)}")

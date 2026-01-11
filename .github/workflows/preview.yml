@@ -47,7 +47,10 @@ jobs:
 
       - name: Highlight HTML content changes
         if: env.PREVIEW_SHOW_HIGHLIGHTS == 'true'
-        run: python3 .github/scripts/highlight-html-changes.py
+        run: |
+          echo "Changed chapters:"
+          echo "${{ env.PREVIEW_CHANGED_CHAPTERS }}"
+          python3 .github/scripts/highlight-html-changes.py
         env:
           HTML_DIR: ./docs
           PREVIEW_CHANGED_CHAPTERS: ${{ env.PREVIEW_CHANGED_CHAPTERS }}
@@ -61,6 +64,7 @@ jobs:
         run: python3 .github/scripts/add-home-banner.py
         env:
           HTML_DIR: ./docs
+          PREVIEW_CHANGED_CHAPTERS: ${{ env.PREVIEW_CHANGED_CHAPTERS }}
 
       - name: Deploy PR Preview
         uses: rossjrw/pr-preview-action@main

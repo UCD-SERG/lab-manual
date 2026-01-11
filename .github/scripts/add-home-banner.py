@@ -77,15 +77,23 @@ def main():
         print("index.html does not exist")
         return
     
-    # Read changed chapters from JSON file
+    # Read changed chapters from JSON file or environment variable
     changed_chapters_file = html_dir / 'changed-chapters.json'
-    if not changed_chapters_file.exists():
-        print("No changed chapters file found")
-        return
+    changed_chapters = []
     
-    with open(changed_chapters_file, 'r') as f:
-        data = json.load(f)
-        changed_chapters = data.get('changed_chapters', [])
+    if changed_chapters_file.exists():
+        with open(changed_chapters_file, 'r') as f:
+            data = json.load(f)
+            changed_chapters = data.get('changed_chapters', [])
+        print(f"Loaded {len(changed_chapters)} changed chapter(s) from JSON file")
+    else:
+        # Try to get from environment variable
+        env_chapters = os.getenv('PREVIEW_CHANGED_CHAPTERS', '').strip()
+        if env_chapters:
+            changed_chapters = [ch.strip() for ch in env_chapters.split('\n') if ch.strip()]
+            print(f"Got {len(changed_chapters)} changed chapter(s) from environment variable")
+        else:
+            print("No changed chapters found")
     
     # Always add banner (shows "no changes" message if no changes detected)
     add_home_page_banner(index_html, changed_chapters)
