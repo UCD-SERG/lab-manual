@@ -2,7 +2,7 @@
 
 #### RStudio shortcuts
 
-{{< include _rstudio-styling-shortcuts.qmd >}}
+{{< include 06-coding-style/_rstudio-styling-shortcuts.qmd >}}
 
 #### `styleR`
    
