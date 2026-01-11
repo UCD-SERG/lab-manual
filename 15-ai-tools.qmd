@@ -115,6 +115,31 @@ the coding agent follows an autonomous workflow:
    You review the PR and can request changes;
    the agent will iterate based on your feedback
 
+#### Example: This Document
+
+This very section you're reading was created through the coding agent workflow:
+
+1. **Issue created**: [Issue #42](https://github.com/UCD-SERG/lab-manual/issues/42) requested adding discussion about benefits and hazards of coding agents,
+   including a Matrix film connection and best practices
+   
+2. **Agent assigned**: The issue was assigned to `@copilot`
+
+3. **Work completed**: The agent analyzed the requirements,
+   reviewed the repository structure,
+   and implemented the changes across multiple files
+
+4. **Pull request**: [PR #50](https://github.com/UCD-SERG/lab-manual/pull/50) was created with comprehensive content about coding agents,
+   including this "How to Work with Coding Agents" section,
+   benefits and hazards discussion,
+   best practices,
+   and firewall configuration details
+
+5. **Iteration**: The PR received feedback comments requesting additional links,
+   improved wording,
+   and this example section—all of which the agent addressed through follow-up commits
+
+This demonstrates the full lifecycle of working with a coding agent on a real documentation task.
+
 #### Directly Prompting for Pull Requests
 
 You can also prompt Copilot to create pull requests without first creating an issue:
