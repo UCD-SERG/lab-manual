@@ -166,7 +166,8 @@ def main():
             f.write("PREVIEW_CHANGED_CHAPTERS<<EOF\n")
             f.write('\n'.join(changed_chapters) + '\n')
             f.write("EOF\n")
-            f.write("PREVIEW_SHOW_HIGHLIGHTS=true\n")
+            # Disable change highlighting due to glitches (see issue about highlighting)
+            f.write("PREVIEW_SHOW_HIGHLIGHTS=false\n")
     
     # Also create a JSON file for easy access
     import json
