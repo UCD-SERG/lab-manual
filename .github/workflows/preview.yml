@@ -25,8 +25,10 @@ jobs:
         with:
           tinytex: true
 
-      - name: Render
+      - name: Render (with freeze to cache computations)
         uses: quarto-dev/quarto-actions/render@v2
+        env:
+          QUARTO_FREEZE: true
 
       - name: Detect changed chapters (based on rendered files)
         run: python3 .github/scripts/detect-changed-chapters.py
@@ -37,7 +39,7 @@ jobs:
         if: env.PREVIEW_SHOW_HIGHLIGHTS == 'true'
         run: python3 .github/scripts/inject-preview-metadata.py
 
-      - name: Re-render with metadata
+      - name: Re-render with metadata (using frozen computations)
         if: env.PREVIEW_SHOW_HIGHLIGHTS == 'true'
         uses: quarto-dev/quarto-actions/render@v2
 

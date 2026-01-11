@@ -38,6 +38,7 @@ placeholder*.tgz
 # Quarto
 /.quarto/
 /docs/
+/_freeze/
 *.pdf
 *.docx
 *.epub

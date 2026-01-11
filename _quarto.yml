@@ -16,6 +16,9 @@ project:
   type: book
   output-dir: docs
 
+execute:
+  freeze: auto  # Enable computation caching for faster re-renders
+
 book:
   title: "UCD-SeRG Lab Manual"
   author:
