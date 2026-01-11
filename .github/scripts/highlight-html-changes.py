@@ -294,6 +294,9 @@ class HTMLDiffer:
         with open(local_filepath, 'r', encoding='utf-8') as f:
             new_html = f.read()
         
+        # Check if there's a placeholder that needs replacing
+        has_placeholder = 'PREVIEW_BANNER_PLACEHOLDER' in new_html
+        
         # Fetch the published (main) version
         old_html = self.fetch_base_html(local_filepath)
         
@@ -320,10 +323,26 @@ class HTMLDiffer:
                     f.write(new_html)
                 
                 print(f"  Added combined banner and inline highlights to {local_filepath}")
+            elif has_placeholder:
+                # No significant changes but placeholder exists - replace it with a simple banner
+                print(f"  No significant content changes detected (similarity: {similarity:.2%})")
+                print(f"  Replacing placeholder with simple banner")
+                new_html = self.inject_combined_banner(new_html, 0, similarity, local_filepath)
+                with open(local_filepath, 'w', encoding='utf-8') as f:
+                    f.write(new_html)
             else:
                 print(f"  No significant content changes detected (similarity: {similarity:.2%})")
+        elif has_placeholder:
+            # Could not fetch base version but placeholder exists - replace with new file banner
+            print(f"  Could not fetch base version (file may be new)")
+            print(f"  Replacing placeholder with new file banner")
+            # Use 0 similarity to show 100% changed
+            new_html = self.inject_combined_banner(new_html, 1, 0.0, local_filepath)
+            with open(local_filepath, 'w', encoding='utf-8') as f:
+                f.write(new_html)
         else:
             print(f"  Could not fetch base version (file may be new)")
+
 
 def checkout_base_html(base_ref='origin/gh-pages', target_dir='/tmp/base-html'):
     """Check out the base HTML files from gh-pages for comparison."""
