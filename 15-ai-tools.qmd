@@ -73,7 +73,7 @@ Coding agents also take time to get configured for work,
 every time you make a request.
 See <https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-environment#preinstalling-tools-or-dependencies-in-copilots-environment> for ways to reduce that startup time,
 but it will never be 0.
-If you can complete the task faster the coding agent can, 
+If you can complete the task faster than the coding agent can, 
 you should probably do it yourself.
 
 Also, the less we practice, the weaker our skills get,
