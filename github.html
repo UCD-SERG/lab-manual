@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Code repositories – UCD-SeRG Lab Manual</title>
+<title>10&nbsp; Github – UCD-SeRG Lab Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -65,8 +30,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./05-coding-practices.html" rel="next">
-<link href="./03-reproducibility.html" rel="prev">
+<link href="./unix.html" rel="next">
+<link href="./data-masking.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -285,7 +250,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04-code-repositories.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Code repositories</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./github.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Github</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -345,103 +310,103 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-culture-and-conduct.html" class="sidebar-item-text sidebar-link">
+  <a href="./culture-and-conduct.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Culture and conduct</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-communication.html" class="sidebar-item-text sidebar-link">
+  <a href="./communication.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Communication and coordination</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-reproducibility.html" class="sidebar-item-text sidebar-link">
+  <a href="./reproducibility.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Reproducibility</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-code-repositories.html" class="sidebar-item-text sidebar-link active">
+  <a href="./code-repositories.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Code repositories</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-coding-practices.html" class="sidebar-item-text sidebar-link">
+  <a href="./coding-practices.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">R Coding Practices</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-coding-style.html" class="sidebar-item-text sidebar-link">
+  <a href="./coding-style.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">R Code Style</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-big-data.html" class="sidebar-item-text sidebar-link">
+  <a href="./big-data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Big data</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-data-masking.html" class="sidebar-item-text sidebar-link">
+  <a href="./data-masking.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data masking</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09-github.html" class="sidebar-item-text sidebar-link">
+  <a href="./github.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Github</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10-unix.html" class="sidebar-item-text sidebar-link">
+  <a href="./unix.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Unix</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11-reproducible-environments.html" class="sidebar-item-text sidebar-link">
+  <a href="./reproducible-environments.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Reproducible Environments</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./12-code-publication.html" class="sidebar-item-text sidebar-link">
+  <a href="./code-publication.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Code Publication</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./13-data-publication.html" class="sidebar-item-text sidebar-link">
+  <a href="./data-publication.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Data Publication</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./14-slurm.html" class="sidebar-item-text sidebar-link">
+  <a href="./slurm.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">High-performance computing (HPC)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./15-ai-tools.html" class="sidebar-item-text sidebar-link">
+  <a href="./ai-tools.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Working with AI</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./16-checklists.html" class="sidebar-item-text sidebar-link">
+  <a href="./checklists.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Checklists</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./17-resources.html" class="sidebar-item-text sidebar-link">
+  <a href="./resources.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Resources</span></span></a>
   </div>
 </li>
@@ -455,24 +420,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#package-structure" id="toc-package-structure" class="nav-link active" data-scroll-target="#package-structure"><span class="header-section-number">5.1</span> Package Structure</a>
+  <li><a href="#basics" id="toc-basics" class="nav-link active" data-scroll-target="#basics"><span class="header-section-number">10.1</span> Basics</a></li>
+  <li><a href="#github-desktop" id="toc-github-desktop" class="nav-link" data-scroll-target="#github-desktop"><span class="header-section-number">10.2</span> Github Desktop</a></li>
+  <li><a href="#git-branching" id="toc-git-branching" class="nav-link" data-scroll-target="#git-branching"><span class="header-section-number">10.3</span> Git Branching</a></li>
+  <li><a href="#example-workflow" id="toc-example-workflow" class="nav-link" data-scroll-target="#example-workflow"><span class="header-section-number">10.4</span> Example Workflow</a></li>
+  <li><a href="#commonly-used-git-commands" id="toc-commonly-used-git-commands" class="nav-link" data-scroll-target="#commonly-used-git-commands"><span class="header-section-number">10.5</span> Commonly Used Git Commands</a></li>
+  <li><a href="#how-often-should-i-commit" id="toc-how-often-should-i-commit" class="nav-link" data-scroll-target="#how-often-should-i-commit"><span class="header-section-number">10.6</span> How often should I commit?</a></li>
+  <li><a href="#repeated-amend-workflow" id="toc-repeated-amend-workflow" class="nav-link" data-scroll-target="#repeated-amend-workflow"><span class="header-section-number">10.7</span> Repeated Amend Workflow</a>
   <ul class="collapse">
-  <li><a href="#why-use-r-package-structure" id="toc-why-use-r-package-structure" class="nav-link" data-scroll-target="#why-use-r-package-structure"><span class="header-section-number">5.1.1</span> Why Use R Package Structure?</a></li>
-  <li><a href="#basic-package-structure" id="toc-basic-package-structure" class="nav-link" data-scroll-target="#basic-package-structure"><span class="header-section-number">5.1.2</span> Basic Package Structure</a></li>
-  <li><a href="#sec-analysis-file-placement" id="toc-sec-analysis-file-placement" class="nav-link" data-scroll-target="#sec-analysis-file-placement"><span class="header-section-number">5.1.3</span> Where to Place Analysis Files</a></li>
-  <li><a href="#keep-analysis-workbooks-tidy" id="toc-keep-analysis-workbooks-tidy" class="nav-link" data-scroll-target="#keep-analysis-workbooks-tidy"><span class="header-section-number">5.1.4</span> Keep Analysis Workbooks Tidy</a></li>
-  <li><a href="#shell-scripts-and-automation" id="toc-shell-scripts-and-automation" class="nav-link" data-scroll-target="#shell-scripts-and-automation"><span class="header-section-number">5.1.5</span> Shell Scripts and Automation</a></li>
-  <li><a href="#storing-analysis-outputs" id="toc-storing-analysis-outputs" class="nav-link" data-scroll-target="#storing-analysis-outputs"><span class="header-section-number">5.1.6</span> Storing Analysis Outputs</a></li>
+  <li><a href="#basic-workflow" id="toc-basic-workflow" class="nav-link" data-scroll-target="#basic-workflow"><span class="header-section-number">10.7.1</span> Basic Workflow</a></li>
+  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points"><span class="header-section-number">10.7.2</span> Key Points</a></li>
   </ul></li>
-  <li><a href="#rproj-files" id="toc-rproj-files" class="nav-link" data-scroll-target="#rproj-files"><span class="header-section-number">5.2</span> <code>.Rproj</code> files</a></li>
-  <li><a href="#organizing-the-data-raw-folder" id="toc-organizing-the-data-raw-folder" class="nav-link" data-scroll-target="#organizing-the-data-raw-folder"><span class="header-section-number">5.3</span> Organizing the <code>data-raw</code> folder</a>
-  <ul class="collapse">
-  <li><a href="#configuration-config-file" id="toc-configuration-config-file" class="nav-link" data-scroll-target="#configuration-config-file"><span class="header-section-number">5.3.1</span> Configuration (‘config’) File</a></li>
-  <li><a href="#order-files-and-directories" id="toc-order-files-and-directories" class="nav-link" data-scroll-target="#order-files-and-directories"><span class="header-section-number">5.3.2</span> Order Files and Directories</a></li>
-  <li><a href="#using-bash-scripts-to-ensure-reproducibility" id="toc-using-bash-scripts-to-ensure-reproducibility" class="nav-link" data-scroll-target="#using-bash-scripts-to-ensure-reproducibility"><span class="header-section-number">5.3.3</span> Using Bash scripts to ensure reproducibility</a></li>
-  </ul></li>
+  <li><a href="#what-should-be-pushed-to-github" id="toc-what-should-be-pushed-to-github" class="nav-link" data-scroll-target="#what-should-be-pushed-to-github"><span class="header-section-number">10.8</span> What should be pushed to Github?</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/04-code-repositories.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/04-code-repositories.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/github.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/github.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -480,7 +441,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Code repositories</span></h1>
+<h1 class="title"><span id="sec-github" class="quarto-section-identifier"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Github</span></span></h1>
 </div>
 
 
@@ -502,268 +463,221 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Adapted by UCD-SeRG team from <a href="https://jadebc.github.io/lab-manual/code-repositories.html">original by Kunal Mishra, Jade Benjamin-Chung, and Stephanie Djajadi</a></p>
-<p>Each study has at least one code repository that typically holds R code, shell scripts with Unix code, and research outputs (results .RDS files, tables, figures). Repositories may also include datasets. This chapter outlines how to organize these files. Adhering to a standard format makes it easier for us to efficiently collaborate across projects.</p>
-<p>UCD-SeRG projects use R package structure for most R-based work. This provides benefits for reproducibility, collaboration, and code quality even for analysis-only projects.</p>
-<section id="package-structure" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="package-structure"><span class="header-section-number">5.1</span> Package Structure</h2>
-<p><strong>All R projects in our lab should be structured as R packages</strong>, even if they are primarily analysis projects and not intended for distribution on CRAN or Bioconductor. This standardized structure provides numerous benefits:</p>
-<section id="why-use-r-package-structure" class="level3" data-number="5.1.1">
-<h3 data-number="5.1.1" class="anchored" data-anchor-id="why-use-r-package-structure"><span class="header-section-number">5.1.1</span> Why Use R Package Structure?</h3>
+<p>Adapted by UCD-SeRG team from <a href="https://jadebc.github.io/lab-manual/github.html">original by Stephanie Djajadi and Nolan Pokpongkiat</a></p>
+<section id="basics" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="basics"><span class="header-section-number">10.1</span> Basics</h2>
+<ul>
+<li>A detailed tutorial of Git can be found <a href="https://sp19.datastructur.es/materials/guides/using-git#b-local-repositories-narrative-introduction">here on the CS61B website</a>.</li>
+<li>If you are already familiar with Git, you can reference the summary at the end of <a href="https://sp19.datastructur.es/materials/guides/using-git#b-local-repositories-narrative-introduction">Section B</a>.</li>
+<li>If you have made a mistake in Git, you can refer to this <a href="https://sethrobertson.github.io/GitFixUm/fixup.html">article</a> to undo, fix, or remove commits in git.</li>
+</ul>
+</section>
+<section id="github-desktop" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="github-desktop"><span class="header-section-number">10.2</span> Github Desktop</h2>
+<p>While knowing how to use Git on the command line will always be useful since the full power of Git and its customizations and flexibilty is designed for use with the command line, Github also provides <a href="https://desktop.github.com/">Github Desktop</a> as an graphical interface to do basic git commands; you can do all of the basic functions of Git using this desktop app. Feel free to use this as an alternative to Git on the command line if you prefer.</p>
+</section>
+<section id="git-branching" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="git-branching"><span class="header-section-number">10.3</span> Git Branching</h2>
+<p>Branches allow you to keep track of multiple versions of your work simultaneously, and you can easily switch between versions and merge branches together once you’ve finished working on a section and want it to join the rest of your code. Here are some cases when it may be a good idea to branch:</p>
+<ul>
+<li>You may want to make a dramatic change to your existing code (called refactoring) but it will break other parts of your project. But you want to be able to simultaneously work on other parts or you are collaborating with others, and you don’t want to break the code for them.</li>
+<li>You want to start working on a new part of the project, but you aren’t sure yet if your changes will work and make it to the final product.</li>
+<li>You are working with others and don’t want to mix up your current work with theirs, even if you want to bring your work together later in the future.</li>
+</ul>
+<p>A detailed tutorial on Git Branching can be found <a href="https://sp19.datastructur.es/materials/guides/using-git#e-git-branching-advanced-git-optional">here</a>. You can also find instructions on how to handle merge conflicts when joining branches together.</p>
+</section>
+<section id="example-workflow" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="example-workflow"><span class="header-section-number">10.4</span> Example Workflow</h2>
+<p>A standard workflow when starting on a new project and contributing code looks like this:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SETUP: FIRST TIME ONLY: <code>git clone &lt;url&gt; &lt;directory_name&gt;</code></td>
+<td>Clone the repo. This copies of all the project files in its current state on Github to your local computer.</td>
+</tr>
+<tr class="even">
+<td>1. <code>git pull origin master</code></td>
+<td>update the state of your files to match the most current version on GitHub</td>
+</tr>
+<tr class="odd">
+<td>2. <code>git checkout -b &lt;new_branch_name&gt;</code></td>
+<td>create new branch that you’ll be working on and go to it</td>
+</tr>
+<tr class="even">
+<td>3. Make some file changes</td>
+<td>work on your feature/implementation</td>
+</tr>
+<tr class="odd">
+<td>4. <code>git add -p</code></td>
+<td>add changes to stage for commit, going through changes line by line</td>
+</tr>
+<tr class="even">
+<td>5. <code>git commit -m &lt;commit message&gt;</code></td>
+<td>commit files with a message</td>
+</tr>
+<tr class="odd">
+<td>6. <code>git push -u origin &lt;branch_name&gt;</code></td>
+<td>push branch to remote and set to track (-u only needed if this is first push)</td>
+</tr>
+<tr class="even">
+<td>7. Repeat step 4-5.</td>
+<td>work and commit often</td>
+</tr>
+<tr class="odd">
+<td>8. <code>git push</code></td>
+<td>push work to remote branch for others to view</td>
+</tr>
+<tr class="even">
+<td>9. Follow the link given from the <code>git push</code> command to <a href="https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request#creating-the-pull-request">submit a pull request (PR) on GitHub online</a></td>
+<td>PR merges in work from your branch into master</td>
+</tr>
+<tr class="odd">
+<td>(10.) Your changes and PR get approved, your reviewer deletes your remote branch upon merging</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>11. <code>git fetch --all --prune</code></td>
+<td>clean up your local git by untracking deleted remote branches</td>
+</tr>
+</tbody>
+</table>
+<p>Other helpful commands are listed below.</p>
+</section>
+<section id="commonly-used-git-commands" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="commonly-used-git-commands"><span class="header-section-number">10.5</span> Commonly Used Git Commands</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 36%">
+<col style="width: 64%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>git clone &lt;url&gt; &lt;directory_name&gt;</code></td>
+<td>clone a repository, only needs to be done the first time</td>
+</tr>
+<tr class="even">
+<td><code>git pull origin master</code></td>
+<td>pull from <code>master</code> before making any changes</td>
+</tr>
+<tr class="odd">
+<td><code>git branch</code></td>
+<td>check what branch you are on</td>
+</tr>
+<tr class="even">
+<td><code>git branch -a</code></td>
+<td>check what branch you are on + all remote branches</td>
+</tr>
+<tr class="odd">
+<td><code>git checkout -b &lt;new_branch_name&gt;</code></td>
+<td>create new branch and go to it (only necessary when you create a new branch)</td>
+</tr>
+<tr class="even">
+<td><code>git checkout &lt;branch name&gt;</code></td>
+<td>switch to branch</td>
+</tr>
+<tr class="odd">
+<td><code>git add &lt;file name&gt;</code></td>
+<td>add file to stage for commit</td>
+</tr>
+<tr class="even">
+<td><code>git add -p</code></td>
+<td>adds changes to commit, showing you changes one by one</td>
+</tr>
+<tr class="odd">
+<td><code>git commit -m &lt;commit message&gt;</code></td>
+<td>commit file with a message</td>
+</tr>
+<tr class="even">
+<td><code>git push -u origin &lt;branch_name&gt;</code></td>
+<td>push branch to remote and set to track (-u only works if this is first push)</td>
+</tr>
+<tr class="odd">
+<td><code>git branch --set-upstream-to origin &lt;branch_name&gt;</code></td>
+<td>set upstream to <code>origin/&lt;branch_name&gt;</code> (use if you forgot -u on first push)</td>
+</tr>
+<tr class="even">
+<td><code>git push origin &lt;branch_name&gt;</code></td>
+<td>push work to branch</td>
+</tr>
+<tr class="odd">
+<td><code>git checkout &lt;branch_name&gt;</code> &nbsp;<code>git merge master</code></td>
+<td>switch to branch and merge changes from <code>master</code> into <code>&lt;branch_name&gt;</code> (two commands)</td>
+</tr>
+<tr class="even">
+<td><code>git merge &lt;branch_name&gt; master</code></td>
+<td>switch to branch and merge changes from <code>master</code> into <code>&lt;branch_name&gt;</code> (one command)</td>
+</tr>
+<tr class="odd">
+<td><code>git checkout --track origin/&lt;branch_name&gt;</code></td>
+<td>pulls a remote branch and creates a local branch to track it (use when trying to pull someone else’s branch onto your local computer)</td>
+</tr>
+<tr class="even">
+<td><code>git push --delete &lt;remote_name&gt; &lt;branch_name&gt;</code></td>
+<td>delete remote branch</td>
+</tr>
+<tr class="odd">
+<td><code>git branch -d &lt;branch_name&gt;</code></td>
+<td>deletes local branch, -D to force</td>
+</tr>
+<tr class="even">
+<td><code>git fetch --all --prune</code></td>
+<td>untrack deleted remote branches</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="how-often-should-i-commit" class="level2" data-number="10.6">
+<h2 data-number="10.6" class="anchored" data-anchor-id="how-often-should-i-commit"><span class="header-section-number">10.6</span> How often should I commit?</h2>
+<p>It is good practice to commit every 15 minutes, or every time you make a significant change. It is better to commit more rather than less.</p>
+</section>
+<section id="repeated-amend-workflow" class="level2" data-number="10.7">
+<h2 data-number="10.7" class="anchored" data-anchor-id="repeated-amend-workflow"><span class="header-section-number">10.7</span> Repeated Amend Workflow</h2>
+<p>When working on a complex task, you may want to make frequent incremental commits to protect your progress, but avoid cluttering your Git history with many tiny “work in progress” commits. The <strong>Repeated Amend</strong> pattern lets you build up a polished commit gradually.</p>
+<section id="basic-workflow" class="level3" data-number="10.7.1">
+<h3 data-number="10.7.1" class="anchored" data-anchor-id="basic-workflow"><span class="header-section-number">10.7.1</span> Basic Workflow</h3>
+<p>Start with a clean working tree in a functional state. Then:</p>
 <ol type="1">
-<li><strong>Organized code</strong>: Clear separation of functions (<code>R/</code>), documentation (<code>man/</code>), tests (<code>tests/</code>), data (<code>data/</code>), and vignettes/analyses</li>
-<li><strong>Dependency management</strong>: <code>DESCRIPTION</code> file explicitly declares all package dependencies and version restrictions, which simplifies installing those dependencies.</li>
-<li><strong>Automatic documentation</strong>: <code>roxygen2</code> generates help files from inline comments</li>
-<li><strong>Built-in testing</strong>: <code>testthat</code> framework integrates seamlessly with package structure</li>
-<li><strong>Code quality</strong>: Tools like <code>devtools::check()</code> and <code>lintr</code> enforce best practices</li>
-<li><strong>Reproducibility</strong>: Package structure makes it easy to share and reproduce analyses</li>
-<li><strong>Reusable functions</strong>: Decompose complex analyses into well-documented, testable functions</li>
-<li><strong>Version control</strong>: Track changes to code, documentation, and data together</li>
+<li>Make a small change and verify your project still works</li>
+<li>Stage and commit with a temporary message like “WIP” (work in progress)</li>
+<li><strong>Do not push yet</strong></li>
+<li>Make another small change and verify it works</li>
+<li>Stage and amend the previous commit: <code>git commit --amend --no-edit</code></li>
+<li>Repeat steps 4-5 as needed</li>
+<li>When finished, amend one final time with a proper commit message</li>
+<li>Push your completed work</li>
 </ol>
+<p>In RStudio, you can use the “Amend previous commit” checkbox when committing.</p>
 </section>
-<section id="basic-package-structure" class="level3" data-number="5.1.2">
-<h3 data-number="5.1.2" class="anchored" data-anchor-id="basic-package-structure"><span class="header-section-number">5.1.2</span> Basic Package Structure</h3>
-<pre><code>myproject/
-├── DESCRIPTION          # Package metadata and dependencies
-├── NAMESPACE            # Auto-generated, don't edit manually
-├── R/                   # All R functions (reusable code)
-│   ├── analysis_functions.R
-│   ├── data_prep.R
-│   └── plotting.R
-├── man/                 # Auto-generated documentation
-├── tests/              
-│   └── testthat/       # Unit tests
-├── data/               # Processed data objects (.rda files)
-├── data-raw/           # Raw data and data processing scripts
-│   ├── 0-prep-data.sh  # Shell scripts for data preparation
-│   ├── process_survey_data.R
-│   └── clean_lab_results.R
-├── vignettes/          # Long-form documentation
-│   ├── intro.qmd       # Main vignettes (shipped with package)
-│   ├── tutorial.qmd
-│   └── articles/       # Website-only articles (not shipped)
-│       ├── advanced-topics.qmd
-│       └── case-studies.qmd
-├── inst/               # Additional files to include in package
-│   ├── extdata/        # External data files and .RDS results
-│   │   ├── analysis_results.rds
-│   │   └── processed_data.rds
-│   ├── output/         # Figure and table outputs
-│   │   ├── figures/
-│   │   │   ├── fig1.pdf
-│   │   │   └── fig2.png
-│   │   └── tables/
-│   │       ├── table1.csv
-│   │       └── table2.xlsx
-│   └── analyses/       # Analyses using restricted data (see below)
-└── .Rproj              # RStudio project file</code></pre>
-</section>
-<section id="sec-analysis-file-placement" class="level3" data-number="5.1.3">
-<h3 data-number="5.1.3" class="anchored" data-anchor-id="sec-analysis-file-placement"><span class="header-section-number">5.1.3</span> Where to Place Analysis Files</h3>
-<section id="vignettes-vs-articles" class="level4" data-number="5.1.3.1">
-<h4 data-number="5.1.3.1" class="anchored" data-anchor-id="vignettes-vs-articles"><span class="header-section-number">5.1.3.1</span> Vignettes vs Articles</h4>
-<p><strong>Vignettes</strong> (<code>vignettes/*.qmd</code>): - <strong>Shipped with the package</strong> when installed - Accessible via <code>vignette()</code> and <code>browseVignettes()</code> in R - Displayed on CRAN - Built at package build time - Use for core package documentation and tutorials - Created with <code>usethis::use_vignette("name")</code></p>
-<p><strong>Articles</strong> (<code>vignettes/articles/*.qmd</code>): - <strong>Website-only</strong> (not shipped with the package) - Only appear on the pkgdown website - Not accessible via <code>vignette()</code> in R - Not displayed on CRAN - Use for supplementary content, blog posts, extended tutorials, or frequently updated material - Created with <code>usethis::use_article("name")</code> - Automatically added to <code>.Rbuildignore</code></p>
-<p><strong>When to use each:</strong> - <strong>Vignette</strong>: Essential tutorials users need offline, core package workflows - <strong>Article</strong>: Supplementary material, case studies, advanced topics, blog-style content</p>
-</section>
-<section id="public-analyses-vignettes" class="level4" data-number="5.1.3.2">
-<h4 data-number="5.1.3.2" class="anchored" data-anchor-id="public-analyses-vignettes"><span class="header-section-number">5.1.3.2</span> Public Analyses (vignettes/)</h4>
-<p>Use <code>vignettes/</code> for analysis workbooks that:</p>
+<section id="key-points" class="level3" data-number="10.7.2">
+<h3 data-number="10.7.2" class="anchored" data-anchor-id="key-points"><span class="header-section-number">10.7.2</span> Key Points</h3>
 <ul>
-<li>Use publicly available data</li>
-<li>Should be accessible to all package users</li>
-<li>Are core to understanding the package</li>
+<li>Each amend replaces the previous commit rather than creating a new one</li>
+<li>This keeps your history clean while letting you work incrementally</li>
+<li>Only use this pattern before pushing - never amend commits that others may have pulled</li>
+<li>If you need to undo changes, use <code>git reset --hard</code> to return to your last commit state</li>
+<li>Think of commits as climbing protection: use them when in uncertain territory</li>
 </ul>
-<p>Use <code>vignettes/articles/</code> for:</p>
-<ul>
-<li>Extended case studies</li>
-<li>Blog-style posts</li>
-<li>Supplementary analyses</li>
-<li>Material that updates frequently</li>
-</ul>
-<p>All vignettes and articles will be rendered by <code>pkgdown::build_site()</code> on your package website.</p>
-</section>
-<section id="analyses-with-restricted-data-instanalyses" class="level4" data-number="5.1.3.3">
-<h4 data-number="5.1.3.3" class="anchored" data-anchor-id="analyses-with-restricted-data-instanalyses"><span class="header-section-number">5.1.3.3</span> Analyses with Restricted Data (inst/analyses/)</h4>
-<p>For analyses that rely on <strong>private, sensitive, or restricted data</strong>, place <code>.qmd</code> or <code>.qmd</code> files in <code>inst/analyses/</code>:</p>
-<pre><code>myproject/
-├── inst/
-│   ├── analyses/
-│   │   ├── 01-confidential-data-analysis.qmd
-│   │   ├── 02-unpublished-results.qmd
-│   │   └── README.md  # Document data access requirements
-│   └── extdata/
-└── vignettes/
-    ├── 01-public-analysis.qmd
-    └── 02-demo-with-simulated-data.qmd</code></pre>
-<p><strong>Benefits of this approach:</strong></p>
-<ul>
-<li>Analyses with restricted data are included in version control alongside your code</li>
-<li>They’re clearly separated from public documentation</li>
-<li><code>inst/analyses/</code> is <strong>excluded from <code>pkgdown</code> builds</strong> and package documentation</li>
-<li>Collaborators with data access can still run these analyses</li>
-<li>You maintain a complete record of all project work</li>
-</ul>
-<p><strong>Note on privacy:</strong> Files in <code>inst/analyses/</code> are not inherently private—they will be visible if your repository is public. Use this folder for analyses that rely on restricted data that is stored separately, not for storing the restricted data itself. If you need to keep the analysis code private, use a private repository.</p>
-<p><strong>Best practices for analyses with restricted data:</strong></p>
-<ol type="1">
-<li><strong>Document data requirements</strong>: Include a README.md in <code>inst/analyses/</code> explaining:
-<ul>
-<li>What data is required</li>
-<li>Where to obtain it (if permissible)</li>
-<li>Data access restrictions</li>
-<li>How to set up data paths</li>
-</ul></li>
-<li><strong>Use relative paths carefully</strong>: Structure your code so data paths can be configured:</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># In inst/analyses/01-analysis.qmd</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Users should set this based on their local setup</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>data_dir <span class="ot">&lt;-</span> <span class="fu">Sys.getenv</span>(<span class="st">"MYPROJECT_DATA"</span>, </span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                       <span class="at">default =</span> <span class="st">"~/restricted_data/myproject"</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>raw_data <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="fu">file.path</span>(data_dir, <span class="st">"sensitive.csv"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="3" type="1">
-<li><strong>Create public alternatives</strong>: When possible, create companion vignettes in <code>vignettes/</code> using:
-<ul>
-<li>Simulated data that mimics the structure</li>
-<li>Publicly available datasets</li>
-<li>Aggregated/de-identified summaries</li>
-</ul></li>
-<li><strong>Add to .Rbuildignore</strong>: Ensure <code>inst/analyses/</code> doesn’t cause package checks to fail:</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use usethis to add to .Rbuildignore</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_build_ignore</span>(<span class="st">"inst/analyses"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>For more details and troubleshooting scenarios, see the <a href="https://happygitwithr.com/repeated-amend.html">Repeated Amend chapter</a> in Happy Git with R.</p>
 </section>
 </section>
-<section id="keep-analysis-workbooks-tidy" class="level3" data-number="5.1.4">
-<h3 data-number="5.1.4" class="anchored" data-anchor-id="keep-analysis-workbooks-tidy"><span class="header-section-number">5.1.4</span> Keep Analysis Workbooks Tidy</h3>
-<p><strong>Decompose reusable functions</strong> from your analysis notebooks into the <code>R/</code> directory. Your vignettes should:</p>
-<ul>
-<li>Be clean, readable narratives of your analysis</li>
-<li>Call well-documented functions from your package</li>
-<li>Focus on the “what” and “why” rather than implementation details</li>
-<li>Be reproducible by others with a single click (or with documented data access for private analyses)</li>
-</ul>
-<p><strong>Example of what NOT to do</strong> (all code in vignette):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bad: 100 lines of data manipulation in vignette</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>raw_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data.csv"</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ... 100 lines of cleaning, transforming, reshaping ...</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>cleaned_data <span class="ot">&lt;-</span> final_result</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Example of what TO do</strong> (functions in R/, simple calls in vignette):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Good: Clean vignette calling documented functions</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>raw_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data.csv"</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>cleaned_data <span class="ot">&lt;-</span> <span class="fu">prep_study_data</span>(raw_data)  <span class="co"># Function in R/data_prep.R</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="shell-scripts-and-automation" class="level3" data-number="5.1.5">
-<h3 data-number="5.1.5" class="anchored" data-anchor-id="shell-scripts-and-automation"><span class="header-section-number">5.1.5</span> Shell Scripts and Automation</h3>
-<p>Shell scripts are useful for automating workflows and ensuring reproducibility. Place shell scripts in <code>data-raw/</code> alongside the R scripts they coordinate:</p>
-<pre><code>data-raw/
-├── 0-prep-data.sh          # Shell script to run all data prep
-├── 01-load-survey.R
-├── 02-clean-survey.R
-├── 03-merge-datasets.R
-└── 04-create-analysis-data.R</code></pre>
-<p><strong>Using shell scripts:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># data-raw/0-prep-data.sh</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Rscript</span> data-raw/01-load-survey.R</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Rscript</span> data-raw/02-clean-survey.R</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Rscript</span> data-raw/03-merge-datasets.R</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="ex">Rscript</span> data-raw/04-create-analysis-data.R</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This is especially useful when data upstream changes — you can simply run the shell script to reproduce everything. After running shell scripts, <code>.Rout</code> log files will be generated for each script. It is important to check these files to ensure everything has run correctly.</p>
-</section>
-<section id="storing-analysis-outputs" class="level3" data-number="5.1.6">
-<h3 data-number="5.1.6" class="anchored" data-anchor-id="storing-analysis-outputs"><span class="header-section-number">5.1.6</span> Storing Analysis Outputs</h3>
-<p><strong>Results files (.RDS)</strong>: Save analysis results in <code>inst/extdata/</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save results</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">write_rds</span>(analysis_results, <span class="fu">here</span>(<span class="st">"inst"</span>, <span class="st">"extdata"</span>, <span class="st">"analysis_results.rds"</span>))</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Load results later</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_rds</span>(<span class="fu">here</span>(<span class="st">"inst"</span>, <span class="st">"extdata"</span>, <span class="st">"analysis_results.rds"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Figures and tables</strong>: Save publication outputs in <code>inst/output/</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save figure</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="fu">here</span>(<span class="st">"inst"</span>, <span class="st">"output"</span>, <span class="st">"figures"</span>, <span class="st">"fig1_incidence_trends.pdf"</span>), </span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">width =</span> <span class="dv">8</span>, <span class="at">height =</span> <span class="dv">6</span>)</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Save table</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">write_csv</span>(summary_table, </span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">here</span>(<span class="st">"inst"</span>, <span class="st">"output"</span>, <span class="st">"tables"</span>, <span class="st">"table1_demographics.csv"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Organization:</strong></p>
-<pre><code>inst/
-├── extdata/
-│   ├── analysis_results.rds
-│   ├── model_fits.rds
-│   └── processed_data.rds
-└── output/
-    ├── figures/
-    │   ├── fig1_incidence_trends.pdf
-    │   ├── fig2_risk_factors.png
-    │   └── figS1_sensitivity.pdf
-    └── tables/
-        ├── table1_demographics.csv
-        ├── table2_main_results.xlsx
-        └── tableS1_detailed_results.csv</code></pre>
-</section>
-</section>
-<section id="rproj-files" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="rproj-files"><span class="header-section-number">5.2</span> <code>.Rproj</code> files</h2>
-<p>An “R Project” can be created within RStudio by going to <code>File &gt;&gt; New Project</code>. Depending on where you are with your research, choose the most appropriate option. This will save preferences, working directories, and even the results of running code/data (though I’d recommend starting from scratch each time you open your project, in general). Then, ensure that whenever you are working on that specific research project, you open your created project to enable the full utility of <code>.Rproj</code> files. This also automatically sets the directory to the top level of the project.</p>
-</section>
-<section id="organizing-the-data-raw-folder" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="organizing-the-data-raw-folder"><span class="header-section-number">5.3</span> Organizing the <code>data-raw</code> folder</h2>
-<p>The <code>data-raw</code> folder serves as a catch-all for scripts that do not (yet) fit into the package structure described above. The <code>data-raw</code> folder should still be organized. We recommend the following subdirectory structure for <code>data-raw</code>:</p>
-<pre><code>0-run-project.sh
-0-config.R
-1 - Data-Management/
-    0-prep-data.sh
-    1-prep-cdph-fluseas.R
-    2a-prep-absentee.R
-    2b-prep-absentee-weighted.R
-    3a-prep-absentee-adj.R
-    3b-prep-absentee-adj-weighted.R
-2 - Analysis/
-    0-run-analysis.sh
-    1 - Absentee-Mean/
-        1-absentee-mean-primary.R
-        2-absentee-mean-negative-control.R
-        3-absentee-mean-CDC.R
-        4-absentee-mean-peakwk.R
-        5-absentee-mean-cdph2.R
-        6-absentee-mean-cdph3.R
-    2 - Absentee-Positivity-Check/
-    3 - Absentee-P1/
-    4 - Absentee-P2/
-3 - Figures/
-    0-run-figures.sh
-    ...
-4 - Tables/
-    0-run-tables.sh
-    ...
-5 - Results/
-    1 - Absentee-Mean/
-        1-absentee-mean-primary.RDS
-        2-absentee-mean-negative-control.RDS
-        3-absentee-mean-CDC.RDS
-        4-absentee-mean-peakwk.RDS
-        5-absentee-mean-cdph2.RDS
-        6-absentee-mean-cdph3.RDS
-    ...
-.gitignore</code></pre>
-<p>For brevity, not every directory is “expanded”, but we can glean some important takeaways from what we <em>do</em> see.</p>
-<section id="configuration-config-file" class="level3" data-number="5.3.1">
-<h3 data-number="5.3.1" class="anchored" data-anchor-id="configuration-config-file"><span class="header-section-number">5.3.1</span> Configuration (‘config’) File</h3>
-<p>This is the single most important file for your project. It will be responsible for a variety of common tasks, declare global variables, load functions, declare paths, and more. <em>Every other file in the project</em> will begin with <code>source("0-config")</code>, and its role is to reduce redundancy and create an abstraction layer that allows you to make changes in one place (<code>0-config.R</code>) rather than 5 different files. To this end, paths which will be reference in multiple scripts (i.e.&nbsp;a <code>merged_data_path</code>) can be declared in <code>0-config.R</code> and simply referred to by its variable name in scripts. If you ever want to change things, rename them, or even switch from a downsample to the full data, all you would then to need to do is modify the path in one place and the change will automatically update throughout your project. See the example config file for more details. The paths defined in the <code>0-config.R</code> file assume that users have opened the <code>.Rproj</code> file, which sets the directory to the top level of the project.</p>
-</section>
-<section id="order-files-and-directories" class="level3" data-number="5.3.2">
-<h3 data-number="5.3.2" class="anchored" data-anchor-id="order-files-and-directories"><span class="header-section-number">5.3.2</span> Order Files and Directories</h3>
-<p>This makes the jumble of alphabetized filenames much more coherent and places similar code and files next to one another. This also helps us understand how data flows from start to finish and allows us to easily map a script to its output (i.e.&nbsp;<code>2 - Analysis/1 - Absentee-Mean/1-absentee-mean-primary.R</code> =&gt; <code>5 - Results/1 - Absentee-Mean/1-absentee-mean-primary.RDS</code>). If you take nothing else away from this guide, this is the single most helpful suggestion to make your workflow more coherent. Often the particular order of files will be in flux until an analysis is close to completion. At that time it is important to review file order and naming and reproduce everything prior to drafting a manuscript.</p>
-</section>
-<section id="using-bash-scripts-to-ensure-reproducibility" class="level3" data-number="5.3.3">
-<h3 data-number="5.3.3" class="anchored" data-anchor-id="using-bash-scripts-to-ensure-reproducibility"><span class="header-section-number">5.3.3</span> Using Bash scripts to ensure reproducibility</h3>
-<p>Bash scripts are useful components of a reproducible workflow. At many of the directory levels (i.e.&nbsp;in <code>3 - Analysis</code>), there is a bash script that runs each of the analysis scripts. This is exceptionally useful when data “upstream” changes – you simply run the bash script. See <a href="10-unix.html" class="quarto-xref"><span>Chapter 11</span></a> for further details.</p>
-<p>After running bash scripts, <code>.Rout</code> log files will be generated for each script that has been executed. It is important to check these files. Scripts may appear to have run correctly in the terminal, but checking the log files is the only way to ensure that everything has run completely.</p>
+<section id="what-should-be-pushed-to-github" class="level2" data-number="10.8">
+<h2 data-number="10.8" class="anchored" data-anchor-id="what-should-be-pushed-to-github"><span class="header-section-number">10.8</span> What should be pushed to Github?</h2>
+<p>Never push .Rout files! If someone else runs an R script and creates an .Rout file at the same time and both of you try to push to github, it is incredibly difficult to reconcile these two logs. If you run logs, keep them on your own system or (preferably) set up a shared directory where all logs are name and date timestamped.</p>
+<p>There is a standardized <code>.gitignore</code> for <code>R</code> which you <a href="https://github.com/github/gitignore/blob/master/R.gitignore">can download</a> and add to your project. This ensures you’re not committing log files or things that would otherwise best be left ignored to GitHub. This is a <a href="https://www.tidyverse.org/articles/2017/12/workflow-vs-script/">great discussion of project-oriented workflows</a>, extolling the virtues of a self-contained, portable projects, for your reference.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1182,13 +1096,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./03-reproducibility.html" class="pagination-link" aria-label="Reproducibility">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Reproducibility</span></span>
+      <a href="./data-masking.html" class="pagination-link" aria-label="Data masking">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data masking</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./05-coding-practices.html" class="pagination-link" aria-label="R Coding Practices">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">R Coding Practices</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./unix.html" class="pagination-link" aria-label="Unix">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Unix</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1197,4 +1111,4 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/04-code-repositories.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/04-code-repositories.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/github.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/github.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
