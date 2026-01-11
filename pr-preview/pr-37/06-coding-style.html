@@ -462,8 +462,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#markdown-and-quarto-formatting" id="toc-markdown-and-quarto-formatting" class="nav-link" data-scroll-target="#markdown-and-quarto-formatting"><span class="header-section-number">7.5</span> Markdown and Quarto Formatting</a></li>
   <li><a href="#writing-about-code-in-quarto-documents" id="toc-writing-about-code-in-quarto-documents" class="nav-link" data-scroll-target="#writing-about-code-in-quarto-documents"><span class="header-section-number">7.6</span> Writing about code in Quarto documents</a></li>
   <li><a href="#messaging-and-user-communication" id="toc-messaging-and-user-communication" class="nav-link" data-scroll-target="#messaging-and-user-communication"><span class="header-section-number">7.7</span> Messaging and User Communication</a></li>
-  <li><a href="#tidyverse-replacements" id="toc-tidyverse-replacements" class="nav-link" data-scroll-target="#tidyverse-replacements"><span class="header-section-number">7.8</span> Tidyverse Replacements</a></li>
-  <li><a href="#package-code-practices" id="toc-package-code-practices" class="nav-link" data-scroll-target="#package-code-practices"><span class="header-section-number">7.9</span> Package Code Practices</a></li>
+  <li><a href="#package-code-practices" id="toc-package-code-practices" class="nav-link" data-scroll-target="#package-code-practices"><span class="header-section-number">7.8</span> Package Code Practices</a></li>
+  <li><a href="#tidyverse-replacements" id="toc-tidyverse-replacements" class="nav-link" data-scroll-target="#tidyverse-replacements"><span class="header-section-number">7.9</span> Tidyverse Replacements</a></li>
   <li><a href="#sec-here-package-style" id="toc-sec-here-package-style" class="nav-link" data-scroll-target="#sec-here-package-style"><span class="header-section-number">7.10</span> The here Package</a></li>
   <li><a href="#sec-object-naming" id="toc-sec-object-naming" class="nav-link" data-scroll-target="#sec-object-naming"><span class="header-section-number">7.11</span> Object Naming</a></li>
   <li><a href="#sec-style-auto-style" id="toc-sec-style-auto-style" class="nav-link" data-scroll-target="#sec-style-auto-style"><span class="header-section-number">7.12</span> Automated Tools for Style and Project Workflow</a>
@@ -675,17 +675,17 @@ Note
 <span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="fu">warning</span>(<span class="st">"Missing data detected"</span>)</span>
 <span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="fu">stop</span>(<span class="st">"Invalid input"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="tidyverse-replacements" class="level2" data-number="7.8">
-<h2 data-number="7.8" class="anchored" data-anchor-id="tidyverse-replacements"><span class="header-section-number">7.8</span> Tidyverse Replacements</h2>
-<p>See <a href="05-coding-practices.html#sec-tidyverse" class="quarto-xref"><span>Section 6.15</span></a>.</p>
-</section>
-<section id="package-code-practices" class="level2" data-number="7.9">
-<h2 data-number="7.9" class="anchored" data-anchor-id="package-code-practices"><span class="header-section-number">7.9</span> Package Code Practices</h2>
+<section id="package-code-practices" class="level2" data-number="7.8">
+<h2 data-number="7.8" class="anchored" data-anchor-id="package-code-practices"><span class="header-section-number">7.8</span> Package Code Practices</h2>
 <ul>
 <li><strong>No <code>library()</code> in package code</strong>: Use <code>::</code> notation or declare in DESCRIPTION Imports</li>
 <li><strong>Document all exports</strong>: Use roxygen2 (<span class="citation" data-cites="title">@title</span>, <span class="citation" data-cites="description">@description</span>, <span class="citation" data-cites="param">@param</span>, <span class="citation" data-cites="returns">@returns</span>, <span class="citation" data-cites="examples">@examples</span>)</li>
 <li><strong>Avoid code duplication</strong>: Extract repeated logic into helper functions</li>
 </ul>
+</section>
+<section id="tidyverse-replacements" class="level2" data-number="7.9">
+<h2 data-number="7.9" class="anchored" data-anchor-id="tidyverse-replacements"><span class="header-section-number">7.9</span> Tidyverse Replacements</h2>
+<p>See <a href="05-coding-practices.html#sec-tidyverse" class="quarto-xref"><span>Section 6.15</span></a>.</p>
 </section>
 <section id="sec-here-package-style" class="level2" data-number="7.10">
 <h2 data-number="7.10" class="anchored" data-anchor-id="sec-here-package-style"><span class="header-section-number">7.10</span> The here Package</h2>

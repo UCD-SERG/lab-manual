@@ -600,21 +600,21 @@
     ]
   },
   {
-    "objectID": "06-coding-style.html#tidyverse-replacements",
-    "href": "06-coding-style.html#tidyverse-replacements",
+    "objectID": "06-coding-style.html#package-code-practices",
+    "href": "06-coding-style.html#package-code-practices",
     "title": "7  R Code Style",
-    "section": "7.8 Tidyverse Replacements",
-    "text": "7.8 Tidyverse Replacements\nSee Section 6.15.",
+    "section": "7.8 Package Code Practices",
+    "text": "7.8 Package Code Practices\n\nNo library() in package code: Use :: notation or declare in DESCRIPTION Imports\nDocument all exports: Use roxygen2 (@title, @description, @param, @returns, @examples)\nAvoid code duplication: Extract repeated logic into helper functions",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>R Code Style</span>"
     ]
   },
   {
-    "objectID": "06-coding-style.html#package-code-practices",
-    "href": "06-coding-style.html#package-code-practices",
+    "objectID": "06-coding-style.html#tidyverse-replacements",
+    "href": "06-coding-style.html#tidyverse-replacements",
     "title": "7  R Code Style",
-    "section": "7.9 Package Code Practices",
-    "text": "7.9 Package Code Practices\n\nNo library() in package code: Use :: notation or declare in DESCRIPTION Imports\nDocument all exports: Use roxygen2 (@title, @description, @param, @returns, @examples)\nAvoid code duplication: Extract repeated logic into helper functions",
+    "section": "7.9 Tidyverse Replacements",
+    "text": "7.9 Tidyverse Replacements\nSee Section 6.15.",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>R Code Style</span>"
     ]
