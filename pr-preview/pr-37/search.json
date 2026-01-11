@@ -544,7 +544,7 @@
     "href": "06-coding-style.html#sec-function-docs",
     "title": "7  R Code Style",
     "section": "7.2 Function Structure and Documentation",
-    "text": "7.2 Function Structure and Documentation\nSee also Section 6.9 for general code documentation practices.\nEvery function should follow this pattern:\n#' Short Title (One Line)\n#'\n#' Longer description providing details about what the function does,\n#' when to use it, and important considerations.\n#'\n#' @param param1 Description of first parameter, including type and constraints\n#' @param param2 Description of second parameter\n#'\n#' @returns Description of return value, including type and structure\n#'\n#' @examples\n#' # Example usage\n#' result &lt;- my_function(param1 = \"value\", param2 = 10)\n#'\n#' @export\nmy_function &lt;- function(param1, param2) {\n  # Implementation\n}",
+    "text": "7.2 Function Structure and Documentation\nEvery function should follow this pattern:\n#' Short Title (One Line)\n#'\n#' Longer description providing details about what the function does,\n#' when to use it, and important considerations.\n#'\n#' @param param1 Description of first parameter, including type and constraints\n#' @param param2 Description of second parameter\n#'\n#' @returns Description of return value, including type and structure\n#'\n#' @examples\n#' # Example usage\n#' result &lt;- my_function(param1 = \"value\", param2 = 10)\n#'\n#' @export\nmy_function &lt;- function(param1, param2) {\n  # Implementation\n}\nSee also Section 6.9 for general code documentation practices.",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>R Code Style</span>"
     ]
