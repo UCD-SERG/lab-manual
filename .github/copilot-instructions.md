@@ -163,6 +163,20 @@ When working with chapters that don't yet use includes:
 5. Ensure blank lines before include statements
 6. Test that rendering still works correctly
 
+## Working with DOCX Files
+
+GitHub Copilot can read and process Microsoft Word (.docx) files, which is useful for translating edits made in Word back to Quarto format.
+
+When working with DOCX files:
+
+- **Always examine tracked changes**: Use the `view` tool to read DOCX files and pay special attention to any tracked changes (insertions, deletions, formatting changes)
+- **Review comments**: Look for and address any comments in the DOCX file that may provide context or instructions for edits
+- **Translate edits to Quarto**: When edits have been made in a DOCX file, apply the equivalent changes to the corresponding `.qmd` files
+- **Preserve formatting**: Ensure that formatting, citations, and cross-references are properly converted to Quarto/markdown syntax
+- **Verify completeness**: Check that all edits, including those in tracked changes and comments, have been addressed
+
+This workflow enables a hybrid editing process where collaborators can make edits in familiar Word format, and Copilot can translate those edits back to the Quarto source files.
+
 ## Additional Guidelines
 
 - Maintain consistency with existing code style
