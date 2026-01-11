@@ -84,7 +84,7 @@ format:
     number-depth: 3
     colorlinks: true
   docx:
-    toc: true
+    toc: false
     number-sections: true
     highlight-style: github
   epub:
