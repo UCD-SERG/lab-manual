@@ -26,9 +26,7 @@ jobs:
           tinytex: true
 
       - name: Render (with freeze to cache computations)
-        uses: quarto-dev/quarto-actions/render@v2
-        env:
-          QUARTO_FREEZE: true
+        run: quarto render --execute-freeze
 
       - name: Detect changed chapters (based on rendered files)
         run: python3 .github/scripts/detect-changed-chapters.py
@@ -41,7 +39,7 @@ jobs:
 
       - name: Re-render with metadata (using frozen computations)
         if: env.PREVIEW_SHOW_HIGHLIGHTS == 'true'
-        uses: quarto-dev/quarto-actions/render@v2
+        run: quarto render
 
       - name: Install python-docx for DOCX comparison
         if: env.PREVIEW_SHOW_HIGHLIGHTS == 'true'

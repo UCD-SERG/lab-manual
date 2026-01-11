@@ -10,14 +10,35 @@ import subprocess
 from pathlib import Path
 
 def checkout_base_files(base_ref='origin/gh-pages', target_dir='/tmp/base-files'):
-    """Check out the base HTML and DOCX files from gh-pages for comparison."""
+    """
+    Check out the base HTML and DOCX files from gh-pages for comparison.
+    
+    This may fail in the following scenarios:
+    1. First PR to a new repository (gh-pages branch doesn't exist yet)
+    2. Repository doesn't use gh-pages for deployment
+    3. Network/permissions issues accessing the remote branch
+    
+    Returns:
+        Path to directory with base files, or None if checkout failed
+    """
     target_path = Path(target_dir)
     target_path.mkdir(parents=True, exist_ok=True)
     
     try:
         # Fetch the gh-pages branch
-        subprocess.run(['git', 'fetch', 'origin', 'gh-pages:gh-pages'], 
-                      check=False, capture_output=True)
+        result = subprocess.run(
+            ['git', 'fetch', 'origin', 'gh-pages:gh-pages'], 
+            check=False, 
+            capture_output=True,
+            text=True
+        )
+        
+        if result.returncode != 0:
+            print(f"Could not fetch gh-pages branch: {result.stderr}")
+            print("This is expected for:")
+            print("  - First PR to a new repository")
+            print("  - Repositories not using gh-pages for deployment")
+            return None
         
         # List all HTML and DOCX files in gh-pages
         result = subprocess.run(
@@ -72,17 +93,22 @@ def main():
         return
     
     # Check out base files from gh-pages
-    print("Checking out base files from gh-pages...")
+    print("Checking out base files from gh-pages for comparison...")
     base_dir = checkout_base_files()
     
     if not base_dir:
-        print("Warning: Could not check out base files")
-        print("(This is normal for initial PR or if gh-pages doesn't exist yet)")
+        print("\nWARNING: Could not check out base files from gh-pages")
+        print("Treating all rendered files as changed.")
+        print("\nReasons this might happen:")
+        print("  1. This is the first PR and gh-pages branch doesn't exist yet")
+        print("  2. Repository doesn't use gh-pages for deployment")
+        print("  3. Network or permissions issue\n")
+        
         # Treat all files as changed
         html_files = list(rendered_dir.glob("*.html"))
         changed_chapters = [f.stem for f in html_files if f.stem != 'index']
     else:
-        print(f"Base files checked out to {base_dir}")
+        print(f"Base files checked out successfully to {base_dir}\n")
         
         # Find all HTML files in rendered output
         html_files = list(rendered_dir.glob("*.html"))
