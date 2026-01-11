@@ -16,9 +16,6 @@ project:
   type: book
   output-dir: docs
 
-execute:
-  freeze: auto  # Cache computations when freeze is enabled
-
 book:
   title: "UCD-SeRG Lab Manual"
   author:
