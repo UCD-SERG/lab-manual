@@ -136,7 +136,7 @@ On GitHub, it is useful to create an official "release" version to freeze the re
 
         
 
-Further reading on end-to-end data management: [How to Store and Manage Your Data - PLOS](https://plos.org/resource/how-to-store-and-manage-your-data/#data-management-plan) 
+Further reading on end-to-end data management: @plos_data
  
  
 
