@@ -2,7 +2,9 @@
 
 Adapted by UCD-SeRG team from [original by Jade Benjamin-Chung](https://jadebc.github.io/lab-manual/communication-and-coordination.html)
 
-One benefit of the academic environment is its schedule flexibility. This means that lab members may choose to work in the early morning, evening, or weekends. That said, we do not expect lab members to respond outside of business hours (unless there are special circumstances).
+**Demo Note:** This minor edit demonstrates the preview highlighting workflow in action.
+
+One benefit of the academic environment is its schedule flexibility and autonomy. This means that lab members may choose to work in the early morning, afternoon, evening, or weekends. That said, we do not expect lab members to respond outside of normal business hours (unless there are special circumstances).
 
 ## Microsoft Teams
 

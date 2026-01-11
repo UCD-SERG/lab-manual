@@ -44,3 +44,4 @@ placeholder*.tgz
 
 **/*.quarto_ipynb
 *.tex
+__pycache__/

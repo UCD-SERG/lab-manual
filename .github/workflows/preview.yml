@@ -17,6 +17,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch full history for git diff
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
@@ -25,6 +27,44 @@ jobs:
 
       - name: Render
         uses: quarto-dev/quarto-actions/render@v2
+
+      - name: Detect changed chapters (based on rendered files)
+        run: python3 .github/scripts/detect-changed-chapters.py
+        env:
+          HTML_DIR: ./docs
+
+      - name: Inject preview metadata
+        if: env.PREVIEW_SHOW_HIGHLIGHTS == 'true'
+        run: python3 .github/scripts/inject-preview-metadata.py
+
+      - name: Re-render with metadata
+        if: env.PREVIEW_SHOW_HIGHLIGHTS == 'true'
+        uses: quarto-dev/quarto-actions/render@v2
+
+      - name: Install python-docx for DOCX comparison
+        if: env.PREVIEW_SHOW_HIGHLIGHTS == 'true'
+        run: pip install python-docx
+
+      - name: Highlight HTML content changes
+        if: env.PREVIEW_SHOW_HIGHLIGHTS == 'true'
+        run: |
+          echo "Changed chapters:"
+          echo "${{ env.PREVIEW_CHANGED_CHAPTERS }}"
+          python3 .github/scripts/highlight-html-changes.py
+        env:
+          HTML_DIR: ./docs
+          PREVIEW_CHANGED_CHAPTERS: ${{ env.PREVIEW_CHANGED_CHAPTERS }}
+
+      - name: Create DOCX with tracked changes
+        run: python3 .github/scripts/create-docx-tracked-changes.py
+        env:
+          DOCX_DIR: ./docs
+
+      - name: Add home page banner
+        run: python3 .github/scripts/add-home-banner.py
+        env:
+          HTML_DIR: ./docs
+          PREVIEW_CHANGED_CHAPTERS: ${{ env.PREVIEW_CHANGED_CHAPTERS }}
 
       - name: Deploy PR Preview
         uses: rossjrw/pr-preview-action@main
