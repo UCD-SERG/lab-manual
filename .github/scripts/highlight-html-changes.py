@@ -277,7 +277,7 @@ class HTMLDiffer:
                     highlighted_new_html = re.sub(escaped_elem, highlighted_elem, highlighted_new_html, count=1)
                     changes_made += 1
             
-            elif best_match_idx is None and new_text:
+            elif (best_match_idx is None or best_ratio < SIMILARITY_THRESHOLD_MIN) and new_text:
                 # This is a completely new element - highlight the whole thing
                 tag_match = re.match(r'(<[^>]+>)(.*)(</[^>]+>)', new_elem, re.DOTALL)
                 if tag_match:
