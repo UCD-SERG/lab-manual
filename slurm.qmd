@@ -242,7 +242,7 @@ chmod ugo+rwx FOLDER_NAME
 
 ## Running big jobs
 
-Once your test scripts run successfully, you can submit an sbatch script for larger jobs. These are text files with a `.sh` suffix. Use a text editor like Sublime to create such a script. Documentation on sbatch options is available [here](https://slurm.schedmd.com/sbatch.html). Here is an example of an sbatch script with the following options: 
+Once your test scripts run successfully, you can submit an sbatch script for larger jobs. These are text files with a `.sh` suffix. Use a text editor like Sublime to create such a script. Documentation on sbatch options is available from @slurm. Here is an example of an sbatch script with the following options: 
 
 - `job-name=run_inc`: Job name that will show up in the SLURM system
 - `begin=now`: Requests to start the job as soon as the requested resources are available

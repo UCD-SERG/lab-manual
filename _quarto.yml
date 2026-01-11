@@ -93,4 +93,6 @@ format:
     toc: true
     number-sections: true
 
+bibliography: [book.bib, packages.bib]
+
 editor: source

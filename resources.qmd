@@ -6,12 +6,12 @@ Adapted by UCD-SeRG team from [original by Jade Benjamin-Chung and Kunal Mishra]
 
 ### Books and Comprehensive Guides
 
-- [R for Data Science](https://r4ds.hadley.nz/) by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund - comprehensive introduction to doing data science with R
-- [R Packages](https://r-pkgs.org/) by Hadley Wickham and Jenny Bryan - complete guide to R package development
-- [Advanced R](https://adv-r.hadley.nz/) by Hadley Wickham - deep dive into R programming and internals
-- [Mastering Shiny](https://mastering-shiny.org/) by Hadley Wickham - comprehensive guide to building web applications with Shiny
-- [Engineering Production-Grade Shiny Apps](https://engineering-shiny.org/) by Colin Fay, Sébastien Rochette, Vincent Guyader, and Cervan Girard - best practices for production Shiny applications
-- [Happy Git and GitHub for the useR](https://happygitwithr.com/) by Jenny Bryan - guide to using Git and GitHub with R
+- @wickham2023r4ds - comprehensive introduction to doing data science with R
+- @wickham2023rpkgs - complete guide to R package development
+- @wickham2019advr - deep dive into R programming and internals
+- @wickham2021shiny - comprehensive guide to building web applications with Shiny
+- @fay2021engineering - best practices for production Shiny applications
+- @bryan2023happygit - guide to using Git and GitHub with R
 - [Jade's R-for-epi course](https://ucb-epi-r.github.io)
 
 ### Cheat Sheets
@@ -35,7 +35,7 @@ Adapted by UCD-SeRG team from [original by Jade Benjamin-Chung and Kunal Mishra]
 
 ## Resources for Git & Github
 
-- [Happy Git and GitHub for the useR](https://happygitwithr.com/) by Jenny Bryan - comprehensive guide to using Git and GitHub with R
+- @bryan2023happygit - comprehensive guide to using Git and GitHub with R
 - [Data Camp introduction to Git](https://www.datacamp.com/courses/introduction-to-git-for-data-science)
 - [Introduction to Github](https://lab.github.com/githubtraining/introduction-to-github)
 
@@ -45,7 +45,7 @@ Adapted by UCD-SeRG team from [original by Jade Benjamin-Chung and Kunal Mishra]
 ## Writing
 
 - [Tips on how to write a great science paper](https://www.nature.com/articles/d41586-019-02918-5)
-- [ICMJE Definition of authorship](http://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html)
+- @icmje
 - [Nature article on elements of style for scientific writing](https://www.nature.com/articles/nphys724)
 - [The Pathway to Publishing: A Guide to Quantitative Writing in the Health Sciences ](https://link.springer.com/book/10.1007/978-3-030-98175-4)
 - [Secret, actionable writing tips](https://x.com/acagamic/status/1680381737816424450)

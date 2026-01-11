@@ -1,7 +1,7 @@
 ### R Package Development
 
-- [R Packages book](https://r-pkgs.org/) by Hadley Wickham and Jenny Bryan - comprehensive guide to R package development
-- [Tidyverse design guide](https://design.tidyverse.org/) - principles for designing R packages and APIs that are intuitive, composable, and consistent with tidyverse philosophy
+- @wickham2023rpkgs - comprehensive guide to R package development
+- @wickham2023tidydesign - principles for designing R packages and APIs that are intuitive, composable, and consistent with tidyverse philosophy
 - [usethis documentation](https://usethis.r-lib.org/) - workflow automation for R projects
 - [devtools documentation](https://devtools.r-lib.org/) - essential development tools
 - [pkgdown documentation](https://pkgdown.r-lib.org/) - create package websites
@@ -9,14 +9,14 @@
 
 ### General R Programming
 
-- [R for Data Science](https://r4ds.hadley.nz/) by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund - learn data science with the tidyverse
-- [Advanced R](https://adv-r.hadley.nz/) by Hadley Wickham - deep dive into R programming and internals
+- @wickham2023r4ds - learn data science with the tidyverse
+- @wickham2019advr - deep dive into R programming and internals
 
 ### Shiny Development
 
-- [Mastering Shiny](https://mastering-shiny.org/) by Hadley Wickham - comprehensive guide to building web applications with Shiny
-- [Engineering Production-Grade Shiny Apps](https://engineering-shiny.org/) by Colin Fay, Sébastien Rochette, Vincent Guyader, and Cervan Girard - best practices for production Shiny applications
+- @wickham2021shiny - comprehensive guide to building web applications with Shiny
+- @fay2021engineering - best practices for production Shiny applications
 
 ### Git and Version Control
 
-- [Happy Git and GitHub for the useR](https://happygitwithr.com/) by Jenny Bryan - essential guide to using Git and GitHub with R
+- @bryan2023happygit - essential guide to using Git and GitHub with R

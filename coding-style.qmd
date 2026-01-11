@@ -56,4 +56,4 @@ for example, `{dplyr}`.
 
 ## Additional Resources {#sec-r-resources-style}
 
-- [Tidyverse style guide](https://style.tidyverse.org/): Detailed coding style conventions for writing clear, consistent R code. Covers naming, syntax, pipes, functions, and more.
+- @wickham2023tidyverse: Detailed coding style conventions for writing clear, consistent R code. Covers naming, syntax, pipes, functions, and more.
