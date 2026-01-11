@@ -524,7 +524,7 @@ window.Quarto = {
   <li><a href="#sec-r-qa-checklist" id="toc-sec-r-qa-checklist" class="nav-link" data-scroll-target="#sec-r-qa-checklist"><span class="header-section-number">6.7</span> Quality Assurance Checklist</a></li>
   <li><a href="#sec-documenting-code" id="toc-sec-documenting-code" class="nav-link" data-scroll-target="#sec-documenting-code"><span class="header-section-number">6.8</span> Documenting your code</a>
   <ul class="collapse">
-  <li><a href="#function-documentation" id="toc-function-documentation" class="nav-link" data-scroll-target="#function-documentation"><span class="header-section-number">6.8.1</span> Function documentation</a></li>
+  <li><a href="#function-headers" id="toc-function-headers" class="nav-link" data-scroll-target="#function-headers"><span class="header-section-number">6.8.1</span> Function headers</a></li>
   <li><a href="#script-headers" id="toc-script-headers" class="nav-link" data-scroll-target="#script-headers"><span class="header-section-number">6.8.2</span> Script headers</a></li>
   <li><a href="#sections-and-subsections" id="toc-sections-and-subsections" class="nav-link" data-scroll-target="#sections-and-subsections"><span class="header-section-number">6.8.3</span> Sections and subsections</a></li>
   <li><a href="#code-folding" id="toc-code-folding" class="nav-link" data-scroll-target="#code-folding"><span class="header-section-number">6.8.4</span> Code folding</a></li>
@@ -1007,8 +1007,8 @@ test_that("prep_study_data produces expected structure", {
 <section id="sec-documenting-code" class="level2" data-number="6.8">
 <h2 data-number="6.8" class="anchored" data-anchor-id="sec-documenting-code"><span class="header-section-number">6.8</span> Documenting your code</h2>
 <p><em>See also <a href="06-coding-style.html#sec-function-docs" class="quarto-xref"><span>Section 7.2</span></a> for function documentation style guidelines.</em></p>
-<section id="function-documentation" class="level3" data-number="6.8.1">
-<h3 data-number="6.8.1" class="anchored" data-anchor-id="function-documentation"><span class="header-section-number">6.8.1</span> Function documentation</h3>
+<section id="function-headers" class="level3" data-number="6.8.1">
+<h3 data-number="6.8.1" class="anchored" data-anchor-id="function-headers"><span class="header-section-number">6.8.1</span> Function headers</h3>
 <p>Every function you write must include a header to document its purpose, inputs, and outputs. For any reproducible workflows, they are essential, because R is dynamically typed. This means, you can pass a <code>string</code> into an argument that is meant to be a <code>data.table</code>, or a <code>list</code> into an argument meant for a <code>tibble</code>. It is the responsibility of a function’s author to document what each argument is meant to do and its basic type. This is an example for documenting a function (inspired by <a href="https://www.oracle.com/technetwork/java/javase/documentation/index-137868.html#format">JavaDocs</a> and R’s <a href="https://blog.rstudio.com/2018/10/23/rstudio-1-2-preview-plumber-integration/">Plumber API docs</a>):</p>
 <pre><code>##############################################
 ##############################################
