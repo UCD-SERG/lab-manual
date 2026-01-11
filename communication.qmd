@@ -17,17 +17,27 @@ One benefit of the academic environment is its schedule flexibility and autonomy
 - Use email for longer messages (>200 words) or messages that merit preservation. 
 - Generally, strive to respond within 24 hours hours. As noted above, if you are unusually busy or on vacation please alert the team in advance so we can expect you not to respond at all / as quickly as usual. 
 
-## Trello
+## Task Management
 
-- Lab leadership will add new cards within our shared Trello board that outline your tasks. 
-- The higher a card is within your list, the higher priority it is.
-- Generally, strive to complete the tasks in your card by the date listed. 
-- Use checklists to break down a task into smaller chunks. Sometimes leadership will write this for you, but you can also add this yourself. 
-- Lab leadership will move your card to the "Completed" list when it is done. 
+We use a combination of tools to track and manage project tasks:
+
+- **GitHub Issues and Projects**: For code-related tasks, feature requests, and bug tracking.
+  Lab leadership will assign issues and organize them in GitHub Projects.
+  Issues are prioritized within projects, and you can track your assigned tasks there.
+- **Microsoft To-Do** and other M365 task tracking tools:
+  For general lab tasks and personal task management.
+  Lab leadership may assign tasks through these tools, which integrate with Microsoft Teams.
+- Generally, strive to complete assigned tasks by the date listed.
+- Use checklists to break down tasks into smaller chunks.
+  Sometimes leadership will create these for you, but you can also add them yourself.
+- Update task status as you make progress so the team can stay coordinated. 
 
 ## Google Drive
 
-- We mostly use Google Drive to create shared documents with longer descriptions of tasks. These documents are linked to in Trello. Lab leadership often shares these with the whole team since tasks are overlapping, and even if a task is assigned to one person, others may have valuable insights. 
+- We mostly use Google Drive to create shared documents with longer descriptions of tasks.
+  These documents may be linked to in GitHub Issues or other task tracking tools.
+  Lab leadership often shares these with the whole team since tasks are overlapping,
+  and even if a task is assigned to one person, others may have valuable insights. 
 
 ## UC Davis Box and SharePoint
 
