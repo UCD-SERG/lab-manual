@@ -37,6 +37,13 @@ jobs:
       - name: Render
         uses: quarto-dev/quarto-actions/render@v2
 
+      - name: Highlight HTML content changes
+        if: env.PREVIEW_SHOW_HIGHLIGHTS == 'true'
+        run: python3 .github/scripts/highlight-html-changes.py
+        env:
+          HTML_DIR: ./docs
+          PREVIEW_CHANGED_FILES: ${{ env.PREVIEW_CHANGED_FILES }}
+
       - name: Deploy PR Preview
         uses: rossjrw/pr-preview-action@main
         with:
