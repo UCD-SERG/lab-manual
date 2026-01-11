@@ -63,6 +63,8 @@ format:
     toc: true
     number-sections: true
     embed-resources: false
+    filters:
+      - _extensions/preview-highlight.lua
   pdf:
     geometry:
       - top=15mm

@@ -36,3 +36,20 @@ h4,h5,h6{
   font-size: 12pt;
   font-weight: bold;
 }
+
+/* Preview changed banner */
+.preview-changed-banner {
+  background-color: #fff3cd;
+  border-left: 4px solid #ffc107;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Dark mode support for preview banner */
+body.quarto-dark .preview-changed-banner {
+  background-color: #3d3d00;
+  border-left-color: #ffeb3b;
+  color: #ffd700;
+}
