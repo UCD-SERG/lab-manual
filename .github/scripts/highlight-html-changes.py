@@ -262,12 +262,8 @@ class HTMLDiffer:
         if not changed_files:
             return html
         
-        # Convert .qmd files to their corresponding HTML fragment IDs
-        # For example, "01-culture-and-conduct.qmd" maps to link containing "01-culture-and-conduct.html"
-        changed_html_files = set()
-        for qmd_file in changed_files:
-            html_file = qmd_file.replace('.qmd', '.html')
-            changed_html_files.add(html_file)
+        # changed_files should already be HTML filenames
+        changed_html_files = set(changed_files)
         
         # Find all TOC links and add highlighting class to those that point to changed files
         # TOC links are typically in the sidebar navigation
@@ -415,15 +411,16 @@ def main():
     else:
         print(f"Base HTML checked out to {base_html_dir}")
     
-    # Convert .qmd files to .html files
+    # changed_files contains chapter IDs (e.g., "02-communication")
+    # Convert to .html files
     html_files = []
-    changed_qmd_files = []
-    for qmd_file in changed_files.split('\n'):
-        qmd_file = qmd_file.strip()
-        if qmd_file:
-            changed_qmd_files.append(qmd_file)
-            # Convert .qmd to .html
-            html_file = qmd_file.replace('.qmd', '.html')
+    changed_chapter_ids = []
+    for chapter_id in changed_files.split('\n'):
+        chapter_id = chapter_id.strip()
+        if chapter_id:
+            changed_chapter_ids.append(chapter_id)
+            # Chapter ID to HTML file
+            html_file = f"{chapter_id}.html"
             html_path = Path(html_dir) / html_file
             if html_path.exists():
                 html_files.append(html_path)
@@ -447,8 +444,9 @@ def main():
             with open(html_path, 'r', encoding='utf-8') as f:
                 html = f.read()
             
-            # Add TOC highlighting
-            highlighted_html = differ.highlight_toc_entries(html, changed_qmd_files)
+            # Add TOC highlighting - convert chapter IDs to HTML filenames for TOC
+            changed_html_files = [f"{ch_id}.html" for ch_id in changed_chapter_ids]
+            highlighted_html = differ.highlight_toc_entries(html, changed_html_files)
             
             # Only write back if something changed
             if highlighted_html != html:

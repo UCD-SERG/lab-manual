@@ -141,7 +141,10 @@ def main():
     
     if not changed_chapters:
         print("No chapters changed")
-        print("PREVIEW_CHANGED_CHAPTERS=" >> os.getenv('GITHUB_ENV', '/dev/stdout'))
+        env_file = os.getenv('GITHUB_ENV')
+        if env_file:
+            with open(env_file, 'a') as f:
+                f.write("PREVIEW_SHOW_HIGHLIGHTS=false\n")
         return
     
     print(f"\nChanged chapters: {', '.join(changed_chapters)}")
