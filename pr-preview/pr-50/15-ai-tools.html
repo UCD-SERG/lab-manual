@@ -537,8 +537,23 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 <p>This demonstrates the full lifecycle of working with a coding agent on a real documentation task.</p>
 </section>
-<section id="directly-prompting-for-pull-requests" class="level4" data-number="16.4.1.4">
-<h4 data-number="16.4.1.4" class="anchored" data-anchor-id="directly-prompting-for-pull-requests"><span class="header-section-number">16.4.1.4</span> Directly Prompting for Pull Requests</h4>
+<section id="collaborating-with-coding-agents" class="level4" data-number="16.4.1.4">
+<h4 data-number="16.4.1.4" class="anchored" data-anchor-id="collaborating-with-coding-agents"><span class="header-section-number">16.4.1.4</span> Collaborating with Coding Agents</h4>
+<p>Between iterations of asking coding agents to extend a PR, human collaborators can also push changes directly to the PR branch. This allows for a collaborative workflow where both humans and agents contribute:</p>
+<ul>
+<li><p><strong>Human contributions</strong>: You can make quick fixes, add content, or refine the agent’s work by pushing commits to the same branch</p></li>
+<li><p><strong>Agent iterations</strong>: After your changes, you can ask the agent to continue working on additional requirements</p></li>
+</ul>
+<p><strong>Important</strong>: Try to avoid pushing changes while the coding agent is actively working. Simultaneous edits can produce conflicting diffs that:</p>
+<ul>
+<li>Need to be manually resolved</li>
+<li>May confuse both human and AI collaborators</li>
+<li>Could result in lost work or merge conflicts</li>
+</ul>
+<p><strong>Best practice</strong>: Wait for the agent to complete its current iteration (indicated by the PR being updated) before pushing your own changes to the branch. Then assign new work to the agent for the next iteration.</p>
+</section>
+<section id="directly-prompting-for-pull-requests" class="level4" data-number="16.4.1.5">
+<h4 data-number="16.4.1.5" class="anchored" data-anchor-id="directly-prompting-for-pull-requests"><span class="header-section-number">16.4.1.5</span> Directly Prompting for Pull Requests</h4>
 <p>You can also prompt Copilot to create pull requests without first creating an issue:</p>
 <ul>
 <li>Use Copilot Chat in your editor to describe the changes you want</li>
@@ -546,8 +561,8 @@ ul.task-list li input[type="checkbox"] {
 <li>This is useful for quick fixes or well-defined tasks</li>
 </ul>
 </section>
-<section id="important-safeguards" class="level4" data-number="16.4.1.5">
-<h4 data-number="16.4.1.5" class="anchored" data-anchor-id="important-safeguards"><span class="header-section-number">16.4.1.5</span> Important Safeguards</h4>
+<section id="important-safeguards" class="level4" data-number="16.4.1.6">
+<h4 data-number="16.4.1.6" class="anchored" data-anchor-id="important-safeguards"><span class="header-section-number">16.4.1.6</span> Important Safeguards</h4>
 <ul>
 <li><strong>Human approval required</strong>: Coding agents cannot merge their own changes</li>
 <li><strong>Branch restrictions</strong>: Agents can only push to their own branches (e.g., <code>copilot/*</code>)</li>
