@@ -814,8 +814,8 @@ Note
 <span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="styler" class="level4" data-number="7.12.1.2">
-<h4 data-number="7.12.1.2" class="anchored" data-anchor-id="styler"><span class="header-section-number">7.12.1.2</span> <code>styleR</code></h4>
-<p><code>{styleR}</code> is another <a href="https://www.tidyverse.org/articles/2017/12/styler-1.0.0/">cool R package from the Tidyverse</a> that can be powerful and used as a first pass on entire projects that need refactoring. The most useful function of the package is the <code>style_dir</code> function, which will style all files within a given directory. See the <a href="https://www.rdocumentation.org/packages/styler/versions/1.1.0/topics/style_dir">function’s documentation</a> and the vignette linked above for more details.</p>
+<h4 data-number="7.12.1.2" class="anchored" data-anchor-id="styler"><span class="header-section-number">7.12.1.2</span> <code>{styler}</code></h4>
+<p><code>{styler}</code> is another <a href="https://www.tidyverse.org/articles/2017/12/styler-1.0.0/">cool R package from the Tidyverse</a> that can be powerful and used as a first pass on entire projects that need refactoring. The most useful function of the package is the <code>style_dir</code> function, which will style all files within a given directory. See the <a href="https://www.rdocumentation.org/packages/styler/versions/1.1.0/topics/style_dir">function’s documentation</a> and the vignette linked above for more details.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -839,7 +839,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>As is mentioned in the package vignette linked above, StyleR modifies things <em>in-place</em>, meaning it overwrites your existing code and replaces it with the updated, properly styled code. This makes it a good fit on projects <em>with version control</em>, but if you don’t have backups or a good way to revert back to the intial code, I wouldn’t recommend going this route.</p>
+<p>As is mentioned in the package vignette linked above, <code>{styler}</code> modifies things <em>in-place</em>, meaning it overwrites your existing code and replaces it with the updated, properly styled code. This makes it a good fit on projects <em>with version control</em>, but if you don’t have backups or a good way to revert back to the intial code, I wouldn’t recommend going this route.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -868,7 +868,7 @@ Note
 </div>
 </section>
 <section id="lintr" class="level4" data-number="7.12.1.3">
-<h4 data-number="7.12.1.3" class="anchored" data-anchor-id="lintr"><span class="header-section-number">7.12.1.3</span> <code>lintr</code></h4>
+<h4 data-number="7.12.1.3" class="anchored" data-anchor-id="lintr"><span class="header-section-number">7.12.1.3</span> <code>{lintr}</code></h4>
 <p>Linters are programming tools that check adherence to a given style, syntax errors, and possible semantic issues. The R linter, called <code>lintr</code>, can be found in this <a href="https://www.rdocumentation.org/packages/lintr/versions/1.0.3">package</a>. It helps keep files consistent across different authors and even different organizations. For example, it notifies you if you have unused variables, global variables with no visible binding, not enough or superflous whitespace, and improper use of parentheses or brackets. A list of its other purposes can be found <a href="https://cran.r-project.org/web/packages/lintr/readme/README.html#available-linters">in this link</a>, and most guidelines are based on <a href="http://r-pkgs.had.co.nz/style.html">Hadley Wickham’s R Style Guide</a>.</p>
 <p>::: {.callout-note} You can customize your settings to set defaults or to exclude files. More details can be found <a href="https://cran.r-project.org/web/packages/lintr/readme/README.html#project-configuration">here</a>. :::</p>
 <p>::: {.callout-note} The <code>lintr</code> package goes hand in hand with the <code>styler</code> package. The styler can be used to automatically fix the problems that the lintr catches. :::</p>
