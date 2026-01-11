@@ -404,7 +404,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-coding-style.html" class="sidebar-item-text sidebar-link">
+  <a href="./06-coding-style.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">R Code Style</span></span></a>
   </div>
 </li>
@@ -585,6 +585,14 @@ window.Quarto = {
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
+<div class="preview-home-changes-banner">
+    <p style="margin: 0;">
+        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="06-coding-style.html">7. &nbsp; <span class="chapter-title">R Code Style</span></span></a>
+        <br>
+        <strong>📄 DOCX with tracked changes:</strong> <a href="UCD-SeRG-Lab-Manual-tracked-changes.docx" download>Download UCD-SeRG-Lab-Manual-tracked-changes.docx</a>
+    </p>
+</div>
+
 
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -1051,7 +1059,7 @@ test_that("prep_study_data produces expected structure", {
 <li>Style guide violations</li>
 </ul>
 <p>You can customize linting rules by creating a <code>.lintr</code> file in your project root.</p>
-<p>See also <a href="06-coding-style.html#sec-style-auto-style" class="quarto-xref"><span>Section 7.11</span></a>.</p>
+<p>See also <a href="06-coding-style.html#sec-style-auto-style" class="quarto-xref" preview-toc-changed><span>Section 7.11</span></a>.</p>
 </section>
 </section>
 <section id="sec-documenting-code" class="level2" data-number="6.9">
@@ -1134,7 +1142,7 @@ Note
 <h3 data-number="6.9.5" class="anchored" data-anchor-id="comments-in-the-body-of-your-code"><span class="header-section-number">6.9.5</span> Comments in the body of your code</h3>
 <p>Commenting your code is an important part of reproducibility and helps document your code for the future. When things change or break, you’ll be thankful for comments. There’s no need to comment excessively or unnecessarily, but a comment describing what a large or complex chunk of code does is always helpful. See <a href="https://github.com/kmishra9/Flu-Absenteeism/blob/master/Master's%20Thesis%20-%20Spatial%20Epidemiology%20of%20Influenza/1b%20-%20Map-Management.R">this file</a> for an example of how to comment your code and notice that comments are always in the form of:</p>
 <pre><code># This is a comment -- first letter is capitalized and spaced away from the pound sign</code></pre>
-<p><em>See also <a href="06-coding-style.html#sec-function-docs" class="quarto-xref"><span>Section 7.2</span></a> for function documentation style guidelines.</em></p>
+<p><em>See also <a href="06-coding-style.html#sec-function-docs" class="quarto-xref" preview-toc-changed><span>Section 7.2</span></a> for function documentation style guidelines.</em></p>
 </section>
 </section>
 <section id="object-naming" class="level2" data-number="6.10">
@@ -1174,7 +1182,7 @@ Note
 <p>Again, it’s also worth noting there’s nothing inherently wrong with using <code>.</code> in variable names, just that it goes against style best practices that are cropping up in data science, so it’s worth getting rid of these bad habits now.</p>
 </div>
 </div>
-<p>See also <a href="06-coding-style.html#sec-object-naming" class="quarto-xref"><span>Section 7.10</span></a>.</p>
+<p>See also <a href="06-coding-style.html#sec-object-naming" class="quarto-xref" preview-toc-changed><span>Section 7.10</span></a>.</p>
 </section>
 <section id="function-calls" class="level2" data-number="6.11">
 <h2 data-number="6.11" class="anchored" data-anchor-id="function-calls"><span class="header-section-number">6.11</span> Function calls</h2>
@@ -1191,7 +1199,7 @@ Note
 <section id="sec-here-package-practices" class="level2" data-number="6.12">
 <h2 data-number="6.12" class="anchored" data-anchor-id="sec-here-package-practices"><span class="header-section-number">6.12</span> The here package</h2>
 <p>The <code>here</code> package is one great R package that helps multiple collaborators deal with the mess that is working directories within an R project structure. Let’s say we have an R project at the path <code>/home/oski/Some-R-Project</code>. My collaborator might clone the repository and work with it at some other path, such as <code>/home/bear/R-Code/Some-R-Project</code>. Dealing with working directories and paths explicitly can be a very large pain, and as you might imagine, setting up a Config with paths requires those paths to flexibly work for all contributors to a project. This is where the <code>here</code> package comes in and this a <a href="https://github.com/jennybc/here_here">great vignette describing it</a>.</p>
-<p><em>See also <a href="06-coding-style.html#sec-here-package-style" class="quarto-xref"><span>Section 7.9</span></a> for code style guidelines on using the here package.</em></p>
+<p><em>See also <a href="06-coding-style.html#sec-here-package-style" class="quarto-xref" preview-toc-changed><span>Section 7.9</span></a> for code style guidelines on using the here package.</em></p>
 </section>
 <section id="readingsaving-data" class="level2" data-number="6.13">
 <h2 data-number="6.13" class="anchored" data-anchor-id="readingsaving-data"><span class="header-section-number">6.13</span> Reading/Saving Data</h2>
@@ -1367,7 +1375,7 @@ drop_auth(rdstoken = "/path/to/tokenfile.RDS")
 <li><a href="https://stackoverflow.com/questions/28125816/r-standard-evaluation-for-join-dplyr">Standard Evaluation for *_join</a> (stackoverflow)</li>
 <li><a href="https://dplyr.tidyverse.org/articles/programming.html">Programming with dplyr</a> (package vignette)</li>
 </ul>
-<p>See also <a href="06-coding-style.html#sec-tidyverse-replacements" class="quarto-xref"><span>Section 7.8</span></a></p>
+<p>See also <a href="06-coding-style.html#sec-tidyverse-replacements" class="quarto-xref" preview-toc-changed><span>Section 7.8</span></a></p>
 </section>
 <section id="coding-with-r-and-python" class="level2" data-number="6.16">
 <h2 data-number="6.16" class="anchored" data-anchor-id="coding-with-r-and-python"><span class="header-section-number">6.16</span> Coding with R and Python</h2>
@@ -2052,7 +2060,7 @@ Describe how this change has been tested.
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./06-coding-style.html" class="pagination-link" aria-label="R Code Style">
+      <a href="./06-coding-style.html" class="pagination-link" preview-toc-changed aria-label="R Code Style">
         <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">R Code Style</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
