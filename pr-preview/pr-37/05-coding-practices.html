@@ -522,16 +522,16 @@ window.Quarto = {
   <li><a href="#news-file" id="toc-news-file" class="nav-link" data-scroll-target="#news-file"><span class="header-section-number">6.6.2</span> NEWS File</a></li>
   </ul></li>
   <li><a href="#sec-r-qa-checklist" id="toc-sec-r-qa-checklist" class="nav-link" data-scroll-target="#sec-r-qa-checklist"><span class="header-section-number">6.7</span> Quality Assurance Checklist</a></li>
-  <li><a href="#documenting-your-code" id="toc-documenting-your-code" class="nav-link" data-scroll-target="#documenting-your-code"><span class="header-section-number">6.8</span> Documenting your code</a>
+  <li><a href="#sec-documenting-code" id="toc-sec-documenting-code" class="nav-link" data-scroll-target="#sec-documenting-code"><span class="header-section-number">6.8</span> Documenting your code</a>
   <ul class="collapse">
-  <li><a href="#file-headers" id="toc-file-headers" class="nav-link" data-scroll-target="#file-headers"><span class="header-section-number">6.8.1</span> File headers</a></li>
-  <li><a href="#sections-and-subsections" id="toc-sections-and-subsections" class="nav-link" data-scroll-target="#sections-and-subsections"><span class="header-section-number">6.8.2</span> Sections and subsections</a></li>
-  <li><a href="#code-folding" id="toc-code-folding" class="nav-link" data-scroll-target="#code-folding"><span class="header-section-number">6.8.3</span> Code folding</a></li>
-  <li><a href="#comments-in-the-body-of-your-script" id="toc-comments-in-the-body-of-your-script" class="nav-link" data-scroll-target="#comments-in-the-body-of-your-script"><span class="header-section-number">6.8.4</span> Comments in the body of your script</a></li>
-  <li><a href="#function-documentation" id="toc-function-documentation" class="nav-link" data-scroll-target="#function-documentation"><span class="header-section-number">6.8.5</span> Function documentation</a></li>
+  <li><a href="#function-documentation" id="toc-function-documentation" class="nav-link" data-scroll-target="#function-documentation"><span class="header-section-number">6.8.1</span> Function documentation</a></li>
+  <li><a href="#script-headers" id="toc-script-headers" class="nav-link" data-scroll-target="#script-headers"><span class="header-section-number">6.8.2</span> Script headers</a></li>
+  <li><a href="#sections-and-subsections" id="toc-sections-and-subsections" class="nav-link" data-scroll-target="#sections-and-subsections"><span class="header-section-number">6.8.3</span> Sections and subsections</a></li>
+  <li><a href="#code-folding" id="toc-code-folding" class="nav-link" data-scroll-target="#code-folding"><span class="header-section-number">6.8.4</span> Code folding</a></li>
+  <li><a href="#comments-in-the-body-of-your-code" id="toc-comments-in-the-body-of-your-code" class="nav-link" data-scroll-target="#comments-in-the-body-of-your-code"><span class="header-section-number">6.8.5</span> Comments in the body of your code</a></li>
   </ul></li>
   <li><a href="#function-calls" id="toc-function-calls" class="nav-link" data-scroll-target="#function-calls"><span class="header-section-number">6.9</span> Function calls</a></li>
-  <li><a href="#the-here-package" id="toc-the-here-package" class="nav-link" data-scroll-target="#the-here-package"><span class="header-section-number">6.10</span> The here package</a></li>
+  <li><a href="#sec-here-package-practices" id="toc-sec-here-package-practices" class="nav-link" data-scroll-target="#sec-here-package-practices"><span class="header-section-number">6.10</span> The here package</a></li>
   <li><a href="#readingsaving-data" id="toc-readingsaving-data" class="nav-link" data-scroll-target="#readingsaving-data"><span class="header-section-number">6.11</span> Reading/Saving Data</a>
   <ul class="collapse">
   <li><a href="#rds-vs-.rdata-files" id="toc-rds-vs-.rdata-files" class="nav-link" data-scroll-target="#rds-vs-.rdata-files"><span class="header-section-number">6.11.1</span> <code>.RDS</code> vs <code>.RData</code> Files</a></li>
@@ -1004,38 +1004,11 @@ test_that("prep_study_data produces expected structure", {
 <li><label><input type="checkbox">All changes committed and pushed to GitHub</label></li>
 </ul>
 </section>
-<section id="documenting-your-code" class="level2" data-number="6.8">
-<h2 data-number="6.8" class="anchored" data-anchor-id="documenting-your-code"><span class="header-section-number">6.8</span> Documenting your code</h2>
-<section id="file-headers" class="level3" data-number="6.8.1">
-<h3 data-number="6.8.1" class="anchored" data-anchor-id="file-headers"><span class="header-section-number">6.8.1</span> File headers</h3>
-<p>Every file in a project should have a header that allows it to be interpreted on its own. It should include the name of the project and a short description for what this file (among the many in your project) does specifically. You may optionally wish to include the inputs and outputs of the script as well, though the next section makes this significantly less necessary.</p>
-<pre><code>################################################################################
-# @Organization - Example Organization
-# @Project - Example Project
-# @Description - This file is responsible for [...]
-################################################################################
-</code></pre>
-</section>
-<section id="sections-and-subsections" class="level3" data-number="6.8.2">
-<h3 data-number="6.8.2" class="anchored" data-anchor-id="sections-and-subsections"><span class="header-section-number">6.8.2</span> Sections and subsections</h3>
-<p>Rstudio (<a href="https://blog.rstudio.com/2020/12/02/rstudio-v1-4-preview-little-things/">v1.4 or more recent</a>) supports the use of Sections and Subsections. You can easily navigate through longer scripts using the navigation pane in RStudio, as shown on the right below.</p>
-<pre><code># Section -------
-
-## Subsection -------
-
-### Sub-subsection -------</code></pre>
-</section>
-<section id="code-folding" class="level3" data-number="6.8.3">
-<h3 data-number="6.8.3" class="anchored" data-anchor-id="code-folding"><span class="header-section-number">6.8.3</span> Code folding</h3>
-<p>Consider using RStudio’s <a href="https://support.rstudio.com/hc/en-us/articles/200484568-Code-Folding-and-Sections">code folding</a> feature to collapse and expand different sections of your code. Any comment line with at least four trailing dashes (-), equal signs (=), or pound signs (#) automatically creates a code section. For example:</p>
-</section>
-<section id="comments-in-the-body-of-your-script" class="level3" data-number="6.8.4">
-<h3 data-number="6.8.4" class="anchored" data-anchor-id="comments-in-the-body-of-your-script"><span class="header-section-number">6.8.4</span> Comments in the body of your script</h3>
-<p>Commenting your code is an important part of reproducibility and helps document your code for the future. When things change or break, you’ll be thankful for comments. There’s no need to comment excessively or unnecessarily, but a comment describing what a large or complex chunk of code does is always helpful. See <a href="https://github.com/kmishra9/Flu-Absenteeism/blob/master/Master's%20Thesis%20-%20Spatial%20Epidemiology%20of%20Influenza/1b%20-%20Map-Management.R">this file</a> for an example of how to comment your code and notice that comments are always in the form of:</p>
-<pre><code># This is a comment -- first letter is capitalized and spaced away from the pound sign</code></pre>
-</section>
-<section id="function-documentation" class="level3" data-number="6.8.5">
-<h3 data-number="6.8.5" class="anchored" data-anchor-id="function-documentation"><span class="header-section-number">6.8.5</span> Function documentation</h3>
+<section id="sec-documenting-code" class="level2" data-number="6.8">
+<h2 data-number="6.8" class="anchored" data-anchor-id="sec-documenting-code"><span class="header-section-number">6.8</span> Documenting your code</h2>
+<p><em>See also <a href="06-coding-style.html#sec-function-docs" class="quarto-xref"><span>Section 7.2</span></a> for function documentation style guidelines.</em></p>
+<section id="function-documentation" class="level3" data-number="6.8.1">
+<h3 data-number="6.8.1" class="anchored" data-anchor-id="function-documentation"><span class="header-section-number">6.8.1</span> Function documentation</h3>
 <p>Every function you write must include a header to document its purpose, inputs, and outputs. For any reproducible workflows, they are essential, because R is dynamically typed. This means, you can pass a <code>string</code> into an argument that is meant to be a <code>data.table</code>, or a <code>list</code> into an argument meant for a <code>tibble</code>. It is the responsibility of a function’s author to document what each argument is meant to do and its basic type. This is an example for documenting a function (inspired by <a href="https://www.oracle.com/technetwork/java/javase/documentation/index-137868.html#format">JavaDocs</a> and R’s <a href="https://blog.rstudio.com/2018/10/23/rstudio-1-2-preview-plumber-integration/">Plumber API docs</a>):</p>
 <pre><code>##############################################
 ##############################################
@@ -1054,7 +1027,7 @@ test_that("prep_study_data produces expected structure", {
 # Output: prints the data frame described above if silent is not True
 
 calc_fluseas_mean &lt;- function(data, yname, silent = TRUE) {
- ### function code here 
+ ### function code here
 
 }</code></pre>
 <p>The header tells you what the function does, its various inputs, and how you might go about using the function to do what you want. Also notice that all optional arguments (i.e.&nbsp;ones with pre-specified defaults) follow arguments that require user input.</p>
@@ -1085,6 +1058,34 @@ Note
 </div>
 </div>
 </section>
+<section id="script-headers" class="level3" data-number="6.8.2">
+<h3 data-number="6.8.2" class="anchored" data-anchor-id="script-headers"><span class="header-section-number">6.8.2</span> Script headers</h3>
+<p>Every file in a project that doesn’t have roxygen function documentation should at least have a header that allows it to be interpreted on its own. It should include the name of the project and a short description for what this file (among the many in your project) does specifically. You may optionally wish to include the inputs and outputs of the script as well, though the next section makes this significantly less necessary.</p>
+<pre><code>################################################################################
+# @Organization - Example Organization
+# @Project - Example Project
+# @Description - This file is responsible for [...]
+################################################################################
+</code></pre>
+</section>
+<section id="sections-and-subsections" class="level3" data-number="6.8.3">
+<h3 data-number="6.8.3" class="anchored" data-anchor-id="sections-and-subsections"><span class="header-section-number">6.8.3</span> Sections and subsections</h3>
+<p>Rstudio (<a href="https://blog.rstudio.com/2020/12/02/rstudio-v1-4-preview-little-things/">v1.4 or more recent</a>) supports the use of Sections and Subsections. You can easily navigate through longer scripts using the navigation pane in RStudio, as shown on the right below.</p>
+<pre><code># Section -------
+
+## Subsection -------
+
+### Sub-subsection -------</code></pre>
+</section>
+<section id="code-folding" class="level3" data-number="6.8.4">
+<h3 data-number="6.8.4" class="anchored" data-anchor-id="code-folding"><span class="header-section-number">6.8.4</span> Code folding</h3>
+<p>Consider using RStudio’s <a href="https://support.rstudio.com/hc/en-us/articles/200484568-Code-Folding-and-Sections">code folding</a> feature to collapse and expand different sections of your code. Any comment line with at least four trailing dashes (-), equal signs (=), or pound signs (#) automatically creates a code section. For example:</p>
+</section>
+<section id="comments-in-the-body-of-your-code" class="level3" data-number="6.8.5">
+<h3 data-number="6.8.5" class="anchored" data-anchor-id="comments-in-the-body-of-your-code"><span class="header-section-number">6.8.5</span> Comments in the body of your code</h3>
+<p>Commenting your code is an important part of reproducibility and helps document your code for the future. When things change or break, you’ll be thankful for comments. There’s no need to comment excessively or unnecessarily, but a comment describing what a large or complex chunk of code does is always helpful. See <a href="https://github.com/kmishra9/Flu-Absenteeism/blob/master/Master's%20Thesis%20-%20Spatial%20Epidemiology%20of%20Influenza/1b%20-%20Map-Management.R">this file</a> for an example of how to comment your code and notice that comments are always in the form of:</p>
+<pre><code># This is a comment -- first letter is capitalized and spaced away from the pound sign</code></pre>
+</section>
 </section>
 <section id="function-calls" class="level2" data-number="6.9">
 <h2 data-number="6.9" class="anchored" data-anchor-id="function-calls"><span class="header-section-number">6.9</span> Function calls</h2>
@@ -1098,8 +1099,9 @@ Note
   silent = FALSE
 )</code></pre>
 </section>
-<section id="the-here-package" class="level2" data-number="6.10">
-<h2 data-number="6.10" class="anchored" data-anchor-id="the-here-package"><span class="header-section-number">6.10</span> The here package</h2>
+<section id="sec-here-package-practices" class="level2" data-number="6.10">
+<h2 data-number="6.10" class="anchored" data-anchor-id="sec-here-package-practices"><span class="header-section-number">6.10</span> The here package</h2>
+<p><em>See also <a href="06-coding-style.html#sec-here-package-style" class="quarto-xref"><span>Section 7.7</span></a> for code style guidelines on using the here package.</em></p>
 <p>The <code>here</code> package is one great R package that helps multiple collaborators deal with the mess that is working directories within an R project structure. Let’s say we have an R project at the path <code>/home/oski/Some-R-Project</code>. My collaborator might clone the repository and work with it at some other path, such as <code>/home/bear/R-Code/Some-R-Project</code>. Dealing with working directories and paths explicitly can be a very large pain, and as you might imagine, setting up a Config with paths requires those paths to flexibly work for all contributors to a project. This is where the <code>here</code> package comes in and this a <a href="https://github.com/jennybc/here_here">great vignette describing it</a>.</p>
 </section>
 <section id="readingsaving-data" class="level2" data-number="6.11">

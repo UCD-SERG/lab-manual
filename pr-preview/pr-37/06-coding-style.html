@@ -456,12 +456,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#general-principles" id="toc-general-principles" class="nav-link active" data-scroll-target="#general-principles"><span class="header-section-number">7.1</span> General Principles</a></li>
-  <li><a href="#function-structure-and-documentation" id="toc-function-structure-and-documentation" class="nav-link" data-scroll-target="#function-structure-and-documentation"><span class="header-section-number">7.2</span> Function Structure and Documentation</a></li>
+  <li><a href="#sec-function-docs" id="toc-sec-function-docs" class="nav-link" data-scroll-target="#sec-function-docs"><span class="header-section-number">7.2</span> Function Structure and Documentation</a></li>
   <li><a href="#comments" id="toc-comments" class="nav-link" data-scroll-target="#comments"><span class="header-section-number">7.3</span> Comments</a></li>
   <li><a href="#line-breaks-and-formatting" id="toc-line-breaks-and-formatting" class="nav-link" data-scroll-target="#line-breaks-and-formatting"><span class="header-section-number">7.4</span> Line Breaks and Formatting</a></li>
   <li><a href="#messaging-and-user-communication" id="toc-messaging-and-user-communication" class="nav-link" data-scroll-target="#messaging-and-user-communication"><span class="header-section-number">7.5</span> Messaging and User Communication</a></li>
   <li><a href="#package-code-practices" id="toc-package-code-practices" class="nav-link" data-scroll-target="#package-code-practices"><span class="header-section-number">7.6</span> Package Code Practices</a></li>
-  <li><a href="#the-here-package" id="toc-the-here-package" class="nav-link" data-scroll-target="#the-here-package"><span class="header-section-number">7.7</span> The here Package</a></li>
+  <li><a href="#sec-here-package-style" id="toc-sec-here-package-style" class="nav-link" data-scroll-target="#sec-here-package-style"><span class="header-section-number">7.7</span> The here Package</a></li>
   <li><a href="#object-naming" id="toc-object-naming" class="nav-link" data-scroll-target="#object-naming"><span class="header-section-number">7.8</span> Object Naming</a></li>
   <li><a href="#automated-tools-for-style-and-project-workflow" id="toc-automated-tools-for-style-and-project-workflow" class="nav-link" data-scroll-target="#automated-tools-for-style-and-project-workflow"><span class="header-section-number">7.9</span> Automated Tools for Style and Project Workflow</a>
   <ul class="collapse">
@@ -510,8 +510,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Write tidy code</strong>: Keep code clean, readable, and well-organized</li>
 </ul>
 </section>
-<section id="function-structure-and-documentation" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="function-structure-and-documentation"><span class="header-section-number">7.2</span> Function Structure and Documentation</h2>
+<section id="sec-function-docs" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="sec-function-docs"><span class="header-section-number">7.2</span> Function Structure and Documentation</h2>
+<p><em>See also <a href="05-coding-practices.html#sec-documenting-code" class="quarto-xref"><span>Section 6.8</span></a> for general code documentation practices.</em></p>
 <p>Every function should follow this pattern:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#' Short Title (One Line)</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
@@ -672,8 +673,9 @@ Note
 <li><strong>Avoid code duplication</strong>: Extract repeated logic into helper functions</li>
 </ul>
 </section>
-<section id="the-here-package" class="level2" data-number="7.7">
-<h2 data-number="7.7" class="anchored" data-anchor-id="the-here-package"><span class="header-section-number">7.7</span> The here Package</h2>
+<section id="sec-here-package-style" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="sec-here-package-style"><span class="header-section-number">7.7</span> The here Package</h2>
+<p><em>See also <a href="05-coding-practices.html#sec-here-package-practices" class="quarto-xref"><span>Section 6.10</span></a> for detailed explanation of the here package.</em></p>
 <p>The <code>here</code> package helps manage file paths in projects by automatically finding the project root and building paths relative to it.</p>
 <p>This solves the problem of different working directory paths across collaborators. For example, one person might have the project at <code>/home/oski/Some-R-Project</code> while another has it at <code>/home/bear/R-Code/Some-R-Project</code>. The <code>here</code> package handles this automatically.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
