@@ -76,4 +76,7 @@ jobs:
         uses: rossjrw/pr-preview-action@main
         with:
           source-dir: ./docs/
+          # Deploy on label changes too, not just open/reopen/synchronize
+          # The 'auto' action ignores label events, so we explicitly set 'deploy' for non-closed PRs
+          action: ${{ github.event.action == 'closed' && 'remove' || 'deploy' }}
         
