@@ -423,7 +423,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#responsibility-for-validation" id="toc-responsibility-for-validation" class="nav-link active" data-scroll-target="#responsibility-for-validation"><span class="header-section-number">16.1</span> Responsibility for validation</a></li>
   <li><a href="#disclosure-of-ai-use" id="toc-disclosure-of-ai-use" class="nav-link" data-scroll-target="#disclosure-of-ai-use"><span class="header-section-number">16.2</span> Disclosure of AI use</a></li>
   <li><a href="#attribution-of-sources" id="toc-attribution-of-sources" class="nav-link" data-scroll-target="#attribution-of-sources"><span class="header-section-number">16.3</span> Attribution of sources</a></li>
-  <li><a href="#recommended-tools" id="toc-recommended-tools" class="nav-link" data-scroll-target="#recommended-tools"><span class="header-section-number">16.4</span> Recommended tools</a></li>
+  <li><a href="#coding-agents" id="toc-coding-agents" class="nav-link" data-scroll-target="#coding-agents"><span class="header-section-number">16.4</span> Coding Agents</a>
+  <ul class="collapse">
+  <li><a href="#when-to-use-a-coding-agent" id="toc-when-to-use-a-coding-agent" class="nav-link" data-scroll-target="#when-to-use-a-coding-agent"><span class="header-section-number">16.4.1</span> When to use a coding agent</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/15-ai-tools.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/15-ai-tools.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -492,19 +495,30 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>When instructing AI tools to create documentation or written content, explicitly request that they provide proper attribution for any borrowed or adapted material. For example: “Please quote from and paraphrase [source], with proper attribution” rather than simply asking it to summarize information on a topic.</p>
 </section>
-<section id="recommended-tools" class="level2" data-number="16.4">
-<h2 data-number="16.4" class="anchored" data-anchor-id="recommended-tools"><span class="header-section-number">16.4</span> Recommended tools</h2>
-<p>We recommend using <strong><a href="https://github.com/features/copilot">GitHub Copilot</a></strong> for AI-assisted coding. GitHub Copilot offers several advantages:</p>
+<section id="coding-agents" class="level2" data-number="16.4">
+<h2 data-number="16.4" class="anchored" data-anchor-id="coding-agents"><span class="header-section-number">16.4</span> Coding Agents</h2>
+<p>We recommend using <strong><a href="https://github.com/features/copilot/agents">Coding Agents</a></strong> for AI-assisted coding. Coding Agents offer several advantages:</p>
 <ul>
-<li><strong>Built-in transparency</strong>: When used through GitHub’s <a href="https://github.com/features/copilot/agents">Coding Agent interface</a>, Copilot creates a clear record of its role in your work through commit history and code suggestions</li>
-<li><strong>Context-aware suggestions</strong>: Copilot understands your codebase and can make contextually relevant suggestions</li>
-<li><strong>Integration with version control</strong>: Using Copilot within GitHub ensures that AI-assisted changes are tracked alongside all other code changes</li>
-<li><strong>Interactive workflow</strong>: Copilot’s interactive nature encourages you to review and modify suggestions rather than blindly accepting them</li>
+<li><strong>Built-in transparency</strong>: Coding agents create a clear record of their role in your work through commit history and code suggestions</li>
+<li><strong>Context-aware suggestions</strong>: Coding agents understand your codebase and can make contextually relevant suggestions</li>
+<li><strong>Integration with version control</strong>: Using Coding agents within GitHub ensures that AI-assisted changes are tracked alongside all other code changes</li>
+<li><strong>Interactive workflow</strong>: Coding agents’ interactive nature encourages you to review and modify suggestions rather than blindly accepting them</li>
 </ul>
-<p>When using GitHub Copilot or similar tools, work interactively with the AI suggestions—review, modify, and test them rather than accepting them wholesale. This interactive approach helps ensure code quality and deepens your understanding of the code.</p>
+<p>When using coding agents, work interactively with the AI suggestions: review, modify, and test them rather than accepting them wholesale. This interactive approach helps ensure code quality and deepens your understanding of the code.</p>
 <p>Remember: AI tools are assistants, not replacements for your expertise and judgment. The quality and correctness of your work remains your responsibility.</p>
+<section id="when-to-use-a-coding-agent" class="level3" data-number="16.4.1">
+<h3 data-number="16.4.1" class="anchored" data-anchor-id="when-to-use-a-coding-agent"><span class="header-section-number">16.4.1</span> When to use a coding agent</h3>
+<p>Coding agent sessions are currently<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> considered “premium requests”, which are limited resources; see <a href="https://github.com/features/copilot/plans" class="uri">https://github.com/features/copilot/plans</a> for details. So, use coding agents sparingly. Use them for complex changes that would be difficult or time-consuming for you to complete by hand. Coding agents also take time to get configured for work, every time you make a request. See <a href="https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-environment#preinstalling-tools-or-dependencies-in-copilots-environment" class="uri">https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-environment#preinstalling-tools-or-dependencies-in-copilots-environment</a> for ways to reduce that startup time, but it will never be 0. If you can complete the task faster than the coding agent can, you should probably do it yourself.</p>
+<p>Also, the less we practice, the weaker our skills get, and the harder it is for us to supervise the agents and make sure they are actually doing what we want it to do, the way we want it to do it. You should exercise your own coding skills regularly, just like you would for any other skill you want to maintain.</p>
 
 
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>2026-01-10<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
