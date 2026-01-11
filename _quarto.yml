@@ -54,6 +54,8 @@ book:
     - resources.qmd
   page-navigation: true
 
+bibliography: [book.bib, packages.bib]
+
 format:
   html:
     theme:
