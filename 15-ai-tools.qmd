@@ -31,27 +31,35 @@ Example code comment:
 
 ## Attribution of sources
 
-**When using AI tools to generate content that borrows from or adapts existing sources, you must ensure proper attribution.** AI tools sometimes paraphrase or adapt content from documentation, guides, or other resources without clearly indicating the original source. It is your responsibility to:
+**When using AI tools to generate content that borrows from or adapts existing sources, you must ensure proper attribution.** 
+AI tools sometimes paraphrase or adapt content from documentation, guides, or other resources without clearly indicating the original source. 
+It is your responsibility to:
 
 - Ask the AI tool to identify and properly cite sources when it borrows or adapts content
 - Verify that any content the AI generates includes appropriate citations
 - Add citations yourself if the AI fails to do so
 - Follow appropriate attribution practices for the type of content (code comments, documentation, academic writing, etc.)
 
-When instructing AI tools to create documentation or written content, explicitly request that they provide proper attribution for any borrowed or adapted material. For example: "Please quote from and paraphrase [source], with proper attribution" rather than simply asking it to summarize information on a topic.
+When instructing AI tools to create documentation or written content, explicitly request that they provide proper attribution for any borrowed or adapted material. 
+For example: "Please quote from and paraphrase [source], with proper attribution" rather than simply asking it to summarize information on a topic.
 
-## Recommended tools
+## Coding Agents
 
-We recommend using **[GitHub Copilot](https://github.com/features/copilot)** for AI-assisted coding. GitHub Copilot offers several advantages:
+We recommend using **[Coding Agents](https://github.com/features/copilot/agents)** 
+for AI-assisted coding. 
+Coding Agents offer several advantages:
 
-- **Built-in transparency**: When used through GitHub's [Coding Agent interface](https://github.com/features/copilot/agents), Copilot creates a clear record of its role in your work through commit history and code suggestions
-- **Context-aware suggestions**: Copilot understands your codebase and can make contextually relevant suggestions
-- **Integration with version control**: Using Copilot within GitHub ensures that AI-assisted changes are tracked alongside all other code changes
-- **Interactive workflow**: Copilot's interactive nature encourages you to review and modify suggestions rather than blindly accepting them
+- **Built-in transparency**: Coding agents create a clear record of their role in your work through commit history and code suggestions
+- **Context-aware suggestions**: Coding agents understand your codebase and can make contextually relevant suggestions
+- **Integration with version control**: Using Coding agents within GitHub ensures that AI-assisted changes are tracked alongside all other code changes
+- **Interactive workflow**: Coding agents' interactive nature encourages you to review and modify suggestions rather than blindly accepting them
 
-When using GitHub Copilot or similar tools, work interactively with the AI suggestions—review, modify, and test them rather than accepting them wholesale. This interactive approach helps ensure code quality and deepens your understanding of the code.
+When using coding agents, work interactively with the AI suggestions:
+review, modify, and test them rather than accepting them wholesale. 
+This interactive approach helps ensure code quality and deepens your understanding of the code.
 
-Remember: AI tools are assistants, not replacements for your expertise and judgment. The quality and correctness of your work remains your responsibility.
+Remember: AI tools are assistants, not replacements for your expertise and judgment. 
+The quality and correctness of your work remains your responsibility.
 
 ### When to use a coding agent
 
