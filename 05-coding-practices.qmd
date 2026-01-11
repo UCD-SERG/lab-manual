@@ -44,9 +44,9 @@ Adapted by UCD-SeRG team from [original by Kunal Mishra, Jade Benjamin-Chung, St
 
 ## Documenting your code {#sec-documenting-code}
 
-*See also @sec-function-docs for function documentation style guidelines.*
-
 {{< include 05-coding-practices/documenting-code.qmd >}}
+
+*See also @sec-function-docs for function documentation style guidelines.*
 
 ## Function calls
 
