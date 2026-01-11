@@ -46,6 +46,7 @@ Adapted by UCD-SeRG team from [original by Kunal Mishra, Jade Benjamin-Chung, St
 
 See @sec-style-auto-style.
 
+
 ## Documenting your code {#sec-documenting-code}
 
 {{< include 05-coding-practices/documenting-code.qmd >}}
