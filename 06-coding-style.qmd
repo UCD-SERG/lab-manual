@@ -8,7 +8,9 @@ Follow these code style guidelines for all R code:
 
 {{< include 06-coding-style/general-principles.qmd >}}
 
-## Function Structure and Documentation
+## Function Structure and Documentation {#sec-function-docs}
+
+*See also @sec-documenting-code for general code documentation practices.*
 
 {{< include 06-coding-style/function-structure-and-documentation.qmd >}}
 
@@ -28,7 +30,9 @@ Follow these code style guidelines for all R code:
 
 {{< include 06-coding-style/package-code-practices.qmd >}}
 
-## The here Package
+## The here Package {#sec-here-package-style}
+
+*See also @sec-here-package-practices for detailed explanation of the here package.*
 
 {{< include 06-coding-style/the-here-package.qmd >}}
 
