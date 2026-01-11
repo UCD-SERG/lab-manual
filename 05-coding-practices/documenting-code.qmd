@@ -1,5 +1,5 @@
 
-### Function documentation
+### Function headers
 
 {{< include 05-coding-practices/function-documentation.qmd >}}
 

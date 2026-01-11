@@ -52,3 +52,27 @@ We recommend using **[GitHub Copilot](https://github.com/features/copilot)** for
 When using GitHub Copilot or similar tools, work interactively with the AI suggestions—review, modify, and test them rather than accepting them wholesale. This interactive approach helps ensure code quality and deepens your understanding of the code.
 
 Remember: AI tools are assistants, not replacements for your expertise and judgment. The quality and correctness of your work remains your responsibility.
+
+### When to use a coding agent
+
+Coding agent sessions are currently^[2026-01-10] considered
+"premium requests", which are limited resources; 
+see <https://github.com/features/copilot/plans> for details.
+So, use coding agents sparingly.
+Use them for complex changes that would be difficult or time-consuming
+for you to complete by hand.
+Coding agents also take time to get configured for work,
+every time you make a request.
+See <https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-environment#preinstalling-tools-or-dependencies-in-copilots-environment> for ways to reduce that startup time,
+but it will never be 0.
+
+If you can complete the task faster the coding agent can, 
+you should probably do it yourself.
+
+Also, less we practice, the weaker our skills get,
+and the harder it is for us to supervise the agents
+and make sure they are actually doing what we want it to do,
+the way we want it to do it.
+You should exercise your own coding skills regularly,
+just like you would for any other skill you want to maintain.
+
