@@ -35,9 +35,43 @@ Here are the key points:
 ```
 
 This applies to:
+
 - Bullet lists (starting with `-` or `*`)
 - Numbered lists (starting with `1.`, `2.`, etc.)
 - Lists in all .qmd files throughout the repository
+
+### Line Breaks in Plain Text
+
+**ALWAYS line-break at the ends of sentences and long phrases in plain-text paragraphs in .qmd files** to avoid long lines.
+
+**Correct:**
+```markdown
+When talking about code in prose sections,
+use backticks to apply code formatting.
+This helps maintain readability in source files
+and makes diffs easier to review.
+```
+
+**Incorrect:**
+```markdown
+When talking about code in prose sections, use backticks to apply code formatting. This helps maintain readability in source files and makes diffs easier to review.
+```
+
+**Benefits:**
+
+- Improves readability of source .qmd files
+- Makes git diffs clearer and easier to review
+- Helps identify specific changes in version control
+- Prevents horizontal scrolling when editing
+- Follows semantic line breaks best practice
+
+**Guidelines:**
+
+- Break after complete sentences (at periods)
+- Break after long phrases or clauses (at commas or conjunctions)
+- Break after approximately 60-80 characters when appropriate
+- Keep related short phrases together on one line
+- Don't break in the middle of inline code, links, or formatting
 
 ### Why This Matters
 
