@@ -12,9 +12,9 @@ You may optionally wish to include the inputs and outputs of the script as well,
 
 ```
 ################################################################################
-# @Organization - Example Organization
-# @Project - Example Project
-# @Description - This file is responsible for [...]
+# Organization - Example Organization
+# Project - Example Project
+# Description - This file is responsible for [...]
 ################################################################################
 
 ```

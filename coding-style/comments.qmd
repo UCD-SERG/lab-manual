@@ -14,9 +14,9 @@ ggplot(data, aes(x = income)) + geom_histogram()
 
 ```r
 ################################################################################
-# @Organization - Example Organization
-# @Project - Example Project
-# @Description - This file is responsible for [...]
+# Organization - Example Organization
+# Project - Example Project
+# Description - This file is responsible for [...]
 ################################################################################
 ```
 
