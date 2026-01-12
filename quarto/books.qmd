@@ -1,0 +1,141 @@
+Quarto books let you author entire books (or course notes, manuals, dissertations, etc.) in markdown.
+Quarto books are ideal for documentation,
+tutorials,
+lab manuals,
+and other long-form content.
+
+### Creating a Quarto Book
+
+**Starting from a template (recommended):**
+
+Using a template is the fastest way to get started with a Quarto book,
+as it provides pre-configured settings and examples:
+
+1. **UCD-SeRG Quarto Book Template** - Our recommended template with pre-configured settings for lab publications:
+   - Repository: <https://github.com/UCD-SERG/quarto-book-template>
+   - Click "Use this template" → "Create a new repository" on GitHub
+   - Clone your new repository and start editing
+
+2. **Coatless Tutorials Quarto Book Template** - Another frequently-used template with helpful examples:
+   - Repository: <https://github.com/coatless-tutorials/quarto-book-template>
+   - Includes examples of common Quarto book features
+
+**Starting from scratch:**
+
+If you prefer to start from scratch,
+you can create a new Quarto book project using the Quarto CLI:
+
+```bash
+# Create a new Quarto book project
+quarto create project book mybook
+cd mybook
+```
+
+This will create a basic book structure with:
+
+- `_quarto.yml` - configuration file for your book
+- `index.qmd` - the home page / preface
+- Sample chapter files
+- `references.qmd` - bibliography/references page
+
+### Building and Previewing
+
+Once you have a Quarto book project,
+you can build and preview it:
+
+```bash
+# Render the entire book
+quarto render
+
+# Preview with live reload (recommended during development)
+quarto preview
+```
+
+The `quarto preview` command starts a local web server and automatically refreshes the preview whenever you save changes to your files.
+
+### Book Structure
+
+A typical Quarto book is organized as follows:
+
+**`_quarto.yml`:**
+The main configuration file that defines:
+
+- Book metadata (title, author, date)
+- Chapter order
+- Output formats (HTML, PDF, ePub, etc.)
+- Styling and theme
+- Navigation options
+
+**Chapter files:**
+Individual `.qmd` files for each chapter.
+These are listed in the `chapters` section of `_quarto.yml`.
+
+**Parts:**
+You can organize chapters into parts for better structure:
+
+```yaml
+book:
+  chapters:
+    - index.qmd
+    - part: "Getting Started"
+      chapters:
+        - intro.qmd
+        - basics.qmd
+    - part: "Advanced Topics"
+      chapters:
+        - advanced.qmd
+```
+
+### Book Features
+
+Quarto books support many advanced features:
+
+**Cross-references:**
+Reference figures,
+tables,
+equations,
+and sections throughout your book:
+
+```markdown
+See @fig-plot for details.
+As shown in @tbl-results.
+Refer to @sec-introduction.
+```
+
+**Citations:**
+Include a bibliography and cite sources:
+
+```markdown
+According to @smith2020, the method works well.
+```
+
+**Search:**
+Automatic full-text search in HTML output.
+
+**Downloads:**
+Offer PDF,
+ePub,
+and Word versions alongside HTML.
+
+**Navigation:**
+Automatic table of contents,
+previous/next chapter buttons,
+and breadcrumbs.
+
+**Customization:**
+Custom themes,
+CSS,
+and templates for professional appearance.
+
+### Example: This Lab Manual
+
+This lab manual itself is a Quarto book!
+You can view its source code at <https://github.com/UCD-SERG/lab-manual> to see how we've structured chapters,
+used includes for modular content,
+and configured various output formats.
+
+### Resources
+
+- [Quarto Books Guide](https://quarto.org/docs/books/) - comprehensive documentation for Quarto books
+- [Quarto Publishing Guide](https://quarto.org/docs/publishing/) - how to publish your book online
+- [R4DS Quarto chapter](https://r4ds.hadley.nz/quarto.html) [@wickham2023r4ds] - excellent introduction to Quarto

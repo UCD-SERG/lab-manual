@@ -1,0 +1,81 @@
+Quarto profiles allow you to customize rendering behavior for different purposes.
+A profile is a named set of configuration options that can be activated when rendering.
+This is particularly useful when you want to render the same source files in different formats or for different audiences.
+
+### What are Profiles?
+
+Profiles let you maintain multiple `_quarto.yml` configuration files in the same project.
+For example,
+you might have:
+
+- `_quarto.yml` - default book configuration
+- `_quarto-revealjs.yml` - configuration for rendering chapters as slide decks
+- `_quarto-print.yml` - configuration optimized for PDF printing
+
+### Example: Rendering Chapters as Slides
+
+A excellent example of using Quarto profiles comes from the [Regression Models for Epidemiology](https://d-morrison.github.io/rme/) course materials by D. Morrison.
+
+The project includes a `_quarto-revealjs.yml` profile that allows each chapter to be compiled as a RevealJS slide deck,
+in addition to being part of the book.
+
+To render a single chapter as slides:
+
+```bash
+quarto render chapter-name.qmd --profile=revealjs
+```
+
+To render all chapters listed in the profile as slides:
+
+```bash
+quarto render --profile=revealjs
+```
+
+### Creating a Profile
+
+To create a profile:
+
+1. Create a new YAML file named `_quarto-{profile-name}.yml`
+2. Include only the configuration options that differ from your default `_quarto.yml`
+3. Activate the profile when rendering using `--profile={profile-name}`
+
+**Example profile structure:**
+
+`_quarto-slides.yml`:
+
+```yaml
+project:
+  type: default
+  output-dir: slides
+
+format:
+  revealjs:
+    theme: serif
+    slide-number: true
+    preview-links: auto
+```
+
+### Common Use Cases
+
+**Multiple output formats:**
+Maintain separate configurations for web,
+print,
+and presentation versions of your content.
+
+**Different audiences:**
+Create versions with or without solutions,
+technical details,
+or instructor notes.
+
+**Development vs. production:**
+Use a development profile with faster rendering options during writing,
+and a production profile with full features for final output.
+
+**Course materials:**
+Render the same content as both a reference book and lecture slides,
+as demonstrated in the [RME course](https://d-morrison.github.io/rme/).
+
+### Resources
+
+- [Quarto Profiles Documentation](https://quarto.org/docs/projects/profiles.html)
+- [RME Example](https://d-morrison.github.io/rme/) - see the source at <https://github.com/d-morrison/rme> for a working example

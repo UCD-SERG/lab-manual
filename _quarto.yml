@@ -50,6 +50,7 @@ book:
     - data-publication.qmd
     - slurm.qmd
     - ai-tools.qmd
+    - quarto.qmd
     - checklists.qmd
     - resources.qmd
     - professional-development.qmd
