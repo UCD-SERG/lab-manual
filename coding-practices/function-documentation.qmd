@@ -4,7 +4,7 @@ This means you can pass a `string` into an argument that is meant to be a `data.
 or a `list` into an argument meant for a `tibble`.
 It is the responsibility of a function's author to document what each argument is meant to do and its basic type.
 
-We use [roxygen2](https://roxygen2.r-lib.org/) [@R-roxygen2] for function documentation.
+We use [`{roxygen2}`](https://roxygen2.r-lib.org/) [@R-roxygen2] for function documentation.
 Roxygen2 allows you to describe your functions in special comments next to their definitions,
 and automatically generates R documentation files (`.Rd` files) and helps manage your package `NAMESPACE`.
 The roxygen2 format uses `#'` comments placed immediately before the function definition.

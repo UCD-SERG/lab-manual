@@ -28,8 +28,8 @@ When writing about code in prose sections of quarto documents,
 use backticks to apply a code style:
 for example, `dplyr::mutate()`.
 When talking about packages,
-use plain text with hyperlinks to the package website.
-For example: [dplyr](https://dplyr.tidyverse.org/).
+use backticks and curly-braces with a hyperlink to the package website.
+For example: [`{dplyr}`](https://dplyr.tidyverse.org/).
 
 ## Messaging and User Communication
 

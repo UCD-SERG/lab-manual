@@ -4,10 +4,10 @@
 
 {{< include coding-style/_rstudio-styling-shortcuts.qmd >}}
 
-#### [styler](https://styler.r-lib.org/)
+#### [`{styler}`](https://styler.r-lib.org/)
    
 {{< include coding-style/_styler-summary.qmd >}}   
    
-#### [lintr](https://lintr.r-lib.org/)
+#### [`{lintr}`](https://lintr.r-lib.org/)
 
 {{< include coding-style/_lintr-summary.qmd >}} 

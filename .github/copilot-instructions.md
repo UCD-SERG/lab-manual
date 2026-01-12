@@ -11,29 +11,29 @@ use backticks to apply code formatting:
 for example, `dplyr::mutate()`
 
 When talking about packages in prose,
-use plain text with hyperlinks to the package website.
-For example: [dplyr](https://dplyr.tidyverse.org/)
+use backticks and curly-braces with a hyperlink to the package website.
+For example: [`{dplyr}`](https://dplyr.tidyverse.org/)
 
 Common package URLs:
 
-- [dplyr](https://dplyr.tidyverse.org/)
-- [ggplot2](https://ggplot2.tidyverse.org/)
-- [tidyr](https://tidyr.tidyverse.org/)
-- [readr](https://readr.tidyverse.org/)
-- [purrr](https://purrr.tidyverse.org/)
-- [tibble](https://tibble.tidyverse.org/)
-- [stringr](https://stringr.tidyverse.org/)
-- [forcats](https://forcats.tidyverse.org/)
-- [styler](https://styler.r-lib.org/)
-- [lintr](https://lintr.r-lib.org/)
-- [roxygen2](https://roxygen2.r-lib.org/)
-- [testthat](https://testthat.r-lib.org/)
-- [usethis](https://usethis.r-lib.org/)
-- [devtools](https://devtools.r-lib.org/)
-- [renv](https://rstudio.github.io/renv/)
-- [targets](https://docs.ropensci.org/targets/)
-- [data.table](https://rdatatable.gitlab.io/data.table/)
-- [assertthat](https://cran.r-project.org/package=assertthat)
+- [`{dplyr}`](https://dplyr.tidyverse.org/)
+- [`{ggplot2}`](https://ggplot2.tidyverse.org/)
+- [`{tidyr}`](https://tidyr.tidyverse.org/)
+- [`{readr}`](https://readr.tidyverse.org/)
+- [`{purrr}`](https://purrr.tidyverse.org/)
+- [`{tibble}`](https://tibble.tidyverse.org/)
+- [`{stringr}`](https://stringr.tidyverse.org/)
+- [`{forcats}`](https://forcats.tidyverse.org/)
+- [`{styler}`](https://styler.r-lib.org/)
+- [`{lintr}`](https://lintr.r-lib.org/)
+- [`{roxygen2}`](https://roxygen2.r-lib.org/)
+- [`{testthat}`](https://testthat.r-lib.org/)
+- [`{usethis}`](https://usethis.r-lib.org/)
+- [`{devtools}`](https://devtools.r-lib.org/)
+- [`{renv}`](https://rstudio.github.io/renv/)
+- [`{targets}`](https://docs.ropensci.org/targets/)
+- [`{data.table}`](https://rdatatable.gitlab.io/data.table/)
+- [`{assertthat}`](https://cran.r-project.org/package=assertthat)
 
 
 ### Blank Lines Before Lists
