@@ -506,12 +506,13 @@ div.csl-indent {
   <ul class="collapse">
   <li><a href="#what-are-ai-coding-agents" id="toc-what-are-ai-coding-agents" class="nav-link" data-scroll-target="#what-are-ai-coding-agents"><span class="header-section-number">17.4.1</span> What are AI coding agents?</a></li>
   <li><a href="#how-to-work-with-coding-agents" id="toc-how-to-work-with-coding-agents" class="nav-link" data-scroll-target="#how-to-work-with-coding-agents"><span class="header-section-number">17.4.2</span> How to Work with Coding Agents</a></li>
-  <li><a href="#benefits-and-hazards" id="toc-benefits-and-hazards" class="nav-link" data-scroll-target="#benefits-and-hazards"><span class="header-section-number">17.4.3</span> Benefits and Hazards</a></li>
-  <li><a href="#best-practices-for-safe-and-successful-use" id="toc-best-practices-for-safe-and-successful-use" class="nav-link" data-scroll-target="#best-practices-for-safe-and-successful-use"><span class="header-section-number">17.4.4</span> Best Practices for Safe and Successful Use</a></li>
-  <li><a href="#firewall-and-network-configuration" id="toc-firewall-and-network-configuration" class="nav-link" data-scroll-target="#firewall-and-network-configuration"><span class="header-section-number">17.4.5</span> Firewall and Network Configuration</a></li>
-  <li><a href="#when-to-use-a-coding-agent" id="toc-when-to-use-a-coding-agent" class="nav-link" data-scroll-target="#when-to-use-a-coding-agent"><span class="header-section-number">17.4.6</span> When to use a coding agent</a></li>
-  <li><a href="#editing-with-.docx-files" id="toc-editing-with-.docx-files" class="nav-link" data-scroll-target="#editing-with-.docx-files"><span class="header-section-number">17.4.7</span> Editing with <code>.docx</code> files</a></li>
-  <li><a href="#copilot-instructions-for-this-repository" id="toc-copilot-instructions-for-this-repository" class="nav-link" data-scroll-target="#copilot-instructions-for-this-repository"><span class="header-section-number">17.4.8</span> Copilot Instructions for this Repository</a></li>
+  <li><a href="#useful-prompt-formats" id="toc-useful-prompt-formats" class="nav-link" data-scroll-target="#useful-prompt-formats"><span class="header-section-number">17.4.3</span> Useful Prompt Formats</a></li>
+  <li><a href="#benefits-and-hazards" id="toc-benefits-and-hazards" class="nav-link" data-scroll-target="#benefits-and-hazards"><span class="header-section-number">17.4.4</span> Benefits and Hazards</a></li>
+  <li><a href="#best-practices-for-safe-and-successful-use" id="toc-best-practices-for-safe-and-successful-use" class="nav-link" data-scroll-target="#best-practices-for-safe-and-successful-use"><span class="header-section-number">17.4.5</span> Best Practices for Safe and Successful Use</a></li>
+  <li><a href="#firewall-and-network-configuration" id="toc-firewall-and-network-configuration" class="nav-link" data-scroll-target="#firewall-and-network-configuration"><span class="header-section-number">17.4.6</span> Firewall and Network Configuration</a></li>
+  <li><a href="#when-to-use-a-coding-agent" id="toc-when-to-use-a-coding-agent" class="nav-link" data-scroll-target="#when-to-use-a-coding-agent"><span class="header-section-number">17.4.7</span> When to use a coding agent</a></li>
+  <li><a href="#editing-with-.docx-files" id="toc-editing-with-.docx-files" class="nav-link" data-scroll-target="#editing-with-.docx-files"><span class="header-section-number">17.4.8</span> Editing with <code>.docx</code> files</a></li>
+  <li><a href="#copilot-instructions-for-this-repository" id="toc-copilot-instructions-for-this-repository" class="nav-link" data-scroll-target="#copilot-instructions-for-this-repository"><span class="header-section-number">17.4.9</span> Copilot Instructions for this Repository</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/ai-tools.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/ai-tools.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -671,8 +672,66 @@ div.csl-indent {
 <p>For detailed instructions, see <a href="https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent">GitHub Copilot coding agent documentation</a>.</p>
 </section>
 </section>
-<section id="benefits-and-hazards" class="level3" data-number="17.4.3">
-<h3 data-number="17.4.3" class="anchored" data-anchor-id="benefits-and-hazards"><span class="header-section-number">17.4.3</span> Benefits and Hazards</h3>
+<section id="useful-prompt-formats" class="level3" data-number="17.4.3">
+<h3 data-number="17.4.3" class="anchored" data-anchor-id="useful-prompt-formats"><span class="header-section-number">17.4.3</span> Useful Prompt Formats</h3>
+<p>When working with coding agents, using clear and specific prompts helps achieve better results. Here are some useful prompt formats that you can use when requesting assistance from coding agents:</p>
+<section id="common-task-patterns" class="level4" data-number="17.4.3.1">
+<h4 data-number="17.4.3.1" class="anchored" data-anchor-id="common-task-patterns"><span class="header-section-number">17.4.3.1</span> Common Task Patterns</h4>
+<p><strong>Tidying up code:</strong></p>
+<ul>
+<li>“tidy up [file, function, module, whole project]”</li>
+<li>Useful for improving code organization, consistency, and readability</li>
+<li>Example: “tidy up the data processing module”</li>
+</ul>
+<p><strong>Addressing failing workflows:</strong></p>
+<ul>
+<li>“address failing workflows”</li>
+<li>Helps fix continuous integration (CI) failures, build errors, or test failures</li>
+<li>Example: “address failing workflows in the GitHub Actions pipeline”</li>
+</ul>
+<p><strong>Decomposing code:</strong></p>
+<ul>
+<li>“decompose [function, quarto-file, etc]”</li>
+<li>Breaks down large or complex code into smaller, more manageable pieces</li>
+<li>Example: “decompose this analysis function into separate helper functions”</li>
+</ul>
+<p><strong>Updating content:</strong></p>
+<ul>
+<li>“update [links, content, etc]”</li>
+<li>Refreshes outdated information, fixes broken links, or modernizes code</li>
+<li>Example: “update all package URLs in the documentation”</li>
+</ul>
+<p><strong>Expanding documentation:</strong></p>
+<ul>
+<li>“expand [a section in a document]”</li>
+<li>Adds more detail, examples, or explanation to existing content</li>
+<li>Example: “expand the section on data validation with practical examples”</li>
+</ul>
+<p><strong>Condensing content:</strong></p>
+<ul>
+<li>“condense [a section in a document]”</li>
+<li>Reduces verbosity while preserving essential information</li>
+<li>Example: “condense the installation instructions to be more concise”</li>
+</ul>
+<p><strong>Clarifying content:</strong></p>
+<ul>
+<li>“clarify [a section in a document]”</li>
+<li>Improves clarity, removes ambiguity, or simplifies complex explanations</li>
+<li>Example: “clarify the explanation of the analysis workflow”</li>
+</ul>
+</section>
+<section id="tips-for-effective-prompts" class="level4" data-number="17.4.3.2">
+<h4 data-number="17.4.3.2" class="anchored" data-anchor-id="tips-for-effective-prompts"><span class="header-section-number">17.4.3.2</span> Tips for Effective Prompts</h4>
+<ul>
+<li><strong>Be specific</strong>: Include file names, function names, or specific sections when possible</li>
+<li><strong>Provide context</strong>: Explain what you want to achieve and why</li>
+<li><strong>Set boundaries</strong>: Specify what should or shouldn’t change</li>
+<li><strong>Request validation</strong>: Ask the agent to test or verify its changes when appropriate</li>
+</ul>
+</section>
+</section>
+<section id="benefits-and-hazards" class="level3" data-number="17.4.4">
+<h3 data-number="17.4.4" class="anchored" data-anchor-id="benefits-and-hazards"><span class="header-section-number">17.4.4</span> Benefits and Hazards</h3>
 <p>Coding agents are powerful programs that can work autonomously. They create pull requests that propose changes to the code in our repositories, potentially including their own configuration files and our automated workflows. They can work powerfully on our behalf, but they require careful oversight and control to ensure they serve our interests and that we understand the consequences of their actions.</p>
 <p>Coding agents offer several advantages:</p>
 <ul>
@@ -693,8 +752,8 @@ div.csl-indent {
 <li><p><strong>False confidence</strong>: Well-formatted, professional-looking code from AI can mask underlying problems and reduce critical review</p></li>
 <li><p><strong>Workflow manipulation risks</strong>: Coding agents that modify CI/CD workflows (<code>.github/workflows/*.yml</code>) or setup configurations can inadvertently or maliciously compromise repository security, expose secrets, or execute harmful commands</p></li>
 </ul>
-<section id="further-readingviewing" class="level4" data-number="17.4.3.1">
-<h4 data-number="17.4.3.1" class="anchored" data-anchor-id="further-readingviewing"><span class="header-section-number">17.4.3.1</span> Further reading/viewing</h4>
+<section id="further-readingviewing" class="level4" data-number="17.4.4.1">
+<h4 data-number="17.4.4.1" class="anchored" data-anchor-id="further-readingviewing"><span class="header-section-number">17.4.4.1</span> Further reading/viewing</h4>
 <ul>
 <li><em>I Robot</em> <span class="citation" data-cites="i_robot">(<a href="references.html#ref-i_robot" role="doc-biblioref">Asimov 1950</a>)</span></li>
 <li><em>Dune</em> <span class="citation" data-cites="dune">(<a href="references.html#ref-dune" role="doc-biblioref">Herbert 1965</a>)</span></li>
@@ -715,8 +774,8 @@ div.csl-indent {
 </div>
 </section>
 </section>
-<section id="best-practices-for-safe-and-successful-use" class="level3" data-number="17.4.4">
-<h3 data-number="17.4.4" class="anchored" data-anchor-id="best-practices-for-safe-and-successful-use"><span class="header-section-number">17.4.4</span> Best Practices for Safe and Successful Use</h3>
+<section id="best-practices-for-safe-and-successful-use" class="level3" data-number="17.4.5">
+<h3 data-number="17.4.5" class="anchored" data-anchor-id="best-practices-for-safe-and-successful-use"><span class="header-section-number">17.4.5</span> Best Practices for Safe and Successful Use</h3>
 <p>To work with coding agents safely and successfully:</p>
 <ol type="1">
 <li><p><strong>Maintain active supervision</strong>: Never assume AI-generated code is correct. Review every line critically.</p></li>
@@ -750,11 +809,11 @@ div.csl-indent {
 <p>When using coding agents, work interactively with the AI suggestions: review, modify, and test them rather than accepting them wholesale. This interactive approach helps ensure code quality and deepens your understanding of the code.</p>
 <p>Remember: AI tools are assistants, not replacements for your expertise and judgment. The quality and correctness of your work remains your responsibility.</p>
 </section>
-<section id="firewall-and-network-configuration" class="level3" data-number="17.4.5">
-<h3 data-number="17.4.5" class="anchored" data-anchor-id="firewall-and-network-configuration"><span class="header-section-number">17.4.5</span> Firewall and Network Configuration</h3>
+<section id="firewall-and-network-configuration" class="level3" data-number="17.4.6">
+<h3 data-number="17.4.6" class="anchored" data-anchor-id="firewall-and-network-configuration"><span class="header-section-number">17.4.6</span> Firewall and Network Configuration</h3>
 <p>Coding agents require specific network access to function properly. If a coding agent is running behind a corporate firewall or on a restricted network, you may need to configure allowlists to enable coding agent functionality.</p>
-<section id="built-in-agent-firewall" class="level4" data-number="17.4.5.1">
-<h4 data-number="17.4.5.1" class="anchored" data-anchor-id="built-in-agent-firewall"><span class="header-section-number">17.4.5.1</span> Built-in Agent Firewall</h4>
+<section id="built-in-agent-firewall" class="level4" data-number="17.4.6.1">
+<h4 data-number="17.4.6.1" class="anchored" data-anchor-id="built-in-agent-firewall"><span class="header-section-number">17.4.6.1</span> Built-in Agent Firewall</h4>
 <p>Coding agents run in a GitHub Actions environment with a built-in firewall that limits internet access by default. This firewall helps protect against:</p>
 <ul>
 <li>Data exfiltration</li>
@@ -770,8 +829,8 @@ div.csl-indent {
 </ul>
 <p>For the complete list of allowed hosts, see the <a href="https://docs.github.com/en/copilot/reference/copilot-allowlist-reference">Copilot allowlist reference</a>.</p>
 </section>
-<section id="customizing-agent-firewall-settings" class="level4" data-number="17.4.5.2">
-<h4 data-number="17.4.5.2" class="anchored" data-anchor-id="customizing-agent-firewall-settings"><span class="header-section-number">17.4.5.2</span> Customizing Agent Firewall Settings</h4>
+<section id="customizing-agent-firewall-settings" class="level4" data-number="17.4.6.2">
+<h4 data-number="17.4.6.2" class="anchored" data-anchor-id="customizing-agent-firewall-settings"><span class="header-section-number">17.4.6.2</span> Customizing Agent Firewall Settings</h4>
 <p>In your repository’s “Coding agent” settings page, you can:</p>
 <ul>
 <li>Add custom hosts to the allowlist (for internal dependencies or additional registries)</li>
@@ -782,13 +841,13 @@ div.csl-indent {
 <p>For more information, see <a href="https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-firewall">Customizing or disabling the firewall for GitHub Copilot coding agent</a>.</p>
 </section>
 </section>
-<section id="when-to-use-a-coding-agent" class="level3" data-number="17.4.6">
-<h3 data-number="17.4.6" class="anchored" data-anchor-id="when-to-use-a-coding-agent"><span class="header-section-number">17.4.6</span> When to use a coding agent</h3>
+<section id="when-to-use-a-coding-agent" class="level3" data-number="17.4.7">
+<h3 data-number="17.4.7" class="anchored" data-anchor-id="when-to-use-a-coding-agent"><span class="header-section-number">17.4.7</span> When to use a coding agent</h3>
 <p>Coding agent sessions are currently<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> considered “premium requests”, which are limited resources; see <a href="https://github.com/features/copilot/plans" class="uri">https://github.com/features/copilot/plans</a> for details. So, use coding agents sparingly. Use them for complex changes that would be difficult or time-consuming for you to complete by hand. Coding agents also take time to get configured for work, every time you make a request. See <a href="https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-environment#preinstalling-tools-or-dependencies-in-copilots-environment" class="uri">https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-environment#preinstalling-tools-or-dependencies-in-copilots-environment</a> for ways to reduce that startup time, but it will never be 0. If you can complete the task faster than the coding agent can, you should probably do it yourself. For example, when you have errors in the spell-check workflow, it’s often faster to run <code>spelling::update_wordlist()</code> yourself than to have Copilot do it for you. Also, when reviewing Copilot’s PRs, it’s often faster to directly edit the PR branch than to write clear review comments and ask Copilot to address them.</p>
 <p>Also, the less we practice, the weaker our skills get, and the harder it is for us to supervise the agents and make sure they are actually doing what we want it to do, the way we want it to do it. You should exercise your own coding skills regularly, just like you would for any other skill you want to maintain.</p>
 </section>
-<section id="editing-with-.docx-files" class="level3" data-number="17.4.7">
-<h3 data-number="17.4.7" class="anchored" data-anchor-id="editing-with-.docx-files"><span class="header-section-number">17.4.7</span> Editing with <code>.docx</code> files</h3>
+<section id="editing-with-.docx-files" class="level3" data-number="17.4.8">
+<h3 data-number="17.4.8" class="anchored" data-anchor-id="editing-with-.docx-files"><span class="header-section-number">17.4.8</span> Editing with <code>.docx</code> files</h3>
 <p>GitHub Copilot coding agents can read Microsoft Word (<code>.docx</code>) files, including tracked changes and comments. This enables a hybrid editing workflow where:</p>
 <ol type="1">
 <li>Lab members can export Quarto content to Word format for review</li>
@@ -803,8 +862,8 @@ div.csl-indent {
 </ul>
 <p>This approach makes it easier for collaborators who are more comfortable with Word to contribute to the lab manual while maintaining the source files in Quarto format.</p>
 </section>
-<section id="copilot-instructions-for-this-repository" class="level3" data-number="17.4.8">
-<h3 data-number="17.4.8" class="anchored"><span class="header-section-number">17.4.8</span> Copilot Instructions for this Repository</h3>
+<section id="copilot-instructions-for-this-repository" class="level3" data-number="17.4.9">
+<h3 data-number="17.4.9" class="anchored"><span class="header-section-number">17.4.9</span> Copilot Instructions for this Repository</h3>
 <p>The <code>.github/copilot-instructions.md</code> file in this repository contains specific instructions and guidelines for GitHub Copilot coding agents when working with the lab manual. This file helps ensure that AI-generated contributions follow the lab’s formatting standards, coding conventions, and documentation practices.</p>
 <p>The copilot instructions file specifies:</p>
 <ul>
