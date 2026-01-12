@@ -23,7 +23,7 @@ book:
   #     affiliations:
   #       - ref: ucdphs-epi
   #     email: kaiemjoy@health.ucdavis.edu
-  # 
+  #
   #   - name: Ezra Morrison
   #     affiliations:
   #       - ref: ucdphs-biostats
@@ -52,6 +52,8 @@ book:
     - ai-tools.qmd
     - checklists.qmd
     - resources.qmd
+    - professional-development.qmd
+    - manuscript-preparation.qmd
     - references.qmd
   page-navigation: true
 
