@@ -682,7 +682,7 @@ Note
 <h2 data-number="7.5" class="anchored" data-anchor-id="markdown-and-quarto-formatting"><span class="header-section-number">7.5</span> Markdown and Quarto Formatting</h2>
 <section id="writing-about-code-in-quarto-documents" class="level3" data-number="7.5.1">
 <h3 data-number="7.5.1" class="anchored" data-anchor-id="writing-about-code-in-quarto-documents"><span class="header-section-number">7.5.1</span> Writing about code in Quarto documents</h3>
-<p>When writing about code in prose sections of quarto documents, use backticks to apply a code style: for example, <code>dplyr::mutate()</code>. When talking about packages, use backticks and curly-braces: for example, <code>{dplyr}</code>.</p>
+<p>When writing about code in prose sections of quarto documents, use backticks to apply a code style: for example, <code>dplyr::mutate()</code>. When talking about packages, use backticks and curly-braces with a hyperlink to the package website. For example: <a href="https://dplyr.tidyverse.org/"><code>{dplyr}</code></a>.</p>
 </section>
 </section>
 <section id="messaging-and-user-communication" class="level2" data-number="7.6">
@@ -837,8 +837,8 @@ Note
 <span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="styler" class="level4" data-number="7.11.1.2">
-<h4 data-number="7.11.1.2" class="anchored" data-anchor-id="styler"><span class="header-section-number">7.11.1.2</span> <code>{styler}</code></h4>
-<p><code>{styler}</code> is another <a href="https://www.tidyverse.org/articles/2017/12/styler-1.0.0/">cool R package from the Tidyverse</a> that can be powerful and used as a first pass on entire projects that need refactoring. The most useful function of the package is the <code>style_dir</code> function, which will style all files within a given directory. See the <a href="https://www.rdocumentation.org/packages/styler/versions/1.1.0/topics/style_dir">function’s documentation</a> and the vignette linked above for more details.</p>
+<h4 data-number="7.11.1.2" class="anchored" data-anchor-id="styler"><span class="header-section-number">7.11.1.2</span> <a href="https://styler.r-lib.org/"><code>{styler}</code></a></h4>
+<p><a href="https://styler.r-lib.org/"><code>{styler}</code></a> is another <a href="https://www.tidyverse.org/articles/2017/12/styler-1.0.0/">cool R package from the Tidyverse</a> that can be powerful and used as a first pass on entire projects that need refactoring. The most useful function of the package is the <code>style_dir</code> function, which will style all files within a given directory. See the <a href="https://www.rdocumentation.org/packages/styler/versions/1.1.0/topics/style_dir">function’s documentation</a> and the vignette linked above for more details.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -849,7 +849,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The default Tidyverse styler is subtly different from some of the things we’ve advocated for in this document. Most notably we differ with regards to the assignment operator (<code>&lt;-</code> vs <code>=</code>) and number of spaces before/after “tokens” (i.e.&nbsp;Assignment Aligner add spaces before <code>=</code> signs to align them properly). For this reason, we’d recommend the following: <code>style_dir(path = ..., scope = "line_breaks", strict = FALSE)</code>. You can also customize <code>{styler}</code> <a href="http://styler.r-lib.org/articles/customizing_styler.html">even more</a> if you’re really hardcore.</p>
+<p>The default Tidyverse styler is subtly different from some of the things we’ve advocated for in this document. Most notably we differ with regards to the assignment operator (<code>&lt;-</code> vs <code>=</code>) and number of spaces before/after “tokens” (i.e.&nbsp;Assignment Aligner add spaces before <code>=</code> signs to align them properly). For this reason, we’d recommend the following: <code>style_dir(path = ..., scope = "line_breaks", strict = FALSE)</code>. You can also customize <a href="https://styler.r-lib.org/"><code>{styler}</code></a> <a href="http://styler.r-lib.org/articles/customizing_styler.html">even more</a> if you’re really hardcore.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -862,7 +862,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>As is mentioned in the package vignette linked above, <code>{styler}</code> modifies things <em>in-place</em>, meaning it overwrites your existing code and replaces it with the updated, properly styled code. This makes it a good fit on projects <em>with version control</em>, but if you don’t have backups or a good way to revert back to the initial code, I wouldn’t recommend going this route.</p>
+<p>As is mentioned in the package vignette linked above, <a href="https://styler.r-lib.org/"><code>{styler}</code></a> modifies things <em>in-place</em>, meaning it overwrites your existing code and replaces it with the updated, properly styled code. This makes it a good fit on projects <em>with version control</em>, but if you don’t have backups or a good way to revert back to the initial code, I wouldn’t recommend going this route.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -891,7 +891,7 @@ Note
 </div>
 </section>
 <section id="lintr" class="level4" data-number="7.11.1.3">
-<h4 data-number="7.11.1.3" class="anchored" data-anchor-id="lintr"><span class="header-section-number">7.11.1.3</span> <code>{lintr}</code></h4>
+<h4 data-number="7.11.1.3" class="anchored" data-anchor-id="lintr"><span class="header-section-number">7.11.1.3</span> <a href="https://lintr.r-lib.org/"><code>{lintr}</code></a></h4>
 <p>Linters are programming tools that check adherence to a given style, syntax errors, and possible semantic issues. The R linter, called <code>lintr</code>, can be found in this <a href="https://www.rdocumentation.org/packages/lintr/versions/1.0.3">package</a>. It helps keep files consistent across different authors and even different organizations. For example, it notifies you if you have unused variables, global variables with no visible binding, not enough or superfluous whitespace, and improper use of parentheses or brackets. A list of its other purposes can be found <a href="https://cran.r-project.org/web/packages/lintr/readme/README.html#available-linters">in this link</a>, and most guidelines are based on <a href="http://r-pkgs.had.co.nz/style.html">Hadley Wickham’s R Style Guide</a>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
