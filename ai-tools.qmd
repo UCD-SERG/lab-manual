@@ -189,10 +189,11 @@ see [GitHub Copilot coding agent documentation](https://docs.github.com/en/copil
 ### Benefits and Hazards
 
 Coding agents are powerful programs that can work autonomously.
-They can manipulate code,
-including their own configuration files.
-They can work on your behalf,
-but they require careful oversight and control to ensure they serve your interests and that you understand the consequences of their actions.
+They create pull requests that propose changes to the code in our repositories,
+potentially including their own configuration files and our automated workflows.
+They can work powerfully on our behalf,
+but they require careful oversight and control to ensure they serve our interests 
+and that we understand the consequences of their actions.
 
 Coding agents offer several advantages:
 
