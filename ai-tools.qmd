@@ -30,6 +30,10 @@ to [help you code](https://en.wikipedia.org/wiki/AI-assisted_software_developmen
 
 {{< include ai-tools/how-to-work-with-agents.qmd >}}
 
+### Useful Prompt Formats
+
+{{< include ai-tools/useful-prompt-formats.qmd >}}
+
 ### Benefits and Hazards
 
 {{< include ai-tools/agents-benefits-and-hazards.qmd >}}

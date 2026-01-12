@@ -1,0 +1,55 @@
+
+When working with coding agents,
+using clear and specific prompts helps achieve better results.
+Here are some useful prompt formats that you can use when requesting assistance from coding agents:
+
+#### Common Task Patterns
+
+**Tidying up code:**
+
+- "tidy up [file, function, module, whole project]"
+- Useful for improving code organization, consistency, and readability
+- Example: "tidy up the data processing module"
+
+**Addressing failing workflows:**
+
+- "address failing workflows"
+- Helps fix continuous integration (CI) failures, build errors, or test failures
+- Example: "address failing workflows in the GitHub Actions pipeline"
+
+**Decomposing code:**
+
+- "decompose [function, quarto-file, etc]"
+- Breaks down large or complex code into smaller, more manageable pieces
+- Example: "decompose this analysis function into separate helper functions"
+
+**Updating content:**
+
+- "update [links, content, etc]"
+- Refreshes outdated information, fixes broken links, or modernizes code
+- Example: "update all package URLs in the documentation"
+
+**Expanding documentation:**
+
+- "expand [a section in a document]"
+- Adds more detail, examples, or explanation to existing content
+- Example: "expand the section on data validation with practical examples"
+
+**Condensing content:**
+
+- "condense [a section in a document]"
+- Reduces verbosity while preserving essential information
+- Example: "condense the installation instructions to be more concise"
+
+**Clarifying content:**
+
+- "clarify [a section in a document]"
+- Improves clarity, removes ambiguity, or simplifies complex explanations
+- Example: "clarify the explanation of the analysis workflow"
+
+#### Tips for Effective Prompts
+
+- **Be specific**: Include file names, function names, or specific sections when possible
+- **Provide context**: Explain what you want to achieve and why
+- **Set boundaries**: Specify what should or shouldn't change
+- **Request validation**: Ask the agent to test or verify its changes when appropriate
