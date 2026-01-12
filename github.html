@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -470,12 +490,12 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>A detailed tutorial of Git can be found <a href="https://sp19.datastructur.es/materials/guides/using-git#b-local-repositories-narrative-introduction">here on the CS61B website</a>.</li>
 <li>If you are already familiar with Git, you can reference the summary at the end of <a href="https://sp19.datastructur.es/materials/guides/using-git#b-local-repositories-narrative-introduction">Section B</a>.</li>
-<li>If you have made a mistake in Git, you can refer to this <a href="https://sethrobertson.github.io/GitFixUm/fixup.html">article</a> to undo, fix, or remove commits in git.</li>
+<li>If you have made a mistake in Git, you can refer to On undoing, fixing, or removing commits in git <span class="citation" data-cites="gitfixum">(<a href="references.html#ref-gitfixum" role="doc-biblioref">Robertson, n.d.</a>)</span> to undo, fix, or remove commits in git.</li>
 </ul>
 </section>
 <section id="github-desktop" class="level2" data-number="10.2">
 <h2 data-number="10.2" class="anchored" data-anchor-id="github-desktop"><span class="header-section-number">10.2</span> Github Desktop</h2>
-<p>While knowing how to use Git on the command line will always be useful since the full power of Git and its customizations and flexibilty is designed for use with the command line, Github also provides <a href="https://desktop.github.com/">Github Desktop</a> as an graphical interface to do basic git commands; you can do all of the basic functions of Git using this desktop app. Feel free to use this as an alternative to Git on the command line if you prefer.</p>
+<p>While knowing how to use Git on the command line will always be useful since the full power of Git and its customizations and flexibilty is designed for use with the command line, Github also provides GitHub Desktop <span class="citation" data-cites="githubdesktop">(<a href="references.html#ref-githubdesktop" role="doc-biblioref"><span>“GitHub Desktop,”</span> n.d.</a>)</span> as an graphical interface to do basic git commands; you can do all of the basic functions of Git using this desktop app. Feel free to use this as an alternative to Git on the command line if you prefer.</p>
 </section>
 <section id="git-branching" class="level2" data-number="10.3">
 <h2 data-number="10.3" class="anchored" data-anchor-id="git-branching"><span class="header-section-number">10.3</span> Git Branching</h2>
@@ -697,6 +717,14 @@ Table&nbsp;10.2: Commonly used Git commands
 <p>There is a standardized <code>.gitignore</code> for <code>R</code> which you <a href="https://github.com/github/gitignore/blob/master/R.gitignore">can download</a> and add to your project. This ensures you’re not committing log files or things that would otherwise best be left ignored to GitHub. This is a <a href="https://www.tidyverse.org/articles/2017/12/workflow-vs-script/">great discussion of project-oriented workflows</a>, extolling the virtues of a self-contained, portable projects, for your reference.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-githubdesktop" class="csl-entry" role="listitem">
+<span>“GitHub Desktop.”</span> n.d. GitHub. <a href="https://desktop.github.com/">https://desktop.github.com/</a>.
+</div>
+<div id="ref-gitfixum" class="csl-entry" role="listitem">
+Robertson, Seth. n.d. <span>“On Undoing, Fixing, or Removing Commits in Git.”</span> <a href="https://sethrobertson.github.io/GitFixUm/fixup.html">https://sethrobertson.github.io/GitFixUm/fixup.html</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

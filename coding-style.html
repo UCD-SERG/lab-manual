@@ -55,7 +55,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -934,10 +954,15 @@ Note
 <section id="sec-r-resources-style" class="level2" data-number="7.12">
 <h2 data-number="7.12" class="anchored" data-anchor-id="sec-r-resources-style"><span class="header-section-number">7.12</span> Additional Resources</h2>
 <ul>
-<li><a href="https://style.tidyverse.org/">Tidyverse style guide</a>: Detailed coding style conventions for writing clear, consistent R code. Covers naming, syntax, pipes, functions, and more.</li>
+<li>Tidyverse style guide <span class="citation" data-cites="wickham2023tidyverse">(<a href="references.html#ref-wickham2023tidyverse" role="doc-biblioref">Wickham 2023</a>)</span>: Detailed coding style conventions for writing clear, consistent R code. Covers naming, syntax, pipes, functions, and more.</li>
 </ul>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-wickham2023tidyverse" class="csl-entry" role="listitem">
+Wickham, Hadley. 2023. <em>The Tidyverse Style Guide</em>. <a href="https://style.tidyverse.org/">https://style.tidyverse.org/</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -485,7 +505,7 @@ ul.task-list li input[type="checkbox"] {
 analysis_data_public.rds
 analysis_data_public_codebook.txt</code></pre>
 <p>In general, datasets are usually too big to save on GitHub, but occasionally they are small. Here is an example of where we actually pushed the data directly to GitHub: https://github.com/ben-arnold/enterics-seroepi/tree/master/data .</p>
-<p>If the data are bigger, then maintaining them under version control in your git repository can be unwieldy. Instead, we recommend using another stable repository that has version control, such as the Open Science Framework (<a href="https://osf.io">osf.io</a>). For example, all of the data from the WASH Benefits trials (led by investigators at Berkeley, icddr,b, IPA-Kenya and others) are all stored through data components nested within in OSF projects: https://osf.io/tprw2/. Another good option is Dryad (<a href="https://datadryad.org/">datadryad.org</a>) or institutional digital repositories.</p>
+<p>If the data are bigger, then maintaining them under version control in your git repository can be unwieldy. Instead, we recommend using another stable repository that has version control, such as the Open Science Framework <span class="citation" data-cites="osf">(<a href="references.html#ref-osf" role="doc-biblioref"><span>“Open Science Framework,”</span> n.d.</a>)</span>. For example, all of the data from the WASH Benefits trials (led by investigators at Berkeley, icddr,b, IPA-Kenya and others) are all stored through data components nested within in OSF projects: https://osf.io/tprw2/. Another good option is Dryad Digital Repository <span class="citation" data-cites="dryad">(<a href="references.html#ref-dryad" role="doc-biblioref"><span>“Dryad Digital Repository,”</span> n.d.</a>)</span> or institutional digital repositories.</p>
 <p>We recommend cross-linking public files in GitHub (scripts/notebooks only) and OSF/Dryad/institutional digital repositories.</p>
 <p>Below are the main steps to making data public, after finalizing the analysis datasets and scripts:<br>
 1. Remove Protected Health Information (PHI)<br>
@@ -594,9 +614,20 @@ analysis_data_public_codebook.txt</code></pre>
 - ACTION - https://osf.io/ca3pe/<br>
 - NAITRE - https://osf.io/ujeyb/<br>
 - MORDOR Niger antibody study - https://osf.io/dgsq3/</p>
-<p>Further reading on end-to-end data management: <a href="https://plos.org/resource/how-to-store-and-manage-your-data/#data-management-plan">How to Store and Manage Your Data - PLOS</a></p>
+<p>Further reading on end-to-end data management: How to Store and Manage Your Data - PLOS <span class="citation" data-cites="plos_data">(<a href="references.html#ref-plos_data" role="doc-biblioref"><span>“How to Store and Manage Your Data,”</span> n.d.</a>)</span></p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-dryad" class="csl-entry" role="listitem">
+<span>“Dryad Digital Repository.”</span> n.d. Dryad. <a href="https://datadryad.org/">https://datadryad.org/</a>.
+</div>
+<div id="ref-plos_data" class="csl-entry" role="listitem">
+<span>“How to Store and Manage Your Data.”</span> n.d. PLOS. <a href="https://plos.org/resource/how-to-store-and-manage-your-data/">https://plos.org/resource/how-to-store-and-manage-your-data/</a>.
+</div>
+<div id="ref-osf" class="csl-entry" role="listitem">
+<span>“Open Science Framework.”</span> n.d. Center for Open Science. <a href="https://osf.io/">https://osf.io/</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

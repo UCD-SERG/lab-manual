@@ -55,7 +55,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -684,7 +704,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="running-big-jobs" class="level2" data-number="15.7">
 <h2 data-number="15.7" class="anchored" data-anchor-id="running-big-jobs"><span class="header-section-number">15.7</span> Running big jobs</h2>
-<p>Once your test scripts run successfully, you can submit an sbatch script for larger jobs. These are text files with a <code>.sh</code> suffix. Use a text editor like Sublime to create such a script. Documentation on sbatch options is available <a href="https://slurm.schedmd.com/sbatch.html">here</a>. Here is an example of an sbatch script with the following options:</p>
+<p>Once your test scripts run successfully, you can submit an sbatch script for larger jobs. These are text files with a <code>.sh</code> suffix. Use a text editor like Sublime to create such a script. Documentation on sbatch options is available from Slurm Workload Manager <span class="citation" data-cites="slurm">(<a href="references.html#ref-slurm" role="doc-biblioref"><span>“Slurm Workload Manager: Sbatch Documentation,”</span> n.d.</a>)</span>. Here is an example of an sbatch script with the following options:</p>
 <ul>
 <li><code>job-name=run_inc</code>: Job name that will show up in the SLURM system</li>
 <li><code>begin=now</code>: Requests to start the job as soon as the requested resources are available</li>
@@ -729,6 +749,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">squeue</span> <span class="at">-u</span> <span class="va">$USERNAME</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-slurm" class="csl-entry" role="listitem">
+<span>“Slurm Workload Manager: Sbatch Documentation.”</span> n.d. SchedMD. <a href="https://slurm.schedmd.com/sbatch.html">https://slurm.schedmd.com/sbatch.html</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
