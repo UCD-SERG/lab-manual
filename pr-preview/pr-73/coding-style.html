@@ -445,6 +445,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Resources</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -691,7 +697,7 @@ Note
 <h2 data-number="7.7" class="anchored" data-anchor-id="package-code-practices"><span class="header-section-number">7.7</span> Package Code Practices</h2>
 <ul>
 <li><strong>No <code>library()</code> in package code</strong>: Use <code>::</code> notation or declare in DESCRIPTION Imports</li>
-<li><strong>Document all exports</strong>: Use roxygen2 (<span class="citation" data-cites="title">(<a href="#ref-title" role="doc-biblioref"><strong>title?</strong></a>)</span>, <span class="citation" data-cites="description">(<a href="#ref-description" role="doc-biblioref"><strong>description?</strong></a>)</span>, <span class="citation" data-cites="param">(<a href="#ref-param" role="doc-biblioref"><strong>param?</strong></a>)</span>, <span class="citation" data-cites="returns">(<a href="#ref-returns" role="doc-biblioref"><strong>returns?</strong></a>)</span>, <span class="citation" data-cites="examples">(<a href="#ref-examples" role="doc-biblioref"><strong>examples?</strong></a>)</span>)</li>
+<li><strong>Document all exports</strong>: Use roxygen2 (<code>@title</code>, <code>@description</code>, <code>@param</code>, <code>@returns</code>, <code>@examples</code>)</li>
 <li><strong>Avoid code duplication</strong>: Extract repeated logic into helper functions</li>
 </ul>
 </section>

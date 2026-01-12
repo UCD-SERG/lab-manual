@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>13&nbsp; Code Publication – UCD-SeRG Lab Manual</title>
+<title>References – UCD-SeRG Lab Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -30,8 +49,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./data-publication.html" rel="next">
-<link href="./reproducible-environments.html" rel="prev">
+<link href="./resources.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -250,7 +268,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./code-publication.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Code Publication</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">References</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -376,7 +394,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./code-publication.html" class="sidebar-item-text sidebar-link active">
+  <a href="./code-publication.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Code Publication</span></span></a>
   </div>
 </li>
@@ -412,7 +430,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
+  <a href="./references.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -421,22 +439,8 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#checklist-overview" id="toc-checklist-overview" class="nav-link active" data-scroll-target="#checklist-overview"><span class="header-section-number">13.1</span> Checklist overview</a></li>
-  <li><a href="#fill-out-file-headers" id="toc-fill-out-file-headers" class="nav-link" data-scroll-target="#fill-out-file-headers"><span class="header-section-number">13.2</span> Fill out file headers</a></li>
-  <li><a href="#clean-up-comments" id="toc-clean-up-comments" class="nav-link" data-scroll-target="#clean-up-comments"><span class="header-section-number">13.3</span> Clean up comments</a></li>
-  <li><a href="#document-functions" id="toc-document-functions" class="nav-link" data-scroll-target="#document-functions"><span class="header-section-number">13.4</span> Document functions</a></li>
-  <li><a href="#remove-deprecated-filepaths" id="toc-remove-deprecated-filepaths" class="nav-link" data-scroll-target="#remove-deprecated-filepaths"><span class="header-section-number">13.5</span> Remove deprecated filepaths</a></li>
-  <li><a href="#ensure-project-runs-via-bash" id="toc-ensure-project-runs-via-bash" class="nav-link" data-scroll-target="#ensure-project-runs-via-bash"><span class="header-section-number">13.6</span> Ensure project runs via bash</a></li>
-  <li><a href="#complete-the-readme" id="toc-complete-the-readme" class="nav-link" data-scroll-target="#complete-the-readme"><span class="header-section-number">13.7</span> Complete the README</a></li>
-  <li><a href="#clean-up-feature-branches" id="toc-clean-up-feature-branches" class="nav-link" data-scroll-target="#clean-up-feature-branches"><span class="header-section-number">13.8</span> Clean up feature branches</a></li>
-  <li><a href="#create-github-release" id="toc-create-github-release" class="nav-link" data-scroll-target="#create-github-release"><span class="header-section-number">13.9</span> Create Github release</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/code-publication.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/code-publication.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -454,7 +458,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Code Publication</span></h1>
+<h1 class="title">References</h1>
 </div>
 
 
@@ -476,98 +480,44 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Adapted by UCD-SeRG team from <a href="https://jadebc.github.io/lab-manual/code-publication.html">original by Nolan Pokpongkiat</a></p>
-<section id="checklist-overview" class="level2" data-number="13.1">
-<h2 data-number="13.1" class="anchored" data-anchor-id="checklist-overview"><span class="header-section-number">13.1</span> Checklist overview</h2>
-<ol type="1">
-<li><a href="#fill-out-file-headers">Fill out file headers</a></li>
-<li><a href="#clean-up-comments">Clean up comments</a></li>
-<li><a href="#document-functions">Document functions</a></li>
-<li><a href="#remove-deprecated-filepaths">Remove deprecated filepaths</a></li>
-<li><a href="#ensure-project-runs-via-bash">Ensure project runs via bash</a></li>
-<li><a href="#complete-the-readme">Complete the README</a></li>
-<li><a href="#clean-up-feature-branches">Clean up feature branches</a></li>
-<li><a href="#create-github-release">Create Github release</a></li>
-</ol>
-</section>
-<section id="fill-out-file-headers" class="level2" data-number="13.2">
-<h2 data-number="13.2" class="anchored" data-anchor-id="fill-out-file-headers"><span class="header-section-number">13.2</span> Fill out file headers</h2>
-<p>Every file in a project should have a header that allows it to be interpreted on its own. It should include the name of the project and a short description for what this file (among the many in your project) does specifically. See template <a href="https://ucd-serg.github.io/lab-manual/coding-practices.html#file-headers">here.</a></p>
-</section>
-<section id="clean-up-comments" class="level2" data-number="13.3">
-<h2 data-number="13.3" class="anchored" data-anchor-id="clean-up-comments"><span class="header-section-number">13.3</span> Clean up comments</h2>
-<p>Make sure comments in the code are for code documentation purposes only. Do not leave comments to self in the final script files.</p>
-</section>
-<section id="document-functions" class="level2" data-number="13.4">
-<h2 data-number="13.4" class="anchored" data-anchor-id="document-functions"><span class="header-section-number">13.4</span> Document functions</h2>
-<p>Every function you write must include a header to document its purpose, inputs, and outputs. See template for the function documentation <a href="https://ucd-serg.github.io/lab-manual/coding-practices.html#function-documentation">here.</a></p>
-</section>
-<section id="remove-deprecated-filepaths" class="level2" data-number="13.5">
-<h2 data-number="13.5" class="anchored" data-anchor-id="remove-deprecated-filepaths"><span class="header-section-number">13.5</span> Remove deprecated filepaths</h2>
-<p>All file paths should be defined in 0-config.R, and should be set relative to the project working directory. All absolute file paths from your local computer should be removed, and replaced with a relative path. If a third party were to re-run this analysis, if they need to download data from a separate source and change a filepath in the 0-config.R to match, make sure to specify in the README which line of 0-config.R needs to be substituted.</p>
-</section>
-<section id="ensure-project-runs-via-bash" class="level2" data-number="13.6">
-<h2 data-number="13.6" class="anchored" data-anchor-id="ensure-project-runs-via-bash"><span class="header-section-number">13.6</span> Ensure project runs via bash</h2>
-<p>The project should be configured to be entirely reproducible by running a master bash script, run-project.sh, which should live at the top directory. This bash script can call other bash scripts in subfolders, if necessary. Bash scripts should use the runFileSaveLogs utility script, which is a wrapper around the Rscript command, allowing you to specify where .Rout log files are moved after the R scripts are run.</p>
-<p>See usage and documentation <a href="https://ucd-serg.github.io/lab-manual/unix.html#example-code-for-runfilesavelogs">here.</a></p>
-</section>
-<section id="complete-the-readme" class="level2" data-number="13.7">
-<h2 data-number="13.7" class="anchored" data-anchor-id="complete-the-readme"><span class="header-section-number">13.7</span> Complete the README</h2>
-<p>A README.md should live at the top directory of the project. This usually includes a Project Overview and a Directory Structure, along with the names of the contributors and the Creative Commons License. See below for a template:</p>
-<blockquote class="blockquote">
-<p><strong>Overview</strong></p>
-<p>To date, coronavirus testing in the US has been extremely limited. Confirmed COVID-19 case counts underestimate the total number of infections in the population. We estimated the total COVID-19 infections – both symptomatic and asymptomatic – in the US in March 2020. We used a semi-Bayesian approach to correct for bias due to incomplete testing and imperfect test performance.</p>
-<p><strong>Directory structure</strong></p>
-<ul>
-<li><p>0-config.R: configuration file that sets data directories, sources base functions, and loads required libraries</p></li>
-<li><p>0-base-functions: folder containing scripts with functions used in the analysis</p>
-<ul>
-<li><p>0-base-functions.R: R script containing general functions used across the analysis</p></li>
-<li><p>0-bias-corr-functions.R: R script containing functions used in bias correction</p></li>
-<li><p>0-bias-corr-functions-undertesting.R: R script containing functions used in bias correction to estimate the percentage of underestimation due to incomplete testing vs.&nbsp;imperfect test accuracy</p></li>
-<li><p>0-prior-functions.R: R script containing functions to generate priors</p></li>
-</ul></li>
-<li><p>1-data: folder containing data processing scripts NOTE: some scripts are deprecated</p></li>
-<li><p>2-analysis: folder containing analysis scripts. To rerun all scripts in this subdirectory, run the bash script 0-run-analysis.sh.</p>
-<ul>
-<li><p>1-obtain-priors-state.R: obtain priors for each state</p></li>
-<li><p>2-est-expected-cases-state.R: estimate expected cases in each state</p></li>
-<li><p>3-est-expected-cases-state-perf-testing.R: estimate expected cases in each state, estimate the percentage of underestimation due to incomplete testing vs.&nbsp;imperfect test accuracy</p></li>
-<li><p>4-obtain-testing-protocols.R: find testing protocols for each state.</p></li>
-<li><p>5-summarize-results.R: summarize results; obtain results for in text numerical results.</p></li>
-</ul></li>
-<li><p>3-figure-table-scripts: folder containing figure scripts. To rerun all scripts in this subdirectory, run the bash script 0-run-figs.sh.</p>
-<ul>
-<li><p>1-fig-testing.R: creates plot of testing patterns by state over time</p></li>
-<li><p>2-fig-cases-usa-state-bar.R: creates bar plot of confirmed vs.&nbsp;estimated infections by state</p></li>
-<li><p>3a-fig-map-usa-state.R: creates map of confirmed vs.&nbsp;estimated infections by state</p></li>
-<li><p>3b-fig-map-usa-state-shiny.R: creates map of confirmed vs.&nbsp;estimated infections by state with search functionality by state</p></li>
-<li><p>4-fig-priors.R: creates figure with priors for US as a whole</p></li>
-<li><p>5-fig-density-usa.R: creates figure of distribution of estimated cases in the US</p></li>
-<li><p>6-table-data-quality.R: creates table of data quality grading from COVID Tracking Project</p></li>
-<li><p>7-fig-testpos.R: creates figure of the probability of testing positive among those tested by state</p></li>
-<li><p>8-fig-percent-undertesting-state.R: creates figure of the percentage of under estimation due to incomplete testing</p></li>
-</ul></li>
-<li><p>4-figures: folder containing figure files.</p></li>
-<li><p>5-results: folder containing analysis results objects.</p></li>
-<li><p>6-sensitivity: folder containing scripts to run the sensitivity analyses</p></li>
-</ul>
-<p><strong>Contributors:</strong> UCD-SeRG team (adapted from original contributors: Jade Benjamin-Chung, Sean L. Wu, Anna Nguyen, Stephanie Djajadi, Nolan N. Pokpongkiat, Anmol Seth, Andrew Mertens)</p>
-<p>Wu SL, Mertens A, Crider YS, Nguyen A, Pokpongkiat NN, Djajadi S, et al.&nbsp;Substantial underestimation of SARS-CoV-2 infection in the United States due to incomplete testing and imperfect test accuracy. medRxiv. 2020; 2020.05.12.20091744. doi:10.1101/2020.05.12.20091744</p>
-</blockquote>
-<p>When possible, also include a description of the RDS results that are generated, detailing what data sources were used, where the script lives that creates it, and what information the RDS results hold.</p>
-</section>
-<section id="clean-up-feature-branches" class="level2" data-number="13.8">
-<h2 data-number="13.8" class="anchored" data-anchor-id="clean-up-feature-branches"><span class="header-section-number">13.8</span> Clean up feature branches</h2>
-<p>In the remote repository on Github, all feature branches aside from master should be merged in and deleted. All outstanding PRs should be closed.</p>
-</section>
-<section id="create-github-release" class="level2" data-number="13.9">
-<h2 data-number="13.9" class="anchored" data-anchor-id="create-github-release"><span class="header-section-number">13.9</span> Create Github release</h2>
-<p>Once all of these items are verified, create a tag to make a Github release, which will tag the repository, creating a marker at this specific point in time.</p>
-<p>Detailed instructions <a href="https://docs.github.com/en/enterprise/2.13/user/articles/creating-releases">here.</a></p>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-space_odyssey" class="csl-entry" role="listitem">
+<span>“2001: A Space Odyssey.”</span> 1968. Film. <a href="https://en.wikipedia.org/wiki/2001:_A_Space_Odyssey_(film)">https://en.wikipedia.org/wiki/2001:_A_Space_Odyssey_(film)</a>.
+</div>
+<div id="ref-i_robot" class="csl-entry" role="listitem">
+Asimov, Isaac. 1950. <span>“I, Robot.”</span> New York: Novel; Gnome
+Press. <a href="https://search.library.ucdavis.edu/permalink/01UCD_INST/9fle3i/alma990000226350403126">https://search.library.ucdavis.edu/permalink/01UCD_INST/9fle3i/alma990000226350403126</a>.
+</div>
+<div id="ref-blade_runner" class="csl-entry" role="listitem">
+<span>“Blade Runner.”</span> 1982. Film. <a href="https://en.wikipedia.org/wiki/Blade_Runner">https://en.wikipedia.org/wiki/Blade_Runner</a>.
+</div>
+<div id="ref-enders_game" class="csl-entry" role="listitem">
+Card, Orson Scott. 1985. <span>“Ender’s Game.”</span> Novel; Tor Books.
+<a href="https://en.wikipedia.org/wiki/Ender%27s_Game">https://en.wikipedia.org/wiki/Ender%27s_Game</a>.
+</div>
+<div id="ref-humans_are_dead" class="csl-entry" role="listitem">
+Flight of the Conchords. 2007. <span>“The Humans Are Dead.”</span> Music
+Video. <a href="https://www.youtube.com/watch?v=B1BdQcJ2ZYY">https://www.youtube.com/watch?v=B1BdQcJ2ZYY</a>.
+</div>
+<div id="ref-butlerian_jihad" class="csl-entry" role="listitem">
+Herbert, Frank. 1965. <span>“Dune.”</span> Novel. <a href="https://en.wikipedia.org/wiki/Dune_(franchise)#Butlerian_Jihad">https://en.wikipedia.org/wiki/Dune_(franchise)#Butlerian_Jihad</a>.
+</div>
+<div id="ref-matrix" class="csl-entry" role="listitem">
+<span>“The Matrix.”</span> 1999. Film. <a href="https://en.wikipedia.org/wiki/The_Matrix">https://en.wikipedia.org/wiki/The_Matrix</a>.
+</div>
+<div id="ref-terminator" class="csl-entry" role="listitem">
+<span>“The Terminator.”</span> 1984. Film. <a href="https://en.wikipedia.org/wiki/The_Terminator">https://en.wikipedia.org/wiki/The_Terminator</a>.
+</div>
+<div id="ref-wargames" class="csl-entry" role="listitem">
+<span>“WarGames.”</span> 1983. Film. <a href="https://en.wikipedia.org/wiki/WarGames">https://en.wikipedia.org/wiki/WarGames</a>.
+</div>
+<div id="ref-R-roxygen2" class="csl-entry" role="listitem">
+Wickham, Hadley, Peter Danenberg, Gábor Csárdi, and Manuel Eugster.
+2024. <em>Roxygen2: In-Line Documentation for r</em>. <a href="https://roxygen2.r-lib.org/">https://roxygen2.r-lib.org/</a>.
+</div>
+</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -985,14 +935,11 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./reproducible-environments.html" class="pagination-link" aria-label="Reproducible Environments">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Reproducible Environments</span></span>
+      <a href="./resources.html" class="pagination-link" aria-label="Resources">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Resources</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./data-publication.html" class="pagination-link" aria-label="Data Publication">
-        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Data Publication</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -1000,4 +947,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/code-publication.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/code-publication.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/references.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/references.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
