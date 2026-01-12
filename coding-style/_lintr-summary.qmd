@@ -3,7 +3,7 @@ The R linter, called `lintr`, can be found in this [package](https://www.rdocume
 It helps keep files consistent across different authors and even different organizations. 
 For example, it notifies you if you have unused variables, global variables with no visible binding, not enough or superfluous whitespace, and improper use of parentheses or brackets. 
 A list of its other purposes can be found [in this link](https://cran.r-project.org/web/packages/lintr/readme/README.html#available-linters), 
-and most guidelines are based on [Hadley Wickham’s R Style Guide](https://style.tidyverse.org/).
+and most guidelines are based on the [Tidyverse R Style Guide](https://style.tidyverse.org/).
 
 ::: {.callout-note}
 You can customize your settings to set defaults or to exclude files. More details can be found [here](https://cran.r-project.org/web/packages/lintr/readme/README.html#project-configuration).
