@@ -7,61 +7,15 @@ Lab members who use AI tools must adhere to the following guidelines:
 
 ## Responsibility for validation
 
-**You are fully responsible for checking and validating all AI-generated code and content.**
-AI tools can make mistakes,
-generate insecure code,
-produce incorrect logic,
-or suggest approaches that are inappropriate for our specific research context.
-Before using any AI-generated code:
-
-- Carefully review the code to ensure you understand what it does
-- Test the code thoroughly to verify it works as expected
-- Verify that the logic is appropriate for your specific use case
-- Check that the code follows our lab's coding standards and best practices
-- Ensure the code does not introduce security vulnerabilities or data privacy issues
-
-Never blindly copy and paste AI-generated code without understanding it.
-If you don't understand what the AI has suggested,
-take the time to learn or ask a colleague for help.
+{{< include ai-tools/responsibility-for-validation.qmd >}}
 
 ## Disclosure of AI use
 
-**You must clearly state whenever you have used AI tools in your work.**
-This is essential for transparency and reproducibility.
-Specifically:
-
-- In code comments, note when AI tools were used to generate or significantly modify code
-- In commit messages, mention if AI tools assisted with the changes
-- In manuscripts and reports, acknowledge AI tool usage in the methods or acknowledgments section
-- In presentations, disclose AI assistance when relevant
-
-Example code comment:
-
-```
-# The following function was generated with assistance from GitHub Copilot
-# and has been reviewed and tested to ensure correctness
-```
+{{< include ai-tools/disclosure-of-ai-use.qmd >}}
 
 ## Attribution of sources
 
-**When using AI tools to generate content that borrows from or adapts existing sources,
-you must ensure proper attribution.**
-AI tools sometimes paraphrase or adapt content from documentation,
-guides,
-or other resources without clearly indicating the original source.
-It is your responsibility to:
-
-- Ask the AI tool to identify and properly cite sources when it borrows or adapts content
-- Verify that any content the AI generates includes appropriate citations
-- Add citations yourself if the AI fails to do so
-- Follow appropriate attribution practices for the type of content (code comments, documentation, academic writing, etc.)
-
-When instructing AI tools to create documentation or written content,
-explicitly request that they provide proper attribution for any borrowed or adapted material.
-For example:
-"Please quote from and paraphrase [source],
-with proper attribution"
-rather than simply asking it to summarize information on a topic.
+{{< include ai-tools/attribution-of-sources.qmd >}}
 
 ## Coding Agents
 
@@ -70,57 +24,7 @@ to [help you code](https://en.wikipedia.org/wiki/AI-assisted_software_developmen
 
 ### What are AI coding agents?
 
-AI coding agents are [AI agents](https://en.wikipedia.org/wiki/AI_agent) specialized for coding.
-They differ from other AI coding tools in important ways:
-
-**Compared to inline coding assistants** (like traditional autocomplete),
-coding agents work autonomously rather than providing suggestions as you type.
-They can navigate entire codebases,
-execute commands,
-and complete multi-step tasks without constant human guidance.
-
-**Compared to AI chatbots** (like ChatGPT or Claude),
-coding agents don't just generate code snippets in conversation—they actively interact with your development environment.
-While chatbots require you to copy code from a chat window and manually integrate it into your project,
-coding agents directly read your codebase,
-make changes to files,
-run tests and build commands,
-and create pull requests with their proposed changes.
-Chatbots are conversational assistants;
-coding agents are autonomous development tools.
-
-Coding agents are autonomous software programs that can:
-
-- **Understand and execute complex tasks**:
-  Coding agents can interpret natural language instructions and break them down into actionable development tasks
-- **Navigate and modify codebases**:
-  They can read, understand, and edit multiple files across a repository to implement features or fix bugs
-- **Run tools and commands**:
-  Coding agents can execute build commands, run tests, use linters, and interact with development tools
-- **Make decisions autonomously**:
-  They can plan their approach, make technical decisions, and adjust their strategy based on results
-- **Work iteratively**:
-  Coding agents can test their changes, identify issues, and refine their solutions through multiple iterations
-- **Create comprehensive solutions**:
-  They can implement complete features that span multiple files, including code, tests, and documentation
-
-Coding agents operate in isolated environments where they can safely experiment and validate changes before proposing them.
-This allows them to work more independently than inline coding assistants,
-which require step-by-step human direction.
-The agent workflow typically involves analyzing requirements,
-planning an implementation,
-making changes,
-testing those changes,
-and creating a pull request with the results.
-
-While coding agents can handle substantial development tasks,
-they still require human oversight and review.
-The human developer remains responsible for:
-
-- Reviewing the agent's work
-- Ensuring the solution meets requirements
-- Verifying code quality and security
-- Making the final decision to merge changes
+{{< include ai-tools/what-are-ai-coding-agents.qmd >}}
 
 ### How to Work with Coding Agents
 
@@ -140,45 +44,11 @@ The human developer remains responsible for:
 
 ### When to use a coding agent
 
-Coding agent sessions are currently^[2026-01-10] considered "premium requests",
-which are limited resources;
-see <https://github.com/features/copilot/plans> for details.
-So,
-use coding agents sparingly.
-Use them for complex changes that would be difficult or time-consuming
-for you to complete by hand.
-Coding agents also take time to get configured for work,
-every time you make a request.
-See <https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-environment#preinstalling-tools-or-dependencies-in-copilots-environment> for ways to reduce that startup time,
-but it will never be 0.
-If you can complete the task faster than the coding agent can,
-you should probably do it yourself.
-
-Also,
-the less we practice,
-the weaker our skills get,
-and the harder it is for us to supervise the agents
-and make sure they are actually doing what we want it to do,
-the way we want it to do it.
-You should exercise your own coding skills regularly,
-just like you would for any other skill you want to maintain.
+{{< include ai-tools/when-to-use-coding-agent.qmd >}}
 
 ### Editing with `.docx` files
 
-GitHub Copilot coding agents can read Microsoft Word (`.docx`) files, including tracked changes and comments.
-This enables a hybrid editing workflow where:
-
-1. Lab members can export Quarto content to Word format for review
-2. Reviewers can make edits, add tracked changes, and insert comments in Word
-3. Coding agents can read the `.docx` file and translate the edits back to Quarto format
-
-When using this workflow, make sure to explicitly instruct the coding agent to:
-
-- Examine and apply all tracked changes in the `.docx` file
-- Read and address all comments in the `.docx` file
-- Translate edits from Word formatting to appropriate Quarto/markdown syntax
-
-This approach makes it easier for collaborators who are more comfortable with Word to contribute to the lab manual while maintaining the source files in Quarto format.
+{{< include ai-tools/editing-with-docx-files.qmd >}}
 
 ### Copilot Instructions for this Repository
 
