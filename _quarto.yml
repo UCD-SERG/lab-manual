@@ -88,10 +88,14 @@ format:
     number-sections: true
     number-depth: 3
     colorlinks: true
+    filters:
+      - _extensions/chapter-pagebreak.lua
   docx:
     toc: false
     number-sections: true
     highlight-style: github
+    filters:
+      - _extensions/chapter-pagebreak.lua
   epub:
     toc: true
     number-sections: true
