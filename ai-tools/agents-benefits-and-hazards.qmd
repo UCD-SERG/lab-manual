@@ -52,12 +52,13 @@ Coding agents that modify CI/CD workflows (`.github/workflows/*.yml`) or setup c
 #### Further reading/viewing
 
 - *I Robot* [@i_robot]
-- *Dune* [@butlerian_jihad]
+- *Dune* [@dune]
 - @space_odyssey
 - @terminator
 - @matrix
 - @blade_runner
 - @wargames
+- *Battlestar Galactica* (2004) [@battlestar_galactica_2004]
 - *Ender's Game* [@enders_game]
 - "The Humans are Dead" [@humans_are_dead]
 
