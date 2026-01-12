@@ -39,6 +39,7 @@ Working with Tidyverse within functions can be somewhat of a pain due to non-sta
 
 - [Tidy Eval in 5 Minutes](https://www.youtube.com/watch?v=nERXS3ssntw) (video)
 - [Tidy Evaluation](https://dplyr.tidyverse.org/articles/programming.html) (e-book)
+- [Evaluation](https://adv-r.hadley.nz/evaluation.html) (advanced details)
 - [Data Frame Columns as Arguments to Dplyr Functions](https://www.brodrigues.co/blog/2016-07-18-data-frame-columns-as-arguments-to-dplyr-functions/) (blog)
 - [Standard Evaluation for *_join](https://stackoverflow.com/questions/28125816/r-standard-evaluation-for-join-dplyr) (stackoverflow)
 - [Programming with dplyr](https://dplyr.tidyverse.org/articles/programming.html) (package vignette)
