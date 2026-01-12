@@ -27,8 +27,9 @@ Follow these code style guidelines for all R code:
 When writing about code in prose sections of quarto documents, 
 use backticks to apply a code style:
 for example, `dplyr::mutate()`.
-When talking about packages, use backticks and curly-braces:
-for example, `{dplyr}`.
+When talking about packages,
+use backticks and curly-braces with a hyperlink to the package website.
+For example: [`{dplyr}`](https://dplyr.tidyverse.org/).
 
 ## Messaging and User Communication
 
@@ -56,4 +57,4 @@ for example, `{dplyr}`.
 
 ## Additional Resources {#sec-r-resources-style}
 
-- [Tidyverse style guide](https://style.tidyverse.org/): Detailed coding style conventions for writing clear, consistent R code. Covers naming, syntax, pipes, functions, and more.
+- Tidyverse style guide [@wickham2023tidyverse]: Detailed coding style conventions for writing clear, consistent R code. Covers naming, syntax, pipes, functions, and more.

@@ -1,0 +1,40 @@
+
+Coding agents require specific network access to function properly.
+If a coding agent is running behind a corporate firewall or on a restricted network,
+you may need to configure allowlists to enable coding agent functionality.
+
+#### Built-in Agent Firewall
+
+Coding agents run in a GitHub Actions environment
+with a built-in firewall that limits internet access by default.
+This firewall helps protect against:
+
+- Data exfiltration
+- Accidental leaks of sensitive information
+- Execution of malicious instructions
+
+By default, the agent's firewall allows access to:
+
+- Common OS package repositories (Debian, Ubuntu, Red Hat, etc.)
+- Popular container registries (Docker Hub, Azure Container Registry, AWS ECR, etc.)
+- Language-specific package registries (npm, PyPI, Maven, RubyGems, etc.)
+- Common certificate authorities for SSL validation
+
+For the complete list of allowed hosts,
+see the [Copilot allowlist reference](https://docs.github.com/en/copilot/reference/copilot-allowlist-reference).
+
+#### Customizing Agent Firewall Settings
+
+In your repository's "Coding agent" settings page,
+you can:
+
+- Add custom hosts to the allowlist (for internal dependencies or additional registries)
+- Opt out of the default recommended allowlist for stricter security
+- Disable the firewall entirely (not recommended)
+
+If a coding agent's request is blocked by the firewall,
+a warning will be added to the pull request or comment,
+detailing the blocked address and the command that triggered it.
+
+For more information,
+see [Customizing or disabling the firewall for GitHub Copilot coding agent](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-firewall).

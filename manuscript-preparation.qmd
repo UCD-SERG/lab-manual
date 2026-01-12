@@ -1,0 +1,55 @@
+# Manuscript Preparation and Publication
+
+Adapted by UCD-SeRG team from [original by Jade Benjamin-Chung](https://jadebc.github.io/lab-manual/)
+
+## Publication Process
+
+The typical workflow for manuscript preparation and publication:
+
+1. **Planning**: Discuss target journals, outline, and timeline with PIs
+2. **Drafting**: Lead author prepares initial draft
+3. **Internal review**: Co-authors review and provide feedback
+4. **Revision**: Lead author incorporates feedback iteratively
+5. **PI approval**: Obtain final approval from PIs before submission
+6. **Submission**: Submit to journal
+7. **Revisions**: Lead author coordinates response to peer reviewers
+8. **Publication**: Celebrate and share!
+
+## Preprints and Open Access
+
+- We encourage posting preprints prior to or during peer review on platforms like [medRxiv](https://www.medrxiv.org/) or [bioRxiv](https://www.biorxiv.org/)
+- Preprints allow rapid dissemination of findings and can be cited in grant applications
+- We support publishing in open access journals when possible to maximize accessibility
+- Many funders, including NIH, have public access policies that require making publications freely available
+
+A preprint is a scientific manuscript that has not been peer reviewed. Preprint servers create digital object identifiers (DOIs) and can be cited in other articles and in grant applications. Because the peer review process can take many months, publishing preprints prior to or during peer review enables other scientists to immediately learn from and build on your work. Importantly, NIH allows applicants to include preprint citations in their biosketches. In most cases, we publish preprints on [medRxiv](https://www.medrxiv.org/).
+
+## Reporting Checklists
+
+Using reporting checklists ensures that publications contain information needed for readers to assess validity and reproducibility. We use checklists appropriate to study design:
+
+- CONSORT for randomized trials
+- STROBE for observational studies
+- PRISMA for systematic reviews
+- Others as appropriate (see [EQUATOR Network](https://www.equator-network.org/))
+
+## Manuscript Checklist
+
+Before submitting a manuscript:
+
+- [ ] Completed relevant reporting checklist
+- [ ] Results are reproducible (rerunning code replicates tables/figures exactly)
+- [ ] Target journal selected
+- [ ] Title is declarative and states findings clearly
+- [ ] Word count meets journal requirements
+- [ ] Manuscript follows journal formatting guidelines
+- [ ] Consistent voice throughout (typically active voice)
+- [ ] All figures and tables referenced in main text
+- [ ] Captions for all figures and tables
+- [ ] Tables/figures numbered by order of appearance
+- [ ] Abbreviations defined at first use and used sparingly
+- [ ] Avoid subjective wording (e.g., "interesting", "dramatic")
+- [ ] Avoid directionless statements (specify direction of associations)
+- [ ] Causal language only when supported by study design
+- [ ] Avoid "significant" (easily confused with statistical significance)
+- [ ] Author contributions drafted using CRediT Taxonomy
