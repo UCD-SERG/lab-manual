@@ -1,0 +1,29 @@
+### Official Documentation
+
+- [Quarto Official Guide](https://quarto.org/docs/guide/) - comprehensive official documentation
+- [Quarto Books Guide](https://quarto.org/docs/books/) - documentation specific to creating books
+- [Quarto Publishing Guide](https://quarto.org/docs/publishing/) - how to publish your Quarto content online
+- [Quarto Getting Started](https://quarto.org/docs/get-started/) - installation and basic usage
+
+### Learning Resources
+
+- [R for Data Science - Quarto Chapter](https://r4ds.hadley.nz/quarto.html) [@wickham2023r4ds] - excellent introduction to using Quarto with R
+- [Regression Models for Epidemiology](https://d-morrison.github.io/rme/) - example of a Quarto book with profiles for rendering chapters as slides
+- [UCD-SeRG Lab Manual Source](https://github.com/UCD-SERG/lab-manual) - this manual's source code provides examples of:
+  - Book structure and organization
+  - Using includes for modular content  
+  - Configuring multiple output formats (HTML, PDF, ePub, Word)
+  - Cross-references for figures, tables, and sections
+
+### Templates
+
+- [UCD-SeRG Quarto Book Template](https://github.com/UCD-SERG/quarto-book-template) - our recommended template
+- [Coatless Tutorials Quarto Book Template](https://github.com/coatless-tutorials/quarto-book-template) - another frequently-used template with helpful examples
+
+### Related Lab Manual Chapters
+
+For additional context about using Quarto in our lab:
+
+- @sec-r-coding-practices - R coding practices that apply to code in Quarto documents
+- @sec-r-code-style - Code style guidelines including formatting for Quarto documents
+- @sec-github - Version control for Quarto projects

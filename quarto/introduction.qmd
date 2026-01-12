@@ -1,0 +1,103 @@
+[Quarto](https://quarto.org/) is an open-source scientific and technical publishing system that allows you to create documents,
+books,
+websites,
+presentations,
+and more.
+Quarto provides a unified authoring framework for data science,
+combining your code,
+its results,
+and your prose.
+Quarto documents are fully reproducible and support dozens of output formats,
+like PDFs,
+Word files,
+presentations,
+and more.
+
+Quarto files are designed to be used in three ways:
+
+1. **For communicating to decision-makers,**
+   who want to focus on the conclusions,
+   not the code behind the analysis.
+
+2. **For collaborating with other data scientists**
+   (including future you!),
+   who are interested in both your conclusions,
+   and how you reached them (i.e., the code).
+
+3. **As an environment in which to do data science,**
+   as a modern-day lab notebook where you can capture not only what you did,
+   but also what you were thinking.
+
+### Key Features
+
+**Multi-format Output:**
+Quarto documents can be rendered into HTML,
+PDF,
+MS Word,
+ePub,
+PowerPoint,
+Revealjs presentations,
+dashboards,
+websites,
+and books from a single source file.
+This allows authors to maintain one document but publish it in multiple formats without rewriting content.
+
+**Rich Markdown Authoring:**
+Content is created in markdown,
+with support for figures,
+tables,
+equations (LaTeX),
+citations,
+cross-references,
+and advanced layout features like tabs,
+callouts,
+and panels.
+
+**Embedded Executable Code:**
+Integrate code chunks (R, Python, Julia, Observable JS) that can be executed and the results rendered directly in the document.
+This allows for dynamic results,
+data analysis,
+plots,
+and reproducible research workflows.
+
+**Interactivity:**
+Add interactive components such as widgets,
+tab sets,
+and collapsible sections for richer communication with readers.
+
+**Customization:**
+Extensive theming and styling options,
+including custom CSS and advanced layout controls for polished,
+publication-quality output.
+
+**Project Management:**
+Organize large projects and integrate with version control tools like Git.
+Use Quarto projects to group related documents,
+manage dependencies,
+and orchestrate rendering.
+
+### Why Quarto?
+
+If you're an R Markdown user,
+you might be thinking "Quarto sounds a lot like R Markdown."
+You're not wrong!
+Quarto unifies the functionality of many packages from the R Markdown ecosystem
+(rmarkdown, bookdown, distill, xaringan, etc.)
+into a single consistent system as well as extends it with native support for multiple programming languages like Python and Julia in addition to R.
+In a way,
+Quarto reflects everything that was learned from expanding and supporting the R Markdown ecosystem over a decade.
+
+### Getting Started
+
+To get started with Quarto:
+
+- **Installation:** Quarto CLI is included with RStudio,
+  so if you have a recent version of RStudio,
+  you already have Quarto.
+  Otherwise,
+  visit [https://quarto.org/docs/get-started/](https://quarto.org/docs/get-started/)
+
+- **Documentation:** The official Quarto documentation is available at [https://quarto.org/docs/guide/](https://quarto.org/docs/guide/)
+
+- **R4DS Chapter:** For an excellent introduction to using Quarto with R,
+  see the [Quarto chapter in R for Data Science](https://r4ds.hadley.nz/quarto.html) [@wickham2023r4ds]

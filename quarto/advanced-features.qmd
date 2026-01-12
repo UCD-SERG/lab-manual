@@ -1,0 +1,136 @@
+### Cross-References
+
+Quarto provides a powerful cross-reference system for figures,
+tables,
+equations,
+and sections.
+Cross-references automatically number your content and create clickable links in HTML and PDF output.
+
+**Required label prefixes:**
+
+- Figures: `#fig-` (e.g., `#fig-workflow-diagram`)
+- Tables: `#tbl-` (e.g., `#tbl-summary-stats`)
+- Equations: `#eq-` (e.g., `#eq-regression-model`)
+- Sections: `#sec-` (e.g., `#sec-introduction`)
+- Theorems: `#thm-`, Lemmas: `#lem-`, Corollaries: `#cor-`
+- Propositions: `#prp-`, Examples: `#exm-`, Exercises: `#exr-`
+
+**For figures (static images):**
+
+```markdown
+![Caption text](path/to/image.png){#fig-label}
+```
+
+**For code-generated figures:**
+
+````markdown
+```{{r}}
+#| label: fig-plot-name
+#| fig-cap: "Caption text describing the plot"
+
+# R code to generate plot
+ggplot(data, aes(x, y)) + geom_point()
+```
+````
+
+**For tables (markdown tables):**
+
+```markdown
+| Column 1 | Column 2 |
+|----------|----------|
+| Data     | Data     |
+
+: Caption text {#tbl-label}
+```
+
+**For code-generated tables:**
+
+````markdown
+```{{r}}
+#| label: tbl-table-name
+#| tbl-cap: "Caption text"
+
+# R code to generate table
+knitr::kable(data)
+```
+````
+
+**Referencing in text:**
+
+- Figures: `@fig-label` produces "Figure X"
+- Tables: `@tbl-label` produces "Table X"
+- Equations: `@eq-label` produces "Equation X"
+- Sections: `@sec-label` produces "Section X"
+
+**Benefits:**
+
+- Automatic numbering of figures, tables, and equations
+- Automatic updates when content is reordered
+- Clickable cross-references in HTML and PDF output
+- Consistent formatting across all output formats
+- Better accessibility for screen readers
+
+For complete details,
+see the [Quarto Cross-References documentation](https://quarto.org/docs/authoring/cross-references.html).
+
+### Using Includes for Modular Content
+
+Quarto's include feature allows you to decompose large documents into smaller,
+more manageable files.
+This is particularly useful for books and long documents.
+
+**Basic syntax:**
+
+```markdown
+{{</* include path/to/file.qmd */>}}
+```
+
+**Benefits:**
+
+1. **Better Git History:**
+   When sections are reordered,
+   only the main chapter file changes (moving include statements),
+   making it immediately clear that content was reorganized rather than edited.
+
+2. **Easier Code Review:**
+   Reviewers can see exactly what changed—either the organization (main file) or the content (include file).
+
+3. **Modular Maintenance:**
+   Each section lives in its own file,
+   making it easier to find and edit specific content,
+   reuse sections across chapters,
+   and work on different sections simultaneously without merge conflicts.
+
+4. **Clear Structure:**
+   The main chapter file becomes a table of contents showing the organization at a glance.
+
+**Recommended pattern:**
+
+Main chapter file (e.g., `05-coding-practices.qmd`):
+
+```markdown
+# Coding Practices
+
+## Section Heading
+
+{{</* include coding-practices/section-name.qmd */>}}
+
+## Another Section
+
+{{</* include coding-practices/another-section.qmd */>}}
+```
+
+Include files (e.g., `coding-practices/section-name.qmd`):
+
+- Stored in a subdirectory matching the chapter name
+- Contains only the content for that section (no heading)
+- The heading stays in the main chapter file
+- Named descriptively using kebab-case
+
+**Note:** The heading must be in the main file,
+followed by a blank line,
+then the include statement.
+This keeps the document structure clear in the main file.
+
+For more details,
+see the [Quarto Includes documentation](https://quarto.org/docs/authoring/includes.html).

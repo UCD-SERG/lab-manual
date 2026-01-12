@@ -43,6 +43,7 @@ book:
     - coding-style.qmd
     - big-data.qmd
     - data-masking.qmd
+    - quarto.qmd
     - github.qmd
     - unix.qmd
     - reproducible-environments.qmd
