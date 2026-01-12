@@ -455,7 +455,7 @@ This approach makes it easier for collaborators who are more comfortable with Wo
 ## Further reading/viewing
 
 - *I Robot* [@i_robot]
-- *Dune* [@butlerian_jihad]
+- *Dune* [@dune-thinking-machines]
 - @space_odyssey
 - @terminator
 - @matrix
