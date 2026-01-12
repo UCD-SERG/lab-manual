@@ -6,12 +6,12 @@ Adapted by UCD-SeRG team from [original by Jade Benjamin-Chung and Kunal Mishra]
 
 ### Books and Comprehensive Guides
 
-- [R for Data Science](https://r4ds.hadley.nz/) by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund - comprehensive introduction to doing data science with R
-- [R Packages](https://r-pkgs.org/) by Hadley Wickham and Jenny Bryan - complete guide to R package development
-- [Advanced R](https://adv-r.hadley.nz/) by Hadley Wickham - deep dive into R programming and internals
-- [Mastering Shiny](https://mastering-shiny.org/) by Hadley Wickham - comprehensive guide to building web applications with Shiny
-- [Engineering Production-Grade Shiny Apps](https://engineering-shiny.org/) by Colin Fay, Sébastien Rochette, Vincent Guyader, and Cervan Girard - best practices for production Shiny applications
-- [Happy Git and GitHub for the useR](https://happygitwithr.com/) by Jenny Bryan - guide to using Git and GitHub with R
+- R for Data Science [@wickham2023r4ds] - comprehensive introduction to doing data science with R
+- R Packages [@wickham2023rpkgs] - complete guide to R package development
+- Advanced R [@wickham2019advr] - deep dive into R programming and internals
+- Mastering Shiny [@wickham2021shiny] - comprehensive guide to building web applications with Shiny
+- Engineering Production-Grade Shiny Apps [@fay2021engineering] - best practices for production Shiny applications
+- Happy Git and GitHub for the useR [@bryan2023happygit] - guide to using Git and GitHub with R
 - [Jade's R-for-epi course](https://ucb-epi-r.github.io)
 
 ### Cheat Sheets
@@ -35,24 +35,24 @@ Adapted by UCD-SeRG team from [original by Jade Benjamin-Chung and Kunal Mishra]
 
 ## Resources for Git & Github
 
-- [Happy Git and GitHub for the useR](https://happygitwithr.com/) by Jenny Bryan - comprehensive guide to using Git and GitHub with R
+- Happy Git and GitHub for the useR [@bryan2023happygit] - comprehensive guide to using Git and GitHub with R
 - [Data Camp introduction to Git](https://www.datacamp.com/courses/introduction-to-git-for-data-science)
 - [Introduction to Github](https://lab.github.com/githubtraining/introduction-to-github)
 
 ## Scientific figures
-- [Ten Simple Rules for Better Figures](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833)
+- Ten Simple Rules for Better Figures [@rougier2014]
 
 ## Writing
 
-- [Tips on how to write a great science paper](https://www.nature.com/articles/d41586-019-02918-5)
-- [ICMJE Definition of authorship](http://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html)
-- [Nature article on elements of style for scientific writing](https://www.nature.com/articles/nphys724)
+- Unpacking the Scientific Toolbox [@silbiger2019]
+- ICMJE Definition of authorship [@icmje]
+- Computational science: ...why scientific programming does not compute [@merali2010]
 - [The Pathway to Publishing: A Guide to Quantitative Writing in the Health Sciences ](https://link.springer.com/book/10.1007/978-3-030-98175-4)
 - [Secret, actionable writing tips](https://x.com/acagamic/status/1680381737816424450)
 
 ## Presentations
 
-- [How to tell a compelling story in scientific presentations](https://www.nature.com/articles/d41586-021-03603-2)
+- How to tell a compelling story in scientific presentations [@vannoorden2021]
 - [How to give a killer narratively-driven scientific talk](https://www.sciencedirect.com/science/article/pii/S1471491423000928)
 - [How to make a better poster](https://www.youtube.com/watch?v=1RwJbhkCA58&t=1171s)
 - [How to make an even better poster](https://mitcommlab.mit.edu/be/2023/09/27/toward-an-evenbetterposter-improving-the-betterposter-template/)
@@ -66,5 +66,5 @@ Adapted by UCD-SeRG team from [original by Jade Benjamin-Chung and Kunal Mishra]
 
 ## Ethics and global health research
 - [Global Code of Conduct For Research in Resource-Poor Settings](https://www.globalcodeofconduct.org/wp-content/uploads/2018/05/Global-Code-of-Conduct-Brochure.pdf)
-- [Who is a global health expert? Advice for aspiring global health experts](https://journals.plos.org/globalpublichealth/article?id=10.1371/journal.pgph.0002269)
+- Addressing power asymmetries in global health [@abimbola2022]
 - [Transforming Global Health Partnerships](https://link.springer.com/book/9783031537929)

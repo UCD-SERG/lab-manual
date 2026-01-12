@@ -20,11 +20,11 @@ In the past decade, an increasing number of studies have found that published st
 
 Recommended readings on the "reproducibility crisis": 
 
-- Nuzzo R. How scientists fool themselves – and how they can stop. 2015. [https://www.nature.com/articles/526182a]()
+- Nuzzo R. How scientists fool themselves – and how they can stop [@nuzzo2015]
 
-- Stoddart C. Is there a reproducibility crisis in science? 2016. [https://www.nature.com/articles/d41586-019-00067-3](https://www.nature.com/articles/d41586-019-00067-3)
+- Stoddart C. Is there a reproducibility crisis in science? [@stoddart2019]
 
-- Munafo MR, et al. A manifesto for reproducible science. *Nature Human Behavior* 2017 [http://dx.doi.org/10.1038/s41562-016-0021](http://dx.doi.org/10.1038/s41562-016-0021)
+- Munafò MR, et al. A manifesto for reproducible science [@munafo2017]
 
 
 ## Study design
@@ -74,15 +74,15 @@ See my video on this topic: [https://www.youtube.com/watch?v=WoYkY9MkbRE](https:
 
 ## Use reporting checklists with manuscripts
 
-Using reporting checklists helps ensure that peer-reviewed articles contain the information needed for readers to assess the validity of your work and/or attempt to reproduce it. A collection of reporting checklists is available here: [https://www.equator-network.org/about-us/what-is-a-reporting-guideline/)](https://www.equator-network.org/about-us/what-is-a-reporting-guideline/)
+Using reporting checklists helps ensure that peer-reviewed articles contain the information needed for readers to assess the validity of your work and/or attempt to reproduce it. A collection of reporting checklists is available from the EQUATOR Network [@equatornetwork].
 
 ## Publish preprints
 
-A preprint is a scientific manuscript that has not been peer reviewed. Preprint servers create digital object identifiers (DOIs) and can be cited in other articles and in grant applications. Because the peer review process can take many months, publishing preprints prior to or during peer review enables other scientists to immediately learn from and build on your work. Importantly, NIH allows applicants to include preprint citations in their biosketches. In most cases, we publish preprints on [medRxiv](https://www.medrxiv.org/).
+A preprint is a scientific manuscript that has not been peer reviewed. Preprint servers create digital object identifiers (DOIs) and can be cited in other articles and in grant applications. Because the peer review process can take many months, publishing preprints prior to or during peer review enables other scientists to immediately learn from and build on your work. Importantly, NIH allows applicants to include preprint citations in their biosketches. In most cases, we publish preprints on medRxiv [@medRxiv].
 
 ## Publish data (when possible) and replication scripts
 
-Publishing data and replication scripts allows other scientists to reproduce your work and to build upon it. We typically publish data on [Open Science Framework](osf.io), share links to [Github](github.com) repositories, and archive code on [Zenodo](zenodo.org).
+Publishing data and replication scripts allows other scientists to reproduce your work and to build upon it. We typically publish data on the Open Science Framework [@osf], share links to [Github](github.com) repositories, and archive code on [Zenodo](zenodo.org).
 
 
 
