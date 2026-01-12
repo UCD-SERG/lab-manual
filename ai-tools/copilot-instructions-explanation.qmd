@@ -1,0 +1,33 @@
+The `.github/copilot-instructions.md` file in this repository
+contains specific instructions and guidelines for GitHub Copilot coding agents
+when working with the lab manual.
+This file helps ensure that AI-generated contributions
+follow the lab's formatting standards,
+coding conventions,
+and documentation practices.
+
+The copilot instructions file specifies:
+
+- Markdown and Quarto formatting rules (e.g., blank lines before lists, line breaks in prose)
+- R code style guidelines (e.g., using native pipe `|>`, following tidyverse style)
+- File organization patterns (e.g., using Quarto includes for modular content)
+- How to work with DOCX files for hybrid editing workflows
+- Repository-specific best practices
+
+By having these instructions in `.github/copilot-instructions.md`,
+we ensure that coding agents produce consistent,
+high-quality contributions that align with the lab's established practices.
+This reduces the review burden and helps maintain consistency
+across all contributions to the lab manual,
+whether made by humans or AI assistants.
+
+Unfortunately, we can't render the `copilot-instructions.md` file 
+as part of this lab manual, 
+because it includes dummy
+
+::: {.callout-note collapse="true"}
+## View copilot-instructions.md
+
+{{< include .github/copilot-instructions.md >}}
+:::
+
