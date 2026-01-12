@@ -12,7 +12,7 @@ We typically use Unix commands in Terminal (for Mac users) or Git Bash (for Wind
 
 On the computer, there is a desktop with two folders, `folder1` and `folder2`, and a file called `file1.` Inside `folder1`, we have a file called `file2.` Mac users can run these commands on their terminal; it is recommended that Windows users use Git Bash, not Windows PowerShell.
 
-![Here is our example desktop.](assets/images/ex-desktop.jpg)
+![Example desktop with folders and files](assets/images/ex-desktop.jpg){#fig-unix-desktop}
 
 
 ## Syntax for both Mac/Windows
@@ -33,7 +33,9 @@ When typing in directories or file names, quotes are necessary if the name inclu
 | `rm -rf folder3`        | Remove directories (`-r` will attempt to remove the directory recursively, `-rf` will force removal of the directory) |
 | `clear`                 | Clear terminal screen of all previous commands |
 
-![Here is an example of what your terminal might look like after executing the commands in the order listed above.](assets/images/ex-terminal.PNG)
+: Basic Unix commands for Mac and Windows {#tbl-unix-basic-commands}
+
+![Terminal output after executing basic Unix commands](assets/images/ex-terminal.PNG){#fig-unix-terminal}
 
 ## Running Bash Scripts
 
@@ -42,6 +44,8 @@ When typing in directories or file names, quotes are necessary if the name inclu
 |`chmod +750 <filename.sh>`    | `chmod +x <filename.sh>`     | Change access permissions for a file (only needs to be done once) |
 | `./<filename.sh>`            | `./<filename.sh>`            | Run file (`./` to run any executable file) |
 | `bash bash_script_name.sh &` | `bash bash_script_name.sh &` | Run shell script in the background |
+
+: Commands for running Bash scripts {#tbl-unix-bash-scripts}
 
 
 ## Running Rscripts in Windows
