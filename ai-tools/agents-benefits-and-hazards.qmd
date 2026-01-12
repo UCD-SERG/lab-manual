@@ -52,7 +52,7 @@ Coding agents that modify CI/CD workflows (`.github/workflows/*.yml`) or setup c
 #### Further reading/viewing
 
 - *I Robot* [@i_robot]
-- *Dune* [@butlerian_jihad]
+- *Dune* [@dune-thinking-machines]
 - @space_odyssey
 - @terminator
 - @matrix
