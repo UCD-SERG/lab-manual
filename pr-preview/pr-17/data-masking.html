@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>16&nbsp; Use of AI – UCD-SeRG Lab Manual</title>
+<title>9&nbsp; Data masking – UCD-SeRG Lab Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./16-checklists.html" rel="next">
-<link href="./14-slurm.html" rel="prev">
+<link href="./github.html" rel="next">
+<link href="./big-data.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -250,7 +285,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./15-ai-tools.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Use of AI</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data-masking.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data masking</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -310,116 +345,122 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-culture-and-conduct.html" class="sidebar-item-text sidebar-link">
+  <a href="./culture-and-conduct.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Culture and conduct</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-communication.html" class="sidebar-item-text sidebar-link">
+  <a href="./communication.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Communication and coordination</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-reproducibility.html" class="sidebar-item-text sidebar-link">
+  <a href="./reproducibility.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Reproducibility</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-code-repositories.html" class="sidebar-item-text sidebar-link">
+  <a href="./code-repositories.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Code repositories</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-coding-practices.html" class="sidebar-item-text sidebar-link">
+  <a href="./coding-practices.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">R Coding Practices</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-coding-style.html" class="sidebar-item-text sidebar-link">
+  <a href="./coding-style.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">R Code Style</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-big-data.html" class="sidebar-item-text sidebar-link">
+  <a href="./big-data.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Big data</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-data-masking.html" class="sidebar-item-text sidebar-link">
+  <a href="./data-masking.html" class="sidebar-item-text sidebar-link active" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data masking</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09-github.html" class="sidebar-item-text sidebar-link">
+  <a href="./github.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Github</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10-unix.html" class="sidebar-item-text sidebar-link">
+  <a href="./unix.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Unix</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11-reproducible-environments.html" class="sidebar-item-text sidebar-link">
+  <a href="./reproducible-environments.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Reproducible Environments</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./12-code-publication.html" class="sidebar-item-text sidebar-link">
+  <a href="./code-publication.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Code Publication</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./13-data-publication.html" class="sidebar-item-text sidebar-link">
+  <a href="./data-publication.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Data Publication</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./14-slurm.html" class="sidebar-item-text sidebar-link">
+  <a href="./slurm.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">High-performance computing (HPC)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./15-ai-tools.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Use of AI</span></span></a>
+  <a href="./ai-tools.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Working with AI</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./16-checklists.html" class="sidebar-item-text sidebar-link">
+  <a href="./checklists.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Checklists</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./17-resources.html" class="sidebar-item-text sidebar-link">
+  <a href="./resources.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Resources</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./18-professional-development.html" class="sidebar-item-text sidebar-link">
+  <a href="./professional-development.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Professional Development</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./19-manuscript-preparation.html" class="sidebar-item-text sidebar-link">
+  <a href="./manuscript-preparation.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Manuscript Preparation and Publication</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
+ <span class="menu-text">References</span></a>
   </div>
 </li>
     </ul>
@@ -432,32 +473,42 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#responsibility-for-validation" id="toc-responsibility-for-validation" class="nav-link active" data-scroll-target="#responsibility-for-validation"><span class="header-section-number">16.1</span> Responsibility for validation</a></li>
-  <li><a href="#disclosure-of-ai-use" id="toc-disclosure-of-ai-use" class="nav-link" data-scroll-target="#disclosure-of-ai-use"><span class="header-section-number">16.2</span> Disclosure of AI use</a></li>
-  <li><a href="#attribution-of-sources" id="toc-attribution-of-sources" class="nav-link" data-scroll-target="#attribution-of-sources"><span class="header-section-number">16.3</span> Attribution of sources</a></li>
-  <li><a href="#recommended-tools" id="toc-recommended-tools" class="nav-link" data-scroll-target="#recommended-tools"><span class="header-section-number">16.4</span> Recommended tools</a></li>
+  <li><a href="#general-overview" id="toc-general-overview" class="nav-link active" data-scroll-target="#general-overview"><span class="header-section-number">9.1</span> General Overview</a>
+  <ul class="collapse">
+  <li><a href="#what-is-data-masking" id="toc-what-is-data-masking" class="nav-link" data-scroll-target="#what-is-data-masking"><span class="header-section-number">9.1.1</span> What is Data Masking?</a></li>
+  <li><a href="#using-tidy-evaluation-for-data-masking" id="toc-using-tidy-evaluation-for-data-masking" class="nav-link" data-scroll-target="#using-tidy-evaluation-for-data-masking"><span class="header-section-number">9.1.2</span> Using tidy evaluation for data masking</a></li>
+  </ul></li>
+  <li><a href="#technical-overview" id="toc-technical-overview" class="nav-link" data-scroll-target="#technical-overview"><span class="header-section-number">9.2</span> Technical Overview</a>
+  <ul class="collapse">
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">9.2.1</span> Example</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/15-ai-tools.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/15-ai-tools.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/data-masking.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/data-masking.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
+<div class="preview-home-changes-banner">
+    <p style="margin: 0;">
+        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="resources.html">18. &nbsp; <span class="chapter-title">Resources</span></a>, <a href="unix.html">11. &nbsp; <span class="chapter-title">Unix</span></span></a>, <a href="coding-style.html">7. &nbsp; <span class="chapter-title">R Code Style</span></span></a>, <a href="reproducibility.html">4. &nbsp; <span class="chapter-title">Reproducibility</span></a>, <a href="code-publication.html">13. &nbsp; <span class="chapter-title">Code Publication</span></a>, <a href="checklists.html">17. &nbsp; <span class="chapter-title">Checklists</span></a>, <a href="data-publication.html">14. &nbsp; <span class="chapter-title">Data Publication</span></a>, <a href="coding-practices.html">6. &nbsp; <span class="chapter-title">R Coding Practices</span></span></a>, <a href="slurm.html">15. &nbsp; <span class="chapter-title">High-performance computing (HPC)</span></span></a>, <a href="communication.html">3. &nbsp; <span class="chapter-title">Communication and coordination</span></a>, <a href="culture-and-conduct.html">2. &nbsp; <span class="chapter-title">Culture and conduct</span></a>, <a href="code-repositories.html">5. &nbsp; <span class="chapter-title">Code repositories</span></a>, <a href="ai-tools.html">16. &nbsp; <span class="chapter-title">Working with AI</span></a>, <a href="references.html">references</a>, <a href="professional-development.html">19. &nbsp; <span class="chapter-title">Professional Development</span></a>, <a href="data-masking.html">9. &nbsp; <span class="chapter-title">Data masking</span></a>, <a href="github.html">10. &nbsp; <span class="chapter-title">Github</span></span></a>, <a href="big-data.html">8. &nbsp; <span class="chapter-title">Big data</span></a>, <a href="reproducible-environments.html">12. &nbsp; <span class="chapter-title">Reproducible Environments</span></a>, <a href="manuscript-preparation.html">20. &nbsp; <span class="chapter-title">Manuscript Preparation and Publication</span></a>
+        <br>
+        <strong>📄 DOCX with tracked changes:</strong> <a href="UCD-SeRG-Lab-Manual-tracked-changes.docx" download>Download UCD-SeRG-Lab-Manual-tracked-changes.docx</a>
+        <br>
+        <strong>💡 Tip:</strong> If change highlighting is glitchy, add the <code>no-preview-highlights</code> label to this PR to disable it.
+    </p>
+</div>
+
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Use of AI</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data masking</span></h1>
 </div>
 
 
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Authors</div>
-  <div class="quarto-title-meta-heading">Affiliations</div>
-  
-  </div>
 
 <div class="quarto-title-meta">
 
-      
+    
   
     
   </div>
@@ -467,56 +518,108 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>AI-powered coding assistants can be valuable tools for accelerating your work, but they require careful and responsible use. Lab members who use AI tools must adhere to the following guidelines:</p>
-<section id="responsibility-for-validation" class="level2" data-number="16.1">
-<h2 data-number="16.1" class="anchored" data-anchor-id="responsibility-for-validation"><span class="header-section-number">16.1</span> Responsibility for validation</h2>
-<p><strong>You are fully responsible for checking and validating all AI-generated code and content.</strong> AI tools can make mistakes, generate insecure code, produce incorrect logic, or suggest approaches that are inappropriate for our specific research context. Before using any AI-generated code:</p>
-<ul>
-<li>Carefully review the code to ensure you understand what it does</li>
-<li>Test the code thoroughly to verify it works as expected</li>
-<li>Verify that the logic is appropriate for your specific use case</li>
-<li>Check that the code follows our lab’s coding standards and best practices</li>
-<li>Ensure the code does not introduce security vulnerabilities or data privacy issues</li>
-</ul>
-<p>Never blindly copy and paste AI-generated code without understanding it. If you don’t understand what the AI has suggested, take the time to learn or ask a colleague for help.</p>
+
+<div class="preview-combined-banner">
+    <p style="margin: 0;">
+        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~0% of content changed).
+        <br>
+        <strong>🎨 Highlighting Legend:</strong> 
+        <mark class="preview-text-changed" style="display: inline; padding: 1px 3px;">Modified text (yellow)</mark> shows changed words/phrases with tooltips of original text, 
+        <mark class="preview-text-added" style="display: inline; padding: 1px 3px;">added text (green)</mark> shows new content, and 
+        <mark class="preview-element-added" style="display: inline; padding: 1px 3px;">new sections (blue)</mark> highlight entirely new paragraphs.
+    </p>
+</div>
+
+<p>Adapted by UCD-SeRG team from <a href="https://jadebc.github.io/lab-manual/data-masking.html">original by Anna Nguyen, Jade Benjamin-Chung, and Gabby Barratt Heitmann</a></p>
+<p>For information about UC Davis computing resources for data-intensive work, see <a href="slurm.html" class="quarto-xref" preview-toc-changed><span>Chapter 15</span></a>.</p>
+<section id="general-overview" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="general-overview"><span class="header-section-number">9.1</span> General Overview</h2>
+<p>This chapter covers data masking, a unique process in R in which columns are treated as distinct objects within their dataframe’s environment. In our lab, data masking most frequently comes up when writing wrapper functions where arguments to indicate column names are supplied as strings. We often do this when we repeat the same code on multiple columns, and want to apply a function to a vector of strings that correspond to column names in a dataframe. For example, we might want to clean multiple columns using the same function or estimate the same model under different feature sets. Here, we try to break down what data masking is, why this error comes up, and common approaches to solve this problem.</p>
+<section id="what-is-data-masking" class="level3" data-number="9.1.1">
+<h3 data-number="9.1.1" class="anchored" data-anchor-id="what-is-data-masking"><span class="header-section-number">9.1.1</span> What is Data Masking?</h3>
+<p>Within certain tidyverse operations, columns are called as if they were variables. For example, while running <code>df |&gt; mutate(X = …)</code> R recognizes that <code>X</code> specifically references a column in <code>df</code> without explicitly stating its membership <code>df |&gt; mutate(df$X = …)</code> or calling the column name as a string <code>df |&gt; mutate(“X” = …)</code>.</p>
+<div id="fig-data-masking" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-data-masking-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/data-masking.PNG" class="img-fluid figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-masking-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.1: Data masking in tidyverse operations
+</figcaption>
+</figure>
+</div>
+<p>However, this behavior may introduce errors when we attempt to incorporate variables from the global environment within these tidyverse pipelines. In the example shown in <a href="#fig-data-masking" class="quarto-xref">Figure&nbsp;<span>9.1</span></a>, <code>column_name = “X”</code> followed by <code>df |&gt; mutate(X2 = column_name + 1)</code> would yield an error, since <code>column_name</code> is not a column in <code>df</code> and the variable <code>column_name</code> is not defined within the environment of <code>df</code></p>
 </section>
-<section id="disclosure-of-ai-use" class="level2" data-number="16.2">
-<h2 data-number="16.2" class="anchored" data-anchor-id="disclosure-of-ai-use"><span class="header-section-number">16.2</span> Disclosure of AI use</h2>
-<p><strong>You must clearly state whenever you have used AI tools in your work.</strong> This is essential for transparency and reproducibility. Specifically:</p>
-<ul>
-<li>In code comments, note when AI tools were used to generate or significantly modify code</li>
-<li>In commit messages, mention if AI tools assisted with the changes</li>
-<li>In manuscripts and reports, acknowledge AI tool usage in the methods or acknowledgments section</li>
-<li>In presentations, disclose AI assistance when relevant</li>
-</ul>
-<p>Example code comment:</p>
-<pre><code># The following function was generated with assistance from GitHub Copilot
-# and has been reviewed and tested to ensure correctness</code></pre>
+<section id="using-tidy-evaluation-for-data-masking" class="level3" data-number="9.1.2">
+<h3 data-number="9.1.2" class="anchored" data-anchor-id="using-tidy-evaluation-for-data-masking"><span class="header-section-number">9.1.2</span> Using tidy evaluation for data masking</h3>
+<p>In dplyr-based R programming, we make use of tidy evaluation. This allows us to avoid using base R syntax to reference specific columns in a data frame. By leveraging Tidy evaluation-based data masking, we can employ long pipes with several dplyr verbs to manipulate our data using stand-alone variables that store column names as strings.</p>
+<p>For example, consider a data frame “df” that contains a column called “heavyrain” that we want to manipulate. Suppose we wanted to convert the values of “heavyrain” into a factor.</p>
+<p>Using base R, which does not mask data, heavyrain must have quotes to be treated as a data-variable:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>df[[“outcome”]] <span class="ot">=</span> <span class="fu">as.factor</span>(df[[“heavyrain”]])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>In a dplyr pipe, heavyrain is being masked using tidy evaluation and will be correctly interpreted as a column because it is recognized as a data-variable: df |&gt; mutate(outcome = as.factor(heavyrain))</p>
+<p>With modified data masking, heavyrain is a string that is coerced into being recognized as a data-variable:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>var_name <span class="ot">=</span> “heavyrain”</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">outcome =</span> <span class="fu">as.factor</span>(<span class="sc">!!</span><span class="fu">sym</span>(var_name)) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>While cleaner and often more convenient, the data frame that var_name is in is now “masked” and we refer to the vectors in the dataframe (data-variables) as though it is an object of its own (an environmental-variable). This is why we can just say the variable’s name in the context of a pipe – we treat it as though it’s an object defined in our environment. Within normal scripts, this is usually fine, because the data frame is “held on to” in the pipe. However, it can cause some programming hurdles when writing functions that take strings of variable/column names as arguments. In the next section, we briefly describe how to troubleshoot common errors in data masking, as relevant to our lab’s work.</p>
 </section>
-<section id="attribution-of-sources" class="level2" data-number="16.3">
-<h2 data-number="16.3" class="anchored" data-anchor-id="attribution-of-sources"><span class="header-section-number">16.3</span> Attribution of sources</h2>
-<p><strong>When using AI tools to generate content that borrows from or adapts existing sources, you must ensure proper attribution.</strong> AI tools sometimes paraphrase or adapt content from documentation, guides, or other resources without clearly indicating the original source. It is your responsibility to:</p>
-<ul>
-<li>Ask the AI tool to identify and properly cite sources when it borrows or adapts content</li>
-<li>Verify that any content the AI generates includes appropriate citations</li>
-<li>Add citations yourself if the AI fails to do so</li>
-<li>Follow appropriate attribution practices for the type of content (code comments, documentation, academic writing, etc.)</li>
-</ul>
-<p>When instructing AI tools to create documentation or written content, explicitly request that they provide proper attribution for any borrowed or adapted material. For example: “Please quote from and paraphrase [source], with proper attribution” rather than simply asking it to summarize information on a topic.</p>
 </section>
-<section id="recommended-tools" class="level2" data-number="16.4">
-<h2 data-number="16.4" class="anchored" data-anchor-id="recommended-tools"><span class="header-section-number">16.4</span> Recommended tools</h2>
-<p>We recommend using <strong><a href="https://github.com/features/copilot">GitHub Copilot</a></strong> for AI-assisted coding. GitHub Copilot offers several advantages:</p>
-<ul>
-<li><strong>Built-in transparency</strong>: When used through GitHub’s <a href="https://github.com/features/copilot/agents">Coding Agent interface</a>, Copilot creates a clear record of its role in your work through commit history and code suggestions</li>
-<li><strong>Context-aware suggestions</strong>: Copilot understands your codebase and can make contextually relevant suggestions</li>
-<li><strong>Integration with version control</strong>: Using Copilot within GitHub ensures that AI-assisted changes are tracked alongside all other code changes</li>
-<li><strong>Interactive workflow</strong>: Copilot’s interactive nature encourages you to review and modify suggestions rather than blindly accepting them</li>
-</ul>
-<p>When using GitHub Copilot or similar tools, work interactively with the AI suggestions—review, modify, and test them rather than accepting them wholesale. This interactive approach helps ensure code quality and deepens your understanding of the code.</p>
-<p>Remember: AI tools are assistants, not replacements for your expertise and judgment. The quality and correctness of your work remains your responsibility.</p>
+<section id="technical-overview" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="technical-overview"><span class="header-section-number">9.2</span> Technical Overview</h2>
+<p>This section covers the R functions and tools that we often use in the context of data masking, focusing on the bang bang operator (<code>!!</code>) with symbol coercion (<code>sym()</code>) and the Walrus operator (<code>:=</code>).</p>
+<p>The combined use of <code>!!</code> and <code>sym()</code> allows us to use strings, rather than data-variables, to reference column names within dplyr. Together, <code>!!sym(“column_name”)</code> forces dplyr to recognize “column_name” as a data-variable prior to evaluating the rest of the expression, enabling the ability to perform calculations on the column while referring to it as a string. <code>sym()</code> is a function that turns strings into symbols. In the context of a dplyr pipe, these symbols are interpreted as data-variables. The <code>!!</code> (bang bang) operator tells dplyr to evaluate the sym() expression first, e.g.&nbsp;to unquote its expression (e.g.&nbsp;“column_name”) and evaluate it as a pre-existing object, first. This is helpful because often we use <code>sym(“column_name”)</code> within a larger expression, and dplyr might evaluate other elements of the expression first without !!, causing errors.</p>
+<p>When we want to create a new column (via mutate or summarize), the Walrus operator (<code>:=</code>) allows us to specify the new column’s name using a string. For example, while <code>df |&gt; mutate(“new_column” = values)</code> would yield an error, <code>df |&gt; mutate(“new_column” := values)</code> will correctly create a new column called “new_column”. If we want to use a variable representing a string, we can use !! to force the variable to be evaluated before using <code>:=</code> to assign the value of the new column.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>col_name <span class="ot">=</span> “new_column”</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="sc">!!</span><span class="at">col_name :=</span> values)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="example" class="level3" data-number="9.2.1">
+<h3 data-number="9.2.1" class="anchored" data-anchor-id="example"><span class="header-section-number">9.2.1</span> Example</h3>
+<p>Suppose we want to write a function “generate_descriptive_table” to summarize how the prevalence of “outcome” varies under different levels of a “risk_factor” in a data frame “df”</p>
+<p>We can start by writing the function shell:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>generate_descriptive_table <span class="ot">&lt;-</span> <span class="cf">function</span> (df, outcome, rf) {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>outcome_dist_by_rf <span class="ot">&lt;-</span> ….</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">return</span>(outcome_dist_by_rf)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Next, we can filter the data frame for only rows in which “rf” and “outcome” are not missing. We can use !! and sym() within filter to evaluate the strings stored in “rf” and “outcome”. Note that defining <code>!!sym(outcome)</code> or <code>!!sym(outcome)</code> in variables <em>outside of the dplyr pipeline</em> will <em>not</em> work.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>generate_descriptive_table <span class="ot">&lt;-</span> <span class="cf">function</span> (df, outcome, rf,) {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  outcome_dist_by_rf <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(<span class="sc">!!</span><span class="fu">sym</span>(outcome)), <span class="sc">!</span><span class="fu">is.na</span>(<span class="sc">!!</span><span class="fu">sym</span>(rf))) <span class="sc">|&gt;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  ….</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(outcome_dist_by_rf)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Similarly, we use !! and sym() in group_by to evaluate column name, stored as a string in the argument “rf”</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>generate_descriptive_table <span class="ot">&lt;-</span> <span class="cf">function</span> (df, outcome, rf,) {</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  outcome_dist_by_rf <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(<span class="sc">!!</span><span class="fu">sym</span>(outcome)), <span class="sc">!</span><span class="fu">is.na</span>(<span class="sc">!!</span><span class="fu">sym</span>(rf))) <span class="sc">|&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  ….</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(outcome_dist_by_rf)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Finally, we can use the walrus operator, !! and sym() with “summarize” to create a new column that takes the mean of the column referenced in “rf”. We also use “glue” or “paste” to give the new column an informative name that includes the “outcome” it describes.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>generate_descriptive_table <span class="ot">&lt;-</span> <span class="cf">function</span> (df, outcome, rf,) {</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  outcome_dist_by_rf <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(<span class="sc">!!</span><span class="fu">sym</span>(outcome)), <span class="sc">!</span><span class="fu">is.na</span>(<span class="sc">!!</span><span class="fu">sym</span>(rf))) <span class="sc">|&gt;</span> </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(<span class="sc">!!</span><span class="fu">sym</span>(rf)) <span class="sc">|&gt;</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="sc">!!</span>(glue<span class="sc">::</span><span class="fu">glue</span>(“{outcome}_prev”)) <span class="sc">:</span><span class="er">=</span> <span class="fu">mean</span>(<span class="sc">!!</span><span class="fu">sym</span>(outcome))) </span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(outcome_dist_by_rf)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>OR</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>generate_descriptive_table <span class="ot">&lt;-</span> <span class="cf">function</span> (df, outcome, rf,) {</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  outcome_dist_by_rf <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(<span class="sc">!!</span><span class="fu">sym</span>(outcome)), <span class="sc">!</span><span class="fu">is.na</span>(<span class="sc">!!</span><span class="fu">sym</span>(rf))) <span class="sc">|&gt;</span> </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(<span class="sc">!!</span><span class="fu">sym</span>(rf)) <span class="sc">|&gt;</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="sc">!!</span>(<span class="fu">paste0</span>(outcome, ”_prev”)) <span class="sc">:</span><span class="er">=</span> <span class="fu">mean</span>(<span class="sc">!!</span><span class="fu">sym</span>(outcome)))</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(outcome_dist_by_rf)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>OR</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>generate_descriptive_table <span class="ot">&lt;-</span> <span class="cf">function</span> (df, outcome, rf,) {</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  new_column_name <span class="ot">=</span> <span class="fu">paste0</span>(outcome, ”_prev”)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  outcome_dist_by_rf <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(<span class="sc">!!</span><span class="fu">sym</span>(outcome)), <span class="sc">!</span><span class="fu">is.na</span>(<span class="sc">!!</span><span class="fu">sym</span>(rf))) <span class="sc">|&gt;</span> </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(<span class="sc">!!</span><span class="fu">sym</span>(rf)) <span class="sc">|&gt;</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="sc">!!</span>(new_column_name) <span class="sc">:</span><span class="er">=</span> <span class="fu">mean</span>(<span class="sc">!!</span><span class="fu">sym</span>(outcome))) </span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(outcome_dist_by_rf)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -935,13 +1038,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./14-slurm.html" class="pagination-link" aria-label="High-performance computing (HPC)">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">High-performance computing (HPC)</span></span>
+      <a href="./big-data.html" class="pagination-link" preview-toc-changed aria-label="Big data">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Big data</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./16-checklists.html" class="pagination-link" aria-label="Checklists">
-        <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Checklists</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./github.html" class="pagination-link" preview-toc-changed aria-label="Github">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Github</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -950,4 +1053,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/15-ai-tools.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/15-ai-tools.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/data-masking.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/data-masking.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

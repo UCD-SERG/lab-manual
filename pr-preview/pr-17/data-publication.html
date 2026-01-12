@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -30,8 +50,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./14-slurm.html" rel="next">
-<link href="./12-code-publication.html" rel="prev">
+<link href="./slurm.html" rel="next">
+<link href="./code-publication.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -250,7 +270,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./13-data-publication.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Data Publication</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data-publication.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Data Publication</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -310,116 +330,122 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-culture-and-conduct.html" class="sidebar-item-text sidebar-link">
+  <a href="./culture-and-conduct.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Culture and conduct</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-communication.html" class="sidebar-item-text sidebar-link">
+  <a href="./communication.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Communication and coordination</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-reproducibility.html" class="sidebar-item-text sidebar-link">
+  <a href="./reproducibility.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Reproducibility</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-code-repositories.html" class="sidebar-item-text sidebar-link">
+  <a href="./code-repositories.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Code repositories</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-coding-practices.html" class="sidebar-item-text sidebar-link">
+  <a href="./coding-practices.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">R Coding Practices</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-coding-style.html" class="sidebar-item-text sidebar-link">
+  <a href="./coding-style.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">R Code Style</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-big-data.html" class="sidebar-item-text sidebar-link">
+  <a href="./big-data.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Big data</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-data-masking.html" class="sidebar-item-text sidebar-link">
+  <a href="./data-masking.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data masking</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09-github.html" class="sidebar-item-text sidebar-link">
+  <a href="./github.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Github</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10-unix.html" class="sidebar-item-text sidebar-link">
+  <a href="./unix.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Unix</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11-reproducible-environments.html" class="sidebar-item-text sidebar-link">
+  <a href="./reproducible-environments.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Reproducible Environments</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./12-code-publication.html" class="sidebar-item-text sidebar-link">
+  <a href="./code-publication.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Code Publication</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./13-data-publication.html" class="sidebar-item-text sidebar-link active">
+  <a href="./data-publication.html" class="sidebar-item-text sidebar-link active" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Data Publication</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./14-slurm.html" class="sidebar-item-text sidebar-link">
+  <a href="./slurm.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">High-performance computing (HPC)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./15-ai-tools.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Use of AI</span></span></a>
+  <a href="./ai-tools.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Working with AI</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./16-checklists.html" class="sidebar-item-text sidebar-link">
+  <a href="./checklists.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Checklists</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./17-resources.html" class="sidebar-item-text sidebar-link">
+  <a href="./resources.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Resources</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./18-professional-development.html" class="sidebar-item-text sidebar-link">
+  <a href="./professional-development.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Professional Development</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./19-manuscript-preparation.html" class="sidebar-item-text sidebar-link">
+  <a href="./manuscript-preparation.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Manuscript Preparation and Publication</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
+ <span class="menu-text">References</span></a>
   </div>
 </li>
     </ul>
@@ -453,10 +479,20 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#create-a-public-github-page-for-public-scripts" id="toc-create-a-public-github-page-for-public-scripts" class="nav-link" data-scroll-target="#create-a-public-github-page-for-public-scripts"><span class="header-section-number">14.6</span> Create a public GitHub page for public scripts</a></li>
   <li><a href="#go-live" id="toc-go-live" class="nav-link" data-scroll-target="#go-live"><span class="header-section-number">14.7</span> Go live</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/13-data-publication.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/13-data-publication.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/data-publication.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/data-publication.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
+<div class="preview-home-changes-banner">
+    <p style="margin: 0;">
+        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="resources.html">18. &nbsp; <span class="chapter-title">Resources</span></a>, <a href="unix.html">11. &nbsp; <span class="chapter-title">Unix</span></span></a>, <a href="coding-style.html">7. &nbsp; <span class="chapter-title">R Code Style</span></span></a>, <a href="reproducibility.html">4. &nbsp; <span class="chapter-title">Reproducibility</span></a>, <a href="code-publication.html">13. &nbsp; <span class="chapter-title">Code Publication</span></a>, <a href="checklists.html">17. &nbsp; <span class="chapter-title">Checklists</span></a>, <a href="data-publication.html">14. &nbsp; <span class="chapter-title">Data Publication</span></a>, <a href="coding-practices.html">6. &nbsp; <span class="chapter-title">R Coding Practices</span></span></a>, <a href="slurm.html">15. &nbsp; <span class="chapter-title">High-performance computing (HPC)</span></span></a>, <a href="communication.html">3. &nbsp; <span class="chapter-title">Communication and coordination</span></a>, <a href="culture-and-conduct.html">2. &nbsp; <span class="chapter-title">Culture and conduct</span></a>, <a href="code-repositories.html">5. &nbsp; <span class="chapter-title">Code repositories</span></a>, <a href="ai-tools.html">16. &nbsp; <span class="chapter-title">Working with AI</span></a>, <a href="references.html">references</a>, <a href="professional-development.html">19. &nbsp; <span class="chapter-title">Professional Development</span></a>, <a href="data-masking.html">9. &nbsp; <span class="chapter-title">Data masking</span></a>, <a href="github.html">10. &nbsp; <span class="chapter-title">Github</span></span></a>, <a href="big-data.html">8. &nbsp; <span class="chapter-title">Big data</span></a>, <a href="reproducible-environments.html">12. &nbsp; <span class="chapter-title">Reproducible Environments</span></a>, <a href="manuscript-preparation.html">20. &nbsp; <span class="chapter-title">Manuscript Preparation and Publication</span></a>
+        <br>
+        <strong>📄 DOCX with tracked changes:</strong> <a href="UCD-SeRG-Lab-Manual-tracked-changes.docx" download>Download UCD-SeRG-Lab-Manual-tracked-changes.docx</a>
+        <br>
+        <strong>💡 Tip:</strong> If change highlighting is glitchy, add the <code>no-preview-highlights</code> label to this PR to disable it.
+    </p>
+</div>
+
 
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -465,15 +501,10 @@ ul.task-list li input[type="checkbox"] {
 </div>
 
 
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Authors</div>
-  <div class="quarto-title-meta-heading">Affiliations</div>
-  
-  </div>
 
 <div class="quarto-title-meta">
 
-      
+    
   
     
   </div>
@@ -482,6 +513,18 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+
+
+<div class="preview-combined-banner">
+    <p style="margin: 0;">
+        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~0% of content changed).
+        <br>
+        <strong>🎨 Highlighting Legend:</strong> 
+        <mark class="preview-text-changed" style="display: inline; padding: 1px 3px;">Modified text (yellow)</mark> shows changed words/phrases with tooltips of original text, 
+        <mark class="preview-text-added" style="display: inline; padding: 1px 3px;">added text (green)</mark> shows new content, and 
+        <mark class="preview-element-added" style="display: inline; padding: 1px 3px;">new sections (blue)</mark> highlight entirely new paragraphs.
+    </p>
+</div>
 
 <p>Adapted from Fanice Nyatigo and Ben Arnold’s chapter in the <a href="https://urlisolation.com/browser?clickId=524DE241-3F8F-4C98-B619-3C278374BF64&amp;traceToken=1728923499%3Bucsfmed_hosted%3Bhttps%3A%2F%2Fproctor-ucsf.github.io%2Fd&amp;url=https%3A%2F%2Fproctor-ucsf.github.io%2Fdcc-handbook%2Fpublicdata.html">Proctor-UCSF Lab Manual</a></p>
 <section id="overview" class="level2" data-number="14.1">
@@ -496,7 +539,7 @@ ul.task-list li input[type="checkbox"] {
 analysis_data_public.rds
 analysis_data_public_codebook.txt</code></pre>
 <p>In general, datasets are usually too big to save on GitHub, but occasionally they are small. Here is an example of where we actually pushed the data directly to GitHub: https://github.com/ben-arnold/enterics-seroepi/tree/master/data .</p>
-<p>If the data are bigger, then maintaining them under version control in your git repository can be unwieldy. Instead, we recommend using another stable repository that has version control, such as the Open Science Framework (<a href="https://osf.io">osf.io</a>). For example, all of the data from the WASH Benefits trials (led by investigators at Berkeley, icddr,b, IPA-Kenya and others) are all stored through data components nested within in OSF projects: https://osf.io/tprw2/. Another good option is Dryad (<a href="https://datadryad.org/">datadryad.org</a>) or institutional digital repositories.</p>
+<p>If the data are bigger, then maintaining them under version control in your git repository can be unwieldy. Instead, we recommend using another stable repository that has version control, such as the Open Science Framework <span class="citation" data-cites="osf">(<a href="references.html#ref-osf" role="doc-biblioref"><span>“Open Science Framework,”</span> n.d.</a>)</span>. For example, all of the data from the WASH Benefits trials (led by investigators at Berkeley, icddr,b, IPA-Kenya and others) are all stored through data components nested within in OSF projects: https://osf.io/tprw2/. Another good option is Dryad Digital Repository <span class="citation" data-cites="dryad">(<a href="references.html#ref-dryad" role="doc-biblioref"><span>“Dryad Digital Repository,”</span> n.d.</a>)</span> or institutional digital repositories.</p>
 <p>We recommend cross-linking public files in GitHub (scripts/notebooks only) and OSF/Dryad/institutional digital repositories.</p>
 <p>Below are the main steps to making data public, after finalizing the analysis datasets and scripts:<br>
 1. Remove Protected Health Information (PHI)<br>
@@ -605,9 +648,20 @@ analysis_data_public_codebook.txt</code></pre>
 - ACTION - https://osf.io/ca3pe/<br>
 - NAITRE - https://osf.io/ujeyb/<br>
 - MORDOR Niger antibody study - https://osf.io/dgsq3/</p>
-<p>Further reading on end-to-end data management: <a href="https://plos.org/resource/how-to-store-and-manage-your-data/#data-management-plan">How to Store and Manage Your Data - PLOS</a></p>
+<p>Further reading on end-to-end data management: How to Store and Manage Your Data - PLOS <span class="citation" data-cites="plos_data">(<a href="references.html#ref-plos_data" role="doc-biblioref"><span>“How to Store and Manage Your Data,”</span> n.d.</a>)</span></p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-dryad" class="csl-entry" role="listitem">
+<span>“Dryad Digital Repository.”</span> n.d. Dryad. <a href="https://datadryad.org/">https://datadryad.org/</a>.
+</div>
+<div id="ref-plos_data" class="csl-entry" role="listitem">
+<span>“How to Store and Manage Your Data.”</span> n.d. PLOS. <a href="https://plos.org/resource/how-to-store-and-manage-your-data/">https://plos.org/resource/how-to-store-and-manage-your-data/</a>.
+</div>
+<div id="ref-osf" class="csl-entry" role="listitem">
+<span>“Open Science Framework.”</span> n.d. Center for Open Science. <a href="https://osf.io/">https://osf.io/</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -1026,12 +1080,12 @@ analysis_data_public_codebook.txt</code></pre>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./12-code-publication.html" class="pagination-link" aria-label="Code Publication">
+      <a href="./code-publication.html" class="pagination-link" preview-toc-changed aria-label="Code Publication">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Code Publication</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./14-slurm.html" class="pagination-link" aria-label="High-performance computing (HPC)">
+      <a href="./slurm.html" class="pagination-link" preview-toc-changed aria-label="High-performance computing (HPC)">
         <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">High-performance computing (HPC)</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -1041,4 +1095,4 @@ analysis_data_public_codebook.txt</code></pre>
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/13-data-publication.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/13-data-publication.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/data-publication.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/data-publication.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

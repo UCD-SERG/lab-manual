@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>11&nbsp; Unix – UCD-SeRG Lab Manual</title>
+<title>10&nbsp; Github – UCD-SeRG Lab Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,42 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
 }
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
 }
-</style>
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -65,8 +50,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./11-reproducible-environments.html" rel="next">
-<link href="./09-github.html" rel="prev">
+<link href="./unix.html" rel="next">
+<link href="./data-masking.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -285,7 +270,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10-unix.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Unix</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./github.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Github</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -345,116 +330,122 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-culture-and-conduct.html" class="sidebar-item-text sidebar-link">
+  <a href="./culture-and-conduct.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Culture and conduct</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-communication.html" class="sidebar-item-text sidebar-link">
+  <a href="./communication.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Communication and coordination</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-reproducibility.html" class="sidebar-item-text sidebar-link">
+  <a href="./reproducibility.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Reproducibility</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-code-repositories.html" class="sidebar-item-text sidebar-link">
+  <a href="./code-repositories.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Code repositories</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-coding-practices.html" class="sidebar-item-text sidebar-link">
+  <a href="./coding-practices.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">R Coding Practices</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-coding-style.html" class="sidebar-item-text sidebar-link">
+  <a href="./coding-style.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">R Code Style</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-big-data.html" class="sidebar-item-text sidebar-link">
+  <a href="./big-data.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Big data</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-data-masking.html" class="sidebar-item-text sidebar-link">
+  <a href="./data-masking.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data masking</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09-github.html" class="sidebar-item-text sidebar-link">
+  <a href="./github.html" class="sidebar-item-text sidebar-link active" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Github</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10-unix.html" class="sidebar-item-text sidebar-link active">
+  <a href="./unix.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Unix</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11-reproducible-environments.html" class="sidebar-item-text sidebar-link">
+  <a href="./reproducible-environments.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Reproducible Environments</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./12-code-publication.html" class="sidebar-item-text sidebar-link">
+  <a href="./code-publication.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Code Publication</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./13-data-publication.html" class="sidebar-item-text sidebar-link">
+  <a href="./data-publication.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Data Publication</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./14-slurm.html" class="sidebar-item-text sidebar-link">
+  <a href="./slurm.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">High-performance computing (HPC)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./15-ai-tools.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Use of AI</span></span></a>
+  <a href="./ai-tools.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Working with AI</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./16-checklists.html" class="sidebar-item-text sidebar-link">
+  <a href="./checklists.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Checklists</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./17-resources.html" class="sidebar-item-text sidebar-link">
+  <a href="./resources.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Resources</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./18-professional-development.html" class="sidebar-item-text sidebar-link">
+  <a href="./professional-development.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Professional Development</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./19-manuscript-preparation.html" class="sidebar-item-text sidebar-link">
+  <a href="./manuscript-preparation.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Manuscript Preparation and Publication</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
+ <span class="menu-text">References</span></a>
   </div>
 </li>
     </ul>
@@ -467,41 +458,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#basics" id="toc-basics" class="nav-link active" data-scroll-target="#basics"><span class="header-section-number">11.1</span> Basics</a></li>
-  <li><a href="#syntax-for-both-macwindows" id="toc-syntax-for-both-macwindows" class="nav-link" data-scroll-target="#syntax-for-both-macwindows"><span class="header-section-number">11.2</span> Syntax for both Mac/Windows</a></li>
-  <li><a href="#running-bash-scripts" id="toc-running-bash-scripts" class="nav-link" data-scroll-target="#running-bash-scripts"><span class="header-section-number">11.3</span> Running Bash Scripts</a></li>
-  <li><a href="#running-rscripts-in-windows" id="toc-running-rscripts-in-windows" class="nav-link" data-scroll-target="#running-rscripts-in-windows"><span class="header-section-number">11.4</span> Running Rscripts in Windows</a>
+  <li><a href="#basics" id="toc-basics" class="nav-link active" data-scroll-target="#basics"><span class="header-section-number">10.1</span> Basics</a></li>
+  <li><a href="#github-desktop" id="toc-github-desktop" class="nav-link" data-scroll-target="#github-desktop"><span class="header-section-number">10.2</span> Github Desktop</a></li>
+  <li><a href="#git-branching" id="toc-git-branching" class="nav-link" data-scroll-target="#git-branching"><span class="header-section-number">10.3</span> Git Branching</a></li>
+  <li><a href="#example-workflow" id="toc-example-workflow" class="nav-link" data-scroll-target="#example-workflow"><span class="header-section-number">10.4</span> Example Workflow</a></li>
+  <li><a href="#commonly-used-git-commands" id="toc-commonly-used-git-commands" class="nav-link" data-scroll-target="#commonly-used-git-commands"><span class="header-section-number">10.5</span> Commonly Used Git Commands</a></li>
+  <li><a href="#how-often-should-i-commit" id="toc-how-often-should-i-commit" class="nav-link" data-scroll-target="#how-often-should-i-commit"><span class="header-section-number">10.6</span> How often should I commit?</a></li>
+  <li><a href="#repeated-amend-workflow" id="toc-repeated-amend-workflow" class="nav-link" data-scroll-target="#repeated-amend-workflow"><span class="header-section-number">10.7</span> Repeated Amend Workflow</a>
   <ul class="collapse">
-  <li><a href="#common-mistakes" id="toc-common-mistakes" class="nav-link" data-scroll-target="#common-mistakes"><span class="header-section-number">11.4.1</span> Common Mistakes</a></li>
+  <li><a href="#basic-workflow" id="toc-basic-workflow" class="nav-link" data-scroll-target="#basic-workflow"><span class="header-section-number">10.7.1</span> Basic Workflow</a></li>
+  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points"><span class="header-section-number">10.7.2</span> Key Points</a></li>
   </ul></li>
-  <li><a href="#checking-tasks-and-killing-jobs" id="toc-checking-tasks-and-killing-jobs" class="nav-link" data-scroll-target="#checking-tasks-and-killing-jobs"><span class="header-section-number">11.5</span> Checking tasks and killing jobs</a></li>
-  <li><a href="#running-big-jobs" id="toc-running-big-jobs" class="nav-link" data-scroll-target="#running-big-jobs"><span class="header-section-number">11.6</span> Running big jobs</a>
-  <ul class="collapse">
-  <li><a href="#example-code-for-runfilesavelogs" id="toc-example-code-for-runfilesavelogs" class="nav-link" data-scroll-target="#example-code-for-runfilesavelogs"><span class="header-section-number">11.6.1</span> Example code for <code>runfileSaveLogs</code></a></li>
-  <li><a href="#example-usage-for-runfilesavelogs" id="toc-example-usage-for-runfilesavelogs" class="nav-link" data-scroll-target="#example-usage-for-runfilesavelogs"><span class="header-section-number">11.6.2</span> Example usage for <code>runfileSaveLogs</code></a></li>
-  </ul></li>
+  <li><a href="#what-should-be-pushed-to-github" id="toc-what-should-be-pushed-to-github" class="nav-link" data-scroll-target="#what-should-be-pushed-to-github"><span class="header-section-number">10.8</span> What should be pushed to Github?</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/10-unix.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/10-unix.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/github.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/github.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
+<div class="preview-home-changes-banner">
+    <p style="margin: 0;">
+        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="resources.html">18. &nbsp; <span class="chapter-title">Resources</span></a>, <a href="unix.html">11. &nbsp; <span class="chapter-title">Unix</span></span></a>, <a href="coding-style.html">7. &nbsp; <span class="chapter-title">R Code Style</span></span></a>, <a href="reproducibility.html">4. &nbsp; <span class="chapter-title">Reproducibility</span></a>, <a href="code-publication.html">13. &nbsp; <span class="chapter-title">Code Publication</span></a>, <a href="checklists.html">17. &nbsp; <span class="chapter-title">Checklists</span></a>, <a href="data-publication.html">14. &nbsp; <span class="chapter-title">Data Publication</span></a>, <a href="coding-practices.html">6. &nbsp; <span class="chapter-title">R Coding Practices</span></span></a>, <a href="slurm.html">15. &nbsp; <span class="chapter-title">High-performance computing (HPC)</span></span></a>, <a href="communication.html">3. &nbsp; <span class="chapter-title">Communication and coordination</span></a>, <a href="culture-and-conduct.html">2. &nbsp; <span class="chapter-title">Culture and conduct</span></a>, <a href="code-repositories.html">5. &nbsp; <span class="chapter-title">Code repositories</span></a>, <a href="ai-tools.html">16. &nbsp; <span class="chapter-title">Working with AI</span></a>, <a href="references.html">references</a>, <a href="professional-development.html">19. &nbsp; <span class="chapter-title">Professional Development</span></a>, <a href="data-masking.html">9. &nbsp; <span class="chapter-title">Data masking</span></a>, <a href="github.html">10. &nbsp; <span class="chapter-title">Github</span></span></a>, <a href="big-data.html">8. &nbsp; <span class="chapter-title">Big data</span></a>, <a href="reproducible-environments.html">12. &nbsp; <span class="chapter-title">Reproducible Environments</span></a>, <a href="manuscript-preparation.html">20. &nbsp; <span class="chapter-title">Manuscript Preparation and Publication</span></a>
+        <br>
+        <strong>📄 DOCX with tracked changes:</strong> <a href="UCD-SeRG-Lab-Manual-tracked-changes.docx" download>Download UCD-SeRG-Lab-Manual-tracked-changes.docx</a>
+        <br>
+        <strong>💡 Tip:</strong> If change highlighting is glitchy, add the <code>no-preview-highlights</code> label to this PR to disable it.
+    </p>
+</div>
+
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-unix" class="quarto-section-identifier"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Unix</span></span></h1>
+<h1 class="title"><span id="sec-github" class="quarto-section-identifier"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Github</span></span></h1>
 </div>
 
 
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Authors</div>
-  <div class="quarto-title-meta-heading">Affiliations</div>
-  
-  </div>
 
 <div class="quarto-title-meta">
 
-      
+    
   
     
   </div>
@@ -511,30 +506,125 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Adapted by UCD-SeRG team from <a href="https://jadebc.github.io/lab-manual/unix.html">original by Stephanie Djajadi, Kunal Mishra, Anna Nguyen, and Jade Benjamin-Chung</a></p>
-<p>We typically use Unix commands in Terminal (for Mac users) or Git Bash (for Windows users) to</p>
-<ol type="1">
-<li>Run a series of scripts in parallel or in a specific order to reproduce our work</li>
-<li>To check on the progress of a batch of jobs</li>
-<li>To use git and push to github</li>
-</ol>
-<section id="basics" class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="basics"><span class="header-section-number">11.1</span> Basics</h2>
-<p>On the computer, there is a desktop with two folders, <code>folder1</code> and <code>folder2</code>, and a file called <code>file1.</code> Inside <code>folder1</code>, we have a file called <code>file2.</code> Mac users can run these commands on their terminal; it is recommended that Windows users use Git Bash, not Windows PowerShell.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="assets/images/ex-desktop.jpg" class="img-fluid figure-img"></p>
-<figcaption>Here is our example desktop.</figcaption>
+
+<div class="preview-combined-banner">
+    <p style="margin: 0;">
+        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~0% of content changed).
+        <br>
+        <strong>🎨 Highlighting Legend:</strong> 
+        <mark class="preview-text-changed" style="display: inline; padding: 1px 3px;">Modified text (yellow)</mark> shows changed words/phrases with tooltips of original text, 
+        <mark class="preview-text-added" style="display: inline; padding: 1px 3px;">added text (green)</mark> shows new content, and 
+        <mark class="preview-element-added" style="display: inline; padding: 1px 3px;">new sections (blue)</mark> highlight entirely new paragraphs.
+    </p>
+</div>
+
+<p>Adapted by UCD-SeRG team from <a href="https://jadebc.github.io/lab-manual/github.html">original by Stephanie Djajadi and Nolan Pokpongkiat</a></p>
+<section id="basics" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="basics"><span class="header-section-number">10.1</span> Basics</h2>
+<ul>
+<li>A detailed tutorial of Git can be found <a href="https://sp19.datastructur.es/materials/guides/using-git#b-local-repositories-narrative-introduction">here on the CS61B website</a>.</li>
+<li>If you are already familiar with Git, you can reference the summary at the end of <a href="https://sp19.datastructur.es/materials/guides/using-git#b-local-repositories-narrative-introduction">Section B</a>.</li>
+<li>If you have made a mistake in Git, you can refer to On undoing, fixing, or removing commits in git <span class="citation" data-cites="gitfixum">(<a href="references.html#ref-gitfixum" role="doc-biblioref">Robertson, n.d.</a>)</span> to undo, fix, or remove commits in git.</li>
+</ul>
+</section>
+<section id="github-desktop" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="github-desktop"><span class="header-section-number">10.2</span> Github Desktop</h2>
+<p>While knowing how to use Git on the command line will always be useful since the full power of Git and its customizations and flexibilty is designed for use with the command line, Github also provides GitHub Desktop <span class="citation" data-cites="githubdesktop">(<a href="references.html#ref-githubdesktop" role="doc-biblioref"><span>“GitHub Desktop,”</span> n.d.</a>)</span> as an graphical interface to do basic git commands; you can do all of the basic functions of Git using this desktop app. Feel free to use this as an alternative to Git on the command line if you prefer.</p>
+</section>
+<section id="git-branching" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="git-branching"><span class="header-section-number">10.3</span> Git Branching</h2>
+<p>Branches allow you to keep track of multiple versions of your work simultaneously, and you can easily switch between versions and merge branches together once you’ve finished working on a section and want it to join the rest of your code. Here are some cases when it may be a good idea to branch:</p>
+<ul>
+<li>You may want to make a dramatic change to your existing code (called refactoring) but it will break other parts of your project. But you want to be able to simultaneously work on other parts or you are collaborating with others, and you don’t want to break the code for them.</li>
+<li>You want to start working on a new part of the project, but you aren’t sure yet if your changes will work and make it to the final product.</li>
+<li>You are working with others and don’t want to mix up your current work with theirs, even if you want to bring your work together later in the future.</li>
+</ul>
+<p>A detailed tutorial on Git Branching can be found <a href="https://sp19.datastructur.es/materials/guides/using-git#e-git-branching-advanced-git-optional">here</a>. You can also find instructions on how to handle merge conflicts when joining branches together.</p>
+</section>
+<section id="example-workflow" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="example-workflow"><span class="header-section-number">10.4</span> Example Workflow</h2>
+<p>A standard workflow when starting on a new project and contributing code looks like this:</p>
+<div id="tbl-git-workflow" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-git-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;10.1: Standard Git workflow for new projects
+</figcaption>
+<div aria-describedby="tbl-git-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SETUP: FIRST TIME ONLY: <code>git clone &lt;url&gt; &lt;directory_name&gt;</code></td>
+<td>Clone the repo. This copies of all the project files in its current state on Github to your local computer.</td>
+</tr>
+<tr class="even">
+<td>1. <code>git pull origin master</code></td>
+<td>update the state of your files to match the most current version on GitHub</td>
+</tr>
+<tr class="odd">
+<td>2. <code>git checkout -b &lt;new_branch_name&gt;</code></td>
+<td>create new branch that you’ll be working on and go to it</td>
+</tr>
+<tr class="even">
+<td>3. Make some file changes</td>
+<td>work on your feature/implementation</td>
+</tr>
+<tr class="odd">
+<td>4. <code>git add -p</code></td>
+<td>add changes to stage for commit, going through changes line by line</td>
+</tr>
+<tr class="even">
+<td>5. <code>git commit -m &lt;commit message&gt;</code></td>
+<td>commit files with a message</td>
+</tr>
+<tr class="odd">
+<td>6. <code>git push -u origin &lt;branch_name&gt;</code></td>
+<td>push branch to remote and set to track (-u only needed if this is first push)</td>
+</tr>
+<tr class="even">
+<td>7. Repeat step 4-5.</td>
+<td>work and commit often</td>
+</tr>
+<tr class="odd">
+<td>8. <code>git push</code></td>
+<td>push work to remote branch for others to view</td>
+</tr>
+<tr class="even">
+<td>9. Follow the link given from the <code>git push</code> command to <a href="https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request#creating-the-pull-request">submit a pull request (PR) on GitHub online</a></td>
+<td>PR merges in work from your branch into master</td>
+</tr>
+<tr class="odd">
+<td>(10.) Your changes and PR get approved, your reviewer deletes your remote branch upon merging</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>11. <code>git fetch --all --prune</code></td>
+<td>clean up your local git by untracking deleted remote branches</td>
+</tr>
+</tbody>
+</table>
+</div>
 </figure>
 </div>
+<p>Other helpful commands are listed below.</p>
 </section>
-<section id="syntax-for-both-macwindows" class="level2" data-number="11.2">
-<h2 data-number="11.2" class="anchored" data-anchor-id="syntax-for-both-macwindows"><span class="header-section-number">11.2</span> Syntax for both Mac/Windows</h2>
-<p>When typing in directories or file names, quotes are necessary if the name includes spaces.</p>
+<section id="commonly-used-git-commands" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="commonly-used-git-commands"><span class="header-section-number">10.5</span> Commonly Used Git Commands</h2>
+<div id="tbl-git-commands" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-git-commands-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;10.2: Commonly used Git commands
+</figcaption>
+<div aria-describedby="tbl-git-commands-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 43%">
-<col style="width: 56%">
+<col style="width: 36%">
+<col style="width: 64%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -544,291 +634,131 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>cd desktop/folder1</code></td>
-<td>Change directory to <code>folder1</code></td>
+<td><code>git clone &lt;url&gt; &lt;directory_name&gt;</code></td>
+<td>clone a repository, only needs to be done the first time</td>
 </tr>
 <tr class="even">
-<td><code>pwd</code></td>
-<td>Print working directory</td>
+<td><code>git pull origin master</code></td>
+<td>pull from <code>master</code> before making any changes</td>
 </tr>
 <tr class="odd">
-<td><code>ls</code></td>
-<td>List files in the directory</td>
+<td><code>git branch</code></td>
+<td>check what branch you are on</td>
 </tr>
 <tr class="even">
-<td><code>cp "file2" "newfile2"</code></td>
-<td>Copy file (remember to include file extensions when typing in file names like <code>.pdf</code> or <code>.R</code>)</td>
+<td><code>git branch -a</code></td>
+<td>check what branch you are on + all remote branches</td>
 </tr>
 <tr class="odd">
-<td><code>mv “newfile2” “file3”</code></td>
-<td>Rename <code>newfile2</code> to <code>file3</code></td>
+<td><code>git checkout -b &lt;new_branch_name&gt;</code></td>
+<td>create new branch and go to it (only necessary when you create a new branch)</td>
 </tr>
 <tr class="even">
-<td><code>cd ..</code></td>
-<td>Go to parent of the working directory (in this case, <code>desktop</code>)</td>
+<td><code>git checkout &lt;branch name&gt;</code></td>
+<td>switch to branch</td>
 </tr>
 <tr class="odd">
-<td><code>mv “file1” folder2</code></td>
-<td>Move <code>file1</code> to <code>folder2</code></td>
+<td><code>git add &lt;file name&gt;</code></td>
+<td>add file to stage for commit</td>
 </tr>
 <tr class="even">
-<td><code>mkdir folder3</code></td>
-<td>Make a new folder in <code>folder2</code></td>
+<td><code>git add -p</code></td>
+<td>adds changes to commit, showing you changes one by one</td>
 </tr>
 <tr class="odd">
-<td><code>rm &lt;filename&gt;</code></td>
-<td>Remove files</td>
+<td><code>git commit -m &lt;commit message&gt;</code></td>
+<td>commit file with a message</td>
 </tr>
 <tr class="even">
-<td><code>rm -rf folder3</code></td>
-<td>Remove directories (<code>-r</code> will attempt to remove the directory recursively, <code>-rf</code> will force removal of the directory)</td>
+<td><code>git push -u origin &lt;branch_name&gt;</code></td>
+<td>push branch to remote and set to track (-u only works if this is first push)</td>
 </tr>
 <tr class="odd">
-<td><code>clear</code></td>
-<td>Clear terminal screen of all previous commands</td>
+<td><code>git branch --set-upstream-to origin &lt;branch_name&gt;</code></td>
+<td>set upstream to <code>origin/&lt;branch_name&gt;</code> (use if you forgot -u on first push)</td>
+</tr>
+<tr class="even">
+<td><code>git push origin &lt;branch_name&gt;</code></td>
+<td>push work to branch</td>
+</tr>
+<tr class="odd">
+<td><code>git checkout &lt;branch_name&gt;</code> &nbsp;<code>git merge master</code></td>
+<td>switch to branch and merge changes from <code>master</code> into <code>&lt;branch_name&gt;</code> (two commands)</td>
+</tr>
+<tr class="even">
+<td><code>git merge &lt;branch_name&gt; master</code></td>
+<td>switch to branch and merge changes from <code>master</code> into <code>&lt;branch_name&gt;</code> (one command)</td>
+</tr>
+<tr class="odd">
+<td><code>git checkout --track origin/&lt;branch_name&gt;</code></td>
+<td>pulls a remote branch and creates a local branch to track it (use when trying to pull someone else’s branch onto your local computer)</td>
+</tr>
+<tr class="even">
+<td><code>git push --delete &lt;remote_name&gt; &lt;branch_name&gt;</code></td>
+<td>delete remote branch</td>
+</tr>
+<tr class="odd">
+<td><code>git branch -d &lt;branch_name&gt;</code></td>
+<td>deletes local branch, -D to force</td>
+</tr>
+<tr class="even">
+<td><code>git fetch --all --prune</code></td>
+<td>untrack deleted remote branches</td>
 </tr>
 </tbody>
 </table>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="assets/images/ex-terminal.PNG" class="img-fluid figure-img"></p>
-<figcaption>Here is an example of what your terminal might look like after executing the commands in the order listed above.</figcaption>
+</div>
 </figure>
 </div>
 </section>
-<section id="running-bash-scripts" class="level2" data-number="11.3">
-<h2 data-number="11.3" class="anchored" data-anchor-id="running-bash-scripts"><span class="header-section-number">11.3</span> Running Bash Scripts</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 37%">
-<col style="width: 37%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Windows</th>
-<th>Mac / Linux</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>chmod +750 &lt;filename.sh&gt;</code></td>
-<td><code>chmod +x &lt;filename.sh&gt;</code></td>
-<td>Change access permissions for a file (only needs to be done once)</td>
-</tr>
-<tr class="even">
-<td><code>./&lt;filename.sh&gt;</code></td>
-<td><code>./&lt;filename.sh&gt;</code></td>
-<td>Run file (<code>./</code> to run any executable file)</td>
-</tr>
-<tr class="odd">
-<td><code>bash bash_script_name.sh &amp;</code></td>
-<td><code>bash bash_script_name.sh &amp;</code></td>
-<td>Run shell script in the background</td>
-</tr>
-</tbody>
-</table>
+<section id="how-often-should-i-commit" class="level2" data-number="10.6">
+<h2 data-number="10.6" class="anchored" data-anchor-id="how-often-should-i-commit"><span class="header-section-number">10.6</span> How often should I commit?</h2>
+<p>It is good practice to commit every 15 minutes, or every time you make a significant change. It is better to commit more rather than less.</p>
 </section>
-<section id="running-rscripts-in-windows" class="level2" data-number="11.4">
-<h2 data-number="11.4" class="anchored" data-anchor-id="running-rscripts-in-windows"><span class="header-section-number">11.4</span> Running Rscripts in Windows</h2>
-<p><strong>Note: This code seems to work only with Windows Command Prompt, not with Git Bash.</strong></p>
-<p>When R is installed, it comes with a utility called Rscript. This allows you to run R commands from the command line. If Rscript is in your <code>PATH,</code> then typing Rscript into the command line, and pressing enter, will not error. Otherwise, to use Rscript, you will either need to add it to your PATH (as an environment variable), or append the full directory of the location of Rscript on your machine. To find the full directory, search for where R is installed your computer. For instance, it may be something like below (this will vary depending on what version of R you have installed):</p>
-<p><code>C:\Program Files\R\R-3.6.0\bin</code></p>
-<p>For appending the <code>PATH</code> variable, please view <a href="https://www.howtogeek.com/118594/how-to-edit-your-system-path-for-easy-command-line-access/">this link</a>. I strongly recommend completing this option.</p>
-<p>If you add the PATH as an environment variable, then you can run this line of code to test: <code>Rscript -e “cat(‘this is a test’)"</code>, where the <code>-e</code> flag refers to the expression that will be executed.</p>
-<p>If you do not add the PATH as an environment variable, then you can run this line of code to replicate the results from above: <code>“C:\Program Files\R\R-3.6.0\bin” -e “cat(‘this is a test’)”</code></p>
-<p>To run an R script from the command line, we can say: <code>Rscript -e “source(‘C:/path/to/script/some_code.R’)”</code></p>
-<section id="common-mistakes" class="level3" data-number="11.4.1">
-<h3 data-number="11.4.1" class="anchored" data-anchor-id="common-mistakes"><span class="header-section-number">11.4.1</span> Common Mistakes</h3>
+<section id="repeated-amend-workflow" class="level2" data-number="10.7">
+<h2 data-number="10.7" class="anchored" data-anchor-id="repeated-amend-workflow"><span class="header-section-number">10.7</span> Repeated Amend Workflow</h2>
+<p>When working on a complex task, you may want to make frequent incremental commits to protect your progress, but avoid cluttering your Git history with many tiny “work in progress” commits. The <strong>Repeated Amend</strong> pattern lets you build up a polished commit gradually.</p>
+<section id="basic-workflow" class="level3" data-number="10.7.1">
+<h3 data-number="10.7.1" class="anchored" data-anchor-id="basic-workflow"><span class="header-section-number">10.7.1</span> Basic Workflow</h3>
+<p>Start with a clean working tree in a functional state. Then:</p>
+<ol type="1">
+<li>Make a small change and verify your project still works</li>
+<li>Stage and commit with a temporary message like “WIP” (work in progress)</li>
+<li><strong>Do not push yet</strong></li>
+<li>Make another small change and verify it works</li>
+<li>Stage and amend the previous commit: <code>git commit --amend --no-edit</code></li>
+<li>Repeat steps 4-5 as needed</li>
+<li>When finished, amend one final time with a proper commit message</li>
+<li>Push your completed work</li>
+</ol>
+<p>In RStudio, you can use the “Amend previous commit” checkbox when committing.</p>
+</section>
+<section id="key-points" class="level3" data-number="10.7.2">
+<h3 data-number="10.7.2" class="anchored" data-anchor-id="key-points"><span class="header-section-number">10.7.2</span> Key Points</h3>
 <ul>
-<li>Remember to include all of the quotation marks around file paths that have a spaces.</li>
-<li>If you attempt to run an R script but run into <code>Error: '\U' used without hex digits in character string starting "'C:\U"</code>, try replacing all <code>\</code> with <code>\\</code> or <code>/</code>.</li>
+<li>Each amend replaces the previous commit rather than creating a new one</li>
+<li>This keeps your history clean while letting you work incrementally</li>
+<li>Only use this pattern before pushing - never amend commits that others may have pulled</li>
+<li>If you need to undo changes, use <code>git reset --hard</code> to return to your last commit state</li>
+<li>Think of commits as climbing protection: use them when in uncertain territory</li>
 </ul>
+<p>For more details and troubleshooting scenarios, see the <a href="https://happygitwithr.com/repeated-amend.html">Repeated Amend chapter</a> in Happy Git with R.</p>
 </section>
 </section>
-<section id="checking-tasks-and-killing-jobs" class="level2" data-number="11.5">
-<h2 data-number="11.5" class="anchored" data-anchor-id="checking-tasks-and-killing-jobs"><span class="header-section-number">11.5</span> Checking tasks and killing jobs</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 37%">
-<col style="width: 37%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Windows</th>
-<th>Mac / Linux</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>tasklist</code></td>
-<td><code>ps -v</code></td>
-<td>List all processes on the command line</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><code>top -o [cpu/rsize]</code></td>
-<td>List all running processes, sorted by CPU or memory usage</td>
-</tr>
-<tr class="odd">
-<td><code>taskkill /F /PID pid_number</code></td>
-<td><code>kill &lt;PID_number&gt;</code></td>
-<td>Kill a process by its process ID</td>
-</tr>
-<tr class="even">
-<td><code>taskkill /IM "process name" /F</code></td>
-<td></td>
-<td>Kill a process by its name</td>
-</tr>
-<tr class="odd">
-<td><code>start /b program.exe</code></td>
-<td></td>
-<td>Runs jobs in the background (exclude <code>/b</code> if you want the program to run in a new console)</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><code>nohup</code></td>
-<td>Prevents jobs from stopping</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><code>disown</code></td>
-<td>Keeps jobs running in the background even if you close R</td>
-</tr>
-<tr class="even">
-<td><code>taskkill /?</code></td>
-<td></td>
-<td>Help, lists out other commands</td>
-</tr>
-</tbody>
-</table>
-<p>To kill a task in Windows, you can also go to Task Manager &gt; More details &gt; Select your desired app &gt; Click on End Task.</p>
-</section>
-<section id="running-big-jobs" class="level2" data-number="11.6">
-<h2 data-number="11.6" class="anchored" data-anchor-id="running-big-jobs"><span class="header-section-number">11.6</span> Running big jobs</h2>
-<p>For big data workflows, the concept of “backgrounding” a bash script allows you to start a “job” (i.e.&nbsp;run the script) and leave it overnight to run. At the top level, a bash script (<code>0-run-project.sh</code>) that simply calls the directory-level bash scripts (i.e.&nbsp;<code>0-prep-data.sh</code>, <code>0-run-analysis.sh</code>, <code>0-run-figures.sh</code>, etc.) is a powerful tool to rerun every script in your project. See the included example bash scripts for more details.</p>
-<ul>
-<li><strong>Running Bash Scripts in Background</strong>: Running a long bash script is not trivial. Normally you would run a bash script by opening a terminal and typing something like <code>./run-project.sh</code>. But what if you leave your computer, log out of your server, or close the terminal? Normally, the bash script will exit and fail to complete. To run it in background, type <code>./run-project.sh &amp;; disown</code>. You can see the job running (and CPU utilization) with the command <code>top</code> or <code>ps -v</code> and check your memory with <code>free -h</code>.</li>
-</ul>
-<p>Alternatively, to keep code running in the background even when an SSH connection is broken, you can use <code>tmux</code>. In terminal or gitbash follow the steps below. This <a href="https://medium.com/@jeongwhanchoi/install-tmux-on-osx-and-basics-commands-for-beginners-be22520fd95e">site</a> has useful tips on using <code>tmux</code>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a new tmux session called session_name</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">tmux</span> new <span class="at">-ssession_name</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># run your job of interest</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> CMD BATCH myjob.R <span class="kw">&amp;</span> </span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># check that it is running</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ps</span> <span class="at">-v</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># to exit the tmux session (Mac)</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ex">ctrl</span> + b </span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ex">d</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># to reopen the tmux session to kill the job or </span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># start another job</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ex">tmux</span> attach <span class="at">-tsession_name</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ul>
-<li><p><strong>Deleting Previously Computed Results</strong>: One helpful lesson we’ve learned is that your bash scripts should remove previous results (computed and saved by scripts run at a previous time) so that you never mix results from one run with a previous run. This can happen when an R script errors out before saving its result, and can be difficult to catch because your previously saved result exists (leading you to believe everything ran correctly).</p></li>
-<li><p><strong>Ensuring Things Ran Correctly</strong>: You should check the <code>.Rout</code> files generated by the R scripts run by your bash scripts for errors once things are run. A utility file is include in this repository, called <code>runFileSaveLogs</code>, and is used by the example bash scripts to… run files and save the generated logs. It is an awesome utility and one I definitely recommend using. Before using <code>runFileSaveLogs</code>, it is necessary to put the file in the home working directory. For help and documentation, you can use the command <code>./runFileSaveLogs -h</code>. See example code and example usage for <code>runFileSaveLogs</code> below.</p></li>
-</ul>
-<section id="example-code-for-runfilesavelogs" class="level3" data-number="11.6.1">
-<h3 data-number="11.6.1" class="anchored" data-anchor-id="example-code-for-runfilesavelogs"><span class="header-section-number">11.6.1</span> Example code for <code>runfileSaveLogs</code></h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/env python3</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Type "./runFileSaveLogs -h" for help</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> argparse</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> getpass</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> datetime</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> shutil</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> glob</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pathlib</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Setting working directory to this script's current directory</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>os.chdir(os.path.dirname(os.path.abspath(<span class="va">__file__</span>)))</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Setting up argument parser</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>parser <span class="op">=</span> argparse.ArgumentParser(description<span class="op">=</span><span class="st">'Runs the argument R script(s) - in parallel if specified - and moves the subsequent generated .Rout log files to a timestamped directory.'</span>)</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Function ensuring that the file is valid</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_valid_file(parser, arg):</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> os.path.exists(arg):</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>        parser.error(<span class="st">"The file </span><span class="sc">%s</span><span class="st"> does not exist!"</span> <span class="op">%</span> arg)</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> arg</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Function ensuring that the directory is valid</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_valid_directory(parser, arg):</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> os.path.isdir(arg):</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>        parser.error(<span class="st">"The specified path (</span><span class="sc">%s</span><span class="st">) is not a directory!"</span> <span class="op">%</span> arg)</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> arg</span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Additional arguments that can be added when running runFileSaveLogs</span></span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>parser.add_argument(<span class="st">'-p'</span>, <span class="st">'--parallel'</span>, action<span class="op">=</span><span class="st">'store_true'</span>, <span class="bu">help</span><span class="op">=</span><span class="st">"Runs the argument R scripts in parallel if specified"</span>)</span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>parser.add_argument(<span class="st">"-i"</span>, <span class="st">"--identifier"</span>, <span class="bu">help</span><span class="op">=</span><span class="st">"Adds an identifier to the directory name where this is saved"</span>)</span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>parser.add_argument(<span class="st">'filenames'</span>, nargs<span class="op">=</span><span class="st">'+'</span>, <span class="bu">type</span><span class="op">=</span><span class="kw">lambda</span> x: is_valid_file(parser, x))</span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>args <span class="op">=</span> parser.parse_args()</span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>args_dict <span class="op">=</span> <span class="bu">vars</span>(args)</span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(args_dict)</span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Run given R Scripts</span></span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> filename <span class="kw">in</span> args_dict[<span class="st">"filenames"</span>]:</span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>  system_call <span class="op">=</span> <span class="st">"R CMD BATCH"</span> <span class="op">+</span> <span class="st">" "</span> <span class="op">+</span> filename</span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> args_dict[<span class="st">"parallel"</span>]: </span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>    system_call <span class="op">=</span> <span class="st">"nohup"</span> <span class="op">+</span> <span class="st">" "</span> <span class="op">+</span> system_call <span class="op">+</span> <span class="st">" &amp;"</span></span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>  os.system(system_call)</span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the directory (and any parents) of the log files</span></span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>currentUser <span class="op">=</span> getpass.getuser()</span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>currentTime <span class="op">=</span> datetime.datetime.now().strftime(<span class="st">"%Y-%m-</span><span class="sc">%d</span><span class="st"> %H:%M:%S"</span>)</span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>logDirPrefix <span class="op">=</span> <span class="st">"/home/kaiserData/logs/"</span> <span class="co"># Change to the directory where the logs should be saved</span></span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>logDir <span class="op">=</span> logDirPrefix <span class="op">+</span> currentTime <span class="op">+</span> <span class="st">"-"</span> <span class="op">+</span> currentUser </span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="co"># If specified, adds the identifier to the filename of the log</span></span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> args.identifier <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
-<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>  logDir <span class="op">+=</span> <span class="st">"-"</span> <span class="op">+</span> args.identifier</span>
-<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>logDir <span class="op">+=</span> <span class="st">"/"</span></span>
-<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>pathlib.Path(logDir).mkdir(parents<span class="op">=</span><span class="va">True</span>, exist_ok<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a><span class="co"># Find and move all logs to this new directory</span></span>
-<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>currentLogPaths <span class="op">=</span> glob.glob(<span class="st">'./*.Rout'</span>)</span>
-<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> currentLogPath <span class="kw">in</span> currentLogPaths:</span>
-<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>  filename <span class="op">=</span> currentLogPath.split(<span class="st">"/"</span>)[<span class="op">-</span><span class="dv">1</span>]</span>
-<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>  shutil.move(currentLogPath, logDir <span class="op">+</span> filename)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="example-usage-for-runfilesavelogs" class="level3" data-number="11.6.2">
-<h3 data-number="11.6.2" class="anchored" data-anchor-id="example-usage-for-runfilesavelogs"><span class="header-section-number">11.6.2</span> Example usage for <code>runfileSaveLogs</code></h3>
-<p>This example bash script runs files and generates logs for five scripts in the <code>kaiserflu/3-figures</code> folder. Note that the <code>-i</code> flag is used as an identifier to add <code>figures</code> to the filename of each log.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Copy utility run script into this folder for concision in call</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> ~/kaiserflu/runFileSaveLogs ~/kaiserflu/3-figures/</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Run folder scripts and produce output</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/kaiserflu/3-figures/</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="ex">./runFileSaveLogs</span> <span class="at">-i</span> <span class="st">"figures"</span> <span class="dt">\</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>fig-mean-season-age.R <span class="dt">\</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>fig-monthly-rate.R <span class="dt">\</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>fig-point-estimates-combined.R <span class="dt">\</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>fig-point-estimates.R <span class="dt">\</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>fig-weekly-rate.R</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove copied utility run script</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> runFileSaveLogs</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="what-should-be-pushed-to-github" class="level2" data-number="10.8">
+<h2 data-number="10.8" class="anchored" data-anchor-id="what-should-be-pushed-to-github"><span class="header-section-number">10.8</span> What should be pushed to Github?</h2>
+<p>Never push .Rout files! If someone else runs an R script and creates an .Rout file at the same time and both of you try to push to github, it is incredibly difficult to reconcile these two logs. If you run logs, keep them on your own system or (preferably) set up a shared directory where all logs are name and date timestamped.</p>
+<p>There is a standardized <code>.gitignore</code> for <code>R</code> which you <a href="https://github.com/github/gitignore/blob/master/R.gitignore">can download</a> and add to your project. This ensures you’re not committing log files or things that would otherwise best be left ignored to GitHub. This is a <a href="https://www.tidyverse.org/articles/2017/12/workflow-vs-script/">great discussion of project-oriented workflows</a>, extolling the virtues of a self-contained, portable projects, for your reference.</p>
 
 
-</section>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-githubdesktop" class="csl-entry" role="listitem">
+<span>“GitHub Desktop.”</span> n.d. GitHub. <a href="https://desktop.github.com/">https://desktop.github.com/</a>.
+</div>
+<div id="ref-gitfixum" class="csl-entry" role="listitem">
+Robertson, Seth. n.d. <span>“On Undoing, Fixing, or Removing Commits in Git.”</span> <a href="https://sethrobertson.github.io/GitFixUm/fixup.html">https://sethrobertson.github.io/GitFixUm/fixup.html</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -1247,13 +1177,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./09-github.html" class="pagination-link" aria-label="Github">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Github</span></span>
+      <a href="./data-masking.html" class="pagination-link" preview-toc-changed aria-label="Data masking">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data masking</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./11-reproducible-environments.html" class="pagination-link" aria-label="Reproducible Environments">
-        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Reproducible Environments</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./unix.html" class="pagination-link" preview-toc-changed aria-label="Unix">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Unix</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1262,4 +1192,4 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/10-unix.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/10-unix.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/github.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/github.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
