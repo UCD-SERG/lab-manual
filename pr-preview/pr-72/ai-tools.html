@@ -20,7 +20,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -410,6 +465,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Resources</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -425,13 +486,16 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#attribution-of-sources" id="toc-attribution-of-sources" class="nav-link" data-scroll-target="#attribution-of-sources"><span class="header-section-number">16.3</span> Attribution of sources</a></li>
   <li><a href="#coding-agents" id="toc-coding-agents" class="nav-link" data-scroll-target="#coding-agents"><span class="header-section-number">16.4</span> Coding Agents</a>
   <ul class="collapse">
-  <li><a href="#how-to-work-with-coding-agents" id="toc-how-to-work-with-coding-agents" class="nav-link" data-scroll-target="#how-to-work-with-coding-agents"><span class="header-section-number">16.4.1</span> How to Work with Coding Agents</a></li>
-  <li><a href="#benefits-and-hazards" id="toc-benefits-and-hazards" class="nav-link" data-scroll-target="#benefits-and-hazards"><span class="header-section-number">16.4.2</span> Benefits and Hazards</a></li>
-  <li><a href="#best-practices-for-safe-and-successful-use" id="toc-best-practices-for-safe-and-successful-use" class="nav-link" data-scroll-target="#best-practices-for-safe-and-successful-use"><span class="header-section-number">16.4.3</span> Best Practices for Safe and Successful Use</a></li>
-  <li><a href="#firewall-and-network-configuration" id="toc-firewall-and-network-configuration" class="nav-link" data-scroll-target="#firewall-and-network-configuration"><span class="header-section-number">16.4.4</span> Firewall and Network Configuration</a></li>
-  <li><a href="#when-to-use-a-coding-agent" id="toc-when-to-use-a-coding-agent" class="nav-link" data-scroll-target="#when-to-use-a-coding-agent"><span class="header-section-number">16.4.5</span> When to use a coding agent</a></li>
-  <li><a href="#editing-with-.docx-files" id="toc-editing-with-.docx-files" class="nav-link" data-scroll-target="#editing-with-.docx-files"><span class="header-section-number">16.4.6</span> Editing with <code>.docx</code> files</a></li>
+  <li><a href="#what-are-ai-coding-agents" id="toc-what-are-ai-coding-agents" class="nav-link" data-scroll-target="#what-are-ai-coding-agents"><span class="header-section-number">16.4.1</span> What are AI coding agents?</a></li>
+  <li><a href="#how-to-work-with-coding-agents" id="toc-how-to-work-with-coding-agents" class="nav-link" data-scroll-target="#how-to-work-with-coding-agents"><span class="header-section-number">16.4.2</span> How to Work with Coding Agents</a></li>
+  <li><a href="#benefits-and-hazards" id="toc-benefits-and-hazards" class="nav-link" data-scroll-target="#benefits-and-hazards"><span class="header-section-number">16.4.3</span> Benefits and Hazards</a></li>
+  <li><a href="#best-practices-for-safe-and-successful-use" id="toc-best-practices-for-safe-and-successful-use" class="nav-link" data-scroll-target="#best-practices-for-safe-and-successful-use"><span class="header-section-number">16.4.4</span> Best Practices for Safe and Successful Use</a></li>
+  <li><a href="#firewall-and-network-configuration" id="toc-firewall-and-network-configuration" class="nav-link" data-scroll-target="#firewall-and-network-configuration"><span class="header-section-number">16.4.5</span> Firewall and Network Configuration</a></li>
+  <li><a href="#when-to-use-a-coding-agent" id="toc-when-to-use-a-coding-agent" class="nav-link" data-scroll-target="#when-to-use-a-coding-agent"><span class="header-section-number">16.4.6</span> When to use a coding agent</a></li>
+  <li><a href="#editing-with-.docx-files" id="toc-editing-with-.docx-files" class="nav-link" data-scroll-target="#editing-with-.docx-files"><span class="header-section-number">16.4.7</span> Editing with <code>.docx</code> files</a></li>
   </ul></li>
+  <li><a href="#copilot-instructions-for-this-repository" id="toc-copilot-instructions-for-this-repository" class="nav-link" data-scroll-target="#copilot-instructions-for-this-repository"><span class="header-section-number">16.5</span> Copilot Instructions for this Repository</a></li>
+  <li><a href="#further-readingviewing" id="toc-further-readingviewing" class="nav-link" data-scroll-target="#further-readingviewing"><span class="header-section-number">17.6</span> Further reading/viewing</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/ai-tools.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/ai-tools.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -439,7 +503,7 @@ ul.task-list li input[type="checkbox"] {
 <main class="content" id="quarto-document-content">
 <div class="preview-home-changes-banner">
     <p style="margin: 0;">
-        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="resources.html">18. &nbsp; <span class="chapter-title">Resources</span></a>, <a href="unix.html">11. &nbsp; <span class="chapter-title">Unix</span></span></a>, <a href="coding-style.html">7. &nbsp; <span class="chapter-title">R Code Style</span></span></a>, <a href="reproducibility.html">4. &nbsp; <span class="chapter-title">Reproducibility</span></a>, <a href="code-publication.html">13. &nbsp; <span class="chapter-title">Code Publication</span></a>, <a href="checklists.html">17. &nbsp; <span class="chapter-title">Checklists</span></a>, <a href="data-publication.html">14. &nbsp; <span class="chapter-title">Data Publication</span></a>, <a href="coding-practices.html">6. &nbsp; <span class="chapter-title">R Coding Practices</span></span></a>, <a href="slurm.html">15. &nbsp; <span class="chapter-title">High-performance computing (HPC)</span></span></a>, <a href="communication.html">3. &nbsp; <span class="chapter-title">Communication and coordination</span></a>, <a href="culture-and-conduct.html">2. &nbsp; <span class="chapter-title">Culture and conduct</span></a>, <a href="code-repositories.html">5. &nbsp; <span class="chapter-title">Code repositories</span></a>, <a href="ai-tools.html">16. &nbsp; <span class="chapter-title">Working with AI</span></a>, <a href="data-masking.html">9. &nbsp; <span class="chapter-title">Data masking</span></a>, <a href="github.html">10. &nbsp; <span class="chapter-title">Github</span></span></a>, <a href="big-data.html">8. &nbsp; <span class="chapter-title">Big data</span></a>, <a href="reproducible-environments.html">12. &nbsp; <span class="chapter-title">Reproducible Environments</span></a>
+        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="resources.html">18. &nbsp; <span class="chapter-title">Resources</span></a>, <a href="unix.html">11. &nbsp; <span class="chapter-title">Unix</span></span></a>, <a href="coding-style.html">7. &nbsp; <span class="chapter-title">R Code Style</span></span></a>, <a href="reproducibility.html">4. &nbsp; <span class="chapter-title">Reproducibility</span></a>, <a href="code-publication.html">13. &nbsp; <span class="chapter-title">Code Publication</span></a>, <a href="checklists.html">17. &nbsp; <span class="chapter-title">Checklists</span></a>, <a href="data-publication.html">14. &nbsp; <span class="chapter-title">Data Publication</span></a>, <a href="coding-practices.html">6. &nbsp; <span class="chapter-title">R Coding Practices</span></span></a>, <a href="slurm.html">15. &nbsp; <span class="chapter-title">High-performance computing (HPC)</span></span></a>, <a href="communication.html">3. &nbsp; <span class="chapter-title">Communication and coordination</span></a>, <a href="culture-and-conduct.html">2. &nbsp; <span class="chapter-title">Culture and conduct</span></a>, <a href="code-repositories.html">5. &nbsp; <span class="chapter-title">Code repositories</span></a>, <a href="ai-tools.html">16. &nbsp; <span class="chapter-title">Working with AI</span></a>, <a href="references.html">references</a>, <a href="data-masking.html">9. &nbsp; <span class="chapter-title">Data masking</span></a>, <a href="github.html">10. &nbsp; <span class="chapter-title">Github</span></span></a>, <a href="big-data.html">8. &nbsp; <span class="chapter-title">Big data</span></a>, <a href="reproducible-environments.html">12. &nbsp; <span class="chapter-title">Reproducible Environments</span></a>
         <br>
         <strong>📄 DOCX with tracked changes:</strong> <a href="UCD-SeRG-Lab-Manual-tracked-changes.docx" download>Download UCD-SeRG-Lab-Manual-tracked-changes.docx</a>
         <br>
@@ -519,12 +583,35 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="coding-agents" class="level2" data-number="16.4">
 <h2 data-number="16.4" class="anchored" data-anchor-id="coding-agents"><span class="header-section-number">16.4</span> Coding Agents</h2>
-<p>We recommend using <strong><a href="https://github.com/features/copilot/agents">Coding Agents</a></strong> (<a href="https://en.wikipedia.org/wiki/AI_agent">AI agents</a> specialized for coding) for AI-assisted coding.</p>
-<section id="how-to-work-with-coding-agents" class="level3" data-number="16.4.1">
-<h3 data-number="16.4.1" class="anchored" data-anchor-id="how-to-work-with-coding-agents"><span class="header-section-number">16.4.1</span> How to Work with Coding Agents</h3>
+<p>We recommend working with <strong><a href="https://github.com/features/copilot/agents">AI coding agents</a></strong> to <a href="https://en.wikipedia.org/wiki/AI-assisted_software_development">help you code</a>.</p>
+<section id="what-are-ai-coding-agents" class="level3" data-number="16.4.1">
+<h3 data-number="16.4.1" class="anchored" data-anchor-id="what-are-ai-coding-agents"><span class="header-section-number">16.4.1</span> What are AI coding agents?</h3>
+<p>AI coding agents are <a href="https://en.wikipedia.org/wiki/AI_agent">AI agents</a> specialized for coding. They differ from other AI coding tools in important ways:</p>
+<p><strong>Compared to inline coding assistants</strong> (like traditional autocomplete), coding agents work autonomously rather than providing suggestions as you type. They can navigate entire codebases, execute commands, and complete multi-step tasks without constant human guidance.</p>
+<p><strong>Compared to AI chatbots</strong> (like ChatGPT or Claude), coding agents don’t just generate code snippets in conversation—they actively interact with your development environment. While chatbots require you to copy code from a chat window and manually integrate it into your project, coding agents directly read your codebase, make changes to files, run tests and build commands, and create pull requests with their proposed changes. Chatbots are conversational assistants; coding agents are autonomous development tools.</p>
+<p>Coding agents are autonomous software programs that can:</p>
+<ul>
+<li><strong>Understand and execute complex tasks</strong>: Coding agents can interpret natural language instructions and break them down into actionable development tasks</li>
+<li><strong>Navigate and modify codebases</strong>: They can read, understand, and edit multiple files across a repository to implement features or fix bugs</li>
+<li><strong>Run tools and commands</strong>: Coding agents can execute build commands, run tests, use linters, and interact with development tools</li>
+<li><strong>Make decisions autonomously</strong>: They can plan their approach, make technical decisions, and adjust their strategy based on results</li>
+<li><strong>Work iteratively</strong>: Coding agents can test their changes, identify issues, and refine their solutions through multiple iterations</li>
+<li><strong>Create comprehensive solutions</strong>: They can implement complete features that span multiple files, including code, tests, and documentation</li>
+</ul>
+<p>Coding agents operate in isolated environments where they can safely experiment and validate changes before proposing them. This allows them to work more independently than inline coding assistants, which require step-by-step human direction. The agent workflow typically involves analyzing requirements, planning an implementation, making changes, testing those changes, and creating a pull request with the results.</p>
+<p>While coding agents can handle substantial development tasks, they still require human oversight and review. The human developer remains responsible for:</p>
+<ul>
+<li>Reviewing the agent’s work</li>
+<li>Ensuring the solution meets requirements</li>
+<li>Verifying code quality and security</li>
+<li>Making the final decision to merge changes</li>
+</ul>
+</section>
+<section id="how-to-work-with-coding-agents" class="level3" data-number="16.4.2">
+<h3 data-number="16.4.2" class="anchored" data-anchor-id="how-to-work-with-coding-agents"><span class="header-section-number">16.4.2</span> How to Work with Coding Agents</h3>
 <p>GitHub Copilot coding agents can be used in several ways to automate development tasks:</p>
-<section id="assigning-issues-to-copilot" class="level4" data-number="16.4.1.1">
-<h4 data-number="16.4.1.1" class="anchored" data-anchor-id="assigning-issues-to-copilot"><span class="header-section-number">16.4.1.1</span> Assigning Issues to Copilot</h4>
+<section id="assigning-issues-to-copilot" class="level4" data-number="16.4.2.1">
+<h4 data-number="16.4.2.1" class="anchored" data-anchor-id="assigning-issues-to-copilot"><span class="header-section-number">16.4.2.1</span> Assigning Issues to Copilot</h4>
 <p>You can assign GitHub Issues directly to <code>@copilot</code> just like you would assign to a human collaborator:</p>
 <ol type="1">
 <li><p><strong>On GitHub.com</strong>: Navigate to an issue and assign it to Copilot in the assignees section</p></li>
@@ -532,8 +619,8 @@ ul.task-list li input[type="checkbox"] {
 <li><p><strong>From Copilot Chat</strong>: Delegate tasks to Copilot directly from the chat interface in supported editors</p></li>
 </ol>
 </section>
-<section id="the-agent-workflow" class="level4" data-number="16.4.1.2">
-<h4 data-number="16.4.1.2" class="anchored" data-anchor-id="the-agent-workflow"><span class="header-section-number">16.4.1.2</span> The Agent Workflow</h4>
+<section id="the-agent-workflow" class="level4" data-number="16.4.2.2">
+<h4 data-number="16.4.2.2" class="anchored" data-anchor-id="the-agent-workflow"><span class="header-section-number">16.4.2.2</span> The Agent Workflow</h4>
 <p>Once assigned an issue, the coding agent follows an autonomous workflow:</p>
 <ol type="1">
 <li><p><strong>Analysis</strong>: Reviews the issue description, related discussions, repository instructions, and codebase context</p></li>
@@ -543,8 +630,8 @@ ul.task-list li input[type="checkbox"] {
 <li><p><strong>Review and Iteration</strong>: You review the PR and can request changes; the agent will iterate based on your feedback</p></li>
 </ol>
 </section>
-<section id="example-this-document" class="level4" data-number="16.4.1.3">
-<h4 data-number="16.4.1.3" class="anchored" data-anchor-id="example-this-document"><span class="header-section-number">16.4.1.3</span> Example: This Document</h4>
+<section id="example-this-document" class="level4" data-number="16.4.2.3">
+<h4 data-number="16.4.2.3" class="anchored" data-anchor-id="example-this-document"><span class="header-section-number">16.4.2.3</span> Example: This Document</h4>
 <p>This very section you’re reading was created through the coding agent workflow:</p>
 <ol type="1">
 <li><p><strong>Issue created</strong>: <a href="https://github.com/UCD-SERG/lab-manual/issues/42">Issue #42</a> requested adding discussion about benefits and hazards of coding agents, including a Matrix film connection and best practices</p></li>
@@ -555,8 +642,8 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 <p>This demonstrates the full lifecycle of working with a coding agent on a real documentation task.</p>
 </section>
-<section id="collaborating-with-coding-agents" class="level4" data-number="16.4.1.4">
-<h4 data-number="16.4.1.4" class="anchored" data-anchor-id="collaborating-with-coding-agents"><span class="header-section-number">16.4.1.4</span> Collaborating with Coding Agents</h4>
+<section id="collaborating-with-coding-agents" class="level4" data-number="16.4.2.4">
+<h4 data-number="16.4.2.4" class="anchored" data-anchor-id="collaborating-with-coding-agents"><span class="header-section-number">16.4.2.4</span> Collaborating with Coding Agents</h4>
 <p>Between iterations of asking coding agents to extend a PR, human collaborators can also push changes directly to the PR branch. This allows for a collaborative workflow where both humans and agents contribute:</p>
 <ul>
 <li><p><strong>Human contributions</strong>: You can make quick fixes, add content, or refine the agent’s work by pushing commits to the same branch</p></li>
@@ -570,8 +657,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p><strong>Best practice</strong>: Wait for the agent to complete its current iteration (indicated by the PR being updated) before pushing your own changes to the branch. Then assign new work to the agent for the next iteration.</p>
 </section>
-<section id="directly-prompting-for-pull-requests" class="level4" data-number="16.4.1.5">
-<h4 data-number="16.4.1.5" class="anchored" data-anchor-id="directly-prompting-for-pull-requests"><span class="header-section-number">16.4.1.5</span> Directly Prompting for Pull Requests</h4>
+<section id="directly-prompting-for-pull-requests" class="level4" data-number="16.4.2.5">
+<h4 data-number="16.4.2.5" class="anchored" data-anchor-id="directly-prompting-for-pull-requests"><span class="header-section-number">16.4.2.5</span> Directly Prompting for Pull Requests</h4>
 <p>You can also prompt Copilot to create pull requests without first creating an issue:</p>
 <ul>
 <li>Use Copilot Chat in your editor to describe the changes you want</li>
@@ -579,8 +666,8 @@ ul.task-list li input[type="checkbox"] {
 <li>This is useful for quick fixes or well-defined tasks</li>
 </ul>
 </section>
-<section id="important-safeguards" class="level4" data-number="16.4.1.6">
-<h4 data-number="16.4.1.6" class="anchored" data-anchor-id="important-safeguards"><span class="header-section-number">16.4.1.6</span> Important Safeguards</h4>
+<section id="important-safeguards" class="level4" data-number="16.4.2.6">
+<h4 data-number="16.4.2.6" class="anchored" data-anchor-id="important-safeguards"><span class="header-section-number">16.4.2.6</span> Important Safeguards</h4>
 <ul>
 <li><strong>Human approval required</strong>: Coding agents cannot merge their own changes</li>
 <li><strong>Branch restrictions</strong>: Agents can only push to their own branches (e.g., <code>copilot/*</code>)</li>
@@ -589,37 +676,31 @@ ul.task-list li input[type="checkbox"] {
 <p>For detailed instructions, see <a href="https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent">GitHub Copilot coding agent documentation</a>.</p>
 </section>
 </section>
-<section id="benefits-and-hazards" class="level3" data-number="16.4.2">
-<h3 data-number="16.4.2" class="anchored" data-anchor-id="benefits-and-hazards"><span class="header-section-number">16.4.2</span> Benefits and Hazards</h3>
-<p>Like the <a href="https://en.wikipedia.org/wiki/Agent_(The_Matrix)">Agents in the Matrix films</a>, coding agents are powerful programs; coding agents can manipulate code, including their own configuration files. They can work on your behalf, but they require careful oversight and control to ensure they serve your interests.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="assets/images/matrix-agents.png" class="img-fluid figure-img" alt="Three agents in suits and sunglasses from the Matrix films"></p>
-<figcaption>Agents from the Matrix films: powerful programs that require careful oversight</figcaption>
-</figure>
-</div>
+<section id="benefits-and-hazards" class="level3" data-number="16.4.3">
+<h3 data-number="16.4.3" class="anchored" data-anchor-id="benefits-and-hazards"><span class="header-section-number">16.4.3</span> Benefits and Hazards</h3>
+<p>Coding agents are powerful programs that can work autonomously. They create pull requests that propose changes to the code in our repositories, potentially including their own configuration files and our automated workflows. They can work powerfully on our behalf, but they require careful oversight and control to ensure they serve our interests and that we understand the consequences of their actions.</p>
 <p>Coding agents offer several advantages:</p>
 <ul>
-<li><strong>Built-in transparency</strong>: Coding agents create a clear record of their role in your work through commit history and code suggestions</li>
-<li><strong>Context-aware suggestions</strong>: Coding agents understand your codebase and can make contextually relevant suggestions</li>
-<li><strong>Integration with version control</strong>: Using coding agents within GitHub ensures that AI-assisted changes are tracked alongside all other code changes</li>
-<li><strong>Interactive workflow</strong>: Coding agents’ interactive nature encourages you to review and modify suggestions rather than blindly accepting them</li>
-<li><strong>Accelerated development</strong>: Coding agents can help you write boilerplate code, refactor existing code, and implement common patterns more quickly</li>
-<li><strong>Learning opportunities</strong>: Coding agents can suggest approaches or techniques you may not have considered, helping you expand your coding knowledge</li>
+<li><p><strong>Built-in transparency</strong>: Coding agents create a clear record of their role in your work through commit history and code suggestions</p></li>
+<li><p><strong>Context-aware suggestions</strong>: Coding agents understand your codebase and can make contextually relevant suggestions</p></li>
+<li><p><strong>Integration with version control</strong>: Using coding agents within GitHub ensures that AI-assisted changes are tracked alongside all other code changes</p></li>
+<li><p><strong>Interactive workflow</strong>: Coding agents’ interactive nature encourages you to review and modify suggestions rather than blindly accepting them</p></li>
+<li><p><strong>Accelerated development</strong>: Coding agents can help you write boilerplate code, refactor existing code, and implement common patterns more quickly</p></li>
+<li><p><strong>Learning opportunities</strong>: Coding agents can suggest approaches or techniques you may not have considered, helping you expand your coding knowledge</p></li>
 </ul>
 <p>However, coding agents also come with significant hazards:</p>
 <ul>
-<li><strong>Over-reliance</strong>: Depending too heavily on coding agents can atrophy your coding skills and understanding</li>
-<li><strong>Subtle bugs</strong>: AI-generated code may contain logic errors that are not immediately obvious</li>
-<li><strong>Security vulnerabilities</strong>: Coding agents may introduce insecure patterns or fail to follow security best practices</li>
-<li><strong>Inappropriate solutions</strong>: AI may suggest solutions that work but are not optimal for your specific research context or constraints</li>
-<li><strong>Hidden biases</strong>: Coding agents may perpetuate coding patterns or approaches that reflect biases in their training data</li>
-<li><strong>False confidence</strong>: Well-formatted, professional-looking code from AI can mask underlying problems and reduce critical review</li>
-<li><strong>Workflow manipulation risks</strong>: Coding agents that modify CI/CD workflows (<code>.github/workflows/*.yml</code>) or setup configurations can inadvertently or maliciously compromise repository security, expose secrets, or execute harmful commands</li>
+<li><p><strong>Over-reliance</strong>: Depending too heavily on coding agents can atrophy your coding skills and understanding</p></li>
+<li><p><strong>Subtle bugs</strong>: AI-generated code may contain logic errors that are not immediately obvious</p></li>
+<li><p><strong>Security vulnerabilities</strong>: Coding agents may introduce insecure patterns or fail to follow security best practices</p></li>
+<li><p><strong>Inappropriate solutions</strong>: AI may suggest solutions that work but are not optimal for your specific research context or constraints</p></li>
+<li><p><strong>Hidden biases</strong>: Coding agents may perpetuate coding patterns or approaches that reflect biases in their training data</p></li>
+<li><p><strong>False confidence</strong>: Well-formatted, professional-looking code from AI can mask underlying problems and reduce critical review</p></li>
+<li><p><strong>Workflow manipulation risks</strong>: Coding agents that modify CI/CD workflows (<code>.github/workflows/*.yml</code>) or setup configurations can inadvertently or maliciously compromise repository security, expose secrets, or execute harmful commands</p></li>
 </ul>
 </section>
-<section id="best-practices-for-safe-and-successful-use" class="level3" data-number="16.4.3">
-<h3 data-number="16.4.3" class="anchored" data-anchor-id="best-practices-for-safe-and-successful-use"><span class="header-section-number">16.4.3</span> Best Practices for Safe and Successful Use</h3>
+<section id="best-practices-for-safe-and-successful-use" class="level3" data-number="16.4.4">
+<h3 data-number="16.4.4" class="anchored" data-anchor-id="best-practices-for-safe-and-successful-use"><span class="header-section-number">16.4.4</span> Best Practices for Safe and Successful Use</h3>
 <p>To work with coding agents safely and successfully:</p>
 <ol type="1">
 <li><p><strong>Maintain active supervision</strong>: Never assume AI-generated code is correct. Review every line critically.</p></li>
@@ -653,11 +734,11 @@ ul.task-list li input[type="checkbox"] {
 <p>When using coding agents, work interactively with the AI suggestions: review, modify, and test them rather than accepting them wholesale. This interactive approach helps ensure code quality and deepens your understanding of the code.</p>
 <p>Remember: AI tools are assistants, not replacements for your expertise and judgment. The quality and correctness of your work remains your responsibility.</p>
 </section>
-<section id="firewall-and-network-configuration" class="level3" data-number="16.4.4">
-<h3 data-number="16.4.4" class="anchored" data-anchor-id="firewall-and-network-configuration"><span class="header-section-number">16.4.4</span> Firewall and Network Configuration</h3>
+<section id="firewall-and-network-configuration" class="level3" data-number="16.4.5">
+<h3 data-number="16.4.5" class="anchored" data-anchor-id="firewall-and-network-configuration"><span class="header-section-number">16.4.5</span> Firewall and Network Configuration</h3>
 <p>Coding agents require specific network access to function properly. If a coding agent is running behind a corporate firewall or on a restricted network, you may need to configure allowlists to enable coding agent functionality.</p>
-<section id="built-in-agent-firewall" class="level4" data-number="16.4.4.1">
-<h4 data-number="16.4.4.1" class="anchored" data-anchor-id="built-in-agent-firewall"><span class="header-section-number">16.4.4.1</span> Built-in Agent Firewall</h4>
+<section id="built-in-agent-firewall" class="level4" data-number="16.4.5.1">
+<h4 data-number="16.4.5.1" class="anchored" data-anchor-id="built-in-agent-firewall"><span class="header-section-number">16.4.5.1</span> Built-in Agent Firewall</h4>
 <p>Coding agents run in a GitHub Actions environment with a built-in firewall that limits internet access by default. This firewall helps protect against:</p>
 <ul>
 <li>Data exfiltration</li>
@@ -673,8 +754,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>For the complete list of allowed hosts, see the <a href="https://docs.github.com/en/copilot/reference/copilot-allowlist-reference">Copilot allowlist reference</a>.</p>
 </section>
-<section id="customizing-agent-firewall-settings" class="level4" data-number="16.4.4.2">
-<h4 data-number="16.4.4.2" class="anchored" data-anchor-id="customizing-agent-firewall-settings"><span class="header-section-number">16.4.4.2</span> Customizing Agent Firewall Settings</h4>
+<section id="customizing-agent-firewall-settings" class="level4" data-number="16.4.5.2">
+<h4 data-number="16.4.5.2" class="anchored" data-anchor-id="customizing-agent-firewall-settings"><span class="header-section-number">16.4.5.2</span> Customizing Agent Firewall Settings</h4>
 <p>In your repository’s “Coding agent” settings page, you can:</p>
 <ul>
 <li>Add custom hosts to the allowlist (for internal dependencies or additional registries)</li>
@@ -685,13 +766,13 @@ ul.task-list li input[type="checkbox"] {
 <p>For more information, see <a href="https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-firewall">Customizing or disabling the firewall for GitHub Copilot coding agent</a>.</p>
 </section>
 </section>
-<section id="when-to-use-a-coding-agent" class="level3" data-number="16.4.5">
-<h3 data-number="16.4.5" class="anchored" data-anchor-id="when-to-use-a-coding-agent"><span class="header-section-number">16.4.5</span> When to use a coding agent</h3>
+<section id="when-to-use-a-coding-agent" class="level3" data-number="16.4.6">
+<h3 data-number="16.4.6" class="anchored" data-anchor-id="when-to-use-a-coding-agent"><span class="header-section-number">16.4.6</span> When to use a coding agent</h3>
 <p>Coding agent sessions are currently<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> considered “premium requests”, which are limited resources; see <a href="https://github.com/features/copilot/plans" class="uri">https://github.com/features/copilot/plans</a> for details. So, use coding agents sparingly. Use them for complex changes that would be difficult or time-consuming for you to complete by hand. Coding agents also take time to get configured for work, every time you make a request. See <a href="https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-environment#preinstalling-tools-or-dependencies-in-copilots-environment" class="uri">https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-environment#preinstalling-tools-or-dependencies-in-copilots-environment</a> for ways to reduce that startup time, but it will never be 0. If you can complete the task faster than the coding agent can, you should probably do it yourself.</p>
 <p>Also, the less we practice, the weaker our skills get, and the harder it is for us to supervise the agents and make sure they are actually doing what we want it to do, the way we want it to do it. You should exercise your own coding skills regularly, just like you would for any other skill you want to maintain.</p>
 </section>
-<section id="editing-with-.docx-files" class="level3" data-number="16.4.6">
-<h3 data-number="16.4.6" class="anchored" data-anchor-id="editing-with-.docx-files"><span class="header-section-number">16.4.6</span> Editing with <code>.docx</code> files</h3>
+<section id="editing-with-.docx-files" class="level3" data-number="16.4.7">
+<h3 data-number="16.4.7" class="anchored" data-anchor-id="editing-with-.docx-files"><span class="header-section-number">16.4.7</span> Editing with <code>.docx</code> files</h3>
 <p>GitHub Copilot coding agents can read Microsoft Word (<code>.docx</code>) files, including tracked changes and comments. This enables a hybrid editing workflow where:</p>
 <ol type="1">
 <li>Lab members can export Quarto content to Word format for review</li>
@@ -705,9 +786,344 @@ ul.task-list li input[type="checkbox"] {
 <li>Translate edits from Word formatting to appropriate Quarto/markdown syntax</li>
 </ul>
 <p>This approach makes it easier for collaborators who are more comfortable with Word to contribute to the lab manual while maintaining the source files in Quarto format.</p>
-
-
 </section>
+</section>
+<section id="copilot-instructions-for-this-repository" class="level2" data-number="16.5">
+<h2 data-number="16.5" class="anchored" data-anchor-id="copilot-instructions-for-this-repository"><span class="header-section-number">16.5</span> Copilot Instructions for this Repository</h2>
+<p>The <code>.github/copilot-instructions.md</code> file in this repository contains specific instructions and guidelines for GitHub Copilot coding agents when working with the lab manual. This file helps ensure that AI-generated contributions follow the lab’s formatting standards, coding conventions, and documentation practices.</p>
+<p>The copilot instructions file specifies:</p>
+<ul>
+<li>Markdown and Quarto formatting rules (e.g., blank lines before lists, line breaks in prose)</li>
+<li>R code style guidelines (e.g., using native pipe <code>|&gt;</code>, following tidyverse style)</li>
+<li>File organization patterns (e.g., using Quarto includes for modular content)</li>
+<li>How to work with DOCX files for hybrid editing workflows</li>
+<li>Repository-specific best practices</li>
+</ul>
+<p>By having these instructions in <code>.github/copilot-instructions.md</code>, we ensure that coding agents produce consistent, high-quality contributions that align with the lab’s established practices. This reduces the review burden and helps maintain consistency across all contributions to the lab manual, whether made by humans or AI assistants.</p>
+<p>Unfortunately, we can’t render the <code>copilot-instructions.md</code> file as part of this lab manual, because it includes dummy</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>View copilot-instructions.md
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<section id="copilot-instructions-for-ucd-serg-lab-manual" class="level1 callout-body-container callout-body" data-number="17">
+<h1 data-number="17"><span class="header-section-number">17</span> Copilot Instructions for UCD-SeRG Lab Manual</h1>
+<p>This file contains guidelines for GitHub Copilot and other AI assistants when working with the lab manual.</p>
+<section id="markdown-and-quarto-formatting" class="level2" data-number="17.1">
+<h2 data-number="17.1" class="anchored" data-anchor-id="markdown-and-quarto-formatting"><span class="header-section-number">17.1</span> Markdown and Quarto Formatting</h2>
+<section id="talking-about-code" class="level3" data-number="17.1.1">
+<h3 data-number="17.1.1" class="anchored" data-anchor-id="talking-about-code"><span class="header-section-number">17.1.1</span> Talking about code</h3>
+<p>When talking about code in prose sections, use backticks to apply code formatting: for example, <code>dplyr::mutate()</code> When talking about packages, use backticks and curly-braces: for example, <code>{dplyr}</code></p>
+</section>
+<section id="blank-lines-before-lists" class="level3" data-number="17.1.2">
+<h3 data-number="17.1.2" class="anchored" data-anchor-id="blank-lines-before-lists"><span class="header-section-number">17.1.2</span> Blank Lines Before Lists</h3>
+<p><strong>ALWAYS include a blank line before bullet lists and numbered lists</strong> in markdown and Quarto (.qmd) files.</p>
+<p><strong>Correct:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="an">Here are the key points:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>First item</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Second item</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Third item</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Incorrect:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="an">Here are the key points:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>First item</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Second item</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Third item</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This applies to:</p>
+<ul>
+<li>Bullet lists (starting with <code>-</code> or <code>*</code>)</li>
+<li>Numbered lists (starting with <code>1.</code>, <code>2.</code>, etc.)</li>
+<li>Lists in all .qmd files throughout the repository</li>
+</ul>
+</section>
+<section id="line-breaks-in-plain-text" class="level3" data-number="17.1.3">
+<h3 data-number="17.1.3" class="anchored" data-anchor-id="line-breaks-in-plain-text"><span class="header-section-number">17.1.3</span> Line Breaks in Plain Text</h3>
+<p><strong>ALWAYS line-break at the ends of sentences and long phrases in plain-text paragraphs in .qmd files</strong> to avoid long lines.</p>
+<p><strong>Correct:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>When talking about code in prose sections,</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>use backticks to apply code formatting.</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>This helps maintain readability in source files</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>and makes diffs easier to review.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Incorrect:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>When talking about code in prose sections, use backticks to apply code formatting. This helps maintain readability in source files and makes diffs easier to review.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>Improves readability of source .qmd files</li>
+<li>Makes git diffs clearer and easier to review</li>
+<li>Helps identify specific changes in version control</li>
+<li>Prevents horizontal scrolling when editing</li>
+<li>Follows semantic line breaks best practice</li>
+</ul>
+<p><strong>Guidelines:</strong></p>
+<ul>
+<li>Break after complete sentences (at periods)</li>
+<li>Break after long phrases or clauses (at commas or conjunctions)</li>
+<li>Break after approximately 60-80 characters when appropriate</li>
+<li>Keep related short phrases together on one line</li>
+<li>Don’t break in the middle of inline code, links, or formatting</li>
+</ul>
+</section>
+<section id="why-this-matters" class="level3" data-number="17.1.4">
+<h3 data-number="17.1.4" class="anchored" data-anchor-id="why-this-matters"><span class="header-section-number">17.1.4</span> Why This Matters</h3>
+<ul>
+<li>Ensures consistent markdown rendering across different platforms</li>
+<li>Improves readability in both source and rendered forms</li>
+<li>Prevents rendering issues in Quarto books</li>
+<li>Follows markdown best practices</li>
+</ul>
+</section>
+<section id="cross-references-for-figures-and-tables" class="level3" data-number="17.1.5">
+<h3 data-number="17.1.5" class="anchored" data-anchor-id="cross-references-for-figures-and-tables"><span class="header-section-number">17.1.5</span> Cross-References for Figures and Tables</h3>
+<p><strong>ALWAYS use Quarto’s cross-reference system for figures, tables, and other captioned content.</strong> See <a href="https://quarto.org/docs/authoring/cross-references.html">Quarto Cross-References documentation</a> for complete details.</p>
+<p><strong>Required label prefixes:</strong></p>
+<ul>
+<li>Figures: <code>#fig-</code> (e.g., <code>#fig-data-masking</code>, <code>#fig-workflow-diagram</code>)</li>
+<li>Tables: <code>#tbl-</code> (e.g., <code>#tbl-git-commands</code>, <code>#tbl-summary-stats</code>)</li>
+<li>Equations: <code>#eq-</code> (e.g., <code>#eq-regression-model</code>)</li>
+<li>Sections: <code>#sec-</code> (e.g., <code>#sec-introduction</code>) - already in use throughout manual</li>
+<li>Theorems: <code>#thm-</code> (e.g., <code>#thm-central-limit</code>)</li>
+<li>Lemmas: <code>#lem-</code> (e.g., <code>#lem-auxiliary-result</code>)</li>
+<li>Corollaries: <code>#cor-</code> (e.g., <code>#cor-special-case</code>)</li>
+<li>Propositions: <code>#prp-</code> (e.g., <code>#prp-main-result</code>)</li>
+<li>Examples: <code>#exm-</code> (e.g., <code>#exm-simple-case</code>)</li>
+<li>Exercises: <code>#exr-</code> (e.g., <code>#exr-practice-problem</code>)</li>
+</ul>
+<p><strong>For figures (images):</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Caption text](path/to/image.png)</span>{#fig-label}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>For tables (markdown tables):</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Column 1 <span class="pp">|</span> Column 2 <span class="pp">|</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="pp">|----------|----------|</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Data     <span class="pp">|</span> Data     <span class="pp">|</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>: Caption text {#tbl-label}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>For code-generated figures:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-plot-name</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Caption text"</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># R code to generate plot</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>For code-generated tables:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-table-name</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Caption text"</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># R code to generate table</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Referencing in text:</strong></p>
+<ul>
+<li>Figures: <code>@fig-label</code> produces “Figure X”</li>
+<li>Tables: <code>@tbl-label</code> produces “Table X”</li>
+<li>Equations: <code>@eq-label</code> produces “Equation X”</li>
+<li>Sections: <code>@sec-label</code> produces “Section X”</li>
+</ul>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>Automatic numbering of figures, tables, and equations</li>
+<li>Automatic updates when content is reordered</li>
+<li>Clickable cross-references in HTML and PDF output</li>
+<li>Consistent formatting across all output formats</li>
+<li>Better accessibility for screen readers</li>
+</ul>
+</section>
+</section>
+<section id="r-code-style" class="level2" data-number="17.2">
+<h2 data-number="17.2" class="anchored" data-anchor-id="r-code-style"><span class="header-section-number">17.2</span> R Code Style</h2>
+<ul>
+<li>Follow the tidyverse style guide: https://style.tidyverse.org</li>
+<li>Use native pipe <code>|&gt;</code> instead of <code>%&gt;%</code></li>
+<li>Use <code>snake_case</code> for variable and function names</li>
+<li>Use <code>.qmd</code> files exclusively (not <code>.Rmd</code>)</li>
+<li>All R projects should use R package structure</li>
+</ul>
+</section>
+<section id="file-organization" class="level2" data-number="17.3">
+<h2 data-number="17.3" class="anchored" data-anchor-id="file-organization"><span class="header-section-number">17.3</span> File Organization</h2>
+<section id="using-quarto-includes-for-modular-content" class="level3" data-number="17.3.1">
+<h3 data-number="17.3.1" class="anchored" data-anchor-id="using-quarto-includes-for-modular-content"><span class="header-section-number">17.3.1</span> Using Quarto Includes for Modular Content</h3>
+<p><strong>All chapters should use Quarto includes to decompose content into separate files.</strong> This modular approach provides significant benefits for version control, collaboration, and content management.</p>
+<section id="why-use-includes" class="level4" data-number="17.3.1.1">
+<h4 data-number="17.3.1.1" class="anchored" data-anchor-id="why-use-includes"><span class="header-section-number">17.3.1.1</span> Why Use Includes?</h4>
+<ol type="1">
+<li><p><strong>Better Git History</strong>: When sections are reordered, only the main chapter file changes (moving include statements), making it immediately clear that content was reorganized rather than edited. When content is edited, only the specific include file changes. This makes reviews focused and precise.</p></li>
+<li><p><strong>Easier Code Review</strong>: Reviewers can see exactly what changed—either the organization (main file) or the content (include file)—without having to parse through large diffs.</p></li>
+<li><p><strong>Modular Maintenance</strong>: Each section lives in its own file, making it easier to:</p>
+<ul>
+<li>Find and edit specific content</li>
+<li>Reuse sections across chapters if needed</li>
+<li>Work on different sections simultaneously without merge conflicts</li>
+<li>Test and preview individual sections</li>
+</ul></li>
+<li><p><strong>Clear Structure</strong>: The main chapter file becomes a table of contents showing the organization at a glance.</p></li>
+</ol>
+</section>
+<section id="structure-pattern" class="level4" data-number="17.3.1.2">
+<h4 data-number="17.3.1.2" class="anchored" data-anchor-id="structure-pattern"><span class="header-section-number">17.3.1.2</span> Structure Pattern</h4>
+<p><strong>Main chapter file</strong> (e.g., <code>05-coding-practices.qmd</code>):</p>
+<ul>
+<li>Contains the chapter title and introduction</li>
+<li>Contains section headings (##, ###, etc.)</li>
+<li>Uses the <code>include</code> shortcode to pull in content (see <a href="https://quarto.org/docs/authoring/includes.html" class="uri">https://quarto.org/docs/authoring/includes.html</a> for details)</li>
+<li>Shows the organization/outline of the chapter</li>
+</ul>
+<p><strong>Include files</strong> (e.g., <code>05-coding-practices/lab-protocols-for-code-and-data.qmd</code>):</p>
+<ul>
+<li>Stored in a subdirectory matching the chapter name</li>
+<li>Contains only the content for that section (no heading)</li>
+<li>The heading stays in the main chapter file</li>
+<li>Named descriptively using kebab-case</li>
+</ul>
+</section>
+<section id="required-pattern" class="level4" data-number="17.3.1.3">
+<h4 data-number="17.3.1.3" class="anchored" data-anchor-id="required-pattern"><span class="header-section-number">17.3.1.3</span> Required Pattern</h4>
+<p><strong>Always follow this pattern:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Section Heading</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>{{ &lt; include folder/section-name.qmd &gt; }}</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Correct example:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Section heading</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>{{ &lt; include folder/section-name.qmd &gt; }}</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Incorrect (don’t do this):</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>{{ &lt; include folder/section-name.qmd &gt; }}</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The heading must be in the main file, followed by a blank line, then the include statement.</p>
+</section>
+<section id="file-naming-conventions" class="level4" data-number="17.3.1.4">
+<h4 data-number="17.3.1.4" class="anchored" data-anchor-id="file-naming-conventions"><span class="header-section-number">17.3.1.4</span> File Naming Conventions</h4>
+<ul>
+<li>Main chapter files: <code>##-chapter-name.qmd</code> (e.g., <code>05-coding-practices.qmd</code>)</li>
+<li>Subdirectory: <code>##-chapter-name/</code> (matches the main file name)</li>
+<li>Include files: <code>descriptive-section-name.qmd</code> using kebab-case</li>
+<li>Use descriptive names that clearly indicate the content</li>
+<li>Prefix with underscore <code>_</code> for partial/helper files not directly included (e.g., <code>_lintr-summary.qmd</code>)</li>
+</ul>
+</section>
+<section id="git-history-benefits-example" class="level4" data-number="17.3.1.5">
+<h4 data-number="17.3.1.5" class="anchored" data-anchor-id="git-history-benefits-example"><span class="header-section-number">17.3.1.5</span> Git History Benefits Example</h4>
+<p><strong>When reordering sections:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode diff code-with-copy"><code class="sourceCode diff"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="st">-## Object naming</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="va">+## Function calls</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="st">-{{&lt; include demo-folder/section-name.qmd &gt;}}</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="va">+{{&lt; include demo-folder/section-2.qmd &gt;}}</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="st">-## Function calls</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="va">+## Object naming</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="st">-{{&lt; include demo-folder/section-2.qmd &gt;}}</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="va">+{{&lt; include demo-folder/section-name.qmd &gt;}}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This diff clearly shows a reordering (swapping two sections) with no content changes—only the main chapter file changes.</p>
+<p><strong>When editing content:</strong> Only the specific include file (e.g., <code>05-coding-practices/function-calls.qmd</code>) appears in the git diff, making it easy to review the actual content changes without distraction.</p>
+</section>
+<section id="when-to-create-a-new-include-file" class="level4" data-number="17.3.1.6">
+<h4 data-number="17.3.1.6" class="anchored" data-anchor-id="when-to-create-a-new-include-file"><span class="header-section-number">17.3.1.6</span> When to Create a New Include File</h4>
+<p>Create a new include file when:</p>
+<ul>
+<li>Adding a new section to a chapter</li>
+<li>A section becomes long enough to benefit from being in its own file (&gt;20-30 lines)</li>
+<li>Content might be reused elsewhere</li>
+<li>You want to work on a section independently</li>
+</ul>
+</section>
+<section id="migration-strategy" class="level4" data-number="17.3.1.7">
+<h4 data-number="17.3.1.7" class="anchored" data-anchor-id="migration-strategy"><span class="header-section-number">17.3.1.7</span> Migration Strategy</h4>
+<p>When working with chapters that don’t yet use includes:</p>
+<ol type="1">
+<li>Create a subdirectory matching the chapter name</li>
+<li>Extract each section into its own include file</li>
+<li>Update the main chapter file to use includes</li>
+<li>Keep headings in the main file</li>
+<li>Ensure blank lines before include statements</li>
+<li>Test that rendering still works correctly</li>
+</ol>
+</section>
+</section>
+</section>
+<section id="working-with-docx-files" class="level2" data-number="17.4">
+<h2 data-number="17.4" class="anchored" data-anchor-id="working-with-docx-files"><span class="header-section-number">17.4</span> Working with DOCX Files</h2>
+<p>GitHub Copilot can read and process Microsoft Word (.docx) files, which is useful for translating edits made in Word back to Quarto format.</p>
+<p>When working with DOCX files:</p>
+<ul>
+<li><strong>Always examine tracked changes</strong>: Use the <code>view</code> tool to read DOCX files and pay special attention to any tracked changes (insertions, deletions, formatting changes)</li>
+<li><strong>Review comments</strong>: Look for and address any comments in the DOCX file that may provide context or instructions for edits</li>
+<li><strong>Translate edits to Quarto</strong>: When edits have been made in a DOCX file, apply the equivalent changes to the corresponding <code>.qmd</code> files</li>
+<li><strong>Preserve formatting</strong>: Ensure that formatting, citations, and cross-references are properly converted to Quarto/markdown syntax</li>
+<li><strong>Verify completeness</strong>: Check that all edits, including those in tracked changes and comments, have been addressed</li>
+</ul>
+<p>This workflow enables a hybrid editing process where collaborators can make edits in familiar Word format, and Copilot can translate those edits back to the Quarto source files.</p>
+</section>
+<section id="additional-guidelines" class="level2" data-number="17.5">
+<h2 data-number="17.5" class="anchored" data-anchor-id="additional-guidelines"><span class="header-section-number">17.5</span> Additional Guidelines</h2>
+<ul>
+<li>Maintain consistency with existing code style</li>
+<li>Preserve all existing content when refactoring</li>
+<li>Add blank lines before all lists</li>
+<li>Follow the lab’s R package development workflow (as described throughout this repo)</li>
+</ul>
+</section>
+</section>
+</div>
+</div>
+</section>
+<section id="further-readingviewing" class="level2" data-number="17.6">
+<h2 data-number="17.6" class="anchored" data-anchor-id="further-readingviewing"><span class="header-section-number">17.6</span> Further reading/viewing</h2>
+<ul>
+<li><em>I Robot</em> <span class="citation" data-cites="i_robot">(<a href="references.html#ref-i_robot" role="doc-biblioref">Asimov 1950</a>)</span></li>
+<li><em>Dune</em> <span class="citation" data-cites="butlerian_jihad">(<a href="references.html#ref-butlerian_jihad" role="doc-biblioref">Herbert 1965</a>)</span></li>
+<li><span class="citation" data-cites="space_odyssey"><span>“2001: A Space Odyssey”</span> (<a href="references.html#ref-space_odyssey" role="doc-biblioref">1968</a>)</span></li>
+<li><span class="citation" data-cites="terminator"><span>“The Terminator”</span> (<a href="references.html#ref-terminator" role="doc-biblioref">1984</a>)</span></li>
+<li><span class="citation" data-cites="matrix"><span>“The Matrix”</span> (<a href="references.html#ref-matrix" role="doc-biblioref">1999</a>)</span></li>
+<li><span class="citation" data-cites="blade_runner"><span>“Blade Runner”</span> (<a href="references.html#ref-blade_runner" role="doc-biblioref">1982</a>)</span></li>
+<li><span class="citation" data-cites="wargames"><span>“WarGames”</span> (<a href="references.html#ref-wargames" role="doc-biblioref">1983</a>)</span></li>
+<li><em>Ender’s Game</em> <span class="citation" data-cites="enders_game">(<a href="references.html#ref-enders_game" role="doc-biblioref">Card 1985</a>)</span></li>
+<li>“The Humans are Dead” <span class="citation" data-cites="humans_are_dead">(<a href="references.html#ref-humans_are_dead" role="doc-biblioref">Flight of the Conchords 2007</a>)</span></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/images/matrix-agents.png" class="img-fluid figure-img" alt="Three agents in suits and sunglasses from the Matrix films"></p>
+<figcaption><a href="https://en.wikipedia.org/wiki/Agent_(The_Matrix)">Agents</a></figcaption>
+</figure>
+</div>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-space_odyssey" class="csl-entry" role="listitem">
+<span>“2001: A Space Odyssey.”</span> 1968. Film. <a href="https://en.wikipedia.org/wiki/2001:_A_Space_Odyssey_(film)">https://en.wikipedia.org/wiki/2001:_A_Space_Odyssey_(film)</a>.
+</div>
+<div id="ref-i_robot" class="csl-entry" role="listitem">
+Asimov, Isaac. 1950. <span>“I, Robot.”</span> New York: Novel; Gnome Press. <a href="https://search.library.ucdavis.edu/permalink/01UCD_INST/9fle3i/alma990000226350403126">https://search.library.ucdavis.edu/permalink/01UCD_INST/9fle3i/alma990000226350403126</a>.
+</div>
+<div id="ref-blade_runner" class="csl-entry" role="listitem">
+<span>“Blade Runner.”</span> 1982. Film. <a href="https://en.wikipedia.org/wiki/Blade_Runner">https://en.wikipedia.org/wiki/Blade_Runner</a>.
+</div>
+<div id="ref-enders_game" class="csl-entry" role="listitem">
+Card, Orson Scott. 1985. <span>“Ender’s Game.”</span> Novel; Tor Books. <a href="https://en.wikipedia.org/wiki/Ender%27s_Game">https://en.wikipedia.org/wiki/Ender%27s_Game</a>.
+</div>
+<div id="ref-humans_are_dead" class="csl-entry" role="listitem">
+Flight of the Conchords. 2007. <span>“The Humans Are Dead.”</span> Music Video. <a href="https://www.youtube.com/watch?v=B1BdQcJ2ZYY">https://www.youtube.com/watch?v=B1BdQcJ2ZYY</a>.
+</div>
+<div id="ref-butlerian_jihad" class="csl-entry" role="listitem">
+Herbert, Frank. 1965. <span>“Dune.”</span> Novel. <a href="https://en.wikipedia.org/wiki/Dune_(franchise)#Butlerian_Jihad">https://en.wikipedia.org/wiki/Dune_(franchise)#Butlerian_Jihad</a>.
+</div>
+<div id="ref-matrix" class="csl-entry" role="listitem">
+<span>“The Matrix.”</span> 1999. Film. <a href="https://en.wikipedia.org/wiki/The_Matrix">https://en.wikipedia.org/wiki/The_Matrix</a>.
+</div>
+<div id="ref-terminator" class="csl-entry" role="listitem">
+<span>“The Terminator.”</span> 1984. Film. <a href="https://en.wikipedia.org/wiki/The_Terminator">https://en.wikipedia.org/wiki/The_Terminator</a>.
+</div>
+<div id="ref-wargames" class="csl-entry" role="listitem">
+<span>“WarGames.”</span> 1983. Film. <a href="https://en.wikipedia.org/wiki/WarGames">https://en.wikipedia.org/wiki/WarGames</a>.
+</div>
+</div>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>

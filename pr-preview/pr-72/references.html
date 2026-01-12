@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; Reproducibility – UCD-SeRG Lab Manual</title>
+<title>References – UCD-SeRG Lab Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -30,8 +49,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./code-repositories.html" rel="next">
-<link href="./communication.html" rel="prev">
+<link href="./resources.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -250,7 +268,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./reproducibility.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Reproducibility</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">References</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -322,7 +340,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./reproducibility.html" class="sidebar-item-text sidebar-link active" preview-toc-changed>
+  <a href="./reproducibility.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Reproducibility</span></span></a>
   </div>
 </li>
@@ -412,7 +430,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
+  <a href="./references.html" class="sidebar-item-text sidebar-link active" preview-toc-changed>
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -421,22 +439,8 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#what-is-the-reproducibility-crisis" id="toc-what-is-the-reproducibility-crisis" class="nav-link active" data-scroll-target="#what-is-the-reproducibility-crisis"><span class="header-section-number">4.1</span> What is the reproducibility crisis?</a></li>
-  <li><a href="#study-design" id="toc-study-design" class="nav-link" data-scroll-target="#study-design"><span class="header-section-number">4.2</span> Study design</a></li>
-  <li><a href="#register-study-protocols" id="toc-register-study-protocols" class="nav-link" data-scroll-target="#register-study-protocols"><span class="header-section-number">4.3</span> Register study protocols</a></li>
-  <li><a href="#write-and-register-pre-analysis-plans" id="toc-write-and-register-pre-analysis-plans" class="nav-link" data-scroll-target="#write-and-register-pre-analysis-plans"><span class="header-section-number">4.4</span> Write and register pre-analysis plans</a></li>
-  <li><a href="#create-reproducible-workflows" id="toc-create-reproducible-workflows" class="nav-link" data-scroll-target="#create-reproducible-workflows"><span class="header-section-number">4.5</span> Create reproducible workflows</a></li>
-  <li><a href="#process-and-analyze-data-with-internal-replication-and-masking" id="toc-process-and-analyze-data-with-internal-replication-and-masking" class="nav-link" data-scroll-target="#process-and-analyze-data-with-internal-replication-and-masking"><span class="header-section-number">4.6</span> Process and analyze data with internal replication and masking</a></li>
-  <li><a href="#use-reporting-checklists-with-manuscripts" id="toc-use-reporting-checklists-with-manuscripts" class="nav-link" data-scroll-target="#use-reporting-checklists-with-manuscripts"><span class="header-section-number">4.7</span> Use reporting checklists with manuscripts</a></li>
-  <li><a href="#publish-preprints" id="toc-publish-preprints" class="nav-link" data-scroll-target="#publish-preprints"><span class="header-section-number">4.8</span> Publish preprints</a></li>
-  <li><a href="#publish-data-when-possible-and-replication-scripts" id="toc-publish-data-when-possible-and-replication-scripts" class="nav-link" data-scroll-target="#publish-data-when-possible-and-replication-scripts"><span class="header-section-number">4.9</span> Publish data (when possible) and replication scripts</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/reproducibility.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/reproducibility.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -454,7 +458,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Reproducibility</span></h1>
+<h1 class="title">References</h1>
 </div>
 
 
@@ -474,7 +478,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="preview-combined-banner">
     <p style="margin: 0;">
-        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~1% of content changed).
+        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~4% of content changed).
         <br>
         <strong>🎨 Highlighting Legend:</strong> 
         <mark class="preview-text-changed" style="display: inline; padding: 1px 3px;">Modified text (yellow)</mark> shows changed words/phrases with tooltips of original text, 
@@ -483,91 +487,44 @@ ul.task-list li input[type="checkbox"] {
     </p>
 </div>
 
-<p>Adapted by UCD-SeRG team from <a href="https://jadebc.github.io/lab-manual/reproducibility.html">original by Jade Benjamin-Chung</a></p>
-<p>Our lab adopts the following practices to maximize the reproducibility of our work.</p>
-<ol type="1">
-<li>Design studies with appropriate methodology and adherence to best practices in epidemiology and biostatistics</li>
-<li>Register study protocols</li>
-<li>Write and register pre-analysis plans</li>
-<li>Create reproducible workflows</li>
-<li>Process and analyze data with internal replication and masking</li>
-<li>Use reporting checklists with manuscripts</li>
-<li>Publish preprints</li>
-<li>Publish data (when possible) and replication scripts</li>
-</ol>
-<section id="what-is-the-reproducibility-crisis" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="what-is-the-reproducibility-crisis"><span class="header-section-number">4.1</span> What is the reproducibility crisis?</h2>
-<p>In the past decade, an increasing number of studies have found that published study findings could not be reproduced. Researchers found that it was not possible to reproduce estimates from published studies: 1) with the same data and same or similar code and 2) with newly collected data using the same (or similar) study design. These “failures” of reproducibility were frequent enough and broad enough in scope, occurring across a range of disciplines (epidemiology, psychology, economics, and others) to be deeply troubling. Program and policy decisions based on erroneous research findings could lead to wasted resources, and at worst, could harm intended beneficiaries. This crisis has motivated new practices in reproducibility, transparency, and openness. Our lab is committed to adopting these best practices, and much of the remainder of the lab manual focuses on how to do so.</p>
-<p>Recommended readings on the “reproducibility crisis”:</p>
-<ul>
-<li><p>Nuzzo R. How scientists fool themselves – and how they can stop. 2015. <a href="">https://www.nature.com/articles/526182a</a></p></li>
-<li><p>Stoddart C. Is there a reproducibility crisis in science? 2016. <a href="https://www.nature.com/articles/d41586-019-00067-3">https://www.nature.com/articles/d41586-019-00067-3</a></p></li>
-<li><p>Munafo MR, et al.&nbsp;A manifesto for reproducible science. <em>Nature Human Behavior</em> 2017 <a href="http://dx.doi.org/10.1038/s41562-016-0021">http://dx.doi.org/10.1038/s41562-016-0021</a></p></li>
-</ul>
-</section>
-<section id="study-design" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="study-design"><span class="header-section-number">4.2</span> Study design</h2>
-<p>Appropriate study design is beyond the scope of this lab manual and is something trainees develop through their coursework and mentoring.</p>
-</section>
-<section id="register-study-protocols" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="register-study-protocols"><span class="header-section-number">4.3</span> Register study protocols</h2>
-<p>We register all randomized trials on <a href="clinicaltrials.gov">clinicaltrials.gov</a>, and in some cases register observational studies as well.</p>
-</section>
-<section id="write-and-register-pre-analysis-plans" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="write-and-register-pre-analysis-plans"><span class="header-section-number">4.4</span> Write and register pre-analysis plans</h2>
-<p>We write pre-analysis plans for most original research projects that are not exploratory in nature, although in some cases, we write pre-analysis plans for exploratory studies as well. The format and content of pre-analysis plans can vary from project to project. Here is an example of one: <a href="https://osf.io/tgbxr/">https://osf.io/tgbxr/</a>. Generally, these include:</p>
-<ol type="1">
-<li>Brief background on the study (a condensed version of the introduction section of the paper)</li>
-<li>Hypotheses / objectives</li>
-<li>Study design</li>
-<li>Description of data</li>
-<li>Definition of outcomes</li>
-<li>Definition of interventions / exposures</li>
-<li>Definition of covariates</li>
-<li>Statistical power calculation</li>
-<li>Statistical analysis:</li>
-</ol>
-<ul>
-<li>Type of model</li>
-<li>Covariate selection / screening</li>
-<li>Standard error estimation method</li>
-<li>Missing data analysis</li>
-<li>Assessment of effect modification / subgroup analyses</li>
-<li>Sensitivity analyses</li>
-<li>Negative control analyses</li>
-</ul>
-</section>
-<section id="create-reproducible-workflows" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="create-reproducible-workflows"><span class="header-section-number">4.5</span> Create reproducible workflows</h2>
-<p>Reproducible workflows allow a user to reproduce study estimates and ideally figures and tables with a “single click”. In practice, this typically means running a single bash script that sources all replication scripts in a repository. These replication scripts complete data processing, data analysis, and figure/table generation. The following chapters provide detailed guidance on this topic:</p>
-<ul>
-<li>Chapter 5: Code repositories</li>
-<li>Chapter 6: Coding practices</li>
-<li>Chapter 7: Coding style</li>
-<li>Chapter 8: Code publication</li>
-<li>Chapter 9: Working with big data</li>
-<li>Chapter 10: Github</li>
-<li>Chapter 11: Unix</li>
-</ul>
-</section>
-<section id="process-and-analyze-data-with-internal-replication-and-masking" class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="process-and-analyze-data-with-internal-replication-and-masking"><span class="header-section-number">4.6</span> Process and analyze data with internal replication and masking</h2>
-<p>See my video on this topic: <a href="https://www.youtube.com/watch?v=WoYkY9MkbRE">https://www.youtube.com/watch?v=WoYkY9MkbRE</a></p>
-</section>
-<section id="use-reporting-checklists-with-manuscripts" class="level2" data-number="4.7">
-<h2 data-number="4.7" class="anchored" data-anchor-id="use-reporting-checklists-with-manuscripts"><span class="header-section-number">4.7</span> Use reporting checklists with manuscripts</h2>
-<p>Using reporting checklists helps ensure that peer-reviewed articles contain the information needed for readers to assess the validity of your work and/or attempt to reproduce it. A collection of reporting checklists is available here: <a href="https://www.equator-network.org/about-us/what-is-a-reporting-guideline/">https://www.equator-network.org/about-us/what-is-a-reporting-guideline/)</a></p>
-</section>
-<section id="publish-preprints" class="level2" data-number="4.8">
-<h2 data-number="4.8" class="anchored" data-anchor-id="publish-preprints"><span class="header-section-number">4.8</span> Publish preprints</h2>
-<p>A preprint is a scientific manuscript that has not been peer reviewed. Preprint servers create digital object identifiers (DOIs) and can be cited in other articles and in grant applications. Because the peer review process can take many months, publishing preprints prior to or during peer review enables other scientists to immediately learn from and build on your work. Importantly, NIH allows applicants to include preprint citations in their biosketches. In most cases, we publish preprints on <a href="https://www.medrxiv.org/">medRxiv</a>.</p>
-</section>
-<section id="publish-data-when-possible-and-replication-scripts" class="level2" data-number="4.9">
-<h2 data-number="4.9" class="anchored" data-anchor-id="publish-data-when-possible-and-replication-scripts"><span class="header-section-number">4.9</span> Publish data (when possible) and replication scripts</h2>
-<p>Publishing data and replication scripts allows other scientists to reproduce your work and to build upon it. We typically publish data on <a href="osf.io">Open Science Framework</a>, share links to <a href="github.com">Github</a> repositories, and archive code on <a href="zenodo.org">Zenodo</a>.</p>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-space_odyssey" class="csl-entry" role="listitem">
+<span>“2001: A Space Odyssey.”</span> 1968. Film. <a href="https://en.wikipedia.org/wiki/2001:_A_Space_Odyssey_(film)">https://en.wikipedia.org/wiki/2001:_A_Space_Odyssey_(film)</a>.
+</div>
+<div id="ref-i_robot" class="csl-entry" role="listitem">
+Asimov, Isaac. 1950. <span>“I, Robot.”</span> New York: Novel; Gnome
+Press. <a href="https://search.library.ucdavis.edu/permalink/01UCD_INST/9fle3i/alma990000226350403126">https://search.library.ucdavis.edu/permalink/01UCD_INST/9fle3i/alma990000226350403126</a>.
+</div>
+<div id="ref-blade_runner" class="csl-entry" role="listitem">
+<span>“Blade Runner.”</span> 1982. Film. <a href="https://en.wikipedia.org/wiki/Blade_Runner">https://en.wikipedia.org/wiki/Blade_Runner</a>.
+</div>
+<div id="ref-enders_game" class="csl-entry" role="listitem">
+Card, Orson Scott. 1985. <span>“Ender’s Game.”</span> Novel; Tor Books.
+<a href="https://en.wikipedia.org/wiki/Ender%27s_Game">https://en.wikipedia.org/wiki/Ender%27s_Game</a>.
+</div>
+<div id="ref-humans_are_dead" class="csl-entry" role="listitem">
+Flight of the Conchords. 2007. <span>“The Humans Are Dead.”</span> Music
+Video. <a href="https://www.youtube.com/watch?v=B1BdQcJ2ZYY">https://www.youtube.com/watch?v=B1BdQcJ2ZYY</a>.
+</div>
+<div id="ref-butlerian_jihad" class="csl-entry" role="listitem">
+Herbert, Frank. 1965. <span>“Dune.”</span> Novel. <a href="https://en.wikipedia.org/wiki/Dune_(franchise)#Butlerian_Jihad">https://en.wikipedia.org/wiki/Dune_(franchise)#Butlerian_Jihad</a>.
+</div>
+<div id="ref-matrix" class="csl-entry" role="listitem">
+<span>“The Matrix.”</span> 1999. Film. <a href="https://en.wikipedia.org/wiki/The_Matrix">https://en.wikipedia.org/wiki/The_Matrix</a>.
+</div>
+<div id="ref-terminator" class="csl-entry" role="listitem">
+<span>“The Terminator.”</span> 1984. Film. <a href="https://en.wikipedia.org/wiki/The_Terminator">https://en.wikipedia.org/wiki/The_Terminator</a>.
+</div>
+<div id="ref-wargames" class="csl-entry" role="listitem">
+<span>“WarGames.”</span> 1983. Film. <a href="https://en.wikipedia.org/wiki/WarGames">https://en.wikipedia.org/wiki/WarGames</a>.
+</div>
+<div id="ref-R-roxygen2" class="csl-entry" role="listitem">
+Wickham, Hadley, Peter Danenberg, Gábor Csárdi, and Manuel Eugster.
+2024. <em>Roxygen2: In-Line Documentation for r</em>. <a href="https://roxygen2.r-lib.org/">https://roxygen2.r-lib.org/</a>.
+</div>
+</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -985,14 +942,11 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./communication.html" class="pagination-link" preview-toc-changed aria-label="Communication and coordination">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Communication and coordination</span></span>
+      <a href="./resources.html" class="pagination-link" preview-toc-changed aria-label="Resources">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Resources</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./code-repositories.html" class="pagination-link" preview-toc-changed aria-label="Code repositories">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Code repositories</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -1000,4 +954,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/reproducibility.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/reproducibility.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/references.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/references.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
