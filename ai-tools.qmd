@@ -71,8 +71,25 @@ to [help you code](https://en.wikipedia.org/wiki/AI-assisted_software_developmen
 ### What are AI coding agents?
 
 AI coding agents are [AI agents](https://en.wikipedia.org/wiki/AI_agent) specialized for coding.
-Unlike traditional AI coding assistants that provide inline code suggestions as you type,
-coding agents are autonomous software programs that can:
+They differ from other AI coding tools in important ways:
+
+**Compared to inline coding assistants** (like traditional autocomplete),
+coding agents work autonomously rather than providing suggestions as you type.
+They can navigate entire codebases,
+execute commands,
+and complete multi-step tasks without constant human guidance.
+
+**Compared to AI chatbots** (like ChatGPT or Claude),
+coding agents don't just generate code snippets in conversation—they actively interact with your development environment.
+While chatbots require you to copy code from a chat window and manually integrate it into your project,
+coding agents directly read your codebase,
+make changes to files,
+run tests and build commands,
+and create pull requests with their proposed changes.
+Chatbots are conversational assistants;
+coding agents are autonomous development tools.
+
+Coding agents are autonomous software programs that can:
 
 - **Understand and execute complex tasks**:
   Coding agents can interpret natural language instructions and break them down into actionable development tasks
@@ -89,7 +106,7 @@ coding agents are autonomous software programs that can:
 
 Coding agents operate in isolated environments where they can safely experiment and validate changes before proposing them.
 This allows them to work more independently than inline coding assistants,
-which require constant human guidance.
+which require step-by-step human direction.
 The agent workflow typically involves analyzing requirements,
 planning an implementation,
 making changes,
@@ -99,10 +116,11 @@ and creating a pull request with the results.
 While coding agents can handle substantial development tasks,
 they still require human oversight and review.
 The human developer remains responsible for:
-reviewing the agent's work,
-ensuring the solution meets requirements,
-verifying code quality and security,
-and making the final decision to merge changes.
+
+- Reviewing the agent's work
+- Ensuring the solution meets requirements
+- Verifying code quality and security
+- Making the final decision to merge changes
 
 ### How to Work with Coding Agents
 
