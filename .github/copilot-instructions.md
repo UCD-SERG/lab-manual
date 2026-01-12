@@ -114,7 +114,8 @@ When talking about code in prose sections, use backticks to apply code formattin
 
 - Contains the chapter title and introduction
 - Contains section headings (##, ###, etc.)
-- Uses `{{< include >}}` statements to pull in content
+- Uses the `include` shortcode to pull in content
+(see <https://quarto.org/docs/authoring/includes.html> for details) 
 - Shows the organization/outline of the chapter
 
 **Include files** (e.g., `05-coding-practices/lab-protocols-for-code-and-data.qmd`):
@@ -131,19 +132,19 @@ When talking about code in prose sections, use backticks to apply code formattin
 ```markdown
 ## Section Heading
 
-{{< include folder/section-name.qmd >}}
+{{< include demo-folder/section-name.qmd >}}
 ```
 
 **Correct example:**
 ```markdown
-## Lab Protocols for Code and Data
+## Section heading
 
-{{< include 05-coding-practices/lab-protocols-for-code-and-data.qmd >}}
+{{< include demo-folder/section-name.qmd >}}
 ```
 
 **Incorrect (don't do this):**
 ```markdown
-{{< include 05-coding-practices/lab-protocols-for-code-and-data.qmd >}}
+{{< include demo-folder/section-name.qmd >}}
 ```
 
 The heading must be in the main file, followed by a blank line, then the include statement.
@@ -163,14 +164,14 @@ The heading must be in the main file, followed by a blank line, then the include
 -## Object naming
 +## Function calls
  
--{{< include 05-coding-practices/object-naming.qmd >}}
-+{{< include 05-coding-practices/function-calls.qmd >}}
+-{{< include demo-folder/section-name.qmd >}}
++{{< include demo-folder/section-2.qmd >}}
  
 -## Function calls
 +## Object naming
  
--{{< include 05-coding-practices/function-calls.qmd >}}
-+{{< include 05-coding-practices/object-naming.qmd >}}
+-{{< include demo-folder/section-2.qmd >}}
++{{< include demo-folder/section-name.qmd >}}
 ```
 This diff clearly shows a reordering (swapping two sections) with no content changes—only the main chapter file changes.
 

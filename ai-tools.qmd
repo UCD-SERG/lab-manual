@@ -378,10 +378,3 @@ This approach makes it easier for collaborators who are more comfortable with Wo
 ## Copilot Instructions for this Repository
 
 {{< include ai-tools/copilot-instructions-explanation.qmd >}}
-
-::: {.callout-note collapse="true"}
-## View copilot-instructions.md
-
-{{< include ai-tools/copilot-instructions-display.md >}}
-:::
-

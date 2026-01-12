@@ -21,5 +21,13 @@ This reduces the review burden and helps maintain consistency
 across all contributions to the lab manual,
 whether made by humans or AI assistants.
 
-The complete copilot instructions for this repository are included below
-for easy reference and inspection:
+Unfortunately, we can't render the `copilot-instructions.md` file 
+as part of this lab manual, 
+because it includes dummy
+
+::: {.callout-note collapse="true"}
+## View copilot-instructions.md
+
+{{< include .github/copilot-instructions.md >}}
+:::
+
