@@ -58,6 +58,7 @@ Coding agents that modify CI/CD workflows (`.github/workflows/*.yml`) or setup c
 - @matrix
 - @blade_runner
 - @wargames
+- *Battlestar Galactica* (2004) [@battlestar_galactica_2004]
 - *Ender's Game* [@enders_game]
 - "The Humans are Dead" [@humans_are_dead]
 
