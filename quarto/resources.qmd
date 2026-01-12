@@ -19,6 +19,7 @@
 
 - [UCD-SeRG Quarto Book Template](https://github.com/UCD-SERG/quarto-book-template) - our recommended template
 - [Coatless Tutorials Quarto Book Template](https://github.com/coatless-tutorials/quarto-book-template) - another frequently-used template with helpful examples
+- [DataLab Quarto Template](https://github.com/d-rug/datalab_template_quarto) - template from the UC Davis DataLab and Davis R Users Group
 
 ### Related Lab Manual Chapters
 

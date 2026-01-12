@@ -20,6 +20,10 @@ as it provides pre-configured settings and examples:
    - Repository: <https://github.com/coatless-tutorials/quarto-book-template>
    - Includes examples of common Quarto book features
 
+3. **DataLab Quarto Template** - Template from the UC Davis DataLab and Davis R Users Group:
+   - Repository: <https://github.com/d-rug/datalab_template_quarto>
+   - Provides a starting point for DataLab workshop materials and tutorials
+
 **Starting from scratch:**
 
 If you prefer to start from scratch,
