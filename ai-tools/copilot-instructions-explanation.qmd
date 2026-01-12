@@ -21,9 +21,7 @@ This reduces the review burden and helps maintain consistency
 across all contributions to the lab manual,
 whether made by humans or AI assistants.
 
-Unfortunately, we can't render the `copilot-instructions.md` file 
-as part of this lab manual, 
-because it includes dummy
+Here is the complete `copilot-instructions.md` file, for easy inspection:
 
 ::: {.callout-note collapse="true"}
 ## View copilot-instructions.md
