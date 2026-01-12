@@ -449,6 +449,9 @@ When using this workflow, make sure to explicitly instruct the coding agent to:
 
 This approach makes it easier for collaborators who are more comfortable with Word to contribute to the lab manual while maintaining the source files in Quarto format.
 
+## Copilot Instructions for this Repository
+
+{{< include ai-tools/copilot-instructions-explanation.qmd >}}
 ## Further reading/viewing
 
 - *I Robot* [@i_robot]
