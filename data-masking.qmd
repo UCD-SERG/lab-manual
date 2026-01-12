@@ -10,9 +10,9 @@ This chapter covers data masking, a unique process in R in which columns are tre
 ### What is Data Masking? 
 Within certain tidyverse operations, columns are called as if they were variables. For example, while running `df |> mutate(X = …)` R recognizes that `X` specifically references a column in ` df` without explicitly stating its membership ` df |> mutate(df$X = …)` or calling the column name as a string ` df |> mutate(“X” = …)`. 
 
-![](assets/images/data-masking.PNG){width="50%"}
+![Data masking in tidyverse operations](assets/images/data-masking.PNG){#fig-data-masking width="50%"}
 
-However, this behavior may introduce errors when we attempt to incorporate variables from the global environment within these tidyverse pipelines. In the example above, ` column_name = “X”` followed by ` df |> mutate(X2 = column_name + 1)` would yield an error, since ` column_name` is not a column in ` df` and the variable ` column_name` is not defined within the environment of ` df`
+However, this behavior may introduce errors when we attempt to incorporate variables from the global environment within these tidyverse pipelines. In the example shown in @fig-data-masking, ` column_name = “X”` followed by ` df |> mutate(X2 = column_name + 1)` would yield an error, since ` column_name` is not a column in ` df` and the variable ` column_name` is not defined within the environment of ` df`
 
 
 ### Using tidy evaluation for data masking

@@ -52,6 +52,7 @@ book:
     - ai-tools.qmd
     - checklists.qmd
     - resources.qmd
+    - references.qmd
   page-navigation: true
 
 bibliography: [book.bib, packages.bib]
