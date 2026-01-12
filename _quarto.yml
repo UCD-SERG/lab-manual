@@ -35,27 +35,6 @@ book:
   downloads: [pdf, epub, docx]
   chapters:
     - index.qmd
-<<<<<<< HEAD
-    - 01-culture-and-conduct.qmd
-    - 02-communication.qmd
-    - 03-reproducibility.qmd
-    - 04-code-repositories.qmd
-    - 05-coding-practices.qmd
-    - 06-coding-style.qmd
-    - 07-big-data.qmd
-    - 08-data-masking.qmd
-    - 09-github.qmd
-    - 10-unix.qmd
-    - 11-reproducible-environments.qmd
-    - 12-code-publication.qmd
-    - 13-data-publication.qmd
-    - 14-slurm.qmd
-    - 15-ai-tools.qmd
-    - 16-checklists.qmd
-    - 17-resources.qmd
-    - 18-
-    - 19-
-=======
     - culture-and-conduct.qmd
     - communication.qmd
     - reproducibility.qmd
@@ -76,7 +55,6 @@ book:
     - professional-development.qmd
     - manuscript-preparation.qmd
     - references.qmd
->>>>>>> origin/main
   page-navigation: true
 
 bibliography: [book.bib, packages.bib]
