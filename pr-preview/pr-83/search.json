@@ -1260,273 +1260,343 @@
     ]
   },
   {
+    "objectID": "quarto.html",
+    "href": "quarto.html",
+    "title": "17  Quarto",
+    "section": "",
+    "text": "17.1 Introduction\nQuarto is an open-source scientific and technical publishing system that allows you to create documents, books, websites, presentations, and more. Quarto provides a unified authoring framework for data science, combining your code, its results, and your prose. Quarto documents are fully reproducible and support dozens of output formats, like PDFs, Word files, presentations, and more.\nQuarto files are designed to be used in three ways:",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "quarto.html#introduction",
+    "href": "quarto.html#introduction",
+    "title": "17  Quarto",
+    "section": "",
+    "text": "For communicating to decision-makers, who want to focus on the conclusions, not the code behind the analysis.\nFor collaborating with other data scientists (including future you!), who are interested in both your conclusions, and how you reached them (i.e., the code).\nAs an environment in which to do data science, as a modern-day lab notebook where you can capture not only what you did, but also what you were thinking.\n\n\n17.1.1 Key Features\nMulti-format Output: Quarto documents can be rendered into HTML, PDF, MS Word, ePub, PowerPoint, Revealjs presentations, dashboards, websites, and books from a single source file. This allows authors to maintain one document but publish it in multiple formats without rewriting content.\nRich Markdown Authoring: Content is created in markdown, with support for figures, tables, equations (LaTeX), citations, cross-references, and advanced layout features like tabs, callouts, and panels.\nEmbedded Executable Code: Integrate code chunks (R, Python, Julia, Observable JS) that can be executed and the results rendered directly in the document. This allows for dynamic results, data analysis, plots, and reproducible research workflows.\nInteractivity: Add interactive components such as widgets, tab sets, and collapsible sections for richer communication with readers.\nCustomization: Extensive theming and styling options, including custom CSS and advanced layout controls for polished, publication-quality output.\nProject Management: Organize large projects and integrate with version control tools like Git. Use Quarto projects to group related documents, manage dependencies, and orchestrate rendering.\n\n\n17.1.2 Why Quarto?\nIf you’re an R Markdown user, you might be thinking “Quarto sounds a lot like R Markdown.” You’re not wrong! Quarto unifies the functionality of many packages from the R Markdown ecosystem (rmarkdown, bookdown, distill, xaringan, etc.) into a single consistent system as well as extends it with native support for multiple programming languages like Python and Julia in addition to R. In a way, Quarto reflects everything that was learned from expanding and supporting the R Markdown ecosystem over a decade.\n\n\n17.1.3 Getting Started\nTo get started with Quarto:\n\nInstallation: Quarto CLI is included with RStudio, so if you have a recent version of RStudio, you already have Quarto. Otherwise, visit https://quarto.org/docs/get-started/\nDocumentation: The official Quarto documentation is available at https://quarto.org/docs/guide/\nR4DS Chapter: For an excellent introduction to using Quarto with R, see the Quarto chapter in R for Data Science (Wickham, Çetinkaya-Rundel, and Grolemund 2023)",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "quarto.html#quarto-basics",
+    "href": "quarto.html#quarto-basics",
+    "title": "17  Quarto",
+    "section": "17.2 Quarto Basics",
+    "text": "17.2 Quarto Basics\nA Quarto document is a plain text file with the extension .qmd. It contains three important types of content:\n\nAn (optional) YAML header surrounded by ---s\nChunks of code surrounded by ```\nText mixed with simple text formatting like # heading and _italics_\n\n\n17.2.1 Creating a New Quarto Document\nIn RStudio, create a new Quarto document using File &gt; New File &gt; Quarto Document… in the menu bar. RStudio will launch a wizard that you can use to pre-populate your file with useful content that reminds you how the key features of Quarto work.\n\n\n17.2.2 Visual vs. Source Editor\nRStudio provides two ways to edit Quarto documents:\nVisual Editor: The Visual editor provides a WYSIWYM interface for authoring Quarto documents. If you’re new to computational documents but have experience using tools like Google Docs or MS Word, the visual editor is the easiest way to get started. In the visual editor you can use the buttons on the menu bar to insert images, tables, cross-references, etc., or you can use the catch-all ⌘ + / or Ctrl + / shortcut to insert just about anything.\nSource Editor: The source editor allows you to edit the raw markdown and code. While the visual editor will feel familiar to those with experience in word processors, the source editor will feel familiar to those with experience writing R scripts or R Markdown documents. The source editor can also be useful for debugging any Quarto syntax errors since it’s often easier to catch these in plain text.\nYou can switch between the visual and source editors at any time using the toggle in the top-left of the editor pane.\n\n\n17.2.3 Rendering Documents\nTo produce a complete report containing all text, code, and results:\n\nClick “Render” in RStudio, or\nPress Cmd/Ctrl + Shift + K, or\nUse quarto::quarto_render(\"document.qmd\") in R, or\nUse quarto render document.qmd in the terminal\n\nWhen you render the document, Quarto sends the .qmd file to knitr, which executes all of the code chunks and creates a new markdown (.md) document which includes the code and its output. The markdown file generated by knitr is then processed by pandoc, which is responsible for creating the finished file in your chosen format (HTML, PDF, Word, etc.).\n\n\n17.2.4 Code Chunks\nTo run code inside a Quarto document, you need to insert a chunk. There are three ways to do so:\n\nThe keyboard shortcut Cmd + Option + I / Ctrl + Alt + I\nThe “Insert” button icon in the editor toolbar\nBy manually typing the chunk delimiters ```{r} and ```\n\nChunks can be given an optional label and various chunk options:\n```{r}\n#| label: simple-addition\n#| echo: false\n1 + 1\n```\nCommon chunk options include:\n\n#| label: - give the chunk a name\n#| echo: false - hide the code but show the output\n#| eval: false - show the code but don’t run it\n#| include: false - run the code but hide both code and output\n#| warning: false - hide warnings\n#| message: false - hide messages\n\n\n\n17.2.5 Text Formatting\nQuarto uses Pandoc’s markdown for text formatting:\n\n*italic* or _italic_ produces italic text\n**bold** or __bold__ produces bold text\n`code` produces code formatting\n# Heading 1, ## Heading 2, ### Heading 3 for headings\nBullet lists start with - or *\nNumbered lists start with 1., 2., etc.\n[link text](url) creates hyperlinks\n![alt text](image.png) inserts images\n\nImportant: Always include a blank line before bullet lists and numbered lists in markdown and Quarto documents.\nFor more details on using Quarto for writing and analysis, see the Quarto chapter in R for Data Science (Wickham, Çetinkaya-Rundel, and Grolemund 2023).",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "quarto.html#building-quarto-books",
+    "href": "quarto.html#building-quarto-books",
+    "title": "17  Quarto",
+    "section": "17.3 Building Quarto Books",
+    "text": "17.3 Building Quarto Books\nQuarto books let you author entire books (or course notes, manuals, dissertations, etc.) in markdown. Quarto books are ideal for documentation, tutorials, lab manuals, and other long-form content.\n\n17.3.1 Creating a Quarto Book\nStarting from a template (recommended):\nUsing a template is the fastest way to get started with a Quarto book, as it provides pre-configured settings and examples:\n\nUCD-SeRG Quarto Book Template - Our recommended template with pre-configured settings for lab publications:\n\nRepository: https://github.com/UCD-SERG/quarto-book-template\nClick “Use this template” → “Create a new repository” on GitHub\nClone your new repository and start editing\n\nCoatless Tutorials Quarto Book Template - Another frequently-used template with helpful examples:\n\nRepository: https://github.com/coatless-tutorials/quarto-book-template\nIncludes examples of common Quarto book features\n\n\nStarting from scratch:\nIf you prefer to start from scratch, you can create a new Quarto book project using the Quarto CLI:\n# Create a new Quarto book project\nquarto create project book mybook\ncd mybook\nThis will create a basic book structure with:\n\n_quarto.yml - configuration file for your book\nindex.qmd - the home page / preface\nSample chapter files\nreferences.qmd - bibliography/references page\n\n\n\n17.3.2 Building and Previewing\nOnce you have a Quarto book project, you can build and preview it:\n# Render the entire book\nquarto render\n\n# Preview with live reload (recommended during development)\nquarto preview\nThe quarto preview command starts a local web server and automatically refreshes the preview whenever you save changes to your files.\n\n\n17.3.3 Book Structure\nA typical Quarto book is organized as follows:\n_quarto.yml: The main configuration file that defines:\n\nBook metadata (title, author, date)\nChapter order\nOutput formats (HTML, PDF, ePub, etc.)\nStyling and theme\nNavigation options\n\nChapter files: Individual .qmd files for each chapter. These are listed in the chapters section of _quarto.yml.\nParts: You can organize chapters into parts for better structure:\nbook:\n  chapters:\n    - index.qmd\n    - part: \"Getting Started\"\n      chapters:\n        - intro.qmd\n        - basics.qmd\n    - part: \"Advanced Topics\"\n      chapters:\n        - advanced.qmd\n\n\n17.3.4 Book Features\nQuarto books support many advanced features:\nCross-references: Reference figures, tables, equations, and sections throughout your book:\nSee @fig-plot for details.\nAs shown in @tbl-results.\nRefer to @sec-introduction.\nCitations: Include a bibliography and cite sources:\nAccording to @smith2020, the method works well.\nSearch: Automatic full-text search in HTML output.\nDownloads: Offer PDF, ePub, and Word versions alongside HTML.\nNavigation: Automatic table of contents, previous/next chapter buttons, and breadcrumbs.\nCustomization: Custom themes, CSS, and templates for professional appearance.\n\n\n17.3.5 Example: This Lab Manual\nThis lab manual itself is a Quarto book! You can view its source code at https://github.com/UCD-SERG/lab-manual to see how we’ve structured chapters, used includes for modular content, and configured various output formats.\n\n\n17.3.6 Resources\n\nQuarto Books Guide - comprehensive documentation for Quarto books\nQuarto Publishing Guide - how to publish your book online\nR4DS Quarto chapter (Wickham, Çetinkaya-Rundel, and Grolemund 2023) - excellent introduction to Quarto",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "quarto.html#quarto-profiles",
+    "href": "quarto.html#quarto-profiles",
+    "title": "17  Quarto",
+    "section": "17.4 Quarto Profiles",
+    "text": "17.4 Quarto Profiles\nQuarto profiles allow you to customize rendering behavior for different purposes. A profile is a named set of configuration options that can be activated when rendering. This is particularly useful when you want to render the same source files in different formats or for different audiences.\n\n17.4.1 What are Profiles?\nProfiles let you maintain multiple _quarto.yml configuration files in the same project. For example, you might have:\n\n_quarto.yml - default book configuration\n_quarto-revealjs.yml - configuration for rendering chapters as slide decks\n_quarto-print.yml - configuration optimized for PDF printing\n\n\n\n17.4.2 Example: Rendering Chapters as Slides\nA excellent example of using Quarto profiles comes from the Regression Models for Epidemiology course materials by D. Morrison.\nThe project includes a _quarto-revealjs.yml profile that allows each chapter to be compiled as a RevealJS slide deck, in addition to being part of the book.\nTo render a single chapter as slides:\nquarto render chapter-name.qmd --profile=revealjs\nTo render all chapters listed in the profile as slides:\nquarto render --profile=revealjs\n\n\n17.4.3 Creating a Profile\nTo create a profile:\n\nCreate a new YAML file named _quarto-{profile-name}.yml\nInclude only the configuration options that differ from your default _quarto.yml\nActivate the profile when rendering using --profile={profile-name}\n\nExample profile structure:\n_quarto-slides.yml:\nproject:\n  type: default\n  output-dir: slides\n\nformat:\n  revealjs:\n    theme: serif\n    slide-number: true\n    preview-links: auto\n\n\n17.4.4 Common Use Cases\nMultiple output formats: Maintain separate configurations for web, print, and presentation versions of your content.\nDifferent audiences: Create versions with or without solutions, technical details, or instructor notes.\nDevelopment vs. production: Use a development profile with faster rendering options during writing, and a production profile with full features for final output.\nCourse materials: Render the same content as both a reference book and lecture slides, as demonstrated in the RME course.\n\n\n17.4.5 Resources\n\nQuarto Profiles Documentation\nRME Example - see the source at https://github.com/d-morrison/rme for a working example",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "quarto.html#advanced-features",
+    "href": "quarto.html#advanced-features",
+    "title": "17  Quarto",
+    "section": "17.5 Advanced Features",
+    "text": "17.5 Advanced Features\n\n17.5.1 Cross-References\nQuarto provides a powerful cross-reference system for figures, tables, equations, and sections. Cross-references automatically number your content and create clickable links in HTML and PDF output.\nRequired label prefixes:\n\nFigures: #fig- (e.g., #fig-workflow-diagram)\nTables: #tbl- (e.g., #tbl-summary-stats)\nEquations: #eq- (e.g., #eq-regression-model)\nSections: #sec- (e.g., #sec-introduction)\nTheorems: #thm-, Lemmas: #lem-, Corollaries: #cor-\nPropositions: #prp-, Examples: #exm-, Exercises: #exr-\n\nFor figures (static images):\n![Caption text](path/to/image.png){#fig-label}\nFor code-generated figures:\n```{r}\n#| label: fig-plot-name\n#| fig-cap: \"Caption text describing the plot\"\n\n# R code to generate plot\nggplot(data, aes(x, y)) + geom_point()\n```\nFor tables (markdown tables):\n| Column 1 | Column 2 |\n|----------|----------|\n| Data     | Data     |\n\n: Caption text {#tbl-label}\nFor code-generated tables:\n```{r}\n#| label: tbl-table-name\n#| tbl-cap: \"Caption text\"\n\n# R code to generate table\nknitr::kable(data)\n```\nReferencing in text:\n\nFigures: @fig-label produces “Figure X”\nTables: @tbl-label produces “Table X”\nEquations: @eq-label produces “Equation X”\nSections: @sec-label produces “Section X”\n\nBenefits:\n\nAutomatic numbering of figures, tables, and equations\nAutomatic updates when content is reordered\nClickable cross-references in HTML and PDF output\nConsistent formatting across all output formats\nBetter accessibility for screen readers\n\nFor complete details, see the Quarto Cross-References documentation.\n\n\n17.5.2 Using Includes for Modular Content\nQuarto’s include feature allows you to decompose large documents into smaller, more manageable files. This is particularly useful for books and long documents.\nBasic syntax:\n{{&lt; include path/to/file.qmd &gt;}}\nBenefits:\n\nBetter Git History: When sections are reordered, only the main chapter file changes (moving include statements), making it immediately clear that content was reorganized rather than edited.\nEasier Code Review: Reviewers can see exactly what changed—either the organization (main file) or the content (include file).\nModular Maintenance: Each section lives in its own file, making it easier to find and edit specific content, reuse sections across chapters, and work on different sections simultaneously without merge conflicts.\nClear Structure: The main chapter file becomes a table of contents showing the organization at a glance.\n\nRecommended pattern:\nMain chapter file (e.g., 05-coding-practices.qmd):\n# Coding Practices\n\n## Section Heading\n\n{{&lt; include coding-practices/section-name.qmd &gt;}}\n\n## Another Section\n\n{{&lt; include coding-practices/another-section.qmd &gt;}}\nInclude files (e.g., coding-practices/section-name.qmd):\n\nStored in a subdirectory matching the chapter name\nContains only the content for that section (no heading)\nThe heading stays in the main chapter file\nNamed descriptively using kebab-case\n\nNote: The heading must be in the main file, followed by a blank line, then the include statement. This keeps the document structure clear in the main file.\nFor more details, see the Quarto Includes documentation.",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "quarto.html#additional-resources",
+    "href": "quarto.html#additional-resources",
+    "title": "17  Quarto",
+    "section": "17.6 Additional Resources",
+    "text": "17.6 Additional Resources\n\n17.6.1 Official Documentation\n\nQuarto Official Guide - comprehensive official documentation\nQuarto Books Guide - documentation specific to creating books\nQuarto Publishing Guide - how to publish your Quarto content online\nQuarto Getting Started - installation and basic usage\n\n\n\n17.6.2 Learning Resources\n\nR for Data Science - Quarto Chapter (Wickham, Çetinkaya-Rundel, and Grolemund 2023) - excellent introduction to using Quarto with R\nRegression Models for Epidemiology - example of a Quarto book with profiles for rendering chapters as slides\nUCD-SeRG Lab Manual Source - this manual’s source code provides examples of:\n\nBook structure and organization\nUsing includes for modular content\n\nConfiguring multiple output formats (HTML, PDF, ePub, Word)\nCross-references for figures, tables, and sections\n\n\n\n\n17.6.3 Templates\n\nUCD-SeRG Quarto Book Template - our recommended template\nCoatless Tutorials Quarto Book Template - another frequently-used template with helpful examples\n\n\n\n17.6.4 Related Lab Manual Chapters\nFor additional context about using Quarto in our lab:\n\nChapter 6 - R coding practices that apply to code in Quarto documents\nChapter 7 - Code style guidelines including formatting for Quarto documents\nChapter 10 - Version control for Quarto projects\n\n\n\n\n\nWickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund. 2023. R for Data Science. 2nd ed. O’Reilly Media. https://r4ds.hadley.nz/.",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Quarto</span>"
+    ]
+  },
+  {
     "objectID": "checklists.html",
     "href": "checklists.html",
-    "title": "17  Checklists",
+    "title": "18  Checklists",
     "section": "",
-    "text": "17.1 Pre-analysis plan checklist\nAdapted by UCD-SeRG team from original by Jade Benjamin-Chung",
+    "text": "18.1 Pre-analysis plan checklist\nAdapted by UCD-SeRG team from original by Jade Benjamin-Chung",
     "crumbs": [
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Checklists</span>"
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Checklists</span>"
     ]
   },
   {
     "objectID": "checklists.html#pre-analysis-plan-checklist",
     "href": "checklists.html#pre-analysis-plan-checklist",
-    "title": "17  Checklists",
+    "title": "18  Checklists",
     "section": "",
     "text": "Brief background on the study (a condensed version of the introduction section of the paper)\nHypotheses / objectives\nStudy design\nDescription of data\nDefinition of outcomes\nDefinition of interventions / exposures\nDefinition of covariates\nStatistical power calculation\nStatistical model description\nCovariate selection / screening\nStandard error estimation method\nMissing data analysis\nAssessment of effect modification / subgroup analyses\nSensitivity analyses\nNegative control analyses",
     "crumbs": [
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Checklists</span>"
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Checklists</span>"
     ]
   },
   {
     "objectID": "checklists.html#code-checklist",
     "href": "checklists.html#code-checklist",
-    "title": "17  Checklists",
-    "section": "17.2 Code checklist",
-    "text": "17.2 Code checklist\n\nDoes the script run without errors?\nIs code self-contained within repo and/or associated Box folder?\nIs all commented out code / remarks removed?\nDoes the header accurately describe the process completed in the script?\nIs the script pushed to its github repository?\nDoes the code adhere to the coding style guide?\nAre all warnings ignorable? Should any warnings be intentionally suppressed or addressed?",
+    "title": "18  Checklists",
+    "section": "18.2 Code checklist",
+    "text": "18.2 Code checklist\n\nDoes the script run without errors?\nIs code self-contained within repo and/or associated Box folder?\nIs all commented out code / remarks removed?\nDoes the header accurately describe the process completed in the script?\nIs the script pushed to its github repository?\nDoes the code adhere to the coding style guide?\nAre all warnings ignorable? Should any warnings be intentionally suppressed or addressed?",
     "crumbs": [
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Checklists</span>"
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Checklists</span>"
     ]
   },
   {
     "objectID": "checklists.html#manuscript-checklist",
     "href": "checklists.html#manuscript-checklist",
-    "title": "17  Checklists",
-    "section": "17.3 Manuscript checklist",
-    "text": "17.3 Manuscript checklist\nThis is adapted in part from How to tackle the reproducibility crisis in ten steps (Baker 2019).\n\nHave you completed the relevant reporting checklist, if applicable? (See EQUATOR Network (“EQUATOR Network: Enhancing the QUAlity and Transparency of Health Research,” n.d.) for a collection of checklists)\nAre the study results within the manuscript replicable (i.e., if you rerun the code in the study’s repository, the tables and figures will be exactly replicated?)\nIs a target journal selected?\nIs the title declarative, in other words, does it state the object/findings rather than suggest them?\nIs the word count of the manuscript close to the target journal’s allowance?\nDoes the manuscript adhere to the formatting guide of the target journal?\nDoes the manuscript use a consistent voice (passive or active – usually active is preferred … pun intended)?\nIs each figure and table (including supplementary material) referenced in the main text?\nIs there a caption for each figure and table (including supplementary material)?\nAre tables/figures and supplementary material numbered in accordance with their appearance in the main text?\nDoes the text use past tense if it is reporting research findings or future tense if it is a study protocol?\nDoes the text avoid subjective wording (e.g., “interesting”, “dramatic”)?\nDoes the text use minimal abbreviations, and are all abbreviations defined at first use?\nDoes the text avoid directionless words? (e.g., instead of writing, ‘Precipitation influences disease risk’, write, ‘Precipitation was associated with increased disease risk’).\nDoes the text avoid making causal claims that are not supported by the study design? Be careful about the words “effect”, “increase”, and “decrease”, which are often interpreted as causal.\nDoes the text avoid describing results with the word “significant”, which can easily be confused with statistical significance? (see references on this topic here)\nHave you drafted author contributions? Do they follow the CRediT: Contributor Roles Taxonomy (“CRediT: Contributor Roles Taxonomy,” n.d.) for author contributions?",
+    "title": "18  Checklists",
+    "section": "18.3 Manuscript checklist",
+    "text": "18.3 Manuscript checklist\nThis is adapted in part from How to tackle the reproducibility crisis in ten steps (Baker 2019).\n\nHave you completed the relevant reporting checklist, if applicable? (See EQUATOR Network (“EQUATOR Network: Enhancing the QUAlity and Transparency of Health Research,” n.d.) for a collection of checklists)\nAre the study results within the manuscript replicable (i.e., if you rerun the code in the study’s repository, the tables and figures will be exactly replicated?)\nIs a target journal selected?\nIs the title declarative, in other words, does it state the object/findings rather than suggest them?\nIs the word count of the manuscript close to the target journal’s allowance?\nDoes the manuscript adhere to the formatting guide of the target journal?\nDoes the manuscript use a consistent voice (passive or active – usually active is preferred … pun intended)?\nIs each figure and table (including supplementary material) referenced in the main text?\nIs there a caption for each figure and table (including supplementary material)?\nAre tables/figures and supplementary material numbered in accordance with their appearance in the main text?\nDoes the text use past tense if it is reporting research findings or future tense if it is a study protocol?\nDoes the text avoid subjective wording (e.g., “interesting”, “dramatic”)?\nDoes the text use minimal abbreviations, and are all abbreviations defined at first use?\nDoes the text avoid directionless words? (e.g., instead of writing, ‘Precipitation influences disease risk’, write, ‘Precipitation was associated with increased disease risk’).\nDoes the text avoid making causal claims that are not supported by the study design? Be careful about the words “effect”, “increase”, and “decrease”, which are often interpreted as causal.\nDoes the text avoid describing results with the word “significant”, which can easily be confused with statistical significance? (see references on this topic here)\nHave you drafted author contributions? Do they follow the CRediT: Contributor Roles Taxonomy (“CRediT: Contributor Roles Taxonomy,” n.d.) for author contributions?",
     "crumbs": [
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Checklists</span>"
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Checklists</span>"
     ]
   },
   {
     "objectID": "checklists.html#figure-checklist",
     "href": "checklists.html#figure-checklist",
-    "title": "17  Checklists",
-    "section": "17.4 Figure checklist",
-    "text": "17.4 Figure checklist\n\nAre the x-axis and y-axis labeled?\nIf the figure includes panels, is each panel labeled?\nAre there sufficient numerical / text labels and breaks on the x-axis and y-axis?\nIs the font size appropriate (i.e., large enough to read, not so large that it distracts from the data presented in the figure?)\nAre the colors used colorblind friendly? See a colorblind-friendly palette here, a neat palette generator with colorblind options here, and an article on why this matters: The misuse of colour in science communication (Crameri, Shephard, and Heron 2020)\nAre colors/shapes/line types defined in a legend?\nAre the legends and other labels easy to understand with minimal abbreviations?\nIf there is overplotting, is transparency used to show overlapping data?\nAre 95% confidence intervals or other measures of precision shown, if applicable?\n\n\n\n\n\nBaker, Monya. 2019. “How to Tackle the Reproducibility Crisis in Ten Steps.” Nature. https://doi.org/10.1038/d41586-019-01431-z.\n\n\nCrameri, Fabio, Grace E. Shephard, and Philip J. Heron. 2020. “The Misuse of Colour in Science Communication.” Nature Communications 11. https://doi.org/10.1038/s41467-020-19160-7.\n\n\n“CRediT: Contributor Roles Taxonomy.” n.d. PLOS ONE. https://journals.plos.org/plosone/s/authorship.\n\n\n“EQUATOR Network: Enhancing the QUAlity and Transparency of Health Research.” n.d. EQUATOR Network. https://www.equator-network.org/.",
+    "title": "18  Checklists",
+    "section": "18.4 Figure checklist",
+    "text": "18.4 Figure checklist\n\nAre the x-axis and y-axis labeled?\nIf the figure includes panels, is each panel labeled?\nAre there sufficient numerical / text labels and breaks on the x-axis and y-axis?\nIs the font size appropriate (i.e., large enough to read, not so large that it distracts from the data presented in the figure?)\nAre the colors used colorblind friendly? See a colorblind-friendly palette here, a neat palette generator with colorblind options here, and an article on why this matters: The misuse of colour in science communication (Crameri, Shephard, and Heron 2020)\nAre colors/shapes/line types defined in a legend?\nAre the legends and other labels easy to understand with minimal abbreviations?\nIf there is overplotting, is transparency used to show overlapping data?\nAre 95% confidence intervals or other measures of precision shown, if applicable?\n\n\n\n\n\nBaker, Monya. 2019. “How to Tackle the Reproducibility Crisis in Ten Steps.” Nature. https://doi.org/10.1038/d41586-019-01431-z.\n\n\nCrameri, Fabio, Grace E. Shephard, and Philip J. Heron. 2020. “The Misuse of Colour in Science Communication.” Nature Communications 11. https://doi.org/10.1038/s41467-020-19160-7.\n\n\n“CRediT: Contributor Roles Taxonomy.” n.d. PLOS ONE. https://journals.plos.org/plosone/s/authorship.\n\n\n“EQUATOR Network: Enhancing the QUAlity and Transparency of Health Research.” n.d. EQUATOR Network. https://www.equator-network.org/.",
     "crumbs": [
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Checklists</span>"
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Checklists</span>"
     ]
   },
   {
     "objectID": "resources.html",
     "href": "resources.html",
-    "title": "18  Resources",
+    "title": "19  Resources",
     "section": "",
-    "text": "18.1 Resources for R\nAdapted by UCD-SeRG team from original by Jade Benjamin-Chung and Kunal Mishra",
+    "text": "19.1 Resources for R\nAdapted by UCD-SeRG team from original by Jade Benjamin-Chung and Kunal Mishra",
     "crumbs": [
-      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Resources</span>"
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Resources</span>"
     ]
   },
   {
     "objectID": "resources.html#resources-for-r",
     "href": "resources.html#resources-for-r",
-    "title": "18  Resources",
+    "title": "19  Resources",
     "section": "",
-    "text": "18.1.1 Books and Comprehensive Guides\n\nR for Data Science (Wickham, Çetinkaya-Rundel, and Grolemund 2023) - comprehensive introduction to doing data science with R\nR Packages (Wickham and Bryan 2023) - complete guide to R package development\nAdvanced R (Wickham 2019) - deep dive into R programming and internals\nMastering Shiny (Wickham 2021) - comprehensive guide to building web applications with Shiny\nEngineering Production-Grade Shiny Apps (Fay et al. 2021) - best practices for production Shiny applications\nHappy Git and GitHub for the useR (Bryan 2023) - guide to using Git and GitHub with R\nJade’s R-for-epi course\n\n\n\n18.1.2 Cheat Sheets\n\ndplyr and tidyr cheat sheet\nggplot cheat sheet\ndata table cheat sheet\nRMarkdown cheat sheet\n\n\n\n18.1.3 Style and Best Practices\n\nHadley Wickham’s R Style Guide\n\n\n\n18.1.4 Tidy Evaluation Resources\n\nTidy Eval in 5 Minutes (video)\nTidy Evaluation (e-book)\nData Frame Columns as Arguments to Dplyr Functions (blog)\nStandard Evaluation for *_join (stackoverflow)\nProgramming with dplyr (package vignette)",
+    "text": "19.1.1 Books and Comprehensive Guides\n\nR for Data Science (Wickham, Çetinkaya-Rundel, and Grolemund 2023) - comprehensive introduction to doing data science with R\nR Packages (Wickham and Bryan 2023) - complete guide to R package development\nAdvanced R (Wickham 2019) - deep dive into R programming and internals\nMastering Shiny (Wickham 2021) - comprehensive guide to building web applications with Shiny\nEngineering Production-Grade Shiny Apps (Fay et al. 2021) - best practices for production Shiny applications\nHappy Git and GitHub for the useR (Bryan 2023) - guide to using Git and GitHub with R\nJade’s R-for-epi course\n\n\n\n19.1.2 Cheat Sheets\n\ndplyr and tidyr cheat sheet\nggplot cheat sheet\ndata table cheat sheet\nRMarkdown cheat sheet\n\n\n\n19.1.3 Style and Best Practices\n\nHadley Wickham’s R Style Guide\n\n\n\n19.1.4 Tidy Evaluation Resources\n\nTidy Eval in 5 Minutes (video)\nTidy Evaluation (e-book)\nData Frame Columns as Arguments to Dplyr Functions (blog)\nStandard Evaluation for *_join (stackoverflow)\nProgramming with dplyr (package vignette)",
     "crumbs": [
-      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Resources</span>"
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Resources</span>"
     ]
   },
   {
     "objectID": "resources.html#resources-for-git-github",
     "href": "resources.html#resources-for-git-github",
-    "title": "18  Resources",
-    "section": "18.2 Resources for Git & Github",
-    "text": "18.2 Resources for Git & Github\n\nHappy Git and GitHub for the useR (Bryan 2023) - comprehensive guide to using Git and GitHub with R\nData Camp introduction to Git\nIntroduction to Github",
+    "title": "19  Resources",
+    "section": "19.2 Resources for Git & Github",
+    "text": "19.2 Resources for Git & Github\n\nHappy Git and GitHub for the useR (Bryan 2023) - comprehensive guide to using Git and GitHub with R\nData Camp introduction to Git\nIntroduction to Github",
     "crumbs": [
-      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Resources</span>"
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Resources</span>"
     ]
   },
   {
     "objectID": "resources.html#scientific-figures",
     "href": "resources.html#scientific-figures",
-    "title": "18  Resources",
-    "section": "18.3 Scientific figures",
-    "text": "18.3 Scientific figures\n\nTen Simple Rules for Better Figures (Rougier, Droettboom, and Bourne 2014)",
+    "title": "19  Resources",
+    "section": "19.3 Scientific figures",
+    "text": "19.3 Scientific figures\n\nTen Simple Rules for Better Figures (Rougier, Droettboom, and Bourne 2014)",
     "crumbs": [
-      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Resources</span>"
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Resources</span>"
     ]
   },
   {
     "objectID": "resources.html#writing",
     "href": "resources.html#writing",
-    "title": "18  Resources",
-    "section": "18.4 Writing",
-    "text": "18.4 Writing\n\nUnpacking the Scientific Toolbox (Silbiger and Stubler 2019)\nICMJE Definition of authorship (International Committee of Medical Journal Editors, n.d.)\nComputational science: …why scientific programming does not compute (Merali and Giles 2010)\nThe Pathway to Publishing: A Guide to Quantitative Writing in the Health Sciences\nSecret, actionable writing tips",
+    "title": "19  Resources",
+    "section": "19.4 Writing",
+    "text": "19.4 Writing\n\nUnpacking the Scientific Toolbox (Silbiger and Stubler 2019)\nICMJE Definition of authorship (International Committee of Medical Journal Editors, n.d.)\nComputational science: …why scientific programming does not compute (Merali and Giles 2010)\nThe Pathway to Publishing: A Guide to Quantitative Writing in the Health Sciences\nSecret, actionable writing tips",
     "crumbs": [
-      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Resources</span>"
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Resources</span>"
     ]
   },
   {
     "objectID": "resources.html#presentations",
     "href": "resources.html#presentations",
-    "title": "18  Resources",
-    "section": "18.5 Presentations",
-    "text": "18.5 Presentations\n\nHow to tell a compelling story in scientific presentations (Van Noorden 2021)\nHow to give a killer narratively-driven scientific talk\nHow to make a better poster\nHow to make an even better poster",
+    "title": "19  Resources",
+    "section": "19.5 Presentations",
+    "text": "19.5 Presentations\n\nHow to tell a compelling story in scientific presentations (Van Noorden 2021)\nHow to give a killer narratively-driven scientific talk\nHow to make a better poster\nHow to make an even better poster",
     "crumbs": [
-      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Resources</span>"
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Resources</span>"
     ]
   },
   {
     "objectID": "resources.html#professional-advice",
     "href": "resources.html#professional-advice",
-    "title": "18  Resources",
-    "section": "18.6 Professional advice",
-    "text": "18.6 Professional advice\n\nProfessional advice, especially for your first job",
+    "title": "19  Resources",
+    "section": "19.6 Professional advice",
+    "text": "19.6 Professional advice\n\nProfessional advice, especially for your first job",
     "crumbs": [
-      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Resources</span>"
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Resources</span>"
     ]
   },
   {
     "objectID": "resources.html#funding",
     "href": "resources.html#funding",
-    "title": "18  Resources",
-    "section": "18.7 Funding",
-    "text": "18.7 Funding\n\nBuilding Your Funding Train\nNIH Grant Writing Resources",
+    "title": "19  Resources",
+    "section": "19.7 Funding",
+    "text": "19.7 Funding\n\nBuilding Your Funding Train\nNIH Grant Writing Resources",
     "crumbs": [
-      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Resources</span>"
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Resources</span>"
     ]
   },
   {
     "objectID": "resources.html#ethics-and-global-health-research",
     "href": "resources.html#ethics-and-global-health-research",
-    "title": "18  Resources",
-    "section": "18.8 Ethics and global health research",
-    "text": "18.8 Ethics and global health research\n\nGlobal Code of Conduct For Research in Resource-Poor Settings\nAddressing power asymmetries in global health (Abimbola et al. 2022)\nTransforming Global Health Partnerships\n\n\n\n\n\nAbimbola, Seye, Sheena Asthana, Cristina Montenegro, et al. 2022. “Addressing Power Asymmetries in Global Health: Imperatives in the Wake of the COVID-19 Pandemic.” PLOS Global Public Health 2 (10). https://doi.org/10.1371/journal.pgph.0002269.\n\n\nBryan, Jennifer. 2023. Happy Git and GitHub for the useR. https://happygitwithr.com/.\n\n\nFay, Colin, Sébastien Rochette, Vincent Guyader, and Cervan Girard. 2021. Engineering Production-Grade Shiny Apps. Chapman; Hall/CRC. https://engineering-shiny.org/.\n\n\nInternational Committee of Medical Journal Editors. n.d. “Defining the Role of Authors and Contributors.” ICMJE. http://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html.\n\n\nMerali, Zeeya, and Jim Giles. 2010. “Computational Science: Error ... Why Scientific Programming Does Not Compute.” Nature 467: 775–77. https://doi.org/10.1038/467775a.\n\n\nRougier, Nicolas P., Michael Droettboom, and Philip E. Bourne. 2014. “Ten Simple Rules for Better Figures.” PLOS Computational Biology 10 (9). https://doi.org/10.1371/journal.pcbi.1003833.\n\n\nSilbiger, Nyssa J., and Ariel D. Stubler. 2019. “Unpacking the Scientific Toolbox: Five Skills for the Modern Scientist.” Nature. https://doi.org/10.1038/d41586-019-02918-5.\n\n\nVan Noorden, Richard. 2021. “Scientists and Science Communicators Swap Tips on How to Tell Compelling Stories.” Nature. https://doi.org/10.1038/d41586-021-03603-2.\n\n\nWickham, Hadley. 2019. Advanced r. 2nd ed. Chapman; Hall/CRC. https://adv-r.hadley.nz/.\n\n\n———. 2021. Mastering Shiny. O’Reilly Media. https://mastering-shiny.org/.\n\n\nWickham, Hadley, and Jennifer Bryan. 2023. R Packages. 2nd ed. O’Reilly Media. https://r-pkgs.org/.\n\n\nWickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund. 2023. R for Data Science. 2nd ed. O’Reilly Media. https://r4ds.hadley.nz/.",
+    "title": "19  Resources",
+    "section": "19.8 Ethics and global health research",
+    "text": "19.8 Ethics and global health research\n\nGlobal Code of Conduct For Research in Resource-Poor Settings\nAddressing power asymmetries in global health (Abimbola et al. 2022)\nTransforming Global Health Partnerships\n\n\n\n\n\nAbimbola, Seye, Sheena Asthana, Cristina Montenegro, et al. 2022. “Addressing Power Asymmetries in Global Health: Imperatives in the Wake of the COVID-19 Pandemic.” PLOS Global Public Health 2 (10). https://doi.org/10.1371/journal.pgph.0002269.\n\n\nBryan, Jennifer. 2023. Happy Git and GitHub for the useR. https://happygitwithr.com/.\n\n\nFay, Colin, Sébastien Rochette, Vincent Guyader, and Cervan Girard. 2021. Engineering Production-Grade Shiny Apps. Chapman; Hall/CRC. https://engineering-shiny.org/.\n\n\nInternational Committee of Medical Journal Editors. n.d. “Defining the Role of Authors and Contributors.” ICMJE. http://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html.\n\n\nMerali, Zeeya, and Jim Giles. 2010. “Computational Science: Error ... Why Scientific Programming Does Not Compute.” Nature 467: 775–77. https://doi.org/10.1038/467775a.\n\n\nRougier, Nicolas P., Michael Droettboom, and Philip E. Bourne. 2014. “Ten Simple Rules for Better Figures.” PLOS Computational Biology 10 (9). https://doi.org/10.1371/journal.pcbi.1003833.\n\n\nSilbiger, Nyssa J., and Ariel D. Stubler. 2019. “Unpacking the Scientific Toolbox: Five Skills for the Modern Scientist.” Nature. https://doi.org/10.1038/d41586-019-02918-5.\n\n\nVan Noorden, Richard. 2021. “Scientists and Science Communicators Swap Tips on How to Tell Compelling Stories.” Nature. https://doi.org/10.1038/d41586-021-03603-2.\n\n\nWickham, Hadley. 2019. Advanced r. 2nd ed. Chapman; Hall/CRC. https://adv-r.hadley.nz/.\n\n\n———. 2021. Mastering Shiny. O’Reilly Media. https://mastering-shiny.org/.\n\n\nWickham, Hadley, and Jennifer Bryan. 2023. R Packages. 2nd ed. O’Reilly Media. https://r-pkgs.org/.\n\n\nWickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund. 2023. R for Data Science. 2nd ed. O’Reilly Media. https://r4ds.hadley.nz/.",
     "crumbs": [
-      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Resources</span>"
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Resources</span>"
     ]
   },
   {
     "objectID": "professional-development.html",
     "href": "professional-development.html",
-    "title": "19  Professional Development",
+    "title": "20  Professional Development",
     "section": "",
-    "text": "19.1 Mentoring Philosophy\nAdapted by UCD-SeRG team from original by Jade Benjamin-Chung\nWe believe in individualized mentoring that supports each person’s unique career goals. Effective mentoring requires:",
+    "text": "20.1 Mentoring Philosophy\nAdapted by UCD-SeRG team from original by Jade Benjamin-Chung\nWe believe in individualized mentoring that supports each person’s unique career goals. Effective mentoring requires:",
     "crumbs": [
-      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Professional Development</span>"
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Professional Development</span>"
     ]
   },
   {
     "objectID": "professional-development.html#mentoring-philosophy",
     "href": "professional-development.html#mentoring-philosophy",
-    "title": "19  Professional Development",
+    "title": "20  Professional Development",
     "section": "",
     "text": "Regular, open communication between mentees and mentors\nMutual respect and trust\nClear expectations and goals\nConstructive feedback\nSupport for both research and career development",
     "crumbs": [
-      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Professional Development</span>"
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Professional Development</span>"
     ]
   },
   {
     "objectID": "professional-development.html#individual-development-plans",
     "href": "professional-development.html#individual-development-plans",
-    "title": "19  Professional Development",
-    "section": "19.2 Individual Development Plans",
-    "text": "19.2 Individual Development Plans\nAll graduate students and postdocs should maintain an Individual Development Plan (IDP) that outlines:\n\nShort-term and long-term career goals\nSkills to develop\nTraining needs and opportunities\nTimeline and milestones\nProgress toward goals\n\nUpdate your IDP at least annually and discuss it with your PI. Useful resources:\n\nmyIDP - Individual Development Plan tool\nNIH OITE Career Resources",
+    "title": "20  Professional Development",
+    "section": "20.2 Individual Development Plans",
+    "text": "20.2 Individual Development Plans\nAll graduate students and postdocs should maintain an Individual Development Plan (IDP) that outlines:\n\nShort-term and long-term career goals\nSkills to develop\nTraining needs and opportunities\nTimeline and milestones\nProgress toward goals\n\nUpdate your IDP at least annually and discuss it with your PI. Useful resources:\n\nmyIDP - Individual Development Plan tool\nNIH OITE Career Resources",
     "crumbs": [
-      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Professional Development</span>"
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Professional Development</span>"
     ]
   },
   {
     "objectID": "professional-development.html#presentations-and-conferences",
     "href": "professional-development.html#presentations-and-conferences",
-    "title": "19  Professional Development",
-    "section": "19.3 Presentations and Conferences",
-    "text": "19.3 Presentations and Conferences\nWe encourage lab members to present their work at conferences and seminars:\n\nDiscuss conference opportunities with PIs early\nSubmit abstracts with PI approval\nPractice presentations in lab meeting before the conference\nFunding for conferences depends on availability and should be discussed in advance\n\nResources for effective presentations:\n\nHow to tell a compelling story in scientific presentations\nHow to give a killer narratively-driven scientific talk\nHow to make a better poster\nHow to make an even better poster",
+    "title": "20  Professional Development",
+    "section": "20.3 Presentations and Conferences",
+    "text": "20.3 Presentations and Conferences\nWe encourage lab members to present their work at conferences and seminars:\n\nDiscuss conference opportunities with PIs early\nSubmit abstracts with PI approval\nPractice presentations in lab meeting before the conference\nFunding for conferences depends on availability and should be discussed in advance\n\nResources for effective presentations:\n\nHow to tell a compelling story in scientific presentations\nHow to give a killer narratively-driven scientific talk\nHow to make a better poster\nHow to make an even better poster",
     "crumbs": [
-      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Professional Development</span>"
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Professional Development</span>"
     ]
   },
   {
     "objectID": "professional-development.html#scientific-figures",
     "href": "professional-development.html#scientific-figures",
-    "title": "19  Professional Development",
-    "section": "19.4 Scientific Figures",
-    "text": "19.4 Scientific Figures\nCreating clear, effective figures is essential for communicating research findings:\n\nLabel x-axis and y-axis clearly\nUse panel labels when including multiple subplots\nInclude sufficient tick marks and labels\nUse appropriate font sizes (readable but not distracting)\nUse colorblind-friendly palettes (see ColorBrewer or iwanthue)\nDefine colors, shapes, and line types in legends\nMinimize abbreviations in labels and legends\nUse transparency to show overlapping data\nShow measures of precision (e.g., 95% confidence intervals)\n\nResources:\n\nTen Simple Rules for Better Figures",
+    "title": "20  Professional Development",
+    "section": "20.4 Scientific Figures",
+    "text": "20.4 Scientific Figures\nCreating clear, effective figures is essential for communicating research findings:\n\nLabel x-axis and y-axis clearly\nUse panel labels when including multiple subplots\nInclude sufficient tick marks and labels\nUse appropriate font sizes (readable but not distracting)\nUse colorblind-friendly palettes (see ColorBrewer or iwanthue)\nDefine colors, shapes, and line types in legends\nMinimize abbreviations in labels and legends\nUse transparency to show overlapping data\nShow measures of precision (e.g., 95% confidence intervals)\n\nResources:\n\nTen Simple Rules for Better Figures",
     "crumbs": [
-      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Professional Development</span>"
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Professional Development</span>"
     ]
   },
   {
     "objectID": "professional-development.html#grant-writing",
     "href": "professional-development.html#grant-writing",
-    "title": "19  Professional Development",
-    "section": "19.5 Grant Writing",
-    "text": "19.5 Grant Writing\n\nGraduate students and postdocs are encouraged to apply for fellowships (e.g., NIH F31, NSF GRFP, K awards)\nPIs will support fellowship applications with feedback, letters of support, and mentoring\nStart planning fellowship applications well in advance of deadlines (typically 3-6 months)\nAttend grant writing workshops and seek feedback from multiple sources\n\nResources:\n\nBuilding Your Funding Train\nNIH Funding Opportunities\nNIH Grant Writing Resources",
+    "title": "20  Professional Development",
+    "section": "20.5 Grant Writing",
+    "text": "20.5 Grant Writing\n\nGraduate students and postdocs are encouraged to apply for fellowships (e.g., NIH F31, NSF GRFP, K awards)\nPIs will support fellowship applications with feedback, letters of support, and mentoring\nStart planning fellowship applications well in advance of deadlines (typically 3-6 months)\nAttend grant writing workshops and seek feedback from multiple sources\n\nResources:\n\nBuilding Your Funding Train\nNIH Funding Opportunities\nNIH Grant Writing Resources",
     "crumbs": [
-      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Professional Development</span>"
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Professional Development</span>"
     ]
   },
   {
     "objectID": "professional-development.html#teaching-and-outreach",
     "href": "professional-development.html#teaching-and-outreach",
-    "title": "19  Professional Development",
-    "section": "19.6 Teaching and Outreach",
-    "text": "19.6 Teaching and Outreach\nTeaching and outreach are valuable professional development opportunities:\n\nGraduate students are encouraged to gain teaching experience\nWe support science communication and outreach activities\nDiscuss opportunities with PIs",
+    "title": "20  Professional Development",
+    "section": "20.6 Teaching and Outreach",
+    "text": "20.6 Teaching and Outreach\nTeaching and outreach are valuable professional development opportunities:\n\nGraduate students are encouraged to gain teaching experience\nWe support science communication and outreach activities\nDiscuss opportunities with PIs",
     "crumbs": [
-      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Professional Development</span>"
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Professional Development</span>"
     ]
   },
   {
     "objectID": "professional-development.html#networking",
     "href": "professional-development.html#networking",
-    "title": "19  Professional Development",
-    "section": "19.7 Networking",
-    "text": "19.7 Networking\nBuilding a professional network is important for your career:\n\nAttend seminars and departmental events\nConnect with researchers in your field\nJoin professional societies\nUse professional social media platforms to share research and engage with the scientific community",
+    "title": "20  Professional Development",
+    "section": "20.7 Networking",
+    "text": "20.7 Networking\nBuilding a professional network is important for your career:\n\nAttend seminars and departmental events\nConnect with researchers in your field\nJoin professional societies\nUse professional social media platforms to share research and engage with the scientific community",
     "crumbs": [
-      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Professional Development</span>"
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Professional Development</span>"
     ]
   },
   {
     "objectID": "manuscript-preparation.html",
     "href": "manuscript-preparation.html",
-    "title": "20  Manuscript Preparation and Publication",
+    "title": "21  Manuscript Preparation and Publication",
     "section": "",
-    "text": "20.1 Publication Process\nAdapted by UCD-SeRG team from original by Jade Benjamin-Chung\nThe typical workflow for manuscript preparation and publication:",
+    "text": "21.1 Publication Process\nAdapted by UCD-SeRG team from original by Jade Benjamin-Chung\nThe typical workflow for manuscript preparation and publication:",
     "crumbs": [
-      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Manuscript Preparation and Publication</span>"
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Manuscript Preparation and Publication</span>"
     ]
   },
   {
     "objectID": "manuscript-preparation.html#publication-process",
     "href": "manuscript-preparation.html#publication-process",
-    "title": "20  Manuscript Preparation and Publication",
+    "title": "21  Manuscript Preparation and Publication",
     "section": "",
     "text": "Planning: Discuss target journals, outline, and timeline with PIs\nDrafting: Lead author prepares initial draft\nInternal review: Co-authors review and provide feedback\nRevision: Lead author incorporates feedback iteratively\nPI approval: Obtain final approval from PIs before submission\nSubmission: Submit to journal\nRevisions: Lead author coordinates response to peer reviewers\nPublication: Celebrate and share!",
     "crumbs": [
-      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Manuscript Preparation and Publication</span>"
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Manuscript Preparation and Publication</span>"
     ]
   },
   {
     "objectID": "manuscript-preparation.html#preprints-and-open-access",
     "href": "manuscript-preparation.html#preprints-and-open-access",
-    "title": "20  Manuscript Preparation and Publication",
-    "section": "20.2 Preprints and Open Access",
-    "text": "20.2 Preprints and Open Access\n\nWe encourage posting preprints prior to or during peer review on platforms like medRxiv or bioRxiv\nPreprints allow rapid dissemination of findings and can be cited in grant applications\nWe support publishing in open access journals when possible to maximize accessibility\nMany funders, including NIH, have public access policies that require making publications freely available\n\nA preprint is a scientific manuscript that has not been peer reviewed. Preprint servers create digital object identifiers (DOIs) and can be cited in other articles and in grant applications. Because the peer review process can take many months, publishing preprints prior to or during peer review enables other scientists to immediately learn from and build on your work. Importantly, NIH allows applicants to include preprint citations in their biosketches. In most cases, we publish preprints on medRxiv.",
+    "title": "21  Manuscript Preparation and Publication",
+    "section": "21.2 Preprints and Open Access",
+    "text": "21.2 Preprints and Open Access\n\nWe encourage posting preprints prior to or during peer review on platforms like medRxiv or bioRxiv\nPreprints allow rapid dissemination of findings and can be cited in grant applications\nWe support publishing in open access journals when possible to maximize accessibility\nMany funders, including NIH, have public access policies that require making publications freely available\n\nA preprint is a scientific manuscript that has not been peer reviewed. Preprint servers create digital object identifiers (DOIs) and can be cited in other articles and in grant applications. Because the peer review process can take many months, publishing preprints prior to or during peer review enables other scientists to immediately learn from and build on your work. Importantly, NIH allows applicants to include preprint citations in their biosketches. In most cases, we publish preprints on medRxiv.",
     "crumbs": [
-      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Manuscript Preparation and Publication</span>"
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Manuscript Preparation and Publication</span>"
     ]
   },
   {
     "objectID": "manuscript-preparation.html#reporting-checklists",
     "href": "manuscript-preparation.html#reporting-checklists",
-    "title": "20  Manuscript Preparation and Publication",
-    "section": "20.3 Reporting Checklists",
-    "text": "20.3 Reporting Checklists\nUsing reporting checklists ensures that publications contain information needed for readers to assess validity and reproducibility. We use checklists appropriate to study design:\n\nCONSORT for randomized trials\nSTROBE for observational studies\nPRISMA for systematic reviews\nOthers as appropriate (see EQUATOR Network)",
+    "title": "21  Manuscript Preparation and Publication",
+    "section": "21.3 Reporting Checklists",
+    "text": "21.3 Reporting Checklists\nUsing reporting checklists ensures that publications contain information needed for readers to assess validity and reproducibility. We use checklists appropriate to study design:\n\nCONSORT for randomized trials\nSTROBE for observational studies\nPRISMA for systematic reviews\nOthers as appropriate (see EQUATOR Network)",
     "crumbs": [
-      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Manuscript Preparation and Publication</span>"
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Manuscript Preparation and Publication</span>"
     ]
   },
   {
     "objectID": "manuscript-preparation.html#manuscript-checklist",
     "href": "manuscript-preparation.html#manuscript-checklist",
-    "title": "20  Manuscript Preparation and Publication",
-    "section": "20.4 Manuscript Checklist",
-    "text": "20.4 Manuscript Checklist\nBefore submitting a manuscript:\n\nCompleted relevant reporting checklist\nResults are reproducible (rerunning code replicates tables/figures exactly)\nTarget journal selected\nTitle is declarative and states findings clearly\nWord count meets journal requirements\nManuscript follows journal formatting guidelines\nConsistent voice throughout (typically active voice)\nAll figures and tables referenced in main text\nCaptions for all figures and tables\nTables/figures numbered by order of appearance\nAbbreviations defined at first use and used sparingly\nAvoid subjective wording (e.g., “interesting”, “dramatic”)\nAvoid directionless statements (specify direction of associations)\nCausal language only when supported by study design\nAvoid “significant” (easily confused with statistical significance)\nAuthor contributions drafted using CRediT Taxonomy",
+    "title": "21  Manuscript Preparation and Publication",
+    "section": "21.4 Manuscript Checklist",
+    "text": "21.4 Manuscript Checklist\nBefore submitting a manuscript:\n\nCompleted relevant reporting checklist\nResults are reproducible (rerunning code replicates tables/figures exactly)\nTarget journal selected\nTitle is declarative and states findings clearly\nWord count meets journal requirements\nManuscript follows journal formatting guidelines\nConsistent voice throughout (typically active voice)\nAll figures and tables referenced in main text\nCaptions for all figures and tables\nTables/figures numbered by order of appearance\nAbbreviations defined at first use and used sparingly\nAvoid subjective wording (e.g., “interesting”, “dramatic”)\nAvoid directionless statements (specify direction of associations)\nCausal language only when supported by study design\nAvoid “significant” (easily confused with statistical significance)\nAuthor contributions drafted using CRediT Taxonomy",
     "crumbs": [
-      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Manuscript Preparation and Publication</span>"
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Manuscript Preparation and Publication</span>"
     ]
   },
   {
@@ -1534,7 +1604,7 @@
     "href": "references.html",
     "title": "References",
     "section": "",
-    "text": "“2001: A Space Odyssey.” 1968. Film. https://en.wikipedia.org/wiki/2001:_A_Space_Odyssey_(film).\n\n\nAbimbola, Seye, Sheena Asthana, Cristina Montenegro, et al. 2022.\n“Addressing Power Asymmetries in Global Health: Imperatives in the\nWake of the COVID-19 Pandemic.” PLOS Global Public\nHealth 2 (10). https://doi.org/10.1371/journal.pgph.0002269.\n\n\nAsimov, Isaac. 1950. “I, Robot.” New York: Novel; Gnome\nPress. https://search.library.ucdavis.edu/permalink/01UCD_INST/9fle3i/alma990000226350403126.\n\n\nBaker, Monya. 2019. “How to Tackle the Reproducibility Crisis in\nTen Steps.” Nature. https://doi.org/10.1038/d41586-019-01431-z.\n\n\n“Battlestar Galactica.” 2004. Television Series. https://en.wikipedia.org/wiki/Battlestar_Galactica_(2004_TV_series).\n\n\nBenjamin-Chung, Jade, Kunal Mishra, Stephanie Djajadi, Nolan\nPokpongkiat, Anna Nguyen, Iris Tong, and Gabby Barratt Heitmann. 2024.\n“Benjamin-Chung Lab Manual.” https://jadebc.github.io/lab-manual/.\n\n\n“Blade Runner.” 1982. Film. https://en.wikipedia.org/wiki/Blade_Runner.\n\n\nBryan, Jennifer. 2023. Happy Git and GitHub for the useR. https://happygitwithr.com/.\n\n\nCard, Orson Scott. 1985. “Ender’s Game.” Novel; Tor Books.\nhttps://en.wikipedia.org/wiki/Ender%27s_Game.\n\n\nCrameri, Fabio, Grace E. Shephard, and Philip J. Heron. 2020. “The\nMisuse of Colour in Science Communication.” Nature\nCommunications 11. https://doi.org/10.1038/s41467-020-19160-7.\n\n\n“Creative Commons Attribution-NonCommercial 4.0 International\nLicense.” n.d. Creative Commons. http://creativecommons.org/licenses/by-nc/4.0/.\n\n\n“CRediT: Contributor Roles Taxonomy.” n.d. PLOS ONE. https://journals.plos.org/plosone/s/authorship.\n\n\n“Dryad Digital Repository.” n.d. Dryad. https://datadryad.org/.\n\n\n“EQUATOR Network: Enhancing the QUAlity and Transparency of Health\nResearch.” n.d. EQUATOR Network. https://www.equator-network.org/.\n\n\nFay, Colin, Sébastien Rochette, Vincent Guyader, and Cervan Girard.\n2021. Engineering Production-Grade Shiny Apps. Chapman;\nHall/CRC. https://engineering-shiny.org/.\n\n\nFlight of the Conchords. 2007. “The Humans Are Dead.” Music\nVideo. https://www.youtube.com/watch?v=B1BdQcJ2ZYY.\n\n\n“GitHub Desktop.” n.d. GitHub. https://desktop.github.com/.\n\n\nHerbert, Frank. 1965. “Dune.” Novel. https://en.wikipedia.org/wiki/Organizations_of_the_Dune_universe#Thinking_machines.\n\n\n“How to Store and Manage Your Data.” n.d. PLOS. https://plos.org/resource/how-to-store-and-manage-your-data/.\n\n\nInternational Committee of Medical Journal Editors. n.d. “Defining\nthe Role of Authors and Contributors.” ICMJE. http://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html.\n\n\n“medRxiv: The Preprint Server for Health Sciences.” n.d.\nCold Spring Harbor Laboratory. https://www.medrxiv.org/.\n\n\nMerali, Zeeya, and Jim Giles. 2010. “Computational Science: Error\n... Why Scientific Programming Does Not Compute.” Nature\n467: 775–77. https://doi.org/10.1038/467775a.\n\n\nMunafò, Marcus R., Brian A. Nosek, Dorothy V. M. Bishop, Katherine S.\nButton, Christopher D. Chambers, Nathalie Percie du Sert, Uri Simonsohn,\nEric-Jan Wagenmakers, Jennifer J. Ware, and John P. A. Ioannidis. 2017.\n“A Manifesto for Reproducible Science.” Nature Human\nBehaviour 1. https://doi.org/10.1038/s41562-016-0021.\n\n\nNuzzo, Regina. 2015. “How Scientists Fool Themselves – and How\nThey Can Stop.” Nature 526: 182–85. https://doi.org/10.1038/526182a.\n\n\n“Open Science Framework.” n.d. Center for Open Science. https://osf.io/.\n\n\nRobertson, Seth. n.d. “On Undoing, Fixing, or Removing Commits in\nGit.” https://sethrobertson.github.io/GitFixUm/fixup.html.\n\n\nRougier, Nicolas P., Michael Droettboom, and Philip E. Bourne. 2014.\n“Ten Simple Rules for Better Figures.” PLOS\nComputational Biology 10 (9). https://doi.org/10.1371/journal.pcbi.1003833.\n\n\nSilbiger, Nyssa J., and Ariel D. Stubler. 2019. “Unpacking the\nScientific Toolbox: Five Skills for the Modern Scientist.”\nNature. https://doi.org/10.1038/d41586-019-02918-5.\n\n\n“Slurm Workload Manager: Sbatch Documentation.” n.d.\nSchedMD. https://slurm.schedmd.com/sbatch.html.\n\n\nStoddart, Charlotte. 2019. “Is There a Reproducibility Crisis in\nScience?” Nature. https://doi.org/10.1038/d41586-019-00067-3.\n\n\n“Terminator 3: Rise of the Machines.” 2003. Film. https://en.wikipedia.org/wiki/Terminator_3:_Rise_of_the_Machines.\n\n\n“The Matrix.” 1999. Film. https://en.wikipedia.org/wiki/The_Matrix.\n\n\nTidyverse Team. 2023. Tidyverse Code Review Principles. https://code-review.tidyverse.org/.\n\n\nVan Noorden, Richard. 2021. “Scientists and Science Communicators\nSwap Tips on How to Tell Compelling Stories.” Nature. https://doi.org/10.1038/d41586-021-03603-2.\n\n\n“WarGames.” 1983. Film. https://en.wikipedia.org/wiki/WarGames.\n\n\nWickham, Hadley. 2019. Advanced r. 2nd ed. Chapman; Hall/CRC.\nhttps://adv-r.hadley.nz/.\n\n\n———. 2021. Mastering Shiny. O’Reilly Media. https://mastering-shiny.org/.\n\n\n———. 2023a. The Tidyverse Style Guide. https://style.tidyverse.org/.\n\n\n———. 2023b. Tidyverse Design Guide. https://design.tidyverse.org/.\n\n\nWickham, Hadley, and Jennifer Bryan. 2023. R Packages. 2nd ed.\nO’Reilly Media. https://r-pkgs.org/.\n\n\nWickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund. 2023.\nR for Data Science. 2nd ed. O’Reilly Media. https://r4ds.hadley.nz/.\n\n\nWickham, Hadley, Peter Danenberg, Gábor Csárdi, and Manuel Eugster.\n2024. Roxygen2: In-Line Documentation for r. https://roxygen2.r-lib.org/.",
+    "text": "PREVIEW_BANNER_PLACEHOLDER\n\n\n\n“2001: A Space Odyssey.” 1968. Film. https://en.wikipedia.org/wiki/2001:_A_Space_Odyssey_(film).\n\n\nAbimbola, Seye, Sheena Asthana, Cristina Montenegro, et al. 2022.\n“Addressing Power Asymmetries in Global Health: Imperatives in the\nWake of the COVID-19 Pandemic.” PLOS Global Public\nHealth 2 (10). https://doi.org/10.1371/journal.pgph.0002269.\n\n\nAsimov, Isaac. 1950. “I, Robot.” New York: Novel; Gnome\nPress. https://search.library.ucdavis.edu/permalink/01UCD_INST/9fle3i/alma990000226350403126.\n\n\nBaker, Monya. 2019. “How to Tackle the Reproducibility Crisis in\nTen Steps.” Nature. https://doi.org/10.1038/d41586-019-01431-z.\n\n\n“Battlestar Galactica.” 2004. Television Series. https://en.wikipedia.org/wiki/Battlestar_Galactica_(2004_TV_series).\n\n\nBenjamin-Chung, Jade, Kunal Mishra, Stephanie Djajadi, Nolan\nPokpongkiat, Anna Nguyen, Iris Tong, and Gabby Barratt Heitmann. 2024.\n“Benjamin-Chung Lab Manual.” https://jadebc.github.io/lab-manual/.\n\n\n“Blade Runner.” 1982. Film. https://en.wikipedia.org/wiki/Blade_Runner.\n\n\nBryan, Jennifer. 2023. Happy Git and GitHub for the useR. https://happygitwithr.com/.\n\n\nCard, Orson Scott. 1985. “Ender’s Game.” Novel; Tor Books.\nhttps://en.wikipedia.org/wiki/Ender%27s_Game.\n\n\nCrameri, Fabio, Grace E. Shephard, and Philip J. Heron. 2020. “The\nMisuse of Colour in Science Communication.” Nature\nCommunications 11. https://doi.org/10.1038/s41467-020-19160-7.\n\n\n“Creative Commons Attribution-NonCommercial 4.0 International\nLicense.” n.d. Creative Commons. http://creativecommons.org/licenses/by-nc/4.0/.\n\n\n“CRediT: Contributor Roles Taxonomy.” n.d. PLOS ONE. https://journals.plos.org/plosone/s/authorship.\n\n\n“Dryad Digital Repository.” n.d. Dryad. https://datadryad.org/.\n\n\n“EQUATOR Network: Enhancing the QUAlity and Transparency of Health\nResearch.” n.d. EQUATOR Network. https://www.equator-network.org/.\n\n\nFay, Colin, Sébastien Rochette, Vincent Guyader, and Cervan Girard.\n2021. Engineering Production-Grade Shiny Apps. Chapman;\nHall/CRC. https://engineering-shiny.org/.\n\n\nFlight of the Conchords. 2007. “The Humans Are Dead.” Music\nVideo. https://www.youtube.com/watch?v=B1BdQcJ2ZYY.\n\n\n“GitHub Desktop.” n.d. GitHub. https://desktop.github.com/.\n\n\nHerbert, Frank. 1965. “Dune.” Novel. https://en.wikipedia.org/wiki/Organizations_of_the_Dune_universe#Thinking_machines.\n\n\n“How to Store and Manage Your Data.” n.d. PLOS. https://plos.org/resource/how-to-store-and-manage-your-data/.\n\n\nInternational Committee of Medical Journal Editors. n.d. “Defining\nthe Role of Authors and Contributors.” ICMJE. http://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html.\n\n\n“medRxiv: The Preprint Server for Health Sciences.” n.d.\nCold Spring Harbor Laboratory. https://www.medrxiv.org/.\n\n\nMerali, Zeeya, and Jim Giles. 2010. “Computational Science: Error\n... Why Scientific Programming Does Not Compute.” Nature\n467: 775–77. https://doi.org/10.1038/467775a.\n\n\nMunafò, Marcus R., Brian A. Nosek, Dorothy V. M. Bishop, Katherine S.\nButton, Christopher D. Chambers, Nathalie Percie du Sert, Uri Simonsohn,\nEric-Jan Wagenmakers, Jennifer J. Ware, and John P. A. Ioannidis. 2017.\n“A Manifesto for Reproducible Science.” Nature Human\nBehaviour 1. https://doi.org/10.1038/s41562-016-0021.\n\n\nNuzzo, Regina. 2015. “How Scientists Fool Themselves – and How\nThey Can Stop.” Nature 526: 182–85. https://doi.org/10.1038/526182a.\n\n\n“Open Science Framework.” n.d. Center for Open Science. https://osf.io/.\n\n\nRobertson, Seth. n.d. “On Undoing, Fixing, or Removing Commits in\nGit.” https://sethrobertson.github.io/GitFixUm/fixup.html.\n\n\nRougier, Nicolas P., Michael Droettboom, and Philip E. Bourne. 2014.\n“Ten Simple Rules for Better Figures.” PLOS\nComputational Biology 10 (9). https://doi.org/10.1371/journal.pcbi.1003833.\n\n\nSilbiger, Nyssa J., and Ariel D. Stubler. 2019. “Unpacking the\nScientific Toolbox: Five Skills for the Modern Scientist.”\nNature. https://doi.org/10.1038/d41586-019-02918-5.\n\n\n“Slurm Workload Manager: Sbatch Documentation.” n.d.\nSchedMD. https://slurm.schedmd.com/sbatch.html.\n\n\nStoddart, Charlotte. 2019. “Is There a Reproducibility Crisis in\nScience?” Nature. https://doi.org/10.1038/d41586-019-00067-3.\n\n\n“Terminator 3: Rise of the Machines.” 2003. Film. https://en.wikipedia.org/wiki/Terminator_3:_Rise_of_the_Machines.\n\n\n“The Matrix.” 1999. Film. https://en.wikipedia.org/wiki/The_Matrix.\n\n\nTidyverse Team. 2023. Tidyverse Code Review Principles. https://code-review.tidyverse.org/.\n\n\nVan Noorden, Richard. 2021. “Scientists and Science Communicators\nSwap Tips on How to Tell Compelling Stories.” Nature. https://doi.org/10.1038/d41586-021-03603-2.\n\n\n“WarGames.” 1983. Film. https://en.wikipedia.org/wiki/WarGames.\n\n\nWickham, Hadley. 2019. Advanced r. 2nd ed. Chapman; Hall/CRC.\nhttps://adv-r.hadley.nz/.\n\n\n———. 2021. Mastering Shiny. O’Reilly Media. https://mastering-shiny.org/.\n\n\n———. 2023a. The Tidyverse Style Guide. https://style.tidyverse.org/.\n\n\n———. 2023b. Tidyverse Design Guide. https://design.tidyverse.org/.\n\n\nWickham, Hadley, and Jennifer Bryan. 2023. R Packages. 2nd ed.\nO’Reilly Media. https://r-pkgs.org/.\n\n\nWickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund. 2023.\nR for Data Science. 2nd ed. O’Reilly Media. https://r4ds.hadley.nz/.\n\n\nWickham, Hadley, Peter Danenberg, Gábor Csárdi, and Manuel Eugster.\n2024. Roxygen2: In-Line Documentation for r. https://roxygen2.r-lib.org/.",
     "crumbs": [
       "References"
     ]
