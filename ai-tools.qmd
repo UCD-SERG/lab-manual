@@ -65,9 +65,62 @@ rather than simply asking it to summarize information on a topic.
 
 ## Coding Agents
 
-We recommend using **[Coding Agents](https://github.com/features/copilot/agents)** 
-([AI agents](https://en.wikipedia.org/wiki/AI_agent) specialized for coding)
-for AI-assisted coding.
+We recommend working with **[AI coding agents](https://github.com/features/copilot/agents)** 
+to [help you code](https://en.wikipedia.org/wiki/AI-assisted_software_development).
+
+### What are AI coding agents?
+
+AI coding agents are [AI agents](https://en.wikipedia.org/wiki/AI_agent) specialized for coding.
+They differ from other AI coding tools in important ways:
+
+**Compared to inline coding assistants** (like traditional autocomplete),
+coding agents work autonomously rather than providing suggestions as you type.
+They can navigate entire codebases,
+execute commands,
+and complete multi-step tasks without constant human guidance.
+
+**Compared to AI chatbots** (like ChatGPT or Claude),
+coding agents don't just generate code snippets in conversation—they actively interact with your development environment.
+While chatbots require you to copy code from a chat window and manually integrate it into your project,
+coding agents directly read your codebase,
+make changes to files,
+run tests and build commands,
+and create pull requests with their proposed changes.
+Chatbots are conversational assistants;
+coding agents are autonomous development tools.
+
+Coding agents are autonomous software programs that can:
+
+- **Understand and execute complex tasks**:
+  Coding agents can interpret natural language instructions and break them down into actionable development tasks
+- **Navigate and modify codebases**:
+  They can read, understand, and edit multiple files across a repository to implement features or fix bugs
+- **Run tools and commands**:
+  Coding agents can execute build commands, run tests, use linters, and interact with development tools
+- **Make decisions autonomously**:
+  They can plan their approach, make technical decisions, and adjust their strategy based on results
+- **Work iteratively**:
+  Coding agents can test their changes, identify issues, and refine their solutions through multiple iterations
+- **Create comprehensive solutions**:
+  They can implement complete features that span multiple files, including code, tests, and documentation
+
+Coding agents operate in isolated environments where they can safely experiment and validate changes before proposing them.
+This allows them to work more independently than inline coding assistants,
+which require step-by-step human direction.
+The agent workflow typically involves analyzing requirements,
+planning an implementation,
+making changes,
+testing those changes,
+and creating a pull request with the results.
+
+While coding agents can handle substantial development tasks,
+they still require human oversight and review.
+The human developer remains responsible for:
+
+- Reviewing the agent's work
+- Ensuring the solution meets requirements
+- Verifying code quality and security
+- Making the final decision to merge changes
 
 ### How to Work with Coding Agents
 
@@ -188,34 +241,55 @@ see [GitHub Copilot coding agent documentation](https://docs.github.com/en/copil
 
 ### Benefits and Hazards
 
-Like the [Agents in the Matrix films](https://en.wikipedia.org/wiki/Agent_(The_Matrix)), 
-coding agents are powerful programs;
-coding agents can manipulate code,
-including their own configuration files.
-They can work on your behalf,
-but they require careful oversight and control
-to ensure they serve your interests.
-
-![Agents from the Matrix films: powerful programs that require careful oversight](assets/images/matrix-agents.png){fig-alt="Three agents in suits and sunglasses from the Matrix films"}
+Coding agents are powerful programs that can work autonomously.
+They create pull requests that propose changes to the code in our repositories,
+potentially including their own configuration files and our automated workflows.
+They can work powerfully on our behalf,
+but they require careful oversight and control to ensure they serve our interests 
+and that we understand the consequences of their actions.
 
 Coding agents offer several advantages:
 
-- **Built-in transparency**: Coding agents create a clear record of their role in your work through commit history and code suggestions
-- **Context-aware suggestions**: Coding agents understand your codebase and can make contextually relevant suggestions
-- **Integration with version control**: Using coding agents within GitHub ensures that AI-assisted changes are tracked alongside all other code changes
-- **Interactive workflow**: Coding agents' interactive nature encourages you to review and modify suggestions rather than blindly accepting them
-- **Accelerated development**: Coding agents can help you write boilerplate code, refactor existing code, and implement common patterns more quickly
-- **Learning opportunities**: Coding agents can suggest approaches or techniques you may not have considered, helping you expand your coding knowledge
+- **Built-in transparency**: 
+Coding agents create a clear record of their role in your work through commit history and code suggestions
+
+- **Context-aware suggestions**: 
+Coding agents understand your codebase and can make contextually relevant suggestions
+
+- **Integration with version control**: 
+Using coding agents within GitHub ensures that AI-assisted changes are tracked alongside all other code changes
+
+- **Interactive workflow**: 
+Coding agents' interactive nature encourages you to review and modify suggestions rather than blindly accepting them
+
+- **Accelerated development**: 
+Coding agents can help you write boilerplate code, refactor existing code, and implement common patterns more quickly
+
+- **Learning opportunities**: 
+Coding agents can suggest approaches or techniques you may not have considered, helping you expand your coding knowledge
 
 However, coding agents also come with significant hazards:
 
-- **Over-reliance**: Depending too heavily on coding agents can atrophy your coding skills and understanding
-- **Subtle bugs**: AI-generated code may contain logic errors that are not immediately obvious
-- **Security vulnerabilities**: Coding agents may introduce insecure patterns or fail to follow security best practices
-- **Inappropriate solutions**: AI may suggest solutions that work but are not optimal for your specific research context or constraints
-- **Hidden biases**: Coding agents may perpetuate coding patterns or approaches that reflect biases in their training data
-- **False confidence**: Well-formatted, professional-looking code from AI can mask underlying problems and reduce critical review
-- **Workflow manipulation risks**: Coding agents that modify CI/CD workflows (`.github/workflows/*.yml`) or setup configurations can inadvertently or maliciously compromise repository security, expose secrets, or execute harmful commands
+- **Over-reliance**: 
+Depending too heavily on coding agents can atrophy your coding skills and understanding
+
+- **Subtle bugs**: 
+AI-generated code may contain logic errors that are not immediately obvious
+
+- **Security vulnerabilities**: 
+Coding agents may introduce insecure patterns or fail to follow security best practices
+
+- **Inappropriate solutions**: 
+AI may suggest solutions that work but are not optimal for your specific research context or constraints
+
+- **Hidden biases**: 
+Coding agents may perpetuate coding patterns or approaches that reflect biases in their training data
+
+- **False confidence**: 
+Well-formatted, professional-looking code from AI can mask underlying problems and reduce critical review
+
+- **Workflow manipulation risks**: 
+Coding agents that modify CI/CD workflows (`.github/workflows/*.yml`) or setup configurations can inadvertently or maliciously compromise repository security, expose secrets, or execute harmful commands
 
 ### Best Practices for Safe and Successful Use
 
@@ -374,4 +448,18 @@ When using this workflow, make sure to explicitly instruct the coding agent to:
 - Translate edits from Word formatting to appropriate Quarto/markdown syntax
 
 This approach makes it easier for collaborators who are more comfortable with Word to contribute to the lab manual while maintaining the source files in Quarto format.
+
+## Further reading/viewing
+
+- *I Robot* [@i_robot]
+- *Dune* [@butlerian_jihad]
+- @space_odyssey
+- @terminator
+- @matrix
+- @blade_runner
+- @wargames
+- *Ender's Game* [@enders_game]
+- "The Humans are Dead" [@humans_are_dead]
+
+![[Agents](https://en.wikipedia.org/wiki/Agent_(The_Matrix))](assets/images/matrix-agents.png){fig-alt="Three agents in suits and sunglasses from the Matrix films"}
 
