@@ -16,7 +16,7 @@ as it provides pre-configured settings and examples:
    - Click "Use this template" → "Create a new repository" on GitHub
    - Clone your new repository and start editing
 
-2. **Coatless Tutorials Quarto Book Template** - Another frequently-used template with helpful examples:
+2. **Coatless Tutorials Quarto Book Template** - Another template with helpful examples:
    - Repository: <https://github.com/coatless-tutorials/quarto-book-template>
    - Includes examples of common Quarto book features
 
