@@ -42,6 +42,7 @@ placeholder*.tgz
 *.docx
 *.epub
 *.html
+*_files/
 *.aux
 *.log
 *.toc
