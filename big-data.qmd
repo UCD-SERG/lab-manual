@@ -1,6 +1,6 @@
 # Big data
 
-Adapted by UCD-SeRG team from [original by Kunal Mishra and Jade Benjamin-Chung](https://jadebc.github.io/lab-manual/big-data.html)
+Adapted by UCD-SeRG team from [original by Kunal Mishra and Jade Benjamin-Chung](https://jadebc.github.io/lab-manual/working-with-big-data.html)
 
 ## The data.table package
 It may also be the case that you're working with very large datasets. Generally I would define this as 10+ million rows. As is outlined in this document, the 3 main players in the data analysis space are Base R, `Tidvyerse` (more specificially, `dplyr`), and `data.table`. For a majority of things, Base R is inferior to both `dplyr` and `data.table`, with concise but less clear syntax and less speed. `Dplyr` is architected for medium and smaller data, and while its very fast for everyday usage, it trades off maximum performance for ease of use and syntax compared to `data.table`. An overview of the `dplyr` vs `data.table` debate can be found in [this stackoverflow post](https://stackoverflow.com/questions/21435339/data-table-vs-dplyr-can-one-do-something-well-the-other-cant-or-does-poorly/27840349#27840349) and all 3 answers are worth a read.

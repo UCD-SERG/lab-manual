@@ -119,8 +119,8 @@ sdev
 You should only have to install packages once. The cluster may require that you specify the repository where the package is downloaded from. You may also need to add an additional argument to install.packages to prevent the packages from locking after installation:
 
 ```r
-install.packages(<PACKAGE NAME>, repos=“http://cran.us.ur-project.org”, 
-                  INSTALL_opts = "--no-lock"")
+install.packages(<PACKAGE NAME>, repos="https://cran.r-project.org", 
+                  INSTALL_opts = "--no-lock")
 ```
 
 In order for some R packages to work on clusters, it is necessary to load specific software modules before running R. These must be loaded each time you want to use the package in R. For example, for spatial and random effects analyses, you may need the modules/packages below. These modules must also be loaded on the command line prior to opening R in order for package installation to work. 

@@ -11,7 +11,9 @@ max_concurrency = 10
 user_agent = "Mozilla/5.0 (compatible; Lychee/0.15; +https://github.com/lycheeverse/lychee)"
 
 # Accept these HTTP status codes as valid
-accept = [200, 201, 202, 203, 204, 206, 301, 302, 303, 307, 308, 429]
+# 403 is added because some sites block automated checkers but work for users
+# Examples: biorxiv.org, medium.com, sciencedirect.com, hpc.ucdavis.edu, support.rstudio.com
+accept = [200, 201, 202, 203, 204, 206, 301, 302, 303, 307, 308, 403, 429]
 
 # Timeout per request (in seconds)
 timeout = 20
@@ -21,8 +23,12 @@ exclude = [
   "https://github.com/YOUR-USERNAME/.*",
   "https://YOUR-USERNAME.github.io/.*",
   "https://your-username.github.io/.*",
+  # Example placeholder URL in documentation
+  "https://ucd-serg.github.io/YOURPROJECT",
+  # Broken link in commented-out HTML (false positive)
+  "https://beierlab.com/.*",
   "http://localhost.*",
   "https://localhost.*",
   "http://127.0.0.1.*",
-  "https://127.0.0.1.*",
+  "https://127.0.0.1.*"
 ]
