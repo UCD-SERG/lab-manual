@@ -95,7 +95,7 @@ The example workflow is accessible via GitHub: https://github.com/proctor-ucsf/d
 
 ## Create a data repository
 
-First, ensure that you create a codebook and metadata file for each public dataset [See the DCC guide on Documenting datasets](https://proctor-ucsf.github.io/dcc-handbook/datawrangling.html#documenting-datasets). Use the same name as the datasets, but with "-codebook.txt” /  “-codebook.html” / “-codebook.csv” at the end (depending on the file format for the codebook).  One nice option is the R codebook package, which also generates JSON output that is machine-readable.  
+First, ensure that you create a codebook and metadata file for each public dataset [See the DCC guide on Documenting datasets](https://proctor-ucsf.github.io/dcc-handbook/datawrangling.html#documenting-datasets). Use the same name as the datasets, but with "-codebook.txt" /  "-codebook.html" / "-codebook.csv" at the end (depending on the file format for the codebook).  One nice option is the R codebook package, which also generates JSON output that is machine-readable.  
 
 ### Steps for creating an Open Science Framework (OSF) repository:
 1. Create a new OSF project per these instructions: https://help.osf.io/article/252-create-a-project 

@@ -119,7 +119,7 @@ sdev
 You should only have to install packages once. The cluster may require that you specify the repository where the package is downloaded from. You may also need to add an additional argument to install.packages to prevent the packages from locking after installation:
 
 ```r
-install.packages(<PACKAGE NAME>, repos=“https://cran.r-project.org”, 
+install.packages(<PACKAGE NAME>, repos="https://cran.r-project.org", 
                   INSTALL_opts = "--no-lock")
 ```
 
