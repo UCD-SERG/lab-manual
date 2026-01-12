@@ -22,7 +22,9 @@ exclude = [
   "https://github.com/YOUR-USERNAME/.*",
   "https://YOUR-USERNAME.github.io/.*",
   "https://your-username.github.io/.*",
+  # Example placeholder URL in documentation
   "https://ucd-serg.github.io/YOURPROJECT",
+  # Broken link in commented-out HTML (false positive)
   "https://beierlab.com/.*",
   "http://localhost.*",
   "https://localhost.*",
