@@ -28,7 +28,7 @@ Adapted by UCD-SeRG team from [original by Jade Benjamin-Chung and Kunal Mishra]
 ### Tidy Evaluation Resources
 
 - [Tidy Eval in 5 Minutes](https://www.youtube.com/watch?v=nERXS3ssntw) (video)
-- [Tidy Evaluation](https://tidyeval.tidyverse.org/index.html) (e-book)
+- [Tidy Evaluation](https://dplyr.tidyverse.org/articles/programming.html) (e-book)
 - [Data Frame Columns as Arguments to Dplyr Functions](https://www.brodrigues.co/blog/2016-07-18-data-frame-columns-as-arguments-to-dplyr-functions/) (blog)
 - [Standard Evaluation for *_join](https://stackoverflow.com/questions/28125816/r-standard-evaluation-for-join-dplyr) (stackoverflow)
 - [Programming with dplyr](https://dplyr.tidyverse.org/articles/programming.html) (package vignette)
@@ -36,8 +36,7 @@ Adapted by UCD-SeRG team from [original by Jade Benjamin-Chung and Kunal Mishra]
 ## Resources for Git & Github
 
 - Happy Git and GitHub for the useR [@bryan2023happygit] - comprehensive guide to using Git and GitHub with R
-- [Data Camp introduction to Git](https://www.datacamp.com/courses/introduction-to-git-for-data-science)
-- [Introduction to Github](https://lab.github.com/githubtraining/introduction-to-github)
+- [GitHub Skills: Introduction to GitHub](https://github.com/skills/introduction-to-github)
 
 ## Scientific figures
 - Ten Simple Rules for Better Figures [@rougier2014]
@@ -65,6 +64,6 @@ Adapted by UCD-SeRG team from [original by Jade Benjamin-Chung and Kunal Mishra]
 - [NIH Grant Writing Resources](https://www.niaid.nih.gov/grants-contracts/write-grant-application)
 
 ## Ethics and global health research
-- [Global Code of Conduct For Research in Resource-Poor Settings](https://www.globalcodeofconduct.org/wp-content/uploads/2018/05/Global-Code-of-Conduct-Brochure.pdf)
+- [Global Code of Conduct For Research in Resource-Poor Settings](https://www.globalcodeofconduct.org/)
 - Addressing power asymmetries in global health [@abimbola2022]
 - [Transforming Global Health Partnerships](https://link.springer.com/book/9783031537929)

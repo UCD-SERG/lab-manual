@@ -25,9 +25,9 @@ When typing in directories or file names, quotes are necessary if the name inclu
 | `pwd`                   | Print working directory |
 | `ls`                    | List files in the directory |
 | `cp "file2" "newfile2"` | Copy file (remember to include file extensions when typing in file names like `.pdf` or `.R`) |
-| `mv “newfile2” “file3”` | Rename `newfile2` to `file3` |
+| `mv "newfile2" "file3"` | Rename `newfile2` to `file3` |
 | `cd ..`                 | Go to parent of the working directory (in this case, `desktop`) |
-| `mv “file1” folder2`    | Move `file1` to `folder2` |
+| `mv "file1" folder2`    | Move `file1` to `folder2` |
 | `mkdir folder3`         | Make a new folder in `folder2` |
 | `rm <filename>`         | Remove files |
 | `rm -rf folder3`        | Remove directories (`-r` will attempt to remove the directory recursively, `-rf` will force removal of the directory) |
@@ -58,13 +58,13 @@ When R is installed, it comes with a utility called Rscript. This allows you to 
 For appending the `PATH` variable, please view [this link](https://www.howtogeek.com/118594/how-to-edit-your-system-path-for-easy-command-line-access/). I strongly recommend completing this option.
 
 If you add the PATH as an environment variable, then you can run this line of code to test:
-`Rscript -e “cat(‘this is a test’)"`, where the `-e` flag refers to the expression that will be executed.
+`Rscript -e "cat(‘this is a test’)"`, where the `-e` flag refers to the expression that will be executed.
 
 If you do not add the PATH as an environment variable, then you can run this line of code to replicate the results from above:
-`“C:\Program Files\R\R-3.6.0\bin” -e “cat(‘this is a test’)”`
+`"C:\Program Files\R\R-3.6.0\bin" -e "cat(‘this is a test’)"`
 
 To run an R script from the command line, we can say:
-`Rscript -e “source(‘C:/path/to/script/some_code.R’)”`
+`Rscript -e "source(‘C:/path/to/script/some_code.R’)"`
 
 ### Common Mistakes
 * Remember to include all of the quotation marks around file paths that have a spaces.

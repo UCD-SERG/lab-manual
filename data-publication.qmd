@@ -95,14 +95,14 @@ The example workflow is accessible via GitHub: https://github.com/proctor-ucsf/d
 
 ## Create a data repository
 
-First, ensure that you create a codebook and metadata file for each public dataset [See the DCC guide on Documenting datasets](https://proctor-ucsf.github.io/dcc-handbook/datawrangling.html#documenting-datasets). Use the same name as the datasets, but with "-codebook.txt” /  “-codebook.html” / “-codebook.csv” at the end (depending on the file format for the codebook).  One nice option is the R codebook package, which also generates JSON output that is machine-readable.  
+First, ensure that you create a codebook and metadata file for each public dataset [See the DCC guide on Documenting datasets](https://proctor-ucsf.github.io/dcc-handbook/datawrangling.html#documenting-datasets). Use the same name as the datasets, but with "-codebook.txt" /  "-codebook.html" / "-codebook.csv" at the end (depending on the file format for the codebook).  One nice option is the R codebook package, which also generates JSON output that is machine-readable.  
 
 ### Steps for creating an Open Science Framework (OSF) repository:
 1. Create a new OSF project per these instructions: https://help.osf.io/article/252-create-a-project 
 2. Create a data component and upload the datasets in .csv and .rds format along with the codebooks.  The primary format for public dissemination is .csv but we make the .rds files available too as auxiliary files for convenience.
 3. Create a notebook component and upload the final .html files (which will not be on github... but see optional item below)
 4. On the OSF landing Wiki,  provide some context.  Here is a recent example: https://osf.io/954bt/
-5. Create a Digital Object Identifier (DOI) for the repository. A DOI is a unique identifier that provides a persistent link to content, such as a dataset in this case. [Learn more about DOIs](https://researchdata.princeton.edu/research-lifecycle-guide/whats-doi-and-what-should-i-know-about-citing-datasets)
+5. Create a Digital Object Identifier (DOI) for the repository. A DOI is a unique identifier that provides a persistent link to content, such as a dataset in this case. [Learn more about DOIs](https://researchdata.princeton.edu/research-lifecycle-guide/publishing-and-preservation/dois)
 6. Optional: Complete the software checklist and system requirement guide for the analysis to guide others. Include it on the GitHub README for the project: https://github.com/proctor-ucsf/mordor-antibody
 
 
