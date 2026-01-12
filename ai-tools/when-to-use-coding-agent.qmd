@@ -11,6 +11,12 @@ See <https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/
 but it will never be 0.
 If you can complete the task faster than the coding agent can,
 you should probably do it yourself.
+For example,
+when you have errors in the spell-check workflow,
+it's often faster to run `spelling::update_wordlist()` yourself than
+to have Copilot do it for you.
+Also, when reviewing Copilot's PRs, it's often faster to directly edit the
+PR branch than to write clear review comments and ask Copilot to address them.
 
 Also,
 the less we practice,
