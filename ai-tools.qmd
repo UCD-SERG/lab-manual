@@ -65,9 +65,12 @@ rather than simply asking it to summarize information on a topic.
 
 ## Coding Agents
 
-We recommend working with **[AI Coding Agents](https://github.com/features/copilot/agents)** 
-^[[AI agents](https://en.wikipedia.org/wiki/AI_agent) specialized for coding]
+We recommend working with **[AI coding agents](https://github.com/features/copilot/agents)** 
 to [help you code](https://en.wikipedia.org/wiki/AI-assisted_software_development).
+
+### What are AI coding agents?
+
+AI coding agents are [AI agents](https://en.wikipedia.org/wiki/AI_agent) specialized for coding.
 
 ### How to Work with Coding Agents
 
