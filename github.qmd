@@ -40,6 +40,8 @@ A standard workflow when starting on a new project and contributing code looks l
 | (10.) Your changes and PR get approved, your reviewer deletes your remote branch upon merging | |
 | 11. `git fetch --all --prune`                           | clean up your local git by untracking deleted remote branches   |
 
+: Standard Git workflow for new projects {#tbl-git-workflow}
+
 Other helpful commands are listed below.
 
 ## Commonly Used Git Commands
@@ -64,6 +66,8 @@ Other helpful commands are listed below.
 | `git push --delete <remote_name> <branch_name>`     | delete remote branch   |
 | `git branch -d <branch_name>`                       | deletes local branch, -D to force   |
 | `git fetch --all --prune`                           | untrack deleted remote branches   |
+
+: Commonly used Git commands {#tbl-git-commands}
 
 ## How often should I commit? 
 

@@ -80,6 +80,73 @@ When talking about code in prose sections, use backticks to apply code formattin
 - Prevents rendering issues in Quarto books
 - Follows markdown best practices
 
+### Cross-References for Figures and Tables
+
+**ALWAYS use Quarto's cross-reference system for figures, tables, and other captioned content.**
+See [Quarto Cross-References documentation](https://quarto.org/docs/authoring/cross-references.html) for complete details.
+
+**Required label prefixes:**
+
+- Figures: `#fig-` (e.g., `#fig-data-masking`, `#fig-workflow-diagram`)
+- Tables: `#tbl-` (e.g., `#tbl-git-commands`, `#tbl-summary-stats`)
+- Equations: `#eq-` (e.g., `#eq-regression-model`)
+- Sections: `#sec-` (e.g., `#sec-introduction`) - already in use throughout manual
+- Theorems: `#thm-` (e.g., `#thm-central-limit`)
+- Lemmas: `#lem-` (e.g., `#lem-auxiliary-result`)
+- Corollaries: `#cor-` (e.g., `#cor-special-case`)
+- Propositions: `#prp-` (e.g., `#prp-main-result`)
+- Examples: `#exm-` (e.g., `#exm-simple-case`)
+- Exercises: `#exr-` (e.g., `#exr-practice-problem`)
+
+**For figures (images):**
+
+```markdown
+![Caption text](path/to/image.png){#fig-label}
+```
+
+**For tables (markdown tables):**
+
+```markdown
+| Column 1 | Column 2 |
+|----------|----------|
+| Data     | Data     |
+
+: Caption text {#tbl-label}
+```
+
+**For code-generated figures:**
+
+```{{r}}
+#| label: fig-plot-name
+#| fig-cap: "Caption text"
+
+# R code to generate plot
+```
+
+**For code-generated tables:**
+
+```{{r}}
+#| label: tbl-table-name
+#| tbl-cap: "Caption text"
+
+# R code to generate table
+```
+
+**Referencing in text:**
+
+- Figures: `@fig-label` produces "Figure X"
+- Tables: `@tbl-label` produces "Table X"
+- Equations: `@eq-label` produces "Equation X"
+- Sections: `@sec-label` produces "Section X"
+
+**Benefits:**
+
+- Automatic numbering of figures, tables, and equations
+- Automatic updates when content is reordered
+- Clickable cross-references in HTML and PDF output
+- Consistent formatting across all output formats
+- Better accessibility for screen readers
+
 ## R Code Style
 
 - Follow the tidyverse style guide: https://style.tidyverse.org
@@ -114,7 +181,8 @@ When talking about code in prose sections, use backticks to apply code formattin
 
 - Contains the chapter title and introduction
 - Contains section headings (##, ###, etc.)
-- Uses `{{< include >}}` statements to pull in content
+- Uses the `include` shortcode to pull in content
+(see <https://quarto.org/docs/authoring/includes.html> for details) 
 - Shows the organization/outline of the chapter
 
 **Include files** (e.g., `05-coding-practices/lab-protocols-for-code-and-data.qmd`):
@@ -131,19 +199,19 @@ When talking about code in prose sections, use backticks to apply code formattin
 ```markdown
 ## Section Heading
 
-{{< include folder/section-name.qmd >}}
+{{< include demo-folder/section-name.qmd >}}
 ```
 
 **Correct example:**
 ```markdown
-## Lab Protocols for Code and Data
+## Section heading
 
-{{< include 05-coding-practices/lab-protocols-for-code-and-data.qmd >}}
+{{< include demo-folder/section-name.qmd >}}
 ```
 
 **Incorrect (don't do this):**
 ```markdown
-{{< include 05-coding-practices/lab-protocols-for-code-and-data.qmd >}}
+{{< include demo-folder/section-name.qmd >}}
 ```
 
 The heading must be in the main file, followed by a blank line, then the include statement.
@@ -163,14 +231,14 @@ The heading must be in the main file, followed by a blank line, then the include
 -## Object naming
 +## Function calls
  
--{{< include 05-coding-practices/object-naming.qmd >}}
-+{{< include 05-coding-practices/function-calls.qmd >}}
+-{{< include demo-folder/section-name.qmd >}}
++{{< include demo-folder/section-2.qmd >}}
  
 -## Function calls
 +## Object naming
  
--{{< include 05-coding-practices/function-calls.qmd >}}
-+{{< include 05-coding-practices/object-naming.qmd >}}
+-{{< include demo-folder/section-2.qmd >}}
++{{< include demo-folder/section-name.qmd >}}
 ```
 This diff clearly shows a reordering (swapping two sections) with no content changes—only the main chapter file changes.
 
