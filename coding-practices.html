@@ -494,6 +494,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Resources</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -1079,7 +1085,7 @@ test_that("prep_study_data produces expected structure", {
 <section id="function-headers" class="level3" data-number="6.9.1">
 <h3 data-number="6.9.1" class="anchored" data-anchor-id="function-headers"><span class="header-section-number">6.9.1</span> Function headers</h3>
 <p>Every function you write must include documentation to describe its purpose, inputs, and outputs. For any reproducible workflows, this is essential, because R is dynamically typed. This means you can pass a <code>string</code> into an argument that is meant to be a <code>data.table</code>, or a <code>list</code> into an argument meant for a <code>tibble</code>. It is the responsibility of a function’s author to document what each argument is meant to do and its basic type.</p>
-<p>We use <code>{roxygen2}</code> <span class="citation" data-cites="R-roxygen2">(<a href="#ref-R-roxygen2" role="doc-biblioref">Wickham et al. 2024</a>)</span> for function documentation. Roxygen2 allows you to describe your functions in special comments next to their definitions, and automatically generates R documentation files (<code>.Rd</code> files) and helps manage your package <code>NAMESPACE</code>. The roxygen2 format uses <code>#'</code> comments placed immediately before the function definition.</p>
+<p>We use <code>{roxygen2}</code> <span class="citation" data-cites="R-roxygen2">(<a href="references.html#ref-R-roxygen2" role="doc-biblioref">Wickham et al. 2024</a>)</span> for function documentation. Roxygen2 allows you to describe your functions in special comments next to their definitions, and automatically generates R documentation files (<code>.Rd</code> files) and helps manage your package <code>NAMESPACE</code>. The roxygen2 format uses <code>#'</code> comments placed immediately before the function definition.</p>
 <p>Here is an example of documenting a function using roxygen2:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">#' Calculate flu season means by site</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
@@ -1651,7 +1657,7 @@ Describe how this change has been tested.
 </ul>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-R-roxygen2" class="csl-entry" role="listitem">
 Wickham, Hadley, Peter Danenberg, Gábor Csárdi, and Manuel Eugster. 2024. <em>Roxygen2: In-Line Documentation for r</em>. <a href="https://roxygen2.r-lib.org/">https://roxygen2.r-lib.org/</a>.
 </div>
