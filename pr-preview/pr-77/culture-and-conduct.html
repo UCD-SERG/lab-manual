@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -394,7 +414,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ai-tools.html" class="sidebar-item-text sidebar-link">
+  <a href="./ai-tools.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Working with AI</span></span></a>
   </div>
 </li>
@@ -412,7 +432,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
+  <a href="./references.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -437,7 +457,11 @@ ul.task-list li input[type="checkbox"] {
 <main class="content" id="quarto-document-content">
 <div class="preview-home-changes-banner">
     <p style="margin: 0;">
-        <strong>📋 Changes in this PR:</strong> No changes were detected in the rendered book.
+        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="ai-tools.html">16. &nbsp; <span class="chapter-title">Working with AI</span></a>, <a href="references.html">references</a>
+        <br>
+        <strong>📄 DOCX with tracked changes:</strong> <a href="UCD-SeRG-Lab-Manual-tracked-changes.docx" download>Download UCD-SeRG-Lab-Manual-tracked-changes.docx</a>
+        <br>
+        <strong>💡 Tip:</strong> If change highlighting is glitchy, add the <code>no-preview-highlights</code> label to this PR to disable it.
     </p>
 </div>
 
@@ -484,9 +508,14 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="authorship" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="authorship"><span class="header-section-number">2.4</span> Authorship</h2>
-<p>We adhere to the <a href="http://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html">ICMJE Definition of authorship</a> and are happy for team members who meet the definition of authorship to be included as co-authors on scientific manuscripts.</p>
+<p>We adhere to the ICMJE Definition of authorship <span class="citation" data-cites="icmje">(<a href="references.html#ref-icmje" role="doc-biblioref">International Committee of Medical Journal Editors, n.d.</a>)</span> and are happy for team members who meet the definition of authorship to be included as co-authors on scientific manuscripts.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-icmje" class="csl-entry" role="listitem">
+International Committee of Medical Journal Editors. n.d. <span>“Defining the Role of Authors and Contributors.”</span> ICMJE. <a href="http://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html">http://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

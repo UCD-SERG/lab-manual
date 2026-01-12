@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -394,7 +414,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ai-tools.html" class="sidebar-item-text sidebar-link">
+  <a href="./ai-tools.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Working with AI</span></span></a>
   </div>
 </li>
@@ -412,7 +432,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
+  <a href="./references.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -437,7 +457,11 @@ ul.task-list li input[type="checkbox"] {
 <main class="content" id="quarto-document-content">
 <div class="preview-home-changes-banner">
     <p style="margin: 0;">
-        <strong>📋 Changes in this PR:</strong> No changes were detected in the rendered book.
+        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="ai-tools.html">16. &nbsp; <span class="chapter-title">Working with AI</span></a>, <a href="references.html">references</a>
+        <br>
+        <strong>📄 DOCX with tracked changes:</strong> <a href="UCD-SeRG-Lab-Manual-tracked-changes.docx" download>Download UCD-SeRG-Lab-Manual-tracked-changes.docx</a>
+        <br>
+        <strong>💡 Tip:</strong> If change highlighting is glitchy, add the <code>no-preview-highlights</code> label to this PR to disable it.
     </p>
 </div>
 
@@ -497,9 +521,9 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="manuscript-checklist" class="level2" data-number="17.3">
 <h2 data-number="17.3" class="anchored" data-anchor-id="manuscript-checklist"><span class="header-section-number">17.3</span> Manuscript checklist</h2>
-<p><em>This is adapted in part from <a href="https://www.nature.com/articles/d41586-019-01431-z">this article</a>.</em></p>
+<p><em>This is adapted in part from How to tackle the reproducibility crisis in ten steps <span class="citation" data-cites="baker2019">(<a href="references.html#ref-baker2019" role="doc-biblioref">Baker 2019</a>)</span>.</em></p>
 <ul>
-<li>Have you completed the relevant reporting checklist, if applicable? (<a href="https://www.equator-network.org/about-us/what-is-a-reporting-guideline/">Collection of checklists</a>)</li>
+<li>Have you completed the relevant reporting checklist, if applicable? (See EQUATOR Network <span class="citation" data-cites="equatornetwork">(<a href="references.html#ref-equatornetwork" role="doc-biblioref"><span>“EQUATOR Network: Enhancing the QUAlity and Transparency of Health Research,”</span> n.d.</a>)</span> for a collection of checklists)</li>
 <li>Are the study results within the manuscript replicable (i.e., if you rerun the code in the study’s repository, the tables and figures will be exactly replicated?)</li>
 <li>Is a target journal selected?</li>
 <li>Is the title declarative, in other words, does it state the object/findings rather than suggest them?</li>
@@ -515,7 +539,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Does the text avoid directionless words? (e.g., instead of writing, ‘Precipitation influences disease risk’, write, ‘Precipitation was associated with increased disease risk’).</li>
 <li>Does the text avoid making causal claims that are not supported by the study design? Be careful about the words “effect”, “increase”, and “decrease”, which are often interpreted as causal.</li>
 <li>Does the text avoid describing results with the word “significant”, which can easily be confused with statistical significance? (see references on this topic <a href="https://journals.lww.com/epidem/Fulltext/2001/05000/The_Value_of_P.2.aspx">here</a>)</li>
-<li>Have you drafted author contributions? Do they follow the <a href="https://journals.plos.org/plosone/s/authorship/?utm_source=plos&amp;utm_medium=blog&amp;utm_campaign=plos-1607-credit#loc-author-contributions">CRediT Taxonomy</a> for author contributions?</li>
+<li>Have you drafted author contributions? Do they follow the CRediT: Contributor Roles Taxonomy <span class="citation" data-cites="credit">(<a href="references.html#ref-credit" role="doc-biblioref"><span>“CRediT: Contributor Roles Taxonomy,”</span> n.d.</a>)</span> for author contributions?</li>
 </ul>
 </section>
 <section id="figure-checklist" class="level2" data-number="17.4">
@@ -525,7 +549,7 @@ ul.task-list li input[type="checkbox"] {
 <li>If the figure includes panels, is each panel labeled?</li>
 <li>Are there sufficient numerical / text labels and breaks on the x-axis and y-axis?</li>
 <li>Is the font size appropriate (i.e., large enough to read, not so large that it distracts from the data presented in the figure?)</li>
-<li>Are the colors used colorblind friendly? See a colorblind-friendly palette <a href="http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/#a-colorblind-friendly-palette">here</a>, a neat palette generator with colorblind options <a href="https://medialab.github.io/iwanthue/?utm_source=Nature+Briefing&amp;utm_campaign=2c68711076-briefing-dy-20211006&amp;utm_medium=email&amp;utm_term=0_c9dfd39373-2c68711076-44335685">here</a>, and an article on why this matters <a href="https://www.nature.com/articles/d41586-021-02696-z">here</a></li>
+<li>Are the colors used colorblind friendly? See a colorblind-friendly palette <a href="http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/#a-colorblind-friendly-palette">here</a>, a neat palette generator with colorblind options <a href="https://medialab.github.io/iwanthue/?utm_source=Nature+Briefing&amp;utm_campaign=2c68711076-briefing-dy-20211006&amp;utm_medium=email&amp;utm_term=0_c9dfd39373-2c68711076-44335685">here</a>, and an article on why this matters: The misuse of colour in science communication <span class="citation" data-cites="crameri2020">(<a href="references.html#ref-crameri2020" role="doc-biblioref">Crameri, Shephard, and Heron 2020</a>)</span></li>
 <li>Are colors/shapes/line types defined in a legend?</li>
 <li>Are the legends and other labels easy to understand with minimal abbreviations?</li>
 <li>If there is overplotting, is transparency used to show overlapping data?</li>
@@ -533,6 +557,20 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-baker2019" class="csl-entry" role="listitem">
+Baker, Monya. 2019. <span>“How to Tackle the Reproducibility Crisis in Ten Steps.”</span> <em>Nature</em>. <a href="https://doi.org/10.1038/d41586-019-01431-z">https://doi.org/10.1038/d41586-019-01431-z</a>.
+</div>
+<div id="ref-crameri2020" class="csl-entry" role="listitem">
+Crameri, Fabio, Grace E. Shephard, and Philip J. Heron. 2020. <span>“The Misuse of Colour in Science Communication.”</span> <em>Nature Communications</em> 11. <a href="https://doi.org/10.1038/s41467-020-19160-7">https://doi.org/10.1038/s41467-020-19160-7</a>.
+</div>
+<div id="ref-credit" class="csl-entry" role="listitem">
+<span>“CRediT: Contributor Roles Taxonomy.”</span> n.d. PLOS ONE. <a href="https://journals.plos.org/plosone/s/authorship">https://journals.plos.org/plosone/s/authorship</a>.
+</div>
+<div id="ref-equatornetwork" class="csl-entry" role="listitem">
+<span>“EQUATOR Network: Enhancing the QUAlity and Transparency of Health Research.”</span> n.d. EQUATOR Network. <a href="https://www.equator-network.org/">https://www.equator-network.org/</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -951,7 +989,7 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./ai-tools.html" class="pagination-link" aria-label="Working with AI">
+      <a href="./ai-tools.html" class="pagination-link" preview-toc-changed aria-label="Working with AI">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Working with AI</span></span>
       </a>          
   </div>

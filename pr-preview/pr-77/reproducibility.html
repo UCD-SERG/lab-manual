@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -394,7 +414,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ai-tools.html" class="sidebar-item-text sidebar-link">
+  <a href="./ai-tools.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Working with AI</span></span></a>
   </div>
 </li>
@@ -412,7 +432,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
+  <a href="./references.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -442,7 +462,11 @@ ul.task-list li input[type="checkbox"] {
 <main class="content" id="quarto-document-content">
 <div class="preview-home-changes-banner">
     <p style="margin: 0;">
-        <strong>📋 Changes in this PR:</strong> No changes were detected in the rendered book.
+        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="ai-tools.html">16. &nbsp; <span class="chapter-title">Working with AI</span></a>, <a href="references.html">references</a>
+        <br>
+        <strong>📄 DOCX with tracked changes:</strong> <a href="UCD-SeRG-Lab-Manual-tracked-changes.docx" download>Download UCD-SeRG-Lab-Manual-tracked-changes.docx</a>
+        <br>
+        <strong>💡 Tip:</strong> If change highlighting is glitchy, add the <code>no-preview-highlights</code> label to this PR to disable it.
     </p>
 </div>
 
@@ -484,9 +508,9 @@ ul.task-list li input[type="checkbox"] {
 <p>In the past decade, an increasing number of studies have found that published study findings could not be reproduced. Researchers found that it was not possible to reproduce estimates from published studies: 1) with the same data and same or similar code and 2) with newly collected data using the same (or similar) study design. These “failures” of reproducibility were frequent enough and broad enough in scope, occurring across a range of disciplines (epidemiology, psychology, economics, and others) to be deeply troubling. Program and policy decisions based on erroneous research findings could lead to wasted resources, and at worst, could harm intended beneficiaries. This crisis has motivated new practices in reproducibility, transparency, and openness. Our lab is committed to adopting these best practices, and much of the remainder of the lab manual focuses on how to do so.</p>
 <p>Recommended readings on the “reproducibility crisis”:</p>
 <ul>
-<li><p>Nuzzo R. How scientists fool themselves – and how they can stop. 2015. <a href="">https://www.nature.com/articles/526182a</a></p></li>
-<li><p>Stoddart C. Is there a reproducibility crisis in science? 2016. <a href="https://www.nature.com/articles/d41586-019-00067-3">https://www.nature.com/articles/d41586-019-00067-3</a></p></li>
-<li><p>Munafo MR, et al.&nbsp;A manifesto for reproducible science. <em>Nature Human Behavior</em> 2017 <a href="http://dx.doi.org/10.1038/s41562-016-0021">http://dx.doi.org/10.1038/s41562-016-0021</a></p></li>
+<li><p>Nuzzo R. How scientists fool themselves – and how they can stop <span class="citation" data-cites="nuzzo2015">(<a href="references.html#ref-nuzzo2015" role="doc-biblioref">Nuzzo 2015</a>)</span></p></li>
+<li><p>Stoddart C. Is there a reproducibility crisis in science? <span class="citation" data-cites="stoddart2019">(<a href="references.html#ref-stoddart2019" role="doc-biblioref">Stoddart 2019</a>)</span></p></li>
+<li><p>Munafò MR, et al.&nbsp;A manifesto for reproducible science <span class="citation" data-cites="munafo2017">(<a href="references.html#ref-munafo2017" role="doc-biblioref">Munafò et al. 2017</a>)</span></p></li>
 </ul>
 </section>
 <section id="study-design" class="level2" data-number="4.2">
@@ -540,17 +564,37 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="use-reporting-checklists-with-manuscripts" class="level2" data-number="4.7">
 <h2 data-number="4.7" class="anchored" data-anchor-id="use-reporting-checklists-with-manuscripts"><span class="header-section-number">4.7</span> Use reporting checklists with manuscripts</h2>
-<p>Using reporting checklists helps ensure that peer-reviewed articles contain the information needed for readers to assess the validity of your work and/or attempt to reproduce it. A collection of reporting checklists is available here: <a href="https://www.equator-network.org/about-us/what-is-a-reporting-guideline/">https://www.equator-network.org/about-us/what-is-a-reporting-guideline/)</a></p>
+<p>Using reporting checklists helps ensure that peer-reviewed articles contain the information needed for readers to assess the validity of your work and/or attempt to reproduce it. A collection of reporting checklists is available from the EQUATOR Network <span class="citation" data-cites="equatornetwork">(<a href="references.html#ref-equatornetwork" role="doc-biblioref"><span>“EQUATOR Network: Enhancing the QUAlity and Transparency of Health Research,”</span> n.d.</a>)</span>.</p>
 </section>
 <section id="publish-preprints" class="level2" data-number="4.8">
 <h2 data-number="4.8" class="anchored" data-anchor-id="publish-preprints"><span class="header-section-number">4.8</span> Publish preprints</h2>
-<p>A preprint is a scientific manuscript that has not been peer reviewed. Preprint servers create digital object identifiers (DOIs) and can be cited in other articles and in grant applications. Because the peer review process can take many months, publishing preprints prior to or during peer review enables other scientists to immediately learn from and build on your work. Importantly, NIH allows applicants to include preprint citations in their biosketches. In most cases, we publish preprints on <a href="https://www.medrxiv.org/">medRxiv</a>.</p>
+<p>A preprint is a scientific manuscript that has not been peer reviewed. Preprint servers create digital object identifiers (DOIs) and can be cited in other articles and in grant applications. Because the peer review process can take many months, publishing preprints prior to or during peer review enables other scientists to immediately learn from and build on your work. Importantly, NIH allows applicants to include preprint citations in their biosketches. In most cases, we publish preprints on medRxiv <span class="citation" data-cites="medRxiv">(<a href="references.html#ref-medRxiv" role="doc-biblioref"><span>“medRxiv: The Preprint Server for Health Sciences,”</span> n.d.</a>)</span>.</p>
 </section>
 <section id="publish-data-when-possible-and-replication-scripts" class="level2" data-number="4.9">
 <h2 data-number="4.9" class="anchored" data-anchor-id="publish-data-when-possible-and-replication-scripts"><span class="header-section-number">4.9</span> Publish data (when possible) and replication scripts</h2>
-<p>Publishing data and replication scripts allows other scientists to reproduce your work and to build upon it. We typically publish data on <a href="osf.io">Open Science Framework</a>, share links to <a href="github.com">Github</a> repositories, and archive code on <a href="zenodo.org">Zenodo</a>.</p>
+<p>Publishing data and replication scripts allows other scientists to reproduce your work and to build upon it. We typically publish data on the Open Science Framework <span class="citation" data-cites="osf">(<a href="references.html#ref-osf" role="doc-biblioref"><span>“Open Science Framework,”</span> n.d.</a>)</span>, share links to <a href="github.com">Github</a> repositories, and archive code on <a href="zenodo.org">Zenodo</a>.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-equatornetwork" class="csl-entry" role="listitem">
+<span>“EQUATOR Network: Enhancing the QUAlity and Transparency of Health Research.”</span> n.d. EQUATOR Network. <a href="https://www.equator-network.org/">https://www.equator-network.org/</a>.
+</div>
+<div id="ref-medRxiv" class="csl-entry" role="listitem">
+<span>“medRxiv: The Preprint Server for Health Sciences.”</span> n.d. Cold Spring Harbor Laboratory. <a href="https://www.medrxiv.org/">https://www.medrxiv.org/</a>.
+</div>
+<div id="ref-munafo2017" class="csl-entry" role="listitem">
+Munafò, Marcus R., Brian A. Nosek, Dorothy V. M. Bishop, Katherine S. Button, Christopher D. Chambers, Nathalie Percie du Sert, Uri Simonsohn, Eric-Jan Wagenmakers, Jennifer J. Ware, and John P. A. Ioannidis. 2017. <span>“A Manifesto for Reproducible Science.”</span> <em>Nature Human Behaviour</em> 1. <a href="https://doi.org/10.1038/s41562-016-0021">https://doi.org/10.1038/s41562-016-0021</a>.
+</div>
+<div id="ref-nuzzo2015" class="csl-entry" role="listitem">
+Nuzzo, Regina. 2015. <span>“How Scientists Fool Themselves – and How They Can Stop.”</span> <em>Nature</em> 526: 182–85. <a href="https://doi.org/10.1038/526182a">https://doi.org/10.1038/526182a</a>.
+</div>
+<div id="ref-osf" class="csl-entry" role="listitem">
+<span>“Open Science Framework.”</span> n.d. Center for Open Science. <a href="https://osf.io/">https://osf.io/</a>.
+</div>
+<div id="ref-stoddart2019" class="csl-entry" role="listitem">
+Stoddart, Charlotte. 2019. <span>“Is There a Reproducibility Crisis in Science?”</span> <em>Nature</em>. <a href="https://doi.org/10.1038/d41586-019-00067-3">https://doi.org/10.1038/d41586-019-00067-3</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

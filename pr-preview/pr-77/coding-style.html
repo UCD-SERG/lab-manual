@@ -55,7 +55,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -429,7 +449,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ai-tools.html" class="sidebar-item-text sidebar-link">
+  <a href="./ai-tools.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Working with AI</span></span></a>
   </div>
 </li>
@@ -447,7 +467,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
+  <a href="./references.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -486,7 +506,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <main class="content" id="quarto-document-content">
 <div class="preview-home-changes-banner">
     <p style="margin: 0;">
-        <strong>📋 Changes in this PR:</strong> No changes were detected in the rendered book.
+        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="ai-tools.html">16. &nbsp; <span class="chapter-title">Working with AI</span></a>, <a href="references.html">references</a>
+        <br>
+        <strong>📄 DOCX with tracked changes:</strong> <a href="UCD-SeRG-Lab-Manual-tracked-changes.docx" download>Download UCD-SeRG-Lab-Manual-tracked-changes.docx</a>
+        <br>
+        <strong>💡 Tip:</strong> If change highlighting is glitchy, add the <code>no-preview-highlights</code> label to this PR to disable it.
     </p>
 </div>
 
@@ -940,10 +964,15 @@ Note
 <section id="sec-r-resources-style" class="level2" data-number="7.12">
 <h2 data-number="7.12" class="anchored" data-anchor-id="sec-r-resources-style"><span class="header-section-number">7.12</span> Additional Resources</h2>
 <ul>
-<li><a href="https://style.tidyverse.org/">Tidyverse style guide</a>: Detailed coding style conventions for writing clear, consistent R code. Covers naming, syntax, pipes, functions, and more.</li>
+<li>Tidyverse style guide <span class="citation" data-cites="wickham2023tidyverse">(<a href="references.html#ref-wickham2023tidyverse" role="doc-biblioref">Wickham 2023</a>)</span>: Detailed coding style conventions for writing clear, consistent R code. Covers naming, syntax, pipes, functions, and more.</li>
 </ul>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-wickham2023tidyverse" class="csl-entry" role="listitem">
+Wickham, Hadley. 2023. <em>The Tidyverse Style Guide</em>. <a href="https://style.tidyverse.org/">https://style.tidyverse.org/</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

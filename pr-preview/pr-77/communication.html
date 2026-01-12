@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -394,7 +414,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ai-tools.html" class="sidebar-item-text sidebar-link">
+  <a href="./ai-tools.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Working with AI</span></span></a>
   </div>
 </li>
@@ -412,7 +432,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
+  <a href="./references.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -440,7 +460,11 @@ ul.task-list li input[type="checkbox"] {
 <main class="content" id="quarto-document-content">
 <div class="preview-home-changes-banner">
     <p style="margin: 0;">
-        <strong>📋 Changes in this PR:</strong> No changes were detected in the rendered book.
+        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="ai-tools.html">16. &nbsp; <span class="chapter-title">Working with AI</span></a>, <a href="references.html">references</a>
+        <br>
+        <strong>📄 DOCX with tracked changes:</strong> <a href="UCD-SeRG-Lab-Manual-tracked-changes.docx" download>Download UCD-SeRG-Lab-Manual-tracked-changes.docx</a>
+        <br>
+        <strong>💡 Tip:</strong> If change highlighting is glitchy, add the <code>no-preview-highlights</code> label to this PR to disable it.
     </p>
 </div>
 
@@ -521,10 +545,15 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="3.7" class="anchored" data-anchor-id="code-review"><span class="header-section-number">3.7</span> Code Review</h2>
 <p>When submitting code to or reviewing code from colleagues, use best practices to provide and receive constructive feedback:</p>
 <ul>
-<li><a href="https://code-review.tidyverse.org/">Tidyverse code review guide</a>: Best practices for reviewing R code, including what to look for and how to provide constructive feedback.</li>
+<li>Tidyverse code review principles <span class="citation" data-cites="tidyverse2023codereview">(<a href="references.html#ref-tidyverse2023codereview" role="doc-biblioref">Tidyverse Team 2023</a>)</span>: Best practices for reviewing R code, including what to look for and how to provide constructive feedback.</li>
 </ul>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-tidyverse2023codereview" class="csl-entry" role="listitem">
+Tidyverse Team. 2023. <em>Tidyverse Code Review Principles</em>. <a href="https://code-review.tidyverse.org/">https://code-review.tidyverse.org/</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
