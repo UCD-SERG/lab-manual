@@ -49,6 +49,9 @@ Well-formatted, professional-looking code from AI can mask underlying problems a
 - **Workflow manipulation risks**:
 Coding agents that modify CI/CD workflows (`.github/workflows/*.yml`) or setup configurations can inadvertently or maliciously compromise repository security, expose secrets, or execute harmful commands
 
+Despite these hazards,
+[we for one welcome our new AI overlords](https://knowyourmeme.com/memes/i-for-one-welcome-our-new-insect-overlords) [@simpsons_overlords]—as long as we remain vigilant in reviewing their work.
+
 #### Further reading/viewing
 
 - *I Robot* [@i_robot]
