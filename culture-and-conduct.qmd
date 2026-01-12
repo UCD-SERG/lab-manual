@@ -25,6 +25,6 @@ Remember, data that looks like it does not contain identifiers to you might stil
 
 ## Authorship
 
-We adhere to the [ICMJE Definition of authorship](http://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html) and are happy for team members who meet the definition of authorship to be included as co-authors on scientific manuscripts. 
+We adhere to the ICMJE Definition of authorship [@icmje] and are happy for team members who meet the definition of authorship to be included as co-authors on scientific manuscripts. 
 
 
