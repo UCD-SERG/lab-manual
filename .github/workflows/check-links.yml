@@ -1,0 +1,30 @@
+name: Check Links
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  schedule:
+    # Run weekly on Mondays at 9:00 UTC to catch link rot
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+
+jobs:
+  link-checker:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Check links in markdown and HTML files
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # Check all .qmd (Quarto markdown), .md (markdown), and .html files
+          args: --verbose --no-progress --config lychee.toml './**/*.qmd' './**/*.md' './**/*.html'
+          # Fail action on broken links
+          fail: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
