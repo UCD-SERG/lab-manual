@@ -1,0 +1,43 @@
+Linters are programming tools that check adherence to a given style, syntax errors, and possible semantic issues. 
+The R linter, called `lintr`, can be found in this [package](https://www.rdocumentation.org/packages/lintr/versions/1.0.3). 
+It helps keep files consistent across different authors and even different organizations. 
+For example, it notifies you if you have unused variables, global variables with no visible binding, not enough or superfluous whitespace, and improper use of parentheses or brackets. 
+A list of its other purposes can be found [in this link](https://cran.r-project.org/web/packages/lintr/readme/README.html#available-linters), 
+and most guidelines are based on [Hadley Wickham’s R Style Guide](http://r-pkgs.had.co.nz/style.html).
+
+::: {.callout-note}
+You can customize your settings to set defaults or to exclude files. More details can be found [here](https://cran.r-project.org/web/packages/lintr/readme/README.html#project-configuration).
+:::
+
+::: {.callout-note}
+The `lintr` package goes hand in hand with the `styler` package. The styler can be used to automatically fix the problems that the lintr catches.
+:::
+
+
+::: {.callout-tip}
+
+### `lintr` package
+
+For checking code style without modifying files:
+
+```r
+# Install lintr
+install.packages("lintr")
+
+# Lint the entire package
+lintr::lint_package()
+
+# Lint a specific file
+lintr::lint("R/my_function.R")
+```
+
+The linter checks for:
+
+- Unused variables
+- Improper whitespace
+- Line length issues
+- Style guide violations
+
+You can customize linting rules by creating a `.lintr` or `lintr.R` file in your project root.
+
+:::

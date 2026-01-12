@@ -1,0 +1,60 @@
+# R Code Style {#sec-r-code-style}
+
+Adapted by UCD-SeRG team from [original by Kunal Mishra, Jade Benjamin-Chung, and Stephanie Djajadi](https://jadebc.github.io/lab-manual/coding-style.html)
+
+Follow these code style guidelines for all R code:
+
+## General Principles
+
+{{< include coding-style/general-principles.qmd >}}
+
+## Function Structure and Documentation {#sec-function-docs}
+
+{{< include coding-style/function-structure-and-documentation.qmd >}}
+
+## Comments
+
+{{< include coding-style/comments.qmd >}}
+
+## Line Breaks and Formatting
+
+{{< include coding-style/line-breaks.qmd >}}
+
+## Markdown and Quarto Formatting
+
+### Writing about code in Quarto documents
+
+When writing about code in prose sections of quarto documents, 
+use backticks to apply a code style:
+for example, `dplyr::mutate()`.
+When talking about packages,
+use backticks and curly-braces with a hyperlink to the package website.
+For example: [`{dplyr}`](https://dplyr.tidyverse.org/).
+
+## Messaging and User Communication
+
+{{< include coding-style/messaging-and-user-communication.qmd >}}
+
+## Package Code Practices
+
+{{< include coding-style/package-code-practices.qmd >}}
+
+## Tidyverse Replacements {#sec-tidyverse-replacements}
+
+{{< include coding-style/tidyverse-replacements.qmd >}}
+
+## The here Package {#sec-here-package-style}
+
+{{< include coding-style/the-here-package.qmd >}}
+
+## Object Naming {#sec-object-naming}
+
+{{< include coding-style/object-naming.qmd >}}
+
+## Automated Tools for Style and Project Workflow {#sec-style-auto-style}
+
+{{< include coding-style/automated-tools.qmd >}}
+
+## Additional Resources {#sec-r-resources-style}
+
+- Tidyverse style guide [@wickham2023tidyverse]: Detailed coding style conventions for writing clear, consistent R code. Covers naming, syntax, pipes, functions, and more.

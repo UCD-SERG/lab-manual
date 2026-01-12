@@ -1,0 +1,15 @@
+**You must clearly state whenever you have used AI tools in your work.**
+This is essential for transparency and reproducibility.
+Specifically:
+
+- In code comments, note when AI tools were used to generate or significantly modify code
+- In commit messages, mention if AI tools assisted with the changes
+- In manuscripts and reports, acknowledge AI tool usage in the methods or acknowledgments section
+- In presentations, disclose AI assistance when relevant
+
+Example code comment:
+
+```
+# The following function was generated with assistance from GitHub Copilot
+# and has been reviewed and tested to ensure correctness
+```

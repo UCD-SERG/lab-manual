@@ -1,0 +1,91 @@
+# R Coding Practices {#sec-r-coding-practices}
+
+Adapted by UCD-SeRG team from [original by Kunal Mishra, Jade Benjamin-Chung, Stephanie Djajadi, and Iris Tong](https://jadebc.github.io/lab-manual/coding-practices.html)
+
+## Lab Protocols for Code and Data
+
+{{< include coding-practices/lab-protocols-for-code-and-data.qmd >}}
+
+## Essential R Package Development Tools {#sec-r-package-tools}
+
+{{< include coding-practices/essential-r-package-development-tools.qmd >}}
+
+## Complete Package Development Workflow {#sec-r-workflow}
+
+{{< include coding-practices/complete-package-development-workflow.qmd >}}
+
+## Organizing scripts
+
+{{< include coding-practices/organizing-scripts.qmd >}}
+
+## Testing Requirements {#sec-r-testing}
+
+{{< include coding-practices/testing-requirements.qmd >}}
+
+## Iterative Operations {#sec-iteration}
+
+{{< include coding-practices/iterative-operations.qmd >}}
+
+## Reading and Saving Data {#sec-data-io}
+
+{{< include coding-practices/reading-and-saving-data.qmd >}}
+
+## Version Control and Collaboration {#sec-r-version-control}
+
+{{< include coding-practices/version-control-and-collaboration.qmd >}}
+
+## Continuous Integration {#sec-r-ci}
+
+{{< include coding-practices/continuous-integration.qmd >}}
+
+## Quality Assurance Checklist {#sec-r-qa-checklist}
+
+{{< include coding-practices/quality-assurance-checklist.qmd >}}
+
+## Automated Code Styling {#sec-auto-styling}
+
+{{< include coding-practices/automated-code-styling.qmd >}}
+
+## Documenting your code {#sec-documenting-code}
+
+{{< include coding-practices/documenting-code.qmd >}}
+
+## Object naming
+
+{{< include coding-practices/object-naming.qmd >}}
+
+## Function calls
+
+{{< include coding-practices/function-calls.qmd >}}
+
+## The here package {#sec-here-package-practices}
+
+{{< include coding-practices/here-package.qmd >}}
+
+## Reading/Saving Data
+
+{{< include coding-practices/reading-saving-data.qmd >}}
+
+## Integrating Box and Dropbox
+
+{{< include coding-practices/integrating-box-dropbox.qmd >}}
+
+## Tidyverse {#sec-tidyverse}
+
+{{< include coding-practices/tidyverse.qmd >}}
+
+## Coding with R and Python
+
+{{< include coding-practices/coding-r-python.qmd >}}
+
+## Repeating analyses with different variations
+
+{{< include coding-practices/repeating-analyses.qmd >}}
+
+## Reviewing Code
+
+{{< include coding-practices/reviewing-code.qmd >}}
+
+## Additional Resources {#sec-r-resources}
+
+{{< include coding-practices/additional-resources.qmd >}}

@@ -1,0 +1,55 @@
+# Working with AI
+
+[AI-powered coding assistants](https://en.wikipedia.org/wiki/AI-assisted_software_development) 
+can dramatically accelerate and improve your work,
+but they require careful and responsible use.
+Lab members who use AI tools must adhere to the following guidelines:
+
+## Responsibility for validation
+
+{{< include ai-tools/responsibility-for-validation.qmd >}}
+
+## Disclosure of AI use
+
+{{< include ai-tools/disclosure-of-ai-use.qmd >}}
+
+## Attribution of sources
+
+{{< include ai-tools/attribution-of-sources.qmd >}}
+
+## Coding Agents
+
+We recommend working with **[AI coding agents](https://github.com/features/copilot/agents)** 
+to [help you code](https://en.wikipedia.org/wiki/AI-assisted_software_development).
+
+### What are AI coding agents?
+
+{{< include ai-tools/what-are-ai-coding-agents.qmd >}}
+
+### How to Work with Coding Agents
+
+{{< include ai-tools/how-to-work-with-agents.qmd >}}
+
+### Benefits and Hazards
+
+{{< include ai-tools/agents-benefits-and-hazards.qmd >}}
+
+### Best Practices for Safe and Successful Use
+
+{{< include ai-tools/agents-best-practices.qmd >}}
+
+### Firewall and Network Configuration
+
+{{< include ai-tools/agents-firewall-config.qmd >}}
+
+### When to use a coding agent
+
+{{< include ai-tools/when-to-use-coding-agent.qmd >}}
+
+### Editing with `.docx` files
+
+{{< include ai-tools/editing-with-docx-files.qmd >}}
+
+### Copilot Instructions for this Repository
+
+{{< include ai-tools/copilot-instructions-explanation.qmd >}}

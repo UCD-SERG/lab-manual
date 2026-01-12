@@ -1,0 +1,48 @@
+Every function you write must include documentation to describe its purpose, inputs, and outputs.
+For any reproducible workflows, this is essential, because R is dynamically typed.
+This means you can pass a `string` into an argument that is meant to be a `data.table`,
+or a `list` into an argument meant for a `tibble`.
+It is the responsibility of a function's author to document what each argument is meant to do and its basic type.
+
+We use [`{roxygen2}`](https://roxygen2.r-lib.org/) [@R-roxygen2] for function documentation.
+Roxygen2 allows you to describe your functions in special comments next to their definitions,
+and automatically generates R documentation files (`.Rd` files) and helps manage your package `NAMESPACE`.
+The roxygen2 format uses `#'` comments placed immediately before the function definition.
+
+Here is an example of documenting a function using roxygen2:
+
+```r
+#' Calculate flu season means by site
+#'
+#' Make a dataframe with rows for flu season and site
+#' containing the number of patients with an outcome, the total patients,
+#' and the percent of patients with the outcome.
+#'
+#' @param data A data frame with variables flu_season, site, studyID, and yname
+#' @param yname A string for the outcome name
+#' @param silent A boolean specifying whether to suppress console output 
+#'   (default: TRUE)
+#'
+#' @returns A dataframe as described above
+#'
+#' @examples
+#' calc_fluseas_mean(my_data, "hospitalized", silent = FALSE)
+#'
+calc_fluseas_mean <- function(data, yname, silent = TRUE) {
+  ### function code here
+  
+}
+```
+
+The roxygen2 header tells you what the function does, its various inputs, and how you might use it.
+Also notice that all optional arguments (i.e. ones with pre-specified defaults) follow arguments that require user input.
+
+For more information on roxygen2 syntax and features, see <https://roxygen2.r-lib.org/>.
+
+::: {.callout-note}
+As someone trying to call a function, it is possible to access a function's documentation (and internal code) by `CMD-Left-Click`ing the function's name in RStudio
+:::
+
+::: {.callout-note}
+Depending on how important your function is, the complexity of your function code, and the complexity of different types of data in your project, you can also add "type-checking" to your function with the `assertthat::assert_that()` function. You can, for example, `assert_that(is.data.frame(statistical_input))`, which will ensure that collaborators or reviewers of your project attempting to use your function are using it in the way that it is intended by calling it with (at the minimum) the correct type of arguments. You can extend this to ensure that certain assumptions regarding the inputs are fulfilled as well (i.e. that `time_column`, `location_column`, `value_column`, and `population_column` all exist within the `statistical_input` tibble).
+:::

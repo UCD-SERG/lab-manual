@@ -1,0 +1,45 @@
+
+### Function headers
+
+{{< include coding-practices/function-documentation.qmd >}}
+
+### Script headers
+
+Every file in a project that doesn't have roxygen function documentation
+should at least have a header that allows it to be interpreted on its own.
+It should include the name of the project and a short description for what this file (among the many in your project) does specifically. 
+You may optionally wish to include the inputs and outputs of the script as well, though the next section makes this significantly less necessary.
+
+```
+################################################################################
+# @Organization - Example Organization
+# @Project - Example Project
+# @Description - This file is responsible for [...]
+################################################################################
+
+```
+  
+### Sections and subsections
+Rstudio ([v1.4 or more recent](https://blog.rstudio.com/2020/12/02/rstudio-v1-4-preview-little-things/)) supports the use of Sections and Subsections. You can easily navigate through longer scripts using the navigation pane in RStudio, as shown on the right below. 
+
+```
+# Section -------
+
+## Subsection -------
+
+### Sub-subsection -------
+```
+
+### Code folding
+
+Consider using RStudio's [code folding](https://support.rstudio.com/hc/en-us/articles/200484568-Code-Folding-and-Sections) feature to collapse and expand different sections of your code. Any comment line with at least four trailing dashes (-), equal signs (=), or pound signs (#) automatically creates a code section. For example:
+
+
+### Comments in the body of your code
+Commenting your code is an important part of reproducibility and helps document your code for the future. When things change or break, you'll be thankful for comments. There's no need to comment excessively or unnecessarily, but a comment describing what a large or complex chunk of code does is always helpful. See [this file](https://github.com/kmishra9/Flu-Absenteeism/blob/master/Master's%20Thesis%20-%20Spatial%20Epidemiology%20of%20Influenza/1b%20-%20Map-Management.R) for an example of how to comment your code and notice that comments are always in the form of:
+
+```
+# This is a comment -- first letter is capitalized and spaced away from the pound sign
+```
+
+*See also @sec-function-docs for function documentation style guidelines.*

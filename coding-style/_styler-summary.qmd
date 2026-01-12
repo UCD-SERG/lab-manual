@@ -1,0 +1,37 @@
+
+[`{styler}`](https://styler.r-lib.org/) is another [cool R package from the Tidyverse](https://www.tidyverse.org/articles/2017/12/styler-1.0.0/) that can be powerful and used as a first pass on entire projects that need refactoring. The most useful function of the package is the `style_dir` function, which will style all files within a given directory. See the [function's documentation](https://www.rdocumentation.org/packages/styler/versions/1.1.0/topics/style_dir) and the vignette linked above for more details.
+
+::: {.callout-note}
+   The default Tidyverse styler is subtly different from some of the things we've advocated for in this document. Most notably we differ with regards to the assignment operator (`<-` vs `=`) and number of spaces before/after "tokens" (i.e. Assignment Aligner add spaces before `=` signs to align them properly). For this reason, we'd recommend the following: `style_dir(path = ..., scope = "line_breaks", strict = FALSE)`. You can also customize [`{styler}`](https://styler.r-lib.org/) [even more](http://styler.r-lib.org/articles/customizing_styler.html) if you're really hardcore.
+:::
+
+::: {.callout-note}
+   As is mentioned in the package vignette linked above, 
+   [`{styler}`](https://styler.r-lib.org/) modifies things _in-place_, 
+   meaning it overwrites your existing code and replaces it with the updated, properly styled code. 
+   This makes it a good fit on projects _with version control_, 
+   but if you don't have backups or a good way to revert back to the initial code, 
+   I wouldn't recommend going this route.
+:::
+
+::: {.callout-tip}
+
+#### styler Package
+
+For automated styling of entire projects:
+
+```r
+# Install styler
+install.packages("styler")
+
+# Style all files in R/ directory
+styler::style_dir("R/")
+
+# Style entire package
+styler::style_pkg()
+
+# Note: styler modifies files in-place
+# Always use with version control so you can review changes
+```
+
+:::

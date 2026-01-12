@@ -1,0 +1,58 @@
+Use comments to explain *why*, not *what*:
+
+```r
+# Good: Explains reasoning
+# Use log scale because distribution is highly skewed
+ggplot(data, aes(x = log10(income))) + geom_histogram()
+
+# Bad: States the obvious
+# Create a histogram
+ggplot(data, aes(x = income)) + geom_histogram()
+```
+
+**File headers** (for scripts in `data-raw/` or `inst/analyses/`):
+
+```r
+################################################################################
+# @Organization - Example Organization
+# @Project - Example Project
+# @Description - This file is responsible for [...]
+################################################################################
+```
+
+**File Structure** - Just as your data "flows" through your project, data should flow naturally through a script. Very generally, you want to 
+
+1) source your config => 
+2) load all your data => 
+3) do all your analysis/computation => save your data. 
+
+Each of these sections should be "chunked together" using comments. 
+See [this file](https://github.com/kmishra9/Flu-Absenteeism/blob/master/Master's%20Thesis%20-%20Spatial%20Epidemiology%20of%20Influenza/2a%20-%20Statistical-Inputs.R) 
+for a good example of how to cleanly organize a file in a way that follows this "flow" and functionally separate pieces of code that are doing different things.
+
+::: {.callout-note}
+If your computer isn't able to handle this workflow due to RAM or requirements, 
+modifying the ordering of your code to accommodate it won't be ultimately helpful and your code will be fragile, 
+not to mention less readable and messy. 
+You need to look into high-performance computing (HPC) resources in this case.
+:::
+
+**Single-Line Comments** - Commenting your code is an important part of reproducibility and helps document your code for the future. When things change or break, you'll be thankful for comments. There's no need to comment excessively or unnecessarily, but a comment describing what a large or complex chunk of code does is always helpful. See [this file](https://github.com/kmishra9/Flu-Absenteeism/blob/master/Master's%20Thesis%20-%20Spatial%20Epidemiology%20of%20Influenza/1b%20-%20Map-Management.R) for an example of how to comment your code and notice that comments are always in the form of:
+
+```
+# This is a comment -- first letter is capitalized and spaced away from the pound sign
+```
+
+**Multi-Line Comments** - Occasionally, multi-line comments are necessary. 
+You should manually insert line breaks to "hard-wrap" code and comments,
+whenever lines become longer than 80 characters.
+`lintr` should object otherwise, even for comments.
+Try to break lines at semantic boundaries: ends of sentences or phrases.
+Long lines in source code files 
+make it more difficult to see and comment on diffs in pull requests.
+
+In prose text chunks, Quarto ignores single line breaks,
+so you should also line-break your prose text in .qmd files
+to keep them under 80 characters.
+
+You can configure RStudio's settings to display the 80-character margin.

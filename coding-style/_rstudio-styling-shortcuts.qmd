@@ -1,0 +1,39 @@
+1. **Code Autoformatting** - RStudio includes a fantastic built-in utility (keyboard shortcut: `CMD-Shift-A` (Mac) or `Ctrl-Shift-A` (Windows/Linux)) for autoformatting highlighted chunks of code to fit many of the best practices listed here. It generally makes code more readable and fixes a lot of the small things you may not feel like fixing yourself. Try it out as a "first pass" on some code of yours that _doesn't_ follow many of these best practices!
+
+2. **Assignment Aligner** - A [cool R package](https://www.r-bloggers.com/align-assign-rstudio-addin-to-align-assignment-operators/) allows you to very powerfully format large chunks of assignment code to be much cleaner and much more readable. Follow the linked instructions and create a keyboard shortcut of your choosing (recommendation: `CMD-Shift-Z`). Here is an example of how assignment aligning can dramatically improve code readability:
+
+```r
+# Before
+OUSD_not_found_aliases = list(
+  "Brookfield Village Elementary" = str_subset(string = OUSD_school_shapes$schnam, pattern = "Brookfield"),
+  "Carl Munck Elementary" = str_subset(string = OUSD_school_shapes$schnam, pattern = "Munck"),
+  "Community United Elementary School" = str_subset(string = OUSD_school_shapes$schnam, pattern = "Community United"),
+  "East Oakland PRIDE Elementary" = str_subset(string = OUSD_school_shapes$schnam, pattern = "East Oakland Pride"),
+  "EnCompass Academy" = str_subset(string = OUSD_school_shapes$schnam, pattern = "EnCompass"),
+  "Global Family School" = str_subset(string = OUSD_school_shapes$schnam, pattern = "Global"),
+  "International Community School" = str_subset(string = OUSD_school_shapes$schnam, pattern = "International Community"),
+  "Madison Park Lower Campus" = "Madison Park Academy TK-5",
+  "Manzanita Community School" = str_subset(string = OUSD_school_shapes$schnam, pattern = "Manzanita Community"),
+  "Martin Luther King Jr Elementary" = str_subset(string = OUSD_school_shapes$schnam, pattern = "King"),
+  "PLACE @ Prescott" = "Preparatory Literary Academy of Cultural Excellence",
+  "RISE Community School" = str_subset(string = OUSD_school_shapes$schnam, pattern = "Rise Community")
+)
+```
+
+```r
+# After
+OUSD_not_found_aliases = list(
+  "Brookfield Village Elementary"      = str_subset(string = OUSD_school_shapes$schnam, pattern = "Brookfield"),
+  "Carl Munck Elementary"              = str_subset(string = OUSD_school_shapes$schnam, pattern = "Munck"),
+  "Community United Elementary School" = str_subset(string = OUSD_school_shapes$schnam, pattern = "Community United"),
+  "East Oakland PRIDE Elementary"      = str_subset(string = OUSD_school_shapes$schnam, pattern = "East Oakland Pride"),
+  "EnCompass Academy"                  = str_subset(string = OUSD_school_shapes$schnam, pattern = "EnCompass"),
+  "Global Family School"               = str_subset(string = OUSD_school_shapes$schnam, pattern = "Global"),
+  "International Community School"     = str_subset(string = OUSD_school_shapes$schnam, pattern = "International Community"),
+  "Madison Park Lower Campus"          = "Madison Park Academy TK-5",
+  "Manzanita Community School"         = str_subset(string = OUSD_school_shapes$schnam, pattern = "Manzanita Community"),
+  "Martin Luther King Jr Elementary"   = str_subset(string = OUSD_school_shapes$schnam, pattern = "King"),
+  "PLACE @ Prescott"                   = "Preparatory Literary Academy of Cultural Excellence",
+  "RISE Community School"              = str_subset(string = OUSD_school_shapes$schnam, pattern = "Rise Community")
+)
+```

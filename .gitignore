@@ -41,6 +41,13 @@ placeholder*.tgz
 *.pdf
 *.docx
 *.epub
+*.html
+*.aux
+*.log
+*.toc
+site_libs/
 
 **/*.quarto_ipynb
 *.tex
+__pycache__/
+

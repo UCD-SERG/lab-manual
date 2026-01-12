@@ -1,0 +1,46 @@
+# Culture and conduct
+
+Adapted by UCD-SeRG team from [original by Jade Benjamin-Chung](https://jadebc.github.io/lab-manual/culture-and-conduct.html)
+
+## Lab culture
+
+We are committed to a lab culture that is collaborative, supportive, inclusive, open, and free from discrimination and harassment. 
+
+We encourage students / staff of all experience levels to respectfully share their honest opinions and ideas on any topic. Our group has thrived upon such respectful honest input from team members over the years, and this document is a product of years of student and staff input (and even debate) that has gradually improved our productivity and overall quality of our work. 
+
+## Diversity, equity, and inclusion
+
+UCD-SeRG recognizes the importance of and is committed to cultivating a culture of diversity, equity, and inclusion. This means being a safe, supportive, and anti-racist environment in which students from diverse backgrounds are equally and inclusively supported in their education and training. Diversity takes many forms, and includes, but is not limited to, differences in race, ethnicity, gender, sexuality, socioeconomic status, religion, disability, and political affiliation. 
+
+## Protecting human subjects
+
+All lab members must complete [CITI Human Subjects Biomedical Group 1](https://research.ucdavis.edu/policiescompliance/irb-admin/education/) training and share their certificate with the lab leadership. Team members will be added to relevant Institutional Review Board protocols prior to their start date to ensure they have permission to work with identifiable datasets. 
+
+One of the most relevant aspects of protecting human subjects in our work is maintaining confidentiality. For students supporting our data science efforts, in practice this means: 
+
+- Be sure to understand and comply with project-specific policies about where data can be saved, particularly if the data include personal identifiers.
+- Do not share data with anyone without permission, including to other members of the group, who might not be on the same IRB protocol as you (check with lab leadership first).
+
+Remember, data that looks like it does not contain identifiers to you might still be classified as data that requires special protection by our IRB or under HIPAA, so always proceed with caution and ask for help if you have any concerns about how to maintain study participant confidentiality. 
+
+## Authorship
+
+We adhere to the [ICMJE Definition of authorship](http://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html) [@icmje]
+and are happy for team members who meet the definition of authorship to be included as co-authors on scientific manuscripts. 
+To qualify for authorship, individuals must meet all four criteria:
+
+1. Substantial contributions to conception/design, or acquisition/analysis/interpretation of data
+2. Drafting the work or revising it critically for important intellectual content
+3. Final approval of the version to be published
+4. Agreement to be accountable for all aspects of the work
+
+**Authorship practices:**
+
+- **First authorship**: Typically goes to the person who led the work
+- **Corresponding author**: Usually the PI, unless otherwise agreed
+- **Co-authorship**: Determined by substantial intellectual contributions
+- **Author order**: Should be discussed and agreed upon by all authors
+- **Acknowledgments**: For contributions that don't meet authorship criteria
+
+Authorship should be discussed early in a project and revisited as the work evolves to ensure transparency and fairness. We encourage using the [CRediT Taxonomy](https://credit.niso.org/) to document specific author contributions.
+
