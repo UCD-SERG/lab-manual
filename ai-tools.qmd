@@ -197,22 +197,46 @@ and that we understand the consequences of their actions.
 
 Coding agents offer several advantages:
 
-- **Built-in transparency**: Coding agents create a clear record of their role in your work through commit history and code suggestions
-- **Context-aware suggestions**: Coding agents understand your codebase and can make contextually relevant suggestions
-- **Integration with version control**: Using coding agents within GitHub ensures that AI-assisted changes are tracked alongside all other code changes
-- **Interactive workflow**: Coding agents' interactive nature encourages you to review and modify suggestions rather than blindly accepting them
-- **Accelerated development**: Coding agents can help you write boilerplate code, refactor existing code, and implement common patterns more quickly
-- **Learning opportunities**: Coding agents can suggest approaches or techniques you may not have considered, helping you expand your coding knowledge
+- **Built-in transparency**: 
+Coding agents create a clear record of their role in your work through commit history and code suggestions
+
+- **Context-aware suggestions**: 
+Coding agents understand your codebase and can make contextually relevant suggestions
+
+- **Integration with version control**: 
+Using coding agents within GitHub ensures that AI-assisted changes are tracked alongside all other code changes
+
+- **Interactive workflow**: 
+Coding agents' interactive nature encourages you to review and modify suggestions rather than blindly accepting them
+
+- **Accelerated development**: 
+Coding agents can help you write boilerplate code, refactor existing code, and implement common patterns more quickly
+
+- **Learning opportunities**: 
+Coding agents can suggest approaches or techniques you may not have considered, helping you expand your coding knowledge
 
 However, coding agents also come with significant hazards:
 
-- **Over-reliance**: Depending too heavily on coding agents can atrophy your coding skills and understanding
-- **Subtle bugs**: AI-generated code may contain logic errors that are not immediately obvious
-- **Security vulnerabilities**: Coding agents may introduce insecure patterns or fail to follow security best practices
-- **Inappropriate solutions**: AI may suggest solutions that work but are not optimal for your specific research context or constraints
-- **Hidden biases**: Coding agents may perpetuate coding patterns or approaches that reflect biases in their training data
-- **False confidence**: Well-formatted, professional-looking code from AI can mask underlying problems and reduce critical review
-- **Workflow manipulation risks**: Coding agents that modify CI/CD workflows (`.github/workflows/*.yml`) or setup configurations can inadvertently or maliciously compromise repository security, expose secrets, or execute harmful commands
+- **Over-reliance**: 
+Depending too heavily on coding agents can atrophy your coding skills and understanding
+
+- **Subtle bugs**: 
+AI-generated code may contain logic errors that are not immediately obvious
+
+- **Security vulnerabilities**: 
+Coding agents may introduce insecure patterns or fail to follow security best practices
+
+- **Inappropriate solutions**: 
+AI may suggest solutions that work but are not optimal for your specific research context or constraints
+
+- **Hidden biases**: 
+Coding agents may perpetuate coding patterns or approaches that reflect biases in their training data
+
+- **False confidence**: 
+Well-formatted, professional-looking code from AI can mask underlying problems and reduce critical review
+
+- **Workflow manipulation risks**: 
+Coding agents that modify CI/CD workflows (`.github/workflows/*.yml`) or setup configurations can inadvertently or maliciously compromise repository security, expose secrets, or execute harmful commands
 
 ### Best Practices for Safe and Successful Use
 
