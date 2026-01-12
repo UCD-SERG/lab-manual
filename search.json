@@ -64,7 +64,7 @@
     "href": "culture-and-conduct.html#authorship",
     "title": "2  Culture and conduct",
     "section": "2.4 Authorship",
-    "text": "2.4 Authorship\nWe adhere to the ICMJE Definition of authorship (International Committee of Medical Journal Editors, n.d.) and are happy for team members who meet the definition of authorship to be included as co-authors on scientific manuscripts.\n\n\n\n\nInternational Committee of Medical Journal Editors. n.d. “Defining the Role of Authors and Contributors.” ICMJE. http://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html.",
+    "text": "2.4 Authorship\nWe adhere to the ICMJE Definition of authorship (International Committee of Medical Journal Editors, n.d.) and are happy for team members who meet the definition of authorship to be included as co-authors on scientific manuscripts. To qualify for authorship, individuals must meet all four criteria:\n\nSubstantial contributions to conception/design, or acquisition/analysis/interpretation of data\nDrafting the work or revising it critically for important intellectual content\nFinal approval of the version to be published\nAgreement to be accountable for all aspects of the work\n\nAuthorship practices:\n\nFirst authorship: Typically goes to the person who led the work\nCorresponding author: Usually the PI, unless otherwise agreed\nCo-authorship: Determined by substantial intellectual contributions\nAuthor order: Should be discussed and agreed upon by all authors\nAcknowledgments: For contributions that don’t meet authorship criteria\n\nAuthorship should be discussed early in a project and revisited as the work evolves to ensure transparency and fairness. We encourage using the CRediT Taxonomy to document specific author contributions.\n\n\n\n\nInternational Committee of Medical Journal Editors. n.d. “Defining the Role of Authors and Contributors.” ICMJE. http://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Culture and conduct</span>"
     ]
@@ -1397,6 +1397,136 @@
     "text": "18.8 Ethics and global health research\n\nGlobal Code of Conduct For Research in Resource-Poor Settings\nAddressing power asymmetries in global health (Abimbola et al. 2022)\nTransforming Global Health Partnerships\n\n\n\n\n\nAbimbola, Seye, Sheena Asthana, Cristina Montenegro, et al. 2022. “Addressing Power Asymmetries in Global Health: Imperatives in the Wake of the COVID-19 Pandemic.” PLOS Global Public Health 2 (10). https://doi.org/10.1371/journal.pgph.0002269.\n\n\nBryan, Jennifer. 2023. Happy Git and GitHub for the useR. https://happygitwithr.com/.\n\n\nFay, Colin, Sébastien Rochette, Vincent Guyader, and Cervan Girard. 2021. Engineering Production-Grade Shiny Apps. Chapman; Hall/CRC. https://engineering-shiny.org/.\n\n\nInternational Committee of Medical Journal Editors. n.d. “Defining the Role of Authors and Contributors.” ICMJE. http://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html.\n\n\nMerali, Zeeya, and Jim Giles. 2010. “Computational Science: Error ... Why Scientific Programming Does Not Compute.” Nature 467: 775–77. https://doi.org/10.1038/467775a.\n\n\nRougier, Nicolas P., Michael Droettboom, and Philip E. Bourne. 2014. “Ten Simple Rules for Better Figures.” PLOS Computational Biology 10 (9). https://doi.org/10.1371/journal.pcbi.1003833.\n\n\nSilbiger, Nyssa J., and Ariel D. Stubler. 2019. “Unpacking the Scientific Toolbox: Five Skills for the Modern Scientist.” Nature. https://doi.org/10.1038/d41586-019-02918-5.\n\n\nVan Noorden, Richard. 2021. “Scientists and Science Communicators Swap Tips on How to Tell Compelling Stories.” Nature. https://doi.org/10.1038/d41586-021-03603-2.\n\n\nWickham, Hadley. 2019. Advanced r. 2nd ed. Chapman; Hall/CRC. https://adv-r.hadley.nz/.\n\n\n———. 2021. Mastering Shiny. O’Reilly Media. https://mastering-shiny.org/.\n\n\nWickham, Hadley, and Jennifer Bryan. 2023. R Packages. 2nd ed. O’Reilly Media. https://r-pkgs.org/.\n\n\nWickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund. 2023. R for Data Science. 2nd ed. O’Reilly Media. https://r4ds.hadley.nz/.",
     "crumbs": [
       "<span class='chapter-number'>18</span>  <span class='chapter-title'>Resources</span>"
+    ]
+  },
+  {
+    "objectID": "professional-development.html",
+    "href": "professional-development.html",
+    "title": "19  Professional Development",
+    "section": "",
+    "text": "19.1 Mentoring Philosophy\nAdapted by UCD-SeRG team from original by Jade Benjamin-Chung\nWe believe in individualized mentoring that supports each person’s unique career goals. Effective mentoring requires:",
+    "crumbs": [
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Professional Development</span>"
+    ]
+  },
+  {
+    "objectID": "professional-development.html#mentoring-philosophy",
+    "href": "professional-development.html#mentoring-philosophy",
+    "title": "19  Professional Development",
+    "section": "",
+    "text": "Regular, open communication between mentees and mentors\nMutual respect and trust\nClear expectations and goals\nConstructive feedback\nSupport for both research and career development",
+    "crumbs": [
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Professional Development</span>"
+    ]
+  },
+  {
+    "objectID": "professional-development.html#individual-development-plans",
+    "href": "professional-development.html#individual-development-plans",
+    "title": "19  Professional Development",
+    "section": "19.2 Individual Development Plans",
+    "text": "19.2 Individual Development Plans\nAll graduate students and postdocs should maintain an Individual Development Plan (IDP) that outlines:\n\nShort-term and long-term career goals\nSkills to develop\nTraining needs and opportunities\nTimeline and milestones\nProgress toward goals\n\nUpdate your IDP at least annually and discuss it with your PI. Useful resources:\n\nmyIDP - Individual Development Plan tool\nNIH OITE Career Resources",
+    "crumbs": [
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Professional Development</span>"
+    ]
+  },
+  {
+    "objectID": "professional-development.html#presentations-and-conferences",
+    "href": "professional-development.html#presentations-and-conferences",
+    "title": "19  Professional Development",
+    "section": "19.3 Presentations and Conferences",
+    "text": "19.3 Presentations and Conferences\nWe encourage lab members to present their work at conferences and seminars:\n\nDiscuss conference opportunities with PIs early\nSubmit abstracts with PI approval\nPractice presentations in lab meeting before the conference\nFunding for conferences depends on availability and should be discussed in advance\n\nResources for effective presentations:\n\nHow to tell a compelling story in scientific presentations\nHow to give a killer narratively-driven scientific talk\nHow to make a better poster\nHow to make an even better poster",
+    "crumbs": [
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Professional Development</span>"
+    ]
+  },
+  {
+    "objectID": "professional-development.html#scientific-figures",
+    "href": "professional-development.html#scientific-figures",
+    "title": "19  Professional Development",
+    "section": "19.4 Scientific Figures",
+    "text": "19.4 Scientific Figures\nCreating clear, effective figures is essential for communicating research findings:\n\nLabel x-axis and y-axis clearly\nUse panel labels when including multiple subplots\nInclude sufficient tick marks and labels\nUse appropriate font sizes (readable but not distracting)\nUse colorblind-friendly palettes (see ColorBrewer or iwanthue)\nDefine colors, shapes, and line types in legends\nMinimize abbreviations in labels and legends\nUse transparency to show overlapping data\nShow measures of precision (e.g., 95% confidence intervals)\n\nResources:\n\nTen Simple Rules for Better Figures",
+    "crumbs": [
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Professional Development</span>"
+    ]
+  },
+  {
+    "objectID": "professional-development.html#grant-writing",
+    "href": "professional-development.html#grant-writing",
+    "title": "19  Professional Development",
+    "section": "19.5 Grant Writing",
+    "text": "19.5 Grant Writing\n\nGraduate students and postdocs are encouraged to apply for fellowships (e.g., NIH F31, NSF GRFP, K awards)\nPIs will support fellowship applications with feedback, letters of support, and mentoring\nStart planning fellowship applications well in advance of deadlines (typically 3-6 months)\nAttend grant writing workshops and seek feedback from multiple sources\n\nResources:\n\nBuilding Your Funding Train\nNIH Funding Opportunities\nNIH Grant Writing Resources",
+    "crumbs": [
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Professional Development</span>"
+    ]
+  },
+  {
+    "objectID": "professional-development.html#teaching-and-outreach",
+    "href": "professional-development.html#teaching-and-outreach",
+    "title": "19  Professional Development",
+    "section": "19.6 Teaching and Outreach",
+    "text": "19.6 Teaching and Outreach\nTeaching and outreach are valuable professional development opportunities:\n\nGraduate students are encouraged to gain teaching experience\nWe support science communication and outreach activities\nDiscuss opportunities with PIs",
+    "crumbs": [
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Professional Development</span>"
+    ]
+  },
+  {
+    "objectID": "professional-development.html#networking",
+    "href": "professional-development.html#networking",
+    "title": "19  Professional Development",
+    "section": "19.7 Networking",
+    "text": "19.7 Networking\nBuilding a professional network is important for your career:\n\nAttend seminars and departmental events\nConnect with researchers in your field\nJoin professional societies\nUse professional social media platforms to share research and engage with the scientific community",
+    "crumbs": [
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Professional Development</span>"
+    ]
+  },
+  {
+    "objectID": "manuscript-preparation.html",
+    "href": "manuscript-preparation.html",
+    "title": "20  Manuscript Preparation and Publication",
+    "section": "",
+    "text": "20.1 Publication Process\nAdapted by UCD-SeRG team from original by Jade Benjamin-Chung\nThe typical workflow for manuscript preparation and publication:",
+    "crumbs": [
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Manuscript Preparation and Publication</span>"
+    ]
+  },
+  {
+    "objectID": "manuscript-preparation.html#publication-process",
+    "href": "manuscript-preparation.html#publication-process",
+    "title": "20  Manuscript Preparation and Publication",
+    "section": "",
+    "text": "Planning: Discuss target journals, outline, and timeline with PIs\nDrafting: Lead author prepares initial draft\nInternal review: Co-authors review and provide feedback\nRevision: Lead author incorporates feedback iteratively\nPI approval: Obtain final approval from PIs before submission\nSubmission: Submit to journal\nRevisions: Lead author coordinates response to peer reviewers\nPublication: Celebrate and share!",
+    "crumbs": [
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Manuscript Preparation and Publication</span>"
+    ]
+  },
+  {
+    "objectID": "manuscript-preparation.html#preprints-and-open-access",
+    "href": "manuscript-preparation.html#preprints-and-open-access",
+    "title": "20  Manuscript Preparation and Publication",
+    "section": "20.2 Preprints and Open Access",
+    "text": "20.2 Preprints and Open Access\n\nWe encourage posting preprints prior to or during peer review on platforms like medRxiv or bioRxiv\nPreprints allow rapid dissemination of findings and can be cited in grant applications\nWe support publishing in open access journals when possible to maximize accessibility\nMany funders, including NIH, have public access policies that require making publications freely available\n\nA preprint is a scientific manuscript that has not been peer reviewed. Preprint servers create digital object identifiers (DOIs) and can be cited in other articles and in grant applications. Because the peer review process can take many months, publishing preprints prior to or during peer review enables other scientists to immediately learn from and build on your work. Importantly, NIH allows applicants to include preprint citations in their biosketches. In most cases, we publish preprints on medRxiv.",
+    "crumbs": [
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Manuscript Preparation and Publication</span>"
+    ]
+  },
+  {
+    "objectID": "manuscript-preparation.html#reporting-checklists",
+    "href": "manuscript-preparation.html#reporting-checklists",
+    "title": "20  Manuscript Preparation and Publication",
+    "section": "20.3 Reporting Checklists",
+    "text": "20.3 Reporting Checklists\nUsing reporting checklists ensures that publications contain information needed for readers to assess validity and reproducibility. We use checklists appropriate to study design:\n\nCONSORT for randomized trials\nSTROBE for observational studies\nPRISMA for systematic reviews\nOthers as appropriate (see EQUATOR Network)",
+    "crumbs": [
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Manuscript Preparation and Publication</span>"
+    ]
+  },
+  {
+    "objectID": "manuscript-preparation.html#manuscript-checklist",
+    "href": "manuscript-preparation.html#manuscript-checklist",
+    "title": "20  Manuscript Preparation and Publication",
+    "section": "20.4 Manuscript Checklist",
+    "text": "20.4 Manuscript Checklist\nBefore submitting a manuscript:\n\nCompleted relevant reporting checklist\nResults are reproducible (rerunning code replicates tables/figures exactly)\nTarget journal selected\nTitle is declarative and states findings clearly\nWord count meets journal requirements\nManuscript follows journal formatting guidelines\nConsistent voice throughout (typically active voice)\nAll figures and tables referenced in main text\nCaptions for all figures and tables\nTables/figures numbered by order of appearance\nAbbreviations defined at first use and used sparingly\nAvoid subjective wording (e.g., “interesting”, “dramatic”)\nAvoid directionless statements (specify direction of associations)\nCausal language only when supported by study design\nAvoid “significant” (easily confused with statistical significance)\nAuthor contributions drafted using CRediT Taxonomy",
+    "crumbs": [
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Manuscript Preparation and Publication</span>"
     ]
   },
   {
