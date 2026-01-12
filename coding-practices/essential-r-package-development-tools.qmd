@@ -82,7 +82,7 @@ pkgdown::build_home()               # Home page from README
 **Configure your pkgdown site** with `_pkgdown.yml`:
 
 ```yaml
-url: https://ucd-serg.github.io/myproject
+url: https://ucd-serg.github.io/YOURPROJECT
 
 template:
   bootstrap: 5

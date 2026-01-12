@@ -25,4 +25,11 @@ exclude = [
   "https://localhost.*",
   "http://127.0.0.1.*",
   "https://127.0.0.1.*",
+  # Sites that block automated link checkers but work for users
+  "https://medium.com/.*",
+  "https://www.biorxiv.org/.*",
+  "https://www.niaid.nih.gov/.*",
+  "https://www.sciencedirect.com/.*",
+  "https://hpc.ucdavis.edu/.*",
+  "https://support.rstudio.com/.*",
 ]
