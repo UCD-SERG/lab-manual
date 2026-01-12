@@ -509,8 +509,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="what-is-data-masking" class="level3" data-number="9.1.1">
 <h3 data-number="9.1.1" class="anchored" data-anchor-id="what-is-data-masking"><span class="header-section-number">9.1.1</span> What is Data Masking?</h3>
 <p>Within certain tidyverse operations, columns are called as if they were variables. For example, while running <code>df |&gt; mutate(X = …)</code> R recognizes that <code>X</code> specifically references a column in <code>df</code> without explicitly stating its membership <code>df |&gt; mutate(df$X = …)</code> or calling the column name as a string <code>df |&gt; mutate(“X” = …)</code>.</p>
-<p><img src="assets/images/data-masking.PNG" class="img-fluid" style="width:50.0%"></p>
-<p>However, this behavior may introduce errors when we attempt to incorporate variables from the global environment within these tidyverse pipelines. In the example above, <code>column_name = “X”</code> followed by <code>df |&gt; mutate(X2 = column_name + 1)</code> would yield an error, since <code>column_name</code> is not a column in <code>df</code> and the variable <code>column_name</code> is not defined within the environment of <code>df</code></p>
+<div id="fig-data-masking" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-data-masking-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/data-masking.PNG" class="img-fluid figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-masking-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.1: Data masking in tidyverse operations
+</figcaption>
+</figure>
+</div>
+<p>However, this behavior may introduce errors when we attempt to incorporate variables from the global environment within these tidyverse pipelines. In the example shown in <a href="#fig-data-masking" class="quarto-xref">Figure&nbsp;<span>9.1</span></a>, <code>column_name = “X”</code> followed by <code>df |&gt; mutate(X2 = column_name + 1)</code> would yield an error, since <code>column_name</code> is not a column in <code>df</code> and the variable <code>column_name</code> is not defined within the environment of <code>df</code></p>
 </section>
 <section id="using-tidy-evaluation-for-data-masking" class="level3" data-number="9.1.2">
 <h3 data-number="9.1.2" class="anchored" data-anchor-id="using-tidy-evaluation-for-data-masking"><span class="header-section-number">9.1.2</span> Using tidy evaluation for data masking</h3>
