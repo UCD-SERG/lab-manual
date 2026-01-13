@@ -16,7 +16,7 @@ when you have errors in the spell-check or lint workflows,
 you can often fix them faster than Copilot can.
 Similarly, when reviewing Copilot's PRs, 
 you can often make direct changes to the branch
-faser than you could write clear review comments and get Copilot to address them.
+faster than you could write clear review comments and get Copilot to address them.
 
 Also,
 the less we practice,
