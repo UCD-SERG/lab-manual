@@ -315,7 +315,7 @@ For example, to include a YAML workflow file:
 When you need to show the include shortcode syntax itself in documentation
 (without it being processed),
 add an extra pair of curly braces:
-`{{{ < include path/to/file > }}}`.
+`{{{< include path/to/file >}}}`.
 This prevents Quarto from recognizing it as a shortcode,
 allowing the literal syntax to appear in the rendered output.
 
