@@ -24,8 +24,12 @@ whether made by humans or AI assistants.
 Here is the complete `copilot-instructions.md` file, for easy inspection:
 
 ::: {.callout-note collapse="true"}
-## View copilot-instructions.md
 
+##### View `copilot-instructions.md`
+
+````{.md filename=".github/copilot-instructions.md"}
 {{< include .github/copilot-instructions.md >}}
+````
+
 :::
 
