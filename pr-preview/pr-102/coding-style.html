@@ -389,13 +389,13 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./coding-practices.html" class="sidebar-item-text sidebar-link">
+  <a href="./coding-practices.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">R Coding Practices</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./coding-style.html" class="sidebar-item-text sidebar-link active">
+  <a href="./coding-style.html" class="sidebar-item-text sidebar-link active" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">R Code Style</span></span></a>
   </div>
 </li>
@@ -500,7 +500,7 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix-copilot-instructions.html" class="sidebar-item-text sidebar-link">
+  <a href="./appendix-copilot-instructions.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text">Copilot Instructions File</span></a>
   </div>
 </li>
@@ -547,7 +547,7 @@ div.csl-indent {
 <main class="content" id="quarto-document-content">
 <div class="preview-home-changes-banner">
     <p style="margin: 0;">
-        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="ai-tools.html">17. &nbsp; <span class="chapter-title">Working with AI</span></a>
+        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="coding-style.html">7. &nbsp; <span class="chapter-title">R Code Style</span></span></a>, <a href="coding-practices.html">6. &nbsp; <span class="chapter-title">R Coding Practices</span></span></a>, <a href="appendix-copilot-instructions.html">appendix-copilot-instructions</a>, <a href="ai-tools.html">17. &nbsp; <span class="chapter-title">Working with AI</span></a>
         <br>
         <strong>📄 DOCX with tracked changes:</strong> <a href="UCD-SeRG-Lab-Manual-tracked-changes.docx" download>Download UCD-SeRG-Lab-Manual-tracked-changes.docx</a>
         <br>
@@ -575,6 +575,18 @@ div.csl-indent {
 
 </header>
 
+
+
+<div class="preview-combined-banner">
+    <p style="margin: 0;">
+        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~0% of content changed).
+        <br>
+        <strong>🎨 Highlighting Legend:</strong> 
+        <mark class="preview-text-changed" style="display: inline; padding: 1px 3px;">Modified text (yellow)</mark> shows changed words/phrases with tooltips of original text, 
+        <mark class="preview-text-added" style="display: inline; padding: 1px 3px;">added text (green)</mark> shows new content, and 
+        <mark class="preview-element-added" style="display: inline; padding: 1px 3px;">new sections (blue)</mark> highlight entirely new paragraphs.
+    </p>
+</div>
 
 <p>Adapted by UCD-SeRG team from <a href="https://jadebc.github.io/lab-manual/coding-style.html">original by Kunal Mishra, Jade Benjamin-Chung, and Stephanie Djajadi</a></p>
 <p>Follow these code style guidelines for all R code:</p>
@@ -608,7 +620,7 @@ div.csl-indent {
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>my_function <span class="ot">&lt;-</span> <span class="cf">function</span>(param1, param2) {</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Implementation</span></span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><em>See also <a href="coding-practices.html#sec-documenting-code" class="quarto-xref"><span>Section 6.9</span></a> for general code documentation practices.</em></p>
+<p><em>See also <a href="coding-practices.html#sec-documenting-code" class="quarto-xref" preview-toc-changed><span>Section 6.10</span></a> for general code documentation practices.</em></p>
 </section>
 <section id="comments" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="comments"><span class="header-section-number">7.3</span> Comments</h2>
@@ -780,7 +792,7 @@ Note
 <span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Session info</span></span>
 <span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>sessioninfo<span class="sc">::</span><span class="fu">session_info</span>() <span class="co"># instead of sessionInfo()</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>See also <a href="coding-practices.html#sec-tidyverse" class="quarto-xref"><span>Section 6.15</span></a>.</p>
+<p>See also <a href="coding-practices.html#sec-tidyverse" class="quarto-xref" preview-toc-changed><span>Section 6.16</span></a>.</p>
 </section>
 <section id="sec-here-package-style" class="level2" data-number="7.9">
 <h2 data-number="7.9" class="anchored" data-anchor-id="sec-here-package-style"><span class="header-section-number">7.9</span> The here Package</h2>
@@ -792,7 +804,7 @@ Note
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(results, <span class="fu">here</span>(<span class="st">"inst"</span>, <span class="st">"analyses"</span>, <span class="st">"results.rds"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This solves the problem of different working directory paths across collaborators. For example, one person might have the project at <code>/home/oski/Some-R-Project</code> while another has it at <code>/home/bear/R-Code/Some-R-Project</code>. The <code>here</code> package handles this automatically.</p>
 <p>This works regardless of where collaborators clone the repository. For more details, see the <a href="https://github.com/jennybc/here_here">here package vignette</a>.</p>
-<p><em>See also <a href="coding-practices.html#sec-here-package-practices" class="quarto-xref"><span>Section 6.12</span></a> for detailed explanation of the here package.</em></p>
+<p><em>See also <a href="coding-practices.html#sec-here-package-practices" class="quarto-xref" preview-toc-changed><span>Section <mark class="preview-text-changed">6.13</mark></span></a> for detailed explanation of the here package.</em></p>
 </section>
 <section id="sec-object-naming" class="level2" data-number="7.10">
 <h2 data-number="7.10" class="anchored" data-anchor-id="sec-object-naming"><span class="header-section-number">7.10</span> Object Naming</h2>
@@ -1432,7 +1444,7 @@ Wickham, Hadley. 2023. <em>The Tidyverse Style Guide</em>. <a href="https://styl
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./coding-practices.html" class="pagination-link" aria-label="R Coding Practices">
+      <a href="./coding-practices.html" class="pagination-link" preview-toc-changed aria-label="R Coding Practices">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">R Coding Practices</span></span>
       </a>          
   </div>

@@ -389,13 +389,13 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./coding-practices.html" class="sidebar-item-text sidebar-link">
+  <a href="./coding-practices.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">R Coding Practices</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./coding-style.html" class="sidebar-item-text sidebar-link">
+  <a href="./coding-style.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">R Code Style</span></span></a>
   </div>
 </li>
@@ -500,7 +500,7 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix-copilot-instructions.html" class="sidebar-item-text sidebar-link">
+  <a href="./appendix-copilot-instructions.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text">Copilot Instructions File</span></a>
   </div>
 </li>
@@ -531,11 +531,11 @@ div.csl-indent {
   <li><a href="#how-to-work-with-coding-agents" id="toc-how-to-work-with-coding-agents" class="nav-link" data-scroll-target="#how-to-work-with-coding-agents"><span class="header-section-number">17.4.2</span> How to Work with Coding Agents</a></li>
   <li><a href="#useful-prompt-formats" id="toc-useful-prompt-formats" class="nav-link" data-scroll-target="#useful-prompt-formats"><span class="header-section-number">17.4.3</span> Useful Prompt Formats</a></li>
   <li><a href="#addressing-failing-github-actions-workflows" id="toc-addressing-failing-github-actions-workflows" class="nav-link" data-scroll-target="#addressing-failing-github-actions-workflows"><span class="header-section-number">17.4.4</span> Addressing Failing GitHub Actions Workflows</a></li>
-  <li><a href="#benefits-and-hazards" id="toc-benefits-and-hazards" class="nav-link" data-scroll-target="#benefits-and-hazards"><span class="header-section-number">17.4.5</span> Benefits and Hazards</a></li>
-  <li><a href="#best-practices-for-safe-and-successful-use" id="toc-best-practices-for-safe-and-successful-use" class="nav-link" data-scroll-target="#best-practices-for-safe-and-successful-use"><span class="header-section-number">17.4.6</span> Best Practices for Safe and Successful Use</a></li>
+  <li><a href="#sec-ai-benefits-hazards" id="toc-sec-ai-benefits-hazards" class="nav-link" data-scroll-target="#sec-ai-benefits-hazards"><span class="header-section-number">17.4.5</span> Benefits and Hazards</a></li>
+  <li><a href="#sec-ai-best-practices" id="toc-sec-ai-best-practices" class="nav-link" data-scroll-target="#sec-ai-best-practices"><span class="header-section-number">17.4.6</span> Best Practices for Safe and Successful Use</a></li>
   <li><a href="#firewall-and-network-configuration" id="toc-firewall-and-network-configuration" class="nav-link" data-scroll-target="#firewall-and-network-configuration"><span class="header-section-number">17.4.7</span> Firewall and Network Configuration</a></li>
   <li><a href="#configuring-the-agent-environment" id="toc-configuring-the-agent-environment" class="nav-link" data-scroll-target="#configuring-the-agent-environment"><span class="header-section-number">17.4.8</span> Configuring the Agent Environment</a></li>
-  <li><a href="#when-to-use-a-coding-agent" id="toc-when-to-use-a-coding-agent" class="nav-link" data-scroll-target="#when-to-use-a-coding-agent"><span class="header-section-number">17.4.9</span> When to use a coding agent</a></li>
+  <li><a href="#sec-ai-when-to-use" id="toc-sec-ai-when-to-use" class="nav-link" data-scroll-target="#sec-ai-when-to-use"><span class="header-section-number">17.4.9</span> When to use a coding agent</a></li>
   <li><a href="#editing-with-.docx-files" id="toc-editing-with-.docx-files" class="nav-link" data-scroll-target="#editing-with-.docx-files"><span class="header-section-number">17.4.10</span> Editing with <code>.docx</code> files</a></li>
   <li><a href="#copilot-instructions-for-this-repository" id="toc-copilot-instructions-for-this-repository" class="nav-link" data-scroll-target="#copilot-instructions-for-this-repository"><span class="header-section-number">17.4.11</span> Copilot Instructions for this Repository</a></li>
   </ul></li>
@@ -546,7 +546,7 @@ div.csl-indent {
 <main class="content" id="quarto-document-content">
 <div class="preview-home-changes-banner">
     <p style="margin: 0;">
-        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="ai-tools.html">17. &nbsp; <span class="chapter-title">Working with AI</span></a>
+        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="coding-style.html">7. &nbsp; <span class="chapter-title">R Code Style</span></span></a>, <a href="coding-practices.html">6. &nbsp; <span class="chapter-title">R Coding Practices</span></span></a>, <a href="appendix-copilot-instructions.html">appendix-copilot-instructions</a>, <a href="ai-tools.html">17. &nbsp; <span class="chapter-title">Working with AI</span></a>
         <br>
         <strong>📄 DOCX with tracked changes:</strong> <a href="UCD-SeRG-Lab-Manual-tracked-changes.docx" download>Download UCD-SeRG-Lab-Manual-tracked-changes.docx</a>
         <br>
@@ -716,6 +716,24 @@ div.csl-indent {
 <li><strong>Branch restrictions</strong>: Agents can only push to their own branches (e.g., <code>copilot/*</code>)</li>
 <li><strong>Full transparency</strong>: All agent actions are logged and visible in the PR</li>
 </ul>
+</section>
+<section id="workflow-approval-requirements" class="level4" data-number="17.4.2.7">
+<h4 data-number="17.4.2.7" class="anchored" data-anchor-id="workflow-approval-requirements"><span class="header-section-number">17.4.2.7</span> Workflow Approval Requirements</h4>
+<p>When GitHub Copilot creates or updates a pull request, it cannot automatically trigger GitHub Actions workflows. <strong>You must manually approve each workflow run</strong> by clicking the approval button in the Actions tab or on the PR.</p>
+<p>This manual approval requirement is a security measure that prevents potentially malicious or unintended code execution. Because Copilot can modify any file in the repository—including workflow files themselves or scripts called by workflows—allowing automatic workflow execution could create security vulnerabilities.</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li><strong>No automatic approval</strong>: There is currently no way to bypass manual workflow approval for Copilot PRs, even if you are the repository owner</li>
+<li><strong>Security reasoning</strong>: Copilot could modify workflow files (<code>.github/workflows/*.yml</code>) or scripts they execute, potentially injecting malicious code</li>
+<li><strong>Impact on workflow</strong>: This means you need to actively monitor and approve workflow runs as Copilot iterates on your issue, which can slow down the development cycle</li>
+</ul>
+<p><strong>Workaround considerations:</strong></p>
+<p>Some users have discussed using Personal Access Tokens (PATs) to allow Copilot to trigger workflows on your behalf, but this approach has security implications and should be carefully evaluated before implementation.</p>
+<p>For more details and community discussion about this limitation, see:</p>
+<ul>
+<li><a href="https://github.com/orgs/community/discussions/162826">GitHub Community Discussion #162826</a>: Discussion about workflow approval requirements</li>
+<li><a href="https://github.com/orgs/community/discussions/183966">GitHub Community Discussion #183966</a>: Product feedback on this topic</li>
+</ul>
 <p>For detailed instructions, see <a href="https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent">GitHub Copilot coding agent documentation</a>.</p>
 </section>
 </section>
@@ -804,7 +822,7 @@ div.csl-indent {
 <li><mark class="preview-element-added">“update the workflow to use the latest version of action Y”</mark></li>
 <li><mark class="preview-element-added">“correct the job configuration in .github/workflows/check-standard.yaml”</mark></li>
 </ul>
-<p><mark class="preview-element-added"><strong>Important considerations:</strong></mark></p>
+<p><strong><mark class="preview-text-changed">Important</mark> considerations:</strong></p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -823,10 +841,10 @@ Warning
 <li><mark class="preview-element-added"><strong>Check</strong> that no new secret access or command execution has been added</mark></li>
 <li><strong><mark class="preview-text-changed">Test</mark></strong> <mark class="preview-text-changed">in a safe</mark> environment <mark class="preview-text-changed">if possible</mark></li>
 </ol>
-<p><mark class="preview-element-added">See the “Best Practices” section above for more details on workflow file security.</mark></p>
+<p><mark class="preview-element-added">See <a href="#sec-ai-best-practices" class="quarto-xref"><span>Section 17.4.6</span></a> for more details on workflow file security.</mark></p>
 </div>
 </div>
-<p><mark class="preview-element-added"><strong>When to do it yourself:</strong> Workflow syntax errors and configuration issues are often faster to fix manually than with Copilot, especially if you’re familiar with GitHub Actions. See the “When to use a coding agent” section above for more guidance.</mark></p>
+<p><mark class="preview-element-added"><strong>When to do it yourself:</strong> Workflow syntax errors and configuration issues are often faster to fix manually than with Copilot, especially if you’re familiar with GitHub Actions. See <a href="#sec-ai-when-to-use" class="quarto-xref"><span>Section 17.4.9</span></a> for more guidance.</mark></p>
 </section>
 <section id="scenario-3-uncertain-which-scenario-applies" class="level4" data-number="17.4.4.3">
 <h4 data-number="17.4.4.3" class="anchored" data-anchor-id="scenario-3-uncertain-which-scenario-applies"><mark class="preview-element-added"><span class="header-section-number">17.4.4.3</span> Scenario 3: Uncertain Which Scenario Applies</mark></h4>
@@ -856,15 +874,15 @@ Warning
 <section id="additional-resources" class="level4" data-number="17.4.4.4">
 <h4 data-number="17.4.4.4" class="anchored" data-anchor-id="additional-resources"><span class="header-section-number">17.4.4.4</span> Additional Resources</mark></h4>
 <ul>
-<li><mark class="preview-element-added">See the <a href="#sec-r-ci">Continuous Integration</a> section in the R Coding Practices chapter for setting up GitHub Actions workflows</mark></li>
-<li><mark class="preview-element-added">See the “Best Practices” and “Benefits and Hazards” sections above for security considerations with workflow files</mark></li>
-<li><mark class="preview-element-added">See the “When to use a coding agent” section above for guidance on when to use Copilot vs.&nbsp;fixing issues yourself</mark></li>
+<li><mark class="preview-element-added">See <a href="coding-practices.html#sec-r-ci" class="quarto-xref" preview-toc-changed><span>Section 6.7</span></a> for setting up GitHub Actions workflows</mark></li>
+<li><mark class="preview-element-added">See <a href="#sec-ai-best-practices" class="quarto-xref"><span>Section 17.4.6</span></a> and <a href="#sec-ai-benefits-hazards" class="quarto-xref"><span>Section 17.4.5</span></a> for security considerations with workflow files</mark></li>
+<li><mark class="preview-element-added">See <a href="#sec-ai-when-to-use" class="quarto-xref"><span>Section 17.4.9</span></a> for guidance on when to use Copilot vs.&nbsp;fixing issues yourself</mark></li>
 <li><mark class="preview-element-added">See the <a href="https://docs.github.com/en/actions">GitHub Actions documentation</a> for workflow syntax and troubleshooting</mark></li>
 </ul>
 </section>
 </section>
-<section id="benefits-and-hazards" class="level3" data-number="17.4.5">
-<h3 data-number="17.4.5" class="anchored" data-anchor-id="benefits-and-hazards"><span class="header-section-number"><mark class="preview-text-changed">17.4.5</mark></span> Benefits and Hazards</h3>
+<section id="sec-ai-benefits-hazards" class="level3" data-number="17.4.5">
+<h3 data-number="17.4.5" class="anchored" data-anchor-id="sec-ai-benefits-hazards"><span class="header-section-number"><mark class="preview-text-changed">17.4.5</mark></span> Benefits and Hazards</h3>
 <p>Coding agents are powerful programs that can work autonomously. They create pull requests that propose changes to the code in our repositories, potentially including their own configuration files and our automated workflows. They can work powerfully on our behalf, but they require careful oversight and control to ensure they serve our interests and that we understand the consequences of their actions.</p>
 <p>Coding agents offer several advantages:</p>
 <ul>
@@ -907,8 +925,8 @@ Warning
 </div>
 </section>
 </section>
-<section id="best-practices-for-safe-and-successful-use" class="level3" data-number="17.4.6">
-<h3 data-number="17.4.6" class="anchored" data-anchor-id="best-practices-for-safe-and-successful-use"><span class="header-section-number"><mark class="preview-text-changed">17.4.6</mark></span> Best Practices for Safe and Successful Use</h3>
+<section id="sec-ai-best-practices" class="level3" data-number="17.4.6">
+<h3 data-number="17.4.6" class="anchored" data-anchor-id="sec-ai-best-practices"><span class="header-section-number"><mark class="preview-text-changed">17.4.6</mark></span> Best Practices for Safe and Successful Use</h3>
 <p>To work with coding agents safely and successfully:</p>
 <ol type="1">
 <li><p><strong>Maintain active supervision</strong>: Never assume AI-generated code is correct. Review every line critically.</p></li>
@@ -1073,8 +1091,8 @@ Warning
 <p>For complete details, see <a href="https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-environment">Customizing the development environment for GitHub Copilot coding agent</a>.</p>
 </section>
 </section>
-<section id="when-to-use-a-coding-agent" class="level3" data-number="17.4.9">
-<h3 data-number="17.4.9" class="anchored" data-anchor-id="when-to-use-a-coding-agent"><span class="header-section-number"><mark class="preview-text-changed">17.4.9</mark></span> When to use a coding agent</h3>
+<section id="sec-ai-when-to-use" class="level3" data-number="17.4.9">
+<h3 data-number="17.4.9" class="anchored" data-anchor-id="sec-ai-when-to-use"><span class="header-section-number"><mark class="preview-text-changed">17.4.9</mark></span> When to use a coding agent</h3>
 <p>Coding agent sessions are currently<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> considered “premium requests”, which are limited resources; see <a href="https://github.com/features/copilot/plans" class="uri">https://github.com/features/copilot/plans</a> for details. So, use coding agents sparingly. Use them for complex changes that would be difficult or time-consuming for you to complete by hand. Coding agents also take time to get configured for work, every time you make a request. See <a href="https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-environment#preinstalling-tools-or-dependencies-in-copilots-environment" class="uri">https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-environment#preinstalling-tools-or-dependencies-in-copilots-environment</a> for ways to reduce that startup time, but it will never be 0. If you can complete the task faster than the coding agent can, you should probably do it yourself. For example, when you have errors in the spell-check or lint workflows, you can often fix them faster than Copilot can. Similarly, when reviewing Copilot’s PRs, you can often make direct changes to the branch faster than you could write clear review comments and get Copilot to address them.</p>
 <p>Also, the less we practice, the weaker our skills get, and the harder it is for us to supervise the agents and make sure they are actually doing what we want them to do, the way we want them to do it. You should exercise your own coding skills regularly, just like you would for any other skill you want to maintain.</p>
 </section>
