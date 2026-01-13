@@ -50,7 +50,7 @@ These files control automated processes that can:
 - Execute arbitrary commands in your repository
 
 **Never** allow a coding agent to edit workflow files
-(especially `.github/workflows/*.yml` or `copilot-setup-step.yml`)
+(especially `.github/workflows/*.yml` or `copilot-setup-steps.yml`)
 without thorough manual review.
 Before approving any workflow run,
 always check if the workflow files themselves have been modified.
