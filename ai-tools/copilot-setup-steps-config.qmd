@@ -48,7 +48,6 @@ jobs:
     permissions:
       contents: read
     timeout-minutes: 55
-    
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -171,7 +170,7 @@ appropriate network security controls.
 If your repository uses Git LFS:
 
 ```yaml
-- uses: actions/checkout@v5
+- uses: actions/checkout@v4
   with:
     lfs: true
 ```
