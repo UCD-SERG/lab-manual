@@ -34,6 +34,10 @@ to [help you code](https://en.wikipedia.org/wiki/AI-assisted_software_developmen
 
 {{< include ai-tools/useful-prompt-formats.qmd >}}
 
+### Addressing Failing GitHub Actions Workflows
+
+{{< include ai-tools/addressing-failing-workflows.qmd >}}
+
 ### Benefits and Hazards
 
 {{< include ai-tools/agents-benefits-and-hazards.qmd >}}
