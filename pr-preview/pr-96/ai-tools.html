@@ -554,7 +554,7 @@ div.csl-indent {
 
 <div class="preview-combined-banner">
     <p style="margin: 0;">
-        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~49% of content changed).
+        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~26% of content changed).
         <br>
         <strong>🎨 Highlighting Legend:</strong> 
         <mark class="preview-text-changed" style="display: inline; padding: 1px 3px;">Modified text (yellow)</mark> shows changed words/phrases with tooltips of original text, 
@@ -1113,332 +1113,279 @@ div.csl-indent {
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><mark class="preview-element-added"><strong>.github/copilot-instructions.md</strong></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9" data-filename=".github/copilot-instructions.md"><pre class="sourceCode markdown md code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Copilot Instructions for UCD-SeRG Lab Manual</span></span>
+<section id="copilot-instructions-for-ucd-serg-lab-manual" class="level1 callout-body-container callout-body" data-number="18">
+<h1 data-number="18"><span class="header-section-number">18</span> Copilot Instructions for UCD-SeRG Lab Manual</h1>
+<p>This file contains guidelines for GitHub Copilot and other AI assistants when working with the lab manual.</p>
+<section id="markdown-and-quarto-formatting" class="level2" data-number="18.1">
+<h2 data-number="18.1" class="anchored" data-anchor-id="markdown-and-quarto-formatting"><span class="header-section-number">18.1</span> Markdown and Quarto Formatting</h2>
+<section id="talking-about-code" class="level3" data-number="18.1.1">
+<h3 data-number="18.1.1" class="anchored" data-anchor-id="talking-about-code"><span class="header-section-number">18.1.1</span> Talking about code</h3>
+<p>When talking about code in prose sections, use backticks to apply code formatting: for example, <code>dplyr::mutate()</code></p>
+<p>When talking about packages in prose, use backticks and curly-braces with a hyperlink to the package website. For example: <a href="https://dplyr.tidyverse.org/"><code>{dplyr}</code></a></p>
+<p>Common package URLs:</p>
+<ul>
+<li><a href="https://dplyr.tidyverse.org/"><code>{dplyr}</code></a></li>
+<li><a href="https://ggplot2.tidyverse.org/"><code>{ggplot2}</code></a></li>
+<li><a href="https://tidyr.tidyverse.org/"><code>{tidyr}</code></a></li>
+<li><a href="https://readr.tidyverse.org/"><code>{readr}</code></a></li>
+<li><a href="https://purrr.tidyverse.org/"><code>{purrr}</code></a></li>
+<li><a href="https://tibble.tidyverse.org/"><code>{tibble}</code></a></li>
+<li><a href="https://stringr.tidyverse.org/"><code>{stringr}</code></a></li>
+<li><a href="https://forcats.tidyverse.org/"><code>{forcats}</code></a></li>
+<li><a href="https://styler.r-lib.org/"><code>{styler}</code></a></li>
+<li><a href="https://lintr.r-lib.org/"><code>{lintr}</code></a></li>
+<li><a href="https://roxygen2.r-lib.org/"><code>{roxygen2}</code></a></li>
+<li><a href="https://testthat.r-lib.org/"><code>{testthat}</code></a></li>
+<li><a href="https://usethis.r-lib.org/"><code>{usethis}</code></a></li>
+<li><a href="https://devtools.r-lib.org/"><code>{devtools}</code></a></li>
+<li><a href="https://rstudio.github.io/renv/"><code>{renv}</code></a></li>
+<li><a href="https://docs.ropensci.org/targets/"><code>{targets}</code></a></li>
+<li><a href="https://rdatatable.gitlab.io/data.table/"><code>{data.table}</code></a></li>
+<li><a href="https://cran.r-project.org/package=assertthat"><code>{assertthat}</code></a></li>
+</ul>
+</section>
+<section id="blank-lines-before-lists" class="level3" data-number="18.1.2">
+<h3 data-number="18.1.2" class="anchored" data-anchor-id="blank-lines-before-lists"><span class="header-section-number">18.1.2</span> Blank Lines Before Lists</h3>
+<p><strong>ALWAYS include a blank line before bullet lists and numbered lists</strong> in markdown and Quarto (.qmd) files.</p>
+<p><strong>Correct:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="an">Here are the key points:</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>This file contains guidelines for GitHub Copilot and other AI assistants when working with the lab manual.</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## Markdown and Quarto Formatting</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="fu">### Talking about code</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>When talking about code in prose sections, </span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>use backticks to apply code formatting:</span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>for example, <span class="in">`dplyr::mutate()`</span></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>When talking about packages in prose,</span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>use backticks and curly-braces with a hyperlink to the package website.</span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>For example: <span class="co">[</span><span class="ot">`{dplyr}`</span><span class="co">](https://dplyr.tidyverse.org/)</span></span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>Common package URLs:</span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">`{dplyr}`</span><span class="co">](https://dplyr.tidyverse.org/)</span></span>
-<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">`{ggplot2}`</span><span class="co">](https://ggplot2.tidyverse.org/)</span></span>
-<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">`{tidyr}`</span><span class="co">](https://tidyr.tidyverse.org/)</span></span>
-<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">`{readr}`</span><span class="co">](https://readr.tidyverse.org/)</span></span>
-<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">`{purrr}`</span><span class="co">](https://purrr.tidyverse.org/)</span></span>
-<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">`{tibble}`</span><span class="co">](https://tibble.tidyverse.org/)</span></span>
-<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">`{stringr}`</span><span class="co">](https://stringr.tidyverse.org/)</span></span>
-<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">`{forcats}`</span><span class="co">](https://forcats.tidyverse.org/)</span></span>
-<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">`{styler}`</span><span class="co">](https://styler.r-lib.org/)</span></span>
-<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">`{lintr}`</span><span class="co">](https://lintr.r-lib.org/)</span></span>
-<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">`{roxygen2}`</span><span class="co">](https://roxygen2.r-lib.org/)</span></span>
-<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">`{testthat}`</span><span class="co">](https://testthat.r-lib.org/)</span></span>
-<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">`{usethis}`</span><span class="co">](https://usethis.r-lib.org/)</span></span>
-<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">`{devtools}`</span><span class="co">](https://devtools.r-lib.org/)</span></span>
-<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">`{renv}`</span><span class="co">](https://rstudio.github.io/renv/)</span></span>
-<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">`{targets}`</span><span class="co">](https://docs.ropensci.org/targets/)</span></span>
-<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">`{data.table}`</span><span class="co">](https://rdatatable.gitlab.io/data.table/)</span></span>
-<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">`{assertthat}`</span><span class="co">](https://cran.r-project.org/package=assertthat)</span></span>
-<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a><span class="fu">### Blank Lines Before Lists</span></span>
-<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>**ALWAYS include a blank line before bullet lists and numbered lists** in markdown and Quarto (.qmd) files.</span>
-<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>**Correct:**</span>
-<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown</span></span>
-<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>Here are the key points:</span>
-<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>First item</span>
-<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Second item</span>
-<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Third item</span>
-<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a><span class="in">**Incorrect:**</span></span>
-<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown</span></span>
-<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a><span class="in">Here are the key points:</span></span>
-<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a><span class="in">- First item</span></span>
-<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a><span class="in">- Second item</span></span>
-<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a><span class="in">- Third item</span></span>
-<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a>This applies to:</span>
-<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Bullet lists (starting with <span class="in">`-`</span> or <span class="in">`*`</span>)</span>
-<span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Numbered lists (starting with <span class="in">`1.`</span>, <span class="in">`2.`</span>, etc.)</span>
-<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Lists in all .qmd files throughout the repository</span>
-<span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a><span class="fu">### Line Breaks in Plain Text</span></span>
-<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-68"><a href="#cb9-68" aria-hidden="true" tabindex="-1"></a>**ALWAYS line-break at the ends of sentences and long phrases in plain-text paragraphs in .qmd files** to avoid long lines.</span>
-<span id="cb9-69"><a href="#cb9-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-70"><a href="#cb9-70" aria-hidden="true" tabindex="-1"></a>**Correct:**</span>
-<span id="cb9-71"><a href="#cb9-71" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown</span></span>
-<span id="cb9-72"><a href="#cb9-72" aria-hidden="true" tabindex="-1"></a>When talking about code in prose sections,</span>
-<span id="cb9-73"><a href="#cb9-73" aria-hidden="true" tabindex="-1"></a>use backticks to apply code formatting.</span>
-<span id="cb9-74"><a href="#cb9-74" aria-hidden="true" tabindex="-1"></a>This helps maintain readability in source files</span>
-<span id="cb9-75"><a href="#cb9-75" aria-hidden="true" tabindex="-1"></a>and makes diffs easier to review.</span>
-<span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb9-77"><a href="#cb9-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-78"><a href="#cb9-78" aria-hidden="true" tabindex="-1"></a>**Incorrect:**</span>
-<span id="cb9-79"><a href="#cb9-79" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown</span></span>
-<span id="cb9-80"><a href="#cb9-80" aria-hidden="true" tabindex="-1"></a>When talking about code in prose sections, use backticks to apply code formatting. This helps maintain readability in source files and makes diffs easier to review.</span>
-<span id="cb9-81"><a href="#cb9-81" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb9-82"><a href="#cb9-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-83"><a href="#cb9-83" aria-hidden="true" tabindex="-1"></a>**Benefits:**</span>
-<span id="cb9-84"><a href="#cb9-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-85"><a href="#cb9-85" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Improves readability of source .qmd files</span>
-<span id="cb9-86"><a href="#cb9-86" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Makes git diffs clearer and easier to review</span>
-<span id="cb9-87"><a href="#cb9-87" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Helps identify specific changes in version control</span>
-<span id="cb9-88"><a href="#cb9-88" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Prevents horizontal scrolling when editing</span>
-<span id="cb9-89"><a href="#cb9-89" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Follows semantic line breaks best practice</span>
-<span id="cb9-90"><a href="#cb9-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-91"><a href="#cb9-91" aria-hidden="true" tabindex="-1"></a>**Guidelines:**</span>
-<span id="cb9-92"><a href="#cb9-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-93"><a href="#cb9-93" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Break after complete sentences (at periods)</span>
-<span id="cb9-94"><a href="#cb9-94" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Break after long phrases or clauses (at commas or conjunctions)</span>
-<span id="cb9-95"><a href="#cb9-95" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Break after approximately 60-80 characters when appropriate</span>
-<span id="cb9-96"><a href="#cb9-96" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Keep related short phrases together on one line</span>
-<span id="cb9-97"><a href="#cb9-97" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Don't break in the middle of inline code, links, or formatting</span>
-<span id="cb9-98"><a href="#cb9-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-99"><a href="#cb9-99" aria-hidden="true" tabindex="-1"></a><span class="fu">### Why This Matters</span></span>
-<span id="cb9-100"><a href="#cb9-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-101"><a href="#cb9-101" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Ensures consistent markdown rendering across different platforms</span>
-<span id="cb9-102"><a href="#cb9-102" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Improves readability in both source and rendered forms</span>
-<span id="cb9-103"><a href="#cb9-103" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Prevents rendering issues in Quarto books</span>
-<span id="cb9-104"><a href="#cb9-104" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Follows markdown best practices</span>
-<span id="cb9-105"><a href="#cb9-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-106"><a href="#cb9-106" aria-hidden="true" tabindex="-1"></a><span class="fu">### Cross-References for Figures and Tables</span></span>
-<span id="cb9-107"><a href="#cb9-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-108"><a href="#cb9-108" aria-hidden="true" tabindex="-1"></a>**ALWAYS use Quarto's cross-reference system for figures, tables, and other captioned content.**</span>
-<span id="cb9-109"><a href="#cb9-109" aria-hidden="true" tabindex="-1"></a>See <span class="co">[</span><span class="ot">Quarto Cross-References documentation</span><span class="co">](https://quarto.org/docs/authoring/cross-references.html)</span> for complete details.</span>
-<span id="cb9-110"><a href="#cb9-110" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-111"><a href="#cb9-111" aria-hidden="true" tabindex="-1"></a>**Required label prefixes:**</span>
-<span id="cb9-112"><a href="#cb9-112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-113"><a href="#cb9-113" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Figures: <span class="in">`#fig-`</span> (e.g., <span class="in">`#fig-data-masking`</span>, <span class="in">`#fig-workflow-diagram`</span>)</span>
-<span id="cb9-114"><a href="#cb9-114" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Tables: <span class="in">`#tbl-`</span> (e.g., <span class="in">`#tbl-git-commands`</span>, <span class="in">`#tbl-summary-stats`</span>)</span>
-<span id="cb9-115"><a href="#cb9-115" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Equations: <span class="in">`#eq-`</span> (e.g., <span class="in">`#eq-regression-model`</span>)</span>
-<span id="cb9-116"><a href="#cb9-116" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Sections: <span class="in">`#sec-`</span> (e.g., <span class="in">`#sec-introduction`</span>) - already in use throughout manual</span>
-<span id="cb9-117"><a href="#cb9-117" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Theorems: <span class="in">`#thm-`</span> (e.g., <span class="in">`#thm-central-limit`</span>)</span>
-<span id="cb9-118"><a href="#cb9-118" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Lemmas: <span class="in">`#lem-`</span> (e.g., <span class="in">`#lem-auxiliary-result`</span>)</span>
-<span id="cb9-119"><a href="#cb9-119" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Corollaries: <span class="in">`#cor-`</span> (e.g., <span class="in">`#cor-special-case`</span>)</span>
-<span id="cb9-120"><a href="#cb9-120" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Propositions: <span class="in">`#prp-`</span> (e.g., <span class="in">`#prp-main-result`</span>)</span>
-<span id="cb9-121"><a href="#cb9-121" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Examples: <span class="in">`#exm-`</span> (e.g., <span class="in">`#exm-simple-case`</span>)</span>
-<span id="cb9-122"><a href="#cb9-122" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Exercises: <span class="in">`#exr-`</span> (e.g., <span class="in">`#exr-practice-problem`</span>)</span>
-<span id="cb9-123"><a href="#cb9-123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-124"><a href="#cb9-124" aria-hidden="true" tabindex="-1"></a>**For figures (images):**</span>
-<span id="cb9-125"><a href="#cb9-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-126"><a href="#cb9-126" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown</span></span>
-<span id="cb9-127"><a href="#cb9-127" aria-hidden="true" tabindex="-1"></a><span class="al">![Caption text](path/to/image.png)</span>{#fig-label}</span>
-<span id="cb9-128"><a href="#cb9-128" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb9-129"><a href="#cb9-129" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-130"><a href="#cb9-130" aria-hidden="true" tabindex="-1"></a>**For tables (markdown tables):**</span>
-<span id="cb9-131"><a href="#cb9-131" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-132"><a href="#cb9-132" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown</span></span>
-<span id="cb9-133"><a href="#cb9-133" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Column 1 <span class="pp">|</span> Column 2 <span class="pp">|</span></span>
-<span id="cb9-134"><a href="#cb9-134" aria-hidden="true" tabindex="-1"></a><span class="pp">|----------|----------|</span></span>
-<span id="cb9-135"><a href="#cb9-135" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Data     <span class="pp">|</span> Data     <span class="pp">|</span></span>
-<span id="cb9-136"><a href="#cb9-136" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-137"><a href="#cb9-137" aria-hidden="true" tabindex="-1"></a>: Caption text {#tbl-label}</span>
-<span id="cb9-138"><a href="#cb9-138" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb9-139"><a href="#cb9-139" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-140"><a href="#cb9-140" aria-hidden="true" tabindex="-1"></a>**For code-generated figures:**</span>
-<span id="cb9-141"><a href="#cb9-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-142"><a href="#cb9-142" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb9-143"><a href="#cb9-143" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-plot-name</span></span>
-<span id="cb9-144"><a href="#cb9-144" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Caption text"</span></span>
-<span id="cb9-145"><a href="#cb9-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-146"><a href="#cb9-146" aria-hidden="true" tabindex="-1"></a><span class="co"># R code to generate plot</span></span>
-<span id="cb9-147"><a href="#cb9-147" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb9-148"><a href="#cb9-148" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-149"><a href="#cb9-149" aria-hidden="true" tabindex="-1"></a>**For code-generated tables:**</span>
-<span id="cb9-150"><a href="#cb9-150" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-151"><a href="#cb9-151" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb9-152"><a href="#cb9-152" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-table-name</span></span>
-<span id="cb9-153"><a href="#cb9-153" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Caption text"</span></span>
-<span id="cb9-154"><a href="#cb9-154" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-155"><a href="#cb9-155" aria-hidden="true" tabindex="-1"></a><span class="co"># R code to generate table</span></span>
-<span id="cb9-156"><a href="#cb9-156" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb9-157"><a href="#cb9-157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-158"><a href="#cb9-158" aria-hidden="true" tabindex="-1"></a>**Referencing in text:**</span>
-<span id="cb9-159"><a href="#cb9-159" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-160"><a href="#cb9-160" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Figures: <span class="in">`@fig-label`</span> produces "Figure X"</span>
-<span id="cb9-161"><a href="#cb9-161" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Tables: <span class="in">`@tbl-label`</span> produces "Table X"</span>
-<span id="cb9-162"><a href="#cb9-162" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Equations: <span class="in">`@eq-label`</span> produces "Equation X"</span>
-<span id="cb9-163"><a href="#cb9-163" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Sections: <span class="in">`@sec-label`</span> produces "Section X"</span>
-<span id="cb9-164"><a href="#cb9-164" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-165"><a href="#cb9-165" aria-hidden="true" tabindex="-1"></a>**Benefits:**</span>
-<span id="cb9-166"><a href="#cb9-166" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-167"><a href="#cb9-167" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Automatic numbering of figures, tables, and equations</span>
-<span id="cb9-168"><a href="#cb9-168" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Automatic updates when content is reordered</span>
-<span id="cb9-169"><a href="#cb9-169" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Clickable cross-references in HTML and PDF output</span>
-<span id="cb9-170"><a href="#cb9-170" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Consistent formatting across all output formats</span>
-<span id="cb9-171"><a href="#cb9-171" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Better accessibility for screen readers</span>
-<span id="cb9-172"><a href="#cb9-172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-173"><a href="#cb9-173" aria-hidden="true" tabindex="-1"></a><span class="fu">## R Code Style</span></span>
-<span id="cb9-174"><a href="#cb9-174" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-175"><a href="#cb9-175" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Follow the tidyverse style guide: https://style.tidyverse.org</span>
-<span id="cb9-176"><a href="#cb9-176" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Use native pipe <span class="in">`|&gt;`</span> instead of <span class="in">`%&gt;%`</span></span>
-<span id="cb9-177"><a href="#cb9-177" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Use <span class="in">`snake_case`</span> for variable and function names</span>
-<span id="cb9-178"><a href="#cb9-178" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Use <span class="in">`.qmd`</span> files exclusively (not <span class="in">`.Rmd`</span>)</span>
-<span id="cb9-179"><a href="#cb9-179" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>All R projects should use R package structure</span>
-<span id="cb9-180"><a href="#cb9-180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-181"><a href="#cb9-181" aria-hidden="true" tabindex="-1"></a><span class="fu">## File Organization</span></span>
-<span id="cb9-182"><a href="#cb9-182" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-183"><a href="#cb9-183" aria-hidden="true" tabindex="-1"></a><span class="fu">### Using Quarto Includes for Modular Content</span></span>
-<span id="cb9-184"><a href="#cb9-184" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-185"><a href="#cb9-185" aria-hidden="true" tabindex="-1"></a>**All chapters should use Quarto includes to decompose content into separate files.** This modular approach provides significant benefits for version control, collaboration, and content management.</span>
-<span id="cb9-186"><a href="#cb9-186" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-187"><a href="#cb9-187" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Why Use Includes?</span></span>
-<span id="cb9-188"><a href="#cb9-188" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-189"><a href="#cb9-189" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Better Git History**: When sections are reordered, only the main chapter file changes (moving include statements), making it immediately clear that content was reorganized rather than edited. When content is edited, only the specific include file changes. This makes reviews focused and precise.</span>
-<span id="cb9-190"><a href="#cb9-190" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-191"><a href="#cb9-191" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Easier Code Review**: Reviewers can see exactly what changed—either the organization (main file) or the content (include file)—without having to parse through large diffs.</span>
-<span id="cb9-192"><a href="#cb9-192" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-193"><a href="#cb9-193" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Modular Maintenance**: Each section lives in its own file, making it easier to:</span>
-<span id="cb9-194"><a href="#cb9-194" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Find and edit specific content</span>
-<span id="cb9-195"><a href="#cb9-195" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Reuse sections across chapters if needed</span>
-<span id="cb9-196"><a href="#cb9-196" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Work on different sections simultaneously without merge conflicts</span>
-<span id="cb9-197"><a href="#cb9-197" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Test and preview individual sections</span>
-<span id="cb9-198"><a href="#cb9-198" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-199"><a href="#cb9-199" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Clear Structure**: The main chapter file becomes a table of contents showing the organization at a glance.</span>
-<span id="cb9-200"><a href="#cb9-200" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-201"><a href="#cb9-201" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Structure Pattern</span></span>
-<span id="cb9-202"><a href="#cb9-202" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-203"><a href="#cb9-203" aria-hidden="true" tabindex="-1"></a>**Main chapter file** (e.g., <span class="in">`05-coding-practices.qmd`</span>):</span>
-<span id="cb9-204"><a href="#cb9-204" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-205"><a href="#cb9-205" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Contains the chapter title and introduction</span>
-<span id="cb9-206"><a href="#cb9-206" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Contains section headings (##, ###, etc.)</span>
-<span id="cb9-207"><a href="#cb9-207" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Uses the <span class="in">`include`</span> shortcode to pull in content</span>
-<span id="cb9-208"><a href="#cb9-208" aria-hidden="true" tabindex="-1"></a>(see <span class="ot">&lt;https://quarto.org/docs/authoring/includes.html&gt;</span> for details) </span>
-<span id="cb9-209"><a href="#cb9-209" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Shows the organization/outline of the chapter</span>
-<span id="cb9-210"><a href="#cb9-210" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-211"><a href="#cb9-211" aria-hidden="true" tabindex="-1"></a>**Include files** (e.g., <span class="in">`05-coding-practices/lab-protocols-for-code-and-data.qmd`</span>):</span>
-<span id="cb9-212"><a href="#cb9-212" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-213"><a href="#cb9-213" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Stored in a subdirectory matching the chapter name</span>
-<span id="cb9-214"><a href="#cb9-214" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Contains only the content for that section (no heading)</span>
-<span id="cb9-215"><a href="#cb9-215" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The heading stays in the main chapter file</span>
-<span id="cb9-216"><a href="#cb9-216" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Named descriptively using kebab-case</span>
-<span id="cb9-217"><a href="#cb9-217" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-218"><a href="#cb9-218" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Required Pattern</span></span>
-<span id="cb9-219"><a href="#cb9-219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-220"><a href="#cb9-220" aria-hidden="true" tabindex="-1"></a>**Always follow this pattern:**</span>
-<span id="cb9-221"><a href="#cb9-221" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-222"><a href="#cb9-222" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown</span></span>
-<span id="cb9-223"><a href="#cb9-223" aria-hidden="true" tabindex="-1"></a><span class="fu">## Section Heading</span></span>
-<span id="cb9-224"><a href="#cb9-224" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-225"><a href="#cb9-225" aria-hidden="true" tabindex="-1"></a>{{&lt; include folder/section-name.qmd &gt;}}</span>
-<span id="cb9-226"><a href="#cb9-226" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-227"><a href="#cb9-227" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-228"><a href="#cb9-228" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb9-229"><a href="#cb9-229" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-230"><a href="#cb9-230" aria-hidden="true" tabindex="-1"></a>**Correct example:**</span>
-<span id="cb9-231"><a href="#cb9-231" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown</span></span>
-<span id="cb9-232"><a href="#cb9-232" aria-hidden="true" tabindex="-1"></a><span class="fu">## Section heading</span></span>
-<span id="cb9-233"><a href="#cb9-233" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-234"><a href="#cb9-234" aria-hidden="true" tabindex="-1"></a>{{&lt; include folder/section-name.qmd &gt;}}</span>
-<span id="cb9-235"><a href="#cb9-235" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-236"><a href="#cb9-236" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-237"><a href="#cb9-237" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb9-238"><a href="#cb9-238" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-239"><a href="#cb9-239" aria-hidden="true" tabindex="-1"></a>**Incorrect (don't do this):**</span>
-<span id="cb9-240"><a href="#cb9-240" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown</span></span>
-<span id="cb9-241"><a href="#cb9-241" aria-hidden="true" tabindex="-1"></a>{{&lt; include folder/section-name.qmd &gt;}}</span>
-<span id="cb9-242"><a href="#cb9-242" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-243"><a href="#cb9-243" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-244"><a href="#cb9-244" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb9-245"><a href="#cb9-245" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-246"><a href="#cb9-246" aria-hidden="true" tabindex="-1"></a>The heading must be in the main file, followed by a blank line, then the include statement.</span>
-<span id="cb9-247"><a href="#cb9-247" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-248"><a href="#cb9-248" aria-hidden="true" tabindex="-1"></a><span class="fu">#### File Naming Conventions</span></span>
-<span id="cb9-249"><a href="#cb9-249" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-250"><a href="#cb9-250" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Main chapter files: <span class="in">`##-chapter-name.qmd`</span> (e.g., <span class="in">`05-coding-practices.qmd`</span>)</span>
-<span id="cb9-251"><a href="#cb9-251" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Subdirectory: <span class="in">`##-chapter-name/`</span> (matches the main file name)</span>
-<span id="cb9-252"><a href="#cb9-252" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Include files: <span class="in">`descriptive-section-name.qmd`</span> using kebab-case</span>
-<span id="cb9-253"><a href="#cb9-253" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Use descriptive names that clearly indicate the content</span>
-<span id="cb9-254"><a href="#cb9-254" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Prefix with underscore <span class="in">`_`</span> for partial/helper files not directly included (e.g., <span class="in">`_lintr-summary.qmd`</span>)</span>
-<span id="cb9-255"><a href="#cb9-255" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-256"><a href="#cb9-256" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Git History Benefits Example</span></span>
-<span id="cb9-257"><a href="#cb9-257" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-258"><a href="#cb9-258" aria-hidden="true" tabindex="-1"></a>**When reordering sections:**</span>
-<span id="cb9-259"><a href="#cb9-259" aria-hidden="true" tabindex="-1"></a><span class="in">```diff</span></span>
-<span id="cb9-260"><a href="#cb9-260" aria-hidden="true" tabindex="-1"></a><span class="in">-## Object naming</span></span>
-<span id="cb9-261"><a href="#cb9-261" aria-hidden="true" tabindex="-1"></a><span class="in">+## Function calls</span></span>
-<span id="cb9-262"><a href="#cb9-262" aria-hidden="true" tabindex="-1"></a><span class="in"> </span></span>
-<span id="cb9-263"><a href="#cb9-263" aria-hidden="true" tabindex="-1"></a><span class="in">-{{&lt; include demo-folder/section-name.qmd &gt;}}</span></span>
-<span id="cb9-264"><a href="#cb9-264" aria-hidden="true" tabindex="-1"></a><span class="in">+{{&lt; include demo-folder/section-2.qmd &gt;}}</span></span>
-<span id="cb9-265"><a href="#cb9-265" aria-hidden="true" tabindex="-1"></a><span class="in"> </span></span>
-<span id="cb9-266"><a href="#cb9-266" aria-hidden="true" tabindex="-1"></a><span class="in">-## Function calls</span></span>
-<span id="cb9-267"><a href="#cb9-267" aria-hidden="true" tabindex="-1"></a><span class="in">+## Object naming</span></span>
-<span id="cb9-268"><a href="#cb9-268" aria-hidden="true" tabindex="-1"></a><span class="in"> </span></span>
-<span id="cb9-269"><a href="#cb9-269" aria-hidden="true" tabindex="-1"></a><span class="in">-{{&lt; include demo-folder/section-2.qmd &gt;}}</span></span>
-<span id="cb9-270"><a href="#cb9-270" aria-hidden="true" tabindex="-1"></a><span class="in">+{{&lt; include demo-folder/section-name.qmd &gt;}}</span></span>
-<span id="cb9-271"><a href="#cb9-271" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb9-272"><a href="#cb9-272" aria-hidden="true" tabindex="-1"></a>This diff clearly shows a reordering (swapping two sections) with no content changes—only the main chapter file changes.</span>
-<span id="cb9-273"><a href="#cb9-273" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-274"><a href="#cb9-274" aria-hidden="true" tabindex="-1"></a>**When editing content:**</span>
-<span id="cb9-275"><a href="#cb9-275" aria-hidden="true" tabindex="-1"></a>Only the specific include file (e.g., <span class="in">`05-coding-practices/function-calls.qmd`</span>) appears in the git diff, making it easy to review the actual content changes without distraction.</span>
-<span id="cb9-276"><a href="#cb9-276" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-277"><a href="#cb9-277" aria-hidden="true" tabindex="-1"></a><span class="fu">#### When to Create a New Include File</span></span>
-<span id="cb9-278"><a href="#cb9-278" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-279"><a href="#cb9-279" aria-hidden="true" tabindex="-1"></a>Create a new include file when:</span>
-<span id="cb9-280"><a href="#cb9-280" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-281"><a href="#cb9-281" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Adding a new section to a chapter</span>
-<span id="cb9-282"><a href="#cb9-282" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A section becomes long enough to benefit from being in its own file (&gt;20-30 lines)</span>
-<span id="cb9-283"><a href="#cb9-283" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Content might be reused elsewhere</span>
-<span id="cb9-284"><a href="#cb9-284" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>You want to work on a section independently</span>
-<span id="cb9-285"><a href="#cb9-285" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-286"><a href="#cb9-286" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Migration Strategy</span></span>
-<span id="cb9-287"><a href="#cb9-287" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-288"><a href="#cb9-288" aria-hidden="true" tabindex="-1"></a>When working with chapters that don't yet use includes:</span>
-<span id="cb9-289"><a href="#cb9-289" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-290"><a href="#cb9-290" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Create a subdirectory matching the chapter name</span>
-<span id="cb9-291"><a href="#cb9-291" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Extract each section into its own include file</span>
-<span id="cb9-292"><a href="#cb9-292" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Update the main chapter file to use includes</span>
-<span id="cb9-293"><a href="#cb9-293" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Keep headings in the main file</span>
-<span id="cb9-294"><a href="#cb9-294" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Ensure blank lines before include statements</span>
-<span id="cb9-295"><a href="#cb9-295" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>Test that rendering still works correctly</span>
-<span id="cb9-296"><a href="#cb9-296" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-297"><a href="#cb9-297" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Using Includes for Code Examples and Reusable Content</span></span>
-<span id="cb9-298"><a href="#cb9-298" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-299"><a href="#cb9-299" aria-hidden="true" tabindex="-1"></a>**Prefer using Quarto's include shortcode over copy-pasting content whenever feasible.**</span>
-<span id="cb9-300"><a href="#cb9-300" aria-hidden="true" tabindex="-1"></a>This applies to code examples, configuration files, and any content that exists elsewhere in the repository.</span>
-<span id="cb9-301"><a href="#cb9-301" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-302"><a href="#cb9-302" aria-hidden="true" tabindex="-1"></a>**Benefits:**</span>
-<span id="cb9-303"><a href="#cb9-303" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-304"><a href="#cb9-304" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Single source of truth: Changes to the original file automatically propagate</span>
-<span id="cb9-305"><a href="#cb9-305" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Reduces maintenance burden and sync issues</span>
-<span id="cb9-306"><a href="#cb9-306" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Ensures examples stay current and accurate</span>
-<span id="cb9-307"><a href="#cb9-307" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Better git history (changes appear in one place)</span>
-<span id="cb9-308"><a href="#cb9-308" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-309"><a href="#cb9-309" aria-hidden="true" tabindex="-1"></a>**For including code files:**</span>
-<span id="cb9-310"><a href="#cb9-310" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-311"><a href="#cb9-311" aria-hidden="true" tabindex="-1"></a>Use the include shortcode inside a code fence with the appropriate language.</span>
-<span id="cb9-312"><a href="#cb9-312" aria-hidden="true" tabindex="-1"></a>For example, to include a YAML workflow file:</span>
-<span id="cb9-313"><a href="#cb9-313" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-314"><a href="#cb9-314" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-315"><a href="#cb9-315" aria-hidden="true" tabindex="-1"></a><span class="in">````markdown</span></span>
-<span id="cb9-316"><a href="#cb9-316" aria-hidden="true" tabindex="-1"></a><span class="in">```{.yaml filename="demo-folder/yml.yml"}</span></span>
-<span id="cb9-317"><a href="#cb9-317" aria-hidden="true" tabindex="-1"></a><span class="kw">{</span><span class="at">{&lt; include demo-folder/yml.yml &gt;</span><span class="kw">}</span>}</span>
-<span id="cb9-318"><a href="#cb9-318" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-319"><a href="#cb9-319" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-320"><a href="#cb9-320" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>First item</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Second item</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Third item</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Incorrect:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="an">Here are the key points:</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>First item</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Second item</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Third item</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This applies to:</p>
+<ul>
+<li>Bullet lists (starting with <code>-</code> or <code>*</code>)</li>
+<li>Numbered lists (starting with <code>1.</code>, <code>2.</code>, etc.)</li>
+<li>Lists in all .qmd files throughout the repository</li>
+</ul>
+</section>
+<section id="line-breaks-in-plain-text" class="level3" data-number="18.1.3">
+<h3 data-number="18.1.3" class="anchored" data-anchor-id="line-breaks-in-plain-text"><span class="header-section-number">18.1.3</span> Line Breaks in Plain Text</h3>
+<p><strong>ALWAYS line-break at the ends of sentences and long phrases in plain-text paragraphs in .qmd files</strong> to avoid long lines.</p>
+<p><strong>Correct:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>When talking about code in prose sections,</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>use backticks to apply code formatting.</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>This helps maintain readability in source files</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>and makes diffs easier to review.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Incorrect:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>When talking about code in prose sections, use backticks to apply code formatting. This helps maintain readability in source files and makes diffs easier to review.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>Improves readability of source .qmd files</li>
+<li>Makes git diffs clearer and easier to review</li>
+<li>Helps identify specific changes in version control</li>
+<li>Prevents horizontal scrolling when editing</li>
+<li>Follows semantic line breaks best practice</li>
+</ul>
+<p><strong>Guidelines:</strong></p>
+<ul>
+<li>Break after complete sentences (at periods)</li>
+<li>Break after long phrases or clauses (at commas or conjunctions)</li>
+<li>Break after approximately 60-80 characters when appropriate</li>
+<li>Keep related short phrases together on one line</li>
+<li>Don’t break in the middle of inline code, links, or formatting</li>
+</ul>
+</section>
+<section id="why-this-matters" class="level3" data-number="18.1.4">
+<h3 data-number="18.1.4" class="anchored" data-anchor-id="why-this-matters"><span class="header-section-number">18.1.4</span> Why This Matters</h3>
+<ul>
+<li>Ensures consistent markdown rendering across different platforms</li>
+<li>Improves readability in both source and rendered forms</li>
+<li>Prevents rendering issues in Quarto books</li>
+<li>Follows markdown best practices</li>
+</ul>
+</section>
+<section id="cross-references-for-figures-and-tables" class="level3" data-number="18.1.5">
+<h3 data-number="18.1.5" class="anchored" data-anchor-id="cross-references-for-figures-and-tables"><span class="header-section-number">18.1.5</span> Cross-References for Figures and Tables</h3>
+<p><strong>ALWAYS use Quarto’s cross-reference system for figures, tables, and other captioned content.</strong> See <a href="https://quarto.org/docs/authoring/cross-references.html">Quarto Cross-References documentation</a> for complete details.</p>
+<p><strong>Required label prefixes:</strong></p>
+<ul>
+<li>Figures: <code>#fig-</code> (e.g., <code>#fig-data-masking</code>, <code>#fig-workflow-diagram</code>)</li>
+<li>Tables: <code>#tbl-</code> (e.g., <code>#tbl-git-commands</code>, <code>#tbl-summary-stats</code>)</li>
+<li>Equations: <code>#eq-</code> (e.g., <code>#eq-regression-model</code>)</li>
+<li>Sections: <code>#sec-</code> (e.g., <code>#sec-introduction</code>) - already in use throughout manual</li>
+<li>Theorems: <code>#thm-</code> (e.g., <code>#thm-central-limit</code>)</li>
+<li>Lemmas: <code>#lem-</code> (e.g., <code>#lem-auxiliary-result</code>)</li>
+<li>Corollaries: <code>#cor-</code> (e.g., <code>#cor-special-case</code>)</li>
+<li>Propositions: <code>#prp-</code> (e.g., <code>#prp-main-result</code>)</li>
+<li>Examples: <code>#exm-</code> (e.g., <code>#exm-simple-case</code>)</li>
+<li>Exercises: <code>#exr-</code> (e.g., <code>#exr-practice-problem</code>)</li>
+</ul>
+<p><strong>For figures (images):</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Caption text](path/to/image.png)</span>{#fig-label}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>For tables (markdown tables):</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Column 1 <span class="pp">|</span> Column 2 <span class="pp">|</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="pp">|----------|----------|</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Data     <span class="pp">|</span> Data     <span class="pp">|</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>: Caption text {#tbl-label}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>For code-generated figures:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-plot-name</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Caption text"</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co"># R code to generate plot</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>For code-generated tables:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-table-name</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Caption text"</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co"># R code to generate table</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Referencing in text:</strong></p>
+<ul>
+<li>Figures: <code>@fig-label</code> produces “Figure X”</li>
+<li>Tables: <code>@tbl-label</code> produces “Table X”</li>
+<li>Equations: <code>@eq-label</code> produces “Equation X”</li>
+<li>Sections: <code>@sec-label</code> produces “Section X”</li>
+</ul>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>Automatic numbering of figures, tables, and equations</li>
+<li>Automatic updates when content is reordered</li>
+<li>Clickable cross-references in HTML and PDF output</li>
+<li><mark class="preview-text-changed">Consistent</mark> <mark class="preview-text-changed">formatting</mark> across <mark class="preview-text-changed">all</mark> <mark class="preview-text-changed">output formats</mark></li>
+<li>Better accessibility for screen readers</li>
+</ul>
+</section>
+</section>
+<section id="r-code-style" class="level2" data-number="18.2">
+<h2 data-number="18.2" class="anchored" data-anchor-id="r-code-style"><span class="header-section-number">18.2</span> R Code Style</h2>
+<ul>
+<li>Follow the tidyverse style guide: https://style.tidyverse.org</li>
+<li>Use native pipe <code>|&gt;</code> instead of <code>%&gt;%</code></li>
+<li>Use <code>snake_case</code> for variable and function names</li>
+<li>Use <code>.qmd</code> files exclusively (not <code>.Rmd</code>)</li>
+<li>All R projects should use R package structure</li>
+</ul>
+</section>
+<section id="file-organization" class="level2" data-number="18.3">
+<h2 data-number="18.3" class="anchored" data-anchor-id="file-organization"><span class="header-section-number">18.3</span> File Organization</h2>
+<section id="using-quarto-includes-for-modular-content" class="level3" data-number="18.3.1">
+<h3 data-number="18.3.1" class="anchored" data-anchor-id="using-quarto-includes-for-modular-content"><span class="header-section-number">18.3.1</span> Using Quarto Includes for Modular Content</h3>
+<p><strong>All chapters should use Quarto includes to decompose content into separate files.</strong> This modular approach provides significant benefits for version control, collaboration, and content management.</p>
+<section id="why-use-includes" class="level4" data-number="18.3.1.1">
+<h4 data-number="18.3.1.1" class="anchored" data-anchor-id="why-use-includes"><span class="header-section-number">18.3.1.1</span> Why Use Includes?</h4>
+<ol type="1">
+<li><p><strong>Better Git History</strong>: When sections are reordered, only the main chapter file changes (moving include statements), making it immediately clear that content was reorganized rather than edited. When content is edited, only the specific include file changes. This makes reviews focused and precise.</p></li>
+<li><p><strong>Easier Code Review</strong>: Reviewers can see exactly what changed—either the organization (main file) or the content (include file)—without having to parse through large diffs.</p></li>
+<li><p><strong>Modular Maintenance</strong>: Each section lives in its own file, making it easier to:</p>
+<ul>
+<li>Find and edit specific content</li>
+<li>Reuse sections across chapters if needed</li>
+<li>Work on different sections simultaneously without merge conflicts</li>
+<li>Test and preview individual sections</li>
+</ul></li>
+<li><p><strong>Clear Structure</strong>: The main chapter file becomes a table of contents showing the organization at a glance.</p></li>
+</ol>
+</section>
+<section id="structure-pattern" class="level4" data-number="18.3.1.2">
+<h4 data-number="18.3.1.2" class="anchored" data-anchor-id="structure-pattern"><span class="header-section-number">18.3.1.2</span> Structure Pattern</h4>
+<p><strong>Main chapter file</strong> (e.g., <code>05-coding-practices.qmd</code>):</p>
+<ul>
+<li>Contains the chapter title and introduction</li>
+<li>Contains section headings (##, ###, etc.)</li>
+<li>Uses the <code>include</code> shortcode to pull in content (see <a href="https://quarto.org/docs/authoring/includes.html" class="uri">https://quarto.org/docs/authoring/includes.html</a> for details)</li>
+<li>Shows the organization/outline of the chapter</li>
+</ul>
+<p><strong>Include files</strong> (e.g., <code>05-coding-practices/lab-protocols-for-code-and-data.qmd</code>):</p>
+<ul>
+<li><mark class="preview-text-changed">Stored in</mark> a subdirectory matching the chapter name</li>
+<li>Contains only the content for that section (no heading)</li>
+<li>The heading stays in the main chapter file</li>
+<li>Named descriptively using kebab-case</li>
+</ul>
+</section>
+<section id="required-pattern" class="level4" data-number="18.3.1.3">
+<h4 data-number="18.3.1.3" class="anchored" data-anchor-id="required-pattern"><span class="header-section-number">18.3.1.3</span> Required Pattern</h4>
+<p><strong>Always follow this pattern:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Section Heading</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><mark class="preview-text-changed">{{&</mark>lt; include folder/section-name.q<mark class="preview-text-changed">md </mark>&gt;}}</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Correct example:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Section heading</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><mark class="preview-text-changed">{{&</mark>lt; include folder/section-name.q<mark class="preview-text-changed">md </mark>&gt;}}</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Incorrect (don’t do this):</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>{{&lt; include folder/section-name.qmd &gt;}}</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The heading must be in the main file, followed by a blank line, then the include statement.</p>
+</section>
+<section id="file-naming-conventions" class="level4" data-number="18.3.1.4">
+<h4 data-number="18.3.1.4" class="anchored" data-anchor-id="file-naming-conventions"><span class="header-section-number">18.3.1.4</span> File Naming Conventions</h4>
+<ul>
+<li>Main chapter files: <code>##-chapter-name.qmd</code> (e.g., <code>05-coding-practices.qmd</code>)</li>
+<li>Subdirectory: <code>##-chapter-name/</code> (matches the main file name)</li>
+<li>Include files: <code>descriptive-section-name.qmd</code> using kebab-case</li>
+<li>Use descriptive names that clearly indicate the content</li>
+<li>Prefix with underscore <code>_</code> for partial/helper files not directly included (e.g., <code>_lintr-summary.qmd</code>)</li>
+</ul>
+</section>
+<section id="git-history-benefits-example" class="level4" data-number="18.3.1.5">
+<h4 data-number="18.3.1.5" class="anchored" data-anchor-id="git-history-benefits-example"><span class="header-section-number">18.3.1.5</span> Git History Benefits Example</h4>
+<p><strong>When reordering sections:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode diff code-with-copy"><code class="sourceCode diff"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="st">-## Object naming</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="va">+## Function calls</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="st">-{{&lt; include demo-folder/section-name.qmd &gt;}}</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="va">+{{&lt; include demo-folder/section-2.qmd &gt;}}</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="st">-## Function calls</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="va">+## Object naming</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="st">-{{&lt; include demo-folder/section-2.qmd &gt;}}</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="va">+{{&lt; include demo-folder/section-name.qmd &gt;}}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This diff clearly shows a reordering (swapping two sections) with no content changes—only the main chapter file changes.</p>
+<p><strong>When editing content:</strong> Only the specific include file (e.g., <code>05-coding-practices/function-calls.qmd</code>) appears in the git diff, making it easy to review the actual content changes without distraction.</p>
+</section>
+<section id="when-to-create-a-new-include-file" class="level4" data-number="18.3.1.6">
+<h4 data-number="18.3.1.6" class="anchored" data-anchor-id="when-to-create-a-new-include-file"><span class="header-section-number">18.3.1.6</span> When to Create a New Include File</h4>
+<p>Create a new include file when:</p>
+<ul>
+<li>Adding a new section to a chapter</li>
+<li>A section becomes long enough to benefit from being in its own file (&gt;20-30 lines)</li>
+<li>Content might be reused elsewhere</li>
+<li>You want to work on a section independently</li>
+</ul>
+</section>
+<section id="migration-strategy" class="level4" data-number="18.3.1.7">
+<h4 data-number="18.3.1.7" class="anchored" data-anchor-id="migration-strategy"><span class="header-section-number"><mark class="preview-text-changed">18.3.1.7</mark></span> <mark class="preview-text-changed">Migration</mark> <mark class="preview-text-changed">Strategy</mark></h4>
+<p>When working with chapters that don’t yet use includes:</p>
+<ol type="1">
+<li><mark class="preview-element-added">Create a subdirectory matching the chapter name</mark></li>
+<li>Extract each section into its own include file</li>
+<li>Update the main chapter file to use includes</li>
+<li>Keep headings in the main file</li>
+<li>Ensure blank lines before include statements</li>
+<li>Test that rendering still works correctly</li>
+</ol>
+</section>
+<section id="using-includes-for-code-examples-and-reusable-content" class="level4" data-number="18.3.1.8">
+<h4 data-number="18.3.1.8" class="anchored" data-anchor-id="using-includes-for-code-examples-and-reusable-content"><span class="header-section-number"><mark class="preview-text-changed">18.3.1.8</mark></span> Using Includes for <mark class="preview-text-changed">Code Examples and Reusable</mark> Content</h4>
+<p><mark class="preview-element-added"><strong>Prefer using Quarto’s include shortcode over copy-pasting content whenever feasible.</strong> This applies to code examples, configuration files, and any content that exists elsewhere in the repository.</mark></p>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li><mark class="preview-element-added">Single source of truth: Changes to the original file automatically propagate</mark></li>
+<li><mark class="preview-element-added">Reduces maintenance burden and sync issues</mark></li>
+<li><mark class="preview-element-added">Ensures examples stay current and accurate</mark></li>
+<li><mark class="preview-text-changed">Better</mark> <mark class="preview-text-changed">git</mark> <mark class="preview-text-changed">history</mark> <mark class="preview-text-changed">(changes</mark> <mark class="preview-text-changed">appear</mark> <mark class="preview-text-changed">in</mark> one <mark class="preview-text-changed">place)</mark></li>
+</ul>
+<p><strong><mark class="preview-text-changed">For</mark> <mark class="preview-text-changed">including</mark> <mark class="preview-text-changed">code files:</mark></strong></p>
+<p><mark class="preview-element-added">Use the include shortcode inside a code fence with the appropriate language. For example, to include a YAML workflow file:</mark></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode markdown code-with-copy"><mark class="preview-element-added"><code class="sourceCode markdown"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{.yaml filename="demo-folder/yml.yml"}</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="kw">{</span><span class="at">{&lt; include demo-folder/yml.yml &gt;</span><span class="kw">}</span>}</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>When you need to show the include shortcode syntax itself in documentation (without it being processed), add an extra pair of curly braces: <code>{{{ &lt; include path/to/file &gt; }}}</code>. This prevents Quarto from recognizing it as a shortcode, allowing the literal syntax to appear in the rendered output.</mark></p>
 <p><mark class="preview-element-added"><strong>When to copy-paste instead:</strong></mark></p>
 <p><mark class="preview-element-added">Only copy-paste when:</mark></p>
@@ -1448,14 +1395,17 @@ div.csl-indent {
 <li><mark class="preview-element-added">The source file contains content that shouldn’t be fully shown</mark></li>
 <li><mark class="preview-element-added">You need to demonstrate different variations of similar code</mark></li>
 </ul>
-<p><strong><mark class="preview-text-changed">File</mark> <mark class="preview-text-changed">naming for included</mark> code:</strong></p>
+<p><strong><mark class="preview-text-changed">File</mark> <mark class="preview-text-changed">naming</mark> <mark class="preview-text-changed">for</mark> <mark class="preview-text-changed">included</mark> <mark class="preview-text-changed">code:</mark></strong></p>
 <ul>
 <li><mark class="preview-element-added">Prefix standalone code files with <code>_</code> so Quarto doesn’t try to render them (e.g., <code>_helper-functions.R</code>)</mark></li>
 <li>Use descriptive names that indicate the <mark class="preview-text-changed">purpose</mark></li>
 <li><mark class="preview-element-added">Keep included files in appropriate subdirectories</mark></li>
 </ul>
-<section id="working-with-docx-files" class="level2" data-number="17.5">
-<h2 data-number="17.5" class="anchored" data-anchor-id="working-with-docx-files"><span class="header-section-number"><mark class="preview-text-changed">17.5</mark></span> Working with DOCX Files</h2>
+</section>
+</section>
+</section>
+<section id="working-with-docx-files" class="level2" data-number="18.4">
+<h2 data-number="18.4" class="anchored" data-anchor-id="working-with-docx-files"><span class="header-section-number">18.4</span> Working with DOCX Files</h2>
 <p>GitHub Copilot can read and process Microsoft Word (.docx) files, which is useful for translating edits made in Word back to Quarto format.</p>
 <p>When working with DOCX files:</p>
 <ul>
@@ -1467,17 +1417,16 @@ div.csl-indent {
 </ul>
 <p>This workflow enables a hybrid editing process where collaborators can make edits in familiar Word format, and Copilot can translate those edits back to the Quarto source files.</p>
 </section>
-<section id="additional-guidelines" class="level2" data-number="17.6">
-<h2 data-number="17.6" class="anchored" data-anchor-id="additional-guidelines"><span class="header-section-number"><mark class="preview-text-changed">17.6</mark></span> Additional Guidelines</h2>
+<section id="additional-guidelines" class="level2" data-number="18.5">
+<h2 data-number="18.5" class="anchored" data-anchor-id="additional-guidelines"><span class="header-section-number">18.5</span> Additional Guidelines</h2>
 <ul>
 <li>Maintain consistency with existing code style</li>
 <li>Preserve all existing content when refactoring</li>
 <li>Add blank lines before all lists</li>
 <li>Follow the lab’s R package development workflow (as described throughout this repo)</li>
 </ul>
-<p><mark class="preview-element-added">````</mark></p>
 </section>
-</div>
+</section>
 </div>
 </div>
 
