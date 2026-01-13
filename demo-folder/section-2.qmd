@@ -1,1 +1,1 @@
-{{ < include folder/section-2.qmd > }}
+{{{< include folder/section-2.qmd >}}}

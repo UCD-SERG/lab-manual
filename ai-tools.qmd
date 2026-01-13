@@ -46,6 +46,10 @@ to [help you code](https://en.wikipedia.org/wiki/AI-assisted_software_developmen
 
 {{< include ai-tools/agents-firewall-config.qmd >}}
 
+### Configuring the Agent Environment
+
+{{< include ai-tools/copilot-setup-steps-config.qmd >}}
+
 ### When to use a coding agent
 
 {{< include ai-tools/when-to-use-coding-agent.qmd >}}

@@ -1,0 +1,154 @@
+
+The `.github/workflows/copilot-setup-steps.yml` file
+allows you to customize the development environment
+in which the GitHub Copilot coding agent operates.
+This file preinstalls tools and dependencies
+so that Copilot can build, test, and lint your code more reliably.
+
+#### Why Configure the Environment?
+
+While Copilot can discover and install dependencies through trial and error,
+this can be slow and unreliable.
+Additionally, Copilot may be unable to access private dependencies.
+Preconfiguring the environment ensures:
+
+- Faster agent startup and execution
+- More reliable builds and tests
+- Access to private or authenticated dependencies
+- Consistent development environment across all agent sessions
+
+#### File Location and Structure
+
+The workflow file must be located at
+`.github/workflows/copilot-setup-steps.yml`
+in your repository's **default branch**.
+It follows GitHub Actions workflow syntax
+but must contain a single job named `copilot-setup-steps`.
+
+#### Basic Configuration Example
+
+Here's the configuration used in this repository
+(adapted for R and Quarto projects):
+
+```{.yaml filename=".github/workflows/copilot-setup-steps.yml"}
+{{< include /.github/workflows/copilot-setup-steps.yml >}}
+```
+
+#### Configurable Options
+
+You can customize only these specific settings
+in the `copilot-setup-steps` job:
+
+- `steps`: Setup commands and actions to run
+- `permissions`: Access permissions (typically `contents: read`)
+- `runs-on`: Runner type (Ubuntu x64 Linux only)
+- `services`: Database or service containers
+- `snapshot`: Save environment state
+- `timeout-minutes`: Maximum 59 minutes
+
+All other workflow settings are ignored by Copilot.
+
+#### Common Setup Tasks
+
+**For Node.js/TypeScript projects:**
+
+```yaml
+- name: Set up Node.js
+  uses: actions/setup-node@v4
+  with:
+    node-version: "20"
+    cache: "npm"
+
+- name: Install dependencies
+  run: npm ci
+```
+
+**For Python projects:**
+
+```yaml
+- name: Set up Python
+  uses: actions/setup-python@v5
+  with:
+    python-version: "3.11"
+
+- name: Install dependencies
+  run: pip install -r requirements.txt
+```
+
+**For R projects:**
+
+```yaml
+- name: Set up R
+  uses: r-lib/actions/setup-r@v2
+  with:
+    r-version: 'release'
+
+- name: Install R dependencies
+  uses: r-lib/actions/setup-renv@v2
+```
+
+#### Environment Variables and Secrets
+
+To set environment variables for Copilot:
+
+1. Navigate to your repository's **Settings**
+2. Go to **Environments**
+3. Select or create the `copilot` environment
+4. Add environment variables or secrets as needed
+
+Use secrets for sensitive values like API keys or passwords.
+
+#### Testing Your Configuration
+
+The workflow runs automatically when you modify
+`copilot-setup-steps.yml`,
+allowing you to validate changes in pull requests.
+You can also manually trigger the workflow
+from the repository's **Actions** tab.
+
+Setup logs appear in the agent session logs
+when Copilot starts working.
+If a step fails,
+Copilot will skip remaining steps
+and begin working with the current environment state.
+
+#### Advanced Configuration
+
+**Larger runners:**
+For projects requiring more resources,
+you can use larger GitHub-hosted runners:
+
+```yaml
+jobs:
+  copilot-setup-steps:
+    runs-on: ubuntu-4-core
+```
+
+**Self-hosted runners (ARC):**
+For access to internal resources or private registries,
+use Actions Runner Controller (ARC) self-hosted runners:
+
+```yaml
+jobs:
+  copilot-setup-steps:
+    runs-on: arc-scale-set-name
+```
+
+Note: When using self-hosted runners,
+you must disable Copilot's integrated firewall
+in repository settings and configure
+appropriate network security controls.
+
+**Git Large File Storage (LFS):**
+If your repository uses Git LFS:
+
+```yaml
+- uses: actions/checkout@v4
+  with:
+    lfs: true
+```
+
+#### Further Reading
+
+For complete details,
+see [Customizing the development environment for GitHub Copilot coding agent](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-environment).
