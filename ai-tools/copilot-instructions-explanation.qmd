@@ -27,9 +27,7 @@ Here is the complete `copilot-instructions.md` file, for easy inspection:
 
 ##### View `copilot-instructions.md`
 
-````{.md filename=".github/copilot-instructions.md"}
 {{< include .github/copilot-instructions.md >}}
-````
 
 :::
 
