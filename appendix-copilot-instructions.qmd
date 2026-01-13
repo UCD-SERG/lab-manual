@@ -1,0 +1,24 @@
+# Copilot Instructions File {#sec-appendix-copilot-instructions .unnumbered}
+
+::: {.content-visible when-format="html"}
+
+This appendix contains the complete `.github/copilot-instructions.md` file
+used in this repository to guide GitHub Copilot coding agents.
+
+::: {.callout-note collapse="true"}
+
+##### View `.github/copilot-instructions.md`
+
+{{< include .github/copilot-instructions.md >}}
+
+:::
+
+:::
+
+::: {.content-visible unless-format="html"}
+
+For the complete `.github/copilot-instructions.md` file,
+please view the HTML version of this appendix at:
+<https://ucd-serg.github.io/lab-manual/appendix-copilot-instructions.html>
+
+:::

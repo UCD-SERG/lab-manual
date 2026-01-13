@@ -21,13 +21,5 @@ This reduces the review burden and helps maintain consistency
 across all contributions to the lab manual,
 whether made by humans or AI assistants.
 
-Here is the complete `copilot-instructions.md` file, for easy inspection:
-
-::: {.callout-note collapse="true"}
-
-##### View `.github/copilot-instructions.md`
-
-{{< include .github/copilot-instructions.md >}}
-
-:::
+See [Appendix: Copilot Instructions File](#sec-appendix-copilot-instructions) for the complete file.
 

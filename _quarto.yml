@@ -56,6 +56,9 @@ book:
     - professional-development.qmd
     - manuscript-preparation.qmd
     - references.qmd
+  appendices:
+    - appendix-copilot-instructions.qmd
+    - appendix-copilot-setup-steps.qmd
   page-navigation: true
 
 bibliography: [book.bib, packages.bib]
