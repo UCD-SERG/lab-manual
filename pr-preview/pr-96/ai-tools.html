@@ -1381,18 +1381,29 @@ div.csl-indent {
 </ul>
 <p><strong><mark class="preview-text-changed">For</mark> <mark class="preview-text-changed">including</mark> <mark class="preview-text-changed">code files:</mark></strong></p>
 <p><mark class="preview-element-added">Use the include shortcode inside a code fence with the appropriate language. For example, to include a YAML workflow file:</mark></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode markdown code-with-copy"><mark class="preview-element-added"><code class="sourceCode markdown"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{.yaml filename=".github/workflows/example.yml"}</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="kw">{</span><span class="at">{</span><span class="ot">&amp;lt;</span><span class="at"> include /path/to/file.yml </span><span class="ot">&amp;gt;}}</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="at">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><mark class="preview-element-added"><strong>.github/workflows/example.yml</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21" data-filename=".github/workflows/example.yml"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">{</span><span class="at">{ &lt; include /path/to/file.yml &gt; </span><span class="kw">}</span><span class="at">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <p><strong>For including configuration or data files:</strong></mark></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode markdown code-with-copy"><mark class="preview-element-added"><code class="sourceCode markdown"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{.json filename="config.json"}</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>{{<span class="op">&amp;</span>lt<span class="op">;</span> include <span class="op">/</span>path<span class="op">/</span>to<span class="op">/</span>config<span class="op">.</span><span class="at">json</span> <span class="op">&amp;</span>gt<span class="op">;</span>}}</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>For including R code:</strong></mark></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode markdown code-with-copy"><mark class="preview-element-added"><code class="sourceCode markdown"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{.r filename="analysis.R"}</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>{{<span class="sc">&amp;</span>lt; include <span class="sc">/</span>scripts<span class="sc">/</span>analysis.R <span class="sc">&amp;</span>gt;}}</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>When to copy-paste instead:</strong></mark></p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong><mark class="preview-text-changed">config.json</mark></strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22" data-filename="config.json"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span><span class="er">{</span> <span class="er">&lt;</span> <span class="er">inclu<mark class="preview-text-changed">de</mark></span> <span class="er"><mark class="preview-text-changed">/path/to/config.j</mark>son</span> <span class="er">&gt<mark class="preview-text-changed">;</mark></span> <span class="fu"><mark class="preview-text-changed">}</mark></span><span class="er">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong><mark class="preview-text-changed">For including R</mark> code:</strong></p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><mark class="preview-element-added"><strong>analysis.R</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23" data-filename="analysis.R"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>{{ <span class="sc">&lt;</span> include <span class="sc">/</span>scripts<span class="sc">/</span>analysis.R <span class="sc">&gt;</span> }}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Showing include syntax in documentation:</strong></mark></p>
+<p><mark class="preview-element-added">When you need to show the include shortcode syntax itself in documentation (without it being processed), add extra spaces inside the delimiter braces: <code>{{ &lt; include path/to/file &gt; }}</code> instead of <code>{{&lt; include path/to/file &gt;}}</code>. This prevents Quarto from recognizing it as a shortcode, allowing the literal syntax to appear in the rendered output.</mark></p>
+<p><mark class="preview-element-added"><strong>When to copy-paste instead:</strong></mark></p>
 <p><mark class="preview-element-added">Only copy-paste when:</mark></p>
 <ul>
 <li><mark class="preview-text-changed">The</mark> <mark class="preview-text-changed">content</mark> <mark class="preview-text-changed">is</mark> <mark class="preview-text-changed">a simplified example that doesn’t exist</mark> elsewhere</li>
