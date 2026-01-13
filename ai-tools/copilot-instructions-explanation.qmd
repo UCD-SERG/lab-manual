@@ -37,7 +37,7 @@ Here is the complete `copilot-instructions.md` file, for easy inspection:
 
 ::: {.content-visible when-format="pdf"}
 
-The complete `copilot-instructions.md` file is included in @sec-appendix-copilot-instructions.
+The complete `copilot-instructions.md` file is included in Appendix A.
 
 :::
 

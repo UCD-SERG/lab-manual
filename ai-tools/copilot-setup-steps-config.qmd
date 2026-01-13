@@ -46,7 +46,7 @@ Here is the configuration used in this repository
 
 ::: {.content-visible when-format="pdf"}
 
-The complete `copilot-setup-steps.yml` file is included in @sec-appendix-copilot-setup-steps.
+The complete `copilot-setup-steps.yml` file is included in Appendix B.
 
 :::
 
