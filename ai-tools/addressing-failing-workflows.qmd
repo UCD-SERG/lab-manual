@@ -62,14 +62,14 @@ Before accepting any changes to workflow files:
 3. **Check** that no new secret access or command execution has been added
 4. **Test** in a safe environment if possible
 
-See the "Best Practices" section above for more details on workflow file security.
+See @sec-ai-best-practices for more details on workflow file security.
 :::
 
 **When to do it yourself:**
 Workflow syntax errors and configuration issues
 are often faster to fix manually than with Copilot,
 especially if you're familiar with GitHub Actions.
-See the "When to use a coding agent" section above for more guidance.
+See @sec-ai-when-to-use for more guidance.
 
 #### Scenario 3: Uncertain Which Scenario Applies
 
@@ -104,7 +104,7 @@ or workflow configuration problems.
 
 #### Additional Resources
 
-- See the [Continuous Integration](#sec-r-ci) section in the R Coding Practices chapter for setting up GitHub Actions workflows
-- See the "Best Practices" and "Benefits and Hazards" sections above for security considerations with workflow files
-- See the "When to use a coding agent" section above for guidance on when to use Copilot vs. fixing issues yourself
+- See @sec-r-ci for setting up GitHub Actions workflows
+- See @sec-ai-best-practices and @sec-ai-benefits-hazards for security considerations with workflow files
+- See @sec-ai-when-to-use for guidance on when to use Copilot vs. fixing issues yourself
 - See the [GitHub Actions documentation](https://docs.github.com/en/actions) for workflow syntax and troubleshooting
