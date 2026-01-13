@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>21&nbsp; Manuscript Preparation and Publication – UCD-SeRG Lab Manual</title>
+<title>Copilot Instructions File – UCD-SeRG Lab Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
-<link href="./professional-development.html" rel="prev">
+<link href="./appendix-copilot-setup-steps.html" rel="next">
+<link href="./references.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -250,7 +285,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./manuscript-preparation.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Manuscript Preparation and Publication</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./appendix-copilot-instructions.html">Appendices</a></li><li class="breadcrumb-item"><a href="./appendix-copilot-instructions.html">Copilot Instructions File</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -424,7 +459,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./manuscript-preparation.html" class="sidebar-item-text sidebar-link active">
+  <a href="./manuscript-preparation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Manuscript Preparation and Publication</span></span></a>
   </div>
 </li>
@@ -445,7 +480,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix-copilot-instructions.html" class="sidebar-item-text sidebar-link">
+  <a href="./appendix-copilot-instructions.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Copilot Instructions File</span></a>
   </div>
 </li>
@@ -462,17 +497,8 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#publication-process" id="toc-publication-process" class="nav-link active" data-scroll-target="#publication-process"><span class="header-section-number">21.1</span> Publication Process</a></li>
-  <li><a href="#preprints-and-open-access" id="toc-preprints-and-open-access" class="nav-link" data-scroll-target="#preprints-and-open-access"><span class="header-section-number">21.2</span> Preprints and Open Access</a></li>
-  <li><a href="#reporting-checklists" id="toc-reporting-checklists" class="nav-link" data-scroll-target="#reporting-checklists"><span class="header-section-number">21.3</span> Reporting Checklists</a></li>
-  <li><a href="#manuscript-checklist" id="toc-manuscript-checklist" class="nav-link" data-scroll-target="#manuscript-checklist"><span class="header-section-number">21.4</span> Manuscript Checklist</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/manuscript-preparation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/manuscript-preparation.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -488,9 +514,9 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./appendix-copilot-instructions.html">Appendices</a></li><li class="breadcrumb-item"><a href="./appendix-copilot-instructions.html">Copilot Instructions File</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Manuscript Preparation and Publication</span></h1>
+<h1 class="title"><span id="sec-appendix-copilot-instructions" class="quarto-section-identifier">Copilot Instructions File</span></h1>
 </div>
 
 
@@ -507,65 +533,336 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Adapted by UCD-SeRG team from <a href="https://jadebc.github.io/lab-manual/">original by Jade Benjamin-Chung</a></p>
-<section id="publication-process" class="level2" data-number="21.1">
-<h2 data-number="21.1" class="anchored" data-anchor-id="publication-process"><span class="header-section-number">21.1</span> Publication Process</h2>
-<p>The typical workflow for manuscript preparation and publication:</p>
+<p>This appendix contains the complete <code>.github/copilot-instructions.md</code> file used in this repository to guide GitHub Copilot coding agents.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>View <code>.github/copilot-instructions.md</code>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<section id="copilot-instructions-for-ucd-serg-lab-manual" class="level1 callout-body-container callout-body">
+<h1>Copilot Instructions for UCD-SeRG Lab Manual</h1>
+<p>This file contains guidelines for GitHub Copilot and other AI assistants when working with the lab manual.</p>
+<section id="markdown-and-quarto-formatting" class="level2">
+<h2 class="anchored" data-anchor-id="markdown-and-quarto-formatting">Markdown and Quarto Formatting</h2>
+<section id="talking-about-code" class="level3">
+<h3 class="anchored" data-anchor-id="talking-about-code">Talking about code</h3>
+<p>When talking about code in prose sections, use backticks to apply code formatting: for example, <code>dplyr::mutate()</code></p>
+<p>When talking about packages in prose, use backticks and curly-braces with a hyperlink to the package website. For example: <a href="https://dplyr.tidyverse.org/"><code>{dplyr}</code></a></p>
+<p>Common package URLs:</p>
+<ul>
+<li><a href="https://dplyr.tidyverse.org/"><code>{dplyr}</code></a></li>
+<li><a href="https://ggplot2.tidyverse.org/"><code>{ggplot2}</code></a></li>
+<li><a href="https://tidyr.tidyverse.org/"><code>{tidyr}</code></a></li>
+<li><a href="https://readr.tidyverse.org/"><code>{readr}</code></a></li>
+<li><a href="https://purrr.tidyverse.org/"><code>{purrr}</code></a></li>
+<li><a href="https://tibble.tidyverse.org/"><code>{tibble}</code></a></li>
+<li><a href="https://stringr.tidyverse.org/"><code>{stringr}</code></a></li>
+<li><a href="https://forcats.tidyverse.org/"><code>{forcats}</code></a></li>
+<li><a href="https://styler.r-lib.org/"><code>{styler}</code></a></li>
+<li><a href="https://lintr.r-lib.org/"><code>{lintr}</code></a></li>
+<li><a href="https://roxygen2.r-lib.org/"><code>{roxygen2}</code></a></li>
+<li><a href="https://testthat.r-lib.org/"><code>{testthat}</code></a></li>
+<li><a href="https://usethis.r-lib.org/"><code>{usethis}</code></a></li>
+<li><a href="https://devtools.r-lib.org/"><code>{devtools}</code></a></li>
+<li><a href="https://rstudio.github.io/renv/"><code>{renv}</code></a></li>
+<li><a href="https://docs.ropensci.org/targets/"><code>{targets}</code></a></li>
+<li><a href="https://rdatatable.gitlab.io/data.table/"><code>{data.table}</code></a></li>
+<li><a href="https://cran.r-project.org/package=assertthat"><code>{assertthat}</code></a></li>
+</ul>
+</section>
+<section id="blank-lines-before-lists" class="level3">
+<h3 class="anchored" data-anchor-id="blank-lines-before-lists">Blank Lines Before Lists</h3>
+<p><strong>ALWAYS include a blank line before bullet lists and numbered lists</strong> in markdown and Quarto (.qmd) files.</p>
+<p><strong>Correct:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="an">Here are the key points:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>First item</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Second item</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Third item</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Incorrect:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="an">Here are the key points:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>First item</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Second item</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Third item</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This applies to:</p>
+<ul>
+<li>Bullet lists (starting with <code>-</code> or <code>*</code>)</li>
+<li>Numbered lists (starting with <code>1.</code>, <code>2.</code>, etc.)</li>
+<li>Lists in all .qmd files throughout the repository</li>
+</ul>
+</section>
+<section id="line-breaks-in-plain-text" class="level3">
+<h3 class="anchored" data-anchor-id="line-breaks-in-plain-text">Line Breaks in Plain Text</h3>
+<p><strong>ALWAYS line-break at the ends of sentences and long phrases in plain-text paragraphs in .qmd files</strong> to avoid long lines.</p>
+<p><strong>Correct:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>When talking about code in prose sections,</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>use backticks to apply code formatting.</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>This helps maintain readability in source files</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>and makes diffs easier to review.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Incorrect:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>When talking about code in prose sections, use backticks to apply code formatting. This helps maintain readability in source files and makes diffs easier to review.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>Improves readability of source .qmd files</li>
+<li>Makes git diffs clearer and easier to review</li>
+<li>Helps identify specific changes in version control</li>
+<li>Prevents horizontal scrolling when editing</li>
+<li>Follows semantic line breaks best practice</li>
+</ul>
+<p><strong>Guidelines:</strong></p>
+<ul>
+<li>Break after complete sentences (at periods)</li>
+<li>Break after long phrases or clauses (at commas or conjunctions)</li>
+<li>Break after approximately 60-80 characters when appropriate</li>
+<li>Keep related short phrases together on one line</li>
+<li>Don’t break in the middle of inline code, links, or formatting</li>
+</ul>
+</section>
+<section id="why-this-matters" class="level3">
+<h3 class="anchored" data-anchor-id="why-this-matters">Why This Matters</h3>
+<ul>
+<li>Ensures consistent markdown rendering across different platforms</li>
+<li>Improves readability in both source and rendered forms</li>
+<li>Prevents rendering issues in Quarto books</li>
+<li>Follows markdown best practices</li>
+</ul>
+</section>
+<section id="cross-references-for-figures-and-tables" class="level3">
+<h3 class="anchored" data-anchor-id="cross-references-for-figures-and-tables">Cross-References for Figures and Tables</h3>
+<p><strong>ALWAYS use Quarto’s cross-reference system for figures, tables, and other captioned content.</strong> See <a href="https://quarto.org/docs/authoring/cross-references.html">Quarto Cross-References documentation</a> for complete details.</p>
+<p><strong>Required label prefixes:</strong></p>
+<ul>
+<li>Figures: <code>#fig-</code> (e.g., <code>#fig-data-masking</code>, <code>#fig-workflow-diagram</code>)</li>
+<li>Tables: <code>#tbl-</code> (e.g., <code>#tbl-git-commands</code>, <code>#tbl-summary-stats</code>)</li>
+<li>Equations: <code>#eq-</code> (e.g., <code>#eq-regression-model</code>)</li>
+<li>Sections: <code>#sec-</code> (e.g., <code>#sec-introduction</code>) - already in use throughout manual</li>
+<li>Theorems: <code>#thm-</code> (e.g., <code>#thm-central-limit</code>)</li>
+<li>Lemmas: <code>#lem-</code> (e.g., <code>#lem-auxiliary-result</code>)</li>
+<li>Corollaries: <code>#cor-</code> (e.g., <code>#cor-special-case</code>)</li>
+<li>Propositions: <code>#prp-</code> (e.g., <code>#prp-main-result</code>)</li>
+<li>Examples: <code>#exm-</code> (e.g., <code>#exm-simple-case</code>)</li>
+<li>Exercises: <code>#exr-</code> (e.g., <code>#exr-practice-problem</code>)</li>
+</ul>
+<p><strong>For figures (images):</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Caption text](path/to/image.png)</span>{#fig-label}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>For tables (markdown tables):</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Column 1 <span class="pp">|</span> Column 2 <span class="pp">|</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="pp">|----------|----------|</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Data     <span class="pp">|</span> Data     <span class="pp">|</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>: Caption text {#tbl-label}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>For code-generated figures:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-plot-name</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Caption text"</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># R code to generate plot</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>For code-generated tables:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-table-name</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Caption text"</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># R code to generate table</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Referencing in text:</strong></p>
+<ul>
+<li>Figures: <code>@fig-label</code> produces “Figure X”</li>
+<li>Tables: <code>@tbl-label</code> produces “Table X”</li>
+<li>Equations: <code>@eq-label</code> produces “Equation X”</li>
+<li>Sections: <code>@sec-label</code> produces “Section X”</li>
+</ul>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>Automatic numbering of figures, tables, and equations</li>
+<li>Automatic updates when content is reordered</li>
+<li>Clickable cross-references in HTML and PDF output</li>
+<li>Consistent formatting across all output formats</li>
+<li>Better accessibility for screen readers</li>
+</ul>
+</section>
+</section>
+<section id="r-code-style" class="level2">
+<h2 class="anchored" data-anchor-id="r-code-style">R Code Style</h2>
+<ul>
+<li>Follow the tidyverse style guide: https://style.tidyverse.org</li>
+<li>Use native pipe <code>|&gt;</code> instead of <code>%&gt;%</code></li>
+<li>Use <code>snake_case</code> for variable and function names</li>
+<li>Use <code>.qmd</code> files exclusively (not <code>.Rmd</code>)</li>
+<li>All R projects should use R package structure</li>
+</ul>
+</section>
+<section id="file-organization" class="level2">
+<h2 class="anchored" data-anchor-id="file-organization">File Organization</h2>
+<section id="using-quarto-includes-for-modular-content" class="level3">
+<h3 class="anchored" data-anchor-id="using-quarto-includes-for-modular-content">Using Quarto Includes for Modular Content</h3>
+<p><strong>All chapters should use Quarto includes to decompose content into separate files.</strong> This modular approach provides significant benefits for version control, collaboration, and content management.</p>
+<section id="why-use-includes" class="level4">
+<h4 class="anchored" data-anchor-id="why-use-includes">Why Use Includes?</h4>
 <ol type="1">
-<li><strong>Planning</strong>: Discuss target journals, outline, and timeline with PIs</li>
-<li><strong>Drafting</strong>: Lead author prepares initial draft</li>
-<li><strong>Internal review</strong>: Co-authors review and provide feedback</li>
-<li><strong>Revision</strong>: Lead author incorporates feedback iteratively</li>
-<li><strong>PI approval</strong>: Obtain final approval from PIs before submission</li>
-<li><strong>Submission</strong>: Submit to journal</li>
-<li><strong>Revisions</strong>: Lead author coordinates response to peer reviewers</li>
-<li><strong>Publication</strong>: Celebrate and share!</li>
+<li><p><strong>Better Git History</strong>: When sections are reordered, only the main chapter file changes (moving include statements), making it immediately clear that content was reorganized rather than edited. When content is edited, only the specific include file changes. This makes reviews focused and precise.</p></li>
+<li><p><strong>Easier Code Review</strong>: Reviewers can see exactly what changed—either the organization (main file) or the content (include file)—without having to parse through large diffs.</p></li>
+<li><p><strong>Modular Maintenance</strong>: Each section lives in its own file, making it easier to:</p>
+<ul>
+<li>Find and edit specific content</li>
+<li>Reuse sections across chapters if needed</li>
+<li>Work on different sections simultaneously without merge conflicts</li>
+<li>Test and preview individual sections</li>
+</ul></li>
+<li><p><strong>Clear Structure</strong>: The main chapter file becomes a table of contents showing the organization at a glance.</p></li>
 </ol>
 </section>
-<section id="preprints-and-open-access" class="level2" data-number="21.2">
-<h2 data-number="21.2" class="anchored" data-anchor-id="preprints-and-open-access"><span class="header-section-number">21.2</span> Preprints and Open Access</h2>
+<section id="structure-pattern" class="level4">
+<h4 class="anchored" data-anchor-id="structure-pattern">Structure Pattern</h4>
+<p><strong>Main chapter file</strong> (e.g., <code>05-coding-practices.qmd</code>):</p>
 <ul>
-<li>We encourage posting preprints prior to or during peer review on platforms like <a href="https://www.medrxiv.org/">medRxiv</a> or <a href="https://www.biorxiv.org/">bioRxiv</a></li>
-<li>Preprints allow rapid dissemination of findings and can be cited in grant applications</li>
-<li>We support publishing in open access journals when possible to maximize accessibility</li>
-<li>Many funders, including NIH, have public access policies that require making publications freely available</li>
+<li>Contains the chapter title and introduction</li>
+<li>Contains section headings (##, ###, etc.)</li>
+<li>Uses the <code>include</code> shortcode to pull in content (see <a href="https://quarto.org/docs/authoring/includes.html" class="uri">https://quarto.org/docs/authoring/includes.html</a> for details)</li>
+<li>Shows the organization/outline of the chapter</li>
 </ul>
-<p>A preprint is a scientific manuscript that has not been peer reviewed. Preprint servers create digital object identifiers (DOIs) and can be cited in other articles and in grant applications. Because the peer review process can take many months, publishing preprints prior to or during peer review enables other scientists to immediately learn from and build on your work. Importantly, NIH allows applicants to include preprint citations in their biosketches. In most cases, we publish preprints on <a href="https://www.medrxiv.org/">medRxiv</a>.</p>
-</section>
-<section id="reporting-checklists" class="level2" data-number="21.3">
-<h2 data-number="21.3" class="anchored" data-anchor-id="reporting-checklists"><span class="header-section-number">21.3</span> Reporting Checklists</h2>
-<p>Using reporting checklists ensures that publications contain information needed for readers to assess validity and reproducibility. We use checklists appropriate to study design:</p>
+<p><strong>Include files</strong> (e.g., <code>05-coding-practices/lab-protocols-for-code-and-data.qmd</code>):</p>
 <ul>
-<li>CONSORT for randomized trials</li>
-<li>STROBE for observational studies</li>
-<li>PRISMA for systematic reviews</li>
-<li>Others as appropriate (see <a href="https://www.equator-network.org/">EQUATOR Network</a>)</li>
+<li>Stored in a subdirectory matching the chapter name</li>
+<li>Contains only the content for that section (no heading)</li>
+<li>The heading stays in the main chapter file</li>
+<li>Named descriptively using kebab-case</li>
 </ul>
 </section>
-<section id="manuscript-checklist" class="level2" data-number="21.4">
-<h2 data-number="21.4" class="anchored" data-anchor-id="manuscript-checklist"><span class="header-section-number">21.4</span> Manuscript Checklist</h2>
-<p>Before submitting a manuscript:</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Completed relevant reporting checklist</label></li>
-<li><label><input type="checkbox">Results are reproducible (rerunning code replicates tables/figures exactly)</label></li>
-<li><label><input type="checkbox">Target journal selected</label></li>
-<li><label><input type="checkbox">Title is declarative and states findings clearly</label></li>
-<li><label><input type="checkbox">Word count meets journal requirements</label></li>
-<li><label><input type="checkbox">Manuscript follows journal formatting guidelines</label></li>
-<li><label><input type="checkbox">Consistent voice throughout (typically active voice)</label></li>
-<li><label><input type="checkbox">All figures and tables referenced in main text</label></li>
-<li><label><input type="checkbox">Captions for all figures and tables</label></li>
-<li><label><input type="checkbox">Tables/figures numbered by order of appearance</label></li>
-<li><label><input type="checkbox">Abbreviations defined at first use and used sparingly</label></li>
-<li><label><input type="checkbox">Avoid subjective wording (e.g., “interesting”, “dramatic”)</label></li>
-<li><label><input type="checkbox">Avoid directionless statements (specify direction of associations)</label></li>
-<li><label><input type="checkbox">Causal language only when supported by study design</label></li>
-<li><label><input type="checkbox">Avoid “significant” (easily confused with statistical significance)</label></li>
-<li><label><input type="checkbox">Author contributions drafted using CRediT Taxonomy</label></li>
+<section id="required-pattern" class="level4">
+<h4 class="anchored" data-anchor-id="required-pattern">Required Pattern</h4>
+<p><strong>Always follow this pattern:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Section Heading</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>{{&lt; include folder/section-name.qmd &gt;}}</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Correct example:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Section heading</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>{{&lt; include folder/section-name.qmd &gt;}}</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Incorrect (don’t do this):</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>{{&lt; include folder/section-name.qmd &gt;}}</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The heading must be in the main file, followed by a blank line, then the include statement.</p>
+</section>
+<section id="file-naming-conventions" class="level4">
+<h4 class="anchored" data-anchor-id="file-naming-conventions">File Naming Conventions</h4>
+<ul>
+<li>Main chapter files: <code>##-chapter-name.qmd</code> (e.g., <code>05-coding-practices.qmd</code>)</li>
+<li>Subdirectory: <code>##-chapter-name/</code> (matches the main file name)</li>
+<li>Include files: <code>descriptive-section-name.qmd</code> using kebab-case</li>
+<li>Use descriptive names that clearly indicate the content</li>
+<li>Prefix with underscore <code>_</code> for partial/helper files not directly included (e.g., <code>_lintr-summary.qmd</code>)</li>
 </ul>
+</section>
+<section id="git-history-benefits-example" class="level4">
+<h4 class="anchored" data-anchor-id="git-history-benefits-example">Git History Benefits Example</h4>
+<p><strong>When reordering sections:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode diff code-with-copy"><code class="sourceCode diff"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="st">-## Object naming</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="va">+## Function calls</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="st">-{{&lt; include demo-folder/section-name.qmd &gt;}}</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="va">+{{&lt; include demo-folder/section-2.qmd &gt;}}</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="st">-## Function calls</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="va">+## Object naming</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="st">-{{&lt; include demo-folder/section-2.qmd &gt;}}</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="va">+{{&lt; include demo-folder/section-name.qmd &gt;}}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This diff clearly shows a reordering (swapping two sections) with no content changes—only the main chapter file changes.</p>
+<p><strong>When editing content:</strong> Only the specific include file (e.g., <code>05-coding-practices/function-calls.qmd</code>) appears in the git diff, making it easy to review the actual content changes without distraction.</p>
+</section>
+<section id="when-to-create-a-new-include-file" class="level4">
+<h4 class="anchored" data-anchor-id="when-to-create-a-new-include-file">When to Create a New Include File</h4>
+<p>Create a new include file when:</p>
+<ul>
+<li>Adding a new section to a chapter</li>
+<li>A section becomes long enough to benefit from being in its own file (&gt;20-30 lines)</li>
+<li>Content might be reused elsewhere</li>
+<li>You want to work on a section independently</li>
+</ul>
+</section>
+<section id="migration-strategy" class="level4">
+<h4 class="anchored" data-anchor-id="migration-strategy">Migration Strategy</h4>
+<p>When working with chapters that don’t yet use includes:</p>
+<ol type="1">
+<li>Create a subdirectory matching the chapter name</li>
+<li>Extract each section into its own include file</li>
+<li>Update the main chapter file to use includes</li>
+<li>Keep headings in the main file</li>
+<li>Ensure blank lines before include statements</li>
+<li>Test that rendering still works correctly</li>
+</ol>
+</section>
+<section id="using-includes-for-code-examples-and-reusable-content" class="level4">
+<h4 class="anchored" data-anchor-id="using-includes-for-code-examples-and-reusable-content">Using Includes for Code Examples and Reusable Content</h4>
+<p><strong>Prefer using Quarto’s include shortcode over copy-pasting content whenever feasible.</strong> This applies to code examples, configuration files, and any content that exists elsewhere in the repository.</p>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>Single source of truth: Changes to the original file automatically propagate</li>
+<li>Reduces maintenance burden and sync issues</li>
+<li>Ensures examples stay current and accurate</li>
+<li>Better git history (changes appear in one place)</li>
+</ul>
+<p><strong>For including code files:</strong></p>
+<p>Use the include shortcode inside a code fence with the appropriate language. For example, to include a YAML workflow file:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{.yaml filename="demo-folder/yml.yml"}</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="kw">{</span><span class="at">{&lt; include demo-folder/yml.yml &gt;</span><span class="kw">}</span>}</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>When you need to show the include shortcode syntax itself in documentation (without it being processed), add an extra pair of curly braces: <code>{{&lt; include path/to/file &gt;}}</code>. This prevents Quarto from recognizing it as a shortcode, allowing the literal syntax to appear in the rendered output.</p>
+<p><strong>When to copy-paste instead:</strong></p>
+<p>Only copy-paste when:</p>
+<ul>
+<li>The content is a simplified example that doesn’t exist elsewhere</li>
+<li>You need to show a partial excerpt with modifications</li>
+<li>The source file contains content that shouldn’t be fully shown</li>
+<li>You need to demonstrate different variations of similar code</li>
+</ul>
+<p><strong>File naming for included code:</strong></p>
+<ul>
+<li>Prefix standalone code files with <code>_</code> so Quarto doesn’t try to render them (e.g., <code>_helper-functions.R</code>)</li>
+<li>Use descriptive names that indicate the purpose</li>
+<li>Keep included files in appropriate subdirectories</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="working-with-docx-files" class="level2">
+<h2 class="anchored" data-anchor-id="working-with-docx-files">Working with DOCX Files</h2>
+<p>GitHub Copilot can read and process Microsoft Word (.docx) files, which is useful for translating edits made in Word back to Quarto format.</p>
+<p>When working with DOCX files:</p>
+<ul>
+<li><strong>Always examine tracked changes</strong>: Use the <code>view</code> tool to read DOCX files and pay special attention to any tracked changes (insertions, deletions, formatting changes)</li>
+<li><strong>Review comments</strong>: Look for and address any comments in the DOCX file that may provide context or instructions for edits</li>
+<li><strong>Translate edits to Quarto</strong>: When edits have been made in a DOCX file, apply the equivalent changes to the corresponding <code>.qmd</code> files</li>
+<li><strong>Preserve formatting</strong>: Ensure that formatting, citations, and cross-references are properly converted to Quarto/markdown syntax</li>
+<li><strong>Verify completeness</strong>: Check that all edits, including those in tracked changes and comments, have been addressed</li>
+</ul>
+<p>This workflow enables a hybrid editing process where collaborators can make edits in familiar Word format, and Copilot can translate those edits back to the Quarto source files.</p>
+</section>
+<section id="additional-guidelines" class="level2">
+<h2 class="anchored" data-anchor-id="additional-guidelines">Additional Guidelines</h2>
+<ul>
+<li>Maintain consistency with existing code style</li>
+<li>Preserve all existing content when refactoring</li>
+<li>Add blank lines before all lists</li>
+<li>Follow the lab’s R package development workflow (as described throughout this repo)</li>
+</ul>
+</section>
+</section>
+</div>
+</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -983,13 +1280,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./professional-development.html" class="pagination-link" aria-label="Professional Development">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Professional Development</span></span>
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">References</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link" aria-label="References">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./appendix-copilot-setup-steps.html" class="pagination-link" aria-label="Copilot Setup Steps File">
+        <span class="nav-page-text">Copilot Setup Steps File</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -998,4 +1295,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/manuscript-preparation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/manuscript-preparation.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/appendix-copilot-instructions.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/appendix-copilot-instructions.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
