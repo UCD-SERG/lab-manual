@@ -1,4 +1,3 @@
-
 When GitHub Actions workflows fail,
 you can use Copilot to help diagnose and fix the issues.
 However,
@@ -96,9 +95,9 @@ or workflow configuration problems.
 
 **Example workflow:**
 
-```markdown
+```text
 1. Prompt: "examine the failing workflow logs and identify the issue"
-2. Copilot responds: "The workflow is failing because of linting errors 
+2. Copilot responds: "The workflow is failing because of linting errors
    in src/analysis.R"
 3. Prompt: "fix the linting errors in src/analysis.R"
 ```
