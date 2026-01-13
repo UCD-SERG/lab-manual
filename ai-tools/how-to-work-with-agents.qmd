@@ -111,5 +111,47 @@ You can also prompt Copilot to create pull requests without first creating an is
 - **Full transparency**:
   All agent actions are logged and visible in the PR
 
+#### Workflow Approval Requirements
+
+When GitHub Copilot creates or updates a pull request,
+it cannot automatically trigger GitHub Actions workflows.
+**You must manually approve each workflow run**
+by clicking the approval button in the Actions tab or on the PR.
+
+This manual approval requirement is a security measure that prevents
+potentially malicious or unintended code execution.
+Because Copilot can modify any file in the repository—including workflow files
+themselves or scripts called by workflows—allowing automatic workflow execution
+could create security vulnerabilities.
+
+**Key points:**
+
+- **No automatic approval**:
+  There is currently no way to bypass manual workflow approval for Copilot PRs,
+  even if you are the repository owner
+- **Security reasoning**:
+  Copilot could modify workflow files (`.github/workflows/*.yml`)
+  or scripts they execute,
+  potentially injecting malicious code
+- **Impact on workflow**:
+  This means you need to actively monitor and approve workflow runs
+  as Copilot iterates on your issue,
+  which can slow down the development cycle
+
+**Workaround considerations:**
+
+Some users have discussed using Personal Access Tokens (PATs)
+to allow Copilot to trigger workflows on your behalf,
+but this approach has security implications
+and should be carefully evaluated before implementation.
+
+For more details and community discussion about this limitation,
+see:
+
+- [GitHub Community Discussion #162826](https://github.com/orgs/community/discussions/162826):
+  Discussion about workflow approval requirements
+- [GitHub Community Discussion #183966](https://github.com/orgs/community/discussions/183966):
+  Product feedback on this topic
+
 For detailed instructions,
 see [GitHub Copilot coding agent documentation](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent).
