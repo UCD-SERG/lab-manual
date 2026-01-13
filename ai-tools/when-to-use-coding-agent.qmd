@@ -22,7 +22,7 @@ Also,
 the less we practice,
 the weaker our skills get,
 and the harder it is for us to supervise the agents
-and make sure they are actually doing what we want it to do,
-the way we want it to do it.
+and make sure they are actually doing what we want them to do,
+the way we want them to do it.
 You should exercise your own coding skills regularly,
 just like you would for any other skill you want to maintain.
