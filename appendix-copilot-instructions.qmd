@@ -1,0 +1,8 @@
+# Copilot Instructions File {#sec-appendix-copilot-instructions .unnumbered}
+
+This appendix contains the complete `.github/copilot-instructions.md` file
+used in this repository to guide GitHub Copilot coding agents.
+
+```{.markdown filename=".github/copilot-instructions.md"}
+{{< include .github/copilot-instructions.md >}}
+```

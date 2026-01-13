@@ -1,0 +1,8 @@
+# Copilot Setup Steps File {#sec-appendix-copilot-setup-steps .unnumbered}
+
+This appendix contains the complete `.github/workflows/copilot-setup-steps.yml` file
+used to configure the GitHub Copilot coding agent's environment.
+
+```{.yaml filename=".github/workflows/copilot-setup-steps.yml"}
+{{< include .github/workflows/copilot-setup-steps.yml >}}
+```
