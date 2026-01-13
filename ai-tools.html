@@ -693,6 +693,24 @@ div.csl-indent {
 <li><strong>Branch restrictions</strong>: Agents can only push to their own branches (e.g., <code>copilot/*</code>)</li>
 <li><strong>Full transparency</strong>: All agent actions are logged and visible in the PR</li>
 </ul>
+</section>
+<section id="workflow-approval-requirements" class="level4" data-number="17.4.2.7">
+<h4 data-number="17.4.2.7" class="anchored" data-anchor-id="workflow-approval-requirements"><span class="header-section-number">17.4.2.7</span> Workflow Approval Requirements</h4>
+<p>When GitHub Copilot creates or updates a pull request, it cannot automatically trigger GitHub Actions workflows. <strong>You must manually approve each workflow run</strong> by clicking the approval button in the Actions tab or on the PR.</p>
+<p>This manual approval requirement is a security measure that prevents potentially malicious or unintended code execution. Because Copilot can modify any file in the repository—including workflow files themselves or scripts called by workflows—allowing automatic workflow execution could create security vulnerabilities.</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li><strong>No automatic approval</strong>: There is currently no way to bypass manual workflow approval for Copilot PRs, even if you are the repository owner</li>
+<li><strong>Security reasoning</strong>: Copilot could modify workflow files (<code>.github/workflows/*.yml</code>) or scripts they execute, potentially injecting malicious code</li>
+<li><strong>Impact on workflow</strong>: This means you need to actively monitor and approve workflow runs as Copilot iterates on your issue, which can slow down the development cycle</li>
+</ul>
+<p><strong>Workaround considerations:</strong></p>
+<p>Some users have discussed using Personal Access Tokens (PATs) to allow Copilot to trigger workflows on your behalf, but this approach has security implications and should be carefully evaluated before implementation.</p>
+<p>For more details and community discussion about this limitation, see:</p>
+<ul>
+<li><a href="https://github.com/orgs/community/discussions/162826">GitHub Community Discussion #162826</a>: Discussion about workflow approval requirements</li>
+<li><a href="https://github.com/orgs/community/discussions/183966">GitHub Community Discussion #183966</a>: Product feedback on this topic</li>
+</ul>
 <p>For detailed instructions, see <a href="https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent">GitHub Copilot coding agent documentation</a>.</p>
 </section>
 </section>
