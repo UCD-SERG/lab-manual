@@ -305,7 +305,6 @@ This applies to code examples, configuration files, and any content that exists 
 Use the include shortcode inside a code fence with the appropriate language.
 For example, to include a YAML workflow file:
 
-
 ````markdown
 ```{.yaml filename="demo-folder/yml.yml"}
 {{< include demo-folder/yml.yml >}}
