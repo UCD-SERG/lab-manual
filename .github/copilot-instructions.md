@@ -305,27 +305,25 @@ This applies to code examples, configuration files, and any content that exists 
 Use the include shortcode inside a code fence with the appropriate language.
 For example, to include a YAML workflow file:
 
-````markdown
-```{.yaml filename=".github/workflows/example.yml"}
-{{&lt; include /path/to/file.yml &gt;}}
-```
-````
+{{< include .github/copilot-instructions-examples/_yaml-include-example.md >}}
 
 **For including configuration or data files:**
 
-````markdown
-```{.json filename="config.json"}
-{{&lt; include /path/to/config.json &gt;}}
-```
-````
+{{< include .github/copilot-instructions-examples/_json-include-example.md >}}
 
 **For including R code:**
 
-````markdown
-```{.r filename="analysis.R"}
-{{&lt; include /scripts/analysis.R &gt;}}
-```
-````
+{{< include .github/copilot-instructions-examples/_r-include-example.md >}}
+
+**Showing include syntax in documentation:**
+
+When you need to show the include shortcode syntax itself in documentation
+(without it being processed),
+add extra spaces inside the delimiter braces:
+`{{ < include path/to/file > }}`
+instead of `{{< include path/to/file >}}`.
+This prevents Quarto from recognizing it as a shortcode,
+allowing the literal syntax to appear in the rendered output.
 
 **When to copy-paste instead:**
 
