@@ -27,28 +27,8 @@ but must contain a single job named `copilot-setup-steps`.
 
 #### Basic Configuration Example
 
-Here is the configuration used in this repository
-(adapted for R and Quarto projects):
-
-::: {.content-visible when-format="html"}
-
-::: {.callout-note collapse="true"}
-
-##### View `.github/workflows/copilot-setup-steps.yml`
-
-```{.yaml filename=".github/workflows/copilot-setup-steps.yml"}
-{{< include .github/workflows/copilot-setup-steps.yml >}}
-```
-
-:::
-
-:::
-
-::: {.content-visible when-format="pdf"}
-
-The complete `copilot-setup-steps.yml` file is included in Appendix B.
-
-:::
+See [Appendix: Copilot Setup Steps File](#sec-appendix-copilot-setup-steps) for the configuration used in this repository
+(adapted for R and Quarto projects).
 
 #### Configurable Options
 

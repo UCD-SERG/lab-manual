@@ -3,6 +3,22 @@
 This appendix contains the complete `.github/copilot-instructions.md` file
 used in this repository to guide GitHub Copilot coding agents.
 
+::: {.content-visible when-format="html"}
+
+::: {.callout-note collapse="true"}
+
+##### View `.github/copilot-instructions.md`
+
+{{< include .github/copilot-instructions.md >}}
+
+:::
+
+:::
+
+::: {.content-visible unless-format="html"}
+
 ```{.markdown filename=".github/copilot-instructions.md"}
 {{< include .github/copilot-instructions.md >}}
 ```
+
+:::
