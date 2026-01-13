@@ -489,6 +489,29 @@ div.csl-indent {
  <span class="menu-text">References</span></a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-copilot-instructions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Copilot Instructions File</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-copilot-setup-steps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Copilot Setup Steps File</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -861,127 +884,7 @@ div.csl-indent {
 </section>
 <section id="basic-configuration-example" class="level4" data-number="17.4.7.3">
 <h4 data-number="17.4.7.3" class="anchored" data-anchor-id="basic-configuration-example"><span class="header-section-number">17.4.7.3</span> Basic Configuration Example</h4>
-<p>Here is the configuration used in this repository (adapted for R and Quarto projects):</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>View <code>.github/workflows/copilot-setup-steps.yml</code>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>.github/workflows/copilot-setup-steps.yml</strong></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-filename=".github/workflows/copilot-setup-steps.yml"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># GitHub Copilot Setup Steps for lab-manual</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># This workflow configures the GitHub Copilot coding agent's environment</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># by preinstalling R, Quarto and TinyTeX for rendering the Bookdown manual.</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># See: https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-environment</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># This workflow sets up:</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># - R for running Bookdown</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># - Quarto CLI for rendering</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># - TinyTeX for PDF output</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">"Copilot Setup Steps"</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Automatically run the setup steps when they are changed to allow for easy validation,</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co"># and allow manual testing through the repository's "Actions" tab</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="fu">on</span><span class="kw">:</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">workflow_dispatch</span><span class="kw">:</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">paths</span><span class="kw">:</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> .github/workflows/copilot-setup-steps.yml</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">paths</span><span class="kw">:</span></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> .github/workflows/copilot-setup-steps.yml</span></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="co">  # The job MUST be called `copilot-setup-steps` or it will not be picked up by Copilot.</span></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">copilot-setup-steps</span><span class="kw">:</span></span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="at">    </span></span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="co">    # Set the permissions to the lowest permissions possible needed for your steps.</span></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="co">    # Copilot will be given its own token for its operations.</span></span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">permissions</span><span class="kw">:</span></span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> read</span></span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="at">    </span></span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="co">    # Timeout after 55 minutes (max is 59 for copilot-setup-steps)</span></span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">timeout-minutes</span><span class="kw">:</span><span class="at"> </span><span class="dv">55</span></span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="at">    </span></span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="co">      # Checkout code - Copilot will do this automatically if we don't,</span></span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="co">      # but we include it for completeness</span></span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout code</span></span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v4</span></span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="at">      </span></span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="co">      # R and renv setup steps disabled for now - we don't have any R code to run yet</span></span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="co">      # When R code is needed, uncomment the following steps:</span></span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="at">      </span></span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="co">      # # Install system dependencies required for R packages</span></span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="co">      # - name: Install system dependencies</span></span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="co">      #   run: |</span></span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="co">      #     sudo apt-get update</span></span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="co">      #     sudo apt-get install -y \</span></span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a><span class="co">      #       libcurl4-openssl-dev \</span></span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="co">      #       libssl-dev \</span></span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="co">      #       libxml2-dev \</span></span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="co">      #       libfontconfig1-dev \</span></span>
-<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="co">      #       libharfbuzz-dev \</span></span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="co">      #       libfribidi-dev \</span></span>
-<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a><span class="co">      #       libfreetype6-dev \</span></span>
-<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a><span class="co">      #       libpng-dev \</span></span>
-<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a><span class="co">      #       libtiff5-dev \</span></span>
-<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a><span class="co">      #       libjpeg-dev</span></span>
-<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a><span class="at">      </span></span>
-<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a><span class="co">      # Set up pandoc for documentation</span></span>
-<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Set up Pandoc</span></span>
-<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> r-lib/actions/setup-pandoc@v2</span></span>
-<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="at">      </span></span>
-<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a><span class="co">      # # Set up R using the standard GitHub Actions setup</span></span>
-<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a><span class="co">      # - name: Set up R</span></span>
-<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a><span class="co">      #   uses: r-lib/actions/setup-r@v2</span></span>
-<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="co">      #   with:</span></span>
-<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a><span class="co">      #     r-version: 'release'</span></span>
-<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a><span class="co">      #     use-public-rspm: true</span></span>
-<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a><span class="at">      </span></span>
-<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a><span class="co">      # Set up Quarto - required for rendering the website</span></span>
-<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Set up Quarto</span></span>
-<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> quarto-dev/quarto-actions/setup@v2</span></span>
-<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
-<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">tinytex</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a><span class="at">      </span></span>
-<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a><span class="co">      # # Install R dependencies using renv (disabled for now - no renv.lock file yet)</span></span>
-<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a><span class="co">      # - name: Install R dependencies via renv</span></span>
-<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a><span class="co">      #   uses: r-lib/actions/setup-renv@v2</span></span>
-<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a><span class="co">      #   with:</span></span>
-<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a><span class="co">      #     cache-version: 1</span></span>
-<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a><span class="at">      </span></span>
-<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a><span class="co">      # Verify development environment</span></span>
-<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Verify development environment</span></span>
-<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a><span class="fu">        run</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>          echo "=== Development Environment Status ==="</span>
-<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>          </span>
-<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>          # Verify Quarto is installed and working</span>
-<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>          echo ""</span>
-<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>          echo "=== Quarto Status ==="</span>
-<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>          quarto --version</span>
-<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>          quarto list tools</span>
-<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>          </span>
-<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>          echo ""</span>
-<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>          echo "Development environment setup complete!"</span>
-<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div>
-</div>
+<p>See <a href="appendix-copilot-setup-steps.html">Appendix: Copilot Setup Steps File</a> for the configuration used in this repository (adapted for R and Quarto projects).</p>
 </section>
 <section id="configurable-options" class="level4" data-number="17.4.7.4">
 <h4 data-number="17.4.7.4" class="anchored" data-anchor-id="configurable-options"><span class="header-section-number">17.4.7.4</span> Configurable Options</h4>
@@ -999,30 +902,30 @@ div.csl-indent {
 <section id="common-setup-tasks" class="level4" data-number="17.4.7.5">
 <h4 data-number="17.4.7.5" class="anchored" data-anchor-id="common-setup-tasks"><span class="header-section-number">17.4.7.5</span> Common Setup Tasks</h4>
 <p><strong>For Node.js/TypeScript projects:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Set up Node.js</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/setup-node@v4</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">with</span><span class="kw">:</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">node-version</span><span class="kw">:</span><span class="at"> </span><span class="st">"20"</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">cache</span><span class="kw">:</span><span class="at"> </span><span class="st">"npm"</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install dependencies</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">run</span><span class="kw">:</span><span class="at"> npm ci</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Set up Node.js</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/setup-node@v4</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">node-version</span><span class="kw">:</span><span class="at"> </span><span class="st">"20"</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">cache</span><span class="kw">:</span><span class="at"> </span><span class="st">"npm"</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install dependencies</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">run</span><span class="kw">:</span><span class="at"> npm ci</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>For Python projects:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Set up Python</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/setup-python@v5</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">with</span><span class="kw">:</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">python-version</span><span class="kw">:</span><span class="at"> </span><span class="st">"3.11"</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install dependencies</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">run</span><span class="kw">:</span><span class="at"> pip install -r requirements.txt</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Set up Python</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/setup-python@v5</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">python-version</span><span class="kw">:</span><span class="at"> </span><span class="st">"3.11"</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install dependencies</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">run</span><span class="kw">:</span><span class="at"> pip install -r requirements.txt</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>For R projects:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Set up R</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> r-lib/actions/setup-r@v2</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">with</span><span class="kw">:</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">r-version</span><span class="kw">:</span><span class="at"> </span><span class="st">'release'</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install R dependencies</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> r-lib/actions/setup-renv@v2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Set up R</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> r-lib/actions/setup-r@v2</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">r-version</span><span class="kw">:</span><span class="at"> </span><span class="st">'release'</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install R dependencies</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> r-lib/actions/setup-renv@v2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="environment-variables-and-secrets" class="level4" data-number="17.4.7.6">
 <h4 data-number="17.4.7.6" class="anchored" data-anchor-id="environment-variables-and-secrets"><span class="header-section-number">17.4.7.6</span> Environment Variables and Secrets</h4>
@@ -1043,18 +946,18 @@ div.csl-indent {
 <section id="advanced-configuration" class="level4" data-number="17.4.7.8">
 <h4 data-number="17.4.7.8" class="anchored" data-anchor-id="advanced-configuration"><span class="header-section-number">17.4.7.8</span> Advanced Configuration</h4>
 <p><strong>Larger runners:</strong> For projects requiring more resources, you can use larger GitHub-hosted runners:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">copilot-setup-steps</span><span class="kw">:</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-4-core</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Self-hosted runners (ARC):</strong> For access to internal resources or private registries, use Actions Runner Controller (ARC) self-hosted runners:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">copilot-setup-steps</span><span class="kw">:</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-4-core</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Self-hosted runners (ARC):</strong> For access to internal resources or private registries, use Actions Runner Controller (ARC) self-hosted runners:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">copilot-setup-steps</span><span class="kw">:</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> arc-scale-set-name</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> arc-scale-set-name</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Note: When using self-hosted runners, you must disable Copilot’s integrated firewall in repository settings and configure appropriate network security controls.</p>
 <p><strong>Git Large File Storage (LFS):</strong> If your repository uses Git LFS:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v4</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">with</span><span class="kw">:</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">lfs</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v4</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">lfs</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="further-reading" class="level4" data-number="17.4.7.9">
 <h4 data-number="17.4.7.9" class="anchored" data-anchor-id="further-reading"><span class="header-section-number">17.4.7.9</span> Further Reading</h4>
@@ -1083,7 +986,7 @@ div.csl-indent {
 <p>This approach makes it easier for collaborators who are more comfortable with Word to contribute to the lab manual while maintaining the source files in Quarto format.</p>
 </section>
 <section id="copilot-instructions-for-this-repository" class="level3" data-number="17.4.10">
-<h3 data-number="17.4.10" class="anchored"><span class="header-section-number">17.4.10</span> Copilot Instructions for this Repository</h3>
+<h3 data-number="17.4.10" class="anchored" data-anchor-id="copilot-instructions-for-this-repository"><span class="header-section-number">17.4.10</span> Copilot Instructions for this Repository</h3>
 <p>The <code>.github/copilot-instructions.md</code> file in this repository contains specific instructions and guidelines for GitHub Copilot coding agents when working with the lab manual. This file helps ensure that AI-generated contributions follow the lab’s formatting standards, coding conventions, and documentation practices.</p>
 <p>The copilot instructions file specifies:</p>
 <ul>
@@ -1094,334 +997,7 @@ div.csl-indent {
 <li>Repository-specific best practices</li>
 </ul>
 <p>By having these instructions in <code>.github/copilot-instructions.md</code>, we ensure that coding agents produce consistent, high-quality contributions that align with the lab’s established practices. This reduces the review burden and helps maintain consistency across all contributions to the lab manual, whether made by humans or AI assistants.</p>
-<p>Here is the complete <code>copilot-instructions.md</code> file, for easy inspection:</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>View <code>.github/copilot-instructions.md</code>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<section id="copilot-instructions-for-ucd-serg-lab-manual" class="level1 callout-body-container callout-body" data-number="18">
-<h1 data-number="18"><span class="header-section-number">18</span> Copilot Instructions for UCD-SeRG Lab Manual</h1>
-<p>This file contains guidelines for GitHub Copilot and other AI assistants when working with the lab manual.</p>
-<section id="markdown-and-quarto-formatting" class="level2" data-number="18.1">
-<h2 data-number="18.1" class="anchored" data-anchor-id="markdown-and-quarto-formatting"><span class="header-section-number">18.1</span> Markdown and Quarto Formatting</h2>
-<section id="talking-about-code" class="level3" data-number="18.1.1">
-<h3 data-number="18.1.1" class="anchored" data-anchor-id="talking-about-code"><span class="header-section-number">18.1.1</span> Talking about code</h3>
-<p>When talking about code in prose sections, use backticks to apply code formatting: for example, <code>dplyr::mutate()</code></p>
-<p>When talking about packages in prose, use backticks and curly-braces with a hyperlink to the package website. For example: <a href="https://dplyr.tidyverse.org/"><code>{dplyr}</code></a></p>
-<p>Common package URLs:</p>
-<ul>
-<li><a href="https://dplyr.tidyverse.org/"><code>{dplyr}</code></a></li>
-<li><a href="https://ggplot2.tidyverse.org/"><code>{ggplot2}</code></a></li>
-<li><a href="https://tidyr.tidyverse.org/"><code>{tidyr}</code></a></li>
-<li><a href="https://readr.tidyverse.org/"><code>{readr}</code></a></li>
-<li><a href="https://purrr.tidyverse.org/"><code>{purrr}</code></a></li>
-<li><a href="https://tibble.tidyverse.org/"><code>{tibble}</code></a></li>
-<li><a href="https://stringr.tidyverse.org/"><code>{stringr}</code></a></li>
-<li><a href="https://forcats.tidyverse.org/"><code>{forcats}</code></a></li>
-<li><a href="https://styler.r-lib.org/"><code>{styler}</code></a></li>
-<li><a href="https://lintr.r-lib.org/"><code>{lintr}</code></a></li>
-<li><a href="https://roxygen2.r-lib.org/"><code>{roxygen2}</code></a></li>
-<li><a href="https://testthat.r-lib.org/"><code>{testthat}</code></a></li>
-<li><a href="https://usethis.r-lib.org/"><code>{usethis}</code></a></li>
-<li><a href="https://devtools.r-lib.org/"><code>{devtools}</code></a></li>
-<li><a href="https://rstudio.github.io/renv/"><code>{renv}</code></a></li>
-<li><a href="https://docs.ropensci.org/targets/"><code>{targets}</code></a></li>
-<li><a href="https://rdatatable.gitlab.io/data.table/"><code>{data.table}</code></a></li>
-<li><a href="https://cran.r-project.org/package=assertthat"><code>{assertthat}</code></a></li>
-</ul>
-</section>
-<section id="blank-lines-before-lists" class="level3" data-number="18.1.2">
-<h3 data-number="18.1.2" class="anchored" data-anchor-id="blank-lines-before-lists"><span class="header-section-number">18.1.2</span> Blank Lines Before Lists</h3>
-<p><strong>ALWAYS include a blank line before bullet lists and numbered lists</strong> in markdown and Quarto (.qmd) files.</p>
-<p><strong>Correct:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="an">Here are the key points:</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>First item</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Second item</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Third item</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Incorrect:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="an">Here are the key points:</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>First item</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Second item</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Third item</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This applies to:</p>
-<ul>
-<li>Bullet lists (starting with <code>-</code> or <code>*</code>)</li>
-<li>Numbered lists (starting with <code>1.</code>, <code>2.</code>, etc.)</li>
-<li>Lists in all .qmd files throughout the repository</li>
-</ul>
-</section>
-<section id="line-breaks-in-plain-text" class="level3" data-number="18.1.3">
-<h3 data-number="18.1.3" class="anchored" data-anchor-id="line-breaks-in-plain-text"><span class="header-section-number">18.1.3</span> Line Breaks in Plain Text</h3>
-<p><strong>ALWAYS line-break at the ends of sentences and long phrases in plain-text paragraphs in .qmd files</strong> to avoid long lines.</p>
-<p><strong>Correct:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>When talking about code in prose sections,</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>use backticks to apply code formatting.</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>This helps maintain readability in source files</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>and makes diffs easier to review.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Incorrect:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>When talking about code in prose sections, use backticks to apply code formatting. This helps maintain readability in source files and makes diffs easier to review.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Benefits:</strong></p>
-<ul>
-<li>Improves readability of source .qmd files</li>
-<li>Makes git diffs clearer and easier to review</li>
-<li>Helps identify specific changes in version control</li>
-<li>Prevents horizontal scrolling when editing</li>
-<li>Follows semantic line breaks best practice</li>
-</ul>
-<p><strong>Guidelines:</strong></p>
-<ul>
-<li>Break after complete sentences (at periods)</li>
-<li>Break after long phrases or clauses (at commas or conjunctions)</li>
-<li>Break after approximately 60-80 characters when appropriate</li>
-<li>Keep related short phrases together on one line</li>
-<li>Don’t break in the middle of inline code, links, or formatting</li>
-</ul>
-</section>
-<section id="why-this-matters" class="level3" data-number="18.1.4">
-<h3 data-number="18.1.4" class="anchored" data-anchor-id="why-this-matters"><span class="header-section-number">18.1.4</span> Why This Matters</h3>
-<ul>
-<li>Ensures consistent markdown rendering across different platforms</li>
-<li>Improves readability in both source and rendered forms</li>
-<li>Prevents rendering issues in Quarto books</li>
-<li>Follows markdown best practices</li>
-</ul>
-</section>
-<section id="cross-references-for-figures-and-tables" class="level3" data-number="18.1.5">
-<h3 data-number="18.1.5" class="anchored" data-anchor-id="cross-references-for-figures-and-tables"><span class="header-section-number">18.1.5</span> Cross-References for Figures and Tables</h3>
-<p><strong>ALWAYS use Quarto’s cross-reference system for figures, tables, and other captioned content.</strong> See <a href="https://quarto.org/docs/authoring/cross-references.html">Quarto Cross-References documentation</a> for complete details.</p>
-<p><strong>Required label prefixes:</strong></p>
-<ul>
-<li>Figures: <code>#fig-</code> (e.g., <code>#fig-data-masking</code>, <code>#fig-workflow-diagram</code>)</li>
-<li>Tables: <code>#tbl-</code> (e.g., <code>#tbl-git-commands</code>, <code>#tbl-summary-stats</code>)</li>
-<li>Equations: <code>#eq-</code> (e.g., <code>#eq-regression-model</code>)</li>
-<li>Sections: <code>#sec-</code> (e.g., <code>#sec-introduction</code>) - already in use throughout manual</li>
-<li>Theorems: <code>#thm-</code> (e.g., <code>#thm-central-limit</code>)</li>
-<li>Lemmas: <code>#lem-</code> (e.g., <code>#lem-auxiliary-result</code>)</li>
-<li>Corollaries: <code>#cor-</code> (e.g., <code>#cor-special-case</code>)</li>
-<li>Propositions: <code>#prp-</code> (e.g., <code>#prp-main-result</code>)</li>
-<li>Examples: <code>#exm-</code> (e.g., <code>#exm-simple-case</code>)</li>
-<li>Exercises: <code>#exr-</code> (e.g., <code>#exr-practice-problem</code>)</li>
-</ul>
-<p><strong>For figures (images):</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Caption text](path/to/image.png)</span>{#fig-label}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>For tables (markdown tables):</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Column 1 <span class="pp">|</span> Column 2 <span class="pp">|</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="pp">|----------|----------|</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Data     <span class="pp">|</span> Data     <span class="pp">|</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>: Caption text {#tbl-label}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>For code-generated figures:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-plot-name</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Caption text"</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co"># R code to generate plot</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>For code-generated tables:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-table-name</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Caption text"</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co"># R code to generate table</span></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Referencing in text:</strong></p>
-<ul>
-<li>Figures: <code>@fig-label</code> produces “Figure X”</li>
-<li>Tables: <code>@tbl-label</code> produces “Table X”</li>
-<li>Equations: <code>@eq-label</code> produces “Equation X”</li>
-<li>Sections: <code>@sec-label</code> produces “Section X”</li>
-</ul>
-<p><strong>Benefits:</strong></p>
-<ul>
-<li>Automatic numbering of figures, tables, and equations</li>
-<li>Automatic updates when content is reordered</li>
-<li>Clickable cross-references in HTML and PDF output</li>
-<li>Consistent formatting across all output formats</li>
-<li>Better accessibility for screen readers</li>
-</ul>
-</section>
-</section>
-<section id="r-code-style" class="level2" data-number="18.2">
-<h2 data-number="18.2" class="anchored" data-anchor-id="r-code-style"><span class="header-section-number">18.2</span> R Code Style</h2>
-<ul>
-<li>Follow the tidyverse style guide: https://style.tidyverse.org</li>
-<li>Use native pipe <code>|&gt;</code> instead of <code>%&gt;%</code></li>
-<li>Use <code>snake_case</code> for variable and function names</li>
-<li>Use <code>.qmd</code> files exclusively (not <code>.Rmd</code>)</li>
-<li>All R projects should use R package structure</li>
-</ul>
-</section>
-<section id="file-organization" class="level2" data-number="18.3">
-<h2 data-number="18.3" class="anchored" data-anchor-id="file-organization"><span class="header-section-number">18.3</span> File Organization</h2>
-<section id="using-quarto-includes-for-modular-content" class="level3" data-number="18.3.1">
-<h3 data-number="18.3.1" class="anchored" data-anchor-id="using-quarto-includes-for-modular-content"><span class="header-section-number">18.3.1</span> Using Quarto Includes for Modular Content</h3>
-<p><strong>All chapters should use Quarto includes to decompose content into separate files.</strong> This modular approach provides significant benefits for version control, collaboration, and content management.</p>
-<section id="why-use-includes" class="level4" data-number="18.3.1.1">
-<h4 data-number="18.3.1.1" class="anchored" data-anchor-id="why-use-includes"><span class="header-section-number">18.3.1.1</span> Why Use Includes?</h4>
-<ol type="1">
-<li><p><strong>Better Git History</strong>: When sections are reordered, only the main chapter file changes (moving include statements), making it immediately clear that content was reorganized rather than edited. When content is edited, only the specific include file changes. This makes reviews focused and precise.</p></li>
-<li><p><strong>Easier Code Review</strong>: Reviewers can see exactly what changed—either the organization (main file) or the content (include file)—without having to parse through large diffs.</p></li>
-<li><p><strong>Modular Maintenance</strong>: Each section lives in its own file, making it easier to:</p>
-<ul>
-<li>Find and edit specific content</li>
-<li>Reuse sections across chapters if needed</li>
-<li>Work on different sections simultaneously without merge conflicts</li>
-<li>Test and preview individual sections</li>
-</ul></li>
-<li><p><strong>Clear Structure</strong>: The main chapter file becomes a table of contents showing the organization at a glance.</p></li>
-</ol>
-</section>
-<section id="structure-pattern" class="level4" data-number="18.3.1.2">
-<h4 data-number="18.3.1.2" class="anchored" data-anchor-id="structure-pattern"><span class="header-section-number">18.3.1.2</span> Structure Pattern</h4>
-<p><strong>Main chapter file</strong> (e.g., <code>05-coding-practices.qmd</code>):</p>
-<ul>
-<li>Contains the chapter title and introduction</li>
-<li>Contains section headings (##, ###, etc.)</li>
-<li>Uses the <code>include</code> shortcode to pull in content (see <a href="https://quarto.org/docs/authoring/includes.html" class="uri">https://quarto.org/docs/authoring/includes.html</a> for details)</li>
-<li>Shows the organization/outline of the chapter</li>
-</ul>
-<p><strong>Include files</strong> (e.g., <code>05-coding-practices/lab-protocols-for-code-and-data.qmd</code>):</p>
-<ul>
-<li>Stored in a subdirectory matching the chapter name</li>
-<li>Contains only the content for that section (no heading)</li>
-<li>The heading stays in the main chapter file</li>
-<li>Named descriptively using kebab-case</li>
-</ul>
-</section>
-<section id="required-pattern" class="level4" data-number="18.3.1.3">
-<h4 data-number="18.3.1.3" class="anchored" data-anchor-id="required-pattern"><span class="header-section-number">18.3.1.3</span> Required Pattern</h4>
-<p><strong>Always follow this pattern:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Section Heading</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>{{&lt; include folder/section-name.qmd &gt;}}</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Correct example:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Section heading</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>{{&lt; include folder/section-name.qmd &gt;}}</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Incorrect (don’t do this):</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>{{&lt; include folder/section-name.qmd &gt;}}</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The heading must be in the main file, followed by a blank line, then the include statement.</p>
-</section>
-<section id="file-naming-conventions" class="level4" data-number="18.3.1.4">
-<h4 data-number="18.3.1.4" class="anchored" data-anchor-id="file-naming-conventions"><span class="header-section-number">18.3.1.4</span> File Naming Conventions</h4>
-<ul>
-<li>Main chapter files: <code>##-chapter-name.qmd</code> (e.g., <code>05-coding-practices.qmd</code>)</li>
-<li>Subdirectory: <code>##-chapter-name/</code> (matches the main file name)</li>
-<li>Include files: <code>descriptive-section-name.qmd</code> using kebab-case</li>
-<li>Use descriptive names that clearly indicate the content</li>
-<li>Prefix with underscore <code>_</code> for partial/helper files not directly included (e.g., <code>_lintr-summary.qmd</code>)</li>
-</ul>
-</section>
-<section id="git-history-benefits-example" class="level4" data-number="18.3.1.5">
-<h4 data-number="18.3.1.5" class="anchored" data-anchor-id="git-history-benefits-example"><span class="header-section-number">18.3.1.5</span> Git History Benefits Example</h4>
-<p><strong>When reordering sections:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode diff code-with-copy"><code class="sourceCode diff"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="st">-## Object naming</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="va">+## Function calls</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="st">-{{&lt; include demo-folder/section-name.qmd &gt;}}</span></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="va">+{{&lt; include demo-folder/section-2.qmd &gt;}}</span></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="st">-## Function calls</span></span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="va">+## Object naming</span></span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="st">-{{&lt; include demo-folder/section-2.qmd &gt;}}</span></span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="va">+{{&lt; include demo-folder/section-name.qmd &gt;}}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This diff clearly shows a reordering (swapping two sections) with no content changes—only the main chapter file changes.</p>
-<p><strong>When editing content:</strong> Only the specific include file (e.g., <code>05-coding-practices/function-calls.qmd</code>) appears in the git diff, making it easy to review the actual content changes without distraction.</p>
-</section>
-<section id="when-to-create-a-new-include-file" class="level4" data-number="18.3.1.6">
-<h4 data-number="18.3.1.6" class="anchored" data-anchor-id="when-to-create-a-new-include-file"><span class="header-section-number">18.3.1.6</span> When to Create a New Include File</h4>
-<p>Create a new include file when:</p>
-<ul>
-<li>Adding a new section to a chapter</li>
-<li>A section becomes long enough to benefit from being in its own file (&gt;20-30 lines)</li>
-<li>Content might be reused elsewhere</li>
-<li>You want to work on a section independently</li>
-</ul>
-</section>
-<section id="migration-strategy" class="level4" data-number="18.3.1.7">
-<h4 data-number="18.3.1.7" class="anchored" data-anchor-id="migration-strategy"><span class="header-section-number">18.3.1.7</span> Migration Strategy</h4>
-<p>When working with chapters that don’t yet use includes:</p>
-<ol type="1">
-<li>Create a subdirectory matching the chapter name</li>
-<li>Extract each section into its own include file</li>
-<li>Update the main chapter file to use includes</li>
-<li>Keep headings in the main file</li>
-<li>Ensure blank lines before include statements</li>
-<li>Test that rendering still works correctly</li>
-</ol>
-</section>
-<section id="using-includes-for-code-examples-and-reusable-content" class="level4" data-number="18.3.1.8">
-<h4 data-number="18.3.1.8" class="anchored" data-anchor-id="using-includes-for-code-examples-and-reusable-content"><span class="header-section-number">18.3.1.8</span> Using Includes for Code Examples and Reusable Content</h4>
-<p><strong>Prefer using Quarto’s include shortcode over copy-pasting content whenever feasible.</strong> This applies to code examples, configuration files, and any content that exists elsewhere in the repository.</p>
-<p><strong>Benefits:</strong></p>
-<ul>
-<li>Single source of truth: Changes to the original file automatically propagate</li>
-<li>Reduces maintenance burden and sync issues</li>
-<li>Ensures examples stay current and accurate</li>
-<li>Better git history (changes appear in one place)</li>
-</ul>
-<p><strong>For including code files:</strong></p>
-<p>Use the include shortcode inside a code fence with the appropriate language. For example, to include a YAML workflow file:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{.yaml filename="demo-folder/yml.yml"}</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="kw">{</span><span class="at">{&lt; include demo-folder/yml.yml &gt;</span><span class="kw">}</span>}</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>When you need to show the include shortcode syntax itself in documentation (without it being processed), add an extra pair of curly braces: <code>{{&lt; include path/to/file &gt;}}</code>. This prevents Quarto from recognizing it as a shortcode, allowing the literal syntax to appear in the rendered output.</p>
-<p><strong>When to copy-paste instead:</strong></p>
-<p>Only copy-paste when:</p>
-<ul>
-<li>The content is a simplified example that doesn’t exist elsewhere</li>
-<li>You need to show a partial excerpt with modifications</li>
-<li>The source file contains content that shouldn’t be fully shown</li>
-<li>You need to demonstrate different variations of similar code</li>
-</ul>
-<p><strong>File naming for included code:</strong></p>
-<ul>
-<li>Prefix standalone code files with <code>_</code> so Quarto doesn’t try to render them (e.g., <code>_helper-functions.R</code>)</li>
-<li>Use descriptive names that indicate the purpose</li>
-<li>Keep included files in appropriate subdirectories</li>
-</ul>
-</section>
-</section>
-</section>
-<section id="working-with-docx-files" class="level2" data-number="18.4">
-<h2 data-number="18.4" class="anchored" data-anchor-id="working-with-docx-files"><span class="header-section-number">18.4</span> Working with DOCX Files</h2>
-<p>GitHub Copilot can read and process Microsoft Word (.docx) files, which is useful for translating edits made in Word back to Quarto format.</p>
-<p>When working with DOCX files:</p>
-<ul>
-<li><strong>Always examine tracked changes</strong>: Use the <code>view</code> tool to read DOCX files and pay special attention to any tracked changes (insertions, deletions, formatting changes)</li>
-<li><strong>Review comments</strong>: Look for and address any comments in the DOCX file that may provide context or instructions for edits</li>
-<li><strong>Translate edits to Quarto</strong>: When edits have been made in a DOCX file, apply the equivalent changes to the corresponding <code>.qmd</code> files</li>
-<li><strong>Preserve formatting</strong>: Ensure that formatting, citations, and cross-references are properly converted to Quarto/markdown syntax</li>
-<li><strong>Verify completeness</strong>: Check that all edits, including those in tracked changes and comments, have been addressed</li>
-</ul>
-<p>This workflow enables a hybrid editing process where collaborators can make edits in familiar Word format, and Copilot can translate those edits back to the Quarto source files.</p>
-</section>
-<section id="additional-guidelines" class="level2" data-number="18.5">
-<h2 data-number="18.5" class="anchored" data-anchor-id="additional-guidelines"><span class="header-section-number">18.5</span> Additional Guidelines</h2>
-<ul>
-<li>Maintain consistency with existing code style</li>
-<li>Preserve all existing content when refactoring</li>
-<li>Add blank lines before all lists</li>
-<li>Follow the lab’s R package development workflow (as described throughout this repo)</li>
-</ul>
-</section>
-</section>
-</div>
-</div>
+<p>See <a href="appendix-copilot-instructions.html">Appendix: Copilot Instructions File</a> for the complete file.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
