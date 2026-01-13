@@ -288,6 +288,60 @@ When working with chapters that don't yet use includes:
 5. Ensure blank lines before include statements
 6. Test that rendering still works correctly
 
+#### Using Includes for Code Examples and Reusable Content
+
+**Prefer using Quarto's include shortcode over copy-pasting content whenever feasible.**
+This applies to code examples, configuration files, and any content that exists elsewhere in the repository.
+
+**Benefits:**
+
+- Single source of truth: Changes to the original file automatically propagate
+- Reduces maintenance burden and sync issues
+- Ensures examples stay current and accurate
+- Better git history (changes appear in one place)
+
+**For including code files:**
+
+Use the include shortcode inside a code fence with the appropriate language.
+For example, to include a YAML workflow file:
+
+````markdown
+```{.yaml filename=".github/workflows/example.yml"}
+{{&lt; include /path/to/file.yml &gt;}}
+```
+````
+
+**For including configuration or data files:**
+
+````markdown
+```{.json filename="config.json"}
+{{&lt; include /path/to/config.json &gt;}}
+```
+````
+
+**For including R code:**
+
+````markdown
+```{.r filename="analysis.R"}
+{{&lt; include /scripts/analysis.R &gt;}}
+```
+````
+
+**When to copy-paste instead:**
+
+Only copy-paste when:
+
+- The content is a simplified example that doesn't exist elsewhere
+- You need to show a partial excerpt with modifications
+- The source file contains content that shouldn't be fully shown
+- You need to demonstrate different variations of similar code
+
+**File naming for included code:**
+
+- Prefix standalone code files with `_` so Quarto doesn't try to render them (e.g., `_helper-functions.R`)
+- Use descriptive names that indicate the purpose
+- Keep included files in appropriate subdirectories
+
 ## Working with DOCX Files
 
 GitHub Copilot can read and process Microsoft Word (.docx) files, which is useful for translating edits made in Word back to Quarto format.

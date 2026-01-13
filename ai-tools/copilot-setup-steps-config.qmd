@@ -30,35 +30,8 @@ but must contain a single job named `copilot-setup-steps`.
 Here's the configuration used in this repository
 (adapted for R and Quarto projects):
 
-```yaml
-name: "Copilot Setup Steps"
-
-on:
-  workflow_dispatch:
-  push:
-    paths:
-      - .github/workflows/copilot-setup-steps.yml
-  pull_request:
-    paths:
-      - .github/workflows/copilot-setup-steps.yml
-
-jobs:
-  copilot-setup-steps:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-    timeout-minutes: 55
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      
-      - name: Set up Pandoc
-        uses: r-lib/actions/setup-pandoc@v2
-      
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
-        with:
-          tinytex: true
+```{.yaml filename=".github/workflows/copilot-setup-steps.yml"}
+{{< include /.github/workflows/copilot-setup-steps.yml >}}
 ```
 
 #### Configurable Options
