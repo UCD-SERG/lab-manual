@@ -105,7 +105,7 @@ or workflow configuration problems.
 
 #### Additional Resources
 
-- See @sec-r-ci for setting up GitHub Actions workflows
+- See the [Continuous Integration](#sec-r-ci) section in the R Coding Practices chapter for setting up GitHub Actions workflows
 - See the "Best Practices" and "Benefits and Hazards" sections above for security considerations with workflow files
 - See the "When to use a coding agent" section above for guidance on when to use Copilot vs. fixing issues yourself
 - See the [GitHub Actions documentation](https://docs.github.com/en/actions) for workflow syntax and troubleshooting
