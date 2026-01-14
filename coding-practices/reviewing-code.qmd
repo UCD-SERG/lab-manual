@@ -90,7 +90,8 @@ Code review is an excellent opportunity for mentoring. As a reviewer:
 In general, it is the author's responsibility to fix a PR, not the reviewer's. Strike a balance between pointing out problems and providing direct guidance. Sometimes pointing out issues and letting the author decide on a solution helps them learn and may result in a better solution since they are closer to the code.
 
 For very small tweaks (typos, comment additions),
-use GitHub's suggestion feature to allow authors to quickly accept changes directly in the UI.
+use GitHub's suggestion feature
+to allow authors to quickly accept changes directly in the UI.
 
 ![GitHub's suggestion feature in a PR review comment](assets/images/github-suggestion-feature.png){#fig-github-suggestion-feature}
 
