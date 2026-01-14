@@ -1,0 +1,110 @@
+When GitHub Actions workflows fail,
+you can use Copilot to help diagnose and fix the issues.
+However,
+it's important to use the right prompts
+depending on whether the problem is in your code
+or in the workflow configuration itself.
+
+#### Scenario 1: Code Issues Found by Workflows (Most Common)
+
+**When to use:**
+The workflow is functioning correctly,
+but it's detecting problems in your code
+(e.g., failing tests, linting errors, build failures).
+
+**What you want:**
+Fix the code issues without modifying the workflow files themselves.
+
+**Recommended prompts:**
+
+- "fix the code issues found by the failing workflows"
+- "address the linting errors reported in the GitHub Actions checks"
+- "fix the test failures in the CI pipeline"
+- "resolve the build errors shown in the workflow logs"
+
+**Example:**
+If your R package has failing tests detected by `usethis::use_github_action("check-standard")`,
+you want Copilot to fix the test failures in your R code,
+not modify the workflow YAML file.
+
+**Why this matters:**
+These prompts make it clear that you want code changes,
+not workflow changes.
+This helps prevent the agent from unnecessarily modifying
+your carefully-configured CI/CD pipeline.
+
+#### Scenario 2: Issues with Workflow Files Themselves
+
+**When to use:**
+The workflow configuration itself has problems
+(e.g., syntax errors in YAML, incorrect job definitions, outdated actions).
+
+**What you want:**
+Fix the workflow files,
+but with extreme caution due to security implications.
+
+**Recommended prompts:**
+
+- "fix the syntax error in the GitHub Actions workflow file at line X"
+- "update the workflow to use the latest version of action Y"
+- "correct the job configuration in .github/workflows/check-standard.yaml"
+
+**Important considerations:**
+
+::: {.callout-warning}
+**Security Warning**
+
+Workflow files have access to repository secrets and can execute arbitrary code.
+Before accepting any changes to workflow files:
+
+1. **Review every line** of the proposed changes
+2. **Verify** the changes only address the specific issue
+3. **Check** that no new secret access or command execution has been added
+4. **Test** in a safe environment if possible
+
+See @sec-ai-best-practices for more details on workflow file security.
+:::
+
+**When to do it yourself:**
+Workflow syntax errors and configuration issues
+are often faster to fix manually than with Copilot,
+especially if you're familiar with GitHub Actions.
+See @sec-ai-when-to-use for more guidance.
+
+#### Scenario 3: Uncertain Which Scenario Applies
+
+**When to use:**
+You're not sure whether the failure is due to code issues
+or workflow configuration problems.
+
+**Recommended approach:**
+
+1. **First, examine the workflow logs**:
+   - Look at the error messages in the GitHub Actions tab
+   - Identify whether the error is in your code or the workflow itself
+   - Common code issues: test failures, linting errors, compilation errors
+   - Common workflow issues: YAML syntax errors, missing actions, permission errors
+
+2. **Use a diagnostic prompt**:
+   - "examine the failing workflow logs and identify whether the issue is in the code or the workflow configuration"
+   - "diagnose the root cause of the workflow failure"
+
+3. **Then use the appropriate scenario above**:
+   Once you understand the issue,
+   use the specific prompts from Scenario 1 or 2.
+
+**Example workflow:**
+
+```text
+1. Prompt: "examine the failing workflow logs and identify the issue"
+2. Copilot responds: "The workflow is failing because of linting errors
+   in src/analysis.R"
+3. Prompt: "fix the linting errors in src/analysis.R"
+```
+
+#### Additional Resources
+
+- See @sec-r-ci for setting up GitHub Actions workflows
+- See @sec-ai-best-practices and @sec-ai-benefits-hazards for security considerations with workflow files
+- See @sec-ai-when-to-use for guidance on when to use Copilot vs. fixing issues yourself
+- See the [GitHub Actions documentation](https://docs.github.com/en/actions) for workflow syntax and troubleshooting

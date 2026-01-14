@@ -52,3 +52,6 @@ site_libs/
 *.tex
 __pycache__/
 
+# Link checker binary (should be installed via CI, not committed)
+lychee
+

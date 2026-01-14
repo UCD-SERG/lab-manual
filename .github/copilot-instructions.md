@@ -162,6 +162,32 @@ See [Quarto Cross-References documentation](https://quarto.org/docs/authoring/cr
 - Equations: `@eq-label` produces "Equation X"
 - Sections: `@sec-label` produces "Section X"
 
+**Important: Always use cross-references for sections**
+
+When referring to other sections within the manual,
+**always use the Quarto cross-reference system** (`@sec-label`)
+instead of plain text references like "the section above" or "see the X section".
+
+**Correct:**
+```markdown
+See @sec-r-ci for setting up GitHub Actions workflows.
+See @sec-ai-best-practices for security considerations.
+```
+
+**Incorrect:**
+```markdown
+See the "Continuous Integration" section above.
+See the "Best Practices" section for more details.
+```
+
+**Benefits of using cross-references:**
+
+- Automatically generates proper section titles and numbers
+- Creates clickable links in HTML output
+- Updates automatically if section titles change
+- Works correctly across all output formats (HTML, PDF, DOCX, EPUB)
+- Quarto will warn you if a reference is broken
+
 **Benefits:**
 
 - Automatic numbering of figures, tables, and equations
