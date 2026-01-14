@@ -424,7 +424,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./coding-style.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
+  <a href="./coding-style.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">R Code Style</span></span></a>
   </div>
 </li>
@@ -484,7 +484,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ai-tools.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
+  <a href="./ai-tools.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Working with AI</span></span></a>
   </div>
 </li>
@@ -529,7 +529,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix-copilot-instructions.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
+  <a href="./appendix-copilot-instructions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Copilot Instructions File</span></a>
   </div>
 </li>
@@ -588,66 +588,67 @@ window.Quarto = {
   <li><a href="#version-numbers" id="toc-version-numbers" class="nav-link" data-scroll-target="#version-numbers"><span class="header-section-number">6.6.1</span> Version Numbers</a></li>
   <li><a href="#news-file" id="toc-news-file" class="nav-link" data-scroll-target="#news-file"><span class="header-section-number">6.6.2</span> NEWS File</a></li>
   </ul></li>
-  <li><a href="#sec-r-qa-checklist" id="toc-sec-r-qa-checklist" class="nav-link" data-scroll-target="#sec-r-qa-checklist"><span class="header-section-number">6.7</span> Quality Assurance Checklist</a></li>
-  <li><a href="#sec-auto-styling" id="toc-sec-auto-styling" class="nav-link" data-scroll-target="#sec-auto-styling"><span class="header-section-number">6.8</span> Automated Code Styling</a>
+  <li><a href="#sec-r-ci" id="toc-sec-r-ci" class="nav-link" data-scroll-target="#sec-r-ci"><span class="header-section-number">6.7</span> Continuous Integration</a></li>
+  <li><a href="#sec-r-qa-checklist" id="toc-sec-r-qa-checklist" class="nav-link" data-scroll-target="#sec-r-qa-checklist"><span class="header-section-number">6.8</span> Quality Assurance Checklist</a></li>
+  <li><a href="#sec-auto-styling" id="toc-sec-auto-styling" class="nav-link" data-scroll-target="#sec-auto-styling"><span class="header-section-number">6.9</span> Automated Code Styling</a>
   <ul class="collapse">
-  <li><a href="#rstudio-built-in-formatting" id="toc-rstudio-built-in-formatting" class="nav-link" data-scroll-target="#rstudio-built-in-formatting"><span class="header-section-number">6.8.1</span> RStudio Built-in Formatting</a></li>
-  <li><a href="#styler-package" id="toc-styler-package" class="nav-link" data-scroll-target="#styler-package"><span class="header-section-number">6.8.2</span> styler Package</a></li>
-  <li><a href="#lintr-package" id="toc-lintr-package" class="nav-link" data-scroll-target="#lintr-package"><span class="header-section-number">6.8.3</span> lintr Package</a></li>
+  <li><a href="#rstudio-built-in-formatting" id="toc-rstudio-built-in-formatting" class="nav-link" data-scroll-target="#rstudio-built-in-formatting"><span class="header-section-number">6.9.1</span> RStudio Built-in Formatting</a></li>
+  <li><a href="#styler-package" id="toc-styler-package" class="nav-link" data-scroll-target="#styler-package"><span class="header-section-number">6.9.2</span> styler Package</a></li>
+  <li><a href="#lintr-package" id="toc-lintr-package" class="nav-link" data-scroll-target="#lintr-package"><span class="header-section-number">6.9.3</span> lintr Package</a></li>
   </ul></li>
-  <li><a href="#sec-documenting-code" id="toc-sec-documenting-code" class="nav-link" data-scroll-target="#sec-documenting-code"><span class="header-section-number">6.9</span> Documenting your code</a>
+  <li><a href="#sec-documenting-code" id="toc-sec-documenting-code" class="nav-link" data-scroll-target="#sec-documenting-code"><span class="header-section-number">6.10</span> Documenting your code</a>
   <ul class="collapse">
-  <li><a href="#function-headers" id="toc-function-headers" class="nav-link" data-scroll-target="#function-headers"><span class="header-section-number">6.9.1</span> Function headers</a></li>
-  <li><a href="#script-headers" id="toc-script-headers" class="nav-link" data-scroll-target="#script-headers"><span class="header-section-number">6.9.2</span> Script headers</a></li>
-  <li><a href="#sections-and-subsections" id="toc-sections-and-subsections" class="nav-link" data-scroll-target="#sections-and-subsections"><span class="header-section-number">6.9.3</span> Sections and subsections</a></li>
-  <li><a href="#code-folding" id="toc-code-folding" class="nav-link" data-scroll-target="#code-folding"><span class="header-section-number">6.9.4</span> Code folding</a></li>
-  <li><a href="#comments-in-the-body-of-your-code" id="toc-comments-in-the-body-of-your-code" class="nav-link" data-scroll-target="#comments-in-the-body-of-your-code"><span class="header-section-number">6.9.5</span> Comments in the body of your code</a></li>
+  <li><a href="#function-headers" id="toc-function-headers" class="nav-link" data-scroll-target="#function-headers"><span class="header-section-number">6.10.1</span> Function headers</a></li>
+  <li><a href="#script-headers" id="toc-script-headers" class="nav-link" data-scroll-target="#script-headers"><span class="header-section-number">6.10.2</span> Script headers</a></li>
+  <li><a href="#sections-and-subsections" id="toc-sections-and-subsections" class="nav-link" data-scroll-target="#sections-and-subsections"><span class="header-section-number">6.10.3</span> Sections and subsections</a></li>
+  <li><a href="#code-folding" id="toc-code-folding" class="nav-link" data-scroll-target="#code-folding"><span class="header-section-number">6.10.4</span> Code folding</a></li>
+  <li><a href="#comments-in-the-body-of-your-code" id="toc-comments-in-the-body-of-your-code" class="nav-link" data-scroll-target="#comments-in-the-body-of-your-code"><span class="header-section-number">6.10.5</span> Comments in the body of your code</a></li>
   </ul></li>
-  <li><a href="#object-naming" id="toc-object-naming" class="nav-link" data-scroll-target="#object-naming"><span class="header-section-number">6.10</span> Object naming</a></li>
-  <li><a href="#function-calls" id="toc-function-calls" class="nav-link" data-scroll-target="#function-calls"><span class="header-section-number">6.11</span> Function calls</a></li>
-  <li><a href="#sec-here-package-practices" id="toc-sec-here-package-practices" class="nav-link" data-scroll-target="#sec-here-package-practices"><span class="header-section-number">6.12</span> The here package</a></li>
-  <li><a href="#readingsaving-data" id="toc-readingsaving-data" class="nav-link" data-scroll-target="#readingsaving-data"><span class="header-section-number">6.13</span> Reading/Saving Data</a>
+  <li><a href="#object-naming" id="toc-object-naming" class="nav-link" data-scroll-target="#object-naming"><span class="header-section-number">6.11</span> Object naming</a></li>
+  <li><a href="#function-calls" id="toc-function-calls" class="nav-link" data-scroll-target="#function-calls"><span class="header-section-number">6.12</span> Function calls</a></li>
+  <li><a href="#sec-here-package-practices" id="toc-sec-here-package-practices" class="nav-link" data-scroll-target="#sec-here-package-practices"><span class="header-section-number">6.13</span> The here package</a></li>
+  <li><a href="#readingsaving-data" id="toc-readingsaving-data" class="nav-link" data-scroll-target="#readingsaving-data"><span class="header-section-number">6.14</span> Reading/Saving Data</a>
   <ul class="collapse">
-  <li><a href="#rds-vs-.rdata-files" id="toc-rds-vs-.rdata-files" class="nav-link" data-scroll-target="#rds-vs-.rdata-files"><span class="header-section-number">6.13.1</span> <code>.RDS</code> vs <code>.RData</code> Files</a></li>
-  <li><a href="#csvs" id="toc-csvs" class="nav-link" data-scroll-target="#csvs"><span class="header-section-number">6.13.2</span> CSVs</a></li>
+  <li><a href="#rds-vs-.rdata-files" id="toc-rds-vs-.rdata-files" class="nav-link" data-scroll-target="#rds-vs-.rdata-files"><span class="header-section-number">6.14.1</span> <code>.RDS</code> vs <code>.RData</code> Files</a></li>
+  <li><a href="#csvs" id="toc-csvs" class="nav-link" data-scroll-target="#csvs"><span class="header-section-number">6.14.2</span> CSVs</a></li>
   </ul></li>
-  <li><a href="#integrating-box-and-dropbox" id="toc-integrating-box-and-dropbox" class="nav-link" data-scroll-target="#integrating-box-and-dropbox"><span class="header-section-number">6.14</span> Integrating Box and Dropbox</a>
+  <li><a href="#integrating-box-and-dropbox" id="toc-integrating-box-and-dropbox" class="nav-link" data-scroll-target="#integrating-box-and-dropbox"><span class="header-section-number">6.15</span> Integrating Box and Dropbox</a>
   <ul class="collapse">
-  <li><a href="#box" id="toc-box" class="nav-link" data-scroll-target="#box"><span class="header-section-number">6.14.1</span> Box</a></li>
-  <li><a href="#dropbox" id="toc-dropbox" class="nav-link" data-scroll-target="#dropbox"><span class="header-section-number">6.14.2</span> Dropbox</a></li>
+  <li><a href="#box" id="toc-box" class="nav-link" data-scroll-target="#box"><span class="header-section-number">6.15.1</span> Box</a></li>
+  <li><a href="#dropbox" id="toc-dropbox" class="nav-link" data-scroll-target="#dropbox"><span class="header-section-number">6.15.2</span> Dropbox</a></li>
   </ul></li>
-  <li><a href="#sec-tidyverse" id="toc-sec-tidyverse" class="nav-link" data-scroll-target="#sec-tidyverse"><span class="header-section-number">6.15</span> Tidyverse</a></li>
-  <li><a href="#coding-with-r-and-python" id="toc-coding-with-r-and-python" class="nav-link" data-scroll-target="#coding-with-r-and-python"><span class="header-section-number">6.16</span> Coding with R and Python</a></li>
-  <li><a href="#repeating-analyses-with-different-variations" id="toc-repeating-analyses-with-different-variations" class="nav-link" data-scroll-target="#repeating-analyses-with-different-variations"><span class="header-section-number">6.17</span> Repeating analyses with different variations</a>
+  <li><a href="#sec-tidyverse" id="toc-sec-tidyverse" class="nav-link" data-scroll-target="#sec-tidyverse"><span class="header-section-number">6.16</span> Tidyverse</a></li>
+  <li><a href="#coding-with-r-and-python" id="toc-coding-with-r-and-python" class="nav-link" data-scroll-target="#coding-with-r-and-python"><span class="header-section-number">6.17</span> Coding with R and Python</a></li>
+  <li><a href="#repeating-analyses-with-different-variations" id="toc-repeating-analyses-with-different-variations" class="nav-link" data-scroll-target="#repeating-analyses-with-different-variations"><span class="header-section-number">6.18</span> Repeating analyses with different variations</a>
   <ul class="collapse">
-  <li><a href="#lapply-and-sapply-1" id="toc-lapply-and-sapply-1" class="nav-link" data-scroll-target="#lapply-and-sapply-1"><span class="header-section-number">6.17.1</span> <code>lapply()</code> and <code>sapply()</code></a></li>
-  <li><a href="#mapply-and-pmap" id="toc-mapply-and-pmap" class="nav-link" data-scroll-target="#mapply-and-pmap"><span class="header-section-number">6.17.2</span> <code>mapply()</code> and <code>pmap()</code></a></li>
-  <li><a href="#parallel-processing-with-parallel-and-future-packages" id="toc-parallel-processing-with-parallel-and-future-packages" class="nav-link" data-scroll-target="#parallel-processing-with-parallel-and-future-packages"><span class="header-section-number">6.17.3</span> Parallel processing with <code>parallel</code> and <code>future</code> packages</a></li>
+  <li><a href="#lapply-and-sapply-1" id="toc-lapply-and-sapply-1" class="nav-link" data-scroll-target="#lapply-and-sapply-1"><span class="header-section-number">6.18.1</span> <code>lapply()</code> and <code>sapply()</code></a></li>
+  <li><a href="#mapply-and-pmap" id="toc-mapply-and-pmap" class="nav-link" data-scroll-target="#mapply-and-pmap"><span class="header-section-number">6.18.2</span> <code>mapply()</code> and <code>pmap()</code></a></li>
+  <li><a href="#parallel-processing-with-parallel-and-future-packages" id="toc-parallel-processing-with-parallel-and-future-packages" class="nav-link" data-scroll-target="#parallel-processing-with-parallel-and-future-packages"><span class="header-section-number">6.18.3</span> Parallel processing with <code>parallel</code> and <code>future</code> packages</a></li>
   </ul></li>
-  <li><a href="#reviewing-code" id="toc-reviewing-code" class="nav-link" data-scroll-target="#reviewing-code"><span class="header-section-number">6.18</span> Reviewing Code</a></li>
-  <li><a href="#constructing-pull-requests" id="toc-constructing-pull-requests" class="nav-link" data-scroll-target="#constructing-pull-requests"><span class="header-section-number">6.19</span> Constructing Pull Requests</a>
+  <li><a href="#reviewing-code" id="toc-reviewing-code" class="nav-link" data-scroll-target="#reviewing-code"><span class="header-section-number">6.19</span> Reviewing Code</a></li>
+  <li><a href="#constructing-pull-requests" id="toc-constructing-pull-requests" class="nav-link" data-scroll-target="#constructing-pull-requests"><span class="header-section-number">6.20</span> Constructing Pull Requests</a>
   <ul class="collapse">
-  <li><a href="#write-focused-prs" id="toc-write-focused-prs" class="nav-link" data-scroll-target="#write-focused-prs"><span class="header-section-number">6.19.1</span> Write Focused PRs</a></li>
-  <li><a href="#writing-pr-descriptions" id="toc-writing-pr-descriptions" class="nav-link" data-scroll-target="#writing-pr-descriptions"><span class="header-section-number">6.19.2</span> Writing PR Descriptions</a></li>
-  <li><a href="#add-tests" id="toc-add-tests" class="nav-link" data-scroll-target="#add-tests"><span class="header-section-number">6.19.3</span> Add Tests</a></li>
-  <li><a href="#separate-out-refactorings" id="toc-separate-out-refactorings" class="nav-link" data-scroll-target="#separate-out-refactorings"><span class="header-section-number">6.19.4</span> Separate Out Refactorings</a></li>
+  <li><a href="#write-focused-prs" id="toc-write-focused-prs" class="nav-link" data-scroll-target="#write-focused-prs"><span class="header-section-number">6.20.1</span> Write Focused PRs</a></li>
+  <li><a href="#writing-pr-descriptions" id="toc-writing-pr-descriptions" class="nav-link" data-scroll-target="#writing-pr-descriptions"><span class="header-section-number">6.20.2</span> Writing PR Descriptions</a></li>
+  <li><a href="#add-tests" id="toc-add-tests" class="nav-link" data-scroll-target="#add-tests"><span class="header-section-number">6.20.3</span> Add Tests</a></li>
+  <li><a href="#separate-out-refactorings" id="toc-separate-out-refactorings" class="nav-link" data-scroll-target="#separate-out-refactorings"><span class="header-section-number">6.20.4</span> Separate Out Refactorings</a></li>
   </ul></li>
-  <li><a href="#reviewing-pull-requests" id="toc-reviewing-pull-requests" class="nav-link" data-scroll-target="#reviewing-pull-requests"><span class="header-section-number">6.20</span> Reviewing Pull Requests</a>
+  <li><a href="#reviewing-pull-requests" id="toc-reviewing-pull-requests" class="nav-link" data-scroll-target="#reviewing-pull-requests"><span class="header-section-number">6.21</span> Reviewing Pull Requests</a>
   <ul class="collapse">
-  <li><a href="#purpose-of-code-review" id="toc-purpose-of-code-review" class="nav-link" data-scroll-target="#purpose-of-code-review"><span class="header-section-number">6.20.1</span> Purpose of Code Review</a></li>
-  <li><a href="#writing-review-comments" id="toc-writing-review-comments" class="nav-link" data-scroll-target="#writing-review-comments"><span class="header-section-number">6.20.2</span> Writing Review Comments</a></li>
-  <li><a href="#mentoring-through-review" id="toc-mentoring-through-review" class="nav-link" data-scroll-target="#mentoring-through-review"><span class="header-section-number">6.20.3</span> Mentoring Through Review</a></li>
-  <li><a href="#giving-constructive-feedback" id="toc-giving-constructive-feedback" class="nav-link" data-scroll-target="#giving-constructive-feedback"><span class="header-section-number">6.20.4</span> Giving Constructive Feedback</a></li>
-  <li><a href="#ignoring-auto-generated-files" id="toc-ignoring-auto-generated-files" class="nav-link" data-scroll-target="#ignoring-auto-generated-files"><span class="header-section-number">6.20.5</span> Ignoring Auto-Generated Files</a></li>
-  <li><a href="#reviewing-copilot-generated-pull-requests" id="toc-reviewing-copilot-generated-pull-requests" class="nav-link" data-scroll-target="#reviewing-copilot-generated-pull-requests"><span class="header-section-number">6.20.6</span> Reviewing Copilot-Generated Pull Requests</a></li>
+  <li><a href="#purpose-of-code-review" id="toc-purpose-of-code-review" class="nav-link" data-scroll-target="#purpose-of-code-review"><span class="header-section-number">6.21.1</span> Purpose of Code Review</a></li>
+  <li><a href="#writing-review-comments" id="toc-writing-review-comments" class="nav-link" data-scroll-target="#writing-review-comments"><span class="header-section-number">6.21.2</span> Writing Review Comments</a></li>
+  <li><a href="#mentoring-through-review" id="toc-mentoring-through-review" class="nav-link" data-scroll-target="#mentoring-through-review"><span class="header-section-number">6.21.3</span> Mentoring Through Review</a></li>
+  <li><a href="#giving-constructive-feedback" id="toc-giving-constructive-feedback" class="nav-link" data-scroll-target="#giving-constructive-feedback"><span class="header-section-number">6.21.4</span> Giving Constructive Feedback</a></li>
+  <li><a href="#ignoring-auto-generated-files" id="toc-ignoring-auto-generated-files" class="nav-link" data-scroll-target="#ignoring-auto-generated-files"><span class="header-section-number">6.21.5</span> Ignoring Auto-Generated Files</a></li>
+  <li><a href="#reviewing-copilot-generated-pull-requests" id="toc-reviewing-copilot-generated-pull-requests" class="nav-link" data-scroll-target="#reviewing-copilot-generated-pull-requests"><span class="header-section-number">6.21.6</span> Reviewing Copilot-Generated Pull Requests</a></li>
   </ul></li>
-  <li><a href="#creating-a-pull-request-template" id="toc-creating-a-pull-request-template" class="nav-link" data-scroll-target="#creating-a-pull-request-template"><span class="header-section-number">6.21</span> Creating a Pull Request Template</a></li>
-  <li><a href="#sec-r-resources" id="toc-sec-r-resources" class="nav-link" data-scroll-target="#sec-r-resources"><span class="header-section-number">6.22</span> Additional Resources</a>
+  <li><a href="#creating-a-pull-request-template" id="toc-creating-a-pull-request-template" class="nav-link" data-scroll-target="#creating-a-pull-request-template"><span class="header-section-number">6.22</span> Creating a Pull Request Template</a></li>
+  <li><a href="#sec-r-resources" id="toc-sec-r-resources" class="nav-link" data-scroll-target="#sec-r-resources"><span class="header-section-number">6.23</span> Additional Resources</a>
   <ul class="collapse">
-  <li><a href="#r-package-development" id="toc-r-package-development" class="nav-link" data-scroll-target="#r-package-development"><span class="header-section-number">6.22.1</span> R Package Development</a></li>
-  <li><a href="#general-r-programming" id="toc-general-r-programming" class="nav-link" data-scroll-target="#general-r-programming"><span class="header-section-number">6.22.2</span> General R Programming</a></li>
-  <li><a href="#shiny-development" id="toc-shiny-development" class="nav-link" data-scroll-target="#shiny-development"><span class="header-section-number">6.22.3</span> Shiny Development</a></li>
-  <li><a href="#git-and-version-control" id="toc-git-and-version-control" class="nav-link" data-scroll-target="#git-and-version-control"><span class="header-section-number">6.22.4</span> Git and Version Control</a></li>
+  <li><a href="#r-package-development" id="toc-r-package-development" class="nav-link" data-scroll-target="#r-package-development"><span class="header-section-number">6.23.1</span> R Package Development</a></li>
+  <li><a href="#general-r-programming" id="toc-general-r-programming" class="nav-link" data-scroll-target="#general-r-programming"><span class="header-section-number">6.23.2</span> General R Programming</a></li>
+  <li><a href="#shiny-development" id="toc-shiny-development" class="nav-link" data-scroll-target="#shiny-development"><span class="header-section-number">6.23.3</span> Shiny Development</a></li>
+  <li><a href="#git-and-version-control" id="toc-git-and-version-control" class="nav-link" data-scroll-target="#git-and-version-control"><span class="header-section-number">6.23.4</span> Git and Version Control</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/coding-practices.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/coding-practices.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -656,7 +657,7 @@ window.Quarto = {
 <main class="content" id="quarto-document-content">
 <div class="preview-home-changes-banner">
     <p style="margin: 0;">
-        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="coding-style.html">7. &nbsp; <span class="chapter-title">R Code Style</span></span></a>, <a href="coding-practices.html">6. &nbsp; <span class="chapter-title">R Coding Practices</span></span></a>, <a href="appendix-copilot-instructions.html">appendix-copilot-instructions</a>, <a href="ai-tools.html">17. &nbsp; <span class="chapter-title">Working with AI</span></a>
+        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="coding-practices.html">6. &nbsp; <span class="chapter-title">R Coding Practices</span></span></a>
         <br>
         <strong>📄 DOCX with tracked changes:</strong> <a href="UCD-SeRG-Lab-Manual-tracked-changes.docx" download>Download UCD-SeRG-Lab-Manual-tracked-changes.docx</a>
         <br>
@@ -688,7 +689,7 @@ window.Quarto = {
 
 <div class="preview-combined-banner">
     <p style="margin: 0;">
-        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~21% of content changed).
+        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~2% of content changed).
         <br>
         <strong>🎨 Highlighting Legend:</strong> 
         <mark class="preview-text-changed" style="display: inline; padding: 1px 3px;">Modified text (yellow)</mark> shows changed words/phrases with tooltips of original text, 
@@ -1058,18 +1059,26 @@ test_that("prep_study_data produces expected structure", {
 <section id="news-file" class="level3" data-number="6.6.2">
 <h3 data-number="6.6.2" class="anchored" data-anchor-id="news-file"><span class="header-section-number">6.6.2</span> NEWS File</h3>
 <p>Document all user-facing changes in <code>NEWS.md</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu"><mark class="preview-text-added"># myproject 0.2.0</mark></span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># myproject 0.2.0</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="fu"><mark class="preview-text-added">## Continuous Integration {#sec-r-ci}</mark></span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><mark class="preview-text-added">Set up automated checks using GitHub Actions:</mark></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## New features</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Added function for data validation</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Improved error messages</span>
 <span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="in"><mark class="preview-text-added">```r</mark></span></span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Add standard R package CI workflows</span></span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github_action</span>(<span class="st">"check-standard"</span>)    <span class="co"># R CMD check</span></span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github_action</span>(<span class="st">"test-coverage"</span>)     <span class="co"># Code coverage</span></span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github_action</span>(<span class="st">"pkgdown"</span>)           <span class="co"># Deploy website</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="fu">## Bug fixes</span></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Fixed issue with missing values</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Corrected calculation error in summary stats</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="sec-r-ci" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="sec-r-ci"><span class="header-section-number">6.7</span> Continuous Integration</h2>
+<p>Set up automated checks using GitHub Actions:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add standard R package CI workflows</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github_action</span>(<span class="st">"check-standard"</span>)    <span class="co"># R CMD check</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github_action</span>(<span class="st">"test-coverage"</span>)     <span class="co"># Code coverage</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github_action</span>(<span class="st">"pkgdown"</span>)           <span class="co"># Deploy website</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>These workflows automatically:</p>
 <ul>
 <li>Run R CMD check on multiple platforms (Linux, macOS, Windows)</li>
@@ -1078,9 +1087,8 @@ test_that("prep_study_data produces expected structure", {
 <li>Ensure code quality before merging</li>
 </ul>
 </section>
-</section>
-<section id="sec-r-qa-checklist" class="level2" data-number="6.7">
-<h2 data-number="6.7" class="anchored" data-anchor-id="sec-r-qa-checklist"><span class="header-section-number"><mark class="preview-text-changed">6.7</mark></span> Quality Assurance Checklist</h2>
+<section id="sec-r-qa-checklist" class="level2" data-number="6.8">
+<h2 data-number="6.8" class="anchored" data-anchor-id="sec-r-qa-checklist"><span class="header-section-number">6.8</span> Quality Assurance Checklist</h2>
 <p>Before submitting a pull request or finalizing analysis, verify:</p>
 <ul class="task-list">
 <li><label><input type="checkbox">All functions have complete roxygen2 documentation</label></li>
@@ -1097,38 +1105,38 @@ test_that("prep_study_data produces expected structure", {
 <li><label><input type="checkbox">All changes committed and pushed to GitHub</label></li>
 </ul>
 </section>
-<section id="sec-auto-styling" class="level2" data-number="6.8">
-<h2 data-number="6.8" class="anchored" data-anchor-id="sec-auto-styling"><span class="header-section-number"><mark class="preview-text-changed">6.8</mark></span> Automated Code Styling</h2>
-<section id="rstudio-built-in-formatting" class="level3" data-number="6.8.1">
-<h3 data-number="6.8.1" class="anchored" data-anchor-id="rstudio-built-in-formatting"><span class="header-section-number"><mark class="preview-text-changed">6.8.1</mark></span> RStudio Built-in Formatting</h3>
+<section id="sec-auto-styling" class="level2" data-number="6.9">
+<h2 data-number="6.9" class="anchored" data-anchor-id="sec-auto-styling"><span class="header-section-number">6.9</span> Automated Code Styling</h2>
+<section id="rstudio-built-in-formatting" class="level3" data-number="6.9.1">
+<h3 data-number="6.9.1" class="anchored" data-anchor-id="rstudio-built-in-formatting"><span class="header-section-number">6.9.1</span> RStudio Built-in Formatting</h3>
 <p>Use RStudio’s built-in autoformatter (keyboard shortcut: <code>CMD-Shift-A</code> or <code>Ctrl-Shift-A</code>) to quickly format highlighted code.</p>
 </section>
-<section id="styler-package" class="level3" data-number="6.8.2">
-<h3 data-number="6.8.2" class="anchored" data-anchor-id="styler-package"><span class="header-section-number"><mark class="preview-text-changed">6.8.2</mark></span> styler Package</h3>
+<section id="styler-package" class="level3" data-number="6.9.2">
+<h3 data-number="6.9.2" class="anchored" data-anchor-id="styler-package"><span class="header-section-number">6.9.2</span> styler Package</h3>
 <p>For automated styling of entire projects:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install styler</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"styler"</span>)</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Style all files in R/ directory</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>styler<span class="sc">::</span><span class="fu">style_dir</span>(<span class="st">"R/"</span>)</span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Style entire package</span></span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>styler<span class="sc">::</span><span class="fu">style_pkg</span>()</span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Note: styler modifies files in-place</span></span>
-<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Always use with version control so you can review changes</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="lintr-package" class="level3" data-number="6.8.3">
-<h3 data-number="6.8.3" class="anchored" data-anchor-id="lintr-package"><span class="header-section-number">6.8.3</span> lintr Package</h3>
-<p>For checking code style without modifying files:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install lintr</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"lintr"</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install styler</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"styler"</span>)</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Lint the entire package</span></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>lintr<span class="sc">::</span><span class="fu">lint_package</span>()</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Style all files in R/ directory</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>styler<span class="sc">::</span><span class="fu">style_dir</span>(<span class="st">"R/"</span>)</span>
 <span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Lint a specific file</span></span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>lintr<span class="sc">::</span><span class="fu">lint</span>(<span class="st">"R/my_function.R"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Style entire package</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>styler<span class="sc">::</span><span class="fu">style_pkg</span>()</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Note: styler modifies files in-place</span></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Always use with version control so you can review changes</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="lintr-package" class="level3" data-number="6.9.3">
+<h3 data-number="6.9.3" class="anchored" data-anchor-id="lintr-package"><span class="header-section-number">6.9.3</span> lintr Package</h3>
+<p>For checking code style without modifying files:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install lintr</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"lintr"</span>)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Lint the entire package</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>lintr<span class="sc">::</span><span class="fu">lint_package</span>()</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Lint a specific file</span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>lintr<span class="sc">::</span><span class="fu">lint</span>(<span class="st">"R/my_function.R"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The linter checks for:</p>
 <ul>
 <li>Unused variables</li>
@@ -1137,36 +1145,36 @@ test_that("prep_study_data produces expected structure", {
 <li>Style guide violations</li>
 </ul>
 <p>You can customize linting rules by creating a <code>.lintr</code> file in your project root.</p>
-<p>See also <a href="coding-style.html#sec-style-auto-style" class="quarto-xref" preview-toc-changed><span>Section 7.11</span></a>.</p>
+<p>See also <a href="coding-style.html#sec-style-auto-style" class="quarto-xref"><span>Section 7.11</span></a>.</p>
 </section>
 </section>
-<section id="sec-documenting-code" class="level2" data-number="6.9">
-<h2 data-number="6.9" class="anchored" data-anchor-id="sec-documenting-code"><span class="header-section-number"><mark class="preview-text-changed">6.9</mark></span> Documenting your code</h2>
-<section id="function-headers" class="level3" data-number="6.9.1">
-<h3 data-number="6.9.1" class="anchored" data-anchor-id="function-headers"><span class="header-section-number"><mark class="preview-text-changed">6.9.1</mark></span> Function headers</h3>
+<section id="sec-documenting-code" class="level2" data-number="6.10">
+<h2 data-number="6.10" class="anchored" data-anchor-id="sec-documenting-code"><span class="header-section-number">6.10</span> Documenting your code</h2>
+<section id="function-headers" class="level3" data-number="6.10.1">
+<h3 data-number="6.10.1" class="anchored" data-anchor-id="function-headers"><span class="header-section-number">6.10.1</span> Function headers</h3>
 <p>Every function you write must include documentation to describe its purpose, inputs, and outputs. For any reproducible workflows, this is essential, because R is dynamically typed. This means you can pass a <code>string</code> into an argument that is meant to be a <code>data.table</code>, or a <code>list</code> into an argument meant for a <code>tibble</code>. It is the responsibility of a function’s author to document what each argument is meant to do and its basic type.</p>
 <p>We use <a href="https://roxygen2.r-lib.org/"><code>{roxygen2}</code></a> <span class="citation" data-cites="R-roxygen2">(<a href="references.html#ref-R-roxygen2" role="doc-biblioref">Wickham et al. 2024</a>)</span> for function documentation. Roxygen2 allows you to describe your functions in special comments next to their definitions, and automatically generates R documentation files (<code>.Rd</code> files) and helps manage your package <code>NAMESPACE</code>. The roxygen2 format uses <code>#'</code> comments placed immediately before the function definition.</p>
 <p>Here is an example of documenting a function using roxygen2:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">#' Calculate flu season means by site</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co">#' Make a dataframe with rows for flu season and site</span></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co">#' containing the number of patients with an outcome, the total patients,</span></span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="co">#' and the percent of patients with the outcome.</span></span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param data A data frame with variables flu_season, site, studyID, and yname</span></span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param yname A string for the outcome name</span></span>
-<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param silent A boolean specifying whether to suppress console output </span></span>
-<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="co">#'   (default: TRUE)</span></span>
-<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
-<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a><span class="co">#' @returns A dataframe as described above</span></span>
-<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
-<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a><span class="co">#' @examples</span></span>
-<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a><span class="co">#' calc_fluseas_mean(my_data, "hospitalized", silent = FALSE)</span></span>
-<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
-<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>calc_fluseas_mean <span class="ot">&lt;-</span> <span class="cf">function</span>(data, yname, <span class="at">silent =</span> <span class="cn">TRUE</span>) {</span>
-<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>  <span class="do">### function code here</span></span>
-<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">#' Calculate flu season means by site</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="co">#' Make a dataframe with rows for flu season and site</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co">#' containing the number of patients with an outcome, the total patients,</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="co">#' and the percent of patients with the outcome.</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param data A data frame with variables flu_season, site, studyID, and yname</span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param yname A string for the outcome name</span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param silent A boolean specifying whether to suppress console output </span></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="co">#'   (default: TRUE)</span></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a><span class="co">#' @returns A dataframe as described above</span></span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a><span class="co">#' @examples</span></span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a><span class="co">#' calc_fluseas_mean(my_data, "hospitalized", silent = FALSE)</span></span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>calc_fluseas_mean <span class="ot">&lt;-</span> <span class="cf">function</span>(data, yname, <span class="at">silent =</span> <span class="cn">TRUE</span>) {</span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>  <span class="do">### function code here</span></span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The roxygen2 header tells you what the function does, its various inputs, and how you might use it. Also notice that all optional arguments (i.e.&nbsp;ones with pre-specified defaults) follow arguments that require user input.</p>
 <p>For more information on roxygen2 syntax and features, see <a href="https://roxygen2.r-lib.org/" class="uri">https://roxygen2.r-lib.org/</a>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -1196,8 +1204,8 @@ Note
 </div>
 </div>
 </section>
-<section id="script-headers" class="level3" data-number="6.9.2">
-<h3 data-number="6.9.2" class="anchored" data-anchor-id="script-headers"><span class="header-section-number"><mark class="preview-text-changed">6.9.2</mark></span> Script headers</h3>
+<section id="script-headers" class="level3" data-number="6.10.2">
+<h3 data-number="6.10.2" class="anchored" data-anchor-id="script-headers"><span class="header-section-number">6.10.2</span> Script headers</h3>
 <p>Every file in a project that doesn’t have roxygen function documentation should at least have a header that allows it to be interpreted on its own. It should include the name of the project and a short description for what this file (among the many in your project) does specifically. You may optionally wish to include the inputs and outputs of the script as well, though the next section makes this significantly less necessary.</p>
 <pre><code>################################################################################
 # @Organization - Example Organization
@@ -1206,8 +1214,8 @@ Note
 ################################################################################
 </code></pre>
 </section>
-<section id="sections-and-subsections" class="level3" data-number="6.9.3">
-<h3 data-number="6.9.3" class="anchored" data-anchor-id="sections-and-subsections"><span class="header-section-number">6.9.3</span> Sections and subsections</h3>
+<section id="sections-and-subsections" class="level3" data-number="6.10.3">
+<h3 data-number="6.10.3" class="anchored" data-anchor-id="sections-and-subsections"><span class="header-section-number">6.10.3</span> Sections and subsections</h3>
 <p>Rstudio (<a href="https://blog.rstudio.com/2020/12/02/rstudio-v1-4-preview-little-things/">v1.4 or more recent</a>) supports the use of Sections and Subsections. You can easily navigate through longer scripts using the navigation pane in RStudio, as shown on the right below.</p>
 <pre><code># Section -------
 
@@ -1215,19 +1223,19 @@ Note
 
 ### Sub-subsection -------</code></pre>
 </section>
-<section id="code-folding" class="level3" data-number="6.9.4">
-<h3 data-number="6.9.4" class="anchored" data-anchor-id="code-folding"><span class="header-section-number"><mark class="preview-text-changed">6.9.4</mark></span> Code folding</h3>
+<section id="code-folding" class="level3" data-number="6.10.4">
+<h3 data-number="6.10.4" class="anchored" data-anchor-id="code-folding"><span class="header-section-number">6.10.4</span> Code folding</h3>
 <p>Consider using RStudio’s <a href="https://support.rstudio.com/hc/en-us/articles/200484568-Code-Folding-and-Sections">code folding</a> feature to collapse and expand different sections of your code. Any comment line with at least four trailing dashes (-), equal signs (=), or pound signs (#) automatically creates a code section. For example:</p>
 </section>
-<section id="comments-in-the-body-of-your-code" class="level3" data-number="6.9.5">
-<h3 data-number="6.9.5" class="anchored" data-anchor-id="comments-in-the-body-of-your-code"><span class="header-section-number"><mark class="preview-text-changed">6.9.5</mark></span> Comments in the body of your code</h3>
+<section id="comments-in-the-body-of-your-code" class="level3" data-number="6.10.5">
+<h3 data-number="6.10.5" class="anchored" data-anchor-id="comments-in-the-body-of-your-code"><span class="header-section-number">6.10.5</span> Comments in the body of your code</h3>
 <p>Commenting your code is an important part of reproducibility and helps document your code for the future. When things change or break, you’ll be thankful for comments. There’s no need to comment excessively or unnecessarily, but a comment describing what a large or complex chunk of code does is always helpful. See <a href="https://github.com/kmishra9/Flu-Absenteeism/blob/master/Master's%20Thesis%20-%20Spatial%20Epidemiology%20of%20Influenza/1b%20-%20Map-Management.R">this file</a> for an example of how to comment your code and notice that comments are always in the form of:</p>
 <pre><code># This is a comment -- first letter is capitalized and spaced away from the pound sign</code></pre>
-<p><em>See also <a href="coding-style.html#sec-function-docs" class="quarto-xref" preview-toc-changed><span>Section 7.2</span></a> for function documentation style guidelines.</em></p>
+<p><em>See also <a href="coding-style.html#sec-function-docs" class="quarto-xref"><span>Section 7.2</span></a> for function documentation style guidelines.</em></p>
 </section>
 </section>
-<section id="object-naming" class="level2" data-number="6.10">
-<h2 data-number="6.10" class="anchored" data-anchor-id="object-naming"><span class="header-section-number"><mark class="preview-text-changed">6.10</mark></span> Object naming</h2>
+<section id="object-naming" class="level2" data-number="6.11">
+<h2 data-number="6.11" class="anchored" data-anchor-id="object-naming"><span class="header-section-number">6.11</span> Object naming</h2>
 <p>Generally we recommend using nouns for objects and verbs for functions. This is because functions are performing actions, while objects are not.</p>
 <p>Try to make your variable names both more expressive and more explicit. Being a bit more verbose is useful and easy in the age of autocompletion! For example, instead of naming a variable <code>vaxcov_1718</code>, try naming it <code>vaccination_coverage_2017_18</code>. Similarly, <code>flu_res</code> could be named <code>absentee_flu_residuals</code>, making your code more readable and explicit.</p>
 <ul>
@@ -1263,10 +1271,10 @@ Note
 <p>Again, it’s also worth noting there’s nothing inherently wrong with using <code>.</code> in variable names, just that it goes against style best practices that are cropping up in data science, so it’s worth getting rid of these bad habits now.</p>
 </div>
 </div>
-<p>See also <a href="coding-style.html#sec-object-naming" class="quarto-xref" preview-toc-changed><span>Section 7.10</span></a>.</p>
+<p>See also <a href="coding-style.html#sec-object-naming" class="quarto-xref"><span>Section 7.10</span></a>.</p>
 </section>
-<section id="function-calls" class="level2" data-number="6.11">
-<h2 data-number="6.11" class="anchored" data-anchor-id="function-calls"><span class="header-section-number"><mark class="preview-text-changed">6.11</mark></span> Function calls</h2>
+<section id="function-calls" class="level2" data-number="6.12">
+<h2 data-number="6.12" class="anchored" data-anchor-id="function-calls"><span class="header-section-number">6.12</span> Function calls</h2>
 <p>In a function call, use “named arguments” and put each argument on a separate line to make your code more readable.</p>
 <p>Here’s an example of what not to do when calling the function a function <code>calc_fluseas_mean</code> (defined above):</p>
 <pre><code>mean_Y = calc_fluseas_mean(flu_data, "maari_yn", FALSE)</code></pre>
@@ -1277,15 +1285,15 @@ Note
   silent = FALSE
 )</code></pre>
 </section>
-<section id="sec-here-package-practices" class="level2" data-number="6.12">
-<h2 data-number="6.12" class="anchored" data-anchor-id="sec-here-package-practices"><span class="header-section-number">6.12</span> The here package</h2>
+<section id="sec-here-package-practices" class="level2" data-number="6.13">
+<h2 data-number="6.13" class="anchored" data-anchor-id="sec-here-package-practices"><span class="header-section-number">6.13</span> The here package</h2>
 <p>The <code>here</code> package is one great R package that helps multiple collaborators deal with the mess that is working directories within an R project structure. Let’s say we have an R project at the path <code>/home/oski/Some-R-Project</code>. My collaborator might clone the repository and work with it at some other path, such as <code>/home/bear/R-Code/Some-R-Project</code>. Dealing with working directories and paths explicitly can be a very large pain, and as you might imagine, setting up a Config with paths requires those paths to flexibly work for all contributors to a project. This is where the <code>here</code> package comes in and this a <a href="https://github.com/jennybc/here_here">great vignette describing it</a>.</p>
-<p><em>See also <a href="coding-style.html#sec-here-package-style" class="quarto-xref" preview-toc-changed><span>Section 7.9</span></a> for code style guidelines on using the here package.</em></p>
+<p><em>See also <a href="coding-style.html#sec-here-package-style" class="quarto-xref"><span>Section 7.9</span></a> for code style guidelines on using the here package.</em></p>
 </section>
-<section id="readingsaving-data" class="level2" data-number="6.13">
-<h2 data-number="6.13" class="anchored" data-anchor-id="readingsaving-data"><span class="header-section-number"><mark class="preview-text-changed">6.13</mark></span> Reading/Saving Data</h2>
-<section id="rds-vs-.rdata-files" class="level3" data-number="6.13.1">
-<h3 data-number="6.13.1" class="anchored" data-anchor-id="rds-vs-.rdata-files"><span class="header-section-number"><mark class="preview-text-changed">6.13.1</mark></span> <code>.RDS</code> vs <code>.RData</code> Files</h3>
+<section id="readingsaving-data" class="level2" data-number="6.14">
+<h2 data-number="6.14" class="anchored" data-anchor-id="readingsaving-data"><span class="header-section-number">6.14</span> Reading/Saving Data</h2>
+<section id="rds-vs-.rdata-files" class="level3" data-number="6.14.1">
+<h3 data-number="6.14.1" class="anchored" data-anchor-id="rds-vs-.rdata-files"><span class="header-section-number">6.14.1</span> <code>.RDS</code> vs <code>.RData</code> Files</h3>
 <p>One of the most common ways to load and save data in Base R is with the <code>load()</code> and <code>save()</code> functions to serialize multiple objects in a single <code>.RData</code> file. The biggest problems with this practice include an inability to control the names of things getting loaded in, the inherent confusion this creates in understanding older code, and the inability to load individual elements of a saved file. For this, we recommend using the RDS format to save R objects.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1301,23 +1309,23 @@ Note
 </div>
 </div>
 </section>
-<section id="csvs" class="level3" data-number="6.13.2">
-<h3 data-number="6.13.2" class="anchored" data-anchor-id="csvs"><span class="header-section-number"><mark class="preview-text-changed">6.13.2</mark></span> CSVs</h3>
+<section id="csvs" class="level3" data-number="6.14.2">
+<h3 data-number="6.14.2" class="anchored" data-anchor-id="csvs"><span class="header-section-number">6.14.2</span> CSVs</h3>
 <p>Once again, the <code>readr</code> package as part of the Tidvyerse is great, with a much faster <code>read_csv()</code> than Base R’s <code>read.csv()</code>. For massive CSVs (&gt; 5 GB), you’ll find <code>data.table::fread()</code> to be the fastest CSV reader in any data science language out there. For writing CSVs, <code>readr::write_csv()</code> and <code>data.table::fwrite()</code> outclass Base R’s <code>write.csv()</code> by a significant margin as well.</p>
 </section>
 </section>
-<section id="integrating-box-and-dropbox" class="level2" data-number="6.14">
-<h2 data-number="6.14" class="anchored" data-anchor-id="integrating-box-and-dropbox"><span class="header-section-number"><mark class="preview-text-changed">6.14</mark></span> Integrating Box and Dropbox</h2>
+<section id="integrating-box-and-dropbox" class="level2" data-number="6.15">
+<h2 data-number="6.15" class="anchored" data-anchor-id="integrating-box-and-dropbox"><span class="header-section-number">6.15</span> Integrating Box and Dropbox</h2>
 <p>Box and Dropbox are cloud-based file sharing systems that are useful when dealing with large files. When our scripts generate large output files, the files can slow down the workflow if they are pushed to GitHub. This makes collaboration difficult when not everyone has a copy of the file, unless we decide to duplicate files and share them manually. The files might also take up a lot of local storage. Box and Dropbox help us avoid these issues by automatically storing the files, reading data, and writing data back to the cloud.</p>
 <p>Box and Dropbox are separate platforms, but we can use either one to store and share files. To use them, we can install the packages that have been created to integrate Box and Dropbox into R. The set-up instructions are detailed below.</p>
 <p>Make sure to authenticate before reading and writing from either Box or Dropbox. The authentication commands should go in the configuration file; it only needs to be done once. This will prompt you to give your login credentials for Box and Dropbox and will allow your application to access your shared folders.</p>
-<section id="box" class="level3" data-number="6.14.1">
-<h3 data-number="6.14.1" class="anchored" data-anchor-id="box"><span class="header-section-number"><mark class="preview-text-changed">6.14.1</mark></span> Box</h3>
+<section id="box" class="level3" data-number="6.15.1">
+<h3 data-number="6.15.1" class="anchored" data-anchor-id="box"><span class="header-section-number">6.15.1</span> Box</h3>
 <p>Follow the instructions in this section to use the <code>boxr</code> package. Note that there are a few setup steps that need to be done on the box website before you can use the <code>boxr</code> package, <a href="https://r-box.github.io/boxr/articles/boxr-app-interactive.html#create">explained here</a> in the section “Creating an Interactive App.” This gets the authentication keys that must be put in box. Once that is done, add the authentication keys to your code in the configuration file, with <code>box_auth(client_id = "&lt;your_client_id&gt;", client_secret = "&lt;your_client_secret_id&gt;")</code>. It is also important to set the default working directory so that the code can reference the correct folder in box: <code>box_setwd(&lt;folder_id&gt;)</code>. The folder ID is the sequence of digits at the end of the URL.</p>
 <p>Further details can be found <a href="https://github.com/r-box/boxr">here</a>.</p>
 </section>
-<section id="dropbox" class="level3" data-number="6.14.2">
-<h3 data-number="6.14.2" class="anchored" data-anchor-id="dropbox"><span class="header-section-number"><mark class="preview-text-changed">6.14.2</mark></span> Dropbox</h3>
+<section id="dropbox" class="level3" data-number="6.15.2">
+<h3 data-number="6.15.2" class="anchored" data-anchor-id="dropbox"><span class="header-section-number">6.15.2</span> Dropbox</h3>
 <p>Follow the instructions at <a href="https://github.com/karthik/rdrop2">this link</a> to use the <code>rdrop2</code> package. Similar to the <code>boxr</code> package, you must authenticate before reading and writing from Dropbox, which can be done by adding <code>drop_auth()</code> to the configuration file.</p>
 <p>Saving the authentication token is not required, although it may be useful if you plan on using Dropbox frequently. To do so, save the token with the following commands. Tokens are valid until they are manually revoked.</p>
 <pre><code># first time only
@@ -1332,8 +1340,8 @@ drop_auth(rdstoken = "/path/to/tokenfile.RDS")
 </code></pre>
 </section>
 </section>
-<section id="sec-tidyverse" class="level2" data-number="6.15">
-<h2 data-number="6.15" class="anchored" data-anchor-id="sec-tidyverse"><span class="header-section-number">6.15</span> Tidyverse</h2>
+<section id="sec-tidyverse" class="level2" data-number="6.16">
+<h2 data-number="6.16" class="anchored" data-anchor-id="sec-tidyverse"><span class="header-section-number">6.16</span> Tidyverse</h2>
 <p>Throughout this document there have been references to the Tidyverse, but this section is to explicitly show you how to transform your Base R tendencies to Tidyverse (or Data.Table, Tidyverse’s performance-optimized competitor). For most of our work that does not utilize very large datasets, we recommend that you code in Tidyverse rather than Base R. Tidyverse is quickly becoming <a href="https://rviews.rstudio.com/2017/06/08/what-is-the-tidyverse/">the gold standard</a> in R data analysis and modern data science packages and code should use Tidyverse style and packages unless there’s a significant reason not to (i.e.&nbsp;big data pipelines that would benefit from Data.Table’s performance optimizations).</p>
 <p>The package author has published R for Data Science <span class="citation" data-cites="wickham2023r4ds">(<a href="references.html#ref-wickham2023r4ds" role="doc-biblioref">Wickham, Çetinkaya-Rundel, and Grolemund 2023</a>)</span>, which leans heavily on many Tidyverse packages and may be worth checking out.</p>
 <p>The following list is not exhaustive, but is a compact overview to begin to translate Base R into something better:</p>
@@ -1457,24 +1465,24 @@ drop_auth(rdstoken = "/path/to/tokenfile.RDS")
 <li><a href="https://stackoverflow.com/questions/28125816/r-standard-evaluation-for-join-dplyr">Standard Evaluation for *_join</a> (stackoverflow)</li>
 <li><a href="https://dplyr.tidyverse.org/articles/programming.html">Programming with dplyr</a> (package vignette)</li>
 </ul>
-<p>See also <a href="coding-style.html#sec-tidyverse-replacements" class="quarto-xref" preview-toc-changed><span>Section 7.8</span></a></p>
+<p>See also <a href="coding-style.html#sec-tidyverse-replacements" class="quarto-xref"><span>Section 7.8</span></a></p>
 </section>
-<section id="coding-with-r-and-python" class="level2" data-number="6.16">
-<h2 data-number="6.16" class="anchored" data-anchor-id="coding-with-r-and-python"><span class="header-section-number"><mark class="preview-text-changed">6.16</mark></span> Coding with R and Python</h2>
+<section id="coding-with-r-and-python" class="level2" data-number="6.17">
+<h2 data-number="6.17" class="anchored" data-anchor-id="coding-with-r-and-python"><span class="header-section-number">6.17</span> Coding with R and Python</h2>
 <p>If you’re using both R and Python, you may wish to check out the <a href="https://www.rdocumentation.org/packages/feather/versions/0.3.3">Feather package</a> for exchanging data between the two languages <a href="https://blog.rstudio.com/2016/03/29/feather/">extremely quickly</a>.</p>
 </section>
-<section id="repeating-analyses-with-different-variations" class="level2" data-number="6.17">
-<h2 data-number="6.17" class="anchored" data-anchor-id="repeating-analyses-with-different-variations"><span class="header-section-number"><mark class="preview-text-changed">6.17</mark></span> Repeating analyses with different variations</h2>
+<section id="repeating-analyses-with-different-variations" class="level2" data-number="6.18">
+<h2 data-number="6.18" class="anchored" data-anchor-id="repeating-analyses-with-different-variations"><span class="header-section-number">6.18</span> Repeating analyses with different variations</h2>
 <p>In many cases, we will need to apply our modeling on different combinations of interests (outcomes, exposures, etc.). We can certainly use a <code>for</code> loop to repeat the execution of a wrapper function, but generally, <code>for</code> loops request high memory usage and produce the results in long computation time.</p>
 <p>Fortunately, R has some functions which implement looping in a compact form to help repeating your analyses with different variations (subgroups, outcomes, covariate sets, etc.) with better performances.</p>
-<section id="lapply-and-sapply-1" class="level3" data-number="6.17.1">
-<h3 data-number="6.17.1" class="anchored" data-anchor-id="lapply-and-sapply-1"><span class="header-section-number"><mark class="preview-text-changed">6.17.1</mark></span> <code>lapply()</code> and <code>sapply()</code></h3>
+<section id="lapply-and-sapply-1" class="level3" data-number="6.18.1">
+<h3 data-number="6.18.1" class="anchored" data-anchor-id="lapply-and-sapply-1"><span class="header-section-number">6.18.1</span> <code>lapply()</code> and <code>sapply()</code></h3>
 <p><code>lapply()</code> is a function in the base R package that applies a function to each element of a list and returns a list. It’s typically faster than <code>for</code>. Here is a simple generic example:</p>
 <pre><code>result &lt;- lapply(X = mylist, FUN = func)</code></pre>
 <p>There is another very similar function called <code>sapply()</code>. It also takes a list as its input, but if the output of the <code>func</code> is of the same length for each element in the input list, then <code>sapply()</code> will simplify the output to the simplest data structure possible, which will usually be a vector.</p>
 </section>
-<section id="mapply-and-pmap" class="level3" data-number="6.17.2">
-<h3 data-number="6.17.2" class="anchored" data-anchor-id="mapply-and-pmap"><span class="header-section-number"><mark class="preview-text-changed">6.17.2</mark></span> <code>mapply()</code> and <code>pmap()</code></h3>
+<section id="mapply-and-pmap" class="level3" data-number="6.18.2">
+<h3 data-number="6.18.2" class="anchored" data-anchor-id="mapply-and-pmap"><span class="header-section-number">6.18.2</span> <code>mapply()</code> and <code>pmap()</code></h3>
 <p>Sometimes, we’d like to employ a wrapper function that takes arguments from multiple different lists/vectors. Then, we can consider using <code>mapply()</code> from the base R package or <code>pmap()</code> from the <code>purrr</code> package.</p>
 <p>Please see the simple specific example below where the two input lists are of the same length and we are doing a pairwise calculation:</p>
 <pre><code>mylist1 = list(0:3)
@@ -1516,13 +1524,13 @@ for (i in seq_along(mylist1[[1]])) {
 <p>This example doesn’t work in the way that 0 is paired to 6, 1 is paired to 7, and so on. Instead, every element in <code>mylist1</code> will be paired with every element in <code>mylist2</code>. Thus, the “unlisted” results from the example will have <span class="math inline">\(4*7 = 28\)</span> elements.</p>
 <p>We can use <code>flatten()</code> or <code>unlist()</code> functions to decrease the depths of our results. If the results are data frames, then we will need to use <code>bind_rows()</code> to combine them.</p>
 </section>
-<section id="parallel-processing-with-parallel-and-future-packages" class="level3" data-number="6.17.3">
-<h3 data-number="6.17.3" class="anchored" data-anchor-id="parallel-processing-with-parallel-and-future-packages"><span class="header-section-number"><mark class="preview-text-changed">6.17.3</mark></span> Parallel processing with <code>parallel</code> and <code>future</code> packages</h3>
+<section id="parallel-processing-with-parallel-and-future-packages" class="level3" data-number="6.18.3">
+<h3 data-number="6.18.3" class="anchored" data-anchor-id="parallel-processing-with-parallel-and-future-packages"><span class="header-section-number">6.18.3</span> Parallel processing with <code>parallel</code> and <code>future</code> packages</h3>
 <p>One big drawback of <code>lapply()</code> is its long computation time, especially when the list length is long. Fortunately, computers nowadays must have multiple cores which makes parallel processing possible to help make computation much faster.</p>
 <p>Assume you have a list called <code>mylist</code> of length 1000, and <code>lapply(X = mylist, FUN = func)</code> applies the function to each of the 1000 elements one by one in <span class="math inline">\(T\)</span> seconds. If we could execute the <code>func</code> in <span class="math inline">\(n\)</span> processors simultaneously, then ideally, we would shrink the computation time to <span class="math inline">\(T/n\)</span> seconds.</p>
 <p>In practice, using functions under the <code>parallel</code> and the <code>future</code> packages, we can split <code>mylist</code> into smaller chunks and apply the function to each element of the several chunks in parallel in different cores to significantly reduce the run time.</p>
-<section id="parlapply" class="level4" data-number="6.17.3.1">
-<h4 data-number="6.17.3.1" class="anchored" data-anchor-id="parlapply"><span class="header-section-number"><mark class="preview-text-changed">6.17.3.1</mark></span> <code>parLapply()</code></h4>
+<section id="parlapply" class="level4" data-number="6.18.3.1">
+<h4 data-number="6.18.3.1" class="anchored" data-anchor-id="parlapply"><span class="header-section-number">6.18.3.1</span> <code>parLapply()</code></h4>
 <p>Below is a generic example of <code>parLapply()</code>:</p>
 <pre><code>library(parallel)
 
@@ -1539,8 +1547,8 @@ stopCluster(cl)</code></pre>
 <p>You can use <code>parallel::detectCores()</code> to test how many cores your machine has and to help decide what to put for <code>n_cores</code>. It would be a good idea to leave at least one core free for the operating system to use.</p>
 <p>We will always start <code>parLapply()</code> with <code>makeCluster()</code>. <strong><code>stopCluster()</code> is not fully necessary but follows the best practices.</strong> If not stopped, the processing will continue in the back end and consuming the computation capacity for other software in your machine. But keep in mind that stopping the cluster is similar quitting R, meaning that you will need to re-load the packages needed when you need to do parallel processing use <code>parLapply()</code> again.</p>
 </section>
-<section id="future.lapply" class="level4" data-number="6.17.3.2">
-<h4 data-number="6.17.3.2" class="anchored" data-anchor-id="future.lapply"><span class="header-section-number"><mark class="preview-text-changed">6.17.3.2</mark></span> <code>future.lapply()</code></h4>
+<section id="future.lapply" class="level4" data-number="6.18.3.2">
+<h4 data-number="6.18.3.2" class="anchored" data-anchor-id="future.lapply"><span class="header-section-number">6.18.3.2</span> <code>future.lapply()</code></h4>
 <p>Below is a generic example of <code>future.lapply()</code>:</p>
 <pre><code>library(future)
 library(future.apply)
@@ -1556,15 +1564,15 @@ future_lapply(x = mylist, FUN = func)</code></pre>
 </section>
 </section>
 </section>
-<section id="reviewing-code" class="level2" data-number="6.18">
-<h2 data-number="6.18" class="anchored" data-anchor-id="reviewing-code"><span class="header-section-number"><mark class="preview-text-changed">6.18</mark></span> Reviewing Code</h2>
+<section id="reviewing-code" class="level2" data-number="6.19">
+<h2 data-number="6.19" class="anchored" data-anchor-id="reviewing-code"><span class="header-section-number">6.19</span> Reviewing Code</h2>
 <p>Before publishing new changes, it is important to ensure that the code has been tested and well-documented. GitHub makes it possible to document all of these changes in a pull request. Pull requests can be used to describe changes in a branch that are ready to be merged with the base branch (more information in the <a href="#Github">GitHub</a> section).</p>
 <p>This section provides guidance on both constructing effective pull requests and reviewing code submitted by others. Much of the content in this section is adapted from the Tidyverse code review principles <span class="citation" data-cites="tidyverse2023codereview">(<a href="references.html#ref-tidyverse2023codereview" role="doc-biblioref">Tidyverse Team 2023</a>)</span>, which provides excellent principles for code review in R package development.</p>
 </section>
-<section id="constructing-pull-requests" class="level2" data-number="6.19">
-<h2 data-number="6.19" class="anchored" data-anchor-id="constructing-pull-requests"><span class="header-section-number"><mark class="preview-text-changed">6.19</mark></span> Constructing Pull Requests</h2>
-<section id="write-focused-prs" class="level3" data-number="6.19.1">
-<h3 data-number="6.19.1" class="anchored" data-anchor-id="write-focused-prs"><span class="header-section-number"><mark class="preview-text-changed">6.19.1</mark></span> Write Focused PRs</h3>
+<section id="constructing-pull-requests" class="level2" data-number="6.20">
+<h2 data-number="6.20" class="anchored" data-anchor-id="constructing-pull-requests"><span class="header-section-number">6.20</span> Constructing Pull Requests</h2>
+<section id="write-focused-prs" class="level3" data-number="6.20.1">
+<h3 data-number="6.20.1" class="anchored" data-anchor-id="write-focused-prs"><span class="header-section-number">6.20.1</span> Write Focused PRs</h3>
 <p>A focused pull request is <strong>one self-contained change</strong> that addresses just one thing. Writing focused PRs has several benefits:</p>
 <ul>
 <li><strong>Faster reviews</strong>: It’s easier for a reviewer to find 5-10 minutes to review a single bug fix than to set aside an hour for one large PR implementing many features.</li>
@@ -1575,8 +1583,8 @@ future_lapply(x = mylist, FUN = func)</code></pre>
 </ul>
 <p>As a guideline, 100 lines is usually a reasonable size for a PR, and 1000 lines is usually too large. However, the number of files affected also matters—a 200-line change in one file might be fine, but the same change spread across 50 files is usually too large.</p>
 </section>
-<section id="writing-pr-descriptions" class="level3" data-number="6.19.2">
-<h3 data-number="6.19.2" class="anchored" data-anchor-id="writing-pr-descriptions"><span class="header-section-number"><mark class="preview-text-changed">6.19.2</mark></span> Writing PR Descriptions</h3>
+<section id="writing-pr-descriptions" class="level3" data-number="6.20.2">
+<h3 data-number="6.20.2" class="anchored" data-anchor-id="writing-pr-descriptions"><span class="header-section-number">6.20.2</span> Writing PR Descriptions</h3>
 <p>When you submit a pull request, include a detailed PR title and description. A comprehensive description helps your reviewer and provides valuable historical context.</p>
 <p><strong>PR Title</strong>: The title should be a short summary (ideally under 72 characters) of what is being done. It should be informative enough that future developers can understand what the PR did without reading the full description.</p>
 <p>Poor titles that lack context:</p>
@@ -1600,25 +1608,25 @@ future_lapply(x = mylist, FUN = func)</code></pre>
 <li>The <code>Files</code> tab of a Pull Request page on GitHub allows you to annotate your pull request with inline comments. These comments are not part of the source files; they only exist in GitHub’s metadata. Use these comments to explain <em>changes</em> whose reasoning might not be self-apparent to a reviewer.</li>
 </ul>
 </section>
-<section id="add-tests" class="level3" data-number="6.19.3">
-<h3 data-number="6.19.3" class="anchored" data-anchor-id="add-tests"><span class="header-section-number"><mark class="preview-text-changed">6.19.3</mark></span> Add Tests</h3>
+<section id="add-tests" class="level3" data-number="6.20.3">
+<h3 data-number="6.20.3" class="anchored" data-anchor-id="add-tests"><span class="header-section-number">6.20.3</span> Add Tests</h3>
 <p>Focused PRs should include related test code. A PR that adds or changes logic should be accompanied by new or updated tests for the new behavior. Pure refactoring PRs should also be covered by tests—if tests don’t exist for code you’re refactoring, add them in a separate PR first to validate that behavior is unchanged.</p>
 </section>
-<section id="separate-out-refactorings" class="level3" data-number="6.19.4">
-<h3 data-number="6.19.4" class="anchored" data-anchor-id="separate-out-refactorings"><span class="header-section-number"><mark class="preview-text-changed">6.19.4</mark></span> Separate Out Refactorings</h3>
+<section id="separate-out-refactorings" class="level3" data-number="6.20.4">
+<h3 data-number="6.20.4" class="anchored" data-anchor-id="separate-out-refactorings"><span class="header-section-number">6.20.4</span> Separate Out Refactorings</h3>
 <p>It’s usually best to do refactorings in a separate PR from feature changes or bug fixes. For example, moving and renaming a function should be in a different PR from fixing a bug in that function. This makes it much easier for reviewers to understand the changes introduced by each PR.</p>
 <p>Small cleanups (like fixing a local variable name) can be included in a feature change or bug fix PR, but large refactorings should be separate.</p>
 </section>
 </section>
-<section id="reviewing-pull-requests" class="level2" data-number="6.20">
-<h2 data-number="6.20" class="anchored" data-anchor-id="reviewing-pull-requests"><span class="header-section-number"><mark class="preview-text-changed">6.20</mark></span> Reviewing Pull Requests</h2>
-<section id="purpose-of-code-review" class="level3" data-number="6.20.1">
-<h3 data-number="6.20.1" class="anchored" data-anchor-id="purpose-of-code-review"><span class="header-section-number"><mark class="preview-text-changed">6.20.1</mark></span> Purpose of Code Review</h3>
+<section id="reviewing-pull-requests" class="level2" data-number="6.21">
+<h2 data-number="6.21" class="anchored" data-anchor-id="reviewing-pull-requests"><span class="header-section-number">6.21</span> Reviewing Pull Requests</h2>
+<section id="purpose-of-code-review" class="level3" data-number="6.21.1">
+<h3 data-number="6.21.1" class="anchored" data-anchor-id="purpose-of-code-review"><span class="header-section-number">6.21.1</span> Purpose of Code Review</h3>
 <p>The primary purpose of code review is to ensure that the overall code health of our projects improves over time. Reviewers should balance the need to make forward progress with the importance of maintaining code quality.</p>
 <p><strong>Key principle</strong>: Reviewers should favor approving a PR once it is in a state where it definitely improves the overall code health of the system, even if the PR isn’t perfect. There is no such thing as “perfect” code—there is only better code. Rather than seeking perfection, seek continuous improvement.</p>
 </section>
-<section id="writing-review-comments" class="level3" data-number="6.20.2">
-<h3 data-number="6.20.2" class="anchored" data-anchor-id="writing-review-comments"><span class="header-section-number"><mark class="preview-text-changed">6.20.2</mark></span> Writing Review Comments</h3>
+<section id="writing-review-comments" class="level3" data-number="6.21.2">
+<h3 data-number="6.21.2" class="anchored" data-anchor-id="writing-review-comments"><span class="header-section-number">6.21.2</span> Writing Review Comments</h3>
 <p>When reviewing code, maintain courtesy and respect while being clear and helpful:</p>
 <ul>
 <li>Comment on the <strong>code</strong>, not the author</li>
@@ -1629,8 +1637,8 @@ future_lapply(x = mylist, FUN = func)</code></pre>
 <p><strong>Poor comment</strong>: “Why did you use this approach when there’s obviously a better way?”</p>
 <p><strong>Better comment</strong>: “This approach adds complexity without clear benefits. Consider using [alternative approach] instead, which would simplify the logic and improve readability.”</p>
 </section>
-<section id="mentoring-through-review" class="level3" data-number="6.20.3">
-<h3 data-number="6.20.3" class="anchored" data-anchor-id="mentoring-through-review"><span class="header-section-number"><mark class="preview-text-changed">6.20.3</mark></span> Mentoring Through Review</h3>
+<section id="mentoring-through-review" class="level3" data-number="6.21.3">
+<h3 data-number="6.21.3" class="anchored" data-anchor-id="mentoring-through-review"><span class="header-section-number">6.21.3</span> Mentoring Through Review</h3>
 <p>Code review is an excellent opportunity for mentoring. As a reviewer:</p>
 <ul>
 <li>Leave comments that help authors learn something new</li>
@@ -1638,14 +1646,14 @@ future_lapply(x = mylist, FUN = func)</code></pre>
 <li>Consider pair programming for complex reviews—live review sessions can be very effective for teaching</li>
 </ul>
 </section>
-<section id="giving-constructive-feedback" class="level3" data-number="6.20.4">
-<h3 data-number="6.20.4" class="anchored" data-anchor-id="giving-constructive-feedback"><span class="header-section-number"><mark class="preview-text-changed">6.20.4</mark></span> Giving Constructive Feedback</h3>
+<section id="giving-constructive-feedback" class="level3" data-number="6.21.4">
+<h3 data-number="6.21.4" class="anchored" data-anchor-id="giving-constructive-feedback"><span class="header-section-number">6.21.4</span> Giving Constructive Feedback</h3>
 <p>In general, it is the author’s responsibility to fix a PR, not the reviewer’s. Strike a balance between pointing out problems and providing direct guidance. Sometimes pointing out issues and letting the author decide on a solution helps them learn and may result in a better solution since they are closer to the code.</p>
 <p>For very small tweaks (typos, comment additions), use GitHub’s suggestion feature to allow authors to quickly accept changes directly in the UI.</p>
 </section>
-<section id="ignoring-auto-generated-files" class="level3" data-number="6.20.5">
-<h3 data-number="6.20.5" class="anchored" data-anchor-id="ignoring-auto-generated-files"><mark class="preview-element-added"><span class="header-section-number">6.20.5</span> Ignoring Auto-Generated Files</mark></h3>
-<p><mark class="preview-element-added">When reviewing pull requests in R package repositories, <strong>ignore changes to <code>.Rd</code> files</strong> in the <code>man/</code> directory. These are R documentation files automatically generated by <a href="https://roxygen2.r-lib.org/"><code>{roxygen2}</code></a> from special comments in the R source code (see <a href="#sec-documenting-code" class="quarto-xref"><span>Section 6.9</span></a>).</mark></p>
+<section id="ignoring-auto-generated-files" class="level3" data-number="6.21.5">
+<h3 data-number="6.21.5" class="anchored" data-anchor-id="ignoring-auto-generated-files"><mark class="preview-element-added"><span class="header-section-number">6.21.5</span> Ignoring Auto-Generated Files</mark></h3>
+<p><mark class="preview-element-added">When reviewing pull requests in R package repositories, <strong>ignore changes to <code>.Rd</code> files</strong> in the <code>man/</code> directory. These are R documentation files automatically generated by <a href="https://roxygen2.r-lib.org/"><code>{roxygen2}</code></a> from special comments in the R source code (see <a href="#sec-documenting-code" class="quarto-xref"><span>Section 6.10</span></a>).</mark></p>
 <p><mark class="preview-element-added"><strong>Why ignore <code>.Rd</code> files?</strong></mark></p>
 <ul>
 <li><mark class="preview-element-added">They are auto-generated and should never be manually edited</mark></li>
@@ -1658,8 +1666,8 @@ future_lapply(x = mylist, FUN = func)</code></pre>
 <p><mark class="preview-element-added"><strong>GitHub review tip:</strong></mark></p>
 <p><mark class="preview-element-added">In GitHub’s pull request “Files changed” view, you can click the three dots (<code>...</code>) next to a file and select “View file” to hide it from the diff view. This helps you focus on the meaningful changes.</mark></p>
 </section>
-<section id="reviewing-copilot-generated-pull-requests" class="level3" data-number="6.20.6">
-<h3 data-number="6.20.6" class="anchored" data-anchor-id="reviewing-copilot-generated-pull-requests"><span class="header-section-number"><mark class="preview-text-changed">6.20.6</mark></span> <mark class="preview-text-changed">Reviewing</mark> <mark class="preview-text-changed">Copilot-Generated</mark> Pull <mark class="preview-text-changed">Requests</mark></h3>
+<section id="reviewing-copilot-generated-pull-requests" class="level3" data-number="6.21.6">
+<h3 data-number="6.21.6" class="anchored" data-anchor-id="reviewing-copilot-generated-pull-requests"><span class="header-section-number"><mark class="preview-text-changed">6.21.6</mark></span> Reviewing<mark class="preview-text-added"> Copilot-Generated</mark> Pull Requests</h3>
 <p><mark class="preview-element-added">When reviewing pull requests created by GitHub Copilot coding agents, apply the same standards and principles as any other PR, but be aware of some unique considerations:</mark></p>
 <p><mark class="preview-element-added"><strong>Workflow approval requirements:</strong></mark></p>
 <ul>
@@ -1676,7 +1684,7 @@ future_lapply(x = mylist, FUN = func)</code></pre>
 <li><mark class="preview-element-added"><strong>Check documentation</strong>: Ensure documentation is clear and follows project conventions</mark></li>
 <li><mark class="preview-element-added"><strong>Look for edge cases</strong>: AI-generated code may miss edge cases or error handling</mark></li>
 </ul>
-<p><mark class="preview-element-added"><strong>Iterating on Copilot PRs:</strong></mark></p>
+<p><strong><mark class="preview-text-changed">Iterating</mark> <mark class="preview-text-changed">on</mark> <mark class="preview-text-changed">Copilot</mark> <mark class="preview-text-changed">PRs:</mark></strong></p>
 <p><mark class="preview-element-added">When you find issues in a Copilot PR, you have two options:</mark></p>
 <ol type="1">
 <li><mark class="preview-element-added"><p><strong>Request changes from Copilot</strong>: Leave review comments and ask Copilot to address them. This works well for complex changes or when you want to see how Copilot interprets your feedback.</mark></p></li>
@@ -1691,8 +1699,8 @@ future_lapply(x = mylist, FUN = func)</code></pre>
 </ul>
 </section>
 </section>
-<section id="creating-a-pull-request-template" class="level2" data-number="6.21">
-<h2 data-number="6.21" class="anchored" data-anchor-id="creating-a-pull-request-template"><span class="header-section-number"><mark class="preview-text-changed">6.21</mark></span> <mark class="preview-text-changed">Creating</mark> <mark class="preview-text-changed">a</mark> <mark class="preview-text-changed">Pull</mark> <mark class="preview-text-changed">Request</mark> <mark class="preview-text-changed">Template</mark></h2>
+<section id="creating-a-pull-request-template" class="level2" data-number="6.22">
+<h2 data-number="6.22" class="anchored" data-anchor-id="creating-a-pull-request-template"><span class="header-section-number">6.22</span> Creating a Pull Request Template</h2>
 <p>GitHub allows you to create a pull request template in a repository to standardize the information in pull requests. When you add a template, everyone will automatically see its contents in the pull request body.</p>
 <p>Follow these steps to add a pull request template:</p>
 <ol type="1">
@@ -1704,7 +1712,7 @@ future_lapply(x = mylist, FUN = func)</code></pre>
 </ul></li>
 <li>In the body of the new file, add your pull request template.</li>
 </ol>
-<p><mark class="preview-text-changed">Here</mark> <mark class="preview-text-changed">is</mark> <mark class="preview-text-changed">an</mark> <mark class="preview-text-changed">example</mark> pull request template:</p>
+<p>Here is an example pull request template:</p>
 <pre class="text"><code># Description
 
 ## Summary of change
@@ -1731,10 +1739,10 @@ Describe how this change has been tested.
 @username
 </code></pre>
 </section>
-<section id="sec-r-resources" class="level2" data-number="6.22">
-<h2 data-number="6.22" class="anchored" data-anchor-id="sec-r-resources"><span class="header-section-number">6.22</span> Additional Resources</h2>
-<section id="r-package-development" class="level3" data-number="6.22.1">
-<h3 data-number="6.22.1" class="anchored" data-anchor-id="r-package-development"><span class="header-section-number"><mark class="preview-text-changed">6.22.1</mark></span> R Package Development</h3>
+<section id="sec-r-resources" class="level2" data-number="6.23">
+<h2 data-number="6.23" class="anchored" data-anchor-id="sec-r-resources"><span class="header-section-number">6.23</span> Additional Resources</h2>
+<section id="r-package-development" class="level3" data-number="6.23.1">
+<h3 data-number="6.23.1" class="anchored" data-anchor-id="r-package-development"><span class="header-section-number">6.23.1</span> R Package Development</h3>
 <ul>
 <li>R Packages <span class="citation" data-cites="wickham2023rpkgs">(<a href="references.html#ref-wickham2023rpkgs" role="doc-biblioref">Wickham and Bryan 2023</a>)</span> - comprehensive guide to R package development</li>
 <li>Tidyverse design guide <span class="citation" data-cites="wickham2023tidydesign">(<a href="references.html#ref-wickham2023tidydesign" role="doc-biblioref">Wickham 2023</a>)</span> - principles for designing R packages and APIs that are intuitive, composable, and consistent with tidyverse philosophy</li>
@@ -1744,22 +1752,22 @@ Describe how this change has been tested.
 <li><a href="https://testthat.r-lib.org/">testthat documentation</a> - unit testing framework</li>
 </ul>
 </section>
-<section id="general-r-programming" class="level3" data-number="6.22.2">
-<h3 data-number="6.22.2" class="anchored" data-anchor-id="general-r-programming"><span class="header-section-number"><mark class="preview-text-changed">6.22.2</mark></span> General R Programming</h3>
+<section id="general-r-programming" class="level3" data-number="6.23.2">
+<h3 data-number="6.23.2" class="anchored" data-anchor-id="general-r-programming"><span class="header-section-number">6.23.2</span> General R Programming</h3>
 <ul>
 <li>R for Data Science <span class="citation" data-cites="wickham2023r4ds">(<a href="references.html#ref-wickham2023r4ds" role="doc-biblioref">Wickham, Çetinkaya-Rundel, and Grolemund 2023</a>)</span> - learn data science with the tidyverse</li>
 <li>Advanced R <span class="citation" data-cites="wickham2019advr">(<a href="references.html#ref-wickham2019advr" role="doc-biblioref">Wickham 2019</a>)</span> - deep dive into R programming and internals</li>
 </ul>
 </section>
-<section id="shiny-development" class="level3" data-number="6.22.3">
-<h3 data-number="6.22.3" class="anchored" data-anchor-id="shiny-development"><span class="header-section-number"><mark class="preview-text-changed">6.22.3</mark></span> Shiny Development</h3>
+<section id="shiny-development" class="level3" data-number="6.23.3">
+<h3 data-number="6.23.3" class="anchored" data-anchor-id="shiny-development"><span class="header-section-number">6.23.3</span> Shiny Development</h3>
 <ul>
 <li>Mastering Shiny <span class="citation" data-cites="wickham2021shiny">(<a href="references.html#ref-wickham2021shiny" role="doc-biblioref">Wickham 2021</a>)</span> - comprehensive guide to building web applications with Shiny</li>
 <li>Engineering Production-Grade Shiny Apps <span class="citation" data-cites="fay2021engineering">(<a href="references.html#ref-fay2021engineering" role="doc-biblioref">Fay et al. 2021</a>)</span> - best practices for production Shiny applications</li>
 </ul>
 </section>
-<section id="git-and-version-control" class="level3" data-number="6.22.4">
-<h3 data-number="6.22.4" class="anchored" data-anchor-id="git-and-version-control"><span class="header-section-number"><mark class="preview-text-changed">6.22.4</mark></span> Git and Version Control</h3>
+<section id="git-and-version-control" class="level3" data-number="6.23.4">
+<h3 data-number="6.23.4" class="anchored" data-anchor-id="git-and-version-control"><span class="header-section-number">6.23.4</span> Git and Version Control</h3>
 <ul>
 <li>Happy Git and GitHub for the useR <span class="citation" data-cites="bryan2023happygit">(<a href="references.html#ref-bryan2023happygit" role="doc-biblioref">Bryan 2023</a>)</span> - essential guide to using Git and GitHub with R</li>
 </ul>
@@ -2218,7 +2226,7 @@ Wickham, Hadley, Peter Danenberg, Gábor Csárdi, and Manuel Eugster. 2024. <em>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./coding-style.html" class="pagination-link" preview-toc-changed aria-label="R Code Style">
+      <a href="./coding-style.html" class="pagination-link" aria-label="R Code Style">
         <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">R Code Style</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
