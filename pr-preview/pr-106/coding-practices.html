@@ -1662,7 +1662,7 @@ future_lapply(x = mylist, FUN = func)</code></pre>
 <li><mark class="preview-element-added">The <code>.Rd</code> files will be regenerated during the package build process</mark></li>
 </ul>
 <p><mark class="preview-element-added"><strong>What to review instead:</strong></mark></p>
-<p><mark class="preview-element-added">Focus your review on the roxygen2 documentation comments in the actual R source files (<code>.R</code> files in the <code>R/</code> directory). These special comments start with <code>#'</code> and appear immediately before function definitions. Any changes to function documentation will be visible there.</mark></p>
+<p><mark class="preview-element-added">Focus your review on the roxygen2 documentation comments in the actual R source files (<code>.R</code> files in the <code>R/</code> directory). These special comments start with <code>#'</code> and appear immediately before function definitions. Any changes to function documentation will be visible there. You can also review the corresponding rendered reference manual page in the pkgdown website preview. The pkgdown workflow should automatically post a comment on the PR containing a link to a preview version of the revised website.</mark></p>
 <p><mark class="preview-element-added"><strong>GitHub review tip:</strong></mark></p>
 <p><mark class="preview-element-added">In GitHub’s pull request “Files changed” view, you can click the three dots (<code>...</code>) next to a file and select “View file” to hide it from the diff view. This helps you focus on the meaningful changes.</mark></p>
 </section>
