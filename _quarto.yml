@@ -59,6 +59,7 @@ book:
   appendices:
     - appendix-copilot-instructions.qmd
     - appendix-copilot-setup-steps.qmd
+    - appendix-document-metadata.qmd
   page-navigation: true
 
 bibliography: [book.bib, packages.bib]
@@ -102,7 +103,6 @@ format:
     highlight-style: github
     filters:
       - _extensions/chapter-pagebreak.lua
-      - _extensions/docx-git-metadata.lua
   epub:
     toc: true
     number-sections: true
