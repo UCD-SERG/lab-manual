@@ -34,11 +34,15 @@ to [help you code](https://en.wikipedia.org/wiki/AI-assisted_software_developmen
 
 {{< include ai-tools/useful-prompt-formats.qmd >}}
 
-### Benefits and Hazards
+### Addressing Failing GitHub Actions Workflows
+
+{{< include ai-tools/addressing-failing-workflows.qmd >}}
+
+### Benefits and Hazards {#sec-ai-benefits-hazards}
 
 {{< include ai-tools/agents-benefits-and-hazards.qmd >}}
 
-### Best Practices for Safe and Successful Use
+### Best Practices for Safe and Successful Use {#sec-ai-best-practices}
 
 {{< include ai-tools/agents-best-practices.qmd >}}
 
@@ -50,7 +54,7 @@ to [help you code](https://en.wikipedia.org/wiki/AI-assisted_software_developmen
 
 {{< include ai-tools/copilot-setup-steps-config.qmd >}}
 
-### When to use a coding agent
+### When to use a coding agent {#sec-ai-when-to-use}
 
 {{< include ai-tools/when-to-use-coding-agent.qmd >}}
 

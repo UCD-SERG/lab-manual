@@ -19,3 +19,14 @@ Document all user-facing changes in `NEWS.md`:
 
 ```markdown
 # myproject 0.2.0
+
+## New features
+
+- Added function for data validation
+- Improved error messages
+
+## Bug fixes
+
+- Fixed issue with missing values
+- Corrected calculation error in summary stats
+```
