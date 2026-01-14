@@ -67,6 +67,12 @@ local function get_git_commit_date()
   return date
 end
 
+--- Create a page break for DOCX format
+-- @return Raw OpenXML block for a page break
+local function create_page_break()
+  return pandoc.RawBlock('openxml', '<w:p><w:r><w:br w:type="page"/></w:r></w:p>')
+end
+
 --- Append git metadata to the document
 -- This function is called at the end of document processing to add
 -- a section with git branch and commit information
@@ -86,7 +92,7 @@ function Pandoc(doc)
   
   -- Create the metadata section
   local metadata_blocks = {
-    pandoc.RawBlock('openxml', '<w:p><w:r><w:br w:type="page"/></w:r></w:p>'),
+    create_page_break(),
     pandoc.Header(1, pandoc.Str("Document Generation Metadata")),
     pandoc.Para({
       pandoc.Str("This document was generated from the following git commit:")
@@ -98,9 +104,7 @@ function Pandoc(doc)
       {pandoc.Plain({pandoc.Strong(pandoc.Str("Commit date: ")), pandoc.Str(commit_date)})}
     }),
     pandoc.Para({
-      pandoc.Str("When transferring edits from this DOCX file back to the Quarto source files, "),
-      pandoc.Str("use this commit information to set up the PR correctly and account for any "),
-      pandoc.Str("commits that have been added since this document was generated.")
+      pandoc.Str("When transferring edits from this DOCX file back to the Quarto source files, use this commit information to set up the PR correctly and account for any commits that have been added since this document was generated.")
     })
   }
   
