@@ -102,6 +102,7 @@ format:
     highlight-style: github
     filters:
       - _extensions/chapter-pagebreak.lua
+      - _extensions/docx-git-metadata.lua
   epub:
     toc: true
     number-sections: true
