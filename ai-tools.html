@@ -975,6 +975,90 @@ Warning
 <p>If a coding agent’s request is blocked by the firewall, a warning will be added to the pull request or comment, detailing the blocked address and the command that triggered it.</p>
 <p>For more information, see <a href="https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-firewall">Customizing or disabling the firewall for GitHub Copilot coding agent</a>.</p>
 </section>
+<section id="recommended-urls-for-data-science-repositories" class="level4" data-number="17.4.7.3">
+<h4 data-number="17.4.7.3" class="anchored" data-anchor-id="recommended-urls-for-data-science-repositories"><span class="header-section-number">17.4.7.3</span> Recommended URLs for Data Science Repositories</h4>
+<p>For data science and R-focused repositories, we recommend adding the following URLs to your Copilot allowlist. These sites are safe, reputable sources of documentation and packages that coding agents may need to access:</p>
+<p><strong>R Package Documentation and Ecosystems:</strong></p>
+<ul>
+<li><code>tidyverse.org</code> - <a href="https://tidyverse.org/"><code>{tidyverse}</code></a> package documentation and learning resources</li>
+<li><code>r-lib.org</code> - Core R infrastructure packages (<a href="https://devtools.r-lib.org/"><code>{devtools}</code></a>, <a href="https://testthat.r-lib.org/"><code>{testthat}</code></a>, <a href="https://usethis.r-lib.org/"><code>{usethis}</code></a>, etc.)</li>
+<li><code>ggplot2.tidyverse.org</code> - <a href="https://ggplot2.tidyverse.org/"><code>{ggplot2}</code></a> visualization package</li>
+<li><code>dplyr.tidyverse.org</code> - <a href="https://dplyr.tidyverse.org/"><code>{dplyr}</code></a> data manipulation package</li>
+<li><code>tidyr.tidyverse.org</code> - <a href="https://tidyr.tidyverse.org/"><code>{tidyr}</code></a> data tidying package</li>
+<li><code>purrr.tidyverse.org</code> - <a href="https://purrr.tidyverse.org/"><code>{purrr}</code></a> functional programming package</li>
+<li><code>readr.tidyverse.org</code> - <a href="https://readr.tidyverse.org/"><code>{readr}</code></a> data reading package</li>
+<li><code>stringr.tidyverse.org</code> - <a href="https://stringr.tidyverse.org/"><code>{stringr}</code></a> string manipulation package</li>
+<li><code>forcats.tidyverse.org</code> - <a href="https://forcats.tidyverse.org/"><code>{forcats}</code></a> categorical data package</li>
+</ul>
+<p><strong>R Package Repositories:</strong></p>
+<ul>
+<li><code>cran.r-project.org</code> - The Comprehensive R Archive Network</li>
+<li><code>cloud.r-project.org</code> - CRAN mirror (cloud-based)</li>
+<li><code>docs.ropensci.org</code> - rOpenSci package documentation (e.g., <a href="https://docs.ropensci.org/targets/"><code>{targets}</code></a>)</li>
+<li><code>rdatatable.gitlab.io</code> - <a href="https://rdatatable.gitlab.io/data.table/"><code>{data.table}</code></a> package documentation</li>
+<li><code>rstudio.github.io</code> - RStudio-maintained packages (e.g., <a href="https://rstudio.github.io/renv/"><code>{renv}</code></a>)</li>
+</ul>
+<p><strong>Code Style and Quality Tools:</strong></p>
+<ul>
+<li><code>styler.r-lib.org</code> - <a href="https://styler.r-lib.org/"><code>{styler}</code></a> code formatting package</li>
+<li><code>lintr.r-lib.org</code> - <a href="https://lintr.r-lib.org/"><code>{lintr}</code></a> code linting package</li>
+<li><code>roxygen2.r-lib.org</code> - <a href="https://roxygen2.r-lib.org/"><code>{roxygen2}</code></a> documentation package</li>
+<li><code>style.tidyverse.org</code> - Tidyverse style guide</li>
+</ul>
+<p><strong>General Documentation and Reference:</strong></p>
+<ul>
+<li><code>en.wikipedia.org</code> - General reference and technical documentation</li>
+<li><code>r-project.org</code> - Official R project website</li>
+<li><code>quarto.org</code> - Quarto publishing system documentation</li>
+<li><code>pandoc.org</code> - Pandoc document converter documentation</li>
+</ul>
+<p><strong>GitHub Organizations (for package repositories):</strong></p>
+<ul>
+<li><code>github.com/tidyverse/*</code> - Tidyverse package source code</li>
+<li><code>github.com/r-lib/*</code> - R-lib package source code</li>
+<li><code>github.com/rstudio/*</code> - RStudio package source code</li>
+<li><code>github.com/ropensci/*</code> - rOpenSci package source code</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>When to Add These URLs
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Add these URLs to your repository’s allowlist if:</p>
+<ul>
+<li>Coding agents report blocked access to these sites</li>
+<li>You’re working on R or data science projects that use these packages</li>
+<li>You want agents to access current documentation during code generation</li>
+</ul>
+<p>You can add URLs selectively based on your project’s specific dependencies rather than adding all URLs at once.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Safety of These URLs
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>All URLs listed here are:</p>
+<ul>
+<li>Maintained by reputable organizations (Tidyverse, RStudio/Posit, R Core Team, rOpenSci)</li>
+<li>Widely used in the R community</li>
+<li>Focused on documentation and package distribution</li>
+<li>Safe for coding agents to access</li>
+</ul>
+<p>These sites do not host user-generated content or allow arbitrary code execution, making them appropriate for inclusion in your allowlist.</p>
+</div>
+</div>
+</section>
 </section>
 <section id="configuring-the-agent-environment" class="level3" data-number="17.4.8">
 <h3 data-number="17.4.8" class="anchored" data-anchor-id="configuring-the-agent-environment"><span class="header-section-number">17.4.8</span> Configuring the Agent Environment</h3>
