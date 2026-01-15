@@ -121,7 +121,7 @@ you can also review the rendered documentation in the preview build.
 The preview workflow should automatically post a comment on the PR
 containing a link to a preview version of the revised documentation.
 
-![Example of an automated PR preview comment posted by GitHub Actions](assets/images/quarto-preview-comment.svg){#fig-preview-comment}
+![Example of an automated PR preview comment posted by GitHub Actions](assets/images/quarto-preview-comment.png){#fig-preview-comment}
 
 **GitHub review tip:**
 
