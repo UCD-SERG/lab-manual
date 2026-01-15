@@ -27,6 +27,16 @@ jobs:
         with:
           r-version: 'release'
 
+      - uses: r-lib/actions/setup-r-dependencies@HEAD
+        with:
+          needs: |
+            connect
+            website
+          extra-packages: |
+            local::.
+            any::pkgdown
+            any::rmarkdown
+
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
@@ -84,4 +94,4 @@ jobs:
           # Deploy on label changes too, not just open/reopen/synchronize
           # The 'auto' action ignores label events, so we explicitly set 'deploy' for non-closed PRs
           action: ${{ github.event.action == 'closed' && 'remove' || 'deploy' }}
-        
+
