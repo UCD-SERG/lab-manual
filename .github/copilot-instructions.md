@@ -203,6 +203,7 @@ See the "Best Practices" section for more details.
 - Use `snake_case` for variable and function names
 - Use `.qmd` files exclusively (not `.Rmd`)
 - All R projects should use R package structure
+- **Use logical variables directly**: Don't convert logical variables to logical (e.g., use `if (x)` instead of `if (x == TRUE)` or `if (x == 1)`). Logical variables should be used as-is in conditional statements.
 
 ## File Organization
 
