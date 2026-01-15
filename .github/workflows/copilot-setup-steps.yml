@@ -1,12 +1,12 @@
 # GitHub Copilot Setup Steps for lab-manual
 #
 # This workflow configures the GitHub Copilot coding agent's environment
-# by preinstalling R, Quarto and TinyTeX for rendering the Bookdown manual.
+# by preinstalling R, Quarto and TinyTeX for rendering the lab manual.
 #
 # See: https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-environment
 #
 # This workflow sets up:
-# - R for running Bookdown
+# - R for executing R code chunks in Quarto documents
 # - Quarto CLI for rendering
 # - TinyTeX for PDF output
 
@@ -42,35 +42,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       
-      # R and renv setup steps disabled for now - we don't have any R code to run yet
-      # When R code is needed, uncomment the following steps:
-      
-      # # Install system dependencies required for R packages
-      # - name: Install system dependencies
-      #   run: |
-      #     sudo apt-get update
-      #     sudo apt-get install -y \
-      #       libcurl4-openssl-dev \
-      #       libssl-dev \
-      #       libxml2-dev \
-      #       libfontconfig1-dev \
-      #       libharfbuzz-dev \
-      #       libfribidi-dev \
-      #       libfreetype6-dev \
-      #       libpng-dev \
-      #       libtiff5-dev \
-      #       libjpeg-dev
-      
       # Set up pandoc for documentation
       - name: Set up Pandoc
         uses: r-lib/actions/setup-pandoc@v2
       
-      # # Set up R using the standard GitHub Actions setup
-      # - name: Set up R
-      #   uses: r-lib/actions/setup-r@v2
-      #   with:
-      #     r-version: 'release'
-      #     use-public-rspm: true
+      # Set up R using the standard GitHub Actions setup
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: 'release'
+          use-public-rspm: true
       
       # Set up Quarto - required for rendering the website
       - name: Set up Quarto
@@ -88,6 +69,11 @@ jobs:
       - name: Verify development environment
         run: |
           echo "=== Development Environment Status ==="
+          
+          # Verify R is installed and working
+          echo ""
+          echo "=== R Status ==="
+          R --version
           
           # Verify Quarto is installed and working
           echo ""
