@@ -53,6 +53,10 @@ The [UC Davis DataLab](https://github.com/ucdavisdatalab) provides extensive wor
 - [UC Davis DataLab Python Basics Workshop](https://github.com/ucdavisdatalab/workshop_python_basics) - foundational Python programming
 - [Natural Language Processing with Python](https://github.com/ucdavisdatalab/workshop_nlp_with_python) - text analysis and NLP techniques
 
+## Resources for Julia
+
+- [UC Davis Julia Users Group Julia Basics Workshop](https://ucjug.github.io/workshop_julia_basics/) - foundational Julia programming
+
 ## Scientific figures
 - Ten Simple Rules for Better Figures [@rougier2014]
 
