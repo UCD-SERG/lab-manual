@@ -33,7 +33,6 @@ jobs:
             connect
             website
           extra-packages: |
-            local::.
             any::pkgdown
             any::rmarkdown
 
