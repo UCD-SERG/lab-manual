@@ -38,3 +38,80 @@ detailing the blocked address and the command that triggered it.
 
 For more information,
 see [Customizing or disabling the firewall for GitHub Copilot coding agent](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-firewall).
+
+#### Recommended URLs for Data Science Repositories
+
+For data science and R-focused repositories,
+we recommend adding the following URLs to your Copilot allowlist.
+These sites are safe,
+reputable sources of documentation and packages
+that coding agents may need to access:
+
+**R Package Documentation and Ecosystems:**
+
+- `tidyverse.org` - <a href="https://tidyverse.org/">`{tidyverse}`</a> package documentation and learning resources
+- `r-lib.org` - Core R infrastructure packages (<a href="https://devtools.r-lib.org/">`{devtools}`</a>, <a href="https://testthat.r-lib.org/">`{testthat}`</a>, <a href="https://usethis.r-lib.org/">`{usethis}`</a>, etc.)
+- `ggplot2.tidyverse.org` - <a href="https://ggplot2.tidyverse.org/">`{ggplot2}`</a> visualization package
+- `dplyr.tidyverse.org` - <a href="https://dplyr.tidyverse.org/">`{dplyr}`</a> data manipulation package
+- `tidyr.tidyverse.org` - <a href="https://tidyr.tidyverse.org/">`{tidyr}`</a> data tidying package
+- `purrr.tidyverse.org` - <a href="https://purrr.tidyverse.org/">`{purrr}`</a> functional programming package
+- `readr.tidyverse.org` - <a href="https://readr.tidyverse.org/">`{readr}`</a> data reading package
+- `stringr.tidyverse.org` - <a href="https://stringr.tidyverse.org/">`{stringr}`</a> string manipulation package
+- `forcats.tidyverse.org` - <a href="https://forcats.tidyverse.org/">`{forcats}`</a> categorical data package
+
+**R Package Repositories:**
+
+- `cran.r-project.org` - The Comprehensive R Archive Network
+- `cloud.r-project.org` - CRAN mirror (cloud-based)
+- `docs.ropensci.org` - rOpenSci package documentation (e.g., <a href="https://docs.ropensci.org/targets/">`{targets}`</a>)
+- `rdatatable.gitlab.io` - <a href="https://rdatatable.gitlab.io/data.table/">`{data.table}`</a> package documentation
+- `rstudio.github.io` - RStudio-maintained packages (e.g., <a href="https://rstudio.github.io/renv/">`{renv}`</a>)
+
+**Code Style and Quality Tools:**
+
+- `styler.r-lib.org` - <a href="https://styler.r-lib.org/">`{styler}`</a> code formatting package
+- `lintr.r-lib.org` - <a href="https://lintr.r-lib.org/">`{lintr}`</a> code linting package
+- `roxygen2.r-lib.org` - <a href="https://roxygen2.r-lib.org/">`{roxygen2}`</a> documentation package
+- `style.tidyverse.org` - Tidyverse style guide
+
+**General Documentation and Reference:**
+
+- `en.wikipedia.org` - General reference and technical documentation
+- `r-project.org` - Official R project website
+- `quarto.org` - Quarto publishing system documentation
+- `pandoc.org` - Pandoc document converter documentation
+
+**GitHub Organizations (for package repositories):**
+
+- `github.com/tidyverse/*` - Tidyverse package source code
+- `github.com/r-lib/*` - R-lib package source code
+- `github.com/rstudio/*` - RStudio package source code
+- `github.com/ropensci/*` - rOpenSci package source code
+
+::: {.callout-tip}
+#### When to Add These URLs
+
+Add these URLs to your repository's allowlist if:
+
+- Coding agents report blocked access to these sites
+- You're working on R or data science projects that use these packages
+- You want agents to access current documentation during code generation
+
+You can add URLs selectively based on your project's specific dependencies
+rather than adding all URLs at once.
+:::
+
+::: {.callout-note}
+#### Safety of These URLs
+
+All URLs listed here are:
+
+- Maintained by reputable organizations (Tidyverse, RStudio/Posit, R Core Team, rOpenSci)
+- Widely used in the R community
+- Focused on documentation and package distribution
+- Safe for coding agents to access
+
+These sites do not host user-generated content
+or allow arbitrary code execution,
+making them appropriate for inclusion in your allowlist.
+:::
