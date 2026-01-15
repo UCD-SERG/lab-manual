@@ -490,6 +490,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Copilot Setup Steps File</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-document-metadata.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Document Generation Metadata</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -847,6 +853,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>GitHub Copilot can read and process Microsoft Word (.docx) files, which is useful for translating edits made in Word back to Quarto format.</p>
 <p>When working with DOCX files:</p>
 <ul>
+<li><strong>Check git metadata first</strong>: DOCX files generated from this repository include a “Document Generation Metadata” section at the end with the branch name, commit hash, and commit date. Use this information to:
+<ul>
+<li>Identify which commit generated the original DOCX</li>
+<li>Set up the resulting PR correctly with the appropriate base branch</li>
+<li>Account for any commits that have been added since the DOCX was generated</li>
+<li>Understand the state of the repository when the DOCX was created</li>
+</ul></li>
 <li><strong>Always examine tracked changes</strong>: Use the <code>view</code> tool to read DOCX files and pay special attention to any tracked changes (insertions, deletions, formatting changes)</li>
 <li><strong>Review comments</strong>: Look for and address any comments in the DOCX file that may provide context or instructions for edits</li>
 <li><strong>Translate edits to Quarto</strong>: When edits have been made in a DOCX file, apply the equivalent changes to the corresponding <code>.qmd</code> files</li>
