@@ -72,13 +72,12 @@ jobs:
           r-version: 'release'
           use-public-rspm: true
 
-      - uses: r-lib/actions/setup-r-dependencies@HEAD
-        with:
-          needs: |
-            connect
-            website
-          extra-packages: |
-            any::pkgdown
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jags libcurl4-openssl-dev libpng-dev libfontconfig1-dev libjpeg-dev
+
+      - uses: r-lib/actions/setup-renv@v2
 
       # Set up Quarto - required for rendering the website
       - name: Set up Quarto
