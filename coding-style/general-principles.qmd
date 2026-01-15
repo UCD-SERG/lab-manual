@@ -2,4 +2,4 @@
 - **Use native pipe**: `|>` not `%>%` (available in R >= 4.1.0)
 - **Naming**: Use `snake_case` for functions and variables; acronyms may be uppercase (e.g., `prep_IDs_data`)
 - **Write tidy code**: Keep code clean, readable, and well-organized
-- **Use logical variables directly**: Don't convert logical variables to logical. Use `if (x)` instead of `if (x == TRUE)` or `if (x == 1)`. Logical variables should be used as-is in conditional statements.
+- **Avoid redundant logical comparisons**: Use logical variables directly in conditional statements (e.g., `if (x)` instead of `if (x == TRUE)` or `if (x == 1)`)
