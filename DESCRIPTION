@@ -5,7 +5,17 @@ Version: 0.0.1
 Description: Lab manual for the UCD-SERG research group at UC Davis
 Maintainer: UCD-SERG <serg@ucdavis.edu>
 Author: UCD-SERG
-Imports: bookdown
+Imports: 
+    bookdown,
+    devtools,
+    dplyr,
+    ggplot2,
+    lintr,
+    rmarkdown,
+    spelling,
+    tibble
 Remotes: rstudio/bookdown
 Language: en-US
 Encoding: UTF-8
+Suggests: 
+    withr

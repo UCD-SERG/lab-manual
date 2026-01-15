@@ -365,6 +365,11 @@ GitHub Copilot can read and process Microsoft Word (.docx) files, which is usefu
 
 When working with DOCX files:
 
+- **Check git metadata first**: DOCX files generated from this repository include a "Document Generation Metadata" section at the end with the branch name, commit hash, and commit date. Use this information to:
+  - Identify which commit generated the original DOCX
+  - Set up the resulting PR correctly with the appropriate base branch
+  - Account for any commits that have been added since the DOCX was generated
+  - Understand the state of the repository when the DOCX was created
 - **Always examine tracked changes**: Use the `view` tool to read DOCX files and pay special attention to any tracked changes (insertions, deletions, formatting changes)
 - **Review comments**: Look for and address any comments in the DOCX file that may provide context or instructions for edits
 - **Translate edits to Quarto**: When edits have been made in a DOCX file, apply the equivalent changes to the corresponding `.qmd` files
