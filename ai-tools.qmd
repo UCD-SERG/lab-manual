@@ -34,7 +34,7 @@ to [help you code](https://en.wikipedia.org/wiki/AI-assisted_software_developmen
 
 {{< include ai-tools/useful-prompt-formats.qmd >}}
 
-### Addressing Failing GitHub Actions Workflows
+### Addressing Failing GitHub Actions Workflows {#sec-ai-addressing-failing-workflows}
 
 {{< include ai-tools/addressing-failing-workflows.qmd >}}
 
