@@ -37,8 +37,7 @@ calc_fluseas_mean <- function(data, yname, silent = TRUE) {
 The roxygen2 header tells you what the function does, its various inputs, and how you might use it.
 Also notice that all optional arguments (i.e. ones with pre-specified defaults) follow arguments that require user input.
 
-For more information on roxygen2 syntax and features,
-see <https://roxygen2.r-lib.org/>.
+For more information on roxygen2 syntax and features, see <https://roxygen2.r-lib.org/>.
 
 ### Using `...` (dots) and `@inheritDotParams`
 
@@ -118,7 +117,7 @@ The `@inheritDotParams` tag:
 1. **Always document what receives the dots**: Use `@inheritDotParams` when passing to a specific function,
 or clearly describe where the arguments go
 2. **Exclude irrelevant parameters**: Use the `-param_name` syntax to exclude parameters that don't apply
-3. **Validate unexpected arguments**: Consider using the <a href="https://ellipsis.r-lib.org/">`{ellipsis}`</a> package to catch misspelled argument names:
+3. **Validate unexpected arguments**: Consider using the [`{ellipsis}`](https://ellipsis.r-lib.org/) package to catch misspelled argument names:
 
    ```r
    my_function <- function(x, y, ...) {
