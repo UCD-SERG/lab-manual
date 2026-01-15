@@ -58,7 +58,7 @@ We write pre-analysis plans for most original research projects that are not exp
 
 ## Create reproducible workflows
 
-Reproducible workflows allow a user to reproduce study estimates and ideally figures and tables with a "single click". In practice, this typically means running a single bash script that sources all replication scripts in a repository. These replication scripts complete data processing, data analysis, and figure/table generation. The following chapters provide detailed guidance on this topic: 
+Reproducible workflows allow a user to reproduce study estimates and ideally figures and tables with a "single click". In practice, this typically means running a single bash script that sources all replication scripts in a repository. These replication scripts complete data processing, data analysis, and figure/table generation. The following chapters provide detailed guidance on this topic:
 
 - Chapter 5: Code repositories
 - Chapter 6: Coding practices
@@ -67,6 +67,8 @@ Reproducible workflows allow a user to reproduce study estimates and ideally fig
 - Chapter 9: Working with big data
 - Chapter 10: Github
 - Chapter 11: Unix
+
+For additional learning resources on reproducible research practices, see the [UC Davis DataLab workshop on reproducible research](https://github.com/ucdavisdatalab/workshop_reproducible_research).
 
 ## Process and analyze data with internal replication and masking
 
