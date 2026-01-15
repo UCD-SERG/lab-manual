@@ -41,6 +41,25 @@ jobs:
       # but we include it for completeness
       - name: Checkout code
         uses: actions/checkout@v4
+
+      # R and renv setup steps disabled for now - we don't have any R code to run yet
+      # When R code is needed, uncomment the following steps:
+      
+      # Install system dependencies required for R packages
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libcurl4-openssl-dev \
+            libssl-dev \
+            libxml2-dev \
+            libfontconfig1-dev \
+            libharfbuzz-dev \
+            libfribidi-dev \
+            libfreetype6-dev \
+            libpng-dev \
+            libtiff5-dev \
+            libjpeg-dev
       
       # Set up pandoc for documentation
       - name: Set up Pandoc
