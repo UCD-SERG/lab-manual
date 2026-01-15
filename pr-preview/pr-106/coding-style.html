@@ -395,7 +395,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./coding-style.html" class="sidebar-item-text sidebar-link active" preview-toc-changed>
+  <a href="./coding-style.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">R Code Style</span></span></a>
   </div>
 </li>
@@ -553,7 +553,7 @@ div.csl-indent {
 <main class="content" id="quarto-document-content">
 <div class="preview-home-changes-banner">
     <p style="margin: 0;">
-        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="coding-style.html">7. &nbsp; <span class="chapter-title">R Code Style</span></span></a>, <a href="appendix-document-metadata.html">appendix-document-metadata</a>, <a href="coding-practices.html">6. &nbsp; <span class="chapter-title">R Coding Practices</span></span></a>, <a href="appendix-copilot-instructions.html">appendix-copilot-instructions</a>
+        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="appendix-document-metadata.html">appendix-document-metadata</a>, <a href="coding-practices.html">6. &nbsp; <span class="chapter-title">R Coding Practices</span></span></a>, <a href="appendix-copilot-instructions.html">appendix-copilot-instructions</a>
         <br>
         <strong>📄 DOCX with tracked changes:</strong> <a href="UCD-SeRG-Lab-Manual-tracked-changes.docx" download>Download UCD-SeRG-Lab-Manual-tracked-changes.docx</a>
         <br>
@@ -582,18 +582,6 @@ div.csl-indent {
 </header>
 
 
-
-<div class="preview-combined-banner">
-    <p style="margin: 0;">
-        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~0% of content changed).
-        <br>
-        <strong>🎨 Highlighting Legend:</strong> 
-        <mark class="preview-text-changed" style="display: inline; padding: 1px 3px;">Modified text (yellow)</mark> shows changed words/phrases with tooltips of original text, 
-        <mark class="preview-text-added" style="display: inline; padding: 1px 3px;">added text (green)</mark> shows new content, and 
-        <mark class="preview-element-added" style="display: inline; padding: 1px 3px;">new sections (blue)</mark> highlight entirely new paragraphs.
-    </p>
-</div>
-
 <p>Adapted by UCD-SeRG team from <a href="https://jadebc.github.io/lab-manual/coding-style.html">original by Kunal Mishra, Jade Benjamin-Chung, and Stephanie Djajadi</a></p>
 <p>Follow these code style guidelines for all R code:</p>
 <section id="general-principles" class="level2" data-number="7.1">
@@ -603,6 +591,7 @@ div.csl-indent {
 <li><strong>Use native pipe</strong>: <code>|&gt;</code> not <code>%&gt;%</code> (available in R &gt;= 4.1.0)</li>
 <li><strong>Naming</strong>: Use <code>snake_case</code> for functions and variables; acronyms may be uppercase (e.g., <code>prep_IDs_data</code>)</li>
 <li><strong>Write tidy code</strong>: Keep code clean, readable, and well-organized</li>
+<li><strong>Avoid redundant logical comparisons</strong>: Use logical variables directly in conditional statements (e.g., <code>if (x)</code> instead of <code>if (x == TRUE)</code> or <code>if (x == 1)</code>)</li>
 </ul>
 </section>
 <section id="sec-function-docs" class="level2" data-number="7.2">
@@ -796,8 +785,11 @@ Note
 <span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>stringr<span class="sc">::</span><span class="fu">str_which</span>()       <span class="co"># instead of grep()</span></span>
 <span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>stringr<span class="sc">::</span><span class="fu">str_replace</span>()     <span class="co"># instead of gsub()</span></span>
 <span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Session info</span></span>
-<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>sessioninfo<span class="sc">::</span><span class="fu">session_info</span>() <span class="co"># instead of sessionInfo()</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Date/time operations</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>lubridate<span class="sc">::</span>NA_Date_        <span class="co"># instead of as.Date(NA)</span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Session info</span></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>sessioninfo<span class="sc">::</span><span class="fu">session_info</span>() <span class="co"># instead of sessionInfo()</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>See also <a href="coding-practices.html#sec-tidyverse" class="quarto-xref" preview-toc-changed><span>Section 6.16</span></a>.</p>
 </section>
 <section id="sec-here-package-style" class="level2" data-number="7.9">
