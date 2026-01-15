@@ -22,7 +22,7 @@ jobs:
       - name: Install system dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y jags libcurl4-openssl-dev libpng-dev libfontconfig1-dev libjpeg-dev
+          sudo apt-get install -y jags libcurl4-openssl-dev libpng-dev libfontconfig1-dev libjpeg-dev libreoffice-writer
 
       - uses: r-lib/actions/setup-renv@v2
 
@@ -33,6 +33,11 @@ jobs:
 
       - name: Render
         uses: quarto-dev/quarto-actions/render@v2
+
+      - name: Resave DOCX files with LibreOffice
+        run: python3 .github/scripts/resave-docx-with-libreoffice.py
+        env:
+          DOCX_DIR: ./docs
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
