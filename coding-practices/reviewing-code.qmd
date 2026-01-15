@@ -114,9 +114,12 @@ from special comments in the R source code (see @sec-documenting-code).
 Focus your review on the roxygen2 documentation comments in the actual R source files (`.R` files in the `R/` directory).
 These special comments start with `#'` and appear immediately before function definitions.
 Any changes to function documentation will be visible there.
-You can also review the corresponding rendered reference manual page in the pkgdown website preview.
-The pkgdown workflow should automatically post a comment on the PR 
-containing a link to a preview version of the revised website.
+
+If the repository has a preview workflow
+(such as pkgdown for R packages or Quarto for documentation sites),
+you can also review the rendered documentation in the preview build.
+The preview workflow should automatically post a comment on the PR
+containing a link to a preview version of the revised documentation.
 
 ![Example of an automated PR preview comment posted by GitHub Actions](assets/images/quarto-preview-comment.svg){#fig-preview-comment}
 
