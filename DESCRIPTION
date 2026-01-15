@@ -15,3 +15,5 @@ Imports:
 Remotes: rstudio/bookdown
 Language: en-US
 Encoding: UTF-8
+Suggests: 
+    withr
