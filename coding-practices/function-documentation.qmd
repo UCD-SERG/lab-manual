@@ -39,6 +39,99 @@ Also notice that all optional arguments (i.e. ones with pre-specified defaults) 
 
 For more information on roxygen2 syntax and features, see <https://roxygen2.r-lib.org/>.
 
+### Using `...` (dots) and `@inheritDotParams`
+
+The `...` argument (pronounced "dots" or "ellipsis") is a special R construct that allows functions to accept additional arguments that are passed to other functions.
+This is particularly useful when creating wrapper functions that call other functions internally.
+
+**When to use `...`:**
+
+- You're creating a wrapper function that calls another function
+- You want to allow users to pass additional arguments to an internal function
+- You want to provide flexibility without explicitly listing all possible arguments
+
+**Basic example with `...`:**
+
+```r
+#' Plot data with custom ggplot2 styling
+#'
+#' A wrapper function that creates a scatter plot with custom theme settings.
+#' Additional arguments are passed to ggplot2::geom_point().
+#'
+#' @param data A data frame containing the variables to plot
+#' @param x A string specifying the x-axis variable name
+#' @param y A string specifying the y-axis variable name
+#' @param ... Additional arguments passed to ggplot2::geom_point()
+#'
+#' @returns A ggplot2 object
+#'
+#' @examples
+#' # Pass color and size arguments to geom_point
+#' plot_with_style(my_data, "age", "height", color = "blue", size = 3)
+#'
+plot_with_style <- function(data, x, y, ...) {
+  ggplot2::ggplot(data, ggplot2::aes(.data[[x]], .data[[y]])) +
+    ggplot2::geom_point(...) +
+    ggplot2::theme_minimal()  # Apply a minimal theme
+}
+```
+
+While the example above documents `...` with a simple description,
+roxygen2 provides `@inheritDotParams` to automatically inherit parameter documentation from the function you're calling.
+This is more robust and maintainable because it automatically stays synchronized with the target function's documentation.
+
+**Using `@inheritDotParams`:**
+
+```r
+#' Plot data with custom ggplot2 styling
+#'
+#' A wrapper function that creates a scatter plot with custom theme settings.
+#'
+#' @param data A data frame containing the variables to plot
+#' @param x A string specifying the x-axis variable name
+#' @param y A string specifying the y-axis variable name
+#' @inheritDotParams ggplot2::geom_point -mapping -data -stat -position
+#'
+#' @returns A ggplot2 object
+#'
+#' @examples
+#' # Pass color and size arguments to geom_point
+#' plot_with_style(my_data, "age", "height", color = "blue", size = 3)
+#'
+plot_with_style <- function(data, x, y, ...) {
+  ggplot2::ggplot(data, ggplot2::aes(.data[[x]], .data[[y]])) +
+    ggplot2::geom_point(...) +
+    ggplot2::theme_minimal()  # Apply a minimal theme
+}
+```
+
+The `@inheritDotParams` tag:
+
+- Automatically imports parameter documentation from `ggplot2::geom_point()`
+- Uses `-mapping -data -stat -position` to exclude parameters that don't make sense in this context
+- Keeps documentation synchronized if the underlying function changes
+- Makes it clear which function receives the `...` arguments
+
+**Best practices for `...`:**
+
+1. **Always document what receives the dots**: Use `@inheritDotParams` when passing to a specific function,
+or clearly describe where the arguments go
+2. **Exclude irrelevant parameters**: Use the `-param_name` syntax to exclude parameters that don't apply
+3. **Validate unexpected arguments**: Consider using the [`{ellipsis}`](https://ellipsis.r-lib.org/) package to catch misspelled argument names:
+
+   ```r
+   my_function <- function(x, y, ...) {
+     ellipsis::check_dots_used()
+     # function code
+   }
+   ```
+
+4. **Consider alternatives**: If you're only passing a few specific arguments,
+it may be clearer to list them explicitly rather than using `...`
+
+For more details on `@inheritDotParams`,
+see the [roxygen2 documentation on inheriting parameters](https://roxygen2.r-lib.org/articles/rd.html#inheriting-documentation).
+
 ::: {.callout-note}
 As someone trying to call a function, it is possible to access a function's documentation (and internal code) by `CMD-Left-Click`ing the function's name in RStudio
 :::
