@@ -480,7 +480,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix-copilot-instructions.html" class="sidebar-item-text sidebar-link active">
+  <a href="./appendix-copilot-instructions.html" class="sidebar-item-text sidebar-link active" preview-toc-changed>
  <span class="menu-text">Copilot Instructions File</span></a>
   </div>
 </li>
@@ -488,6 +488,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="./appendix-copilot-setup-steps.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Copilot Setup Steps File</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-document-metadata.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
+ <span class="menu-text">Document Generation Metadata</span></a>
   </div>
 </li>
       </ul>
@@ -504,7 +510,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <main class="content" id="quarto-document-content">
 <div class="preview-home-changes-banner">
     <p style="margin: 0;">
-        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="coding-practices.html">6. &nbsp; <span class="chapter-title">R Coding Practices</span></span></a>
+        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="appendix-document-metadata.html">appendix-document-metadata</a>, <a href="coding-practices.html">6. &nbsp; <span class="chapter-title">R Coding Practices</span></span></a>, <a href="appendix-copilot-instructions.html">appendix-copilot-instructions</a>
         <br>
         <strong>📄 DOCX with tracked changes:</strong> <a href="UCD-SeRG-Lab-Manual-tracked-changes.docx" download>Download UCD-SeRG-Lab-Manual-tracked-changes.docx</a>
         <br>
@@ -532,6 +538,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+
+
+<div class="preview-combined-banner">
+    <p style="margin: 0;">
+        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~1% of content changed).
+        <br>
+        <strong>🎨 Highlighting Legend:</strong> 
+        <mark class="preview-text-changed" style="display: inline; padding: 1px 3px;">Modified text (yellow)</mark> shows changed words/phrases with tooltips of original text, 
+        <mark class="preview-text-added" style="display: inline; padding: 1px 3px;">added text (green)</mark> shows new content, and 
+        <mark class="preview-element-added" style="display: inline; padding: 1px 3px;">new sections (blue)</mark> highlight entirely new paragraphs.
+    </p>
+</div>
 
 <p>This appendix contains the complete <code>.github/copilot-instructions.md</code> file used in this repository to guide GitHub Copilot coding agents.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -574,6 +592,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="https://docs.ropensci.org/targets/"><code>{targets}</code></a></li>
 <li><a href="https://rdatatable.gitlab.io/data.table/"><code>{data.table}</code></a></li>
 <li><a href="https://cran.r-project.org/package=assertthat"><code>{assertthat}</code></a></li>
+<li><a href="https://lubridate.tidyverse.org/"><code>{lubridate}</code></a></li>
 </ul>
 </section>
 <section id="blank-lines-before-lists" class="level3">
@@ -712,6 +731,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Use <code>snake_case</code> for variable and function names</li>
 <li>Use <code>.qmd</code> files exclusively (not <code>.Rmd</code>)</li>
 <li>All R projects should use R package structure</li>
+<li>Use <code>lubridate::NA_Date_</code> instead of <code>as.Date(NA)</code> for missing date values</li>
 </ul>
 </section>
 <section id="file-organization" class="level2">
@@ -857,6 +877,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>GitHub Copilot can read and process Microsoft Word (.docx) files, which is useful for translating edits made in Word back to Quarto format.</p>
 <p>When working with DOCX files:</p>
 <ul>
+<li><strong>Check git metadata first</strong>: DOCX files generated from this repository include a “Document Generation Metadata” section at the end with the branch name, commit hash, and commit date. Use this information to:
+<ul>
+<li>Identify which commit generated the original DOCX</li>
+<li>Set up the resulting PR correctly with the appropriate base branch</li>
+<li>Account for any commits that have been added since the DOCX was generated</li>
+<li>Understand the state of the repository when the DOCX was created</li>
+</ul></li>
 <li><strong>Always examine tracked changes</strong>: Use the <code>view</code> tool to read DOCX files and pay special attention to any tracked changes (insertions, deletions, formatting changes)</li>
 <li><strong>Review comments</strong>: Look for and address any comments in the DOCX file that may provide context or instructions for edits</li>
 <li><strong>Translate edits to Quarto</strong>: When edits have been made in a DOCX file, apply the equivalent changes to the corresponding <code>.qmd</code> files</li>
@@ -873,6 +900,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Add blank lines before all lists</li>
 <li>Follow the lab’s R package development workflow (as described throughout this repo)</li>
 </ul>
+<section id="testing-and-validation" class="level3">
+<h3 class="anchored" data-anchor-id="testing-and-validation"><mark class="preview-text-changed">Testing</mark> and <mark class="preview-text-changed">Validation</mark></h3>
+<p><mark class="preview-element-added"><strong>ALWAYS render the full Quarto book before requesting code review or finalizing your work.</strong></mark></p>
+<p><mark class="preview-text-changed">Run</mark> <code><mark class="preview-text-changed">quarto</mark> <mark class="preview-text-changed">render</mark></code><mark class="preview-text-changed"> to ensure the book builds successfully in</mark> all output formats (HTML, PDF, DOCX, <mark class="preview-text-changed">EPUB). This validates that:</mark></p>
+<ul>
+<li><mark class="preview-text-changed">All</mark> <mark class="preview-text-changed">cross-references</mark> <mark class="preview-text-changed">are</mark> <mark class="preview-text-changed">valid</mark></li>
+<li><mark class="preview-element-added">All images can be properly converted for PDF output (use PNG format for images, not SVG)</mark></li>
+<li><mark class="preview-element-added">All code chunks execute without errors</mark></li>
+<li><mark class="preview-element-added">The book structure is correct</mark></li>
+</ul>
+<p><mark class="preview-element-added">If the render fails, fix the issues before committing or requesting review. Common issues include:</mark></p>
+<ul>
+<li><mark class="preview-element-added">SVG images that cannot be converted to PDF (use PNG instead)</mark></li>
+<li><mark class="preview-text-changed">Invalid</mark> cross-references</li>
+<li><mark class="preview-element-added">Missing or incorrect file paths</mark></li>
+<li><mark class="preview-element-added">Syntax errors in code chunks</mark></li>
+</ul>
+</section>
 </section>
 </section>
 </div>
