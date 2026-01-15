@@ -34,6 +34,7 @@ Common package URLs:
 - [`{targets}`](https://docs.ropensci.org/targets/)
 - [`{data.table}`](https://rdatatable.gitlab.io/data.table/)
 - [`{assertthat}`](https://cran.r-project.org/package=assertthat)
+- [`{lubridate}`](https://lubridate.tidyverse.org/)
 
 
 ### Blank Lines Before Lists
@@ -203,6 +204,7 @@ See the "Best Practices" section for more details.
 - Use `snake_case` for variable and function names
 - Use `.qmd` files exclusively (not `.Rmd`)
 - All R projects should use R package structure
+- Use `lubridate::NA_Date_` instead of `as.Date(NA)` for missing date values
 
 ## File Organization
 
