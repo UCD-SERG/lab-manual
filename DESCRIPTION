@@ -12,6 +12,7 @@ Imports:
     ggplot2,
     lintr,
     rmarkdown,
+    spelling,
     tibble
 Remotes: rstudio/bookdown
 Language: en-US
