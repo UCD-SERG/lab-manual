@@ -1,6 +1,6 @@
 # Document Generation Metadata {.unnumbered}
 
-::: {.content-visible when-format="docx"}
+::: {.content-visible unless-format="html"}
 
 This document was generated from the following git commit:
 
