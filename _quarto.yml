@@ -59,6 +59,7 @@ book:
   appendices:
     - appendix-copilot-instructions.qmd
     - appendix-copilot-setup-steps.qmd
+    - appendix-document-metadata.qmd
   page-navigation: true
 
 bibliography: [book.bib, packages.bib]
