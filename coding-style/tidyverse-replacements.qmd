@@ -19,6 +19,9 @@ dplyr::bind_cols()         # instead of cbind()
 stringr::str_which()       # instead of grep()
 stringr::str_replace()     # instead of gsub()
 
+# Date/time operations
+lubridate::NA_Date_        # instead of as.Date(NA)
+
 # Session info
 sessioninfo::session_info() # instead of sessionInfo()
 ```
