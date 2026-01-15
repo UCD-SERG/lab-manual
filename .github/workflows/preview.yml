@@ -83,6 +83,11 @@ jobs:
         env:
           DOCX_DIR: ./docs
 
+      - name: Resave tracked changes DOCX with LibreOffice
+        run: python3 .github/scripts/resave-docx-with-libreoffice.py
+        env:
+          DOCX_DIR: ./docs
+
       - name: Add home page banner
         run: python3 .github/scripts/add-home-banner.py
         env:
