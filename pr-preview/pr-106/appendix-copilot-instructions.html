@@ -375,7 +375,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./coding-style.html" class="sidebar-item-text sidebar-link">
+  <a href="./coding-style.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">R Code Style</span></span></a>
   </div>
 </li>
@@ -510,7 +510,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <main class="content" id="quarto-document-content">
 <div class="preview-home-changes-banner">
     <p style="margin: 0;">
-        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="appendix-document-metadata.html">appendix-document-metadata</a>, <a href="coding-practices.html">6. &nbsp; <span class="chapter-title">R Coding Practices</span></span></a>, <a href="appendix-copilot-instructions.html">appendix-copilot-instructions</a>
+        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="coding-style.html">7. &nbsp; <span class="chapter-title">R Code Style</span></span></a>, <a href="appendix-document-metadata.html">appendix-document-metadata</a>, <a href="coding-practices.html">6. &nbsp; <span class="chapter-title">R Coding Practices</span></span></a>, <a href="appendix-copilot-instructions.html">appendix-copilot-instructions</a>
         <br>
         <strong>📄 DOCX with tracked changes:</strong> <a href="UCD-SeRG-Lab-Manual-tracked-changes.docx" download>Download UCD-SeRG-Lab-Manual-tracked-changes.docx</a>
         <br>
@@ -542,7 +542,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div class="preview-combined-banner">
     <p style="margin: 0;">
-        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~1% of content changed).
+        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~2% of content changed).
         <br>
         <strong>🎨 Highlighting Legend:</strong> 
         <mark class="preview-text-changed" style="display: inline; padding: 1px 3px;">Modified text (yellow)</mark> shows changed words/phrases with tooltips of original text, 
@@ -592,7 +592,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="https://docs.ropensci.org/targets/"><code>{targets}</code></a></li>
 <li><a href="https://rdatatable.gitlab.io/data.table/"><code>{data.table}</code></a></li>
 <li><a href="https://cran.r-project.org/package=assertthat"><code>{assertthat}</code></a></li>
-<li><a href="https://lubridate.tidyverse.org/"><code>{lubridate}</code></a></li>
 </ul>
 </section>
 <section id="blank-lines-before-lists" class="level3">
@@ -731,7 +730,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Use <code>snake_case</code> for variable and function names</li>
 <li>Use <code>.qmd</code> files exclusively (not <code>.Rmd</code>)</li>
 <li>All R projects should use R package structure</li>
-<li>Use <code>lubridate::NA_Date_</code> instead of <code>as.Date(NA)</code> for missing date values</li>
 </ul>
 </section>
 <section id="file-organization" class="level2">
