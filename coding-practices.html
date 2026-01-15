@@ -594,7 +594,15 @@ window.Quarto = {
   <li><a href="#version-numbers" id="toc-version-numbers" class="nav-link" data-scroll-target="#version-numbers"><span class="header-section-number">6.6.1</span> Version Numbers</a></li>
   <li><a href="#news-file" id="toc-news-file" class="nav-link" data-scroll-target="#news-file"><span class="header-section-number">6.6.2</span> NEWS File</a></li>
   </ul></li>
-  <li><a href="#sec-r-ci" id="toc-sec-r-ci" class="nav-link" data-scroll-target="#sec-r-ci"><span class="header-section-number">6.7</span> Continuous Integration</a></li>
+  <li><a href="#sec-r-ci" id="toc-sec-r-ci" class="nav-link" data-scroll-target="#sec-r-ci"><span class="header-section-number">6.7</span> Continuous Integration</a>
+  <ul class="collapse">
+  <li><a href="#understanding-github-actions" id="toc-understanding-github-actions" class="nav-link" data-scroll-target="#understanding-github-actions"><span class="header-section-number">6.7.1</span> Understanding GitHub Actions</a></li>
+  <li><a href="#setting-up-github-actions" id="toc-setting-up-github-actions" class="nav-link" data-scroll-target="#setting-up-github-actions"><span class="header-section-number">6.7.2</span> Setting Up GitHub Actions</a></li>
+  <li><a href="#how-github-actions-workflows-work" id="toc-how-github-actions-workflows-work" class="nav-link" data-scroll-target="#how-github-actions-workflows-work"><span class="header-section-number">6.7.3</span> How GitHub Actions Workflows Work</a></li>
+  <li><a href="#workflow-files-and-security" id="toc-workflow-files-and-security" class="nav-link" data-scroll-target="#workflow-files-and-security"><span class="header-section-number">6.7.4</span> Workflow Files and Security</a></li>
+  <li><a href="#troubleshooting-failed-workflows" id="toc-troubleshooting-failed-workflows" class="nav-link" data-scroll-target="#troubleshooting-failed-workflows"><span class="header-section-number">6.7.5</span> Troubleshooting Failed Workflows</a></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources"><span class="header-section-number">6.7.6</span> Additional Resources</a></li>
+  </ul></li>
   <li><a href="#sec-r-qa-checklist" id="toc-sec-r-qa-checklist" class="nav-link" data-scroll-target="#sec-r-qa-checklist"><span class="header-section-number">6.8</span> Quality Assurance Checklist</a></li>
   <li><a href="#sec-auto-styling" id="toc-sec-auto-styling" class="nav-link" data-scroll-target="#sec-auto-styling"><span class="header-section-number">6.9</span> Automated Code Styling</a>
   <ul class="collapse">
@@ -1056,18 +1064,101 @@ test_that("prep_study_data produces expected structure", {
 </section>
 <section id="sec-r-ci" class="level2" data-number="6.7">
 <h2 data-number="6.7" class="anchored" data-anchor-id="sec-r-ci"><span class="header-section-number">6.7</span> Continuous Integration</h2>
-<p>Set up automated checks using GitHub Actions:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add standard R package CI workflows</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github_action</span>(<span class="st">"check-standard"</span>)    <span class="co"># R CMD check</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github_action</span>(<span class="st">"test-coverage"</span>)     <span class="co"># Code coverage</span></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github_action</span>(<span class="st">"pkgdown"</span>)           <span class="co"># Deploy website</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>These workflows automatically:</p>
+<section id="understanding-github-actions" class="level3" data-number="6.7.1">
+<h3 data-number="6.7.1" class="anchored" data-anchor-id="understanding-github-actions"><span class="header-section-number">6.7.1</span> Understanding GitHub Actions</h3>
+<p><a href="https://github.com/features/actions">GitHub Actions</a> is GitHub’s built-in automation platform that makes it easy to automate software workflows, including continuous integration and deployment (CI/CD). For R packages, this means you can automatically test your code, check for errors, and deploy documentation every time you push changes to GitHub.</p>
+<p><strong>Key benefits of GitHub Actions:</strong></p>
 <ul>
-<li>Run R CMD check on multiple platforms (Linux, macOS, Windows)</li>
-<li>Calculate test coverage</li>
-<li>Build and deploy your pkgdown website</li>
-<li>Ensure code quality before merging</li>
+<li><strong>Automated testing</strong>: Run <code>R CMD check</code> across multiple operating systems (Linux, macOS, Windows) and R versions</li>
+<li><strong>Immediate feedback</strong>: Get notified of problems quickly, when they’re easier to fix</li>
+<li><strong>Better collaboration</strong>: External contributors can see if their changes pass all checks before you review</li>
+<li><strong>Quality assurance</strong>: Catch platform-specific issues before they reach users</li>
+<li><strong>Documentation deployment</strong>: Automatically build and deploy your pkgdown website</li>
 </ul>
+<p>Even for solo developers, having automated checks run on different platforms helps avoid the “works on my machine” problem.</p>
+</section>
+<section id="setting-up-github-actions" class="level3" data-number="6.7.2">
+<h3 data-number="6.7.2" class="anchored" data-anchor-id="setting-up-github-actions"><span class="header-section-number">6.7.2</span> Setting Up GitHub Actions</h3>
+<p>The easiest way to add GitHub Actions to your R package is using <a href="https://usethis.r-lib.org/"><code>{usethis}</code></a>. The tidyverse team maintains a collection of ready-to-use workflows at <a href="https://github.com/r-lib/actions">r-lib/actions</a> that handle common R package tasks.</p>
+<section id="essential-workflows" class="level4" data-number="6.7.2.1">
+<h4 data-number="6.7.2.1" class="anchored" data-anchor-id="essential-workflows"><span class="header-section-number">6.7.2.1</span> Essential Workflows</h4>
+<p><strong>1. R CMD check (most important):</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github_action</span>(<span class="st">"check-standard"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This runs <code>R CMD check</code> on Linux, macOS, and Windows to ensure your package works across platforms. If you only set up one workflow, make it this one.</p>
+<p><strong>2. Test coverage:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github_action</span>(<span class="st">"test-coverage"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Calculates what percentage of your code is covered by tests and reports to <a href="https://about.codecov.io">codecov.io</a>.</p>
+<p><strong>3. Package website:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github_action</span>(<span class="st">"pkgdown"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Automatically builds and deploys your pkgdown documentation site to GitHub Pages.</p>
+</section>
+<section id="interactive-setup" class="level4" data-number="6.7.2.2">
+<h4 data-number="6.7.2.2" class="anchored" data-anchor-id="interactive-setup"><span class="header-section-number">6.7.2.2</span> Interactive Setup</h4>
+<p>Running <code>usethis::use_github_action()</code> without arguments shows a menu of recommended workflows:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github_action</span>()</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Which action do you want to add? (0 to exit)</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; (See &lt;https://github.com/r-lib/actions/tree/v2/examples&gt; for other options)</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1: check-standard: Run `R CMD check` on Linux, macOS, and Windows</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2: test-coverage: Compute test coverage and report to https://about.codecov.io</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3: pr-commands: Add /document and /style commands for pull requests</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="how-github-actions-workflows-work" class="level3" data-number="6.7.3">
+<h3 data-number="6.7.3" class="anchored" data-anchor-id="how-github-actions-workflows-work"><span class="header-section-number">6.7.3</span> How GitHub Actions Workflows Work</h3>
+<p>When you set up a workflow, <code>usethis</code> creates a YAML configuration file in <code>.github/workflows/</code>. For example, <code>check-standard</code> creates <code>.github/workflows/R-CMD-check.yaml</code>.</p>
+<p>This workflow automatically runs when you:</p>
+<ul>
+<li>Push commits to <code>main</code> or <code>master</code></li>
+<li>Open or update a pull request</li>
+</ul>
+<p>You can view workflow results in the “Actions” tab of your GitHub repository. A status badge is added to your README showing whether checks are passing.</p>
+</section>
+<section id="workflow-files-and-security" class="level3" data-number="6.7.4">
+<h3 data-number="6.7.4" class="anchored" data-anchor-id="workflow-files-and-security"><span class="header-section-number">6.7.4</span> Workflow Files and Security</h3>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Important Security Consideration</strong></p>
+<p>Workflow files (<code>.github/workflows/*.yaml</code>) have access to repository secrets and can execute code. Always review workflow files carefully before committing them, especially if copied from external sources.</p>
+<p>See <a href="ai-tools.html#sec-ai-best-practices" class="quarto-xref"><span>Section 17.4.6</span></a> for guidance on working with workflow files using AI tools.</p>
+</div>
+</div>
+<p>The workflow YAML files in <code>.github/workflows/</code> are configuration files that tell GitHub Actions:</p>
+<ul>
+<li>When to run (on push, pull request, schedule, etc.)</li>
+<li>What operating systems and R versions to use</li>
+<li>What steps to execute (install dependencies, run checks, etc.)</li>
+</ul>
+</section>
+<section id="troubleshooting-failed-workflows" class="level3" data-number="6.7.5">
+<h3 data-number="6.7.5" class="anchored" data-anchor-id="troubleshooting-failed-workflows"><span class="header-section-number">6.7.5</span> Troubleshooting Failed Workflows</h3>
+<p>When workflows fail, check the “Actions” tab in your GitHub repository for detailed logs. Common issues include:</p>
+<ul>
+<li><strong>Test failures</strong>: Your tests found a bug (this is good! fix the bug)</li>
+<li><strong>Platform-specific issues</strong>: Code works on your machine but not on other platforms</li>
+<li><strong>Missing dependencies</strong>: System libraries needed for packages aren’t installed</li>
+<li><strong>Linting errors</strong>: Code style issues detected by automated checks</li>
+</ul>
+<p>For help addressing workflow failures, see <a href="ai-tools.html#sec-ai-addressing-failing-workflows" class="quarto-xref"><span>Section 17.4.4</span></a>.</p>
+</section>
+<section id="additional-resources" class="level3" data-number="6.7.6">
+<h3 data-number="6.7.6" class="anchored" data-anchor-id="additional-resources"><span class="header-section-number">6.7.6</span> Additional Resources</h3>
+<ul>
+<li><a href="https://github.com/features/actions">GitHub Actions features overview</a></li>
+<li><a href="https://github.com/r-lib/actions">r-lib/actions repository</a> - R-specific actions and example workflows</li>
+<li><a href="https://r-pkgs.org/software-development-practices.html#sec-sw-dev-practices-ci">R Packages book: Continuous Integration</a></li>
+<li><a href="https://docs.github.com/en/actions">GitHub Actions documentation</a></li>
+<li><a href="https://github.com/r-lib/actions#where-to-find-help">Where to find help with r-lib/actions</a></li>
+</ul>
+</section>
 </section>
 <section id="sec-r-qa-checklist" class="level2" data-number="6.8">
 <h2 data-number="6.8" class="anchored" data-anchor-id="sec-r-qa-checklist"><span class="header-section-number">6.8</span> Quality Assurance Checklist</h2>
@@ -1096,29 +1187,29 @@ test_that("prep_study_data produces expected structure", {
 <section id="styler-package" class="level3" data-number="6.9.2">
 <h3 data-number="6.9.2" class="anchored" data-anchor-id="styler-package"><span class="header-section-number">6.9.2</span> styler Package</h3>
 <p>For automated styling of entire projects:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install styler</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"styler"</span>)</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Style all files in R/ directory</span></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>styler<span class="sc">::</span><span class="fu">style_dir</span>(<span class="st">"R/"</span>)</span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Style entire package</span></span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>styler<span class="sc">::</span><span class="fu">style_pkg</span>()</span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Note: styler modifies files in-place</span></span>
-<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Always use with version control so you can review changes</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install styler</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"styler"</span>)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Style all files in R/ directory</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>styler<span class="sc">::</span><span class="fu">style_dir</span>(<span class="st">"R/"</span>)</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Style entire package</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>styler<span class="sc">::</span><span class="fu">style_pkg</span>()</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Note: styler modifies files in-place</span></span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Always use with version control so you can review changes</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="lintr-package" class="level3" data-number="6.9.3">
 <h3 data-number="6.9.3" class="anchored" data-anchor-id="lintr-package"><span class="header-section-number">6.9.3</span> lintr Package</h3>
 <p>For checking code style without modifying files:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install lintr</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"lintr"</span>)</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Lint the entire package</span></span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>lintr<span class="sc">::</span><span class="fu">lint_package</span>()</span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Lint a specific file</span></span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>lintr<span class="sc">::</span><span class="fu">lint</span>(<span class="st">"R/my_function.R"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install lintr</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"lintr"</span>)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Lint the entire package</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>lintr<span class="sc">::</span><span class="fu">lint_package</span>()</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Lint a specific file</span></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>lintr<span class="sc">::</span><span class="fu">lint</span>(<span class="st">"R/my_function.R"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The linter checks for:</p>
 <ul>
 <li>Unused variables</li>
@@ -1137,26 +1228,26 @@ test_that("prep_study_data produces expected structure", {
 <p>Every function you write must include documentation to describe its purpose, inputs, and outputs. For any reproducible workflows, this is essential, because R is dynamically typed. This means you can pass a <code>string</code> into an argument that is meant to be a <code>data.table</code>, or a <code>list</code> into an argument meant for a <code>tibble</code>. It is the responsibility of a function’s author to document what each argument is meant to do and its basic type.</p>
 <p>We use <a href="https://roxygen2.r-lib.org/"><code>{roxygen2}</code></a> <span class="citation" data-cites="R-roxygen2">(<a href="references.html#ref-R-roxygen2" role="doc-biblioref">Wickham et al. 2024</a>)</span> for function documentation. Roxygen2 allows you to describe your functions in special comments next to their definitions, and automatically generates R documentation files (<code>.Rd</code> files) and helps manage your package <code>NAMESPACE</code>. The roxygen2 format uses <code>#'</code> comments placed immediately before the function definition.</p>
 <p>Here is an example of documenting a function using roxygen2:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">#' Calculate flu season means by site</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="co">#' Make a dataframe with rows for flu season and site</span></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co">#' containing the number of patients with an outcome, the total patients,</span></span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="co">#' and the percent of patients with the outcome.</span></span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param data A data frame with variables flu_season, site, studyID, and yname</span></span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param yname A string for the outcome name</span></span>
-<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param silent A boolean specifying whether to suppress console output </span></span>
-<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="co">#'   (default: TRUE)</span></span>
-<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
-<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a><span class="co">#' @returns A dataframe as described above</span></span>
-<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
-<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a><span class="co">#' @examples</span></span>
-<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a><span class="co">#' calc_fluseas_mean(my_data, "hospitalized", silent = FALSE)</span></span>
-<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
-<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>calc_fluseas_mean <span class="ot">&lt;-</span> <span class="cf">function</span>(data, yname, <span class="at">silent =</span> <span class="cn">TRUE</span>) {</span>
-<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>  <span class="do">### function code here</span></span>
-<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">#' Calculate flu season means by site</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="co">#' Make a dataframe with rows for flu season and site</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="co">#' containing the number of patients with an outcome, the total patients,</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="co">#' and the percent of patients with the outcome.</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param data A data frame with variables flu_season, site, studyID, and yname</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param yname A string for the outcome name</span></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param silent A boolean specifying whether to suppress console output </span></span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="co">#'   (default: TRUE)</span></span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a><span class="co">#' @returns A dataframe as described above</span></span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a><span class="co">#' @examples</span></span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a><span class="co">#' calc_fluseas_mean(my_data, "hospitalized", silent = FALSE)</span></span>
+<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a>calc_fluseas_mean <span class="ot">&lt;-</span> <span class="cf">function</span>(data, yname, <span class="at">silent =</span> <span class="cn">TRUE</span>) {</span>
+<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a>  <span class="do">### function code here</span></span>
+<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The roxygen2 header tells you what the function does, its various inputs, and how you might use it. Also notice that all optional arguments (i.e.&nbsp;ones with pre-specified defaults) follow arguments that require user input.</p>
 <p>For more information on roxygen2 syntax and features, see <a href="https://roxygen2.r-lib.org/" class="uri">https://roxygen2.r-lib.org/</a>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
