@@ -204,6 +204,7 @@ See the "Best Practices" section for more details.
 - Use `snake_case` for variable and function names
 - Use `.qmd` files exclusively (not `.Rmd`)
 - All R projects should use R package structure
+- **Avoid redundant logical comparisons**: Use logical variables directly in conditional statements (e.g., `if (x)` instead of `if (x == TRUE)` or `if (x == 1)`)
 - Use `lubridate::NA_Date_` instead of `as.Date(NA)` for missing date values
 
 ## File Organization
