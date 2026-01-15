@@ -72,7 +72,7 @@ This is particularly useful when creating wrapper functions that call other func
 plot_with_style <- function(data, x, y, ...) {
   ggplot2::ggplot(data, ggplot2::aes(.data[[x]], .data[[y]])) +
     ggplot2::geom_point(...) +
-    custom_theme()
+    ggplot2::theme_minimal()  # Apply a minimal theme
 }
 ```
 
@@ -101,7 +101,7 @@ This is more robust and maintainable because it automatically stays synchronized
 plot_with_style <- function(data, x, y, ...) {
   ggplot2::ggplot(data, ggplot2::aes(.data[[x]], .data[[y]])) +
     ggplot2::geom_point(...) +
-    custom_theme()
+    ggplot2::theme_minimal()  # Apply a minimal theme
 }
 ```
 
