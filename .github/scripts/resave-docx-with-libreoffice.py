@@ -17,6 +17,8 @@ import os
 import sys
 import subprocess
 import shutil
+import tempfile
+import traceback
 from pathlib import Path
 
 
@@ -65,8 +67,7 @@ def resave_docx_with_libreoffice(docx_path, output_dir=None):
         output_dir.mkdir(parents=True, exist_ok=True)
     
     # Create a temporary directory for LibreOffice to write to
-    temp_dir = Path('/tmp/libreoffice-resave')
-    temp_dir.mkdir(parents=True, exist_ok=True)
+    temp_dir = Path(tempfile.mkdtemp(prefix='libreoffice-resave-'))
     
     try:
         # Use LibreOffice to convert (resave) the DOCX file
@@ -111,13 +112,15 @@ def resave_docx_with_libreoffice(docx_path, output_dir=None):
         return False
     except Exception as e:
         print(f"  ✗ Error resaving {docx_path.name}: {e}", file=sys.stderr)
-        import traceback
         traceback.print_exc()
         return False
     finally:
         # Clean up temp directory
         if temp_dir.exists():
-            shutil.rmtree(temp_dir, ignore_errors=True)
+            try:
+                shutil.rmtree(temp_dir)
+            except Exception as e:
+                print(f"  ⚠ Warning: Failed to clean up temp directory {temp_dir}: {e}", file=sys.stderr)
 
 
 def main():
