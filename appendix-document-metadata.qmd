@@ -19,7 +19,8 @@ commit_full <- system("git rev-parse HEAD 2>/dev/null", intern = TRUE)
 if (length(commit_full) == 0 || commit_full == "") commit_full <- "unknown"
 
 # Get commit date
-commit_date <- system("git show -s --format=%ci HEAD 2>/dev/null", intern = TRUE)
+commit_date <- "git show -s --format=%ci HEAD 2>/dev/null" |> 
+  system(intern = TRUE)
 if (length(commit_date) == 0 || commit_date == "") commit_date <- "unknown"
 
 # Print formatted output
