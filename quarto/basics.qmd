@@ -105,7 +105,7 @@ if (knitr::pandoc_to("docx")) {
   # DOCX-specific code
   knitr::kable(data, format = "simple")
 } else if (knitr::pandoc_to("html")) {
-  # HTML-specific code  
+  # HTML-specific code
   knitr::kable(data, format = "html")
 } else {
   # PDF or other formats
