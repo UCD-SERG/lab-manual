@@ -79,6 +79,55 @@ Common chunk options include:
 - `#| warning: false` - hide warnings
 - `#| message: false` - hide messages
 
+### Format-Specific Settings
+
+When rendering to multiple output formats (HTML, PDF, DOCX, EPUB),
+you may want different chunk options or behavior for different formats.
+Use `knitr::pandoc_to()` with `if ()` statements to detect the output format and set format-specific settings.
+
+**Example: Different figure sizes for different formats**
+
+````markdown
+```{{r}}
+#| label: example-plot
+#| fig-width: !expr if (knitr::pandoc_to("html")) 8 else 6
+#| fig-height: !expr if (knitr::pandoc_to("html")) 6 else 4
+
+plot(1:10)
+```
+````
+
+**Example: Conditional code execution based on format**
+
+````markdown
+```{{r}}
+if (knitr::pandoc_to("docx")) {
+  # DOCX-specific code
+  knitr::kable(data, format = "simple")
+} else if (knitr::pandoc_to("html")) {
+  # HTML-specific code  
+  knitr::kable(data, format = "html")
+} else {
+  # PDF or other formats
+  knitr::kable(data, format = "latex")
+}
+```
+````
+
+Common format detection patterns:
+
+- `knitr::pandoc_to("html")` - returns `TRUE` for HTML output
+- `knitr::pandoc_to("latex")` - returns `TRUE` for PDF output
+- `knitr::pandoc_to("docx")` - returns `TRUE` for Word output
+- `knitr::pandoc_to("epub")` - returns `TRUE` for EPUB output
+
+This technique is particularly useful when you need to:
+
+- Adjust figure dimensions for different page sizes
+- Use different table formatting for different outputs
+- Include or exclude content based on output format
+- Set format-specific styling or options
+
 ### Text Formatting
 
 Quarto uses Pandoc's markdown for text formatting:
