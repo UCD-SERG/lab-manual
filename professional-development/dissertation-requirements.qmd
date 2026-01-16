@@ -18,14 +18,14 @@ making it easy to access recent examples from your program.
 
 ### Publication Requirements
 
-Three first-author papers typically suffices for a dissertation in our field.
+Three first-author papers typically suffice for a dissertation in public health and biomedical sciences.
 If academic peers in reputable journals have approved your work through peer review,
 this demonstrates that your research meets professional standards.
 Your dissertation committee should recognize this external validation.
 
 The specific publication requirements may vary by program and institution,
 so consult your program's guidelines and discuss expectations with your committee early.
-However, three substantial first-author publications generally demonstrates:
+However, three substantial first-author publications generally demonstrate:
 
 - Independent research capability
 - Ability to communicate findings effectively
@@ -39,7 +39,7 @@ you can usually get fast-tracked through the dissertation process.
 The reasoning is straightforward:
 your work has been externally validated as worthwhile by prospective employers.
 
-Since nearly any other job pays better than graduate stipends,
+Since most post-PhD positions offer better compensation than graduate stipends,
 it's difficult to justify prolonging your graduation
 when you've already demonstrated professional competence.
 This applies whether the job offer is in academia,
@@ -49,7 +49,7 @@ or nonprofit sectors.
 
 ### Historical Context: The Masterpiece Tradition
 
-The dissertation is a spiritual successor to an apprentice's <a href="https://en.wikipedia.org/wiki/Masterpiece#History">masterpiece</a> in craft guilds.
+The dissertation is a spiritual successor to an apprentice's [masterpiece](https://en.wikipedia.org/wiki/Masterpiece#History) in craft guilds.
 Historically,
 a masterpiece was the piece of work that demonstrated an apprentice had achieved sufficient skill to join the guild as a master craftsperson.
 It was not meant to be the best work they would ever produce—it was meant to prove they were ready to work independently.
