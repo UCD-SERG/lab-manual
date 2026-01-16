@@ -81,3 +81,9 @@ Focus on making a solid,
 incremental contribution to knowledge in your field.
 That's what a dissertation is meant to be—no more,
 no less.
+
+### Resources
+
+**Dissertation writing tools:**
+
+- [quarto-thesis](https://github.com/nmfs-opensci/quarto-thesis) - Quarto extension for creating masters or PhD theses with professional LaTeX formatting
