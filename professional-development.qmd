@@ -74,6 +74,10 @@ Creating clear, effective figures is essential for communicating research findin
 - [NIH Funding Opportunities](https://grants.nih.gov)
 - [NIH Grant Writing Resources](https://www.niaid.nih.gov/grants-contracts/write-grant-application)
 
+## PhD Dissertation Requirements {#sec-dissertation-requirements}
+
+{{< include professional-development/dissertation-requirements.qmd >}}
+
 ## Teaching and Outreach
 
 Teaching and outreach are valuable professional development opportunities:
