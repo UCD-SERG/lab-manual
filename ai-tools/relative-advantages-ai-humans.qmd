@@ -38,7 +38,7 @@ you'll still need strong coding skills to:
 As AI technology advances,
 the distinction between these strengths may shift.
 Yann LeCun,
-Meta's former Chief AI Scientist and 2019 Turing Award winner,
+2019 Turing Award winner and AI researcher at Meta and NYU,
 advocates for developing "world models"—AI systems that understand and reason
 about the physical world,
 not just language patterns [@lecun_world_models].
@@ -59,7 +59,3 @@ and creative problem-solving.
 This makes it even more important to develop strong supervision
 and validation skills now,
 so you can effectively work with increasingly capable AI systems.
-
-For more on LeCun's vision for world models and the future of AI,
-see his discussions of this topic in various interviews
-and his research at NYU's Center for Data Science.
