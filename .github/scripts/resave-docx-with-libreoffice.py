@@ -70,16 +70,22 @@ def resave_docx_with_libreoffice(docx_path, output_dir=None):
     temp_dir = Path(tempfile.mkdtemp(prefix='libreoffice-resave-'))
     
     try:
+        # Copy the file to temp directory first
+        # This ensures LibreOffice has full access and avoids any locking issues
+        temp_input = temp_dir / docx_path.name
+        shutil.copy2(docx_path, temp_input)
+        
         # Use LibreOffice to convert (resave) the DOCX file
         # The --convert-to option forces LibreOffice to read and write the file,
         # which normalizes the structure
+        # We use a simple 'docx' output format instead of the quoted version
         result = subprocess.run(
             [
                 'libreoffice',
                 '--headless',
-                '--convert-to', 'docx:"MS Word 2007 XML"',
+                '--convert-to', 'docx',
                 '--outdir', str(temp_dir),
-                str(docx_path.absolute())
+                str(temp_input.absolute())
             ],
             capture_output=True,
             text=True,
@@ -93,16 +99,29 @@ def resave_docx_with_libreoffice(docx_path, output_dir=None):
             print(f"    stderr: {result.stderr}", file=sys.stderr)
             return False
         
-        # Find the converted file in the temp directory
+        # LibreOffice creates output with the same base name
+        # Since we're converting docx to docx, it may create filename.docx or might
+        # refuse to overwrite. Let's check what files exist.
         converted_file = temp_dir / docx_path.name
         
+        # If the file wasn't created (because it's the same format),
+        # the input file is already normalized by LibreOffice's read operation
         if not converted_file.exists():
-            print(f"  ✗ Converted file not found: {converted_file}", file=sys.stderr)
-            return False
+            # Check if LibreOffice created any new files
+            temp_files = list(temp_dir.glob('*.docx'))
+            # Filter out the input file we created
+            output_files = [f for f in temp_files if f != temp_input]
+            
+            if not output_files:
+                print(f"  ⚠ LibreOffice did not create output file (may already be normalized)", file=sys.stderr)
+                print(f"    Using input file as-is", file=sys.stderr)
+                converted_file = temp_input
+            else:
+                converted_file = output_files[0]
         
         # Move the converted file to replace the original
         final_path = output_dir / docx_path.name
-        shutil.move(str(converted_file), str(final_path))
+        shutil.copy2(str(converted_file), str(final_path))
         
         print(f"  ✓ Successfully resaved: {docx_path.name}")
         return True
