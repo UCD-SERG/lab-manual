@@ -14,6 +14,9 @@ When talking about packages in prose,
 use backticks and curly-braces with a hyperlink to the package website.
 For example: [`{dplyr}`](https://dplyr.tidyverse.org/)
 
+**Do not use raw HTML** (`<a href="...">`) in .qmd files.
+Always use Quarto/markdown link syntax instead.
+
 Common package URLs:
 
 - [`{dplyr}`](https://dplyr.tidyverse.org/)

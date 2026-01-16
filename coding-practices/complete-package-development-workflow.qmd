@@ -19,10 +19,10 @@ The template includes pre-configured:
 - GitHub Actions workflows for R CMD check,
 test coverage,
 and pkgdown deployment
-- Development tools setup (<a href="https://usethis.r-lib.org/">`{usethis}`</a>,
-<a href="https://devtools.r-lib.org/">`{devtools}`</a>,
-<a href="https://roxygen2.r-lib.org/">`{roxygen2}`</a>)
-- Testing infrastructure (<a href="https://testthat.r-lib.org/">`{testthat}`</a>)
+- Development tools setup ([`{usethis}`](https://usethis.r-lib.org/),
+[`{devtools}`](https://devtools.r-lib.org/),
+[`{roxygen2}`](https://roxygen2.r-lib.org/))
+- Testing infrastructure ([`{testthat}`](https://testthat.r-lib.org/))
 - Code styling and linting configurations
 - Package documentation structure
 
