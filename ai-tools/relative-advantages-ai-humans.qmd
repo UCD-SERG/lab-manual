@@ -5,8 +5,10 @@ and when to handle tasks yourself.
 
 #### Comparative Strengths: Humans vs. AI Agents
 
-The table below summarizes the relative advantages of human coders
+::: notes
+@tbl-ai-human-comparison summarizes the relative advantages of human coders
 and AI coding agents across different types of tasks:
+:::
 
 | Task Type | Humans 😊 | AI Agents 🤖 |
 |-----------|-----------|-------------|
@@ -15,7 +17,11 @@ and AI coding agents across different types of tasks:
 
 : Relative advantages of humans and AI coding agents {#tbl-ai-human-comparison}
 
+---
+
+::: notes
 Or, if you prefer a more visual representation:
+:::
 
 ::: {#tbl-matrix-meme-table}
 
