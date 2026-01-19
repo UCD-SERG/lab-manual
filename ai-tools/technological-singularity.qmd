@@ -16,7 +16,7 @@ leading to an intelligence explosion beyond human comprehension or control.
 
 #### Do current AI agents represent the singularity?
 
-**No, current AI coding agents (as of early 2025) do not represent the technological singularity.**
+**No, current AI coding agents (as of early 2026) do not represent the technological singularity.**
 
 While modern AI agents demonstrate impressive capabilities,
 they remain fundamentally different from the singularity scenario
