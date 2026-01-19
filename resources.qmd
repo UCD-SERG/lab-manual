@@ -44,7 +44,7 @@ The [UC Davis DataLab](https://github.com/ucdavisdatalab) provides extensive wor
 
 ### Useful R Packages
 
-- [PSW](https://github.com/d-morrison/psw) - R package for propensity score weighting and related methods
+- [PSW](https://github.com/d-morrison/psw) - R package for propensity score weighting and related methods for causal inference in observational studies
 
 ## Resources for Git & Github
 
