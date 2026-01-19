@@ -5,12 +5,14 @@ produce incorrect logic,
 or suggest approaches that are inappropriate for our specific research context.
 Before using any AI-generated code:
 
-- Carefully review the code to ensure you understand what it does
-- Test the code thoroughly to verify it works as expected
-- Verify that the logic is appropriate for your specific use case
-- Check that the code follows our lab's coding standards and best practices
-- Ensure the code does not introduce security vulnerabilities or data privacy issues
+- [ ] Carefully review the code to ensure you understand what it does
+- [ ] Test the code thoroughly to verify it works as expected
+- [ ] Verify that the logic is appropriate for your specific use case
+- [ ] Check that the code follows our lab's coding standards and best practices
+- [ ] Ensure the code does not introduce security vulnerabilities or data privacy issues
 
+::: callout-warning
 Never blindly copy and paste AI-generated code without understanding it.
 If you don't understand what the AI has suggested,
 take the time to learn or ask a colleague for help.
+:::
