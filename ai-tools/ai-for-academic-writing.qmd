@@ -60,10 +60,11 @@ and make it unclear whose ideas are being presented.
 to prevent unknowing plagiarism.**
 
 AI language models are trained on vast amounts of text,
-including published research,
-and may inadvertently paraphrase or closely mimic existing work
-without attribution.
-This creates a serious plagiarism risk.
+including published research.
+While they don't have direct access to their training data during generation,
+they may produce text that closely resembles or paraphrases existing work
+without providing attribution.
+This creates a plagiarism risk.
 
 **Best practices:**
 
@@ -88,17 +89,18 @@ as AI tools can sometimes generate plausible-but-incorrect references
 
 #### Example Workflow
 
-This section you're reading demonstrates these practices in action.
-The issue requesting this content and its associated pull request
-show:
+The development of this documentation section demonstrates these practices:
 
-1. **Core ideas in the issue**: The issue description outlines the key concepts (transparency, writing out ideas, source attribution)
-2. **Clear prompts to AI**: Instructions to the coding agent establish what content should be created
-3. **Source attribution**: This content cites the issue itself as the source of these guidelines
-4. **Transparent record**: The PR shows exactly what the AI contributed and what came from human direction
+1. **Core ideas stated clearly**: The request outlined specific concepts (transparency through GitHub, writing explicit prompts, requesting source attribution)
+2. **Detailed instructions**: The guidance specified what content should be created and how it should be structured
+3. **Transparent record**: The development history shows what was human-directed versus AI-generated
+4. **Demonstrated accountability**: The pull request provides a full audit trail of all changes
 
-This workflow creates accountability and demonstrates proper AI use
-for academic work.
+When developing content for journal articles,
+a similar workflow creates documentation that demonstrates
+responsible AI use and intellectual ownership.
+You can point to your GitHub history to show reviewers
+that you directed the AI rather than simply accepting its output.
 
 #### Additional Considerations
 
