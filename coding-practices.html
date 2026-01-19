@@ -633,38 +633,52 @@ window.Quarto = {
   <li><a href="#dropbox" id="toc-dropbox" class="nav-link" data-scroll-target="#dropbox"><span class="header-section-number">6.15.2</span> Dropbox</a></li>
   </ul></li>
   <li><a href="#sec-tidyverse" id="toc-sec-tidyverse" class="nav-link" data-scroll-target="#sec-tidyverse"><span class="header-section-number">6.16</span> Tidyverse</a></li>
-  <li><a href="#coding-with-r-and-python" id="toc-coding-with-r-and-python" class="nav-link" data-scroll-target="#coding-with-r-and-python"><span class="header-section-number">6.17</span> Coding with R and Python</a></li>
-  <li><a href="#repeating-analyses-with-different-variations" id="toc-repeating-analyses-with-different-variations" class="nav-link" data-scroll-target="#repeating-analyses-with-different-variations"><span class="header-section-number">6.18</span> Repeating analyses with different variations</a>
+  <li><a href="#core-tidyverse-packages" id="toc-core-tidyverse-packages" class="nav-link" data-scroll-target="#core-tidyverse-packages"><span class="header-section-number">6.17</span> Core Tidyverse Packages</a>
   <ul class="collapse">
-  <li><a href="#lapply-and-sapply-1" id="toc-lapply-and-sapply-1" class="nav-link" data-scroll-target="#lapply-and-sapply-1"><span class="header-section-number">6.18.1</span> <code>lapply()</code> and <code>sapply()</code></a></li>
-  <li><a href="#mapply-and-pmap" id="toc-mapply-and-pmap" class="nav-link" data-scroll-target="#mapply-and-pmap"><span class="header-section-number">6.18.2</span> <code>mapply()</code> and <code>pmap()</code></a></li>
-  <li><a href="#parallel-processing-with-parallel-and-future-packages" id="toc-parallel-processing-with-parallel-and-future-packages" class="nav-link" data-scroll-target="#parallel-processing-with-parallel-and-future-packages"><span class="header-section-number">6.18.3</span> Parallel processing with <code>parallel</code> and <code>future</code> packages</a></li>
+  <li><a href="#sec-ggplot2" id="toc-sec-ggplot2" class="nav-link" data-scroll-target="#sec-ggplot2"><span class="header-section-number">6.17.1</span> ggplot2</a></li>
+  <li><a href="#sec-dplyr" id="toc-sec-dplyr" class="nav-link" data-scroll-target="#sec-dplyr"><span class="header-section-number">6.17.2</span> dplyr</a></li>
+  <li><a href="#sec-tidyr" id="toc-sec-tidyr" class="nav-link" data-scroll-target="#sec-tidyr"><span class="header-section-number">6.17.3</span> tidyr</a></li>
+  <li><a href="#sec-readr" id="toc-sec-readr" class="nav-link" data-scroll-target="#sec-readr"><span class="header-section-number">6.17.4</span> readr</a></li>
+  <li><a href="#sec-purrr" id="toc-sec-purrr" class="nav-link" data-scroll-target="#sec-purrr"><span class="header-section-number">6.17.5</span> purrr</a></li>
+  <li><a href="#sec-tibble" id="toc-sec-tibble" class="nav-link" data-scroll-target="#sec-tibble"><span class="header-section-number">6.17.6</span> tibble</a></li>
+  <li><a href="#sec-stringr" id="toc-sec-stringr" class="nav-link" data-scroll-target="#sec-stringr"><span class="header-section-number">6.17.7</span> stringr</a></li>
+  <li><a href="#sec-forcats" id="toc-sec-forcats" class="nav-link" data-scroll-target="#sec-forcats"><span class="header-section-number">6.17.8</span> forcats</a></li>
+  <li><a href="#sec-lubridate" id="toc-sec-lubridate" class="nav-link" data-scroll-target="#sec-lubridate"><span class="header-section-number">6.17.9</span> lubridate</a></li>
   </ul></li>
-  <li><a href="#reviewing-code" id="toc-reviewing-code" class="nav-link" data-scroll-target="#reviewing-code"><span class="header-section-number">6.19</span> Reviewing Code</a></li>
-  <li><a href="#constructing-pull-requests" id="toc-constructing-pull-requests" class="nav-link" data-scroll-target="#constructing-pull-requests"><span class="header-section-number">6.20</span> Constructing Pull Requests</a>
+  <li><a href="#base-r-to-tidyverse-translation" id="toc-base-r-to-tidyverse-translation" class="nav-link" data-scroll-target="#base-r-to-tidyverse-translation"><span class="header-section-number">6.18</span> Base R to Tidyverse Translation</a></li>
+  <li><a href="#programming-with-tidyverse" id="toc-programming-with-tidyverse" class="nav-link" data-scroll-target="#programming-with-tidyverse"><span class="header-section-number">6.19</span> Programming with Tidyverse</a></li>
+  <li><a href="#coding-with-r-and-python" id="toc-coding-with-r-and-python" class="nav-link" data-scroll-target="#coding-with-r-and-python"><span class="header-section-number">6.20</span> Coding with R and Python</a></li>
+  <li><a href="#repeating-analyses-with-different-variations" id="toc-repeating-analyses-with-different-variations" class="nav-link" data-scroll-target="#repeating-analyses-with-different-variations"><span class="header-section-number">6.21</span> Repeating analyses with different variations</a>
   <ul class="collapse">
-  <li><a href="#write-focused-prs" id="toc-write-focused-prs" class="nav-link" data-scroll-target="#write-focused-prs"><span class="header-section-number">6.20.1</span> Write Focused PRs</a></li>
-  <li><a href="#writing-pr-descriptions" id="toc-writing-pr-descriptions" class="nav-link" data-scroll-target="#writing-pr-descriptions"><span class="header-section-number">6.20.2</span> Writing PR Descriptions</a></li>
-  <li><a href="#add-tests" id="toc-add-tests" class="nav-link" data-scroll-target="#add-tests"><span class="header-section-number">6.20.3</span> Add Tests</a></li>
-  <li><a href="#separate-out-refactorings" id="toc-separate-out-refactorings" class="nav-link" data-scroll-target="#separate-out-refactorings"><span class="header-section-number">6.20.4</span> Separate Out Refactorings</a></li>
+  <li><a href="#lapply-and-sapply-1" id="toc-lapply-and-sapply-1" class="nav-link" data-scroll-target="#lapply-and-sapply-1"><span class="header-section-number">6.21.1</span> <code>lapply()</code> and <code>sapply()</code></a></li>
+  <li><a href="#mapply-and-pmap" id="toc-mapply-and-pmap" class="nav-link" data-scroll-target="#mapply-and-pmap"><span class="header-section-number">6.21.2</span> <code>mapply()</code> and <code>pmap()</code></a></li>
+  <li><a href="#parallel-processing-with-parallel-and-future-packages" id="toc-parallel-processing-with-parallel-and-future-packages" class="nav-link" data-scroll-target="#parallel-processing-with-parallel-and-future-packages"><span class="header-section-number">6.21.3</span> Parallel processing with <code>parallel</code> and <code>future</code> packages</a></li>
   </ul></li>
-  <li><a href="#reviewing-pull-requests" id="toc-reviewing-pull-requests" class="nav-link" data-scroll-target="#reviewing-pull-requests"><span class="header-section-number">6.21</span> Reviewing Pull Requests</a>
+  <li><a href="#reviewing-code" id="toc-reviewing-code" class="nav-link" data-scroll-target="#reviewing-code"><span class="header-section-number">6.22</span> Reviewing Code</a></li>
+  <li><a href="#constructing-pull-requests" id="toc-constructing-pull-requests" class="nav-link" data-scroll-target="#constructing-pull-requests"><span class="header-section-number">6.23</span> Constructing Pull Requests</a>
   <ul class="collapse">
-  <li><a href="#purpose-of-code-review" id="toc-purpose-of-code-review" class="nav-link" data-scroll-target="#purpose-of-code-review"><span class="header-section-number">6.21.1</span> Purpose of Code Review</a></li>
-  <li><a href="#monitoring-prs-awaiting-your-review" id="toc-monitoring-prs-awaiting-your-review" class="nav-link" data-scroll-target="#monitoring-prs-awaiting-your-review"><span class="header-section-number">6.21.2</span> Monitoring PRs Awaiting Your Review</a></li>
-  <li><a href="#writing-review-comments" id="toc-writing-review-comments" class="nav-link" data-scroll-target="#writing-review-comments"><span class="header-section-number">6.21.3</span> Writing Review Comments</a></li>
-  <li><a href="#mentoring-through-review" id="toc-mentoring-through-review" class="nav-link" data-scroll-target="#mentoring-through-review"><span class="header-section-number">6.21.4</span> Mentoring Through Review</a></li>
-  <li><a href="#giving-constructive-feedback" id="toc-giving-constructive-feedback" class="nav-link" data-scroll-target="#giving-constructive-feedback"><span class="header-section-number">6.21.5</span> Giving Constructive Feedback</a></li>
-  <li><a href="#ignoring-auto-generated-files" id="toc-ignoring-auto-generated-files" class="nav-link" data-scroll-target="#ignoring-auto-generated-files"><span class="header-section-number">6.21.6</span> Ignoring Auto-Generated Files</a></li>
-  <li><a href="#reviewing-copilot-generated-pull-requests" id="toc-reviewing-copilot-generated-pull-requests" class="nav-link" data-scroll-target="#reviewing-copilot-generated-pull-requests"><span class="header-section-number">6.21.7</span> Reviewing Copilot-Generated Pull Requests</a></li>
+  <li><a href="#write-focused-prs" id="toc-write-focused-prs" class="nav-link" data-scroll-target="#write-focused-prs"><span class="header-section-number">6.23.1</span> Write Focused PRs</a></li>
+  <li><a href="#writing-pr-descriptions" id="toc-writing-pr-descriptions" class="nav-link" data-scroll-target="#writing-pr-descriptions"><span class="header-section-number">6.23.2</span> Writing PR Descriptions</a></li>
+  <li><a href="#add-tests" id="toc-add-tests" class="nav-link" data-scroll-target="#add-tests"><span class="header-section-number">6.23.3</span> Add Tests</a></li>
+  <li><a href="#separate-out-refactorings" id="toc-separate-out-refactorings" class="nav-link" data-scroll-target="#separate-out-refactorings"><span class="header-section-number">6.23.4</span> Separate Out Refactorings</a></li>
   </ul></li>
-  <li><a href="#creating-a-pull-request-template" id="toc-creating-a-pull-request-template" class="nav-link" data-scroll-target="#creating-a-pull-request-template"><span class="header-section-number">6.22</span> Creating a Pull Request Template</a></li>
-  <li><a href="#sec-r-resources" id="toc-sec-r-resources" class="nav-link" data-scroll-target="#sec-r-resources"><span class="header-section-number">6.23</span> Additional Resources</a>
+  <li><a href="#reviewing-pull-requests" id="toc-reviewing-pull-requests" class="nav-link" data-scroll-target="#reviewing-pull-requests"><span class="header-section-number">6.24</span> Reviewing Pull Requests</a>
   <ul class="collapse">
-  <li><a href="#r-package-development" id="toc-r-package-development" class="nav-link" data-scroll-target="#r-package-development"><span class="header-section-number">6.23.1</span> R Package Development</a></li>
-  <li><a href="#general-r-programming" id="toc-general-r-programming" class="nav-link" data-scroll-target="#general-r-programming"><span class="header-section-number">6.23.2</span> General R Programming</a></li>
-  <li><a href="#shiny-development" id="toc-shiny-development" class="nav-link" data-scroll-target="#shiny-development"><span class="header-section-number">6.23.3</span> Shiny Development</a></li>
-  <li><a href="#git-and-version-control" id="toc-git-and-version-control" class="nav-link" data-scroll-target="#git-and-version-control"><span class="header-section-number">6.23.4</span> Git and Version Control</a></li>
+  <li><a href="#purpose-of-code-review" id="toc-purpose-of-code-review" class="nav-link" data-scroll-target="#purpose-of-code-review"><span class="header-section-number">6.24.1</span> Purpose of Code Review</a></li>
+  <li><a href="#monitoring-prs-awaiting-your-review" id="toc-monitoring-prs-awaiting-your-review" class="nav-link" data-scroll-target="#monitoring-prs-awaiting-your-review"><span class="header-section-number">6.24.2</span> Monitoring PRs Awaiting Your Review</a></li>
+  <li><a href="#writing-review-comments" id="toc-writing-review-comments" class="nav-link" data-scroll-target="#writing-review-comments"><span class="header-section-number">6.24.3</span> Writing Review Comments</a></li>
+  <li><a href="#mentoring-through-review" id="toc-mentoring-through-review" class="nav-link" data-scroll-target="#mentoring-through-review"><span class="header-section-number">6.24.4</span> Mentoring Through Review</a></li>
+  <li><a href="#giving-constructive-feedback" id="toc-giving-constructive-feedback" class="nav-link" data-scroll-target="#giving-constructive-feedback"><span class="header-section-number">6.24.5</span> Giving Constructive Feedback</a></li>
+  <li><a href="#ignoring-auto-generated-files" id="toc-ignoring-auto-generated-files" class="nav-link" data-scroll-target="#ignoring-auto-generated-files"><span class="header-section-number">6.24.6</span> Ignoring Auto-Generated Files</a></li>
+  <li><a href="#reviewing-copilot-generated-pull-requests" id="toc-reviewing-copilot-generated-pull-requests" class="nav-link" data-scroll-target="#reviewing-copilot-generated-pull-requests"><span class="header-section-number">6.24.7</span> Reviewing Copilot-Generated Pull Requests</a></li>
+  </ul></li>
+  <li><a href="#creating-a-pull-request-template" id="toc-creating-a-pull-request-template" class="nav-link" data-scroll-target="#creating-a-pull-request-template"><span class="header-section-number">6.25</span> Creating a Pull Request Template</a></li>
+  <li><a href="#sec-r-resources" id="toc-sec-r-resources" class="nav-link" data-scroll-target="#sec-r-resources"><span class="header-section-number">6.26</span> Additional Resources</a>
+  <ul class="collapse">
+  <li><a href="#r-package-development" id="toc-r-package-development" class="nav-link" data-scroll-target="#r-package-development"><span class="header-section-number">6.26.1</span> R Package Development</a></li>
+  <li><a href="#general-r-programming" id="toc-general-r-programming" class="nav-link" data-scroll-target="#general-r-programming"><span class="header-section-number">6.26.2</span> General R Programming</a></li>
+  <li><a href="#shiny-development" id="toc-shiny-development" class="nav-link" data-scroll-target="#shiny-development"><span class="header-section-number">6.26.3</span> Shiny Development</a></li>
+  <li><a href="#git-and-version-control" id="toc-git-and-version-control" class="nav-link" data-scroll-target="#git-and-version-control"><span class="header-section-number">6.26.4</span> Git and Version Control</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/coding-practices.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/coding-practices.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -1513,8 +1527,60 @@ drop_auth(rdstoken = "/path/to/tokenfile.RDS")
 </section>
 <section id="sec-tidyverse" class="level2" data-number="6.16">
 <h2 data-number="6.16" class="anchored" data-anchor-id="sec-tidyverse"><span class="header-section-number">6.16</span> Tidyverse</h2>
-<p>Throughout this document there have been references to the Tidyverse, but this section is to explicitly show you how to transform your Base R tendencies to Tidyverse (or Data.Table, Tidyverse’s performance-optimized competitor). For most of our work that does not utilize very large datasets, we recommend that you code in Tidyverse rather than Base R. Tidyverse is quickly becoming <a href="https://rviews.rstudio.com/2017/06/08/what-is-the-tidyverse/">the gold standard</a> in R data analysis and modern data science packages and code should use Tidyverse style and packages unless there’s a significant reason not to (i.e.&nbsp;big data pipelines that would benefit from Data.Table’s performance optimizations).</p>
+<p>Throughout this document there have been references to the Tidyverse, but this section is to explicitly show you how to transform your Base R tendencies to Tidyverse (or Data.Table, Tidyverse’s performance-optimized competitor). For most of our work that does not utilize very large datasets, we recommend that you code in Tidyverse rather than Base R. Tidyverse is quickly becoming <a href="https://rviews.rstudio.com/2017/06/08/what-is-the-tidyverse/">the gold standard</a> in R data analysis and modern data science packages and code should use Tidyverse style and packages unless there’s a significant reason not to (i.e.&nbsp;big data pipelines that would benefit from Data.Table’s performance optimizations). Note that <a href="https://dtplyr.tidyverse.org/"><code>{dtplyr}</code></a> provides a data.table backend for dplyr, enabling you to use most of dplyr’s tidy syntax with data.table’s performance optimizations.</p>
 <p>The package author has published R for Data Science <span class="citation" data-cites="wickham2023r4ds">(<a href="references.html#ref-wickham2023r4ds" role="doc-biblioref">Wickham, Çetinkaya-Rundel, and Grolemund 2023</a>)</span>, which leans heavily on many Tidyverse packages and may be worth checking out.</p>
+</section>
+<section id="core-tidyverse-packages" class="level2" data-number="6.17">
+<h2 data-number="6.17" class="anchored" data-anchor-id="core-tidyverse-packages"><span class="header-section-number">6.17</span> Core Tidyverse Packages</h2>
+<p>The <a href="https://www.tidyverse.org/">tidyverse</a> is a collection of R packages designed for data science that share an underlying design philosophy, grammar, and data structures. As of tidyverse 1.3.0, the following nine packages are included in the core tidyverse and are loaded automatically when you run <code>library(tidyverse)</code>:</p>
+<section id="sec-ggplot2" class="level3" data-number="6.17.1">
+<h3 data-number="6.17.1" class="anchored" data-anchor-id="sec-ggplot2"><span class="header-section-number">6.17.1</span> <a href="https://ggplot2.tidyverse.org/">ggplot2</a></h3>
+<p><a href="https://ggplot2.tidyverse.org/"><code>{ggplot2}</code></a> is a system for declaratively creating graphics, based on The Grammar of Graphics. You provide the data, tell ggplot2 how to map variables to aesthetics and what graphical primitives to use, and it takes care of the details.</p>
+</section>
+<section id="sec-dplyr" class="level3" data-number="6.17.2">
+<h3 data-number="6.17.2" class="anchored" data-anchor-id="sec-dplyr"><span class="header-section-number">6.17.2</span> <a href="https://dplyr.tidyverse.org/">dplyr</a></h3>
+<p><a href="https://dplyr.tidyverse.org/"><code>{dplyr}</code></a> provides a grammar of data manipulation, providing a consistent set of verbs that solve the most common data manipulation challenges. Key functions include <code>filter()</code>, <code>select()</code>, <code>mutate()</code>, <code>summarize()</code>, and <code>arrange()</code>.</p>
+</section>
+<section id="sec-tidyr" class="level3" data-number="6.17.3">
+<h3 data-number="6.17.3" class="anchored" data-anchor-id="sec-tidyr"><span class="header-section-number">6.17.3</span> <a href="https://tidyr.tidyverse.org/">tidyr</a></h3>
+<p><a href="https://tidyr.tidyverse.org/"><code>{tidyr}</code></a> provides a set of functions that help you get to tidy data. Tidy data is data with a consistent form: in brief, every variable goes in a column, and every column is a variable. Key functions include <code>pivot_longer()</code>, <code>pivot_wider()</code>, <code>separate()</code>, and <code>unite()</code>.</p>
+<section id="when-to-use-dplyr-vs-tidyr" class="level4" data-number="6.17.3.1">
+<h4 data-number="6.17.3.1" class="anchored" data-anchor-id="when-to-use-dplyr-vs-tidyr"><span class="header-section-number">6.17.3.1</span> When to use dplyr vs tidyr</h4>
+<p>While both <a href="https://dplyr.tidyverse.org/"><code>{dplyr}</code></a> and <a href="https://tidyr.tidyverse.org/"><code>{tidyr}</code></a> work with data frames, they serve different purposes:</p>
+<ul>
+<li><p><strong>Use dplyr</strong> for data manipulation within the current structure: filtering rows, selecting columns, creating new variables, summarizing data, or joining datasets. These operations work with your data as-is.</p></li>
+<li><p><strong>Use tidyr</strong> for reshaping your data structure itself: converting between wide and long formats (<code>pivot_longer()</code>, <code>pivot_wider()</code>), splitting or combining columns (<code>separate()</code>, <code>unite()</code>), or handling missing values explicitly (<code>complete()</code>, <code>fill()</code>).</p></li>
+</ul>
+<p>These packages work together seamlessly in data analysis workflows. A typical pattern is to use tidyr to reshape your data into the right structure, then use dplyr to manipulate and analyze it.</p>
+</section>
+</section>
+<section id="sec-readr" class="level3" data-number="6.17.4">
+<h3 data-number="6.17.4" class="anchored" data-anchor-id="sec-readr"><span class="header-section-number">6.17.4</span> <a href="https://readr.tidyverse.org/">readr</a></h3>
+<p><a href="https://readr.tidyverse.org/"><code>{readr}</code></a> provides a fast and friendly way to read rectangular data (like csv, tsv, and fwf). It is designed to flexibly parse many types of data found in the wild, while still cleanly failing when data unexpectedly changes.</p>
+</section>
+<section id="sec-purrr" class="level3" data-number="6.17.5">
+<h3 data-number="6.17.5" class="anchored" data-anchor-id="sec-purrr"><span class="header-section-number">6.17.5</span> <a href="https://purrr.tidyverse.org/">purrr</a></h3>
+<p><a href="https://purrr.tidyverse.org/"><code>{purrr}</code></a> enhances R’s <a href="https://en.wikipedia.org/wiki/Functional_programming">functional programming</a> (FP) toolkit by providing a complete and consistent set of tools for working with functions and vectors. Once you master the basic concepts, purrr allows you to replace many for loops with code that is easier to write and more expressive. See <a href="#sec-iteration" class="quarto-xref"><span>Section 6.4</span></a> for more details on using purrr.</p>
+</section>
+<section id="sec-tibble" class="level3" data-number="6.17.6">
+<h3 data-number="6.17.6" class="anchored" data-anchor-id="sec-tibble"><span class="header-section-number">6.17.6</span> <a href="https://tibble.tidyverse.org/">tibble</a></h3>
+<p><a href="https://tibble.tidyverse.org/"><code>{tibble}</code></a> is a modern re-imagining of the data frame, keeping what time has proven to be effective, and throwing out what it has not. Tibbles are data.frames that are lazy and surly: they do less and complain more forcing you to confront problems earlier, typically leading to cleaner, more expressive code.</p>
+</section>
+<section id="sec-stringr" class="level3" data-number="6.17.7">
+<h3 data-number="6.17.7" class="anchored" data-anchor-id="sec-stringr"><span class="header-section-number">6.17.7</span> <a href="https://stringr.tidyverse.org/">stringr</a></h3>
+<p><a href="https://stringr.tidyverse.org/"><code>{stringr}</code></a> provides a cohesive set of functions designed to make working with strings as easy as possible. It is built on top of stringi, which uses the ICU C library to provide fast, correct implementations of common string manipulations.</p>
+</section>
+<section id="sec-forcats" class="level3" data-number="6.17.8">
+<h3 data-number="6.17.8" class="anchored" data-anchor-id="sec-forcats"><span class="header-section-number">6.17.8</span> <a href="https://forcats.tidyverse.org/">forcats</a></h3>
+<p><a href="https://forcats.tidyverse.org/"><code>{forcats}</code></a> provides a suite of useful tools that solve common problems with factors. R uses factors to handle categorical variables, variables that have a fixed and known set of possible values.</p>
+</section>
+<section id="sec-lubridate" class="level3" data-number="6.17.9">
+<h3 data-number="6.17.9" class="anchored" data-anchor-id="sec-lubridate"><span class="header-section-number">6.17.9</span> <a href="https://lubridate.tidyverse.org/">lubridate</a></h3>
+<p><a href="https://lubridate.tidyverse.org/"><code>{lubridate}</code></a> provides a set of functions for working with date-times, extending and improving on R’s existing support for them. Key functions include <code>ymd()</code>, <code>mdy()</code>, <code>dmy()</code> for parsing dates, and <code>year()</code>, <code>month()</code>, <code>day()</code> for extracting components.</p>
+</section>
+</section>
+<section id="base-r-to-tidyverse-translation" class="level2" data-number="6.18">
+<h2 data-number="6.18" class="anchored" data-anchor-id="base-r-to-tidyverse-translation"><span class="header-section-number">6.18</span> Base R to Tidyverse Translation</h2>
 <p>The following list is not exhaustive, but is a compact overview to begin to translate Base R into something better:</p>
 <table class="caption-top table">
 <colgroup>
@@ -1626,34 +1692,38 @@ drop_auth(rdstoken = "/path/to/tokenfile.RDS")
 </tr>
 </tbody>
 </table>
-<p>For a more extensive set of syntactical translations to Tidyverse, you can check out <a href="https://tavareshugo.github.io/data_carpentry_extras/base-r_tidyverse_equivalents/base-r_tidyverse_equivalents.html#reshaping_data">this document</a>.</p>
+<p>For a more extensive set of syntactical translations to Tidyverse, you can check out <a href="https://tavareshugo.github.io/data_carpentry_extras/base-r_tidyverse_equivalents/base-r_tidyverse_equivalents.html">this document</a>.</p>
+</section>
+<section id="programming-with-tidyverse" class="level2" data-number="6.19">
+<h2 data-number="6.19" class="anchored" data-anchor-id="programming-with-tidyverse"><span class="header-section-number">6.19</span> Programming with Tidyverse</h2>
 <p>Working with Tidyverse within functions can be somewhat of a pain due to non-standard evaluation (NSE) semantics. If you’re an avid function writer, we’d recommend checking out the following resources:</p>
 <ul>
+<li><a href="https://dplyr.tidyverse.org/articles/programming.html">Programming with dplyr</a> (package vignette)</li>
+<li><a href="https://dplyr.tidyverse.org/articles/in-packages.html">Using dplyr in packages</a> (package vignette)</li>
 <li><a href="https://www.youtube.com/watch?v=nERXS3ssntw">Tidy Eval in 5 Minutes</a> (video)</li>
 <li><a href="https://dplyr.tidyverse.org/articles/programming.html">Tidy Evaluation</a> (e-book)</li>
 <li><a href="https://adv-r.hadley.nz/evaluation.html">Evaluation</a> (advanced details)</li>
 <li><a href="https://www.brodrigues.co/blog/2016-07-18-data-frame-columns-as-arguments-to-dplyr-functions/">Data Frame Columns as Arguments to Dplyr Functions</a> (blog)</li>
 <li><a href="https://stackoverflow.com/questions/28125816/r-standard-evaluation-for-join-dplyr">Standard Evaluation for *_join</a> (stackoverflow)</li>
-<li><a href="https://dplyr.tidyverse.org/articles/programming.html">Programming with dplyr</a> (package vignette)</li>
 </ul>
 <p>See also <a href="coding-style.html#sec-tidyverse-replacements" class="quarto-xref"><span>Section 7.8</span></a></p>
 </section>
-<section id="coding-with-r-and-python" class="level2" data-number="6.17">
-<h2 data-number="6.17" class="anchored" data-anchor-id="coding-with-r-and-python"><span class="header-section-number">6.17</span> Coding with R and Python</h2>
+<section id="coding-with-r-and-python" class="level2" data-number="6.20">
+<h2 data-number="6.20" class="anchored" data-anchor-id="coding-with-r-and-python"><span class="header-section-number">6.20</span> Coding with R and Python</h2>
 <p>If you’re using both R and Python, you may wish to check out the <a href="https://www.rdocumentation.org/packages/feather/versions/0.3.3">Feather package</a> for exchanging data between the two languages <a href="https://blog.rstudio.com/2016/03/29/feather/">extremely quickly</a>.</p>
 </section>
-<section id="repeating-analyses-with-different-variations" class="level2" data-number="6.18">
-<h2 data-number="6.18" class="anchored" data-anchor-id="repeating-analyses-with-different-variations"><span class="header-section-number">6.18</span> Repeating analyses with different variations</h2>
+<section id="repeating-analyses-with-different-variations" class="level2" data-number="6.21">
+<h2 data-number="6.21" class="anchored" data-anchor-id="repeating-analyses-with-different-variations"><span class="header-section-number">6.21</span> Repeating analyses with different variations</h2>
 <p>In many cases, we will need to apply our modeling on different combinations of interests (outcomes, exposures, etc.). We can certainly use a <code>for</code> loop to repeat the execution of a wrapper function, but generally, <code>for</code> loops request high memory usage and produce the results in long computation time.</p>
 <p>Fortunately, R has some functions which implement looping in a compact form to help repeating your analyses with different variations (subgroups, outcomes, covariate sets, etc.) with better performances.</p>
-<section id="lapply-and-sapply-1" class="level3" data-number="6.18.1">
-<h3 data-number="6.18.1" class="anchored" data-anchor-id="lapply-and-sapply-1"><span class="header-section-number">6.18.1</span> <code>lapply()</code> and <code>sapply()</code></h3>
+<section id="lapply-and-sapply-1" class="level3" data-number="6.21.1">
+<h3 data-number="6.21.1" class="anchored" data-anchor-id="lapply-and-sapply-1"><span class="header-section-number">6.21.1</span> <code>lapply()</code> and <code>sapply()</code></h3>
 <p><code>lapply()</code> is a function in the base R package that applies a function to each element of a list and returns a list. It’s typically faster than <code>for</code>. Here is a simple generic example:</p>
 <pre><code>result &lt;- lapply(X = mylist, FUN = func)</code></pre>
 <p>There is another very similar function called <code>sapply()</code>. It also takes a list as its input, but if the output of the <code>func</code> is of the same length for each element in the input list, then <code>sapply()</code> will simplify the output to the simplest data structure possible, which will usually be a vector.</p>
 </section>
-<section id="mapply-and-pmap" class="level3" data-number="6.18.2">
-<h3 data-number="6.18.2" class="anchored" data-anchor-id="mapply-and-pmap"><span class="header-section-number">6.18.2</span> <code>mapply()</code> and <code>pmap()</code></h3>
+<section id="mapply-and-pmap" class="level3" data-number="6.21.2">
+<h3 data-number="6.21.2" class="anchored" data-anchor-id="mapply-and-pmap"><span class="header-section-number">6.21.2</span> <code>mapply()</code> and <code>pmap()</code></h3>
 <p>Sometimes, we’d like to employ a wrapper function that takes arguments from multiple different lists/vectors. Then, we can consider using <code>mapply()</code> from the base R package or <code>pmap()</code> from the <code>purrr</code> package.</p>
 <p>Please see the simple specific example below where the two input lists are of the same length and we are doing a pairwise calculation:</p>
 <pre><code>mylist1 = list(0:3)
@@ -1695,13 +1765,13 @@ for (i in seq_along(mylist1[[1]])) {
 <p>This example doesn’t work in the way that 0 is paired to 6, 1 is paired to 7, and so on. Instead, every element in <code>mylist1</code> will be paired with every element in <code>mylist2</code>. Thus, the “unlisted” results from the example will have <span class="math inline">\(4*7 = 28\)</span> elements.</p>
 <p>We can use <code>flatten()</code> or <code>unlist()</code> functions to decrease the depths of our results. If the results are data frames, then we will need to use <code>bind_rows()</code> to combine them.</p>
 </section>
-<section id="parallel-processing-with-parallel-and-future-packages" class="level3" data-number="6.18.3">
-<h3 data-number="6.18.3" class="anchored" data-anchor-id="parallel-processing-with-parallel-and-future-packages"><span class="header-section-number">6.18.3</span> Parallel processing with <code>parallel</code> and <code>future</code> packages</h3>
+<section id="parallel-processing-with-parallel-and-future-packages" class="level3" data-number="6.21.3">
+<h3 data-number="6.21.3" class="anchored" data-anchor-id="parallel-processing-with-parallel-and-future-packages"><span class="header-section-number">6.21.3</span> Parallel processing with <code>parallel</code> and <code>future</code> packages</h3>
 <p>One big drawback of <code>lapply()</code> is its long computation time, especially when the list length is long. Fortunately, computers nowadays must have multiple cores which makes parallel processing possible to help make computation much faster.</p>
 <p>Assume you have a list called <code>mylist</code> of length 1000, and <code>lapply(X = mylist, FUN = func)</code> applies the function to each of the 1000 elements one by one in <span class="math inline">\(T\)</span> seconds. If we could execute the <code>func</code> in <span class="math inline">\(n\)</span> processors simultaneously, then ideally, we would shrink the computation time to <span class="math inline">\(T/n\)</span> seconds.</p>
 <p>In practice, using functions under the <code>parallel</code> and the <code>future</code> packages, we can split <code>mylist</code> into smaller chunks and apply the function to each element of the several chunks in parallel in different cores to significantly reduce the run time.</p>
-<section id="parlapply" class="level4" data-number="6.18.3.1">
-<h4 data-number="6.18.3.1" class="anchored" data-anchor-id="parlapply"><span class="header-section-number">6.18.3.1</span> <code>parLapply()</code></h4>
+<section id="parlapply" class="level4" data-number="6.21.3.1">
+<h4 data-number="6.21.3.1" class="anchored" data-anchor-id="parlapply"><span class="header-section-number">6.21.3.1</span> <code>parLapply()</code></h4>
 <p>Below is a generic example of <code>parLapply()</code>:</p>
 <pre><code>library(parallel)
 
@@ -1718,8 +1788,8 @@ stopCluster(cl)</code></pre>
 <p>You can use <code>parallel::detectCores()</code> to test how many cores your machine has and to help decide what to put for <code>n_cores</code>. It would be a good idea to leave at least one core free for the operating system to use.</p>
 <p>We will always start <code>parLapply()</code> with <code>makeCluster()</code>. <strong><code>stopCluster()</code> is not fully necessary but follows the best practices.</strong> If not stopped, the processing will continue in the back end and consuming the computation capacity for other software in your machine. But keep in mind that stopping the cluster is similar quitting R, meaning that you will need to re-load the packages needed when you need to do parallel processing use <code>parLapply()</code> again.</p>
 </section>
-<section id="future.lapply" class="level4" data-number="6.18.3.2">
-<h4 data-number="6.18.3.2" class="anchored" data-anchor-id="future.lapply"><span class="header-section-number">6.18.3.2</span> <code>future.lapply()</code></h4>
+<section id="future.lapply" class="level4" data-number="6.21.3.2">
+<h4 data-number="6.21.3.2" class="anchored" data-anchor-id="future.lapply"><span class="header-section-number">6.21.3.2</span> <code>future.lapply()</code></h4>
 <p>Below is a generic example of <code>future.lapply()</code>:</p>
 <pre><code>library(future)
 library(future.apply)
@@ -1735,15 +1805,15 @@ future_lapply(x = mylist, FUN = func)</code></pre>
 </section>
 </section>
 </section>
-<section id="reviewing-code" class="level2" data-number="6.19">
-<h2 data-number="6.19" class="anchored" data-anchor-id="reviewing-code"><span class="header-section-number">6.19</span> Reviewing Code</h2>
+<section id="reviewing-code" class="level2" data-number="6.22">
+<h2 data-number="6.22" class="anchored" data-anchor-id="reviewing-code"><span class="header-section-number">6.22</span> Reviewing Code</h2>
 <p>Before publishing new changes, it is important to ensure that the code has been tested and well-documented. GitHub makes it possible to document all of these changes in a pull request. Pull requests can be used to describe changes in a branch that are ready to be merged with the base branch (more information in the <a href="#Github">GitHub</a> section).</p>
 <p>This section provides guidance on both constructing effective pull requests and reviewing code submitted by others. Much of the content in this section is adapted from the Tidyverse code review principles <span class="citation" data-cites="tidyverse2023codereview">(<a href="references.html#ref-tidyverse2023codereview" role="doc-biblioref">Tidyverse Team 2023</a>)</span>, which provides excellent principles for code review in R package development.</p>
 </section>
-<section id="constructing-pull-requests" class="level2" data-number="6.20">
-<h2 data-number="6.20" class="anchored" data-anchor-id="constructing-pull-requests"><span class="header-section-number">6.20</span> Constructing Pull Requests</h2>
-<section id="write-focused-prs" class="level3" data-number="6.20.1">
-<h3 data-number="6.20.1" class="anchored" data-anchor-id="write-focused-prs"><span class="header-section-number">6.20.1</span> Write Focused PRs</h3>
+<section id="constructing-pull-requests" class="level2" data-number="6.23">
+<h2 data-number="6.23" class="anchored" data-anchor-id="constructing-pull-requests"><span class="header-section-number">6.23</span> Constructing Pull Requests</h2>
+<section id="write-focused-prs" class="level3" data-number="6.23.1">
+<h3 data-number="6.23.1" class="anchored" data-anchor-id="write-focused-prs"><span class="header-section-number">6.23.1</span> Write Focused PRs</h3>
 <p>A focused pull request is <strong>one self-contained change</strong> that addresses just one thing. Writing focused PRs has several benefits:</p>
 <ul>
 <li><strong>Faster reviews</strong>: It’s easier for a reviewer to find 5-10 minutes to review a single bug fix than to set aside an hour for one large PR implementing many features.</li>
@@ -1754,8 +1824,8 @@ future_lapply(x = mylist, FUN = func)</code></pre>
 </ul>
 <p>As a guideline, 100 lines is usually a reasonable size for a PR, and 1000 lines is usually too large. However, the number of files affected also matters—a 200-line change in one file might be fine, but the same change spread across 50 files is usually too large.</p>
 </section>
-<section id="writing-pr-descriptions" class="level3" data-number="6.20.2">
-<h3 data-number="6.20.2" class="anchored" data-anchor-id="writing-pr-descriptions"><span class="header-section-number">6.20.2</span> Writing PR Descriptions</h3>
+<section id="writing-pr-descriptions" class="level3" data-number="6.23.2">
+<h3 data-number="6.23.2" class="anchored" data-anchor-id="writing-pr-descriptions"><span class="header-section-number">6.23.2</span> Writing PR Descriptions</h3>
 <p>When you submit a pull request, include a detailed PR title and description. A comprehensive description helps your reviewer and provides valuable historical context.</p>
 <p><strong>PR Title</strong>: The title should be a short summary (ideally under 72 characters) of what is being done. It should be informative enough that future developers can understand what the PR did without reading the full description.</p>
 <p>Poor titles that lack context:</p>
@@ -1779,25 +1849,25 @@ future_lapply(x = mylist, FUN = func)</code></pre>
 <li>The <code>Files</code> tab of a Pull Request page on GitHub allows you to annotate your pull request with inline comments. These comments are not part of the source files; they only exist in GitHub’s metadata. Use these comments to explain <em>changes</em> whose reasoning might not be self-apparent to a reviewer.</li>
 </ul>
 </section>
-<section id="add-tests" class="level3" data-number="6.20.3">
-<h3 data-number="6.20.3" class="anchored" data-anchor-id="add-tests"><span class="header-section-number">6.20.3</span> Add Tests</h3>
+<section id="add-tests" class="level3" data-number="6.23.3">
+<h3 data-number="6.23.3" class="anchored" data-anchor-id="add-tests"><span class="header-section-number">6.23.3</span> Add Tests</h3>
 <p>Focused PRs should include related test code. A PR that adds or changes logic should be accompanied by new or updated tests for the new behavior. Pure refactoring PRs should also be covered by tests—if tests don’t exist for code you’re refactoring, add them in a separate PR first to validate that behavior is unchanged.</p>
 </section>
-<section id="separate-out-refactorings" class="level3" data-number="6.20.4">
-<h3 data-number="6.20.4" class="anchored" data-anchor-id="separate-out-refactorings"><span class="header-section-number">6.20.4</span> Separate Out Refactorings</h3>
+<section id="separate-out-refactorings" class="level3" data-number="6.23.4">
+<h3 data-number="6.23.4" class="anchored" data-anchor-id="separate-out-refactorings"><span class="header-section-number">6.23.4</span> Separate Out Refactorings</h3>
 <p>It’s usually best to do refactorings in a separate PR from feature changes or bug fixes. For example, moving and renaming a function should be in a different PR from fixing a bug in that function. This makes it much easier for reviewers to understand the changes introduced by each PR.</p>
 <p>Small cleanups (like fixing a local variable name) can be included in a feature change or bug fix PR, but large refactorings should be separate.</p>
 </section>
 </section>
-<section id="reviewing-pull-requests" class="level2" data-number="6.21">
-<h2 data-number="6.21" class="anchored" data-anchor-id="reviewing-pull-requests"><span class="header-section-number">6.21</span> Reviewing Pull Requests</h2>
-<section id="purpose-of-code-review" class="level3" data-number="6.21.1">
-<h3 data-number="6.21.1" class="anchored" data-anchor-id="purpose-of-code-review"><span class="header-section-number">6.21.1</span> Purpose of Code Review</h3>
+<section id="reviewing-pull-requests" class="level2" data-number="6.24">
+<h2 data-number="6.24" class="anchored" data-anchor-id="reviewing-pull-requests"><span class="header-section-number">6.24</span> Reviewing Pull Requests</h2>
+<section id="purpose-of-code-review" class="level3" data-number="6.24.1">
+<h3 data-number="6.24.1" class="anchored" data-anchor-id="purpose-of-code-review"><span class="header-section-number">6.24.1</span> Purpose of Code Review</h3>
 <p>The primary purpose of code review is to ensure that the overall code health of our projects improves over time. Reviewers should balance the need to make forward progress with the importance of maintaining code quality.</p>
 <p><strong>Key principle</strong>: Reviewers should favor approving a PR once it is in a state where it definitely improves the overall code health of the system, even if the PR isn’t perfect. There is no such thing as “perfect” code—there is only better code. Rather than seeking perfection, seek continuous improvement.</p>
 </section>
-<section id="monitoring-prs-awaiting-your-review" class="level3" data-number="6.21.2">
-<h3 data-number="6.21.2" class="anchored" data-anchor-id="monitoring-prs-awaiting-your-review"><span class="header-section-number">6.21.2</span> Monitoring PRs Awaiting Your Review</h3>
+<section id="monitoring-prs-awaiting-your-review" class="level3" data-number="6.24.2">
+<h3 data-number="6.24.2" class="anchored" data-anchor-id="monitoring-prs-awaiting-your-review"><span class="header-section-number">6.24.2</span> Monitoring PRs Awaiting Your Review</h3>
 <p>To ensure timely code reviews, bookmark GitHub’s review-requested page and check it regularly (at least daily):</p>
 <ul>
 <li><p><strong>General bookmark</strong>: <a href="https://github.com/pulls/review-requested" class="uri">https://github.com/pulls/review-requested</a> shows all PRs across GitHub where you’ve been requested as a reviewer</p></li>
@@ -1805,8 +1875,8 @@ future_lapply(x = mylist, FUN = func)</code></pre>
 </ul>
 <p>Checking these pages regularly helps ensure that PRs don’t languish waiting for review, which is important for maintaining team productivity and code quality.</p>
 </section>
-<section id="writing-review-comments" class="level3" data-number="6.21.3">
-<h3 data-number="6.21.3" class="anchored" data-anchor-id="writing-review-comments"><span class="header-section-number">6.21.3</span> Writing Review Comments</h3>
+<section id="writing-review-comments" class="level3" data-number="6.24.3">
+<h3 data-number="6.24.3" class="anchored" data-anchor-id="writing-review-comments"><span class="header-section-number">6.24.3</span> Writing Review Comments</h3>
 <p>When reviewing code, maintain courtesy and respect while being clear and helpful:</p>
 <ul>
 <li>Comment on the <strong>code</strong>, not the author</li>
@@ -1817,8 +1887,8 @@ future_lapply(x = mylist, FUN = func)</code></pre>
 <p><strong>Poor comment</strong>: “Why did you use this approach when there’s obviously a better way?”</p>
 <p><strong>Better comment</strong>: “This approach adds complexity without clear benefits. Consider using [alternative approach] instead, which would simplify the logic and improve readability.”</p>
 </section>
-<section id="mentoring-through-review" class="level3" data-number="6.21.4">
-<h3 data-number="6.21.4" class="anchored" data-anchor-id="mentoring-through-review"><span class="header-section-number">6.21.4</span> Mentoring Through Review</h3>
+<section id="mentoring-through-review" class="level3" data-number="6.24.4">
+<h3 data-number="6.24.4" class="anchored" data-anchor-id="mentoring-through-review"><span class="header-section-number">6.24.4</span> Mentoring Through Review</h3>
 <p>Code review is an excellent opportunity for mentoring. As a reviewer:</p>
 <ul>
 <li>Leave comments that help authors learn something new</li>
@@ -1826,8 +1896,8 @@ future_lapply(x = mylist, FUN = func)</code></pre>
 <li>Consider pair programming for complex reviews—live review sessions can be very effective for teaching</li>
 </ul>
 </section>
-<section id="giving-constructive-feedback" class="level3" data-number="6.21.5">
-<h3 data-number="6.21.5" class="anchored" data-anchor-id="giving-constructive-feedback"><span class="header-section-number">6.21.5</span> Giving Constructive Feedback</h3>
+<section id="giving-constructive-feedback" class="level3" data-number="6.24.5">
+<h3 data-number="6.24.5" class="anchored" data-anchor-id="giving-constructive-feedback"><span class="header-section-number">6.24.5</span> Giving Constructive Feedback</h3>
 <p>In general, it is the author’s responsibility to fix a PR, not the reviewer’s. Strike a balance between pointing out problems and providing direct guidance. Sometimes pointing out issues and letting the author decide on a solution helps them learn and may result in a better solution since they are closer to the code.</p>
 <p>For very small tweaks (typos, comment additions), use GitHub’s suggestion feature to allow authors to quickly accept changes directly in the UI.</p>
 <div id="fig-github-suggestion-feature" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -1841,8 +1911,8 @@ Figure&nbsp;6.1: GitHub’s suggestion feature in a PR review comment
 </figure>
 </div>
 </section>
-<section id="ignoring-auto-generated-files" class="level3" data-number="6.21.6">
-<h3 data-number="6.21.6" class="anchored" data-anchor-id="ignoring-auto-generated-files"><span class="header-section-number">6.21.6</span> Ignoring Auto-Generated Files</h3>
+<section id="ignoring-auto-generated-files" class="level3" data-number="6.24.6">
+<h3 data-number="6.24.6" class="anchored" data-anchor-id="ignoring-auto-generated-files"><span class="header-section-number">6.24.6</span> Ignoring Auto-Generated Files</h3>
 <p>When reviewing pull requests in R package repositories, you can typically ignore changes to <code>.Rd</code> files in the <code>man/</code> directory. These are R documentation files automatically generated by <a href="https://roxygen2.r-lib.org/"><code>{roxygen2}</code></a> from special comments in the R source code (see <a href="#sec-documenting-code" class="quarto-xref"><span>Section 6.10</span></a>).</p>
 <p><strong>Why ignore <code>.Rd</code> files?</strong></p>
 <ul>
@@ -1867,8 +1937,8 @@ Figure&nbsp;6.2: Example of an automated PR preview comment posted by GitHub Act
 <p><strong>GitHub review tip:</strong></p>
 <p>In GitHub’s pull request “Files changed” view, you can click the three dots (<code>...</code>) next to a file and select “View file” to hide it from the diff view. This helps you focus on the meaningful changes.</p>
 </section>
-<section id="reviewing-copilot-generated-pull-requests" class="level3" data-number="6.21.7">
-<h3 data-number="6.21.7" class="anchored" data-anchor-id="reviewing-copilot-generated-pull-requests"><span class="header-section-number">6.21.7</span> Reviewing Copilot-Generated Pull Requests</h3>
+<section id="reviewing-copilot-generated-pull-requests" class="level3" data-number="6.24.7">
+<h3 data-number="6.24.7" class="anchored" data-anchor-id="reviewing-copilot-generated-pull-requests"><span class="header-section-number">6.24.7</span> Reviewing Copilot-Generated Pull Requests</h3>
 <p>When reviewing pull requests created by GitHub Copilot coding agents, apply the same standards and principles as any other PR, but be aware of some unique considerations:</p>
 <p><strong>Workflow approval requirements:</strong></p>
 <ul>
@@ -1900,8 +1970,8 @@ Figure&nbsp;6.2: Example of an automated PR preview comment posted by GitHub Act
 </ul>
 </section>
 </section>
-<section id="creating-a-pull-request-template" class="level2" data-number="6.22">
-<h2 data-number="6.22" class="anchored" data-anchor-id="creating-a-pull-request-template"><span class="header-section-number">6.22</span> Creating a Pull Request Template</h2>
+<section id="creating-a-pull-request-template" class="level2" data-number="6.25">
+<h2 data-number="6.25" class="anchored" data-anchor-id="creating-a-pull-request-template"><span class="header-section-number">6.25</span> Creating a Pull Request Template</h2>
 <p>GitHub allows you to create a pull request template in a repository to standardize the information in pull requests. When you add a template, everyone will automatically see its contents in the pull request body.</p>
 <p>Follow these steps to add a pull request template:</p>
 <ol type="1">
@@ -1940,10 +2010,10 @@ Describe how this change has been tested.
 @username
 </code></pre>
 </section>
-<section id="sec-r-resources" class="level2" data-number="6.23">
-<h2 data-number="6.23" class="anchored" data-anchor-id="sec-r-resources"><span class="header-section-number">6.23</span> Additional Resources</h2>
-<section id="r-package-development" class="level3" data-number="6.23.1">
-<h3 data-number="6.23.1" class="anchored" data-anchor-id="r-package-development"><span class="header-section-number">6.23.1</span> R Package Development</h3>
+<section id="sec-r-resources" class="level2" data-number="6.26">
+<h2 data-number="6.26" class="anchored" data-anchor-id="sec-r-resources"><span class="header-section-number">6.26</span> Additional Resources</h2>
+<section id="r-package-development" class="level3" data-number="6.26.1">
+<h3 data-number="6.26.1" class="anchored" data-anchor-id="r-package-development"><span class="header-section-number">6.26.1</span> R Package Development</h3>
 <ul>
 <li>R Packages <span class="citation" data-cites="wickham2023rpkgs">(<a href="references.html#ref-wickham2023rpkgs" role="doc-biblioref">Wickham and Bryan 2023</a>)</span> - comprehensive guide to R package development</li>
 <li>Tidyverse design guide <span class="citation" data-cites="wickham2023tidydesign">(<a href="references.html#ref-wickham2023tidydesign" role="doc-biblioref">Wickham 2023</a>)</span> - principles for designing R packages and APIs that are intuitive, composable, and consistent with tidyverse philosophy</li>
@@ -1953,22 +2023,22 @@ Describe how this change has been tested.
 <li><a href="https://testthat.r-lib.org/">testthat documentation</a> - unit testing framework</li>
 </ul>
 </section>
-<section id="general-r-programming" class="level3" data-number="6.23.2">
-<h3 data-number="6.23.2" class="anchored" data-anchor-id="general-r-programming"><span class="header-section-number">6.23.2</span> General R Programming</h3>
+<section id="general-r-programming" class="level3" data-number="6.26.2">
+<h3 data-number="6.26.2" class="anchored" data-anchor-id="general-r-programming"><span class="header-section-number">6.26.2</span> General R Programming</h3>
 <ul>
 <li>R for Data Science <span class="citation" data-cites="wickham2023r4ds">(<a href="references.html#ref-wickham2023r4ds" role="doc-biblioref">Wickham, Çetinkaya-Rundel, and Grolemund 2023</a>)</span> - learn data science with the tidyverse</li>
 <li>Advanced R <span class="citation" data-cites="wickham2019advr">(<a href="references.html#ref-wickham2019advr" role="doc-biblioref">Wickham 2019</a>)</span> - deep dive into R programming and internals</li>
 </ul>
 </section>
-<section id="shiny-development" class="level3" data-number="6.23.3">
-<h3 data-number="6.23.3" class="anchored" data-anchor-id="shiny-development"><span class="header-section-number">6.23.3</span> Shiny Development</h3>
+<section id="shiny-development" class="level3" data-number="6.26.3">
+<h3 data-number="6.26.3" class="anchored" data-anchor-id="shiny-development"><span class="header-section-number">6.26.3</span> Shiny Development</h3>
 <ul>
 <li>Mastering Shiny <span class="citation" data-cites="wickham2021shiny">(<a href="references.html#ref-wickham2021shiny" role="doc-biblioref">Wickham 2021</a>)</span> - comprehensive guide to building web applications with Shiny</li>
 <li>Engineering Production-Grade Shiny Apps <span class="citation" data-cites="fay2021engineering">(<a href="references.html#ref-fay2021engineering" role="doc-biblioref">Fay et al. 2021</a>)</span> - best practices for production Shiny applications</li>
 </ul>
 </section>
-<section id="git-and-version-control" class="level3" data-number="6.23.4">
-<h3 data-number="6.23.4" class="anchored" data-anchor-id="git-and-version-control"><span class="header-section-number">6.23.4</span> Git and Version Control</h3>
+<section id="git-and-version-control" class="level3" data-number="6.26.4">
+<h3 data-number="6.26.4" class="anchored" data-anchor-id="git-and-version-control"><span class="header-section-number">6.26.4</span> Git and Version Control</h3>
 <ul>
 <li>Happy Git and GitHub for the useR <span class="citation" data-cites="bryan2023happygit">(<a href="references.html#ref-bryan2023happygit" role="doc-biblioref">Bryan 2023</a>)</span> - essential guide to using Git and GitHub with R</li>
 </ul>
