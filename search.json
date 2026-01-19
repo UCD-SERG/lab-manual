@@ -1510,11 +1510,21 @@
     ]
   },
   {
+    "objectID": "professional-development.html#sec-dissertation-requirements",
+    "href": "professional-development.html#sec-dissertation-requirements",
+    "title": "20  Professional Development",
+    "section": "20.6 PhD Dissertation Requirements",
+    "text": "20.6 PhD Dissertation Requirements\nUnderstanding what constitutes a sufficient PhD dissertation is crucial for setting realistic expectations and timelines. The dissertation represents an important milestone, but it doesn’t need to be your magnum opus.\n\n20.6.1 Review Previous Dissertations\nBefore setting your dissertation goals, read previous dissertations from students in your program. This helps you:\n\nUnderstand the typical scope and depth expected\nSee different approaches to structure and presentation\nCalibrate your expectations based on successful examples\nIdentify common patterns and standards in your field\n\nMost universities maintain electronic dissertation repositories, making it easy to access recent examples from your program.\n\n\n20.6.2 Publication Requirements\nThree first-author papers typically suffice for a dissertation in public health and biomedical sciences. If academic peers in reputable journals have approved your work through peer review, this demonstrates that your research meets professional standards. Your dissertation committee should recognize this external validation.\nThe specific publication requirements may vary by program and institution, so consult your program’s guidelines and discuss expectations with your committee early. However, three substantial first-author publications generally demonstrate:\n\nIndependent research capability\nAbility to communicate findings effectively\nContribution to the scientific literature\nReadiness for an academic or research career\n\n\n\n20.6.3 External Validation and Fast-Tracking\nIf you have a job offer waiting, you can usually get fast-tracked through the dissertation process. The reasoning is straightforward: your work has been externally validated as worthwhile by prospective employers.\nSince most post-PhD positions offer better compensation than graduate stipends, it’s difficult to justify prolonging your graduation when you’ve already demonstrated professional competence. This applies whether the job offer is in academia, industry, government, or nonprofit sectors.\n\n\n20.6.4 Historical Context: The Masterpiece Tradition\nThe dissertation is a spiritual successor to an apprentice’s masterpiece in craft guilds. Historically, a masterpiece was the piece of work that demonstrated an apprentice had achieved sufficient skill to join the guild as a master craftsperson. It was not meant to be the best work they would ever produce—it was meant to prove they were ready to work independently.\nSimilarly, your dissertation should demonstrate that you’re ready to conduct independent research. It’s your first professional-level work, not your career highlight. This perspective helps set appropriate expectations:\n\nThe dissertation proves you can conduct rigorous research\nIt doesn’t need to solve every problem in your field\nIt doesn’t need to be flawless\nIt doesn’t need to be all-encompassing\nIt just needs to constitute incremental progress in your field\n\n\n\n20.6.5 Setting Realistic Expectations\nMany PhD students struggle with perfectionism or “scope creep” in their dissertations. Remember:\n\nDone is better than perfect when it comes to dissertations\nYou’ll have your entire career to refine and expand on these ideas\nThe goal is to finish and move forward, not to write the definitive work on your topic\nYour committee wants to see you succeed and graduate\n\nFocus on making a solid, incremental contribution to knowledge in your field. That’s what a dissertation is meant to be—no more, no less.\n\n\n20.6.6 Resources\nDissertation writing tools:\n\nquarto-thesis - Quarto extension for creating masters or PhD theses with professional LaTeX formatting",
+    "crumbs": [
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Professional Development</span>"
+    ]
+  },
+  {
     "objectID": "professional-development.html#teaching-and-outreach",
     "href": "professional-development.html#teaching-and-outreach",
     "title": "20  Professional Development",
-    "section": "20.6 Teaching and Outreach",
-    "text": "20.6 Teaching and Outreach\nTeaching and outreach are valuable professional development opportunities:\n\nGraduate students are encouraged to gain teaching experience\nWe support science communication and outreach activities\nDiscuss opportunities with PIs\n\nThe UC Davis DataLab offers various workshops and learning materials that can support your teaching and professional development. Their workshop index provides a comprehensive catalog of available resources.",
+    "section": "20.7 Teaching and Outreach",
+    "text": "20.7 Teaching and Outreach\nTeaching and outreach are valuable professional development opportunities:\n\nGraduate students are encouraged to gain teaching experience\nWe support science communication and outreach activities\nDiscuss opportunities with PIs\n\nThe UC Davis DataLab offers various workshops and learning materials that can support your teaching and professional development. Their workshop index provides a comprehensive catalog of available resources.",
     "crumbs": [
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>Professional Development</span>"
     ]
@@ -1523,8 +1533,8 @@
     "objectID": "professional-development.html#networking",
     "href": "professional-development.html#networking",
     "title": "20  Professional Development",
-    "section": "20.7 Networking",
-    "text": "20.7 Networking\nBuilding a professional network is important for your career:\n\nAttend seminars and departmental events\nConnect with researchers in your field\nJoin professional societies\nUse professional social media platforms to share research and engage with the scientific community",
+    "section": "20.8 Networking",
+    "text": "20.8 Networking\nBuilding a professional network is important for your career:\n\nAttend seminars and departmental events\nConnect with researchers in your field\nJoin professional societies\nUse professional social media platforms to share research and engage with the scientific community",
     "crumbs": [
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>Professional Development</span>"
     ]
@@ -1671,7 +1681,7 @@
     "href": "appendix-document-metadata.html",
     "title": "Document Generation Metadata",
     "section": "",
-    "text": "This document was generated from the following git commit:\n\nBranch: main\nCommit: 38c6d35\nFull commit hash: 38c6d35c430f26dba8274fe6053a63bff8d2a7c5\nCommit date: 2026-01-19 13:08:26 -0800\n\nWhen transferring edits from this DOCX file back to the Quarto source files, use this commit information to set up the PR correctly and account for any commits that have been added since this document was generated.",
+    "text": "This document was generated from the following git commit:\n\nBranch: main\nCommit: c46a327\nFull commit hash: c46a32762591fab6ab85e689f463b84996135468\nCommit date: 2026-01-19 13:09:35 -0800\n\nWhen transferring edits from this DOCX file back to the Quarto source files, use this commit information to set up the PR correctly and account for any commits that have been added since this document was generated.",
     "crumbs": [
       "Appendices",
       "Document Generation Metadata"
