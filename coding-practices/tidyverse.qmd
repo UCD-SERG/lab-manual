@@ -7,6 +7,8 @@ Tidyverse is quickly becoming [the gold standard](https://rviews.rstudio.com/201
 in R data analysis and modern data science packages and code should use Tidyverse style and packages
 unless there's a significant reason not to
 (i.e. big data pipelines that would benefit from Data.Table's performance optimizations).
+Note that [`{dtplyr}`](https://dtplyr.tidyverse.org/) provides a data.table backend for dplyr,
+enabling you to use most of dplyr's tidy syntax with data.table's performance optimizations.
 
 The package author has published R for Data Science [@wickham2023r4ds],
 which leans heavily on many Tidyverse packages and may be worth checking out.
@@ -40,6 +42,25 @@ Tidy data is data with a consistent form:
 in brief, every variable goes in a column, and every column is a variable.
 Key functions include `pivot_longer()`, `pivot_wider()`, `separate()`, and `unite()`.
 
+#### When to use dplyr vs tidyr
+
+While both [`{dplyr}`](https://dplyr.tidyverse.org/) and [`{tidyr}`](https://tidyr.tidyverse.org/)
+work with data frames,
+they serve different purposes:
+
+- **Use dplyr** for data manipulation within the current structure:
+filtering rows, selecting columns, creating new variables, summarizing data, or joining datasets.
+These operations work with your data as-is.
+
+- **Use tidyr** for reshaping your data structure itself:
+converting between wide and long formats (`pivot_longer()`, `pivot_wider()`),
+splitting or combining columns (`separate()`, `unite()`),
+or handling missing values explicitly (`complete()`, `fill()`).
+
+These packages work together seamlessly in data analysis workflows.
+A typical pattern is to use tidyr to reshape your data into the right structure,
+then use dplyr to manipulate and analyze it.
+
 ### [readr](https://readr.tidyverse.org/) {#sec-readr}
 
 [`{readr}`](https://readr.tidyverse.org/) provides a fast and friendly way to read rectangular data
@@ -49,7 +70,8 @@ while still cleanly failing when data unexpectedly changes.
 
 ### [purrr](https://purrr.tidyverse.org/) {#sec-purrr}
 
-[`{purrr}`](https://purrr.tidyverse.org/) enhances R's functional programming (FP) toolkit
+[`{purrr}`](https://purrr.tidyverse.org/) enhances R's
+[functional programming](https://en.wikipedia.org/wiki/Functional_programming) (FP) toolkit
 by providing a complete and consistent set of tools for working with functions and vectors.
 Once you master the basic concepts,
 purrr allows you to replace many for loops with code that is easier to write and more expressive.
@@ -119,7 +141,7 @@ _|_
 `sessionInfo()` | `sessioninfo::session_info()`
 
 For a more extensive set of syntactical translations to Tidyverse,
-you can check out [this document](https://tavareshugo.github.io/data_carpentry_extras/base-r_tidyverse_equivalents/base-r_tidyverse_equivalents.html#reshaping_data).
+you can check out [this document](https://tavareshugo.github.io/data_carpentry_extras/base-r_tidyverse_equivalents/base-r_tidyverse_equivalents.html).
 
 ## Programming with Tidyverse
 
@@ -128,11 +150,12 @@ due to non-standard evaluation (NSE) semantics.
 If you're an avid function writer,
 we'd recommend checking out the following resources:
 
+- [Programming with dplyr](https://dplyr.tidyverse.org/articles/programming.html) (package vignette)
+- [Using dplyr in packages](https://dplyr.tidyverse.org/articles/in-packages.html) (package vignette)
 - [Tidy Eval in 5 Minutes](https://www.youtube.com/watch?v=nERXS3ssntw) (video)
 - [Tidy Evaluation](https://dplyr.tidyverse.org/articles/programming.html) (e-book)
 - [Evaluation](https://adv-r.hadley.nz/evaluation.html) (advanced details)
 - [Data Frame Columns as Arguments to Dplyr Functions](https://www.brodrigues.co/blog/2016-07-18-data-frame-columns-as-arguments-to-dplyr-functions/) (blog)
 - [Standard Evaluation for *_join](https://stackoverflow.com/questions/28125816/r-standard-evaluation-for-join-dplyr) (stackoverflow)
-- [Programming with dplyr](https://dplyr.tidyverse.org/articles/programming.html) (package vignette)
 
 See also @sec-tidyverse-replacements
