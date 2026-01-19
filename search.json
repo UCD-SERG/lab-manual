@@ -204,7 +204,7 @@
     "href": "reproducibility.html#create-reproducible-workflows",
     "title": "4  Reproducibility",
     "section": "4.5 Create reproducible workflows",
-    "text": "4.5 Create reproducible workflows\nReproducible workflows allow a user to reproduce study estimates and ideally figures and tables with a “single click”. In practice, this typically means running a single bash script that sources all replication scripts in a repository. These replication scripts complete data processing, data analysis, and figure/table generation. The following chapters provide detailed guidance on this topic:\n\nChapter 5: Code repositories\nChapter 6: Coding practices\nChapter 7: Coding style\nChapter 8: Code publication\nChapter 9: Working with big data\nChapter 10: Github\nChapter 11: Unix",
+    "text": "4.5 Create reproducible workflows\nReproducible workflows allow a user to reproduce study estimates and ideally figures and tables with a “single click”. In practice, this typically means running a single bash script that sources all replication scripts in a repository. These replication scripts complete data processing, data analysis, and figure/table generation. The following chapters provide detailed guidance on this topic:\n\nChapter 5: Code repositories\nChapter 6: Coding practices\nChapter 7: Coding style\nChapter 8: Code publication\nChapter 9: Working with big data\nChapter 10: Github\nChapter 11: Unix\n\nFor additional learning resources on reproducible research practices, see the UC Davis DataLab workshop on reproducible research.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Reproducibility</span>"
     ]
@@ -804,7 +804,7 @@
     "href": "github.html#basics",
     "title": "11  Github",
     "section": "",
-    "text": "A detailed tutorial of Git can be found here on the CS61B website.\nIf you are already familiar with Git, you can reference the summary at the end of Section B.\nIf you have made a mistake in Git, you can refer to On undoing, fixing, or removing commits in git (Robertson, n.d.) to undo, fix, or remove commits in git.",
+    "text": "A detailed tutorial of Git can be found here on the CS61B website.\nIf you are already familiar with Git, you can reference the summary at the end of Section B.\nIf you have made a mistake in Git, you can refer to On undoing, fixing, or removing commits in git (Robertson, n.d.) to undo, fix, or remove commits in git.\nFor hands-on Git practice, see the UC Davis DataLab Git Sandbox - a collaborative repository for learning Git workflows.",
     "crumbs": [
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Github</span>"
     ]
@@ -1094,7 +1094,7 @@
     "href": "data-publication.html#removing-phi",
     "title": "15  Data Publication",
     "section": "15.2 Removing PHI",
-    "text": "15.2 Removing PHI\nOnce the data is finalized for analysis, the first step is to strip it of Protected Health Information (PHI), or any other data that could be used to link back to specific participants, such as names, birth dates, or GPS coordinates at the village/neighborhood level or below. PHI includes, but is not limited to:\n\n15.2.1 Personal information\nThese are identifiers that directly point to specific individuals, such as:\n- Names, addresses, photographs, date of birth\n- A combination of age, sex, and geographic location (below population 20,000) is considered identifiable\n\n\n15.2.2 Dates\nAny specific dates (e.g., study visit dates, birth dates, treatment dates) are usually problematic.\n- If a dataset requires high resolution temporal information, coarsen visit or measurement dates to be two variables: year and week of the year (1-52).\n- If a dataset requires age, provide that information without a birth date (typically month resolution is sufficient)\n\n\nCaution! If making changes to the format of dates or ages, make sure your analysis code runs on these modified versions of the data (step 3)! \n\n\n\n\n15.2.3 Geographic information\nDo not include GPS coordinates (longitude, latitude) except in special circumstances where they have been obfuscated/shifted. Reach out to lab leadership before doing this because it can be complicated.\nDo not include place names or codes (e.g., US Zip Codes) if the place contains &lt;20,000 people. For villages or neighborhoods, code them with uninformative IDs. For sub-districts or districts, names are fine.\nIf an analysis requires GPS locations (e.g., to make a map), then typically we include a disclaimer in the article’s data availability statement that explains we cannot make GPS locations public to protect participant confidentiality. As a middle ground, we typically make our code public that runs on the geo-located data for transparency, even if independent researchers can’t actually run that code (although please be careful to ensure the code itself does not in any way include geographic identifiers).\nFor more examples of what constitutes PHI, please refer to this link: https://cphs.berkeley.edu/hipaa/hipaa18.html",
+    "text": "15.2 Removing PHI\nOnce the data is finalized for analysis, the first step is to strip it of Protected Health Information (PHI), or any other data that could be used to link back to specific participants, such as names, birth dates, or GPS coordinates at the village/neighborhood level or below. PHI includes, but is not limited to:\n\n15.2.1 Personal information\nThese are identifiers that directly point to specific individuals, such as:\n- Names, addresses, photographs, date of birth\n- A combination of age, sex, and geographic location (below population 20,000) is considered identifiable\n\n\n15.2.2 Dates\nAny specific dates (e.g., study visit dates, birth dates, treatment dates) are usually problematic.\n- If a dataset requires high resolution temporal information, coarsen visit or measurement dates to be two variables: year and week of the year (1-52).\n- If a dataset requires age, provide that information without a birth date (typically month resolution is sufficient)\n\n\nCaution! If making changes to the format of dates or ages, make sure your analysis code runs on these modified versions of the data (step 3)! \n\n\n\n\n15.2.3 Geographic information\nDo not include GPS coordinates (longitude, latitude) except in special circumstances where they have been obfuscated/shifted. Reach out to lab leadership before doing this because it can be complicated.\nDo not include place names or codes (e.g., US Zip Codes) if the place contains &lt;20,000 people. For villages or neighborhoods, code them with uninformative IDs. For sub-districts or districts, names are fine.\nIf an analysis requires GPS locations (e.g., to make a map), then typically we include a disclaimer in the article’s data availability statement that explains we cannot make GPS locations public to protect participant confidentiality. As a middle ground, we typically make our code public that runs on the geo-located data for transparency, even if independent researchers can’t actually run that code (although please be careful to ensure the code itself does not in any way include geographic identifiers).\nFor more examples of what constitutes PHI, please refer to this link: https://cphs.berkeley.edu/hipaa/hipaa18.html\nFor learning about working with geospatial data, see the UC Davis DataLab GIS workshops, including resources on QGIS and spatial SQL.",
     "crumbs": [
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>Data Publication</span>"
     ]
@@ -1114,7 +1114,7 @@
     "href": "data-publication.html#create-a-data-repository",
     "title": "15  Data Publication",
     "section": "15.4 Create a data repository",
-    "text": "15.4 Create a data repository\nFirst, ensure that you create a codebook and metadata file for each public dataset See the DCC guide on Documenting datasets. Use the same name as the datasets, but with “-codebook.txt” / “-codebook.html” / “-codebook.csv” at the end (depending on the file format for the codebook). One nice option is the R codebook package, which also generates JSON output that is machine-readable.\n\n15.4.1 Steps for creating an Open Science Framework (OSF) repository:\n\nCreate a new OSF project per these instructions: https://help.osf.io/article/252-create-a-project\nCreate a data component and upload the datasets in .csv and .rds format along with the codebooks. The primary format for public dissemination is .csv but we make the .rds files available too as auxiliary files for convenience.\nCreate a notebook component and upload the final .html files (which will not be on github… but see optional item below)\nOn the OSF landing Wiki, provide some context. Here is a recent example: https://osf.io/954bt/\nCreate a Digital Object Identifier (DOI) for the repository. A DOI is a unique identifier that provides a persistent link to content, such as a dataset in this case. Learn more about DOIs\nOptional: Complete the software checklist and system requirement guide for the analysis to guide others. Include it on the GitHub README for the project: https://github.com/proctor-ucsf/mordor-antibody",
+    "text": "15.4 Create a data repository\nFirst, ensure that you create a codebook and metadata file for each public dataset See the DCC guide on Documenting datasets. Use the same name as the datasets, but with “-codebook.txt” / “-codebook.html” / “-codebook.csv” at the end (depending on the file format for the codebook). One nice option is the R codebook package, which also generates JSON output that is machine-readable.\nFor additional guidance on data documentation best practices, see the UC Davis DataLab workshop on data documentation.\n\n15.4.1 Steps for creating an Open Science Framework (OSF) repository:\n\nCreate a new OSF project per these instructions: https://help.osf.io/article/252-create-a-project\nCreate a data component and upload the datasets in .csv and .rds format along with the codebooks. The primary format for public dissemination is .csv but we make the .rds files available too as auxiliary files for convenience.\nCreate a notebook component and upload the final .html files (which will not be on github… but see optional item below)\nOn the OSF landing Wiki, provide some context. Here is a recent example: https://osf.io/954bt/\nCreate a Digital Object Identifier (DOI) for the repository. A DOI is a unique identifier that provides a persistent link to content, such as a dataset in this case. Learn more about DOIs\nOptional: Complete the software checklist and system requirement guide for the analysis to guide others. Include it on the GitHub README for the project: https://github.com/proctor-ucsf/mordor-antibody",
     "crumbs": [
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>Data Publication</span>"
     ]
@@ -1354,7 +1354,7 @@
     "href": "resources.html#resources-for-r",
     "title": "19  Resources",
     "section": "",
-    "text": "19.1.1 Books and Comprehensive Guides\n\nR for Data Science (Wickham, Çetinkaya-Rundel, and Grolemund 2023) - comprehensive introduction to doing data science with R\nR Packages (Wickham and Bryan 2023) - complete guide to R package development\nAdvanced R (Wickham 2019) - deep dive into R programming and internals\nMastering Shiny (Wickham 2021) - comprehensive guide to building web applications with Shiny\nEngineering Production-Grade Shiny Apps (Fay et al. 2021) - best practices for production Shiny applications\nHappy Git and GitHub for the useR (Bryan 2023) - guide to using Git and GitHub with R\nJade’s R-for-epi course\n\n\n\n19.1.2 Cheat Sheets\n\ndplyr and tidyr cheat sheet\nggplot cheat sheet\ndata table cheat sheet\nRMarkdown cheat sheet\n\n\n\n19.1.3 Style and Best Practices\n\nHadley Wickham’s R Style Guide\n\n\n\n19.1.4 Tidy Evaluation Resources\n\nTidy Eval in 5 Minutes (video)\nTidy Evaluation (e-book)\nData Frame Columns as Arguments to Dplyr Functions (blog)\nStandard Evaluation for *_join (stackoverflow)\nProgramming with dplyr (package vignette)",
+    "text": "19.1.1 Books and Comprehensive Guides\n\nR for Data Science (Wickham, Çetinkaya-Rundel, and Grolemund 2023) - comprehensive introduction to doing data science with R\nR Packages (Wickham and Bryan 2023) - complete guide to R package development\nAdvanced R (Wickham 2019) - deep dive into R programming and internals\nMastering Shiny (Wickham 2021) - comprehensive guide to building web applications with Shiny\nEngineering Production-Grade Shiny Apps (Fay et al. 2021) - best practices for production Shiny applications\nHappy Git and GitHub for the useR (Bryan 2023) - guide to using Git and GitHub with R\nJade’s R-for-epi course\n\n\n\n19.1.2 UC Davis DataLab Workshops and Tutorials\nThe UC Davis DataLab provides extensive workshops and learning materials for data science:\n\nWorkshop Index - comprehensive catalog of all DataLab workshops\nR Basics Workshop - foundational R programming for beginners\nResearch Toolkits - in-depth guides for research tools and methods\nInstall Guides - setup instructions for data science software\n\n\n\n19.1.3 Cheat Sheets\n\ndplyr and tidyr cheat sheet\nggplot cheat sheet\ndata table cheat sheet\nRMarkdown cheat sheet\n\n\n\n19.1.4 Style and Best Practices\n\nHadley Wickham’s R Style Guide\n\n\n\n19.1.5 Tidy Evaluation Resources\n\nTidy Eval in 5 Minutes (video)\nTidy Evaluation (e-book)\nData Frame Columns as Arguments to Dplyr Functions (blog)\nStandard Evaluation for *_join (stackoverflow)\nProgramming with dplyr (package vignette)",
     "crumbs": [
       "<span class='chapter-number'>19</span>  <span class='chapter-title'>Resources</span>"
     ]
@@ -1364,7 +1364,27 @@
     "href": "resources.html#resources-for-git-github",
     "title": "19  Resources",
     "section": "19.2 Resources for Git & Github",
-    "text": "19.2 Resources for Git & Github\n\nHappy Git and GitHub for the useR (Bryan 2023) - comprehensive guide to using Git and GitHub with R\nGitHub Skills: Introduction to GitHub",
+    "text": "19.2 Resources for Git & Github\n\nHappy Git and GitHub for the useR (Bryan 2023) - comprehensive guide to using Git and GitHub with R\nGitHub Skills: Introduction to GitHub\nUC Davis DataLab Git Sandbox - hands-on Git practice repository",
+    "crumbs": [
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Resources</span>"
+    ]
+  },
+  {
+    "objectID": "resources.html#resources-for-python",
+    "href": "resources.html#resources-for-python",
+    "title": "19  Resources",
+    "section": "19.3 Resources for Python",
+    "text": "19.3 Resources for Python\n\nUC Davis DataLab Python Basics Workshop - foundational Python programming\nNatural Language Processing with Python - text analysis and NLP techniques",
+    "crumbs": [
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Resources</span>"
+    ]
+  },
+  {
+    "objectID": "resources.html#resources-for-julia",
+    "href": "resources.html#resources-for-julia",
+    "title": "19  Resources",
+    "section": "19.4 Resources for Julia",
+    "text": "19.4 Resources for Julia\n\nUC Davis Julia Users Group Julia Basics Workshop - foundational Julia programming",
     "crumbs": [
       "<span class='chapter-number'>19</span>  <span class='chapter-title'>Resources</span>"
     ]
@@ -1373,8 +1393,8 @@
     "objectID": "resources.html#scientific-figures",
     "href": "resources.html#scientific-figures",
     "title": "19  Resources",
-    "section": "19.3 Scientific figures",
-    "text": "19.3 Scientific figures\n\nTen Simple Rules for Better Figures (Rougier, Droettboom, and Bourne 2014)",
+    "section": "19.5 Scientific figures",
+    "text": "19.5 Scientific figures\n\nTen Simple Rules for Better Figures (Rougier, Droettboom, and Bourne 2014)",
     "crumbs": [
       "<span class='chapter-number'>19</span>  <span class='chapter-title'>Resources</span>"
     ]
@@ -1383,8 +1403,8 @@
     "objectID": "resources.html#writing",
     "href": "resources.html#writing",
     "title": "19  Resources",
-    "section": "19.4 Writing",
-    "text": "19.4 Writing\n\nUnpacking the Scientific Toolbox (Silbiger and Stubler 2019)\nICMJE Definition of authorship (International Committee of Medical Journal Editors, n.d.)\nComputational science: …why scientific programming does not compute (Merali and Giles 2010)\nThe Pathway to Publishing: A Guide to Quantitative Writing in the Health Sciences\nSecret, actionable writing tips",
+    "section": "19.6 Writing",
+    "text": "19.6 Writing\n\nUnpacking the Scientific Toolbox (Silbiger and Stubler 2019)\nICMJE Definition of authorship (International Committee of Medical Journal Editors, n.d.)\nComputational science: …why scientific programming does not compute (Merali and Giles 2010)\nThe Pathway to Publishing: A Guide to Quantitative Writing in the Health Sciences\nSecret, actionable writing tips",
     "crumbs": [
       "<span class='chapter-number'>19</span>  <span class='chapter-title'>Resources</span>"
     ]
@@ -1393,8 +1413,8 @@
     "objectID": "resources.html#presentations",
     "href": "resources.html#presentations",
     "title": "19  Resources",
-    "section": "19.5 Presentations",
-    "text": "19.5 Presentations\n\nHow to tell a compelling story in scientific presentations (Van Noorden 2021)\nHow to give a killer narratively-driven scientific talk\nHow to make a better poster\nHow to make an even better poster",
+    "section": "19.7 Presentations",
+    "text": "19.7 Presentations\n\nHow to tell a compelling story in scientific presentations (Van Noorden 2021)\nHow to give a killer narratively-driven scientific talk\nHow to make a better poster\nHow to make an even better poster",
     "crumbs": [
       "<span class='chapter-number'>19</span>  <span class='chapter-title'>Resources</span>"
     ]
@@ -1403,8 +1423,8 @@
     "objectID": "resources.html#professional-advice",
     "href": "resources.html#professional-advice",
     "title": "19  Resources",
-    "section": "19.6 Professional advice",
-    "text": "19.6 Professional advice\n\nProfessional advice, especially for your first job\nTeam Public Health Substack",
+    "section": "19.8 Professional advice",
+    "text": "19.8 Professional advice\n\nProfessional advice, especially for your first job\nTeam Public Health Substack",
     "crumbs": [
       "<span class='chapter-number'>19</span>  <span class='chapter-title'>Resources</span>"
     ]
@@ -1413,8 +1433,8 @@
     "objectID": "resources.html#funding",
     "href": "resources.html#funding",
     "title": "19  Resources",
-    "section": "19.7 Funding",
-    "text": "19.7 Funding\n\nBuilding Your Funding Train\nNIH Grant Writing Resources",
+    "section": "19.9 Funding",
+    "text": "19.9 Funding\n\nBuilding Your Funding Train\nNIH Grant Writing Resources",
     "crumbs": [
       "<span class='chapter-number'>19</span>  <span class='chapter-title'>Resources</span>"
     ]
@@ -1423,8 +1443,8 @@
     "objectID": "resources.html#ethics-and-global-health-research",
     "href": "resources.html#ethics-and-global-health-research",
     "title": "19  Resources",
-    "section": "19.8 Ethics and global health research",
-    "text": "19.8 Ethics and global health research\n\nGlobal Code of Conduct For Research in Resource-Poor Settings\nAddressing power asymmetries in global health (Abimbola et al. 2022)\nTransforming Global Health Partnerships\n\n\n\n\n\nAbimbola, Seye, Sheena Asthana, Cristina Montenegro, et al. 2022. “Addressing Power Asymmetries in Global Health: Imperatives in the Wake of the COVID-19 Pandemic.” PLOS Global Public Health 2 (10). https://doi.org/10.1371/journal.pgph.0002269.\n\n\nBryan, Jennifer. 2023. Happy Git and GitHub for the useR. https://happygitwithr.com/.\n\n\nFay, Colin, Sébastien Rochette, Vincent Guyader, and Cervan Girard. 2021. Engineering Production-Grade Shiny Apps. Chapman; Hall/CRC. https://engineering-shiny.org/.\n\n\nInternational Committee of Medical Journal Editors. n.d. “Defining the Role of Authors and Contributors.” ICMJE. http://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html.\n\n\nMerali, Zeeya, and Jim Giles. 2010. “Computational Science: Error ... Why Scientific Programming Does Not Compute.” Nature 467: 775–77. https://doi.org/10.1038/467775a.\n\n\nRougier, Nicolas P., Michael Droettboom, and Philip E. Bourne. 2014. “Ten Simple Rules for Better Figures.” PLOS Computational Biology 10 (9). https://doi.org/10.1371/journal.pcbi.1003833.\n\n\nSilbiger, Nyssa J., and Ariel D. Stubler. 2019. “Unpacking the Scientific Toolbox: Five Skills for the Modern Scientist.” Nature. https://doi.org/10.1038/d41586-019-02918-5.\n\n\nVan Noorden, Richard. 2021. “Scientists and Science Communicators Swap Tips on How to Tell Compelling Stories.” Nature. https://doi.org/10.1038/d41586-021-03603-2.\n\n\nWickham, Hadley. 2019. Advanced r. 2nd ed. Chapman; Hall/CRC. https://adv-r.hadley.nz/.\n\n\n———. 2021. Mastering Shiny. O’Reilly Media. https://mastering-shiny.org/.\n\n\nWickham, Hadley, and Jennifer Bryan. 2023. R Packages. 2nd ed. O’Reilly Media. https://r-pkgs.org/.\n\n\nWickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund. 2023. R for Data Science. 2nd ed. O’Reilly Media. https://r4ds.hadley.nz/.",
+    "section": "19.10 Ethics and global health research",
+    "text": "19.10 Ethics and global health research\n\nGlobal Code of Conduct For Research in Resource-Poor Settings\nAddressing power asymmetries in global health (Abimbola et al. 2022)\nTransforming Global Health Partnerships\n\n\n\n\n\nAbimbola, Seye, Sheena Asthana, Cristina Montenegro, et al. 2022. “Addressing Power Asymmetries in Global Health: Imperatives in the Wake of the COVID-19 Pandemic.” PLOS Global Public Health 2 (10). https://doi.org/10.1371/journal.pgph.0002269.\n\n\nBryan, Jennifer. 2023. Happy Git and GitHub for the useR. https://happygitwithr.com/.\n\n\nFay, Colin, Sébastien Rochette, Vincent Guyader, and Cervan Girard. 2021. Engineering Production-Grade Shiny Apps. Chapman; Hall/CRC. https://engineering-shiny.org/.\n\n\nInternational Committee of Medical Journal Editors. n.d. “Defining the Role of Authors and Contributors.” ICMJE. http://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html.\n\n\nMerali, Zeeya, and Jim Giles. 2010. “Computational Science: Error ... Why Scientific Programming Does Not Compute.” Nature 467: 775–77. https://doi.org/10.1038/467775a.\n\n\nRougier, Nicolas P., Michael Droettboom, and Philip E. Bourne. 2014. “Ten Simple Rules for Better Figures.” PLOS Computational Biology 10 (9). https://doi.org/10.1371/journal.pcbi.1003833.\n\n\nSilbiger, Nyssa J., and Ariel D. Stubler. 2019. “Unpacking the Scientific Toolbox: Five Skills for the Modern Scientist.” Nature. https://doi.org/10.1038/d41586-019-02918-5.\n\n\nVan Noorden, Richard. 2021. “Scientists and Science Communicators Swap Tips on How to Tell Compelling Stories.” Nature. https://doi.org/10.1038/d41586-021-03603-2.\n\n\nWickham, Hadley. 2019. Advanced r. 2nd ed. Chapman; Hall/CRC. https://adv-r.hadley.nz/.\n\n\n———. 2021. Mastering Shiny. O’Reilly Media. https://mastering-shiny.org/.\n\n\nWickham, Hadley, and Jennifer Bryan. 2023. R Packages. 2nd ed. O’Reilly Media. https://r-pkgs.org/.\n\n\nWickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund. 2023. R for Data Science. 2nd ed. O’Reilly Media. https://r4ds.hadley.nz/.",
     "crumbs": [
       "<span class='chapter-number'>19</span>  <span class='chapter-title'>Resources</span>"
     ]
@@ -1494,7 +1514,7 @@
     "href": "professional-development.html#teaching-and-outreach",
     "title": "20  Professional Development",
     "section": "20.6 Teaching and Outreach",
-    "text": "20.6 Teaching and Outreach\nTeaching and outreach are valuable professional development opportunities:\n\nGraduate students are encouraged to gain teaching experience\nWe support science communication and outreach activities\nDiscuss opportunities with PIs",
+    "text": "20.6 Teaching and Outreach\nTeaching and outreach are valuable professional development opportunities:\n\nGraduate students are encouraged to gain teaching experience\nWe support science communication and outreach activities\nDiscuss opportunities with PIs\n\nThe UC Davis DataLab offers various workshops and learning materials that can support your teaching and professional development. Their workshop index provides a comprehensive catalog of available resources.",
     "crumbs": [
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>Professional Development</span>"
     ]
@@ -1651,7 +1671,7 @@
     "href": "appendix-document-metadata.html",
     "title": "Document Generation Metadata",
     "section": "",
-    "text": "This document was generated from the following git commit:\n\nBranch: main\nCommit: 4b05018\nFull commit hash: 4b05018bc6bebc62da70fe343c690a8b4fdb1668\nCommit date: 2026-01-19 13:02:01 -0800\n\nWhen transferring edits from this DOCX file back to the Quarto source files, use this commit information to set up the PR correctly and account for any commits that have been added since this document was generated.",
+    "text": "This document was generated from the following git commit:\n\nBranch: main\nCommit: 15e203f\nFull commit hash: 15e203ff3f6f06b8ed60bc9eb164f7c3c9ad1892\nCommit date: 2026-01-19 13:06:45 -0800\n\nWhen transferring edits from this DOCX file back to the Quarto source files, use this commit information to set up the PR correctly and account for any commits that have been added since this document was generated.",
     "crumbs": [
       "Appendices",
       "Document Generation Metadata"
