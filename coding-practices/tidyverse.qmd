@@ -1,9 +1,95 @@
+Throughout this document there have been references to the Tidyverse,
+but this section is to explicitly show you how to transform your Base R tendencies to Tidyverse
+(or Data.Table, Tidyverse's performance-optimized competitor).
+For most of our work that does not utilize very large datasets,
+we recommend that you code in Tidyverse rather than Base R.
+Tidyverse is quickly becoming [the gold standard](https://rviews.rstudio.com/2017/06/08/what-is-the-tidyverse/)
+in R data analysis and modern data science packages and code should use Tidyverse style and packages
+unless there's a significant reason not to
+(i.e. big data pipelines that would benefit from Data.Table's performance optimizations).
 
-Throughout this document there have been references to the Tidyverse, but this section is to explicitly show you how to transform your Base R tendencies to Tidyverse (or Data.Table, Tidyverse's performance-optimized competitor). For most of our work that does not utilize very large datasets, we recommend that you code in Tidyverse rather than Base R. Tidyverse is quickly becoming [the gold standard](https://rviews.rstudio.com/2017/06/08/what-is-the-tidyverse/) in R data analysis and modern data science packages and code should use Tidyverse style and packages unless there's a significant reason not to (i.e. big data pipelines that would benefit from Data.Table's performance optimizations).
+The package author has published R for Data Science [@wickham2023r4ds],
+which leans heavily on many Tidyverse packages and may be worth checking out.
 
-The package author has published R for Data Science [@wickham2023r4ds], which leans heavily on many Tidyverse packages and may be worth checking out.
+## Core Tidyverse Packages
 
-The following list is not exhaustive, but is a compact overview to begin to translate Base R into something better:
+The [tidyverse](https://www.tidyverse.org/) is a collection of R packages designed for data science
+that share an underlying design philosophy, grammar, and data structures.
+As of tidyverse 1.3.0,
+the following nine packages are included in the core tidyverse and are loaded automatically
+when you run `library(tidyverse)`:
+
+### [ggplot2](https://ggplot2.tidyverse.org/) {#sec-ggplot2}
+
+[`{ggplot2}`](https://ggplot2.tidyverse.org/) is a system for declaratively creating graphics,
+based on The Grammar of Graphics.
+You provide the data,
+tell ggplot2 how to map variables to aesthetics and what graphical primitives to use,
+and it takes care of the details.
+
+### [dplyr](https://dplyr.tidyverse.org/) {#sec-dplyr}
+
+[`{dplyr}`](https://dplyr.tidyverse.org/) provides a grammar of data manipulation,
+providing a consistent set of verbs that solve the most common data manipulation challenges.
+Key functions include `filter()`, `select()`, `mutate()`, `summarize()`, and `arrange()`.
+
+### [tidyr](https://tidyr.tidyverse.org/) {#sec-tidyr}
+
+[`{tidyr}`](https://tidyr.tidyverse.org/) provides a set of functions that help you get to tidy data.
+Tidy data is data with a consistent form:
+in brief, every variable goes in a column, and every column is a variable.
+Key functions include `pivot_longer()`, `pivot_wider()`, `separate()`, and `unite()`.
+
+### [readr](https://readr.tidyverse.org/) {#sec-readr}
+
+[`{readr}`](https://readr.tidyverse.org/) provides a fast and friendly way to read rectangular data
+(like csv, tsv, and fwf).
+It is designed to flexibly parse many types of data found in the wild,
+while still cleanly failing when data unexpectedly changes.
+
+### [purrr](https://purrr.tidyverse.org/) {#sec-purrr}
+
+[`{purrr}`](https://purrr.tidyverse.org/) enhances R's functional programming (FP) toolkit
+by providing a complete and consistent set of tools for working with functions and vectors.
+Once you master the basic concepts,
+purrr allows you to replace many for loops with code that is easier to write and more expressive.
+See @sec-iteration for more details on using purrr.
+
+### [tibble](https://tibble.tidyverse.org/) {#sec-tibble}
+
+[`{tibble}`](https://tibble.tidyverse.org/) is a modern re-imagining of the data frame,
+keeping what time has proven to be effective,
+and throwing out what it has not.
+Tibbles are data.frames that are lazy and surly:
+they do less and complain more forcing you to confront problems earlier,
+typically leading to cleaner, more expressive code.
+
+### [stringr](https://stringr.tidyverse.org/) {#sec-stringr}
+
+[`{stringr}`](https://stringr.tidyverse.org/) provides a cohesive set of functions
+designed to make working with strings as easy as possible.
+It is built on top of stringi,
+which uses the ICU C library to provide fast,
+correct implementations of common string manipulations.
+
+### [forcats](https://forcats.tidyverse.org/) {#sec-forcats}
+
+[`{forcats}`](https://forcats.tidyverse.org/) provides a suite of useful tools
+that solve common problems with factors.
+R uses factors to handle categorical variables,
+variables that have a fixed and known set of possible values.
+
+### [lubridate](https://lubridate.tidyverse.org/) {#sec-lubridate}
+
+[`{lubridate}`](https://lubridate.tidyverse.org/) provides a set of functions for working with date-times,
+extending and improving on R's existing support for them.
+Key functions include `ymd()`, `mdy()`, `dmy()` for parsing dates,
+and `year()`, `month()`, `day()` for extracting components.
+
+## Base R to Tidyverse Translation
+
+The following list is not exhaustive,
+but is a compact overview to begin to translate Base R into something better:
 
 Base R | Better Style, Performance, and Utility
 --- | ---
@@ -32,10 +118,15 @@ Nested: `ifelse(test_expression1, yes1, ifelse(test_expression2, yes2, ifelse(te
 _|_
 `sessionInfo()` | `sessioninfo::session_info()`
 
-For a more extensive set of syntactical translations to Tidyverse, you can check out [this document](https://tavareshugo.github.io/data_carpentry_extras/base-r_tidyverse_equivalents/base-r_tidyverse_equivalents.html#reshaping_data).
+For a more extensive set of syntactical translations to Tidyverse,
+you can check out [this document](https://tavareshugo.github.io/data_carpentry_extras/base-r_tidyverse_equivalents/base-r_tidyverse_equivalents.html#reshaping_data).
 
+## Programming with Tidyverse
 
-Working with Tidyverse within functions can be somewhat of a pain due to non-standard evaluation (NSE) semantics. If you're an avid function writer, we'd recommend checking out the following resources:
+Working with Tidyverse within functions can be somewhat of a pain
+due to non-standard evaluation (NSE) semantics.
+If you're an avid function writer,
+we'd recommend checking out the following resources:
 
 - [Tidy Eval in 5 Minutes](https://www.youtube.com/watch?v=nERXS3ssntw) (video)
 - [Tidy Evaluation](https://dplyr.tidyverse.org/articles/programming.html) (e-book)
