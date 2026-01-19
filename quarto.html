@@ -746,13 +746,14 @@ div.csl-indent {
 <section id="creating-a-quarto-book" class="level3" data-number="10.3.1">
 <h3 data-number="10.3.1" class="anchored" data-anchor-id="creating-a-quarto-book"><span class="header-section-number">10.3.1</span> Creating a Quarto Book</h3>
 <p><strong>Starting from a template (recommended):</strong></p>
-<p>Using a template is the fastest way to get started with a Quarto book, as it provides pre-configured settings and examples:</p>
+<p>Using a template is the fastest way to get started with a Quarto book, as it provides pre-configured settings, example content, and GitHub Actions workflows for automated deployment:</p>
 <ol type="1">
 <li><strong>UCD-SeRG Quarto Book Template</strong> - Our recommended template with pre-configured settings for lab publications:
 <ul>
 <li>Repository: <a href="https://github.com/UCD-SERG/quarto-book-template" class="uri">https://github.com/UCD-SERG/quarto-book-template</a></li>
 <li>Click “Use this template” → “Create a new repository” on GitHub</li>
 <li>Clone your new repository and start editing</li>
+<li>Includes GitHub Actions for automatic deployment to GitHub Pages</li>
 </ul></li>
 <li><strong>Coatless Tutorials Quarto Book Template</strong> - Another template with helpful examples:
 <ul>
@@ -765,6 +766,7 @@ div.csl-indent {
 <li>Provides a starting point for DataLab workshop materials and tutorials</li>
 </ul></li>
 </ol>
+<p>While these templates jumpstart your project with up-to-date configuration and workflow files, you should still come up to speed on what all the config files do (particularly <code>_quarto.yml</code> and any GitHub Actions workflows) so you can modify and debug them as needed. The templates serve as central locations for the most current versions of these files and best practices.</p>
 <p><strong>Starting from scratch:</strong></p>
 <p>If you prefer to start from scratch, you can create a new Quarto book project using the Quarto CLI:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new Quarto book project</span></span>

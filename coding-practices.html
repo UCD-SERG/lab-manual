@@ -809,6 +809,27 @@ window.Quarto = {
 <p>Here’s the typical workflow for developing an R package in our lab:</p>
 <section id="initial-setup" class="level3" data-number="6.3.1">
 <h3 data-number="6.3.1" class="anchored" data-anchor-id="initial-setup"><span class="header-section-number">6.3.1</span> 1. Initial Setup</h3>
+<p><strong>Starting from a template (recommended):</strong></p>
+<p>Using our R package template is the fastest way to get started with a new R package, as it provides pre-configured settings, GitHub Actions workflows, and development tools:</p>
+<ul>
+<li><strong>UCD-SeRG R Package Template</strong> - Our recommended template with pre-configured development tools and CI workflows:
+<ul>
+<li>Repository: <a href="https://github.com/UCD-SERG/r.package.template" class="uri">https://github.com/UCD-SERG/r.package.template</a></li>
+<li>Click “Use this template” → “Create a new repository” on GitHub</li>
+<li>Clone your new repository and start developing</li>
+</ul></li>
+</ul>
+<p>The template includes pre-configured:</p>
+<ul>
+<li>GitHub Actions workflows for R CMD check, test coverage, and pkgdown deployment</li>
+<li>Development tools setup (<a href="https://usethis.r-lib.org/"><code>{usethis}</code></a>, <a href="https://devtools.r-lib.org/"><code>{devtools}</code></a>, <a href="https://roxygen2.r-lib.org/"><code>{roxygen2}</code></a>)</li>
+<li>Testing infrastructure (<a href="https://testthat.r-lib.org/"><code>{testthat}</code></a>)</li>
+<li>Code styling and linting configurations</li>
+<li>Package documentation structure</li>
+</ul>
+<p>While the template jumpstarts your project with up-to-date configuration and workflow files, you should still come up to speed on what all the config files do so you can modify and debug them as needed. The template serves as a central location for the most current versions of these files and best practices.</p>
+<p><strong>Starting from scratch:</strong></p>
+<p>If you prefer to start from scratch or need to understand each setup step, you can create a new package manually:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create package structure</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_package</span>(<span class="st">"~/myproject"</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
