@@ -74,6 +74,10 @@ Creating clear, effective figures is essential for communicating research findin
 - [NIH Funding Opportunities](https://grants.nih.gov)
 - [NIH Grant Writing Resources](https://www.niaid.nih.gov/grants-contracts/write-grant-application)
 
+## PhD Dissertation Requirements {#sec-dissertation-requirements}
+
+{{< include professional-development/dissertation-requirements.qmd >}}
+
 ## Teaching and Outreach
 
 Teaching and outreach are valuable professional development opportunities:
@@ -81,6 +85,8 @@ Teaching and outreach are valuable professional development opportunities:
 - Graduate students are encouraged to gain teaching experience
 - We support science communication and outreach activities
 - Discuss opportunities with PIs
+
+The [UC Davis DataLab](https://github.com/ucdavisdatalab) offers various workshops and learning materials that can support your teaching and professional development. Their [workshop index](https://ucdavisdatalab.github.io/workshop_index/) provides a comprehensive catalog of available resources.
 
 ## Networking
 
