@@ -585,7 +585,7 @@ div.csl-indent {
 
 <div class="preview-combined-banner">
     <p style="margin: 0;">
-        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~4% of content changed).
+        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~5% of content changed).
         <br>
         <strong>🎨 Highlighting Legend:</strong> 
         <mark class="preview-text-changed" style="display: inline; padding: 1px 3px;">Modified text (yellow)</mark> shows changed words/phrases with tooltips of original text, 
@@ -598,14 +598,26 @@ div.csl-indent {
 <section id="responsibility-for-validation" class="level2" data-number="17.1">
 <h2 data-number="17.1" class="anchored" data-anchor-id="responsibility-for-validation"><span class="header-section-number">17.1</span> Responsibility for validation</h2>
 <p><strong>You are fully responsible for checking and validating all AI-generated code and content.</strong> AI tools can make mistakes, generate insecure code, produce incorrect logic, or suggest approaches that are inappropriate for our specific research context. Before using any AI-generated code:</p>
-<ul>
-<li>Carefully review the code to ensure you understand what it does</li>
-<li>Test the code thoroughly to verify it works as expected</li>
-<li>Verify that the logic is appropriate for your specific use case</li>
-<li>Check that the code follows our lab’s coding standards and best practices</li>
-<li>Ensure the code does not introduce security vulnerabilities or data privacy issues</li>
+<ul class="task-list">
+<li><label><input type="checkbox">Carefully review the code to ensure you understand what it does</label></li>
+<li><label><input type="checkbox">Test the code thoroughly to verify it works as expected</label></li>
+<li><label><input type="checkbox">Verify that the logic is appropriate for your specific use case</label></li>
+<li><label><input type="checkbox">Check that the code follows our lab’s coding standards and best practices</label></li>
+<li><label><input type="checkbox">Ensure the code does not introduce security vulnerabilities or data privacy issues</label></li>
 </ul>
-<p>Never blindly copy and paste AI-generated code without understanding it. If you don’t understand what the AI has suggested, take the time to learn or ask a colleague for help.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Never blindly use AI-generated code without fully understanding it. If you don’t completely understand what the AI has suggested, take the time to learn or ask a colleague for help.</p>
+</div>
+</div>
 </section>
 <section id="disclosure-of-ai-use" class="level2" data-number="17.2">
 <h2 data-number="17.2" class="anchored" data-anchor-id="disclosure-of-ai-use"><span class="header-section-number">17.2</span> Disclosure of AI use</h2>
@@ -678,15 +690,15 @@ Table&nbsp;17.1: Relative advantages of humans and AI coding agents
 <thead>
 <tr class="header">
 <th>Task Type</th>
-<th>Humans 😊</th>
-<th>AI Agents 🤖</th>
+<th>Humans (Neo/Keanu) 😊</th>
+<th>AI Agents (Agent Smith) 🤖</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><strong>Creative thinking and handling ambiguity</strong></td>
 <td>😊 Humans excel at understanding context, handling ambiguous requirements, and thinking creatively about novel problems</td>
-<td>😠 AI agents struggle with ambiguous requirements and creative problem-solving in unfamiliar domains</td>
+<td>😞 AI agents struggle with ambiguous requirements and creative problem-solving in unfamiliar domains</td>
 </tr>
 <tr class="even">
 <td><strong>Following instruction scripts precisely</strong></td>
@@ -696,6 +708,32 @@ Table&nbsp;17.1: Relative advantages of humans and AI coding agents
 </tbody>
 </table>
 </div>
+</figure>
+</div>
+<p><mark class="preview-element-added">Or, if you prefer a more visual representation:</mark></p>
+<div id="fig-matrix-meme-table" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-matrix-meme-table-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="assets/images/happy-neo-placeholder.png" class="img-fluid figure-img" width="450"></td>
+<td style="text-align: center;"><img src="assets/images/angry-smith-placeholder.png" class="img-fluid figure-img" width="450"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><img src="assets/images/sad-keanu-placeholder.png" class="img-fluid figure-img" width="450"></td>
+<td style="text-align: center;"><img src="assets/images/happy-smith-placeholder.png" class="img-fluid figure-img" width="450"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-matrix-meme-table-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;17.1: The same comparison with Matrix characters in a 2×2 grid
+</figcaption>
 </figure>
 </div>
 <p><mark class="preview-element-added">This pattern mirrors the evolution of programming itself. Just as almost no one writes machine code anymore because higher-level languages and compilers handle those details, most developers will increasingly spend less time writing low-level code. Instead, you’ll describe what the system needs to do as clearly as possible, and AI agents will handle many of the computational and coding details.</mark></p>

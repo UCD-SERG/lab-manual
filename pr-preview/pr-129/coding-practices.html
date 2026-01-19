@@ -651,11 +651,12 @@ window.Quarto = {
   <li><a href="#reviewing-pull-requests" id="toc-reviewing-pull-requests" class="nav-link" data-scroll-target="#reviewing-pull-requests"><span class="header-section-number">6.21</span> Reviewing Pull Requests</a>
   <ul class="collapse">
   <li><a href="#purpose-of-code-review" id="toc-purpose-of-code-review" class="nav-link" data-scroll-target="#purpose-of-code-review"><span class="header-section-number">6.21.1</span> Purpose of Code Review</a></li>
-  <li><a href="#writing-review-comments" id="toc-writing-review-comments" class="nav-link" data-scroll-target="#writing-review-comments"><span class="header-section-number">6.21.2</span> Writing Review Comments</a></li>
-  <li><a href="#mentoring-through-review" id="toc-mentoring-through-review" class="nav-link" data-scroll-target="#mentoring-through-review"><span class="header-section-number">6.21.3</span> Mentoring Through Review</a></li>
-  <li><a href="#giving-constructive-feedback" id="toc-giving-constructive-feedback" class="nav-link" data-scroll-target="#giving-constructive-feedback"><span class="header-section-number">6.21.4</span> Giving Constructive Feedback</a></li>
-  <li><a href="#ignoring-auto-generated-files" id="toc-ignoring-auto-generated-files" class="nav-link" data-scroll-target="#ignoring-auto-generated-files"><span class="header-section-number">6.21.5</span> Ignoring Auto-Generated Files</a></li>
-  <li><a href="#reviewing-copilot-generated-pull-requests" id="toc-reviewing-copilot-generated-pull-requests" class="nav-link" data-scroll-target="#reviewing-copilot-generated-pull-requests"><span class="header-section-number">6.21.6</span> Reviewing Copilot-Generated Pull Requests</a></li>
+  <li><a href="#monitoring-prs-awaiting-your-review" id="toc-monitoring-prs-awaiting-your-review" class="nav-link" data-scroll-target="#monitoring-prs-awaiting-your-review"><span class="header-section-number">6.21.2</span> Monitoring PRs Awaiting Your Review</a></li>
+  <li><a href="#writing-review-comments" id="toc-writing-review-comments" class="nav-link" data-scroll-target="#writing-review-comments"><span class="header-section-number">6.21.3</span> Writing Review Comments</a></li>
+  <li><a href="#mentoring-through-review" id="toc-mentoring-through-review" class="nav-link" data-scroll-target="#mentoring-through-review"><span class="header-section-number">6.21.4</span> Mentoring Through Review</a></li>
+  <li><a href="#giving-constructive-feedback" id="toc-giving-constructive-feedback" class="nav-link" data-scroll-target="#giving-constructive-feedback"><span class="header-section-number">6.21.5</span> Giving Constructive Feedback</a></li>
+  <li><a href="#ignoring-auto-generated-files" id="toc-ignoring-auto-generated-files" class="nav-link" data-scroll-target="#ignoring-auto-generated-files"><span class="header-section-number">6.21.6</span> Ignoring Auto-Generated Files</a></li>
+  <li><a href="#reviewing-copilot-generated-pull-requests" id="toc-reviewing-copilot-generated-pull-requests" class="nav-link" data-scroll-target="#reviewing-copilot-generated-pull-requests"><span class="header-section-number">6.21.7</span> Reviewing Copilot-Generated Pull Requests</a></li>
   </ul></li>
   <li><a href="#creating-a-pull-request-template" id="toc-creating-a-pull-request-template" class="nav-link" data-scroll-target="#creating-a-pull-request-template"><span class="header-section-number">6.22</span> Creating a Pull Request Template</a></li>
   <li><a href="#sec-r-resources" id="toc-sec-r-resources" class="nav-link" data-scroll-target="#sec-r-resources"><span class="header-section-number">6.23</span> Additional Resources</a>
@@ -831,6 +832,27 @@ window.Quarto = {
 <p>Here’s the typical workflow for developing an R package in our lab:</p>
 <section id="initial-setup" class="level3" data-number="6.3.1">
 <h3 data-number="6.3.1" class="anchored" data-anchor-id="initial-setup"><span class="header-section-number">6.3.1</span> 1. Initial Setup</h3>
+<p><strong>Starting from a template (recommended):</strong></p>
+<p>Using our R package template is the fastest way to get started with a new R package, as it provides pre-configured settings, GitHub Actions workflows, and development tools:</p>
+<ul>
+<li><strong>UCD-SeRG R Package Template</strong> - Our recommended template with pre-configured development tools and CI workflows:
+<ul>
+<li>Repository: <a href="https://github.com/UCD-SERG/r.package.template" class="uri">https://github.com/UCD-SERG/r.package.template</a></li>
+<li>Click “Use this template” → “Create a new repository” on GitHub</li>
+<li>Clone your new repository and start developing</li>
+</ul></li>
+</ul>
+<p>The template includes pre-configured:</p>
+<ul>
+<li>GitHub Actions workflows for R CMD check, test coverage, and pkgdown deployment</li>
+<li>Development tools setup (<a href="https://usethis.r-lib.org/"><code>{usethis}</code></a>, <a href="https://devtools.r-lib.org/"><code>{devtools}</code></a>, <a href="https://roxygen2.r-lib.org/"><code>{roxygen2}</code></a>)</li>
+<li>Testing infrastructure (<a href="https://testthat.r-lib.org/"><code>{testthat}</code></a>)</li>
+<li>Code styling and linting configurations</li>
+<li>Package documentation structure</li>
+</ul>
+<p>While the template jumpstarts your project with up-to-date configuration and workflow files, you should still come up to speed on what all the config files do so you can modify and debug them as needed. The template serves as a central location for the most current versions of these files and best practices.</p>
+<p><strong>Starting from scratch:</strong></p>
+<p>If you prefer to start from scratch or need to understand each setup step, you can create a new package manually:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create package structure</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_package</span>(<span class="st">"~/myproject"</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1796,8 +1818,17 @@ future_lapply(x = mylist, FUN = func)</code></pre>
 <p>The primary purpose of code review is to ensure that the overall code health of our projects improves over time. Reviewers should balance the need to make forward progress with the importance of maintaining code quality.</p>
 <p><strong>Key principle</strong>: Reviewers should favor approving a PR once it is in a state where it definitely improves the overall code health of the system, even if the PR isn’t perfect. There is no such thing as “perfect” code—there is only better code. Rather than seeking perfection, seek continuous improvement.</p>
 </section>
-<section id="writing-review-comments" class="level3" data-number="6.21.2">
-<h3 data-number="6.21.2" class="anchored" data-anchor-id="writing-review-comments"><span class="header-section-number">6.21.2</span> Writing Review Comments</h3>
+<section id="monitoring-prs-awaiting-your-review" class="level3" data-number="6.21.2">
+<h3 data-number="6.21.2" class="anchored" data-anchor-id="monitoring-prs-awaiting-your-review"><span class="header-section-number">6.21.2</span> Monitoring PRs Awaiting Your Review</h3>
+<p>To ensure timely code reviews, bookmark GitHub’s review-requested page and check it regularly (at least daily):</p>
+<ul>
+<li><p><strong>General bookmark</strong>: <a href="https://github.com/pulls/review-requested" class="uri">https://github.com/pulls/review-requested</a> shows all PRs across GitHub where you’ve been requested as a reviewer</p></li>
+<li><p><strong>Project-specific bookmark</strong>: For frequently-reviewed repositories, you can bookmark project-specific versions using GitHub’s search syntax. For example, to see PRs awaiting your review in this repository: <a href="https://github.com/UCD-SERG/lab-manual/pulls/review-requested/YOUR-USERNAME" class="uri">https://github.com/UCD-SERG/lab-manual/pulls/review-requested/YOUR-USERNAME</a> (replace <code>YOUR-USERNAME</code> with your GitHub username)</p></li>
+</ul>
+<p>Checking these pages regularly helps ensure that PRs don’t languish waiting for review, which is important for maintaining team productivity and code quality.</p>
+</section>
+<section id="writing-review-comments" class="level3" data-number="6.21.3">
+<h3 data-number="6.21.3" class="anchored" data-anchor-id="writing-review-comments"><span class="header-section-number">6.21.3</span> Writing Review Comments</h3>
 <p>When reviewing code, maintain courtesy and respect while being clear and helpful:</p>
 <ul>
 <li>Comment on the <strong>code</strong>, not the author</li>
@@ -1808,8 +1839,8 @@ future_lapply(x = mylist, FUN = func)</code></pre>
 <p><strong>Poor comment</strong>: “Why did you use this approach when there’s obviously a better way?”</p>
 <p><strong>Better comment</strong>: “This approach adds complexity without clear benefits. Consider using [alternative approach] instead, which would simplify the logic and improve readability.”</p>
 </section>
-<section id="mentoring-through-review" class="level3" data-number="6.21.3">
-<h3 data-number="6.21.3" class="anchored" data-anchor-id="mentoring-through-review"><span class="header-section-number">6.21.3</span> Mentoring Through Review</h3>
+<section id="mentoring-through-review" class="level3" data-number="6.21.4">
+<h3 data-number="6.21.4" class="anchored" data-anchor-id="mentoring-through-review"><span class="header-section-number">6.21.4</span> Mentoring Through Review</h3>
 <p>Code review is an excellent opportunity for mentoring. As a reviewer:</p>
 <ul>
 <li>Leave comments that help authors learn something new</li>
@@ -1817,8 +1848,8 @@ future_lapply(x = mylist, FUN = func)</code></pre>
 <li>Consider pair programming for complex reviews—live review sessions can be very effective for teaching</li>
 </ul>
 </section>
-<section id="giving-constructive-feedback" class="level3" data-number="6.21.4">
-<h3 data-number="6.21.4" class="anchored" data-anchor-id="giving-constructive-feedback"><span class="header-section-number">6.21.4</span> Giving Constructive Feedback</h3>
+<section id="giving-constructive-feedback" class="level3" data-number="6.21.5">
+<h3 data-number="6.21.5" class="anchored" data-anchor-id="giving-constructive-feedback"><span class="header-section-number">6.21.5</span> Giving Constructive Feedback</h3>
 <p>In general, it is the author’s responsibility to fix a PR, not the reviewer’s. Strike a balance between pointing out problems and providing direct guidance. Sometimes pointing out issues and letting the author decide on a solution helps them learn and may result in a better solution since they are closer to the code.</p>
 <p>For very small tweaks (typos, comment additions), use GitHub’s suggestion feature to allow authors to quickly accept changes directly in the UI.</p>
 <div id="fig-github-suggestion-feature" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -1832,8 +1863,8 @@ Figure&nbsp;6.1: GitHub’s suggestion feature in a PR review comment
 </figure>
 </div>
 </section>
-<section id="ignoring-auto-generated-files" class="level3" data-number="6.21.5">
-<h3 data-number="6.21.5" class="anchored" data-anchor-id="ignoring-auto-generated-files"><span class="header-section-number">6.21.5</span> Ignoring Auto-Generated Files</h3>
+<section id="ignoring-auto-generated-files" class="level3" data-number="6.21.6">
+<h3 data-number="6.21.6" class="anchored" data-anchor-id="ignoring-auto-generated-files"><span class="header-section-number">6.21.6</span> Ignoring Auto-Generated Files</h3>
 <p>When reviewing pull requests in R package repositories, you can typically ignore changes to <code>.Rd</code> files in the <code>man/</code> directory. These are R documentation files automatically generated by <a href="https://roxygen2.r-lib.org/"><code>{roxygen2}</code></a> from special comments in the R source code (see <a href="#sec-documenting-code" class="quarto-xref"><span>Section 6.10</span></a>).</p>
 <p><strong>Why ignore <code>.Rd</code> files?</strong></p>
 <ul>
@@ -1858,8 +1889,8 @@ Figure&nbsp;6.2: Example of an automated PR preview comment posted by GitHub Act
 <p><strong>GitHub review tip:</strong></p>
 <p>In GitHub’s pull request “Files changed” view, you can click the three dots (<code>...</code>) next to a file and select “View file” to hide it from the diff view. This helps you focus on the meaningful changes.</p>
 </section>
-<section id="reviewing-copilot-generated-pull-requests" class="level3" data-number="6.21.6">
-<h3 data-number="6.21.6" class="anchored" data-anchor-id="reviewing-copilot-generated-pull-requests"><span class="header-section-number">6.21.6</span> Reviewing Copilot-Generated Pull Requests</h3>
+<section id="reviewing-copilot-generated-pull-requests" class="level3" data-number="6.21.7">
+<h3 data-number="6.21.7" class="anchored" data-anchor-id="reviewing-copilot-generated-pull-requests"><span class="header-section-number">6.21.7</span> Reviewing Copilot-Generated Pull Requests</h3>
 <p>When reviewing pull requests created by GitHub Copilot coding agents, apply the same standards and principles as any other PR, but be aware of some unique considerations:</p>
 <p><strong>Workflow approval requirements:</strong></p>
 <ul>
