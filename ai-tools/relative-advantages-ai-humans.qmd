@@ -15,6 +15,10 @@ and AI coding agents across different types of tasks:
 
 : Relative advantages of humans and AI coding agents {#tbl-ai-human-comparison}
 
+Or, if you prefer a more visual representation:
+
+![The same comparison in Matrix meme format](assets/images/matrix-meme-table.png){#fig-matrix-meme-table fig-alt="A 2x2 grid showing emojis and text: top-left shows happy emoji for humans doing creative thinking (green background), bottom-left shows sad emoji for humans following scripts (pink background), top-right shows angry emoji for AI doing creative thinking (pink background), and bottom-right shows happy emoji for AI following scripts precisely (green background)"}
+
 This pattern mirrors the evolution of programming itself.
 Just as almost no one writes machine code anymore because higher-level languages
 and compilers handle those details,
