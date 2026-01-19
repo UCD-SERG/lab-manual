@@ -12,7 +12,7 @@ Before using any AI-generated code:
 - [ ] Ensure the code does not introduce security vulnerabilities or data privacy issues
 
 ::: callout-warning
-Never blindly copy and paste AI-generated code without understanding it.
-If you don't understand what the AI has suggested,
+Never blindly use AI-generated code without fully understanding it.
+If you don't completely understand what the AI has suggested,
 take the time to learn or ask a colleague for help.
 :::
