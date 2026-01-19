@@ -2,6 +2,39 @@ Here's the typical workflow for developing an R package in our lab:
 
 ### 1. Initial Setup
 
+**Starting from a template (recommended):**
+
+Using our R package template is the fastest way to get started with a new R package,
+as it provides pre-configured settings,
+GitHub Actions workflows,
+and development tools:
+
+- **UCD-SeRG R Package Template** - Our recommended template with pre-configured development tools and CI workflows:
+  - Repository: <https://github.com/UCD-SERG/r.package.template>
+  - Click "Use this template" → "Create a new repository" on GitHub
+  - Clone your new repository and start developing
+
+The template includes pre-configured:
+
+- GitHub Actions workflows for R CMD check,
+test coverage,
+and pkgdown deployment
+- Development tools setup ([`{usethis}`](https://usethis.r-lib.org/),
+[`{devtools}`](https://devtools.r-lib.org/),
+[`{roxygen2}`](https://roxygen2.r-lib.org/))
+- Testing infrastructure ([`{testthat}`](https://testthat.r-lib.org/))
+- Code styling and linting configurations
+- Package documentation structure
+
+While the template jumpstarts your project with up-to-date configuration and workflow files,
+you should still come up to speed on what all the config files do so you can modify and debug them as needed.
+The template serves as a central location for the most current versions of these files and best practices.
+
+**Starting from scratch:**
+
+If you prefer to start from scratch or need to understand each setup step,
+you can create a new package manually:
+
 ```r
 # Create package structure
 usethis::create_package("~/myproject")
