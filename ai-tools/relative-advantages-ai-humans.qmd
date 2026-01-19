@@ -10,14 +10,23 @@ and AI coding agents across different types of tasks:
 
 | Task Type | Humans (Neo/Keanu) 😊 | AI Agents (Agent Smith) 🤖 |
 |-----------|-----------|-------------|
-| **Creative thinking and handling ambiguity** | 😊 Humans excel at understanding context, handling ambiguous requirements, and thinking creatively about novel problems | 😠 AI agents struggle with ambiguous requirements and creative problem-solving in unfamiliar domains |
+| **Creative thinking and handling ambiguity** | 😊 Humans excel at understanding context, handling ambiguous requirements, and thinking creatively about novel problems | 😞 AI agents struggle with ambiguous requirements and creative problem-solving in unfamiliar domains |
 | **Following instruction scripts precisely** | 😞 Humans make mistakes when following repetitive instructions and may introduce inconsistencies | 😊 AI agents excel at executing well-defined, repetitive tasks with precision and consistency |
 
 : Relative advantages of humans and AI coding agents {#tbl-ai-human-comparison}
 
 Or, if you prefer a more visual representation:
 
-![The same comparison with Matrix characters: Happy Neo (top-left), Sad Keanu (bottom-left), Angry Agent Smith (top-right), Happy Agent Smith (bottom-right)](assets/images/matrix-meme-table.png){#fig-matrix-meme-table fig-alt="A 2x2 grid with Matrix character labels: top-left shows 'Neo/Keanu' with happy emoji for humans doing creative thinking (green background), bottom-left shows 'Sad Keanu' with sad emoji for humans following scripts (red background), top-right shows 'Angry Agent Smith' with angry emoji for AI doing creative thinking (red background), and bottom-right shows 'Agent Smith' with happy emoji for AI following scripts precisely (green background)"}
+::: {#fig-matrix-meme-table}
+
+|  |  |
+|:---:|:---:|
+| ![Happy Neo](assets/images/happy-neo-placeholder.png){width=450px} | ![Angry Agent Smith](assets/images/angry-smith-placeholder.png){width=450px} |
+| ![Sad Keanu](assets/images/sad-keanu-placeholder.png){width=450px} | ![Happy Agent Smith](assets/images/happy-smith-placeholder.png){width=450px} |
+
+: The same comparison with Matrix characters in a 2×2 grid
+
+:::
 
 This pattern mirrors the evolution of programming itself.
 Just as almost no one writes machine code anymore because higher-level languages
