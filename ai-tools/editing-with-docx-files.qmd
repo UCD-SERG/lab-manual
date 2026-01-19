@@ -12,3 +12,5 @@ When using this workflow, make sure to explicitly instruct the coding agent to:
 - Translate edits from Word formatting to appropriate Quarto/markdown syntax
 
 This approach makes it easier for collaborators who are more comfortable with Word to contribute to the lab manual while maintaining the source files in Quarto format.
+
+{{< include ai-tools/docx-document-1-warning.qmd >}}
