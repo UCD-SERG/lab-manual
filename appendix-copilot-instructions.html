@@ -879,6 +879,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Add blank lines before all lists</li>
 <li>Follow the lab’s R package development workflow (as described throughout this repo)</li>
 </ul>
+<section id="testing-and-validation" class="level3">
+<h3 class="anchored" data-anchor-id="testing-and-validation">Testing and Validation</h3>
+<p><strong>ALWAYS render the full Quarto book before requesting code review or finalizing your work.</strong></p>
+<p>Run <code>quarto render</code> to ensure the book builds successfully in all output formats (HTML, PDF, DOCX, EPUB). This validates that:</p>
+<ul>
+<li>All cross-references are valid</li>
+<li>All images can be properly converted for PDF output (use PNG format for images, not SVG)</li>
+<li>All code chunks execute without errors</li>
+<li>The book structure is correct</li>
+</ul>
+<p>If the render fails, fix the issues before committing or requesting review. Common issues include:</p>
+<ul>
+<li>SVG images that cannot be converted to PDF (use PNG instead)</li>
+<li>Invalid cross-references</li>
+<li>Missing or incorrect file paths</li>
+<li>Syntax errors in code chunks</li>
+</ul>
+</section>
 </section>
 </section>
 </div>
