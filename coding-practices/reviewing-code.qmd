@@ -64,6 +64,22 @@ The primary purpose of code review is to ensure that the overall code health of 
 
 **Key principle**: Reviewers should favor approving a PR once it is in a state where it definitely improves the overall code health of the system, even if the PR isn't perfect. There is no such thing as "perfect" code—there is only better code. Rather than seeking perfection, seek continuous improvement.
 
+### Monitoring PRs Awaiting Your Review
+
+To ensure timely code reviews,
+bookmark GitHub's review-requested page and check it regularly (at least daily):
+
+- **General bookmark**: <https://github.com/pulls/review-requested>
+shows all PRs across GitHub where you've been requested as a reviewer
+
+- **Project-specific bookmark**: For frequently-reviewed repositories,
+you can bookmark project-specific versions like
+<https://github.com/UCD-SERG/lab-manual/pulls/review-requested/YOUR-USERNAME>
+(replace `YOUR-USERNAME` with your GitHub username)
+
+Checking these pages regularly helps ensure that PRs don't languish waiting for review,
+which is important for maintaining team productivity and code quality.
+
 ### Writing Review Comments
 
 When reviewing code, maintain courtesy and respect while being clear and helpful:
