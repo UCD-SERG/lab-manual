@@ -53,3 +53,30 @@ Before submitting a manuscript:
 - [ ] Causal language only when supported by study design
 - [ ] Avoid "significant" (easily confused with statistical significance)
 - [ ] Author contributions drafted using CRediT Taxonomy
+
+## Scientific Writing: Claims and Evidence
+
+All factual claims in scientific writing should be supported by appropriate evidence.
+
+**Citation requirements:**
+
+- **Cite primary sources** for factual statements about established knowledge, methods, or findings
+- **Cite official documentation** when describing how software, tools, or systems work
+- **Link to authoritative sources** like peer-reviewed publications, official repositories, or technical specifications
+- Avoid citing secondary sources when primary sources are available
+
+**When you can't find a citation:**
+
+- **Demonstrate directly**: Show the behavior through experiments, data, or explicit examples
+- **Acknowledge uncertainty**: Use appropriate hedging language ("may", "appears to", "in our experience") when evidence is limited
+- **Remove the claim**: If you cannot substantiate a claim with either citations or direct evidence, consider whether it needs to be included
+
+**Why this matters:**
+
+- Builds reader trust and credibility
+- Enables readers to verify information independently
+- Maintains scientific rigor in all communications
+- Prevents propagation of misinformation
+
+This principle applies to all lab writing, including:
+manuscripts, documentation, grant applications, and technical reports.
