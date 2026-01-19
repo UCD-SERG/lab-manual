@@ -387,3 +387,24 @@ This workflow enables a hybrid editing process where collaborators can make edit
 - Preserve all existing content when refactoring
 - Add blank lines before all lists
 - Follow the lab's R package development workflow (as described throughout this repo)
+
+### Testing and Validation
+
+**ALWAYS render the full Quarto book before requesting code review or finalizing your work.**
+
+Run `quarto render` to ensure the book builds successfully in all output formats (HTML, PDF, DOCX, EPUB).
+This validates that:
+
+- All cross-references are valid
+- All images can be properly converted for PDF output (use PNG format for images, not SVG)
+- All code chunks execute without errors
+- The book structure is correct
+
+If the render fails,
+fix the issues before committing or requesting review.
+Common issues include:
+
+- SVG images that cannot be converted to PDF (use PNG instead)
+- Invalid cross-references
+- Missing or incorrect file paths
+- Syntax errors in code chunks
