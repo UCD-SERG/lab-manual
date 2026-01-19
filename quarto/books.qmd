@@ -9,12 +9,15 @@ and other long-form content.
 **Starting from a template (recommended):**
 
 Using a template is the fastest way to get started with a Quarto book,
-as it provides pre-configured settings and examples:
+as it provides pre-configured settings,
+example content,
+and GitHub Actions workflows for automated deployment:
 
 1. **UCD-SeRG Quarto Book Template** - Our recommended template with pre-configured settings for lab publications:
    - Repository: <https://github.com/UCD-SERG/quarto-book-template>
    - Click "Use this template" → "Create a new repository" on GitHub
    - Clone your new repository and start editing
+   - Includes GitHub Actions for automatic deployment to GitHub Pages
 
 2. **Coatless Tutorials Quarto Book Template** - Another template with helpful examples:
    - Repository: <https://github.com/coatless-tutorials/quarto-book-template>
@@ -23,6 +26,10 @@ as it provides pre-configured settings and examples:
 3. **DataLab Quarto Template** - Template from the UC Davis DataLab and Davis R Users Group:
    - Repository: <https://github.com/d-rug/datalab_template_quarto>
    - Provides a starting point for DataLab workshop materials and tutorials
+
+While these templates jumpstart your project with up-to-date configuration and workflow files,
+you should still come up to speed on what all the config files do (particularly `_quarto.yml` and any GitHub Actions workflows) so you can modify and debug them as needed.
+The templates serve as central locations for the most current versions of these files and best practices.
 
 **Starting from scratch:**
 
