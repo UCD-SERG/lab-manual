@@ -598,6 +598,7 @@ analysis_data_public_codebook.txt</code></pre>
 <p>Do not include place names or codes (e.g., US Zip Codes) if the place contains &lt;20,000 people. For villages or neighborhoods, code them with uninformative IDs. For sub-districts or districts, names are fine.</p>
 <p>If an analysis requires GPS locations (e.g., to make a map), then typically we include a disclaimer in the article’s data availability statement that explains we cannot make GPS locations public to protect participant confidentiality. As a middle ground, we typically make our <em>code</em> public that runs on the geo-located data for transparency, even if independent researchers can’t actually run that code (although please be careful to ensure the code itself does not in any way include geographic identifiers).</p>
 <p>For more examples of what constitutes PHI, please refer to this link: https://cphs.berkeley.edu/hipaa/hipaa18.html</p>
+<p>For learning about working with geospatial data, see the <a href="https://github.com/ucdavisdatalab">UC Davis DataLab GIS workshops</a>, including resources on QGIS and spatial SQL.</p>
 </section>
 </section>
 <section id="create-public-ids" class="level2" data-number="15.3">
@@ -636,6 +637,7 @@ analysis_data_public_codebook.txt</code></pre>
 <section id="create-a-data-repository" class="level2" data-number="15.4">
 <h2 data-number="15.4" class="anchored" data-anchor-id="create-a-data-repository"><span class="header-section-number">15.4</span> Create a data repository</h2>
 <p>First, ensure that you create a codebook and metadata file for each public dataset <a href="https://proctor-ucsf.github.io/dcc-handbook/datawrangling.html#documenting-datasets">See the DCC guide on Documenting datasets</a>. Use the same name as the datasets, but with “-codebook.txt” / “-codebook.html” / “-codebook.csv” at the end (depending on the file format for the codebook). One nice option is the R codebook package, which also generates JSON output that is machine-readable.</p>
+<p>For additional guidance on data documentation best practices, see the <a href="https://github.com/ucdavisdatalab/workshop_how-to-data-documentation">UC Davis DataLab workshop on data documentation</a>.</p>
 <section id="steps-for-creating-an-open-science-framework-osf-repository" class="level3" data-number="15.4.1">
 <h3 data-number="15.4.1" class="anchored" data-anchor-id="steps-for-creating-an-open-science-framework-osf-repository"><span class="header-section-number">15.4.1</span> Steps for creating an Open Science Framework (OSF) repository:</h3>
 <ol type="1">
