@@ -14,6 +14,15 @@ Adapted by UCD-SeRG team from [original by Jade Benjamin-Chung and Kunal Mishra]
 - Happy Git and GitHub for the useR [@bryan2023happygit] - guide to using Git and GitHub with R
 - [Jade's R-for-epi course](https://ucb-epi-r.github.io)
 
+### UC Davis DataLab Workshops and Tutorials
+
+The [UC Davis DataLab](https://github.com/ucdavisdatalab) provides extensive workshops and learning materials for data science:
+
+- [Workshop Index](https://ucdavisdatalab.github.io/workshop_index/) - comprehensive catalog of all DataLab workshops
+- [R Basics Workshop](https://github.com/ucdavisdatalab/workshop_r_basics) - foundational R programming for beginners
+- [Research Toolkits](https://github.com/ucdavisdatalab/research-toolkits) - in-depth guides for research tools and methods
+- [Install Guides](https://ucdavisdatalab.github.io/install_guides/) - setup instructions for data science software
+
 ### Cheat Sheets
 
 - [dplyr and tidyr cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
@@ -37,6 +46,16 @@ Adapted by UCD-SeRG team from [original by Jade Benjamin-Chung and Kunal Mishra]
 
 - Happy Git and GitHub for the useR [@bryan2023happygit] - comprehensive guide to using Git and GitHub with R
 - [GitHub Skills: Introduction to GitHub](https://github.com/skills/introduction-to-github)
+- [UC Davis DataLab Git Sandbox](https://github.com/ucdavisdatalab/sandbox_git) - hands-on Git practice repository
+
+## Resources for Python
+
+- [UC Davis DataLab Python Basics Workshop](https://github.com/ucdavisdatalab/workshop_python_basics) - foundational Python programming
+- [Natural Language Processing with Python](https://github.com/ucdavisdatalab/workshop_nlp_with_python) - text analysis and NLP techniques
+
+## Resources for Julia
+
+- [UC Davis Julia Users Group Julia Basics Workshop](https://ucjug.github.io/workshop_julia_basics/) - foundational Julia programming
 
 ## Scientific figures
 - Ten Simple Rules for Better Figures [@rougier2014]

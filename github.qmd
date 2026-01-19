@@ -6,6 +6,7 @@ Adapted by UCD-SeRG team from [original by Stephanie Djajadi and Nolan Pokpongki
 - A detailed tutorial of Git can be found [here on the CS61B website](https://sp19.datastructur.es/materials/guides/using-git#b-local-repositories-narrative-introduction).
 - If you are already familiar with Git, you can reference the summary at the end of [Section B](https://sp19.datastructur.es/materials/guides/using-git#b-local-repositories-narrative-introduction).
 - If you have made a mistake in Git, you can refer to On undoing, fixing, or removing commits in git [@gitfixum] to undo, fix, or remove commits in git.
+- For hands-on Git practice, see the [UC Davis DataLab Git Sandbox](https://github.com/ucdavisdatalab/sandbox_git) - a collaborative repository for learning Git workflows.
 
 ## Github Desktop
 While knowing how to use Git on the command line will always be useful since the full power of Git and its customizations and flexibilty is designed for use with the command line, Github also provides GitHub Desktop [@githubdesktop] as an graphical interface to do basic git commands; you can do all of the basic functions of Git using this desktop app. Feel free to use this as an alternative to Git on the command line if you prefer.

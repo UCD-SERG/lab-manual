@@ -82,6 +82,8 @@ Teaching and outreach are valuable professional development opportunities:
 - We support science communication and outreach activities
 - Discuss opportunities with PIs
 
+The [UC Davis DataLab](https://github.com/ucdavisdatalab) offers various workshops and learning materials that can support your teaching and professional development. Their [workshop index](https://ucdavisdatalab.github.io/workshop_index/) provides a comprehensive catalog of available resources.
+
 ## Networking
 
 Building a professional network is important for your career:
