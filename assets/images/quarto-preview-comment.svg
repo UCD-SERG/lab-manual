@@ -1,0 +1,26 @@
+<svg width="800" height="200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="200" fill="#f6f8fa"/>
+  
+  <!-- Comment box -->
+  <rect x="20" y="20" width="760" height="160" rx="6" fill="white" stroke="#d0d7de" stroke-width="1"/>
+  
+  <!-- Bot icon circle -->
+  <circle cx="45" cy="50" r="16" fill="#6e40c9"/>
+  <text x="45" y="56" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="white">🤖</text>
+  
+  <!-- Header -->
+  <text x="70" y="55" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#24292f">github-actions[bot]</text>
+  <text x="220" y="55" font-family="Arial, sans-serif" font-size="12" fill="#57606a">commented</text>
+  
+  <!-- Title -->
+  <text x="40" y="90" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#24292f">🚀 PR Preview Deployed</text>
+  
+  <!-- Preview link box -->
+  <rect x="40" y="105" width="720" height="45" rx="6" fill="#ddf4ff" stroke="#54aeff" stroke-width="1"/>
+  <text x="55" y="125" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#24292f">Preview URL:</text>
+  <text x="55" y="142" font-family="Arial, sans-serif" font-size="11" fill="#0969da">https://ucd-serg.github.io/lab-manual/pr-preview/pr-123/</text>
+  
+  <!-- Footer -->
+  <text x="40" y="170" font-family="Arial, sans-serif" font-size="10" font-style="italic" fill="#57606a">The preview will be updated automatically when you push new commits to this PR.</text>
+</svg>
