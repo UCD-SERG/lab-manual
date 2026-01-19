@@ -21,8 +21,5 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Disable renv
-        run: echo "RENV_CONFIG_AUTOLOADER_ENABLED=FALSE" >> $GITHUB_ENV
-
       - name: Run Spelling Check test
         uses: insightsengineering/r-spellcheck-action@v3.0.2
