@@ -63,6 +63,8 @@ If an analysis requires GPS locations (e.g., to make a map), then typically we i
 
 For more examples of what constitutes PHI, please refer to this link: https://cphs.berkeley.edu/hipaa/hipaa18.html 
 
+For learning about working with geospatial data, see the [UC Davis DataLab GIS workshops](https://github.com/ucdavisdatalab), including resources on QGIS and spatial SQL. 
+
 ## Create public IDs
 
 ### Rationale
@@ -95,7 +97,9 @@ The example workflow is accessible via GitHub: https://github.com/proctor-ucsf/d
 
 ## Create a data repository
 
-First, ensure that you create a codebook and metadata file for each public dataset [See the DCC guide on Documenting datasets](https://proctor-ucsf.github.io/dcc-handbook/datawrangling.html#documenting-datasets). Use the same name as the datasets, but with "-codebook.txt" /  "-codebook.html" / "-codebook.csv" at the end (depending on the file format for the codebook).  One nice option is the R codebook package, which also generates JSON output that is machine-readable.  
+First, ensure that you create a codebook and metadata file for each public dataset [See the DCC guide on Documenting datasets](https://proctor-ucsf.github.io/dcc-handbook/datawrangling.html#documenting-datasets). Use the same name as the datasets, but with "-codebook.txt" /  "-codebook.html" / "-codebook.csv" at the end (depending on the file format for the codebook).  One nice option is the R codebook package, which also generates JSON output that is machine-readable.
+
+For additional guidance on data documentation best practices, see the [UC Davis DataLab workshop on data documentation](https://github.com/ucdavisdatalab/workshop_how-to-data-documentation).  
 
 ### Steps for creating an Open Science Framework (OSF) repository:
 1. Create a new OSF project per these instructions: https://help.osf.io/article/252-create-a-project 
