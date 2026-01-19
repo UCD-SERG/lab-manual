@@ -391,6 +391,19 @@ This workflow enables a hybrid editing process where collaborators can make edit
 - Add blank lines before all lists
 - Follow the lab's R package development workflow (as described throughout this repo)
 
+### Citations and Evidence for Claims
+
+**All factual claims should be backed by either citations or direct evidence.**
+
+When writing documentation:
+
+- **Cite sources** for factual statements about how tools, systems, or processes work
+- **Provide direct evidence** by demonstrating behavior yourself (e.g., showing command output, testing functionality)
+- **Remove unverified explanations** rather than including speculative or unsubstantiated claims
+- Link to authoritative sources like official documentation, GitHub issues, or peer-reviewed materials
+
+This practice ensures accuracy, builds trust, and helps readers verify information independently.
+
 ### Testing and Validation
 
 **ALWAYS render the full Quarto book before requesting code review or finalizing your work.**
