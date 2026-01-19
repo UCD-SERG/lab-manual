@@ -34,6 +34,7 @@ Or, if you prefer a more visual representation:
 
 :::
 
+::: notes
 This pattern mirrors the evolution of programming itself.
 Just as almost no one writes machine code anymore because higher-level languages
 and compilers handle those details,
@@ -41,6 +42,9 @@ most developers will increasingly spend less time writing low-level code.
 Instead,
 you'll describe what the system needs to do as clearly as possible,
 and AI agents will handle many of the computational and coding details.
+:::
+
+---
 
 For most tasks,
 you won't need to step in and manipulate code yourself.
