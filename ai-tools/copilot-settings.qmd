@@ -225,6 +225,7 @@ For lab members, we recommend the following configuration:
 - Editor preview features (only if comfortable with potential instability)
 - Automatic Copilot code review (wait until familiar with review quality)
 
+Following these guidelines will help establish an effective Copilot configuration.
 The key is to enable features that add value to your workflow
 while maintaining awareness that AI assistance requires validation
 (see @sec-ai-best-practices).
