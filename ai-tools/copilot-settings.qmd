@@ -1,0 +1,232 @@
+
+GitHub Copilot offers numerous configuration options
+that control how the AI assistant integrates into your development workflow.
+This section explains the key settings visible in your GitHub account preferences
+and provides guidance on which options to enable based on your use case.
+
+#### Model Selection Options
+
+GitHub Copilot provides access to multiple AI models,
+each with different capabilities and performance characteristics.
+The available models as of early 2026 include:
+
+**Anthropic Claude Models:**
+
+- **Claude Opus 4.1**: Most capable model for complex reasoning and analysis
+  - *Pros*: Excellent at understanding nuanced requirements, handling complex codebases, superior code quality
+  - *Cons*: Slower response times, may be overkill for simple tasks, limited availability (select option required)
+  - *When to use*: Complex refactoring, architectural decisions, thorough code reviews
+
+- **Claude Opus 4.5**: Latest version with enhanced capabilities
+  - *Pros*: State-of-the-art performance, improved reasoning over 4.1
+  - *Cons*: Similar trade-offs to Opus 4.1, requires selection
+  - *When to use*: Most demanding tasks requiring cutting-edge capabilities
+
+- **Claude Sonnet 4**: Balanced model optimizing capability and speed
+  - *Pros*: Fast responses, strong performance, good default choice
+  - *Cons*: Slightly less capable than Opus models for very complex tasks
+  - *When to use*: General development work, most coding tasks
+
+- **Claude Sonnet 4.5**: Enhanced version of Sonnet
+  - *Pros*: Improved over Sonnet 4 while maintaining speed
+  - *Cons*: Still not as powerful as Opus for extremely complex scenarios
+  - *When to use*: Most daily development tasks
+
+- **Claude Haiku 4.5**: Fast, efficient model for simpler tasks
+  - *Pros*: Very fast responses, cost-effective, good for quick questions
+  - *Cons*: Less capable for complex reasoning or large codebases
+  - *When to use*: Simple completions, quick questions, repetitive tasks
+
+**OpenAI GPT Models:**
+
+- **GPT-5.2-Codex**: Specialized for code generation
+  - *Pros*: Strong code completion, good at common patterns
+  - *Cons*: May hallucinate package names or APIs
+  - *When to use*: Code completion, common coding patterns
+
+- **GPT-5**: Latest general-purpose model
+  - *Pros*: Broad knowledge, good general performance
+  - *Cons*: Not specifically optimized for code
+  - *When to use*: Mixed tasks involving code and documentation
+
+- **GPT-5-Codex** (various versions including Mini and Max):
+  - *Pros*: Specialized variants for different use cases
+  - *Cons*: Fragmented options can be confusing
+  - *When to use*: Specific scenarios where variant optimizations matter
+
+**Google Gemini Models:**
+
+- **Gemini 2.5 Pro**: High-capability model
+  - *Pros*: Strong multimodal capabilities, good at understanding context
+  - *Cons*: Less proven in coding scenarios than Claude or GPT
+  - *When to use*: Tasks involving images or complex context
+
+- **Gemini 3 Pro/Flash** (Preview): Latest generation
+  - *Pros*: Cutting-edge capabilities, flash variant offers speed
+  - *Cons*: Preview status means less stable, limited track record
+  - *When to use*: Experimental workflows, evaluation of new capabilities
+
+**Lab Recommendation:**
+For most lab work,
+enable **Claude Sonnet 4.5** as your default model.
+It provides excellent balance of capability and speed.
+Consider switching to **Claude Opus 4.5** for complex architectural decisions or difficult debugging sessions.
+Keep **Claude Haiku 4.5** enabled for quick inline completions.
+
+#### Feature Settings
+
+These settings control where and how Copilot integrates into your development environment:
+
+**Editor preview features:**
+
+- *What it does*: Enables preview/experimental features in your editor
+- *Pros*: Access to latest capabilities before general release
+- *Cons*: May have bugs or unstable behavior
+- *Recommendation*: **Enable** if you're comfortable troubleshooting issues and want cutting-edge features
+
+**Copilot Chat in GitHub.com:**
+
+- *What it does*: Enables Copilot chat interface on GitHub.com
+- *Pros*: Quick access to Copilot without opening an editor, useful for reviewing PRs
+- *Cons*: Only available with paid license
+- *Recommendation*: **Enable** (included in GitHub Copilot subscription)
+
+**Copilot CLI:**
+
+- *What it does*: GitHub Copilot for assistance in terminal
+- *Pros*: AI help for command-line operations, shell commands, and git operations
+- *Cons*: Requires separate installation and setup
+- *Recommendation*: **Enable** and install via `gh extension install github/gh-copilot`
+
+**Copilot in GitHub Desktop:**
+
+- *What it does*: Enables Copilot in GitHub Desktop app
+- *Pros*: AI assistance in GUI git client
+- *Cons*: Limited compared to editor integration
+- *Recommendation*: **Enable** if you use GitHub Desktop
+
+**Copilot Chat in the IDE:**
+
+- *What it does*: Enables chat interface in your code editor
+- *Pros*: Context-aware help, refactoring assistance, code explanation
+- *Cons*: Can be distracting if overused
+- *Recommendation*: **Enable** (essential feature)
+
+**Copilot Chat in GitHub Mobile:**
+
+- *What it does*: Enables Copilot chat in mobile app
+- *Pros*: Quick access on mobile devices
+- *Cons*: Limited by mobile interface
+- *Recommendation*: **Enable** for convenience
+
+**Copilot can search the web:**
+
+- *What it does*: Allows Copilot to search internet for up-to-date information
+- *Pros*: Access to current documentation, recent library changes, latest best practices
+- *Cons*: May introduce latency, results depend on search quality
+- *Recommendation*: **Enable** for access to current information
+
+#### Advanced Settings
+
+**Dashboard Entry Point:**
+
+- *What it does*: Allows instant chatting when landing on GitHub.com
+- *Pros*: Quick access to Copilot without navigating menus
+- *Cons*: None significant
+- *Recommendation*: **Enable** for convenience
+
+**Copilot code review:**
+
+- *What it does*: Use Copilot to review your code and generate pull request summaries
+- *Pros*: Automated code review suggestions, PR summary generation, catches common issues
+- *Cons*: May generate false positives, shouldn't replace human review
+- *Recommendation*: **Enable** (major productivity boost)
+
+**Automatic Copilot code review:**
+
+- *What it does*: Automatically reviews all pull requests you create
+- *Pros*: Catches issues early without manual triggering
+- *Cons*: May be noisy on simple PRs, uses API quota
+- *Recommendation*: **Disable** initially; enable only after you're comfortable with code review quality
+
+**Copilot coding agent:**
+
+- *What it does*: Delegate tasks to Copilot coding agent in repositories where it is enabled
+- *Pros*: Autonomous multi-file edits, can execute complex refactoring, runs tests and fixes issues
+- *Cons*: Requires careful oversight, can make unwanted changes if instructions unclear
+- *Recommendation*: **Enable** (see @sec-ai-best-practices for safe usage guidelines)
+
+**Copilot Memory (Preview):**
+
+- *What it does*: Remember repository context across Copilot agent interactions
+- *Pros*: Better context awareness, learns repository patterns and conventions
+- *Cons*: Preview feature governed by pre-release terms, potential privacy implications
+- *Recommendation*: **Enable** to help Copilot learn your codebase patterns
+
+**MCP servers in Copilot:**
+
+- *What it does*: Connect MCP servers to Copilot in all editors and Coding Agent
+- *Pros*: Extend Copilot with custom tools and integrations
+- *Cons*: Requires MCP server setup and maintenance
+- *Recommendation*: **Enable** if you have MCP servers configured; otherwise this setting has no effect
+
+**Copilot-generated commit messages:**
+
+- *What it does*: Allow Copilot to suggest commit messages when you make changes
+- *Pros*: Saves time, generates descriptive messages based on code changes
+- *Cons*: May miss important context, still requires review
+- *Recommendation*: **Enable** but always review and edit suggested messages
+
+**Copilot Spaces:**
+
+- *What it does*: View and create Copilot Spaces (collaborative AI environments)
+- *Pros*: Share AI context with team members
+- *Cons*: Additional complexity for individual work
+- *Recommendation*: **Enable** for team collaboration features
+
+**Copilot Spaces Individual Access:**
+
+- *What it does*: Create individually owned Copilot Spaces
+- *Pros*: Personal AI workspaces for complex projects
+- *Cons*: May fragment your workflow
+- *Recommendation*: **Enable** for flexibility
+
+**Copilot Spaces Individual Sharing:**
+
+- *What it does*: Share individually owned Copilot Spaces
+- *Pros*: Collaborate while maintaining ownership
+- *Cons*: None significant
+- *Recommendation*: **Enable** for sharing capability
+
+#### Summary of Recommended Settings
+
+For lab members, we recommend the following configuration:
+
+**Enable these features:**
+
+- All Copilot Chat options (GitHub.com, CLI, IDE, Mobile)
+- Web search capability
+- Dashboard Entry Point
+- Copilot code review (but not automatic review initially)
+- Copilot coding agent
+- Copilot Memory
+- MCP servers (if configured)
+- Copilot-generated commit messages
+- All Copilot Spaces options
+
+**Model selection:**
+
+- Default: Claude Sonnet 4.5
+- Complex tasks: Claude Opus 4.5
+- Quick completions: Claude Haiku 4.5
+
+**Enable with caution:**
+
+- Editor preview features (only if comfortable with potential instability)
+- Automatic Copilot code review (wait until familiar with review quality)
+
+The specific settings shown in your screenshots represent a well-configured setup
+that balances productivity features with appropriate safeguards.
+The key is to enable features that add value to your workflow
+while maintaining awareness that AI assistance requires validation
+(see @sec-ai-best-practices).
