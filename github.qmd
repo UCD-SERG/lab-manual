@@ -41,16 +41,17 @@ you may be eligible for a free Copilot seat.
 **If you are not yet a member of the UC Davis GitHub organization:**
 
 1. Ensure you have a GitHub account and have signed up for GitHub Education (see above)
-2. Fill out the [UC Davis GitHub Organization Access Request form](https://ucdavis.co1.qualtrics.com/jfe/form/SV_6zKEZU8KK74rUeV?Q_JFE=qdg)
-3. When you receive the invitation email,
+2. Go to the [UC Davis IT ServiceHub GitHub page](https://servicehub.ucdavis.edu/servicehub?id=it_catalog_content&sys_id=951add951b5798103f4286ae6e4bcb12)
+3. Click the blue "Get Github!" button near the top right
+4. When you receive the invitation email,
    make sure to check the "Ask for a GitHub Copilot seat (optional)" checkbox before joining
 
    ::: {.content-visible when-format="html"}
    ![UC Davis GitHub invitation with Copilot seat option](assets/images/github-copilot-invitation-email.png)
    :::
 
-4. Click "Join UC Davis" to accept the invitation
-5. Follow the setup instructions to install and configure Copilot in your development environment
+5. Click "Join UC Davis" to accept the invitation
+6. Follow the setup instructions to install and configure Copilot in your development environment
 
 **If you are already a member of the UC Davis GitHub organization:**
 
