@@ -402,6 +402,13 @@ When writing documentation:
 - **Remove unverified explanations** rather than including speculative or unsubstantiated claims
 - Link to authoritative sources like official documentation, GitHub issues, or peer-reviewed materials
 
+**When adding links to external resources:**
+
+- **Always verify the content** of linked pages before adding them to the manual
+- Read the repository README, DESCRIPTION file, or website content to understand what the resource actually contains
+- Use accurate descriptions based on the actual content, not assumptions based on the URL or name
+- For GitHub repositories, check key files like README.md, DESCRIPTION, index.qmd, or _quarto.yml to understand the project's purpose
+
 This practice ensures accuracy, builds trust, and helps readers verify information independently.
 
 ### Testing and Validation
