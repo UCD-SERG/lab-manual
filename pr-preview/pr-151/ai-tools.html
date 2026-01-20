@@ -1,0 +1,1820 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>17&nbsp; Working with AI – UCD-SeRG Lab Manual</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./checklists.html" rel="next">
+<link href="./slurm.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-0dd2bd5de344125cf763a379ddc3eb04.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-7e34ecb6a0e7991f0346b0751d4a7c3f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-0dd2bd5de344125cf763a379ddc3eb04.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ai-tools.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Working with AI</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">UCD-SeRG Lab Manual</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/UCD-SERG/lab-manual" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./UCD-SeRG-Lab-Manual.pdf">
+              <i class="bi bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./UCD-SeRG-Lab-Manual.epub">
+              <i class="bi bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./UCD-SeRG-Lab-Manual.docx">
+              <i class="bi bi-file-word pe-1"></i>
+            Download Docx
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome to UCD-SeRG!</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./culture-and-conduct.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Culture and conduct</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./communication.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Communication and coordination</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./reproducibility.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Reproducibility</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./code-repositories.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Code repositories</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./coding-practices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">R Coding Practices</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./coding-style.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">R Code Style</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./big-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Big data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-masking.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data masking</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quarto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Quarto</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./github.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Github</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Unix</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./reproducible-environments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Reproducible Environments</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./code-publication.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Code Publication</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-publication.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Data Publication</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slurm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">High-performance computing (HPC)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ai-tools.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Working with AI</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./checklists.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Checklists</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Resources</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./professional-development.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Professional Development</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./manuscript-preparation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Manuscript Preparation and Publication</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-copilot-instructions.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
+ <span class="menu-text">Copilot Instructions File</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-copilot-setup-steps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Copilot Setup Steps File</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-document-metadata.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
+ <span class="menu-text">Document Generation Metadata</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#responsibility-for-validation" id="toc-responsibility-for-validation" class="nav-link active" data-scroll-target="#responsibility-for-validation"><span class="header-section-number">17.1</span> Responsibility for validation</a></li>
+  <li><a href="#disclosure-of-ai-use" id="toc-disclosure-of-ai-use" class="nav-link" data-scroll-target="#disclosure-of-ai-use"><span class="header-section-number">17.2</span> Disclosure of AI use</a></li>
+  <li><a href="#attribution-of-sources" id="toc-attribution-of-sources" class="nav-link" data-scroll-target="#attribution-of-sources"><span class="header-section-number">17.3</span> Attribution of sources</a></li>
+  <li><a href="#coding-agents" id="toc-coding-agents" class="nav-link" data-scroll-target="#coding-agents"><span class="header-section-number">17.4</span> Coding Agents</a>
+  <ul class="collapse">
+  <li><a href="#what-are-ai-coding-agents" id="toc-what-are-ai-coding-agents" class="nav-link" data-scroll-target="#what-are-ai-coding-agents"><span class="header-section-number">17.4.1</span> What are AI coding agents?</a></li>
+  <li><a href="#relative-advantages-of-ai-and-humans" id="toc-relative-advantages-of-ai-and-humans" class="nav-link" data-scroll-target="#relative-advantages-of-ai-and-humans"><span class="header-section-number">17.4.2</span> Relative Advantages of AI and Humans</a></li>
+  <li><a href="#how-to-work-with-coding-agents" id="toc-how-to-work-with-coding-agents" class="nav-link" data-scroll-target="#how-to-work-with-coding-agents"><span class="header-section-number">17.4.3</span> How to Work with Coding Agents</a></li>
+  <li><a href="#useful-prompt-formats" id="toc-useful-prompt-formats" class="nav-link" data-scroll-target="#useful-prompt-formats"><span class="header-section-number">17.4.4</span> Useful Prompt Formats</a></li>
+  <li><a href="#sec-ai-addressing-failing-workflows" id="toc-sec-ai-addressing-failing-workflows" class="nav-link" data-scroll-target="#sec-ai-addressing-failing-workflows"><span class="header-section-number">17.4.5</span> Addressing Failing GitHub Actions Workflows</a></li>
+  <li><a href="#sec-ai-benefits-hazards" id="toc-sec-ai-benefits-hazards" class="nav-link" data-scroll-target="#sec-ai-benefits-hazards"><span class="header-section-number">17.4.6</span> Benefits and Hazards</a></li>
+  <li><a href="#sec-ai-best-practices" id="toc-sec-ai-best-practices" class="nav-link" data-scroll-target="#sec-ai-best-practices"><span class="header-section-number">17.4.7</span> Best Practices for Safe and Successful Use</a></li>
+  <li><a href="#firewall-and-network-configuration" id="toc-firewall-and-network-configuration" class="nav-link" data-scroll-target="#firewall-and-network-configuration"><span class="header-section-number">17.4.8</span> Firewall and Network Configuration</a></li>
+  <li><a href="#configuring-the-agent-environment" id="toc-configuring-the-agent-environment" class="nav-link" data-scroll-target="#configuring-the-agent-environment"><span class="header-section-number">17.4.9</span> Configuring the Agent Environment</a></li>
+  <li><a href="#sec-ai-when-to-use" id="toc-sec-ai-when-to-use" class="nav-link" data-scroll-target="#sec-ai-when-to-use"><span class="header-section-number">17.4.10</span> When to use a coding agent</a></li>
+  <li><a href="#editing-with-.docx-files" id="toc-editing-with-.docx-files" class="nav-link" data-scroll-target="#editing-with-.docx-files"><span class="header-section-number">17.4.11</span> Editing with <code>.docx</code> files</a></li>
+  <li><a href="#copilot-instructions-for-this-repository" id="toc-copilot-instructions-for-this-repository" class="nav-link" data-scroll-target="#copilot-instructions-for-this-repository"><span class="header-section-number">17.4.12</span> Copilot Instructions for this Repository</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/ai-tools.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/ai-tools.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<div class="preview-home-changes-banner">
+    <p style="margin: 0;">
+        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="resources.html">19. &nbsp; <span class="chapter-title">Resources</span></a>, <a href="appendix-document-metadata.html">appendix-document-metadata</a>, <a href="appendix-copilot-instructions.html">appendix-copilot-instructions</a>
+        <br>
+        <strong>📄 DOCX with tracked changes:</strong> <a href="UCD-SeRG-Lab-Manual-tracked-changes.docx" download>Download UCD-SeRG-Lab-Manual-tracked-changes.docx</a>
+        <br>
+        <strong>💡 Tip:</strong> If change highlighting is glitchy, add the <code>no-preview-highlights</code> label to this PR to disable it.
+    </p>
+</div>
+
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Working with AI</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><a href="https://en.wikipedia.org/wiki/AI-assisted_software_development">AI-powered coding assistants</a> can dramatically accelerate and improve your work, but they require careful and responsible use. Lab members who use AI tools must adhere to the following guidelines:</p>
+<section id="responsibility-for-validation" class="level2" data-number="17.1">
+<h2 data-number="17.1" class="anchored" data-anchor-id="responsibility-for-validation"><span class="header-section-number">17.1</span> Responsibility for validation</h2>
+<p><strong>You are fully responsible for checking and validating all AI-generated code and content.</strong> AI tools can make mistakes, generate insecure code, produce incorrect logic, or suggest approaches that are inappropriate for our specific research context. Before using any AI-generated code:</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Carefully review the code to ensure you understand what it does</label></li>
+<li><label><input type="checkbox">Test the code thoroughly to verify it works as expected</label></li>
+<li><label><input type="checkbox">Verify that the logic is appropriate for your specific use case</label></li>
+<li><label><input type="checkbox">Check that the code follows our lab’s coding standards and best practices</label></li>
+<li><label><input type="checkbox">Ensure the code does not introduce security vulnerabilities or data privacy issues</label></li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Never blindly use AI-generated code without fully understanding it. If you don’t completely understand what the AI has suggested, take the time to learn or ask a colleague for help.</p>
+</div>
+</div>
+</section>
+<section id="disclosure-of-ai-use" class="level2" data-number="17.2">
+<h2 data-number="17.2" class="anchored" data-anchor-id="disclosure-of-ai-use"><span class="header-section-number">17.2</span> Disclosure of AI use</h2>
+<p><strong>You must clearly state whenever you have used AI tools in your work.</strong> This is essential for transparency and reproducibility. Specifically:</p>
+<ul>
+<li>In code comments, note when AI tools were used to generate or significantly modify code</li>
+<li>In commit messages, mention if AI tools assisted with the changes</li>
+<li>In manuscripts and reports, acknowledge AI tool usage in the methods or acknowledgments section</li>
+<li>In presentations, disclose AI assistance when relevant</li>
+</ul>
+<p>Example code comment:</p>
+<pre><code># The following function was generated with assistance from GitHub Copilot
+# and has been reviewed and tested to ensure correctness</code></pre>
+</section>
+<section id="attribution-of-sources" class="level2" data-number="17.3">
+<h2 data-number="17.3" class="anchored" data-anchor-id="attribution-of-sources"><span class="header-section-number">17.3</span> Attribution of sources</h2>
+<p><strong>When using AI tools to generate content that borrows from or adapts existing sources, you must ensure proper attribution.</strong> AI tools sometimes paraphrase or adapt content from documentation, guides, or other resources without clearly indicating the original source. It is your responsibility to:</p>
+<ul>
+<li>Ask the AI tool to identify and properly cite sources when it borrows or adapts content</li>
+<li>Verify that any content the AI generates includes appropriate citations</li>
+<li>Add citations yourself if the AI fails to do so</li>
+<li>Follow appropriate attribution practices for the type of content (code comments, documentation, academic writing, etc.)</li>
+</ul>
+<p>When instructing AI tools to create documentation or written content, explicitly request that they provide proper attribution for any borrowed or adapted material. For example: “Please quote from and paraphrase [source], with proper attribution” rather than simply asking it to summarize information on a topic.</p>
+</section>
+<section id="coding-agents" class="level2" data-number="17.4">
+<h2 data-number="17.4" class="anchored" data-anchor-id="coding-agents"><span class="header-section-number">17.4</span> Coding Agents</h2>
+<p>We recommend working with <strong><a href="https://github.com/features/copilot/agents">AI coding agents</a></strong> to <a href="https://en.wikipedia.org/wiki/AI-assisted_software_development">help you code</a>.</p>
+<section id="what-are-ai-coding-agents" class="level3" data-number="17.4.1">
+<h3 data-number="17.4.1" class="anchored" data-anchor-id="what-are-ai-coding-agents"><span class="header-section-number">17.4.1</span> What are AI coding agents?</h3>
+<p>AI coding agents are <a href="https://en.wikipedia.org/wiki/AI_agent">AI agents</a> specialized for coding. They differ from other AI coding tools in important ways:</p>
+<p><strong>Compared to inline coding assistants</strong> (like traditional autocomplete), coding agents work autonomously rather than providing suggestions as you type. They can navigate entire codebases, execute commands, and complete multi-step tasks without constant human guidance.</p>
+<p><strong>Compared to AI chatbots</strong> (like ChatGPT or Claude), coding agents don’t just generate code snippets in conversation—they actively interact with your development environment. While chatbots require you to copy code from a chat window and manually integrate it into your project, coding agents directly read your codebase, make changes to files, run tests and build commands, and create pull requests with their proposed changes. Chatbots are conversational assistants; coding agents are autonomous development tools.</p>
+<p>Coding agents are autonomous software programs that can:</p>
+<ul>
+<li><strong>Understand and execute complex tasks</strong>: Coding agents can interpret natural language instructions and break them down into actionable development tasks</li>
+<li><strong>Navigate and modify codebases</strong>: They can read, understand, and edit multiple files across a repository to implement features or fix bugs</li>
+<li><strong>Run tools and commands</strong>: Coding agents can execute build commands, run tests, use linters, and interact with development tools</li>
+<li><strong>Make decisions autonomously</strong>: They can plan their approach, make technical decisions, and adjust their strategy based on results</li>
+<li><strong>Work iteratively</strong>: Coding agents can test their changes, identify issues, and refine their solutions through multiple iterations</li>
+<li><strong>Create comprehensive solutions</strong>: They can implement complete features that span multiple files, including code, tests, and documentation</li>
+</ul>
+<p>Coding agents operate in isolated environments where they can safely experiment and validate changes before proposing them. This allows them to work more independently than inline coding assistants, which require step-by-step human direction. The agent workflow typically involves analyzing requirements, planning an implementation, making changes, testing those changes, and creating a pull request with the results.</p>
+<p>While coding agents can handle substantial development tasks, they still require human oversight and review. The human developer remains responsible for:</p>
+<ul>
+<li>Reviewing the agent’s work</li>
+<li>Ensuring the solution meets requirements</li>
+<li>Verifying code quality and security</li>
+<li>Making the final decision to merge changes</li>
+</ul>
+</section>
+<section id="relative-advantages-of-ai-and-humans" class="level3" data-number="17.4.2">
+<h3 data-number="17.4.2" class="anchored" data-anchor-id="relative-advantages-of-ai-and-humans"><span class="header-section-number">17.4.2</span> Relative Advantages of AI and Humans</h3>
+<p>AI coding agents and human coders have complementary strengths. Understanding these differences helps you decide when to delegate work to agents and when to handle tasks yourself.</p>
+<section id="comparative-strengths-humans-vs.-ai-agents" class="level4" data-number="17.4.2.1">
+<h4 data-number="17.4.2.1" class="anchored" data-anchor-id="comparative-strengths-humans-vs.-ai-agents"><span class="header-section-number">17.4.2.1</span> Comparative Strengths: Humans vs.&nbsp;AI Agents</h4>
+<div class="notes">
+<p><a href="#tbl-ai-human-comparison" class="quarto-xref">Table&nbsp;<span>17.1</span></a> summarizes the relative advantages of human coders and AI coding agents across different types of tasks:</p>
+</div>
+<div id="tbl-ai-human-comparison" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ai-human-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;17.1: Relative advantages of humans and AI coding agents
+</figcaption>
+<div aria-describedby="tbl-ai-human-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 31%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Task Type</th>
+<th>Humans 😊</th>
+<th>AI agents 🤖</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Creative thinking</strong></td>
+<td>😊 Humans excel at understanding context, handling ambiguous requirements, and thinking creatively about novel problems</td>
+<td>😞 AI agents struggle with ambiguous requirements and creative problem-solving in unfamiliar domains</td>
+</tr>
+<tr class="even">
+<td><strong>Algorithmic thinking</strong></td>
+<td>😞 Humans make mistakes when following repetitive instructions and may introduce inconsistencies</td>
+<td>😊 AI agents excel at executing well-defined, repetitive tasks with precision and consistency</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<hr>
+<div class="notes">
+<p>Or, if you prefer a more visual representation:</p>
+</div>
+<div id="tbl-matrix-meme-table" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-matrix-meme-table-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;17.2: Relative advantages of humans and Agents
+</figcaption>
+<div aria-describedby="tbl-matrix-meme-table-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 31%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Humans</th>
+<th>AI Agents</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Creative thinking</strong></td>
+<td><img src="assets/images/The-Matrix-Neo-Flying.png" class="img-fluid figure-img" width="450"></td>
+<td><img src="assets/images/agent-smith-no-its-not-fair.jpg" class="img-fluid figure-img" width="450"></td>
+</tr>
+<tr class="even">
+<td><strong>Algorithmic thinking</strong></td>
+<td><img src="assets/images/sad-keanu.png" class="img-fluid figure-img" width="450"></td>
+<td><img src="assets/images/grinning-smith.png" class="img-fluid figure-img" width="450"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<div class="notes">
+<p>This pattern mirrors the evolution of programming itself. Just as almost no one writes machine code anymore because higher-level languages and compilers handle those details, most developers will increasingly spend less time writing low-level code. Instead, you’ll describe what the system needs to do as clearly as possible, and AI agents will handle many of the computational and coding details.</p>
+</div>
+<hr>
+<p>For most tasks, you won’t need to step in and manipulate code yourself. However, you’ll still need strong coding skills to:</p>
+<ul>
+<li>Supervise and validate AI-generated code</li>
+<li>Handle edge cases that agents struggle with</li>
+<li>Make creative decisions about architecture and design</li>
+<li>Understand when agent suggestions are incorrect or suboptimal</li>
+</ul>
+</section>
+<section id="future-developments-world-models" class="level4" data-number="17.4.2.2">
+<h4 data-number="17.4.2.2" class="anchored" data-anchor-id="future-developments-world-models"><span class="header-section-number">17.4.2.2</span> Future Developments: World Models</h4>
+<p>As AI technology advances, the distinction between these strengths may shift. Yann LeCun, 2019 Turing Award winner and AI researcher at Meta and NYU, advocates for developing “world models”—AI systems that understand and reason about the physical world, not just language patterns <span class="citation" data-cites="lecun_world_models">(<a href="references.html#ref-lecun_world_models" role="doc-biblioref">LeCun 2022</a>)</span>.</p>
+<p>World models aim to give AI systems:</p>
+<ul>
+<li><strong>Persistent memory and reasoning</strong>: Understanding that persists across interactions</li>
+<li><strong>Physical world understanding</strong>: Reasoning about how things work in reality, not just in text</li>
+<li><strong>Better handling of ambiguity</strong>: Using world knowledge to interpret unclear requirements</li>
+</ul>
+<p>As these technologies mature, AI agents may become better at tasks requiring contextual understanding and creative problem-solving. This makes it even more important to develop strong supervision and validation skills now, so you can effectively work with increasingly capable AI systems.</p>
+</section>
+</section>
+<section id="how-to-work-with-coding-agents" class="level3" data-number="17.4.3">
+<h3 data-number="17.4.3" class="anchored" data-anchor-id="how-to-work-with-coding-agents"><span class="header-section-number">17.4.3</span> How to Work with Coding Agents</h3>
+<p>GitHub Copilot coding agents can be used in several ways to automate development tasks:</p>
+<section id="assigning-issues-to-copilot" class="level4" data-number="17.4.3.1">
+<h4 data-number="17.4.3.1" class="anchored" data-anchor-id="assigning-issues-to-copilot"><span class="header-section-number">17.4.3.1</span> Assigning Issues to Copilot</h4>
+<p>You can assign GitHub Issues directly to <code>@copilot</code> just like you would assign to a human collaborator:</p>
+<ol type="1">
+<li><p><strong>On GitHub.com</strong>: Navigate to an issue and assign it to Copilot in the assignees section</p></li>
+<li><p><strong>In VS Code</strong>: In the GitHub Pull Requests or Issues view, right-click an issue and select “Assign to Copilot”</p></li>
+<li><p><strong>From Copilot Chat</strong>: Delegate tasks to Copilot directly from the chat interface in supported editors</p></li>
+</ol>
+</section>
+<section id="the-agent-workflow" class="level4" data-number="17.4.3.2">
+<h4 data-number="17.4.3.2" class="anchored" data-anchor-id="the-agent-workflow"><span class="header-section-number">17.4.3.2</span> The Agent Workflow</h4>
+<p>Once assigned an issue, the coding agent follows an autonomous workflow:</p>
+<ol type="1">
+<li><p><strong>Analysis</strong>: Reviews the issue description, related discussions, repository instructions, and codebase context</p></li>
+<li><p><strong>Planning</strong>: Determines what changes are needed and creates a work plan</p></li>
+<li><p><strong>Development</strong>: Works in an isolated GitHub Actions environment, modifies code, runs tests and linters, and validates changes</p></li>
+<li><p><strong>Pull Request Creation</strong>: Creates a draft pull request with implemented changes, audit logs, and a summary of modifications</p></li>
+<li><p><strong>Review and Iteration</strong>: You review the PR and can request changes; the agent will iterate based on your feedback</p></li>
+</ol>
+</section>
+<section id="example-this-document" class="level4" data-number="17.4.3.3">
+<h4 data-number="17.4.3.3" class="anchored" data-anchor-id="example-this-document"><span class="header-section-number">17.4.3.3</span> Example: This Document</h4>
+<p>This very section you’re reading was created through the coding agent workflow:</p>
+<ol type="1">
+<li><p><strong>Issue created</strong>: <a href="https://github.com/UCD-SERG/lab-manual/issues/42">Issue #42</a> requested adding discussion about benefits and hazards of coding agents, including a Matrix film connection and best practices</p></li>
+<li><p><strong>Agent assigned</strong>: The issue was assigned to <code>@copilot</code></p></li>
+<li><p><strong>Work completed</strong>: The agent analyzed the requirements, reviewed the repository structure, and implemented the changes across multiple files</p></li>
+<li><p><strong>Pull request</strong>: <a href="https://github.com/UCD-SERG/lab-manual/pull/50">PR #50</a> was created with comprehensive content about coding agents, including this “How to Work with Coding Agents” section, benefits and hazards discussion, best practices, and firewall configuration details</p></li>
+<li><p><strong>Iteration</strong>: The PR received feedback comments requesting additional links, improved wording, and this example section—all of which the agent addressed through follow-up commits</p></li>
+</ol>
+<p>This demonstrates the full lifecycle of working with a coding agent on a real documentation task.</p>
+</section>
+<section id="collaborating-with-coding-agents" class="level4" data-number="17.4.3.4">
+<h4 data-number="17.4.3.4" class="anchored" data-anchor-id="collaborating-with-coding-agents"><span class="header-section-number">17.4.3.4</span> Collaborating with Coding Agents</h4>
+<p>Between iterations of asking coding agents to extend a PR, human collaborators can also push changes directly to the PR branch. This allows for a collaborative workflow where both humans and agents contribute:</p>
+<ul>
+<li><p><strong>Human contributions</strong>: You can make quick fixes, add content, or refine the agent’s work by pushing commits to the same branch</p></li>
+<li><p><strong>Agent iterations</strong>: After your changes, you can ask the agent to continue working on additional requirements</p></li>
+</ul>
+<p><strong>Important</strong>: Try to avoid pushing changes while the coding agent is actively working. Simultaneous edits can produce conflicting diffs that:</p>
+<ul>
+<li>Need to be manually resolved</li>
+<li>May confuse both human and AI collaborators</li>
+<li>Could result in lost work or merge conflicts</li>
+</ul>
+<p><strong>Best practice</strong>: Wait for the agent to complete its current iteration (indicated by the PR being updated) before pushing your own changes to the branch. Then assign new work to the agent for the next iteration.</p>
+</section>
+<section id="directly-prompting-for-pull-requests" class="level4" data-number="17.4.3.5">
+<h4 data-number="17.4.3.5" class="anchored" data-anchor-id="directly-prompting-for-pull-requests"><span class="header-section-number">17.4.3.5</span> Directly Prompting for Pull Requests</h4>
+<p>You can also prompt Copilot to create pull requests without first creating an issue:</p>
+<ul>
+<li>Use Copilot Chat in your editor to describe the changes you want</li>
+<li>The agent will analyze your request and create a pull request</li>
+<li>This is useful for quick fixes or well-defined tasks</li>
+</ul>
+</section>
+<section id="important-safeguards" class="level4" data-number="17.4.3.6">
+<h4 data-number="17.4.3.6" class="anchored" data-anchor-id="important-safeguards"><span class="header-section-number">17.4.3.6</span> Important Safeguards</h4>
+<ul>
+<li><strong>Human approval required</strong>: Coding agents cannot merge their own changes</li>
+<li><strong>Branch restrictions</strong>: Agents can only push to their own branches (e.g., <code>copilot/*</code>)</li>
+<li><strong>Full transparency</strong>: All agent actions are logged and visible in the PR</li>
+</ul>
+</section>
+<section id="workflow-approval-requirements" class="level4" data-number="17.4.3.7">
+<h4 data-number="17.4.3.7" class="anchored" data-anchor-id="workflow-approval-requirements"><span class="header-section-number">17.4.3.7</span> Workflow Approval Requirements</h4>
+<p>When GitHub Copilot creates or updates a pull request, it cannot automatically trigger GitHub Actions workflows. <strong>You must manually approve each workflow run</strong> by clicking the approval button in the Actions tab or on the PR.</p>
+<p>This manual approval requirement is a security measure that prevents potentially malicious or unintended code execution. Because Copilot can modify any file in the repository—including workflow files themselves or scripts called by workflows—allowing automatic workflow execution could create security vulnerabilities.</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li><strong>No automatic approval</strong>: There is currently no way to bypass manual workflow approval for Copilot PRs, even if you are the repository owner</li>
+<li><strong>Security reasoning</strong>: Copilot could modify workflow files (<code>.github/workflows/*.yml</code>) or scripts they execute, potentially injecting malicious code</li>
+<li><strong>Impact on workflow</strong>: This means you need to actively monitor and approve workflow runs as Copilot iterates on your issue, which can slow down the development cycle</li>
+</ul>
+<p><strong>Workaround considerations:</strong></p>
+<p>Some users have discussed using Personal Access Tokens (PATs) to allow Copilot to trigger workflows on your behalf, but this approach has security implications and should be carefully evaluated before implementation.</p>
+<p>For more details and community discussion about this limitation, see:</p>
+<ul>
+<li><a href="https://github.com/orgs/community/discussions/162826">GitHub Community Discussion #162826</a>: Discussion about workflow approval requirements</li>
+<li><a href="https://github.com/orgs/community/discussions/183966">GitHub Community Discussion #183966</a>: Product feedback on this topic</li>
+</ul>
+<p>For detailed instructions, see <a href="https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent">GitHub Copilot coding agent documentation</a>.</p>
+</section>
+</section>
+<section id="useful-prompt-formats" class="level3" data-number="17.4.4">
+<h3 data-number="17.4.4" class="anchored" data-anchor-id="useful-prompt-formats"><span class="header-section-number">17.4.4</span> Useful Prompt Formats</h3>
+<p>When working with coding agents, using clear and specific prompts helps achieve better results. Here are some useful prompt formats that you can use when requesting assistance from coding agents:</p>
+<section id="common-task-patterns" class="level4" data-number="17.4.4.1">
+<h4 data-number="17.4.4.1" class="anchored" data-anchor-id="common-task-patterns"><span class="header-section-number">17.4.4.1</span> Common Task Patterns</h4>
+<p><strong>Tidying up code:</strong></p>
+<ul>
+<li>“tidy up [file, function, module, whole project]”</li>
+<li>Useful for improving code organization, consistency, and readability</li>
+<li>Example: “tidy up the data processing module”</li>
+</ul>
+<p><strong>Addressing failing workflows:</strong></p>
+<ul>
+<li>“address failing workflows”</li>
+<li>Helps fix continuous integration (CI) failures, build errors, or test failures</li>
+<li>Example: “address failing workflows in the GitHub Actions pipeline”</li>
+</ul>
+<p><strong>Decomposing code:</strong></p>
+<ul>
+<li>“decompose [function, quarto-file, etc]”</li>
+<li>Breaks down large or complex code into smaller, more manageable pieces</li>
+<li>Example: “decompose this analysis function into separate helper functions”</li>
+</ul>
+<p><strong>Updating content:</strong></p>
+<ul>
+<li>“update [links, content, etc]”</li>
+<li>Refreshes outdated information, fixes broken links, or modernizes code</li>
+<li>Example: “update all package URLs in the documentation”</li>
+</ul>
+<p><strong>Expanding documentation:</strong></p>
+<ul>
+<li>“expand [a section in a document]”</li>
+<li>Adds more detail, examples, or explanation to existing content</li>
+<li>Example: “expand the section on data validation with practical examples”</li>
+</ul>
+<p><strong>Condensing content:</strong></p>
+<ul>
+<li>“condense [a section in a document]”</li>
+<li>Reduces verbosity while preserving essential information</li>
+<li>Example: “condense the installation instructions to be more concise”</li>
+</ul>
+<p><strong>Clarifying content:</strong></p>
+<ul>
+<li>“clarify [a section in a document]”</li>
+<li>Improves clarity, removes ambiguity, or simplifies complex explanations</li>
+<li>Example: “clarify the explanation of the analysis workflow”</li>
+</ul>
+</section>
+<section id="tips-for-effective-prompts" class="level4" data-number="17.4.4.2">
+<h4 data-number="17.4.4.2" class="anchored" data-anchor-id="tips-for-effective-prompts"><span class="header-section-number">17.4.4.2</span> Tips for Effective Prompts</h4>
+<ul>
+<li><strong>Be specific</strong>: Include file names, function names, or specific sections when possible</li>
+<li><strong>Provide context</strong>: Explain what you want to achieve and why</li>
+<li><strong>Set boundaries</strong>: Specify what should or shouldn’t change</li>
+<li><strong>Request validation</strong>: Ask the agent to test or verify its changes when appropriate</li>
+</ul>
+</section>
+</section>
+<section id="sec-ai-addressing-failing-workflows" class="level3" data-number="17.4.5">
+<h3 data-number="17.4.5" class="anchored" data-anchor-id="sec-ai-addressing-failing-workflows"><span class="header-section-number">17.4.5</span> Addressing Failing GitHub Actions Workflows</h3>
+<p>When GitHub Actions workflows fail, you can use Copilot to help diagnose and fix the issues. However, it’s important to use the right prompts depending on whether the problem is in your code or in the workflow configuration itself.</p>
+<section id="scenario-1-code-issues-found-by-workflows-most-common" class="level4" data-number="17.4.5.1">
+<h4 data-number="17.4.5.1" class="anchored" data-anchor-id="scenario-1-code-issues-found-by-workflows-most-common"><span class="header-section-number">17.4.5.1</span> Scenario 1: Code Issues Found by Workflows (Most Common)</h4>
+<p><strong>When to use:</strong> The workflow is functioning correctly, but it’s detecting problems in your code (e.g., failing tests, linting errors, build failures).</p>
+<p><strong>What you want:</strong> Fix the code issues without modifying the workflow files themselves.</p>
+<p><strong>Recommended prompts:</strong></p>
+<ul>
+<li>“fix the code issues found by the failing workflows”</li>
+<li>“address the linting errors reported in the GitHub Actions checks”</li>
+<li>“fix the test failures in the CI pipeline”</li>
+<li>“resolve the build errors shown in the workflow logs”</li>
+</ul>
+<p><strong>Example:</strong> If your R package has failing tests detected by <code>usethis::use_github_action("check-standard")</code>, you want Copilot to fix the test failures in your R code, not modify the workflow YAML file.</p>
+<p><strong>Why this matters:</strong> These prompts make it clear that you want code changes, not workflow changes. This helps prevent the agent from unnecessarily modifying your carefully-configured CI/CD pipeline.</p>
+</section>
+<section id="scenario-2-issues-with-workflow-files-themselves" class="level4" data-number="17.4.5.2">
+<h4 data-number="17.4.5.2" class="anchored" data-anchor-id="scenario-2-issues-with-workflow-files-themselves"><span class="header-section-number">17.4.5.2</span> Scenario 2: Issues with Workflow Files Themselves</h4>
+<p><strong>When to use:</strong> The workflow configuration itself has problems (e.g., syntax errors in YAML, incorrect job definitions, outdated actions).</p>
+<p><strong>What you want:</strong> Fix the workflow files, but with extreme caution due to security implications.</p>
+<p><strong>Recommended prompts:</strong></p>
+<ul>
+<li>“fix the syntax error in the GitHub Actions workflow file at line X”</li>
+<li>“update the workflow to use the latest version of action Y”</li>
+<li>“correct the job configuration in .github/workflows/check-standard.yaml”</li>
+</ul>
+<p><strong>Important considerations:</strong></p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Security Warning</strong></p>
+<p>Workflow files have access to repository secrets and can execute arbitrary code. Before accepting any changes to workflow files:</p>
+<ol type="1">
+<li><strong>Review every line</strong> of the proposed changes</li>
+<li><strong>Verify</strong> the changes only address the specific issue</li>
+<li><strong>Check</strong> that no new secret access or command execution has been added</li>
+<li><strong>Test</strong> in a safe environment if possible</li>
+</ol>
+<p>See <a href="#sec-ai-best-practices" class="quarto-xref"><span>Section 17.4.7</span></a> for more details on workflow file security.</p>
+</div>
+</div>
+<p><strong>When to do it yourself:</strong> Workflow syntax errors and configuration issues are often faster to fix manually than with Copilot, especially if you’re familiar with GitHub Actions. See <a href="#sec-ai-when-to-use" class="quarto-xref"><span>Section 17.4.10</span></a> for more guidance.</p>
+</section>
+<section id="scenario-3-uncertain-which-scenario-applies" class="level4" data-number="17.4.5.3">
+<h4 data-number="17.4.5.3" class="anchored" data-anchor-id="scenario-3-uncertain-which-scenario-applies"><span class="header-section-number">17.4.5.3</span> Scenario 3: Uncertain Which Scenario Applies</h4>
+<p><strong>When to use:</strong> You’re not sure whether the failure is due to code issues or workflow configuration problems.</p>
+<p><strong>Recommended approach:</strong></p>
+<ol type="1">
+<li><strong>First, examine the workflow logs</strong>:
+<ul>
+<li>Look at the error messages in the GitHub Actions tab</li>
+<li>Identify whether the error is in your code or the workflow itself</li>
+<li>Common code issues: test failures, linting errors, compilation errors</li>
+<li>Common workflow issues: YAML syntax errors, missing actions, permission errors</li>
+</ul></li>
+<li><strong>Use a diagnostic prompt</strong>:
+<ul>
+<li>“examine the failing workflow logs and identify whether the issue is in the code or the workflow configuration”</li>
+<li>“diagnose the root cause of the workflow failure”</li>
+</ul></li>
+<li><strong>Then use the appropriate scenario above</strong>: Once you understand the issue, use the specific prompts from Scenario 1 or 2.</li>
+</ol>
+<p><strong>Example workflow:</strong></p>
+<pre class="text"><code>1. Prompt: "examine the failing workflow logs and identify the issue"
+2. Copilot responds: "The workflow is failing because of linting errors
+   in src/analysis.R"
+3. Prompt: "fix the linting errors in src/analysis.R"</code></pre>
+</section>
+<section id="additional-resources" class="level4" data-number="17.4.5.4">
+<h4 data-number="17.4.5.4" class="anchored" data-anchor-id="additional-resources"><span class="header-section-number">17.4.5.4</span> Additional Resources</h4>
+<ul>
+<li>See <a href="coding-practices.html#sec-r-ci" class="quarto-xref"><span>Section 6.7</span></a> for setting up GitHub Actions workflows</li>
+<li>See <a href="#sec-ai-best-practices" class="quarto-xref"><span>Section 17.4.7</span></a> and <a href="#sec-ai-benefits-hazards" class="quarto-xref"><span>Section 17.4.6</span></a> for security considerations with workflow files</li>
+<li>See <a href="#sec-ai-when-to-use" class="quarto-xref"><span>Section 17.4.10</span></a> for guidance on when to use Copilot vs.&nbsp;fixing issues yourself</li>
+<li>See the <a href="https://docs.github.com/en/actions">GitHub Actions documentation</a> for workflow syntax and troubleshooting</li>
+</ul>
+</section>
+</section>
+<section id="sec-ai-benefits-hazards" class="level3" data-number="17.4.6">
+<h3 data-number="17.4.6" class="anchored" data-anchor-id="sec-ai-benefits-hazards"><span class="header-section-number">17.4.6</span> Benefits and Hazards</h3>
+<p>Coding agents are powerful programs that can work autonomously. They create pull requests that propose changes to the code in our repositories, potentially including their own configuration files and our automated workflows. They can work powerfully on our behalf, but they require careful oversight and control to ensure they serve our interests and that we understand the consequences of their actions.</p>
+<p>Coding agents offer several advantages:</p>
+<ul>
+<li><p><strong>Built-in transparency</strong>: Coding agents create a clear record of their role in your work through commit history and code suggestions</p></li>
+<li><p><strong>Context-aware suggestions</strong>: Coding agents understand your codebase and can make contextually relevant suggestions</p></li>
+<li><p><strong>Integration with version control</strong>: Using coding agents within GitHub ensures that AI-assisted changes are tracked alongside all other code changes</p></li>
+<li><p><strong>Interactive workflow</strong>: Coding agents’ interactive nature encourages you to review and modify suggestions rather than blindly accepting them</p></li>
+<li><p><strong>Accelerated development</strong>: Coding agents can help you write boilerplate code, refactor existing code, and implement common patterns more quickly</p></li>
+<li><p><strong>Learning opportunities</strong>: Coding agents can suggest approaches or techniques you may not have considered, helping you expand your coding knowledge</p></li>
+</ul>
+<p>However, coding agents also come with significant hazards:</p>
+<ul>
+<li><p><strong>Over-reliance</strong>: Depending too heavily on coding agents can atrophy your coding skills and understanding</p></li>
+<li><p><strong>Subtle bugs</strong>: AI-generated code may contain logic errors that are not immediately obvious</p></li>
+<li><p><strong>Security vulnerabilities</strong>: Coding agents may introduce insecure patterns or fail to follow security best practices</p></li>
+<li><p><strong>Inappropriate solutions</strong>: AI may suggest solutions that work but are not optimal for your specific research context or constraints</p></li>
+<li><p><strong>Hidden biases</strong>: Coding agents may perpetuate coding patterns or approaches that reflect biases in their training data</p></li>
+<li><p><strong>False confidence</strong>: Well-formatted, professional-looking code from AI can mask underlying problems and reduce critical review</p></li>
+<li><p><strong>Workflow manipulation risks</strong>: Coding agents that modify CI/CD workflows (<code>.github/workflows/*.yml</code>) or setup configurations can inadvertently or maliciously compromise repository security, expose secrets, or execute harmful commands</p></li>
+</ul>
+<section id="further-readingviewing" class="level4" data-number="17.4.6.1">
+<h4 data-number="17.4.6.1" class="anchored" data-anchor-id="further-readingviewing"><span class="header-section-number">17.4.6.1</span> Further reading/viewing</h4>
+<ul>
+<li><em>I Robot</em> <span class="citation" data-cites="i_robot">(<a href="references.html#ref-i_robot" role="doc-biblioref">Asimov 1950</a>)</span></li>
+<li><em>Dune</em> <span class="citation" data-cites="dune">(<a href="references.html#ref-dune" role="doc-biblioref">Herbert 1965</a>)</span></li>
+<li><span class="citation" data-cites="space_odyssey"><span>“2001: A Space Odyssey”</span> (<a href="references.html#ref-space_odyssey" role="doc-biblioref">1968</a>)</span></li>
+<li><span class="citation" data-cites="terminator"><span>“Terminator 3: Rise of the Machines”</span> (<a href="references.html#ref-terminator" role="doc-biblioref">2003</a>)</span></li>
+<li><span class="citation" data-cites="matrix"><span>“The Matrix”</span> (<a href="references.html#ref-matrix" role="doc-biblioref">1999</a>)</span></li>
+<li><span class="citation" data-cites="blade_runner"><span>“Blade Runner”</span> (<a href="references.html#ref-blade_runner" role="doc-biblioref">1982</a>)</span></li>
+<li><span class="citation" data-cites="wargames"><span>“WarGames”</span> (<a href="references.html#ref-wargames" role="doc-biblioref">1983</a>)</span></li>
+<li><em>Battlestar Galactica</em> (2004) <span class="citation" data-cites="battlestar_galactica_2004">(<a href="references.html#ref-battlestar_galactica_2004" role="doc-biblioref"><span>“Battlestar Galactica”</span> 2004</a>)</span></li>
+<li><em>Ender’s Game</em> <span class="citation" data-cites="enders_game">(<a href="references.html#ref-enders_game" role="doc-biblioref">Card 1985</a>)</span></li>
+<li>“The Humans are Dead” <span class="citation" data-cites="humans_are_dead">(<a href="references.html#ref-humans_are_dead" role="doc-biblioref">Flight of the Conchords 2007</a>)</span></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/images/matrix-agents.png" class="img-fluid figure-img" alt="Three agents in suits and sunglasses from the Matrix films"></p>
+<figcaption><a href="https://en.wikipedia.org/wiki/Agent_(The_Matrix)">Agents</a></figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="sec-ai-best-practices" class="level3" data-number="17.4.7">
+<h3 data-number="17.4.7" class="anchored" data-anchor-id="sec-ai-best-practices"><span class="header-section-number">17.4.7</span> Best Practices for Safe and Successful Use</h3>
+<p>To work with coding agents safely and successfully:</p>
+<ol type="1">
+<li><p><strong>Maintain active supervision</strong>: Never assume AI-generated code is correct. Review every line critically.</p></li>
+<li><p><strong>Understand before accepting</strong>: If you don’t understand what the code does, don’t use it. Take time to learn or ask a colleague.</p></li>
+<li><p><strong>Test thoroughly</strong>: AI-generated code must be tested as rigorously as code you write yourself. Don’t skip testing because “the AI wrote it.”</p></li>
+<li><p><strong>Start small</strong>: Begin with small, well-defined tasks to build confidence and understanding of the agent’s capabilities and limitations.</p></li>
+<li><p><strong>Verify logic and assumptions</strong>: Check that the AI hasn’t made incorrect assumptions about your data, requirements, or scientific context.</p></li>
+<li><p><strong>Review for security</strong>: Explicitly check for security issues, especially when handling sensitive data or user input.</p></li>
+<li><p><strong>Iterate and refine</strong>: Use coding agents as a starting point, not an endpoint. Refine and improve the generated code.</p></li>
+<li><p><strong>Maintain coding practice</strong>: Regularly write code yourself to maintain and develop your skills. Don’t let the agent do everything.</p></li>
+</ol>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Critical: Exercise Extreme Caution with Workflow Files
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Be especially careful when allowing coding agents to edit GitHub Actions workflows or CI/CD configurations. These files control automated processes that can:</p>
+<ul>
+<li>Access secrets and credentials</li>
+<li>Deploy code to production</li>
+<li>Execute arbitrary commands in your repository</li>
+</ul>
+<p><strong>Never</strong> allow a coding agent to edit workflow files (especially <code>.github/workflows/*.yml</code> or <code>copilot-setup-steps.yml</code>) without thorough manual review. Before approving any workflow run, always check if the workflow files themselves have been modified. Malicious or erroneous changes to workflows can compromise your entire repository and its secrets.</p>
+</div>
+</div>
+<p>When using coding agents, work interactively with the AI suggestions: review, modify, and test them rather than accepting them wholesale. This interactive approach helps ensure code quality and deepens your understanding of the code.</p>
+<p>Remember: AI tools are assistants, not replacements for your expertise and judgment. The quality and correctness of your work remains your responsibility.</p>
+</section>
+<section id="firewall-and-network-configuration" class="level3" data-number="17.4.8">
+<h3 data-number="17.4.8" class="anchored" data-anchor-id="firewall-and-network-configuration"><span class="header-section-number">17.4.8</span> Firewall and Network Configuration</h3>
+<p>Coding agents require specific network access to function properly. If a coding agent is running behind a corporate firewall or on a restricted network, you may need to configure allowlists to enable coding agent functionality.</p>
+<section id="built-in-agent-firewall" class="level4" data-number="17.4.8.1">
+<h4 data-number="17.4.8.1" class="anchored" data-anchor-id="built-in-agent-firewall"><span class="header-section-number">17.4.8.1</span> Built-in Agent Firewall</h4>
+<p>Coding agents run in a GitHub Actions environment with a built-in firewall that limits internet access by default. This firewall helps protect against:</p>
+<ul>
+<li>Data exfiltration</li>
+<li>Accidental leaks of sensitive information</li>
+<li>Execution of malicious instructions</li>
+</ul>
+<p>By default, the agent’s firewall allows access to:</p>
+<ul>
+<li>Common OS package repositories (Debian, Ubuntu, Red Hat, etc.)</li>
+<li>Popular container registries (Docker Hub, Azure Container Registry, AWS ECR, etc.)</li>
+<li>Language-specific package registries (npm, PyPI, Maven, RubyGems, etc.)</li>
+<li>Common certificate authorities for SSL validation</li>
+</ul>
+<p>For the complete list of allowed hosts, see the <a href="https://docs.github.com/en/copilot/reference/copilot-allowlist-reference">Copilot allowlist reference</a>.</p>
+</section>
+<section id="customizing-agent-firewall-settings" class="level4" data-number="17.4.8.2">
+<h4 data-number="17.4.8.2" class="anchored" data-anchor-id="customizing-agent-firewall-settings"><span class="header-section-number">17.4.8.2</span> Customizing Agent Firewall Settings</h4>
+<p>In your repository’s “Coding agent” settings page, you can:</p>
+<ul>
+<li>Add custom hosts to the allowlist (for internal dependencies or additional registries)</li>
+<li>Opt out of the default recommended allowlist for stricter security</li>
+<li>Disable the firewall entirely (not recommended)</li>
+</ul>
+<p>If a coding agent’s request is blocked by the firewall, a warning will be added to the pull request or comment, detailing the blocked address and the command that triggered it.</p>
+<p>For more information, see <a href="https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-firewall">Customizing or disabling the firewall for GitHub Copilot coding agent</a>.</p>
+</section>
+<section id="recommended-urls-for-data-science-repositories" class="level4" data-number="17.4.8.3">
+<h4 data-number="17.4.8.3" class="anchored" data-anchor-id="recommended-urls-for-data-science-repositories"><span class="header-section-number">17.4.8.3</span> Recommended URLs for Data Science Repositories</h4>
+<p>For data science and R-focused repositories, we recommend adding the following URLs to your Copilot allowlist. These sites are safe, reputable sources of documentation and packages that coding agents may need to access:</p>
+<p><strong>R Package Documentation and Ecosystems:</strong></p>
+<ul>
+<li><code>tidyverse.org</code> - <a href="https://tidyverse.org/"><code>{tidyverse}</code></a> package documentation and learning resources</li>
+<li><code>r-lib.org</code> - Core R infrastructure packages (<a href="https://devtools.r-lib.org/"><code>{devtools}</code></a>, <a href="https://testthat.r-lib.org/"><code>{testthat}</code></a>, <a href="https://usethis.r-lib.org/"><code>{usethis}</code></a>, etc.)</li>
+<li><code>ggplot2.tidyverse.org</code> - <a href="https://ggplot2.tidyverse.org/"><code>{ggplot2}</code></a> visualization package</li>
+<li><code>dplyr.tidyverse.org</code> - <a href="https://dplyr.tidyverse.org/"><code>{dplyr}</code></a> data manipulation package</li>
+<li><code>tidyr.tidyverse.org</code> - <a href="https://tidyr.tidyverse.org/"><code>{tidyr}</code></a> data tidying package</li>
+<li><code>purrr.tidyverse.org</code> - <a href="https://purrr.tidyverse.org/"><code>{purrr}</code></a> functional programming package</li>
+<li><code>readr.tidyverse.org</code> - <a href="https://readr.tidyverse.org/"><code>{readr}</code></a> data reading package</li>
+<li><code>stringr.tidyverse.org</code> - <a href="https://stringr.tidyverse.org/"><code>{stringr}</code></a> string manipulation package</li>
+<li><code>forcats.tidyverse.org</code> - <a href="https://forcats.tidyverse.org/"><code>{forcats}</code></a> categorical data package</li>
+</ul>
+<p><strong>R Package Repositories:</strong></p>
+<ul>
+<li><code>cran.r-project.org</code> - The Comprehensive R Archive Network</li>
+<li><code>cloud.r-project.org</code> - CRAN mirror (cloud-based)</li>
+<li><code>docs.ropensci.org</code> - rOpenSci package documentation (e.g., <a href="https://docs.ropensci.org/targets/"><code>{targets}</code></a>)</li>
+<li><code>rdatatable.gitlab.io</code> - <a href="https://rdatatable.gitlab.io/data.table/"><code>{data.table}</code></a> package documentation</li>
+<li><code>rstudio.github.io</code> - RStudio-maintained packages (e.g., <a href="https://rstudio.github.io/renv/"><code>{renv}</code></a>)</li>
+</ul>
+<p><strong>Code Style and Quality Tools:</strong></p>
+<ul>
+<li><code>styler.r-lib.org</code> - <a href="https://styler.r-lib.org/"><code>{styler}</code></a> code formatting package</li>
+<li><code>lintr.r-lib.org</code> - <a href="https://lintr.r-lib.org/"><code>{lintr}</code></a> code linting package</li>
+<li><code>roxygen2.r-lib.org</code> - <a href="https://roxygen2.r-lib.org/"><code>{roxygen2}</code></a> documentation package</li>
+<li><code>style.tidyverse.org</code> - Tidyverse style guide</li>
+</ul>
+<p><strong>General Documentation and Reference:</strong></p>
+<ul>
+<li><code>en.wikipedia.org</code> - General reference and technical documentation</li>
+<li><code>r-project.org</code> - Official R project website</li>
+<li><code>quarto.org</code> - Quarto publishing system documentation</li>
+<li><code>pandoc.org</code> - Pandoc document converter documentation</li>
+</ul>
+<p><strong>GitHub Organizations (for package repositories):</strong></p>
+<ul>
+<li><code>github.com/tidyverse/*</code> - Tidyverse package source code</li>
+<li><code>github.com/r-lib/*</code> - R-lib package source code</li>
+<li><code>github.com/rstudio/*</code> - RStudio package source code</li>
+<li><code>github.com/ropensci/*</code> - rOpenSci package source code</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>When to Add These URLs
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Add these URLs to your repository’s allowlist if:</p>
+<ul>
+<li>Coding agents report blocked access to these sites</li>
+<li>You’re working on R or data science projects that use these packages</li>
+<li>You want agents to access current documentation during code generation</li>
+</ul>
+<p>You can add URLs selectively based on your project’s specific dependencies rather than adding all URLs at once.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Safety of These URLs
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>All URLs listed here are:</p>
+<ul>
+<li>Maintained by reputable organizations (Tidyverse, RStudio/Posit, R Core Team, rOpenSci)</li>
+<li>Widely used in the R community</li>
+<li>Focused on documentation and package distribution</li>
+<li>Safe for coding agents to access</li>
+</ul>
+<p>These sites do not host user-generated content or allow arbitrary code execution, making them appropriate for inclusion in your allowlist.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="configuring-the-agent-environment" class="level3" data-number="17.4.9">
+<h3 data-number="17.4.9" class="anchored" data-anchor-id="configuring-the-agent-environment"><span class="header-section-number">17.4.9</span> Configuring the Agent Environment</h3>
+<p>The <code>.github/workflows/copilot-setup-steps.yml</code> file allows you to customize the development environment in which the GitHub Copilot coding agent operates. This file preinstalls tools and dependencies so that Copilot can build, test, and lint your code more reliably.</p>
+<section id="why-configure-the-environment" class="level4" data-number="17.4.9.1">
+<h4 data-number="17.4.9.1" class="anchored" data-anchor-id="why-configure-the-environment"><span class="header-section-number">17.4.9.1</span> Why Configure the Environment?</h4>
+<p>While Copilot can discover and install dependencies through trial and error, this can be slow and unreliable. Additionally, Copilot may be unable to access private dependencies. Preconfiguring the environment ensures:</p>
+<ul>
+<li>Faster agent startup and execution</li>
+<li>More reliable builds and tests</li>
+<li>Access to private or authenticated dependencies</li>
+<li>Consistent development environment across all agent sessions</li>
+</ul>
+</section>
+<section id="file-location-and-structure" class="level4" data-number="17.4.9.2">
+<h4 data-number="17.4.9.2" class="anchored" data-anchor-id="file-location-and-structure"><span class="header-section-number">17.4.9.2</span> File Location and Structure</h4>
+<p>The workflow file must be located at <code>.github/workflows/copilot-setup-steps.yml</code> in your repository’s <strong>default branch</strong>. It follows GitHub Actions workflow syntax but must contain a single job named <code>copilot-setup-steps</code>.</p>
+</section>
+<section id="basic-configuration-example" class="level4" data-number="17.4.9.3">
+<h4 data-number="17.4.9.3" class="anchored" data-anchor-id="basic-configuration-example"><span class="header-section-number">17.4.9.3</span> Basic Configuration Example</h4>
+<p>See <a href="appendix-copilot-setup-steps.html">Appendix: Copilot Setup Steps File</a> for the configuration used in this repository (adapted for R and Quarto projects).</p>
+</section>
+<section id="configurable-options" class="level4" data-number="17.4.9.4">
+<h4 data-number="17.4.9.4" class="anchored" data-anchor-id="configurable-options"><span class="header-section-number">17.4.9.4</span> Configurable Options</h4>
+<p>You can customize only these specific settings in the <code>copilot-setup-steps</code> job:</p>
+<ul>
+<li><code>steps</code>: Setup commands and actions to run</li>
+<li><code>permissions</code>: Access permissions (typically <code>contents: read</code>)</li>
+<li><code>runs-on</code>: Runner type (Ubuntu x64 Linux only)</li>
+<li><code>services</code>: Database or service containers</li>
+<li><code>snapshot</code>: Save environment state</li>
+<li><code>timeout-minutes</code>: Maximum 59 minutes</li>
+</ul>
+<p>All other workflow settings are ignored by Copilot.</p>
+</section>
+<section id="common-setup-tasks" class="level4" data-number="17.4.9.5">
+<h4 data-number="17.4.9.5" class="anchored" data-anchor-id="common-setup-tasks"><span class="header-section-number">17.4.9.5</span> Common Setup Tasks</h4>
+<p><strong>For Node.js/TypeScript projects:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Set up Node.js</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/setup-node@v4</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">node-version</span><span class="kw">:</span><span class="at"> </span><span class="st">"20"</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">cache</span><span class="kw">:</span><span class="at"> </span><span class="st">"npm"</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install dependencies</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">run</span><span class="kw">:</span><span class="at"> npm ci</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>For Python projects:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Set up Python</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/setup-python@v5</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">python-version</span><span class="kw">:</span><span class="at"> </span><span class="st">"3.11"</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install dependencies</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">run</span><span class="kw">:</span><span class="at"> pip install -r requirements.txt</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>For R projects:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Set up R</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> r-lib/actions/setup-r@v2</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">r-version</span><span class="kw">:</span><span class="at"> </span><span class="st">'release'</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install R dependencies</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> r-lib/actions/setup-renv@v2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="environment-variables-and-secrets" class="level4" data-number="17.4.9.6">
+<h4 data-number="17.4.9.6" class="anchored" data-anchor-id="environment-variables-and-secrets"><span class="header-section-number">17.4.9.6</span> Environment Variables and Secrets</h4>
+<p>To set environment variables for Copilot:</p>
+<ol type="1">
+<li>Navigate to your repository’s <strong>Settings</strong></li>
+<li>Go to <strong>Environments</strong></li>
+<li>Select or create the <code>copilot</code> environment</li>
+<li>Add environment variables or secrets as needed</li>
+</ol>
+<p>Use secrets for sensitive values like API keys or passwords.</p>
+</section>
+<section id="testing-your-configuration" class="level4" data-number="17.4.9.7">
+<h4 data-number="17.4.9.7" class="anchored" data-anchor-id="testing-your-configuration"><span class="header-section-number">17.4.9.7</span> Testing Your Configuration</h4>
+<p>The workflow runs automatically when you modify <code>copilot-setup-steps.yml</code>, allowing you to validate changes in pull requests. You can also manually trigger the workflow from the repository’s <strong>Actions</strong> tab.</p>
+<p>Setup logs appear in the agent session logs when Copilot starts working. If a step fails, Copilot will skip remaining steps and begin working with the current environment state.</p>
+</section>
+<section id="advanced-configuration" class="level4" data-number="17.4.9.8">
+<h4 data-number="17.4.9.8" class="anchored" data-anchor-id="advanced-configuration"><span class="header-section-number">17.4.9.8</span> Advanced Configuration</h4>
+<p><strong>Larger runners:</strong> For projects requiring more resources, you can use larger GitHub-hosted runners:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">copilot-setup-steps</span><span class="kw">:</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-4-core</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Self-hosted runners (ARC):</strong> For access to internal resources or private registries, use Actions Runner Controller (ARC) self-hosted runners:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">copilot-setup-steps</span><span class="kw">:</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> arc-scale-set-name</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Note: When using self-hosted runners, you must disable Copilot’s integrated firewall in repository settings and configure appropriate network security controls.</p>
+<p><strong>Git Large File Storage (LFS):</strong> If your repository uses Git LFS:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v4</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">lfs</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="further-reading" class="level4" data-number="17.4.9.9">
+<h4 data-number="17.4.9.9" class="anchored" data-anchor-id="further-reading"><span class="header-section-number">17.4.9.9</span> Further Reading</h4>
+<p>For complete details, see <a href="https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-environment">Customizing the development environment for GitHub Copilot coding agent</a>.</p>
+</section>
+</section>
+<section id="sec-ai-when-to-use" class="level3" data-number="17.4.10">
+<h3 data-number="17.4.10" class="anchored" data-anchor-id="sec-ai-when-to-use"><span class="header-section-number">17.4.10</span> When to use a coding agent</h3>
+<p>Coding agent sessions are currently<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> considered “premium requests”, which are limited resources; see <a href="https://github.com/features/copilot/plans" class="uri">https://github.com/features/copilot/plans</a> for details. So, use coding agents sparingly. Use them for complex changes that would be difficult or time-consuming for you to complete by hand. Coding agents also take time to get configured for work, every time you make a request. See <a href="https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-environment#preinstalling-tools-or-dependencies-in-copilots-environment" class="uri">https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-environment#preinstalling-tools-or-dependencies-in-copilots-environment</a> for ways to reduce that startup time, but it will never be 0. If you can complete the task faster than the coding agent can, you should probably do it yourself. For example, when you have errors in the spell-check or lint workflows, you can often fix them faster than Copilot can. Similarly, when reviewing Copilot’s PRs, you can often make direct changes to the branch faster than you could write clear review comments and get Copilot to address them.</p>
+<p>Also, the less we practice, the weaker our skills get, and the harder it is for us to supervise the agents and make sure they are actually doing what we want them to do, the way we want them to do it. You should exercise your own coding skills regularly, just like you would for any other skill you want to maintain.</p>
+</section>
+<section id="editing-with-.docx-files" class="level3" data-number="17.4.11">
+<h3 data-number="17.4.11" class="anchored" data-anchor-id="editing-with-.docx-files"><span class="header-section-number">17.4.11</span> Editing with <code>.docx</code> files</h3>
+<p>GitHub Copilot coding agents can read Microsoft Word (<code>.docx</code>) files, including tracked changes and comments. This enables a hybrid editing workflow where:</p>
+<ol type="1">
+<li>Lab members can export Quarto content to Word format for review</li>
+<li>Reviewers can make edits, add tracked changes, and insert comments in Word</li>
+<li>Coding agents can read the <code>.docx</code> file and translate the edits back to Quarto format</li>
+</ol>
+<p>When using this workflow, make sure to explicitly instruct the coding agent to:</p>
+<ul>
+<li>Examine and apply all tracked changes in the <code>.docx</code> file</li>
+<li>Read and address all comments in the <code>.docx</code> file</li>
+<li>Translate edits from Word formatting to appropriate Quarto/markdown syntax</li>
+</ul>
+<p>This approach makes it easier for collaborators who are more comfortable with Word to contribute to the lab manual while maintaining the source files in Quarto format.</p>
+<section id="known-issue-document-1-warning-in-word" class="level4" data-number="17.4.11.1">
+<h4 data-number="17.4.11.1" class="anchored" data-anchor-id="known-issue-document-1-warning-in-word"><span class="header-section-number">17.4.11.1</span> Known Issue: “Document 1” Warning in Word</h4>
+<p>When opening DOCX files generated by Quarto (including this lab manual), Microsoft Word may display a warning message and open the file with the title “Document 1” instead of the actual filename. Word may also require you to save the file before you can add comments or track changes.</p>
+<p><strong>This is a known limitation</strong> with how Quarto generates DOCX files. The issue is being tracked in the Quarto project:</p>
+<ul>
+<li><a href="https://github.com/quarto-dev/quarto-cli/issues/6357">Quarto CLI Issue #6357</a></li>
+<li><a href="https://github.com/orgs/quarto-dev/discussions/6544">Quarto Discussion #6544</a></li>
+<li><a href="https://github.com/quarto-dev/quarto-cli/issues/10587">Quarto CLI Issue #10587</a></li>
+</ul>
+<p><strong>Workaround:</strong> If you are the author generating the DOCX file from Quarto, follow these steps before sharing with collaborators:</p>
+<ol type="1">
+<li>Open the generated DOCX file in Microsoft Word</li>
+<li>Immediately save the file (File → Save, or Ctrl+S/Cmd+S)</li>
+<li>Close and re-open the file to verify it no longer shows “Document 1”</li>
+<li>Share this saved version with collaborators</li>
+</ol>
+<p>This one-time step ensures that when collaborators open the file, they won’t see the “Document 1” warning and can immediately add comments and track changes without issues.</p>
+</section>
+</section>
+<section id="copilot-instructions-for-this-repository" class="level3" data-number="17.4.12">
+<h3 data-number="17.4.12" class="anchored" data-anchor-id="copilot-instructions-for-this-repository"><span class="header-section-number">17.4.12</span> Copilot Instructions for this Repository</h3>
+<p>The <code>.github/copilot-instructions.md</code> file in this repository contains specific instructions and guidelines for GitHub Copilot coding agents when working with the lab manual. This file helps ensure that AI-generated contributions follow the lab’s formatting standards, coding conventions, and documentation practices.</p>
+<p>The copilot instructions file specifies:</p>
+<ul>
+<li>Markdown and Quarto formatting rules (e.g., blank lines before lists, line breaks in prose)</li>
+<li>R code style guidelines (e.g., using native pipe <code>|&gt;</code>, following tidyverse style)</li>
+<li>File organization patterns (e.g., using Quarto includes for modular content)</li>
+<li>How to work with DOCX files for hybrid editing workflows</li>
+<li>Repository-specific best practices</li>
+</ul>
+<p>By having these instructions in <code>.github/copilot-instructions.md</code>, we ensure that coding agents produce consistent, high-quality contributions that align with the lab’s established practices. This reduces the review burden and helps maintain consistency across all contributions to the lab manual, whether made by humans or AI assistants.</p>
+<p>See <a href="appendix-copilot-instructions.html">Appendix: Copilot Instructions File</a> for the complete file.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-space_odyssey" class="csl-entry" role="listitem">
+<span>“2001: A Space Odyssey.”</span> 1968. Film. <a href="https://en.wikipedia.org/wiki/2001:_A_Space_Odyssey_(film)">https://en.wikipedia.org/wiki/2001:_A_Space_Odyssey_(film)</a>.
+</div>
+<div id="ref-i_robot" class="csl-entry" role="listitem">
+Asimov, Isaac. 1950. <span>“I, Robot.”</span> New York: Novel; Gnome Press. <a href="https://search.library.ucdavis.edu/permalink/01UCD_INST/9fle3i/alma990000226350403126">https://search.library.ucdavis.edu/permalink/01UCD_INST/9fle3i/alma990000226350403126</a>.
+</div>
+<div id="ref-battlestar_galactica_2004" class="csl-entry" role="listitem">
+<span>“Battlestar Galactica.”</span> 2004. Television Series. <a href="https://en.wikipedia.org/wiki/Battlestar_Galactica_(2004_TV_series)">https://en.wikipedia.org/wiki/Battlestar_Galactica_(2004_TV_series)</a>.
+</div>
+<div id="ref-blade_runner" class="csl-entry" role="listitem">
+<span>“Blade Runner.”</span> 1982. Film. <a href="https://en.wikipedia.org/wiki/Blade_Runner">https://en.wikipedia.org/wiki/Blade_Runner</a>.
+</div>
+<div id="ref-enders_game" class="csl-entry" role="listitem">
+Card, Orson Scott. 1985. <span>“Ender’s Game.”</span> Novel; Tor Books. <a href="https://en.wikipedia.org/wiki/Ender%27s_Game">https://en.wikipedia.org/wiki/Ender%27s_Game</a>.
+</div>
+<div id="ref-humans_are_dead" class="csl-entry" role="listitem">
+Flight of the Conchords. 2007. <span>“The Humans Are Dead.”</span> Music Video. <a href="https://www.youtube.com/watch?v=B1BdQcJ2ZYY">https://www.youtube.com/watch?v=B1BdQcJ2ZYY</a>.
+</div>
+<div id="ref-dune" class="csl-entry" role="listitem">
+Herbert, Frank. 1965. <span>“Dune.”</span> Novel. <a href="https://en.wikipedia.org/wiki/Organizations_of_the_Dune_universe#Thinking_machines">https://en.wikipedia.org/wiki/Organizations_of_the_Dune_universe#Thinking_machines</a>.
+</div>
+<div id="ref-lecun_world_models" class="csl-entry" role="listitem">
+LeCun, Yann. 2022. <span>“A Path Towards Autonomous Machine Intelligence.”</span> Meta AI Research; New York University; Technical Report. <a href="https://openreview.net/forum?id=BZ5a1r-kVsf">https://openreview.net/forum?id=BZ5a1r-kVsf</a>.
+</div>
+<div id="ref-terminator" class="csl-entry" role="listitem">
+<span>“Terminator 3: Rise of the Machines.”</span> 2003. Film. <a href="https://en.wikipedia.org/wiki/Terminator_3:_Rise_of_the_Machines">https://en.wikipedia.org/wiki/Terminator_3:_Rise_of_the_Machines</a>.
+</div>
+<div id="ref-matrix" class="csl-entry" role="listitem">
+<span>“The Matrix.”</span> 1999. Film. <a href="https://en.wikipedia.org/wiki/The_Matrix">https://en.wikipedia.org/wiki/The_Matrix</a>.
+</div>
+<div id="ref-wargames" class="csl-entry" role="listitem">
+<span>“WarGames.”</span> 1983. Film. <a href="https://en.wikipedia.org/wiki/WarGames">https://en.wikipedia.org/wiki/WarGames</a>.
+</div>
+</div>
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>2026-01-10<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./slurm.html" class="pagination-link" aria-label="High-performance computing (HPC)">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">High-performance computing (HPC)</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./checklists.html" class="pagination-link" aria-label="Checklists">
+        <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Checklists</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/ai-tools.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/ai-tools.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
