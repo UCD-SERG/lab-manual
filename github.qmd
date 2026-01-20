@@ -42,7 +42,7 @@ you may be eligible for a free Copilot seat.
 
 1. Ensure you have a GitHub account and have signed up for GitHub Education (see above)
 2. Go to the [UC Davis IT ServiceHub GitHub page](https://servicehub.ucdavis.edu/servicehub?id=it_catalog_content&sys_id=951add951b5798103f4286ae6e4bcb12)
-3. Click the blue "Get Github!" button near the top right
+3. Click the blue "Get GitHub!" button near the top right
 4. When you receive the invitation email,
    make sure to check the "Ask for a GitHub Copilot seat (optional)" checkbox before joining
 
