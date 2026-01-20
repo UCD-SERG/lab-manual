@@ -38,12 +38,33 @@ you may be eligible for a free Copilot seat.
 
 **To request a Copilot seat:**
 
+**If you are not yet a member of the UC Davis GitHub organization:**
+
 1. Ensure you have a GitHub account and have signed up for GitHub Education (see above)
-2. Contact the UC Davis GitHub organization administrators to request a Copilot seat
-   - You can find contact information and request instructions through your department or the UC Davis IT support
-   - Alternatively, ask your lab PI or lab manager for guidance on the current process
-3. Once your request is approved, you'll receive an invitation to enable Copilot on your account
-4. Follow the setup instructions to install and configure Copilot in your development environment
+2. Fill out the [UC Davis GitHub Organization Access Request form](https://ucdavis.co1.qualtrics.com/jfe/form/SV_6zKEZU8KK74rUeV?Q_JFE=qdg)
+3. When you receive the invitation email,
+   make sure to check the "Ask for a GitHub Copilot seat (optional)" checkbox before joining
+
+   ::: {.content-visible when-format="html"}
+   ![UC Davis GitHub invitation with Copilot seat option](https://github.com/user-attachments/assets/e813f3ef-3eda-46a6-ba88-eb917ad082d2)
+   :::
+
+4. Click "Join UC Davis" to accept the invitation
+5. Follow the setup instructions to install and configure Copilot in your development environment
+
+**If you are already a member of the UC Davis GitHub organization:**
+
+1. Go to your [GitHub Copilot settings](https://github.com/settings/copilot/features)
+2. Scroll to the "Get Copilot from an organization" section at the bottom
+3. Find the "ucdavis" entry and click the request button
+
+   ::: {.content-visible when-format="html"}
+   ![GitHub Copilot settings page showing organization options](https://github.com/user-attachments/assets/33179245-2ce8-439c-a301-2a1c30cae0e3)
+   :::
+
+4. Wait for approval from the UC Davis GitHub organization administrators
+5. Once approved,
+   follow the setup instructions to install and configure Copilot in your development environment
 
 For guidance on using GitHub Copilot effectively,
 see @sec-ai-best-practices in the Working with AI chapter.
