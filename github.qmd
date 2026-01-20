@@ -46,7 +46,7 @@ you may be eligible for a free Copilot seat.
    make sure to check the "Ask for a GitHub Copilot seat (optional)" checkbox before joining
 
    ::: {.content-visible when-format="html"}
-   ![UC Davis GitHub invitation with Copilot seat option](https://github.com/user-attachments/assets/e813f3ef-3eda-46a6-ba88-eb917ad082d2)
+   ![UC Davis GitHub invitation with Copilot seat option](assets/images/github-copilot-invitation-email.png)
    :::
 
 4. Click "Join UC Davis" to accept the invitation
@@ -59,7 +59,7 @@ you may be eligible for a free Copilot seat.
 3. Find the "ucdavis" entry and click the request button
 
    ::: {.content-visible when-format="html"}
-   ![GitHub Copilot settings page showing organization options](https://github.com/user-attachments/assets/33179245-2ce8-439c-a301-2a1c30cae0e3)
+   ![GitHub Copilot settings page showing organization options](assets/images/github-copilot-settings-page.png)
    :::
 
 4. Wait for approval from the UC Davis GitHub organization administrators

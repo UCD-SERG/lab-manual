@@ -131,6 +131,26 @@ See [Quarto Cross-References documentation](https://quarto.org/docs/authoring/cr
 ![Caption text](path/to/image.png){#fig-label}
 ```
 
+**Important: Store images locally in the repository**
+
+**DO NOT link to external image URLs** (especially `https://github.com/user-attachments/assets/`).
+Always save images locally in the `assets/images/` directory
+and reference them using relative paths.
+
+External image links can break over time,
+are not included in repository archives,
+and may fail to render in PDF or other output formats.
+
+**Correct:**
+```markdown
+![Screenshot description](assets/images/my-screenshot.png)
+```
+
+**Incorrect:**
+```markdown
+![Screenshot description](https://github.com/user-attachments/assets/...)
+```
+
 **For tables (markdown tables):**
 
 ```markdown
