@@ -3,10 +3,50 @@
 Adapted by UCD-SeRG team from [original by Stephanie Djajadi and Nolan Pokpongkiat](https://jadebc.github.io/lab-manual/github.html)
 
 ## Basics
+
 - A detailed tutorial of Git can be found [here on the CS61B website](https://sp19.datastructur.es/materials/guides/using-git#b-local-repositories-narrative-introduction).
 - If you are already familiar with Git, you can reference the summary at the end of [Section B](https://sp19.datastructur.es/materials/guides/using-git#b-local-repositories-narrative-introduction).
 - If you have made a mistake in Git, you can refer to On undoing, fixing, or removing commits in git [@gitfixum] to undo, fix, or remove commits in git.
 - For hands-on Git practice, see the [UC Davis DataLab Git Sandbox](https://github.com/ucdavisdatalab/sandbox_git) - a collaborative repository for learning Git workflows.
+
+## GitHub Education and Copilot Access {#sec-github-education}
+
+### GitHub Education Benefits
+
+Students, faculty, and researchers at UC Davis can access GitHub Education benefits,
+which include free access to GitHub Pro features and various developer tools.
+
+**To sign up for GitHub Education:**
+
+1. Visit the [GitHub Education website](https://education.github.com/)
+2. Click "Get benefits" or "Join GitHub Education"
+3. Sign in with your GitHub account (or create one if you don't have one)
+4. Complete the application form using your UC Davis email address (ending in `ucdavis.edu`)
+5. Provide proof of your academic affiliation (e.g., upload a photo of your student ID or university letter)
+6. Wait for approval (typically takes a few days)
+
+Once approved,
+you'll have access to the [GitHub Student Developer Pack](https://education.github.com/pack) (for students)
+or [GitHub Teacher Toolbox](https://education.github.com/teachers) (for faculty),
+which includes numerous free tools and services for learning and development.
+
+### GitHub Copilot Access for UC Davis Members
+
+GitHub Copilot is an AI-powered coding assistant that can significantly accelerate your work.
+As a member of the UC Davis GitHub organization,
+you may be eligible for a free Copilot seat.
+
+**To request a Copilot seat:**
+
+1. Ensure you have a GitHub account and have signed up for GitHub Education (see above)
+2. Contact the UC Davis GitHub organization administrators to request a Copilot seat
+   - You can find contact information and request instructions through your department or the UC Davis IT support
+   - Alternatively, ask your lab PI or lab manager for guidance on the current process
+3. Once your request is approved, you'll receive an invitation to enable Copilot on your account
+4. Follow the setup instructions to install and configure Copilot in your development environment
+
+For guidance on using GitHub Copilot effectively,
+see @sec-ai-best-practices in the Working with AI chapter.
 
 ## Github Desktop
 While knowing how to use Git on the command line will always be useful since the full power of Git and its customizations and flexibilty is designed for use with the command line, Github also provides GitHub Desktop [@githubdesktop] as an graphical interface to do basic git commands; you can do all of the basic functions of Git using this desktop app. Feel free to use this as an alternative to Git on the command line if you prefer.
