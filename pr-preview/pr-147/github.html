@@ -494,17 +494,22 @@ div.csl-indent {
    
   <ul>
   <li><a href="#basics" id="toc-basics" class="nav-link active" data-scroll-target="#basics"><span class="header-section-number">11.1</span> Basics</a></li>
-  <li><a href="#github-desktop" id="toc-github-desktop" class="nav-link" data-scroll-target="#github-desktop"><span class="header-section-number">11.2</span> Github Desktop</a></li>
-  <li><a href="#git-branching" id="toc-git-branching" class="nav-link" data-scroll-target="#git-branching"><span class="header-section-number">11.3</span> Git Branching</a></li>
-  <li><a href="#example-workflow" id="toc-example-workflow" class="nav-link" data-scroll-target="#example-workflow"><span class="header-section-number">11.4</span> Example Workflow</a></li>
-  <li><a href="#commonly-used-git-commands" id="toc-commonly-used-git-commands" class="nav-link" data-scroll-target="#commonly-used-git-commands"><span class="header-section-number">11.5</span> Commonly Used Git Commands</a></li>
-  <li><a href="#how-often-should-i-commit" id="toc-how-often-should-i-commit" class="nav-link" data-scroll-target="#how-often-should-i-commit"><span class="header-section-number">11.6</span> How often should I commit?</a></li>
-  <li><a href="#repeated-amend-workflow" id="toc-repeated-amend-workflow" class="nav-link" data-scroll-target="#repeated-amend-workflow"><span class="header-section-number">11.7</span> Repeated Amend Workflow</a>
+  <li><a href="#sec-github-education" id="toc-sec-github-education" class="nav-link" data-scroll-target="#sec-github-education"><span class="header-section-number">11.2</span> GitHub Education and Copilot Access</a>
   <ul class="collapse">
-  <li><a href="#basic-workflow" id="toc-basic-workflow" class="nav-link" data-scroll-target="#basic-workflow"><span class="header-section-number">11.7.1</span> Basic Workflow</a></li>
-  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points"><span class="header-section-number">11.7.2</span> Key Points</a></li>
+  <li><a href="#github-education-benefits" id="toc-github-education-benefits" class="nav-link" data-scroll-target="#github-education-benefits"><span class="header-section-number">11.2.1</span> GitHub Education Benefits</a></li>
+  <li><a href="#github-copilot-access-for-uc-davis-members" id="toc-github-copilot-access-for-uc-davis-members" class="nav-link" data-scroll-target="#github-copilot-access-for-uc-davis-members"><span class="header-section-number">11.2.2</span> GitHub Copilot Access for UC Davis Members</a></li>
   </ul></li>
-  <li><a href="#what-should-be-pushed-to-github" id="toc-what-should-be-pushed-to-github" class="nav-link" data-scroll-target="#what-should-be-pushed-to-github"><span class="header-section-number">11.8</span> What should be pushed to Github?</a></li>
+  <li><a href="#github-desktop" id="toc-github-desktop" class="nav-link" data-scroll-target="#github-desktop"><span class="header-section-number">11.3</span> Github Desktop</a></li>
+  <li><a href="#git-branching" id="toc-git-branching" class="nav-link" data-scroll-target="#git-branching"><span class="header-section-number">11.4</span> Git Branching</a></li>
+  <li><a href="#example-workflow" id="toc-example-workflow" class="nav-link" data-scroll-target="#example-workflow"><span class="header-section-number">11.5</span> Example Workflow</a></li>
+  <li><a href="#commonly-used-git-commands" id="toc-commonly-used-git-commands" class="nav-link" data-scroll-target="#commonly-used-git-commands"><span class="header-section-number">11.6</span> Commonly Used Git Commands</a></li>
+  <li><a href="#how-often-should-i-commit" id="toc-how-often-should-i-commit" class="nav-link" data-scroll-target="#how-often-should-i-commit"><span class="header-section-number">11.7</span> How often should I commit?</a></li>
+  <li><a href="#repeated-amend-workflow" id="toc-repeated-amend-workflow" class="nav-link" data-scroll-target="#repeated-amend-workflow"><span class="header-section-number">11.8</span> Repeated Amend Workflow</a>
+  <ul class="collapse">
+  <li><a href="#basic-workflow" id="toc-basic-workflow" class="nav-link" data-scroll-target="#basic-workflow"><span class="header-section-number">11.8.1</span> Basic Workflow</a></li>
+  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points"><span class="header-section-number">11.8.2</span> Key Points</a></li>
+  </ul></li>
+  <li><a href="#what-should-be-pushed-to-github" id="toc-what-should-be-pushed-to-github" class="nav-link" data-scroll-target="#what-should-be-pushed-to-github"><span class="header-section-number">11.9</span> What should be pushed to Github?</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/github.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/github.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -551,12 +556,64 @@ div.csl-indent {
 <li>For hands-on Git practice, see the <a href="https://github.com/ucdavisdatalab/sandbox_git">UC Davis DataLab Git Sandbox</a> - a collaborative repository for learning Git workflows.</li>
 </ul>
 </section>
-<section id="github-desktop" class="level2" data-number="11.2">
-<h2 data-number="11.2" class="anchored" data-anchor-id="github-desktop"><span class="header-section-number">11.2</span> Github Desktop</h2>
-<p>While knowing how to use Git on the command line will always be useful since the full power of Git and its customizations and flexibilty is designed for use with the command line, Github also provides GitHub Desktop <span class="citation" data-cites="githubdesktop">(<a href="references.html#ref-githubdesktop" role="doc-biblioref"><span>“GitHub Desktop,”</span> n.d.</a>)</span> as an graphical interface to do basic git commands; you can do all of the basic functions of Git using this desktop app. Feel free to use this as an alternative to Git on the command line if you prefer.</p>
+<section id="sec-github-education" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="sec-github-education"><span class="header-section-number">11.2</span> GitHub Education and Copilot Access</h2>
+<section id="github-education-benefits" class="level3" data-number="11.2.1">
+<h3 data-number="11.2.1" class="anchored" data-anchor-id="github-education-benefits"><span class="header-section-number">11.2.1</span> GitHub Education Benefits</h3>
+<p>Students, faculty, and researchers at UC Davis can access GitHub Education benefits, which include free access to GitHub Pro features and various developer tools.</p>
+<p><strong>To sign up for GitHub Education:</strong></p>
+<ol type="1">
+<li>Visit the <a href="https://education.github.com/">GitHub Education website</a></li>
+<li>Click “Get benefits” or “Join GitHub Education”</li>
+<li>Sign in with your GitHub account (or create one if you don’t have one)</li>
+<li>Complete the application form using your UC Davis email address (ending in <code>ucdavis.edu</code>)</li>
+<li>Provide proof of your academic affiliation (e.g., upload a photo of your student ID or university letter)</li>
+<li>Wait for approval (typically takes a few days)</li>
+</ol>
+<p>Once approved, you’ll have access to the <a href="https://education.github.com/pack">GitHub Student Developer Pack</a> (for students) or <a href="https://education.github.com/teachers">GitHub Teacher Toolbox</a> (for faculty), which includes numerous free tools and services for learning and development.</p>
 </section>
-<section id="git-branching" class="level2" data-number="11.3">
-<h2 data-number="11.3" class="anchored" data-anchor-id="git-branching"><span class="header-section-number">11.3</span> Git Branching</h2>
+<section id="github-copilot-access-for-uc-davis-members" class="level3" data-number="11.2.2">
+<h3 data-number="11.2.2" class="anchored" data-anchor-id="github-copilot-access-for-uc-davis-members"><span class="header-section-number">11.2.2</span> GitHub Copilot Access for UC Davis Members</h3>
+<p>GitHub Copilot is an AI-powered coding assistant that can significantly accelerate your work. As a member of the UC Davis GitHub organization, you may be eligible for a free Copilot seat.</p>
+<p><strong>To request a Copilot seat:</strong></p>
+<p><strong>If you are not yet a member of the UC Davis GitHub organization:</strong></p>
+<ol type="1">
+<li><p>Ensure you have a GitHub account and have signed up for GitHub Education (see above)</p></li>
+<li><p>Go to the <a href="https://servicehub.ucdavis.edu/servicehub?id=it_catalog_content&amp;sys_id=951add951b5798103f4286ae6e4bcb12">UC Davis IT ServiceHub GitHub page</a></p></li>
+<li><p>Click the blue “Get GitHub!” button near the top right</p></li>
+<li><p>When you receive the invitation email, make sure to check the “Ask for a GitHub Copilot seat (optional)” checkbox before joining</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/images/github-copilot-invitation-email.png" class="img-fluid figure-img"></p>
+<figcaption>UC Davis GitHub invitation with Copilot seat option</figcaption>
+</figure>
+</div></li>
+<li><p>Click “Join UC Davis” to accept the invitation</p></li>
+<li><p>Follow the setup instructions to install and configure Copilot in your development environment</p></li>
+</ol>
+<p><strong>If you are already a member of the UC Davis GitHub organization:</strong></p>
+<ol type="1">
+<li><p>Go to your <a href="https://github.com/settings/copilot/features">GitHub Copilot settings</a></p></li>
+<li><p>Scroll to the “Get Copilot from an organization” section at the bottom</p></li>
+<li><p>Find the “ucdavis” entry and click the request button</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/images/github-copilot-settings-page.png" class="img-fluid figure-img"></p>
+<figcaption>GitHub Copilot settings page showing organization options</figcaption>
+</figure>
+</div></li>
+<li><p>Wait for approval from the UC Davis GitHub organization administrators</p></li>
+<li><p>Once approved, follow the setup instructions to install and configure Copilot in your development environment</p></li>
+</ol>
+<p>For guidance on using GitHub Copilot effectively, see <a href="ai-tools.html#sec-ai-best-practices" class="quarto-xref"><span>Section 17.5.8</span></a> in the Working with AI chapter.</p>
+</section>
+</section>
+<section id="github-desktop" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="github-desktop"><span class="header-section-number">11.3</span> Github Desktop</h2>
+<p>While knowing how to use Git on the command line will always be useful since the full power of Git and its customizations and flexibility is designed for use with the command line, Github also provides GitHub Desktop <span class="citation" data-cites="githubdesktop">(<a href="references.html#ref-githubdesktop" role="doc-biblioref"><span>“GitHub Desktop,”</span> n.d.</a>)</span> as a graphical interface to do basic git commands; you can do all of the basic functions of Git using this desktop app. Feel free to use this as an alternative to Git on the command line if you prefer.</p>
+</section>
+<section id="git-branching" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="git-branching"><span class="header-section-number">11.4</span> Git Branching</h2>
 <p>Branches allow you to keep track of multiple versions of your work simultaneously, and you can easily switch between versions and merge branches together once you’ve finished working on a section and want it to join the rest of your code. Here are some cases when it may be a good idea to branch:</p>
 <ul>
 <li>You may want to make a dramatic change to your existing code (called refactoring) but it will break other parts of your project. But you want to be able to simultaneously work on other parts or you are collaborating with others, and you don’t want to break the code for them.</li>
@@ -565,8 +622,8 @@ div.csl-indent {
 </ul>
 <p>A detailed tutorial on Git Branching can be found <a href="https://sp19.datastructur.es/materials/guides/using-git#e-git-branching-advanced-git-optional">here</a>. You can also find instructions on how to handle merge conflicts when joining branches together.</p>
 </section>
-<section id="example-workflow" class="level2" data-number="11.4">
-<h2 data-number="11.4" class="anchored" data-anchor-id="example-workflow"><span class="header-section-number">11.4</span> Example Workflow</h2>
+<section id="example-workflow" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="example-workflow"><span class="header-section-number">11.5</span> Example Workflow</h2>
 <p>A standard workflow when starting on a new project and contributing code looks like this:</p>
 <div id="tbl-git-workflow" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -637,8 +694,8 @@ Table&nbsp;11.1: Standard Git workflow for new projects
 </div>
 <p>Other helpful commands are listed below.</p>
 </section>
-<section id="commonly-used-git-commands" class="level2" data-number="11.5">
-<h2 data-number="11.5" class="anchored" data-anchor-id="commonly-used-git-commands"><span class="header-section-number">11.5</span> Commonly Used Git Commands</h2>
+<section id="commonly-used-git-commands" class="level2" data-number="11.6">
+<h2 data-number="11.6" class="anchored" data-anchor-id="commonly-used-git-commands"><span class="header-section-number">11.6</span> Commonly Used Git Commands</h2>
 <div id="tbl-git-commands" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-git-commands-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -735,15 +792,15 @@ Table&nbsp;11.2: Commonly used Git commands
 </figure>
 </div>
 </section>
-<section id="how-often-should-i-commit" class="level2" data-number="11.6">
-<h2 data-number="11.6" class="anchored" data-anchor-id="how-often-should-i-commit"><span class="header-section-number">11.6</span> How often should I commit?</h2>
+<section id="how-often-should-i-commit" class="level2" data-number="11.7">
+<h2 data-number="11.7" class="anchored" data-anchor-id="how-often-should-i-commit"><span class="header-section-number">11.7</span> How often should I commit?</h2>
 <p>It is good practice to commit every 15 minutes, or every time you make a significant change. It is better to commit more rather than less.</p>
 </section>
-<section id="repeated-amend-workflow" class="level2" data-number="11.7">
-<h2 data-number="11.7" class="anchored" data-anchor-id="repeated-amend-workflow"><span class="header-section-number">11.7</span> Repeated Amend Workflow</h2>
+<section id="repeated-amend-workflow" class="level2" data-number="11.8">
+<h2 data-number="11.8" class="anchored" data-anchor-id="repeated-amend-workflow"><span class="header-section-number">11.8</span> Repeated Amend Workflow</h2>
 <p>When working on a complex task, you may want to make frequent incremental commits to protect your progress, but avoid cluttering your Git history with many tiny “work in progress” commits. The <strong>Repeated Amend</strong> pattern lets you build up a polished commit gradually.</p>
-<section id="basic-workflow" class="level3" data-number="11.7.1">
-<h3 data-number="11.7.1" class="anchored" data-anchor-id="basic-workflow"><span class="header-section-number">11.7.1</span> Basic Workflow</h3>
+<section id="basic-workflow" class="level3" data-number="11.8.1">
+<h3 data-number="11.8.1" class="anchored" data-anchor-id="basic-workflow"><span class="header-section-number">11.8.1</span> Basic Workflow</h3>
 <p>Start with a clean working tree in a functional state. Then:</p>
 <ol type="1">
 <li>Make a small change and verify your project still works</li>
@@ -757,8 +814,8 @@ Table&nbsp;11.2: Commonly used Git commands
 </ol>
 <p>In RStudio, you can use the “Amend previous commit” checkbox when committing.</p>
 </section>
-<section id="key-points" class="level3" data-number="11.7.2">
-<h3 data-number="11.7.2" class="anchored" data-anchor-id="key-points"><span class="header-section-number">11.7.2</span> Key Points</h3>
+<section id="key-points" class="level3" data-number="11.8.2">
+<h3 data-number="11.8.2" class="anchored" data-anchor-id="key-points"><span class="header-section-number">11.8.2</span> Key Points</h3>
 <ul>
 <li>Each amend replaces the previous commit rather than creating a new one</li>
 <li>This keeps your history clean while letting you work incrementally</li>
@@ -769,8 +826,8 @@ Table&nbsp;11.2: Commonly used Git commands
 <p>For more details and troubleshooting scenarios, see the <a href="https://happygitwithr.com/repeated-amend.html">Repeated Amend chapter</a> in Happy Git with R.</p>
 </section>
 </section>
-<section id="what-should-be-pushed-to-github" class="level2" data-number="11.8">
-<h2 data-number="11.8" class="anchored" data-anchor-id="what-should-be-pushed-to-github"><span class="header-section-number">11.8</span> What should be pushed to Github?</h2>
+<section id="what-should-be-pushed-to-github" class="level2" data-number="11.9">
+<h2 data-number="11.9" class="anchored" data-anchor-id="what-should-be-pushed-to-github"><span class="header-section-number">11.9</span> What should be pushed to Github?</h2>
 <p>Never push .Rout files! If someone else runs an R script and creates an .Rout file at the same time and both of you try to push to github, it is incredibly difficult to reconcile these two logs. If you run logs, keep them on your own system or (preferably) set up a shared directory where all logs are name and date timestamped.</p>
 <p>There is a standardized <code>.gitignore</code> for <code>R</code> which you <a href="https://github.com/github/gitignore/blob/master/R.gitignore">can download</a> and add to your project. This ensures you’re not committing log files or things that would otherwise best be left ignored to GitHub. This is a <a href="https://tidyverse.org/blog/2017/12/workflow-vs-script/">great discussion of project-oriented workflows</a>, extolling the virtues of a self-contained, portable projects, for your reference.</p>
 
