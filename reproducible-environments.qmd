@@ -28,6 +28,33 @@ To add `renv` to your workflow, follow these steps:
 5. As you write code, update the project’s R library by running `renv::snapshot()` in the R console
 6. Add `renv::restore()` to the head of your config file, to make sure that all users that run your code are on the same package versions. 
 
+### Configuring renv settings
+
+The `renv/settings.json` file created during initialization allows you to customize how `renv` behaves in your project.
+One useful setting is `snapshot.dev`,
+which controls whether development dependencies are included by default when calling `renv::snapshot()` or `renv::status()`.
+
+#### Reducing startup messages
+
+When working on projects,
+you may encounter startup messages indicating that `renv` is out of sync with the lockfile.
+To reduce these messages in most projects,
+add the following setting to `renv/settings.json`:
+
+```json
+"snapshot.dev": true
+```
+
+This setting (available in `renv` version 1.1.6 and later) includes development dependencies in snapshots by default,
+which helps keep the lockfile aligned with your actual usage and eliminates many synchronization warnings.
+
+If startup messages about being out of sync persist after enabling this setting,
+use `renv::restore()` to sync your local library with the lockfile,
+or `renv::snapshot()` to update the lockfile with your current package versions.
+
+For more details on `renv` configuration options,
+see the [official renv documentation](https://rstudio.github.io/renv/).
+
 ### Using projects with renv
 
 If you’re starting to work on an ongoing project that already has `renv` set up, follow these steps to ensure that you’re using the same project versions.
