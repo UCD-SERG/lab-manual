@@ -80,3 +80,11 @@ All factual claims in scientific writing should be supported by appropriate evid
 
 This principle applies to all lab writing, including:
 manuscripts, documentation, grant applications, and technical reports.
+
+**Using AI tools for writing:**
+
+When using AI tools to help develop manuscripts or other academic writing,
+follow the special guidance in @sec-ai-journal-articles
+to ensure transparency,
+maintain intellectual ownership,
+and avoid plagiarism.

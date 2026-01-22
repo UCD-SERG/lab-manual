@@ -9,13 +9,17 @@ Lab members who use AI tools must adhere to the following guidelines:
 
 {{< include ai-tools/responsibility-for-validation.qmd >}}
 
-## Disclosure of AI use
+## Disclosure of AI use {#sec-ai-disclosure}
 
 {{< include ai-tools/disclosure-of-ai-use.qmd >}}
 
 ## Attribution of sources
 
 {{< include ai-tools/attribution-of-sources.qmd >}}
+
+## Using AI for Journal Articles {#sec-ai-journal-articles}
+
+{{< include ai-tools/ai-for-academic-writing.qmd >}}
 
 ## Coding Agents
 

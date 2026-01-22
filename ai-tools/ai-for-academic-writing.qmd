@@ -1,0 +1,123 @@
+When using AI tools to help develop journal articles and other academic writing,
+you must take special care to ensure transparency,
+maintain intellectual ownership,
+and avoid plagiarism.
+The following practices help achieve these goals.
+
+#### Establish a Clear Track Record
+
+**Working with AI through GitHub creates valuable documentation
+of your contributions versus the AI's.**
+This track record can be crucial if reviewers or editors
+question your use of AI tools.
+
+GitHub Pull Requests and Issues provide:
+
+- **Attribution clarity**: Each commit shows exactly who (you or `@copilot`) made which changes
+- **Audit trail**: The full conversation history shows your instructions and the AI's responses
+- **Intellectual ownership**: Your prompts and guidance demonstrate that the core ideas are yours
+- **Transparency**: Reviewers can see that you actively supervised and validated all AI contributions
+
+This transparency protects you if journal reviewers are skeptical
+about or opposed to AI use in research.
+You can point to the PR history to demonstrate
+that you maintained control and responsibility for the work.
+
+#### Write Out Your Core Ideas in Prompts
+
+**Make your prompts explicit and detailed to establish
+that the ideas originate from you, not from the AI.**
+
+When requesting AI assistance with academic writing:
+
+- State your research question, hypothesis, or argument clearly
+- Outline the structure and key points you want to make
+- Specify the evidence or data you want to include
+- Describe the logic connecting your points
+- Explain the interpretation or conclusions you want to draw
+
+**Example of a good prompt:**
+
+> I need help writing the discussion section for a study
+> on social determinants of health.
+> My core argument is that [your specific argument].
+> The key findings I want to discuss are: [list findings].
+> I want to interpret these findings as suggesting [your interpretation].
+> Please help me draft this section while preserving these core ideas
+> and citing relevant literature.
+
+This approach creates clear evidence that the intellectual content
+came from you,
+while the AI helped with expression, organization, and literature integration.
+
+**Avoid vague prompts** like "write a discussion section about my results"
+that give the AI too much creative control
+and make it unclear whose ideas are being presented.
+
+#### Request Explicit Source Attribution
+
+**Always instruct AI tools to identify and cite their sources
+to prevent unknowing plagiarism.**
+
+AI language models are trained on vast amounts of text,
+including published research.
+While they don't have direct access to their training data during generation,
+they may produce text that closely resembles or paraphrases existing work
+without providing attribution.
+This creates a plagiarism risk.
+
+**Best practices:**
+
+- Explicitly ask the AI to cite sources for any borrowed or adapted content
+- Request that the AI indicate when it is drawing from specific works
+- Verify that generated text includes proper citations
+- Add citations yourself if the AI fails to provide them
+- Cross-check AI-generated content against the cited sources to ensure accuracy
+
+**Example request:**
+
+> Please help me write this section,
+> and explicitly cite any sources you draw from or adapt.
+> If you're paraphrasing from specific papers,
+> identify them clearly so I can verify the citations.
+
+Remember that even with these precautions,
+you must still verify the accuracy and appropriateness
+of any AI-generated citations,
+as AI tools can sometimes generate plausible-but-incorrect references
+("hallucinate" citations).
+
+#### Example Workflow
+
+The development of this documentation section demonstrates these practices.
+See [Issue #112](https://github.com/UCD-SERG/lab-manual/issues/112)
+and [PR #145](https://github.com/UCD-SERG/lab-manual/pull/145)
+for the complete development history,
+which shows:
+
+1. **Core ideas stated clearly**: The issue description outlined specific concepts (transparency through GitHub, writing explicit prompts, requesting source attribution)
+2. **Detailed instructions**: The guidance specified what content should be created and how it should be structured
+3. **Transparent record**: The development history shows what was human-directed versus AI-generated
+4. **Demonstrated accountability**: The pull request provides a full audit trail of all changes
+
+When developing content for journal articles,
+a similar workflow creates documentation that demonstrates
+responsible AI use and intellectual ownership.
+You can point to your GitHub history to show reviewers
+that you directed the AI rather than simply accepting its output.
+
+#### Additional Considerations
+
+When using AI for academic writing,
+also remember to:
+
+- **Disclose AI use**: Follow journal policies on acknowledging AI assistance (see @sec-ai-disclosure)
+- **Maintain responsibility**: You are accountable for all content, including AI-generated text
+- **Verify accuracy**: Always fact-check AI-generated claims and citations
+- **Preserve your voice**: Ensure the writing reflects your thinking and style, not just AI's patterns
+- **Follow ethical guidelines**: Comply with your institution's and journals' policies on AI use
+
+These practices help you benefit from AI assistance
+while maintaining the integrity,
+originality,
+and credibility of your academic work.
