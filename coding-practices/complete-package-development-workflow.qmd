@@ -10,7 +10,7 @@ GitHub Actions workflows,
 and development tools:
 
 - **UCD-SeRG R Package Template** - Our recommended template with pre-configured development tools and CI workflows:
-  - Repository: <https://github.com/UCD-SERG/r.package.template>
+  - Repository: <https://github.com/UCD-SERG/rpt>
   - Click "Use this template" → "Create a new repository" on GitHub
   - Clone your new repository and start developing
 

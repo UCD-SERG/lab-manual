@@ -131,6 +131,26 @@ See [Quarto Cross-References documentation](https://quarto.org/docs/authoring/cr
 ![Caption text](path/to/image.png){#fig-label}
 ```
 
+**Important: Store images locally in the repository**
+
+**DO NOT link to external image URLs** (especially `https://github.com/user-attachments/assets/`).
+Always save images locally in the `assets/images/` directory
+and reference them using relative paths.
+
+External image links can break over time,
+are not included in repository archives,
+and may fail to render in PDF or other output formats.
+
+**Correct:**
+```markdown
+![Screenshot description](assets/images/my-screenshot.png)
+```
+
+**Incorrect:**
+```markdown
+![Screenshot description](https://github.com/user-attachments/assets/...)
+```
+
 **For tables (markdown tables):**
 
 ```markdown
@@ -390,6 +410,8 @@ This workflow enables a hybrid editing process where collaborators can make edit
 - Preserve all existing content when refactoring
 - Add blank lines before all lists
 - Follow the lab's R package development workflow (as described throughout this repo)
+- **When discussing current world conditions or technology capabilities**:
+  Always mention the date or time period (e.g., "as of early 2025", "in 2024") to provide temporal context and prevent content from becoming misleading as time passes
 
 ### Citations and Evidence for Claims
 

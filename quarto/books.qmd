@@ -14,7 +14,7 @@ example content,
 and GitHub Actions workflows for automated deployment:
 
 1. **UCD-SeRG Quarto Book Template** - Our recommended template with pre-configured settings for lab publications:
-   - Repository: <https://github.com/UCD-SERG/quarto-book-template>
+   - Repository: <https://github.com/UCD-SERG/qbt>
    - Click "Use this template" → "Create a new repository" on GitHub
    - Clone your new repository and start editing
    - Includes GitHub Actions for automatic deployment to GitHub Pages
