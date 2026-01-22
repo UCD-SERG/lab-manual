@@ -3,13 +3,75 @@
 Adapted by UCD-SeRG team from [original by Stephanie Djajadi and Nolan Pokpongkiat](https://jadebc.github.io/lab-manual/github.html)
 
 ## Basics
+
 - A detailed tutorial of Git can be found [here on the CS61B website](https://sp19.datastructur.es/materials/guides/using-git#b-local-repositories-narrative-introduction).
 - If you are already familiar with Git, you can reference the summary at the end of [Section B](https://sp19.datastructur.es/materials/guides/using-git#b-local-repositories-narrative-introduction).
 - If you have made a mistake in Git, you can refer to On undoing, fixing, or removing commits in git [@gitfixum] to undo, fix, or remove commits in git.
 - For hands-on Git practice, see the [UC Davis DataLab Git Sandbox](https://github.com/ucdavisdatalab/sandbox_git) - a collaborative repository for learning Git workflows.
 
+## GitHub Education and Copilot Access {#sec-github-education}
+
+### GitHub Education Benefits
+
+Students, faculty, and researchers at UC Davis can access GitHub Education benefits,
+which include free access to GitHub Pro features and various developer tools.
+
+**To sign up for GitHub Education:**
+
+1. Visit the [GitHub Education website](https://education.github.com/)
+2. Click "Get benefits" or "Join GitHub Education"
+3. Sign in with your GitHub account (or create one if you don't have one)
+4. Complete the application form using your UC Davis email address (ending in `ucdavis.edu`)
+5. Provide proof of your academic affiliation (e.g., upload a photo of your student ID or university letter)
+6. Wait for approval (typically takes a few days)
+
+Once approved,
+you'll have access to the [GitHub Student Developer Pack](https://education.github.com/pack) (for students)
+or [GitHub Teacher Toolbox](https://education.github.com/teachers) (for faculty),
+which includes numerous free tools and services for learning and development.
+
+### GitHub Copilot Access for UC Davis Members
+
+GitHub Copilot is an AI-powered coding assistant that can significantly accelerate your work.
+As a member of the UC Davis GitHub organization,
+you may be eligible for a free Copilot seat.
+
+**To request a Copilot seat:**
+
+**If you are not yet a member of the UC Davis GitHub organization:**
+
+1. Ensure you have a GitHub account and have signed up for GitHub Education (see above)
+2. Go to the [UC Davis IT ServiceHub GitHub page](https://servicehub.ucdavis.edu/servicehub?id=it_catalog_content&sys_id=951add951b5798103f4286ae6e4bcb12)
+3. Click the blue "Get GitHub!" button near the top right
+4. When you receive the invitation email,
+   make sure to check the "Ask for a GitHub Copilot seat (optional)" checkbox before joining
+
+   ::: {.content-visible when-format="html"}
+   ![UC Davis GitHub invitation with Copilot seat option](assets/images/github-copilot-invitation-email.png)
+   :::
+
+5. Click "Join UC Davis" to accept the invitation
+6. Follow the setup instructions to install and configure Copilot in your development environment
+
+**If you are already a member of the UC Davis GitHub organization:**
+
+1. Go to your [GitHub Copilot settings](https://github.com/settings/copilot/features)
+2. Scroll to the "Get Copilot from an organization" section at the bottom
+3. Find the "ucdavis" entry and click the request button
+
+   ::: {.content-visible when-format="html"}
+   ![GitHub Copilot settings page showing organization options](assets/images/github-copilot-settings-page.png)
+   :::
+
+4. Wait for approval from the UC Davis GitHub organization administrators
+5. Once approved,
+   follow the setup instructions to install and configure Copilot in your development environment
+
+For guidance on using GitHub Copilot effectively,
+see @sec-ai-best-practices in the Working with AI chapter.
+
 ## Github Desktop
-While knowing how to use Git on the command line will always be useful since the full power of Git and its customizations and flexibilty is designed for use with the command line, Github also provides GitHub Desktop [@githubdesktop] as an graphical interface to do basic git commands; you can do all of the basic functions of Git using this desktop app. Feel free to use this as an alternative to Git on the command line if you prefer.
+While knowing how to use Git on the command line will always be useful since the full power of Git and its customizations and flexibility is designed for use with the command line, Github also provides GitHub Desktop [@githubdesktop] as a graphical interface to do basic git commands; you can do all of the basic functions of Git using this desktop app. Feel free to use this as an alternative to Git on the command line if you prefer.
 
 ## Git Branching
 Branches allow you to keep track of multiple versions of your work simultaneously, and you can easily switch between versions and merge branches together once you've finished working on a section and want it to join the rest of your code. Here are some cases when it may be a good idea to branch:
