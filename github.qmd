@@ -219,15 +219,14 @@ bootstrap.min.css -linguist-generated
 ```
 
 The `.gitattributes` file uses the same pattern matching rules as `.gitignore`.
-For more details,
-see the [pattern format documentation](https://www.git-scm.com/docs/gitignore#_pattern_format).
+For more details, see the [pattern format documentation](https://www.git-scm.com/docs/gitignore#_pattern_format).
 
 ### Other Useful Linguist Attributes
 
 Beyond `linguist-generated`, you can use several other attributes:
 
 - `linguist-vendored` - Marks vendored code (libraries you didn't write) to exclude from stats
-- `linguist-documentation` - Marks documentation files to exclude from stats  
+- `linguist-documentation` - Marks documentation files to exclude from stats
 - `linguist-detectable` - Forces a file type to be included in language stats (useful for data or prose files)
 - `linguist-language=<name>` - Overrides the detected language for syntax highlighting
 
