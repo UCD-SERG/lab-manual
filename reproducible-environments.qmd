@@ -17,13 +17,13 @@ In this lab manual chapter, we provide a quick tutorial for integrating `renv` i
 
 ### Implementing renv in projects
  
-Ideally, `renv` should be initiated at the start of projects and updated continuously when new packages are introduced in the codebase. However, this process can be initated at any point in a project
+Ideally, `renv` should be initiated at the start of projects and updated continuously when new packages are introduced in the codebase. However, this process can be initiated at any point in a project
 
 To add `renv` to your workflow, follow these steps:
 
 1. Install the `renv` package by running `install.packages("renv")`
 2. Create an RProject file and ensure that your working directory is set to the correct folder
-3. In the R console, run `renv::init()` to intiialize renv in your R Project
+3. In the R console, run `renv::init()` to initialize renv in your R Project
 4. This will create the following files: `renv.lock`, .`Rprofile`, `renv/settings.json` and `renv/activate.R`. Commit and push these files to GitHub so that they’re accessible to other users. 
 5. As you write code, update the project’s R library by running `renv::snapshot()` in the R console
 6. Add `renv::restore()` to the head of your config file, to make sure that all users that run your code are on the same package versions. 
