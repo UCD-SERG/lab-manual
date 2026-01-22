@@ -30,6 +30,10 @@ to [help you code](https://en.wikipedia.org/wiki/AI-assisted_software_developmen
 
 {{< include ai-tools/what-are-ai-coding-agents.qmd >}}
 
+### AI Agents and the Technological Singularity
+
+{{< include ai-tools/technological-singularity.qmd >}}
+
 ### Relative Advantages of AI and Humans
 
 {{< include ai-tools/relative-advantages-ai-humans.qmd >}}
