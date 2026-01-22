@@ -58,6 +58,10 @@ to [help you code](https://en.wikipedia.org/wiki/AI-assisted_software_developmen
 
 {{< include ai-tools/agents-firewall-config.qmd >}}
 
+### Configuring GitHub Copilot Settings {#sec-ai-copilot-settings}
+
+{{< include ai-tools/copilot-settings.qmd >}}
+
 ### Configuring the Agent Environment
 
 {{< include ai-tools/copilot-setup-steps-config.qmd >}}
