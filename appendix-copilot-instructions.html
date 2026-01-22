@@ -898,6 +898,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Remove unverified explanations</strong> rather than including speculative or unsubstantiated claims</li>
 <li>Link to authoritative sources like official documentation, GitHub issues, or peer-reviewed materials</li>
 </ul>
+<p><strong>When adding links to external resources:</strong></p>
+<ul>
+<li><strong>Always verify the content</strong> of linked pages before adding them to the manual</li>
+<li>Read the repository README, DESCRIPTION file, or website content to understand what the resource actually contains</li>
+<li>Use accurate descriptions based on the actual content, not assumptions based on the URL or name</li>
+<li>For GitHub repositories, check key files like README.md, DESCRIPTION, index.qmd, or _quarto.yml to understand the project’s purpose</li>
+</ul>
+<p><strong>Example of what NOT to do:</strong></p>
+<p>In <a href="https://github.com/UCD-SERG/lab-manual/pull/151/">PR #151</a>, the initial approach failed to verify the actual content of the linked repository: - Assumed “PSW” meant “Propensity Score Weighting” based on the acronym - Created a mischaracterized description: “R package for propensity score weighting and related methods for causal inference in observational studies” - Placed the link in an incorrect section (“Useful R Packages”)</p>
+<p><strong>Example of what TO do:</strong></p>
+<p>After reviewing the actual repository files (DESCRIPTION, _quarto.yml, index.qmd): - Verified that PSW stands for “Principles of Scientific Writing” - Determined it’s a Quarto book (later revised to “handbook”) about scientific writing principles - Placed the link in the appropriate “Writing” section - Used an accurate description based on the actual content: “a handbook covering scientific writing principles including citations and evidence, word choice, and conciseness”</p>
 <p>This practice ensures accuracy, builds trust, and helps readers verify information independently.</p>
 </section>
 <section id="testing-and-validation" class="level3">
