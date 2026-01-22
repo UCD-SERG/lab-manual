@@ -66,6 +66,7 @@ The [UC Davis DataLab](https://github.com/ucdavisdatalab) provides extensive wor
 - ICMJE Definition of authorship [@icmje]
 - Computational science: ...why scientific programming does not compute [@merali2010]
 - [The Pathway to Publishing: A Guide to Quantitative Writing in the Health Sciences ](https://link.springer.com/book/10.1007/978-3-030-98175-4)
+- [Principles of Scientific Writing](https://github.com/d-morrison/psw) - a handbook covering scientific writing principles including citations and evidence, word choice, and conciseness
 - [Secret, actionable writing tips](https://x.com/acagamic/status/1680381737816424450)
 
 ## Presentations

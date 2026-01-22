@@ -424,6 +424,28 @@ When writing documentation:
 - **Remove unverified explanations** rather than including speculative or unsubstantiated claims
 - Link to authoritative sources like official documentation, GitHub issues, or peer-reviewed materials
 
+**When adding links to external resources:**
+
+- **Always verify the content** of linked pages before adding them to the manual
+- Read the repository README, DESCRIPTION file, or website content to understand what the resource actually contains
+- Use accurate descriptions based on the actual content, not assumptions based on the URL or name
+- For GitHub repositories, check key files like README.md, DESCRIPTION, index.qmd, or _quarto.yml to understand the project's purpose
+
+**Example of what NOT to do:**
+
+In [PR #151](https://github.com/UCD-SERG/lab-manual/pull/151/), the initial approach failed to verify the actual content of the linked repository:
+- Assumed "PSW" meant "Propensity Score Weighting" based on the acronym
+- Created a mischaracterized description: "R package for propensity score weighting and related methods for causal inference in observational studies"
+- Placed the link in an incorrect section ("Useful R Packages")
+
+**Example of what TO do:**
+
+After reviewing the actual repository files (DESCRIPTION, _quarto.yml, index.qmd):
+- Verified that PSW stands for "Principles of Scientific Writing"
+- Determined it's a Quarto book (later revised to "handbook") about scientific writing principles
+- Placed the link in the appropriate "Writing" section
+- Used an accurate description based on the actual content: "a handbook covering scientific writing principles including citations and evidence, word choice, and conciseness"
+
 This practice ensures accuracy, builds trust, and helps readers verify information independently.
 
 ### Testing and Validation
