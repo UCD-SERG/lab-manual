@@ -89,9 +89,13 @@ as AI tools can sometimes generate plausible-but-incorrect references
 
 #### Example Workflow
 
-The development of this documentation section demonstrates these practices:
+The development of this documentation section demonstrates these practices.
+See [Issue #112](https://github.com/UCD-SERG/lab-manual/issues/112)
+and [PR #145](https://github.com/UCD-SERG/lab-manual/pull/145)
+for the complete development history,
+which shows:
 
-1. **Core ideas stated clearly**: The request outlined specific concepts (transparency through GitHub, writing explicit prompts, requesting source attribution)
+1. **Core ideas stated clearly**: The issue description outlined specific concepts (transparency through GitHub, writing explicit prompts, requesting source attribution)
 2. **Detailed instructions**: The guidance specified what content should be created and how it should be structured
 3. **Transparent record**: The development history shows what was human-directed versus AI-generated
 4. **Demonstrated accountability**: The pull request provides a full audit trail of all changes
