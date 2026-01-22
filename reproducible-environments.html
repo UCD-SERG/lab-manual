@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -477,7 +512,8 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">13.1.1</span> Introduction</a></li>
   <li><a href="#implementing-renv-in-projects" id="toc-implementing-renv-in-projects" class="nav-link" data-scroll-target="#implementing-renv-in-projects"><span class="header-section-number">13.1.2</span> Implementing renv in projects</a></li>
-  <li><a href="#using-projects-with-renv" id="toc-using-projects-with-renv" class="nav-link" data-scroll-target="#using-projects-with-renv"><span class="header-section-number">13.1.3</span> Using projects with renv</a></li>
+  <li><a href="#configuring-renv-settings" id="toc-configuring-renv-settings" class="nav-link" data-scroll-target="#configuring-renv-settings"><span class="header-section-number">13.1.3</span> Configuring renv settings</a></li>
+  <li><a href="#using-projects-with-renv" id="toc-using-projects-with-renv" class="nav-link" data-scroll-target="#using-projects-with-renv"><span class="header-section-number">13.1.4</span> Using projects with renv</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/reproducible-environments.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/reproducible-environments.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -518,19 +554,31 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="implementing-renv-in-projects" class="level3" data-number="13.1.2">
 <h3 data-number="13.1.2" class="anchored" data-anchor-id="implementing-renv-in-projects"><span class="header-section-number">13.1.2</span> Implementing renv in projects</h3>
-<p>Ideally, <code>renv</code> should be initiated at the start of projects and updated continuously when new packages are introduced in the codebase. However, this process can be initated at any point in a project</p>
+<p>Ideally, <code>renv</code> should be initiated at the start of projects and updated continuously when new packages are introduced in the codebase. However, this process can be initiated at any point in a project</p>
 <p>To add <code>renv</code> to your workflow, follow these steps:</p>
 <ol type="1">
 <li>Install the <code>renv</code> package by running <code>install.packages("renv")</code></li>
 <li>Create an RProject file and ensure that your working directory is set to the correct folder</li>
-<li>In the R console, run <code>renv::init()</code> to intiialize renv in your R Project</li>
+<li>In the R console, run <code>renv::init()</code> to initialize renv in your R Project</li>
 <li>This will create the following files: <code>renv.lock</code>, .<code>Rprofile</code>, <code>renv/settings.json</code> and <code>renv/activate.R</code>. Commit and push these files to GitHub so that they’re accessible to other users.</li>
 <li>As you write code, update the project’s R library by running <code>renv::snapshot()</code> in the R console</li>
 <li>Add <code>renv::restore()</code> to the head of your config file, to make sure that all users that run your code are on the same package versions.</li>
 </ol>
 </section>
-<section id="using-projects-with-renv" class="level3" data-number="13.1.3">
-<h3 data-number="13.1.3" class="anchored" data-anchor-id="using-projects-with-renv"><span class="header-section-number">13.1.3</span> Using projects with renv</h3>
+<section id="configuring-renv-settings" class="level3" data-number="13.1.3">
+<h3 data-number="13.1.3" class="anchored" data-anchor-id="configuring-renv-settings"><span class="header-section-number">13.1.3</span> Configuring renv settings</h3>
+<p>The <code>renv/settings.json</code> file created during initialization allows you to customize how <code>renv</code> behaves in your project. One useful setting is <code>snapshot.dev</code>, which controls whether development dependencies are included by default when calling <code>renv::snapshot()</code> or <code>renv::status()</code>.</p>
+<section id="reducing-startup-messages" class="level4" data-number="13.1.3.1">
+<h4 data-number="13.1.3.1" class="anchored" data-anchor-id="reducing-startup-messages"><span class="header-section-number">13.1.3.1</span> Reducing startup messages</h4>
+<p>When working on projects, you may encounter startup messages indicating that <code>renv</code> is out of sync with the lockfile. To reduce these messages in most projects, add the following setting to <code>renv/settings.json</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="er">"snapshot.dev":</span> <span class="er">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This setting (available in <code>renv</code> version 1.1.6 and later) includes development dependencies in snapshots by default, which helps keep the lockfile aligned with your actual usage and eliminates many synchronization warnings.</p>
+<p>If startup messages about being out of sync persist after enabling this setting, use <code>renv::restore()</code> to sync your local library with the lockfile, or <code>renv::snapshot()</code> to update the lockfile with your current package versions.</p>
+<p>For more details on <code>renv</code> configuration options, see the <a href="https://rstudio.github.io/renv/">official renv documentation</a>.</p>
+</section>
+</section>
+<section id="using-projects-with-renv" class="level3" data-number="13.1.4">
+<h3 data-number="13.1.4" class="anchored" data-anchor-id="using-projects-with-renv"><span class="header-section-number">13.1.4</span> Using projects with renv</h3>
 <p>If you’re starting to work on an ongoing project that already has <code>renv</code> set up, follow these steps to ensure that you’re using the same project versions.</p>
 <ol type="1">
 <li>Install the <code>renv</code> package by running <code>install.packages("renv")</code></li>
