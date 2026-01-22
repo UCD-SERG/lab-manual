@@ -131,6 +131,26 @@ See [Quarto Cross-References documentation](https://quarto.org/docs/authoring/cr
 ![Caption text](path/to/image.png){#fig-label}
 ```
 
+**Important: Store images locally in the repository**
+
+**DO NOT link to external image URLs** (especially `https://github.com/user-attachments/assets/`).
+Always save images locally in the `assets/images/` directory
+and reference them using relative paths.
+
+External image links can break over time,
+are not included in repository archives,
+and may fail to render in PDF or other output formats.
+
+**Correct:**
+```markdown
+![Screenshot description](assets/images/my-screenshot.png)
+```
+
+**Incorrect:**
+```markdown
+![Screenshot description](https://github.com/user-attachments/assets/...)
+```
+
 **For tables (markdown tables):**
 
 ```markdown
@@ -390,6 +410,8 @@ This workflow enables a hybrid editing process where collaborators can make edit
 - Preserve all existing content when refactoring
 - Add blank lines before all lists
 - Follow the lab's R package development workflow (as described throughout this repo)
+- **When discussing current world conditions or technology capabilities**:
+  Always mention the date or time period (e.g., "as of early 2025", "in 2024") to provide temporal context and prevent content from becoming misleading as time passes
 
 ### Citations and Evidence for Claims
 
@@ -401,6 +423,28 @@ When writing documentation:
 - **Provide direct evidence** by demonstrating behavior yourself (e.g., showing command output, testing functionality)
 - **Remove unverified explanations** rather than including speculative or unsubstantiated claims
 - Link to authoritative sources like official documentation, GitHub issues, or peer-reviewed materials
+
+**When adding links to external resources:**
+
+- **Always verify the content** of linked pages before adding them to the manual
+- Read the repository README, DESCRIPTION file, or website content to understand what the resource actually contains
+- Use accurate descriptions based on the actual content, not assumptions based on the URL or name
+- For GitHub repositories, check key files like README.md, DESCRIPTION, index.qmd, or _quarto.yml to understand the project's purpose
+
+**Example of what NOT to do:**
+
+In [PR #151](https://github.com/UCD-SERG/lab-manual/pull/151/), the initial approach failed to verify the actual content of the linked repository:
+- Assumed "PSW" meant "Propensity Score Weighting" based on the acronym
+- Created a mischaracterized description: "R package for propensity score weighting and related methods for causal inference in observational studies"
+- Placed the link in an incorrect section ("Useful R Packages")
+
+**Example of what TO do:**
+
+After reviewing the actual repository files (DESCRIPTION, _quarto.yml, index.qmd):
+- Verified that PSW stands for "Principles of Scientific Writing"
+- Determined it's a Quarto book (later revised to "handbook") about scientific writing principles
+- Placed the link in the appropriate "Writing" section
+- Used an accurate description based on the actual content: "a handbook covering scientific writing principles including citations and evidence, word choice, and conciseness"
 
 This practice ensures accuracy, builds trust, and helps readers verify information independently.
 

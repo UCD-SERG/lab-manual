@@ -9,13 +9,17 @@ Lab members who use AI tools must adhere to the following guidelines:
 
 {{< include ai-tools/responsibility-for-validation.qmd >}}
 
-## Disclosure of AI use
+## Disclosure of AI use {#sec-ai-disclosure}
 
 {{< include ai-tools/disclosure-of-ai-use.qmd >}}
 
 ## Attribution of sources
 
 {{< include ai-tools/attribution-of-sources.qmd >}}
+
+## Using AI for Journal Articles {#sec-ai-journal-articles}
+
+{{< include ai-tools/ai-for-academic-writing.qmd >}}
 
 ## Coding Agents
 
@@ -25,6 +29,10 @@ to [help you code](https://en.wikipedia.org/wiki/AI-assisted_software_developmen
 ### What are AI coding agents?
 
 {{< include ai-tools/what-are-ai-coding-agents.qmd >}}
+
+### AI Agents and the Technological Singularity
+
+{{< include ai-tools/technological-singularity.qmd >}}
 
 ### Relative Advantages of AI and Humans
 
@@ -53,6 +61,10 @@ to [help you code](https://en.wikipedia.org/wiki/AI-assisted_software_developmen
 ### Firewall and Network Configuration
 
 {{< include ai-tools/agents-firewall-config.qmd >}}
+
+### Configuring GitHub Copilot Settings {#sec-ai-copilot-settings}
+
+{{< include ai-tools/copilot-settings.qmd >}}
 
 ### Configuring the Agent Environment
 
