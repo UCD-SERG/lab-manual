@@ -200,7 +200,7 @@ Common use cases for `linguist-generated` include:
 
 Create a `.gitattributes` file in the root of your repository and add patterns for files you want to mark as generated:
 
-```gitattributes
+```
 # Mark minified JavaScript as generated
 *.min.js linguist-generated
 
@@ -213,7 +213,7 @@ dist/styles.css linguist-generated
 
 To unmark a file that would normally be considered generated:
 
-```gitattributes
+```
 # Don't treat bootstrap as generated
 bootstrap.min.css -linguist-generated
 ```
@@ -233,7 +233,7 @@ Beyond `linguist-generated`, you can use several other attributes:
 
 **Example `.gitattributes` file:**
 
-```gitattributes
+```
 # Exclude vendored dependencies
 vendor/* linguist-vendored
 
