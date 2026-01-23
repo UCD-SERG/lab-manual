@@ -21,7 +21,7 @@ We do not expect lab members to respond outside of normal business hours (unless
 ## Email
 
 - Use email for longer messages (>200 words) or messages that merit preservation. 
-- Generally, strive to respond to mentions and direct messages within one work day.
+- Generally, strive to respond within one work day when you are directly addressed in an email.
   If you're on vacation, you're not expected to respond until the end of your first work day back
   (or possibly longer, if you've been out for a while and have a backlog).
 - As noted above, if you are unusually busy or on vacation please alert the team in advance so we can expect you not to respond at all / as quickly as usual.
