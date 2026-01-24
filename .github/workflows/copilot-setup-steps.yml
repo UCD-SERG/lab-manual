@@ -38,9 +38,11 @@ jobs:
 
     steps:
       # Checkout code - Copilot will do this automatically if we don't,
-      # but we include it for completeness
+      # but we include it for completeness and to configure fetch-depth
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch full history so agents can see multiple branches
 
       # R and renv setup steps disabled for now - we don't have any R code to run yet
       # When R code is needed, uncomment the following steps:

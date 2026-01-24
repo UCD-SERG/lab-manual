@@ -30,6 +30,50 @@ but must contain a single job named `copilot-setup-steps`.
 See [Appendix: Copilot Setup Steps File](#sec-appendix-copilot-setup-steps) for the configuration used in this repository
 (adapted for R and Quarto projects).
 
+#### Using `actions/checkout`
+
+The [`actions/checkout`](https://github.com/actions/checkout) action
+is used to check out your repository code
+so that the workflow can access it.
+While Copilot will automatically check out your repository if you don't include this step,
+explicitly including it allows you to configure important options.
+
+**Basic checkout:**
+
+```yaml
+- name: Checkout code
+  uses: actions/checkout@v4
+```
+
+**Checkout with full git history:**
+
+```yaml
+- name: Checkout code
+  uses: actions/checkout@v4
+  with:
+    fetch-depth: 0
+```
+
+The `fetch-depth` option controls how much git history is fetched:
+
+- `fetch-depth: 1` (default): Shallow clone with only the latest commit
+- `fetch-depth: 0`: Full clone with complete git history and all branches
+
+Using `fetch-depth: 0` is particularly useful for coding agents because:
+
+- **Multi-branch visibility**: Agents can see and compare multiple branches,
+  making it easier to understand context when working on features or bug fixes
+- **Git operations**: Enables full git operations like rebasing,
+  cherry-picking, and examining commit history
+- **Diff comparison**: Allows comparing changes across branches or commits,
+  which is helpful when reviewing or merging work
+- **Better context**: Provides agents with the full repository history
+  to understand how code evolved over time
+
+For repositories with large histories,
+this increases checkout time and disk usage,
+but the benefits for agent functionality usually outweigh these costs.
+
 #### Configurable Options
 
 You can customize only these specific settings
