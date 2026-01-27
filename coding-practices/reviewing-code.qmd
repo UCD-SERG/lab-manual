@@ -196,14 +196,14 @@ follow these guidelines to avoid confusion and ensure smooth collaboration:
 
 **The scenario:**
 
-- One team member (the "PR manager") wrote the original prompt or issue that Copilot is addressing
-- Copilot created the PR with the PR manager as co-author
-- The PR manager requested your review
+- One team member (the "prompter") wrote the original prompt or issue that Copilot is addressing
+- Copilot created the PR with the prompter as co-author
+- The prompter requested your review
 - Copilot may have also automatically reviewed the PR
 
-**As a non-managing reviewer, your role is to provide feedback,
+**As a non-prompter reviewer, your role is to provide feedback,
 not to directly initiate more work by Copilot.**
-The PR manager should remain in control of when and how Copilot makes additional changes.
+The prompter should remain in control of when and how Copilot makes additional changes.
 
 **Recommended review workflow:**
 
@@ -214,14 +214,14 @@ The PR manager should remain in control of when and how Copilot makes additional
 
 2. **Don't ask Copilot to make changes directly**:
    - Avoid using features that would trigger Copilot to start working immediately
-   - Let the PR manager decide whether to ask Copilot to address your comments or make changes themselves
+   - Let the prompter decide whether to ask Copilot to address your comments or make changes themselves
 
 3. **Write clear, actionable comments**:
    - Explain what needs to change and why
    - Suggest specific solutions when appropriate
-   - The PR manager will decide how to address your feedback
+   - The prompter will decide how to address your feedback
 
-**For PR managers (the person who prompted Copilot):**
+**For prompters (the person who prompted Copilot):**
 
 After receiving reviews from other team members:
 
@@ -241,7 +241,24 @@ After receiving reviews from other team members:
    - Mark conversations as resolved after addressing them
    - Request re-review from humans after Copilot makes significant changes
 
-This workflow ensures the PR manager maintains control over the development process
+**Transferring the prompter role:**
+
+The original prompter can hand over a PR to another person,
+who then becomes the new prompter with control over Copilot's work on that PR.
+This might be useful when:
+
+- The original prompter is unavailable or on leave
+- Someone with different expertise needs to guide the remaining work
+- Responsibilities are being redistributed within the team
+
+To transfer the prompter role:
+
+1. The original prompter should clearly communicate the handover to all reviewers
+2. The new prompter should review the PR's history and any open feedback
+3. The new prompter takes over responding to Copilot and managing future iterations
+4. Update PR comments or description to reflect the current prompter if helpful
+
+This workflow ensures the prompter maintains control over the development process
 while benefiting from collaborative human review and Copilot's implementation capabilities.
 
 ### Using Copilot Review Before Human Review
