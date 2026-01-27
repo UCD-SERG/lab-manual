@@ -30,6 +30,34 @@ but must contain a single job named `copilot-setup-steps`.
 See [Appendix: Copilot Setup Steps File](#sec-appendix-copilot-setup-steps) for the configuration used in this repository
 (adapted for R and Quarto projects).
 
+#### Using `actions/checkout`
+
+The [`actions/checkout`](https://github.com/actions/checkout) action
+is used to check out your repository code
+so that the workflow can access it.
+Copilot will automatically check out your repository if you don't include this step,
+but explicitly including it allows you to configure options like Git LFS.
+
+**Basic checkout:**
+
+```yaml
+- name: Checkout code
+  uses: actions/checkout@v4
+```
+
+**Important:** The Copilot coding agent overrides any `fetch-depth` value
+you set in the checkout step.
+According to [GitHub's official documentation](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-environment),
+this override happens "to allow the agent to rollback commits upon request,
+while mitigating security risks."
+The agent dynamically determines the appropriate fetch depth
+based on the pull request context.
+
+While you cannot control the fetch depth used by Copilot,
+the agent still has access to sufficient git history
+to perform its work effectively,
+including comparing changes and understanding the context of your pull request.
+
 #### Configurable Options
 
 You can customize only these specific settings
