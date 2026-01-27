@@ -446,7 +446,7 @@ When writing documentation:
 - Link to authoritative sources like official documentation, GitHub issues, or peer-reviewed materials
 - **For comparative or popularity claims**: Provide specific metrics (e.g., GitHub stars, download counts, usage statistics) with dates rather than subjective terms like "most popular" or "widely used" without evidence
 - **For all factual claims**: you must provide supporting evidence, either directly or by explicitly citing credible sources;
-do not phrase statements as facts when they are really claims that are really assumptions or common knowledge that may not be universally.
+- Do not phrase claims as facts when they are really merely assumptions or common opinions that may not be universally agreed on.
 
 **When adding links to external resources:**
 
