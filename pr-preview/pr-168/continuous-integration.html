@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>10&nbsp; Data masking – UCD-SeRG Lab Manual</title>
+<title>7&nbsp; Continuous Integration – UCD-SeRG Lab Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./quarto.html" rel="next">
-<link href="./big-data.html" rel="prev">
+<link href="./coding-style.html" rel="next">
+<link href="./coding-practices.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -285,7 +285,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data-masking.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Data masking</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./continuous-integration.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Continuous Integration</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -375,7 +375,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./continuous-integration.html" class="sidebar-item-text sidebar-link">
+  <a href="./continuous-integration.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Continuous Integration</span></span></a>
   </div>
 </li>
@@ -393,7 +393,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data-masking.html" class="sidebar-item-text sidebar-link active">
+  <a href="./data-masking.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Data masking</span></span></a>
   </div>
 </li>
@@ -520,17 +520,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#general-overview" id="toc-general-overview" class="nav-link active" data-scroll-target="#general-overview"><span class="header-section-number">10.1</span> General Overview</a>
+  <li><a href="#understanding-github-actions" id="toc-understanding-github-actions" class="nav-link active" data-scroll-target="#understanding-github-actions"><span class="header-section-number">7.1</span> Understanding GitHub Actions</a></li>
+  <li><a href="#setting-up-github-actions" id="toc-setting-up-github-actions" class="nav-link" data-scroll-target="#setting-up-github-actions"><span class="header-section-number">7.2</span> Setting Up GitHub Actions</a>
   <ul class="collapse">
-  <li><a href="#what-is-data-masking" id="toc-what-is-data-masking" class="nav-link" data-scroll-target="#what-is-data-masking"><span class="header-section-number">10.1.1</span> What is Data Masking?</a></li>
-  <li><a href="#using-tidy-evaluation-for-data-masking" id="toc-using-tidy-evaluation-for-data-masking" class="nav-link" data-scroll-target="#using-tidy-evaluation-for-data-masking"><span class="header-section-number">10.1.2</span> Using tidy evaluation for data masking</a></li>
+  <li><a href="#essential-workflows" id="toc-essential-workflows" class="nav-link" data-scroll-target="#essential-workflows"><span class="header-section-number">7.2.1</span> Essential Workflows</a></li>
+  <li><a href="#interactive-setup" id="toc-interactive-setup" class="nav-link" data-scroll-target="#interactive-setup"><span class="header-section-number">7.2.2</span> Interactive Setup</a></li>
   </ul></li>
-  <li><a href="#technical-overview" id="toc-technical-overview" class="nav-link" data-scroll-target="#technical-overview"><span class="header-section-number">10.2</span> Technical Overview</a>
-  <ul class="collapse">
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">10.2.1</span> Example</a></li>
-  </ul></li>
+  <li><a href="#how-github-actions-workflows-work" id="toc-how-github-actions-workflows-work" class="nav-link" data-scroll-target="#how-github-actions-workflows-work"><span class="header-section-number">7.3</span> How GitHub Actions Workflows Work</a></li>
+  <li><a href="#workflow-files-and-security" id="toc-workflow-files-and-security" class="nav-link" data-scroll-target="#workflow-files-and-security"><span class="header-section-number">7.4</span> Workflow Files and Security</a></li>
+  <li><a href="#troubleshooting-failed-workflows" id="toc-troubleshooting-failed-workflows" class="nav-link" data-scroll-target="#troubleshooting-failed-workflows"><span class="header-section-number">7.5</span> Troubleshooting Failed Workflows</a></li>
+  <li><a href="#sec-pr-comment-automation" id="toc-sec-pr-comment-automation" class="nav-link" data-scroll-target="#sec-pr-comment-automation"><span class="header-section-number">7.6</span> Pull Request Comment Automation</a></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources"><span class="header-section-number">7.7</span> Additional Resources</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/data-masking.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/data-masking.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/continuous-integration.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/continuous-integration.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -548,7 +550,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Data masking</span></h1>
+<h1 class="title"><span id="sec-r-ci" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Continuous Integration</span></span></h1>
 </div>
 
 
@@ -565,96 +567,297 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Adapted by UCD-SeRG team from <a href="https://jadebc.github.io/lab-manual/data-masking.html">original by Anna Nguyen, Jade Benjamin-Chung, and Gabby Barratt Heitmann</a></p>
-<p>For information about UC Davis computing resources for data-intensive work, see <a href="slurm.html" class="quarto-xref"><span>Chapter 17</span></a>.</p>
-<section id="general-overview" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="general-overview"><span class="header-section-number">10.1</span> General Overview</h2>
-<p>This chapter covers data masking, a unique process in R in which columns are treated as distinct objects within their dataframe’s environment. In our lab, data masking most frequently comes up when writing wrapper functions where arguments to indicate column names are supplied as strings. We often do this when we repeat the same code on multiple columns, and want to apply a function to a vector of strings that correspond to column names in a dataframe. For example, we might want to clean multiple columns using the same function or estimate the same model under different feature sets. Here, we try to break down what data masking is, why this error comes up, and common approaches to solve this problem.</p>
-<section id="what-is-data-masking" class="level3" data-number="10.1.1">
-<h3 data-number="10.1.1" class="anchored" data-anchor-id="what-is-data-masking"><span class="header-section-number">10.1.1</span> What is Data Masking?</h3>
-<p>Within certain tidyverse operations, columns are called as if they were variables. For example, while running <code>df |&gt; mutate(X = …)</code> R recognizes that <code>X</code> specifically references a column in <code>df</code> without explicitly stating its membership <code>df |&gt; mutate(df$X = …)</code> or calling the column name as a string <code>df |&gt; mutate("X" = …)</code>.</p>
-<div id="fig-data-masking" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-data-masking-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="assets/images/data-masking.PNG" class="img-fluid figure-img" style="width:50.0%">
+<section id="understanding-github-actions" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="understanding-github-actions"><span class="header-section-number">7.1</span> Understanding GitHub Actions</h2>
+<p><a href="https://github.com/features/actions">GitHub Actions</a> is GitHub’s built-in automation platform that makes it easy to automate software workflows, including continuous integration and deployment (CI/CD). For R packages, this means you can automatically test your code, check for errors, and deploy documentation every time you push changes to GitHub.</p>
+<p><strong>Key benefits of GitHub Actions:</strong></p>
+<ul>
+<li><strong>Automated testing</strong>: Run <code>R CMD check</code> across multiple operating systems (Linux, macOS, Windows) and R versions</li>
+<li><strong>Immediate feedback</strong>: Get notified of problems quickly, when they’re easier to fix</li>
+<li><strong>Better collaboration</strong>: External contributors can see if their changes pass all checks before you review</li>
+<li><strong>Quality assurance</strong>: Catch platform-specific issues before they reach users</li>
+<li><strong>Documentation deployment</strong>: Automatically build and deploy your pkgdown website</li>
+</ul>
+<p>Even for solo developers, having automated checks run on different platforms helps avoid the “works on my machine” problem.</p>
+</section>
+<section id="setting-up-github-actions" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="setting-up-github-actions"><span class="header-section-number">7.2</span> Setting Up GitHub Actions</h2>
+<p>The easiest way to add GitHub Actions to your R package is using <a href="https://usethis.r-lib.org/"><code>{usethis}</code></a>. The tidyverse team maintains a collection of ready-to-use workflows at <a href="https://github.com/r-lib/actions">r-lib/actions</a> that handle common R package tasks.</p>
+<section id="essential-workflows" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="essential-workflows"><span class="header-section-number">7.2.1</span> Essential Workflows</h3>
+<p><strong>1. R CMD check (most important):</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github_action</span>(<span class="st">"check-standard"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This runs <code>R CMD check</code> on Linux, macOS, and Windows to ensure your package works across platforms. If you only set up one workflow, make it this one.</p>
+<p><strong>2. Test coverage:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github_action</span>(<span class="st">"test-coverage"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Calculates what percentage of your code is covered by tests and reports to <a href="https://about.codecov.io">codecov.io</a>.</p>
+<p><strong>3. Package website:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github_action</span>(<span class="st">"pkgdown"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Automatically builds and deploys your pkgdown documentation site to GitHub Pages.</p>
+</section>
+<section id="interactive-setup" class="level3" data-number="7.2.2">
+<h3 data-number="7.2.2" class="anchored" data-anchor-id="interactive-setup"><span class="header-section-number">7.2.2</span> Interactive Setup</h3>
+<p>Running <code>usethis::use_github_action()</code> without arguments shows a menu of recommended workflows:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github_action</span>()</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Which action do you want to add? (0 to exit)</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; (See &lt;https://github.com/r-lib/actions/tree/v2/examples&gt; for other options)</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1: check-standard: Run `R CMD check` on Linux, macOS, and Windows</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2: test-coverage: Compute test coverage and report to https://about.codecov.io</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3: pr-commands: Add /document and /style commands for pull requests</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="how-github-actions-workflows-work" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="how-github-actions-workflows-work"><span class="header-section-number">7.3</span> How GitHub Actions Workflows Work</h2>
+<p>When you set up a workflow, <code>usethis</code> creates a YAML configuration file in <code>.github/workflows/</code>. For example, <code>check-standard</code> creates <code>.github/workflows/R-CMD-check.yaml</code>.</p>
+<p>This workflow automatically runs when you:</p>
+<ul>
+<li>Push commits to <code>main</code> or <code>master</code></li>
+<li>Open or update a pull request</li>
+</ul>
+<p>You can view workflow results in the “Actions” tab of your GitHub repository. A status badge is added to your README showing whether checks are passing.</p>
+</section>
+<section id="workflow-files-and-security" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="workflow-files-and-security"><span class="header-section-number">7.4</span> Workflow Files and Security</h2>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-masking-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10.1: Data masking in tidyverse operations
-</figcaption>
-</figure>
+<div class="callout-title-container flex-fill">
+Warning
 </div>
-<p>However, this behavior may introduce errors when we attempt to incorporate variables from the global environment within these tidyverse pipelines. In the example shown in <a href="#fig-data-masking" class="quarto-xref">Figure&nbsp;<span>10.1</span></a>, <code>column_name = "X"</code> followed by <code>df |&gt; mutate(X2 = column_name + 1)</code> would yield an error, since <code>column_name</code> is not a column in <code>df</code> and the variable <code>column_name</code> is not defined within the environment of <code>df</code></p>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Important Security Consideration</strong></p>
+<p>Workflow files (<code>.github/workflows/*.yaml</code>) have access to repository secrets and can execute code. Always review workflow files carefully before committing them, especially if copied from external sources.</p>
+<p>See <a href="ai-tools.html#sec-ai-best-practices" class="quarto-xref"><span>Section 18.5.8</span></a> for guidance on working with workflow files using AI tools.</p>
+</div>
+</div>
+<p>The workflow YAML files in <code>.github/workflows/</code> are configuration files that tell GitHub Actions:</p>
+<ul>
+<li>When to run (on push, pull request, schedule, etc.)</li>
+<li>What operating systems and R versions to use</li>
+<li>What steps to execute (install dependencies, run checks, etc.)</li>
+</ul>
 </section>
-<section id="using-tidy-evaluation-for-data-masking" class="level3" data-number="10.1.2">
-<h3 data-number="10.1.2" class="anchored" data-anchor-id="using-tidy-evaluation-for-data-masking"><span class="header-section-number">10.1.2</span> Using tidy evaluation for data masking</h3>
-<p>In dplyr-based R programming, we make use of tidy evaluation. This allows us to avoid using base R syntax to reference specific columns in a data frame. By leveraging Tidy evaluation-based data masking, we can employ long pipes with several dplyr verbs to manipulate our data using stand-alone variables that store column names as strings.</p>
-<p>For example, consider a data frame “df” that contains a column called “heavyrain” that we want to manipulate. Suppose we wanted to convert the values of “heavyrain” into a factor.</p>
-<p>Using base R, which does not mask data, heavyrain must have quotes to be treated as a data-variable:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">"outcome"</span>]] <span class="ot">=</span> <span class="fu">as.factor</span>(df[[<span class="st">"heavyrain"</span>]])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>In a dplyr pipe, heavyrain is being masked using tidy evaluation and will be correctly interpreted as a column because it is recognized as a data-variable: df |&gt; mutate(outcome = as.factor(heavyrain))</p>
-<p>With modified data masking, heavyrain is a string that is coerced into being recognized as a data-variable:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>var_name <span class="ot">=</span> <span class="st">"heavyrain"</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">outcome =</span> <span class="fu">as.factor</span>(<span class="sc">!!</span><span class="fu">sym</span>(var_name)) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>While cleaner and often more convenient, the data frame that var_name is in is now “masked” and we refer to the vectors in the dataframe (data-variables) as though it is an object of its own (an environmental-variable). This is why we can just say the variable’s name in the context of a pipe – we treat it as though it’s an object defined in our environment. Within normal scripts, this is usually fine, because the data frame is “held on to” in the pipe. However, it can cause some programming hurdles when writing functions that take strings of variable/column names as arguments. In the next section, we briefly describe how to troubleshoot common errors in data masking, as relevant to our lab’s work.</p>
+<section id="troubleshooting-failed-workflows" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="troubleshooting-failed-workflows"><span class="header-section-number">7.5</span> Troubleshooting Failed Workflows</h2>
+<p>When workflows fail, check the “Actions” tab in your GitHub repository for detailed logs. Common issues include:</p>
+<ul>
+<li><strong>Test failures</strong>: Your tests found a bug (this is good! fix the bug)</li>
+<li><strong>Platform-specific issues</strong>: Code works on your machine but not on other platforms</li>
+<li><strong>Missing dependencies</strong>: System libraries needed for packages aren’t installed</li>
+<li><strong>Linting errors</strong>: Code style issues detected by automated checks</li>
+</ul>
+<p>For help addressing workflow failures, see <a href="ai-tools.html#sec-ai-addressing-failing-workflows" class="quarto-xref"><span>Section 18.5.6</span></a>.</p>
+</section>
+<section id="sec-pr-comment-automation" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="sec-pr-comment-automation"><span class="header-section-number">7.6</span> Pull Request Comment Automation</h2>
+<p>GitHub Actions can automatically comment on pull requests to provide feedback, status updates, or deployment previews. This section compares commonly used actions for managing PR comments, helping you choose the right tool for your workflow.</p>
+<section id="common-use-cases" class="level4" data-number="7.6.0.1">
+<h4 data-number="7.6.0.1" class="anchored" data-anchor-id="common-use-cases"><span class="header-section-number">7.6.0.1</span> Common Use Cases</h4>
+<p>PR comment automation is particularly useful for:</p>
+<ul>
+<li><strong>CI/CD status updates</strong>: Report test results, build status, or deployment progress</li>
+<li><strong>Code quality reports</strong>: Post coverage reports, linting results, or security scan findings<br>
+</li>
+<li><strong>Deployment previews</strong>: Share links to preview deployments (e.g., documentation sites, app previews)</li>
+<li><strong>Bot feedback</strong>: Provide automated feedback without cluttering the PR conversation</li>
+</ul>
+</section>
+<section id="comparison-of-popular-actions" class="level4" data-number="7.6.0.2">
+<h4 data-number="7.6.0.2" class="anchored" data-anchor-id="comparison-of-popular-actions"><span class="header-section-number">7.6.0.2</span> Comparison of Popular Actions</h4>
+<p><strong><a href="https://github.com/marocchino/sticky-pull-request-comment">marocchino/sticky-pull-request-comment</a></strong></p>
+<p>A widely-used action for creating or updating a single comment per workflow (as of early 2026, ~580 GitHub stars). Prevents comment spam by updating the same comment each time the workflow runs.</p>
+<p><em>Key features:</em></p>
+<ul>
+<li><strong>Sticky comments</strong>: Creates or updates a comment identified by a unique header</li>
+<li><strong>Multiple independent comments</strong>: Different workflows can maintain separate sticky comments using different headers</li>
+<li><strong>Flexible update modes</strong>: Replace, append, recreate, delete, or hide comments</li>
+<li><strong>File-based messages</strong>: Load comment content from files for complex templates</li>
+<li><strong>Works with push events</strong>: Can find and comment on PRs from push triggers (useful for monorepos)</li>
+</ul>
+<p><em>Typical usage:</em></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> marocchino/sticky-pull-request-comment@v2</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">header</span><span class="kw">:</span><span class="at"> test-results</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">    message</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>      ## Test Results</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>      ```</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>      ${{ steps.test.outputs.summary }}</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>      ```</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><em>Best for:</em> Projects needing clean, updatable status comments without duplicates. Ideal when you want the same type of information always visible in one place.</p>
+<p><strong><a href="https://github.com/hasura/comment-progress">hasura/comment-progress</a></strong></p>
+<p>Designed for tracking workflow progress with multiple updates as jobs complete. Similar to how Netlify or SonarCloud bots provide progressive feedback.</p>
+<p><em>Key features:</em></p>
+<ul>
+<li><strong>Progress tracking</strong>: Update comments as workflow steps complete or fail</li>
+<li><strong>Identifier-based updates</strong>: Uses a hidden identifier to find and update the correct comment</li>
+<li><strong>Multiple update modes</strong>: Append to existing comments, recreate, or delete</li>
+<li><strong>Flexible targets</strong>: Comment on PRs, issues, or specific commits</li>
+<li><strong>Failure handling</strong>: Optionally fail the workflow and append failure messages</li>
+</ul>
+<p><em>Typical usage:</em></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> hasura/comment-progress@v2.3.0</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">github-token</span><span class="kw">:</span><span class="at"> ${{ secrets.GITHUB_TOKEN }}</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">repository</span><span class="kw">:</span><span class="at"> ${{ github.repository }}</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">number</span><span class="kw">:</span><span class="at"> ${{ github.event.number }}</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">id</span><span class="kw">:</span><span class="at"> deploy-progress</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">message</span><span class="kw">:</span><span class="at"> </span><span class="st">"Deploy in progress..."</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">append</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><em>Best for:</em> Long-running workflows where you want to provide incremental status updates as different stages complete. Good for deployment pipelines or multi-stage builds.</p>
+<p><strong><a href="https://github.com/thollander/actions-comment-pull-request">thollander/actions-comment-pull-request</a></strong></p>
+<p>A simpler, more straightforward action for posting or updating PR comments. Good balance of features and ease of use.</p>
+<p><em>Key features:</em></p>
+<ul>
+<li><strong>Simple comment creation</strong>: Easy to post one-time or updated comments</li>
+<li><strong>Comment updates</strong>: Find and update existing comments by ID or content</li>
+<li><strong>Reactions</strong>: Add emoji reactions to comments</li>
+<li><strong>Comment deletion</strong>: Remove comments when no longer needed</li>
+<li><strong>Dynamic content</strong>: Supports multi-line messages and environment variables</li>
+</ul>
+<p><em>Typical usage:</em></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> thollander/actions-comment-pull-request@v2</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">    message</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>      ## Deployment Status</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>      ✅ Successfully deployed to preview environment</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>      Preview URL: https://preview-${{ github.event.number }}.example.com</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><em>Best for:</em> Straightforward commenting needs without complex update logic. Good for simple status messages or one-time notifications.</p>
+</section>
+<section id="tbl-pr-comment-features" class="level4" data-number="7.6.0.3">
+<h4 data-number="7.6.0.3" class="anchored" data-anchor-id="tbl-pr-comment-features"><span class="header-section-number">7.6.0.3</span> Feature Comparison</h4>
+<table class="caption-top table">
+<caption>Comparison of PR comment action features</caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 23%">
+<col style="width: 30%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>marocchino/sticky</th>
+<th>hasura/comment-progress</th>
+<th>thollander/actions-comment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Update existing comment</td>
+<td>✅ (by header)</td>
+<td>✅ (by identifier)</td>
+<td>✅ (by ID or content)</td>
+</tr>
+<tr class="even">
+<td>Multiple independent comments</td>
+<td>✅ (via headers)</td>
+<td>✅ (via identifiers)</td>
+<td>⚠️ (limited)</td>
+</tr>
+<tr class="odd">
+<td>Append mode</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr class="even">
+<td>Delete comments</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr class="odd">
+<td>Hide comments</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr class="even">
+<td>File-based messages</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr class="odd">
+<td>Emoji reactions</td>
+<td>❌</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr class="even">
+<td>Works with push events</td>
+<td>✅</td>
+<td>⚠️ (requires PR number)</td>
+<td>⚠️ (requires PR number)</td>
+</tr>
+<tr class="odd">
+<td>Progress tracking focus</td>
+<td>⚠️ (flexible)</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="choosing-the-right-action" class="level4" data-number="7.6.0.4">
+<h4 data-number="7.6.0.4" class="anchored" data-anchor-id="choosing-the-right-action"><span class="header-section-number">7.6.0.4</span> Choosing the Right Action</h4>
+<p><strong>Use marocchino/sticky-pull-request-comment when:</strong></p>
+<ul>
+<li>You need to maintain multiple independent status comments (test results, coverage, deployment, etc.)</li>
+<li>You want to prevent comment spam by updating the same comment</li>
+<li>You need advanced features like hiding outdated comments or file-based templates</li>
+<li>Your workflow triggers on push events and needs to find the associated PR</li>
+</ul>
+<p><strong>Use hasura/comment-progress when:</strong></p>
+<ul>
+<li>You have long-running workflows with multiple stages</li>
+<li>You want to provide progressive feedback as each stage completes</li>
+<li>You need the workflow to fail and report the failure in the comment</li>
+<li>You want a pattern similar to third-party CI/CD service bots</li>
+</ul>
+<p><strong>Use thollander/actions-comment-pull-request when:</strong></p>
+<ul>
+<li>You need simple comment posting without complex update logic</li>
+<li>You want to add emoji reactions to comments</li>
+<li>You’re comfortable with the action’s simpler update mechanism</li>
+<li>Your use case doesn’t require the advanced features of the other options</li>
+</ul>
+</section>
+<section id="security-considerations" class="level4" data-number="7.6.0.5">
+<h4 data-number="7.6.0.5" class="anchored" data-anchor-id="security-considerations"><span class="header-section-number">7.6.0.5</span> Security Considerations</h4>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Important: PR Comment Permissions</strong></p>
+<p>PR comment actions require write access to pull requests, which means they need the <code>pull-requests: write</code> permission.</p>
+<p>For workflows triggered by pull requests from forks (common in open-source projects), be careful about what information you expose in comments, as fork contributors can trigger these workflows. Never expose secrets or sensitive information in PR comments.</p>
+<p>See <a href="ai-tools.html#sec-ai-best-practices" class="quarto-xref"><span>Section 18.5.8</span></a> for more guidance on workflow security.</p>
+</div>
+</div>
 </section>
 </section>
-<section id="technical-overview" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="technical-overview"><span class="header-section-number">10.2</span> Technical Overview</h2>
-<p>This section covers the R functions and tools that we often use in the context of data masking, focusing on the bang bang operator (<code>!!</code>) with symbol coercion (<code>sym()</code>) and the Walrus operator (<code>:=</code>).</p>
-<p>The combined use of <code>!!</code> and <code>sym()</code> allows us to use strings, rather than data-variables, to reference column names within dplyr. Together, <code>!!sym("column_name")</code> forces dplyr to recognize “column_name” as a data-variable prior to evaluating the rest of the expression, enabling the ability to perform calculations on the column while referring to it as a string. <code>sym()</code> is a function that turns strings into symbols. In the context of a dplyr pipe, these symbols are interpreted as data-variables. The <code>!!</code> (bang bang) operator tells dplyr to evaluate the sym() expression first, e.g.&nbsp;to unquote its expression (e.g.&nbsp;“column_name”) and evaluate it as a pre-existing object, first. This is helpful because often we use <code>sym("column_name")</code> within a larger expression, and dplyr might evaluate other elements of the expression first without !!, causing errors.</p>
-<p>When we want to create a new column (via mutate or summarize), the Walrus operator (<code>:=</code>) allows us to specify the new column’s name using a string. For example, while <code>df |&gt; mutate("new_column" = values)</code> would yield an error, <code>df |&gt; mutate("new_column" := values)</code> will correctly create a new column called “new_column”. If we want to use a variable representing a string, we can use !! to force the variable to be evaluated before using <code>:=</code> to assign the value of the new column.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>col_name <span class="ot">=</span> <span class="st">"new_column"</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="sc">!!</span><span class="at">col_name :=</span> values)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<section id="example" class="level3" data-number="10.2.1">
-<h3 data-number="10.2.1" class="anchored" data-anchor-id="example"><span class="header-section-number">10.2.1</span> Example</h3>
-<p>Suppose we want to write a function “generate_descriptive_table” to summarize how the prevalence of “outcome” varies under different levels of a “risk_factor” in a data frame “df”</p>
-<p>We can start by writing the function shell:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>generate_descriptive_table <span class="ot">&lt;-</span> <span class="cf">function</span> (df, outcome, rf) {</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>outcome_dist_by_rf <span class="ot">&lt;-</span> ….</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">return</span>(outcome_dist_by_rf)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Next, we can filter the data frame for only rows in which “rf” and “outcome” are not missing. We can use !! and sym() within filter to evaluate the strings stored in “rf” and “outcome”. Note that defining <code>!!sym(outcome)</code> or <code>!!sym(outcome)</code> in variables <em>outside of the dplyr pipeline</em> will <em>not</em> work.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>generate_descriptive_table <span class="ot">&lt;-</span> <span class="cf">function</span> (df, outcome, rf,) {</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  outcome_dist_by_rf <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> </span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(<span class="sc">!!</span><span class="fu">sym</span>(outcome)), <span class="sc">!</span><span class="fu">is.na</span>(<span class="sc">!!</span><span class="fu">sym</span>(rf))) <span class="sc">|&gt;</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  ….</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(outcome_dist_by_rf)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Similarly, we use !! and sym() in group_by to evaluate column name, stored as a string in the argument “rf”</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>generate_descriptive_table <span class="ot">&lt;-</span> <span class="cf">function</span> (df, outcome, rf,) {</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  outcome_dist_by_rf <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> </span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(<span class="sc">!!</span><span class="fu">sym</span>(outcome)), <span class="sc">!</span><span class="fu">is.na</span>(<span class="sc">!!</span><span class="fu">sym</span>(rf))) <span class="sc">|&gt;</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  ….</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(outcome_dist_by_rf)</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Finally, we can use the walrus operator, !! and sym() with “summarize” to create a new column that takes the mean of the column referenced in “rf”. We also use “glue” or “paste” to give the new column an informative name that includes the “outcome” it describes.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>generate_descriptive_table <span class="ot">&lt;-</span> <span class="cf">function</span> (df, outcome, rf,) {</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  outcome_dist_by_rf <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> </span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(<span class="sc">!!</span><span class="fu">sym</span>(outcome)), <span class="sc">!</span><span class="fu">is.na</span>(<span class="sc">!!</span><span class="fu">sym</span>(rf))) <span class="sc">|&gt;</span> </span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(<span class="sc">!!</span><span class="fu">sym</span>(rf)) <span class="sc">|&gt;</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="sc">!!</span>(glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{outcome}_prev"</span>)) <span class="sc">:</span><span class="er">=</span> <span class="fu">mean</span>(<span class="sc">!!</span><span class="fu">sym</span>(outcome))) </span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(outcome_dist_by_rf)</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>OR</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>generate_descriptive_table <span class="ot">&lt;-</span> <span class="cf">function</span> (df, outcome, rf,) {</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  outcome_dist_by_rf <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> </span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(<span class="sc">!!</span><span class="fu">sym</span>(outcome)), <span class="sc">!</span><span class="fu">is.na</span>(<span class="sc">!!</span><span class="fu">sym</span>(rf))) <span class="sc">|&gt;</span> </span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(<span class="sc">!!</span><span class="fu">sym</span>(rf)) <span class="sc">|&gt;</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="sc">!!</span>(<span class="fu">paste0</span>(outcome, <span class="st">"_prev"</span>)) <span class="sc">:</span><span class="er">=</span> <span class="fu">mean</span>(<span class="sc">!!</span><span class="fu">sym</span>(outcome)))</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(outcome_dist_by_rf)</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>OR</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>generate_descriptive_table <span class="ot">&lt;-</span> <span class="cf">function</span> (df, outcome, rf,) {</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  new_column_name <span class="ot">=</span> <span class="fu">paste0</span>(outcome, <span class="st">"_prev"</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  outcome_dist_by_rf <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> </span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(<span class="sc">!!</span><span class="fu">sym</span>(outcome)), <span class="sc">!</span><span class="fu">is.na</span>(<span class="sc">!!</span><span class="fu">sym</span>(rf))) <span class="sc">|&gt;</span> </span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(<span class="sc">!!</span><span class="fu">sym</span>(rf)) <span class="sc">|&gt;</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="sc">!!</span>(new_column_name) <span class="sc">:</span><span class="er">=</span> <span class="fu">mean</span>(<span class="sc">!!</span><span class="fu">sym</span>(outcome))) </span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(outcome_dist_by_rf)</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="additional-resources" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="additional-resources"><span class="header-section-number">7.7</span> Additional Resources</h2>
+<ul>
+<li><a href="https://github.com/features/actions">GitHub Actions features overview</a></li>
+<li><a href="https://github.com/r-lib/actions">r-lib/actions repository</a> - R-specific actions and example workflows</li>
+<li><a href="https://r-pkgs.org/software-development-practices.html#sec-sw-dev-practices-ci">R Packages book: Continuous Integration</a></li>
+<li><a href="https://docs.github.com/en/actions">GitHub Actions documentation</a></li>
+<li><a href="https://github.com/r-lib/actions#where-to-find-help">Where to find help with r-lib/actions</a></li>
+</ul>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1073,13 +1276,13 @@ Figure&nbsp;10.1: Data masking in tidyverse operations
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./big-data.html" class="pagination-link" aria-label="Big data">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Big data</span></span>
+      <a href="./coding-practices.html" class="pagination-link" aria-label="R Coding Practices">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">R Coding Practices</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./quarto.html" class="pagination-link" aria-label="Quarto">
-        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Quarto</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./coding-style.html" class="pagination-link" aria-label="R Code Style">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">R Code Style</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1088,4 +1291,4 @@ Figure&nbsp;10.1: Data masking in tidyverse operations
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/data-masking.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/data-masking.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/continuous-integration.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/continuous-integration.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
