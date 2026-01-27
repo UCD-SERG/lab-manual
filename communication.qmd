@@ -7,13 +7,20 @@ This means that lab members may choose to work in the early morning,
 afternoon, evening, or weekends.
 Lab members should manage their own notification schedules to ensure they can maintain healthy work-life boundaries.
 We do not expect lab members to respond outside of normal business hours (unless there are special circumstances).
+Because of the nature of our work across time zones,
+frequent travel,
+and international collaborations,
+there are no set working hours.
+Team members are not expected to reply to messages outside their own working hours,
+even if a message arrives outside of those hours.
 
 ## Microsoft Teams
 
 - Use Microsoft Teams for scheduling, coding related questions, quick check ins, etc. If your Teams message exceeds 200 words, it might be time to use email. 
 - Use channels instead of direct messages unless you need to discuss something private. 
-- Please make an effort to respond to messages that mention you (e.g., `@username`) as quickly as possible and always within 24 hours. 
-- If you are unusually busy (e.g., taking MCAT/GRE, taking many exams) or on vacation please alert the team in advance so we can expect you not to respond at all / as quickly as usual and also set your status in Teams (e.g., it could say "On vacation") so we know not to expect to see you online. 
+- Please make an effort to respond to messages that mention you (e.g., `@username`) as quickly as possible. 
+- If you are unusually busy (e.g., preparing for QE/grant deadline, taking two exams) or on vacation please alert the team in advance so we can expect you not to respond at all / as quickly as usual.
+Please also set your status in Teams (e.g., it could say "On vacation") so we know not to expect to see you online. 
 - Please thread messages in Teams as much as possible.
 - Don't wait for meetings to ask questions.
   As soon as a question comes up,
@@ -24,7 +31,9 @@ We do not expect lab members to respond outside of normal business hours (unless
 ## Email
 
 - Use email for longer messages (>200 words) or messages that merit preservation. 
-- Generally, strive to respond within one work day when you are directly addressed in an email.
+- Generally, strive to respond within a work day when you are directly addressed in an email.
+  Again because we work across many timezones,
+  this means responding within a work day in your own timezone.
   If you're on vacation, you're not expected to respond until the end of your first work day back
   (or possibly longer, if you've been out for a while and have a backlog).
 - As noted above, if you are unusually busy or on vacation please alert the team in advance and via an away message, so we can expect you not to respond at all / as quickly as usual.
@@ -59,17 +68,20 @@ We use a combination of tools to track and manage project tasks:
 - **GitHub Issues and Projects**: For code-related tasks, feature requests, and bug tracking.
   Lab leadership will assign issues and organize them in GitHub Projects.
   Issues are prioritized within projects, and you can track your assigned tasks there.
-- **Microsoft To-Do** and other M365 task tracking tools:
+- **Microsoft Teams & Planner**:
   For general lab tasks and personal task management.
   Lab leadership may assign tasks through these tools, which integrate with Microsoft Teams.
+  Lab members are expected to set up a Teams page for important degree requirements (QE) and projects (grant proposals, papers, etc.).
+  Invite both Dr Morrison and Aiemjoy to the Teams page and assign them to review tasks with the deadline you need the review by.
+  We appreciate 2 week's notice for letters and larger review projects.
 - Generally, strive to complete assigned tasks by the date listed.
 - Use checklists to break down tasks into smaller chunks.
   Sometimes leadership will create these for you, but you can also add them yourself.
 - Update task status as you make progress so the team can stay coordinated. 
 
-## Google Drive
+## Shared Documents
 
-- We mostly use Google Drive to create shared documents with longer descriptions of tasks.
+- We mostly use Microsoft 365 to collaborate and write internally and GoogleDocs when working with external collaborators.
   These documents may be linked to in GitHub Issues or other task tracking tools.
   Lab leadership often shares these with the whole team since tasks are overlapping,
   and even if a task is assigned to one person, others may have valuable insights. 
