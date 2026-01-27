@@ -255,7 +255,7 @@ To transfer the prompter role:
 
 1. The original prompter should clearly communicate the handover to all reviewers
 2. The new prompter should review the PR's history and any open feedback
-3. The new prompter takes over responding to Copilot and managing future iterations
+3. The new prompter should take over responding to Copilot and managing future iterations
 4. Update PR comments or description to reflect the current prompter if helpful
 
 This workflow ensures the prompter maintains control over the development process
