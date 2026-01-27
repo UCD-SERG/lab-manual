@@ -1,0 +1,21 @@
+When you encounter a coding problem,
+creating a **reprex** (minimal **repr**oducible **ex**ample)
+is one of the most effective ways to get help—and
+often helps you solve the problem yourself.
+
+A good reprex [@reprex]:
+
+- Is **reproducible**: Contains all necessary code, including `library()` calls and data
+- Is **minimal**: Strips away everything not directly related to your problem
+- Uses small, simple example data (often built-in datasets)
+
+**Why create a reprex:**
+
+- 80% of the time, creating a reprex helps you discover the solution yourself
+- 20% of the time, you'll have a clear example that makes it easy for others to help you
+- It respects others' time by making your problem easy to understand and reproduce
+
+**Resources:**
+
+- [`{reprex}`](https://reprex.tidyverse.org/) package: Automates creation of reproducible examples
+- [R for Data Science: Making a reprex](https://r4ds.hadley.nz/workflow-help.html#making-a-reprex) [@wickham2023r4ds]: Step-by-step guide to creating effective reproducible examples

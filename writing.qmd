@@ -1,0 +1,5 @@
+# Writing
+
+## Writing to Clarify Your Thinking
+
+{{< include writing/writing-to-clarify-thinking.qmd >}}
