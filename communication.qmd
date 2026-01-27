@@ -15,7 +15,8 @@ We do not expect lab members to respond outside of normal business hours (unless
 - Please make an effort to respond to messages that mention you (e.g., `@username`) as quickly as possible and always within one work day.
   If you are on vacation or sick leave, you are not expected to respond until the end of your first work day back
   (or possibly longer, if you've been out for a while and have a backlog). 
-- If you are unusually busy (e.g., taking MCAT/GRE, taking many exams) or on vacation please alert the team in advance so we can expect you not to respond at all / as quickly as usual and also set your status in Teams (e.g., it could say "On vacation") so we know not to expect to see you online. 
+- If you are unusually busy (e.g., taking MCAT/GRE, taking many exams) or on vacation please alert the team in advance so we can expect you not to respond at all / as quickly as usual.
+Please also set your status in Teams (e.g., it could say "On vacation") so we know not to expect to see you online. 
 - Please thread messages in Teams as much as possible. 
 
 ## Email
@@ -24,7 +25,7 @@ We do not expect lab members to respond outside of normal business hours (unless
 - Generally, strive to respond within one work day when you are directly addressed in an email.
   If you're on vacation, you're not expected to respond until the end of your first work day back
   (or possibly longer, if you've been out for a while and have a backlog).
-- As noted above, if you are unusually busy or on vacation please alert the team in advance so we can expect you not to respond at all / as quickly as usual.
+- As noted above, if you are unusually busy or on vacation please alert the team in advance and via an away message, so we can expect you not to respond at all / as quickly as usual.
 
 ## Managing Notifications and Work-Life Balance
 
