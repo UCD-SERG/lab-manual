@@ -17,7 +17,8 @@ PR comment automation is particularly useful for:
 
 **[marocchino/sticky-pull-request-comment](https://github.com/marocchino/sticky-pull-request-comment)**
 
-The most popular choice for creating or updating a single comment per workflow.
+A widely-used action for creating or updating a single comment per workflow (as of early 2025,
+~580 GitHub stars).
 Prevents comment spam by updating the same comment each time the workflow runs.
 
 *Key features:*

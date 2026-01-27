@@ -440,6 +440,7 @@ When writing documentation:
 - **Provide direct evidence** by demonstrating behavior yourself (e.g., showing command output, testing functionality)
 - **Remove unverified explanations** rather than including speculative or unsubstantiated claims
 - Link to authoritative sources like official documentation, GitHub issues, or peer-reviewed materials
+- **For popularity claims**: Provide specific metrics (e.g., GitHub stars, download counts, usage statistics) with dates rather than subjective terms like "most popular" or "widely used" without evidence
 
 **When adding links to external resources:**
 
