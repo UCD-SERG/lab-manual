@@ -79,7 +79,7 @@ These settings control where and how Copilot integrates into your development en
 
 **Editor preview features:**
 
-- *What it does*: Enables preview/experimental features in your editor
+- *What it does*: Enables previews of experimental features in your editor
 - *Pros*: Access to latest capabilities before general release
 - *Cons*: May have bugs or unstable behavior
 - *Recommendation*: **Enable** if you're comfortable troubleshooting issues and want cutting-edge features
