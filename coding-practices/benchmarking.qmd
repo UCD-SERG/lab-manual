@@ -38,6 +38,11 @@ Add benchmarking dependencies to `DESCRIPTION`:
 # Add bench and profvis as development dependencies
 usethis::use_package("bench", type = "Suggests")
 usethis::use_package("profvis", type = "Suggests")
+
+# Add any packages used in benchmarks
+# For example, if comparing with data.table or gbm:
+# usethis::use_package("data.table", type = "Suggests")
+# usethis::use_package("gbm", type = "Suggests")
 ```
 
 Create a benchmark template:
@@ -119,6 +124,9 @@ cohort <- data.frame(
   treatment = rbinom(n, 1, 0.5),
   outcome = rbinom(n, 1, 0.3)
 )
+
+# Note: Install gbm first if not already installed
+# usethis::use_package("gbm", type = "Suggests")
 
 # Compare GLM vs GBM for propensity scores
 ps_benchmark <- bench::mark(
@@ -333,6 +341,7 @@ jobs:
 - **Baseline storage**: Commit baseline results or use GitHub Actions artifacts
 - **Selective running**: Only benchmark on specific branches or when performance-critical files change
 - **Manual triggers**: Use `workflow_dispatch` for on-demand benchmarking
+- **Security**: For production workflows, consider pinning action versions to commit SHAs instead of tags (see @sec-ai-best-practices)
 
 **Alternative: Comment benchmark results on PRs:**
 
@@ -351,7 +360,12 @@ add performance tests to your test suite.
 
 test_that("data preparation meets performance requirements", {
   skip_on_cran()  # Skip on CRAN (timing-based tests can be flaky)
-  skip_on_ci()    # Skip on CI unless needed
+  
+  # Run on CI only if BENCHMARK_ON_CI is set
+  if (identical(Sys.getenv("CI"), "true") && 
+      !identical(Sys.getenv("BENCHMARK_ON_CI"), "true")) {
+    skip("Skipping performance test on CI")
+  }
   
   n <- 10000
   test_data <- generate_test_cohort(n)
@@ -379,7 +393,12 @@ test_that("data preparation meets performance requirements", {
 
 test_that("analysis scales linearly with sample size", {
   skip_on_cran()
-  skip_on_ci()
+  
+  # Run on CI only if BENCHMARK_ON_CI is set
+  if (identical(Sys.getenv("CI"), "true") && 
+      !identical(Sys.getenv("BENCHMARK_ON_CI"), "true")) {
+    skip("Skipping performance test on CI")
+  }
   
   # Test at different sample sizes
   sizes <- c(1000, 5000, 10000)
