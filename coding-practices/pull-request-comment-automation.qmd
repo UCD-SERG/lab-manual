@@ -1,0 +1,159 @@
+GitHub Actions can automatically comment on pull requests to provide feedback,
+status updates,
+or deployment previews.
+This section compares commonly used actions for managing PR comments,
+helping you choose the right tool for your workflow.
+
+#### Common Use Cases
+
+PR comment automation is particularly useful for:
+
+- **CI/CD status updates**: Report test results, build status, or deployment progress
+- **Code quality reports**: Post coverage reports, linting results, or security scan findings  
+- **Deployment previews**: Share links to preview deployments (e.g., documentation sites, app previews)
+- **Bot feedback**: Provide automated feedback without cluttering the PR conversation
+
+#### Comparison of Popular Actions
+
+**[marocchino/sticky-pull-request-comment](https://github.com/marocchino/sticky-pull-request-comment)**
+
+The most popular choice for creating or updating a single comment per workflow.
+Prevents comment spam by updating the same comment each time the workflow runs.
+
+*Key features:*
+
+- **Sticky comments**: Creates or updates a comment identified by a unique header
+- **Multiple independent comments**: Different workflows can maintain separate sticky comments using different headers
+- **Flexible update modes**: Replace, append, recreate, delete, or hide comments
+- **File-based messages**: Load comment content from files for complex templates
+- **Works with push events**: Can find and comment on PRs from push triggers (useful for monorepos)
+
+*Typical usage:*
+
+```yaml
+- uses: marocchino/sticky-pull-request-comment@v2
+  with:
+    header: test-results
+    message: |
+      ## Test Results
+      ```
+      ${{ steps.test.outputs.summary }}
+      ```
+```
+
+*Best for:* Projects needing clean,
+updatable status comments without duplicates.
+Ideal when you want the same type of information always visible in one place.
+
+**[hasura/comment-progress](https://github.com/hasura/comment-progress)**
+
+Designed for tracking workflow progress with multiple updates as jobs complete.
+Similar to how Netlify or SonarCloud bots provide progressive feedback.
+
+*Key features:*
+
+- **Progress tracking**: Update comments as workflow steps complete or fail
+- **Identifier-based updates**: Uses a hidden identifier to find and update the correct comment
+- **Multiple update modes**: Append to existing comments, recreate, or delete
+- **Flexible targets**: Comment on PRs, issues, or specific commits
+- **Failure handling**: Optionally fail the workflow and append failure messages
+
+*Typical usage:*
+
+```yaml
+- uses: hasura/comment-progress@v2.3.0
+  with:
+    github-token: ${{ secrets.GITHUB_TOKEN }}
+    repository: ${{ github.repository }}
+    number: ${{ github.event.number }}
+    id: deploy-progress
+    message: "Deploy in progress..."
+    append: true
+```
+
+*Best for:* Long-running workflows where you want to provide incremental status updates as different stages complete.
+Good for deployment pipelines or multi-stage builds.
+
+**[thollander/actions-comment-pull-request](https://github.com/thollander/actions-comment-pull-request)**
+
+A simpler,
+more straightforward action for posting or updating PR comments.
+Good balance of features and ease of use.
+
+*Key features:*
+
+- **Simple comment creation**: Easy to post one-time or updated comments
+- **Comment updates**: Find and update existing comments by ID or content
+- **Reactions**: Add emoji reactions to comments
+- **Comment deletion**: Remove comments when no longer needed
+- **Dynamic content**: Supports multi-line messages and environment variables
+
+*Typical usage:*
+
+```yaml
+- uses: thollander/actions-comment-pull-request@v2
+  with:
+    message: |
+      ## Deployment Status
+      ✅ Successfully deployed to preview environment
+      Preview URL: https://preview-${{ github.event.number }}.example.com
+```
+
+*Best for:* Straightforward commenting needs without complex update logic.
+Good for simple status messages or one-time notifications.
+
+#### Feature Comparison {#tbl-pr-comment-features}
+
+| Feature | marocchino/sticky | hasura/comment-progress | thollander/actions-comment |
+|---------|-------------------|------------------------|----------------------------|
+| Update existing comment | ✅ (by header) | ✅ (by identifier) | ✅ (by ID or content) |
+| Multiple independent comments | ✅ (via headers) | ✅ (via identifiers) | ⚠️ (limited) |
+| Append mode | ✅ | ✅ | ❌ |
+| Delete comments | ✅ | ✅ | ✅ |
+| Hide comments | ✅ | ❌ | ❌ |
+| File-based messages | ✅ | ❌ | ❌ |
+| Emoji reactions | ❌ | ❌ | ✅ |
+| Works with push events | ✅ | ⚠️ (requires PR number) | ⚠️ (requires PR number) |
+| Progress tracking focus | ⚠️ (flexible) | ✅ | ❌ |
+
+: Comparison of PR comment action features
+
+#### Choosing the Right Action
+
+**Use marocchino/sticky-pull-request-comment when:**
+
+- You need to maintain multiple independent status comments (test results, coverage, deployment, etc.)
+- You want to prevent comment spam by updating the same comment
+- You need advanced features like hiding outdated comments or file-based templates
+- Your workflow triggers on push events and needs to find the associated PR
+
+**Use hasura/comment-progress when:**
+
+- You have long-running workflows with multiple stages
+- You want to provide progressive feedback as each stage completes
+- You need the workflow to fail and report the failure in the comment
+- You want a pattern similar to third-party CI/CD service bots
+
+**Use thollander/actions-comment-pull-request when:**
+
+- You need simple comment posting without complex update logic
+- You want to add emoji reactions to comments
+- You're comfortable with the action's simpler update mechanism
+- Your use case doesn't require the advanced features of the other options
+
+#### Security Considerations
+
+::: {.callout-warning}
+**Important: PR Comment Permissions**
+
+PR comment actions require write access to pull requests,
+which means they need the `pull-requests: write` permission.
+
+For workflows triggered by pull requests from forks
+(common in open-source projects),
+be careful about what information you expose in comments,
+as fork contributors can trigger these workflows.
+Never expose secrets or sensitive information in PR comments.
+
+See @sec-ai-best-practices for more guidance on workflow security.
+:::
