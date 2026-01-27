@@ -1,0 +1,43 @@
+The easiest way to add GitHub Actions to your R package is using <a href="https://usethis.r-lib.org/">`{usethis}`</a>.
+The tidyverse team maintains a collection of ready-to-use workflows at [r-lib/actions](https://github.com/r-lib/actions) that handle common R package tasks.
+
+### Essential Workflows
+
+**1. R CMD check (most important):**
+
+```r
+usethis::use_github_action("check-standard")
+```
+
+This runs `R CMD check` on Linux, macOS, and Windows to ensure your package works across platforms.
+If you only set up one workflow, make it this one.
+
+**2. Test coverage:**
+
+```r
+usethis::use_github_action("test-coverage")
+```
+
+Calculates what percentage of your code is covered by tests and reports to [codecov.io](https://about.codecov.io).
+
+**3. Package website:**
+
+```r
+usethis::use_github_action("pkgdown")
+```
+
+Automatically builds and deploys your pkgdown documentation site to GitHub Pages.
+
+### Interactive Setup
+
+Running `usethis::use_github_action()` without arguments shows a menu of recommended workflows:
+
+```r
+usethis::use_github_action()
+#> Which action do you want to add? (0 to exit)
+#> (See <https://github.com/r-lib/actions/tree/v2/examples> for other options)
+#>
+#> 1: check-standard: Run `R CMD check` on Linux, macOS, and Windows
+#> 2: test-coverage: Compute test coverage and report to https://about.codecov.io
+#> 3: pr-commands: Add /document and /style commands for pull requests
+```
