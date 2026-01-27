@@ -445,7 +445,8 @@ When writing documentation:
 - **Remove unverified explanations** rather than including speculative or unsubstantiated claims
 - Link to authoritative sources like official documentation, GitHub issues, or peer-reviewed materials
 - **For comparative or popularity claims**: Provide specific metrics (e.g., GitHub stars, download counts, usage statistics) with dates rather than subjective terms like "most popular" or "widely used" without evidence
-- **For all factual claims**: Ensure statements are verifiable and backed by evidence, not assumptions or common knowledge that may not be universally accepted
+- **For all factual claims**: you must provide supporting evidence, either directly or by explicitly citing credible sources;
+do not phrase statements as facts when they are really claims that are really assumptions or common knowledge that may not be universally.
 
 **When adding links to external resources:**
 
