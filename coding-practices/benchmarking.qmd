@@ -1,3 +1,8 @@
+::: {.callout-note}
+This section draws from the [Measuring Performance](https://adv-r.hadley.nz/perf-measure.html) and [Improving Performance](https://adv-r.hadley.nz/perf-improve.html) chapters in *Advanced R* by Hadley Wickham,
+along with documentation for [`{bench}`](https://bench.r-lib.org/) and [`{profvis}`](https://rstudio.github.io/profvis/).
+:::
+
 Performance optimization starts with measurement.
 Benchmarking helps identify bottlenecks,
 compare alternative implementations,
