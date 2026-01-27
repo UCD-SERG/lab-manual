@@ -229,6 +229,7 @@ See the "Best Practices" section for more details.
 - All R projects should use R package structure
 - **Avoid redundant logical comparisons**: Use logical variables directly in conditional statements (e.g., `if (x)` instead of `if (x == TRUE)` or `if (x == 1)`)
 - Use `lubridate::NA_Date_` instead of `as.Date(NA)` for missing date values
+- **Use pipes to emphasize primary inputs**: When writing functions and code, use the pipe operator to clearly show transformations on a primary object. The primary input should flow as the first argument to each function in the chain. Design functions so the most important argument (usually data) comes first, enabling natural pipeline composition.
 
 ### Quarto Code Chunk Options
 
