@@ -74,10 +74,14 @@ Common chunk options include:
 
 - `#| label:` - give the chunk a name
 - `#| echo: false` - hide the code but show the output
+- `#| code-fold: true` - allow readers to toggle code visibility (useful when output is more important to the narrative than the code)
 - `#| eval: false` - show the code but don't run it
 - `#| include: false` - run the code but hide both code and output
 - `#| warning: false` - hide warnings
 - `#| message: false` - hide messages
+
+Use `code-fold: true` for chunks where the output is important to the narrative and not the code used to produce it.
+This allows interested readers to expand and view the code while keeping the document focused on results.
 
 ### Format-Specific Settings
 
