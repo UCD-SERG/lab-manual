@@ -725,6 +725,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>All R projects should use R package structure</li>
 <li><strong>Avoid redundant logical comparisons</strong>: Use logical variables directly in conditional statements (e.g., <code>if (x)</code> instead of <code>if (x == TRUE)</code> or <code>if (x == 1)</code>)</li>
 <li>Use <code>lubridate::NA_Date_</code> instead of <code>as.Date(NA)</code> for missing date values</li>
+<li><strong>Use pipes to emphasize primary inputs</strong>: When writing functions and code, use the pipe operator to clearly show transformations on a primary object. The primary input should flow as the first argument to each function in the chain. Design functions so the most important argument (usually data) comes first, enabling natural pipeline composition.</li>
 </ul>
 <section id="quarto-code-chunk-options" class="level3">
 <h3 class="anchored" data-anchor-id="quarto-code-chunk-options">Quarto Code Chunk Options</h3>

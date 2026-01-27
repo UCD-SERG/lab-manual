@@ -588,6 +588,7 @@ div.csl-indent {
 <li><strong>Naming</strong>: Use <code>snake_case</code> for functions and variables; acronyms may be uppercase (e.g., <code>prep_IDs_data</code>)</li>
 <li><strong>Write tidy code</strong>: Keep code clean, readable, and well-organized</li>
 <li><strong>Avoid redundant logical comparisons</strong>: Use logical variables directly in conditional statements (e.g., <code>if (x)</code> instead of <code>if (x == TRUE)</code> or <code>if (x == 1)</code>)</li>
+<li><strong>Use pipes to emphasize primary inputs</strong>: When writing functions and code, use the pipe operator to clearly show transformations on a primary object. The primary input should flow as the first argument to each function in the chain. Design functions so the most important argument (usually data) comes first, enabling natural pipeline composition. See the <a href="https://design.tidyverse.org/important-args-first.html">tidyverse design principles</a> for more details.</li>
 </ul>
 </section>
 <section id="sec-function-docs" class="level2" data-number="7.2">
