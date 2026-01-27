@@ -63,9 +63,13 @@ UC Davis GitHub invitation with Copilot seat option
 2. Scroll to the "Get Copilot from an organization" section at the bottom
 3. Find the "ucdavis" entry and click the request button
 
-   ::: {.content-visible when-format="html"}
-   ![GitHub Copilot settings page showing organization options](assets/images/github-copilot-settings-page.png)
-   :::
+:::{#fig-copilot-settings-org-options}
+
+![](assets/images/github-copilot-settings-page.png)
+
+GitHub Copilot settings page showing organization options
+
+:::
 
 4. Wait for approval from the UC Davis GitHub organization administrators
 5. Once approved,
