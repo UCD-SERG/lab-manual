@@ -1547,7 +1547,16 @@ Warning
 </section>
 <section id="using-actionscheckout" class="level4" data-number="17.5.11.4">
 <h4 data-number="17.5.11.4" class="anchored" data-anchor-id="using-actionscheckout"><span class="header-section-number">17.5.11.4</span> Using <code>actions/checkout</code></h4>
-<p>The <a href="https://github.com/actions/checkout"><code>actions/checkout</code></a> action is used to check out your repository code so that the workflow can access it. Copilot will automatically check out your repository if you don’t include this step, but explicitly including it allows you to configure options like Git LFS.</p>
+<p>The <a href="https://github.com/actions/checkout"><code>actions/checkout</code></a> action is used to check out your repository code so that the workflow can access it. While Copilot will automatically check out your repository if you don’t include this step, <strong>explicitly including it is necessary</strong> when your setup steps need to access repository files.</p>
+<p><strong>Why explicitly include checkout?</strong></p>
+<p>Many dependency installation steps require access to repository files:</p>
+<ul>
+<li><code>r-lib/actions/setup-renv@v2</code> needs <code>renv.lock</code> to install R package dependencies</li>
+<li><code>r-lib/actions/setup-r-dependencies@v2</code> needs <code>DESCRIPTION</code> to install R package dependencies</li>
+<li><code>npm ci</code> needs <code>package-lock.json</code> to install Node.js dependencies</li>
+<li><code>pip install -r requirements.txt</code> needs the requirements file</li>
+</ul>
+<p>Without an explicit checkout step, these dependency installation commands will fail because the necessary files won’t be available yet.</p>
 <p><strong>Basic checkout:</strong></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout code</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v4</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
