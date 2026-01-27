@@ -111,6 +111,10 @@ Common issues include:
 For help addressing workflow failures,
 see @sec-ai-addressing-failing-workflows.
 
+### Pull Request Comment Automation {#sec-pr-comment-automation}
+
+{{< include coding-practices/pull-request-comment-automation.qmd >}}
+
 ### Additional Resources
 
 - [GitHub Actions features overview](https://github.com/features/actions)

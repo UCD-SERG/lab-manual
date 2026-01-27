@@ -44,11 +44,15 @@ you may be eligible for a free Copilot seat.
 2. Go to the [UC Davis IT ServiceHub GitHub page](https://servicehub.ucdavis.edu/servicehub?id=it_catalog_content&sys_id=951add951b5798103f4286ae6e4bcb12)
 3. Click the blue "Get GitHub!" button near the top right
 4. When you receive the invitation email,
-   make sure to check the "Ask for a GitHub Copilot seat (optional)" checkbox before joining
+   make sure to check the "Ask for a GitHub Copilot seat (optional)" checkbox before joining (@fig-request-copilot-seat)
 
-   ::: {.content-visible when-format="html"}
-   ![UC Davis GitHub invitation with Copilot seat option](assets/images/github-copilot-invitation-email.png)
-   :::
+
+:::{#fig-request-copilot-seat}
+
+![ ](assets/images/github-copilot-invitation-email.png)
+
+UC Davis GitHub invitation with Copilot seat option
+:::
 
 5. Click "Join UC Davis" to accept the invitation
 6. Follow the setup instructions to install and configure Copilot in your development environment
@@ -59,9 +63,13 @@ you may be eligible for a free Copilot seat.
 2. Scroll to the "Get Copilot from an organization" section at the bottom
 3. Find the "ucdavis" entry and click the request button
 
-   ::: {.content-visible when-format="html"}
-   ![GitHub Copilot settings page showing organization options](assets/images/github-copilot-settings-page.png)
-   :::
+:::{#fig-copilot-settings-org-options}
+
+![](assets/images/github-copilot-settings-page.png)
+
+GitHub Copilot settings page showing organization options
+
+:::
 
 4. Wait for approval from the UC Davis GitHub organization administrators
 5. Once approved,
@@ -170,3 +178,7 @@ For more details and troubleshooting scenarios, see the [Repeated Amend chapter]
 Never push .Rout files! If someone else runs an R script and creates an .Rout file at the same time and both of you try to push to github, it is incredibly difficult to reconcile these two logs. If you run logs, keep them on your own system or (preferably) set up a shared directory where all logs are name and date timestamped. 
 
 There is a standardized `.gitignore` for `R` which you [can download](https://github.com/github/gitignore/blob/master/R.gitignore) and add to your project. This ensures you're not committing log files or things that would otherwise best be left ignored to GitHub. This is a [great discussion of project-oriented workflows](https://tidyverse.org/blog/2017/12/workflow-vs-script/), extolling the virtues of a self-contained, portable projects, for your reference.
+
+## Customizing How Files Appear on GitHub {#sec-gitattributes}
+
+{{< include github/_sec-gitattributes.qmd >}}

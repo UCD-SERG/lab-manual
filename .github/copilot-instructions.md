@@ -329,6 +329,27 @@ Create a new include file when:
 - Content might be reused elsewhere
 - You want to work on a section independently
 
+::: {.callout-important}
+**Important: New subsections should usually use includes**
+
+When adding new subsections (### headings) to existing chapters,
+**usually create a separate include file** for the content.
+Consider these factors when deciding:
+
+- Subsections with substantial content (>50 lines)
+- Subsections that are "big and distinctive enough" to stand on their own
+- Content that forms a cohesive, self-contained topic
+- Likelihood of future growth or expansion
+- Current size of the parent file (keep source files under 100 lines when practical)
+
+For shorter subsections (<30 lines) in files that are well under 100 lines,
+inline content may be appropriate if the section is unlikely to grow significantly.
+
+This practice ensures better git history,
+easier code review,
+and clearer organization from the start.
+:::
+
 #### Migration Strategy
 
 When working with chapters that don't yet use includes:
@@ -423,6 +444,9 @@ When writing documentation:
 - **Provide direct evidence** by demonstrating behavior yourself (e.g., showing command output, testing functionality)
 - **Remove unverified explanations** rather than including speculative or unsubstantiated claims
 - Link to authoritative sources like official documentation, GitHub issues, or peer-reviewed materials
+- **For comparative or popularity claims**: Provide specific metrics (e.g., GitHub stars, download counts, usage statistics) with dates rather than subjective terms like "most popular" or "widely used" without evidence
+- **For all factual claims**: you must provide supporting evidence, either directly or by explicitly citing credible sources;
+- Do not phrase claims as facts when they are really merely assumptions or common opinions that may not be universally agreed on.
 
 **When adding links to external resources:**
 
