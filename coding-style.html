@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; R Code Style – UCD-SeRG Lab Manual</title>
+<title>8&nbsp; R Code Style – UCD-SeRG Lab Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -86,7 +86,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./big-data.html" rel="next">
-<link href="./coding-practices.html" rel="prev">
+<link href="./continuous-integration.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -305,7 +305,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./coding-style.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">R Code Style</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./coding-style.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">R Code Style</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -395,98 +395,104 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./continuous-integration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Continuous Integration</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./coding-style.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">R Code Style</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">R Code Style</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./big-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Big data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Big data</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data-masking.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data masking</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Data masking</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./quarto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Quarto</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Quarto</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./github.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Github</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Github</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./unix.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Unix</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Unix</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./reproducible-environments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Reproducible Environments</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Reproducible Environments</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./code-publication.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Code Publication</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Code Publication</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data-publication.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Data Publication</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Data Publication</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./slurm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">High-performance computing (HPC)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">High-performance computing (HPC)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ai-tools.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Working with AI</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Working with AI</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./checklists.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Checklists</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Checklists</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./resources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Resources</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Resources</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./professional-development.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Professional Development</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Professional Development</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./writing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Writing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Writing</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./manuscript-preparation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Manuscript Preparation and Publication</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Manuscript Preparation and Publication</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -534,24 +540,24 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#general-principles" id="toc-general-principles" class="nav-link active" data-scroll-target="#general-principles"><span class="header-section-number">7.1</span> General Principles</a></li>
-  <li><a href="#sec-function-docs" id="toc-sec-function-docs" class="nav-link" data-scroll-target="#sec-function-docs"><span class="header-section-number">7.2</span> Function Structure and Documentation</a></li>
-  <li><a href="#comments" id="toc-comments" class="nav-link" data-scroll-target="#comments"><span class="header-section-number">7.3</span> Comments</a></li>
-  <li><a href="#line-breaks-and-formatting" id="toc-line-breaks-and-formatting" class="nav-link" data-scroll-target="#line-breaks-and-formatting"><span class="header-section-number">7.4</span> Line Breaks and Formatting</a></li>
-  <li><a href="#markdown-and-quarto-formatting" id="toc-markdown-and-quarto-formatting" class="nav-link" data-scroll-target="#markdown-and-quarto-formatting"><span class="header-section-number">7.5</span> Markdown and Quarto Formatting</a>
+  <li><a href="#general-principles" id="toc-general-principles" class="nav-link active" data-scroll-target="#general-principles"><span class="header-section-number">8.1</span> General Principles</a></li>
+  <li><a href="#sec-function-docs" id="toc-sec-function-docs" class="nav-link" data-scroll-target="#sec-function-docs"><span class="header-section-number">8.2</span> Function Structure and Documentation</a></li>
+  <li><a href="#comments" id="toc-comments" class="nav-link" data-scroll-target="#comments"><span class="header-section-number">8.3</span> Comments</a></li>
+  <li><a href="#line-breaks-and-formatting" id="toc-line-breaks-and-formatting" class="nav-link" data-scroll-target="#line-breaks-and-formatting"><span class="header-section-number">8.4</span> Line Breaks and Formatting</a></li>
+  <li><a href="#markdown-and-quarto-formatting" id="toc-markdown-and-quarto-formatting" class="nav-link" data-scroll-target="#markdown-and-quarto-formatting"><span class="header-section-number">8.5</span> Markdown and Quarto Formatting</a>
   <ul class="collapse">
-  <li><a href="#writing-about-code-in-quarto-documents" id="toc-writing-about-code-in-quarto-documents" class="nav-link" data-scroll-target="#writing-about-code-in-quarto-documents"><span class="header-section-number">7.5.1</span> Writing about code in Quarto documents</a></li>
+  <li><a href="#writing-about-code-in-quarto-documents" id="toc-writing-about-code-in-quarto-documents" class="nav-link" data-scroll-target="#writing-about-code-in-quarto-documents"><span class="header-section-number">8.5.1</span> Writing about code in Quarto documents</a></li>
   </ul></li>
-  <li><a href="#messaging-and-user-communication" id="toc-messaging-and-user-communication" class="nav-link" data-scroll-target="#messaging-and-user-communication"><span class="header-section-number">7.6</span> Messaging and User Communication</a></li>
-  <li><a href="#package-code-practices" id="toc-package-code-practices" class="nav-link" data-scroll-target="#package-code-practices"><span class="header-section-number">7.7</span> Package Code Practices</a></li>
-  <li><a href="#sec-tidyverse-replacements" id="toc-sec-tidyverse-replacements" class="nav-link" data-scroll-target="#sec-tidyverse-replacements"><span class="header-section-number">7.8</span> Tidyverse Replacements</a></li>
-  <li><a href="#sec-here-package-style" id="toc-sec-here-package-style" class="nav-link" data-scroll-target="#sec-here-package-style"><span class="header-section-number">7.9</span> The here Package</a></li>
-  <li><a href="#sec-object-naming" id="toc-sec-object-naming" class="nav-link" data-scroll-target="#sec-object-naming"><span class="header-section-number">7.10</span> Object Naming</a></li>
-  <li><a href="#sec-style-auto-style" id="toc-sec-style-auto-style" class="nav-link" data-scroll-target="#sec-style-auto-style"><span class="header-section-number">7.11</span> Automated Tools for Style and Project Workflow</a>
+  <li><a href="#messaging-and-user-communication" id="toc-messaging-and-user-communication" class="nav-link" data-scroll-target="#messaging-and-user-communication"><span class="header-section-number">8.6</span> Messaging and User Communication</a></li>
+  <li><a href="#package-code-practices" id="toc-package-code-practices" class="nav-link" data-scroll-target="#package-code-practices"><span class="header-section-number">8.7</span> Package Code Practices</a></li>
+  <li><a href="#sec-tidyverse-replacements" id="toc-sec-tidyverse-replacements" class="nav-link" data-scroll-target="#sec-tidyverse-replacements"><span class="header-section-number">8.8</span> Tidyverse Replacements</a></li>
+  <li><a href="#sec-here-package-style" id="toc-sec-here-package-style" class="nav-link" data-scroll-target="#sec-here-package-style"><span class="header-section-number">8.9</span> The here Package</a></li>
+  <li><a href="#sec-object-naming" id="toc-sec-object-naming" class="nav-link" data-scroll-target="#sec-object-naming"><span class="header-section-number">8.10</span> Object Naming</a></li>
+  <li><a href="#sec-style-auto-style" id="toc-sec-style-auto-style" class="nav-link" data-scroll-target="#sec-style-auto-style"><span class="header-section-number">8.11</span> Automated Tools for Style and Project Workflow</a>
   <ul class="collapse">
-  <li><a href="#styling" id="toc-styling" class="nav-link" data-scroll-target="#styling"><span class="header-section-number">7.11.1</span> Styling</a></li>
+  <li><a href="#styling" id="toc-styling" class="nav-link" data-scroll-target="#styling"><span class="header-section-number">8.11.1</span> Styling</a></li>
   </ul></li>
-  <li><a href="#sec-r-resources-style" id="toc-sec-r-resources-style" class="nav-link" data-scroll-target="#sec-r-resources-style"><span class="header-section-number">7.12</span> Additional Resources</a></li>
+  <li><a href="#sec-r-resources-style" id="toc-sec-r-resources-style" class="nav-link" data-scroll-target="#sec-r-resources-style"><span class="header-section-number">8.12</span> Additional Resources</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/coding-style.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/coding-style.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -561,7 +567,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-r-code-style" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">R Code Style</span></span></h1>
+<h1 class="title"><span id="sec-r-code-style" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">R Code Style</span></span></h1>
 </div>
 
 
@@ -580,8 +586,8 @@ div.csl-indent {
 
 <p>Adapted by UCD-SeRG team from <a href="https://jadebc.github.io/lab-manual/coding-style.html">original by Kunal Mishra, Jade Benjamin-Chung, and Stephanie Djajadi</a></p>
 <p>Follow these code style guidelines for all R code:</p>
-<section id="general-principles" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="general-principles"><span class="header-section-number">7.1</span> General Principles</h2>
+<section id="general-principles" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="general-principles"><span class="header-section-number">8.1</span> General Principles</h2>
 <ul>
 <li><strong>Follow tidyverse style guide</strong>: https://style.tidyverse.org</li>
 <li><strong>Use native pipe</strong>: <code>|&gt;</code> not <code>%&gt;%</code> (available in R &gt;= 4.1.0)</li>
@@ -591,8 +597,8 @@ div.csl-indent {
 <li><strong>Use pipes to emphasize primary inputs</strong>: When writing functions and code, use the pipe operator to clearly show transformations on a primary object. The primary input should flow as the first argument to each function in the chain. Design functions so the most important argument (usually data) comes first, enabling natural pipeline composition. See the <a href="https://design.tidyverse.org/important-args-first.html">tidyverse design principles</a> for more details.</li>
 </ul>
 </section>
-<section id="sec-function-docs" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="sec-function-docs"><span class="header-section-number">7.2</span> Function Structure and Documentation</h2>
+<section id="sec-function-docs" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="sec-function-docs"><span class="header-section-number">8.2</span> Function Structure and Documentation</h2>
 <p>Every function should follow this pattern:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#' Short Title (One Line)</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
@@ -612,10 +618,10 @@ div.csl-indent {
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>my_function <span class="ot">&lt;-</span> <span class="cf">function</span>(param1, param2) {</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Implementation</span></span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><em>See also <a href="coding-practices.html#sec-documenting-code" class="quarto-xref"><span>Section 6.10</span></a> for general code documentation practices.</em></p>
+<p><em>See also <a href="coding-practices.html#sec-documenting-code" class="quarto-xref"><span>Section 6.9</span></a> for general code documentation practices.</em></p>
 </section>
-<section id="comments" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="comments"><span class="header-section-number">7.3</span> Comments</h2>
+<section id="comments" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="comments"><span class="header-section-number">8.3</span> Comments</h2>
 <p>Use comments to explain <em>why</em>, not <em>what</em>:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Good: Explains reasoning</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Use log scale because distribution is highly skewed</span></span>
@@ -656,8 +662,8 @@ Note
 <p>In prose text chunks, Quarto ignores single line breaks, so you should also line-break your prose text in .qmd files to keep them under 80 characters.</p>
 <p>You can configure RStudio’s settings to display the 80-character margin.</p>
 </section>
-<section id="line-breaks-and-formatting" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="line-breaks-and-formatting"><span class="header-section-number">7.4</span> Line Breaks and Formatting</h2>
+<section id="line-breaks-and-formatting" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="line-breaks-and-formatting"><span class="header-section-number">8.4</span> Line Breaks and Formatting</h2>
 <p><strong>Blank Lines Before Lists</strong></p>
 <p>Always include a blank line before starting a bullet list or numbered list in markdown/Quarto documents. This ensures proper rendering and readability.</p>
 <p><strong>Correct:</strong></p>
@@ -733,16 +739,16 @@ Note
 <span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(title)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Imagine (or perhaps mournfully recall) the mess that can occur when you don’t strictly style a complicated <code>ggplot</code> call. Trying to fix bugs and ensure your code is working can be a nightmare. Now imagine trying to do it with the same code 6 months after you’ve written it. Invest the time now and reap the rewards as the code practically explains itself, line by line.</p>
 </section>
-<section id="markdown-and-quarto-formatting" class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="markdown-and-quarto-formatting"><span class="header-section-number">7.5</span> Markdown and Quarto Formatting</h2>
-<section id="writing-about-code-in-quarto-documents" class="level3" data-number="7.5.1">
-<h3 data-number="7.5.1" class="anchored" data-anchor-id="writing-about-code-in-quarto-documents"><span class="header-section-number">7.5.1</span> Writing about code in Quarto documents</h3>
+<section id="markdown-and-quarto-formatting" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="markdown-and-quarto-formatting"><span class="header-section-number">8.5</span> Markdown and Quarto Formatting</h2>
+<section id="writing-about-code-in-quarto-documents" class="level3" data-number="8.5.1">
+<h3 data-number="8.5.1" class="anchored" data-anchor-id="writing-about-code-in-quarto-documents"><span class="header-section-number">8.5.1</span> Writing about code in Quarto documents</h3>
 <p>When writing about code in prose sections of quarto documents, use backticks to apply a code style: for example, <code>dplyr::mutate()</code>. When talking about packages, use backticks and curly-braces with a hyperlink to the package website. For example: <a href="https://dplyr.tidyverse.org/"><code>{dplyr}</code></a>.</p>
 <p><strong>Important:</strong> Do not use raw HTML (<code>&lt;a href="..."&gt;</code>) in <code>.qmd</code> files. Always use Quarto/markdown link syntax instead.</p>
 </section>
 </section>
-<section id="messaging-and-user-communication" class="level2" data-number="7.6">
-<h2 data-number="7.6" class="anchored" data-anchor-id="messaging-and-user-communication"><span class="header-section-number">7.6</span> Messaging and User Communication</h2>
+<section id="messaging-and-user-communication" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="messaging-and-user-communication"><span class="header-section-number">8.6</span> Messaging and User Communication</h2>
 <p>Use <code>cli</code> package functions for all user-facing messages in package functions:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Good</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>cli<span class="sc">::</span><span class="fu">cli_inform</span>(<span class="st">"Analysis complete"</span>)</span>
@@ -754,16 +760,16 @@ Note
 <span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="fu">warning</span>(<span class="st">"Missing data detected"</span>)</span>
 <span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="fu">stop</span>(<span class="st">"Invalid input"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="package-code-practices" class="level2" data-number="7.7">
-<h2 data-number="7.7" class="anchored" data-anchor-id="package-code-practices"><span class="header-section-number">7.7</span> Package Code Practices</h2>
+<section id="package-code-practices" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="package-code-practices"><span class="header-section-number">8.7</span> Package Code Practices</h2>
 <ul>
 <li><strong>No <code>library()</code> in package code</strong>: Use <code>::</code> notation or declare in DESCRIPTION Imports</li>
 <li><strong>Document all exports</strong>: Use roxygen2 (<code>@title</code>, <code>@description</code>, <code>@param</code>, <code>@returns</code>, <code>@examples</code>)</li>
 <li><strong>Avoid code duplication</strong>: Extract repeated logic into helper functions</li>
 </ul>
 </section>
-<section id="sec-tidyverse-replacements" class="level2" data-number="7.8">
-<h2 data-number="7.8" class="anchored" data-anchor-id="sec-tidyverse-replacements"><span class="header-section-number">7.8</span> Tidyverse Replacements</h2>
+<section id="sec-tidyverse-replacements" class="level2" data-number="8.8">
+<h2 data-number="8.8" class="anchored" data-anchor-id="sec-tidyverse-replacements"><span class="header-section-number">8.8</span> Tidyverse Replacements</h2>
 <p>Use modern tidyverse/alternatives for base R functions:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Data structures</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">tibble</span>()           <span class="co"># instead of data.frame()</span></span>
@@ -788,10 +794,10 @@ Note
 <span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Session info</span></span>
 <span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>sessioninfo<span class="sc">::</span><span class="fu">session_info</span>() <span class="co"># instead of sessionInfo()</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>See also <a href="coding-practices.html#sec-tidyverse" class="quarto-xref"><span>Section 6.16</span></a>.</p>
+<p>See also <a href="coding-practices.html#sec-tidyverse" class="quarto-xref"><span>Section 6.15</span></a>.</p>
 </section>
-<section id="sec-here-package-style" class="level2" data-number="7.9">
-<h2 data-number="7.9" class="anchored" data-anchor-id="sec-here-package-style"><span class="header-section-number">7.9</span> The here Package</h2>
+<section id="sec-here-package-style" class="level2" data-number="8.9">
+<h2 data-number="8.9" class="anchored" data-anchor-id="sec-here-package-style"><span class="header-section-number">8.9</span> The here Package</h2>
 <p>The <code>here</code> package helps manage file paths in projects by automatically finding the project root and building paths relative to it:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -800,10 +806,10 @@ Note
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(results, <span class="fu">here</span>(<span class="st">"inst"</span>, <span class="st">"analyses"</span>, <span class="st">"results.rds"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This solves the problem of different working directory paths across collaborators. For example, one person might have the project at <code>/home/oski/Some-R-Project</code> while another has it at <code>/home/bear/R-Code/Some-R-Project</code>. The <code>here</code> package handles this automatically.</p>
 <p>This works regardless of where collaborators clone the repository. For more details, see the <a href="https://github.com/jennybc/here_here">here package vignette</a>.</p>
-<p><em>See also <a href="coding-practices.html#sec-here-package-practices" class="quarto-xref"><span>Section 6.13</span></a> for detailed explanation of the here package.</em></p>
+<p><em>See also <a href="coding-practices.html#sec-here-package-practices" class="quarto-xref"><span>Section 6.12</span></a> for detailed explanation of the here package.</em></p>
 </section>
-<section id="sec-object-naming" class="level2" data-number="7.10">
-<h2 data-number="7.10" class="anchored" data-anchor-id="sec-object-naming"><span class="header-section-number">7.10</span> Object Naming</h2>
+<section id="sec-object-naming" class="level2" data-number="8.10">
+<h2 data-number="8.10" class="anchored" data-anchor-id="sec-object-naming"><span class="header-section-number">8.10</span> Object Naming</h2>
 <p>Use descriptive names that are both expressive and explicit. Being verbose is useful and easy in the age of autocompletion:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Good</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>vaccination_coverage_2017_18</span>
@@ -854,12 +860,12 @@ Note
 <hr>
 <p>For more help, check out <a href="https://spin.atomicobject.com/2017/11/01/good-variable-names/">Be Expressive: How to Give Your Variables Better Names</a></p>
 </section>
-<section id="sec-style-auto-style" class="level2" data-number="7.11">
-<h2 data-number="7.11" class="anchored" data-anchor-id="sec-style-auto-style"><span class="header-section-number">7.11</span> Automated Tools for Style and Project Workflow</h2>
-<section id="styling" class="level3" data-number="7.11.1">
-<h3 data-number="7.11.1" class="anchored" data-anchor-id="styling"><span class="header-section-number">7.11.1</span> Styling</h3>
-<section id="rstudio-shortcuts" class="level4" data-number="7.11.1.1">
-<h4 data-number="7.11.1.1" class="anchored" data-anchor-id="rstudio-shortcuts"><span class="header-section-number">7.11.1.1</span> RStudio shortcuts</h4>
+<section id="sec-style-auto-style" class="level2" data-number="8.11">
+<h2 data-number="8.11" class="anchored" data-anchor-id="sec-style-auto-style"><span class="header-section-number">8.11</span> Automated Tools for Style and Project Workflow</h2>
+<section id="styling" class="level3" data-number="8.11.1">
+<h3 data-number="8.11.1" class="anchored" data-anchor-id="styling"><span class="header-section-number">8.11.1</span> Styling</h3>
+<section id="rstudio-shortcuts" class="level4" data-number="8.11.1.1">
+<h4 data-number="8.11.1.1" class="anchored" data-anchor-id="rstudio-shortcuts"><span class="header-section-number">8.11.1.1</span> RStudio shortcuts</h4>
 <ol type="1">
 <li><p><strong>Code Autoformatting</strong> - RStudio includes a fantastic built-in utility (keyboard shortcut: <code>CMD-Shift-A</code> (Mac) or <code>Ctrl-Shift-A</code> (Windows/Linux)) for autoformatting highlighted chunks of code to fit many of the best practices listed here. It generally makes code more readable and fixes a lot of the small things you may not feel like fixing yourself. Try it out as a “first pass” on some code of yours that <em>doesn’t</em> follow many of these best practices!</p></li>
 <li><p><strong>Assignment Aligner</strong> - A <a href="https://www.r-bloggers.com/align-assign-rstudio-addin-to-align-assignment-operators/">cool R package</a> allows you to very powerfully format large chunks of assignment code to be much cleaner and much more readable. Follow the linked instructions and create a keyboard shortcut of your choosing (recommendation: <code>CMD-Shift-Z</code>). Here is an example of how assignment aligning can dramatically improve code readability:</p></li>
@@ -895,8 +901,8 @@ Note
 <span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">"RISE Community School"</span>              <span class="ot">=</span> <span class="fu">str_subset</span>(<span class="at">string =</span> OUSD_school_shapes<span class="sc">$</span>schnam, <span class="at">pattern =</span> <span class="st">"Rise Community"</span>)</span>
 <span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="styler" class="level4" data-number="7.11.1.2">
-<h4 data-number="7.11.1.2" class="anchored" data-anchor-id="styler"><span class="header-section-number">7.11.1.2</span> <a href="https://styler.r-lib.org/"><code>{styler}</code></a></h4>
+<section id="styler" class="level4" data-number="8.11.1.2">
+<h4 data-number="8.11.1.2" class="anchored" data-anchor-id="styler"><span class="header-section-number">8.11.1.2</span> <a href="https://styler.r-lib.org/"><code>{styler}</code></a></h4>
 <p><a href="https://styler.r-lib.org/"><code>{styler}</code></a> is another <a href="https://tidyverse.org/blog/2017/12/styler-1.0.0/">cool R package from the Tidyverse</a> that can be powerful and used as a first pass on entire projects that need refactoring. The most useful function of the package is the <code>style_dir</code> function, which will style all files within a given directory. See the <a href="https://www.rdocumentation.org/packages/styler/versions/1.1.0/topics/style_dir">function’s documentation</a> and the vignette linked above for more details.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -949,8 +955,8 @@ Note
 </div>
 </div>
 </section>
-<section id="lintr" class="level4" data-number="7.11.1.3">
-<h4 data-number="7.11.1.3" class="anchored" data-anchor-id="lintr"><span class="header-section-number">7.11.1.3</span> <a href="https://lintr.r-lib.org/"><code>{lintr}</code></a></h4>
+<section id="lintr" class="level4" data-number="8.11.1.3">
+<h4 data-number="8.11.1.3" class="anchored" data-anchor-id="lintr"><span class="header-section-number">8.11.1.3</span> <a href="https://lintr.r-lib.org/"><code>{lintr}</code></a></h4>
 <p>Linters are programming tools that check adherence to a given style, syntax errors, and possible semantic issues. The R linter, called <code>lintr</code>, can be found in this <a href="https://www.rdocumentation.org/packages/lintr/versions/1.0.3">package</a>. It helps keep files consistent across different authors and even different organizations. For example, it notifies you if you have unused variables, global variables with no visible binding, not enough or superfluous whitespace, and improper use of parentheses or brackets. A list of its other purposes can be found <a href="https://cran.r-project.org/web/packages/lintr/readme/README.html#available-linters">in this link</a>, and most guidelines are based on the <a href="https://style.tidyverse.org/">Tidyverse R Style Guide</a>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1010,8 +1016,8 @@ Note
 </section>
 </section>
 </section>
-<section id="sec-r-resources-style" class="level2" data-number="7.12">
-<h2 data-number="7.12" class="anchored" data-anchor-id="sec-r-resources-style"><span class="header-section-number">7.12</span> Additional Resources</h2>
+<section id="sec-r-resources-style" class="level2" data-number="8.12">
+<h2 data-number="8.12" class="anchored" data-anchor-id="sec-r-resources-style"><span class="header-section-number">8.12</span> Additional Resources</h2>
 <ul>
 <li>Tidyverse style guide <span class="citation" data-cites="wickham2023tidyverse">(<a href="references.html#ref-wickham2023tidyverse" role="doc-biblioref">Wickham 2023</a>)</span>: Detailed coding style conventions for writing clear, consistent R code. Covers naming, syntax, pipes, functions, and more.</li>
 </ul>
@@ -1440,13 +1446,13 @@ Wickham, Hadley. 2023. <em>The Tidyverse Style Guide</em>. <a href="https://styl
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./coding-practices.html" class="pagination-link" aria-label="R Coding Practices">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">R Coding Practices</span></span>
+      <a href="./continuous-integration.html" class="pagination-link" aria-label="Continuous Integration">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Continuous Integration</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./big-data.html" class="pagination-link" aria-label="Big data">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Big data</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Big data</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
