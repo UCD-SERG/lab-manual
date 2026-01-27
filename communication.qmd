@@ -41,14 +41,14 @@ especially if they receive work email or Teams notifications on their phones.
   Recipients will manage their own notification schedules,
   and they may be working different hours or want the information sooner.
 
-## Setting Away Status and Autoresponse
+## Setting Away Status and Autoresponse checklist
 
 When you'll be away from work (vacation, conference, sick leave, etc.),
 please help the team stay coordinated by setting appropriate away indicators:
 
-- **Outlook calendar**: Mark yourself as away on your Outlook calendar for the dates you'll be unavailable.
-- **Autoresponse**: Set an autoresponse message that indicates when you expect to be back at work.
-- **Teams status**: Update your Teams status to indicate you're away (e.g., "On vacation until [date]"). 
+- [ ] **Outlook calendar**: Mark yourself as away on your Outlook calendar for the dates you'll be unavailable.
+- [ ] **Autoresponse**: Set an autoresponse message that indicates when you expect to be back at work.
+- [ ] **Teams status**: Update your Teams status to indicate you're away (e.g., "On vacation until [date]"). 
 
 ## Task Management
 
