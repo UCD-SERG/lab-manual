@@ -508,8 +508,14 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./writing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Writing</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./manuscript-preparation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Manuscript Preparation and Publication</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Manuscript Preparation and Publication</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -601,7 +607,8 @@ window.Quarto = {
   <li><a href="#how-github-actions-workflows-work" id="toc-how-github-actions-workflows-work" class="nav-link" data-scroll-target="#how-github-actions-workflows-work"><span class="header-section-number">6.7.3</span> How GitHub Actions Workflows Work</a></li>
   <li><a href="#workflow-files-and-security" id="toc-workflow-files-and-security" class="nav-link" data-scroll-target="#workflow-files-and-security"><span class="header-section-number">6.7.4</span> Workflow Files and Security</a></li>
   <li><a href="#troubleshooting-failed-workflows" id="toc-troubleshooting-failed-workflows" class="nav-link" data-scroll-target="#troubleshooting-failed-workflows"><span class="header-section-number">6.7.5</span> Troubleshooting Failed Workflows</a></li>
-  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources"><span class="header-section-number">6.7.6</span> Additional Resources</a></li>
+  <li><a href="#sec-pr-comment-automation" id="toc-sec-pr-comment-automation" class="nav-link" data-scroll-target="#sec-pr-comment-automation"><span class="header-section-number">6.7.6</span> Pull Request Comment Automation</a></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources"><span class="header-section-number">6.7.7</span> Additional Resources</a></li>
   </ul></li>
   <li><a href="#sec-r-qa-checklist" id="toc-sec-r-qa-checklist" class="nav-link" data-scroll-target="#sec-r-qa-checklist"><span class="header-section-number">6.8</span> Quality Assurance Checklist</a></li>
   <li><a href="#sec-auto-styling" id="toc-sec-auto-styling" class="nav-link" data-scroll-target="#sec-auto-styling"><span class="header-section-number">6.9</span> Automated Code Styling</a>
@@ -673,12 +680,13 @@ window.Quarto = {
   <li><a href="#reviewing-copilot-generated-pull-requests" id="toc-reviewing-copilot-generated-pull-requests" class="nav-link" data-scroll-target="#reviewing-copilot-generated-pull-requests"><span class="header-section-number">6.24.7</span> Reviewing Copilot-Generated Pull Requests</a></li>
   </ul></li>
   <li><a href="#creating-a-pull-request-template" id="toc-creating-a-pull-request-template" class="nav-link" data-scroll-target="#creating-a-pull-request-template"><span class="header-section-number">6.25</span> Creating a Pull Request Template</a></li>
-  <li><a href="#sec-r-resources" id="toc-sec-r-resources" class="nav-link" data-scroll-target="#sec-r-resources"><span class="header-section-number">6.26</span> Additional Resources</a>
+  <li><a href="#sec-getting-help-with-code" id="toc-sec-getting-help-with-code" class="nav-link" data-scroll-target="#sec-getting-help-with-code"><span class="header-section-number">6.26</span> Getting Help with Code</a></li>
+  <li><a href="#sec-r-resources" id="toc-sec-r-resources" class="nav-link" data-scroll-target="#sec-r-resources"><span class="header-section-number">6.27</span> Additional Resources</a>
   <ul class="collapse">
-  <li><a href="#r-package-development" id="toc-r-package-development" class="nav-link" data-scroll-target="#r-package-development"><span class="header-section-number">6.26.1</span> R Package Development</a></li>
-  <li><a href="#general-r-programming" id="toc-general-r-programming" class="nav-link" data-scroll-target="#general-r-programming"><span class="header-section-number">6.26.2</span> General R Programming</a></li>
-  <li><a href="#shiny-development" id="toc-shiny-development" class="nav-link" data-scroll-target="#shiny-development"><span class="header-section-number">6.26.3</span> Shiny Development</a></li>
-  <li><a href="#git-and-version-control" id="toc-git-and-version-control" class="nav-link" data-scroll-target="#git-and-version-control"><span class="header-section-number">6.26.4</span> Git and Version Control</a></li>
+  <li><a href="#r-package-development" id="toc-r-package-development" class="nav-link" data-scroll-target="#r-package-development"><span class="header-section-number">6.27.1</span> R Package Development</a></li>
+  <li><a href="#general-r-programming" id="toc-general-r-programming" class="nav-link" data-scroll-target="#general-r-programming"><span class="header-section-number">6.27.2</span> General R Programming</a></li>
+  <li><a href="#shiny-development" id="toc-shiny-development" class="nav-link" data-scroll-target="#shiny-development"><span class="header-section-number">6.27.3</span> Shiny Development</a></li>
+  <li><a href="#git-and-version-control" id="toc-git-and-version-control" class="nav-link" data-scroll-target="#git-and-version-control"><span class="header-section-number">6.27.4</span> Git and Version Control</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/coding-practices.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/coding-practices.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -1198,8 +1206,203 @@ Warning
 </ul>
 <p>For help addressing workflow failures, see <a href="ai-tools.html#sec-ai-addressing-failing-workflows" class="quarto-xref"><span>Section 17.5.6</span></a>.</p>
 </section>
-<section id="additional-resources" class="level3" data-number="6.7.6">
-<h3 data-number="6.7.6" class="anchored" data-anchor-id="additional-resources"><span class="header-section-number">6.7.6</span> Additional Resources</h3>
+<section id="sec-pr-comment-automation" class="level3" data-number="6.7.6">
+<h3 data-number="6.7.6" class="anchored" data-anchor-id="sec-pr-comment-automation"><span class="header-section-number">6.7.6</span> Pull Request Comment Automation</h3>
+<p>GitHub Actions can automatically comment on pull requests to provide feedback, status updates, or deployment previews. This section compares commonly used actions for managing PR comments, helping you choose the right tool for your workflow.</p>
+<section id="common-use-cases" class="level4" data-number="6.7.6.1">
+<h4 data-number="6.7.6.1" class="anchored" data-anchor-id="common-use-cases"><span class="header-section-number">6.7.6.1</span> Common Use Cases</h4>
+<p>PR comment automation is particularly useful for:</p>
+<ul>
+<li><strong>CI/CD status updates</strong>: Report test results, build status, or deployment progress</li>
+<li><strong>Code quality reports</strong>: Post coverage reports, linting results, or security scan findings<br>
+</li>
+<li><strong>Deployment previews</strong>: Share links to preview deployments (e.g., documentation sites, app previews)</li>
+<li><strong>Bot feedback</strong>: Provide automated feedback without cluttering the PR conversation</li>
+</ul>
+</section>
+<section id="comparison-of-popular-actions" class="level4" data-number="6.7.6.2">
+<h4 data-number="6.7.6.2" class="anchored" data-anchor-id="comparison-of-popular-actions"><span class="header-section-number">6.7.6.2</span> Comparison of Popular Actions</h4>
+<p><strong><a href="https://github.com/marocchino/sticky-pull-request-comment">marocchino/sticky-pull-request-comment</a></strong></p>
+<p>A widely-used action for creating or updating a single comment per workflow (as of early 2026, ~580 GitHub stars). Prevents comment spam by updating the same comment each time the workflow runs.</p>
+<p><em>Key features:</em></p>
+<ul>
+<li><strong>Sticky comments</strong>: Creates or updates a comment identified by a unique header</li>
+<li><strong>Multiple independent comments</strong>: Different workflows can maintain separate sticky comments using different headers</li>
+<li><strong>Flexible update modes</strong>: Replace, append, recreate, delete, or hide comments</li>
+<li><strong>File-based messages</strong>: Load comment content from files for complex templates</li>
+<li><strong>Works with push events</strong>: Can find and comment on PRs from push triggers (useful for monorepos)</li>
+</ul>
+<p><em>Typical usage:</em></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> marocchino/sticky-pull-request-comment@v2</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">header</span><span class="kw">:</span><span class="at"> test-results</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="fu">    message</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>      ## Test Results</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>      ```</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>      ${{ steps.test.outputs.summary }}</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>      ```</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><em>Best for:</em> Projects needing clean, updatable status comments without duplicates. Ideal when you want the same type of information always visible in one place.</p>
+<p><strong><a href="https://github.com/hasura/comment-progress">hasura/comment-progress</a></strong></p>
+<p>Designed for tracking workflow progress with multiple updates as jobs complete. Similar to how Netlify or SonarCloud bots provide progressive feedback.</p>
+<p><em>Key features:</em></p>
+<ul>
+<li><strong>Progress tracking</strong>: Update comments as workflow steps complete or fail</li>
+<li><strong>Identifier-based updates</strong>: Uses a hidden identifier to find and update the correct comment</li>
+<li><strong>Multiple update modes</strong>: Append to existing comments, recreate, or delete</li>
+<li><strong>Flexible targets</strong>: Comment on PRs, issues, or specific commits</li>
+<li><strong>Failure handling</strong>: Optionally fail the workflow and append failure messages</li>
+</ul>
+<p><em>Typical usage:</em></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> hasura/comment-progress@v2.3.0</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">github-token</span><span class="kw">:</span><span class="at"> ${{ secrets.GITHUB_TOKEN }}</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">repository</span><span class="kw">:</span><span class="at"> ${{ github.repository }}</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">number</span><span class="kw">:</span><span class="at"> ${{ github.event.number }}</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">id</span><span class="kw">:</span><span class="at"> deploy-progress</span></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">message</span><span class="kw">:</span><span class="at"> </span><span class="st">"Deploy in progress..."</span></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">append</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><em>Best for:</em> Long-running workflows where you want to provide incremental status updates as different stages complete. Good for deployment pipelines or multi-stage builds.</p>
+<p><strong><a href="https://github.com/thollander/actions-comment-pull-request">thollander/actions-comment-pull-request</a></strong></p>
+<p>A simpler, more straightforward action for posting or updating PR comments. Good balance of features and ease of use.</p>
+<p><em>Key features:</em></p>
+<ul>
+<li><strong>Simple comment creation</strong>: Easy to post one-time or updated comments</li>
+<li><strong>Comment updates</strong>: Find and update existing comments by ID or content</li>
+<li><strong>Reactions</strong>: Add emoji reactions to comments</li>
+<li><strong>Comment deletion</strong>: Remove comments when no longer needed</li>
+<li><strong>Dynamic content</strong>: Supports multi-line messages and environment variables</li>
+</ul>
+<p><em>Typical usage:</em></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> thollander/actions-comment-pull-request@v2</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">    message</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>      ## Deployment Status</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>      ✅ Successfully deployed to preview environment</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>      Preview URL: https://preview-${{ github.event.number }}.example.com</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><em>Best for:</em> Straightforward commenting needs without complex update logic. Good for simple status messages or one-time notifications.</p>
+</section>
+<section id="tbl-pr-comment-features" class="level4" data-number="6.7.6.3">
+<h4 data-number="6.7.6.3" class="anchored" data-anchor-id="tbl-pr-comment-features"><span class="header-section-number">6.7.6.3</span> Feature Comparison</h4>
+<table class="caption-top table">
+<caption>Comparison of PR comment action features</caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 23%">
+<col style="width: 30%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>marocchino/sticky</th>
+<th>hasura/comment-progress</th>
+<th>thollander/actions-comment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Update existing comment</td>
+<td>✅ (by header)</td>
+<td>✅ (by identifier)</td>
+<td>✅ (by ID or content)</td>
+</tr>
+<tr class="even">
+<td>Multiple independent comments</td>
+<td>✅ (via headers)</td>
+<td>✅ (via identifiers)</td>
+<td>⚠️ (limited)</td>
+</tr>
+<tr class="odd">
+<td>Append mode</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr class="even">
+<td>Delete comments</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr class="odd">
+<td>Hide comments</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr class="even">
+<td>File-based messages</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr class="odd">
+<td>Emoji reactions</td>
+<td>❌</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr class="even">
+<td>Works with push events</td>
+<td>✅</td>
+<td>⚠️ (requires PR number)</td>
+<td>⚠️ (requires PR number)</td>
+</tr>
+<tr class="odd">
+<td>Progress tracking focus</td>
+<td>⚠️ (flexible)</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="choosing-the-right-action" class="level4" data-number="6.7.6.4">
+<h4 data-number="6.7.6.4" class="anchored" data-anchor-id="choosing-the-right-action"><span class="header-section-number">6.7.6.4</span> Choosing the Right Action</h4>
+<p><strong>Use marocchino/sticky-pull-request-comment when:</strong></p>
+<ul>
+<li>You need to maintain multiple independent status comments (test results, coverage, deployment, etc.)</li>
+<li>You want to prevent comment spam by updating the same comment</li>
+<li>You need advanced features like hiding outdated comments or file-based templates</li>
+<li>Your workflow triggers on push events and needs to find the associated PR</li>
+</ul>
+<p><strong>Use hasura/comment-progress when:</strong></p>
+<ul>
+<li>You have long-running workflows with multiple stages</li>
+<li>You want to provide progressive feedback as each stage completes</li>
+<li>You need the workflow to fail and report the failure in the comment</li>
+<li>You want a pattern similar to third-party CI/CD service bots</li>
+</ul>
+<p><strong>Use thollander/actions-comment-pull-request when:</strong></p>
+<ul>
+<li>You need simple comment posting without complex update logic</li>
+<li>You want to add emoji reactions to comments</li>
+<li>You’re comfortable with the action’s simpler update mechanism</li>
+<li>Your use case doesn’t require the advanced features of the other options</li>
+</ul>
+</section>
+<section id="security-considerations" class="level4" data-number="6.7.6.5">
+<h4 data-number="6.7.6.5" class="anchored" data-anchor-id="security-considerations"><span class="header-section-number">6.7.6.5</span> Security Considerations</h4>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Important: PR Comment Permissions</strong></p>
+<p>PR comment actions require write access to pull requests, which means they need the <code>pull-requests: write</code> permission.</p>
+<p>For workflows triggered by pull requests from forks (common in open-source projects), be careful about what information you expose in comments, as fork contributors can trigger these workflows. Never expose secrets or sensitive information in PR comments.</p>
+<p>See <a href="ai-tools.html#sec-ai-best-practices" class="quarto-xref"><span>Section 17.5.8</span></a> for more guidance on workflow security.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="additional-resources" class="level3" data-number="6.7.7">
+<h3 data-number="6.7.7" class="anchored" data-anchor-id="additional-resources"><span class="header-section-number">6.7.7</span> Additional Resources</h3>
 <ul>
 <li><a href="https://github.com/features/actions">GitHub Actions features overview</a></li>
 <li><a href="https://github.com/r-lib/actions">r-lib/actions repository</a> - R-specific actions and example workflows</li>
@@ -1236,29 +1439,29 @@ Warning
 <section id="styler-package" class="level3" data-number="6.9.2">
 <h3 data-number="6.9.2" class="anchored" data-anchor-id="styler-package"><span class="header-section-number">6.9.2</span> styler Package</h3>
 <p>For automated styling of entire projects:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install styler</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"styler"</span>)</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Style all files in R/ directory</span></span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>styler<span class="sc">::</span><span class="fu">style_dir</span>(<span class="st">"R/"</span>)</span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Style entire package</span></span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>styler<span class="sc">::</span><span class="fu">style_pkg</span>()</span>
-<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Note: styler modifies files in-place</span></span>
-<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Always use with version control so you can review changes</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install styler</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"styler"</span>)</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Style all files in R/ directory</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>styler<span class="sc">::</span><span class="fu">style_dir</span>(<span class="st">"R/"</span>)</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Style entire package</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>styler<span class="sc">::</span><span class="fu">style_pkg</span>()</span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Note: styler modifies files in-place</span></span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Always use with version control so you can review changes</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="lintr-package" class="level3" data-number="6.9.3">
 <h3 data-number="6.9.3" class="anchored" data-anchor-id="lintr-package"><span class="header-section-number">6.9.3</span> lintr Package</h3>
 <p>For checking code style without modifying files:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install lintr</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"lintr"</span>)</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Lint the entire package</span></span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>lintr<span class="sc">::</span><span class="fu">lint_package</span>()</span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Lint a specific file</span></span>
-<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>lintr<span class="sc">::</span><span class="fu">lint</span>(<span class="st">"R/my_function.R"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install lintr</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"lintr"</span>)</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Lint the entire package</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>lintr<span class="sc">::</span><span class="fu">lint_package</span>()</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Lint a specific file</span></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>lintr<span class="sc">::</span><span class="fu">lint</span>(<span class="st">"R/my_function.R"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The linter checks for:</p>
 <ul>
 <li>Unused variables</li>
@@ -1277,26 +1480,26 @@ Warning
 <p>Every function you write must include documentation to describe its purpose, inputs, and outputs. For any reproducible workflows, this is essential, because R is dynamically typed. This means you can pass a <code>string</code> into an argument that is meant to be a <code>data.table</code>, or a <code>list</code> into an argument meant for a <code>tibble</code>. It is the responsibility of a function’s author to document what each argument is meant to do and its basic type.</p>
 <p>We use <a href="https://roxygen2.r-lib.org/"><code>{roxygen2}</code></a> <span class="citation" data-cites="R-roxygen2">(<a href="references.html#ref-R-roxygen2" role="doc-biblioref">Wickham et al. 2024</a>)</span> for function documentation. Roxygen2 allows you to describe your functions in special comments next to their definitions, and automatically generates R documentation files (<code>.Rd</code> files) and helps manage your package <code>NAMESPACE</code>. The roxygen2 format uses <code>#'</code> comments placed immediately before the function definition.</p>
 <p>Here is an example of documenting a function using roxygen2:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">#' Calculate flu season means by site</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="co">#' Make a dataframe with rows for flu season and site</span></span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="co">#' containing the number of patients with an outcome, the total patients,</span></span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="co">#' and the percent of patients with the outcome.</span></span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param data A data frame with variables flu_season, site, studyID, and yname</span></span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param yname A string for the outcome name</span></span>
-<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param silent A boolean specifying whether to suppress console output </span></span>
-<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="co">#'   (default: TRUE)</span></span>
-<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
-<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a><span class="co">#' @returns A dataframe as described above</span></span>
-<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
-<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a><span class="co">#' @examples</span></span>
-<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a><span class="co">#' calc_fluseas_mean(my_data, "hospitalized", silent = FALSE)</span></span>
-<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
-<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a>calc_fluseas_mean <span class="ot">&lt;-</span> <span class="cf">function</span>(data, yname, <span class="at">silent =</span> <span class="cn">TRUE</span>) {</span>
-<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a>  <span class="do">### function code here</span></span>
-<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co">#' Calculate flu season means by site</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co">#' Make a dataframe with rows for flu season and site</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="co">#' containing the number of patients with an outcome, the total patients,</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="co">#' and the percent of patients with the outcome.</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param data A data frame with variables flu_season, site, studyID, and yname</span></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param yname A string for the outcome name</span></span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param silent A boolean specifying whether to suppress console output </span></span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a><span class="co">#'   (default: TRUE)</span></span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a><span class="co">#' @returns A dataframe as described above</span></span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a><span class="co">#' @examples</span></span>
+<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a><span class="co">#' calc_fluseas_mean(my_data, "hospitalized", silent = FALSE)</span></span>
+<span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb34-17"><a href="#cb34-17" aria-hidden="true" tabindex="-1"></a>calc_fluseas_mean <span class="ot">&lt;-</span> <span class="cf">function</span>(data, yname, <span class="at">silent =</span> <span class="cn">TRUE</span>) {</span>
+<span id="cb34-18"><a href="#cb34-18" aria-hidden="true" tabindex="-1"></a>  <span class="do">### function code here</span></span>
+<span id="cb34-19"><a href="#cb34-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb34-20"><a href="#cb34-20" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The roxygen2 header tells you what the function does, its various inputs, and how you might use it. Also notice that all optional arguments (i.e.&nbsp;ones with pre-specified defaults) follow arguments that require user input.</p>
 <p>For more information on roxygen2 syntax and features, see <a href="https://roxygen2.r-lib.org/" class="uri">https://roxygen2.r-lib.org/</a>.</p>
 </section>
@@ -1310,49 +1513,49 @@ Warning
 <li>You want to provide flexibility without explicitly listing all possible arguments</li>
 </ul>
 <p><strong>Basic example with <code>...</code>:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co">#' Plot data with custom ggplot2 styling</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="co">#' A wrapper function that creates a scatter plot with custom theme settings.</span></span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="co">#' Additional arguments are passed to ggplot2::geom_point().</span></span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param data A data frame containing the variables to plot</span></span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param x A string specifying the x-axis variable name</span></span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param y A string specifying the y-axis variable name</span></span>
-<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param ... Additional arguments passed to ggplot2::geom_point()</span></span>
-<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
-<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a><span class="co">#' @returns A ggplot2 object</span></span>
-<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
-<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a><span class="co">#' @examples</span></span>
-<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a><span class="co">#' # Pass color and size arguments to geom_point</span></span>
-<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a><span class="co">#' plot_with_style(my_data, "age", "height", color = "blue", size = 3)</span></span>
-<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
-<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>plot_with_style <span class="ot">&lt;-</span> <span class="cf">function</span>(data, x, y, ...) {</span>
-<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(data, ggplot2<span class="sc">::</span><span class="fu">aes</span>(.data[[x]], .data[[y]])) <span class="sc">+</span></span>
-<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">geom_point</span>(...) <span class="sc">+</span></span>
-<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>()  <span class="co"># Apply a minimal theme</span></span>
-<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co">#' Plot data with custom ggplot2 styling</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="co">#' A wrapper function that creates a scatter plot with custom theme settings.</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="co">#' Additional arguments are passed to ggplot2::geom_point().</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param data A data frame containing the variables to plot</span></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param x A string specifying the x-axis variable name</span></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param y A string specifying the y-axis variable name</span></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param ... Additional arguments passed to ggplot2::geom_point()</span></span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a><span class="co">#' @returns A ggplot2 object</span></span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a><span class="co">#' @examples</span></span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a><span class="co">#' # Pass color and size arguments to geom_point</span></span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a><span class="co">#' plot_with_style(my_data, "age", "height", color = "blue", size = 3)</span></span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a>plot_with_style <span class="ot">&lt;-</span> <span class="cf">function</span>(data, x, y, ...) {</span>
+<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(data, ggplot2<span class="sc">::</span><span class="fu">aes</span>(.data[[x]], .data[[y]])) <span class="sc">+</span></span>
+<span id="cb35-19"><a href="#cb35-19" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">geom_point</span>(...) <span class="sc">+</span></span>
+<span id="cb35-20"><a href="#cb35-20" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>()  <span class="co"># Apply a minimal theme</span></span>
+<span id="cb35-21"><a href="#cb35-21" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>While the example above documents <code>...</code> with a simple description, roxygen2 provides <code>@inheritDotParams</code> to automatically inherit parameter documentation from the function you’re calling. This is more robust and maintainable because it automatically stays synchronized with the target function’s documentation.</p>
 <p><strong>Using <code>@inheritDotParams</code>:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co">#' Plot data with custom ggplot2 styling</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="co">#' A wrapper function that creates a scatter plot with custom theme settings.</span></span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param data A data frame containing the variables to plot</span></span>
-<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param x A string specifying the x-axis variable name</span></span>
-<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param y A string specifying the y-axis variable name</span></span>
-<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a><span class="co">#' @inheritDotParams ggplot2::geom_point -mapping -data -stat -position</span></span>
-<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
-<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a><span class="co">#' @returns A ggplot2 object</span></span>
-<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
-<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a><span class="co">#' @examples</span></span>
-<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a><span class="co">#' # Pass color and size arguments to geom_point</span></span>
-<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a><span class="co">#' plot_with_style(my_data, "age", "height", color = "blue", size = 3)</span></span>
-<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
-<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a>plot_with_style <span class="ot">&lt;-</span> <span class="cf">function</span>(data, x, y, ...) {</span>
-<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(data, ggplot2<span class="sc">::</span><span class="fu">aes</span>(.data[[x]], .data[[y]])) <span class="sc">+</span></span>
-<span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">geom_point</span>(...) <span class="sc">+</span></span>
-<span id="cb33-19"><a href="#cb33-19" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>()  <span class="co"># Apply a minimal theme</span></span>
-<span id="cb33-20"><a href="#cb33-20" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co">#' Plot data with custom ggplot2 styling</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="co">#' A wrapper function that creates a scatter plot with custom theme settings.</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param data A data frame containing the variables to plot</span></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param x A string specifying the x-axis variable name</span></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param y A string specifying the y-axis variable name</span></span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a><span class="co">#' @inheritDotParams ggplot2::geom_point -mapping -data -stat -position</span></span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a><span class="co">#' @returns A ggplot2 object</span></span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a><span class="co">#' @examples</span></span>
+<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a><span class="co">#' # Pass color and size arguments to geom_point</span></span>
+<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a><span class="co">#' plot_with_style(my_data, "age", "height", color = "blue", size = 3)</span></span>
+<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb36-16"><a href="#cb36-16" aria-hidden="true" tabindex="-1"></a>plot_with_style <span class="ot">&lt;-</span> <span class="cf">function</span>(data, x, y, ...) {</span>
+<span id="cb36-17"><a href="#cb36-17" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(data, ggplot2<span class="sc">::</span><span class="fu">aes</span>(.data[[x]], .data[[y]])) <span class="sc">+</span></span>
+<span id="cb36-18"><a href="#cb36-18" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">geom_point</span>(...) <span class="sc">+</span></span>
+<span id="cb36-19"><a href="#cb36-19" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>()  <span class="co"># Apply a minimal theme</span></span>
+<span id="cb36-20"><a href="#cb36-20" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The <code>@inheritDotParams</code> tag:</p>
 <ul>
 <li>Automatically imports parameter documentation from <code>ggplot2::geom_point()</code></li>
@@ -1365,10 +1568,10 @@ Warning
 <li><p><strong>Always document what receives the dots</strong>: Use <code>@inheritDotParams</code> when passing to a specific function, or clearly describe where the arguments go</p></li>
 <li><p><strong>Exclude irrelevant parameters</strong>: Use the <code>-param_name</code> syntax to exclude parameters that don’t apply</p></li>
 <li><p><strong>Validate unexpected arguments</strong>: Consider using the <a href="https://ellipsis.r-lib.org/"><code>{ellipsis}</code></a> package to catch misspelled argument names:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>my_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y, ...) {</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  ellipsis<span class="sc">::</span><span class="fu">check_dots_used</span>()</span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># function code</span></span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>my_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y, ...) {</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  ellipsis<span class="sc">::</span><span class="fu">check_dots_used</span>()</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># function code</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p><strong>Consider alternatives</strong>: If you’re only passing a few specific arguments, it may be clearer to list them explicitly rather than using <code>...</code></p></li>
 </ol>
 <p>For more details on <code>@inheritDotParams</code>, see the <a href="https://roxygen2.r-lib.org/articles/rd.html#inheriting-documentation">roxygen2 documentation on inheriting parameters</a>.</p>
@@ -2020,10 +2223,31 @@ Describe how this change has been tested.
 @username
 </code></pre>
 </section>
-<section id="sec-r-resources" class="level2" data-number="6.26">
-<h2 data-number="6.26" class="anchored" data-anchor-id="sec-r-resources"><span class="header-section-number">6.26</span> Additional Resources</h2>
-<section id="r-package-development" class="level3" data-number="6.26.1">
-<h3 data-number="6.26.1" class="anchored" data-anchor-id="r-package-development"><span class="header-section-number">6.26.1</span> R Package Development</h3>
+<section id="sec-getting-help-with-code" class="level2" data-number="6.26">
+<h2 data-number="6.26" class="anchored" data-anchor-id="sec-getting-help-with-code"><span class="header-section-number">6.26</span> Getting Help with Code</h2>
+<p>When you encounter a coding problem, creating a <strong>reprex</strong> (minimal <strong>repr</strong>oducible <strong>ex</strong>ample) is one of the most effective ways to get help—and often helps you solve the problem yourself.</p>
+<p>A good reprex <span class="citation" data-cites="reprex">(<a href="references.html#ref-reprex" role="doc-biblioref">Bryan et al. 2024</a>)</span>:</p>
+<ul>
+<li>Is <strong>reproducible</strong>: Contains all necessary code, including <code>library()</code> calls and data</li>
+<li>Is <strong>minimal</strong>: Strips away everything not directly related to your problem</li>
+<li>Uses small, simple example data (often built-in datasets)</li>
+</ul>
+<p><strong>Why create a reprex:</strong></p>
+<ul>
+<li>80% of the time, creating a reprex helps you discover the solution yourself</li>
+<li>20% of the time, you’ll have a clear example that makes it easy for others to help you</li>
+<li>It respects others’ time by making your problem easy to understand and reproduce</li>
+</ul>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="https://reprex.tidyverse.org/"><code>{reprex}</code></a> package: Automates creation of reproducible examples</li>
+<li><a href="https://r4ds.hadley.nz/workflow-help.html#making-a-reprex">R for Data Science: Making a reprex</a> <span class="citation" data-cites="wickham2023r4ds">(<a href="references.html#ref-wickham2023r4ds" role="doc-biblioref">Wickham, Çetinkaya-Rundel, and Grolemund 2023</a>)</span>: Step-by-step guide to creating effective reproducible examples</li>
+</ul>
+</section>
+<section id="sec-r-resources" class="level2" data-number="6.27">
+<h2 data-number="6.27" class="anchored" data-anchor-id="sec-r-resources"><span class="header-section-number">6.27</span> Additional Resources</h2>
+<section id="r-package-development" class="level3" data-number="6.27.1">
+<h3 data-number="6.27.1" class="anchored" data-anchor-id="r-package-development"><span class="header-section-number">6.27.1</span> R Package Development</h3>
 <ul>
 <li>R Packages <span class="citation" data-cites="wickham2023rpkgs">(<a href="references.html#ref-wickham2023rpkgs" role="doc-biblioref">Wickham and Bryan 2023</a>)</span> - comprehensive guide to R package development</li>
 <li>Tidyverse design guide <span class="citation" data-cites="wickham2023tidydesign">(<a href="references.html#ref-wickham2023tidydesign" role="doc-biblioref">Wickham 2023</a>)</span> - principles for designing R packages and APIs that are intuitive, composable, and consistent with tidyverse philosophy</li>
@@ -2033,22 +2257,22 @@ Describe how this change has been tested.
 <li><a href="https://testthat.r-lib.org/">testthat documentation</a> - unit testing framework</li>
 </ul>
 </section>
-<section id="general-r-programming" class="level3" data-number="6.26.2">
-<h3 data-number="6.26.2" class="anchored" data-anchor-id="general-r-programming"><span class="header-section-number">6.26.2</span> General R Programming</h3>
+<section id="general-r-programming" class="level3" data-number="6.27.2">
+<h3 data-number="6.27.2" class="anchored" data-anchor-id="general-r-programming"><span class="header-section-number">6.27.2</span> General R Programming</h3>
 <ul>
 <li>R for Data Science <span class="citation" data-cites="wickham2023r4ds">(<a href="references.html#ref-wickham2023r4ds" role="doc-biblioref">Wickham, Çetinkaya-Rundel, and Grolemund 2023</a>)</span> - learn data science with the tidyverse</li>
 <li>Advanced R <span class="citation" data-cites="wickham2019advr">(<a href="references.html#ref-wickham2019advr" role="doc-biblioref">Wickham 2019</a>)</span> - deep dive into R programming and internals</li>
 </ul>
 </section>
-<section id="shiny-development" class="level3" data-number="6.26.3">
-<h3 data-number="6.26.3" class="anchored" data-anchor-id="shiny-development"><span class="header-section-number">6.26.3</span> Shiny Development</h3>
+<section id="shiny-development" class="level3" data-number="6.27.3">
+<h3 data-number="6.27.3" class="anchored" data-anchor-id="shiny-development"><span class="header-section-number">6.27.3</span> Shiny Development</h3>
 <ul>
 <li>Mastering Shiny <span class="citation" data-cites="wickham2021shiny">(<a href="references.html#ref-wickham2021shiny" role="doc-biblioref">Wickham 2021</a>)</span> - comprehensive guide to building web applications with Shiny</li>
 <li>Engineering Production-Grade Shiny Apps <span class="citation" data-cites="fay2021engineering">(<a href="references.html#ref-fay2021engineering" role="doc-biblioref">Fay et al. 2021</a>)</span> - best practices for production Shiny applications</li>
 </ul>
 </section>
-<section id="git-and-version-control" class="level3" data-number="6.26.4">
-<h3 data-number="6.26.4" class="anchored" data-anchor-id="git-and-version-control"><span class="header-section-number">6.26.4</span> Git and Version Control</h3>
+<section id="git-and-version-control" class="level3" data-number="6.27.4">
+<h3 data-number="6.27.4" class="anchored" data-anchor-id="git-and-version-control"><span class="header-section-number">6.27.4</span> Git and Version Control</h3>
 <ul>
 <li>Happy Git and GitHub for the useR <span class="citation" data-cites="bryan2023happygit">(<a href="references.html#ref-bryan2023happygit" role="doc-biblioref">Bryan 2023</a>)</span> - essential guide to using Git and GitHub with R</li>
 </ul>
@@ -2057,6 +2281,9 @@ Describe how this change has been tested.
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-bryan2023happygit" class="csl-entry" role="listitem">
 Bryan, Jennifer. 2023. <em>Happy Git and GitHub for the useR</em>. <a href="https://happygitwithr.com/">https://happygitwithr.com/</a>.
+</div>
+<div id="ref-reprex" class="csl-entry" role="listitem">
+Bryan, Jennifer, Jim Hester, David Robinson, Hadley Wickham, and Christophe Dervieux. 2024. <em>Reprex: Prepare Reproducible Example Code via the Clipboard</em>. <a href="https://reprex.tidyverse.org/">https://reprex.tidyverse.org/</a>.
 </div>
 <div id="ref-fay2021engineering" class="csl-entry" role="listitem">
 Fay, Colin, Sébastien Rochette, Vincent Guyader, and Cervan Girard. 2021. <em>Engineering Production-Grade Shiny Apps</em>. Chapman; Hall/CRC. <a href="https://engineering-shiny.org/">https://engineering-shiny.org/</a>.
