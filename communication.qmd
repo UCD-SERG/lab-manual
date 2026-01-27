@@ -25,7 +25,7 @@ it's good practice to write them down immediately—this helps you:
 
 As Leslie Lamport,
 a Turing Award winner and computer scientist,
-eloquently states:
+states:
 "If you think you understand something,
 and don't write down your ideas,
 you only think you're thinking" [@lamport2019think].
@@ -58,7 +58,7 @@ A good reprex [@reprex]:
 
 **Resources:**
 
-- [`{reprex}`](https://reprex.tidyverse.org/) package: Automates creation of reproducible examples [@reprex]
+- [`{reprex}`](https://reprex.tidyverse.org/) package: Automates creation of reproducible examples
 - [R for Data Science: Making a reprex](https://r4ds.hadley.nz/workflow-help.html#making-a-reprex) [@wickham2023r4ds]: Step-by-step guide to creating effective reproducible examples
 
 ## Email
