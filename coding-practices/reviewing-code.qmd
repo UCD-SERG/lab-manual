@@ -196,7 +196,11 @@ follow these guidelines to avoid confusion and ensure smooth collaboration:
 
 **The scenario:**
 
-- One team member (the "prompter") wrote the original prompt or issue that Copilot is addressing
+- One team member (the "prompter") assigned Copilot to work on an issue or explicitly prompted Copilot to start working
+- The prompter may or may not be the same person who originally wrote the issue
+  - In projects with a user base, users often submit issues (bug reports, feature requests)
+  - A project maintainer then steps in, adds their perspective, and assigns the issue to Copilot
+  - In this case, the maintainer who assigned Copilot is the prompter, not the original issue author
 - Copilot created the PR with the prompter as co-author
 - The prompter requested your review
 - Copilot may have also automatically reviewed the PR
