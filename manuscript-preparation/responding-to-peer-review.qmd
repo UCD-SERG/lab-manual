@@ -42,7 +42,12 @@ This response isn't false—it's just a bit misleading,
 and hopefully counts as a
 ["white lie"](https://en.wikipedia.org/wiki/Lie#White_lie)
 made to spare the reviewer's pride.
-It acknowledges their input while avoiding the awkwardness
+The word "now" creates an
+[implicature](https://en.wikipedia.org/wiki/Implicature)
+that suggests the content wasn't already in the manuscript,
+even though you're not explicitly making that claim.
+This allows you to acknowledge their input
+while avoiding the awkwardness
 of pointing out that they missed something during their review.
 
 **Additional tips:**
