@@ -508,8 +508,14 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./writing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Writing</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./manuscript-preparation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Manuscript Preparation and Publication</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Manuscript Preparation and Publication</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -674,12 +680,13 @@ window.Quarto = {
   <li><a href="#reviewing-copilot-generated-pull-requests" id="toc-reviewing-copilot-generated-pull-requests" class="nav-link" data-scroll-target="#reviewing-copilot-generated-pull-requests"><span class="header-section-number">6.24.7</span> Reviewing Copilot-Generated Pull Requests</a></li>
   </ul></li>
   <li><a href="#creating-a-pull-request-template" id="toc-creating-a-pull-request-template" class="nav-link" data-scroll-target="#creating-a-pull-request-template"><span class="header-section-number">6.25</span> Creating a Pull Request Template</a></li>
-  <li><a href="#sec-r-resources" id="toc-sec-r-resources" class="nav-link" data-scroll-target="#sec-r-resources"><span class="header-section-number">6.26</span> Additional Resources</a>
+  <li><a href="#sec-getting-help-with-code" id="toc-sec-getting-help-with-code" class="nav-link" data-scroll-target="#sec-getting-help-with-code"><span class="header-section-number">6.26</span> Getting Help with Code</a></li>
+  <li><a href="#sec-r-resources" id="toc-sec-r-resources" class="nav-link" data-scroll-target="#sec-r-resources"><span class="header-section-number">6.27</span> Additional Resources</a>
   <ul class="collapse">
-  <li><a href="#r-package-development" id="toc-r-package-development" class="nav-link" data-scroll-target="#r-package-development"><span class="header-section-number">6.26.1</span> R Package Development</a></li>
-  <li><a href="#general-r-programming" id="toc-general-r-programming" class="nav-link" data-scroll-target="#general-r-programming"><span class="header-section-number">6.26.2</span> General R Programming</a></li>
-  <li><a href="#shiny-development" id="toc-shiny-development" class="nav-link" data-scroll-target="#shiny-development"><span class="header-section-number">6.26.3</span> Shiny Development</a></li>
-  <li><a href="#git-and-version-control" id="toc-git-and-version-control" class="nav-link" data-scroll-target="#git-and-version-control"><span class="header-section-number">6.26.4</span> Git and Version Control</a></li>
+  <li><a href="#r-package-development" id="toc-r-package-development" class="nav-link" data-scroll-target="#r-package-development"><span class="header-section-number">6.27.1</span> R Package Development</a></li>
+  <li><a href="#general-r-programming" id="toc-general-r-programming" class="nav-link" data-scroll-target="#general-r-programming"><span class="header-section-number">6.27.2</span> General R Programming</a></li>
+  <li><a href="#shiny-development" id="toc-shiny-development" class="nav-link" data-scroll-target="#shiny-development"><span class="header-section-number">6.27.3</span> Shiny Development</a></li>
+  <li><a href="#git-and-version-control" id="toc-git-and-version-control" class="nav-link" data-scroll-target="#git-and-version-control"><span class="header-section-number">6.27.4</span> Git and Version Control</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/coding-practices.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/coding-practices.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -2206,10 +2213,31 @@ Describe how this change has been tested.
 @username
 </code></pre>
 </section>
-<section id="sec-r-resources" class="level2" data-number="6.26">
-<h2 data-number="6.26" class="anchored" data-anchor-id="sec-r-resources"><span class="header-section-number">6.26</span> Additional Resources</h2>
-<section id="r-package-development" class="level3" data-number="6.26.1">
-<h3 data-number="6.26.1" class="anchored" data-anchor-id="r-package-development"><span class="header-section-number">6.26.1</span> R Package Development</h3>
+<section id="sec-getting-help-with-code" class="level2" data-number="6.26">
+<h2 data-number="6.26" class="anchored" data-anchor-id="sec-getting-help-with-code"><span class="header-section-number">6.26</span> Getting Help with Code</h2>
+<p>When you encounter a coding problem, creating a <strong>reprex</strong> (minimal <strong>repr</strong>oducible <strong>ex</strong>ample) is one of the most effective ways to get help—and often helps you solve the problem yourself.</p>
+<p>A good reprex <span class="citation" data-cites="reprex">(<a href="references.html#ref-reprex" role="doc-biblioref">Bryan et al. 2024</a>)</span>:</p>
+<ul>
+<li>Is <strong>reproducible</strong>: Contains all necessary code, including <code>library()</code> calls and data</li>
+<li>Is <strong>minimal</strong>: Strips away everything not directly related to your problem</li>
+<li>Uses small, simple example data (often built-in datasets)</li>
+</ul>
+<p><strong>Why create a reprex:</strong></p>
+<ul>
+<li>80% of the time, creating a reprex helps you discover the solution yourself</li>
+<li>20% of the time, you’ll have a clear example that makes it easy for others to help you</li>
+<li>It respects others’ time by making your problem easy to understand and reproduce</li>
+</ul>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="https://reprex.tidyverse.org/"><code>{reprex}</code></a> package: Automates creation of reproducible examples</li>
+<li><a href="https://r4ds.hadley.nz/workflow-help.html#making-a-reprex">R for Data Science: Making a reprex</a> <span class="citation" data-cites="wickham2023r4ds">(<a href="references.html#ref-wickham2023r4ds" role="doc-biblioref">Wickham, Çetinkaya-Rundel, and Grolemund 2023</a>)</span>: Step-by-step guide to creating effective reproducible examples</li>
+</ul>
+</section>
+<section id="sec-r-resources" class="level2" data-number="6.27">
+<h2 data-number="6.27" class="anchored" data-anchor-id="sec-r-resources"><span class="header-section-number">6.27</span> Additional Resources</h2>
+<section id="r-package-development" class="level3" data-number="6.27.1">
+<h3 data-number="6.27.1" class="anchored" data-anchor-id="r-package-development"><span class="header-section-number">6.27.1</span> R Package Development</h3>
 <ul>
 <li>R Packages <span class="citation" data-cites="wickham2023rpkgs">(<a href="references.html#ref-wickham2023rpkgs" role="doc-biblioref">Wickham and Bryan 2023</a>)</span> - comprehensive guide to R package development</li>
 <li>Tidyverse design guide <span class="citation" data-cites="wickham2023tidydesign">(<a href="references.html#ref-wickham2023tidydesign" role="doc-biblioref">Wickham 2023</a>)</span> - principles for designing R packages and APIs that are intuitive, composable, and consistent with tidyverse philosophy</li>
@@ -2219,22 +2247,22 @@ Describe how this change has been tested.
 <li><a href="https://testthat.r-lib.org/">testthat documentation</a> - unit testing framework</li>
 </ul>
 </section>
-<section id="general-r-programming" class="level3" data-number="6.26.2">
-<h3 data-number="6.26.2" class="anchored" data-anchor-id="general-r-programming"><span class="header-section-number">6.26.2</span> General R Programming</h3>
+<section id="general-r-programming" class="level3" data-number="6.27.2">
+<h3 data-number="6.27.2" class="anchored" data-anchor-id="general-r-programming"><span class="header-section-number">6.27.2</span> General R Programming</h3>
 <ul>
 <li>R for Data Science <span class="citation" data-cites="wickham2023r4ds">(<a href="references.html#ref-wickham2023r4ds" role="doc-biblioref">Wickham, Çetinkaya-Rundel, and Grolemund 2023</a>)</span> - learn data science with the tidyverse</li>
 <li>Advanced R <span class="citation" data-cites="wickham2019advr">(<a href="references.html#ref-wickham2019advr" role="doc-biblioref">Wickham 2019</a>)</span> - deep dive into R programming and internals</li>
 </ul>
 </section>
-<section id="shiny-development" class="level3" data-number="6.26.3">
-<h3 data-number="6.26.3" class="anchored" data-anchor-id="shiny-development"><span class="header-section-number">6.26.3</span> Shiny Development</h3>
+<section id="shiny-development" class="level3" data-number="6.27.3">
+<h3 data-number="6.27.3" class="anchored" data-anchor-id="shiny-development"><span class="header-section-number">6.27.3</span> Shiny Development</h3>
 <ul>
 <li>Mastering Shiny <span class="citation" data-cites="wickham2021shiny">(<a href="references.html#ref-wickham2021shiny" role="doc-biblioref">Wickham 2021</a>)</span> - comprehensive guide to building web applications with Shiny</li>
 <li>Engineering Production-Grade Shiny Apps <span class="citation" data-cites="fay2021engineering">(<a href="references.html#ref-fay2021engineering" role="doc-biblioref">Fay et al. 2021</a>)</span> - best practices for production Shiny applications</li>
 </ul>
 </section>
-<section id="git-and-version-control" class="level3" data-number="6.26.4">
-<h3 data-number="6.26.4" class="anchored" data-anchor-id="git-and-version-control"><span class="header-section-number">6.26.4</span> Git and Version Control</h3>
+<section id="git-and-version-control" class="level3" data-number="6.27.4">
+<h3 data-number="6.27.4" class="anchored" data-anchor-id="git-and-version-control"><span class="header-section-number">6.27.4</span> Git and Version Control</h3>
 <ul>
 <li>Happy Git and GitHub for the useR <span class="citation" data-cites="bryan2023happygit">(<a href="references.html#ref-bryan2023happygit" role="doc-biblioref">Bryan 2023</a>)</span> - essential guide to using Git and GitHub with R</li>
 </ul>
@@ -2243,6 +2271,9 @@ Describe how this change has been tested.
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-bryan2023happygit" class="csl-entry" role="listitem">
 Bryan, Jennifer. 2023. <em>Happy Git and GitHub for the useR</em>. <a href="https://happygitwithr.com/">https://happygitwithr.com/</a>.
+</div>
+<div id="ref-reprex" class="csl-entry" role="listitem">
+Bryan, Jennifer, Jim Hester, David Robinson, Hadley Wickham, and Christophe Dervieux. 2024. <em>Reprex: Prepare Reproducible Example Code via the Clipboard</em>. <a href="https://reprex.tidyverse.org/">https://reprex.tidyverse.org/</a>.
 </div>
 <div id="ref-fay2021engineering" class="csl-entry" role="listitem">
 Fay, Colin, Sébastien Rochette, Vincent Guyader, and Cervan Girard. 2021. <em>Engineering Production-Grade Shiny Apps</em>. Chapman; Hall/CRC. <a href="https://engineering-shiny.org/">https://engineering-shiny.org/</a>.
