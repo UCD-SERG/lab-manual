@@ -40,6 +40,7 @@ book:
     - reproducibility.qmd
     - code-repositories.qmd
     - coding-practices.qmd
+    - continuous-integration.qmd
     - coding-style.qmd
     - big-data.qmd
     - data-masking.qmd
@@ -54,6 +55,7 @@ book:
     - checklists.qmd
     - resources.qmd
     - professional-development.qmd
+    - writing.qmd
     - manuscript-preparation.qmd
     - references.qmd
   appendices:

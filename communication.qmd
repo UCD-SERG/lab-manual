@@ -12,12 +12,14 @@ We do not expect lab members to respond outside of normal business hours (unless
 
 - Use Microsoft Teams for scheduling, coding related questions, quick check ins, etc. If your Teams message exceeds 200 words, it might be time to use email. 
 - Use channels instead of direct messages unless you need to discuss something private. 
-- Please make an effort to respond to messages that mention you (e.g., `@username`) as quickly as possible and always within one work day.
-  If you are on vacation or sick leave, you are not expected to respond until the end of your first work day back
-  (or possibly longer, if you've been out for a while and have a backlog). 
-- If you are unusually busy (e.g., taking MCAT/GRE, taking many exams) or on vacation please alert the team in advance so we can expect you not to respond at all / as quickly as usual.
-Please also set your status in Teams (e.g., it could say "On vacation") so we know not to expect to see you online. 
-- Please thread messages in Teams as much as possible. 
+- Please make an effort to respond to messages that mention you (e.g., `@username`) as quickly as possible and always within 24 hours. 
+- If you are unusually busy (e.g., taking MCAT/GRE, taking many exams) or on vacation please alert the team in advance so we can expect you not to respond at all / as quickly as usual and also set your status in Teams (e.g., it could say "On vacation") so we know not to expect to see you online. 
+- Please thread messages in Teams as much as possible.
+- Don't wait for meetings to ask questions.
+  As soon as a question comes up,
+  write it out in Teams.
+  This benefits both you (by clarifying your thinking, as discussed in @sec-writing)
+  and the team (by getting the conversation started earlier).
 
 ## Email
 

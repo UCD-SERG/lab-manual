@@ -34,10 +34,6 @@ Adapted by UCD-SeRG team from [original by Kunal Mishra, Jade Benjamin-Chung, St
 
 {{< include coding-practices/version-control-and-collaboration.qmd >}}
 
-## Continuous Integration {#sec-r-ci}
-
-{{< include coding-practices/continuous-integration.qmd >}}
-
 ## Quality Assurance Checklist {#sec-r-qa-checklist}
 
 {{< include coding-practices/quality-assurance-checklist.qmd >}}
@@ -85,6 +81,10 @@ Adapted by UCD-SeRG team from [original by Kunal Mishra, Jade Benjamin-Chung, St
 ## Reviewing Code
 
 {{< include coding-practices/reviewing-code.qmd >}}
+
+## Getting Help with Code {#sec-getting-help-with-code}
+
+{{< include coding-practices/getting-help-with-code.qmd >}}
 
 ## Additional Resources {#sec-r-resources}
 
