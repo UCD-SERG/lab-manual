@@ -684,11 +684,13 @@ div.csl-indent {
 <ul>
 <li><code>#| label:</code> - give the chunk a name</li>
 <li><code>#| echo: false</code> - hide the code but show the output</li>
+<li><code>#| code-fold: true</code> - allow readers to toggle code visibility (useful when output is more important to the narrative than the code)</li>
 <li><code>#| eval: false</code> - show the code but don’t run it</li>
 <li><code>#| include: false</code> - run the code but hide both code and output</li>
 <li><code>#| warning: false</code> - hide warnings</li>
 <li><code>#| message: false</code> - hide messages</li>
 </ul>
+<p>Use <code>code-fold: true</code> for chunks where the output is important to the narrative and not the code used to produce it. This allows interested readers to expand and view the code while keeping the document focused on results.</p>
 </section>
 <section id="format-specific-settings" class="level3" data-number="10.2.5">
 <h3 data-number="10.2.5" class="anchored" data-anchor-id="format-specific-settings"><span class="header-section-number">10.2.5</span> Format-Specific Settings</h3>
