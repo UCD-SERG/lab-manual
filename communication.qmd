@@ -12,6 +12,55 @@ One benefit of the academic environment is its schedule flexibility and autonomy
 - If you are unusually busy (e.g., taking MCAT/GRE, taking many exams) or on vacation please alert the team in advance so we can expect you not to respond at all / as quickly as usual and also set your status in Teams (e.g., it could say "On vacation") so we know not to expect to see you online. 
 - Please thread messages in Teams as much as possible. 
 
+## Writing to Clarify Your Thinking
+
+Writing is a powerful tool for clarifying your thoughts,
+even before you start searching for answers.
+When questions or ideas come up,
+it's good practice to write them down immediately—this helps you:
+
+- Organize your thoughts and identify what you actually need to know
+- Articulate the problem more precisely
+- Often realize the answer yourself through the process of writing
+
+As Leslie Lamport,
+a Turing Award winner and computer scientist,
+eloquently states:
+"If you think you understand something,
+and don't write down your ideas,
+you only think you're thinking" [@lamport2019think].
+
+**Best practice:**
+Don't wait for meetings to ask questions.
+As soon as a question comes up,
+write it out in Teams.
+This benefits both you (by clarifying your thinking) and the team
+(by getting the conversation started earlier).
+
+## Getting Help with Code
+
+When you encounter a coding problem,
+creating a **reprex** (minimal **repr**oducible **ex**ample)
+is one of the most effective ways to get help—and
+often helps you solve the problem yourself.
+
+A good reprex [@reprex]:
+
+- Is **reproducible**: Contains all necessary code, including `library()` calls and data
+- Is **minimal**: Strips away everything not directly related to your problem
+- Uses small, simple example data (often built-in datasets)
+
+**Why create a reprex:**
+
+- 80% of the time, creating a reprex helps you discover the solution yourself
+- 20% of the time, you'll have a clear example that makes it easy for others to help you
+- It respects others' time by making your problem easy to understand and reproduce
+
+**Resources:**
+
+- [`{reprex}`](https://reprex.tidyverse.org/) package: Automates creation of reproducible examples [@reprex]
+- [R for Data Science: Making a reprex](https://r4ds.hadley.nz/workflow-help.html#making-a-reprex) [@wickham2023r4ds]: Step-by-step guide to creating effective reproducible examples
+
 ## Email
 
 - Use email for longer messages (>200 words) or messages that merit preservation. 
