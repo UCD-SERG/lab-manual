@@ -13,10 +13,3 @@ states:
 "If you think you understand something,
 and don't write down your ideas,
 you only think you're thinking" [@lamport2019think].
-
-**Best practice:**
-Don't wait for meetings to ask questions.
-As soon as a question comes up,
-write it out in Teams.
-This benefits both you (by clarifying your thinking) and the team
-(by getting the conversation started earlier).
