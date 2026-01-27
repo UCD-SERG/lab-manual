@@ -342,7 +342,7 @@ Consider these factors when deciding:
 - Likelihood of future growth or expansion
 - Current size of the parent file (keep source files under 100 lines when practical)
 
-For shorter subsections (&lt;30 lines) in files that are well under 100 lines,
+For shorter subsections (<30 lines) in files that are well under 100 lines,
 inline content may be appropriate if the section is unlikely to grow significantly.
 
 This practice ensures better git history,
