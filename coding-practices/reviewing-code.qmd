@@ -189,6 +189,61 @@ and waiting for Copilot to respond.
 - **Review incrementally**: If a Copilot PR is large, review it in stages as the agent updates it rather than waiting until the end
 - **Trust but verify**: Copilot is a powerful tool, but human review is essential for catching issues and ensuring quality
 
+### Reviewing a Copilot PR You Didn't Create
+
+When reviewing a pull request where someone else prompted Copilot to make changes,
+follow these guidelines to avoid confusion and ensure smooth collaboration:
+
+**The scenario:**
+
+- One team member (the "PR manager") wrote the original prompt or issue that Copilot is addressing
+- Copilot created the PR with the PR manager as co-author
+- The PR manager requested your review
+- Copilot may have also automatically reviewed the PR
+
+**As a non-managing reviewer, your role is to provide feedback,
+not to directly initiate more work by Copilot.**
+The PR manager should remain in control of when and how Copilot makes additional changes.
+
+**Recommended review workflow:**
+
+1. **Use "Comment" or "Request changes" based on the severity of issues**:
+   - Use **"Comment"** for suggestions, questions, or minor issues that don't block merging
+   - Use **"Request changes"** for significant issues that must be addressed before merging
+   - Both options allow you to provide feedback without directly triggering Copilot
+
+2. **Don't ask Copilot to make changes directly**:
+   - Avoid using features that would trigger Copilot to start working immediately
+   - Let the PR manager decide whether to ask Copilot to address your comments or make changes themselves
+
+3. **Write clear, actionable comments**:
+   - Explain what needs to change and why
+   - Suggest specific solutions when appropriate
+   - The PR manager will decide how to address your feedback
+
+**For PR managers (the person who prompted Copilot):**
+
+After receiving reviews from other team members:
+
+1. **Review all comments carefully**:
+   - Decide which comments you agree with
+   - Dismiss or respond to comments you don't entirely agree with
+   - This ensures Copilot only addresses feedback you've validated
+
+2. **Choose how to address valid feedback**:
+   - **Option A**: Make the changes yourself (faster for simple fixes)
+   - **Option B**: Ask Copilot to address the feedback (better for complex changes)
+   - **Option C**: Add your own review summarizing which comments Copilot should address,
+     then ask Copilot to respond to the open comment threads
+
+3. **Maintain clear communication**:
+   - Let reviewers know how you plan to address their feedback
+   - Mark conversations as resolved after addressing them
+   - Request re-review from humans after Copilot makes significant changes
+
+This workflow ensures the PR manager maintains control over the development process
+while benefiting from collaborative human review and Copilot's implementation capabilities.
+
 ### Using Copilot Review Before Human Review
 
 Before requesting review from other humans,
