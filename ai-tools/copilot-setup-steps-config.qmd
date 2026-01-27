@@ -35,8 +35,21 @@ See [Appendix: Copilot Setup Steps File](#sec-appendix-copilot-setup-steps) for 
 The [`actions/checkout`](https://github.com/actions/checkout) action
 is used to check out your repository code
 so that the workflow can access it.
-Copilot will automatically check out your repository if you don't include this step,
-but explicitly including it allows you to configure options like Git LFS.
+While Copilot will automatically check out your repository if you don't include this step,
+**explicitly including it is necessary** when your setup steps need to access repository files.
+
+**Why explicitly include checkout?**
+
+Many dependency installation steps require access to repository files:
+
+- `r-lib/actions/setup-renv@v2` needs `renv.lock` to install R package dependencies
+- `r-lib/actions/setup-r-dependencies@v2` needs `DESCRIPTION` to install R package dependencies
+- `npm ci` needs `package-lock.json` to install Node.js dependencies
+- `pip install -r requirements.txt` needs the requirements file
+
+Without an explicit checkout step,
+these dependency installation commands will fail
+because the necessary files won't be available yet.
 
 **Basic checkout:**
 
