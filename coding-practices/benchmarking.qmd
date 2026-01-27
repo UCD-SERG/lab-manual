@@ -315,18 +315,32 @@ jobs:
       
       - name: Run benchmarks
         run: |
-          source("tests/benchmarks/01-data-prep.R")
+          library(bench)
+          library(mypackage)
+          
+          # Run benchmark
+          results <- bench::mark(
+            current_implementation = analyze_cohort(test_data),
+            iterations = 100
+          )
+          
+          # Save results
+          saveRDS(results, "tests/benchmarks/current.rds")
         shell: Rscript {0}
       
       - name: Compare with baseline
         run: |
-          # Load baseline results
+          # Load baseline and current results
           baseline <- readRDS("tests/benchmarks/baseline.rds")
           current <- readRDS("tests/benchmarks/current.rds")
           
-          # Calculate percentage change
-          pct_change <- (median(current$time) - median(baseline$time)) / 
-                        median(baseline$time) * 100
+          # Calculate percentage change in median time
+          baseline_time <- as.numeric(baseline$median[1])
+          current_time <- as.numeric(current$median[1])
+          pct_change <- (current_time - baseline_time) / baseline_time * 100
+          
+          # Report results
+          cat(sprintf("Performance change: %.1f%%\n", pct_change))
           
           # Fail if performance degrades by >10%
           if (pct_change > 10) {
