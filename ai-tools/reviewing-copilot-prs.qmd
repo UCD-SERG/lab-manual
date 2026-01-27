@@ -1,0 +1,73 @@
+When reviewing a pull request where someone else prompted Copilot to make changes,
+follow these guidelines to avoid confusion and ensure smooth collaboration:
+
+**The scenario:**
+
+- One team member (the "prompter") assigned Copilot to work on an issue or explicitly prompted Copilot to start working
+- The prompter may or may not be the same person who originally wrote the issue
+  - In projects with a user base, users often submit issues (bug reports, feature requests)
+  - A project maintainer then steps in, adds their perspective, and assigns the issue to Copilot
+  - In this case, the maintainer who assigned Copilot is the prompter, not the original issue author
+- Copilot created the PR with the prompter as co-author
+- The prompter requested your review
+- Copilot may have also automatically reviewed the PR
+
+**As a non-prompter reviewer, your role is to provide feedback,
+not to directly initiate more work by Copilot.**
+The prompter should remain in control of when and how Copilot makes additional changes.
+
+**Recommended review workflow:**
+
+1. **Use "Comment" or "Request changes" based on the severity of issues**:
+   - Use **"Comment"** for suggestions, questions, or minor issues that don't block merging
+   - Use **"Request changes"** for significant issues that must be addressed before merging
+   - Both options allow you to provide feedback without directly triggering Copilot
+
+2. **Don't ask Copilot to make changes directly**:
+   - Avoid using features that would trigger Copilot to start working immediately
+   - Let the prompter decide whether to ask Copilot to address your comments or make changes themselves
+
+3. **Write clear, actionable comments**:
+   - Explain what needs to change and why
+   - Suggest specific solutions when appropriate
+   - The prompter will decide how to address your feedback
+
+**For prompters (the person who prompted Copilot):**
+
+After receiving reviews from other team members:
+
+1. **Review all comments carefully**:
+   - Decide which comments you agree with
+   - Dismiss or respond to comments you don't entirely agree with
+   - This ensures Copilot only addresses feedback you've validated
+
+2. **Choose how to address valid feedback**:
+   - **Option A**: Make the changes yourself (faster for simple fixes)
+   - **Option B**: Ask Copilot to address the feedback (better for complex changes)
+   - **Option C**: Add your own review summarizing which comments Copilot should address,
+     then ask Copilot to respond to the open comment threads
+
+3. **Maintain clear communication**:
+   - Let reviewers know how you plan to address their feedback
+   - Mark conversations as resolved after addressing them
+   - Request re-review from humans after Copilot makes significant changes
+
+**Transferring the prompter role:**
+
+The original prompter can hand over a PR to another person,
+who then becomes the new prompter with control over Copilot's work on that PR.
+This might be useful when:
+
+- The original prompter is unavailable or on leave
+- Someone with different expertise needs to guide the remaining work
+- Responsibilities are being redistributed within the team
+
+To transfer the prompter role:
+
+1. The original prompter should clearly communicate the handover to all reviewers
+2. The new prompter should review the PR's history and any open feedback
+3. The new prompter should take over responding to Copilot and managing future iterations
+4. The team should update PR comments or description to reflect the current prompter if helpful
+
+This workflow ensures the prompter maintains control over the development process
+while benefiting from collaborative human review and Copilot's implementation capabilities.
