@@ -217,7 +217,7 @@ saving everyone time and improving code quality.
    carefully examine each comment.
    For each comment, decide whether you agree with the suggestion:
    
-   - **If the comment is correct**: Address it by making code changes yourself or use GitHub's "Ask Copilot to fix this" button to have Copilot apply the fix
+   - **If the comment is correct**: Address it by making code changes yourself or ask Copilot to apply the fix using GitHub's suggestion features
    - **If the comment is incorrect or not applicable**: Dismiss the comment with an explanation for why it doesn't apply
    - **If you're uncertain**: Seek a second opinion from a human reviewer or do additional research
 
