@@ -38,7 +38,7 @@ jobs:
 
     steps:
       # Checkout code - Copilot will do this automatically if we don't,
-      # but we include it for completeness
+      # but we need it to install dependencies from renv.lock
       - name: Checkout code
         uses: actions/checkout@v4
 

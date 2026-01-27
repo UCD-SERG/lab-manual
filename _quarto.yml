@@ -54,6 +54,7 @@ book:
     - checklists.qmd
     - resources.qmd
     - professional-development.qmd
+    - writing.qmd
     - manuscript-preparation.qmd
     - references.qmd
   appendices:
