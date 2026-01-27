@@ -1,0 +1,29 @@
+# Continuous Integration {#sec-r-ci}
+
+## Understanding GitHub Actions
+
+{{< include continuous-integration/understanding-github-actions.qmd >}}
+
+## Setting Up GitHub Actions
+
+{{< include continuous-integration/setting-up-github-actions.qmd >}}
+
+## How GitHub Actions Workflows Work
+
+{{< include continuous-integration/how-workflows-work.qmd >}}
+
+## Workflow Files and Security
+
+{{< include continuous-integration/workflow-files-and-security.qmd >}}
+
+## Troubleshooting Failed Workflows
+
+{{< include continuous-integration/troubleshooting-workflows.qmd >}}
+
+## Pull Request Comment Automation {#sec-pr-comment-automation}
+
+{{< include continuous-integration/pull-request-comment-automation.qmd >}}
+
+## Additional Resources
+
+{{< include continuous-integration/additional-resources.qmd >}}

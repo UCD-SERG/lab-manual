@@ -1,0 +1,12 @@
+When you set up a workflow,
+`usethis` creates a YAML configuration file in `.github/workflows/`.
+For example,
+`check-standard` creates `.github/workflows/R-CMD-check.yaml`.
+
+This workflow automatically runs when you:
+
+- Push commits to `main` or `master`
+- Open or update a pull request
+
+You can view workflow results in the "Actions" tab of your GitHub repository.
+A status badge is added to your README showing whether checks are passing.
