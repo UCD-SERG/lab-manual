@@ -74,7 +74,7 @@
     "href": "communication.html",
     "title": "3  Communication and coordination",
     "section": "",
-    "text": "3.1 Microsoft Teams\nAdapted by UCD-SeRG team from original by Jade Benjamin-Chung\nOne benefit of the academic environment is its schedule flexibility and autonomy. This means that lab members may choose to work in the early morning, afternoon, evening, or weekends. Lab members should manage their own notification schedules to ensure they can maintain healthy work-life boundaries. We do not expect lab members to respond outside of normal business hours (unless there are special circumstances).",
+    "text": "3.1 Microsoft Teams\nAdapted by UCD-SeRG team from original by Jade Benjamin-Chung\nOne benefit of the academic environment is its schedule flexibility and autonomy. This means that lab members may choose to work in the early morning, afternoon, evening, or weekends. Lab members should manage their own notification schedules to ensure they can maintain healthy work-life boundaries. We do not expect lab members to respond outside of normal business hours (unless there are special circumstances). Because of the nature of our work across time zones, frequent travel, and international collaborations, there are no set working hours. Team members are not expected to reply to messages outside their own working hours, even if a message arrives outside of those hours.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Communication and coordination</span>"
     ]
@@ -84,7 +84,7 @@
     "href": "communication.html#microsoft-teams",
     "title": "3  Communication and coordination",
     "section": "",
-    "text": "Use Microsoft Teams for scheduling, coding related questions, quick check ins, etc. If your Teams message exceeds 200 words, it might be time to use email.\nUse channels instead of direct messages unless you need to discuss something private.\nPlease make an effort to respond to messages that mention you (e.g., @username) as quickly as possible and always within 24 hours.\nIf you are unusually busy (e.g., taking MCAT/GRE, taking many exams) or on vacation please alert the team in advance so we can expect you not to respond at all / as quickly as usual and also set your status in Teams (e.g., it could say “On vacation”) so we know not to expect to see you online.\nPlease thread messages in Teams as much as possible.\nDon’t wait for meetings to ask questions. As soon as a question comes up, write it out in Teams. This benefits both you (by clarifying your thinking, as discussed in Chapter 22) and the team (by getting the conversation started earlier).",
+    "text": "Use Microsoft Teams for scheduling, coding related questions, quick check ins, etc. If your Teams message exceeds 200 words, it might be time to use email.\nUse channels instead of direct messages unless you need to discuss something private.\nPlease make an effort to respond to messages that mention you (e.g., @username) as quickly as possible.\nIf you are unusually busy (e.g., preparing for QE/grant deadline, taking two exams) or on vacation please alert the team in advance so we can expect you not to respond at all / as quickly as usual. Please also set your status in Teams (e.g., it could say “On vacation”) so we know not to expect to see you online.\nPlease thread messages in Teams as much as possible.\nDon’t wait for meetings to ask questions. As soon as a question comes up, write it out in Teams. This benefits both you (by clarifying your thinking, as discussed in Chapter 22) and the team (by getting the conversation started earlier).",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Communication and coordination</span>"
     ]
@@ -94,7 +94,7 @@
     "href": "communication.html#email",
     "title": "3  Communication and coordination",
     "section": "3.2 Email",
-    "text": "3.2 Email\n\nUse email for longer messages (&gt;200 words) or messages that merit preservation.\nGenerally, strive to respond within one work day when you are directly addressed in an email. If you’re on vacation, you’re not expected to respond until the end of your first work day back (or possibly longer, if you’ve been out for a while and have a backlog).\nAs noted above, if you are unusually busy or on vacation please alert the team in advance and via an away message, so we can expect you not to respond at all / as quickly as usual.",
+    "text": "3.2 Email\n\nUse email for longer messages (&gt;200 words) or messages that merit preservation.\nGenerally, strive to respond within a work day when you are directly addressed in an email. Again because we work across many timezones, this means responding within a work day in your own timezone. If you’re on vacation, you’re not expected to respond until the end of your first work day back (or possibly longer, if you’ve been out for a while and have a backlog).\nAs noted above, if you are unusually busy or on vacation please alert the team in advance and via an away message, so we can expect you not to respond at all / as quickly as usual.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Communication and coordination</span>"
     ]
@@ -124,17 +124,17 @@
     "href": "communication.html#task-management",
     "title": "3  Communication and coordination",
     "section": "3.5 Task Management",
-    "text": "3.5 Task Management\nWe use a combination of tools to track and manage project tasks:\n\nGitHub Issues and Projects: For code-related tasks, feature requests, and bug tracking. Lab leadership will assign issues and organize them in GitHub Projects. Issues are prioritized within projects, and you can track your assigned tasks there.\nMicrosoft To-Do and other M365 task tracking tools: For general lab tasks and personal task management. Lab leadership may assign tasks through these tools, which integrate with Microsoft Teams.\nGenerally, strive to complete assigned tasks by the date listed.\nUse checklists to break down tasks into smaller chunks. Sometimes leadership will create these for you, but you can also add them yourself.\nUpdate task status as you make progress so the team can stay coordinated.",
+    "text": "3.5 Task Management\nWe use a combination of tools to track and manage project tasks:\n\nGitHub Issues and Projects: For code-related tasks, feature requests, and bug tracking. Lab leadership will assign issues and organize them in GitHub Projects. Issues are prioritized within projects, and you can track your assigned tasks there.\nMicrosoft Teams & Planner: For general lab tasks and personal task management. Lab leadership may assign tasks through these tools, which integrate with Microsoft Teams. Lab members are expected to set up a Teams page for important degree requirements (QE) and projects (grant proposals, papers, etc.). Invite both Dr Morrison and Aiemjoy to the Teams page and assign them to review tasks with the deadline you need the review by. We appreciate 2 week’s notice for letters and larger review projects.\nGenerally, strive to complete assigned tasks by the date listed.\nUse checklists to break down tasks into smaller chunks. Sometimes leadership will create these for you, but you can also add them yourself.\nUpdate task status as you make progress so the team can stay coordinated.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Communication and coordination</span>"
     ]
   },
   {
-    "objectID": "communication.html#google-drive",
-    "href": "communication.html#google-drive",
+    "objectID": "communication.html#shared-documents",
+    "href": "communication.html#shared-documents",
     "title": "3  Communication and coordination",
-    "section": "3.6 Google Drive",
-    "text": "3.6 Google Drive\n\nWe mostly use Google Drive to create shared documents with longer descriptions of tasks. These documents may be linked to in GitHub Issues or other task tracking tools. Lab leadership often shares these with the whole team since tasks are overlapping, and even if a task is assigned to one person, others may have valuable insights.",
+    "section": "3.6 Shared Documents",
+    "text": "3.6 Shared Documents\n\nWe mostly use Microsoft 365 to collaborate and write internally and GoogleDocs when working with external collaborators. These documents may be linked to in GitHub Issues or other task tracking tools. Lab leadership often shares these with the whole team since tasks are overlapping, and even if a task is assigned to one person, others may have valuable insights.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Communication and coordination</span>"
     ]
@@ -1871,7 +1871,7 @@
     "href": "appendix-document-metadata.html",
     "title": "Document Generation Metadata",
     "section": "",
-    "text": "PREVIEW_BANNER_PLACEHOLDER\n\nThis document was generated from the following git commit:\n\nBranch: HEAD\nCommit: fd10b82\nFull commit hash: fd10b825f6d4a6399b2d1760c6d92ba3dffc9b7d\nCommit date: 2026-01-27 10:49:59 -0800\n\nWhen transferring edits from this DOCX file back to the Quarto source files, use this commit information to set up the PR correctly and account for any commits that have been added since this document was generated.",
+    "text": "PREVIEW_BANNER_PLACEHOLDER\n\nThis document was generated from the following git commit:\n\nBranch: HEAD\nCommit: 3ba61a8\nFull commit hash: 3ba61a864f50438ffb61b1010bd7afb6cd48d2f9\nCommit date: 2026-01-27 19:00:35 +0000\n\nWhen transferring edits from this DOCX file back to the Quarto source files, use this commit information to set up the PR correctly and account for any commits that have been added since this document was generated.",
     "crumbs": [
       "Appendices",
       "Document Generation Metadata"
