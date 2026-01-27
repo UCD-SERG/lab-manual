@@ -330,16 +330,20 @@ Create a new include file when:
 - You want to work on a section independently
 
 ::: {.callout-important}
-**Important: New subsections should always use includes**
+**Important: New subsections should usually use includes**
 
 When adding new subsections (### headings) to existing chapters,
-**always create a separate include file** for the content,
-even if the section is relatively short.
-This is particularly important for:
+**usually create a separate include file** for the content.
+Consider these factors when deciding:
 
 - Subsections with substantial content (>50 lines)
 - Subsections that are "big and distinctive enough" to stand on their own
 - Content that forms a cohesive, self-contained topic
+- Likelihood of future growth or expansion
+- Current size of the parent file (keep source files under 100 lines when practical)
+
+For shorter subsections (&lt;30 lines) in files that are well under 100 lines,
+inline content may be appropriate if the section is unlikely to grow significantly.
 
 This practice ensures better git history,
 easier code review,
