@@ -12,3 +12,5 @@ Before submitting a pull request or finalizing analysis, verify:
 - [ ] `README.Rmd` has been updated (if needed) and `README.md` regenerated
 - [ ] `pkgdown::build_site()` builds successfully
 - [ ] All changes committed and pushed to GitHub
+- [ ] Copilot review completed and all comments addressed or dismissed
+- [ ] Copilot review iterations completed until no valuable suggestions remain
