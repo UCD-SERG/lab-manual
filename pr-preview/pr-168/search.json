@@ -84,7 +84,7 @@
     "href": "communication.html#microsoft-teams",
     "title": "3  Communication and coordination",
     "section": "",
-    "text": "Use Microsoft Teams for scheduling, coding related questions, quick check ins, etc. If your Teams message exceeds 200 words, it might be time to use email.\nUse channels instead of direct messages unless you need to discuss something private.\nPlease make an effort to respond to messages that mention you (e.g., @username) as quickly as possible and always within one work day. If you are on vacation or sick leave, you are not expected to respond until the end of your first work day back (or possibly longer, if you’ve been out for a while and have a backlog).\nIf you are unusually busy (e.g., taking MCAT/GRE, taking many exams) or on vacation please alert the team in advance so we can expect you not to respond at all / as quickly as usual and also set your status in Teams (e.g., it could say “On vacation”) so we know not to expect to see you online.\nPlease thread messages in Teams as much as possible.",
+    "text": "Use Microsoft Teams for scheduling, coding related questions, quick check ins, etc. If your Teams message exceeds 200 words, it might be time to use email.\nUse channels instead of direct messages unless you need to discuss something private.\nPlease make an effort to respond to messages that mention you (e.g., @username) as quickly as possible and always within one work day. If you are on vacation or sick leave, you are not expected to respond until the end of your first work day back (or possibly longer, if you’ve been out for a while and have a backlog).\nIf you are unusually busy (e.g., taking MCAT/GRE, taking many exams) or on vacation please alert the team in advance so we can expect you not to respond at all / as quickly as usual. Please also set your status in Teams (e.g., it could say “On vacation”) so we know not to expect to see you online.\nPlease thread messages in Teams as much as possible.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Communication and coordination</span>"
     ]
@@ -94,7 +94,7 @@
     "href": "communication.html#email",
     "title": "3  Communication and coordination",
     "section": "3.2 Email",
-    "text": "3.2 Email\n\nUse email for longer messages (&gt;200 words) or messages that merit preservation.\nGenerally, strive to respond within one work day when you are directly addressed in an email. If you’re on vacation, you’re not expected to respond until the end of your first work day back (or possibly longer, if you’ve been out for a while and have a backlog).\nAs noted above, if you are unusually busy or on vacation please alert the team in advance so we can expect you not to respond at all / as quickly as usual.",
+    "text": "3.2 Email\n\nUse email for longer messages (&gt;200 words) or messages that merit preservation.\nGenerally, strive to respond within one work day when you are directly addressed in an email. If you’re on vacation, you’re not expected to respond until the end of your first work day back (or possibly longer, if you’ve been out for a while and have a backlog).\nAs noted above, if you are unusually busy or on vacation please alert the team in advance and via an away message, so we can expect you not to respond at all / as quickly as usual.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Communication and coordination</span>"
     ]
@@ -1761,7 +1761,7 @@
     "href": "appendix-document-metadata.html",
     "title": "Document Generation Metadata",
     "section": "",
-    "text": "PREVIEW_BANNER_PLACEHOLDER\n\nThis document was generated from the following git commit:\n\nBranch: HEAD\nCommit: 8909633\nFull commit hash: 8909633db44d373026f278737b436594c7b61fe0\nCommit date: 2026-01-27 01:12:23 +0000\n\nWhen transferring edits from this DOCX file back to the Quarto source files, use this commit information to set up the PR correctly and account for any commits that have been added since this document was generated.",
+    "text": "PREVIEW_BANNER_PLACEHOLDER\n\nThis document was generated from the following git commit:\n\nBranch: HEAD\nCommit: da9b5e3\nFull commit hash: da9b5e3be940a634d4ecbfc8e172de4d8d1a9be6\nCommit date: 2026-01-27 01:13:36 +0000\n\nWhen transferring edits from this DOCX file back to the Quarto source files, use this commit information to set up the PR correctly and account for any commits that have been added since this document was generated.",
     "crumbs": [
       "Appendices",
       "Document Generation Metadata"
