@@ -318,6 +318,12 @@ jobs:
           library(bench)
           library(mypackage)
           
+          # Create benchmarks directory if it doesn't exist
+          dir.create("tests/benchmarks", recursive = TRUE, showWarnings = FALSE)
+          
+          # Generate test data (or load existing test data)
+          test_data <- generate_test_cohort(n = 10000)
+          
           # Run benchmark
           results <- bench::mark(
             current_implementation = analyze_cohort(test_data),
