@@ -38,17 +38,8 @@ you can usually respond with:
 >
 > [quote the content that was already there before]"
 
-This response isn't false—it's just a bit misleading,
-and hopefully counts as a
-["white lie"](https://en.wikipedia.org/wiki/Lie#White_lie)
-made to spare the reviewer's pride.
-The word "now" creates an
-[implicature](https://en.wikipedia.org/wiki/Implicature)
-that suggests the content wasn't already in the manuscript,
-even though you're not explicitly making that claim.
-This allows you to acknowledge their input
-while avoiding the awkwardness
-of pointing out that they missed something during their review.
+The reviewer doesn't need to know that they missed it the last time
+(see also: [implicature](https://en.wikipedia.org/wiki/Implicature).
 
 **Additional tips:**
 
