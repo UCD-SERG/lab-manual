@@ -1720,11 +1720,21 @@
     ]
   },
   {
+    "objectID": "manuscript-preparation.html#responding-to-peer-review",
+    "href": "manuscript-preparation.html#responding-to-peer-review",
+    "title": "23  Manuscript Preparation and Publication",
+    "section": "23.2 Responding to Peer Review",
+    "text": "23.2 Responding to Peer Review\nWhen a journal asks for revisions, you will typically need to provide a point-by-point response to the reviewers’ comments. The key strategy is to use the “yes-and” approach from improvisational theater—building on what reviewers say rather than contradicting them. Try to avoid explicitly disagreeing with reviewers if at all possible.\nStandard response format:\nThe typical response follows this pattern:\n\n“Thank you for raising this important point. We agree, and now state (page ##):\n[quote a section of the revised manuscript here]”\n\nBalancing direct response and manuscript content:\nThere can be some overlap between the direct response to the reviewer (the sentences before “now state”) and what goes into the revised manuscript (the part after “(page ##)”). This is acceptable, but we usually try to put as much of the content into the revised manuscript as possible, and minimize the direct response section. The goal is to make the manuscript self-contained while showing the reviewer that you’ve addressed their concern.\nWhen content already exists:\nSometimes, a reviewer asks for content that was already in the manuscript. In these cases, first see if there’s anything you can elaborate or clarify. Even if you don’t see room for improvement, you can usually respond with:\n\n“We agree, and now state (page ##):\n[quote the content that was already there before]”\n\nThe reviewer doesn’t need to know that they missed it the last time (see also: implicature.\nAdditional tips:\n\nAlways thank reviewers for their time and feedback\nQuote page numbers from the revised manuscript\nUse direct quotes from your revised text when possible\nMaintain a respectful and collaborative tone throughout\nIf you make changes beyond what the reviewer requested, mention them briefly",
+    "crumbs": [
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Manuscript Preparation and Publication</span>"
+    ]
+  },
+  {
     "objectID": "manuscript-preparation.html#preprints-and-open-access",
     "href": "manuscript-preparation.html#preprints-and-open-access",
     "title": "23  Manuscript Preparation and Publication",
-    "section": "23.2 Preprints and Open Access",
-    "text": "23.2 Preprints and Open Access\n\nWe encourage posting preprints prior to or during peer review on platforms like medRxiv or bioRxiv\nPreprints allow rapid dissemination of findings and can be cited in grant applications\nWe support publishing in open access journals when possible to maximize accessibility\nMany funders, including NIH, have public access policies that require making publications freely available\n\nA preprint is a scientific manuscript that has not been peer reviewed. Preprint servers create digital object identifiers (DOIs) and can be cited in other articles and in grant applications. Because the peer review process can take many months, publishing preprints prior to or during peer review enables other scientists to immediately learn from and build on your work. Importantly, NIH allows applicants to include preprint citations in their biosketches. In most cases, we publish preprints on medRxiv.",
+    "section": "23.3 Preprints and Open Access",
+    "text": "23.3 Preprints and Open Access\n\nWe encourage posting preprints prior to or during peer review on platforms like medRxiv or bioRxiv\nPreprints allow rapid dissemination of findings and can be cited in grant applications\nWe support publishing in open access journals when possible to maximize accessibility\nMany funders, including NIH, have public access policies that require making publications freely available\n\nA preprint is a scientific manuscript that has not been peer reviewed. Preprint servers create digital object identifiers (DOIs) and can be cited in other articles and in grant applications. Because the peer review process can take many months, publishing preprints prior to or during peer review enables other scientists to immediately learn from and build on your work. Importantly, NIH allows applicants to include preprint citations in their biosketches. In most cases, we publish preprints on medRxiv.",
     "crumbs": [
       "<span class='chapter-number'>23</span>  <span class='chapter-title'>Manuscript Preparation and Publication</span>"
     ]
@@ -1733,8 +1743,8 @@
     "objectID": "manuscript-preparation.html#reporting-checklists",
     "href": "manuscript-preparation.html#reporting-checklists",
     "title": "23  Manuscript Preparation and Publication",
-    "section": "23.3 Reporting Checklists",
-    "text": "23.3 Reporting Checklists\nUsing reporting checklists ensures that publications contain information needed for readers to assess validity and reproducibility. We use checklists appropriate to study design:\n\nCONSORT for randomized trials\nSTROBE for observational studies\nPRISMA for systematic reviews\nOthers as appropriate (see EQUATOR Network)",
+    "section": "23.4 Reporting Checklists",
+    "text": "23.4 Reporting Checklists\nUsing reporting checklists ensures that publications contain information needed for readers to assess validity and reproducibility. We use checklists appropriate to study design:\n\nCONSORT for randomized trials\nSTROBE for observational studies\nPRISMA for systematic reviews\nOthers as appropriate (see EQUATOR Network)",
     "crumbs": [
       "<span class='chapter-number'>23</span>  <span class='chapter-title'>Manuscript Preparation and Publication</span>"
     ]
@@ -1743,8 +1753,8 @@
     "objectID": "manuscript-preparation.html#manuscript-checklist",
     "href": "manuscript-preparation.html#manuscript-checklist",
     "title": "23  Manuscript Preparation and Publication",
-    "section": "23.4 Manuscript Checklist",
-    "text": "23.4 Manuscript Checklist\nBefore submitting a manuscript:\n\nCompleted relevant reporting checklist\nResults are reproducible (rerunning code replicates tables/figures exactly)\nTarget journal selected\nTitle is declarative and states findings clearly\nWord count meets journal requirements\nManuscript follows journal formatting guidelines\nConsistent voice throughout (typically active voice)\nAll figures and tables referenced in main text\nCaptions for all figures and tables\nTables/figures numbered by order of appearance\nAbbreviations defined at first use and used sparingly\nAvoid subjective wording (e.g., “interesting”, “dramatic”)\nAvoid directionless statements (specify direction of associations)\nCausal language only when supported by study design\nAvoid “significant” (easily confused with statistical significance)\nAuthor contributions drafted using CRediT Taxonomy",
+    "section": "23.5 Manuscript Checklist",
+    "text": "23.5 Manuscript Checklist\nBefore submitting a manuscript:\n\nCompleted relevant reporting checklist\nResults are reproducible (rerunning code replicates tables/figures exactly)\nTarget journal selected\nTitle is declarative and states findings clearly\nWord count meets journal requirements\nManuscript follows journal formatting guidelines\nConsistent voice throughout (typically active voice)\nAll figures and tables referenced in main text\nCaptions for all figures and tables\nTables/figures numbered by order of appearance\nAbbreviations defined at first use and used sparingly\nAvoid subjective wording (e.g., “interesting”, “dramatic”)\nAvoid directionless statements (specify direction of associations)\nCausal language only when supported by study design\nAvoid “significant” (easily confused with statistical significance)\nAuthor contributions drafted using CRediT Taxonomy",
     "crumbs": [
       "<span class='chapter-number'>23</span>  <span class='chapter-title'>Manuscript Preparation and Publication</span>"
     ]
@@ -1753,8 +1763,8 @@
     "objectID": "manuscript-preparation.html#scientific-writing-claims-and-evidence",
     "href": "manuscript-preparation.html#scientific-writing-claims-and-evidence",
     "title": "23  Manuscript Preparation and Publication",
-    "section": "23.5 Scientific Writing: Claims and Evidence",
-    "text": "23.5 Scientific Writing: Claims and Evidence\nAll factual claims in scientific writing should be supported by appropriate evidence.\nCitation requirements:\n\nCite primary sources for factual statements about established knowledge, methods, or findings\nCite official documentation when describing how software, tools, or systems work\nLink to authoritative sources like peer-reviewed publications, official repositories, or technical specifications\nAvoid citing secondary sources when primary sources are available\n\nWhen you can’t find a citation:\n\nDemonstrate directly: Show the behavior through experiments, data, or explicit examples\nAcknowledge uncertainty: Use appropriate hedging language (“may”, “appears to”, “in our experience”) when evidence is limited\nRemove the claim: If you cannot substantiate a claim with either citations or direct evidence, consider whether it needs to be included\n\nWhy this matters:\n\nBuilds reader trust and credibility\nEnables readers to verify information independently\nMaintains scientific rigor in all communications\nPrevents propagation of misinformation\n\nThis principle applies to all lab writing, including: manuscripts, documentation, grant applications, and technical reports.\nUsing AI tools for writing:\nWhen using AI tools to help develop manuscripts or other academic writing, follow the special guidance in Section 18.4 to ensure transparency, maintain intellectual ownership, and avoid plagiarism.",
+    "section": "23.6 Scientific Writing: Claims and Evidence",
+    "text": "23.6 Scientific Writing: Claims and Evidence\nAll factual claims in scientific writing should be supported by appropriate evidence.\nCitation requirements:\n\nCite primary sources for factual statements about established knowledge, methods, or findings\nCite official documentation when describing how software, tools, or systems work\nLink to authoritative sources like peer-reviewed publications, official repositories, or technical specifications\nAvoid citing secondary sources when primary sources are available\n\nWhen you can’t find a citation:\n\nDemonstrate directly: Show the behavior through experiments, data, or explicit examples\nAcknowledge uncertainty: Use appropriate hedging language (“may”, “appears to”, “in our experience”) when evidence is limited\nRemove the claim: If you cannot substantiate a claim with either citations or direct evidence, consider whether it needs to be included\n\nWhy this matters:\n\nBuilds reader trust and credibility\nEnables readers to verify information independently\nMaintains scientific rigor in all communications\nPrevents propagation of misinformation\n\nThis principle applies to all lab writing, including: manuscripts, documentation, grant applications, and technical reports.\nUsing AI tools for writing:\nWhen using AI tools to help develop manuscripts or other academic writing, follow the special guidance in Section 18.4 to ensure transparency, maintain intellectual ownership, and avoid plagiarism.",
     "crumbs": [
       "<span class='chapter-number'>23</span>  <span class='chapter-title'>Manuscript Preparation and Publication</span>"
     ]
@@ -1851,7 +1861,7 @@
     "href": "appendix-document-metadata.html",
     "title": "Document Generation Metadata",
     "section": "",
-    "text": "This document was generated from the following git commit:\n\nBranch: main\nCommit: 53a7c88\nFull commit hash: 53a7c8817413324bc215bafb08fb2e243fc56c2f\nCommit date: 2026-01-27 17:28:06 -0800\n\nWhen transferring edits from this DOCX file back to the Quarto source files, use this commit information to set up the PR correctly and account for any commits that have been added since this document was generated.",
+    "text": "This document was generated from the following git commit:\n\nBranch: main\nCommit: 0992f8a\nFull commit hash: 0992f8aa594e6171f86ae87b7ca24dec4198b6a6\nCommit date: 2026-01-27 17:31:47 -0800\n\nWhen transferring edits from this DOCX file back to the Quarto source files, use this commit information to set up the PR correctly and account for any commits that have been added since this document was generated.",
     "crumbs": [
       "Appendices",
       "Document Generation Metadata"
