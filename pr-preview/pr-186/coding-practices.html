@@ -741,7 +741,7 @@ window.Quarto = {
 
 <div class="preview-combined-banner">
     <p style="margin: 0;">
-        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~7% of content changed).
+        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~8% of content changed).
         <br>
         <strong>🎨 Highlighting Legend:</strong> 
         <mark class="preview-text-changed" style="display: inline; padding: 1px 3px;">Modified text (yellow)</mark> shows changed words/phrases with tooltips of original text, 
@@ -870,9 +870,9 @@ window.Quarto = {
 <p><mark class="preview-element-added"><a href="https://altdoc.etiennebacher.com/"><code>{altdoc}</code></a> is a flexible alternative that supports multiple documentation frameworks, including Quarto, Docsify, MkDocs, and Docute. It is especially useful when you need to generate documentation in multiple formats.</mark></p>
 <p><strong><mark class="preview-text-changed">Key features:</mark></strong></p>
 <ul>
-<li><mark class="preview-element-added">Supports Quarto and R Markdown vignettes</mark></li>
-<li><mark class="preview-element-added">Can generate HTML websites, PDF documents, DOCX files, and reveal.js presentations</mark></li>
-<li><mark class="preview-element-added">Provides multiple site generation frameworks to choose from</mark></li>
+<li><mark class="preview-element-added">Supports multiple documentation frameworks (Quarto, Docsify, MkDocs, Docute)</mark></li>
+<li><mark class="preview-element-added">Renders Quarto and R Markdown vignettes to HTML websites</mark></li>
+<li><mark class="preview-element-added">When using Quarto as the framework, vignettes can be authored to support multiple output formats (HTML, PDF, DOCX, reveal.js presentations), and Quarto can include download links for alternative formats on the HTML site (<a href="https://quarto.org/docs/output-formats/html-multi-format.html">see Quarto documentation on multiple formats</a>)</mark></li>
 <li><mark class="preview-element-added">Handles function reference pages, README, NEWS, and other standard documentation</mark></li>
 <li><mark class="preview-text-changed">Easy</mark> <mark class="preview-text-changed">preview</mark> <mark class="preview-text-changed">and</mark> <mark class="preview-text-changed">deployment</mark> <mark class="preview-text-changed">workflow</mark></li>
 </ul>
@@ -895,11 +895,10 @@ window.Quarto = {
 <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>altdoc<span class="sc">::</span><span class="fu">preview_docs</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>When to choose altdoc:</strong></mark></p>
 <ul>
-<li>You need to generate DOCX or PDF versions of your documentation</li>
-<li><mark class="preview-element-added">You want to create reveal.js presentations from your vignettes</mark></li>
-<li><mark class="preview-element-added">You prefer Quarto’s modern publishing system</mark></li>
+<li><mark class="preview-element-added">You want to use Quarto’s modern publishing system for your documentation website</mark></li>
+<li><mark class="preview-element-added">You need vignettes that can be downloaded in multiple formats (when authored with Quarto’s multi-format support)</mark></li>
+<li><mark class="preview-element-added">You prefer a different documentation framework than pkgdown’s Bootstrap-based approach (Docsify, MkDocs, or Docute)</mark></li>
 <li><mark class="preview-element-added">You need more flexibility in site design and structure</mark></li>
-<li><mark class="preview-element-added">You want to use a different documentation framework than pkgdown’s Bootstrap-based approach</mark></li>
 </ul>
 </section>
 <section id="pkgsite" class="level4" data-number="6.2.4.2">
@@ -954,17 +953,19 @@ window.Quarto = {
 <h4 data-number="6.2.4.4" class="anchored" data-anchor-id="comparison-summary"><span class="header-section-number"><mark class="preview-text-changed">6.2.4.4</mark></span> <mark class="preview-text-changed">Comparison</mark> <mark class="preview-text-changed">Summary</mark></h4>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 16%">
+<col style="width: 11%">
+<col style="width: 13%">
+<col style="width: 19%">
+<col style="width: 26%">
 <col style="width: 17%">
-<col style="width: 25%">
-<col style="width: 24%">
-<col style="width: 16%">
+<col style="width: 11%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Tool</th>
 <th>Complexity</th>
-<th>Output Formats</th>
+<th>Website Output</th>
+<th>Multi-format Support</th>
 <th>Customization</th>
 <th>Best For</th>
 </tr>
@@ -974,33 +975,37 @@ window.Quarto = {
 <td>pkgdown</td>
 <td>Standard</td>
 <td>HTML</td>
+<td>Limited (via Quarto vignettes)</td>
 <td>Template-based</td>
 <td>Most R packages, standard documentation needs</td>
 </tr>
 <tr class="even">
 <td>altdoc</td>
 <td>Moderate</td>
-<td>HTML, PDF, DOCX, reveal.js</td>
+<td>HTML</td>
+<td>Yes (via Quarto-authored vignettes with download links)</td>
 <td>Framework-dependent</td>
-<td>Multiple output formats, modern design</td>
+<td>Quarto-based workflows, flexible frameworks</td>
 </tr>
 <tr class="odd">
 <td>pkgsite</td>
 <td>Minimal</td>
 <td>HTML</td>
+<td>No</td>
 <td>High (simple CSS)</td>
 <td>Lightweight sites, custom styling</td>
 </tr>
 <tr class="even">
 <td>Quarto</td>
 <td>Advanced</td>
-<td>HTML, PDF, DOCX, reveal.js, EPUB</td>
+<td>HTML (for websites)</td>
+<td>Yes (native - can output to PDF, DOCX, reveal.js, EPUB)</td>
 <td>Complete</td>
 <td>Full control, advanced features</td>
 </tr>
 </tbody>
 </table>
-<p><mark class="preview-element-added"><strong>Recommendation:</strong> Use pkgdown for most standard R package documentation needs. Consider altdoc when you need multiple output formats (DOCX, PDF, presentations) or prefer Quarto’s publishing system. Choose pkgsite for minimalist websites with easy CSS customization. Use Quarto directly only if you need complete control and are comfortable with more complex setup.</mark></p>
+<p><mark class="preview-element-added"><strong>Recommendation:</strong> Use pkgdown for most standard R package documentation needs. Consider altdoc when you prefer Quarto’s publishing system or want flexibility to choose between documentation frameworks (Quarto, Docsify, MkDocs, Docute). If you choose altdoc with Quarto, you can author vignettes to provide downloadable PDF and DOCX versions alongside the HTML website. Choose pkgsite for minimalist websites with easy CSS customization. Use Quarto directly only if you need complete control and are comfortable with more complex setup.</mark></p>
 </section>
 </section>
 </section>
