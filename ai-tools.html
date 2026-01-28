@@ -560,6 +560,8 @@ div.csl-indent {
   <li><a href="#sec-ai-when-to-use" id="toc-sec-ai-when-to-use" class="nav-link" data-scroll-target="#sec-ai-when-to-use"><span class="header-section-number">18.5.12</span> When to use a coding agent</a></li>
   <li><a href="#editing-with-.docx-files" id="toc-editing-with-.docx-files" class="nav-link" data-scroll-target="#editing-with-.docx-files"><span class="header-section-number">18.5.13</span> Editing with <code>.docx</code> files</a></li>
   <li><a href="#copilot-instructions-for-this-repository" id="toc-copilot-instructions-for-this-repository" class="nav-link" data-scroll-target="#copilot-instructions-for-this-repository"><span class="header-section-number">18.5.14</span> Copilot Instructions for this Repository</a></li>
+  <li><a href="#using-copilot-review-before-human-review" id="toc-using-copilot-review-before-human-review" class="nav-link" data-scroll-target="#using-copilot-review-before-human-review"><span class="header-section-number">18.5.15</span> Using Copilot Review Before Human Review</a></li>
+  <li><a href="#reviewing-a-copilot-pr-you-didnt-create" id="toc-reviewing-a-copilot-pr-you-didnt-create" class="nav-link" data-scroll-target="#reviewing-a-copilot-pr-you-didnt-create"><span class="header-section-number">18.5.16</span> Reviewing a Copilot PR You Didn’t Create</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/ai-tools.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/ai-tools.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -1705,6 +1707,128 @@ Warning
 </ul>
 <p>By having these instructions in <code>.github/copilot-instructions.md</code>, we ensure that coding agents produce consistent, high-quality contributions that align with the lab’s established practices. This reduces the review burden and helps maintain consistency across all contributions to the lab manual, whether made by humans or AI assistants.</p>
 <p>See <a href="appendix-copilot-instructions.html">Appendix: Copilot Instructions File</a> for the complete file.</p>
+</section>
+<section id="using-copilot-review-before-human-review" class="level3" data-number="18.5.15">
+<h3 data-number="18.5.15" class="anchored" data-anchor-id="using-copilot-review-before-human-review"><span class="header-section-number">18.5.15</span> Using Copilot Review Before Human Review</h3>
+<p>Before requesting review from other humans, <strong>always have Copilot review your pull request first</strong>—even if Copilot created the PR itself. AI review provides fast, thorough feedback that helps catch issues before involving human reviewers, saving everyone time and improving code quality.</p>
+<p><strong>Why review with Copilot first:</strong></p>
+<ul>
+<li><strong>AI has more bandwidth</strong>: Copilot can review code immediately without competing priorities</li>
+<li><strong>Catch common issues early</strong>: Copilot excels at identifying bugs, logic errors, security vulnerabilities, and style inconsistencies</li>
+<li><strong>Improve human review quality</strong>: When humans review cleaner code, they can focus on higher-level concerns like design and architecture rather than basic issues</li>
+<li><strong>Learn from feedback</strong>: Even experienced developers benefit from Copilot’s perspective on best practices and potential improvements</li>
+<li><strong>Growing capabilities</strong>: AI review capabilities continue to improve over time, making this investment increasingly valuable</li>
+</ul>
+<p><strong>Copilot review workflow:</strong></p>
+<ol type="1">
+<li><p><strong>Assign Copilot as a reviewer</strong>: On your pull request page, assign Copilot to review the PR the same way you would assign any other reviewer. Click “Reviewers” in the right sidebar and select Copilot from the list.</p></li>
+<li><p><strong>Review Copilot’s comments</strong>: Once Copilot completes its review, carefully examine each comment. For each comment, decide whether you agree with the suggestion:</p>
+<ul>
+<li><strong>If the comment is correct</strong>: Address it by making code changes yourself or ask Copilot to apply the fix using GitHub’s suggestion features</li>
+<li><strong>If the comment is incorrect or not applicable</strong>: Dismiss the comment with an explanation for why it doesn’t apply</li>
+<li><strong>If you’re uncertain</strong>: Seek a second opinion from a human reviewer or do additional research</li>
+</ul></li>
+<li><p><strong>Request another Copilot review</strong>: After addressing or dismissing all comments, request another review from Copilot. This creates an iterative improvement process.</p></li>
+<li><p><strong>Iterate until satisfied</strong>: Repeat the review-and-address cycle until Copilot stops providing valuable suggestions. This typically takes 1-3 iterations depending on the complexity of the changes.</p></li>
+<li><p><strong>Request human review</strong>: Only after you’ve addressed Copilot’s feedback should you request review from human team members. At this point, the code should be in better shape, allowing human reviewers to focus on higher-level concerns.</p></li>
+</ol>
+<p><strong>Important considerations:</strong></p>
+<ul>
+<li><strong>Copilot isn’t perfect</strong>: AI review can produce false positives or miss important issues. Always apply your own judgment when evaluating Copilot’s suggestions.</li>
+<li><strong>Don’t blindly accept all suggestions</strong>: Some of Copilot’s recommendations may not fit your specific context or requirements. It’s perfectly appropriate to dismiss comments that don’t apply.</li>
+<li><strong>Human review remains essential</strong>: Copilot review supplements but does not replace human code review. Humans bring domain knowledge, understanding of business requirements, and judgment about trade-offs that AI cannot replicate.</li>
+<li><strong>Document dismissals</strong>: When dismissing Copilot comments, briefly explain why. This helps human reviewers understand your reasoning and can serve as documentation for future reference.</li>
+</ul>
+<p><strong>For pull request authors:</strong></p>
+<p>Even if you’re highly experienced, treating Copilot review as a required pre-review step helps maintain code quality and makes the best use of everyone’s time. The few minutes spent on Copilot review often save hours of back-and-forth with human reviewers.</p>
+<p><strong>For human reviewers:</strong></p>
+<p>When you receive a PR for review, check whether the author has completed the Copilot review process. If Copilot hasn’t reviewed the PR yet, consider asking the author to complete that step first before you invest time in review. This ensures you’re reviewing code that has already been through initial automated quality checks.</p>
+</section>
+<section id="reviewing-a-copilot-pr-you-didnt-create" class="level3" data-number="18.5.16">
+<h3 data-number="18.5.16" class="anchored" data-anchor-id="reviewing-a-copilot-pr-you-didnt-create"><span class="header-section-number">18.5.16</span> Reviewing a Copilot PR You Didn’t Create</h3>
+<p>When reviewing a pull request where someone else prompted Copilot to make changes, follow these guidelines to avoid confusion and ensure smooth collaboration:</p>
+<p><strong>Understanding PR roles:</strong></p>
+<p>Different people may play different roles in the PR lifecycle:</p>
+<ul>
+<li><strong>Issue creator</strong>: Reports a bug, suggests a feature, or requests other improvements. In projects with external users, issue creators often cannot assign issues to developers and are therefore distinct from the PR prompter</li>
+<li><strong>PR prompter</strong>: Assigns a developer (human or AI) to start working on a PR, often by assigning an issue to Copilot. The PR prompter is sometimes the same person as the issue creator, but often is a project maintainer who reviews and triages external issue reports</li>
+<li><strong>PR author(s)</strong>: Makes commits to the PR branch (when Copilot creates commits, both Copilot and the prompter are co-authors)</li>
+<li><strong>PR manager</strong>: Supervises and guides the PR authors, assigns reviewers, and controls the PR workflow. Typically the PR prompter becomes the PR manager, but can hand off this role to someone else</li>
+<li><strong>PR reviewer(s)</strong>: Reviews the PR and provides feedback. The PR manager often also serves as the lead reviewer</li>
+<li><strong>PR assignee(s)</strong>: Listed in the “Assignees” field on GitHub to indicate who is responsible for the PR. Use this field to clarify current ownership and track who should be working on addressing feedback</li>
+</ul>
+<p><strong>The scenario:</strong></p>
+<ul>
+<li>One team member (the “PR prompter”) assigned Copilot to work on an issue or explicitly prompted Copilot to start working</li>
+<li>The prompter may or may not be the same person who originally created the issue
+<ul>
+<li>In projects with a user base, users often submit issues (bug reports, feature requests)</li>
+<li>A project maintainer then steps in, adds their perspective, and assigns the issue to Copilot</li>
+<li>In this case, the maintainer who assigned Copilot is the prompter, not the original issue creator</li>
+</ul></li>
+<li>Copilot created the PR with the prompter as co-author</li>
+<li>The prompter (now acting as PR manager) requested your review</li>
+<li>Copilot may have also automatically reviewed the PR</li>
+</ul>
+<p><strong>As a non-manager reviewer, your role is to provide feedback, not to directly initiate more work by Copilot.</strong> The PR manager should remain in control of when and how Copilot makes additional changes.</p>
+<p><strong>Recommended review workflow:</strong></p>
+<ol type="1">
+<li><strong>Use “Comment” or “Request changes” based on the severity of issues</strong>:
+<ul>
+<li>Use <strong>“Comment”</strong> for suggestions, questions, or minor issues that don’t block merging</li>
+<li>Use <strong>“Request changes”</strong> for significant issues that must be addressed before merging</li>
+<li>Both options allow you to provide feedback without directly triggering Copilot</li>
+</ul></li>
+<li><strong>Don’t ask Copilot to make changes directly</strong>:
+<ul>
+<li>Avoid using features that would trigger Copilot to start working immediately</li>
+<li>Let the PR manager decide whether to ask Copilot to address your comments or make changes themselves</li>
+</ul></li>
+<li><strong>Write clear, actionable comments</strong>:
+<ul>
+<li>Explain what needs to change and why</li>
+<li>Suggest specific solutions when appropriate</li>
+<li>The PR manager will decide how to address your feedback</li>
+</ul></li>
+</ol>
+<p><strong>For PR managers:</strong></p>
+<p>After receiving reviews from other team members:</p>
+<ol type="1">
+<li><strong>Review all comments carefully</strong>:
+<ul>
+<li>Decide which comments you agree with</li>
+<li>Dismiss or respond to comments you don’t entirely agree with</li>
+<li>This ensures Copilot only addresses feedback you’ve validated</li>
+</ul></li>
+<li><strong>Choose how to address valid feedback</strong>:
+<ul>
+<li><strong>Option A</strong>: Make the changes yourself (faster for simple fixes)</li>
+<li><strong>Option B</strong>: Ask Copilot to address the feedback (better for complex changes)</li>
+<li><strong>Option C</strong>: Add your own review summarizing which comments Copilot should address, then ask Copilot to respond to the open comment threads</li>
+</ul></li>
+<li><strong>Maintain clear communication</strong>:
+<ul>
+<li>Let reviewers know how you plan to address their feedback</li>
+<li>Mark conversations as resolved after addressing them</li>
+<li>Request re-review from humans after Copilot makes significant changes</li>
+<li>Update the PR’s “Assignees” field to reflect who is currently responsible for the PR</li>
+</ul></li>
+</ol>
+<p><strong>Transferring the PR manager role:</strong></p>
+<p>The original PR manager can hand over a PR to another person, who then becomes the new PR manager with control over Copilot’s work on that PR. This might be useful when:</p>
+<ul>
+<li>The original PR manager is unavailable or on leave</li>
+<li>Someone with different expertise needs to guide the remaining work</li>
+<li>Responsibilities are being redistributed within the team</li>
+</ul>
+<p>To transfer the PR manager role:</p>
+<ol type="1">
+<li>The original PR manager should clearly communicate the handover to all reviewers</li>
+<li>The new PR manager should review the PR’s history and any open feedback</li>
+<li>The new PR manager should take over responding to Copilot and managing future iterations</li>
+<li>The team should update the PR’s “Assignees” field and comments or description to reflect the current PR manager</li>
+</ol>
+<p>This workflow ensures the PR manager maintains control over the development process while benefiting from collaborative human review and Copilot’s implementation capabilities.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
