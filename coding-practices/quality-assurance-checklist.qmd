@@ -1,4 +1,4 @@
-Before requesting review on a a pull request or finalizing analysis, verify:
+Before requesting human review on a pull request or finalizing analysis, verify:
 
 - [ ] All functions have complete roxygen2 documentation
 - [ ] All functions have corresponding tests
