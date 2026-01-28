@@ -1,0 +1,121 @@
+While [`{pkgdown}`](https://pkgdown.r-lib.org/) is the standard tool for creating package documentation websites,
+several alternatives exist that may better suit specific needs,
+particularly for generating multiple output formats beyond HTML.
+
+#### altdoc
+
+[`{altdoc}`](https://altdoc.etiennebacher.com/) is a flexible alternative that supports multiple documentation frameworks,
+including Quarto,
+Docsify,
+MkDocs,
+and Docute.
+It is especially useful when you need to generate documentation in multiple formats.
+
+**Key features:**
+
+- Supports Quarto and RMarkdown vignettes
+- Can generate HTML websites, PDF documents, DOCX files, and reveal.js presentations
+- Provides multiple site generation frameworks to choose from
+- Handles function reference pages, README, NEWS, and other standard documentation
+- Easy preview and deployment workflow
+
+**Basic usage:**
+
+```r
+# Install altdoc
+install.packages("altdoc")
+
+# Set up documentation with Quarto
+altdoc::setup_docs(tool = "quarto_website")
+
+# Or use other frameworks
+# altdoc::setup_docs(tool = "docsify")
+# altdoc::setup_docs(tool = "mkdocs")
+# altdoc::setup_docs(tool = "docute")
+
+# Render documentation
+altdoc::render_docs()
+
+# Preview in browser
+altdoc::preview_docs()
+```
+
+**When to choose altdoc:**
+
+- You need to generate DOCX or PDF versions of your documentation
+- You want to create reveal.js presentations from your vignettes
+- You prefer Quarto's modern publishing system
+- You need more flexibility in site design and structure
+- You want to use a different documentation framework than pkgdown's Bootstrap-based approach
+
+#### pkgsite
+
+[`{pkgsite}`](https://github.com/pachadotdev/pkgsite) provides a minimal,
+lightweight alternative to pkgdown,
+focusing on simplicity and ease of customization.
+
+**Key features:**
+
+- Minimal CSS framework (no Bootstrap)
+- Simple, clean design that is easy to customize
+- Similar `build_site()` function to pkgdown
+- Lightweight and fast
+- Can be published via GitHub Pages or other static site hosts
+
+**Basic usage:**
+
+```r
+# Install pkgsite (not on CRAN as of early 2025)
+pak::pkg_install("pachadotdev/pkgsite")
+
+# Build and preview site
+pkgsite::build_site(preview = TRUE)
+
+# Build with custom URL and lazy rebuilding
+pkgsite::build_site(
+  url = "https://yourdomain.com",
+  lazy = TRUE,
+  preview = TRUE
+)
+```
+
+**When to choose pkgsite:**
+
+- You want a minimal, lightweight documentation site
+- You prefer to customize CSS styling from scratch
+- You don't need the extensive features of pkgdown
+- You want faster build times for simple packages
+
+#### Quarto for Package Documentation
+
+While not a dedicated package documentation tool,
+Quarto can be used to create sophisticated documentation websites for R packages,
+particularly when combined with custom scripts or tools like [`{ecodown}`](https://github.com/edgararuiz/ecodown) (experimental,
+for internal use).
+
+**Discussion and resources:**
+
+- [Quarto discussion on pkgdown alternative](https://github.com/orgs/quarto-dev/discussions/1591)
+- pkgdown itself now supports Quarto vignettes (as of version 2.1.0)
+
+**When to consider Quarto:**
+
+- You want complete control over site structure and design
+- You're already using Quarto for other documentation
+- You need advanced publishing features beyond what pkgdown offers
+- You're comfortable writing custom scripts for function reference extraction
+
+#### Comparison Summary
+
+| Tool     | Complexity | Output Formats | Customization | Best For |
+|----------|-----------|----------------|---------------|----------|
+| pkgdown  | Standard  | HTML           | Template-based | Most R packages, standard documentation needs |
+| altdoc   | Moderate  | HTML, PDF, DOCX, reveal.js | Framework-dependent | Multiple output formats, modern design |
+| pkgsite  | Minimal   | HTML           | High (simple CSS) | Lightweight sites, custom styling |
+| Quarto   | Advanced  | HTML, PDF, DOCX, reveal.js, EPUB | Complete | Full control, advanced features |
+
+**Recommendation:**
+Use pkgdown for most standard R package documentation needs.
+Consider altdoc when you need multiple output formats (DOCX, PDF, presentations) or prefer Quarto's publishing system.
+Choose pkgsite for minimalist websites with easy CSS customization.
+Use Quarto directly only if you need complete control and are comfortable with more complex setup.
