@@ -1,0 +1,545 @@
+::: {.callout-note}
+This section draws from the [Measuring Performance](https://adv-r.hadley.nz/perf-measure.html) and [Improving Performance](https://adv-r.hadley.nz/perf-improve.html) chapters in *Advanced R* by Hadley Wickham,
+along with documentation for [`{bench}`](https://bench.r-lib.org/) and [`{profvis}`](https://rstudio.github.io/profvis/).
+:::
+
+Performance optimization starts with measurement.
+Benchmarking helps identify bottlenecks,
+compare alternative implementations,
+and ensure your code meets performance requirements.
+This section covers when and how to benchmark R code,
+with a focus on integration with package development workflows.
+
+### When to Benchmark
+
+Benchmark when:
+
+- **Choosing between implementations**: Compare different approaches to the same problem
+- **Optimizing critical paths**: Identify and improve performance bottlenecks
+- **Preventing regressions**: Ensure new code doesn't slow down existing functionality
+- **Processing large datasets**: Verify scalability for biostatistics/epidemiology workflows
+- **Implementing computational methods**: Test algorithms involving bootstrapping, simulation, or resampling
+
+Don't benchmark prematurely.
+Write correct, readable code first,
+then measure to find what actually needs optimization.
+
+### Setting Up Benchmarking Infrastructure
+
+Organize benchmarking code separately from unit tests:
+
+```
+mypackage/
+  tests/
+    testthat/          # Unit tests (run by R CMD check)
+    benchmarks/        # Benchmarking scripts (run manually or in CI)
+      01-data-prep.R
+      02-analysis.R
+```
+
+Add benchmarking dependencies to `DESCRIPTION`:
+
+```r
+# Add bench and profvis as development dependencies
+usethis::use_package("bench", type = "Suggests")
+usethis::use_package("profvis", type = "Suggests")
+
+# Add any packages used in benchmarks
+# For example, if comparing with data.table or gbm:
+# usethis::use_package("data.table", type = "Suggests")
+# usethis::use_package("gbm", type = "Suggests")
+```
+
+Create a benchmark template:
+
+```r
+# tests/benchmarks/01-data-prep.R
+library(bench)
+library(mypackage)
+
+# Generate test data
+n <- 10000
+test_data <- data.frame(
+  id = 1:n,
+  exposure = rnorm(n),
+  outcome = rbinom(n, 1, 0.3)
+)
+
+# Compare implementations
+results <- bench::mark(
+  original = prep_data_v1(test_data),
+  optimized = prep_data_v2(test_data),
+  check = FALSE,  # Set TRUE to verify outputs are identical
+  iterations = 100,
+  time_unit = "ms"
+)
+
+print(results)
+```
+
+### Using bench for Performance Comparisons
+
+[`{bench}`](https://bench.r-lib.org/) provides accurate performance measurements
+and makes it easy to compare multiple implementations.
+
+**Basic usage:**
+
+```r
+library(bench)
+
+# Compare different approaches
+results <- bench::mark(
+  base_subset = data[data$group == "treatment", ],
+  dplyr_filter = dplyr::filter(data, group == "treatment"),
+  data.table = dt[group == "treatment"],
+  iterations = 100
+)
+
+# View results
+print(results)
+#> # A tibble: 3 × 6
+#>   expression        min   median `itr/sec` mem_alloc `gc/sec`
+#>   <bch:expr>   <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
+#> 1 base_subset    1.2ms    1.4ms       714.    1.5MB     2.14
+#> 2 dplyr_filter   2.1ms    2.3ms       435.    2.1MB     4.35
+#> 3 data.table   850.0µs  950.0µs      1053.  800.0KB     0.00
+
+# Plot results
+plot(results)
+```
+
+**Key features:**
+
+- **Accurate timing**: Accounts for overhead and runs multiple iterations
+- **Memory tracking**: Shows memory allocation for each approach
+- **Garbage collection**: Reports GC frequency
+- **Output verification**: Optional checking that all implementations produce identical results
+
+**Example for biostatistics workflow:**
+
+```r
+# Compare propensity score estimation methods
+library(bench)
+
+# Simulate cohort data
+n <- 5000
+cohort <- data.frame(
+  age = rnorm(n, 50, 15),
+  bmi = rnorm(n, 27, 5),
+  treatment = rbinom(n, 1, 0.5),
+  outcome = rbinom(n, 1, 0.3)
+)
+
+# Note: Install gbm first if not already installed
+# usethis::use_package("gbm", type = "Suggests")
+
+# Compare GLM vs GBM for propensity scores
+ps_benchmark <- bench::mark(
+  glm_method = {
+    model <- glm(treatment ~ age + bmi, 
+                 data = cohort, 
+                 family = binomial())
+    predict(model, type = "response")
+  },
+  gbm_method = {
+    model <- gbm::gbm(treatment ~ age + bmi,
+                      data = cohort,
+                      distribution = "bernoulli",
+                      n.trees = 100,
+                      verbose = FALSE)
+    predict(model, n.trees = 100, type = "response")
+  },
+  check = FALSE,
+  iterations = 50
+)
+
+print(ps_benchmark)
+```
+
+### Using profvis for Memory and CPU Profiling
+
+[`{profvis}`](https://rstudio.github.io/profvis/) identifies where your code spends time
+and allocates memory.
+Use it to find bottlenecks in existing functions.
+
+**Basic usage:**
+
+```r
+library(profvis)
+
+# Profile a function
+profvis({
+  data <- prep_study_data(raw_data)
+  results <- run_primary_analysis(data)
+})
+```
+
+The profvis output shows:
+
+- **Flame graph**: Visual representation of time spent in each function
+- **Data view**: Line-by-line time and memory usage
+- **Memory profile**: Allocation patterns over time
+
+**Example for data preparation:**
+
+```r
+library(profvis)
+
+profvis({
+  # Profile data cleaning pipeline
+  cleaned <- raw_data |>
+    dplyr::filter(!is.na(id)) |>
+    dplyr::mutate(
+      age_group = cut(age, breaks = c(0, 18, 65, Inf)),
+      bmi_category = cut(bmi, breaks = c(0, 18.5, 25, 30, Inf))
+    ) |>
+    dplyr::left_join(exposure_data, by = "id") |>
+    dplyr::group_by(age_group) |>
+    dplyr::summarize(
+      n = n(),
+      mean_bmi = mean(bmi, na.rm = TRUE)
+    )
+})
+```
+
+**Interpreting profvis output:**
+
+- **Wide bars**: Functions taking substantial time
+- **Tall stacks**: Deep call chains (potential for simplification)
+- **Memory spikes**: Large allocations (consider chunking or data.table)
+
+**Common bottlenecks in epidemiology code:**
+
+- Repeated subsetting operations → Use data.table or pre-filter
+- Growing objects in loops → Pre-allocate vectors
+- Complex joins on large datasets → Index properly or use data.table
+- Unnecessary copies → Use reference semantics where appropriate
+
+### Integration with Package Development Workflow
+
+Integrate benchmarking into your development cycle:
+
+**1. Benchmark before optimization:**
+
+```r
+# tests/benchmarks/baseline.R
+# Run this before making changes to establish baseline
+
+library(bench)
+library(mypackage)
+
+baseline <- bench::mark(
+  current_implementation = analyze_cohort(test_data),
+  iterations = 100
+)
+
+saveRDS(baseline, "tests/benchmarks/baseline.rds")
+```
+
+**2. Profile to identify bottlenecks:**
+
+```r
+library(profvis)
+
+profvis({
+  analyze_cohort(test_data)
+})
+# Identify which functions are slow
+```
+
+**3. Optimize and re-benchmark:**
+
+```r
+# After optimization
+library(bench)
+
+baseline <- readRDS("tests/benchmarks/baseline.rds")
+
+comparison <- bench::mark(
+  baseline = analyze_cohort_v1(test_data),
+  optimized = analyze_cohort_v2(test_data),
+  check = FALSE,
+  iterations = 100
+)
+
+print(comparison)
+```
+
+**4. Document performance characteristics:**
+
+```r
+#' Analyze cohort data
+#'
+#' @param data A data frame with cohort information
+#' @return Analysis results
+#'
+#' @details
+#' Performance characteristics (as of 2025-01):
+#' - Typical runtime: ~50ms for 10,000 observations
+#' - Memory usage: ~5MB per 10,000 observations
+#' - Scales linearly with sample size
+#'
+#' @examples
+#' \dontrun{
+#' results <- analyze_cohort(cohort_data)
+#' }
+#' @export
+analyze_cohort <- function(data) {
+  # Implementation
+}
+```
+
+### CI/CD Integration for Automated Benchmarking
+
+Set up GitHub Actions to track performance over time.
+
+**Create `.github/workflows/benchmark.yaml`:**
+
+```{.yaml filename=".github/workflows/benchmark.yaml"}
+name: Benchmark
+
+on:
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:  # Manual trigger
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+      
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: any::bench, any::profvis
+      
+      - name: Run benchmarks
+        run: |
+          library(bench)
+          library(mypackage)
+          
+          # Create benchmarks directory if it doesn't exist
+          dir.create("tests/benchmarks", recursive = TRUE, showWarnings = FALSE)
+          
+          # Generate test data (or load existing test data)
+          test_data <- generate_test_cohort(n = 10000)
+          
+          # Run benchmark
+          results <- bench::mark(
+            current_implementation = analyze_cohort(test_data),
+            iterations = 100
+          )
+          
+          # Save results
+          saveRDS(results, "tests/benchmarks/current.rds")
+        shell: Rscript {0}
+      
+      - name: Compare with baseline
+        run: |
+          # Load baseline and current results
+          baseline <- readRDS("tests/benchmarks/baseline.rds")
+          current <- readRDS("tests/benchmarks/current.rds")
+          
+          # Calculate percentage change in median time
+          baseline_time <- as.numeric(baseline$median[1])
+          current_time <- as.numeric(current$median[1])
+          pct_change <- (current_time - baseline_time) / baseline_time * 100
+          
+          # Report results
+          cat(sprintf("Performance change: %.1f%%\n", pct_change))
+          
+          # Fail if performance degrades by >10%
+          if (pct_change > 10) {
+            stop(sprintf("Performance regression: %.1f%% slower", pct_change))
+          }
+        shell: Rscript {0}
+```
+
+**Key considerations for CI benchmarks:**
+
+- **Variability**: CI runners have variable performance; use thresholds (e.g., >10% regression)
+- **Baseline storage**: Commit baseline results or use GitHub Actions artifacts
+- **Selective running**: Only benchmark on specific branches or when performance-critical files change
+- **Manual triggers**: Use `workflow_dispatch` for on-demand benchmarking
+- **Security**: For production workflows, consider pinning action versions to commit SHAs instead of tags (see @sec-ai-best-practices)
+
+**Alternative: Comment benchmark results on PRs:**
+
+Use the [`{touchstone}`](https://github.com/lorenzwalthert/touchstone) package
+for more sophisticated CI benchmarking with automated PR comments.
+
+### Performance Testing with testthat
+
+For critical performance requirements,
+add performance tests to your test suite.
+
+**Example performance test:**
+
+```r
+# tests/testthat/test-performance.R
+
+test_that("data preparation meets performance requirements", {
+  skip_on_cran()  # Skip on CRAN (timing-based tests can be flaky)
+  
+  # Run on CI only if BENCHMARK_ON_CI is set
+  if (identical(Sys.getenv("CI"), "true") && 
+      !identical(Sys.getenv("BENCHMARK_ON_CI"), "true")) {
+    skip("Skipping performance test on CI")
+  }
+  
+  n <- 10000
+  test_data <- generate_test_cohort(n)
+  
+  # Measure execution time
+  timing <- bench::mark(
+    prep_study_data(test_data),
+    iterations = 10,
+    check = FALSE
+  )
+  
+  # Require median time under threshold
+  max_time_ms <- 100
+  median_time_ms <- as.numeric(timing$median) * 1000
+  
+  expect_true(
+    median_time_ms < max_time_ms,
+    info = sprintf(
+      "prep_study_data took %.1f ms (threshold: %.1f ms)",
+      median_time_ms,
+      max_time_ms
+    )
+  )
+})
+
+test_that("analysis scales linearly with sample size", {
+  skip_on_cran()
+  
+  # Run on CI only if BENCHMARK_ON_CI is set
+  if (identical(Sys.getenv("CI"), "true") && 
+      !identical(Sys.getenv("BENCHMARK_ON_CI"), "true")) {
+    skip("Skipping performance test on CI")
+  }
+  
+  # Test at different sample sizes
+  sizes <- c(1000, 5000, 10000)
+  
+  timings <- vapply(sizes, function(n) {
+    data <- generate_test_cohort(n)
+    result <- bench::mark(
+      analyze_cohort(data),
+      iterations = 10
+    )
+    as.numeric(result$median)
+  }, numeric(1))
+  
+  # Check approximate linearity (R² > 0.95)
+  model <- lm(timings ~ sizes)
+  r_squared <- summary(model)$r.squared
+  
+  expect_true(
+    r_squared > 0.95,
+    info = sprintf("Scaling R² = %.3f (expected > 0.95)", r_squared)
+  )
+})
+```
+
+**When to use performance tests:**
+
+- Functions with documented performance requirements
+- Critical paths that must stay fast
+- Code that processes large datasets
+
+**When not to use performance tests:**
+
+- Functions without specific performance needs
+- Tests that would be flaky due to system variability
+- Development environments with limited resources
+
+See @sec-r-testing for more on testing with [`{testthat}`](https://testthat.r-lib.org/).
+
+### Best Practices
+
+**Focus benchmarks on realistic scenarios:**
+
+```r
+# Good: Realistic data size
+n <- 50000  # Typical cohort size in our studies
+test_data <- generate_realistic_cohort(n)
+
+# Avoid: Unrealistically small data
+n <- 10
+```
+
+**Establish baselines:**
+
+Before optimizing,
+measure current performance to understand the improvement.
+
+```r
+# Document baseline
+baseline <- bench::mark(current_implementation(data), iterations = 100)
+saveRDS(baseline, "benchmarks/baseline-2025-01.rds")
+```
+
+**Compare on equal footing:**
+
+```r
+# Good: Same random seed, same data
+set.seed(123)
+data <- generate_test_data(10000)
+
+bench::mark(
+  method_a = analyze_a(data),
+  method_b = analyze_b(data),
+  check = FALSE
+)
+
+# Avoid: Different random data
+bench::mark(
+  method_a = analyze_a(generate_test_data(10000)),
+  method_b = analyze_b(generate_test_data(10000))
+)
+```
+
+**Benchmark critical paths only:**
+
+Don't optimize everything—focus on code that:
+
+- Runs frequently
+- Processes large datasets
+- Is called in loops or simulations
+- Has noticeable user-facing delays
+
+**Use appropriate sample sizes:**
+
+```r
+# For data prep: use typical dataset size
+cohort_data <- generate_cohort(n = 50000)
+
+# For simulation: use realistic iteration counts
+n_iterations <- 1000
+```
+
+**Document optimization decisions:**
+
+```r
+# In package documentation or vignette
+
+# We use data.table for joins because:
+# - Benchmarks show 5x speedup over dplyr for n > 100,000
+# - Typical cohort sizes: 50,000 - 500,000 observations
+# - See tests/benchmarks/join-comparison.R for details
+```
+
+### Additional Resources
+
+- [`{bench}`](https://bench.r-lib.org/) - Accurate benchmarking
+- [`{profvis}`](https://rstudio.github.io/profvis/) - Interactive profiling
+- [Measuring Performance](https://adv-r.hadley.nz/perf-measure.html) chapter in Advanced R
+- [Improving Performance](https://adv-r.hadley.nz/perf-improve.html) chapter in Advanced R
+- [`{touchstone}`](https://github.com/lorenzwalthert/touchstone) - CI benchmarking with PR comments

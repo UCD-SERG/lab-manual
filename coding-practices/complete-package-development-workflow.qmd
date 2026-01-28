@@ -132,4 +132,3 @@ pkgdown::build_site()
 # The pkgdown site can be automatically deployed to GitHub Pages
 # using GitHub Actions
 ```
-```

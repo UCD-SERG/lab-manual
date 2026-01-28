@@ -22,6 +22,10 @@ Adapted by UCD-SeRG team from [original by Kunal Mishra, Jade Benjamin-Chung, St
 
 {{< include coding-practices/testing-requirements.qmd >}}
 
+## Benchmarking {#sec-benchmarking}
+
+{{< include coding-practices/benchmarking.qmd >}}
+
 ## Iterative Operations {#sec-iteration}
 
 {{< include coding-practices/iterative-operations.qmd >}}
