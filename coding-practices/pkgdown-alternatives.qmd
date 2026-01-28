@@ -13,7 +13,7 @@ It is especially useful when you need to generate documentation in multiple form
 
 **Key features:**
 
-- Supports Quarto and RMarkdown vignettes
+- Supports Quarto and R Markdown vignettes
 - Can generate HTML websites, PDF documents, DOCX files, and reveal.js presentations
 - Provides multiple site generation frameworks to choose from
 - Handles function reference pages, README, NEWS, and other standard documentation
@@ -65,7 +65,7 @@ focusing on simplicity and ease of customization.
 **Basic usage:**
 
 ```r
-# Install pkgsite (not on CRAN as of early 2025)
+# Install pkgsite (not on CRAN as of early 2026)
 pak::pkg_install("pachadotdev/pkgsite")
 
 # Build and preview site
@@ -90,8 +90,7 @@ pkgsite::build_site(
 
 While not a dedicated package documentation tool,
 Quarto can be used to create sophisticated documentation websites for R packages,
-particularly when combined with custom scripts or tools like [`{ecodown}`](https://github.com/edgararuiz/ecodown) (experimental,
-for internal use).
+particularly when combined with custom scripts or tools like [`{ecodown}`](https://github.com/edgararuiz/ecodown) (experimental and intended for internal use).
 
 **Discussion and resources:**
 
