@@ -1,0 +1,40 @@
+For GitHub Actions workflows running on Ubuntu,
+[r2u](https://eddelbuettel.github.io/r2u/) provides a faster alternative to installing R packages from source.
+r2u offers pre-compiled binary packages for all CRAN packages on Ubuntu,
+which can dramatically reduce CI build times.
+
+**Key benefits for CI workflows:**
+
+- **Faster installation**: Binary packages install in seconds rather than minutes
+- **Automatic dependency resolution**: All system dependencies are handled by `apt`
+- **Complete CRAN coverage**: Over 30,000 CRAN packages available as binaries (as of early 2025)
+- **GitHub Actions support**: Easy integration with Ubuntu runners
+
+**Quick example:**
+
+Instead of waiting several minutes for `install.packages("tidyverse")` to compile from source,
+r2u can install it as binaries in under 20 seconds.
+
+**How to use r2u in GitHub Actions:**
+
+The r2u project provides Docker containers and setup actions.
+For most workflows,
+you can use the [r2u setup action](https://github.com/eddelbuettel/github-actions/tree/master/r2u-setup):
+
+```yaml
+- name: Setup r2u
+  uses: eddelbuettel/github-actions/r2u-setup@master
+```
+
+Alternatively,
+use the rocker/r2u Docker containers directly in your workflow.
+
+**When to consider r2u:**
+
+- Your workflow installs many R packages
+- Build times are a bottleneck in your CI pipeline
+- You're running on Ubuntu (focal, jammy, or noble)
+- You want to reduce GitHub Actions minutes usage
+
+For complete documentation and setup instructions,
+see the [r2u website](https://eddelbuettel.github.io/r2u/).
