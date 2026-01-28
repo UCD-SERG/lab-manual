@@ -81,3 +81,11 @@ to [help you code](https://en.wikipedia.org/wiki/AI-assisted_software_developmen
 ### Copilot Instructions for this Repository
 
 {{< include ai-tools/copilot-instructions-explanation.qmd >}}
+
+### Using Copilot Review Before Human Review
+
+{{< include ai-tools/copilot-review-before-human-review.qmd >}}
+
+### Reviewing a Copilot PR You Didn't Create
+
+{{< include ai-tools/reviewing-copilot-prs.qmd >}}

@@ -229,6 +229,34 @@ See the "Best Practices" section for more details.
 - All R projects should use R package structure
 - **Avoid redundant logical comparisons**: Use logical variables directly in conditional statements (e.g., `if (x)` instead of `if (x == TRUE)` or `if (x == 1)`)
 - Use `lubridate::NA_Date_` instead of `as.Date(NA)` for missing date values
+- **Use pipes to emphasize primary inputs**: When writing functions and code, use the pipe operator to clearly show transformations on a primary object. The primary input should flow as the first argument to each function in the chain. Design functions so the most important argument (usually data) comes first, enabling natural pipeline composition.
+
+### Quarto Code Chunk Options
+
+**Use `code-fold: true` for chunks where the output is important to the narrative,
+not the code used to produce it.**
+
+This option allows interested readers to expand and view the code while keeping the document focused on results.
+
+**Example:**
+
+````markdown
+```{{r}}
+#| code-fold: true
+#| fig-cap: "Distribution of variable X"
+
+ggplot(data, aes(x = variable)) +
+  geom_histogram()
+```
+````
+
+This is particularly useful for:
+
+- Complex data manipulation code that produces important summary tables
+- Plot generation code where the visualization is the key message
+- Lengthy setup or configuration code that supports the narrative but isn't central to it
+
+Do not use `code-fold: true` when the code itself is being taught or demonstrated.
 
 ## File Organization
 
