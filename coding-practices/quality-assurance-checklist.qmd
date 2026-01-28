@@ -1,4 +1,4 @@
-Before submitting a pull request or finalizing analysis, verify:
+Before requesting human review on a pull request or finalizing analysis, verify:
 
 - [ ] All functions have complete roxygen2 documentation
 - [ ] All functions have corresponding tests
@@ -12,3 +12,4 @@ Before submitting a pull request or finalizing analysis, verify:
 - [ ] `README.Rmd` has been updated (if needed) and `README.md` regenerated
 - [ ] `pkgdown::build_site()` builds successfully
 - [ ] All changes committed and pushed to GitHub
+- [ ] Copilot review completed iteratively until no valuable suggestions remain (typically 1-3 iterations, with all comments addressed or dismissed)

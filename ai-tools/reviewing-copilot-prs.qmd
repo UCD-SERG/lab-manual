@@ -1,0 +1,85 @@
+When reviewing a pull request where someone else prompted Copilot to make changes,
+follow these guidelines to avoid confusion and ensure smooth collaboration:
+
+**Understanding PR roles:**
+
+Different people may play different roles in the PR lifecycle:
+
+- **Issue creator**: Reports a bug, suggests a feature, or requests other improvements. In projects with external users, issue creators often cannot assign issues to developers and are therefore distinct from the PR prompter
+- **PR prompter**: Assigns a developer (human or AI) to start working on a PR, often by assigning an issue to Copilot. The PR prompter is sometimes the same person as the issue creator, but often is a project maintainer who reviews and triages external issue reports
+- **PR author(s)**: Makes commits to the PR branch (when Copilot creates commits, both Copilot and the prompter are co-authors)
+- **PR manager**: Supervises and guides the PR authors, assigns reviewers, and controls the PR workflow. Typically the PR prompter becomes the PR manager, but can hand off this role to someone else
+- **PR reviewer(s)**: Reviews the PR and provides feedback. The PR manager often also serves as the lead reviewer
+- **PR assignee(s)**: Listed in the "Assignees" field on GitHub to indicate who is responsible for the PR. Use this field to clarify current ownership and track who should be working on addressing feedback
+
+**The scenario:**
+
+- One team member (the "PR prompter") assigned Copilot to work on an issue or explicitly prompted Copilot to start working
+- The prompter may or may not be the same person who originally created the issue
+  - In projects with a user base, users often submit issues (bug reports, feature requests)
+  - A project maintainer then steps in, adds their perspective, and assigns the issue to Copilot
+  - In this case, the maintainer who assigned Copilot is the prompter, not the original issue creator
+- Copilot created the PR with the prompter as co-author
+- The prompter (now acting as PR manager) requested your review
+- Copilot may have also automatically reviewed the PR
+
+**As a non-manager reviewer, your role is to provide feedback,
+not to directly initiate more work by Copilot.**
+The PR manager should remain in control of when and how Copilot makes additional changes.
+
+**Recommended review workflow:**
+
+1. **Use "Comment" or "Request changes" based on the severity of issues**:
+   - Use **"Comment"** for suggestions, questions, or minor issues that don't block merging
+   - Use **"Request changes"** for significant issues that must be addressed before merging
+   - Both options allow you to provide feedback without directly triggering Copilot
+
+2. **Don't ask Copilot to make changes directly**:
+   - Avoid using features that would trigger Copilot to start working immediately
+   - Let the PR manager decide whether to ask Copilot to address your comments or make changes themselves
+
+3. **Write clear, actionable comments**:
+   - Explain what needs to change and why
+   - Suggest specific solutions when appropriate
+   - The PR manager will decide how to address your feedback
+
+**For PR managers:**
+
+After receiving reviews from other team members:
+
+1. **Review all comments carefully**:
+   - Decide which comments you agree with
+   - Dismiss or respond to comments you don't entirely agree with
+   - This ensures Copilot only addresses feedback you've validated
+
+2. **Choose how to address valid feedback**:
+   - **Option A**: Make the changes yourself (faster for simple fixes)
+   - **Option B**: Ask Copilot to address the feedback (better for complex changes)
+   - **Option C**: Add your own review summarizing which comments Copilot should address,
+     then ask Copilot to respond to the open comment threads
+
+3. **Maintain clear communication**:
+   - Let reviewers know how you plan to address their feedback
+   - Mark conversations as resolved after addressing them
+   - Request re-review from humans after Copilot makes significant changes
+   - Update the PR's "Assignees" field to reflect who is currently responsible for the PR
+
+**Transferring the PR manager role:**
+
+The original PR manager can hand over a PR to another person,
+who then becomes the new PR manager with control over Copilot's work on that PR.
+This might be useful when:
+
+- The original PR manager is unavailable or on leave
+- Someone with different expertise needs to guide the remaining work
+- Responsibilities are being redistributed within the team
+
+To transfer the PR manager role:
+
+1. The original PR manager should clearly communicate the handover to all reviewers
+2. The new PR manager should review the PR's history and any open feedback
+3. The new PR manager should take over responding to Copilot and managing future iterations
+4. The team should update the PR's "Assignees" field and comments or description to reflect the current PR manager
+
+This workflow ensures the PR manager maintains control over the development process
+while benefiting from collaborative human review and Copilot's implementation capabilities.
