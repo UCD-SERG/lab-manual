@@ -110,7 +110,7 @@ particularly when combined with custom scripts or tools like [`{ecodown}`](https
 | pkgdown  | Standard  | HTML           | Limited (via Quarto vignettes) | Template-based | Most R packages, standard documentation needs |
 | altdoc   | Moderate  | HTML           | Yes (via Quarto-authored vignettes with download links) | Framework-dependent | Quarto-based workflows, flexible frameworks |
 | pkgsite  | Minimal   | HTML           | No | High (simple CSS) | Lightweight sites, custom styling |
-| Quarto   | Advanced  | HTML, PDF, DOCX, reveal.js, EPUB | Yes (native) | Complete | Full control, advanced features |
+| Quarto   | Advanced  | HTML (for websites) | Yes (native - can output to PDF, DOCX, reveal.js, EPUB) | Complete | Full control, advanced features |
 
 **Recommendation:**
 Use pkgdown for most standard R package documentation needs.
