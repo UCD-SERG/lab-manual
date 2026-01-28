@@ -1,0 +1,50 @@
+When a journal asks for revisions,
+you will typically need to provide a point-by-point response to the reviewers' comments.
+The key strategy is to use the ["yes-and" approach](https://en.wikipedia.org/wiki/Yes,_and_...)
+from improvisational theater—building on what reviewers say
+rather than contradicting them.
+Try to avoid explicitly disagreeing with reviewers if at all possible.
+
+**Standard response format:**
+
+The typical response follows this pattern:
+
+> "Thank you for raising this important point. We agree, and now state (page ##):
+>
+> [quote a section of the revised manuscript here]"
+
+**Balancing direct response and manuscript content:**
+
+There can be some overlap between the direct response to the reviewer
+(the sentences before "now state")
+and what goes into the revised manuscript
+(the part after "(page ##)").
+This is acceptable,
+but we usually try to put as much of the content into the revised manuscript as possible,
+and minimize the direct response section.
+The goal is to make the manuscript self-contained
+while showing the reviewer that you've addressed their concern.
+
+**When content already exists:**
+
+Sometimes,
+a reviewer asks for content that was already in the manuscript.
+In these cases,
+first see if there's anything you can elaborate or clarify.
+Even if you don't see room for improvement,
+you can usually respond with:
+
+> "We agree, and now state (page ##):
+>
+> [quote the content that was already there before]"
+
+The reviewer doesn't need to know that they missed it the last time
+(see also: [implicature](https://en.wikipedia.org/wiki/Implicature).
+
+**Additional tips:**
+
+- Always thank reviewers for their time and feedback
+- Quote page numbers from the revised manuscript
+- Use direct quotes from your revised text when possible
+- Maintain a respectful and collaborative tone throughout
+- If you make changes beyond what the reviewer requested, mention them briefly

@@ -15,6 +15,10 @@ The typical workflow for manuscript preparation and publication:
 7. **Revisions**: Lead author coordinates response to peer reviewers
 8. **Publication**: Celebrate and share!
 
+## Responding to Peer Review
+
+{{< include manuscript-preparation/responding-to-peer-review.qmd >}}
+
 ## Preprints and Open Access
 
 - We encourage posting preprints prior to or during peer review on platforms like [medRxiv](https://www.medrxiv.org/) or [bioRxiv](https://www.biorxiv.org/)
