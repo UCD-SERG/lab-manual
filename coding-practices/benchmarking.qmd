@@ -1,6 +1,6 @@
 ::: {.callout-note}
 This section draws from the [Measuring Performance](https://adv-r.hadley.nz/perf-measure.html) and [Improving Performance](https://adv-r.hadley.nz/perf-improve.html) chapters in *Advanced R* by Hadley Wickham,
-along with documentation for [`{bench}`](https://bench.r-lib.org/) and [`{profvis}`](https://rstudio.github.io/profvis/).
+along with documentation for [`{bench}`](https://bench.r-lib.org/) and [`{profvis}`](https://profvis.r-lib.org/).
 :::
 
 Performance optimization starts with measurement.
@@ -158,7 +158,7 @@ print(ps_benchmark)
 
 ### Using profvis for Memory and CPU Profiling
 
-[`{profvis}`](https://rstudio.github.io/profvis/) identifies where your code spends time
+[`{profvis}`](https://profvis.r-lib.org/) identifies where your code spends time
 and allocates memory.
 Use it to find bottlenecks in existing functions.
 
@@ -539,7 +539,7 @@ n_iterations <- 1000
 ### Additional Resources
 
 - [`{bench}`](https://bench.r-lib.org/) - Accurate benchmarking
-- [`{profvis}`](https://rstudio.github.io/profvis/) - Interactive profiling
+- [`{profvis}`](https://profvis.r-lib.org/) - Interactive profiling
 - [Measuring Performance](https://adv-r.hadley.nz/perf-measure.html) chapter in Advanced R
 - [Improving Performance](https://adv-r.hadley.nz/perf-improve.html) chapter in Advanced R
 - [`{touchstone}`](https://github.com/lorenzwalthert/touchstone) - CI benchmarking with PR comments
