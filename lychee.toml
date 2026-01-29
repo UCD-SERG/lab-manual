@@ -33,5 +33,8 @@ exclude = [
   "https://127.0.0.1.*",
   # GitHub PR review pages require authentication
   "https://github.com/pulls/review-requested.*",
-  "https://github.com/.*/pulls\\?q=.*review-requested.*"
+  "https://github.com/.*/pulls\\?q=.*review-requested.*",
+  # Example preview URLs in documentation (not real URLs)
+  "https://preview.*",
+  "https://preview/.*"
 ]
