@@ -5,6 +5,16 @@ can dramatically accelerate and improve your work,
 but they require careful and responsible use.
 Lab members who use AI tools must adhere to the following guidelines:
 
+::: {.callout-warning}
+## Technology in Rapid Evolution
+
+As of early 2025,
+AI coding assistant technology is changing extremely rapidly,
+and we are just beginning to figure out how to use these tools effectively ourselves.
+All information in this chapter should be taken with extra caution,
+as best practices and capabilities continue to evolve.
+:::
+
 ## Responsibility for validation
 
 {{< include ai-tools/responsibility-for-validation.qmd >}}
