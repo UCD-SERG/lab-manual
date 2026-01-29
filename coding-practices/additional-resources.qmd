@@ -20,3 +20,5 @@
 ### Git and Version Control
 
 - Happy Git and GitHub for the useR [@bryan2023happygit] - essential guide to using Git and GitHub with R
+- [`{gitdown}`](https://thinkr-open.github.io/gitdown/) - R package for documenting git commit history as a bookdown report,
+  organized by patterns like tags or issues
