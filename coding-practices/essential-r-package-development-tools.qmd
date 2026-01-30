@@ -108,3 +108,7 @@ articles:
     - 02-primary-analysis
     - 03-sensitivity-analysis
 ```
+
+### Alternatives to pkgdown
+
+{{< include coding-practices/pkgdown-alternatives.qmd >}}
