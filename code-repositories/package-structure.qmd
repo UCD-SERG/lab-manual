@@ -85,7 +85,7 @@ depends on external services,
 or takes too long to run
 - **Demonstrating integration with other packages**:
 When you want to show your package working with packages you don't want to formally depend on
-- **Graphics-heavy content**: When including many or large graphics would make the package too large for CRAN or burdensome for users with limited internet
+- **Graphics-heavy content**: When including many or large graphics would make the package too large for CRAN
 - **Trade-off**: Articles are less accessible than vignettes for users with limited internet access,
 as they don't ship with the package and only appear on the pkgdown website
 
