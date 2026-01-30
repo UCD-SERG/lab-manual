@@ -63,7 +63,7 @@ Log file locations:
 
 - **Windows:** `%LOCALAPPDATA%\quarto\logs`
 - **macOS:** `~/Library/Application Support/quarto/logs`
-- **Linux:** `~/.local/share/quarto/logs` (or `${XDG_DATA_HOME}/quarto/logs` if `$XDG_DATA_HOME` is set)
+- **Linux:** `~/.local/share/quarto/logs` (or `${XDG_DATA_HOME}/quarto/logs` if `${XDG_DATA_HOME}` is set)
 
 ### Common Issues
 
@@ -74,7 +74,7 @@ increase memory allocation (example sets 8GB limit).
 On Unix-like systems (macOS, Linux):
 
 ```bash
-export QUARTO_DENO_V8_OPTIONS=--max-old-space-size=8192
+export QUARTO_DENO_V8_OPTIONS="--max-old-space-size=8192"
 quarto render
 ```
 
