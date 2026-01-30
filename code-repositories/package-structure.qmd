@@ -75,10 +75,9 @@ myproject/
 - **Vignette**: Essential tutorials users need offline, core package workflows
 - **Article**: Supplementary material, case studies, advanced topics, blog-style content
 
-**Additional considerations for choosing articles over vignettes**
-[@wickham2023rpkgs, Section 17.4.1]:
+**Additional considerations for choosing articles over vignettes:**
 
-Articles are particularly useful when:
+Articles are particularly useful when [@wickham2023rpkgs, Section 17.4.1]:
 
 - **Code shouldn't execute on CRAN**: When your code requires authentication credentials,
 depends on external services,
