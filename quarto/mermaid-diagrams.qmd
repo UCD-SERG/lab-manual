@@ -3,7 +3,7 @@ sequence diagrams,
 state diagrams,
 and other visualizations directly in your Quarto documents using text-based syntax.
 While mermaid diagrams work well in HTML output,
-they have significant limitations when rendering to DOCX (Word) and PDF formats as of early 2025.
+they have significant limitations when rendering to DOCX (Word) and PDF formats as of 2025.
 
 ### Creating Mermaid Diagrams
 
@@ -22,7 +22,7 @@ This creates a simple flowchart that renders beautifully in HTML output.
 
 ### Known Issues with DOCX and PDF Output
 
-**As of early 2025,
+**As of 2025,
 rendering mermaid diagrams to DOCX or PDF formats in Quarto is unreliable and problematic.**
 These issues are well-documented in the Quarto community and stem from the underlying tooling used to convert diagrams to images.
 
@@ -136,7 +136,7 @@ Monitor the following resources for updates:
 - [Quarto Diagrams Documentation](https://quarto.org/docs/authoring/diagrams.html) - Official documentation on diagram rendering
 
 Check for improvements in newer Quarto versions,
-but as of early 2025,
+but as of 2025,
 manual export and embedding remains the most reliable approach for DOCX and PDF outputs.
 
 ### Summary
