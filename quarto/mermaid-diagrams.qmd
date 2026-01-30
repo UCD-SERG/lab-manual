@@ -1,0 +1,153 @@
+Mermaid diagrams are a powerful tool for creating flowcharts,
+sequence diagrams,
+state diagrams,
+and other visualizations directly in your Quarto documents using text-based syntax.
+While mermaid diagrams work well in HTML output,
+they have significant limitations when rendering to DOCX (Word) and PDF formats as of early 2025.
+
+### Creating Mermaid Diagrams
+
+Mermaid diagrams are created using fenced code blocks with the `mermaid` language tag:
+
+````markdown
+```{mermaid}
+flowchart LR
+  A[Start] --> B{Decision}
+  B -->|Yes| C[Result 1]
+  B -->|No| D[Result 2]
+```
+````
+
+This creates a simple flowchart that renders beautifully in HTML output.
+
+### Known Issues with DOCX and PDF Output
+
+**As of early 2025,
+rendering mermaid diagrams to DOCX or PDF formats in Quarto is unreliable and problematic.**
+These issues are well-documented in the Quarto community and stem from the underlying tooling used to convert diagrams to images.
+
+#### Rendering Failures and Hangs
+
+When rendering documents with mermaid diagrams to DOCX format,
+you may experience:
+
+- **Indefinite hangs:**
+  Quarto may hang indefinitely during rendering,
+  leaving orphaned Chrome/Edge browser processes running [@quarto-dev-discussions-6085]
+- **Complete rendering failures:**
+  The rendering process may fail entirely with errors
+- **Missing diagrams:**
+  The document may render successfully but with missing diagrams [@quarto-dev-issues-3809]
+
+These issues occur because Quarto relies on headless browser engines (Chrome or Edge via Puppeteer) to convert mermaid diagrams to images for inclusion in DOCX and PDF outputs.
+The browser integration can fail or hang,
+particularly when running in automated environments or when multiple diagrams are present.
+
+#### Image Quality Issues
+
+Even when rendering succeeds,
+mermaid diagrams in DOCX and PDF output often suffer from:
+
+- **Small or blurry images:**
+  Diagrams appear rasterized at low resolution
+- **Incorrect sizing:**
+  Diagrams may not respect sizing options specified in the document
+
+### Recommended Workarounds
+
+Given these limitations,
+we recommend the following approaches when you need DOCX or PDF output:
+
+#### 1. Manual Export and Embedding (Most Reliable)
+
+The most robust workflow is to:
+
+1. First render your mermaid diagrams to HTML
+2. Export them as PNG or SVG images manually using:
+   - Browser developer tools (save rendered diagram)
+   - Online mermaid editors (e.g., <https://mermaid.live/>)
+   - Mermaid CLI tools
+3. Include the exported images in your Quarto document using standard markdown syntax
+
+**Example:**
+
+```markdown
+![Workflow diagram description](assets/images/workflow-diagram.png){#fig-workflow}
+```
+
+This approach guarantees compatibility with all output formats and gives you full control over image quality.
+
+#### 2. Conditional Content for Different Formats
+
+Use Quarto's conditional content features to show different content based on output format:
+
+````markdown
+::: {.content-visible when-format="html"}
+```{mermaid}
+flowchart LR
+  A[Start] --> B[End]
+```
+:::
+
+::: {.content-visible unless-format="html"}
+![Workflow diagram](assets/images/workflow-diagram.png)
+:::
+````
+
+This shows the live mermaid diagram in HTML output and a static image in DOCX/PDF outputs.
+
+#### 3. Ensure Chromium is Installed (Partial Solution)
+
+If you want to attempt rendering mermaid diagrams to DOCX,
+ensure you have Chrome or Edge installed.
+You can install Chromium via Quarto:
+
+```bash
+quarto tools install chromium
+```
+
+However,
+this does not guarantee successful rendering and may still result in hangs or failures.
+
+#### 4. Prefer HTML Output When Possible
+
+When creating documentation that includes mermaid diagrams,
+prefer HTML as your primary output format.
+HTML rendering of mermaid diagrams is fast,
+reliable,
+and produces high-quality interactive diagrams.
+
+If DOCX output is required for collaboration or submission,
+use one of the workarounds above.
+
+### Real-World Example
+
+In [UCD-SERG/rpt PR #70](https://github.com/UCD-SERG/rpt/pull/70),
+our team removed mermaid diagrams from package vignettes specifically because they were incompatible with DOCX output.
+This demonstrates the practical impact of these limitations in production workflows.
+
+### Future Outlook
+
+The Quarto development team is aware of these issues and working to improve diagram rendering support.
+Monitor the following resources for updates:
+
+- [Quarto CLI Issue #3809](https://github.com/quarto-dev/quarto-cli/issues/3809) - Tracking mermaid/dot rendering to DOCX/PDF
+- [Quarto Discussion #6085](https://github.com/orgs/quarto-dev/discussions/6085) - Mermaid rendering hangs with DOCX
+- [Quarto Diagrams Documentation](https://quarto.org/docs/authoring/diagrams.html) - Official documentation on diagram rendering
+
+Check for improvements in newer Quarto versions,
+but as of early 2025,
+manual export and embedding remains the most reliable approach for DOCX and PDF outputs.
+
+### Summary
+
+**Key Takeaways:**
+
+- Mermaid diagrams work well in HTML output but are problematic for DOCX and PDF
+- Rendering failures,
+  hangs,
+  and quality issues are common
+- For reliable DOCX/PDF output,
+  export diagrams manually as images
+- Use conditional content to show different formats based on output type
+- Prefer HTML output when mermaid diagrams are important to your document
