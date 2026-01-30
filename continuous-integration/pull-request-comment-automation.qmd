@@ -103,19 +103,82 @@ Good balance of features and ease of use.
 *Best for:* Straightforward commenting needs without complex update logic.
 Good for simple status messages or one-time notifications.
 
+**[rossjrw/pr-preview-action](https://github.com/rossjrw/pr-preview-action)**
+
+Specialized action for deploying pull request previews to GitHub Pages.
+Unlike the general-purpose comment actions above,
+this action handles the complete preview deployment lifecycle:
+building previews,
+deploying them to a GitHub Pages branch,
+and posting a comment with the preview link.
+
+*Key features:*
+
+- **Automated preview deployment**: Creates and deploys PR previews to GitHub Pages branch (e.g., `gh-pages`)
+- **Preview URLs**: Generates predictable preview URLs like `https://[owner].github.io/[repo]/pr-preview/pr-[number]/`
+- **Sticky comments with links**: Posts and updates a comment with the preview URL and optional QR code for mobile access
+- **Automatic cleanup**: Removes preview deployments when PRs are closed
+- **Selective cleanup**: Can be configured to only remove previews for unmerged PRs,
+preserving merged PR previews for historical reference
+- **Compatibility safeguards**: Designed to coexist with main branch deployments without conflicts
+
+*Typical usage:*
+
+```yaml
+- uses: rossjrw/pr-preview-action@v1
+  with:
+    source-dir: ./docs/
+    preview-branch: gh-pages
+    umbrella-dir: pr-preview
+```
+
+*Advanced usage - only remove unmerged PR previews:*
+
+```yaml
+# Deploy preview when PR is opened/updated
+- uses: rossjrw/pr-preview-action@v1
+  if: contains(['opened', 'reopened', 'synchronize'], github.event.action)
+  with:
+    source-dir: ./docs/
+    action: deploy
+
+# Remove preview only for unmerged PRs
+- uses: rossjrw/pr-preview-action@v1
+  if: github.event.action == "closed" && !github.event.pull_request.merged
+  with:
+    source-dir: ./docs/
+    action: remove
+```
+
+This selective cleanup pattern
+(from the [pr-preview-action documentation](https://github.com/rossjrw/pr-preview-action?tab=readme-ov-file#only-remove-previews-for-unmerged-prs))
+is particularly useful when you want to:
+
+- Keep a historical record of what each merged PR changed
+- Allow stakeholders to review merged changes after the fact
+- Maintain preview URLs referenced in issue discussions or documentation
+
+*Best for:* Projects using GitHub Pages for documentation,
+web apps,
+or other static sites where stakeholders benefit from previewing changes before merging.
+Essential when you want reviewers to see the rendered output (e.g., documentation sites, UI changes) rather than just the source code.
+
 #### Feature Comparison {#tbl-pr-comment-features}
 
-| Feature | marocchino/sticky | hasura/comment-progress | thollander/actions-comment |
-|---------|-------------------|------------------------|----------------------------|
-| Update existing comment | ✅ (by header) | ✅ (by identifier) | ✅ (by ID or content) |
-| Multiple independent comments | ✅ (via headers) | ✅ (via identifiers) | ⚠️ (limited) |
-| Append mode | ✅ | ✅ | ❌ |
-| Delete comments | ✅ | ✅ | ✅ |
-| Hide comments | ✅ | ❌ | ❌ |
-| File-based messages | ✅ | ❌ | ❌ |
-| Emoji reactions | ❌ | ❌ | ✅ |
-| Works with push events | ✅ | ⚠️ (requires PR number) | ⚠️ (requires PR number) |
-| Progress tracking focus | ⚠️ (flexible) | ✅ | ❌ |
+| Feature | marocchino/sticky | hasura/comment-progress | thollander/actions-comment | rossjrw/pr-preview |
+|---------|-------------------|------------------------|----------------------------|--------------------|
+| Update existing comment | ✅ (by header) | ✅ (by identifier) | ✅ (by ID or content) | ✅ (automatic) |
+| Multiple independent comments | ✅ (via headers) | ✅ (via identifiers) | ⚠️ (limited) | ❌ (single preview link) |
+| Append mode | ✅ | ✅ | ❌ | ❌ |
+| Delete comments | ✅ | ✅ | ✅ | ✅ (on PR close) |
+| Hide comments | ✅ | ❌ | ❌ | ❌ |
+| File-based messages | ✅ | ❌ | ❌ | ❌ |
+| Emoji reactions | ❌ | ❌ | ✅ | ❌ |
+| Works with push events | ✅ | ⚠️ (requires PR number) | ⚠️ (requires PR number) | ⚠️ (requires PR number) |
+| Progress tracking focus | ⚠️ (flexible) | ✅ | ❌ | ❌ |
+| Deploy to GitHub Pages | ❌ | ❌ | ❌ | ✅ |
+| QR code generation | ❌ | ❌ | ❌ | ✅ (optional) |
+| Selective cleanup | ❌ | ❌ | ❌ | ✅ (merged vs unmerged) |
 
 : Comparison of PR comment action features
 
@@ -141,6 +204,14 @@ Good for simple status messages or one-time notifications.
 - You want to add emoji reactions to comments
 - You're comfortable with the action's simpler update mechanism
 - Your use case doesn't require the advanced features of the other options
+
+**Use rossjrw/pr-preview-action when:**
+
+- You need to deploy preview versions of your site/app to GitHub Pages for each PR
+- You want stakeholders to review rendered output (documentation, UI) rather than just code
+- You need automatic cleanup of preview deployments when PRs close
+- You want to preserve previews of merged PRs for historical reference
+- Your project uses GitHub Pages and benefits from preview environments
 
 #### Security Considerations
 
