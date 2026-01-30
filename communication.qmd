@@ -71,7 +71,7 @@ The room will automatically accept or decline based on its availability.
 
 **To view the room's calendar:**
 
-1. In Outlook Calendar, click "Add Calendar" 
+1. In Outlook Calendar, click "Add Calendar"
 2. Select "Add Shared Calendar..." or use "Open Calendar..."
 3. Search for "ms1c" or enter `ms1cconfroom@ou.ad3.ucdavis.edu`
 4. Select "MS1C Conference Room" to add it to your calendar view
