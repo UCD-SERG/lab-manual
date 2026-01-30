@@ -56,6 +56,28 @@ We use a combination of tools to track and manage project tasks:
 - If you are going to be late, please send a message in our Teams channel. 
 - If you are regularly not able to come on the hour, notify the team and we might choose the modify the agenda order or the start time.
 
+## Conference Room Booking
+
+The MS1C Conference Room can be booked through its Outlook calendar.
+
+**To book the room:**
+
+1. Create a new event in Outlook Calendar
+2. Add the conference room as an attendee by typing "ms1c" or the full email address: `ms1cconfroom@ou.ad3.ucdavis.edu`
+3. Select "MS1C Conference Room" from the results
+4. Send the meeting invitation
+
+The room will automatically accept or decline based on its availability.
+
+**To view the room's calendar:**
+
+1. In Outlook Calendar, click "Add Calendar" 
+2. Select "Add Shared Calendar..." or use "Open Calendar..."
+3. Search for "ms1c" or enter `ms1cconfroom@ou.ad3.ucdavis.edu`
+4. Select "MS1C Conference Room" to add it to your calendar view
+
+This allows you to check the room's availability before scheduling.
+
 ## Code Review
 
 When submitting code to or reviewing code from colleagues, use best practices to provide and receive constructive feedback:
