@@ -20,6 +20,10 @@
 
 {{< include quarto/advanced-features.qmd >}}
 
+## Troubleshooting
+
+{{< include quarto/troubleshooting.qmd >}}
+
 ## Additional Resources
 
 {{< include quarto/resources.qmd >}}
