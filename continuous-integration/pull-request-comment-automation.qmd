@@ -114,7 +114,7 @@ and posting a comment with the preview link.
 
 *Key features:*
 
-- **Automated preview deployment**: Creates and deploys PR previews to GitHub Pages branch (e.g., `gh-pages`)
+- **Automated preview deployment**: Creates and deploys PR previews to a GitHub Pages branch (e.g., `gh-pages`)
 - **Preview URLs**: Generates predictable preview URLs like `https://[owner].github.io/[repo]/pr-preview/pr-[number]/`
 - **Sticky comments with links**: Posts and updates a comment with the preview URL and optional QR code for mobile access
 - **Automatic cleanup**: Removes preview deployments when PRs are closed
