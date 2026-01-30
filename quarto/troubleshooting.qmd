@@ -21,6 +21,7 @@ This command checks for:
 ### Diagnostic Tools
 
 **Enable verbose logging** to see detailed rendering information.
+
 On Unix-like systems (macOS, Linux):
 
 ```bash
@@ -28,16 +29,32 @@ export QUARTO_LOG_LEVEL=DEBUG
 quarto render document.qmd
 ```
 
-Or pass at command line:
+On Windows PowerShell:
+
+```powershell
+$env:QUARTO_LOG_LEVEL="DEBUG"
+quarto render document.qmd
+```
+
+Or pass at command line (all platforms):
 
 ```bash
 quarto render document.qmd --log-level debug
 ```
 
-**Get stack traces** for better error messages:
+**Get stack traces** for better error messages.
+
+On Unix-like systems (macOS, Linux):
 
 ```bash
 export QUARTO_PRINT_STACK=true
+quarto render document.qmd
+```
+
+On Windows PowerShell:
+
+```powershell
+$env:QUARTO_PRINT_STACK="true"
 quarto render document.qmd
 ```
 
@@ -46,16 +63,25 @@ Log file locations:
 
 - **Windows:** `%LOCALAPPDATA%\quarto\logs`
 - **macOS:** `~/Library/Application Support/quarto/logs`
-- **Linux:** `~/.local/share/quarto/logs` (or `${XDG_DATA_HOME}/.local/share/quarto/logs` if `$XDG_DATA_HOME` is set)
+- **Linux:** `~/.local/share/quarto/logs` (or `${XDG_DATA_HOME}/quarto/logs` if `$XDG_DATA_HOME` is set)
 
 ### Common Issues
 
 **Out-of-memory errors:**
 When building large projects,
-increase memory allocation (example sets 8GB limit):
+increase memory allocation (example sets 8GB limit).
+
+On Unix-like systems (macOS, Linux):
 
 ```bash
 export QUARTO_DENO_V8_OPTIONS=--max-old-space-size=8192
+quarto render
+```
+
+On Windows PowerShell:
+
+```powershell
+$env:QUARTO_DENO_V8_OPTIONS="--max-old-space-size=8192"
 quarto render
 ```
 
