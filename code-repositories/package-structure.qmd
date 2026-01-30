@@ -75,6 +75,20 @@ myproject/
 - **Vignette**: Essential tutorials users need offline, core package workflows
 - **Article**: Supplementary material, case studies, advanced topics, blog-style content
 
+**Additional considerations for choosing articles over vignettes**
+[@wickham2023rpkgs, Section 17.4.1]:
+
+Articles are particularly useful when:
+
+- **Code shouldn't execute on CRAN**: When your code requires authentication credentials,
+depends on external services,
+or takes too long to run
+- **Demonstrating integration with other packages**:
+When you want to show your package working with packages you don't want to formally depend on
+- **Graphics-heavy content**: When including many or large graphics would make the package too large for CRAN or burdensome for users with limited internet
+- **Trade-off**: Articles are less accessible than vignettes for users with limited internet access,
+as they don't ship with the package and only appear on the pkgdown website
+
 #### Public Analyses (vignettes/)
 
 Use `vignettes/` for analysis workbooks that:
