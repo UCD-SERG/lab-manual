@@ -460,7 +460,13 @@ This workflow enables a hybrid editing process where collaborators can make edit
 - Add blank lines before all lists
 - Follow the lab's R package development workflow (as described throughout this repo)
 - **When discussing current world conditions or technology capabilities**:
-  Always mention the date or time period (e.g., "as of early 2025", "in 2024") to provide temporal context and prevent content from becoming misleading as time passes
+  Always mention the date or time period to provide temporal context and prevent content from becoming misleading as time passes
+- **Determining the current date**:
+  Do not assume you know what the current date is.
+  Instead, use the Unix command line to determine the actual date (e.g., `date +"%Y-%m-%d"` or `date +"%B %Y"`),
+  and use that when discussing current conditions,
+  recent events,
+  or the state of technology "as of" a particular time period
 
 ### Citations and Evidence for Claims
 
