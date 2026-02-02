@@ -20,6 +20,10 @@
 
 {{< include quarto/advanced-features.qmd >}}
 
+## Mermaid Diagrams
+
+{{< include quarto/mermaid-diagrams.qmd >}}
+
 ## Additional Resources
 
 {{< include quarto/resources.qmd >}}
