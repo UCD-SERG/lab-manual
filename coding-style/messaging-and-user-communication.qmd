@@ -1,10 +1,23 @@
-Use `cli` package functions for all user-facing messages in package functions:
+Use [`{cli}`](https://cli.r-lib.org/) package functions for all user-facing messages in package functions.
+This is enforced by our `.lintr.R` configuration via `undesirable_function_linter()`.
+
+**Required messaging functions:**
+
+- Use `cli::cli_inform()` instead of `message()`, `inform()`, or older `cli_alert_*()` functions
+- Use `cli::cli_warn()` instead of `warning()` or `warn()`
+- Use `cli::cli_abort()` instead of `stop()` or `abort()`
+
+This provides better formatting,
+color support,
+and consistent messaging across our packages.
+
+**Examples:**
 
 ```r
 # Good
 cli::cli_inform("Analysis complete")
 cli::cli_warn("Missing data detected")
-cli::cli_abort("Invalid input: {x}")
+cli::cli_abort("Invalid input: {.arg x} must be numeric")
 
 # Bad - don't use these in package code
 message("Analysis complete")

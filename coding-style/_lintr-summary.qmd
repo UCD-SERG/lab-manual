@@ -1,18 +1,52 @@
-Linters are programming tools that check adherence to a given style, syntax errors, and possible semantic issues. 
-The R linter, called `lintr`, can be found in this [package](https://www.rdocumentation.org/packages/lintr/versions/1.0.3). 
-It helps keep files consistent across different authors and even different organizations. 
-For example, it notifies you if you have unused variables, global variables with no visible binding, not enough or superfluous whitespace, and improper use of parentheses or brackets. 
-A list of its other purposes can be found [in this link](https://cran.r-project.org/web/packages/lintr/readme/README.html#available-linters), 
+Linters are programming tools that check adherence to a given style,
+syntax errors,
+and possible semantic issues.
+The R linter, called [`{lintr}`](https://lintr.r-lib.org/),
+helps keep files consistent across different authors and even different organizations.
+For example, it notifies you if you have unused variables,
+global variables with no visible binding,
+not enough or superfluous whitespace,
+and improper use of parentheses or brackets.
+A list of its other purposes can be found [in this link](https://cran.r-project.org/web/packages/lintr/readme/README.html#available-linters),
 and most guidelines are based on the [Tidyverse R Style Guide](https://style.tidyverse.org/).
 
 ::: {.callout-note}
-You can customize your settings to set defaults or to exclude files. More details can be found [here](https://cran.r-project.org/web/packages/lintr/readme/README.html#project-configuration).
+You can customize your settings to set defaults or to exclude files.
+More details can be found [here](https://cran.r-project.org/web/packages/lintr/readme/README.html#project-configuration).
 :::
 
 ::: {.callout-note}
-The `lintr` package goes hand in hand with the `styler` package. The styler can be used to automatically fix the problems that the lintr catches.
+The `lintr` package goes hand in hand with the `styler` package.
+The styler can be used to automatically fix the problems that the lintr catches.
 :::
 
+### Our Lab's Lintr Configuration
+
+Our lab uses a custom `.lintr.R` configuration file in each repository to enforce our style standards.
+You can view the lab-manual's configuration at <https://github.com/UCD-SERG/lab-manual/blob/main/.lintr.R>.
+
+**Key linters we enable:**
+
+- `pipe_consistency_linter(pipe = "|>")`: Enforces use of native pipe `|>` instead of `%>%`
+- `object_name_linter()`: Enforces `snake_case` with custom regex allowing uppercase acronyms
+- `undesirable_function_linter()`: Prohibits base messaging functions and `library()` in package code
+- `redundant_equals_linter()`: Catches redundant `= TRUE` when `TRUE` is the default
+
+**Linters we disable:**
+
+- `return_linter`: Disabled to allow flexibility (though we still require explicit returns as a lab standard)
+- `trailing_whitespace_linter`: Disabled (handled by `styler` instead)
+
+**Exceptions:**
+
+Our configuration allows relaxed rules for certain directories:
+
+- `data-raw/`: Pipe consistency and undesirable function rules relaxed (exploratory scripts)
+- `vignettes/`: Undesirable function and object naming rules relaxed (tutorial code may need `library()`)
+- `inst/examples/`: Undesirable function rules relaxed
+- `tests/testthat.R`: Undesirable function rules relaxed
+
+### Using Lintr
 
 ::: {.callout-tip}
 
@@ -38,6 +72,6 @@ The linter checks for:
 - Line length issues
 - Style guide violations
 
-You can customize linting rules by creating a `.lintr` or `lintr.R` file in your project root.
+You can customize linting rules by creating a `.lintr` or `.lintr.R` file in your project root.
 
 :::
