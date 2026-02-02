@@ -72,6 +72,7 @@ The linter checks for:
 - Line length issues
 - Style guide violations
 
-You can customize linting rules by creating a `.lintr` or `.lintr.R` file in your project root.
+Our lab uses `.lintr.R` files for configuration (the `.lintr` format is also supported by lintr,
+but we prefer `.lintr.R` for better R syntax support).
 
 :::
