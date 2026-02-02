@@ -34,7 +34,7 @@ You can view the lab-manual's configuration at <https://github.com/UCD-SERG/lab-
 
 **Linters we disable:**
 
-- `return_linter`: Disabled to allow flexibility (though we still require explicit returns as a lab standard)
+- `return_linter(return_style = "explicit")`: Every function should end with `return(return_value)` rather than just `return_value`. We may sometimes disable this linter in older projects when we aren't ready to clean this issue up, but for all new code, we require explicit returns as a lab standard, following the [Google R Style Guide](https://google.github.io/styleguide/Rguide.html#use-explicit-returns).
 - `trailing_whitespace_linter`: Disabled (handled by `styler` instead)
 
 **Exceptions:**
