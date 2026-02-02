@@ -82,7 +82,7 @@ The [UC Davis DataLab](https://github.com/ucdavisdatalab) provides extensive wor
 - [Team Public Health Substack](https://teampublichealth.substack.com/)
 
 ## Funding
-- [Building Your Funding Train](https://grantwriting.stanford.edu/funding-train/#ep)
+- [Building Your Funding Train](https://grantwriting.stanford.edu/resources/funding-train/)
 - [NIH Grant Writing Resources](https://www.niaid.nih.gov/grants-contracts/write-grant-application)
 
 ## Ethics and global health research
