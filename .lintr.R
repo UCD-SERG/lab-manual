@@ -80,6 +80,7 @@ exclusions <- list(
   ),
   "tests/testthat.R" = list(
     undesirable_function_linter = Inf
-  )
+  ),
+  "quarto/mermaid-diagrams.qmd" = Inf
 
 )
