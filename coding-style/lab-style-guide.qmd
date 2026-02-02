@@ -1,0 +1,113 @@
+Our lab follows the [Google R Style Guide](https://google.github.io/styleguide/Rguide.html),
+which in turn mostly follows the [tidyverse style guide](https://style.tidyverse.org/).
+This section documents our specific style preferences
+and the rules enforced through our [`.lintr.R`](https://github.com/UCD-SERG/lab-manual/blob/main/.lintr.R) configuration file.
+
+### Style Guide Foundations
+
+We adopt the Google R Style Guide with the following key principles:
+
+- **Follow tidyverse conventions**: Our style is built on the tidyverse style guide,
+  which provides comprehensive guidance on naming,
+  syntax,
+  pipes,
+  functions,
+  and more [@wickham2023tidyverse]
+- **Use explicit return values**: Following the [Google R Style Guide's recommendation](https://google.github.io/styleguide/Rguide.html#use-explicit-returns),
+  always use explicit `return()` statements in functions,
+  even when R's implicit return would work.
+  This makes the function's intent clear and improves readability.
+
+**Example of explicit returns:**
+
+```r
+# Good: Explicit return
+calculate_mean <- function(x) {
+  result <- mean(x, na.rm = TRUE)
+  return(result)
+}
+
+# Less clear: Implicit return (avoid)
+calculate_mean <- function(x) {
+  mean(x, na.rm = TRUE)
+}
+```
+
+### Automated Style Enforcement
+
+Our lab uses [`{lintr}`](https://lintr.r-lib.org/) to automatically check code style.
+The `.lintr.R` configuration file in each repository defines our style rules.
+You can view the lab-manual's configuration at <https://github.com/UCD-SERG/lab-manual/blob/main/.lintr.R>.
+
+#### Key Lintr Rules
+
+Our `.lintr.R` configuration enforces the following rules:
+
+**Naming conventions:**
+
+- Use `snake_case` for functions and variables
+- Uppercase acronyms are allowed (e.g., `prep_IDs_data`, `calculate_BMI_score`)
+- This is implemented via a custom `object_name_linter` using a regex pattern
+
+**Pipe operator:**
+
+- **Always use the native pipe** `|>` instead of the magrittr pipe `%>%`
+- Enforced by `pipe_consistency_linter(pipe = "|>")`
+- Requires R >= 4.1.0
+
+**Messaging and error handling:**
+
+- **Use [`{cli}`](https://cli.r-lib.org/) package functions** for all user communication:
+  - Use `cli::cli_inform()` instead of `message()`, `inform()`, or older `cli_alert_*()` functions
+  - Use `cli::cli_warn()` instead of `warning()` or `warn()`
+  - Use `cli::cli_abort()` instead of `stop()` or `abort()`
+- This provides better formatting,
+  color support,
+  and consistent messaging across our packages
+- Enforced by `undesirable_function_linter()`
+
+**Package loading:**
+
+- **Avoid `library()` calls** in package code
+- Instead, use one of these approaches:
+  - `::` for explicit namespace references (e.g., `dplyr::mutate()`)
+  - `usethis::use_import_from()` to declare imports in `NAMESPACE`
+  - `withr::local_package()` for temporary package loading in tests
+- This keeps the global search path clean
+  and makes dependencies explicit
+- See [R Packages - The R landscape](https://r-pkgs.org/code.html#sec-code-r-landscape) for more details
+- Enforced by `undesirable_function_linter()`
+
+**Other style rules:**
+
+- **Redundant equals**: Don't use `= TRUE` when `TRUE` is the default value
+- **Trailing whitespace**: Linter disabled (handled by `styler` instead)
+- **Return statements**: Linter disabled to allow flexibility,
+  but **we require explicit returns** following the Google R Style Guide
+
+#### Exceptions and Exclusions
+
+Our `.lintr.R` configuration allows exceptions for certain directories:
+
+- `data-raw/`: Pipe consistency and undesirable function rules relaxed
+  (exploratory scripts may use different conventions)
+- `vignettes/`: Undesirable function and object naming rules relaxed
+  (tutorial code may need `library()` calls for clarity)
+- `inst/examples/`: Undesirable function rules relaxed
+- `tests/testthat.R`: Undesirable function rules relaxed
+
+### Running the Linter
+
+Check your code style by running:
+
+```r
+# Lint the entire package
+lintr::lint_package()
+
+# Lint a specific file
+lintr::lint("R/my_function.R")
+```
+
+The linter will identify style violations
+and suggest corrections.
+Use [`{styler}`](https://styler.r-lib.org/) to automatically fix many issues (see @sec-style-auto-style).

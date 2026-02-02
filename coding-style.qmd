@@ -4,6 +4,10 @@ Adapted by UCD-SeRG team from [original by Kunal Mishra, Jade Benjamin-Chung, an
 
 Follow these code style guidelines for all R code:
 
+## Lab Style Guide {#sec-lab-style-guide}
+
+{{< include coding-style/lab-style-guide.qmd >}}
+
 ## General Principles
 
 {{< include coding-style/general-principles.qmd >}}
