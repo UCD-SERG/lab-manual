@@ -63,7 +63,7 @@ The MS1C Conference Room can be booked through its Outlook calendar.
 **To book the room:**
 
 1. Create a new event in Outlook Calendar
-2. Add the conference room as an attendee by typing "ms1c" or the full email address: `ms1cconfroom@ou.ad3.ucdavis.edu`
+2. Add the conference room as an attendee by typing "ms1c"
 3. Select "MS1C Conference Room" from the results
 4. Send the meeting invitation
 
@@ -73,7 +73,7 @@ The room will automatically accept or decline based on its availability.
 
 1. In Outlook Calendar, click "Add Calendar"
 2. Select "Add Shared Calendar..." or use "Open Calendar..."
-3. Search for "ms1c" or enter `ms1cconfroom@ou.ad3.ucdavis.edu`
+3. Search for "ms1c"
 4. Select "MS1C Conference Room" to add it to your calendar view
 
 This allows you to check the room's availability before scheduling.
