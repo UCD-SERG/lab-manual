@@ -1,0 +1,15 @@
+Writing is a powerful tool for clarifying your thoughts,
+even before you start searching for answers.
+When questions or ideas come up,
+it's good practice to write them down immediately—this helps you:
+
+- Organize your thoughts and identify what you actually need to know
+- Articulate the problem more precisely
+- Often realize the answer yourself through the process of writing
+
+As Leslie Lamport,
+a Turing Award winner and computer scientist,
+states:
+"If you think you understand something,
+and don't write down your ideas,
+you only think you're thinking" [@lamport2019think].

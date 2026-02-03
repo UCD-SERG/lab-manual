@@ -1,0 +1,5 @@
+- [GitHub Actions features overview](https://github.com/features/actions)
+- [r-lib/actions repository](https://github.com/r-lib/actions) - R-specific actions and example workflows
+- [R Packages book: Continuous Integration](https://r-pkgs.org/software-development-practices.html#sec-sw-dev-practices-ci)
+- [GitHub Actions documentation](https://docs.github.com/en/actions)
+- [Where to find help with r-lib/actions](https://github.com/r-lib/actions#where-to-find-help)

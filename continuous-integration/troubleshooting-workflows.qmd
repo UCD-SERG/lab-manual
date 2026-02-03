@@ -1,0 +1,11 @@
+When workflows fail,
+check the "Actions" tab in your GitHub repository for detailed logs.
+Common issues include:
+
+- **Test failures**: Your tests found a bug (this is good! fix the bug)
+- **Platform-specific issues**: Code works on your machine but not on other platforms
+- **Missing dependencies**: System libraries needed for packages aren't installed
+- **Linting errors**: Code style issues detected by automated checks
+
+For help addressing workflow failures,
+see @sec-ai-addressing-failing-workflows.

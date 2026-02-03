@@ -229,6 +229,34 @@ See the "Best Practices" section for more details.
 - All R projects should use R package structure
 - **Avoid redundant logical comparisons**: Use logical variables directly in conditional statements (e.g., `if (x)` instead of `if (x == TRUE)` or `if (x == 1)`)
 - Use `lubridate::NA_Date_` instead of `as.Date(NA)` for missing date values
+- **Use pipes to emphasize primary inputs**: When writing functions and code, use the pipe operator to clearly show transformations on a primary object. The primary input should flow as the first argument to each function in the chain. Design functions so the most important argument (usually data) comes first, enabling natural pipeline composition.
+
+### Quarto Code Chunk Options
+
+**Use `code-fold: true` for chunks where the output is important to the narrative,
+not the code used to produce it.**
+
+This option allows interested readers to expand and view the code while keeping the document focused on results.
+
+**Example:**
+
+````markdown
+```{{r}}
+#| code-fold: true
+#| fig-cap: "Distribution of variable X"
+
+ggplot(data, aes(x = variable)) +
+  geom_histogram()
+```
+````
+
+This is particularly useful for:
+
+- Complex data manipulation code that produces important summary tables
+- Plot generation code where the visualization is the key message
+- Lengthy setup or configuration code that supports the narrative but isn't central to it
+
+Do not use `code-fold: true` when the code itself is being taught or demonstrated.
 
 ## File Organization
 
@@ -329,6 +357,27 @@ Create a new include file when:
 - Content might be reused elsewhere
 - You want to work on a section independently
 
+::: {.callout-important}
+**Important: New subsections should usually use includes**
+
+When adding new subsections (### headings) to existing chapters,
+**usually create a separate include file** for the content.
+Consider these factors when deciding:
+
+- Subsections with substantial content (>50 lines)
+- Subsections that are "big and distinctive enough" to stand on their own
+- Content that forms a cohesive, self-contained topic
+- Likelihood of future growth or expansion
+- Current size of the parent file (keep source files under 100 lines when practical)
+
+For shorter subsections (<30 lines) in files that are well under 100 lines,
+inline content may be appropriate if the section is unlikely to grow significantly.
+
+This practice ensures better git history,
+easier code review,
+and clearer organization from the start.
+:::
+
 #### Migration Strategy
 
 When working with chapters that don't yet use includes:
@@ -411,7 +460,13 @@ This workflow enables a hybrid editing process where collaborators can make edit
 - Add blank lines before all lists
 - Follow the lab's R package development workflow (as described throughout this repo)
 - **When discussing current world conditions or technology capabilities**:
-  Always mention the date or time period (e.g., "as of early 2025", "in 2024") to provide temporal context and prevent content from becoming misleading as time passes
+  Always mention the date or time period to provide temporal context and prevent content from becoming misleading as time passes
+- **Determining the current date**:
+  Do not assume you know what the current date is.
+  Instead, use the Unix command line to determine the actual date (e.g., `date +"%Y-%m-%d"` or `date +"%B %Y"`),
+  and use that when discussing current conditions,
+  recent events,
+  or the state of technology "as of" a particular time period
 
 ### Citations and Evidence for Claims
 
@@ -423,6 +478,9 @@ When writing documentation:
 - **Provide direct evidence** by demonstrating behavior yourself (e.g., showing command output, testing functionality)
 - **Remove unverified explanations** rather than including speculative or unsubstantiated claims
 - Link to authoritative sources like official documentation, GitHub issues, or peer-reviewed materials
+- **For comparative or popularity claims**: Provide specific metrics (e.g., GitHub stars, download counts, usage statistics) with dates rather than subjective terms like "most popular" or "widely used" without evidence
+- **For all factual claims**: you must provide supporting evidence, either directly or by explicitly citing credible sources;
+- Do not phrase claims as facts when they are really merely assumptions or common opinions that may not be universally agreed on.
 
 **When adding links to external resources:**
 

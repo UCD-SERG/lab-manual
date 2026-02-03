@@ -1,0 +1,15 @@
+::: {.callout-warning}
+**Important Security Consideration**
+
+Workflow files (`.github/workflows/*.yaml`) have access to repository secrets and can execute code.
+Always review workflow files carefully before committing them,
+especially if copied from external sources.
+
+See @sec-ai-best-practices for guidance on working with workflow files using AI tools.
+:::
+
+The workflow YAML files in `.github/workflows/` are configuration files that tell GitHub Actions:
+
+- When to run (on push, pull request, schedule, etc.)
+- What operating systems and R versions to use
+- What steps to execute (install dependencies, run checks, etc.)

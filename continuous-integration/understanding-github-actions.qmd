@@ -1,0 +1,17 @@
+[GitHub Actions](https://github.com/features/actions) is GitHub's built-in automation platform that makes it easy to automate software workflows,
+including continuous integration and deployment (CI/CD).
+For R packages,
+this means you can automatically test your code,
+check for errors,
+and deploy documentation every time you push changes to GitHub.
+
+**Key benefits of GitHub Actions:**
+
+- **Automated testing**: Run `R CMD check` across multiple operating systems (Linux, macOS, Windows) and R versions
+- **Immediate feedback**: Get notified of problems quickly, when they're easier to fix
+- **Better collaboration**: External contributors can see if their changes pass all checks before you review
+- **Quality assurance**: Catch platform-specific issues before they reach users
+- **Documentation deployment**: Automatically build and deploy your pkgdown website
+
+Even for solo developers,
+having automated checks run on different platforms helps avoid the "works on my machine" problem.
