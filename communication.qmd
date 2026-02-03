@@ -52,7 +52,7 @@ especially if they receive work email or Teams notifications on their phones.
   Recipients will manage their own notification schedules,
   and they may be working different hours or want the information sooner.
 
-## Setting Away Status and Autoresponse checklist
+## Setting Away Status and Autoresponse Checklist
 
 When you'll be away from work (vacation, conference, sick leave, etc.),
 please help the team stay coordinated by setting appropriate away indicators:
