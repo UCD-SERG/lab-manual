@@ -73,7 +73,7 @@ We use a combination of tools to track and manage project tasks:
   Lab leadership may assign tasks through these tools, which integrate with Microsoft Teams.
   Lab members are expected to set up a Teams page for important degree requirements (QE) and projects (grant proposals, papers, etc.).
   Invite both Dr Morrison and Aiemjoy to the Teams page and assign them to review tasks with the deadline you need the review by.
-  We appreciate 2 week's notice for letters and larger review projects.
+  We appreciate 2 weeks' notice for letters and larger review projects.
 - Generally, strive to complete assigned tasks by the date listed.
 - Use checklists to break down tasks into smaller chunks.
   Sometimes leadership will create these for you, but you can also add them yourself.
