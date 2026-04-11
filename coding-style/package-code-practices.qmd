@@ -1,3 +1,10 @@
-- **No `library()` in package code**: Use `::` notation or declare in DESCRIPTION Imports
+- **No `library()` in package code**: Use `::` notation or declare in DESCRIPTION Imports.
+  This is enforced by our `.lintr.R` configuration via `undesirable_function_linter()`.
+  Instead, use:
+  - `::` for explicit namespace references (e.g., `dplyr::mutate()`)
+  - `usethis::use_import_from()` to declare imports in `NAMESPACE`
+  - `withr::local_package()` for temporary package loading in tests
+- This keeps the global search path clean and makes dependencies explicit.
+  See [R Packages - The R landscape](https://r-pkgs.org/code.html#sec-code-r-landscape) for more details.
 - **Document all exports**: Use roxygen2 (`@title`, `@description`, `@param`, `@returns`, `@examples`)
 - **Avoid code duplication**: Extract repeated logic into helper functions

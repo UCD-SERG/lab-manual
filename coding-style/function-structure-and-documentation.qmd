@@ -18,8 +18,34 @@ Every function should follow this pattern:
 #' @export
 my_function <- function(param1, param2) {
   # Implementation
+  return(result)
 }
 ```
 
 *See also @sec-documenting-code for general code documentation practices.*
+
+### Explicit Return Statements
+
+Following the [Google R Style Guide's recommendation](https://google.github.io/styleguide/Rguide.html#use-explicit-returns),
+always use explicit `return()` statements in functions,
+even when R's implicit return would work.
+This makes the function's intent clear and improves readability.
+
+**Example:**
+
+```r
+# Good: Explicit return
+calculate_mean <- function(x) {
+  result <- mean(x, na.rm = TRUE)
+  return(result)
+}
+
+# Less clear: Implicit return (avoid)
+calculate_mean <- function(x) {
+  mean(x, na.rm = TRUE)
+}
+```
+
+Note: Our `.lintr.R` configuration disables the `return_linter` to allow flexibility in code,
+but we still require explicit returns as a lab standard.
 
