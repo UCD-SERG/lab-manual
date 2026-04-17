@@ -58,6 +58,7 @@ Before submitting a manuscript:
 - [ ] Avoid "significant" (easily confused with statistical significance)
 - [ ] Author contributions drafted using CRediT Taxonomy
 
+
 ## Formatting tables with `gtsummary` + `flextable` + `flexlsx`
 
 One practical workflow for publication-ready tables is to use
@@ -82,9 +83,11 @@ flexlsx::write_xlsx(tbl1, path = here::here("results", "table-1.xlsx"))
 
 This gives you a reproducible table pipeline:
 
-- Define table content with `gtsummary::tbl_summary()` (or model tables).
+- Define table content with `gtsummary::tbl_summary()`
+  (or model tables).
 - Apply presentation formatting with `flextable` verbs.
-- Export an `.xlsx` file for collaborator review while preserving your R workflow.
+- Export an `.xlsx` file for collaborator review
+  while preserving your R workflow.
 
 ## Scientific Writing: Claims and Evidence
 
