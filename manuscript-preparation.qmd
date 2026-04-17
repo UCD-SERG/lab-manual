@@ -84,7 +84,7 @@ flexlsx::write_xlsx(tbl1, path = here::here("results", "table-1.xlsx"))
 This gives you a reproducible table pipeline:
 
 - Define table content with `gtsummary::tbl_summary()`
-  (or model tables).
+  (or `gtsummary::tbl_regression()` for model tables).
 - Apply presentation formatting with `flextable` verbs.
 - Export an `.xlsx` file for collaborator review
   while preserving your R workflow.
