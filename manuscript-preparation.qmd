@@ -58,6 +58,32 @@ Before submitting a manuscript:
 - [ ] Avoid "significant" (easily confused with statistical significance)
 - [ ] Author contributions drafted using CRediT Taxonomy
 
+## Intro: Formatting tables with `gtsummary` + `flextable` + `flexlsx`
+
+One practical workflow for publication-ready tables is to use
+[`{gtsummary}`](https://cran.r-project.org/package=gtsummary)
+to create summary/regression tables,
+convert to [`{flextable}`](https://cran.r-project.org/package=flextable)
+for styling,
+and export to Excel with
+[`{flexlsx}`](https://cran.r-project.org/package=flexlsx).
+
+```r
+tbl1 <-
+  trial |>
+  gtsummary::tbl_summary(by = trt) |>
+  gtsummary::as_flex_table() |>
+  flextable::autofit()
+
+flexlsx::write_xlsx(tbl1, path = here::here("results", "table-1.xlsx"))
+```
+
+This gives you a reproducible table pipeline:
+
+- Define table content with `gtsummary::tbl_summary()` (or model tables).
+- Apply presentation formatting with `flextable` verbs.
+- Export an `.xlsx` file for collaborator review while preserving your R workflow.
+
 ## Scientific Writing: Claims and Evidence
 
 All factual claims in scientific writing should be supported by appropriate evidence.
