@@ -58,17 +58,19 @@ Before submitting a manuscript:
 - [ ] Avoid "significant" (easily confused with statistical significance)
 - [ ] Author contributions drafted using CRediT Taxonomy
 
-## Intro: Formatting tables with `gtsummary` + `flextable` + `flexlsx`
+## Formatting tables with `gtsummary` + `flextable` + `flexlsx`
 
 One practical workflow for publication-ready tables is to use
-[`{gtsummary}`](https://cran.r-project.org/package=gtsummary)
+[`{gtsummary}`](https://www.danieldsjoberg.com/gtsummary/)
 to create summary/regression tables,
-convert to [`{flextable}`](https://cran.r-project.org/package=flextable)
+convert to [`{flextable}`](https://davidgohel.github.io/flextable/)
 for styling,
 and export to Excel with
 [`{flexlsx}`](https://cran.r-project.org/package=flexlsx).
 
-```r
+```{{r}}
+#| eval: false
+
 tbl1 <-
   trial |>
   gtsummary::tbl_summary(by = trt) |>
