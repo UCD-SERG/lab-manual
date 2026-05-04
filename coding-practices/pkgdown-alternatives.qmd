@@ -72,7 +72,7 @@ pkgsite::build_site(preview = TRUE)
 
 # Build with custom URL and lazy rebuilding
 pkgsite::build_site(
-  url = "https://yourdomain.com",
+  url = "https://example.com",
   lazy = TRUE,
   preview = TRUE
 )
