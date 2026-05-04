@@ -8,7 +8,7 @@ Adapted by UCD-SeRG team from [original by Jade Benjamin-Chung and Kunal Mishra]
 
 - R for Data Science [@wickham2023r4ds] - comprehensive introduction to doing data science with R
 - R Packages [@wickham2023rpkgs] - complete guide to R package development
-- [Awesome R Package Development Tools](https://indrajeetpatil.github.io/awesome-r-pkgtools/) - curated list of tools for R package development
+- [Awesome R Package Development Tools](https://github.com/IndrajeetPatil/awesome-r-pkgtools) - curated list of tools for R package development
 - Advanced R [@wickham2019advr] - deep dive into R programming and internals
 - Mastering Shiny [@wickham2021shiny] - comprehensive guide to building web applications with Shiny
 - Engineering Production-Grade Shiny Apps [@fay2021engineering] - best practices for production Shiny applications

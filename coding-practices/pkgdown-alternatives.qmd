@@ -72,7 +72,8 @@ pkgsite::build_site(preview = TRUE)
 
 # Build with custom URL and lazy rebuilding
 pkgsite::build_site(
-  url = "https://yourdomain.com",
+  # Replace with your real docs domain.
+  url = "https://example.com",
   lazy = TRUE,
   preview = TRUE
 )
