@@ -19,9 +19,13 @@ jobs:
 
       - uses: r-lib/actions/setup-r@v2
         with:
-          # Pin to project's renv.lock-era R to avoid S7 compilation failures on newer release R.
-          r-version: '4.5.2'
+          r-version: 'release'
           use-public-rspm: true
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libcurl4-openssl-dev libpng-dev libfontconfig1-dev libjpeg-dev libharfbuzz-dev libfribidi-dev libfreetype6-dev libtiff5-dev libwebp-dev
 
       - uses: r-lib/actions/setup-renv@v2
 
