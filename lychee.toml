@@ -28,6 +28,8 @@ exclude = [
   "https://ucd-serg.github.io/YOURPROJECT",
   # Broken link in commented-out HTML (false positive)
   "https://beierlab.com/.*",
+  # Old RStudio blog moved to posit.co; frequently times out in CI
+  "https://blog.rstudio.com/.*",
   "http://localhost.*",
   "https://localhost.*",
   "http://127.0.0.1.*",
