@@ -27,6 +27,25 @@ means <- map_dbl(data_list, mean)        # Returns numeric vector
 models <- map(splits, ~ lm(y ~ x, data = .x))  # Returns list of models
 ```
 
+### `Vectorize()` vs `purrr::map_*()`
+
+`base::Vectorize()` and [`{purrr}`](https://purrr.tidyverse.org/) solve
+different problems.
+
+- Use `base::Vectorize()` when you already have a scalar function
+  and want a quick base-R wrapper that accepts vector inputs.
+- Use `purrr::map_*()` when you are iterating over lists or list-columns
+  and want explicit, type-stable outputs (`map_dbl()`, `map_int()`, etc.)
+  that compose naturally in tidyverse pipelines.
+
+`base::Vectorize()` is often convenient for small, local wrappers.
+In contrast, [`{purrr}`](https://purrr.tidyverse.org/) is usually more
+idiomatic for analysis workflows because output types are explicit
+and iteration intent is clearer.
+
+Also note that neither approach is parallel by default.
+For parallel execution, use `furrr::future_map()` as shown below.
+
 ### `purrr::pmap()` for Multiple Arguments
 
 When iterating over multiple parameter lists:
