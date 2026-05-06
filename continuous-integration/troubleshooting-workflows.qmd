@@ -1,5 +1,12 @@
 When workflows fail,
 check the "Actions" tab in your GitHub repository for detailed logs.
+Before spending time debugging,
+check [GitHub Status](https://www.githubstatus.com/) to confirm that GitHub's
+services are fully operational.
+If GitHub is experiencing an outage,
+workflows may fail through no fault of your own—wait for the outage to resolve
+before investigating further.
+
 Common issues include:
 
 - **Test failures**: Your tests found a bug (this is good! fix the bug)
