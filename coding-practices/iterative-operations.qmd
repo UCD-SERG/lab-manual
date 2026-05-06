@@ -27,7 +27,7 @@ means <- map_dbl(data_list, mean)        # Returns numeric vector
 models <- map(splits, ~ lm(y ~ x, data = .x))  # Returns list of models
 ```
 
-### `Vectorize()` vs `purrr::map_*()`
+### `base::Vectorize()` vs `purrr::map_*()`
 
 `base::Vectorize()` and [`{purrr}`](https://purrr.tidyverse.org/) solve
 different problems.
@@ -44,7 +44,8 @@ idiomatic for analysis workflows because output types are explicit
 and iteration intent is clearer.
 
 Also note that neither approach is parallel by default.
-For parallel execution, use `furrr::future_map()` as shown below.
+For parallel execution, use `furrr::future_map()` from
+[`{furrr}`](https://furrr.futureverse.org/).
 
 ### `purrr::pmap()` for Multiple Arguments
 
