@@ -24,6 +24,10 @@
 
 {{< include continuous-integration/pull-request-comment-automation.qmd >}}
 
+## Fast Package Installation with r2u
+
+{{< include continuous-integration/r2u-for-fast-ci.qmd >}}
+
 ## Additional Resources
 
 {{< include continuous-integration/additional-resources.qmd >}}
