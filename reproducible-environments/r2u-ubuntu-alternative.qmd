@@ -1,0 +1,43 @@
+For users working on Ubuntu Linux systems,
+[r2u](https://eddelbuettel.github.io/r2u/) provides an alternative approach to package management
+that complements or replaces `renv` in certain workflows.
+
+**What is r2u?**
+
+r2u integrates R package installation with Ubuntu's `apt` package manager,
+providing pre-compiled binary packages for all CRAN packages.
+This integration offers several advantages over traditional R package installation:
+
+- **Fast installation**: Binary packages install in seconds, not minutes
+- **Automatic dependency resolution**: System dependencies are handled automatically
+- **System-level integration**: Packages integrate with Ubuntu's package management
+- **No compilation required**: Eliminates the need for build tools and compilers
+
+**Supported Ubuntu versions (as of early 2025):**
+
+- Ubuntu 24.04 "noble" (amd64 and arm64)
+- Ubuntu 22.04 "jammy" (amd64)
+- Ubuntu 20.04 "focal" (amd64, archived - no new updates)
+
+**When to use r2u vs. renv:**
+
+- **Use r2u when**: You work primarily on Ubuntu systems, want fast package installation, or need system-level package management
+- **Use renv when**: You need cross-platform reproducibility, work on macOS/Windows, or require project-specific package libraries
+- **Use both when**: You want fast installation on Ubuntu while maintaining reproducibility through renv lockfiles
+
+**Basic setup:**
+
+r2u requires a one-time system setup.
+See the [r2u website](https://eddelbuettel.github.io/r2u/) for detailed installation instructions.
+
+Once configured,
+R's `install.packages()` automatically uses binary packages from r2u,
+making package installation much faster.
+
+**Docker containers:**
+
+The Rocker Project provides `rocker/r2u` Docker containers with r2u pre-configured,
+ideal for reproducible containerized workflows.
+
+For complete documentation and setup instructions,
+see the [r2u website](https://eddelbuettel.github.io/r2u/).

@@ -13,4 +13,3 @@ mean_Y <- calc_fluseas_mean(
   silent = FALSE
 )
 ```
-

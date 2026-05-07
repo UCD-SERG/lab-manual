@@ -30,7 +30,7 @@ jobs:
       - name: Install system dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y jags libcurl4-openssl-dev libpng-dev libfontconfig1-dev libjpeg-dev
+          sudo apt-get install -y jags libcurl4-openssl-dev libpng-dev libfontconfig1-dev libjpeg-dev libharfbuzz-dev libfribidi-dev libfreetype6-dev libtiff5-dev libwebp-dev
 
       - uses: r-lib/actions/setup-renv@v2
 
@@ -91,4 +91,3 @@ jobs:
           # Deploy on label changes too, not just open/reopen/synchronize
           # The 'auto' action ignores label events, so we explicitly set 'deploy' for non-closed PRs
           action: ${{ github.event.action == 'closed' && 'remove' || 'deploy' }}
-

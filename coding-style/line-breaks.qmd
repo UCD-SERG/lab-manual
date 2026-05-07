@@ -1,4 +1,4 @@
-**Blank Lines Before Lists**
+### Blank Lines Before Lists
 
 Always include a blank line before starting a bullet list or numbered list in markdown/Quarto documents. This ensures proper rendering and readability.
 
@@ -23,7 +23,56 @@ Here are the requirements:
 - First item
 - Second item
 
-**Line Breaks in Code**
+### Semantic Line Breaks in Plain Text {#sec-semantic-line-breaks}
+
+Add a newline at the end of every phrase or logical unit of text
+in plain-text source files.
+A phrase is typically a complete thought, clause, or sentence.
+This applies to:
+
+- Plain-text paragraphs in `.qmd` files
+- Source code text: comments, documentation strings, and error messages
+
+**Correct (prose in .qmd):**
+
+```markdown
+When talking about code in prose sections,
+use backticks to apply code formatting.
+This helps maintain readability in source files
+and makes diffs easier to review.
+```
+
+**Incorrect (prose in .qmd):**
+
+```markdown
+When talking about code in prose sections, use backticks to apply code formatting. This helps maintain readability in source files and makes diffs easier to review.
+```
+
+**Correct (R code comment):**
+
+```r
+# First, check if the input is valid.
+# Then, process the data.
+# Finally, return the result.
+```
+
+**Incorrect (R code comment):**
+
+```r
+# First, check if the input is valid. Then, process the data. Finally, return the result.
+```
+
+This practice is also known as [semantic line breaks](https://sembr.org/).
+
+**Guidelines:**
+
+- Break after complete sentences (at periods)
+- Break after long phrases or clauses (at commas or conjunctions)
+- Aim for lines under 80 characters
+- Keep related short phrases together on one line
+- Do not break in the middle of inline code, links, or formatting
+
+### Line Breaks in Code
 
 - For `ggplot` calls and `dplyr` pipelines, do not crowd single lines. Here are some nontrivial examples of "beautiful" pipelines, where beauty is defined by coherence:
 

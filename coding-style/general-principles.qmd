@@ -1,6 +1,19 @@
-- **Follow tidyverse style guide**: https://style.tidyverse.org
-- **Use native pipe**: `|>` not `%>%` (available in R >= 4.1.0)
-- **Naming**: Use `snake_case` for functions and variables; acronyms may be uppercase (e.g., `prep_IDs_data`)
+Our lab follows the [Google R Style Guide](https://google.github.io/styleguide/Rguide.html),
+which in turn mostly follows the [tidyverse style guide](https://style.tidyverse.org/) [@wickham2023tidyverse].
+The following principles apply to all R code:
+
+- **Follow tidyverse conventions**: Our style is built on the tidyverse style guide,
+  which provides comprehensive guidance on naming,
+  syntax,
+  pipes,
+  functions,
+  and more
+- **Naming**: Use `snake_case` for functions and variables;
+  acronyms may be uppercase (e.g., `prep_IDs_data`)
 - **Write tidy code**: Keep code clean, readable, and well-organized
 - **Avoid redundant logical comparisons**: Use logical variables directly in conditional statements (e.g., `if (x)` instead of `if (x == TRUE)` or `if (x == 1)`)
-- **Use pipes to emphasize primary inputs**: When writing functions and code, use the pipe operator to clearly show transformations on a primary object. The primary input should flow as the first argument to each function in the chain. Design functions so the most important argument (usually data) comes first, enabling natural pipeline composition. See the [tidyverse design principles](https://design.tidyverse.org/important-args-first.html) for more details.
+
+{{< include coding-style/_pipes.qmd >}}
+
+Many of these rules are automatically enforced through our [`.lintr.R`](https://github.com/UCD-SERG/lab-manual/blob/main/.lintr.R) configuration file.
+See @sec-style-auto-style for details on automated style checking.

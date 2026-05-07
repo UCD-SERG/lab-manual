@@ -23,6 +23,9 @@
 ## Troubleshooting
 
 {{< include quarto/troubleshooting.qmd >}}
+## Mermaid Diagrams
+
+{{< include quarto/mermaid-diagrams.qmd >}}
 
 ## Additional Resources
 
