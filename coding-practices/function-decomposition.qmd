@@ -1,0 +1,53 @@
+Function decomposition improves code readability and maintainability
+by breaking complex logic into focused, reusable units.
+When a function becomes too long or handles too many concerns,
+split it into smaller helper functions with clear responsibilities.
+
+Key goals of decomposition include:
+
+- Breaking a big problem into smaller subproblems that are easier to reason about
+- Making code easier to read, review, and test
+- Pushing low-level complexity "downward" into helper functions so the main workflow stays clear
+
+## When to decompose a function
+
+Consider decomposition when one or more of these are true:
+
+- A function is doing multiple jobs (validation, transformation, modeling, and formatting)
+- You need comments to explain every few lines just to follow the logic
+- You are repeating the same block in multiple places
+- You want to test one part of a workflow independently of the rest
+- The top-level function is hard to scan because implementation details hide the main idea
+
+## How to decompose in practice
+
+A practical sequence is:
+
+1. Write down the top-level steps in plain language.
+2. Extract one step at a time into a helper function.
+3. Give each helper a single, specific contract (inputs, outputs, and assumptions).
+4. Keep the orchestration function short, so it reads like a workflow outline.
+5. Add or update tests around each helper and the top-level function.
+
+## Examples borrowed from lab package PRs
+
+In [`UCD-SERG/rpt` PR #100](https://github.com/UCD-SERG/rpt/pull/100),
+a top-level function was updated to call dedicated helpers,
+with helper logic split into separate files.
+The workflow moved from "do everything in one function"
+toward a clearer sequence of validation, cleaning, calculation,
+and formatting steps.
+This made the top-level function easier to read,
+while isolating validation and formatting details in reusable units.
+
+In [`UCD-SERG/shigella` PR #11](https://github.com/UCD-SERG/shigella/pull/11),
+focused analysis functions were added in separate files,
+moving away from larger script-style helpers toward
+single-purpose, testable package functions.
+
+## Related references
+
+For background and related ideas,
+see [Decomposition (computer science)](<https://en.wikipedia.org/wiki/Decomposition_(computer_science)>),
+[Code refactoring](https://en.wikipedia.org/wiki/Code_refactoring),
+and [Functional decomposition](https://en.wikipedia.org/wiki/Functional_decomposition).
