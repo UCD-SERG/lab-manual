@@ -69,9 +69,16 @@ This applies to:
 
 ### Line Breaks in Plain Text
 
-**ALWAYS line-break at the ends of sentences and long phrases in plain-text paragraphs in .qmd files** to avoid long lines.
+**ALWAYS line-break at the ends of sentences and long phrases** in:
 
-**Correct:**
+- Plain-text paragraphs in `.qmd` files
+- Source code text: comments, documentation strings, and error messages
+
+Add a newline at the end of every phrase or logical unit of text.
+Each phrase should be on its own line in the source.
+A phrase is typically a complete thought, clause, or sentence.
+
+**Correct (prose in .qmd):**
 ```markdown
 When talking about code in prose sections,
 use backticks to apply code formatting.
@@ -79,14 +86,26 @@ This helps maintain readability in source files
 and makes diffs easier to review.
 ```
 
-**Incorrect:**
+**Incorrect (prose in .qmd):**
 ```markdown
 When talking about code in prose sections, use backticks to apply code formatting. This helps maintain readability in source files and makes diffs easier to review.
 ```
 
+**Correct (R code comment):**
+```r
+# First, check if the input is valid.
+# Then, process the data.
+# Finally, return the result.
+```
+
+**Incorrect (R code comment):**
+```r
+# First, check if the input is valid. Then, process the data. Finally, return the result.
+```
+
 **Benefits:**
 
-- Improves readability of source .qmd files
+- Improves readability of source files
 - Makes git diffs clearer and easier to review
 - Helps identify specific changes in version control
 - Prevents horizontal scrolling when editing
@@ -225,7 +244,8 @@ See the "Best Practices" section for more details.
 - Follow the tidyverse style guide: https://style.tidyverse.org
 - Use native pipe `|>` instead of `%>%`
 - Use `snake_case` for variable and function names
-- Use `.qmd` files exclusively (not `.Rmd`)
+- Use `.qmd` files exclusively (not `.Rmd`),
+  **except** for `README.Rmd` — see the [README.Rmd and README.md](#readmermd-and-readmemd) section below for that intentional exception
 - All R projects should use R package structure
 - **Avoid redundant logical comparisons**: Use logical variables directly in conditional statements (e.g., `if (x)` instead of `if (x == TRUE)` or `if (x == 1)`)
 - Use `lubridate::NA_Date_` instead of `as.Date(NA)` for missing date values
@@ -257,6 +277,54 @@ This is particularly useful for:
 - Lengthy setup or configuration code that supports the narrative but isn't central to it
 
 Do not use `code-fold: true` when the code itself is being taught or demonstrated.
+
+## Communication and Documentation
+
+### Explaining Changes in Pull Requests
+
+When making changes to code or workflows,
+**proactively explain your reasoning** in commit messages and PR descriptions.
+
+- **For version pinning decisions**:
+  Explain whether you're using floating tags (e.g., `@v2`)
+  vs. specific versions (e.g., `@v2.9.4`) and why
+- **For configuration changes**:
+  Explain the rationale behind boolean vs. string values,
+  or other non-obvious choices
+- **For workflow modifications**:
+  Describe what problem you're solving and why your approach is the best solution
+- **For dependency updates**:
+  Explain why you're updating and what benefits or fixes it brings
+
+**Example:**
+Instead of just changing `@v2.9.4` to `@v2`,
+include in your commit message or PR description:
+
+> "Using `@v2` (moving tag) instead of `@v2.9.4` (pinned version)
+> to automatically receive bug fixes and updates within the v2 major version
+> while maintaining stability."
+
+This proactive communication prevents reviewers from needing to ask
+clarifying questions
+and helps future maintainers understand the decisions made.
+
+### GitHub Actions Version Pinning
+
+When referencing GitHub Actions in workflow files,
+choose between floating tags and pinned versions deliberately:
+
+- **Floating tags** (e.g., `@v2`):
+  Automatically receive minor updates and bug fixes within the major version.
+  Use when stability within a major version is acceptable.
+- **Version tags** (e.g., `@v2.9.4`):
+  Lock to a specific release for reproducibility.
+  Note: tags can be retargeted, so this is a convenience tradeoff,
+  not a strong security guarantee.
+- **Commit SHA pins** (e.g., `uses: actions/checkout@abc1234...`):
+  The most secure option — immutably locks the action to a specific commit.
+  Use when supply-chain security is a priority.
+
+Always document your choice in the PR description or commit message.
 
 ## File Organization
 
@@ -469,6 +537,24 @@ This workflow enables a hybrid editing process where collaborators can make edit
   or the state of technology "as of" a particular time period.
   **ALWAYS check the date using the command line before writing any temporal references** (e.g., "as of early 2026", "in 2026", etc.).
   Never guess or assume the current year.
+
+### README.Rmd and README.md
+
+If a repository contains both `README.Rmd` and `README.md`,
+**always edit `README.Rmd`, never `README.md` directly.**
+`README.md` is auto-generated from `README.Rmd`.
+
+To regenerate `README.md` after editing `README.Rmd`,
+use `devtools::build_readme()` (preferred for R packages):
+
+```r
+devtools::build_readme()
+```
+
+Alternatively, you can use
+[`{rmarkdown}`](https://rmarkdown.rstudio.com/) via
+`rmarkdown::render("README.Rmd")`
+if [`{devtools}`](https://devtools.r-lib.org/) is not available.
 
 ### Citations and Evidence for Claims
 
