@@ -258,62 +258,6 @@ This is particularly useful for:
 
 Do not use `code-fold: true` when the code itself is being taught or demonstrated.
 
-## R Package Development
-
-### Version Management
-
-**CRITICAL**: Always keep the development version ahead of the main branch version.
-
-- When working on a development branch,
-  ensure the version in `DESCRIPTION` is higher than the version on `main`
-- Use the fourth component for development versions
-  (e.g., `0.1.0.9000` for development following `0.1.0` release)
-- Before merging to `main`, update to a release version (e.g., `0.1.1`, `0.2.0`, etc.)
-- After merging a release to `main`,
-  immediately bump the development version on the development branch
-
-**Version numbering guidelines:**
-
-- **Major version** (X.0.0): Breaking changes, major new features
-- **Minor version** (0.X.0): New features, backward compatible
-- **Patch version** (0.0.X): Bug fixes, backward compatible
-- **Development version** (0.0.0.X): Development work, not released
-
-To increment the version, use:
-
-```r
-usethis::use_version()
-```
-
-See [R Packages - Version numbers](https://r-pkgs.org/lifecycle.html#sec-lifecycle-version-number) for details.
-
-### NEWS.md Conventions
-
-When updating `NEWS.md` for user-facing changes:
-
-- Use the `(#issue_number)` notation to link to issues (e.g., `(#123)`)
-- Use the `(#PR_number)` notation to link to pull requests
-- Use `@username` to credit **external** contributors only
-  (not internal team members)
-- Always update `NEWS.md` for user-facing changes before requesting PR review
-
-See [R Packages - NEWS.md](https://r-pkgs.org/other-markdown.html#sec-news) for details.
-
-### README.Rmd and README.md
-
-**Always edit `README.Rmd`, never `README.md` directly.**
-`README.md` is auto-generated from `README.Rmd`.
-
-To regenerate `README.md` after editing `README.Rmd`,
-use `devtools::build_readme()` (preferred for R packages):
-
-```r
-devtools::build_readme()
-```
-
-Alternatively, you can use `rmarkdown::render("README.Rmd")`
-if `devtools` is not available.
-
 ## Communication and Documentation
 
 ### Explaining Changes in Pull Requests
@@ -567,6 +511,22 @@ This workflow enables a hybrid editing process where collaborators can make edit
   and use that when discussing current conditions,
   recent events,
   or the state of technology "as of" a particular time period
+
+### README.Rmd and README.md
+
+If a repository contains both `README.Rmd` and `README.md`,
+**always edit `README.Rmd`, never `README.md` directly.**
+`README.md` is auto-generated from `README.Rmd`.
+
+To regenerate `README.md` after editing `README.Rmd`,
+use `devtools::build_readme()` (preferred for R packages):
+
+```r
+devtools::build_readme()
+```
+
+Alternatively, you can use `rmarkdown::render("README.Rmd")`
+if `devtools` is not available.
 
 ### Citations and Evidence for Claims
 
