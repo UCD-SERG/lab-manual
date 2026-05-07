@@ -46,6 +46,41 @@ A practical sequence is:
 4. Keep the orchestration function short, so it reads like a workflow outline.
 5. Add or update tests around each helper and the top-level function.
 
+## Function length limits: consolidated viewpoints
+
+The sources below combine community discussions (opinion-based)
+with a formal complexity reference.
+Use the community links for examples of practitioner viewpoints,
+and the complexity reference for a formal metric.
+
+
+- [Reddit (r/learnprogramming)](https://www.reddit.com/r/learnprogramming/comments/47avb5/one_long_function_2001000_lines_of_codes_or_one/):
+  February 2016 community thread asking whether one long function
+  or many smaller functions is preferable.
+- [SoloLearn discussion](https://www.sololearn.com/en/Discuss/1278705/optimal-number-of-lines-of-code-of-functions):
+  commenters describe different line-count conventions
+  (including 20-line and 100-line limits)
+  and discuss readability and testability tradeoffs.
+- [Stack Overflow: "When is a function too long?"](https://stackoverflow.com/questions/475675/when-is-a-function-too-long)
+  and
+  [Software Engineering Stack Exchange: "What is the ideal length of a method for you?"](https://softwareengineering.stackexchange.com/questions/133404/what-is-the-ideal-length-of-a-method-for-you):
+  older Q&A threads (September 2008 and February 2012, respectively)
+  focused on practical criteria
+  for deciding when to split methods.
+- [Cyclomatic complexity](https://en.wikipedia.org/wiki/Cyclomatic_complexity):
+  defines complexity by counting independent execution paths/decision points;
+  this reinforces that branching complexity is often a better risk indicator
+  than raw line count alone.
+
+Synthesizing these viewpoints into lab guidance:
+
+For lab code, practical rules are:
+
+1. Treat line count as a heuristic, not a hard constraint.
+2. Prefer single-purpose functions with clear names and contracts.
+3. Watch decision complexity (branching and nesting), not only length.
+4. Decompose when the top-level story is hard to follow or hard to test.
+
 ## Examples borrowed from lab package PRs
 
 In [`UCD-SERG/rpt` PR #100](https://github.com/UCD-SERG/rpt/pull/100)
