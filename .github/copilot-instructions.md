@@ -258,6 +258,106 @@ This is particularly useful for:
 
 Do not use `code-fold: true` when the code itself is being taught or demonstrated.
 
+## R Package Development
+
+### Version Management
+
+**CRITICAL**: Always keep the development version ahead of the main branch version.
+
+- When working on a development branch,
+  ensure the version in `DESCRIPTION` is higher than the version on `main`
+- Use the fourth component for development versions
+  (e.g., `0.1.0.9000` for development following `0.1.0` release)
+- Before merging to `main`, update to a release version (e.g., `0.1.1`, `0.2.0`, etc.)
+- After merging a release to `main`,
+  immediately bump the development version on the development branch
+
+**Version numbering guidelines:**
+
+- **Major version** (X.0.0): Breaking changes, major new features
+- **Minor version** (0.X.0): New features, backward compatible
+- **Patch version** (0.0.X): Bug fixes, backward compatible
+- **Development version** (0.0.0.X): Development work, not released
+
+To increment the version, use:
+
+```r
+usethis::use_version()
+```
+
+See [R Packages - Version numbers](https://r-pkgs.org/lifecycle.html#sec-lifecycle-version-number) for details.
+
+### NEWS.md Conventions
+
+When updating `NEWS.md` for user-facing changes:
+
+- Use the `(#issue_number)` notation to link to issues (e.g., `(#123)`)
+- Use the `(#PR_number)` notation to link to pull requests
+- Use `@username` to credit **external** contributors only
+  (not internal team members)
+- Always update `NEWS.md` for user-facing changes before requesting PR review
+
+See [R Packages - NEWS.md](https://r-pkgs.org/other-markdown.html#sec-news) for details.
+
+### README.Rmd and README.md
+
+**Always edit `README.Rmd`, never `README.md` directly.**
+`README.md` is auto-generated from `README.Rmd`.
+
+To regenerate `README.md` after editing `README.Rmd`,
+use `devtools::build_readme()` (preferred for R packages):
+
+```r
+devtools::build_readme()
+```
+
+Alternatively, you can use `rmarkdown::render("README.Rmd")`
+if `devtools` is not available.
+
+## Communication and Documentation
+
+### Explaining Changes in Pull Requests
+
+When making changes to code or workflows,
+**proactively explain your reasoning** in commit messages and PR descriptions.
+
+- **For version pinning decisions**:
+  Explain whether you're using floating tags (e.g., `@v2`)
+  vs. specific versions (e.g., `@v2.9.4`) and why
+- **For configuration changes**:
+  Explain the rationale behind boolean vs. string values,
+  or other non-obvious choices
+- **For workflow modifications**:
+  Describe what problem you're solving and why your approach is the best solution
+- **For dependency updates**:
+  Explain why you're updating and what benefits or fixes it brings
+
+**Example:**
+Instead of just changing `@v2.9.4` to `@v2`,
+include in your commit message or PR description:
+
+> "Using `@v2` (moving tag) instead of `@v2.9.4` (pinned version)
+> to automatically receive bug fixes and updates within the v2 major version
+> while maintaining stability."
+
+This proactive communication prevents reviewers from needing to ask
+clarifying questions
+and helps future maintainers understand the decisions made.
+
+### GitHub Actions Version Pinning
+
+When referencing GitHub Actions in workflow files,
+choose between floating tags and pinned versions deliberately:
+
+- **Floating tags** (e.g., `@v2`):
+  Automatically receive minor updates and bug fixes within the major version.
+  Use when stability within a major version is acceptable.
+- **Pinned versions** (e.g., `@v2.9.4`):
+  Lock to a specific release for maximum reproducibility.
+  Use when exact behavior must be preserved.
+
+Always document your choice in the PR description or commit message.
+
 ## File Organization
 
 ### Using Quarto Includes for Modular Content

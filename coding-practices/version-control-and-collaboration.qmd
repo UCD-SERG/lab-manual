@@ -8,25 +8,56 @@ Follow semantic versioning (MAJOR.MINOR.PATCH):
 - New features: increment MINOR (e.g., `0.1.1` → `0.2.0`)
 - Breaking changes: increment MAJOR (e.g., `0.2.0` → `1.0.0`)
 
+**CRITICAL**: Always keep the development version ahead of the main branch version.
+When working on a development branch,
+ensure the version in `DESCRIPTION` is higher than the version on `main`.
+
 ```r
 # Increment version
 usethis::use_version()
 ```
 
+See [R Packages - Version numbers](https://r-pkgs.org/lifecycle.html#sec-lifecycle-version-number) for full guidelines.
+
 ### NEWS File
 
-Document all user-facing changes in `NEWS.md`:
+Document all user-facing changes in `NEWS.md`.
+
+**Formatting conventions:**
+
+- Use `(#issue_number)` notation to link to related issues (e.g., `(#123)`)
+- Use `(#PR_number)` notation to link to related pull requests
+- Use `@username` to credit **external** contributors only
+  (not internal team members)
 
 ```markdown
 # myproject 0.2.0
 
 ## New features
 
-- Added function for data validation
-- Improved error messages
+- Added function for data validation (#45).
+- Improved error messages (#52, @external-contributor).
 
 ## Bug fixes
 
-- Fixed issue with missing values
-- Corrected calculation error in summary stats
+- Fixed issue with missing values (#38).
+- Corrected calculation error in summary stats (#41).
 ```
+
+See [R Packages - NEWS.md](https://r-pkgs.org/other-markdown.html#sec-news) for full conventions.
+
+### README.Rmd and README.md
+
+If your project uses `README.Rmd` (a README with executable R code),
+**always edit `README.Rmd`, never `README.md` directly.**
+`README.md` is auto-generated from `README.Rmd`.
+
+To regenerate `README.md` after editing `README.Rmd`,
+use `devtools::build_readme()` (preferred for R packages):
+
+```r
+devtools::build_readme()
+```
+
+Alternatively, you can use `rmarkdown::render("README.Rmd")`
+if [`{devtools}`](https://devtools.r-lib.org/) is not available.
