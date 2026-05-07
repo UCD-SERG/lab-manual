@@ -54,8 +54,9 @@ Don't make reviewers ask why you made a particular choice.
 
 Common situations that require explanation:
 
-- **Version pinning**: Explain whether you're using floating tags (e.g., `@v2`)
-  vs. pinned versions (e.g., `@v2.9.4`) and why.
+- **Version pinning**: Explain whether you're using floating tags (e.g., `@v2`),
+  version tags (e.g., `@v2.9.4`), or commit SHA pins
+  (e.g., `@abc1234...` — most secure, since tags can be retargeted) and why.
   For example: "Using `@v2` (moving tag) to automatically receive bug fixes
   within the major version while maintaining stability."
 - **Configuration changes**: Explain the rationale behind non-obvious choices

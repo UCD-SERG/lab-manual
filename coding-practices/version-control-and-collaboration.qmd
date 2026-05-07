@@ -25,8 +25,8 @@ Document all user-facing changes in `NEWS.md`.
 
 **Formatting conventions:**
 
-- Use `(#issue_number)` notation to link to related issues (e.g., `(#123)`)
-- Use `(#PR_number)` notation to link to related pull requests
+- Use `(#123)` notation to link to related issues and pull requests
+  (GitHub uses a shared number space for both)
 - Use `@username` to credit **external** contributors only
   (not internal team members)
 

@@ -315,9 +315,13 @@ choose between floating tags and pinned versions deliberately:
 - **Floating tags** (e.g., `@v2`):
   Automatically receive minor updates and bug fixes within the major version.
   Use when stability within a major version is acceptable.
-- **Pinned versions** (e.g., `@v2.9.4`):
-  Lock to a specific release for maximum reproducibility.
-  Use when exact behavior must be preserved.
+- **Version tags** (e.g., `@v2.9.4`):
+  Lock to a specific release for reproducibility.
+  Note: tags can be retargeted, so this is a convenience tradeoff,
+  not a strong security guarantee.
+- **Commit SHA pins** (e.g., `uses: actions/checkout@abc1234...`):
+  The most secure option — immutably locks the action to a specific commit.
+  Use when supply-chain security is a priority.
 
 Always document your choice in the PR description or commit message.
 
