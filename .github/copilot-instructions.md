@@ -69,9 +69,16 @@ This applies to:
 
 ### Line Breaks in Plain Text
 
-**ALWAYS line-break at the ends of sentences and long phrases in plain-text paragraphs in .qmd files** to avoid long lines.
+**ALWAYS line-break at the ends of sentences and long phrases** in:
 
-**Correct:**
+- Plain-text paragraphs in `.qmd` files
+- Source code text: comments, documentation strings, and error messages
+
+Add a newline at the end of every phrase or logical unit of text.
+Each phrase should be on its own line in the source.
+A phrase is typically a complete thought, clause, or sentence.
+
+**Correct (prose in .qmd):**
 ```markdown
 When talking about code in prose sections,
 use backticks to apply code formatting.
@@ -79,14 +86,26 @@ This helps maintain readability in source files
 and makes diffs easier to review.
 ```
 
-**Incorrect:**
+**Incorrect (prose in .qmd):**
 ```markdown
 When talking about code in prose sections, use backticks to apply code formatting. This helps maintain readability in source files and makes diffs easier to review.
 ```
 
+**Correct (R code comment):**
+```r
+# First, check if the input is valid.
+# Then, process the data.
+# Finally, return the result.
+```
+
+**Incorrect (R code comment):**
+```r
+# First, check if the input is valid. Then, process the data. Finally, return the result.
+```
+
 **Benefits:**
 
-- Improves readability of source .qmd files
+- Improves readability of source files
 - Makes git diffs clearer and easier to review
 - Helps identify specific changes in version control
 - Prevents horizontal scrolling when editing
