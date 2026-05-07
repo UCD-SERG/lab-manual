@@ -1,8 +1,12 @@
+Function length matters because very long functions can hide workflow intent,
+increase maintenance burden,
+and make targeted testing harder.
 The sources below combine community discussions (opinion-based)
 with a formal complexity reference.
 Use the community links for examples of practitioner viewpoints,
 and the complexity reference for a formal metric.
 
+Sources:
 
 - [Reddit (r/learnprogramming)](https://www.reddit.com/r/learnprogramming/comments/47avb5/one_long_function_2001000_lines_of_codes_or_one/):
   February 2016 community thread asking whether one long function
@@ -22,9 +26,8 @@ and the complexity reference for a formal metric.
   this reinforces that branching complexity is often a better risk indicator
   than raw line count alone.
 
-Synthesizing these viewpoints into lab guidance:
-
-For lab code, practical rules are:
+Synthesizing these viewpoints for lab code
+yields the following practical rules:
 
 1. Treat line count as a heuristic, not a hard constraint.
 2. Prefer single-purpose functions with clear names and contracts.
