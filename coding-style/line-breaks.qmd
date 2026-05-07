@@ -1,4 +1,4 @@
-**Blank Lines Before Lists**
+### Blank Lines Before Lists
 
 Always include a blank line before starting a bullet list or numbered list in markdown/Quarto documents. This ensures proper rendering and readability.
 
@@ -23,7 +23,7 @@ Here are the requirements:
 - First item
 - Second item
 
-**Semantic Line Breaks in Plain Text** {#sec-semantic-line-breaks}
+### Semantic Line Breaks in Plain Text {#sec-semantic-line-breaks}
 
 Add a newline at the end of every phrase or logical unit of text
 in plain-text source files.
@@ -72,7 +72,7 @@ This practice is also known as [semantic line breaks](https://sembr.org/).
 - Keep related short phrases together on one line
 - Do not break in the middle of inline code, links, or formatting
 
-**Line Breaks in Code**
+### Line Breaks in Code
 
 - For `ggplot` calls and `dplyr` pipelines, do not crowd single lines. Here are some nontrivial examples of "beautiful" pipelines, where beauty is defined by coherence:
 
