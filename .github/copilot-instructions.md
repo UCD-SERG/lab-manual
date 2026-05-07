@@ -525,8 +525,10 @@ use `devtools::build_readme()` (preferred for R packages):
 devtools::build_readme()
 ```
 
-Alternatively, you can use `rmarkdown::render("README.Rmd")`
-if `devtools` is not available.
+Alternatively, you can use
+[`{rmarkdown}`](https://rmarkdown.rstudio.com/) via
+`rmarkdown::render("README.Rmd")`
+if [`{devtools}`](https://devtools.r-lib.org/) is not available.
 
 ### Citations and Evidence for Claims
 
