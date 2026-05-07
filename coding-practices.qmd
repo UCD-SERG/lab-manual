@@ -58,6 +58,10 @@ Adapted by UCD-SeRG team from [original by Kunal Mishra, Jade Benjamin-Chung, St
 
 {{< include coding-practices/function-calls.qmd >}}
 
+## Function decomposition
+
+{{< include coding-practices/function-decomposition.qmd >}}
+
 ## Function length limits
 
 {{< include coding-practices/function-length-limits.qmd >}}

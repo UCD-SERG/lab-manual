@@ -29,7 +29,7 @@ Sources:
 Synthesizing these viewpoints for lab code
 yields the following practical rules:
 
-1. Treat line count as a heuristic, not a hard constraint.
+1. Use `<150` lines as a provisional heuristic trigger to reassess decomposition, not a hard constraint.
 2. Prefer single-purpose functions with clear names and contracts.
 3. Watch decision complexity (branching and nesting), not only length.
 4. Decompose when the top-level story is hard to follow or hard to test.
