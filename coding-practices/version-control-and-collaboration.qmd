@@ -59,5 +59,7 @@ use `devtools::build_readme()` (preferred for R packages):
 devtools::build_readme()
 ```
 
-Alternatively, you can use `rmarkdown::render("README.Rmd")`
+Alternatively, you can use
+[`{rmarkdown}`](https://rmarkdown.rstudio.com/)'s
+`rmarkdown::render("README.Rmd")`
 if [`{devtools}`](https://devtools.r-lib.org/) is not available.
