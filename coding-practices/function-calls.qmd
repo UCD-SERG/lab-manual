@@ -14,3 +14,17 @@ mean_Y <- calc_fluseas_mean(
 )
 ```
 
+Function decomposition is also an important part of readable function usage.
+When a function becomes too long or handles too many concerns,
+split it into smaller helper functions.
+
+Key goals of decomposition include:
+
+- Breaking a big problem into smaller subproblems that are easier to reason about
+- Making code easier to read, review, and test
+- Pushing low-level complexity "downward" into helper functions so the main workflow stays clear
+
+For background and related ideas,
+see [Decomposition (computer science)](https://en.wikipedia.org/wiki/Decomposition_(computer_science)),
+[Code refactoring](https://en.wikipedia.org/wiki/Code_refactoring),
+and [Martin Fowler's overview of refactoring](https://refactoring.com/).
