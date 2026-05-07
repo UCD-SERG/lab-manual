@@ -25,6 +25,6 @@ Key goals of decomposition include:
 - Pushing low-level complexity "downward" into helper functions so the main workflow stays clear
 
 For background and related ideas,
-see [Decomposition (computer science)](https://en.wikipedia.org/wiki/Decomposition_(computer_science)),
+see [Decomposition (computer science)](<https://en.wikipedia.org/wiki/Decomposition_(computer_science)>),
 [Code refactoring](https://en.wikipedia.org/wiki/Code_refactoring),
-and [Martin Fowler's overview of refactoring](https://refactoring.com/).
+and [Functional decomposition](https://en.wikipedia.org/wiki/Functional_decomposition).
