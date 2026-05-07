@@ -466,7 +466,9 @@ This workflow enables a hybrid editing process where collaborators can make edit
   Instead, use the Unix command line to determine the actual date (e.g., `date +"%Y-%m-%d"` or `date +"%B %Y"`),
   and use that when discussing current conditions,
   recent events,
-  or the state of technology "as of" a particular time period
+  or the state of technology "as of" a particular time period.
+  **ALWAYS check the date using the command line before writing any temporal references** (e.g., "as of early 2026", "in 2026", etc.).
+  Never guess or assume the current year.
 
 ### Citations and Evidence for Claims
 
