@@ -12,6 +12,8 @@ The copilot instructions file specifies:
 - R code style guidelines (e.g., using native pipe `|>`, following tidyverse style)
 - File organization patterns (e.g., using Quarto includes for modular content)
 - How to work with DOCX files for hybrid editing workflows
+- Version control best practices
+  (e.g., do not commit rendered artifacts that are generated only for preview/review)
 - Repository-specific best practices
 
 By having these instructions in `.github/copilot-instructions.md`,
@@ -22,4 +24,3 @@ across all contributions to the lab manual,
 whether made by humans or AI assistants.
 
 See [Appendix: Copilot Instructions File](#sec-appendix-copilot-instructions) for the complete file.
-

@@ -39,6 +39,24 @@ The available models as of early 2026 include:
 
 **OpenAI GPT Models:**
 
+As of 2026-05-08,
+OpenAI points users to ChatGPT Codex at
+[`chatgpt.com/codex`](https://chatgpt.com/codex/).
+The OpenAI quickstart describes Codex as an AI coding assistant
+available through the Codex IDE extension
+that can read files, run commands, and write changes.
+This quickstart guide also links to a dedicated Codex app
+for working with local projects:
+[OpenAI Codex quickstart guide](https://developers.openai.com/codex/quickstart).
+For additional background and platform context,
+Wikipedia describes Codex as an AI coding agent by OpenAI
+with desktop app availability on Windows and macOS
+as an additional access path:
+[Codex (AI agent)](https://en.wikipedia.org/wiki/Codex_(AI_agent)).
+In the GitHub Copilot model names shown below,
+the `-Codex` suffix identifies code-specialized variants
+(for example, `GPT-5.2-Codex` and `GPT-5-Codex`).
+
 - **GPT-5.2-Codex**: Specialized for code generation
   - *Pros*: Strong code completion, good at common patterns
   - *Cons*: May hallucinate package names or APIs

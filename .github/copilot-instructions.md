@@ -527,6 +527,9 @@ This workflow enables a hybrid editing process where collaborators can make edit
 - Preserve all existing content when refactoring
 - Add blank lines before all lists
 - Follow the lab's R package development workflow (as described throughout this repo)
+- Do not commit rendered artifacts produced during validation
+  (for example, temporary rendered previews or screenshots generated only for review).
+  Keep only source files under version control.
 - **When discussing current world conditions or technology capabilities**:
   Always mention the date or time period to provide temporal context and prevent content from becoming misleading as time passes
 - **Determining the current date**:
