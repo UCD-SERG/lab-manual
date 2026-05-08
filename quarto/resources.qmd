@@ -21,6 +21,18 @@
 - [Coatless Tutorials Quarto Book Template](https://github.com/coatless-tutorials/quarto-book-template) - another frequently-used template with helpful examples
 - [DataLab Quarto Template](https://github.com/d-rug/datalab_template_quarto) - template from the UC Davis DataLab and Davis R Users Group
 
+### Development Roadmap and Known Issues
+
+The Quarto development team uses GitHub "epics" to track collections of
+related bugs and planned improvements.
+These are useful for staying informed about known limitations
+and upcoming features:
+
+- [All open Quarto epics](https://github.com/quarto-dev/quarto-cli/issues?q=is%3Aopen+is%3Aissue+label%3Aepic) -
+  index of all open epic issues in the Quarto CLI repository
+- [reveal.js bugs & improvements epic](https://github.com/quarto-dev/quarto-cli/issues/4894) -
+  example epic tracking reveal.js-related issues
+
 ### Related Lab Manual Chapters
 
 For additional context about using Quarto in our lab:
