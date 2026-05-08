@@ -12,7 +12,7 @@ The copilot instructions file specifies:
 - R code style guidelines (e.g., using native pipe `|>`, following tidyverse style)
 - File organization patterns (e.g., using Quarto includes for modular content)
 - How to work with DOCX files for hybrid editing workflows
-- Version-control boundaries
+- Version control best practices
   (e.g., do not commit rendered artifacts that are generated only for preview/review)
 - Repository-specific best practices
 
