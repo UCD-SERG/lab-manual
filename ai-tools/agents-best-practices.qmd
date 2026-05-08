@@ -46,8 +46,8 @@ UC Davis Student Affairs also provides guidance on the
 That page provides UC Davis-specific guidance on AI tool selection,
 campus training,
 and careful handling of sensitive data.
-Those recommendations fit well with the lab practices in this chapter,
-especially careful validation,
+Their recommendations, like ours, include
+careful validation,
 active supervision,
 and protection of confidential information.
 :::
