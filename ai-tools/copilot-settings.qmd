@@ -39,6 +39,11 @@ The available models as of early 2026 include:
 
 **OpenAI GPT Models:**
 
+`Codex` refers to OpenAI models tuned for software development tasks.
+In GitHub Copilot model names,
+the `-Codex` suffix indicates code-focused variants
+intended for code generation and editing workflows.
+
 - **GPT-5.2-Codex**: Specialized for code generation
   - *Pros*: Strong code completion, good at common patterns
   - *Cons*: May hallucinate package names or APIs
