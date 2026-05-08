@@ -54,6 +54,10 @@ The available models as of early 2026 include:
   - *Cons*: Fragmented options can be confusing
   - *When to use*: Specific scenarios where variant optimizations matter
 
+#### Connecting Positron Assistant to OpenAI
+
+{{< include ai-tools/copilot-settings/connecting-positron-to-openai.qmd >}}
+
 **Google Gemini Models:**
 
 - **Gemini 2.5 Pro**: High-capability model
