@@ -56,27 +56,7 @@ The available models as of early 2026 include:
 
 #### Connecting Positron Assistant to OpenAI
 
-If you are using Positron Assistant with OpenAI models,
-set up an OpenAI API key first.
-
-1. Go to the [OpenAI API keys page](https://platform.openai.com/api-keys).
-2. Sign in, choose or create the correct project, and select **Create new secret key**.
-3. Copy the key immediately and store it in a secure password manager.
-4. In Positron, open the Command Palette with `Cmd+Shift+P`
-   (or `Ctrl+Shift+P` on Windows/Linux).
-5. Run `Positron Assistant: Configure Language Model Providers`.
-6. Select **OpenAI**, paste your API key, and complete sign-in.
-
-Positron documentation states that OpenAI is enabled by default.
-If OpenAI does not appear as a provider,
-update Positron and confirm
-`positron.assistant.provider.openAI.enable`
-is not disabled.
-
-Sources:
-[Positron Assistant setup](https://positron.posit.co/assistant-getting-started.html),
-[OpenAI API key help](https://help.openai.com/en/articles/4936850-where-do-i-find-my-openai-api-key),
-[OpenAI quickstart](https://developers.openai.com/api/docs/quickstart).
+{{< include ai-tools/copilot-settings/connecting-positron-to-openai.qmd >}}
 
 **Google Gemini Models:**
 
