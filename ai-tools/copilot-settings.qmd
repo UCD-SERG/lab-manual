@@ -40,14 +40,16 @@ The available models as of early 2026 include:
 **OpenAI GPT Models:**
 
 As of 2026-05-08,
-ChatGPT Codex is available at
+OpenAI points users to ChatGPT Codex at
 [`chatgpt.com/codex`](https://chatgpt.com/codex/).
-That URL is the main web entry point for Codex.
-For practical setup steps,
-see the OpenAI quickstart guide:
+The OpenAI quickstart describes Codex as an agent-oriented coding workflow
+available through an IDE extension
+that can read files, run commands, and write changes,
+and it links to a dedicated Codex app for local projects:
 [OpenAI Codex quickstart guide](https://developers.openai.com/codex/quickstart).
-For additional background,
-Wikipedia describes Codex as an AI coding agent by OpenAI:
+For additional background and platform context,
+Wikipedia describes Codex as an AI coding agent by OpenAI,
+including desktop app availability on Windows and macOS:
 [Codex (AI agent)](https://en.wikipedia.org/wiki/Codex_(AI_agent)).
 In the GitHub Copilot model names shown below,
 the `-Codex` suffix identifies code-specialized variants
