@@ -43,9 +43,9 @@ To work with coding agents safely and successfully:
 
 UC Davis Student Affairs also provides guidance on the
 [Responsible Use of Artificial Intelligence (AI)](https://studentaffairs.ucdavis.edu/news/responsible-use-artificial-intelligence-ai).
-That page emphasizes using institution-approved AI tools for university business,
-completing campus AI training,
-and avoiding sensitive data in AI systems.
+That page provides UC Davis-specific guidance on AI tool selection,
+campus training,
+and careful handling of sensitive data.
 Those recommendations fit well with the lab practices in this chapter,
 especially careful validation,
 active supervision,
