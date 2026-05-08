@@ -38,6 +38,16 @@ To work with coding agents safely and successfully:
    Regularly write code yourself to maintain and develop your skills.
    Don't let the agent do everything.
 
+UC Davis Student Affairs also provides guidance on the
+[Responsible Use of Artificial Intelligence (AI)](https://studentaffairs.ucdavis.edu/news/responsible-use-artificial-intelligence-ai).
+That page emphasizes using institution-approved AI tools for university business,
+completing campus AI training,
+and avoiding sensitive data in AI systems.
+Those recommendations fit well with the lab practices in this chapter,
+especially careful validation,
+active supervision,
+and protection of confidential information.
+
 ::: {.callout-warning}
 #### Critical: Exercise Extreme Caution with Workflow Files
 
