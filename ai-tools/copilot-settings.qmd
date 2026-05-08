@@ -40,8 +40,10 @@ The available models as of early 2026 include:
 **OpenAI GPT Models:**
 
 As of 2026-05-08,
-based on the Copilot model names shown below,
-we use `Codex` to refer to entries with the `-Codex` suffix
+ChatGPT Codex is available at
+[`chatgpt.com/codex`](https://chatgpt.com/codex/).
+In the GitHub Copilot model names shown below,
+the `-Codex` suffix identifies Codex-labeled variants
 (for example, `GPT-5.2-Codex` and `GPT-5-Codex`).
 
 - **GPT-5.2-Codex**: Specialized for code generation
