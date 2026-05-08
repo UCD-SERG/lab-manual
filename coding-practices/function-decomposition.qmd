@@ -14,6 +14,7 @@ Key goals of decomposition include:
 Consider decomposition when one or more of these are true:
 
 - A function is doing multiple jobs (validation, transformation, modeling, and formatting)
+- Most of the function body is a single `if`-`else`; split the two cases into separate functions so each path has a clear name and contract
 - You need comments to explain every few lines just to follow the logic
 - You are repeating the same block in multiple places
 - You want to test one part of a workflow independently of the rest
