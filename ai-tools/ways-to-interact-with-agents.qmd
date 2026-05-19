@@ -1,0 +1,36 @@
+You can ask for similar coding work through different interfaces,
+but the trade-offs are different.
+The main differences are where the agent runs,
+how much repository context it can access,
+and how directly it can apply changes.
+
+- **Cloud coding agents (GitHub Issues/PR workflow)**:
+  Best for larger,
+  asynchronous tasks.
+  The agent runs in a managed cloud environment,
+  works through an issue,
+  and proposes changes in a pull request for review.
+- **CLI agents (terminal-first workflows)**:
+  Best for rapid,
+  local iteration.
+  You stay close to shell tools and local files,
+  with faster back-and-forth for debugging,
+  refactoring,
+  and test-driven edits.
+- **Chat/app agents (for example Claude or Codex-style chat interfaces)**:
+  Best for planning,
+  design discussion,
+  and drafting code ideas.
+  They can be very strong thought partners,
+  but often need more manual copy/edit/execute steps unless tightly integrated with your repository tools.
+- **IDE-integrated agents**:
+  Best for mixed human+agent editing.
+  They combine conversational help with direct file edits,
+  code navigation,
+  and in-editor testing loops.
+
+In practice,
+teams often combine these modes:
+use app or IDE chat to refine requirements,
+then hand implementation to a cloud or CLI agent,
+and finish with human review in a pull request.
