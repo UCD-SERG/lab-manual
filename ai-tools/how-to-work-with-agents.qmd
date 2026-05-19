@@ -22,7 +22,7 @@ and how directly it can apply changes.
   with faster back-and-forth for debugging,
   refactoring,
   and test-driven edits.
-- **Chat/app agents (for example Claude or Codex app experiences)**:
+- **Chat/app agents (for example Claude or Codex-style chat interfaces)**:
   Best for planning,
   design discussion,
   and drafting code ideas.
