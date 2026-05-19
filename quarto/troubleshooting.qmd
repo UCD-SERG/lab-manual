@@ -1,5 +1,6 @@
 When encountering issues with Quarto,
-the official [Quarto Troubleshooting Guide](https://quarto.org/docs/troubleshooting/) provides comprehensive diagnostic tools and strategies.
+the official [Quarto Troubleshooting Guide](https://quarto.org/docs/troubleshooting/)
+provides comprehensive diagnostic tools and strategies.
 This section summarizes key troubleshooting approaches.
 
 ### Checking Your Setup
@@ -98,7 +99,9 @@ quarto install tinytex
 If Quarto finds the wrong R or Python installation,
 use `quarto check` output to verify which installation Quarto is using.
 For R,
-you can render a diagnostic document with `sessionInfo()` to compare Quarto's environment with your interactive R session.
+you can render a diagnostic document
+with `sessionInfo()`
+to compare Quarto's environment with your interactive R session.
 
 ### Advanced Troubleshooting
 

@@ -20,12 +20,13 @@
 
 {{< include quarto/advanced-features.qmd >}}
 
-## Troubleshooting
-
-{{< include quarto/troubleshooting.qmd >}}
 ## Mermaid Diagrams
 
 {{< include quarto/mermaid-diagrams.qmd >}}
+
+## Troubleshooting
+
+{{< include quarto/troubleshooting.qmd >}}
 
 ## Additional Resources
 
