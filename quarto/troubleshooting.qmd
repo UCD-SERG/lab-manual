@@ -117,3 +117,4 @@ which covers:
 
 When seeking help on the [Quarto issue tracker](https://github.com/quarto-dev/quarto-cli/issues),
 include diagnostic information from `quarto check` and relevant log files.
+

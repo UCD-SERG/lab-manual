@@ -329,8 +329,12 @@ run_doi_validation <- function() {
   
   # Parse arguments
   no_metadata_check <- "--no-metadata-check" %in% args
-  files <- args[!grepl("^--", args)]
-  
+  files_raw <- args[!grepl("^--", args)]
+  # Handle the case where all file paths are passed as a single space-separated
+  # argument (e.g., via "$BIB_FILES" in a shell script)
+  files <- unlist(strsplit(paste(files_raw, collapse = " "), "\\s+"))
+  files <- files[nchar(trimws(files)) > 0]
+
   if (length(files) == 0) {
     cat("Usage: check-bibliography-dois.R [--no-metadata-check] <file1.bib> [file2.bib ...]\n")
     quit(status = 1)
