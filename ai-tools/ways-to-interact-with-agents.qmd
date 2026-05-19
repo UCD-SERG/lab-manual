@@ -6,7 +6,11 @@ and how directly it can apply changes.
 
 - **Cloud coding agents (GitHub Issues/PR workflow)**:
   Best for larger,
-  asynchronous tasks.
+  asynchronous tasks
+  (for example,
+  multi-file refactoring,
+  dependency updates,
+  or documentation changes spanning several chapters).
   The agent runs in a managed cloud environment,
   works through an issue,
   and proposes changes in a pull request for review.
