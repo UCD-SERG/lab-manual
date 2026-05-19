@@ -39,7 +39,7 @@ quarto render document.qmd
 
 Or pass at command line (all platforms):
 
-```bash
+```
 quarto render document.qmd --log-level debug
 ```
 
@@ -48,7 +48,7 @@ quarto render document.qmd --log-level debug
 On Unix-like systems (macOS, Linux):
 
 ```bash
-export QUARTO_PRINT_STACK=true
+export QUARTO_PRINT_STACK="true"
 quarto render document.qmd
 ```
 
