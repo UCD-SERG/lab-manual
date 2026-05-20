@@ -1,9 +1,15 @@
 
-GitHub Copilot coding agents can be used in several ways to automate development tasks:
+Coding agents can be accessed through several interfaces,
+each with different trade-offs for task size,
+feedback speed,
+and collaboration style.
 
 #### Ways to interact with coding agents
 
 {{< include ai-tools/ways-to-interact-with-agents.qmd >}}
+
+The following sections focus on GitHub Copilot's specific workflow
+for assigning and managing coding tasks.
 
 #### Assigning Issues to Copilot
 
