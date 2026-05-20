@@ -139,8 +139,9 @@ including internal helpers that only your other package functions call.
 The question is *how* the documentation is exposed,
 not whether it exists.
 
-Two roxygen tags hide a function from the package's public surface,
-and they behave differently:
+A helper is kept internal by omitting `@export` (which keeps it out of `NAMESPACE`).
+Once the function is non-exported, two roxygen tags control how its documentation
+is generated and indexed, and they behave differently:
 
 | Tag                  | Generates an `.Rd` file? | Appears in pkgdown reference index? | Accessible via `?pkg:::fn`? |
 |----------------------|:------------------------:|:------------------------------------:|:----------------------------:|
