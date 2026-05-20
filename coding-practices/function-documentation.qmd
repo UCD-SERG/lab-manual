@@ -132,6 +132,51 @@ it may be clearer to list them explicitly rather than using `...`
 For more details on `@inheritDotParams`,
 see the [roxygen2 documentation on inheriting parameters](https://roxygen2.r-lib.org/articles/rd.html#inheriting-documentation).
 
+### Documenting internal helpers: `@keywords internal` over `@noRd`
+
+Document every function you write,
+including internal helpers that only your other package functions call.
+The question is *how* the documentation is exposed,
+not whether it exists.
+
+Two roxygen tags hide a function from the package's public surface,
+and they behave differently:
+
+| Tag                  | Generates an `.Rd` file? | Appears in pkgdown reference index? | Accessible via `?pkg:::fn`? |
+|----------------------|:------------------------:|:------------------------------------:|:----------------------------:|
+| `@noRd`              | No                       | No                                   | No                           |
+| `@keywords internal` | Yes                      | No                                   | Yes                          |
+
+**Prefer `@keywords internal` for any helper that isn't part of the
+package's public API.**
+You still get a real `.Rd` file —
+so future maintainers (or future-you) can `?internal_helper` and see
+the documentation —
+but the function stays out of the pkgdown reference and the package's
+main help page.
+
+`@noRd` is for cases where you genuinely don't want documentation to
+exist at all
+(e.g., a one-line internal shim where the docstring would be longer than
+the function).
+Reach for it sparingly.
+
+**Example:**
+
+```r
+#' Compute the per-row score
+#'
+#' Internal worker for [public_summary()].
+#'
+#' @param row a one-row data frame.
+#' @returns a numeric scalar.
+#'
+#' @keywords internal
+score_one_row <- function(row) {
+  ...
+}
+```
+
 ::: {.callout-note}
 As someone trying to call a function, it is possible to access a function's documentation (and internal code) by `CMD-Left-Click`ing the function's name in RStudio
 :::
