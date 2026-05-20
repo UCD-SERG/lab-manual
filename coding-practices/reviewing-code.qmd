@@ -78,6 +78,43 @@ It's usually best to do refactorings in a separate PR from feature changes or bu
 
 Small cleanups (like fixing a local variable name) can be included in a feature change or bug fix PR, but large refactorings should be separate.
 
+### Deferring Out-of-Scope Review Concerns
+
+PR reviews sometimes surface valid concerns that fall outside the scope of the current PR—for example, because addressing them would substantially expand the PR's size, or because there is pressure to merge quickly (to unblock dependent work, meet a deadline, or cut a release).
+
+In these cases, the PR author can **defer the concern to a future PR** by opening a new GitHub issue to track it. This approach keeps the current PR focused while ensuring the reviewer's feedback is not lost.
+
+#### When to defer
+
+- The concern is valid but would take the PR well beyond its original purpose
+- Addressing it would significantly increase the PR's size or complexity, making review harder
+- There is time pressure to merge the current PR
+- The concern applies to a broader pattern in the codebase that would be better addressed systematically
+
+#### How to defer
+
+1. **Acknowledge** the reviewer's concern in your reply—make it clear you understand the point and consider it worth acting on.
+2. **Create a new GitHub issue** that captures the concern with enough detail to stand on its own, without needing to reference the PR discussion. Include:
+   - A clear description of the problem or improvement
+   - The relevant file(s) or function(s) affected
+   - Any constraints or context raised in the review that would be useful to have when the issue is eventually addressed
+3. **Link the new issue in your reply** to the reviewer, so they can confirm their concern has been recorded and will not be forgotten. For example:
+
+   > Thanks for catching this—you're right that the function should validate its inputs more defensively. I'd prefer to keep this PR focused on the bug fix. I've opened #456 to track the input validation improvements. Does that work for you?
+
+4. **Ask for the reviewer's buy-in** when the concern is significant. It is courteous to check whether the reviewer is comfortable approving the PR given that the issue will be addressed separately, rather than assuming they are.
+
+Linking the new issue in your reply serves two purposes: it demonstrates to the reviewer that their concern won't be dropped, and it gives them a chance to subscribe to the issue if they want to stay informed.
+
+#### Guidance for reviewers
+
+If a PR author proposes to defer one of your concerns, verify that the new issue:
+
+- Captures the concern clearly enough to be actionable in the future, without requiring anyone to re-read the PR discussion
+- Will realistically be addressed (e.g., it is assigned, labeled, or added to a milestone)
+
+It is entirely reasonable to request that a new issue be created and linked *before* you approve the PR, particularly if the deferred concern touches correctness, security, or other high-stakes areas.
+
 ## Reviewing Pull Requests
 
 ### Purpose of Code Review
