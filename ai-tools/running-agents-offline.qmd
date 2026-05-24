@@ -20,11 +20,19 @@ Use local models when network access or data-privacy policies require it.
 
 #### Running a Local Model with Ollama
 
-[Ollama](https://ollama.com) is the most common way to run open-weight AI models locally.
+[Ollama](https://ollama.com) is a common way to run open-weight AI models locally.
 It packages models and a simple API server into a single tool
 and is available for macOS, Linux, and Windows.
 
 **Install Ollama:**
+
+::: {.callout-caution}
+Before running any remote install script, review it first:
+`curl -fsSL https://ollama.com/install.sh | less`.
+Alternatively, use your system package manager (e.g., `brew install ollama` on macOS)
+or follow the manual installation steps on the
+[Ollama releases page](https://github.com/ollama/ollama/releases).
+:::
 
 ```bash
 # macOS / Linux (one-liner from ollama.com)
@@ -101,10 +109,13 @@ A useful pattern:
 2. **Start Ollama on a compute node** (or an interactive session)
    using the pre-downloaded model files—no internet required.
 
-3. **Forward the port** to your local machine to use your editor's Ollama integration:
+3. **Forward the port** to your local machine to use your editor's Ollama integration.
+   Because Ollama is running on a compute node (e.g., `gpu-node-01`),
+   forward through the login node to that specific host:
 
    ```bash
-   ssh -L 11434:localhost:11434 user@cluster.example.edu
+   # Replace gpu-node-01 with your actual compute node hostname
+   ssh -L 11434:gpu-node-01:11434 user@cluster.example.edu
    ```
 
    Then configure your editor to use `http://localhost:11434/v1` as the base URL.
@@ -115,7 +126,7 @@ A useful pattern:
 If running Ollama on a SLURM-managed cluster,
 request a GPU node with enough VRAM for your chosen model
 and load any required CUDA modules before starting `ollama serve`.
-See the [SLURM chapter](slurm.qmd) for guidance on requesting GPU resources.
+See @sec-slurm for guidance on requesting GPU resources.
 :::
 
 #### Privacy Considerations
