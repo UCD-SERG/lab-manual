@@ -72,6 +72,10 @@ to [help you code](https://en.wikipedia.org/wiki/AI-assisted_software_developmen
 
 {{< include ai-tools/agents-firewall-config.qmd >}}
 
+### Running Coding Agents Offline {#sec-ai-offline}
+
+{{< include ai-tools/running-agents-offline.qmd >}}
+
 ### Configuring GitHub Copilot Settings {#sec-ai-copilot-settings}
 
 {{< include ai-tools/copilot-settings.qmd >}}
