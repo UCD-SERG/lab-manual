@@ -151,7 +151,7 @@ is generated and indexed, and they behave differently:
 **Prefer `@keywords internal` for any helper that isn't part of the
 package's public API.**
 You still get a real `.Rd` file —
-so future maintainers (or future-you) can `?internal_helper` and see
+so future maintainers (or future-you) can run `?pkg:::internal_helper` and see
 the documentation —
 but the function stays out of the pkgdown reference and the package's
 main help page.
@@ -169,8 +169,8 @@ Reach for it sparingly.
 #'
 #' Internal worker for [public_summary()].
 #'
-#' @param row a one-row data frame.
-#' @returns a numeric scalar.
+#' @param row A one-row data frame.
+#' @returns A numeric scalar.
 #'
 #' @keywords internal
 score_one_row <- function(row) {
