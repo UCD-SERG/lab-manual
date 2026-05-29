@@ -123,6 +123,10 @@ Detailed instructions [here.](https://docs.github.com/en/enterprise/2.13/user/ar
 
 If your R package is intended for public distribution, you may want to release it on [CRAN](https://cran.r-project.org/) (the Comprehensive R Archive Network). This section summarizes the release process and adds lab-specific guidance on versioning and tagging. For full details, see the [R Packages book chapter on releasing to CRAN](https://r-pkgs.org/release.html) by Hadley Wickham and Jennifer Bryan.
 
+The diagram below illustrates the stages of the CRAN submission pipeline:
+
+![Stages of the CRAN submission pipeline. Source: [Edgar Ruiz, cran-stages](https://github.com/edgararuiz-zz/cran-stages).](https://raw.githubusercontent.com/edgararuiz-zz/cran-stages/master/cran-stages.png){fig-alt="A flowchart showing the stages that an R package goes through during CRAN submission, from initial submission through automated checks, human review, and final acceptance or rejection."}
+
 ### Versioning
 
 R package versions follow a `major.minor.patch` scheme (e.g., `1.2.3`). Use a fourth development component (e.g., `1.2.3.9000`) on the development version to distinguish it from the released version.
