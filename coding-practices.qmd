@@ -76,6 +76,10 @@
 
 {{< include coding-practices/integrating-box-dropbox.qmd >}}
 
+## r-lib Packages {#sec-r-lib-packages}
+
+{{< include coding-practices/r-lib-packages.qmd >}}
+
 ## Tidyverse {#sec-tidyverse}
 
 {{< include coding-practices/tidyverse.qmd >}}
