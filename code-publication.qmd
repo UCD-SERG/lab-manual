@@ -123,9 +123,8 @@ Detailed instructions [here.](https://docs.github.com/en/enterprise/2.13/user/ar
 
 If your R package is intended for public distribution, you may want to release it on [CRAN](https://cran.r-project.org/) (the Comprehensive R Archive Network). This section summarizes the release process and adds lab-specific guidance on versioning and tagging. For full details, see the [R Packages book chapter on releasing to CRAN](https://r-pkgs.org/release.html) by Hadley Wickham and Jennifer Bryan.
 
-The diagram below illustrates the stages of the CRAN submission pipeline:
-
-![Stages of the CRAN submission pipeline. Source: [Edgar Ruiz, cran-stages](https://github.com/edgararuiz-zz/cran-stages).](https://raw.githubusercontent.com/edgararuiz-zz/cran-stages/master/cran-stages.png){fig-alt="A flowchart showing the stages that an R package goes through during CRAN submission, from initial submission through automated checks, human review, and final acceptance or rejection."}
+The CRAN submission pipeline goes through several stages: initial upload, automated checks, human review by CRAN maintainers, and final acceptance or rejection.
+For a visual overview of the full pipeline, see the [CRAN stages diagram](https://github.com/edgararuiz-zz/cran-stages) by Edgar Ruiz.
 
 ### Versioning
 
@@ -154,8 +153,8 @@ Before submitting to CRAN, work through the following steps:
    ```
 
 4. **Test on multiple platforms**: CRAN requires packages to work across operating systems and R versions. Use the following to test on additional platforms:
-   - `devtools::check_win_devel()` — tests on Windows with the development version of R
-   - `rhub::check_for_cran()` — tests on multiple platforms via [R-hub](https://r-hub.github.io/rhub/)
+   - `devtools::check_win_devel()` - tests on Windows with the development version of R
+   - `rhub::check_for_cran()` - tests on multiple platforms via [R-hub](https://r-hub.github.io/rhub/)
 
 5. **Review CRAN policies**: Ensure your package complies with the [CRAN Repository Policy](https://cran.r-project.org/web/packages/policies.html).
 
