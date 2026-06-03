@@ -174,7 +174,7 @@ Reach for it sparingly.
 #'
 #' @keywords internal
 score_one_row <- function(row) {
-  ...
+  ### function code here
 }
 ```
 
