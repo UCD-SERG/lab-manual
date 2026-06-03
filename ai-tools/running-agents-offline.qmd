@@ -27,8 +27,10 @@ and is available for macOS, Linux, and Windows.
 **Install Ollama:**
 
 ::: {.callout-caution}
-Before running any remote install script, review it first:
-`curl -fsSL https://ollama.com/install.sh | less`.
+Before running any remote install script, review it first.
+Save it and open it in a pager (piping `curl` straight into `less` can behave
+oddly in some terminal emulators):
+`curl -fsSL https://ollama.com/install.sh -o install.sh && less install.sh`.
 Alternatively, use your system package manager (e.g., `brew install ollama` on macOS)
 or follow the manual installation steps on the
 [Ollama releases page](https://github.com/ollama/ollama/releases).
@@ -71,7 +73,8 @@ that Ollama exposes.
 1. Open the Command Palette with `Cmd+Shift+P` (macOS) or `Ctrl+Shift+P` (Windows/Linux).
 2. Run **Positron Assistant: Configure Language Model Providers**.
 3. Select **Ollama** (or **Custom/OpenAI-compatible** if Ollama is not listed).
-4. Set the base URL to `http://localhost:11434/v1` and leave the API key blank.
+4. Set the base URL to `http://localhost:11434/v1` and leave the API key blank,
+   or, if the client rejects an empty field, enter any placeholder value such as `ollama`.
 5. Choose your model from the model list (e.g., `qwen2.5-coder:7b`).
 
 Once configured, Positron Assistant will send requests to your local Ollama server
@@ -94,6 +97,20 @@ but routed entirely to your local model.
 
 Many HPC clusters do not have outbound internet access on compute nodes
 but do allow access on login nodes.
+
+::: {.callout-note}
+#### Install the Ollama binary on the cluster first
+Ollama must be installed on the cluster (on the host that will run `ollama serve`)
+before any of the steps below.
+On most HPC systems you do not have root access,
+so the `curl | sh` installer may fail or install to the wrong place.
+Instead, check whether your cluster already provides it (e.g., `module load ollama`),
+ask your HPC administrators,
+or download a static binary from the
+[Ollama releases page](https://github.com/ollama/ollama/releases)
+and place it on your `PATH`.
+:::
+
 A useful pattern:
 
 1. **Pre-pull models** on a login node or a machine with internet access,
@@ -105,6 +122,24 @@ A useful pattern:
    # Ollama stores models in ~/.ollama/models by default
    rsync -a ~/.ollama/ user@cluster.example.edu:~/.ollama/
    ```
+
+   ::: {.callout-warning}
+   #### Watch your home-directory quota
+   Model files are large—`qwen2.5-coder:7b` is ~4 GB and `qwen2.5-coder:32b`
+   is ~20 GB—and most HPC home directories have tight quotas (often 10–50 GB).
+   Filling your home directory can break other jobs.
+   Redirect model storage to a scratch or project filesystem with `OLLAMA_MODELS`
+   and rsync to that path instead:
+
+   ```bash
+   # Store models outside your home directory (recommended on HPC)
+   export OLLAMA_MODELS=/scratch/$USER/ollama-models
+   rsync -a ~/.ollama/models/ user@cluster.example.edu:/scratch/$USER/ollama-models/
+   ```
+
+   Set the same `OLLAMA_MODELS` value before running `ollama serve` so the server
+   finds the models.
+   :::
 
 2. **Start Ollama on a compute node** (or an interactive session)
    using the pre-downloaded model files—no internet required.
@@ -122,6 +157,18 @@ A useful pattern:
    # Replace gpu-node-01 with your actual compute node hostname
    ssh -L 11434:gpu-node-01:11434 user@cluster.example.edu
    ```
+
+   This terminal must stay open for as long as you use the editor's Ollama
+   integration—closing it tears down the tunnel and silently drops the
+   connection. Alternatively, start the tunnel in the background (non-interactive)
+   so it does not occupy a terminal:
+
+   ```bash
+   ssh -N -f -L 11434:gpu-node-01:11434 user@cluster.example.edu
+   ```
+
+   (`-N` runs no remote command, `-f` backgrounds ssh after authenticating;
+   stop it later with `kill` or `pkill -f 11434:gpu-node-01`.)
 
    Then configure your editor to use `http://localhost:11434/v1` as the base URL.
 
