@@ -10,8 +10,10 @@ when working with sensitive or confidential data.
 ::: {.callout-note}
 #### Trade-offs of Local vs. Cloud Models
 
-Local models require significant hardware (typically a GPU with ≥8 GB VRAM),
-are generally less capable than frontier cloud models,
+Local models work best with a GPU (≥8 GB VRAM for smaller models);
+CPU-only inference is possible but significantly slower,
+and hardware needs vary with model size and quantization.
+They are generally less capable than frontier cloud models,
 and may produce lower-quality results on complex tasks.
 For routine work in fully connected environments,
 cloud-based agents remain the better choice.
@@ -37,8 +39,8 @@ or follow the manual installation steps on the
 :::
 
 ```bash
-# macOS / Linux (one-liner from ollama.com)
-curl -fsSL https://ollama.com/install.sh | sh
+# macOS / Linux: download first, review it (see caution above), then run
+curl -fsSL https://ollama.com/install.sh -o install.sh && sh install.sh
 ```
 
 On Windows, download the installer from <https://ollama.com/download>.
@@ -171,8 +173,12 @@ A useful pattern:
    ssh -N -f -L 11434:gpu-node-01:11434 user@cluster.example.edu
    ```
 
-   (`-N` runs no remote command, `-f` backgrounds ssh after authenticating;
-   stop it later with `kill` or `pkill -f 11434:gpu-node-01`.)
+   (`-N` runs no remote command, `-f` backgrounds ssh after authenticating.)
+   To stop the tunnel later, match the full SSH command rather than a bare
+   port string—`pkill -f "ssh.*-N.*11434:gpu-node-01"`—so you don't
+   accidentally kill unrelated processes whose command line happens to contain
+   that port. Safer still, note the PID when you start it
+   (`pgrep -f "11434:gpu-node-01"`) and `kill` that PID directly.
 
    Then configure your editor to use `http://localhost:11434/v1` as the base URL.
 
