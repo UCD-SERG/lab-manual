@@ -142,9 +142,9 @@ Before submitting to CRAN, work through the following steps:
 
 1. **Update `NEWS.md`**: Document all changes since the last release in `NEWS.md`. Use `usethis::use_news_md()` to create this file if it doesn't exist. Each release should have a top-level heading (e.g., `# mypackage 1.2.0`).
 
-2. **Run `devtools::check()`**: Ensure your package passes `R CMD CHECK` with no errors, warnings, or notes. Address any issues before submitting.
+2. **Run `devtools::check()`**: Ensure your package passes `R CMD CHECK` with no errors, warnings, or notes. Use `cran = TRUE` to enable the stricter checks that more closely mirror what CRAN runs. Address any issues before submitting.
    ```r
-   devtools::check()
+   devtools::check(cran = TRUE)
    ```
 
 3. **Check spelling**: Run `devtools::spell_check()` to catch typos in documentation.
@@ -152,11 +152,16 @@ Before submitting to CRAN, work through the following steps:
    devtools::spell_check()
    ```
 
-4. **Test on multiple platforms**: CRAN requires packages to work across operating systems and R versions. Use the following to test on additional platforms:
-   - `devtools::check_win_devel()` - tests on Windows with the development version of R
-   - `rhub::check_for_cran()` - tests on multiple platforms via [R-hub](https://r-hub.github.io/rhub/)
+4. **Check URLs**: Run `urlchecker::url_check()` to catch broken or redirected URLs in your documentation, which CRAN flags.
+   ```r
+   urlchecker::url_check()
+   ```
 
-5. **Review CRAN policies**: Ensure your package complies with the [CRAN Repository Policy](https://cran.r-project.org/web/packages/policies.html).
+5. **Test on multiple platforms**: CRAN requires packages to work across operating systems and R versions. Use the following to test on additional platforms:
+   - `devtools::check_win_devel()` - tests on Windows with the development version of R
+   - [R-hub](https://github.com/r-hub/rhub) - tests on a wide range of platforms. As of rhub v2 this runs via GitHub Actions: run `rhub::rhub_setup()` once to add the workflow to your repository, then `rhub::rc_submit()` to trigger a check run. (The older `rhub::check_for_cran()` function was removed in the v2 rewrite.)
+
+6. **Review CRAN policies**: Ensure your package complies with the [CRAN Repository Policy](https://cran.r-project.org/web/packages/policies.html).
 
 ### Submitting to CRAN
 
@@ -168,7 +173,7 @@ devtools::submit_cran()
 
 This bundles your package and uploads it to CRAN's submission portal. You will receive an email asking you to confirm the submission. CRAN maintainers typically review submissions within a few days to a few weeks.
 
-In your submission comments (prompted by `devtools::submit_cran()`), briefly describe any `R CMD CHECK` notes and explain why they are acceptable. Be concise and factual.
+On the CRAN web submission form that `devtools::submit_cran()` opens, briefly describe any `R CMD CHECK` notes in the submission comments and explain why they are acceptable. Be concise and factual.
 
 For first-time submissions, also check the [new submission checklist](https://r-pkgs.org/release.html#sec-release-initial) in the R Packages book for additional requirements.
 
@@ -176,22 +181,15 @@ For first-time submissions, also check the [new submission checklist](https://r-
 
 Once CRAN accepts your package:
 
-1. **Tag the release in git**: Create an annotated git tag for the released version. Use the convention `v` followed by the version number (e.g., `v1.2.0`):
-   ```bash
-   git tag -a v1.2.0 -m "Release version 1.2.0"
-   git push origin v1.2.0
-   ```
-   Tags permanently mark the exact commit that was released, making it easy to return to or compare against any released version.
+1. **Tag the release and create a GitHub release**: Follow the steps in the [Create Github release](#create-github-release) section above, using an annotated tag named `v` followed by the version number (e.g., `v1.2.0`). Copy the relevant section of `NEWS.md` as the release notes. Tags permanently mark the exact commit that was released, making it easy to return to or compare against any released version.
 
-2. **Create a GitHub release**: On GitHub, navigate to **Releases → Draft a new release**, select the tag you just pushed, and publish a release. Copy the relevant section of `NEWS.md` as the release notes. GitHub releases make it easy for users to download source archives and review the changelog.
-
-3. **Bump the development version**: After releasing, increment the patch version and add the `.9000` development suffix in `DESCRIPTION`:
+2. **Bump the development version**: After releasing, increment the patch version and add the `.9000` development suffix in `DESCRIPTION`:
    ```r
    usethis::use_version("dev")
    ```
    For example, after releasing `1.2.0`, the `DESCRIPTION` version becomes `1.2.0.9000`. This signals to contributors that the repository reflects development work toward the next release.
 
-4. **Commit the version bump**: Stage and commit the updated `DESCRIPTION` (and `NEWS.md` if you added a `# mypackage (development version)` header):
+3. **Commit the version bump**: Stage and commit the updated `DESCRIPTION` (and `NEWS.md` if you added a `# mypackage (development version)` header):
    ```bash
    git add DESCRIPTION NEWS.md
    git commit -m "Start development toward next release (1.2.0.9000)"
