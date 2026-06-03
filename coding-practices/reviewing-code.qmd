@@ -78,6 +78,31 @@ It's usually best to do refactorings in a separate PR from feature changes or bu
 
 Small cleanups (like fixing a local variable name) can be included in a feature change or bug fix PR, but large refactorings should be separate.
 
+## Responding to Pull Request Reviews
+
+Once you receive a PR review from a human, you are obligated to respond promptly—typically within a week, unless there are extenuating circumstances.
+
+### Address All Review Comments
+
+You should address each reviewer's comments individually. You aren't obligated to agree with all review comments; you are entitled to:
+
+- Ask clarifying questions
+- Raise objections
+- Ask to defer issues to subsequent PRs
+
+### Deferring Issues
+
+If you want to defer an issue to a future PR:
+
+1. Create an Issue to track it.
+2. Either assign it to yourself or delegate it, if applicable.
+3. Reply to the reviewer's comment and include a link to the tracking Issue,
+   so the reviewer can see that you are taking their concern seriously.
+
+### Avoid Closing and Restarting PRs
+
+Avoid closing PRs and "starting over" on the same issue. Doing so disrupts the conversation between authors and reviewers, creates confusion, and leads to repeated work.
+
 ## Reviewing Pull Requests
 
 ### Purpose of Code Review
