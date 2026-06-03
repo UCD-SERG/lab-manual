@@ -76,6 +76,22 @@ This practice is also known as [semantic line breaks](https://sembr.org/).
 
 - For `ggplot` calls and `dplyr` pipelines, do not crowd single lines. Here are some nontrivial examples of "beautiful" pipelines, where beauty is defined by coherence:
 
+- For `ggplot` calls,
+  do not nest `aes()` inside the `ggplot()` call.
+  Instead, add `aes()` as a separate layer using `+`.
+  This makes it easier to read, move, and modify the aesthetics independently.
+
+```r
+# Avoid: aes() nested inside ggplot()
+ggplot(data, aes(x = year, y = value, color = group)) +
+  geom_point()
+
+# Prefer: aes() as a separate layer
+ggplot(data) +
+  aes(x = year, y = value, color = group) +
+  geom_point()
+```
+
 ```r
 # Example 1
 school_names = list(

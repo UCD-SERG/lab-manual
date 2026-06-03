@@ -26,4 +26,41 @@ lubridate::NA_Date_        # instead of as.Date(NA)
 sessioninfo::session_info() # instead of sessionInfo()
 ```
 
+## Avoid Nested `if_else()` Calls {#sec-avoid-nested-if-else}
+
+Nested `if_else()` calls quickly become hard to read and maintain.
+Use the following alternatives instead:
+
+- **`dplyr::case_when()`**: for multiple conditional branches based on different logical expressions
+- **`dplyr::case_match()`**: for simple value replacement where one variable is matched against fixed values
+
+```r
+# Avoid: nested if_else()
+x <- if_else(
+  condition1,
+  value1,
+  if_else(
+    condition2,
+    value2,
+    if_else(condition3, value3, default_value)
+  )
+)
+
+# Prefer: case_when() for multiple conditions
+x <- case_when(
+  condition1 ~ value1,
+  condition2 ~ value2,
+  condition3 ~ value3,
+  .default = default_value
+)
+
+# Prefer: case_match() for simple value recoding
+y <- case_match(
+  z,
+  "old_value1" ~ "new_value1",
+  "old_value2" ~ "new_value2",
+  .default = z
+)
+```
+
 See also @sec-tidyverse.
