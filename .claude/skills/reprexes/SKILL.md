@@ -65,8 +65,9 @@ but nothing more.
    - the minimal code that triggers the phenomenon, with a comment marking
      where it goes wrong.
 3. **Run it in a clean session** and confirm it reproduces. For R, run with
-   `Rscript /tmp/reprex.R` (a fresh process — no stale `globalenv()` state
-   masking or faking the bug). For a Quarto page, render just that file:
+   `Rscript --vanilla /tmp/reprex.R` (a fresh process — `--vanilla` skips
+   `.Rprofile`/`.Renviron` so no stale `globalenv()` state or profile
+   settings mask or fake the bug). For a Quarto page, render just that file:
    `quarto render /tmp/reprex.qmd --to html`, not the whole site.
 4. **Minimize.** Remove pieces until the phenomenon disappears — the last
    removal that "fixes" it implicates that piece. (Or build up from nothing
@@ -96,7 +97,7 @@ but nothing more.
   session (via `callr` since reprex 2.0) and emits code **plus actual
   output**.
   Copy the code and call `reprex::reprex()` (reads the clipboard by default),
-  or point it at a file with `reprex(input = "/tmp/reprex.R")` (or a
+  or point it at a file with `reprex::reprex(input = "/tmp/reprex.R")` (or a
   `tempfile(fileext = ".R")` path on non-Unix machines) — handy from a
   non-interactive CLI session where there's no clipboard. Use it when the
   output is destined for a PR comment or an upstream issue. Useful arguments:
