@@ -28,8 +28,8 @@ and is available for macOS, Linux, and Windows.
 
 ::: {.callout-caution}
 Before running any remote install script, review it first.
-Save it and open it in a pager (piping `curl` straight into `less` can behave
-oddly in some terminal emulators):
+Instead of piping directly into `less` (which can behave oddly in some
+terminal emulators), save it first and then page it:
 `curl -fsSL https://ollama.com/install.sh -o install.sh && less install.sh`.
 Alternatively, use your system package manager (e.g., `brew install ollama` on macOS)
 or follow the manual installation steps on the
@@ -148,6 +148,10 @@ A useful pattern:
    ```bash
    OLLAMA_HOST=0.0.0.0:11434 ollama serve
    ```
+
+   If you are on a shared compute node, be aware that binding to `0.0.0.0`
+   exposes the Ollama port to other users on that host; most HPC clusters
+   grant exclusive node allocation, so this is rarely a concern in practice.
 
 3. **Forward the port** to your local machine to use your editor's Ollama integration.
    Because Ollama is running on a compute node (e.g., `gpu-node-01`),
