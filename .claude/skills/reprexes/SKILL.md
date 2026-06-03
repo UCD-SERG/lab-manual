@@ -114,15 +114,16 @@ but nothing more.
   - `std_out_err = TRUE` — capture stdout/stderr too (e.g. `system()` /
     subprocess or C-level output that doesn't come back as normal R results).
   - `wd =` — set the working directory when the code needs one.
-  - Validation bonus: because `reprex()` runs in a fresh session, if it errors
+  - Validation bonus: because `reprex::reprex()` runs in a fresh session, if it errors
     on a missing object or package, your example wasn't actually
     self-contained — fix that before sharing.
 
   Companion helpers handle "wild-caught" reprexes (all exported in reprex
-  2.x): `reprex_clean()` (strip the `#>` output markers from a rendered/pasted
-  reprex, leaving runnable code), `reprex_rescue()` (recover code from
-  R-console output with `>`/`+` prompts), and `reprex_invert()` (the inverse
-  of `reprex()` — recover the input code from a rendered reprex).
+  2.x): `reprex::reprex_clean()` (strip the `#>` output markers from a
+  rendered/pasted reprex, leaving runnable code), `reprex::reprex_rescue()`
+  (recover code from R-console output with `>`/`+` prompts), and
+  `reprex::reprex_invert()` (the inverse of `reprex::reprex()` — recover the
+  input code from a rendered reprex).
 - When the bug might be **version-dependent**, capture `sessionInfo()` (or set
   `session_info = TRUE` above) in the reprex so versions are part of the
   record. If you suspect *stale* packages are the cause,
