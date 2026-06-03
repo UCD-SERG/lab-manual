@@ -121,7 +121,11 @@ Detailed instructions [here.](https://docs.github.com/en/enterprise/2.13/user/ar
 
 ## Releasing to CRAN {#sec-cran-release}
 
-If your R package is intended for public distribution, you may want to release it on [CRAN](https://cran.r-project.org/) (the Comprehensive R Archive Network). This section summarizes the release process and adds lab-specific guidance on versioning and tagging. For full details, see the [R Packages book chapter on releasing to CRAN](https://r-pkgs.org/release.html) by Hadley Wickham and Jennifer Bryan.
+If your R package is intended for public distribution,
+you may want to release it on [CRAN](https://cran.r-project.org/) (the Comprehensive R Archive Network).
+This section summarizes the release process
+and adds lab-specific guidance on versioning and tagging.
+For full details, see the [R Packages book chapter on releasing to CRAN](https://r-pkgs.org/release.html) by Hadley Wickham and Jennifer Bryan.
 
 The CRAN submission pipeline goes through several stages: initial upload, automated checks, human review by CRAN maintainers, and final acceptance or rejection.
 For a visual overview of the full pipeline, see the [CRAN stages diagram](https://github.com/edgararuiz-zz/cran-stages) by Edgar Ruiz.
@@ -158,6 +162,7 @@ Before submitting to CRAN, work through the following steps:
    ```
 
 5. **Test on multiple platforms**: CRAN requires packages to work across operating systems and R versions. Use the following to test on additional platforms:
+
    - `devtools::check_win_devel()` - tests on Windows with the development version of R
    - [R-hub](https://github.com/r-hub/rhub) - tests on a wide range of platforms. As of rhub v2 this runs via GitHub Actions: run `rhub::rhub_setup()` once to add the workflow to your repository, then `rhub::rhub_check()` to trigger a check run. (The older `rhub::check_for_cran()` function was removed in the v2 rewrite.)
 
@@ -181,7 +186,12 @@ For first-time submissions, also check the [new submission checklist](https://r-
 
 Once CRAN accepts your package:
 
-1. **Tag the release and create a GitHub release**: Follow the steps in the [Create Github release](#create-github-release) section above, using an annotated tag named `v` followed by the version number (e.g., `v1.2.0`). Copy the relevant section of `NEWS.md` as the release notes. Tags permanently mark the exact commit that was released, making it easy to return to or compare against any released version.
+1. **Tag the release and create a GitHub release**:
+   Follow the steps in the [Create Github release](#create-github-release) section above,
+   using an annotated tag named `v` followed by the version number (e.g., `v1.2.0`).
+   Copy the relevant section of `NEWS.md` as the release notes.
+   Tags permanently mark the exact commit that was released,
+   making it easy to return to or compare against any released version.
 
 2. **Bump the development version**: After releasing, increment the patch version and add the `.9000` development suffix in `DESCRIPTION`:
    ```r
