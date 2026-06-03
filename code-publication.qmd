@@ -159,7 +159,7 @@ Before submitting to CRAN, work through the following steps:
 
 5. **Test on multiple platforms**: CRAN requires packages to work across operating systems and R versions. Use the following to test on additional platforms:
    - `devtools::check_win_devel()` - tests on Windows with the development version of R
-   - [R-hub](https://github.com/r-hub/rhub) - tests on a wide range of platforms. As of rhub v2 this runs via GitHub Actions: run `rhub::rhub_setup()` once to add the workflow to your repository, then `rhub::rc_submit()` to trigger a check run. (The older `rhub::check_for_cran()` function was removed in the v2 rewrite.)
+   - [R-hub](https://github.com/r-hub/rhub) - tests on a wide range of platforms. As of rhub v2 this runs via GitHub Actions: run `rhub::rhub_setup()` once to add the workflow to your repository, then `rhub::rhub_check()` to trigger a check run. (The older `rhub::check_for_cran()` function was removed in the v2 rewrite.)
 
 6. **Review CRAN policies**: Ensure your package complies with the [CRAN Repository Policy](https://cran.r-project.org/web/packages/policies.html).
 
