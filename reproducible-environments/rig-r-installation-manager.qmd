@@ -1,0 +1,39 @@
+[rig](https://github.com/r-lib/rig) is an R installation manager that makes it easy to install,
+manage, and switch between multiple versions of R on macOS, Windows, and Linux.
+
+When working across projects that require different R versions,
+or when you need to match a specific R version for reproducibility,
+`rig` provides a simple command-line interface to handle R version management.
+
+Key features:
+
+- **Multi-version support**: Install and switch between multiple R versions
+- **Cross-platform**: Works on macOS, Windows, and Linux
+- **Simple CLI**: Install a version with `rig add release`, list installed versions with `rig list`
+- **RStudio / Positron integration**: Registered R versions are automatically available in RStudio and Positron
+- **No admin rights required** (on macOS and Windows): installs R in user space
+
+**When to use rig:**
+
+- You need a specific older R version to reproduce results from a published analysis
+- You want to test code against multiple R versions
+- You are setting up a new machine and want a streamlined R installation process
+
+**Basic usage:**
+
+```bash
+# Install the latest release of R
+rig add release
+
+# Install a specific version
+rig add 4.3.3
+
+# List installed versions
+rig list
+
+# Switch the default R version
+rig default 4.3.3
+```
+
+For full installation instructions and documentation,
+see the [rig GitHub repository](https://github.com/r-lib/rig).

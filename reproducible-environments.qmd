@@ -74,3 +74,7 @@ If you're starting to work on an ongoing project that already has `renv` set up,
 
 {{< include reproducible-environments/docker-cache.qmd >}}
 
+## Managing R Versions with rig
+
+{{< include reproducible-environments/rig-r-installation-manager.qmd >}}
+
