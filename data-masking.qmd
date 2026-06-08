@@ -36,6 +36,44 @@ df |> mutate(outcome = as.factor(!!sym(var_name))
 
 While cleaner and often more convenient, the data frame that var_name is in is now "masked" and we refer to the vectors in the dataframe (data-variables) as though it is an object of its own (an environmental-variable). This is why we can just say the variable’s name in the context of a pipe – we treat it as though it’s an object defined in our environment. Within normal scripts, this is usually fine, because the data frame is "held on to" in the pipe. However, it can cause some programming hurdles when writing functions that take strings of variable/column names as arguments. In the next section, we briefly describe how to troubleshoot common errors in data masking, as relevant to our lab’s work.
 
+## Data masking vs. tidy selection {#sec-data-masking-vs-tidy-selection}
+
+Many `tidyverse` verbs use *two* different flavors of tidy evaluation, and the way you refer to a column stored in a string variable depends on which one you are in.
+
+- **Data-masking** contexts treat column names as values you compute *with*: `mutate()`, `filter()`, `summarize()`/`summarise()` (the summary expressions), `group_by()`, `arrange()`, and `aes()` in `ggplot2`.
+- **Tidy-selection** contexts treat column names as columns you *choose*: `select()`, `rename()`, `relocate()`, `pull()`, the `.cols` argument of `across()`, the `.by` argument of `mutate()`/`summarize()`, and the `cols`, `names_from`, `values_from`, and `id_cols` arguments of `tidyr::pivot_*()`.
+
+To refer to a column named by a string variable, use the tool that matches the context:
+
+| Context | Use | Avoid |
+|---------|-----|-------|
+| Data-masking | `!!sym(var)` or `.data[[var]]` | bare `var` (looks up an environment variable, not the column) |
+| Tidy-selection | `all_of(var)` / `any_of(var)` | the `.data` pronoun (`.data[[var]]`, `.data$col`) |
+
+Use `all_of()` when every selected name must exist (it errors if one is missing) and `any_of()` when names that are absent should simply be dropped.
+
+### The `.data` pronoun does not belong in tidy selection
+
+A common (and **silent**) mistake is reaching for the `.data` pronoun inside a tidy-selection context:
+
+```r
+# Soft-deprecated: .data used in selection contexts
+df |> select(.data$Subject, .data[[var]])
+df |> summarize(.by = c(.data$group), med = median(value))
+df |> tidyr::pivot_wider(names_from = .data$Parameter)
+```
+
+The `.data` pronoun is a *data-masking* tool, not a selection tool. Using it in a selection context was deprecated in `tidyselect` 1.2.0, but it is a **soft** deprecation: in installed-package code it usually emits *no warning at all*, so it slips past interactive use, CI, and code review unnoticed. Rewrite these with `all_of()`/`any_of()` and plain strings:
+
+```r
+# Idiomatic tidy selection
+df |> select(all_of(c("Subject", var)))
+df |> summarize(.by = all_of("group"), med = median(value))
+df |> tidyr::pivot_wider(names_from = "Parameter")
+```
+
+To make this class of soft deprecation fail loudly, set `options(lifecycle_verbosity = "error")` in your tests (for example in `tests/testthat/setup.R`). Plain `options(warn = 2)` will *not* catch it, because the warning is suppressed before it is ever signaled.
+
 ## Technical Overview
 
 This section covers the R functions and tools that we often use in the context of data masking, focusing on the bang bang operator (` !!`) with symbol coercion (` sym()`) and the Walrus operator (`:=`). 
