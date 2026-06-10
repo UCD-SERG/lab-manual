@@ -11,7 +11,7 @@ Adapted by UCD-SeRG team from [original by Nolan Pokpongkiat](https://jadebc.git
 5. [Ensure project runs via bash](#ensure-project-runs-via-bash)
 6. [Complete the README](#complete-the-readme)
 7. [Clean up feature branches](#clean-up-feature-branches)
-8. [Create Github release](#create-github-release)
+8. [Create GitHub release](#sec-create-github-release)
 
 ## Fill out file headers
 
@@ -111,11 +111,14 @@ When possible, also include a description of the RDS results that are generated,
 
 ## Clean up feature branches
 
-In the remote repository on Github, all feature branches aside from master should be merged in and deleted. All outstanding PRs should be closed.
+In the remote repository on GitHub, all feature branches aside from master should be merged in and deleted. All outstanding PRs should be closed.
 
-## Create Github release
+## Create GitHub release {#sec-create-github-release}
 
-Once all of these items are verified, create a tag to make a Github release, which will tag the repository, creating a marker at this specific point in time.
+Once all of these items are verified,
+create a tag to make a GitHub release,
+which will tag the repository,
+creating a marker at this specific point in time.
 
 Detailed instructions [here.](https://docs.github.com/en/enterprise/2.13/user/articles/creating-releases)
 
@@ -127,12 +130,18 @@ This section summarizes the release process
 and adds lab-specific guidance on versioning and tagging.
 For full details, see the [R Packages book chapter on releasing to CRAN](https://r-pkgs.org/release.html) by Hadley Wickham and Jennifer Bryan.
 
-The CRAN submission pipeline goes through several stages: initial upload, automated checks, human review by CRAN maintainers, and final acceptance or rejection.
-For a visual overview of the full pipeline, see the [CRAN stages diagram](https://github.com/edgararuiz-zz/cran-stages) by Edgar Ruiz.
+The CRAN submission pipeline goes through several stages:
+initial upload, automated checks,
+human review by CRAN maintainers,
+and final acceptance or rejection.
+For a visual overview of the full pipeline,
+see the [CRAN stages diagram](https://github.com/edgararuiz-zz/cran-stages) by Edgar Ruiz.
 
 ### Versioning
 
-R package versions follow a `major.minor.patch` scheme (e.g., `1.2.3`). Use a fourth development component (e.g., `1.2.3.9000`) on the development version to distinguish it from the released version.
+R package versions follow a `major.minor.patch` scheme (e.g., `1.2.3`).
+Use a fourth development component (e.g., `1.2.3.9000`) on the development version
+to distinguish it from the released version.
 
 - Increment the **patch** version (`1.2.3` → `1.2.4`) for bug fixes
 - Increment the **minor** version (`1.2.3` → `1.3.0`) for new features that are backward-compatible
@@ -144,9 +153,14 @@ Update the version in `DESCRIPTION` before each release.
 
 Before submitting to CRAN, work through the following steps:
 
-1. **Update `NEWS.md`**: Document all changes since the last release in `NEWS.md`. Use `usethis::use_news_md()` to create this file if it doesn't exist. Each release should have a top-level heading (e.g., `# mypackage 1.2.0`).
+1. **Update `NEWS.md`**: Document all changes since the last release in `NEWS.md`.
+   Use `usethis::use_news_md()` to create this file if it doesn't exist.
+   Each release should have a top-level heading (e.g., `# mypackage 1.2.0`).
 
-2. **Run `devtools::check()`**: Ensure your package passes `R CMD CHECK` with no errors, warnings, or notes. Use `cran = TRUE` to enable the stricter checks that more closely mirror what CRAN runs. Address any issues before submitting.
+2. **Run `devtools::check()`**: Ensure your package passes `R CMD CHECK`
+   with no errors, warnings, or notes.
+   Use `cran = TRUE` to enable the stricter checks that more closely mirror what CRAN runs.
+   Address any issues before submitting.
    ```r
    devtools::check(cran = TRUE)
    ```
@@ -156,17 +170,24 @@ Before submitting to CRAN, work through the following steps:
    devtools::spell_check()
    ```
 
-4. **Check URLs**: Run `urlchecker::url_check()` to catch broken or redirected URLs in your documentation, which CRAN flags.
+4. **Check URLs**: Run `urlchecker::url_check()` to catch broken or redirected URLs
+   in your documentation, which CRAN flags.
    ```r
    urlchecker::url_check()
    ```
 
-5. **Test on multiple platforms**: CRAN requires packages to work across operating systems and R versions. Use the following to test on additional platforms:
+5. **Test on multiple platforms**: CRAN requires packages to work across operating systems and R versions.
+   Use the following to test on additional platforms:
 
    - `devtools::check_win_devel()` - tests on Windows with the development version of R
-   - [R-hub](https://github.com/r-hub/rhub) - tests on a wide range of platforms. As of rhub v2 this runs via GitHub Actions: run `rhub::rhub_setup()` once to add the workflow to your repository, then `rhub::rhub_check()` to trigger a check run. (The older `rhub::check_for_cran()` function was removed in the v2 rewrite.)
+   - [R-hub](https://github.com/r-hub/rhub) - tests on a wide range of platforms.
+     In rhub v2, this runs via GitHub Actions:
+     run `rhub::rhub_setup()` once to add the workflow to your repository,
+     then `rhub::rhub_check()` to trigger a check run.
+     (The older `rhub::check_for_cran()` function was removed in the v2 rewrite.)
 
-6. **Review CRAN policies**: Ensure your package complies with the [CRAN Repository Policy](https://cran.r-project.org/web/packages/policies.html).
+6. **Review CRAN policies**: Ensure your package complies with the
+   [CRAN Repository Policy](https://cran.r-project.org/web/packages/policies.html).
 
 ### Submitting to CRAN
 
@@ -176,30 +197,42 @@ Once all checks pass, submit with:
 devtools::submit_cran()
 ```
 
-This bundles your package and uploads it to CRAN's submission portal. You will receive an email asking you to confirm the submission. CRAN maintainers typically review submissions within a few days to a few weeks.
+This bundles your package and uploads it to CRAN's submission portal.
+You will receive an email asking you to confirm the submission.
+CRAN maintainers typically review submissions within a few days to a few weeks.
 
-On the CRAN web submission form that `devtools::submit_cran()` opens, briefly describe any `R CMD CHECK` notes in the submission comments and explain why they are acceptable. Be concise and factual.
+On the CRAN web submission form that `devtools::submit_cran()` opens,
+briefly describe any `R CMD CHECK` notes in the submission comments
+and explain why they are acceptable.
+Be concise and factual.
 
-For first-time submissions, also check the [new submission checklist](https://r-pkgs.org/release.html#sec-release-initial) in the R Packages book for additional requirements.
+For first-time submissions,
+also check the [new submission checklist](https://r-pkgs.org/release.html#sec-release-initial) in the R Packages book
+for additional requirements.
 
 ### After CRAN Acceptance
 
 Once CRAN accepts your package:
 
 1. **Tag the release and create a GitHub release**:
-   Follow the steps in the [Create Github release](#create-github-release) section above,
+   Follow the steps in @sec-create-github-release,
    using an annotated tag named `v` followed by the version number (e.g., `v1.2.0`).
    Copy the relevant section of `NEWS.md` as the release notes.
    Tags permanently mark the exact commit that was released,
    making it easy to return to or compare against any released version.
 
-2. **Bump the development version**: After releasing, increment the patch version and add the `.9000` development suffix in `DESCRIPTION`:
+2. **Bump the development version**: After releasing,
+   append the `.9000` development suffix to the current version in `DESCRIPTION`:
    ```r
    usethis::use_version("dev")
    ```
-   For example, after releasing `1.2.0`, the `DESCRIPTION` version becomes `1.2.0.9000`. This signals to contributors that the repository reflects development work toward the next release.
+   For example, after releasing `1.2.0`,
+   the `DESCRIPTION` version becomes `1.2.0.9000`.
+   This signals to contributors that the repository reflects development work
+   toward the next release.
 
-3. **Commit the version bump**: Stage and commit the updated `DESCRIPTION` (and `NEWS.md` if you added a `# mypackage (development version)` header):
+3. **Commit the version bump**: Stage and commit the updated `DESCRIPTION`
+   (and `NEWS.md` if you added a `# mypackage (development version)` header):
    ```bash
    git add DESCRIPTION NEWS.md
    git commit -m "Start development toward next release (1.2.0.9000)"
