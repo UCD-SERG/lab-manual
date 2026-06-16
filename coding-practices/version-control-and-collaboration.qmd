@@ -9,7 +9,7 @@ Follow semantic versioning (MAJOR.MINOR.PATCH):
 - Breaking changes: increment MAJOR (e.g., `0.2.0` → `1.0.0`)
 
 ::: {.callout-important}
-## Keep the development version ahead
+#### Keep the development version ahead
 
 Always keep the development version ahead of the main branch version.
 When working on a development branch,
