@@ -21,7 +21,7 @@ supplies its **own** local exclusions:
 ```r
 # .lintr.R
 if (!requireNamespace("lms", quietly = TRUE)) {
-  stop(
+  stop(  # nolint: undesirable_function_linter. .lintr.R is config, not package code.
     "Package 'lms' is required to lint this project. Install it with:\n",
     "  install.packages('remotes')\n",
     "  remotes::install_github('UCD-SERG/lab-manual/lms@v0.1.0')",
@@ -46,6 +46,9 @@ Install `lms` in CI with an **explicit** step in the lint workflow, before linti
   shell: Rscript {0}
 ```
 
+For local linting, install `lms` once the same way:
+`remotes::install_github("UCD-SERG/lab-manual/lms@v0.1.0")`.
+
 ## Do NOT declare lms in DESCRIPTION
 
 `lms` is **lint-only tooling, not a runtime dependency** — a linter configuration, not
@@ -58,8 +61,9 @@ add a `Remotes:` entry for it. Two reasons:
    `r-lib/actions/setup-r-dependencies`, which fail with `Can't find package called
    lms`. If `lms` is in `Suggests`, that failure breaks *every* `{pak}`-based workflow in
    the consuming repo (e.g. a bibliography/DOI check), even ones unrelated to linting.
-2. **CRAN hygiene.** A linter config has no place in a package's declared dependency
-   graph; lint checks should be skipped on CRAN (`testthat::skip_on_cran()`) anyway.
+2. **CRAN hygiene.** `.lintr.R` is a dev-time config file, not test code, so
+   `R CMD check` never executes it — there's no CRAN footprint, and a linter config
+   has no place in a package's declared dependency graph.
 
 The version pin lives in the CI `install_github(...@<tag>)` step, not in DESCRIPTION.
 
