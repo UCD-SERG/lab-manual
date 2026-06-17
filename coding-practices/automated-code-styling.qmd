@@ -25,8 +25,12 @@ styler::style_pkg()
 For checking code style without modifying files:
 
 ```r
-# Install lintr
-install.packages("lintr")
+# Install lintr (and pkgload, used below)
+install.packages(c("lintr", "pkgload"))
+
+# For package code, load the package first so object_usage_linter()
+# checks your current source (see the style guide for details)
+pkgload::load_all()
 
 # Lint the entire package
 lintr::lint_package()

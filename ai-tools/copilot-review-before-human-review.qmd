@@ -1,5 +1,5 @@
 Before requesting review from other humans,
-**always have Copilot review your pull request first**—even if Copilot created the PR itself.
+**always have Copilot review your pull request first**---even if Copilot created the PR itself.
 AI review provides fast,
 thorough feedback that helps catch issues before involving human reviewers,
 saving everyone time and improving code quality.
