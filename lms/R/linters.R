@@ -57,7 +57,6 @@ undesirable_functions <- function() {
 #' `%or%`, ...), so the package does **not** need to attach rex.
 #'
 #' @return A single regular-expression string.
-#' @keywords internal
 #' @noRd
 snake_case_acros_regex <- function() {
   rex::rex(
