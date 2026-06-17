@@ -7,7 +7,7 @@ Adapted by UCD-SeRG team from [original by Anna Nguyen](https://jadebc.github.io
 ### Introduction 
 Replicable code should produce the same results, regardless of when or where it's run. However, our analyses often leverage open-source R packages that are developed by other teams. These packages continue to be developed after research projects are completed, which may include changes to analysis functions that could impact how code runs for both other team members and external replicators. 
 
-For example, suppose we had used a function that took in one argument, such that our code contained `example_function(arg_a = "a")`. A few months after we publish our code, the package developers update the function to take in another mandatory argument `arg_b`. If someone runs our code, but has the most recent version of the package, they'll receive an error message that the argument `arg_b` is missing and will not be able to full reproduce our results. 
+For example, suppose we had used a function that took in one argument, such that our code contained `example_function(arg_a = "a")`. A few months after we publish our code, the package developers update the function to take in another mandatory argument `arg_b`. If someone runs our code, but has the most recent version of the package, they'll receive an error message that the argument `arg_b` is missing and will not be able to fully reproduce our results. 
 
 To ensure that the right functions are used in replication efforts, it is important for us to keep track of package versions used in each project. 
 
@@ -24,7 +24,7 @@ To add `renv` to your workflow, follow these steps:
 1. Install the `renv` package by running `install.packages("renv")`
 2. Create an RProject file and ensure that your working directory is set to the correct folder
 3. In the R console, run `renv::init()` to initialize renv in your R Project
-4. This will create the following files: `renv.lock`, .`Rprofile`, `renv/settings.json` and `renv/activate.R`. Commit and push these files to GitHub so that they're accessible to other users. 
+4. This will create the following files: `renv.lock`, `.Rprofile`, `renv/settings.json` and `renv/activate.R`. Commit and push these files to GitHub so that they're accessible to other users. 
 5. As you write code, update the project's R library by running `renv::snapshot()` in the R console
 6. Add `renv::restore()` to the head of your config file, to make sure that all users that run your code are on the same package versions. 
 

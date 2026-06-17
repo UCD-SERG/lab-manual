@@ -61,7 +61,7 @@ If you add the PATH as an environment variable, then you can run this line of co
 `Rscript -e "cat('this is a test')"`, where the `-e` flag refers to the expression that will be executed.
 
 If you do not add the PATH as an environment variable, then you can run this line of code to replicate the results from above:
-`"C:\Program Files\R\R-3.6.0\bin" -e "cat('this is a test')"`
+`"C:\Program Files\R\R-3.6.0\bin\Rscript.exe" -e "cat('this is a test')"`
 
 To run an R script from the command line, we can say:
 `Rscript -e "source('C:/path/to/script/some_code.R')"`

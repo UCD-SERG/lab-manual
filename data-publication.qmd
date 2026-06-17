@@ -133,7 +133,8 @@ Once a public GitHub page exists, you can create a new component on an OSF proje
 
 ## Go live 
 
-On GitHub, it is useful to create an official "release" version to freeze the repository, where you can have "associated files" with each version. Include the .html notebook output as additional files --- since they aren't tracked in GitHub, it does provide a way of freezing / saving the HTML output for us and others. OSF examples of a studies from UCSF's Proctor Foundation:   
+On GitHub, it is useful to create an official "release" version to freeze the repository, where you can have "associated files" with each version. Include the .html notebook output as additional files --- since they aren't tracked in GitHub, it does provide a way of freezing / saving the HTML output for us and others. OSF examples of a studies from UCSF's Proctor Foundation:
+
 - ACTION - https://osf.io/ca3pe/    
 - NAITRE -  https://osf.io/ujeyb/   
 - MORDOR Niger antibody study - https://osf.io/dgsq3/   
