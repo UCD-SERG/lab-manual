@@ -48,7 +48,7 @@ especially if they receive work email or Teams notifications on their phones.
   We all need uninterrupted rest and relaxation time in order to stay healthy and productive in the medium and long-terms.
 - **Sending messages outside work hours**:
   There's no expectation to only send emails or messages during normal work hours.
-  Feel free to send messages whenever you compose them—don't spend effort scheduling messages for later delivery.
+  Feel free to send messages whenever you compose them---don't spend effort scheduling messages for later delivery.
   Recipients will manage their own notification schedules,
   and they may be working different hours or want the information sooner.
 
