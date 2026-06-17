@@ -130,7 +130,7 @@ myproject/
 - Collaborators with data access can still run these analyses
 - You maintain a complete record of all project work
 
-**Note on privacy:** Files in `inst/analyses/` are not inherently private—they will be visible if your repository is public. Use this folder for analyses that rely on restricted data that is stored separately, not for storing the restricted data itself. If you need to keep the analysis code private, use a private repository.
+**Note on privacy:** Files in `inst/analyses/` are not inherently private---they will be visible if your repository is public. Use this folder for analyses that rely on restricted data that is stored separately, not for storing the restricted data itself. If you need to keep the analysis code private, use a private repository.
 
 **Best practices for analyses with restricted data:**
 
@@ -212,7 +212,7 @@ Rscript data-raw/03-merge-datasets.R
 Rscript data-raw/04-create-analysis-data.R
 ```
 
-This is especially useful when data upstream changes — you can simply run the shell script to reproduce everything. After running shell scripts, `.Rout` log files will be generated for each script. It is important to check these files to ensure everything has run correctly.
+This is especially useful when data upstream changes --- you can simply run the shell script to reproduce everything. After running shell scripts, `.Rout` log files will be generated for each script. It is important to check these files to ensure everything has run correctly.
 
 ### Storing Analysis Outputs
 
