@@ -65,7 +65,7 @@ This very section you're reading was created through the coding agent workflow:
 
 5. **Iteration**: The PR received feedback comments requesting additional links,
    improved wording,
-   and this example section—all of which the agent addressed through follow-up commits
+   and this example section---all of which the agent addressed through follow-up commits
 
 This demonstrates the full lifecycle of working with a coding agent on a real documentation task.
 
@@ -120,8 +120,8 @@ by clicking the approval button in the Actions tab or on the PR.
 
 This manual approval requirement is a security measure that prevents
 potentially malicious or unintended code execution.
-Because Copilot can modify any file in the repository—including workflow files
-themselves or scripts called by workflows—allowing automatic workflow execution
+Because Copilot can modify any file in the repository---including workflow files
+themselves or scripts called by workflows---allowing automatic workflow execution
 could create security vulnerabilities.
 
 **Key points:**

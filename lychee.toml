@@ -32,6 +32,11 @@ exclude = [
   "https://blog.rstudio.com/.*",
   # Stanford grant writing page times out in CI
   "https://grantwriting.stanford.edu/.*",
+  # Publisher cookie-consent interstitials: resolve fine for humans but
+  # intermittently fail automated checks because the redirect chain ends on a
+  # "cookies_not_supported" page (same rationale as the timeouts above).
+  "https://www\\.nature\\.com/articles/.*",
+  "https://link\\.springer\\.com/.*",
   "http://localhost.*",
   "https://localhost.*",
   "http://127.0.0.1.*",

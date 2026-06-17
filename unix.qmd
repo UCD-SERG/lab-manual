@@ -58,13 +58,13 @@ When R is installed, it comes with a utility called Rscript. This allows you to 
 For appending the `PATH` variable, please view [this link](https://www.howtogeek.com/118594/how-to-edit-your-system-path-for-easy-command-line-access/). I strongly recommend completing this option.
 
 If you add the PATH as an environment variable, then you can run this line of code to test:
-`Rscript -e "cat(‘this is a test’)"`, where the `-e` flag refers to the expression that will be executed.
+`Rscript -e "cat('this is a test')"`, where the `-e` flag refers to the expression that will be executed.
 
 If you do not add the PATH as an environment variable, then you can run this line of code to replicate the results from above:
-`"C:\Program Files\R\R-3.6.0\bin" -e "cat(‘this is a test’)"`
+`"C:\Program Files\R\R-3.6.0\bin" -e "cat('this is a test')"`
 
 To run an R script from the command line, we can say:
-`Rscript -e "source(‘C:/path/to/script/some_code.R’)"`
+`Rscript -e "source('C:/path/to/script/some_code.R')"`
 
 ### Common Mistakes
 * Remember to include all of the quotation marks around file paths that have a spaces.
