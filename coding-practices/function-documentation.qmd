@@ -150,9 +150,9 @@ is generated and indexed, and they behave differently:
 
 **Prefer `@keywords internal` for any helper that isn't part of the
 package's public API.**
-You still get a real `.Rd` file —
+You still get a real `.Rd` file ---
 so future maintainers (or future-you) can run `?pkg:::internal_helper` and see
-the documentation —
+the documentation ---
 but the function stays out of the pkgdown reference and the package's
 main help page.
 
