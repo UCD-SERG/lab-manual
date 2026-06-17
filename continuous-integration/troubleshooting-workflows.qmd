@@ -1,7 +1,7 @@
 Before spending time debugging,
 check [GitHub Status](https://www.githubstatus.com/) to confirm that GitHub's
 services are fully operational.
-Outages can affect any GitHub service, not just CI—
+Outages can affect any GitHub service, not just CI---
 for example, as of May 2026, recent incidents have included:
 
 - **Actions**: Hosted runners experiencing high queue times or failures,
@@ -12,7 +12,7 @@ for example, as of May 2026, recent incidents have included:
   making it seem as though review comments have disappeared or are not saving
 
 If a GitHub-wide issue is reported, wait for the outage to resolve
-before investigating further—the problem is not in your code.
+before investigating further---the problem is not in your code.
 
 If [GitHub Status](https://www.githubstatus.com/) shows all services operational,
 check the "Actions" tab in your GitHub repository for detailed logs.

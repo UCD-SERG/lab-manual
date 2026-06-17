@@ -62,7 +62,7 @@ As AI technology advances,
 the distinction between these strengths may shift.
 Yann LeCun,
 2019 Turing Award winner and AI researcher at Meta and NYU,
-advocates for developing "world models"—AI systems that understand and reason
+advocates for developing "world models"---AI systems that understand and reason
 about the physical world,
 not just language patterns [@lecun_world_models].
 

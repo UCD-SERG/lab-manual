@@ -54,8 +54,8 @@ or operate without human authorization.
 
 #### Why this matters for responsible AI use
 
-Understanding that current AI agents are powerful but limited tools—not
-autonomous superintelligences—has important implications:
+Understanding that current AI agents are powerful but limited tools---not
+autonomous superintelligences---has important implications:
 
 - **Maintain appropriate skepticism**:
 AI agent outputs require the same critical review

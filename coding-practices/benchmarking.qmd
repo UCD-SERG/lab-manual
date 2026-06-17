@@ -508,7 +508,7 @@ bench::mark(
 
 **Benchmark critical paths only:**
 
-Don't optimize everything—focus on code that:
+Don't optimize everything---focus on code that:
 
 - Runs frequently
 - Processes large datasets
