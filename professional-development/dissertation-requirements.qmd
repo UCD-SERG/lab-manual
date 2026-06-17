@@ -54,7 +54,7 @@ a requirement for earning a [PhD](https://en.wikipedia.org/wiki/Doctor_of_Philos
 is a spiritual successor to an apprentice's [masterpiece](https://en.wikipedia.org/wiki/Masterpiece#History) in craft guilds.
 Historically,
 a masterpiece was the piece of work that demonstrated an apprentice had achieved sufficient skill to join the guild as a master craftsperson.
-It was not meant to be the best work they would ever produce—it was meant to prove they were ready to work independently.
+It was not meant to be the best work they would ever produce---it was meant to prove they were ready to work independently.
 
 Similarly,
 your dissertation should demonstrate that you're ready to conduct independent research.
@@ -81,7 +81,7 @@ not to write the definitive work on your topic
 
 Focus on making a solid,
 incremental contribution to knowledge in your field.
-That's what a dissertation is meant to be—no more,
+That's what a dissertation is meant to be---no more,
 no less.
 
 ### Resources

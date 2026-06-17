@@ -93,7 +93,7 @@ This is particularly useful for books and long documents.
    making it immediately clear that content was reorganized rather than edited.
 
 2. **Easier Code Review:**
-   Reviewers can see exactly what changed—either the organization (main file) or the content (include file).
+   Reviewers can see exactly what changed---either the organization (main file) or the content (include file).
 
 3. **Modular Maintenance:**
    Each section lives in its own file,
