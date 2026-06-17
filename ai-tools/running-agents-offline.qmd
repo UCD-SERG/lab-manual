@@ -1,5 +1,5 @@
 
-Some environments restrict or prohibit internet access—high-performance computing (HPC) clusters,
+Some environments restrict or prohibit internet access---high-performance computing (HPC) clusters,
 hospital networks,
 or air-gapped research servers may block connections to cloud AI providers.
 Running a local AI model lets you use coding assistance in these settings
@@ -54,7 +54,7 @@ ollama pull qwen2.5-coder:7b
 # More capable; requires ~20 GB VRAM
 ollama pull qwen2.5-coder:32b
 
-# Alternatively, a general-purpose model (70B variant; requires ~40 GB VRAM—unusable on most single GPUs)
+# Alternatively, a general-purpose model (70B variant; requires ~40 GB VRAM---unusable on most single GPUs)
 ollama pull llama3.3
 ```
 
@@ -127,8 +127,8 @@ A useful pattern:
 
    ::: {.callout-warning}
    #### Watch your home-directory quota
-   Model files are large—`qwen2.5-coder:7b` is ~4 GB and `qwen2.5-coder:32b`
-   is ~20 GB—and most HPC home directories have tight quotas (often 10–50 GB).
+   Model files are large---`qwen2.5-coder:7b` is ~4 GB and `qwen2.5-coder:32b`
+   is ~20 GB---and most HPC home directories have tight quotas (often 10--50 GB).
    Filling your home directory can break other jobs.
    Redirect model storage to a scratch or project filesystem with `OLLAMA_MODELS`
    and rsync to that path instead:
@@ -144,7 +144,7 @@ A useful pattern:
    :::
 
 2. **Start Ollama on a compute node** (or an interactive session)
-   using the pre-downloaded model files—no internet required.
+   using the pre-downloaded model files---no internet required.
    Set `OLLAMA_HOST=0.0.0.0` so the SSH tunnel from the login node can reach the port:
 
    ```bash
@@ -165,7 +165,7 @@ A useful pattern:
    ```
 
    This terminal must stay open for as long as you use the editor's Ollama
-   integration—closing it tears down the tunnel and silently drops the
+   integration---closing it tears down the tunnel and silently drops the
    connection. Alternatively, start the tunnel in the background (non-interactive)
    so it does not occupy a terminal:
 
@@ -175,7 +175,7 @@ A useful pattern:
 
    (`-N` runs no remote command, `-f` backgrounds ssh after authenticating.)
    To stop the tunnel later, match the full SSH command rather than a bare
-   port string—`pkill -f "ssh.*-N.*11434:gpu-node-01"`—so you don't
+   port string---`pkill -f "ssh.*-N.*11434:gpu-node-01"`---so you don't
    accidentally kill unrelated processes whose command line happens to contain
    that port. Safer still, note the PID when you start it
    (`pgrep -f "11434:gpu-node-01"`) and `kill` that PID directly.
