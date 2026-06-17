@@ -1,6 +1,6 @@
 # lms — Lab Manual Style
 
-`lms` ("lab manual style") is the shared UCD-SERG [`lintr`](https://lintr.r-lib.org/)
+`lms` ("lab manual style") is the shared UCD-SERG [`{lintr}`](https://lintr.r-lib.org/)
 configuration, packaged as a small R package so every lab repository enforces the
 **same** linter set without copy-pasting `.lintr.R` files (which drift apart over time).
 
@@ -48,18 +48,18 @@ Install `lms` in CI with an **explicit** step in the lint workflow, before linti
 
 ## Do NOT declare lms in DESCRIPTION
 
-`lms` is **lint-only tooling, not a package dependency** — the same status as `lintr`
-itself, which you also do not declare. Keep it out of `Imports`/`Suggests`, and do not
+`lms` is **lint-only tooling, not a runtime dependency** — a linter configuration, not
+something your package calls. Keep it out of `Imports`/`Suggests`, and do not
 add a `Remotes:` entry for it. Two reasons:
 
-1. **`pak` cannot resolve the subdir Remote.** The reference
+1. **`{pak}` cannot resolve the subdir Remote.** The reference
    `UCD-SERG/lab-manual/lms@v0.1.0` (a package in a repo *subdirectory*) resolves with
-   the `remotes` package but **not** with `pak` /
+   the `{remotes}` package but **not** with `{pak}` /
    `r-lib/actions/setup-r-dependencies`, which fail with `Can't find package called
-   lms`. If `lms` is in `Suggests`, that failure breaks *every* `pak`-based workflow in
+   lms`. If `lms` is in `Suggests`, that failure breaks *every* `{pak}`-based workflow in
    the consuming repo (e.g. a bibliography/DOI check), even ones unrelated to linting.
 2. **CRAN hygiene.** A linter config has no place in a package's declared dependency
-   graph; lint checks should be skipped on CRAN (`skip_on_cran()`) anyway.
+   graph; lint checks should be skipped on CRAN (`testthat::skip_on_cran()`) anyway.
 
 The version pin lives in the CI `install_github(...@<tag>)` step, not in DESCRIPTION.
 
@@ -80,6 +80,6 @@ pkgload::load_all()
 lintr::lint_package()
 ```
 
-`.onLoad()` calls `rex::register_shortcuts()` so the `rex` DSL tokens used in the
+`.onLoad()` calls `rex::register_shortcuts()` so the `{rex}` DSL tokens used in the
 snake_case regex are not flagged as undefined globals. After editing `R/` roxygen
 comments, run `devtools::document()`.
