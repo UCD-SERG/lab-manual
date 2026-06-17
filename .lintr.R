@@ -4,6 +4,13 @@
 #   R CMD INSTALL lms        # or: pak::local_install("lms")
 #
 # CI installs lms from the local subdir before running lintr.
+if (!requireNamespace("lms", quietly = TRUE)) {
+  stop(
+    "Package 'lms' is required to lint this repo. Install it with:\n",
+    "  R CMD INSTALL lms   (or pak::local_install('lms'))",
+    call. = FALSE
+  )
+}
 linters <- lms::default_linters()
 
 # Exclusions are repo-specific and stay LOCAL; do not move these into lms.

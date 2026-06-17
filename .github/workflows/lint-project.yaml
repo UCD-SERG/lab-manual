@@ -29,14 +29,10 @@ jobs:
 
       - uses: r-lib/actions/setup-renv@v2
 
-      - name: Install lintr and rex (lms dependencies)
-        run: install.packages(c("lintr", "rex"))
-        shell: Rscript {0}
-
       - name: Install lms (shared linter config) from local subdir
         # The root .lintr.R calls lms::default_linters(), so lms must be
-        # installed before linting. R CMD INSTALL does not resolve deps,
-        # hence the explicit lintr/rex install above.
+        # installed before linting. lms's deps (lintr, rex) are restored
+        # from renv.lock by setup-renv above, so no extra install is needed.
         run: R CMD INSTALL lms
         shell: bash
 
