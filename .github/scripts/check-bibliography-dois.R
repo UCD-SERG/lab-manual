@@ -279,9 +279,11 @@ check_bibliography_file <- function(filepath, verify_metadata = TRUE) {
       next
     }
 
-    # Skip entries exempt from the DOI requirement (DOI-less online books)
-    if (entry$BIBTEXKEY %in% DOI_EXEMPT) {
-      cat(sprintf("  Skipping %s '%s' (DOI-exempt)\n", entry_type, entry$BIBTEXKEY))
+    # DOI-exempt entries are allowed to have no DOI. Only skip when the DOI
+    # is actually absent; if one is present it is still validated below.
+    doi_present <- !(is.na(entry$DOI) || entry$DOI == "")
+    if (entry$BIBTEXKEY %in% DOI_EXEMPT && !doi_present) {
+      cat(sprintf("  Skipping %s '%s' (DOI-exempt, no DOI)\n", entry_type, entry$BIBTEXKEY))
       next
     }
 
