@@ -21,15 +21,14 @@ jobs:
         with:
           use-public-rspm: true
 
-      - uses: r-lib/actions/setup-r-dependencies@v2
-        with:
-          extra-packages: |
-            any::pkgdown
-            any::rmarkdown
-            any::bib2df
-            any::httr
-            any::jsonlite
-            any::stringr
+      - name: Install DOI-check dependencies
+        # Install only what check-bibliography-dois.R needs. Avoids
+        # setup-r-dependencies reading DESCRIPTION and resolving the
+        # `Remotes: rstudio/bookdown` entry via the GitHub API, which
+        # intermittently rate-limits and fails this job (the DOI check
+        # needs none of the book's dependencies).
+        run: install.packages(c("bib2df", "httr", "jsonlite", "stringr"))
+        shell: Rscript {0}
 
       - name: Find bibliography files
         id: find-bibs
@@ -42,7 +41,9 @@ jobs:
       - name: Check bibliography DOIs
         if: steps.find-bibs.outputs.bib_files != ''
         run: |
-          Rscript .github/scripts/check-bibliography-dois.R "$BIB_FILES"
+          # Unquoted so each .bib path is a separate argument; the script
+          # reads files via commandArgs() and expects one path per arg.
+          Rscript .github/scripts/check-bibliography-dois.R $BIB_FILES
         env:
           BIB_FILES: ${{ steps.find-bibs.outputs.bib_files }}
 

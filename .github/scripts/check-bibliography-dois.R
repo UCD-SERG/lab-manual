@@ -1,6 +1,6 @@
 #!/usr/bin/env Rscript
 # Check bibliography files for DOI requirements:
-# 1. Every book and article must have a DOI field
+# 1. Every book and article must have a DOI field (except DOI_EXEMPT keys)
 # 2. Every DOI must resolve to a valid URL
 # 3. Reference information must match the document at the DOI URL
 
@@ -10,6 +10,17 @@ suppressPackageStartupMessages({
   library(jsonlite)
   library(stringr)
 })
+
+# Entries that legitimately have no DOI and are therefore exempt from the
+# "must have a DOI field" requirement (online-only / O'Reilly / self-published
+# books that publishers never registered a DOI for). DOIs that *are* present
+# on other books are still validated normally.
+DOI_EXEMPT <- c(
+  "wickham2023r4ds",   # R for Data Science (O'Reilly, online: r4ds.hadley.nz)
+  "wickham2023rpkgs",  # R Packages (O'Reilly, online: r-pkgs.org)
+  "wickham2021shiny",  # Mastering Shiny (O'Reilly, online: mastering-shiny.org)
+  "bryan2023happygit"  # Happy Git and GitHub for the useR (self-published online)
+)
 
 #' Parse BibTeX file and extract entries
 #'
@@ -267,7 +278,13 @@ check_bibliography_file <- function(filepath, verify_metadata = TRUE) {
     if (!(entry_type %in% c("book", "article"))) {
       next
     }
-    
+
+    # Skip entries exempt from the DOI requirement (DOI-less online books)
+    if (entry$BIBTEXKEY %in% DOI_EXEMPT) {
+      cat(sprintf("  Skipping %s '%s' (DOI-exempt)\n", entry_type, entry$BIBTEXKEY))
+      next
+    }
+
     checked_count <- checked_count + 1
     cat(sprintf("  Checking %s '%s'...\n", entry_type, entry$BIBTEXKEY))
     
