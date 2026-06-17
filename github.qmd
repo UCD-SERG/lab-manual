@@ -84,9 +84,9 @@ While knowing how to use Git on the command line will always be useful since the
 ## Git Branching
 Branches allow you to keep track of multiple versions of your work simultaneously, and you can easily switch between versions and merge branches together once you've finished working on a section and want it to join the rest of your code. Here are some cases when it may be a good idea to branch:
 
-* You may want to make a dramatic change to your existing code (called refactoring) but it will break other parts of your project. But you want to be able to simultaneously work on other parts or you are collaborating with others, and you don’t want to break the code for them.
-* You want to start working on a new part of the project, but you aren’t sure yet if your changes will work and make it to the final product.
-* You are working with others and don’t want to mix up your current work with theirs, even if you want to bring your work together later in the future.
+* You may want to make a dramatic change to your existing code (called refactoring) but it will break other parts of your project. But you want to be able to simultaneously work on other parts or you are collaborating with others, and you don't want to break the code for them.
+* You want to start working on a new part of the project, but you aren't sure yet if your changes will work and make it to the final product.
+* You are working with others and don't want to mix up your current work with theirs, even if you want to bring your work together later in the future.
 
 A detailed tutorial on Git Branching can be found [here](https://sp19.datastructur.es/materials/guides/using-git#e-git-branching-advanced-git-optional). You can also find instructions on how to handle merge conflicts when joining branches together.
 
@@ -133,7 +133,7 @@ Other helpful commands are listed below.
 | `git push origin <branch_name>`                     | push work to branch   |
 | `git checkout <branch_name>` \ `git merge master`   | switch to branch and merge changes from `master` into `<branch_name>` (two commands) | 
 | `git merge <branch_name> master`                    | switch to branch and merge changes from `master` into `<branch_name>` (one command) | 
-| `git checkout --track origin/<branch_name>`         | pulls a remote branch and creates a local branch to track it (use when trying to pull someone else’s branch onto your local computer)   |
+| `git checkout --track origin/<branch_name>`         | pulls a remote branch and creates a local branch to track it (use when trying to pull someone else's branch onto your local computer)   |
 | `git push --delete <remote_name> <branch_name>`     | delete remote branch   |
 | `git branch -d <branch_name>`                       | deletes local branch, -D to force   |
 | `git fetch --all --prune`                           | untrack deleted remote branches   |

@@ -46,7 +46,7 @@ Adapted by UCD-SeRG team from [original by Jade Benjamin-Chung](https://jadebc.g
 - Does the text use past tense if it is reporting research findings or future tense if it is a study protocol? 
 - Does the text avoid subjective wording (e.g., "interesting", "dramatic")?
 - Does the text use minimal abbreviations, and are all abbreviations defined at first use?
-- Does the text avoid directionless words? (e.g., instead of writing, ‘Precipitation influences disease risk’, write, ‘Precipitation was associated with increased disease risk’). 
+- Does the text avoid directionless words? (e.g., instead of writing, 'Precipitation influences disease risk', write, 'Precipitation was associated with increased disease risk'). 
 - Does the text avoid making causal claims that are not supported by the study design? Be careful about the words "effect", "increase", and "decrease", which are often interpreted as causal. 
 - Does the text avoid describing results with the word "significant", which can easily be confused with statistical significance? (see references on this topic [here](https://journals.lww.com/epidem/Fulltext/2001/05000/The_Value_of_P.2.aspx))
 - Have you drafted author contributions? Do they follow the CRediT: Contributor Roles Taxonomy [@credit] for author contributions?

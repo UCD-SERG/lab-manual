@@ -1,4 +1,4 @@
-Just as wet labs have strict safety protocols to ensure reproducible results and prevent contamination, our computational lab has protocols for coding and data management. These protocols are not suggestions—they are essential practices that:
+Just as wet labs have strict safety protocols to ensure reproducible results and prevent contamination, our computational lab has protocols for coding and data management. These protocols are not suggestions---they are essential practices that:
 
 - **Ensure reproducibility**: Others (including your future self) can recreate your analysis
 - **Prevent errors**: Systematic approaches reduce the risk of mistakes
