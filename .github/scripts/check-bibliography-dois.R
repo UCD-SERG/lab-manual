@@ -44,7 +44,7 @@ check_doi_field <- function(entry) {
   entry_type <- tolower(entry$CATEGORY)
   entry_key <- entry$BIBTEXKEY
   
-  if (entry_type %in% c("book", "article") && !(entry_key %in% DOI_EXEMPT)) {
+  if (entry_type %in% c("book", "article")) {
     if (is.na(entry$DOI) || entry$DOI == "") {
       return(list(
         has_doi = FALSE,
@@ -278,7 +278,13 @@ check_bibliography_file <- function(filepath, verify_metadata = TRUE) {
     if (!(entry_type %in% c("book", "article"))) {
       next
     }
-    
+
+    # Skip entries exempt from the DOI requirement (DOI-less online books)
+    if (entry$BIBTEXKEY %in% DOI_EXEMPT) {
+      cat(sprintf("  Skipping %s '%s' (DOI-exempt)\n", entry_type, entry$BIBTEXKEY))
+      next
+    }
+
     checked_count <- checked_count + 1
     cat(sprintf("  Checking %s '%s'...\n", entry_type, entry$BIBTEXKEY))
     
