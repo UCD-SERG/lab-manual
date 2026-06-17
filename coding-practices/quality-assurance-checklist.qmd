@@ -5,7 +5,8 @@ Before requesting human review on a pull request or finalizing analysis, verify:
 - [ ] `devtools::document()` has been run
 - [ ] `devtools::test()` passes with no failures
 - [ ] `devtools::check()` passes with no errors, warnings, or notes
-- [ ] `lintr::lint_package()` shows no issues (or only acceptable ones)
+- [ ] `lintr::lint_package()` shows no issues (or only acceptable ones);
+      run `pkgload::load_all()` first so `object_usage_linter()` checks current source
 - [ ] `spelling::spell_check_package()` passes
 - [ ] Version number has been incremented
 - [ ] `NEWS.md` has been updated with changes

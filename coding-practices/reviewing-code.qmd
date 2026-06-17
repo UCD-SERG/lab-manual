@@ -14,7 +14,7 @@ A focused pull request is **one self-contained change** that addresses just one 
 - **Easier to merge**: Large PRs take longer and are more likely to have merge conflicts.
 - **Less wasted work**: If the overall direction is wrong, you've wasted less time on a small PR.
 
-As a guideline, 100 lines is usually a reasonable size for a PR, and 1000 lines is usually too large. However, the number of files affected also matters—a 200-line change in one file might be fine, but the same change spread across 50 files is usually too large.
+As a guideline, 100 lines is usually a reasonable size for a PR, and 1000 lines is usually too large. However, the number of files affected also matters---a 200-line change in one file might be fine, but the same change spread across 50 files is usually too large.
 
 ### Writing PR Descriptions
 
@@ -56,7 +56,7 @@ Common situations that require explanation:
 
 - **Version pinning**: Explain whether you're using floating tags (e.g., `@v2`),
   version tags (e.g., `@v2.9.4`), or commit SHA pins
-  (e.g., `@abc1234...` — most secure, since tags can be retargeted) and why.
+  (e.g., `@abc1234...` --- most secure, since tags can be retargeted) and why.
   For example: "Using `@v2` (moving tag) to automatically receive bug fixes
   within the major version while maintaining stability."
 - **Configuration changes**: Explain the rationale behind non-obvious choices
@@ -70,7 +70,7 @@ and helps future maintainers understand the decisions made.
 
 ### Add Tests
 
-Focused PRs should include related test code. A PR that adds or changes logic should be accompanied by new or updated tests for the new behavior. Pure refactoring PRs should also be covered by tests—if tests don't exist for code you're refactoring, add them in a separate PR first to validate that behavior is unchanged.
+Focused PRs should include related test code. A PR that adds or changes logic should be accompanied by new or updated tests for the new behavior. Pure refactoring PRs should also be covered by tests---if tests don't exist for code you're refactoring, add them in a separate PR first to validate that behavior is unchanged.
 
 ### Separate Out Refactorings
 
@@ -84,7 +84,7 @@ Small cleanups (like fixing a local variable name) can be included in a feature 
 
 The primary purpose of code review is to ensure that the overall code health of our projects improves over time. Reviewers should balance the need to make forward progress with the importance of maintaining code quality.
 
-**Key principle**: Reviewers should favor approving a PR once it is in a state where it definitely improves the overall code health of the system, even if the PR isn't perfect. There is no such thing as "perfect" code—there is only better code. Rather than seeking perfection, seek continuous improvement.
+**Key principle**: Reviewers should favor approving a PR once it is in a state where it definitely improves the overall code health of the system, even if the PR isn't perfect. There is no such thing as "perfect" code---there is only better code. Rather than seeking perfection, seek continuous improvement.
 
 ### Monitoring PRs Awaiting Your Review
 
@@ -110,7 +110,7 @@ When reviewing code, maintain courtesy and respect while being clear and helpful
 - Comment on the **code**, not the author
 - Explain **why** you're making suggestions (reference best practices, design patterns, or how the suggestion improves code health)
 - Balance pointing out problems with providing guidance (help authors learn while being constructive)
-- Highlight positive aspects too—if you see good practices, comment on those to reinforce them
+- Highlight positive aspects too---if you see good practices, comment on those to reinforce them
 
 **Poor comment**: "Why did you use this approach when there's obviously a better way?"
 
@@ -122,7 +122,7 @@ Code review is an excellent opportunity for mentoring. As a reviewer:
 
 - Leave comments that help authors learn something new
 - Link to relevant sections of style guides or best practices documentation
-- Consider pair programming for complex reviews—live review sessions can be very effective for teaching
+- Consider pair programming for complex reviews---live review sessions can be very effective for teaching
 
 ### Giving Constructive Feedback
 

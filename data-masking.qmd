@@ -5,7 +5,7 @@ Adapted by UCD-SeRG team from [original by Anna Nguyen, Jade Benjamin-Chung, and
 For information about UC Davis computing resources for data-intensive work, see @sec-slurm.
 
 ## General Overview
-This chapter covers data masking, a unique process in R in which columns are treated as distinct objects within their dataframe’s environment. In our lab, data masking most frequently comes up when writing wrapper functions where arguments to indicate column names  are supplied as strings. We often do this when we repeat the same code on multiple columns, and want to apply a function to a vector of strings that correspond to column names in a dataframe. For example, we might want to clean multiple columns using the same function or estimate the same model under different feature sets. Here, we try to break down what data masking is, why this error comes up, and common approaches to solve this problem.
+This chapter covers data masking, a unique process in R in which columns are treated as distinct objects within their dataframe's environment. In our lab, data masking most frequently comes up when writing wrapper functions where arguments to indicate column names  are supplied as strings. We often do this when we repeat the same code on multiple columns, and want to apply a function to a vector of strings that correspond to column names in a dataframe. For example, we might want to clean multiple columns using the same function or estimate the same model under different feature sets. Here, we try to break down what data masking is, why this error comes up, and common approaches to solve this problem.
 
 ### What is Data Masking? 
 Within certain tidyverse operations, columns are called as if they were variables. For example, while running `df |> mutate(X = …)` R recognizes that `X` specifically references a column in ` df` without explicitly stating its membership ` df |> mutate(df$X = …)` or calling the column name as a string ` df |> mutate("X" = …)`. 
@@ -34,7 +34,7 @@ var_name = "heavyrain"
 df |> mutate(outcome = as.factor(!!sym(var_name)) 
 ```
 
-While cleaner and often more convenient, the data frame that var_name is in is now "masked" and we refer to the vectors in the dataframe (data-variables) as though it is an object of its own (an environmental-variable). This is why we can just say the variable’s name in the context of a pipe – we treat it as though it’s an object defined in our environment. Within normal scripts, this is usually fine, because the data frame is "held on to" in the pipe. However, it can cause some programming hurdles when writing functions that take strings of variable/column names as arguments. In the next section, we briefly describe how to troubleshoot common errors in data masking, as relevant to our lab’s work.
+While cleaner and often more convenient, the data frame that var_name is in is now "masked" and we refer to the vectors in the dataframe (data-variables) as though it is an object of its own (an environmental-variable). This is why we can just say the variable's name in the context of a pipe -- we treat it as though it's an object defined in our environment. Within normal scripts, this is usually fine, because the data frame is "held on to" in the pipe. However, it can cause some programming hurdles when writing functions that take strings of variable/column names as arguments. In the next section, we briefly describe how to troubleshoot common errors in data masking, as relevant to our lab's work.
 
 ## Data masking vs. tidy selection {#sec-data-masking-vs-tidy-selection}
 
@@ -82,7 +82,7 @@ The combined use of ` !!` and ` sym()` allows us to use strings, rather than dat
 ` sym()` is a function that turns strings into symbols. In the context of a dplyr pipe, these symbols are interpreted as data-variables.
 The ` !!` (bang bang) operator tells dplyr to evaluate the sym() expression first, e.g. to unquote its expression (e.g. "column_name") and evaluate it as a pre-existing object, first. This is helpful because often we use ` sym("column_name")` within a larger expression, and dplyr might evaluate other elements of the expression first without !!, causing errors. 
 
-When we want to create a new column (via mutate or summarize), the Walrus operator (` :=`) allows us to specify the new column’s name using a string. For example, while ` df |> mutate("new_column" = values)` would yield an error, ` df |> mutate("new_column" := values)` will correctly create a new column called "new_column". 
+When we want to create a new column (via mutate or summarize), the Walrus operator (` :=`) allows us to specify the new column's name using a string. For example, while ` df |> mutate("new_column" = values)` would yield an error, ` df |> mutate("new_column" := values)` will correctly create a new column called "new_column". 
 If we want to use a variable representing a string, we can use !! to force the variable to be evaluated before using ` :=` to assign the value of the new column. 
 ```r
 col_name = "new_column"

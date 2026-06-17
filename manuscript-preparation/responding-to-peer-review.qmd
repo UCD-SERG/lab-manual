@@ -1,7 +1,7 @@
 When a journal asks for revisions,
 you will typically need to provide a point-by-point response to the reviewers' comments.
 The key strategy is to use the ["yes-and" approach](https://en.wikipedia.org/wiki/Yes,_and_...)
-from improvisational theater—building on what reviewers say
+from improvisational theater---building on what reviewers say
 rather than contradicting them.
 Try to avoid explicitly disagreeing with reviewers if at all possible.
 

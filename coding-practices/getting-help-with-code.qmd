@@ -1,6 +1,6 @@
 When you encounter a coding problem,
 creating a **reprex** (minimal **repr**oducible **ex**ample)
-is one of the most effective ways to get help—and
+is one of the most effective ways to get help---and
 often helps you solve the problem yourself.
 
 A good reprex [@reprex]:
