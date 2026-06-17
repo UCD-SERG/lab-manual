@@ -281,7 +281,7 @@ check_bibliography_file <- function(filepath, verify_metadata = TRUE) {
 
     # DOI-exempt entries are allowed to have no DOI. Only skip when the DOI
     # is actually absent; if one is present it is still validated below.
-    doi_present <- !(is.na(entry$DOI) || entry$DOI == "")
+    doi_present <- !is.na(entry$DOI) && nzchar(trimws(entry$DOI))
     if (entry$BIBTEXKEY %in% DOI_EXEMPT && !doi_present) {
       cat(sprintf("  Skipping %s '%s' (DOI-exempt, no DOI)\n", entry_type, entry$BIBTEXKEY))
       next
