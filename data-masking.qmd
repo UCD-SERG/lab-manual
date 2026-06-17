@@ -54,7 +54,7 @@ To refer to a column named by a string variable, use the tool that matches the c
 
 | Context | Use | Avoid |
 |---------|-----|-------|
-| Data-masking | `!!sym(var)` or `.data[[var]]` | bare `var` (looks up an environment variable, not the column) |
+| Data-masking | `!!sym(var)` or `.data[[var]]` | bare `var` (uses the string value itself, not the column it names) |
 | Tidy-selection | `all_of(var)` / `any_of(var)` | the `.data` pronoun (`.data[[var]]`, `.data$col`) |
 
 : Referring to a column named by a string variable {#tbl-masking-selection}
