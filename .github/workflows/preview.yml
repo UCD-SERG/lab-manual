@@ -34,6 +34,18 @@ jobs:
 
       - uses: r-lib/actions/setup-renv@v2
 
+      # Restore the TinyTeX tree (with LaTeX packages installed by prior
+      # renders) so the PDF render reuses them instead of refetching via
+      # tlmgr on every run. Live tlmgr fetches intermittently fail to resolve
+      # packages (e.g. "luatexbase.sty not found"), the recurring cause of red
+      # preview builds. After a successful run the populated tree is cached, so
+      # subsequent runs don't hit the network for TeX packages.
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-v1
+
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
