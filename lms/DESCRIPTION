@@ -1,0 +1,16 @@
+Package: lms
+Title: Lab Manual Style (UCD-SERG lintr Configuration)
+Version: 0.1.0
+Authors@R:
+    person("UCD-SERG", role = c("aut", "cre"), email = "serg@ucdavis.edu")
+Description: Shared lintr linter configuration implementing the UCD-SERG
+    lab manual style guide. Applied repositories consume this via a thin
+    '.lintr.R' that calls lms::default_linters() and supplies their own
+    local exclusions.
+License: CC0
+Encoding: UTF-8
+Imports:
+    lintr,
+    rex
+Roxygen: list(markdown = TRUE)
+Config/roxygen2/version: 8.0.0
