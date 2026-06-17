@@ -8,7 +8,7 @@ execute commands,
 and complete multi-step tasks without constant human guidance.
 
 **Compared to AI chatbots** (like ChatGPT or Claude),
-coding agents don't just generate code snippets in conversation—they actively interact with your development environment.
+coding agents don't just generate code snippets in conversation---they actively interact with your development environment.
 While chatbots require you to copy code from a chat window and manually integrate it into your project,
 coding agents directly read your codebase,
 make changes to files,

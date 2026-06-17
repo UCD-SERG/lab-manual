@@ -29,8 +29,11 @@ The styler can be used to automatically fix the problems that the lintr catches.
 For checking code style without modifying files:
 
 ```r
-# Install lintr
-install.packages("lintr")
+# Install lintr (and pkgload, used below)
+install.packages(c("lintr", "pkgload"))
+
+# For package code, load the package first (see note below)
+pkgload::load_all()
 
 # Lint the entire package
 lintr::lint_package()
@@ -45,6 +48,15 @@ The linter checks for:
 - Improper whitespace
 - Line length issues
 - Style guide violations
+
+For package code, run `pkgload::load_all()` (or `devtools::load_all()`) **before**
+`lintr::lint_package()`. Our configuration includes `object_usage_linter()`, which
+resolves symbols using the loaded package; without loading first, it checks against a
+stale installed copy (or none), producing spurious
+`no visible binding for global variable` warnings. Loading also runs any `.onLoad()` side effects: for example, our
+[`lms`](https://github.com/UCD-SERG/lab-manual/tree/main/lms) linter package registers
+its `rex` shortcuts in `.onLoad()`, and the linter only sees them once the package is
+loaded.
 
 Our lab uses `.lintr.R` files for configuration (the `.lintr` format is also supported by lintr,
 but we prefer `.lintr.R` for better R syntax support).
