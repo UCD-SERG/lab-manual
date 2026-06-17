@@ -20,7 +20,7 @@ In the past decade, an increasing number of studies have found that published st
 
 Recommended readings on the "reproducibility crisis": 
 
-- Nuzzo R. How scientists fool themselves – and how they can stop [@nuzzo2015]
+- Nuzzo R. How scientists fool themselves -- and how they can stop [@nuzzo2015]
 
 - Stoddart C. Is there a reproducibility crisis in science? [@stoddart2019]
 
