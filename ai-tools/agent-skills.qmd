@@ -2,10 +2,8 @@
 [Agent Skills](https://agentskills.io/home) are a lightweight,
 open standard for extending AI agent capabilities
 with specialized knowledge and workflows.
-Originally developed by Anthropic and released as an open standard,
-Agent Skills are now supported by a wide range of coding agent tools,
-including GitHub Copilot, Claude Code, Cursor, Gemini CLI, and many others
-(as of June 2026).
+Introduced by Anthropic and released as an open standard,
+they are supported by a growing range of coding agents.
 
 #### What is a Skill?
 
@@ -32,7 +30,7 @@ Agents load skills through a process called *progressive disclosure*,
 in three stages:
 
 1. **Discovery**: At startup, the agent loads only the name and description
-   of each available skill — just enough to know when it might be relevant.
+   of each available skill --- just enough to know when it might be relevant.
 2. **Activation**: When a task matches a skill's description,
    the agent reads the full `SKILL.md` instructions into context.
 3. **Execution**: The agent follows the instructions,
@@ -58,4 +56,4 @@ see [agentskills.io](https://agentskills.io/home).
 
 The [d-morrison/ai-config](https://github.com/d-morrison/ai-config) repository
 contains an example of personal Claude Code configuration,
-including user-level skills and slash commands, synced across machines via git.
+including user-level skills and slash commands, synced across machines via Git.
