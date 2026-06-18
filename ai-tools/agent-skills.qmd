@@ -56,6 +56,6 @@ This gives agents:
 For the complete specification and more details,
 see [agentskills.io](https://agentskills.io/home).
 
-The [d-morrison/claude-config](https://github.com/d-morrison/claude-config) repository
-contains an example of Claude-specific configuration files,
-including Claude skills and related settings.
+The [d-morrison/ai-config](https://github.com/d-morrison/ai-config) repository
+contains an example of personal Claude Code configuration,
+including user-level skills and slash commands, synced across machines via git.
