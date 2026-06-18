@@ -69,7 +69,7 @@ By default the server listens at `http://localhost:11434`.
 #### Connecting Positron Assistant to Ollama
 
 [Positron](https://positron.posit.co) supports Ollama natively through the
-[OpenAI-compatible API endpoint](https://github.com/ollama/ollama/blob/main/docs/openai.md)
+[OpenAI-compatible API endpoint](https://ollama.com/blog/openai-compatibility)
 that Ollama exposes.
 
 1. Open the Command Palette with `Cmd+Shift+P` (macOS) or `Ctrl+Shift+P` (Windows/Linux).
