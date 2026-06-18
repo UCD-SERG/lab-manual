@@ -200,7 +200,7 @@ if(Sys.getenv("LMOD_SYSHOST")!=""){
 
 ## Recovering a disconnected interactive session
 
-Interactive sessions on a SLURM cluster — a development node opened with `sdev`, or a session started with `srun --pty` [@slurm-srun] or `salloc` [@slurm-salloc] — are tied to the terminal that launched them. If your SSH connection drops (a broken pipe, a network blip, or closing your laptop), SLURM usually sends the launching process a hang-up signal and **tears down the whole job allocation**, not just your shell. When that happens there is nothing left to reconnect to, and any unsaved work in that session is lost.
+Interactive sessions on a SLURM cluster --- a development node opened with `sdev`, or a session started with `srun --pty` [@slurm-srun] or `salloc` [@slurm-salloc] --- are tied to the terminal that launched them. If your SSH connection drops (a broken pipe, a network blip, or closing your laptop), SLURM usually sends the launching process a hang-up signal and **tears down the whole job allocation**, not just your shell. When that happens there is nothing left to reconnect to, and any unsaved work in that session is lost.
 
 There is no way to reattach to the *identical* shell once the allocation has been released. The reliable strategy is to prevent the drop in the first place; if the allocation does happen to survive, you can open a *new* shell inside it.
 
@@ -228,7 +228,7 @@ tmux attach     # reattach to the most recent session
 
 ### Reconnect to a surviving allocation
 
-If you did not use a multiplexer, you can still open a new shell on the nodes of a job that is **already running** — most commonly a batch job submitted with `sbatch`, or an interactive allocation that happened to survive. This gives you a *new* shell (a new job step), not the original session.
+If you did not use a multiplexer, you can still open a new shell on the nodes of a job that is **already running** --- most commonly a batch job submitted with `sbatch`, or an interactive allocation that happened to survive. This gives you a *new* shell (a new job step), not the original session.
 
 First, find the job ID [@slurm-squeue]:
 
