@@ -80,6 +80,10 @@ to [help you code](https://en.wikipedia.org/wiki/AI-assisted_software_developmen
 
 {{< include ai-tools/copilot-setup-steps-config.qmd >}}
 
+### Agent Skills {#sec-ai-agent-skills}
+
+{{< include ai-tools/agent-skills.qmd >}}
+
 ### When to use a coding agent {#sec-ai-when-to-use}
 
 {{< include ai-tools/when-to-use-coding-agent.qmd >}}

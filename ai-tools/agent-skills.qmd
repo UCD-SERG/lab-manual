@@ -1,0 +1,61 @@
+
+[Agent Skills](https://agentskills.io/home) are a lightweight,
+open standard for extending AI agent capabilities
+with specialized knowledge and workflows.
+Originally developed by Anthropic and released as an open standard,
+Agent Skills are now supported by a wide range of coding agent tools,
+including GitHub Copilot, Claude Code, Cursor, Gemini CLI, and many others
+(as of June 2026).
+
+#### What is a Skill?
+
+At its core, a skill is a folder containing a `SKILL.md` file.
+This file includes required metadata (`name` and `description`)
+along with instructions that tell an agent how to perform a specific task.
+Skills can also bundle supporting resources:
+
+- Scripts
+- Reference documentation
+- Templates and assets
+
+```
+my-skill/
+├── SKILL.md          # Required: metadata + instructions
+├── scripts/          # Optional: executable code
+├── references/       # Optional: documentation
+└── assets/           # Optional: templates, resources
+```
+
+#### How Agents Load Skills
+
+Agents load skills through a process called *progressive disclosure*,
+in three stages:
+
+1. **Discovery**: At startup, the agent loads only the name and description
+   of each available skill — just enough to know when it might be relevant.
+2. **Activation**: When a task matches a skill's description,
+   the agent reads the full `SKILL.md` instructions into context.
+3. **Execution**: The agent follows the instructions,
+   optionally executing bundled scripts or loading referenced files as needed.
+
+This means full instructions load only when needed,
+so agents can maintain many skills with a small context footprint.
+
+#### Why Use Skills?
+
+Skills package procedural knowledge and team-specific context
+into portable, version-controlled folders.
+This gives agents:
+
+- **Domain expertise**: Capture specialized knowledge as reusable instructions
+- **Repeatable workflows**: Turn multi-step tasks into consistent, auditable procedures
+- **Cross-tool reuse**: Build a skill once and use it across any skills-compatible agent
+
+#### Further Reading
+
+For the complete specification and more details,
+see [agentskills.io](https://agentskills.io/home).
+
+The [d-morrison/claude-config](https://github.com/d-morrison/claude-config) repository
+contains an example of Claude-specific configuration files,
+including Claude skills and related settings.
