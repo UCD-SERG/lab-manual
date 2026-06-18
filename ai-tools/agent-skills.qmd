@@ -2,8 +2,8 @@
 [Agent Skills](https://agentskills.io/home) are a lightweight,
 open standard for extending AI agent capabilities
 with specialized knowledge and workflows.
-Introduced by Anthropic and released as an open standard,
-they are supported by a growing range of coding agents.
+The [specification](https://agentskills.io/specification) defines a portable,
+tool-agnostic format that any compatible agent can load.
 
 #### What is a Skill?
 
@@ -26,8 +26,8 @@ my-skill/
 
 #### How Agents Load Skills
 
-Agents load skills through a process called *progressive disclosure*,
-in three stages:
+The specification describes a *progressive disclosure* model,
+in which an agent typically loads a skill in three stages:
 
 1. **Discovery**: At startup, the agent loads only the name and description
    of each available skill --- just enough to know when it might be relevant.
