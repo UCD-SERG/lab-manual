@@ -122,7 +122,7 @@ A useful pattern:
    # On a machine with internet access
    ollama pull qwen2.5-coder:7b
    # Ollama stores models in ~/.ollama/models by default
-   rsync -a ~/.ollama/ user@cluster.example.edu:~/.ollama/
+   rsync -a ~/.ollama/models/ user@cluster.example.edu:~/.ollama/models/
    ```
 
    ::: {.callout-warning}
