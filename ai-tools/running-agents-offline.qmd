@@ -30,9 +30,11 @@ and is available for macOS, Linux, and Windows.
 
 ::: {.callout-caution}
 Before running any remote install script, review it first.
-Instead of piping directly into `less` (which can behave oddly in some
-terminal emulators), save it first and then page it:
-`curl -fsSL https://ollama.com/install.sh -o install.sh && less install.sh`.
+The real risk is piping `curl` straight into `sh`/`bash` (`curl ... | sh`),
+which executes unreviewed code. Save the script, read it, then run it:
+`curl -fsSL https://ollama.com/install.sh -o install.sh && less install.sh`
+(paging the saved file rather than piping `curl` into `less`, which can
+behave oddly in some terminal emulators).
 Alternatively, use your system package manager (e.g., `brew install ollama` on macOS)
 or follow the manual installation steps on the
 [Ollama releases page](https://github.com/ollama/ollama/releases).
@@ -134,9 +136,13 @@ A useful pattern:
    and rsync to that path instead:
 
    ```bash
-   # Store models outside your home directory (recommended on HPC)
-   export OLLAMA_MODELS=/scratch/$USER/ollama-models
+   # On your local machine: copy the models to the cluster scratch filesystem
    rsync -a ~/.ollama/models/ user@cluster.example.edu:/scratch/$USER/ollama-models/
+   ```
+
+   ```bash
+   # On the cluster: point ollama at that path (export before `ollama serve`)
+   export OLLAMA_MODELS=/scratch/$USER/ollama-models
    ```
 
    Set the same `OLLAMA_MODELS` value before running `ollama serve` so the server
