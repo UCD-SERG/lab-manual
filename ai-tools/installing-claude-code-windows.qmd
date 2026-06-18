@@ -8,7 +8,7 @@ and the gotchas to watch for.
 ::: {.callout-note}
 These notes were written in June 2026.
 As with the rest of this chapter,
-treat the specifics with caution—
+treat the specifics with caution---
 installers and behavior change quickly.
 :::
 
@@ -22,7 +22,7 @@ On Windows, run it from one of:
 - **WSL** (Windows Subsystem for Linux), the most Unix-faithful option.
 
 If you use WSL,
-install Claude Code *inside* WSL—
+install Claude Code *inside* WSL---
 a Windows install will not carry over,
 because WSL has its own filesystem and `PATH`.
 
