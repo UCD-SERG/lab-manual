@@ -2,3 +2,5 @@
 ^renv\.lock$
 ^\.lintr\.R$
 ^lms$
+^\.ai-config$
+^\.claude$

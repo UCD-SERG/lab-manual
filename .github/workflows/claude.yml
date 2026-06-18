@@ -38,6 +38,12 @@ jobs:
       # (the reusable workflow's default) rather than via a renv restore, which
       # would also need the preview workflow's system libraries.
       install-quarto: true
+      # Check out the .ai-config submodule so the committed
+      # .claude/skills -> ../.ai-config/skills symlink resolves and the bot can
+      # invoke the shared skills by name. ai-config is public, so no token is
+      # needed. (Without this the symlink dangles and claude-code-action's
+      # restoreConfigFromBase errors with ENOENT statx '.claude/skills'.)
+      checkout-submodules: true
       prompt-addendum: |
         This is the UCD-SERG lab manual, a Quarto book. Follow the manual's own
         coding-style and coding-practices conventions. Keep prose ASCII: the

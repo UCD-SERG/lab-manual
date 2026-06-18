@@ -27,3 +27,7 @@ jobs:
       # Wires the workflow_dispatch input through so claude.yml can re-dispatch a
       # review on Claude's commits; empty (and ignored) for pull_request runs.
       pr-number: ${{ inputs.pr_number }}
+      # Check out the .ai-config submodule so the committed .claude/skills
+      # symlink resolves; otherwise claude-code-action's restoreConfigFromBase
+      # errors with ENOENT statx '.claude/skills'. ai-config is public — no token.
+      checkout-submodules: true
