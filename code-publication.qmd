@@ -120,7 +120,7 @@ create a tag to make a GitHub release,
 which will tag the repository,
 creating a marker at this specific point in time.
 
-Detailed instructions [here.](https://docs.github.com/en/enterprise/2.13/user/articles/creating-releases)
+Detailed instructions: [Managing releases in a repository](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository).
 
 ## Releasing to CRAN {#sec-cran-release}
 
@@ -181,7 +181,7 @@ Before submitting to CRAN, work through the following steps:
 
    - `devtools::check_win_devel()` - tests on Windows with the development version of R
    - [R-hub](https://github.com/r-hub/rhub) - tests on a wide range of platforms.
-     In rhub v2, this runs via GitHub Actions:
+     In [rhub v2](https://r-hub.github.io/rhub/articles/rhubv2.html), this runs via GitHub Actions:
      run `rhub::rhub_setup()` once to add the workflow to your repository,
      then `rhub::rhub_check()` to trigger a check run.
      (The older `rhub::check_for_cran()` function was removed in the v2 rewrite.)
@@ -216,7 +216,7 @@ Once CRAN accepts your package:
 
 1. **Tag the release and create a GitHub release**:
    Follow the steps in @sec-create-github-release,
-   using an annotated tag named `v` followed by the version number (e.g., `v1.2.0`).
+   using a tag named `v` followed by the version number (e.g., `v1.2.0`).
    Copy the relevant section of `NEWS.md` as the release notes.
    Tags permanently mark the exact commit that was released,
    making it easy to return to or compare against any released version.
