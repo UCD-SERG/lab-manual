@@ -26,12 +26,12 @@ jobs:
     with:
       # The lab manual is a Quarto book, so Claude needs Quarto to render
       # chapters. Dependencies are installed from DESCRIPTION as RSPM binaries
-      # (the reusable workflow's default) rather than via an renv restore, which
+      # (the reusable workflow's default) rather than via a renv restore, which
       # would also need the preview workflow's system libraries.
       install-quarto: true
       prompt-addendum: |
         This is the UCD-SERG lab manual, a Quarto book. Follow the manual's own
-        coding-style and coding-practices conventions. Keep prose ASCII — the
+        coding-style and coding-practices conventions. Keep prose ASCII: the
         check-non-standard-chars workflow flags non-standard characters such as
         curly quotes and en/em dashes. Before committing a changed chapter, run
         spelling::spell_check_files() on it and, where feasible, `quarto render`
