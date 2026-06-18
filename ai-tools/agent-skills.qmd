@@ -8,7 +8,8 @@ tool-agnostic format that any compatible agent can load.
 #### What is a Skill?
 
 At its core, a skill is a folder containing a `SKILL.md` file.
-This file includes required metadata (`name` and `description`)
+This file includes the `name` and `description` metadata
+[required by the specification](https://agentskills.io/specification),
 along with instructions that tell an agent how to perform a specific task.
 Skills can also bundle supporting resources:
 
