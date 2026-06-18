@@ -29,7 +29,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 1
+          # claude-code-action's restoreConfigFromBase touches .claude, which
+          # contains a skills symlink into the .ai-config submodule. The
+          # submodule must be checked out or the symlink dangles and the action
+          # errors (ENOENT statx '.claude/skills'). fetch-depth: 0 keeps the
+          # pinned submodule commit fetchable as .ai-config advances.
+          fetch-depth: 0
+          submodules: recursive
 
       - name: Run Claude Code Review
         id: claude-review

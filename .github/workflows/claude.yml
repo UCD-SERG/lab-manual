@@ -28,7 +28,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 1
+          # Full history is required alongside submodules: a shallow clone only
+          # fetches the submodule's branch tip, so CI would break once the pinned
+          # .ai-config commit is no longer that tip.
+          fetch-depth: 0
           # Pull in the .ai-config submodule so the @claude bot can load the
           # shared skills committed at .claude/skills -> ../.ai-config/skills.
           submodules: recursive
