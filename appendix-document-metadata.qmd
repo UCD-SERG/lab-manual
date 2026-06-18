@@ -6,24 +6,16 @@ This document was generated from the following git commit:
 #| echo: false
 #| output: asis
 
-# Get git branch
-branch <- system("git rev-parse --abbrev-ref HEAD 2>/dev/null", intern = TRUE)
-if (length(branch) == 0 || branch == "") branch <- "unknown"
+get_git_info <- function(cmd) {
+  result <- system(paste(cmd, "2>/dev/null"), intern = TRUE)
+  if (length(result) == 0 || result == "") "unknown" else result
+}
 
-# Get short commit hash
-commit_short <- system("git rev-parse --short HEAD 2>/dev/null", intern = TRUE)
-if (length(commit_short) == 0 || commit_short == "") commit_short <- "unknown"
+branch <- get_git_info("git rev-parse --abbrev-ref HEAD")
+commit_short <- get_git_info("git rev-parse --short HEAD")
+commit_full <- get_git_info("git rev-parse HEAD")
+commit_date <- get_git_info("git show -s --format=%ci HEAD")
 
-# Get full commit hash
-commit_full <- system("git rev-parse HEAD 2>/dev/null", intern = TRUE)
-if (length(commit_full) == 0 || commit_full == "") commit_full <- "unknown"
-
-# Get commit date
-commit_date <- "git show -s --format=%ci HEAD 2>/dev/null" |> 
-  system(intern = TRUE)
-if (length(commit_date) == 0 || commit_date == "") commit_date <- "unknown"
-
-# Print formatted output
 cat("- **Branch:**", branch, "\n")
 cat("- **Commit:**", commit_short, "\n")
 cat("- **Full commit hash:**", commit_full, "\n")
