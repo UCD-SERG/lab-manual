@@ -124,4 +124,16 @@ This allows you to check the room's availability before scheduling.
 
 When submitting code to or reviewing code from colleagues, use best practices to provide and receive constructive feedback:
 
-- [Tidyverse code review principles](https://code-review.tidyverse.org/) [@tidyverse2023codereview]: Best practices for reviewing R code, including what to look for and how to provide constructive feedback. 
+- [Tidyverse code review principles](https://code-review.tidyverse.org/) [@tidyverse2023codereview]: Best practices for reviewing R code, including what to look for and how to provide constructive feedback.
+
+### Responding to review comments
+
+When a reviewer leaves a comment on your code, respond to each one with exactly one of these:
+
+- **Address it.** Make the change the reviewer asked for.
+- **Rebut it.** If you think the code is correct as written, explain your reasoning and push back. You are entitled to disagree, as long as you say why.
+- **Defer it.** If the comment is valid but out of scope for this change, file a tracking issue and link it in your reply so the reviewer can see the work will not be lost.
+
+For an observation that requests no change, a short acknowledgement is enough.
+
+Silently ignoring a review comment is not a valid option. Leaving a comment unanswered stalls the review and signals that you missed it or chose not to engage. Always reply, even if only to say you have filed a follow-up issue.
