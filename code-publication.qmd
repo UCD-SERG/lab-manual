@@ -128,7 +128,9 @@ If your R package is intended for public distribution,
 you may want to release it on [CRAN](https://cran.r-project.org/) (the Comprehensive R Archive Network).
 This section summarizes the release process
 and adds lab-specific guidance on versioning and tagging.
-For full details, see the [R Packages book chapter on releasing to CRAN](https://r-pkgs.org/release.html) by Hadley Wickham and Jennifer Bryan.
+For full details,
+see the [R Packages book chapter on releasing to CRAN](https://r-pkgs.org/release.html)
+by Hadley Wickham and Jennifer Bryan.
 
 The CRAN submission pipeline goes through several stages:
 initial upload, automated checks,
