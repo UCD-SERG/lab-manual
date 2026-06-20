@@ -37,10 +37,12 @@ for `--remote` runs:
 `/remote-env` only *selects* the default;
 to add, edit, or archive the environments themselves,
 use the web interface at [claude.ai/code](https://claude.ai/code).
-Because it opens an interactive panel,
+Because `/remote-env` opens an interactive panel,
 run it from an interactive `claude` terminal session.
 
 ::: {.callout-note}
+#### Availability
+
 Claude Code on the web
 (and the cloud environments it relies on)
 is a research-preview feature,
