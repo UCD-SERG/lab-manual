@@ -132,8 +132,7 @@ When a reviewer leaves a comment on your code, respond to each one with exactly 
 
 - **Address it.** Make the change the reviewer asked for.
 - **Rebut it.** If you think the code is correct as written, explain your reasoning and push back. You are entitled to disagree, as long as you say why.
-- **Defer it.** If the comment is valid but out of scope for this change, file a tracking issue and link it in your reply so the reviewer can see the work will not be lost.
+- **Defer it.** If the comment is valid but out of scope for this change, file a tracking issue and link it in your reply. This keeps the work visible and ensures it is not lost.
+- **Acknowledge it.** For an observation that requests no change, a short acknowledgement is enough.
 
-For an observation that requests no change, a short acknowledgement is enough.
-
-Silently ignoring a review comment is not a valid option. Leaving a comment unanswered stalls the review and signals that you missed it or chose not to engage. Always reply, even if only to say you have filed a follow-up issue.
+Never ignore a review comment. Always reply --- even if only to say you filed a follow-up issue.
