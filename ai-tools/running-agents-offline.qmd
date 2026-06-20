@@ -10,7 +10,7 @@ when working with sensitive or confidential data.
 ::: {.callout-note}
 #### Trade-offs of Local vs. Cloud Models
 
-Local models work best with a GPU (≥8 GB VRAM for smaller models);
+Local models work best with a GPU (roughly 8 GB VRAM or more for smaller models);
 CPU-only inference is possible but significantly slower,
 and hardware needs vary with model size and quantization.
 They are generally less capable than frontier cloud models,
@@ -41,8 +41,10 @@ or follow the manual installation steps on the
 :::
 
 ```bash
-# macOS / Linux: download first, review it (see caution above), then run
-curl -fsSL https://ollama.com/install.sh -o install.sh && sh install.sh
+# macOS / Linux: download, review, then run (do not chain these into one command)
+curl -fsSL https://ollama.com/install.sh -o install.sh
+less install.sh   # review the script before running it (see caution above)
+sh install.sh
 ```
 
 On Windows, download the installer from <https://ollama.com/download>.
@@ -50,15 +52,21 @@ On Windows, download the installer from <https://ollama.com/download>.
 **Pull a code-focused model:**
 
 ```bash
-# Smaller, faster; requires ~8 GB VRAM; works on most machines with a modern GPU or Apple Silicon
+# Smaller, faster; works on most machines with a modern GPU or Apple Silicon
 ollama pull qwen2.5-coder:7b
 
-# More capable; requires ~20 GB VRAM
+# More capable; larger memory footprint
 ollama pull qwen2.5-coder:32b
 
-# Alternatively, a general-purpose model (70B variant; requires ~40 GB VRAM---unusable on most single GPUs)
+# Alternatively, a general-purpose model (70B variant; needs a high-memory GPU)
 ollama pull llama3.3
 ```
+
+The VRAM each model needs depends on its size and quantization and changes as
+models are re-quantized---check the [Ollama model library](https://ollama.com/library)
+for current requirements. As a rough guide, smaller (7B) models run on consumer
+GPUs with around 8 GB of VRAM, while larger (32B and 70B) models need
+substantially more and may not fit on a single GPU.
 
 **Start the Ollama server:**
 
@@ -158,8 +166,11 @@ A useful pattern:
    ```
 
    If you are on a shared compute node, be aware that binding to `0.0.0.0`
-   exposes the Ollama port to other users on that host; most HPC clusters
-   grant exclusive node allocation, so this is rarely a concern in practice.
+   exposes the Ollama port to other users on that host. Scheduler policies vary
+   by site and job type, so confirm whether your job has exclusive node access
+   (request it explicitly when in doubt---e.g., `--exclusive` in SLURM), or bind
+   only to loopback (`OLLAMA_HOST=127.0.0.1:11434`) and tunnel from the login
+   node when the node is shared.
 
 3. **Forward the port** to your local machine to use your editor's Ollama integration.
    Because Ollama is running on a compute node (e.g., `gpu-node-01`),
