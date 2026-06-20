@@ -53,6 +53,10 @@ The render depends on the `.ai-config` submodule (chapters transclude its
 git submodule update --init --recursive
 ```
 
+R dependencies are managed with `renv` (`renv.lock`, activated by `.Rprofile`).
+Run `renv::restore()` once to install them before rendering or linting locally;
+CI does the same via `r-lib/actions/setup-renv`.
+
 ## The `.ai-config` submodule
 
 `.ai-config` vendors `d-morrison/ai-config`. It supplies two things:
