@@ -73,20 +73,20 @@ but on Windows two things commonly break that.
 **MSYS2 does not inherit the Windows `PATH` by default.**
 It starts in a "minimal" path mode,
 so tools installed elsewhere on Windows are invisible to it.
-Add the binary's directory explicitly in your `~/.zshrc` (or `~/.bashrc`):
+Add the binary's directory explicitly in your `~/.zshrc` (or `~/.bashrc`).
+Because MSYS2's `$HOME` is `/home/<you>` (its own home, not the Windows
+profile where the installer puts the binary),
+point `PATH` at the absolute Windows path:
 
 ```sh
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="/c/Users/<you>/.local/bin:$PATH"     # MSYS2
 ```
 
-Note that `$HOME` differs by shell:
-in **Git Bash** it is `/c/Users/<you>` (your Windows user profile, where the installer puts the binary),
-but in **MSYS2** it is `/home/<you>`.
-If they differ on your machine,
-use the absolute Windows path so MSYS2 finds the real install:
+In **Git Bash**, `$HOME` already is `/c/Users/<you>` (your Windows user
+profile), so the shorthand works there:
 
 ```sh
-export PATH="/c/Users/<you>/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"     # Git Bash
 ```
 
 **Rehash after changing `PATH`.**
