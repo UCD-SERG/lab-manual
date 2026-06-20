@@ -95,10 +95,9 @@ If you add a directory to `PATH` in your shell config,
 the shell may still report `command not found`
 *even though the directory is on `PATH`*,
 because its command table is stale.
-Force a rebuild right after the export:
+Force a rebuild in the same shell right after editing `PATH`:
 
 ```sh
-export PATH="$HOME/.local/bin:$PATH"
 rehash        # zsh; use 'hash -r' in bash
 ```
 
