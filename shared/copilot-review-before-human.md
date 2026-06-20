@@ -14,30 +14,30 @@ saving everyone time and improving code quality.
 
 **Copilot review workflow:**
 
-1. **Assign Copilot as a reviewer**: 
+1. **Assign Copilot as a reviewer**:
    On your pull request page,
    assign Copilot to review the PR the same way you would assign any other reviewer.
    Click "Reviewers" in the right sidebar and select Copilot from the list.
 
-2. **Review Copilot's comments**: 
+2. **Review Copilot's comments**:
    Once Copilot completes its review,
    carefully examine each comment.
    For each comment, decide whether you agree with the suggestion:
-   
+
    - **If the comment is correct**: Address it by making code changes yourself or ask Copilot to apply the fix using GitHub's suggestion features
    - **If the comment is incorrect or not applicable**: Dismiss the comment with an explanation for why it doesn't apply
    - **If you're uncertain**: Seek a second opinion from a human reviewer or do additional research
 
-3. **Request another Copilot review**: 
+3. **Request another Copilot review**:
    After addressing or dismissing all comments,
    request another review from Copilot.
    This creates an iterative improvement process.
 
-4. **Iterate until satisfied**: 
+4. **Iterate until satisfied**:
    Repeat the review-and-address cycle until Copilot stops providing valuable suggestions.
    This typically takes 1-3 iterations depending on the complexity of the changes.
 
-5. **Request human review**: 
+5. **Request human review**:
    Only after you've addressed Copilot's feedback should you request review from human team members.
    At this point,
    the code should be in better shape,
