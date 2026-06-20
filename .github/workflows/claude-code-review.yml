@@ -1,11 +1,11 @@
 # Calls the shared reusable Claude Code Review workflow in d-morrison/gha.
 # Requires the CLAUDE_CODE_OAUTH_TOKEN repository secret. It is passed
-# EXPLICITLY (not `secrets: inherit`): the reusable workflow lives in the
-# d-morrison *user* account while this repo is in the *UCD-SERG org*, and
-# GitHub only inherits secrets into a reusable workflow owned by the same
-# org/user. Cross-owner `secrets: inherit` silently passes an empty token,
-# so the reviewer dies with "Either ANTHROPIC_API_KEY, CLAUDE_CODE_OAUTH_TOKEN,
-# ... is required". Keep this file named claude-code-review.yml so claude.yml
+# explicitly (not `secrets: inherit`): the reusable workflow lives in the
+# d-morrison user account while this repo is in the UCD-SERG org, and GitHub
+# only inherits secrets into a reusable workflow owned by the same org/user.
+# Cross-owner `secrets: inherit` silently passes an empty token, so the
+# reviewer dies with "Either ANTHROPIC_API_KEY, CLAUDE_CODE_OAUTH_TOKEN, ...
+# is required". Keep this file named claude-code-review.yml so claude.yml
 # can re-dispatch a review after an @claude run pushes commits.
 name: Claude Code Review
 

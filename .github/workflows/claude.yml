@@ -1,7 +1,7 @@
 # Calls the shared reusable Claude Code workflow in d-morrison/gha.
-# Requires the CLAUDE_CODE_OAUTH_TOKEN repository secret, passed EXPLICITLY
-# (not `secrets: inherit`): the reusable workflow is in the d-morrison *user*
-# account while this repo is in the *UCD-SERG org*, and cross-owner `inherit`
+# Requires the CLAUDE_CODE_OAUTH_TOKEN repository secret, passed explicitly
+# (not `secrets: inherit`): the reusable workflow is in the d-morrison user
+# account while this repo is in the UCD-SERG org, and cross-owner `inherit`
 # silently passes an empty token. SUBMODULES_TOKEN / WORKFLOW_TOKEN are
 # optional and resolve to empty when unset.
 name: Claude Code
