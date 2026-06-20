@@ -57,11 +57,14 @@ current versions **migrate themselves to a native install**
 the first time you run `claude`
 (at `~/.local/bin/claude`, or `~/.local/bin/claude.exe` on Windows)
 and remove the npm copy.
+You can watch this happen in the terminal output the first time you run
+`claude`; the current install methods are documented in the
+[Claude Code setup guide](https://code.claude.com/docs/en/setup).
 
 This is the single most confusing Windows gotcha:
 a path that worked a moment ago "disappears."
 **Do not** hardcode the npm location
-(e.g. `…/AppData/Roaming/npm/…`) in your shell config.
+(e.g. `.../AppData/Roaming/npm/...`) in your shell config.
 Point your `PATH` at the shell-appropriate directory shown in the next section instead.
 :::
 
