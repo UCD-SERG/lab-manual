@@ -25,6 +25,8 @@ If you use WSL,
 install Claude Code *inside* WSL---
 a Windows install will not carry over,
 because WSL has its own filesystem and `PATH`.
+Inside WSL the standard Linux install applies,
+and the Windows-specific `PATH` and `rehash` gotchas below don't apply.
 
 #### Install Claude Code
 
@@ -37,6 +39,9 @@ There are two common routes:
    ```
 
    This installs the binary to `~/.local/bin`.
+   If your organization's policy requires it,
+   download and inspect the script before running it
+   rather than piping it straight to `bash`.
 
 2. **npm** (requires [Node.js](https://nodejs.org/)):
 
@@ -75,7 +80,7 @@ export PATH="$HOME/.local/bin:$PATH"
 ```
 
 Note that `$HOME` differs by shell:
-in **Git Bash** it is `C:\Users\<you>` (where the installer puts the binary),
+in **Git Bash** it is `/c/Users/<you>` (your Windows user profile, where the installer puts the binary),
 but in **MSYS2** it is `/home/<you>`.
 If they differ on your machine,
 use the absolute Windows path so MSYS2 finds the real install:
@@ -144,7 +149,7 @@ winpty gh auth login
 Open a **new** terminal window (so it picks up your updated config) and run:
 
 ```sh
-claude --version      # e.g. 2.1.177 (Claude Code)
+claude --version      # prints the installed version number
 ```
 
 If you get a version number, you're ready to run `claude` in your project directory.
