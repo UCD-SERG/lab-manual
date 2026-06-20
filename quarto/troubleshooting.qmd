@@ -19,6 +19,10 @@ This command checks for:
 - R, knitr, and rmarkdown versions
 - Library paths and installed packages
 
+See the `quarto check` output and the
+[official guide](https://quarto.org/docs/troubleshooting/)
+for the complete, authoritative list of checks.
+
 ### Diagnostic Tools
 
 **Enable verbose logging** to see detailed rendering information.

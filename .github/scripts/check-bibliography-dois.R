@@ -350,9 +350,15 @@ run_doi_validation <- function() {
   no_metadata_check <- "--no-metadata-check" %in% args
   files_raw <- args[!grepl("^--", args)]
   # Handle the case where all file paths are passed as a single space-separated
-  # argument (e.g., via "$BIB_FILES" in a shell script)
-  files <- unlist(strsplit(paste(files_raw, collapse = " "), "\\s+"))
-  files <- files[nchar(trimws(files)) > 0]
+  # argument (e.g., via "$BIB_FILES" in a shell script). Only split on
+  # whitespace when the single argument is not itself an existing file path,
+  # so that valid quoted paths containing spaces are preserved.
+  if (length(files_raw) == 1 && !file.exists(files_raw)) {
+    files <- unlist(strsplit(files_raw, "\\s+"))
+    files <- files[nchar(trimws(files)) > 0]
+  } else {
+    files <- files_raw
+  }
 
   if (length(files) == 0) {
     cat("Usage: check-bibliography-dois.R [--no-metadata-check] <file1.bib> [file2.bib ...]\n")
