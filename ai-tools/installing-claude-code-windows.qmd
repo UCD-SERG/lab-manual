@@ -1,0 +1,154 @@
+[Claude Code](https://www.anthropic.com/claude-code) is Anthropic's
+command-line coding agent.
+Installing it on Windows works well,
+but a few platform-specific pitfalls can cost you hours if you don't know about them.
+These notes capture a setup that works,
+and the gotchas to watch for.
+
+::: {.callout-note}
+These notes were written in June 2026.
+As with the rest of this chapter,
+treat the specifics with caution---
+installers and behavior change quickly.
+:::
+
+#### Run it from a Unix-like terminal
+
+Claude Code expects a Unix-like shell.
+On Windows, run it from one of:
+
+- **Git Bash** (ships with [Git for Windows](https://gitforwindows.org/));
+- **MSYS2** (<https://www.msys2.org/>), which also gives you a package manager (`pacman`) and optional `zsh`;
+- **WSL** (Windows Subsystem for Linux), the most Unix-faithful option.
+
+If you use WSL,
+install Claude Code *inside* WSL---
+a Windows install will not carry over,
+because WSL has its own filesystem and `PATH`.
+
+#### Install Claude Code
+
+There are two common routes:
+
+1. **Native installer** (recommended):
+
+   ```sh
+   curl -fsSL https://claude.ai/install.sh | bash
+   ```
+
+   This installs the binary to `~/.local/bin`.
+
+2. **npm** (requires [Node.js](https://nodejs.org/)):
+
+   ```sh
+   npm install -g @anthropic-ai/claude-code
+   ```
+
+::: {.callout-important}
+## Claude Code migrates itself out of npm
+
+Even if you install via npm,
+the first time you run `claude` it **migrates itself to a native install**
+at `~/.local/bin/claude` (`claude.exe` on Windows)
+and removes the npm copy.
+
+This is the single most confusing Windows gotcha:
+a path that worked a moment ago "disappears."
+**Do not** hardcode the npm location
+(e.g. `…/AppData/Roaming/npm/…`) in your shell config.
+Point your `PATH` at `~/.local/bin` instead.
+:::
+
+#### Make sure your shell can find `claude`
+
+The native binary lives in `~/.local/bin`.
+The installer adds this directory to `PATH` for ordinary shells,
+but on Windows two things commonly break that.
+
+**MSYS2 does not inherit the Windows `PATH` by default.**
+It starts in a "minimal" path mode,
+so tools installed elsewhere on Windows are invisible to it.
+Add the binary's directory explicitly in your `~/.zshrc` (or `~/.bashrc`):
+
+```sh
+export PATH="$HOME/.local/bin:$PATH"
+```
+
+Note that `$HOME` differs by shell:
+in **Git Bash** it is `C:\Users\<you>` (where the installer puts the binary),
+but in **MSYS2** it is `/home/<you>`.
+If they differ on your machine,
+use the absolute Windows path so MSYS2 finds the real install:
+
+```sh
+export PATH="/c/Users/<you>/.local/bin:$PATH"
+```
+
+**Rehash after changing `PATH`.**
+`zsh` and `bash` cache the locations of executables.
+If you add a directory to `PATH` in your shell config,
+the shell may still report `command not found`
+*even though the directory is on `PATH`*,
+because its command table is stale.
+Force a rebuild right after the export:
+
+```sh
+export PATH="$HOME/.local/bin:$PATH"
+rehash        # zsh; use 'hash -r' in bash
+```
+
+This bites hardest with [oh-my-zsh](https://ohmyz.sh/),
+which builds zsh's command table *before* your custom `PATH` line runs,
+so without the `rehash` you will see `command not found`
+no matter how many times you open a new window.
+
+#### Do not edit dotfiles with PowerShell redirection
+
+::: {.callout-warning}
+## PowerShell writes the wrong encoding
+
+Never write to `~/.bashrc`, `~/.zshrc`, or other shell config files
+using PowerShell's `>` or `>>` redirection.
+Windows PowerShell writes **UTF-16 with a byte-order mark**,
+which `bash`/`zsh` read as a stray character at the start of the file:
+
+```
+bash: $'\377\376export': command not found
+```
+
+Edit dotfiles from *inside* the shell
+(e.g. with `nano`, `vim`, or `echo … >> ~/.zshrc` run in bash/zsh),
+or with an editor that saves UTF-8 without a BOM (e.g. VS Code).
+:::
+
+#### Authenticating the GitHub CLI in Git Bash
+
+If you also use the [GitHub CLI](https://cli.github.com/) (`gh`)
+to push code or open pull requests,
+`gh auth login` may fail in Git Bash with:
+
+```
+could not prompt: … running in MinTTY without pseudo terminal support
+```
+
+Git Bash's terminal (MinTTY) can't host the interactive prompt.
+Wrap the command with `winpty`,
+or run it from PowerShell / Windows Terminal instead:
+
+```sh
+winpty gh auth login
+```
+
+#### Verify the install
+
+Open a **new** terminal window (so it picks up your updated config) and run:
+
+```sh
+claude --version      # e.g. 2.1.177 (Claude Code)
+```
+
+If you get a version number, you're ready to run `claude` in your project directory.
+If you get `command not found`,
+re-check the two `PATH` issues above:
+the directory must be on `PATH`,
+and you must `rehash` (or open a fresh window) after changing it.

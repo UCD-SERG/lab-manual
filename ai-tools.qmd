@@ -103,3 +103,7 @@ to [help you code](https://en.wikipedia.org/wiki/AI-assisted_software_developmen
 ### Reviewing a Copilot PR You Didn't Create
 
 {{< include ai-tools/reviewing-copilot-prs.qmd >}}
+
+### Installing Claude Code on Windows {#sec-claude-code-windows}
+
+{{< include ai-tools/installing-claude-code-windows.qmd >}}
