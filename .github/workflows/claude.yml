@@ -1,6 +1,9 @@
 # Calls the shared reusable Claude Code workflow in d-morrison/gha.
-# Requires the CLAUDE_CODE_OAUTH_TOKEN repository secret; `secrets: inherit`
-# passes it (and any optional WORKFLOW_TOKEN) through to the reusable workflow.
+# Requires the CLAUDE_CODE_OAUTH_TOKEN repository secret, passed explicitly
+# (not `secrets: inherit`): the reusable workflow is in the d-morrison user
+# account while this repo is in the UCD-SERG org, and cross-owner `inherit`
+# silently passes an empty token. SUBMODULES_TOKEN / WORKFLOW_TOKEN are
+# optional and resolve to empty when unset.
 name: Claude Code
 
 on:
@@ -31,13 +34,25 @@ jobs:
       id-token: write
       actions: write       # dispatch the review workflow via `gh workflow run`
     uses: d-morrison/gha/.github/workflows/claude.yml@v1
-    secrets: inherit
+    # Pass secrets explicitly — cross-owner `secrets: inherit` drops them (see
+    # the header comment). SUBMODULES_TOKEN / WORKFLOW_TOKEN are optional and
+    # resolve to empty when unset.
+    secrets:
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+      SUBMODULES_TOKEN: ${{ secrets.SUBMODULES_TOKEN }}
+      WORKFLOW_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
     with:
       # The lab manual is a Quarto book, so Claude needs Quarto to render
       # chapters. Dependencies are installed from DESCRIPTION as RSPM binaries
       # (the reusable workflow's default) rather than via a renv restore, which
       # would also need the preview workflow's system libraries.
       install-quarto: true
+      # Check out the .ai-config submodule so the committed
+      # .claude/skills -> ../.ai-config/skills symlink resolves and the bot can
+      # invoke the shared skills by name. ai-config is public, so no token is
+      # needed. (Without this the symlink dangles and claude-code-action's
+      # restoreConfigFromBase errors with ENOENT statx '.claude/skills'.)
+      checkout-submodules: true
       prompt-addendum: |
         This is the UCD-SERG lab manual, a Quarto book. Follow the manual's own
         coding-style and coding-practices conventions. Keep prose ASCII: the
