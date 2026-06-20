@@ -54,7 +54,7 @@ to [help you code](https://en.wikipedia.org/wiki/AI-assisted_software_developmen
 
 ### Useful Prompt Formats
 
-{{< include ai-tools/useful-prompt-formats.qmd >}}
+{{< include shared/prompt-formats.md >}}
 
 ### Addressing Failing GitHub Actions Workflows {#sec-ai-addressing-failing-workflows}
 
@@ -98,8 +98,38 @@ to [help you code](https://en.wikipedia.org/wiki/AI-assisted_software_developmen
 
 ### Using Copilot Review Before Human Review
 
-{{< include ai-tools/copilot-review-before-human-review.qmd >}}
+{{< include shared/copilot-review-before-human.md >}}
 
 ### Reviewing a Copilot PR You Didn't Create
 
 {{< include ai-tools/reviewing-copilot-prs.qmd >}}
+
+## Pull-Request Workflow with Agents
+
+The practices below apply whether you are driving an agent's work or doing the
+work yourself. They keep parallel sessions from colliding and keep a pull
+request moving toward a clean, mergeable state.
+
+### File an Issue Before Starting
+
+{{< include .ai-config/shared/workflow/issue-first.md >}}
+
+### Claim a PR or Issue Before Working on It
+
+{{< include .ai-config/shared/workflow/claim-pr.md >}}
+
+### Keep Your Branch Synced with Main
+
+{{< include .ai-config/shared/workflow/sync-with-main.md >}}
+
+### Driving a Pull Request to Clean
+
+{{< include .ai-config/shared/workflow/ardi.md >}}
+
+### What "Fully Clean" Means {#sec-fully-clean}
+
+{{< include .ai-config/shared/workflow/fully-clean.md >}}
+
+### Address Every In-Scope Review Comment
+
+{{< include .ai-config/shared/workflow/address-every-comment.md >}}
