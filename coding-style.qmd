@@ -12,6 +12,10 @@ Follow these code style guidelines for all R code:
 
 {{< include coding-style/function-structure-and-documentation.qmd >}}
 
+## Avoiding Deep Nesting {#sec-avoid-nesting}
+
+{{< include .ai-config/shared/coding/avoid-nesting.md >}}
+
 ## Comments
 
 {{< include coding-style/comments.qmd >}}
