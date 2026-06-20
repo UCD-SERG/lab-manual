@@ -15,6 +15,27 @@ This makes those reusable skills available as **project skills** to:
   skills from `.claude/skills/` in the checked-out repo. The workflow's checkout
   step uses `submodules: recursive` so the submodule is populated in CI.
 
+### Populating the submodule after cloning
+
+A plain `git clone` leaves the submodule empty and the symlink dangling. Run:
+
+```sh
+git submodule update --init --recursive
+```
+
+(or clone with `git clone --recurse-submodules`).
+
+### Updating to a newer ai-config
+
+The submodule is pinned to a specific `ai-config` commit. To bump it:
+
+```sh
+git -C .ai-config fetch origin
+git -C .ai-config checkout origin/main
+git add .ai-config
+git commit -m "Bump .ai-config submodule"
+```
+
 ## `shared/` guidance fragments transcluded into the book
 
 The submodule also carries `ai-config`'s `shared/` directory: small,
@@ -28,24 +49,3 @@ Because the render now depends on the submodule, the Quarto build workflows
 (`publish.yml`, `preview.yml`) check out submodules too --- not just the
 `@claude` workflows. Render locally only after
 `git submodule update --init --recursive`.
-
-### Populating the submodule after cloning
-
-A plain `git clone` leaves the submodule empty and the symlink dangling. Run:
-
-```sh
-git submodule update --init --recursive
-```
-
-(or clone with `git clone --recurse-submodules`).
-
-### Updating to newer skills
-
-The submodule is pinned to a specific `ai-config` commit. To bump it:
-
-```sh
-git -C .ai-config fetch origin
-git -C .ai-config checkout origin/main
-git add .ai-config
-git commit -m "Bump .ai-config submodule"
-```
