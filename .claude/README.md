@@ -15,6 +15,20 @@ This makes those reusable skills available as **project skills** to:
   skills from `.claude/skills/` in the checked-out repo. The workflow's checkout
   step uses `submodules: recursive` so the submodule is populated in CI.
 
+## `shared/` guidance fragments transcluded into the book
+
+The submodule also carries `ai-config`'s `shared/` directory: small,
+single-topic guidance fragments (coding style, writing style, PR/agent
+workflow) that this book transcludes with `{{< include
+.ai-config/shared/<topic>.md >}}`. The fragment is the single source of truth,
+shared with `ai-config`'s own `CLAUDE.md`, so the guidance is edited once and
+appears in both places.
+
+Because the render now depends on the submodule, the Quarto build workflows
+(`publish.yml`, `preview.yml`) check out submodules too --- not just the
+`@claude` workflows. Render locally only after
+`git submodule update --init --recursive`.
+
 ### Populating the submodule after cloning
 
 A plain `git clone` leaves the submodule empty and the symlink dangling. Run:
