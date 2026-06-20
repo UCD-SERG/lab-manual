@@ -55,7 +55,7 @@ There are two common routes:
 Even if you install via npm,
 current versions **migrate themselves to a native install**
 the first time you run `claude`
-(at `~/.local/bin/claude`, or `claude.exe` on Windows)
+(at `~/.local/bin/claude`, or `~/.local/bin/claude.exe` on Windows)
 and remove the npm copy.
 
 This is the single most confusing Windows gotcha:
@@ -123,21 +123,22 @@ bash: $'\377\376export': command not found
 ```
 
 Edit dotfiles from *inside* the shell
-(e.g. with `nano`, `vim`, or `echo … >> ~/.zshrc` run in bash/zsh),
+(e.g. with `nano`, `vim`, or `echo 'export PATH=...' >> ~/.zshrc` run in bash/zsh),
 or with an editor that saves UTF-8 without a BOM (e.g. VS Code).
 :::
 
-#### Authenticating the GitHub CLI in Git Bash
+#### Authenticating the GitHub CLI in Git Bash or MSYS2
 
 If you also use the [GitHub CLI](https://cli.github.com/) (`gh`)
 to push code or open pull requests,
-`gh auth login` may fail in Git Bash with:
+`gh auth login` may fail with:
 
 ```
 could not prompt: … running in MinTTY without pseudo terminal support
 ```
 
-Git Bash's terminal (MinTTY) can't host the interactive prompt.
+Git Bash and MSYS2 both default to the MinTTY terminal,
+which can't host the interactive prompt.
 Wrap the command with `winpty`,
 or run it from PowerShell / Windows Terminal instead:
 
