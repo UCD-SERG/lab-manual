@@ -61,7 +61,7 @@ This is the single most confusing Windows gotcha:
 a path that worked a moment ago "disappears."
 **Do not** hardcode the npm location
 (e.g. `…/AppData/Roaming/npm/…`) in your shell config.
-Point your `PATH` at `~/.local/bin` instead.
+Point your `PATH` at the shell-appropriate directory shown in the next section instead.
 :::
 
 #### Make sure your shell can find `claude`
