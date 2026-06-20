@@ -30,7 +30,7 @@ copilot-instructions.md wins. Read it before non-trivial content edits.
   `man/`, `NAMESPACE`, `DESCRIPTION`), installed locally for linting
 - `inst/WORDLIST` - accepted spell-check terms
 - `lychee.toml` - link-checker config; `.lintr.R` - lint config
-- `.github/workflows/` - CI; `.github/scripts/` - Python helpers for preview/checks
+- `.github/workflows/` - CI; `.github/scripts/` - R, Python, and shell helpers for preview/checks
 - `.ai-config/` - git submodule (`d-morrison/ai-config`); see below
 - `docs/`, `.quarto/`, `_freeze/`, `*_files/` - build outputs, git-ignored; do not edit
 
