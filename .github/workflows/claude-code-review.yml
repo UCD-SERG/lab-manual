@@ -1,44 +1,42 @@
+# Calls the shared reusable Claude Code Review workflow in d-morrison/gha.
+# Requires the CLAUDE_CODE_OAUTH_TOKEN repository secret. It is passed
+# explicitly (not `secrets: inherit`): the reusable workflow lives in the
+# d-morrison user account while this repo is in the UCD-SERG org, and GitHub
+# only inherits secrets into a reusable workflow owned by the same org/user.
+# Cross-owner `secrets: inherit` silently passes an empty token, so the
+# reviewer dies with "Either ANTHROPIC_API_KEY, CLAUDE_CODE_OAUTH_TOKEN, ...
+# is required". Keep this file named claude-code-review.yml so claude.yml
+# can re-dispatch a review after an @claude run pushes commits.
 name: Claude Code Review
 
 on:
   pull_request:
     types: [opened, synchronize, ready_for_review, reopened]
-    # Optional: Only run on specific file changes
-    # paths:
-    #   - "src/**/*.ts"
-    #   - "src/**/*.tsx"
-    #   - "src/**/*.js"
-    #   - "src/**/*.jsx"
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: 'Pull request number to review'
+        required: true
+        type: string
 
 jobs:
-  claude-review:
-    # Optional: Filter by PR author
-    # if: |
-    #   github.event.pull_request.user.login == 'external-contributor' ||
-    #   github.event.pull_request.user.login == 'new-developer' ||
-    #   github.event.pull_request.author_association == 'FIRST_TIME_CONTRIBUTOR'
-
-    runs-on: ubuntu-latest
+  review:
     permissions:
       contents: read
-      pull-requests: read
-      issues: read
+      pull-requests: write
+      issues: write
       id-token: write
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
-
-      - name: Run Claude Code Review
-        id: claude-review
-        uses: anthropics/claude-code-action@v1
-        with:
-          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          plugin_marketplaces: 'https://github.com/anthropics/claude-code.git'
-          plugins: 'code-review@claude-code-plugins'
-          prompt: '/code-review:code-review ${{ github.repository }}/pull/${{ github.event.pull_request.number }}'
-          # See https://github.com/anthropics/claude-code-action/blob/main/docs/usage.md
-          # or https://code.claude.com/docs/en/cli-reference for available options
-
+    uses: d-morrison/gha/.github/workflows/claude-code-review.yml@v1
+    # Pass secrets explicitly — cross-owner `secrets: inherit` drops them (see
+    # the header comment). SUBMODULES_TOKEN is optional (empty when unset).
+    secrets:
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+      SUBMODULES_TOKEN: ${{ secrets.SUBMODULES_TOKEN }}
+    with:
+      # Wires the workflow_dispatch input through so claude.yml can re-dispatch a
+      # review on Claude's commits; empty (and ignored) for pull_request runs.
+      pr-number: ${{ inputs.pr_number }}
+      # Check out the .ai-config submodule so the committed .claude/skills
+      # symlink resolves; otherwise claude-code-action's restoreConfigFromBase
+      # errors with ENOENT statx '.claude/skills'. ai-config is public — no token.
+      checkout-submodules: true
