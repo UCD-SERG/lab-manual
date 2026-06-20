@@ -24,8 +24,10 @@ copilot-instructions.md wins. Read it before non-trivial content edits.
   HTML + PDF + DOCX + EPUB formats, chapter and appendix lists
 - `book.bib`, `packages.bib` - BibTeX bibliographies (`references.qmd` renders them)
 - `_extensions/` - vendored Quarto Lua filters; do not edit
-- `R/`, `man/`, `NAMESPACE`, `DESCRIPTION` - the R-package shell
-- `lms/` - the shared UCD-SERG linter package, installed locally for linting
+- `DESCRIPTION` - declares the book's R dependencies (package `labmanual`,
+  `Type: Book`); the only R-package file at the root
+- `lms/` - the shared UCD-SERG linter package (a proper R package with `R/`,
+  `man/`, `NAMESPACE`, `DESCRIPTION`), installed locally for linting
 - `inst/WORDLIST` - accepted spell-check terms
 - `lychee.toml` - link-checker config; `.lintr.R` - lint config
 - `.github/workflows/` - CI; `.github/scripts/` - Python helpers for preview/checks
