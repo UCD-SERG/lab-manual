@@ -13,6 +13,11 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          # Populate the .ai-config submodule so chapters can {{< include >}}
+          # its shared/ guidance fragments at render time. ai-config is public,
+          # so no token is needed.
+          submodules: recursive
 
       - name: Set up R
         uses: r-lib/actions/setup-r@v2

@@ -1,0 +1,22 @@
+# Auto-bump the .ai-config submodule to ai-config's main, opening a PR when the
+# pointer moves. Calls d-morrison/gha's reusable bump-submodule workflow.
+#
+# .ai-config is public, so no SUBMODULES_TOKEN is needed, and the PR is opened in
+# this repo with the integrated GITHUB_TOKEN -- which requires Settings ->
+# Actions -> General -> "Allow GitHub Actions to create and approve pull
+# requests" to be enabled.
+name: Bump .ai-config
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 6 * * 1' # Weekly on Monday at 06:00 UTC
+
+jobs:
+  bump:
+    permissions:
+      contents: write
+      pull-requests: write
+    uses: d-morrison/gha/.github/workflows/bump-submodule.yml@v1
+    with:
+      submodule-path: .ai-config
