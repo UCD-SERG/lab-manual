@@ -54,7 +54,7 @@ to [help you code](https://en.wikipedia.org/wiki/AI-assisted_software_developmen
 
 ### Useful Prompt Formats
 
-{{< include ai-tools/useful-prompt-formats.qmd >}}
+{{< include shared/prompt-formats.md >}}
 
 ### Addressing Failing GitHub Actions Workflows {#sec-ai-addressing-failing-workflows}
 
@@ -98,7 +98,7 @@ to [help you code](https://en.wikipedia.org/wiki/AI-assisted_software_developmen
 
 ### Using Copilot Review Before Human Review
 
-{{< include ai-tools/copilot-review-before-human-review.qmd >}}
+{{< include shared/copilot-review-before-human.md >}}
 
 ### Reviewing a Copilot PR You Didn't Create
 
