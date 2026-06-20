@@ -133,10 +133,10 @@ respond to each one with exactly one of these:
 
 - **Address it.** Make the change the reviewer asked for.
 - **Rebut it.** If you think the code is correct as written, explain your reasoning and push back.
-  You are entitled to disagree, as long as you say why.
+  You can disagree---just say why.
 - **Defer it.** If the comment is valid but out of scope for this change, file a tracking issue and link it in your reply.
   This keeps the work visible and ensures it is not lost.
-- **Acknowledge it.** For an observation that requests no change, a short acknowledgement is enough.
+- **Acknowledge it.** For a comment that needs no action, a short acknowledgment is enough.
 
 Never ignore a review comment.
 Always reply---even if only to say you filed a follow-up issue.
