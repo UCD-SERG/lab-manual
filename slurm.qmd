@@ -216,7 +216,10 @@ if the allocation does happen to survive, you can open a *new* shell inside it.
 
 ### Prevent drops with a terminal multiplexer (recommended)
 
-Start a terminal multiplexer such as [`tmux`](https://github.com/tmux/tmux/wiki) or [`screen`](https://www.gnu.org/software/screen/) **on the login node**,
+Start a terminal multiplexer such as
+[`tmux`](https://github.com/tmux/tmux/wiki) or
+[`screen`](https://www.gnu.org/software/screen/)
+**on the login node**,
 then launch your interactive session from inside it:
 
 ```bash
