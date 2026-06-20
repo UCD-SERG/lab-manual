@@ -50,12 +50,13 @@ There are two common routes:
    ```
 
 ::: {.callout-important}
-## Claude Code migrates itself out of npm
+#### Claude Code migrates itself out of npm
 
 Even if you install via npm,
-the first time you run `claude` it **migrates itself to a native install**
-at `~/.local/bin/claude` (`claude.exe` on Windows)
-and removes the npm copy.
+current versions **migrate themselves to a native install**
+the first time you run `claude`
+(at `~/.local/bin/claude`, or `claude.exe` on Windows)
+and remove the npm copy.
 
 This is the single most confusing Windows gotcha:
 a path that worked a moment ago "disappears."
@@ -103,13 +104,14 @@ rehash        # zsh; use 'hash -r' in bash
 
 This bites hardest with [oh-my-zsh](https://ohmyz.sh/),
 which builds zsh's command table *before* your custom `PATH` line runs,
-so without the `rehash` you will see `command not found`
-no matter how many times you open a new window.
+so opening a fresh window may not clear the stale `command not found`
+on its own until you `rehash` (or move the `PATH` line before oh-my-zsh
+initializes).
 
 #### Do not edit dotfiles with PowerShell redirection
 
 ::: {.callout-warning}
-## PowerShell writes the wrong encoding
+#### PowerShell writes the wrong encoding
 
 Never write to `~/.bashrc`, `~/.zshrc`, or other shell config files
 using PowerShell's `>` or `>>` redirection.
