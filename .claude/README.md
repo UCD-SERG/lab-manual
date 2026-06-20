@@ -27,7 +27,10 @@ git submodule update --init --recursive
 
 ### Updating to a newer ai-config
 
-The submodule is pinned to a specific `ai-config` commit. To bump it:
+The submodule is pinned to a specific `ai-config` commit. The `Bump .ai-config`
+workflow (`.github/workflows/bump-ai-config.yml`) advances it to `ai-config`'s
+`main` weekly and opens a PR when the pointer moves, so this usually happens on
+its own. To bump it by hand:
 
 ```sh
 git -C .ai-config fetch origin
