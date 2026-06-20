@@ -200,13 +200,24 @@ if(Sys.getenv("LMOD_SYSHOST")!=""){
 
 ## Recovering a disconnected interactive session
 
-Interactive sessions on a SLURM cluster --- a development node opened with `sdev`, or a session started with `srun --pty` [@slurm-srun] or `salloc` [@slurm-salloc] --- are tied to the terminal that launched them. If your SSH connection drops (a broken pipe, a network blip, or closing your laptop), SLURM usually sends the launching process a hang-up signal and **tears down the whole job allocation**, not just your shell. When that happens there is nothing left to reconnect to, and any unsaved work in that session is lost.
+Interactive sessions on a SLURM cluster ---
+a development node opened with `sdev`,
+or a session started with `srun --pty` [@slurm-srun] or `salloc` [@slurm-salloc] ---
+are tied to the terminal that launched them.
+If your SSH connection drops (a broken pipe, a network blip, or closing your laptop),
+SLURM usually sends the launching process a hang-up signal
+and **tears down the whole job allocation**, not just your shell.
+When that happens there is nothing left to reconnect to,
+and any unsaved work in that session is lost.
 
-There is no way to reattach to the *identical* shell once the allocation has been released. The reliable strategy is to prevent the drop in the first place; if the allocation does happen to survive, you can open a *new* shell inside it.
+There is no way to reattach to the *identical* shell once the allocation has been released.
+The reliable strategy is to prevent the drop in the first place;
+if the allocation does happen to survive, you can open a *new* shell inside it.
 
 ### Prevent drops with a terminal multiplexer (recommended)
 
-Start a terminal multiplexer such as [`tmux`](https://github.com/tmux/tmux/wiki) or `screen` **on the login node**, then launch your interactive session from inside it:
+Start a terminal multiplexer such as [`tmux`](https://github.com/tmux/tmux/wiki) or [`screen`](https://www.gnu.org/software/screen/) **on the login node**,
+then launch your interactive session from inside it:
 
 ```bash
 ssh USERNAME@shiva.ucdavis.edu
@@ -218,7 +229,9 @@ tmux
 sdev          # or: srun --pty bash
 ```
 
-Because `tmux` keeps running on the login node even after your SSH connection drops, the launching process survives and the allocation stays alive. When you reconnect, reattach to your multiplexer and you are back where you left off:
+Because `tmux` keeps running on the login node even after your SSH connection drops,
+the launching process survives and the allocation stays alive.
+When you reconnect, reattach to your multiplexer and you are back where you left off:
 
 ```bash
 ssh USERNAME@shiva.ucdavis.edu
@@ -228,30 +241,43 @@ tmux attach     # reattach to the most recent session
 
 ### Reconnect to a surviving allocation
 
-If you did not use a multiplexer, you can still open a new shell on the nodes of a job that is **already running** --- most commonly a batch job submitted with `sbatch`, or an interactive allocation that happened to survive. This gives you a *new* shell (a new job step), not the original session.
+If you did not use a multiplexer,
+you can still open a new shell on the nodes of a job that is **already running** ---
+most commonly a batch job submitted with `sbatch`,
+or an interactive allocation that happened to survive.
+This gives you a *new* shell (a new job step), not the original session.
 
 First, find the job ID [@slurm-squeue]:
 
 ```bash
-squeue --me        # or: squeue -u $USERNAME
+squeue --me        # or: squeue -u $USER
 ```
 
-Then launch a new interactive step inside that allocation [@slurm-srun]:
+Then launch a new interactive step inside that allocation,
+replacing `JOBID` with the ID reported by `squeue` [@slurm-srun]:
 
 ```bash
-srun --jobid=<JOBID> --overlap --pty bash
+srun --jobid=JOBID --overlap --pty bash
 ```
 
 ::: {.callout-important}
 #### The `--overlap` flag is required on recent SLURM
 
-Since SLURM 20.11, a new job step requests exclusive use of the job's resources by default, so without `--overlap` the `srun` above will simply hang waiting for resources the running step already holds. Always include `--overlap` when attaching to a running job.
+Since SLURM 20.11, a new job step requests exclusive use of the job's resources by default,
+so without `--overlap` the `srun` above will simply hang
+waiting for resources the running step already holds.
+Always include `--overlap` when attaching to a running job.
 :::
 
-If you only need to reattach to the input and output streams of an existing step (rather than start a fresh shell), `sattach <jobid>.<stepid>` does that instead [@slurm-sattach].
+If you only need to reattach to the input and output streams of an existing step
+(rather than start a fresh shell),
+`sattach JOBID.STEPID` does that instead [@slurm-sattach].
 
 ::: {.callout-note}
-Exact behavior varies by cluster: some sites disable `srun` into running jobs, wrap it in a local helper, or require different flags. When in doubt, check the [UC Davis HPC documentation](https://hpc.ucdavis.edu/) or contact HPC support.
+Exact behavior varies by cluster:
+some sites disable `srun` into running jobs, wrap it in a local helper, or require different flags.
+When in doubt,
+check the [UC Davis HPC documentation](https://hpc.ucdavis.edu/) or contact HPC support.
 :::
 
 ## Storage & group storage access
