@@ -84,6 +84,10 @@ to [help you code](https://en.wikipedia.org/wiki/AI-assisted_software_developmen
 
 {{< include ai-tools/copilot-setup-steps-config.qmd >}}
 
+### Claude Code Cloud Environments {#sec-ai-claude-cloud-env}
+
+{{< include ai-tools/claude-code-cloud-environments.qmd >}}
+
 ### When to use a coding agent {#sec-ai-when-to-use}
 
 {{< include ai-tools/when-to-use-coding-agent.qmd >}}
