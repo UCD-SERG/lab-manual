@@ -1,0 +1,46 @@
+[`gh`](https://cli.github.com/) is the official GitHub command-line interface.
+It lets you manage pull requests,
+issues,
+repositories,
+and workflows without leaving the terminal.
+[`glab`](https://gitlab.com/gitlab-org/cli) is the GitLab equivalent.
+
+### Installing `gh` {#sec-install-gh}
+
+Follow the official [installation guide](https://github.com/cli/cli#installation) for your platform.
+The most common routes are:
+
+- **macOS:** `brew install gh`
+- **Linux (Debian/Ubuntu):** `sudo apt install gh`
+  after adding the [GitHub CLI apt repository](https://github.com/cli/cli/blob/trunk/docs/install_linux.md)
+- **Linux (Fedora/RHEL):** `sudo dnf install gh`
+- **Windows:** `winget install GitHub.cli` or `scoop install gh`
+
+After installing, authenticate:
+
+```sh
+gh auth login
+```
+
+On Windows with Git Bash or MSYS2,
+see @sec-ai-claude-code-windows for the `winpty` workaround if the interactive
+prompt fails.
+
+### Installing `glab` {#sec-install-glab}
+
+Follow the official [installation guide](https://gitlab.com/gitlab-org/cli#installation) for your platform.
+The most common routes are:
+
+- **macOS:** `brew install glab`
+- **Linux:** download the latest package from the
+  [glab releases page](https://gitlab.com/gitlab-org/cli/-/releases),
+  or use `sudo snap install glab`
+- **Windows:** `scoop install glab`,
+  or download the installer from the
+  [glab releases page](https://gitlab.com/gitlab-org/cli/-/releases)
+
+After installing, authenticate:
+
+```sh
+glab auth login
+```
