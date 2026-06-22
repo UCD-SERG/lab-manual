@@ -149,6 +149,9 @@ or run it from PowerShell / Windows Terminal instead:
 winpty gh auth login
 ```
 
+`winpty` ships with Git Bash, but in MSYS2 it's a separate package ---
+install it first with `pacman -S winpty` if you get `command not found`.
+
 #### Verify the install
 
 Open a **new** terminal window (so it picks up your updated config) and run:
