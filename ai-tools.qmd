@@ -104,6 +104,10 @@ to [help you code](https://en.wikipedia.org/wiki/AI-assisted_software_developmen
 
 {{< include ai-tools/reviewing-copilot-prs.qmd >}}
 
+### Installing Claude Code on Windows {#sec-ai-claude-code-windows}
+
+{{< include ai-tools/installing-claude-code-windows.qmd >}}
+
 ## Pull-Request Workflow with Agents
 
 The practices below apply whether you are driving an agent's work or doing the
