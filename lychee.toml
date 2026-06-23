@@ -32,6 +32,9 @@ exclude = [
   "https://beierlab.com/.*",
   # Old RStudio blog moved to posit.co; frequently times out in CI
   "https://blog.rstudio.com/.*",
+  # Old RStudio support moved to posit.co; returns 403 for automated checks
+  "https://support.rstudio.com/.*",
+  "https://support.posit.co/.*",
   # Stanford grant writing page times out in CI
   "https://grantwriting.stanford.edu/.*",
   # Publisher cookie-consent interstitials: resolve fine for humans but

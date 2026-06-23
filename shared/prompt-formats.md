@@ -1,4 +1,3 @@
-
 When working with coding agents,
 using clear and specific prompts helps achieve better results.
 Here are some useful prompt formats that you can use when requesting assistance from coding agents:
