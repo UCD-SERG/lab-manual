@@ -20,7 +20,7 @@ Consider decomposition when one or more of these are true:
 - You need comments to explain every few lines just to follow the logic
 - You are repeating the same block in multiple places
 - You want to test one part of a workflow independently of the rest
-- The top-level function is hard to scan because implementation details hide the main idea
+- The current function is hard to scan because implementation details hide the main idea
 
 ## How to decompose in practice
 
