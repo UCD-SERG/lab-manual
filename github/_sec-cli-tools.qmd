@@ -44,3 +44,7 @@ After installing, authenticate:
 ```sh
 glab auth login
 ```
+
+On Windows with Git Bash or MSYS2,
+see @sec-ai-claude-code-windows for the `winpty` workaround if the interactive
+prompt fails.
