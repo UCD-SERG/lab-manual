@@ -150,6 +150,8 @@ is generated and indexed, and they behave differently:
 | `@noRd`              | No                       | No                                   | No                           |
 | `@keywords internal` | Yes                      | No                                   | Yes                          |
 
+: Comparison of `@noRd` and `@keywords internal` roxygen tags {#tbl-keywords-internal-vs-nord}
+
 **Prefer `@keywords internal` for any helper that isn't part of the
 package's public API.**
 
