@@ -1,0 +1,124 @@
+When encountering issues with Quarto,
+the official [Quarto Troubleshooting Guide](https://quarto.org/docs/troubleshooting/)
+provides comprehensive diagnostic tools and strategies.
+This section summarizes key troubleshooting approaches.
+
+### Checking Your Setup
+
+Use `quarto check` to verify your installation and dependencies:
+
+```bash
+quarto check
+```
+
+This command checks for:
+
+- Quarto version and binary dependencies (Pandoc, Dart Sass, Deno, Typst)
+- LaTeX installation (TinyTeX or system TeX)
+- Python, Jupyter, and available kernels
+- R, knitr, and rmarkdown versions
+- Library paths and installed packages
+
+See the `quarto check` output and the
+[official guide](https://quarto.org/docs/troubleshooting/)
+for the complete, authoritative list of checks.
+
+### Diagnostic Tools
+
+**Enable verbose logging** to see detailed rendering information.
+
+On Unix-like systems (macOS, Linux):
+
+```bash
+export QUARTO_LOG_LEVEL=DEBUG
+quarto render document.qmd
+```
+
+On Windows PowerShell:
+
+```powershell
+$env:QUARTO_LOG_LEVEL="DEBUG"
+quarto render document.qmd
+```
+
+Or pass at command line (all platforms):
+
+```bash
+quarto render document.qmd --log-level debug
+```
+
+**Get stack traces** for better error messages.
+
+On Unix-like systems (macOS, Linux):
+
+```bash
+export QUARTO_PRINT_STACK="true"
+quarto render document.qmd
+```
+
+On Windows PowerShell:
+
+```powershell
+$env:QUARTO_PRINT_STACK="true"
+quarto render document.qmd
+```
+
+**Inspect log files** for diagnostic information.
+Log file locations:
+
+- **Windows:** `%LOCALAPPDATA%\quarto\logs`
+- **macOS:** `~/Library/Application Support/quarto/logs`
+- **Linux:** `~/.local/share/quarto/logs` (or `${XDG_DATA_HOME}/quarto/logs` if `${XDG_DATA_HOME}` is set)
+
+### Common Issues
+
+**Out-of-memory errors:**
+When building large projects,
+increase memory allocation (example sets 8GB limit).
+
+On Unix-like systems (macOS, Linux):
+
+```bash
+export QUARTO_DENO_V8_OPTIONS="--max-old-space-size=8192"
+quarto render
+```
+
+On Windows PowerShell:
+
+```powershell
+$env:QUARTO_DENO_V8_OPTIONS="--max-old-space-size=8192"
+quarto render
+```
+
+**PDF rendering issues:**
+If you encounter PDF rendering problems,
+ensure you have an up-to-date LaTeX installation,
+or install Quarto's TinyTeX:
+
+```bash
+quarto install tinytex
+```
+
+**Environment conflicts:**
+If Quarto finds the wrong R or Python installation,
+use `quarto check` output to verify which installation Quarto is using.
+For R,
+you can render a diagnostic document
+with `sessionInfo()`
+to compare Quarto's environment with your interactive R session.
+
+### Advanced Troubleshooting
+
+For more specialized issues,
+consult the [official Quarto Troubleshooting Guide](https://quarto.org/docs/troubleshooting/),
+which covers:
+
+- Jupyter engine debugging and kernel issues
+- Lua filter debugging and tracing
+- Julia-specific troubleshooting
+- Detailed environment and dependency diagnostics
+- Installation problems (including macOS installer logs)
+
+When seeking help on the [Quarto issue tracker](https://github.com/quarto-dev/quarto-cli/issues),
+include diagnostic information from `quarto check` and relevant log files.
+
