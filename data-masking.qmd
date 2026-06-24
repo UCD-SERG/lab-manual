@@ -50,7 +50,8 @@ and the way you refer to a column stored in a string variable depends on which o
   the `.by` argument of `mutate()`/`summarize()`,
   and the `cols`, `names_from`, `values_from`, and `id_cols` arguments of `tidyr::pivot_*()`.
 
-To refer to a column named by a string variable, use the tool that matches the context:
+To refer to a column named by a string variable,
+use the tool that matches the context:
 
 | Context | Use | Avoid |
 |---------|-----|-------|
@@ -64,7 +65,8 @@ and `any_of()` when names that are absent should simply be dropped.
 
 ### The `.data` pronoun does not belong in tidy selection
 
-A common (and **silent**) mistake is reaching for the `.data` pronoun inside a tidy-selection context:
+A common (and **silent**) mistake is reaching for the `.data` pronoun
+inside a tidy-selection context:
 
 ```r
 # Soft-deprecated: .data used in selection contexts
@@ -80,7 +82,7 @@ but it is a **soft** deprecation,
 signaled through [`{lifecycle}`](https://lifecycle.r-lib.org/).
 Per the [`{lifecycle}` documentation](https://lifecycle.r-lib.org/articles/communicate.html),
 a soft-deprecated feature warns only users who trigger it from the global environment
-and developers who use it directly (for example when running `{testthat}` tests);
+and developers who use it directly (for example when running [`{testthat}`](https://testthat.r-lib.org/) tests);
 there is *no warning when the deprecated feature is called indirectly by another package*.
 So in installed-package code it usually emits *no warning at all*,
 and it slips past interactive use, CI, and code review unnoticed.
