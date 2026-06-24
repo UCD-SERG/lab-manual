@@ -163,6 +163,8 @@ A useful pattern:
 
    ```bash
    OLLAMA_HOST=0.0.0.0:11434 ollama serve
+   # If you redirected model storage (see quota warning above):
+   # OLLAMA_HOST=0.0.0.0:11434 OLLAMA_MODELS=/scratch/$USER/ollama-models ollama serve
    ```
 
    If you are on a shared compute node, be aware that binding to `0.0.0.0`
