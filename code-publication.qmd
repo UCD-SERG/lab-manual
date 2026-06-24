@@ -145,9 +145,12 @@ R package versions follow a `major.minor.patch` scheme (e.g., `1.2.3`).
 Use a fourth development component (e.g., `1.2.3.9000`) on the development version
 to distinguish it from the released version.
 
-- Increment the **patch** version (`1.2.3` → `1.2.4`) for bug fixes
-- Increment the **minor** version (`1.2.3` → `1.3.0`) for new features that are backward-compatible
-- Increment the **major** version (`1.2.3` → `2.0.0`) for breaking changes
+- Increment the **patch** version (`1.2.3` → `1.2.4`)
+  for bug fixes
+- Increment the **minor** version (`1.2.3` → `1.3.0`)
+  for new features that are backward-compatible
+- Increment the **major** version (`1.2.3` → `2.0.0`)
+  for breaking changes
 
 Update the version in `DESCRIPTION` before each release.
 
@@ -186,7 +189,7 @@ Before submitting to CRAN, work through the following steps:
      In [rhub v2](https://r-hub.github.io/rhub/articles/rhubv2.html), this runs via GitHub Actions:
      run `rhub::rhub_setup()` once to add the workflow to your repository,
      then `rhub::rhub_check()` to trigger a check run.
-     (The older `rhub::check_for_cran()` function was removed in the v2 rewrite.)
+      (If you previously used older rhub APIs, see the rhub v2 documentation for migration details.)
 
 6. **Review CRAN policies**: Ensure your package complies with the
    [CRAN Repository Policy](https://cran.r-project.org/web/packages/policies.html).
@@ -201,7 +204,7 @@ devtools::submit_cran()
 
 This bundles your package and uploads it to CRAN's submission portal.
 You will receive an email asking you to confirm the submission.
-CRAN maintainers typically review submissions within a few days to a few weeks.
+Review time varies; watch for email from CRAN maintainers with acceptance or requested changes.
 
 On the CRAN web submission form that `devtools::submit_cran()` opens,
 briefly describe any `R CMD CHECK` notes in the submission comments
