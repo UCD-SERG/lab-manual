@@ -14,8 +14,6 @@ fit <- lm(model_formula, data = study_data)
 fit <- lm(reformulate(c("age", "sex", "titer"), response = "outcome"), data = study_data)
 ```
 
----
-
 A pipe is the other idiomatic way to avoid an inline-constructed argument,
 when the input is the result of a short sequence of transformations:
 
@@ -26,7 +24,8 @@ recent_cases <-
   filter(year >= 2017) |>
   arrange(onset_date)
 
-plot_epi_curve(recent_cases)
+ggplot(recent_cases, aes(x = onset_date)) +
+  geom_histogram()
 ```
 
 This is the same readability goal as @sec-avoid-nesting:
