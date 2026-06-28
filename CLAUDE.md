@@ -81,6 +81,11 @@ includes directly. That is separate from `.ai-config/shared/`.
 
 - Spellcheck (`check-spelling.yaml`, `insightsengineering/r-spellcheck-action`).
   Add genuine technical terms and names to `inst/WORDLIST`, one per line.
+  Note: this job checks out **without** the `.ai-config` submodule, so prose in
+  `.ai-config/shared/*.md` fragments is not scanned. Don't assume a word passes
+  just because it already appears in the rendered manual via a transcluded
+  fragment (e.g. "inspectable" in `avoid-nesting.md`). A new word you add to a
+  file in this repo must be dictionary-valid or listed in `inst/WORDLIST`.
 - Link check (`check-links.yml`, `lycheeverse/lychee-action`) over `.qmd`/`.md`/
   `.html`. Fix broken links; only add an exclusion to `lychee.toml` when a URL
   is valid for humans but trips the automated checker.
