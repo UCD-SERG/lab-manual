@@ -117,6 +117,10 @@ A standard workflow when starting on a new project and contributing code looks l
 
 : Standard Git workflow for new projects {#tbl-git-workflow}
 
+## Pull Request Roles {#sec-pr-roles}
+
+{{< include github/_sec-pr-roles.qmd >}}
+
 Other helpful commands are listed below.
 
 ## Commonly Used Git Commands
