@@ -1,6 +1,14 @@
-Every pull request involves at least two people:
-an author and a reviewer.
-Larger teams often designate a merger and a PR steward as well.
+Every pull request involves several people,
+each with a distinct role.
+
+### Issue Creator {#sec-pr-issue-creator}
+
+The issue creator reports a bug,
+suggests a feature,
+or requests other improvements.
+In projects with external contributors,
+the issue creator often cannot assign issues to developers
+and is typically distinct from the PR author.
 
 ### Author {#sec-pr-author}
 
@@ -21,6 +29,13 @@ and either approves or requests changes.
 The merger executes the final merge
 once the PR is approved and all CI checks pass.
 This is often the same person as the reviewer.
+
+### Assignee {#sec-pr-assignee}
+
+The assignee is listed in the "Assignees" field on GitHub
+to indicate who is currently responsible for the PR.
+This field clarifies ownership
+and tracks who should be addressing open feedback.
 
 ### PR Steward {#sec-pr-steward}
 
