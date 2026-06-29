@@ -2,7 +2,7 @@ Every pull request involves at least two people:
 an author and a reviewer.
 Larger teams often designate a merger and a PR steward as well.
 
-**Author**
+### Author {#sec-pr-author}
 
 The author opens the PR,
 writes a clear description,
@@ -10,19 +10,19 @@ and links it to the relevant issue with `Closes #N` in the PR body.
 The author implements review feedback
 and resolves merge conflicts before re-requesting review.
 
-**Reviewer**
+### Reviewer {#sec-pr-reviewer}
 
 The reviewer reads the diff,
 checks the code for correctness and style,
 and either approves or requests changes.
 
-**Merger**
+### Merger {#sec-pr-merger}
 
 The merger executes the final merge
 once the PR is approved and all CI checks pass.
 This is often the same person as the reviewer.
 
-**PR Steward**
+### PR Steward {#sec-pr-steward}
 
 A PR steward keeps the review queue healthy.
 The steward monitors open PRs,
@@ -30,5 +30,5 @@ assigns reviewers when none are assigned,
 follows up on stalled reviews,
 and helps resolve disagreements between authors and reviewers.
 This is typically a rotating duty for a senior contributor or release manager.
-The [p5.js steward guidelines](https://beta.p5js.org/contribute/steward_guidelines/)
-provide one example of how to structure the role.
+The p5.js project documents how it structures this role in its
+[contributor docs](https://github.com/processing/p5.js-website/blob/main/src/content/contributor-docs/en/steward_guidelines.mdx).

@@ -121,8 +121,6 @@ A standard workflow when starting on a new project and contributing code looks l
 
 {{< include github/_sec-pr-roles.qmd >}}
 
-Other helpful commands are listed below.
-
 ## Commonly Used Git Commands
 
 | Command   | Description      |
