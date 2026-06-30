@@ -26,6 +26,7 @@ jobs:
       pull-requests: write
       issues: write
       id-token: write
+      actions: read   # lets the reviewer read CI status (github_ci MCP server)
     uses: d-morrison/gha/.github/workflows/claude-code-review.yml@v1
     # Pass secrets explicitly — cross-owner `secrets: inherit` drops them (see
     # the header comment). SUBMODULES_TOKEN is optional (empty when unset).

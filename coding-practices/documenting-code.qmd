@@ -32,7 +32,7 @@ Rstudio ([v1.4 or more recent](https://blog.rstudio.com/2020/12/02/rstudio-v1-4-
 
 ### Code folding
 
-Consider using RStudio's [code folding](https://support.rstudio.com/hc/en-us/articles/200484568-Code-Folding-and-Sections) feature to collapse and expand different sections of your code. Any comment line with at least four trailing dashes (-), equal signs (=), or pound signs (#) automatically creates a code section. For example:
+Consider using RStudio's [code folding](https://support.posit.co/hc/en-us/articles/200484568-Code-Folding-and-Sections) feature to collapse and expand different sections of your code. Any comment line with at least four trailing dashes (-), equal signs (=), or pound signs (#) automatically creates a code section. For example:
 
 
 ### Comments in the body of your code
