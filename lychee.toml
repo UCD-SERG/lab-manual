@@ -32,8 +32,13 @@ exclude = [
   "https://beierlab.com/.*",
   # Old RStudio blog moved to posit.co; frequently times out in CI
   "https://blog.rstudio.com/.*",
+  # Old RStudio support moved to posit.co; returns 403 for automated checks
+  "https://support.rstudio.com/.*",
+  "https://support.posit.co/.*",
   # Stanford grant writing page times out in CI
   "https://grantwriting.stanford.edu/.*",
+  # GNU Screen homepage is valid for humans but reliably times out in CI
+  "https://www\\.gnu\\.org/software/screen.*",
   # Publisher cookie-consent interstitials: resolve fine for humans but
   # intermittently fail automated checks because the redirect chain ends on a
   # "cookies_not_supported" page (same rationale as the timeouts above).

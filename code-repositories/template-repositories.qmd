@@ -1,0 +1,25 @@
+When starting a new package,
+begin from the lab's template repository
+([`UCD-SERG/rpt`](https://github.com/UCD-SERG/rpt))
+rather than an empty repository.
+On GitHub, click **Use this template** to create a new repository that already
+includes our standard structure, CI workflows, and documentation scaffolding.
+Then replace the placeholder package name, `Title`, and `Description` in
+`DESCRIPTION` with your project's details.
+
+### A note on GitLab
+
+GitHub-style template repositories do **not** have a direct equivalent in
+GitLab Community Edition (CE):
+
+- **Built-in project templates** (Rails, Node, and similar) ship with all
+  editions, including CE, but you cannot add your own to that list.
+- **Custom project templates** (instance- or group-level) --- the feature most
+  analogous to GitHub's template repositories --- are
+  [Premium/Ultimate tier](https://docs.gitlab.com/user/group/custom_project_templates/)
+  only, so they are unavailable in CE.
+- On CE, the practical workaround is to **fork** (or clone and re-push) a "seed"
+  project to start new work from it.
+
+In short: if the lab ever mirrors this workflow onto a self-managed GitLab CE
+instance, plan to either fork a seed repository or budget for a paid tier.
