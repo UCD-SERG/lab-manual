@@ -1,7 +1,5 @@
 # Culture and conduct
 
-Adapted by UCD-SeRG team from [original by Jade Benjamin-Chung](https://jadebc.github.io/lab-manual/culture-and-conduct.html)
-
 ## Lab culture
 
 We are committed to a lab culture that is collaborative, supportive, inclusive, open, and free from discrimination and harassment. 

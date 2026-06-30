@@ -1,7 +1,5 @@
 # Communication and coordination
 
-Adapted by UCD-SeRG team from [original by Jade Benjamin-Chung](https://jadebc.github.io/lab-manual/communication-and-coordination.html)
-
 One benefit of the academic environment is its schedule flexibility and autonomy.
 This means that lab members may choose to work in the early morning,
 afternoon, evening, or weekends.
@@ -44,7 +42,7 @@ Lab members should actively manage their notification schedules,
 especially if they receive work email or Teams notifications on their phones.
 
 - **Block notifications outside of work hours**:
-  It's important to configure your devices and applications to prevent work notifications during non-work time.
+  We recommend configuring your devices and applications to prevent work notifications during non-work time.
   We all need uninterrupted rest and relaxation time in order to stay healthy and productive in the medium and long-terms.
 - **Sending messages outside work hours**:
   There's no expectation to only send emails or messages during normal work hours.

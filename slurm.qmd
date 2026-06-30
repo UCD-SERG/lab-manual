@@ -1,7 +1,5 @@
 # High-performance computing (HPC) {#sec-slurm}
 
-Adapted by UCD-SeRG team from [original by Anna Nguyen, Jade Benjamin-Chung, and Gabby Barratt Heitmann](https://jadebc.github.io/lab-manual/slurm.html)
-
 When you need to run a script that requires a large amount of RAM, large files, or that uses parallelization, UC Davis provides several high-performance computing (HPC) resources.
 
 ## UC Davis Computing Resources
@@ -312,17 +310,7 @@ cd /scratch/groups/GROUPNAME
 However, saving files to group storage can be tricky. You can try using the scp command in the section "Moving files to the cluster" to see if you have permission to add files to group directories. Read the next section to ensure any directories you create have the right permissions.
 
 ### Folder permissions
-Generally, when we put folders in `$GROUP_HOME` or `$GROUP_SCRATCH`, it is so that we can collaborate on an analysis within the research group, so multiple people need to be able to access the folders. If you create a new folder in `$GROUP_HOME` or `$GROUP_SCRATCH`, please check the folder's permissions to ensure that other group members are able to access its contents. To check the permissions of a folder, navigate to the level above it, and enter `ls -l`. You will see output like this: 
-
-```bash
-drwxrwxrwx 2 jadebc jadebc  2204 Jun 17 13:12 myfolder
-```
-
-Please review [this website](https://www.chriswrites.com/how-to-change-file-permissions-using-the-terminal/) to learn how to interpret the code on the left side of this output. The website also tells you how to change folder permissions. In order to ensure that all users and group members are able to access a folder's contents, you can use the following command: 
-
-```bash
-chmod ugo+rwx FOLDER_NAME
-```
+Generally, when we put folders in `$GROUP_HOME` or `$GROUP_SCRATCH`, it is so that we can collaborate on an analysis within the research group, so multiple people need to be able to access the folders. If you create a new folder in `$GROUP_HOME` or `$GROUP_SCRATCH`, please check the folder's permissions to ensure that other group members are able to access its contents.
 
 
 ## Running big jobs

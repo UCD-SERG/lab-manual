@@ -1,7 +1,5 @@
 # Reproducibility
 
-Adapted by UCD-SeRG team from [original by Jade Benjamin-Chung](https://jadebc.github.io/lab-manual/reproducibility.html)
-
 Our lab adopts the following practices to maximize the reproducibility of our work. 
 
 1. Design studies with appropriate methodology and adherence to best practices in epidemiology and biostatistics
@@ -76,7 +74,7 @@ See my video on this topic: [https://www.youtube.com/watch?v=WoYkY9MkbRE](https:
 
 ## Use reporting checklists with manuscripts
 
-Using reporting checklists helps ensure that peer-reviewed articles contain the information needed for readers to assess the validity of your work and/or attempt to reproduce it. A collection of reporting checklists is available from the EQUATOR Network [@equatornetwork].
+Using reporting checklists helps ensure that peer-reviewed articles contain the information needed for readers to assess the validity of your work and/or attempt to reproduce it. A collection of reporting checklists is available from the [EQUATOR Network](https://www.equator-network.org/).
 
 ## Publish preprints
 
