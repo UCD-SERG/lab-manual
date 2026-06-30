@@ -6,7 +6,22 @@ Welcome to the UC Davis Seroepidemiology Research Group (SeRG), led by Drs. Kris
 ## About this lab manual
 This lab manual covers our communication strategy, code of conduct, and best practices for reproducibility of computational workflows. It is a living document that is updated regularly. 
 
-This manual is a fork of the Benjamin-Chung Lab Manual [@benjaminchunglab], adapted for UCD-SeRG. We are grateful to Dr. Jade Benjamin-Chung and her team for developing and openly sharing their excellent lab manual. You can view the original manual at [jadebc.github.io/lab-manual](https://jadebc.github.io/lab-manual/index.html). Original contributors include Jade Benjamin-Chung, Kunal Mishra, Stephanie Djajadi, Nolan Pokpongkiat, Anna Nguyen, Iris Tong, and Gabby Barratt Heitmann.
+This manual is a fork of the Benjamin-Chung Lab Manual [@benjaminchunglab],
+adapted for UCD-SeRG.
+We are grateful to Dr. Jade Benjamin-Chung and her team
+for developing and openly sharing their excellent lab manual.
+You can view the original manual
+at [jadebc.github.io/lab-manual](https://jadebc.github.io/lab-manual/index.html).
+Original contributors include Jade Benjamin-Chung,
+Kunal Mishra,
+Stephanie Djajadi,
+Nolan Pokpongkiat,
+Anna Nguyen,
+Iris Tong,
+and Gabby Barratt Heitmann.
+The `Data Publication` chapter also draws from Fanice Nyatigo
+and Ben Arnold's public-data chapter
+in the [Proctor Lab at UCSF handbook](https://proctor-ucsf.github.io/dcc-handbook/publicdata.html).
 
 Feel free to draw from this manual (and please cite it if you do!).  
 
