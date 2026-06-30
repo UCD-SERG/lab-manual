@@ -83,7 +83,7 @@ Create a public ID that can be used to uniquely identify participants and that c
 
 ### Example scripts
 
-Please see the reproducible example provided by the [Proctor Lab at UCSF](https://proctor-ucsf.github.io/dcc-handbook/publicdata.html) that you can run and replicate when making data public for your projects. It contains the following files and folders:
+Please see the reproducible example provided by the [Proctor Lab at UCSF](https://proctor-ucsf.github.io/dcc-handbook/publicdata.html) that you can run and replicate when making data public for your projects. The example contains the following files and folders:
 
 1. `data/final/`- folder containing the projects final data in both csv and rds formats              
 2. `code/DEMO_generate_public_IDs.R`- creates randomly generated public IDs that can be matched to the trial's assigned patient IDs.              
