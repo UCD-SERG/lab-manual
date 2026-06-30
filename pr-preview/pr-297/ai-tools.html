@@ -1901,14 +1901,10 @@ Warning
 <h3 data-number="18.5.18" class="anchored" data-anchor-id="reviewing-a-copilot-pr-you-didnt-create"><span class="header-section-number">18.5.18</span> Reviewing a Copilot PR You Didn’t Create</h3>
 <p>When reviewing a pull request where someone else prompted Copilot to make changes, follow these guidelines to avoid confusion and ensure smooth collaboration:</p>
 <p><strong>Understanding PR roles:</strong></p>
-<p>Different people may play different roles in the PR lifecycle:</p>
+<p>The general PR roles (issue creator, author, reviewer, merger, assignee, and PR steward) are described in <a href="github.html#sec-pr-roles" class="quarto-xref"><span>Section 11.7</span></a>. Copilot-assisted workflows add two more:</p>
 <ul>
-<li><strong>Issue creator</strong>: Reports a bug, suggests a feature, or requests other improvements. In projects with external users, issue creators often cannot assign issues to developers and are therefore distinct from the PR prompter</li>
-<li><strong>PR prompter</strong>: Assigns a developer (human or AI) to start working on a PR, often by assigning an issue to Copilot. The PR prompter is sometimes the same person as the issue creator, but often is a project maintainer who reviews and triages external issue reports</li>
-<li><strong>PR author(s)</strong>: Makes commits to the PR branch (when Copilot creates commits, both Copilot and the prompter are co-authors)</li>
-<li><strong>PR manager</strong>: Supervises and guides the PR authors, assigns reviewers, and controls the PR workflow. Typically the PR prompter becomes the PR manager, but can hand off this role to someone else</li>
-<li><strong>PR reviewer(s)</strong>: Reviews the PR and provides feedback. The PR manager often also serves as the lead reviewer</li>
-<li><strong>PR assignee(s)</strong>: Listed in the “Assignees” field on GitHub to indicate who is responsible for the PR. Use this field to clarify current ownership and track who should be working on addressing feedback</li>
+<li><strong>PR prompter</strong>: Assigns a developer (human or AI) to start working on a PR, often by assigning an issue to Copilot. The PR prompter is sometimes the same person as the issue creator, but is often a project maintainer who reviews and triages external issue reports. When Copilot creates commits, both Copilot and the prompter are listed as co-authors. Typically the PR prompter becomes the PR manager.</li>
+<li><strong>PR manager</strong>: Supervises and guides the PR authors, assigns reviewers, and controls the PR workflow, deciding when and how Copilot makes additional changes. The PR manager can hand off this role to someone else.</li>
 </ul>
 <p><strong>The scenario:</strong></p>
 <ul>

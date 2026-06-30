@@ -555,19 +555,28 @@ div.csl-indent {
   </ul></li>
   <li><a href="#git-branching" id="toc-git-branching" class="nav-link" data-scroll-target="#git-branching"><span class="header-section-number">11.5</span> Git Branching</a></li>
   <li><a href="#example-workflow" id="toc-example-workflow" class="nav-link" data-scroll-target="#example-workflow"><span class="header-section-number">11.6</span> Example Workflow</a></li>
-  <li><a href="#commonly-used-git-commands" id="toc-commonly-used-git-commands" class="nav-link" data-scroll-target="#commonly-used-git-commands"><span class="header-section-number">11.7</span> Commonly Used Git Commands</a></li>
-  <li><a href="#how-often-should-i-commit" id="toc-how-often-should-i-commit" class="nav-link" data-scroll-target="#how-often-should-i-commit"><span class="header-section-number">11.8</span> How often should I commit?</a></li>
-  <li><a href="#repeated-amend-workflow" id="toc-repeated-amend-workflow" class="nav-link" data-scroll-target="#repeated-amend-workflow"><span class="header-section-number">11.9</span> Repeated Amend Workflow</a>
+  <li><a href="#sec-pr-roles" id="toc-sec-pr-roles" class="nav-link" data-scroll-target="#sec-pr-roles"><span class="header-section-number">11.7</span> Pull Request Roles</a>
   <ul class="collapse">
-  <li><a href="#basic-workflow" id="toc-basic-workflow" class="nav-link" data-scroll-target="#basic-workflow"><span class="header-section-number">11.9.1</span> Basic Workflow</a></li>
-  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points"><span class="header-section-number">11.9.2</span> Key Points</a></li>
+  <li><a href="#sec-pr-issue-creator" id="toc-sec-pr-issue-creator" class="nav-link" data-scroll-target="#sec-pr-issue-creator"><span class="header-section-number">11.7.1</span> Issue Creator</a></li>
+  <li><a href="#sec-pr-author" id="toc-sec-pr-author" class="nav-link" data-scroll-target="#sec-pr-author"><span class="header-section-number">11.7.2</span> Author</a></li>
+  <li><a href="#sec-pr-reviewer" id="toc-sec-pr-reviewer" class="nav-link" data-scroll-target="#sec-pr-reviewer"><span class="header-section-number">11.7.3</span> Reviewer</a></li>
+  <li><a href="#sec-pr-merger" id="toc-sec-pr-merger" class="nav-link" data-scroll-target="#sec-pr-merger"><span class="header-section-number">11.7.4</span> Merger</a></li>
+  <li><a href="#sec-pr-assignee" id="toc-sec-pr-assignee" class="nav-link" data-scroll-target="#sec-pr-assignee"><span class="header-section-number">11.7.5</span> Assignee</a></li>
+  <li><a href="#sec-pr-steward" id="toc-sec-pr-steward" class="nav-link" data-scroll-target="#sec-pr-steward"><span class="header-section-number">11.7.6</span> PR Steward</a></li>
   </ul></li>
-  <li><a href="#what-should-be-pushed-to-github" id="toc-what-should-be-pushed-to-github" class="nav-link" data-scroll-target="#what-should-be-pushed-to-github"><span class="header-section-number">11.10</span> What should be pushed to Github?</a></li>
-  <li><a href="#sec-gitattributes" id="toc-sec-gitattributes" class="nav-link" data-scroll-target="#sec-gitattributes"><span class="header-section-number">11.11</span> Customizing How Files Appear on GitHub</a>
+  <li><a href="#commonly-used-git-commands" id="toc-commonly-used-git-commands" class="nav-link" data-scroll-target="#commonly-used-git-commands"><span class="header-section-number">11.8</span> Commonly Used Git Commands</a></li>
+  <li><a href="#how-often-should-i-commit" id="toc-how-often-should-i-commit" class="nav-link" data-scroll-target="#how-often-should-i-commit"><span class="header-section-number">11.9</span> How often should I commit?</a></li>
+  <li><a href="#repeated-amend-workflow" id="toc-repeated-amend-workflow" class="nav-link" data-scroll-target="#repeated-amend-workflow"><span class="header-section-number">11.10</span> Repeated Amend Workflow</a>
   <ul class="collapse">
-  <li><a href="#the-linguist-generated-attribute" id="toc-the-linguist-generated-attribute" class="nav-link" data-scroll-target="#the-linguist-generated-attribute"><span class="header-section-number">11.11.1</span> The <code>linguist-generated</code> Attribute</a></li>
-  <li><a href="#using-.gitattributes" id="toc-using-.gitattributes" class="nav-link" data-scroll-target="#using-.gitattributes"><span class="header-section-number">11.11.2</span> Using <code>.gitattributes</code></a></li>
-  <li><a href="#other-useful-linguist-attributes" id="toc-other-useful-linguist-attributes" class="nav-link" data-scroll-target="#other-useful-linguist-attributes"><span class="header-section-number">11.11.3</span> Other Useful Linguist Attributes</a></li>
+  <li><a href="#basic-workflow" id="toc-basic-workflow" class="nav-link" data-scroll-target="#basic-workflow"><span class="header-section-number">11.10.1</span> Basic Workflow</a></li>
+  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points"><span class="header-section-number">11.10.2</span> Key Points</a></li>
+  </ul></li>
+  <li><a href="#what-should-be-pushed-to-github" id="toc-what-should-be-pushed-to-github" class="nav-link" data-scroll-target="#what-should-be-pushed-to-github"><span class="header-section-number">11.11</span> What should be pushed to Github?</a></li>
+  <li><a href="#sec-gitattributes" id="toc-sec-gitattributes" class="nav-link" data-scroll-target="#sec-gitattributes"><span class="header-section-number">11.12</span> Customizing How Files Appear on GitHub</a>
+  <ul class="collapse">
+  <li><a href="#the-linguist-generated-attribute" id="toc-the-linguist-generated-attribute" class="nav-link" data-scroll-target="#the-linguist-generated-attribute"><span class="header-section-number">11.12.1</span> The <code>linguist-generated</code> Attribute</a></li>
+  <li><a href="#using-.gitattributes" id="toc-using-.gitattributes" class="nav-link" data-scroll-target="#using-.gitattributes"><span class="header-section-number">11.12.2</span> Using <code>.gitattributes</code></a></li>
+  <li><a href="#other-useful-linguist-attributes" id="toc-other-useful-linguist-attributes" class="nav-link" data-scroll-target="#other-useful-linguist-attributes"><span class="header-section-number">11.12.3</span> Other Useful Linguist Attributes</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/github.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/github.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -792,10 +801,37 @@ Table&nbsp;11.1: Standard Git workflow for new projects
 </div>
 </figure>
 </div>
-<p>Other helpful commands are listed below.</p>
 </section>
-<section id="commonly-used-git-commands" class="level2" data-number="11.7">
-<h2 data-number="11.7" class="anchored" data-anchor-id="commonly-used-git-commands"><span class="header-section-number">11.7</span> Commonly Used Git Commands</h2>
+<section id="sec-pr-roles" class="level2" data-number="11.7">
+<h2 data-number="11.7" class="anchored" data-anchor-id="sec-pr-roles"><span class="header-section-number">11.7</span> Pull Request Roles</h2>
+<p>Every pull request involves several people, each with a distinct role.</p>
+<section id="sec-pr-issue-creator" class="level3" data-number="11.7.1">
+<h3 data-number="11.7.1" class="anchored" data-anchor-id="sec-pr-issue-creator"><span class="header-section-number">11.7.1</span> Issue Creator</h3>
+<p>The issue creator reports a bug, suggests a feature, or requests other improvements. In projects with external contributors, the issue creator often cannot assign issues to developers and is typically distinct from the PR author.</p>
+</section>
+<section id="sec-pr-author" class="level3" data-number="11.7.2">
+<h3 data-number="11.7.2" class="anchored" data-anchor-id="sec-pr-author"><span class="header-section-number">11.7.2</span> Author</h3>
+<p>The author opens the PR, writes a clear description, and links it to the relevant issue with <code>Closes #N</code> in the PR body. The author implements review feedback and resolves merge conflicts before re-requesting review.</p>
+</section>
+<section id="sec-pr-reviewer" class="level3" data-number="11.7.3">
+<h3 data-number="11.7.3" class="anchored" data-anchor-id="sec-pr-reviewer"><span class="header-section-number">11.7.3</span> Reviewer</h3>
+<p>The reviewer reads the diff, checks the code for correctness and style, and either approves or requests changes.</p>
+</section>
+<section id="sec-pr-merger" class="level3" data-number="11.7.4">
+<h3 data-number="11.7.4" class="anchored" data-anchor-id="sec-pr-merger"><span class="header-section-number">11.7.4</span> Merger</h3>
+<p>The merger executes the final merge once the PR is approved and all CI checks pass. This is often the same person as the reviewer.</p>
+</section>
+<section id="sec-pr-assignee" class="level3" data-number="11.7.5">
+<h3 data-number="11.7.5" class="anchored" data-anchor-id="sec-pr-assignee"><span class="header-section-number">11.7.5</span> Assignee</h3>
+<p>The assignee is listed in the “Assignees” field on GitHub to indicate who is currently responsible for the PR. This field clarifies ownership and tracks who should be addressing open feedback.</p>
+</section>
+<section id="sec-pr-steward" class="level3" data-number="11.7.6">
+<h3 data-number="11.7.6" class="anchored" data-anchor-id="sec-pr-steward"><span class="header-section-number">11.7.6</span> PR Steward</h3>
+<p>A PR steward keeps the review queue healthy. The steward monitors open PRs, assigns reviewers when none are assigned, follows up on stalled reviews, and helps resolve disagreements between authors and reviewers. This is typically a rotating duty for a senior contributor or release manager. The p5.js project documents how it structures this role in its <a href="https://github.com/processing/p5.js-website/blob/main/src/content/contributor-docs/en/steward_guidelines.mdx">contributor docs</a>.</p>
+</section>
+</section>
+<section id="commonly-used-git-commands" class="level2" data-number="11.8">
+<h2 data-number="11.8" class="anchored" data-anchor-id="commonly-used-git-commands"><span class="header-section-number">11.8</span> Commonly Used Git Commands</h2>
 <div id="tbl-git-commands" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-git-commands-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -892,15 +928,15 @@ Table&nbsp;11.2: Commonly used Git commands
 </figure>
 </div>
 </section>
-<section id="how-often-should-i-commit" class="level2" data-number="11.8">
-<h2 data-number="11.8" class="anchored" data-anchor-id="how-often-should-i-commit"><span class="header-section-number">11.8</span> How often should I commit?</h2>
+<section id="how-often-should-i-commit" class="level2" data-number="11.9">
+<h2 data-number="11.9" class="anchored" data-anchor-id="how-often-should-i-commit"><span class="header-section-number">11.9</span> How often should I commit?</h2>
 <p>It is good practice to commit every 15 minutes, or every time you make a significant change. It is better to commit more rather than less.</p>
 </section>
-<section id="repeated-amend-workflow" class="level2" data-number="11.9">
-<h2 data-number="11.9" class="anchored" data-anchor-id="repeated-amend-workflow"><span class="header-section-number">11.9</span> Repeated Amend Workflow</h2>
+<section id="repeated-amend-workflow" class="level2" data-number="11.10">
+<h2 data-number="11.10" class="anchored" data-anchor-id="repeated-amend-workflow"><span class="header-section-number">11.10</span> Repeated Amend Workflow</h2>
 <p>When working on a complex task, you may want to make frequent incremental commits to protect your progress, but avoid cluttering your Git history with many tiny “work in progress” commits. The <strong>Repeated Amend</strong> pattern lets you build up a polished commit gradually.</p>
-<section id="basic-workflow" class="level3" data-number="11.9.1">
-<h3 data-number="11.9.1" class="anchored" data-anchor-id="basic-workflow"><span class="header-section-number">11.9.1</span> Basic Workflow</h3>
+<section id="basic-workflow" class="level3" data-number="11.10.1">
+<h3 data-number="11.10.1" class="anchored" data-anchor-id="basic-workflow"><span class="header-section-number">11.10.1</span> Basic Workflow</h3>
 <p>Start with a clean working tree in a functional state. Then:</p>
 <ol type="1">
 <li>Make a small change and verify your project still works</li>
@@ -914,8 +950,8 @@ Table&nbsp;11.2: Commonly used Git commands
 </ol>
 <p>In RStudio, you can use the “Amend previous commit” checkbox when committing.</p>
 </section>
-<section id="key-points" class="level3" data-number="11.9.2">
-<h3 data-number="11.9.2" class="anchored" data-anchor-id="key-points"><span class="header-section-number">11.9.2</span> Key Points</h3>
+<section id="key-points" class="level3" data-number="11.10.2">
+<h3 data-number="11.10.2" class="anchored" data-anchor-id="key-points"><span class="header-section-number">11.10.2</span> Key Points</h3>
 <ul>
 <li>Each amend replaces the previous commit rather than creating a new one</li>
 <li>This keeps your history clean while letting you work incrementally</li>
@@ -926,16 +962,16 @@ Table&nbsp;11.2: Commonly used Git commands
 <p>For more details and troubleshooting scenarios, see the <a href="https://happygitwithr.com/repeated-amend.html">Repeated Amend chapter</a> in Happy Git with R.</p>
 </section>
 </section>
-<section id="what-should-be-pushed-to-github" class="level2" data-number="11.10">
-<h2 data-number="11.10" class="anchored" data-anchor-id="what-should-be-pushed-to-github"><span class="header-section-number">11.10</span> What should be pushed to Github?</h2>
+<section id="what-should-be-pushed-to-github" class="level2" data-number="11.11">
+<h2 data-number="11.11" class="anchored" data-anchor-id="what-should-be-pushed-to-github"><span class="header-section-number">11.11</span> What should be pushed to Github?</h2>
 <p>Never push .Rout files! If someone else runs an R script and creates an .Rout file at the same time and both of you try to push to github, it is incredibly difficult to reconcile these two logs. If you run logs, keep them on your own system or (preferably) set up a shared directory where all logs are name and date timestamped.</p>
 <p>There is a standardized <code>.gitignore</code> for <code>R</code> which you <a href="https://github.com/github/gitignore/blob/master/R.gitignore">can download</a> and add to your project. This ensures you’re not committing log files or things that would otherwise best be left ignored to GitHub. This is a <a href="https://tidyverse.org/blog/2017/12/workflow-vs-script/">great discussion of project-oriented workflows</a>, extolling the virtues of a self-contained, portable projects, for your reference.</p>
 </section>
-<section id="sec-gitattributes" class="level2" data-number="11.11">
-<h2 data-number="11.11" class="anchored" data-anchor-id="sec-gitattributes"><span class="header-section-number">11.11</span> Customizing How Files Appear on GitHub</h2>
+<section id="sec-gitattributes" class="level2" data-number="11.12">
+<h2 data-number="11.12" class="anchored" data-anchor-id="sec-gitattributes"><span class="header-section-number">11.12</span> Customizing How Files Appear on GitHub</h2>
 <p>GitHub uses a tool called <a href="https://github.com/github-linguist/linguist/">Linguist</a> to detect languages in your repository and generate language statistics. You can customize how certain files are treated by GitHub using a <code>.gitattributes</code> file in the root of your repository. This is particularly useful for marking generated files, documentation, or vendored code that shouldn’t count toward your repository’s language statistics.</p>
-<section id="the-linguist-generated-attribute" class="level3" data-number="11.11.1">
-<h3 data-number="11.11.1" class="anchored" data-anchor-id="the-linguist-generated-attribute"><span class="header-section-number">11.11.1</span> The <code>linguist-generated</code> Attribute</h3>
+<section id="the-linguist-generated-attribute" class="level3" data-number="11.12.1">
+<h3 data-number="11.12.1" class="anchored" data-anchor-id="the-linguist-generated-attribute"><span class="header-section-number">11.12.1</span> The <code>linguist-generated</code> Attribute</h3>
 <p>One of the most useful attributes is <code>linguist-generated</code>, which marks files as generated code. Files marked this way are:</p>
 <ul>
 <li><strong>Excluded from language statistics</strong> - they won’t affect your repository’s language breakdown</li>
@@ -950,8 +986,8 @@ Table&nbsp;11.2: Commonly used Git commands
 </ul>
 <p>For more details, see the <a href="https://github.com/github-linguist/linguist/blob/main/docs/overrides.md#generated-code">Generated code documentation</a>.</p>
 </section>
-<section id="using-.gitattributes" class="level3" data-number="11.11.2">
-<h3 data-number="11.11.2" class="anchored" data-anchor-id="using-.gitattributes"><span class="header-section-number">11.11.2</span> Using <code>.gitattributes</code></h3>
+<section id="using-.gitattributes" class="level3" data-number="11.12.2">
+<h3 data-number="11.12.2" class="anchored" data-anchor-id="using-.gitattributes"><span class="header-section-number">11.12.2</span> Using <code>.gitattributes</code></h3>
 <p>Create a <code>.gitattributes</code> file in the root of your repository and add patterns for files you want to mark as generated:</p>
 <pre class="text"><code># Mark minified JavaScript as generated
 *.min.js linguist-generated
@@ -966,8 +1002,8 @@ dist/styles.css linguist-generated</code></pre>
 bootstrap.min.css -linguist-generated</code></pre>
 <p>The <code>.gitattributes</code> file uses the same pattern matching rules as <code>.gitignore</code>. For more details, see the <a href="https://www.git-scm.com/docs/gitignore#_pattern_format">pattern format documentation</a> and the <a href="https://github.com/github-linguist/linguist/blob/main/docs/overrides.md#using-gitattributes">Using gitattributes guide</a>.</p>
 </section>
-<section id="other-useful-linguist-attributes" class="level3" data-number="11.11.3">
-<h3 data-number="11.11.3" class="anchored" data-anchor-id="other-useful-linguist-attributes"><span class="header-section-number">11.11.3</span> Other Useful Linguist Attributes</h3>
+<section id="other-useful-linguist-attributes" class="level3" data-number="11.12.3">
+<h3 data-number="11.12.3" class="anchored" data-anchor-id="other-useful-linguist-attributes"><span class="header-section-number">11.12.3</span> Other Useful Linguist Attributes</h3>
 <p>Beyond <code>linguist-generated</code>, you can use several other attributes:</p>
 <ul>
 <li><code>linguist-vendored</code> - Marks vendored code (libraries you didn’t write) to exclude from stats (<a href="https://github.com/github-linguist/linguist/blob/main/docs/overrides.md#vendored-code">documentation</a>)</li>
