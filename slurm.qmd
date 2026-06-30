@@ -310,7 +310,7 @@ cd /scratch/groups/GROUPNAME
 However, saving files to group storage can be tricky. You can try using the scp command in the section "Moving files to the cluster" to see if you have permission to add files to group directories. Read the next section to ensure any directories you create have the right permissions.
 
 ### Folder permissions
-Generally, when we put folders in `$GROUP_HOME` or `$GROUP_SCRATCH`, it is so that we can collaborate on an analysis within the research group, so multiple people need to be able to access the folders. If you create a new folder in `$GROUP_HOME` or `$GROUP_SCRATCH`, please check the folder's permissions to ensure that other group members are able to access its contents.
+Generally, when we put folders in `$GROUP_HOME` or `$GROUP_SCRATCH`, it is so that we can collaborate on an analysis within the research group, so multiple people need to be able to access the folders. If you create a new folder in `$GROUP_HOME` or `$GROUP_SCRATCH`, please check the folder's permissions to ensure that other group members are able to access its contents. For example, you can inspect a folder's permissions by running `ls -l` from the level above it.
 
 
 ## Running big jobs
