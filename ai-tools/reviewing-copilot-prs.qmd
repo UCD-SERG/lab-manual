@@ -3,14 +3,22 @@ follow these guidelines to avoid confusion and ensure smooth collaboration:
 
 **Understanding PR roles:**
 
-Different people may play different roles in the PR lifecycle:
+The general PR roles (issue creator, author, reviewer, merger, assignee, and PR steward)
+are described in @sec-pr-roles.
+Copilot-assisted workflows add two more:
 
-- **Issue creator**: Reports a bug, suggests a feature, or requests other improvements. In projects with external users, issue creators often cannot assign issues to developers and are therefore distinct from the PR prompter
-- **PR prompter**: Assigns a developer (human or AI) to start working on a PR, often by assigning an issue to Copilot. The PR prompter is sometimes the same person as the issue creator, but often is a project maintainer who reviews and triages external issue reports
-- **PR author(s)**: Makes commits to the PR branch (when Copilot creates commits, both Copilot and the prompter are co-authors)
-- **PR manager**: Supervises and guides the PR authors, assigns reviewers, and controls the PR workflow. Typically the PR prompter becomes the PR manager, but can hand off this role to someone else
-- **PR reviewer(s)**: Reviews the PR and provides feedback. The PR manager often also serves as the lead reviewer
-- **PR assignee(s)**: Listed in the "Assignees" field on GitHub to indicate who is responsible for the PR. Use this field to clarify current ownership and track who should be working on addressing feedback
+- **PR prompter**: Assigns a developer (human or AI) to start working on a PR,
+  often by assigning an issue to Copilot.
+  The PR prompter is sometimes the same person as the issue creator,
+  but is often a project maintainer who reviews and triages external issue reports.
+  When Copilot creates commits,
+  both Copilot and the prompter are listed as co-authors.
+  Typically the PR prompter becomes the PR manager.
+- **PR manager**: Supervises and guides the PR authors,
+  assigns reviewers,
+  and controls the PR workflow,
+  deciding when and how Copilot makes additional changes.
+  The PR manager can hand off this role to someone else.
 
 **The scenario:**
 
