@@ -1,14 +1,27 @@
 # Welcome to UCD-SeRG!
 
-Adapted by UCD-SeRG team from [original by Jade Benjamin-Chung](https://jadebc.github.io/lab-manual/index.html)
-
 ## About the lab
-Welcome to the Seroepidemiology Research Group (SeRG) at the University of California, Davis, led by Drs. Kristen Aiemjoy and Ezra Morrison. Accurate methods to measure infectious disease burden are essential for guiding public health decisions, yet many infectious diseases remain under-recognized due to limited diagnostics and costly, resource-intensive surveillance systems. Our work addresses this gap by developing seroepidemiologic methods to characterize infection burden in populations. Currently, we focus on enteric fever (Salmonella Typhi and Paratyphi), Scrub Typhus (Orientia tsutsugamushi), Melioidosis (Burkholderia pseudomallei), Shigella (Shigella spp.), and Cholera (Vibrio cholerae). We are supported by the US National Institutes of Health, the Bill and Melinda Gates Foundation, and the Department of Defense, and collaborate with partners around the world. To learn more about the lab, visit [ucdserg.ucdavis.edu](https://ucdserg.ucdavis.edu).
+Welcome to the UC Davis Seroepidemiology Research Group (SeRG), led by Drs. Kristen Aiemjoy and Ezra Morrison. Accurate methods to measure infectious disease burden are essential for guiding public health decisions, yet many infectious diseases remain under-recognized due to limited diagnostics and costly, resource-intensive surveillance systems. Our work addresses this gap by developing seroepidemiologic methods to characterize infection burden in populations. Currently, we focus on enteric fever (Salmonella Typhi and Paratyphi), Scrub Typhus (Orientia tsutsugamushi), Melioidosis (Burkholderia pseudomallei), Shigella (Shigella spp.), and Cholera (Vibrio cholerae). We are supported by the US National Institutes of Health, the Bill and Melinda Gates Foundation, and the Department of Defense, and collaborate with partners around the world. To learn more about the lab, visit [ucdserg.ucdavis.edu](https://ucdserg.ucdavis.edu).
 
 ## About this lab manual
 This lab manual covers our communication strategy, code of conduct, and best practices for reproducibility of computational workflows. It is a living document that is updated regularly. 
 
-This manual is a fork of the Benjamin-Chung Lab Manual [@benjaminchunglab], adapted for UCD-SeRG. We are grateful to Dr. Jade Benjamin-Chung and her team for developing and openly sharing their excellent lab manual. You can view the original manual at [jadebc.github.io/lab-manual](https://jadebc.github.io/lab-manual/index.html). Original contributors include Jade Benjamin-Chung, Kunal Mishra, Stephanie Djajadi, Nolan Pokpongkiat, Anna Nguyen, Iris Tong, and Gabby Barratt Heitmann.
+This manual is a fork of the Benjamin-Chung Lab Manual [@benjaminchunglab],
+adapted for UCD-SeRG.
+We are grateful to Dr. Jade Benjamin-Chung and her team
+for developing and openly sharing their excellent lab manual.
+You can view the original manual
+at [jadebc.github.io/lab-manual](https://jadebc.github.io/lab-manual/index.html).
+Original contributors include Jade Benjamin-Chung,
+Kunal Mishra,
+Stephanie Djajadi,
+Nolan Pokpongkiat,
+Anna Nguyen,
+Iris Tong,
+and Gabby Barratt Heitmann.
+The Data Publication chapter also draws from Fanice Nyatigo
+and Ben Arnold's public-data chapter
+in the [Proctor Lab at UCSF handbook](https://proctor-ucsf.github.io/dcc-handbook/publicdata.html).
 
 Feel free to draw from this manual (and please cite it if you do!).  
 

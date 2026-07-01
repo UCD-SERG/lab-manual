@@ -1,7 +1,5 @@
 # Reproducible Environments
 
-Adapted by UCD-SeRG team from [original by Anna Nguyen](https://jadebc.github.io/lab-manual/reproducible-environments.html)
-
 ## Package Version Control with renv
 
 ### Introduction 

@@ -1,7 +1,5 @@
 # Data Publication
 
-Adapted from Fanice Nyatigo and Ben Arnold's chapter in the [Proctor-UCSF Lab Manual](https://urlisolation.com/browser?clickId=524DE241-3F8F-4C98-B619-3C278374BF64&traceToken=1728923499%3Bucsfmed_hosted%3Bhttps%3A%2F%2Fproctor-ucsf.github.io%2Fd&url=https%3A%2F%2Fproctor-ucsf.github.io%2Fdcc-handbook%2Fpublicdata.html) 
-
 ## Overview
 
 ---
@@ -68,7 +66,7 @@ For learning about working with geospatial data, see the [UC Davis DataLab GIS w
 ## Create public IDs
 
 ### Rationale
-The UC Davis IRB requires that public datasets not include the original study IDs to identify participants or other units in the study (such as village IDs). The reason is that those IDs are linked in our private datasets to PHI.  By creating a new set of public IDs, the public dataset is one step further removed from the potential to link to PHI.  
+The UC Davis IRB requires that public datasets not include the original study IDs to identify participants or other units in the study. The reason is that those IDs are linked in our private datasets to PHI. By creating a new set of public IDs, the public dataset is one step further removed from the potential to link to PHI.
 
 ### A single set of public IDs for each study
 For each study, it is ideal to create a single set of public IDs whenever possible. We could create a new set of public IDs for every public dataset, but the downside is that independent researchers could no longer link data that might be related. By creating a single set of public IDs associated with each internal study ID, public files retain the link.
@@ -85,7 +83,10 @@ Create a public ID that can be used to uniquely identify participants and that c
 
 ### Example scripts
 
-We have created a self-contained and reproducible example that you can run and replicate when making data public for your projects. It contains the following files and folders:
+Please see the reproducible example provided by the
+[Proctor Lab at UCSF](https://proctor-ucsf.github.io/dcc-handbook/publicdata.html)
+that you can run and replicate when making data public for your projects.
+The example contains the following files and folders:
 
 1. `data/final/`- folder containing the projects final data in both csv and rds formats              
 2. `code/DEMO_generate_public_IDs.R`- creates randomly generated public IDs that can be matched to the trial's assigned patient IDs.              
