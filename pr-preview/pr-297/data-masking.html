@@ -583,7 +583,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </p>
 </div>
 
-<p>Adapted by UCD-SeRG team from <a href="https://jadebc.github.io/lab-manual/data-masking.html">original by Anna Nguyen, Jade Benjamin-Chung, and Gabby Barratt Heitmann</a></p>
 <p>For information about UC Davis computing resources for data-intensive work, see <a href="slurm.html" class="quarto-xref"><span>Chapter 17</span></a>.</p>
 <section id="general-overview" class="level2" data-number="9.1">
 <h2 data-number="9.1" class="anchored" data-anchor-id="general-overview"><span class="header-section-number">9.1</span> General Overview</h2>
@@ -620,8 +619,8 @@ Figure&nbsp;9.1: Data masking in tidyverse operations
 <h2 data-number="9.2" class="anchored" data-anchor-id="sec-data-masking-vs-tidy-selection"><span class="header-section-number"><mark class="preview-text-changed">9.2</mark></span><mark class="preview-text-changed"> </mark>Data masking<mark class="preview-text-added"> vs.&nbsp;tidy sele</mark>ction</h2>
 <p><mark class="preview-element-added">Many <a href="https://www.tidyverse.org/"><code>{tidyverse}</code></a> verbs use <em>two</em> different flavors of tidy evaluation, and the way you refer to a column stored in a string variable depends on which one you are in.</mark></p>
 <ul>
-<li><mark class="preview-element-added"><strong>Data-masking</strong> contexts treat column names as values you compute <em>with</em>: <code>mutate()</code>, <code>filter()</code>, <code>summarize()</code>/<code>summarise()</code> (the summary expressions), <code>group_by()</code>, <code>arrange()</code>, and <code>aes()</code> in <a href="https://ggplot2.tidyverse.org/"><code>{ggplot2}</code></a>.</mark></li>
-<li><mark class="preview-element-added"><strong>Tidy-selection</strong> contexts treat column names as columns you <em>choose</em>: <code>select()</code>, <code>rename()</code>, <code>relocate()</code>, <code>pull()</code>, the <code>.cols</code> argument of <code>across()</code>, the <code>.by</code> argument of <code>mutate()</code>/<code>summarize()</code>, and the <code>cols</code>, <code>names_from</code>, <code>values_from</code>, and <code>id_cols</code> arguments of <code>tidyr::pivot_*()</code>.</mark></li>
+<li><mark class="preview-element-added"><strong>Data-masking</strong> contexts treat column names as values you compute <em>with</em>: the <a href="https://dplyr.tidyverse.org/"><code>{dplyr}</code></a> verbs <code>mutate()</code>, <code>filter()</code>, <code>summarize()</code>/<code>summarise()</code> (the summary expressions), <code>group_by()</code>, and <code>arrange()</code>, plus <code>aes()</code> in <a href="https://ggplot2.tidyverse.org/"><code>{ggplot2}</code></a>.</mark></li>
+<li><mark class="preview-element-added"><strong>Tidy-selection</strong> contexts treat column names as columns you <em>choose</em>: <code>select()</code>, <code>rename()</code>, <code>relocate()</code>, <code>pull()</code>, the <code>.cols</code> argument of <code>across()</code>, the <code>.by</code> argument of <code>mutate()</code>/<code>summarize()</code>, and the <code>cols</code>, <code>names_from</code>, <code>values_from</code>, and <code>id_cols</code> arguments of <code>pivot_*()</code> in <a href="https://tidyr.tidyverse.org/"><code>{tidyr}</code></a>.</mark></li>
 </ul>
 <p><mark class="preview-element-added">To refer to a column named by a string variable, use the tool that matches the context:</mark></p>
 <div id="tbl-masking-selection" class="quarto-float quarto-figure quarto-figure-center anchored">
