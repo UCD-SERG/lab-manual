@@ -19,7 +19,7 @@ Nolan Pokpongkiat,
 Anna Nguyen,
 Iris Tong,
 and Gabby Barratt Heitmann.
-The `Data Publication` chapter also draws from Fanice Nyatigo
+The Data Publication chapter also draws from Fanice Nyatigo
 and Ben Arnold's public-data chapter
 in the [Proctor Lab at UCSF handbook](https://proctor-ucsf.github.io/dcc-handbook/publicdata.html).
 
