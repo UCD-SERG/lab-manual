@@ -1,0 +1,225 @@
+
+Some environments restrict or prohibit internet access---high-performance computing (HPC) clusters,
+hospital networks,
+or air-gapped research servers may block connections to cloud AI providers.
+Running a local AI model lets you use coding assistance in these settings
+without sending code to external servers,
+which also addresses data-privacy concerns
+when working with sensitive or confidential data.
+
+::: {.callout-note}
+#### Trade-offs of Local vs. Cloud Models
+
+Local models work best with a GPU (roughly 8 GB VRAM or more for smaller models);
+CPU-only inference is possible but significantly slower,
+and hardware needs vary with model size and quantization.
+They are generally less capable than frontier cloud models,
+and may produce lower-quality results on complex tasks.
+For routine work in fully connected environments,
+cloud-based agents remain the better choice.
+Use local models when network access or data-privacy policies require it.
+:::
+
+#### Running a Local Model with Ollama
+
+[Ollama](https://ollama.com) is a common way to run open-weight AI models locally.
+It packages models and a simple API server into a single tool
+and is available for macOS, Linux, and Windows.
+
+**Install Ollama:**
+
+::: {.callout-caution}
+Before running any remote install script, review it first.
+The real risk is piping `curl` straight into `sh`/`bash` (`curl ... | sh`),
+which executes unreviewed code. Save the script, read it, then run it:
+`curl -fsSL https://ollama.com/install.sh -o install.sh && less install.sh`
+(paging the saved file rather than piping `curl` into `less`, which can
+behave oddly in some terminal emulators).
+Alternatively, use your system package manager (e.g., `brew install ollama` on macOS)
+or follow the manual installation steps on the
+[Ollama releases page](https://github.com/ollama/ollama/releases).
+:::
+
+```bash
+# macOS / Linux: download, review, then run (do not chain these into one command)
+curl -fsSL https://ollama.com/install.sh -o install.sh
+less install.sh   # review the script before running it (see caution above)
+sh install.sh
+```
+
+On Windows, download the installer from <https://ollama.com/download>.
+
+**Pull a code-focused model:**
+
+```bash
+# Smaller, faster; works on most machines with a modern GPU or Apple Silicon
+ollama pull qwen2.5-coder:7b
+
+# More capable; larger memory footprint
+ollama pull qwen2.5-coder:32b
+
+# Alternatively, a general-purpose model (70B variant; needs a high-memory GPU)
+ollama pull llama3.3
+```
+
+The VRAM each model needs depends on its size and quantization and changes as
+models are re-quantized---check the [Ollama model library](https://ollama.com/library)
+for current requirements. As a rough guide, smaller (7B) models run on consumer
+GPUs with around 8 GB of VRAM, while larger (32B and 70B) models need
+substantially more and may not fit on a single GPU.
+
+**Start the Ollama server:**
+
+```bash
+ollama serve
+```
+
+By default the server listens at `http://localhost:11434`.
+
+#### Connecting Positron Assistant to Ollama
+
+[Positron](https://positron.posit.co) supports Ollama natively through the
+[OpenAI-compatible API endpoint](https://ollama.com/blog/openai-compatibility)
+that Ollama exposes.
+
+1. Open the Command Palette with `Cmd+Shift+P` (macOS) or `Ctrl+Shift+P` (Windows/Linux).
+2. Run **Positron Assistant: Configure Language Model Providers**.
+3. Select **Ollama** (or **Custom/OpenAI-compatible** if Ollama is not listed).
+4. Set the base URL to `http://localhost:11434/v1` and leave the API key blank,
+   or, if the client rejects an empty field, enter any placeholder value such as `ollama`.
+5. Choose your model from the model list (e.g., `qwen2.5-coder:7b`).
+
+Once configured, Positron Assistant will send requests to your local Ollama server
+instead of a cloud provider.
+
+#### Connecting VS Code to Ollama via Continue
+
+[Continue](https://continue.dev) is an open-source VS Code extension
+that supports Ollama and many other local and cloud backends.
+
+1. Install the **Continue** extension from the VS Code marketplace.
+2. Open the Continue sidebar and click the model selector.
+3. Choose **Ollama** and select a model (Continue detects running Ollama models automatically).
+
+Continue provides inline completions and a chat panel,
+similar to GitHub Copilot,
+but routed entirely to your local model.
+
+#### Working in HPC / Cluster Environments
+
+Many HPC clusters do not have outbound internet access on compute nodes
+but do allow access on login nodes.
+
+::: {.callout-note}
+#### Install the Ollama binary on the cluster first
+Ollama must be installed on the cluster (on the host that will run `ollama serve`)
+before any of the steps below.
+On most HPC systems you do not have root access,
+so the `curl | sh` installer may fail or install to the wrong place.
+Instead, check whether your cluster already provides it (e.g., `module load ollama`),
+ask your HPC administrators,
+or download a static binary from the
+[Ollama releases page](https://github.com/ollama/ollama/releases)
+and place it on your `PATH`.
+:::
+
+A useful pattern:
+
+1. **Pre-pull models** on a login node or a machine with internet access,
+   then copy the model files to the cluster:
+
+   ```bash
+   # On a machine with internet access
+   ollama pull qwen2.5-coder:7b
+   # Ollama stores models in ~/.ollama/models by default
+   rsync -a ~/.ollama/models/ user@cluster.example.edu:~/.ollama/models/
+   ```
+
+   ::: {.callout-warning}
+   #### Watch your home-directory quota
+   Model files are large---`qwen2.5-coder:7b` is ~4 GB and `qwen2.5-coder:32b`
+   is ~20 GB---and most HPC home directories have tight quotas (often 10--50 GB).
+   Filling your home directory can break other jobs.
+   Redirect model storage to a scratch or project filesystem with `OLLAMA_MODELS`
+   and rsync to that path instead:
+
+   ```bash
+   # On your local machine: copy the models to the cluster scratch filesystem
+   rsync -a ~/.ollama/models/ user@cluster.example.edu:/scratch/$USER/ollama-models/
+   ```
+
+   ```bash
+   # On the cluster: point ollama at that path (export before `ollama serve`)
+   export OLLAMA_MODELS=/scratch/$USER/ollama-models
+   ```
+
+   Set the same `OLLAMA_MODELS` value before running `ollama serve` so the server
+   finds the models.
+   :::
+
+2. **Start Ollama on a compute node** (or an interactive session)
+   using the pre-downloaded model files---no internet required.
+   Set `OLLAMA_HOST=0.0.0.0` so the SSH tunnel from the login node can reach the port:
+
+   ```bash
+   OLLAMA_HOST=0.0.0.0:11434 ollama serve
+   # If you redirected model storage (see quota warning above):
+   # OLLAMA_HOST=0.0.0.0:11434 OLLAMA_MODELS=/scratch/$USER/ollama-models ollama serve
+   ```
+
+   If you are on a shared compute node, be aware that binding to `0.0.0.0`
+   exposes the Ollama port to other users on that host. Scheduler policies vary
+   by site and job type, so confirm whether your job has exclusive node access
+   (request it explicitly when in doubt---e.g., `--exclusive` in SLURM), or bind
+   only to loopback (`OLLAMA_HOST=127.0.0.1:11434`) and tunnel from the login
+   node when the node is shared.
+
+3. **Forward the port** to your local machine to use your editor's Ollama integration.
+   Because Ollama is running on a compute node (e.g., `gpu-node-01`),
+   forward through the login node to that specific host:
+
+   ```bash
+   # Replace gpu-node-01 with your actual compute node hostname
+   ssh -L 11434:gpu-node-01:11434 user@cluster.example.edu
+   ```
+
+   This terminal must stay open for as long as you use the editor's Ollama
+   integration---closing it tears down the tunnel and silently drops the
+   connection. Alternatively, start the tunnel in the background (non-interactive)
+   so it does not occupy a terminal:
+
+   ```bash
+   ssh -N -f -L 11434:gpu-node-01:11434 user@cluster.example.edu
+   ```
+
+   (`-N` runs no remote command, `-f` backgrounds ssh after authenticating.)
+   To stop the tunnel later, match the full SSH command rather than a bare
+   port string---`pkill -f "ssh.*-N.*11434:gpu-node-01"`---so you don't
+   accidentally kill unrelated processes whose command line happens to contain
+   that port. Safer still, note the PID when you start it
+   (`pgrep -f "11434:gpu-node-01"`) and `kill` that PID directly.
+
+   Then configure your editor to use `http://localhost:11434/v1` as the base URL.
+
+::: {.callout-warning}
+#### SLURM and GPU Allocation
+
+If running Ollama on a SLURM-managed cluster,
+request a GPU node with enough VRAM for your chosen model
+and load any required CUDA modules before starting `ollama serve`.
+See @sec-slurm for guidance on requesting GPU resources.
+:::
+
+#### Privacy Considerations
+
+Running a model locally ensures that your code and prompts
+never leave your machine or cluster.
+This is important when working with:
+
+- Protected health information (PHI) or other HIPAA-regulated data
+- Unpublished research data under data-use agreements (DUAs)
+- Proprietary or commercially sensitive code
+
+Even with local models,
+avoid including raw sensitive data in prompts.
+Work with anonymized or synthetic data wherever possible.
