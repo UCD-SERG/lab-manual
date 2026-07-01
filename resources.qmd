@@ -11,7 +11,7 @@
 - Mastering Shiny [@wickham2021shiny] - comprehensive guide to building web applications with Shiny
 - Engineering Production-Grade Shiny Apps [@fay2021engineering] - best practices for production Shiny applications
 - Happy Git and GitHub for the useR [@bryan2023happygit] - guide to using Git and GitHub with R
-- [Datacamp](https://www.datacamp.com/) - email Kristen for access.
+- [DataCamp](https://www.datacamp.com/) - email Kristen for access
 
 ### UC Davis DataLab Workshops and Tutorials
 
