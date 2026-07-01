@@ -41,7 +41,7 @@ The front matter is parsed as structured configuration
 (name, description, allowed tools, model);
 the markdown body below it becomes that agent's system prompt,
 verbatim.
-An [Agent Skill's](#sec-ai-agent-skills) `SKILL.md` follows the same shape:
+An [Agent Skill's](@sec-ai-agent-skills) `SKILL.md` follows the same shape:
 front matter for discovery metadata,
 a markdown body for instructions,
 and an optional folder of bundled scripts or reference files alongside it.
