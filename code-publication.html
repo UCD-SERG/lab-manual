@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -495,7 +530,14 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#ensure-project-runs-via-bash" id="toc-ensure-project-runs-via-bash" class="nav-link" data-scroll-target="#ensure-project-runs-via-bash"><span class="header-section-number">15.6</span> Ensure project runs via bash</a></li>
   <li><a href="#complete-the-readme" id="toc-complete-the-readme" class="nav-link" data-scroll-target="#complete-the-readme"><span class="header-section-number">15.7</span> Complete the README</a></li>
   <li><a href="#clean-up-feature-branches" id="toc-clean-up-feature-branches" class="nav-link" data-scroll-target="#clean-up-feature-branches"><span class="header-section-number">15.8</span> Clean up feature branches</a></li>
-  <li><a href="#create-github-release" id="toc-create-github-release" class="nav-link" data-scroll-target="#create-github-release"><span class="header-section-number">15.9</span> Create Github release</a></li>
+  <li><a href="#sec-create-github-release" id="toc-sec-create-github-release" class="nav-link" data-scroll-target="#sec-create-github-release"><span class="header-section-number">15.9</span> Create GitHub release</a></li>
+  <li><a href="#sec-cran-release" id="toc-sec-cran-release" class="nav-link" data-scroll-target="#sec-cran-release"><span class="header-section-number">15.10</span> Releasing to CRAN</a>
+  <ul class="collapse">
+  <li><a href="#versioning" id="toc-versioning" class="nav-link" data-scroll-target="#versioning"><span class="header-section-number">15.10.1</span> Versioning</a></li>
+  <li><a href="#pre-release-checklist" id="toc-pre-release-checklist" class="nav-link" data-scroll-target="#pre-release-checklist"><span class="header-section-number">15.10.2</span> Pre-release Checklist</a></li>
+  <li><a href="#submitting-to-cran" id="toc-submitting-to-cran" class="nav-link" data-scroll-target="#submitting-to-cran"><span class="header-section-number">15.10.3</span> Submitting to CRAN</a></li>
+  <li><a href="#after-cran-acceptance" id="toc-after-cran-acceptance" class="nav-link" data-scroll-target="#after-cran-acceptance"><span class="header-section-number">15.10.4</span> After CRAN Acceptance</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/code-publication.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/code-publication.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -532,7 +574,7 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="#ensure-project-runs-via-bash">Ensure project runs via bash</a></li>
 <li><a href="#complete-the-readme">Complete the README</a></li>
 <li><a href="#clean-up-feature-branches">Clean up feature branches</a></li>
-<li><a href="#create-github-release">Create Github release</a></li>
+<li><a href="#sec-create-github-release">Create GitHub release</a></li>
 </ol>
 </section>
 <section id="fill-out-file-headers" class="level2" data-number="15.2">
@@ -604,14 +646,70 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="clean-up-feature-branches" class="level2" data-number="15.8">
 <h2 data-number="15.8" class="anchored" data-anchor-id="clean-up-feature-branches"><span class="header-section-number">15.8</span> Clean up feature branches</h2>
-<p>In the remote repository on Github, all feature branches aside from master should be merged in and deleted. All outstanding PRs should be closed.</p>
+<p>In the remote repository on GitHub, all feature branches aside from master should be merged in and deleted. All outstanding PRs should be closed.</p>
 </section>
-<section id="create-github-release" class="level2" data-number="15.9">
-<h2 data-number="15.9" class="anchored" data-anchor-id="create-github-release"><span class="header-section-number">15.9</span> Create Github release</h2>
-<p>Once all of these items are verified, create a tag to make a Github release, which will tag the repository, creating a marker at this specific point in time.</p>
-<p>Detailed instructions <a href="https://docs.github.com/en/enterprise/2.13/user/articles/creating-releases">here.</a></p>
+<section id="sec-create-github-release" class="level2" data-number="15.9">
+<h2 data-number="15.9" class="anchored" data-anchor-id="sec-create-github-release"><span class="header-section-number">15.9</span> Create GitHub release</h2>
+<p>Once all of these items are verified, create a tag to make a GitHub release, which will tag the repository, creating a marker at this specific point in time.</p>
+<p>Detailed instructions: <a href="https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository">Managing releases in a repository</a>.</p>
+</section>
+<section id="sec-cran-release" class="level2" data-number="15.10">
+<h2 data-number="15.10" class="anchored" data-anchor-id="sec-cran-release"><span class="header-section-number">15.10</span> Releasing to CRAN</h2>
+<p>If your R package is intended for public distribution, you may want to release it on <a href="https://cran.r-project.org/">CRAN</a> (the Comprehensive R Archive Network). This section summarizes the release process and adds lab-specific guidance on versioning and tagging. For full details, see the <a href="https://r-pkgs.org/release.html">R Packages book chapter on releasing to CRAN</a> by Hadley Wickham and Jennifer Bryan.</p>
+<p>The CRAN submission pipeline goes through several stages: initial upload, automated checks, human review by CRAN maintainers, and final acceptance or rejection. For a visual overview of the full pipeline, see the <a href="https://github.com/edgararuiz-zz/cran-stages">CRAN stages diagram</a> by Edgar Ruiz.</p>
+<section id="versioning" class="level3" data-number="15.10.1">
+<h3 data-number="15.10.1" class="anchored" data-anchor-id="versioning"><span class="header-section-number">15.10.1</span> Versioning</h3>
+<p>R package versions follow a <code>major.minor.patch</code> scheme (e.g., <code>1.2.3</code>). Use a fourth development component (e.g., <code>1.2.3.9000</code>) on the development version to distinguish it from the released version.</p>
+<ul>
+<li>Increment the <strong>patch</strong> version (<code>1.2.3</code> → <code>1.2.4</code>) for bug fixes</li>
+<li>Increment the <strong>minor</strong> version (<code>1.2.3</code> → <code>1.3.0</code>) for new features that are backward-compatible</li>
+<li>Increment the <strong>major</strong> version (<code>1.2.3</code> → <code>2.0.0</code>) for breaking changes</li>
+</ul>
+<p>Update the version in <code>DESCRIPTION</code> before each release.</p>
+</section>
+<section id="pre-release-checklist" class="level3" data-number="15.10.2">
+<h3 data-number="15.10.2" class="anchored" data-anchor-id="pre-release-checklist"><span class="header-section-number">15.10.2</span> Pre-release Checklist</h3>
+<p>Before submitting to CRAN, work through the following steps:</p>
+<ol type="1">
+<li><p><strong>Update <code>NEWS.md</code></strong>: Document all changes since the last release in <code>NEWS.md</code>. Use <code>usethis::use_news_md()</code> to create this file if it doesn’t exist. Each release should have a top-level heading (e.g., <code># mypackage 1.2.0</code>).</p></li>
+<li><p><strong>Run <code>devtools::check()</code></strong>: Ensure your package passes <code>R CMD CHECK</code> with no errors, warnings, or notes. Use <code>cran = TRUE</code> to enable the stricter checks that more closely mirror what CRAN runs. Address any issues before submitting.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">check</span>(<span class="at">cran =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p><strong>Check spelling</strong>: Run <code>devtools::spell_check()</code> to catch typos in documentation.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">spell_check</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p><strong>Check URLs</strong>: Run <code>urlchecker::url_check()</code> to catch broken or redirected URLs in your documentation, which CRAN flags.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>urlchecker<span class="sc">::</span><span class="fu">url_check</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p><strong>Test on multiple platforms</strong>: CRAN requires packages to work across operating systems and R versions. Use the following to test on additional platforms:</p>
+<ul>
+<li><code>devtools::check_win_devel()</code> - tests on Windows with the development version of R</li>
+<li><a href="https://github.com/r-hub/rhub">R-hub</a> - tests on a wide range of platforms. In <a href="https://r-hub.github.io/rhub/articles/rhubv2.html">rhub v2</a>, this runs via GitHub Actions: run <code>rhub::rhub_setup()</code> once to add the workflow to your repository, then <code>rhub::rhub_check()</code> to trigger a check run. (If you previously used older rhub APIs, see the rhub v2 documentation for migration details.)</li>
+</ul></li>
+<li><p><strong>Review CRAN policies</strong>: Ensure your package complies with the <a href="https://cran.r-project.org/web/packages/policies.html">CRAN Repository Policy</a>.</p></li>
+</ol>
+</section>
+<section id="submitting-to-cran" class="level3" data-number="15.10.3">
+<h3 data-number="15.10.3" class="anchored" data-anchor-id="submitting-to-cran"><span class="header-section-number">15.10.3</span> Submitting to CRAN</h3>
+<p>Once all checks pass, submit with:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">submit_cran</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This bundles your package and uploads it to CRAN’s submission portal. You will receive an email asking you to confirm the submission. Review time varies; watch for email from CRAN maintainers with acceptance or requested changes.</p>
+<p>On the CRAN web submission form that <code>devtools::submit_cran()</code> opens, briefly describe any <code>R CMD CHECK</code> notes in the submission comments and explain why they are acceptable. Be concise and factual.</p>
+<p>For first-time submissions, also check the <a href="https://r-pkgs.org/release.html#sec-release-initial">new submission checklist</a> in the R Packages book for additional requirements.</p>
+</section>
+<section id="after-cran-acceptance" class="level3" data-number="15.10.4">
+<h3 data-number="15.10.4" class="anchored" data-anchor-id="after-cran-acceptance"><span class="header-section-number">15.10.4</span> After CRAN Acceptance</h3>
+<p>Once CRAN accepts your package:</p>
+<ol type="1">
+<li><p><strong>Tag the release and create a GitHub release</strong>: Follow the steps in <a href="#sec-create-github-release" class="quarto-xref"><span>Section 15.9</span></a>, using a tag named <code>v</code> followed by the version number (e.g., <code>v1.2.0</code>). Copy the relevant section of <code>NEWS.md</code> as the release notes. Tags permanently mark the exact commit that was released, making it easy to return to or compare against any released version.</p></li>
+<li><p><strong>Bump the development version</strong>: After releasing, append the <code>.9000</code> development suffix to the current version in <code>DESCRIPTION</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_version</span>(<span class="st">"dev"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>For example, after releasing <code>1.2.0</code>, the <code>DESCRIPTION</code> version becomes <code>1.2.0.9000</code>. This signals to contributors that the repository reflects development work toward the next release.</p></li>
+<li><p><strong>Commit the version bump</strong>: Stage and commit the updated <code>DESCRIPTION</code> (and <code>NEWS.md</code> if you added a <code># mypackage (development version)</code> header):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add DESCRIPTION NEWS.md</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Start development toward next release (1.2.0.9000)"</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+</ol>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
