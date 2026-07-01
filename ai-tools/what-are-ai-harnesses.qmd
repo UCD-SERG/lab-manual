@@ -9,10 +9,11 @@ and carry state across turns and sessions.
 #### Layers of a Harness
 
 Most coding-agent harnesses ---
-including the GitHub Copilot coding agent and Claude Code ---
+including the [GitHub Copilot coding agent](https://github.com/features/copilot/agents)
+and [Claude Code](https://claude.com/product/claude-code) ---
 share a similar set of layers:
 
-- **Core loop**: the tool-calling loop,
+- **Core loop**: the [tool-calling loop](https://docs.claude.com/en/docs/agents-and-tools/tool-use/overview),
   permission and sandboxing model,
   and context management that keep the agent grounded in your repository.
 - **Skills**: reusable,
@@ -32,7 +33,7 @@ share a similar set of layers:
   beyond raw shell or API calls.
 - **Memory**: files ---
   like this manual,
-  or a repository's `CLAUDE.md`/`AGENTS.md` ---
+  or a repository's `CLAUDE.md`/[`AGENTS.md`](https://agents.md/) ---
   that persist instructions and learned preferences across sessions,
   so the harness does not relearn your conventions every time.
 
@@ -64,4 +65,5 @@ share a similar set of layers:
   PR comments,
   fetched web pages,
   and other tool output can contain text that looks like a command;
-  a harness that acts on it uncritically is vulnerable to prompt injection.
+  a harness that acts on it uncritically is vulnerable to
+  [prompt injection](https://owasp.org/www-project-top-10-for-large-language-model-applications/).
