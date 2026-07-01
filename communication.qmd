@@ -43,7 +43,7 @@ especially if they receive work email or Teams notifications on their phones.
 
 - **Block notifications outside of work hours**:
   We recommend configuring your devices and applications to prevent work notifications during non-work time.
-  We all need uninterrupted rest and relaxation time in order to stay healthy and productive in the medium and long-terms.
+  We all need uninterrupted rest and relaxation time in order to stay healthy and productive in the medium and long term.
 - **Sending messages outside work hours**:
   There's no expectation to only send emails or messages during normal work hours.
   Feel free to send messages whenever you compose them---don't spend effort scheduling messages for later delivery.
