@@ -1,7 +1,5 @@
 # R Code Style {#sec-r-code-style}
 
-Adapted by UCD-SeRG team from [original by Kunal Mishra, Jade Benjamin-Chung, and Stephanie Djajadi](https://jadebc.github.io/lab-manual/coding-style.html)
-
 Follow these code style guidelines for all R code:
 
 ## General Principles

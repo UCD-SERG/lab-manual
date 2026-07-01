@@ -1,7 +1,5 @@
 # Unix {#sec-unix}
 
-Adapted by UCD-SeRG team from [original by Stephanie Djajadi, Kunal Mishra, Anna Nguyen, and Jade Benjamin-Chung](https://jadebc.github.io/lab-manual/unix.html)
-
 We typically use Unix commands in Terminal (for Mac users) or Git Bash (for Windows users) to 
 
 1. Run a series of scripts in parallel or in a specific order to reproduce our work

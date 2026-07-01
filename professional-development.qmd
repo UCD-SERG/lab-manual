@@ -1,7 +1,5 @@
 # Professional Development
 
-Adapted by UCD-SeRG team from [original by Jade Benjamin-Chung](https://jadebc.github.io/lab-manual/)
-
 ## Mentoring Philosophy
 
 We believe in individualized mentoring that supports each person's unique career goals. Effective mentoring requires:

@@ -1,7 +1,5 @@
 # Manuscript Preparation and Publication
 
-Adapted by UCD-SeRG team from [original by Jade Benjamin-Chung](https://jadebc.github.io/lab-manual/)
-
 ## Publication Process
 
 The typical workflow for manuscript preparation and publication:

@@ -1,7 +1,5 @@
 # Data masking
 
-Adapted by UCD-SeRG team from [original by Anna Nguyen, Jade Benjamin-Chung, and Gabby Barratt Heitmann](https://jadebc.github.io/lab-manual/data-masking.html)
-
 For information about UC Davis computing resources for data-intensive work, see @sec-slurm.
 
 ## General Overview
