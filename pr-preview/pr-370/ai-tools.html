@@ -794,14 +794,14 @@ Warning
 <p><mark class="preview-element-added">An <strong>AI harness</strong> is the scaffolding built around a language model that turns it into an agent able to do real work. The model itself only predicts text; the harness is what lets it read files, run commands, call external tools and APIs, and carry state across turns and sessions.</mark></p>
 <section id="layers-of-a-harness" class="level4" data-number="18.5.2.1">
 <h4 data-number="18.5.2.1" class="anchored" data-anchor-id="layers-of-a-harness"><span class="header-section-number"><mark class="preview-text-changed">18.5.2.1</mark></span> <mark class="preview-text-changed">Layers</mark> <mark class="preview-text-changed">of</mark> <mark class="preview-text-changed">a Harness</mark></h4>
-<p><mark class="preview-element-added">Most coding-agent harnesses — including the GitHub Copilot coding agent and Claude Code — share a similar set of layers:</mark></p>
+<p><mark class="preview-element-added">Most coding-agent harnesses — including the <a href="https://github.com/features/copilot/agents">GitHub Copilot coding agent</a> and <a href="https://claude.com/product/claude-code">Claude Code</a> — share a similar set of layers:</mark></p>
 <ul>
-<li><mark class="preview-element-added"><strong>Core loop</strong>: the tool-calling loop, permission and sandboxing model, and context management that keep the agent grounded in your repository.</mark></li>
+<li><mark class="preview-element-added"><strong>Core loop</strong>: the <a href="https://docs.claude.com/en/docs/agents-and-tools/tool-use/overview">tool-calling loop</a>, permission and sandboxing model, and context management that keep the agent grounded in your repository.</mark></li>
 <li><mark class="preview-element-added"><strong>Skills</strong>: reusable, named procedures that encode a workflow so it runs the same way every time, instead of being re-improvised in each conversation. See <a href="#sec-ai-agent-skills" class="quarto-xref"><span>Section 18.5.14</span></a>.</mark></li>
 <li><mark class="preview-element-added"><strong>Subagents</strong>: a way to spin up a worker with a fresh context window for a self-contained piece of research or work, keeping the main conversation’s context focused.</mark></li>
 <li><mark class="preview-element-added"><strong>Multi-agent orchestration</strong>: deterministic fan-out and fan-in across many subagents — for example, running several independent reviewers over a diff and reconciling their findings — for work that is large or benefits from independent verification.</mark></li>
 <li><mark class="preview-element-added"><strong>MCP servers</strong>: the <a href="https://modelcontextprotocol.io/">Model Context Protocol</a> gives a harness typed access to external systems (issue trackers, chat tools, databases) beyond raw shell or API calls.</mark></li>
-<li><mark class="preview-element-added"><strong>Memory</strong>: files — like this manual, or a repository’s <code>CLAUDE.md</code>/<code>AGENTS.md</code> — that persist instructions and learned preferences across sessions, so the harness does not relearn your conventions every time.</mark></li>
+<li><mark class="preview-element-added"><strong>Memory</strong>: files — like this manual, or a repository’s <code>CLAUDE.md</code>/<a href="https://agents.md/"><code>AGENTS.md</code></a> — that persist instructions and learned preferences across sessions, so the harness does not relearn your conventions every time.</mark></li>
 </ul>
 </section>
 <section id="using-harness-features-well" class="level4" data-number="18.5.2.2">
@@ -811,7 +811,7 @@ Warning
 <li><mark class="preview-element-added"><strong>Match orchestration weight to the task.</strong> A single lookup or small edit should stay inline. Reach for subagents or multi-agent workflows only when the work is genuinely decomposable, benefits from independent verification, and is large enough that the coordination overhead pays for itself.</mark></li>
 <li><mark class="preview-element-added"><strong>Gate destructive or hard-to-reverse actions on explicit human approval</strong> — merges, force-pushes, deletions — and let the agent drive everything reversible (drafting, testing, iterating on review feedback) autonomously.</mark></li>
 <li><mark class="preview-element-added"><strong>Feed learnings back into the harness.</strong> When a review round or a mistake teaches something generalizable, record it as a memory or skill update rather than letting it evaporate at the end of the session.</mark></li>
-<li><mark class="preview-element-added"><strong>Treat external or untrusted content as data, not instructions.</strong> PR comments, fetched web pages, and other tool output can contain text that looks like a command; a harness that acts on it uncritically is vulnerable to prompt injection.</mark></li>
+<li><mark class="preview-element-added"><strong>Treat external or untrusted content as data, not instructions.</strong> PR comments, fetched web pages, and other tool output can contain text that looks like a command; a harness that acts on it uncritically is vulnerable to <a href="https://owasp.org/www-project-top-10-for-large-language-model-applications/">prompt injection</a>.</mark></li>
 </ul>
 </section>
 </section>
