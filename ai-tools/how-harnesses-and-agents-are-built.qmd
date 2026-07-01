@@ -1,0 +1,80 @@
+The layers described above are not all built the same way.
+Some are ordinary software;
+others are just text files the harness reads at runtime.
+
+#### The Execution Engine Is Ordinary Software
+
+The program that runs the core loop ---
+calling the model,
+parsing tool calls,
+enforcing permissions,
+managing the sandbox ---
+is compiled or interpreted source code,
+the same as any other application.
+There is no markdown involved here;
+this layer is what makes a harness a harness,
+rather than just a prompt someone wrote.
+
+#### Agent and Skill Definitions Are Markdown with a Front Matter Header
+
+An agent's identity,
+and a skill's metadata,
+are usually just a markdown file with a
+[YAML front matter](https://jekyllrb.com/docs/front-matter/) header.
+For example,
+a custom [Claude Code subagent](https://docs.claude.com/en/docs/claude-code/sub-agents)
+defined in `.claude/agents/code-reviewer.md`:
+
+```markdown
+---
+name: code-reviewer
+description: Reviews diffs for bugs and style issues.
+tools: Read, Grep, Glob
+model: sonnet
+---
+
+You are a meticulous code reviewer. Focus on correctness,
+security, and idiomatic style.
+```
+
+The front matter is parsed as structured configuration
+(name, description, allowed tools, model);
+the markdown body below it becomes that agent's system prompt,
+verbatim.
+An [Agent Skill's](#sec-ai-agent-skills) `SKILL.md` follows the same shape:
+front matter for discovery metadata,
+a markdown body for instructions,
+and an optional folder of bundled scripts or reference files alongside it.
+No compilation step is involved;
+the harness reads the file and uses it directly.
+
+#### Tools Are a Schema Paired with a Handler
+
+A tool definition has two parts:
+a [JSON Schema](https://json-schema.org/) describing its parameters,
+which is the only part the model ever sees,
+and a handler function,
+ordinary code that performs the actual action
+(reading a file, running a command, calling an API).
+The schema is declarative data;
+the handler is real software the model never inspects or writes.
+
+#### Orchestration Needs Real Code
+
+Multi-agent orchestration cannot be expressed declaratively,
+because it needs genuine control flow ---
+loops,
+conditionals,
+parallel fan-out with a concurrency limit.
+So orchestration scripts are literal source files,
+executed by the harness,
+not parsed as prompt text the way an agent definition is.
+
+#### Memory Is Just Prose
+
+Files like this manual,
+or a repository's `CLAUDE.md`/[`AGENTS.md`](https://agents.md/),
+carry no front matter and no schema.
+They are concatenated into the system prompt as plain text,
+and the harness trusts the model to read and follow that prose,
+the same way it follows any other instruction in its context.
