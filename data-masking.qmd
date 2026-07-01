@@ -40,13 +40,16 @@ Many [`{tidyverse}`](https://www.tidyverse.org/) verbs use *two* different flavo
 and the way you refer to a column stored in a string variable depends on which one you are in.
 
 - **Data-masking** contexts treat column names as values you compute *with*:
+  the [`{dplyr}`](https://dplyr.tidyverse.org/) verbs
   `mutate()`, `filter()`, `summarize()`/`summarise()` (the summary expressions),
-  `group_by()`, `arrange()`, and `aes()` in [`{ggplot2}`](https://ggplot2.tidyverse.org/).
+  `group_by()`, and `arrange()`,
+  plus `aes()` in [`{ggplot2}`](https://ggplot2.tidyverse.org/).
 - **Tidy-selection** contexts treat column names as columns you *choose*:
   `select()`, `rename()`, `relocate()`, `pull()`,
   the `.cols` argument of `across()`,
   the `.by` argument of `mutate()`/`summarize()`,
-  and the `cols`, `names_from`, `values_from`, and `id_cols` arguments of `tidyr::pivot_*()`.
+  and the `cols`, `names_from`, `values_from`, and `id_cols`
+  arguments of `pivot_*()` in [`{tidyr}`](https://tidyr.tidyverse.org/).
 
 To refer to a column named by a string variable,
 use the tool that matches the context:
@@ -74,14 +77,18 @@ df |> tidyr::pivot_wider(names_from = .data$Parameter)
 ```
 
 The `.data` pronoun is a *data-masking* tool, not a selection tool.
-Using it in a selection context was deprecated in [`{tidyselect}`](https://tidyselect.r-lib.org/) 1.2.0
+Using it in a selection context was deprecated in
+[`{tidyselect}`](https://tidyselect.r-lib.org/) 1.2.0
 ([release notes](https://www.tidyverse.org/blog/2022/10/tidyselect-1-2-0/)),
 but it is a **soft** deprecation,
 signaled through [`{lifecycle}`](https://lifecycle.r-lib.org/).
 Per the [`{lifecycle}` documentation](https://lifecycle.r-lib.org/articles/communicate.html),
-a soft-deprecated feature warns only users who trigger it from the global environment
-and developers who use it directly (for example when running [`{testthat}`](https://testthat.r-lib.org/) tests);
-there is *no warning when the deprecated feature is called indirectly by another package*.
+a soft-deprecated feature warns only users
+who trigger it from the global environment
+and developers who use it directly
+(for example when running [`{testthat}`](https://testthat.r-lib.org/) tests);
+there is *no warning when the deprecated feature
+is called indirectly by another package*.
 So in installed-package code it usually emits *no warning at all*,
 and it slips past interactive use, CI, and code review unnoticed.
 Rewrite these with `all_of()`/`any_of()` and plain strings:
@@ -100,8 +107,10 @@ This option promotes deprecation signals to errors
 regardless of the soft-versus-warning distinction
 ([`{lifecycle}` reference](https://lifecycle.r-lib.org/reference/deprecate_soft.html)).
 Plain `options(warn = 2)` will *not* catch it,
-because `warn = 2` only converts warnings into errors once a warning is actually signaled,
-and for a soft deprecation in installed-package code no warning is signaled in the first place.
+because `warn = 2` only converts warnings into errors
+once a warning is actually signaled,
+and for a soft deprecation in installed-package code
+no warning is signaled in the first place.
 
 ## Technical Overview
 
