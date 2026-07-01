@@ -52,7 +52,7 @@ to [help you code](https://en.wikipedia.org/wiki/AI-assisted_software_developmen
 
 {{< include ai-tools/how-agents-are-implemented.qmd >}}
 
-### How Harnesses and Agents Are Built {#sec-ai-file-formats}
+### How Harnesses and Agents Are Built {#sec-ai-harness-construction}
 
 {{< include ai-tools/how-harnesses-and-agents-are-built.qmd >}}
 
