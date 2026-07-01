@@ -36,6 +36,10 @@ as best practices and capabilities continue to evolve.
 We recommend working with **[AI coding agents](https://github.com/features/copilot/agents)** 
 to [help you code](https://en.wikipedia.org/wiki/AI-assisted_software_development).
 
+### What Is a Language Model? {#sec-ai-language-model}
+
+{{< include ai-tools/what-is-a-language-model.qmd >}}
+
 ### What are AI coding agents?
 
 {{< include ai-tools/what-are-ai-coding-agents.qmd >}}
@@ -47,6 +51,10 @@ to [help you code](https://en.wikipedia.org/wiki/AI-assisted_software_developmen
 ### How Agents Are Structured and Implemented {#sec-ai-agent-implementation}
 
 {{< include ai-tools/how-agents-are-implemented.qmd >}}
+
+### How Harnesses and Agents Are Built {#sec-ai-file-formats}
+
+{{< include ai-tools/how-harnesses-and-agents-are-built.qmd >}}
 
 ### AI Agents and the Technological Singularity
 
