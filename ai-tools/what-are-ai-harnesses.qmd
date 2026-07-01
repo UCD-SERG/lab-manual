@@ -18,7 +18,7 @@ share a similar set of layers:
 - **Skills**: reusable,
   named procedures that encode a workflow so it runs the same way every time,
   instead of being re-improvised in each conversation.
-  See [Agent Skills](#sec-ai-agent-skills).
+  See @sec-ai-agent-skills.
 - **Subagents**: a way to spin up a worker with a fresh context window
   for a self-contained piece of research or work,
   keeping the main conversation's context focused.
