@@ -1,0 +1,84 @@
+When a workflow references an action,
+it must specify which version to use:
+
+```yaml
+uses: r-lib/actions/setup-r@v2
+```
+
+The string after `@` is a Git ref---it can be a branch name,
+a commit SHA,
+or a tag.
+For most SERG workflows you will see a short tag like `v2`,
+and it is worth understanding what that actually means.
+
+### Floating (mutable) tags
+
+`v2` is a **floating tag** (sometimes called a "sliding tag" or "mutable tag"):
+a Git tag that the action's maintainers deliberately move forward
+each time they publish a new backward-compatible release.
+When your workflow runs,
+GitHub resolves `v2` to whatever commit that tag currently points to,
+so you automatically pick up bug fixes,
+new platform support,
+and tool upgrades without editing your workflow file.
+
+This is the
+[officially recommended pattern for GitHub Actions](https://github.com/actions/toolkit/blob/main/docs/action-versioning.md):
+maintainers commit to keeping all changes under a major-version floating tag
+backward-compatible,
+and bump to `v3` only for breaking changes.
+
+::: {.callout-note}
+"Floating tag" is the standard term used across the ecosystem.
+`r-lib/actions` uses "sliding tag" to mean the same thing.
+:::
+
+### How a floating tag differs from a branch
+
+Floating tags and branches are superficially similar---both are mutable
+named pointers to a commit.
+The key differences are:
+
+- **Branches** advance automatically as commits are pushed.
+  A floating tag only moves when the maintainer explicitly force-pushes it,
+  so they retain deliberate control over when `v2` advances.
+- **Semantics**: branches signal active development;
+  a floating major-version tag signals a stable, maintained release line.
+- In the GitHub Actions context the two are functionally equivalent as refs,
+  but `@v2` communicates intent in a way that `@main` does not.
+
+::: {.callout-note}
+Moving tags are generally considered bad practice in version control,
+because a tag that can change breaks the expectation that tagged commits
+are stable reference points---other collaborators who have already fetched
+the old target will silently diverge from the new one.
+See [this Stack Overflow thread](https://stackoverflow.com/questions/12581969/why-moving-tag-in-version-control-system-is-a-bad-practice)
+for a detailed discussion of the pitfalls.
+GitHub Actions major-version tags are a deliberate, ecosystem-wide exception:
+maintainers accept the complexity in exchange for giving users
+automatic backward-compatible updates,
+and the pattern is explicitly endorsed in the
+[Actions versioning guide](https://github.com/actions/toolkit/blob/main/docs/action-versioning.md).
+:::
+
+### The reproducibility tradeoff
+
+Using `@v2` is convenient but not fully reproducible:
+the same workflow file can silently resolve to a different commit on different days.
+For most R package development this is the right tradeoff---you benefit from
+fixes automatically.
+If you need exact reproducibility of your CI environment
+(e.g., for a frozen simulation study),
+you can pin to a specific commit SHA instead:
+
+```yaml
+# Pinned to a specific commit; immune to tag movement
+uses: r-lib/actions/setup-r@a51a8012b0aab7c32ef9d19bf54da93f3254335e # v2
+```
+
+The inline comment preserving the human-readable tag name is a community
+convention supported by dependency-update tools like Dependabot and Renovate.
+
+For SERG workflows, **`@v2` is the default recommendation**.
+Reach for SHA pinning only when exact CI reproducibility is a stated
+project requirement.

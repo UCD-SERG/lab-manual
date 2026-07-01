@@ -4,6 +4,10 @@
 
 {{< include continuous-integration/understanding-github-actions.qmd >}}
 
+### Action Versioning
+
+{{< include continuous-integration/action-versioning.qmd >}}
+
 ## Setting Up GitHub Actions
 
 {{< include continuous-integration/setting-up-github-actions.qmd >}}
