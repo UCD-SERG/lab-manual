@@ -44,6 +44,10 @@ to [help you code](https://en.wikipedia.org/wiki/AI-assisted_software_developmen
 
 {{< include ai-tools/what-are-ai-harnesses.qmd >}}
 
+### How Agents Are Structured and Implemented {#sec-ai-agent-implementation}
+
+{{< include ai-tools/how-agents-are-implemented.qmd >}}
+
 ### AI Agents and the Technological Singularity
 
 {{< include ai-tools/technological-singularity.qmd >}}
