@@ -10,7 +10,8 @@ Description: Shared lintr linter configuration implementing the UCD-SERG
 License: CC0
 Encoding: UTF-8
 Imports:
-    lintr,
+    cyclocomp,
+    lintr (>= 3.1.2),
     rex,
     xml2
 Suggests:
