@@ -56,6 +56,10 @@ to [help you code](https://en.wikipedia.org/wiki/AI-assisted_software_developmen
 
 {{< include ai-tools/how-harnesses-and-agents-are-built.qmd >}}
 
+### What Kind of Program Is an Agent? {#sec-ai-agent-program-kind}
+
+{{< include ai-tools/what-kind-of-program-is-an-agent.qmd >}}
+
 ### AI Agents and the Technological Singularity
 
 {{< include ai-tools/technological-singularity.qmd >}}
