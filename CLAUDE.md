@@ -87,6 +87,10 @@ includes directly. That is separate from `.ai-config/shared/`.
   via a transcluded fragment (e.g. "inspectable" in `avoid-nesting.md`).
   A new word you add to a file in this repo must be dictionary-valid
   or listed in `inst/WORDLIST`.
+  Before pushing, grep any new proper noun, product name, or acronym you
+  introduced against `inst/WORDLIST` yourself --- catching it up front avoids
+  a spellcheck-fail-then-fix round trip per term (all-caps acronyms are not
+  reliably auto-skipped).
 - Link check (`check-links.yml`, `lycheeverse/lychee-action`) over `.qmd`/`.md`/
   `.html`. Fix broken links; only add an exclusion to `lychee.toml` when a URL
   is valid for humans but trips the automated checker.
@@ -97,7 +101,11 @@ includes directly. That is separate from `.ai-config/shared/`.
   files must use ASCII only - no curly quotes, no en/em dashes. Use `"`, `'`,
   and `-` (or write the dash as `---` in prose, which Quarto renders as an em dash).
 - Render/deploy (`publish.yml`, `preview.yml`) and bibliography DOI checks
-  (`check-bibliography-dois.yml`).
+  (`check-bibliography-dois.yml`). The full-book render (HTML + PDF + DOCX +
+  EPUB) plus PR-preview deploy legitimately takes 10-15 minutes; its check-run
+  status can lag behind actual completion in the GitHub API, so confirm via
+  the job's own step list or the preview-deploy comment's timestamp before
+  concluding it is stuck.
 
 Don't bypass a failing check; fix the underlying issue.
 
@@ -113,6 +121,10 @@ Don't bypass a failing check; fix the underlying issue.
   [`{dplyr}`](https://dplyr.tidyverse.org/). No raw HTML in `.qmd`.
 - Use Quarto cross-references: `#fig-`, `#tbl-`, `#sec-`, etc., referenced with
   `@fig-label`. Store images locally under `assets/images/`, not external URLs.
+  A bare markdown anchor link like `[text](#sec-foo)` is **not** the same
+  thing and will pass a render but fail review --- always use `[text](@sec-foo)`
+  for an internal cross-reference, even when linking custom prose text rather
+  than the auto-generated "Section N".
 - Use `#| code-fold: true` when the output is the point and the code is incidental.
 - R style: tidyverse, native `|>` pipe, `snake_case`, `.qmd` not `.Rmd`.
 
