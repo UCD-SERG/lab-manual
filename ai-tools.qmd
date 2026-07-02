@@ -60,6 +60,10 @@ to [help you code](https://en.wikipedia.org/wiki/AI-assisted_software_developmen
 
 {{< include ai-tools/what-kind-of-program-is-an-agent.qmd >}}
 
+### How Does a Harness Relate to an Agent? {#sec-ai-harness-agent-relationship}
+
+{{< include ai-tools/harness-agent-relationship.qmd >}}
+
 ### AI Agents and the Technological Singularity
 
 {{< include ai-tools/technological-singularity.qmd >}}
