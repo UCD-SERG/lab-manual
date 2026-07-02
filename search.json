@@ -1320,6 +1320,16 @@
     ]
   },
   {
+    "objectID": "reproducible-environments.html#clearing-docker-cache",
+    "href": "reproducible-environments.html#clearing-docker-cache",
+    "title": "14  Reproducible Environments",
+    "section": "14.3 Clearing Docker Cache",
+    "text": "14.3 Clearing Docker Cache\nWhen Docker images and containers accumulate on a server, they can consume significant disk space. To reclaim disk space by removing unused Docker data:\n\nSSH into the Docker server.\nRun docker system prune -a.\n\nThis command removes all stopped containers, all unused networks, all unused images (not just dangling ones), and all build cache.\n\n\n\n\n\n\nWarning\n\n\n\ndocker system prune -a removes all unused images, not just dangling ones. Confirm that no important containers are currently stopped before running it, as their associated images will also be removed.",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Reproducible Environments</span>"
+    ]
+  },
+  {
     "objectID": "code-publication.html",
     "href": "code-publication.html",
     "title": "15  Code Publication",
@@ -2152,7 +2162,7 @@
     "href": "appendix-document-metadata.html",
     "title": "Document Generation Metadata",
     "section": "",
-    "text": "This document was generated from the following git commit:\n\nBranch: main\nCommit: f8996bf\nFull commit hash: f8996bf8722e4810dd51273a1a84a9def70bc730\nCommit date: 2026-07-01 20:22:38 -0700\n\nWhen transferring edits from this DOCX file back to the Quarto source files, use this commit information to set up the PR correctly and account for any commits that have been added since this document was generated.",
+    "text": "This document was generated from the following git commit:\n\nBranch: main\nCommit: 30a80db\nFull commit hash: 30a80dbb27de41ab78e550ad9073f6b12acd4be3\nCommit date: 2026-07-02 00:55:18 -0700\n\nWhen transferring edits from this DOCX file back to the Quarto source files, use this commit information to set up the PR correctly and account for any commits that have been added since this document was generated.",
     "crumbs": [
       "Appendices",
       "Document Generation Metadata"

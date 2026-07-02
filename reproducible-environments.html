@@ -530,6 +530,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#using-projects-with-renv" id="toc-using-projects-with-renv" class="nav-link" data-scroll-target="#using-projects-with-renv"><span class="header-section-number">14.1.4</span> Using projects with renv</a></li>
   </ul></li>
   <li><a href="#fast-package-installation-on-ubuntu-with-r2u" id="toc-fast-package-installation-on-ubuntu-with-r2u" class="nav-link" data-scroll-target="#fast-package-installation-on-ubuntu-with-r2u"><span class="header-section-number">14.2</span> Fast Package Installation on Ubuntu with r2u</a></li>
+  <li><a href="#clearing-docker-cache" id="toc-clearing-docker-cache" class="nav-link" data-scroll-target="#clearing-docker-cache"><span class="header-section-number">14.3</span> Clearing Docker Cache</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/reproducible-environments.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/reproducible-environments.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -635,6 +636,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Docker containers:</strong></p>
 <p>The Rocker Project provides <code>rocker/r2u</code> Docker containers with r2u pre-configured, ideal for reproducible containerized workflows.</p>
 <p>For complete documentation and setup instructions, see the <a href="https://eddelbuettel.github.io/r2u/">r2u website</a>.</p>
+</section>
+<section id="clearing-docker-cache" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="clearing-docker-cache"><span class="header-section-number">14.3</span> Clearing Docker Cache</h2>
+<p>When Docker images and containers accumulate on a server, they can consume significant disk space. To reclaim disk space by removing unused Docker data:</p>
+<ol type="1">
+<li>SSH into the Docker server.</li>
+<li>Run <code>docker system prune -a</code>.</li>
+</ol>
+<p>This command removes all stopped containers, all unused networks, all unused images (not just dangling ones), and all build cache.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>docker system prune -a</code> removes <strong>all</strong> unused images, not just dangling ones. Confirm that no important containers are currently stopped before running it, as their associated images will also be removed.</p>
+</div>
+</div>
 
 
 </section>
