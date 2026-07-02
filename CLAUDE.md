@@ -100,10 +100,11 @@ includes directly. That is separate from `.ai-config/shared/`.
   `default_linters()` includes `cyclocomp_linter()` and a custom
   `function_length_linter()` (the `<150` line heuristic from
   `coding-practices/function-length-limits.qmd`; lintr has no built-in
-  line-count linter). If `lms` grows a `tests/` directory, the standard
-  testthat boilerplate's `library()` calls need their own `.lintr.R`
-  exclusion entry keyed to the nested path (e.g. `"lms/tests/testthat.R"`)
-  --- the existing root-level `"tests/testthat.R"` exclusion entry is for a
+  line-count linter). `lms/tests/testthat.R` already has its own `.lintr.R`
+  exclusion entry; the same pattern applies to any nested path --- the
+  standard testthat boilerplate's `library()` calls need an explicit entry
+  keyed to the nested path (e.g. `"lms/tests/testthat.R"`), since the
+  existing root-level `"tests/testthat.R"` exclusion entry is for a
   different, not-yet-existing root-level tests directory and does not match
   nested paths.
 - Non-standard characters (`check-non-standard-chars.yaml`). `.qmd` and `.R`
