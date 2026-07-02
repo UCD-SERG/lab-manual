@@ -97,6 +97,16 @@ includes directly. That is separate from `.ai-config/shared/`.
 - Lint (`lint-project.yaml`, `lintr::lint_dir()`). The root `.lintr.R` calls
   `lms::default_linters()`, so install the local `lms` package first:
   `R CMD INSTALL lms`. Repo-specific exclusions stay in `.lintr.R`, not in `lms`.
+  `default_linters()` includes `cyclocomp_linter()` and a custom
+  `function_length_linter()` (the `<150` line heuristic from
+  `coding-practices/function-length-limits.qmd`; lintr has no built-in
+  line-count linter). `lms/tests/testthat.R` already has its own `.lintr.R`
+  exclusion entry; the same pattern applies to any nested path --- the
+  standard testthat boilerplate's `library()` calls need an explicit entry
+  keyed to the nested path (e.g. `"lms/tests/testthat.R"`), since the
+  existing root-level `"tests/testthat.R"` exclusion entry is for a
+  different, not-yet-existing root-level tests directory and does not match
+  nested paths.
 - Non-standard characters (`check-non-standard-chars.yaml`). `.qmd` and `.R`
   files must use ASCII only - no curly quotes, no en/em dashes. Use `"`, `'`,
   and `-` (or write the dash as `---` in prose, which Quarto renders as an em dash).
