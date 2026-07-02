@@ -70,3 +70,7 @@ If you're starting to work on an ongoing project that already has `renv` set up,
 
 {{< include reproducible-environments/r2u-ubuntu-alternative.qmd >}}
 
+## Clearing Docker Cache
+
+{{< include reproducible-environments/docker-cache.qmd >}}
+
