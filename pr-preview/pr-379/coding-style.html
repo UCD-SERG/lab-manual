@@ -390,7 +390,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./coding-practices.html" class="sidebar-item-text sidebar-link">
+  <a href="./coding-practices.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">R Coding Practices</span></span></a>
   </div>
 </li>
@@ -420,13 +420,13 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./github.html" class="sidebar-item-text sidebar-link">
+  <a href="./github.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Github</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./continuous-integration.html" class="sidebar-item-text sidebar-link">
+  <a href="./continuous-integration.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Continuous Integration</span></span></a>
   </div>
 </li>
@@ -462,7 +462,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ai-tools.html" class="sidebar-item-text sidebar-link">
+  <a href="./ai-tools.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Working with AI</span></span></a>
   </div>
 </li>
@@ -578,7 +578,7 @@ div.csl-indent {
 <main class="content" id="quarto-document-content">
 <div class="preview-home-changes-banner">
     <p style="margin: 0;">
-        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="reproducible-environments.html">14. &nbsp; <span class="chapter-title">Reproducible Environments</span></a>, <a href="appendix-document-metadata.html">appendix-document-metadata</a>
+        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="continuous-integration.html">12. &nbsp; <span class="chapter-title">Continuous Integration</span></span></a>, <a href="github.html">11. &nbsp; <span class="chapter-title">Github</span></span></a>, <a href="reproducible-environments.html">14. &nbsp; <span class="chapter-title">Reproducible Environments</span></a>, <a href="ai-tools.html">18. &nbsp; <span class="chapter-title">Working with AI</span></a>, <a href="appendix-document-metadata.html">appendix-document-metadata</a>, <a href="coding-practices.html">6. &nbsp; <span class="chapter-title">R Coding Practices</span></span></a>
         <br>
         <strong>📄 DOCX with tracked changes:</strong> <a href="UCD-SeRG-Lab-Manual-tracked-changes.docx" download>Download UCD-SeRG-Lab-Manual-tracked-changes.docx</a>
         <br>
@@ -643,7 +643,7 @@ div.csl-indent {
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Implementation</span></span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(result)</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><em>See also <a href="coding-practices.html#sec-documenting-code" class="quarto-xref"><span>Section 6.12</span></a> for general code documentation practices.</em></p>
+<p><em>See also <a href="coding-practices.html#sec-documenting-code" class="quarto-xref" preview-toc-changed><span>Section 6.12</span></a> for general code documentation practices.</em></p>
 <section id="explicit-return-statements" class="level3" data-number="7.2.1">
 <h3 data-number="7.2.1" class="anchored" data-anchor-id="explicit-return-statements"><span class="header-section-number">7.2.1</span> Explicit Return Statements</h3>
 <p>Following the <a href="https://google.github.io/styleguide/Rguide.html#use-explicit-returns">Google R Style Guide’s recommendation</a>, always use explicit <code>return()</code> statements in functions, even when R’s implicit return would work. This makes the function’s intent clear and improves readability.</p>
@@ -913,7 +913,7 @@ Note
 <span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Session info</span></span>
 <span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a>sessioninfo<span class="sc">::</span><span class="fu">session_info</span>() <span class="co"># instead of sessionInfo()</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>See also <a href="coding-practices.html#sec-tidyverse" class="quarto-xref"><span>Section 6.24</span></a>.</p>
+<p>See also <a href="coding-practices.html#sec-tidyverse" class="quarto-xref" preview-toc-changed><span>Section 6.24</span></a>.</p>
 </section>
 <section id="sec-here-package-style" class="level2" data-number="7.11">
 <h2 data-number="7.11" class="anchored" data-anchor-id="sec-here-package-style"><span class="header-section-number">7.11</span> The here Package</h2>
@@ -925,7 +925,7 @@ Note
 <span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(results, <span class="fu">here</span>(<span class="st">"inst"</span>, <span class="st">"analyses"</span>, <span class="st">"results.rds"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This solves the problem of different working directory paths across collaborators. For example, one person might have the project at <code>/home/oski/Some-R-Project</code> while another has it at <code>/home/bear/R-Code/Some-R-Project</code>. The <code>here</code> package handles this automatically.</p>
 <p>This works regardless of where collaborators clone the repository. For more details, see the <a href="https://github.com/jennybc/here_here">here package vignette</a>.</p>
-<p><em>See also <a href="coding-practices.html#sec-here-package-practices" class="quarto-xref"><span>Section 6.21</span></a> for detailed explanation of the here package.</em></p>
+<p><em>See also <a href="coding-practices.html#sec-here-package-practices" class="quarto-xref" preview-toc-changed><span>Section 6.21</span></a> for detailed explanation of the here package.</em></p>
 </section>
 <section id="sec-object-naming" class="level2" data-number="7.12">
 <h2 data-number="7.12" class="anchored" data-anchor-id="sec-object-naming"><span class="header-section-number">7.12</span> Object Naming</h2>
@@ -1597,7 +1597,7 @@ Wickham, Hadley. 2023. <em>The Tidyverse Style Guide</em>. <a href="https://styl
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./coding-practices.html" class="pagination-link" aria-label="R Coding Practices">
+      <a href="./coding-practices.html" class="pagination-link" preview-toc-changed aria-label="R Coding Practices">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">R Coding Practices</span></span>
       </a>          
   </div>
