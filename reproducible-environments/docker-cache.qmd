@@ -1,0 +1,17 @@
+When Docker images and containers accumulate on a server,
+they can consume significant disk space.
+To reclaim disk space by removing unused Docker data:
+
+1. SSH into the Docker server.
+2. Run `docker system prune -a`.
+
+This command removes all stopped containers,
+all unused networks,
+all unused images (not just dangling ones),
+and all build cache.
+
+::: {.callout-warning}
+`docker system prune -a` removes **all** unused images, not just dangling ones.
+Confirm that no important containers are currently stopped before running it,
+as their associated images will also be removed.
+:::
