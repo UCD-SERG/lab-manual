@@ -41,6 +41,57 @@ parent calls harness,
 harness instantiates and runs a new agent,
 harness returns that agent's output to the parent.
 
+#### Sketching the Harness's Own Loop
+
+The [agent loop](@sec-ai-agent-program-kind) sketched earlier is really just
+the innermost piece.
+The harness wraps a bootstrap step and a permission/dispatch layer around it:
+
+```python
+def run_harness():
+    # Load everything the loop will need before any conversation starts.
+    tools = load_tool_registry()          # built-ins, plus whatever MCP servers expose
+    memory = load_memory(CLAUDE_MD_PATHS) # CLAUDE.md / AGENTS.md, concatenated
+
+    # The "main session" is just the harness's own loop, run with a default,
+    # unrestricted configuration -- not a separate program.
+    main_agent = Agent(config=default_config, system_prompt=memory)
+    return run_agent(main_agent, tools)
+
+def run_agent(agent, tools):
+    history = [agent.system_prompt, agent.first_message]
+    while True:
+        response = call_model(history, tools=agent.tool_schemas)
+        history.append(response)
+        if not response.tool_calls:
+            break
+        for call in response.tool_calls:
+            # Every tool call passes through the harness's own gate first,
+            # regardless of which agent requested it.
+            check_permission(call)
+
+            if call.name == "spawn_subagent":
+                # A subagent is not called directly -- the harness recurses
+                # into a fresh instance of this same loop, then hands the
+                # finished result back as an ordinary tool result.
+                result = run_agent(Agent(call.arguments), tools)
+            else:
+                result = tools[call.name](call.arguments)
+
+            history.append(result)
+    return history[-1]
+```
+
+`run_agent` is identical in shape to the loop in @sec-ai-agent-program-kind.
+`run_harness` and the permission check are the parts that only exist at the
+harness level,
+not inside any individual agent.
+That recursive call ---
+`run_agent` calling itself for a subagent ---
+is the concrete mechanism behind
+"agent calls agent, routed through the harness,"
+described in the previous subsection.
+
 #### What Do You Launch When You Type `claude`?
 
 Typing `claude` at a shell starts the harness process:

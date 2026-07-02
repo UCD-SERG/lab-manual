@@ -20,12 +20,20 @@ the same category as a network client.
 Its core loop can be sketched in a few lines:
 
 ```python
+# Start the conversation with the agent's instructions and the task.
 history = [system_prompt, user_message]
+
 while True:
+    # Send everything so far to the model, along with what it's allowed to call.
     response = call_model(history, tools=tool_schemas)
     history.append(response)
+
+    # No tool calls means the model gave a final answer -- stop.
     if not response.tool_calls:
         break
+
+    # Otherwise, run each requested tool and feed the result back in,
+    # so the next model call can see what happened.
     for call in response.tool_calls:
         result = tool_registry[call.name](call.arguments)
         history.append(result)
