@@ -419,7 +419,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./coding-practices.html" class="sidebar-item-text sidebar-link active" preview-toc-changed>
+  <a href="./coding-practices.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">R Coding Practices</span></span></a>
   </div>
 </li>
@@ -449,7 +449,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./github.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
+  <a href="./github.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Github</span></span></a>
   </div>
 </li>
@@ -491,7 +491,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ai-tools.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
+  <a href="./ai-tools.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Working with AI</span></span></a>
   </div>
 </li>
@@ -720,7 +720,7 @@ window.Quarto = {
 <main class="content" id="quarto-document-content">
 <div class="preview-home-changes-banner">
     <p style="margin: 0;">
-        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="continuous-integration.html">12. &nbsp; <span class="chapter-title">Continuous Integration</span></span></a>, <a href="github.html">11. &nbsp; <span class="chapter-title">Github</span></span></a>, <a href="ai-tools.html">18. &nbsp; <span class="chapter-title">Working with AI</span></a>, <a href="appendix-document-metadata.html">appendix-document-metadata</a>, <a href="coding-practices.html">6. &nbsp; <span class="chapter-title">R Coding Practices</span></span></a>
+        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="continuous-integration.html">12. &nbsp; <span class="chapter-title">Continuous Integration</span></span></a>, <a href="appendix-document-metadata.html">appendix-document-metadata</a>
         <br>
         <strong>📄 DOCX with tracked changes:</strong> <a href="UCD-SeRG-Lab-Manual-tracked-changes.docx" download>Download UCD-SeRG-Lab-Manual-tracked-changes.docx</a>
         <br>
@@ -748,18 +748,6 @@ window.Quarto = {
 
 </header>
 
-
-
-<div class="preview-combined-banner">
-    <p style="margin: 0;">
-        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~0% of content changed).
-        <br>
-        <strong>🎨 Highlighting Legend:</strong> 
-        <mark class="preview-text-changed" style="display: inline; padding: 1px 3px;">Modified text (yellow)</mark> shows changed words/phrases with tooltips of original text, 
-        <mark class="preview-text-added" style="display: inline; padding: 1px 3px;">added text (green)</mark> shows new content, and 
-        <mark class="preview-element-added" style="display: inline; padding: 1px 3px;">new sections (blue)</mark> highlight entirely new paragraphs.
-    </p>
-</div>
 
 <section id="lab-protocols-for-code-and-data" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="lab-protocols-for-code-and-data"><span class="header-section-number">6.1</span> Lab Protocols for Code and Data</h2>
@@ -1508,7 +1496,7 @@ Note
 <li><strong>Baseline storage</strong>: Commit baseline results or use GitHub Actions artifacts</li>
 <li><strong>Selective running</strong>: Only benchmark on specific branches or when performance-critical files change</li>
 <li><strong>Manual triggers</strong>: Use <code>workflow_dispatch</code> for on-demand benchmarking</li>
-<li><strong>Security</strong>: For production workflows, consider pinning action versions to commit SHAs instead of tags (see <a href="ai-tools.html#sec-ai-best-practices" class="quarto-xref" preview-toc-changed><span>Section <mark class="preview-text-changed">18.5.8</mark></span></a><mark class="preview-text-changed">)</mark></li>
+<li><strong>Security</strong>: For production workflows, consider pinning action versions to commit SHAs instead of tags (see <a href="ai-tools.html#sec-ai-best-practices" class="quarto-xref"><span>Section 18.5.14</span></a>)</li>
 </ul>
 <p><strong>Alternative: Comment benchmark results on PRs:</strong></p>
 <p>Use the <a href="https://github.com/lorenzwalthert/touchstone"><code>{touchstone}</code></a> package for more sophisticated CI benchmarking with automated PR comments.</p>
