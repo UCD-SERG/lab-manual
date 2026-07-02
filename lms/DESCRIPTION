@@ -11,6 +11,10 @@ License: CC0
 Encoding: UTF-8
 Imports:
     lintr,
-    rex
+    rex,
+    xml2
+Suggests:
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
 Roxygen: list(markdown = TRUE)
 Config/roxygen2/version: 8.0.0
