@@ -202,10 +202,10 @@ with a cloud primary and a local fallback:
 
 ```yaml
 model_list:
-  # Cloud primary --- replace the model id with a current one from your provider
+  # Cloud primary --- replace with your provider and a current model id
   - model_name: coder
     litellm_params:
-      model: anthropic/claude-sonnet-4-5
+      model: anthropic/YOUR-MODEL-ID
       api_key: os.environ/ANTHROPIC_API_KEY
   # Local fallback, served by Ollama
   - model_name: coder-local
