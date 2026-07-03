@@ -105,6 +105,159 @@ Continue provides inline completions and a chat panel,
 similar to GitHub Copilot,
 but routed entirely to your local model.
 
+#### Running an Autonomous Coding Agent with Aider
+
+The editor integrations above provide inline completion and chat.
+For an autonomous agent that reads your files,
+proposes edits across a whole repository,
+and commits them to git---the local counterpart to a cloud coding agent---[`aider`](https://aider.chat)
+works directly against Ollama.
+
+Install it in an isolated environment so its dependencies do not collide with other tools:
+
+```bash
+# Recommended: isolated install with pipx
+pipx install aider-chat
+
+# Or into your user environment with pip
+python3 -m pip install --user aider-chat
+```
+
+Point it at Ollama and choose a model with the `ollama_chat/` prefix,
+which gives better results in `aider` than the plain `ollama/` prefix:
+
+```bash
+export OLLAMA_API_BASE=http://127.0.0.1:11434
+aider --model ollama_chat/qwen2.5-coder:7b
+```
+
+::: {.callout-important}
+#### Raise the Ollama context window
+
+By default Ollama uses a 2048-token context window,
+which silently truncates your code and makes the model look far less capable than it is.
+This is the single most common mistake when pairing `aider` with Ollama.
+Raise it with a model-settings file at `~/.aider.model.settings.yml`:
+
+```yaml
+- name: ollama_chat/qwen2.5-coder:7b
+  extra_params:
+    num_ctx: 8192
+```
+
+Larger values (16384, 32768) handle bigger files at the cost of more memory;
+pick the largest your machine can comfortably hold.
+:::
+
+To avoid passing flags every time,
+set defaults in a config file at `~/.aider.conf.yml`:
+
+```yaml
+model: ollama_chat/qwen2.5-coder:7b
+set-env:
+  - OLLAMA_API_BASE=http://127.0.0.1:11434
+```
+
+`aider` can also split the work between two models in "architect" mode:
+a larger model plans the change (the architect),
+and a second model applies the edits (the editor).
+
+```bash
+aider --architect \
+  --model ollama_chat/qwen2.5-coder:32b \
+  --editor-model ollama_chat/qwen2.5-coder:7b
+```
+
+This can improve results on multi-step changes,
+but on a machine without a strong GPU it roughly doubles the time per turn,
+because the two models take turns and their weights are swapped in and out of memory.
+Reserve it for genuinely tricky changes;
+for small edits, a single model is faster.
+
+#### Falling Back Between Cloud and Local Automatically
+
+Air-gapped work aside,
+the common case is a laptop that is usually online but sometimes is not---on a
+plane, behind a flaky hospital network, or temporarily rate-limited by a cloud provider.
+You can keep a coding agent working across these gaps
+by putting a cloud model and a local model behind one endpoint
+and falling back automatically.
+
+[`LiteLLM`](https://docs.litellm.ai) runs a small local proxy
+that presents a single OpenAI-compatible endpoint.
+You give it a primary model and one or more fallbacks;
+when the primary fails with a retryable error---a rate-limit response (HTTP 429),
+or a connection error when you are offline---it retries the request on the next model.
+Pointing your agent at the proxy instead of directly at a provider
+makes the cloud-to-local switch automatic and invisible to the tool.
+
+Install the proxy:
+
+```bash
+python3 -m pip install --user "litellm[proxy]"
+```
+
+Create a config file (for example, `~/.litellm/config.yaml`)
+with a cloud primary and a local fallback:
+
+```yaml
+model_list:
+  # Cloud primary --- replace with your provider and a current model id
+  - model_name: coder
+    litellm_params:
+      model: anthropic/YOUR-MODEL-ID
+      api_key: os.environ/ANTHROPIC_API_KEY
+  # Local fallback, served by Ollama
+  - model_name: coder-local
+    litellm_params:
+      model: ollama_chat/qwen2.5-coder:7b
+      api_base: http://localhost:11434
+
+litellm_settings:
+  num_retries: 2
+  fallbacks:
+    - coder: ["coder-local"]
+```
+
+Run the proxy, which listens on `http://localhost:4000`:
+
+```bash
+litellm --config ~/.litellm/config.yaml --port 4000
+```
+
+Then point your agent at the proxy.
+Because the proxy speaks the OpenAI API,
+most tools accept it as a custom endpoint.
+For `aider`:
+
+```bash
+export OPENAI_API_BASE=http://localhost:4000/v1
+export OPENAI_API_KEY=placeholder   # the proxy needs no key unless you set one
+aider --model openai/coder
+```
+
+Requests now go to the cloud model when it is reachable
+and fall back to the local model on a rate limit or when you are offline.
+
+::: {.callout-note}
+#### A cloud API key is separate from a chat subscription
+
+The cloud side needs an API key billed per token,
+issued from the provider's developer console.
+A chat subscription such as Claude Pro or a Copilot seat is not an API key
+and cannot be used here.
+Omit the cloud entry entirely to run local-only,
+or add the key later to enable the hybrid.
+:::
+
+::: {.callout-caution}
+#### Keep the proxy on loopback
+
+By default the proxy binds to localhost, which is what you want.
+Do not expose it on `0.0.0.0` on a shared or untrusted network without authentication,
+because anyone who can reach the port can spend your cloud API key.
+:::
+
 #### Working in HPC / Cluster Environments
 
 Many HPC clusters do not have outbound internet access on compute nodes
