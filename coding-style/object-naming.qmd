@@ -28,6 +28,32 @@ This is because functions are performing actions, while objects are not.
 
 ---
 
+Use consistent prefixes to signal what a function returns:
+
+- `add_...()` for functions that add one or more columns to a `data.frame` or `tibble`
+  and return the modified table.
+- `compute_...()` for functions that compute and return a single vector.
+
+```r
+# Good
+add_age_group <- function(data) {
+  data |> dplyr::mutate(age_group = cut(age, breaks = c(0, 18, 65, Inf)))
+}
+
+compute_age_group <- function(age) {
+  cut(age, breaks = c(0, 18, 65, Inf))
+}
+
+# Less clear
+make_age_group <- function(data) { ... }
+get_age_group  <- function(age)  { ... }
+```
+
+This distinction makes the return type visible from the call site
+without reading the function body.
+
+---
+
 Use `snake_case` for all variable and function names.
 Avoid using `.` in names (as in base R's `read.csv()`),
 as this goes against best practices in modern R and other languages.
