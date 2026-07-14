@@ -366,7 +366,10 @@ jobs:
 - **Baseline storage**: Commit baseline results or use GitHub Actions artifacts
 - **Selective running**: Only benchmark on specific branches or when performance-critical files change
 - **Manual triggers**: Use `workflow_dispatch` for on-demand benchmarking
-- **Security**: For production workflows, consider pinning action versions to commit SHAs instead of tags (see the [wai site's "Best Practices for Safe and Successful Use" section](https://d-morrison.github.io/wai/chapters/coding-agents.html#sec-ai-best-practices))
+- **Security**: For production workflows, consider pinning action versions to
+  commit SHAs instead of tags
+  (see the [wai site's "Best Practices for Safe and Successful Use"
+  section](https://d-morrison.github.io/wai/chapters/coding-agents.html#sec-ai-best-practices))
 
 **Alternative: Comment benchmark results on PRs:**
 

@@ -227,5 +227,7 @@ be careful about what information you expose in comments,
 as fork contributors can trigger these workflows.
 Never expose secrets or sensitive information in PR comments.
 
-See the [wai site's "Best Practices for Safe and Successful Use" section](https://d-morrison.github.io/wai/chapters/coding-agents.html#sec-ai-best-practices) for more guidance on workflow security.
+See the [wai site's "Best Practices for Safe and Successful Use"
+section](https://d-morrison.github.io/wai/chapters/coding-agents.html#sec-ai-best-practices)
+for more guidance on workflow security.
 :::
