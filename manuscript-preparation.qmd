@@ -118,8 +118,7 @@ manuscripts, documentation, grant applications, and technical reports.
 
 When using AI tools to help develop manuscripts or other academic writing,
 follow the special guidance in the
-[wai site's "Using AI for Journal Articles"
-section](https://d-morrison.github.io/wai/chapters/ai-use-policies.html#sec-ai-journal-articles)
+[wai site's "Using AI for Journal Articles" section](https://d-morrison.github.io/wai/chapters/ai-use-policies.html#sec-ai-journal-articles)
 to ensure transparency,
 maintain intellectual ownership,
 and avoid plagiarism.

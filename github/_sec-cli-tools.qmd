@@ -23,8 +23,7 @@ gh auth login
 ```
 
 On Windows with Git Bash or MSYS2,
-see the [wai site's "Installing Claude Code on Windows"
-section](https://d-morrison.github.io/wai/chapters/coding-agents.html#sec-ai-claude-code-windows)
+see the [wai site's "Installing Claude Code on Windows" section](https://d-morrison.github.io/wai/chapters/coding-agents.html#sec-ai-claude-code-windows)
 for the `winpty` workaround if the interactive
 prompt fails.
 
@@ -48,7 +47,6 @@ glab auth login
 ```
 
 On Windows with Git Bash or MSYS2,
-see the [wai site's "Installing Claude Code on Windows"
-section](https://d-morrison.github.io/wai/chapters/coding-agents.html#sec-ai-claude-code-windows)
+see the [wai site's "Installing Claude Code on Windows" section](https://d-morrison.github.io/wai/chapters/coding-agents.html#sec-ai-claude-code-windows)
 for the `winpty` workaround if the interactive
 prompt fails.

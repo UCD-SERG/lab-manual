@@ -24,5 +24,4 @@ Common causes of CI failures include:
 - **Linting errors**: Code style issues detected by automated checks
 
 For help addressing workflow failures,
-see the [wai site's "Addressing Failing GitHub Actions Workflows"
-section](https://d-morrison.github.io/wai/chapters/coding-agents.html#sec-ai-addressing-failing-workflows).
+see the [wai site's "Addressing Failing GitHub Actions Workflows" section](https://d-morrison.github.io/wai/chapters/coding-agents.html#sec-ai-addressing-failing-workflows).

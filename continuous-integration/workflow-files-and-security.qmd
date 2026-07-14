@@ -5,8 +5,7 @@ Workflow files (`.github/workflows/*.yaml`) have access to repository secrets an
 Always review workflow files carefully before committing them,
 especially if copied from external sources.
 
-See the [wai site's "Best Practices for Safe and Successful Use"
-section](https://d-morrison.github.io/wai/chapters/coding-agents.html#sec-ai-best-practices)
+See the [wai site's "Best Practices for Safe and Successful Use" section](https://d-morrison.github.io/wai/chapters/coding-agents.html#sec-ai-best-practices)
 for guidance on working with workflow files using AI tools.
 :::
 
