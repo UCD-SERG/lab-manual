@@ -6,16 +6,33 @@ have moved to a dedicated site: **[Working with AI](https://d-morrison.github.io
 
 That site covers:
 
+[]{#sec-ai-disclosure}[]{#sec-ai-journal-articles}
+
 - [**Policies for Using AI**](https://d-morrison.github.io/wai/chapters/ai-use-policies.html):
   responsibility for validation, disclosure, attribution, and using AI for
   journal articles
+
+[]{#sec-ai-language-model}[]{#sec-ai-harnesses}[]{#sec-ai-agent-implementation}[]{#sec-ai-harness-construction}[]{#sec-ai-agent-program-kind}[]{#sec-ai-harness-agent-relationship}[]{#sec-ai-addressing-failing-workflows}[]{#sec-ai-benefits-hazards}[]{#sec-ai-best-practices}[]{#sec-ai-offline}[]{#sec-ai-copilot-settings}[]{#sec-ai-agent-skills}[]{#sec-ai-claude-cloud-env}[]{#sec-ai-when-to-use}[]{#sec-ai-claude-code-windows}
+
 - [**Coding Agents**](https://d-morrison.github.io/wai/chapters/coding-agents.html):
   what language models, coding agents, and harnesses are; how to work with
   them; benefits, hazards, and best practices; and configuring your
   environment
+
+[]{#sec-fully-clean}
+
 - [**Pull-Request Workflow with Agents**](https://d-morrison.github.io/wai/chapters/pr-workflow-with-agents.html):
   filing issues, claiming work, and driving a pull request to a clean,
   mergeable state
 
 Lab members who use AI tools must still adhere to the guidelines described
 there.
+
+::: {.callout-note collapse="true"}
+## Looking for a specific section that used to be here?
+
+This chapter previously had section anchors like `#sec-ai-best-practices` or
+`#sec-ai-disclosure` for each subtopic. Those anchors still resolve on this
+page (so old bookmarks and links won't 404), but the content itself now
+lives on the linked wai pages above -- follow the matching bullet to find it.
+:::
