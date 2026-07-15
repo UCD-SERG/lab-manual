@@ -25,12 +25,12 @@ defined inline in a \verb{data-raw/} script, a vignette, or \verb{inst/} is usua
 misplaced.
 }
 \details{
-Matches the three named-definition forms — \verb{name <- function(...)},
+Matches the three named-definition forms: \verb{name <- function(...)},
 \verb{name = function(...)}, and the \verb{name <- \\(...)} lambda shorthand. It does
 \strong{not} flag anonymous functions passed as arguments
 (\code{purrr::map(x, function(z) z)}), lambdas used inline, or nested/local
-function definitions inside another function's body — only top-level
-definitions bound to a name.
+function definitions inside another function's body; only top-level
+definitions bound to a name are flagged.
 
 lintr has no built-in linter for function \emph{location}; this complements
 \code{\link[=function_length_linter]{function_length_linter()}} (which flags over-long definitions wherever they

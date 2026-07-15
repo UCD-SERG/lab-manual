@@ -7,12 +7,12 @@
 #' defined inline in a `data-raw/` script, a vignette, or `inst/` is usually
 #' misplaced.
 #'
-#' Matches the three named-definition forms — `name <- function(...)`,
+#' Matches the three named-definition forms: `name <- function(...)`,
 #' `name = function(...)`, and the `name <- \(...)` lambda shorthand. It does
 #' **not** flag anonymous functions passed as arguments
 #' (`purrr::map(x, function(z) z)`), lambdas used inline, or nested/local
-#' function definitions inside another function's body — only top-level
-#' definitions bound to a name.
+#' function definitions inside another function's body; only top-level
+#' definitions bound to a name are flagged.
 #'
 #' lintr has no built-in linter for function *location*; this complements
 #' [function_length_linter()] (which flags over-long definitions wherever they
