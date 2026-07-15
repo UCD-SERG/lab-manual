@@ -2,4 +2,5 @@
 
 export(default_linters)
 export(function_length_linter)
+export(function_location_linter)
 export(undesirable_functions)
