@@ -6,7 +6,7 @@ Address each of the reviewer's comments individually.
 You aren't obligated to agree with every comment;
 you are entitled to ask clarifying questions,
 raise objections,
-or ask to defer an issue to a later pull request.
+or ask to defer it to a later pull request.
 
 When a reviewer leaves a comment on your code,
 respond to each one with exactly one of these:
