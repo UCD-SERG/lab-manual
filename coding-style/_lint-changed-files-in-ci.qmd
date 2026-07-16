@@ -17,7 +17,7 @@ In most cases,
 a better default is to lint **changed files only**,
 so pre-existing findings elsewhere in the project
 don't block unrelated work.
-[r-lib/actions](https://github.com/r-lib/actions/tree/v2-branch/examples)
+[r-lib/actions](https://github.com/r-lib/actions/blob/v2-branch/examples/lint-changed-files.yaml)
 provides a ready-made `lint-changed-files` example workflow;
 install it with `usethis::use_github_action("lint-changed-files")`.
 
