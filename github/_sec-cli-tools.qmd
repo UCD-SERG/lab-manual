@@ -23,7 +23,8 @@ gh auth login
 ```
 
 On Windows with Git Bash or MSYS2,
-see @sec-ai-claude-code-windows for the `winpty` workaround if the interactive
+see the [wai site's "Installing Claude Code on Windows" section](https://d-morrison.github.io/wai/chapters/coding-agents.html#sec-ai-claude-code-windows)
+for the `winpty` workaround if the interactive
 prompt fails.
 
 ### Installing `glab` {#sec-install-glab}
@@ -46,5 +47,6 @@ glab auth login
 ```
 
 On Windows with Git Bash or MSYS2,
-see @sec-ai-claude-code-windows for the `winpty` workaround if the interactive
+see the [wai site's "Installing Claude Code on Windows" section](https://d-morrison.github.io/wai/chapters/coding-agents.html#sec-ai-claude-code-windows)
+for the `winpty` workaround if the interactive
 prompt fails.

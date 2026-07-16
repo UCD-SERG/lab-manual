@@ -18,7 +18,7 @@ copilot-instructions.md wins. Read it before non-trivial content edits.
 
 - `index.qmd`, `*.qmd` at the root - chapter sources, listed in `_quarto.yml`
 - `<chapter-name>/` subdirectories - Quarto `{{< include >}}` fragments for each
-  chapter (e.g. `coding-style/`, `ai-tools/`, `coding-practices/`)
+  chapter (e.g. `coding-style/`, `coding-practices/`)
 - `appendix-*.qmd` - appendices, also wired into `_quarto.yml`
 - `_quarto.yml` - the only Quarto config; `type: book`, `output-dir: docs`,
   HTML + PDF + DOCX + EPUB formats, chapter and appendix lists
@@ -63,8 +63,11 @@ CI does the same via `r-lib/actions/setup-renv`.
 
 - `shared/` guidance fragments that chapters transclude, e.g.
   `{{< include .ai-config/shared/coding/avoid-nesting.md >}}` in `coding-style.qmd`
-  and the writing/workflow fragments in `writing.qmd` and `ai-tools.qmd`. The
+  and the writing fragments in `writing.qmd`. The
   fragment is the single source of truth, shared with ai-config's own CLAUDE.md.
+  (The PR-workflow fragments this repo used to transclude in `ai-tools.qmd`
+  moved along with that chapter's content to
+  [d-morrison/wai](https://github.com/d-morrison/wai).)
 - Reusable Claude skills, exposed as project skills through the symlink
   `.claude/skills -> ../.ai-config/skills`.
 
@@ -73,9 +76,10 @@ A plain clone leaves the submodule empty and the symlink dangling. The
 and opens a PR. The build and `@claude` workflows check out with
 `submodules: recursive`.
 
-Note: the repo also has a top-level `shared/` directory (vendored
-`copilot-review-before-human.md`, `prompt-formats.md`) that `ai-tools.qmd`
-includes directly. That is separate from `.ai-config/shared/`.
+Note: this repo no longer has a top-level `shared/` directory --- the vendored
+`copilot-review-before-human.md` and `prompt-formats.md` files it held moved to
+[d-morrison/wai](https://github.com/d-morrison/wai) along with `ai-tools.qmd`'s
+content, which now vendors them directly.
 
 ## CI checks and how to satisfy them
 

@@ -1,171 +1,39 @@
 # Working with AI
 
-[AI-powered coding assistants](https://en.wikipedia.org/wiki/AI-assisted_software_development) 
-can dramatically accelerate and improve your work,
-but they require careful and responsible use.
-Lab members who use AI tools must adhere to the following guidelines:
+Our notes on working responsibly and effectively with AI coding assistants
+have moved to a dedicated site: **[Working with AI](https://d-morrison.github.io/wai/)**
+(source: <https://github.com/d-morrison/wai>).
 
-::: {.callout-warning}
-## Technology in Rapid Evolution
+That site covers:
+[]{#sec-ai-disclosure}[]{#sec-ai-journal-articles}
+[]{#sec-ai-language-model}[]{#sec-ai-harnesses}[]{#sec-ai-agent-implementation}
+[]{#sec-ai-harness-construction}[]{#sec-ai-agent-program-kind}
+[]{#sec-ai-harness-agent-relationship}[]{#sec-ai-addressing-failing-workflows}
+[]{#sec-ai-benefits-hazards}[]{#sec-ai-best-practices}[]{#sec-ai-offline}
+[]{#sec-ai-copilot-settings}[]{#sec-ai-agent-skills}[]{#sec-ai-claude-cloud-env}
+[]{#sec-ai-when-to-use}[]{#sec-ai-claude-code-windows}[]{#sec-fully-clean}
 
-As of early 2026,
-AI coding assistant technology is changing extremely rapidly,
-and we are just beginning to figure out how to use these tools effectively ourselves.
-All information in this chapter should be taken with extra caution,
-as best practices and capabilities continue to evolve.
+- [**Policies for Using AI**](https://d-morrison.github.io/wai/chapters/ai-use-policies.html):
+  responsibility for validation, disclosure, attribution, and using AI for
+  journal articles
+
+- [**Coding Agents**](https://d-morrison.github.io/wai/chapters/coding-agents.html):
+  what language models, coding agents, and harnesses are; how to work with
+  them; benefits, hazards, and best practices; and configuring your
+  environment
+
+- [**Pull-Request Workflow with Agents**](https://d-morrison.github.io/wai/chapters/pr-workflow-with-agents.html):
+  filing issues, claiming work, and driving a pull request to a clean,
+  mergeable state
+
+Lab members who use AI tools must still adhere to the guidelines described
+there.
+
+::: {.callout-note collapse="true"}
+## Looking for a specific section that used to be here?
+
+This chapter previously had section anchors like `#sec-ai-best-practices` or
+`#sec-ai-disclosure` for each subtopic. Those anchors still resolve on this
+page (so old bookmarks and links won't 404), but the content itself now
+lives on the linked wai pages above -- follow the matching bullet to find it.
 :::
-
-## Responsibility for validation
-
-{{< include ai-tools/responsibility-for-validation.qmd >}}
-
-## Disclosure of AI use {#sec-ai-disclosure}
-
-{{< include ai-tools/disclosure-of-ai-use.qmd >}}
-
-## Attribution of sources
-
-{{< include ai-tools/attribution-of-sources.qmd >}}
-
-## Using AI for Journal Articles {#sec-ai-journal-articles}
-
-{{< include ai-tools/ai-for-academic-writing.qmd >}}
-
-## Coding Agents
-
-We recommend working with **[AI coding agents](https://github.com/features/copilot/agents)** 
-to [help you code](https://en.wikipedia.org/wiki/AI-assisted_software_development).
-
-### What Is a Language Model? {#sec-ai-language-model}
-
-{{< include ai-tools/what-is-a-language-model.qmd >}}
-
-### What are AI coding agents?
-
-{{< include ai-tools/what-are-ai-coding-agents.qmd >}}
-
-### What are AI harnesses? {#sec-ai-harnesses}
-
-{{< include ai-tools/what-are-ai-harnesses.qmd >}}
-
-### How Agents Are Structured and Implemented {#sec-ai-agent-implementation}
-
-{{< include ai-tools/how-agents-are-implemented.qmd >}}
-
-### How Harnesses and Agents Are Built {#sec-ai-harness-construction}
-
-{{< include ai-tools/how-harnesses-and-agents-are-built.qmd >}}
-
-### What Kind of Program Is an Agent? {#sec-ai-agent-program-kind}
-
-{{< include ai-tools/what-kind-of-program-is-an-agent.qmd >}}
-
-### How Does a Harness Relate to an Agent? {#sec-ai-harness-agent-relationship}
-
-{{< include ai-tools/harness-agent-relationship.qmd >}}
-
-### AI Agents and the Technological Singularity
-
-{{< include ai-tools/technological-singularity.qmd >}}
-
-### Relative Advantages of AI and Humans
-
-{{< include ai-tools/relative-advantages-ai-humans.qmd >}}
-
-### How to Work with Coding Agents
-
-{{< include ai-tools/how-to-work-with-agents.qmd >}}
-
-### Useful Prompt Formats
-
-{{< include shared/prompt-formats.md >}}
-
-### Addressing Failing GitHub Actions Workflows {#sec-ai-addressing-failing-workflows}
-
-{{< include ai-tools/addressing-failing-workflows.qmd >}}
-
-### Benefits and Hazards {#sec-ai-benefits-hazards}
-
-{{< include ai-tools/agents-benefits-and-hazards.qmd >}}
-
-### Best Practices for Safe and Successful Use {#sec-ai-best-practices}
-
-{{< include ai-tools/agents-best-practices.qmd >}}
-
-### Firewall and Network Configuration
-
-{{< include ai-tools/agents-firewall-config.qmd >}}
-
-### Running Coding Agents Offline {#sec-ai-offline}
-
-{{< include ai-tools/running-agents-offline.qmd >}}
-
-### Configuring GitHub Copilot Settings {#sec-ai-copilot-settings}
-
-{{< include ai-tools/copilot-settings.qmd >}}
-
-### Configuring the Agent Environment
-
-{{< include ai-tools/copilot-setup-steps-config.qmd >}}
-
-### Agent Skills {#sec-ai-agent-skills}
-
-{{< include ai-tools/agent-skills.qmd >}}
-
-### Claude Code Cloud Environments {#sec-ai-claude-cloud-env}
-
-{{< include ai-tools/claude-code-cloud-environments.qmd >}}
-
-### When to use a coding agent {#sec-ai-when-to-use}
-
-{{< include ai-tools/when-to-use-coding-agent.qmd >}}
-
-### Editing with `.docx` files
-
-{{< include ai-tools/editing-with-docx-files.qmd >}}
-
-### Copilot Instructions for this Repository
-
-{{< include ai-tools/copilot-instructions-explanation.qmd >}}
-
-### Using Copilot Review Before Human Review
-
-{{< include shared/copilot-review-before-human.md >}}
-
-### Reviewing a Copilot PR You Didn't Create
-
-{{< include ai-tools/reviewing-copilot-prs.qmd >}}
-
-### Installing Claude Code on Windows {#sec-ai-claude-code-windows}
-
-{{< include ai-tools/installing-claude-code-windows.qmd >}}
-
-## Pull-Request Workflow with Agents
-
-The practices below apply whether you are driving an agent's work or doing the
-work yourself. They keep parallel sessions from colliding and keep a pull
-request moving toward a clean, mergeable state.
-
-### File an Issue Before Starting
-
-{{< include .ai-config/shared/workflow/issue-first.md >}}
-
-### Claim a PR or Issue Before Working on It
-
-{{< include .ai-config/shared/workflow/claim-pr.md >}}
-
-### Keep Your Branch Synced with Main
-
-{{< include .ai-config/shared/workflow/sync-with-main.md >}}
-
-### Driving a Pull Request to Clean
-
-{{< include .ai-config/shared/workflow/ardi.md >}}
-
-### What "Fully Clean" Means {#sec-fully-clean}
-
-{{< include .ai-config/shared/workflow/fully-clean.md >}}
-
-### Address Every In-Scope Review Comment
-
-{{< include .ai-config/shared/workflow/address-every-comment.md >}}

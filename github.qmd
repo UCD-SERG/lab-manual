@@ -74,10 +74,16 @@ GitHub Copilot settings page showing organization options
    follow the setup instructions to install and configure Copilot in your development environment
 
 For guidance on using GitHub Copilot effectively,
-see @sec-ai-best-practices in the Working with AI chapter.
+see the [wai site's "Best Practices for Safe and Successful Use" section](https://d-morrison.github.io/wai/chapters/coding-agents.html#sec-ai-best-practices).
 
-## Github Desktop
-While knowing how to use Git on the command line will always be useful since the full power of Git and its customizations and flexibility is designed for use with the command line, Github also provides GitHub Desktop [@githubdesktop] as a graphical interface to do basic git commands; you can do all of the basic functions of Git using this desktop app. Feel free to use this as an alternative to Git on the command line if you prefer.
+## GitHub Desktop
+While knowing how to use Git on the command line will always be useful
+since the full power of Git and its customizations and flexibility is
+designed for use with the command line,
+GitHub also provides GitHub Desktop [@githubdesktop]
+as a graphical interface to do basic git commands;
+you can do all of the basic functions of Git using this desktop app.
+Feel free to use this as an alternative to Git on the command line if you prefer.
 
 ## GitHub CLI and GitLab CLI {#sec-cli-tools}
 
