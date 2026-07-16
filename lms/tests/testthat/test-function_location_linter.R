@@ -48,7 +48,11 @@ test_that("nested/local function definitions are not flagged", {
 
 test_that("a top-level def with a nested def is flagged exactly once", {
   code <- "outer <- function() {\n  inner <- function() 1\n  inner()\n}"
-  lints <- lintr::lint(text = code, linters = function_location_linter())
+  lints <- lint_as_path(
+    code,
+    file.path("data-raw", "scratch.R"),
+    linters = function_location_linter()
+  )
   expect_length(lints, 1L)
 })
 

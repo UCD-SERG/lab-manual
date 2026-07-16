@@ -27,6 +27,10 @@
 #' @return A [lintr::Linter()] object.
 #' @export
 function_location_linter <- function(allowed_dirs = c("R", "tests")) {
+  # RIGHT_ASSIGN (`function(x) x -> name`) is deliberately omitted: it is
+  # near-unused syntax, precedence makes `function(x) x -> name` bind inside
+  # the body rather than name the function, and lintr's assignment_linter
+  # already flags right-assignment.
   xpath <- "
     /exprlist/*[
       (LEFT_ASSIGN or EQ_ASSIGN)
@@ -40,6 +44,11 @@ function_location_linter <- function(allowed_dirs = c("R", "tests")) {
       return(list())
     }
 
+    # A file is exempt when any path segment matches an allowed dir. This is a
+    # deliberately simple heuristic: a non-package dir literally named "R" (e.g.
+    # `scripts/R/`) would also be exempt, which is an acceptable false negative.
+    # lintr normalises paths to forward slashes internally, so splitting on "/"
+    # is portable across platforms.
     path_parts <- strsplit(source_expression$filename, "/", fixed = TRUE)[[1]]
     if (any(path_parts %in% allowed_dirs)) {
       return(list())
