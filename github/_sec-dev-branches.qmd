@@ -20,6 +20,10 @@ When some of that work is ready to contribute back to `main`:
    as usual.
 
 ```bash
+# one-time setup: create your personal dev branch from current main
+git switch -c dev-ezra origin/main
+git push -u origin dev-ezra
+
 # daily work: push freely
 git switch dev-ezra
 
