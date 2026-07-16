@@ -56,11 +56,11 @@
 
 {{< include coding-practices/function-calls.qmd >}}
 
-## Function decomposition
+## Function decomposition {#sec-function-decomposition}
 
 {{< include coding-practices/function-decomposition.qmd >}}
 
-## Function length limits
+## Function length limits {#sec-function-length-limits}
 
 {{< include coding-practices/function-length-limits.qmd >}}
 

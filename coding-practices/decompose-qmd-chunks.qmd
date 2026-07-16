@@ -9,7 +9,8 @@ a function defined inline,
 a non-trivial transformation,
 or the same block copied across chunks ---
 extract that logic into a function and have the chunk call it.
-Following the decomposition and length principles above,
+Following the function-decomposition (@sec-function-decomposition)
+and length-limit (@sec-function-length-limits) principles,
 give the function its own file under `R/`,
 with full [`{roxygen2}`](https://roxygen2.r-lib.org/) documentation,
 the same way any other package function is written.
@@ -27,7 +28,8 @@ and duplicates code that should have one home.
 Our shared linter set enforces the function-definition half of this rule:
 `lms::function_location_linter()`
 (part of `lms::default_linters()`)
-flags a named function defined at the top level of any file outside `R/`,
+flags a named function defined at the top level of any file
+outside the designated directories (`R/` and `tests/` by default),
 including inside a `.qmd` chunk.
 Loose chunk logic that was never wrapped in a function at all
 is not something a linter can catch,
