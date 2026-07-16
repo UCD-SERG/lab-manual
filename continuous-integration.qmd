@@ -8,7 +8,7 @@
 
 {{< include continuous-integration/action-versioning.qmd >}}
 
-## Setting Up GitHub Actions
+## Setting Up GitHub Actions {#sec-setting-up-github-actions}
 
 {{< include continuous-integration/setting-up-github-actions.qmd >}}
 

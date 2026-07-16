@@ -1,5 +1,5 @@
 Several repositories collect reusable GitHub Actions and workflows for R projects,
-so you can call battle-tested CI steps instead of writing your own:
+so you can call shared, community-maintained CI steps instead of writing your own:
 
 - [d-morrison/gha](https://github.com/d-morrison/gha):
   our lab's own collection of composite actions and reusable workflows
@@ -8,9 +8,9 @@ so you can call battle-tested CI steps instead of writing your own:
   bibliography DOI checks, and the Claude review bots used across our repos.
 - [r-lib/actions](https://github.com/r-lib/actions):
   the tidyverse team's actions and example workflows
-  (`R CMD check`, test coverage, pkgdown, lint),
+  (`R CMD check`, test coverage, [`{pkgdown}`](https://pkgdown.r-lib.org/), [`{lintr}`](https://lintr.r-lib.org/)),
   installable with `usethis::use_github_action()`
-  as described earlier in this chapter.
+  as described in @sec-setting-up-github-actions.
 - [eddelbuettel/r-ci](https://github.com/eddelbuettel/r-ci):
   a portable, shell-script-based CI setup for R
   that works across GitHub Actions, Azure DevOps, Docker,
