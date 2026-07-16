@@ -20,7 +20,8 @@ Key functions include `load_all()`, `document()`, `test()`, `check()`, and `inst
 ### [`{roxygen2}`](https://roxygen2.r-lib.org/) {#sec-roxygen2}
 
 [`{roxygen2}`](https://roxygen2.r-lib.org/) lets you write documentation in-source, alongside the code it documents,
-using `#'` comment blocks. It generates `.Rd` files for the `man/` directory and updates `NAMESPACE`.
+using `#'` comment blocks.
+It generates `.Rd` files for the `man/` directory and updates `NAMESPACE`.
 It is the standard approach to R package documentation.
 
 ### [`{pkgdown}`](https://pkgdown.r-lib.org/) {#sec-pkgdown}
@@ -32,7 +33,8 @@ and integrates with GitHub Actions for automatic deployment.
 ### [`{pkgload}`](https://pkgload.r-lib.org/) {#sec-pkgload}
 
 [`{pkgload}`](https://pkgload.r-lib.org/) simulates the process of installing and loading a package,
-enabling rapid interactive development. It is the backend for `devtools::load_all()`.
+enabling rapid interactive development.
+It is the backend for `devtools::load_all()`.
 
 ### [`{pkgbuild}`](https://pkgbuild.r-lib.org/) {#sec-pkgbuild}
 
@@ -42,12 +44,14 @@ and checking whether a build environment (such as Rtools on Windows) is availabl
 ### [`{rcmdcheck}`](https://rcmdcheck.r-lib.org/) {#sec-rcmdcheck}
 
 [`{rcmdcheck}`](https://rcmdcheck.r-lib.org/) runs `R CMD check` from within R and captures the results
-in a structured format. It is used by CI systems and `devtools::check()`.
+in a structured format.
+It is used by CI systems and `devtools::check()`.
 
 ### [`{remotes}`](https://remotes.r-lib.org/) {#sec-remotes}
 
 [`{remotes}`](https://remotes.r-lib.org/) installs R packages from remote sources including GitHub, GitLab,
-Bitbucket, URLs, and local files. It is a lightweight alternative to `devtools::install_github()`.
+Bitbucket, URLs, and local files.
+It is a lightweight alternative to `devtools::install_github()`.
 
 ### [`{pak}`](https://pak.r-lib.org/) {#sec-pak}
 
@@ -69,7 +73,8 @@ It is used internally by `usethis` and other developer-facing tools.
 ### [`{pkgcache}`](https://r-lib.github.io/pkgcache/) {#sec-pkgcache}
 
 [`{pkgcache}`](https://r-lib.github.io/pkgcache/) provides a local cache of CRAN-like metadata and package files,
-speeding up package installation. It is used internally by `pak`.
+speeding up package installation.
+It is used internally by `pak`.
 
 ### [`{lifecycle}`](https://lifecycle.r-lib.org/) {#sec-lifecycle}
 
@@ -121,7 +126,8 @@ It underpins the consistent behavior of `dplyr` and `tidyr` across vector types.
 
 [`{withr}`](https://withr.r-lib.org/) allows code to be run with temporarily modified global state ---
 changing options, environment variables, working directories, or random seeds ---
-and reliably restoring them afterward. Essential for writing side-effect-free tests.
+and reliably restoring them afterward.
+Essential for writing side-effect-free tests.
 
 ### [`{cli}`](https://cli.r-lib.org/) {#sec-cli}
 
@@ -152,7 +158,7 @@ It replaces inconsistent base R file functions with a tidy API using `path_*()`,
 
 [`{processx}`](https://processx.r-lib.org/) runs external system processes asynchronously or synchronously
 from R, with full control over stdin, stdout, and stderr.
-It is the backend for `callr` and used by `devtools::check()`.
+It is the backend for `callr`, and is used internally by `rcmdcheck`.
 
 ### [`{callr}`](https://callr.r-lib.org/) {#sec-callr}
 
@@ -172,7 +178,8 @@ It is used internally by `processx` and `callr`.
 
 [`{httr2}`](https://httr2.r-lib.org/) is a modern, pipe-friendly HTTP client for R.
 It replaces `httr` with a cleaner API, better support for OAuth, rate limiting,
-retries, and request/response bodies. Preferred for new code.
+retries, and request/response bodies.
+Preferred for new code.
 
 ### [`{httr}`](https://httr.r-lib.org/) {#sec-httr}
 
@@ -233,7 +240,8 @@ It is used internally by `devtools`, `remotes`, and progress-reporting packages.
 
 [`{lobstr}`](https://lobstr.r-lib.org/) provides tools for visualizing R data structures,
 including shared-reference trees (`ref()`), abstract syntax trees (`ast()`),
-and object sizes (`obj_size()`). It is a useful learning and debugging tool.
+and object sizes (`obj_size()`).
+It is a useful learning and debugging tool.
 
 ### [`{crayon}`](https://r-lib.github.io/crayon/) {#sec-crayon}
 
@@ -244,7 +252,8 @@ It has been largely superseded by `cli` but remains widely used in older code an
 
 [`{styler}`](https://styler.r-lib.org/) formats R code according to the tidyverse style guide.
 It provides an RStudio add-in and functions for styling individual files,
-packages, or projects. See @sec-auto-styling for more details.
+packages, or projects.
+See @sec-auto-styling for more details.
 
 ## GitHub Actions
 
