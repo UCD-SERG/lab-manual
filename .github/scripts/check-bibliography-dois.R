@@ -39,7 +39,7 @@ parse_bibtex_file <- function(filepath) {
 #' Check if entry has a DOI field
 #'
 #' @param entry Single bibliography entry (row from data frame)
-#' @return List with has_doi (logical) and error_message (string or NULL)
+#' @return List with has_doi (logical) and error (string or NULL)
 check_doi_field <- function(entry) {
   entry_type <- tolower(entry$CATEGORY)
   entry_key <- entry$BIBTEXKEY
@@ -62,7 +62,7 @@ check_doi_field <- function(entry) {
 #' resolver hiccup (timeout, 5xx) does not fail the whole check (#358).
 #'
 #' @param doi DOI string
-#' @return List with is_valid, error_message, status_code, and transient
+#' @return List with is_valid, error, status_code, and transient
 #'   (TRUE when the failure looks like resolver unavailability rather than
 #'   a genuinely broken DOI)
 validate_doi_url <- function(doi) {
@@ -287,13 +287,18 @@ compare_metadata <- function(entry, metadata) {
 #'
 #' @param filepath Path to bibliography file
 #' @param verify_metadata Whether to verify metadata (default TRUE)
-#' @return List with checked_count, errors_count, and error_messages
+#' @return List with checked_count, errors_count, errors, and warnings
 check_bibliography_file <- function(filepath, verify_metadata = TRUE) {
   cat(sprintf("\nChecking %s...\n", filepath))
   
   bib_df <- parse_bibtex_file(filepath)
   if (is.null(bib_df)) {
-    return(list(checked_count = 0, errors_count = 1, errors = c("Failed to parse BibTeX file")))
+    return(list(
+      checked_count = 0,
+      errors_count = 1,
+      errors = c("Failed to parse BibTeX file"),
+      warnings = c()
+    ))
   }
   
   errors <- c()
