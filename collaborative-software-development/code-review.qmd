@@ -1,0 +1,3 @@
+When submitting code to or reviewing code from colleagues, use best practices to provide and receive constructive feedback:
+
+- [Tidyverse code review principles](https://code-review.tidyverse.org/) [@tidyverse2023codereview]: Best practices for reviewing R code, including what to look for and how to provide constructive feedback.
