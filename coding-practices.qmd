@@ -64,6 +64,10 @@
 
 {{< include coding-practices/function-length-limits.qmd >}}
 
+## Decomposing Code Chunks in Quarto Documents {#sec-decompose-qmd-chunks}
+
+{{< include coding-practices/decompose-qmd-chunks.qmd >}}
+
 ## The here package {#sec-here-package-practices}
 
 {{< include coding-practices/here-package.qmd >}}
