@@ -1,0 +1,51 @@
+Feature branches work best when each one stays small and scoped,
+but day-to-day exploratory work does not arrive in tidy, scoped units.
+Personal dev branches let you have both.
+
+Each developer can keep a long-lived personal branch ---
+named after them, for example `dev-ezra` ---
+that they push to freely:
+experiments, half-finished ideas, notes-to-self,
+and fixes for whatever they bump into along the way.
+Nobody reviews a dev branch and nothing merges from it directly,
+so there is no pressure to keep it clean.
+
+When some of that work is ready to contribute back to `main`:
+
+1. Start a *new* feature branch from the **current** `main`
+   (not from the dev branch).
+2. Cherry-pick the commits you want to contribute
+   from the dev branch onto the feature branch.
+3. Open a pull request from the feature branch onto `main`
+   as usual.
+
+```bash
+# daily work: push freely
+git switch dev-ezra
+
+# ready to contribute: branch from current main ...
+git fetch origin
+git switch -c feat-cleaning-helpers origin/main
+
+# ... pull over just the commits that belong in this contribution
+git log --oneline dev-ezra           # find the commit hashes
+git cherry-pick <hash1> <hash2>
+
+git push -u origin feat-cleaning-helpers
+# then open the PR from feat-cleaning-helpers onto main
+```
+
+This way you can flow naturally while working ---
+no stopping to plan a minimal, modular pull request in advance ---
+and still deliver PRs that are minimal and modular,
+because the scoping happens at cherry-pick time instead.
+
+Two habits make the cherry-picking step painless:
+
+- **Commit in small, single-topic units on your dev branch.**
+  A commit that mixes two unrelated changes
+  cannot be cherry-picked into two different PRs.
+- **Sync the dev branch with `main` periodically**
+  (`git merge origin/main`),
+  so your experiments build on current code
+  and your cherry-picks transplant cleanly.
