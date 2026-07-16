@@ -57,7 +57,7 @@ It is r-lib's modern alternative to `install.packages()` and `remotes` for inter
 
 ### [`{revdepcheck}`](https://revdepcheck.r-lib.org/) {#sec-revdepcheck}
 
-[`{revdepcheck}`](https://revdepcheck.r-lib.org/) automates reverse dependency checking —
+[`{revdepcheck}`](https://revdepcheck.r-lib.org/) automates reverse dependency checking ---
 checking that changes to a package do not break packages that depend on it.
 It is used by package maintainers before CRAN releases.
 
@@ -119,8 +119,8 @@ It underpins the consistent behavior of `dplyr` and `tidyr` across vector types.
 
 ### [`{withr}`](https://withr.r-lib.org/) {#sec-withr}
 
-[`{withr}`](https://withr.r-lib.org/) allows code to be run with temporarily modified global state —
-changing options, environment variables, working directories, or random seeds —
+[`{withr}`](https://withr.r-lib.org/) allows code to be run with temporarily modified global state ---
+changing options, environment variables, working directories, or random seeds ---
 and reliably restoring them afterward. Essential for writing side-effect-free tests.
 
 ### [`{cli}`](https://cli.r-lib.org/) {#sec-cli}
@@ -254,10 +254,10 @@ The [`r-lib/actions`](https://github.com/r-lib/actions) repository provides reus
 GitHub Actions workflows for R package development.
 Commonly used actions include:
 
-- `r-lib/actions/setup-r` — installs R
-- `r-lib/actions/setup-renv` — restores an `renv` environment
-- `r-lib/actions/check-r-package` — runs `R CMD check`
-- `r-lib/actions/setup-r-dependencies` — installs package dependencies
+- `r-lib/actions/setup-r` --- installs R
+- `r-lib/actions/setup-renv` --- restores an `renv` environment
+- `r-lib/actions/check-r-package` --- runs `R CMD check`
+- `r-lib/actions/setup-r-dependencies` --- installs package dependencies
 
 These actions are widely used across R packages hosted on GitHub,
 including this lab's repositories.
