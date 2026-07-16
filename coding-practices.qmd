@@ -20,6 +20,10 @@
 
 {{< include coding-practices/testing-requirements.qmd >}}
 
+## Test-Driven Development {#sec-tdd}
+
+{{< include coding-practices/test-driven-development.qmd >}}
+
 ## Benchmarking {#sec-benchmarking}
 
 {{< include coding-practices/benchmarking.qmd >}}
@@ -56,7 +60,7 @@
 
 {{< include coding-practices/function-calls.qmd >}}
 
-## Function decomposition
+## Function decomposition {#sec-function-decomposition}
 
 {{< include coding-practices/function-decomposition.qmd >}}
 
