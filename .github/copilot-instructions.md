@@ -214,7 +214,7 @@ instead of plain text references like "the section above" or "see the X section"
 **Correct:**
 ```markdown
 See @sec-r-ci for setting up GitHub Actions workflows.
-See @sec-ai-best-practices for security considerations.
+See @sec-github for GitHub workflow guidance.
 ```
 
 **Incorrect:**
