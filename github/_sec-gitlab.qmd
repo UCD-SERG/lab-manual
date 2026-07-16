@@ -22,7 +22,7 @@ with a few differences worth knowing:
 Two R packages help when working with GitLab from R
 (the second works across both forges):
 
-- [`{gitlabr}`](https://github.com/ThinkR-open/gitlabr)
+- [`{gitlabr}`](https://thinkr-open.github.io/gitlabr/)
   provides R access to the GitLab API,
   with convenience wrappers for common tasks
   (repository file access, issue assignment and status, commenting).
