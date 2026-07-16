@@ -1,6 +1,6 @@
 Package: lms
 Title: Lab Manual Style (UCD-SERG lintr Configuration)
-Version: 0.1.0
+Version: 0.1.1
 Authors@R:
     person("UCD-SERG", role = c("aut", "cre"), email = "serg@ucdavis.edu")
 Description: Shared lintr linter configuration implementing the UCD-SERG

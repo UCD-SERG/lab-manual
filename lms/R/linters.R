@@ -142,6 +142,7 @@ default_linters <- function() {
       symbol_is_undesirable = TRUE
     ),
     lintr::cyclocomp_linter(),
-    function_length_linter()
+    function_length_linter(),
+    function_location_linter()
   )
 }
