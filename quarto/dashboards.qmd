@@ -10,8 +10,8 @@ and sidebars and toolbars hold interactive inputs.
 
 Dashboards work with R, Python, Julia, and Observable JavaScript,
 and display both interactive widgets
-([`{plotly}`](https://plotly.com/r/), [`{leaflet}`](https://rstudio.github.io/leaflet/), htmlwidgets)
-and static graphics ([`{ggplot2}`](https://ggplot2.tidyverse.org/), Matplotlib).
+([`{plotly}`](https://plotly.com/r/), [`{leaflet}`](https://rstudio.github.io/leaflet/), [`{htmlwidgets}`](https://www.htmlwidgets.org/))
+and static graphics ([`{ggplot2}`](https://ggplot2.tidyverse.org/), `Matplotlib`).
 
 By default a dashboard renders to static HTML,
 so it can be published anywhere a web page can
