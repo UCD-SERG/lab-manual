@@ -11,7 +11,7 @@ Key features:
 - **Cross-platform**: Works on macOS, Windows, and Linux
 - **Simple CLI**: Install a version with `rig add release`, list installed versions with `rig list`
 - **RStudio / Positron integration**: Registered R versions are automatically available in RStudio and Positron
-- **No admin rights required** (on macOS and Windows): installs R in user space
+- **Handles permissions for you**: switches to the root/administrator user as needed when installing R versions
 
 **When to use rig:**
 
