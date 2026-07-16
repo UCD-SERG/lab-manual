@@ -128,7 +128,8 @@ and do not retry *permanent* failures ---
 a `404 Not Found` will not succeed on attempt three,
 and retrying it just slows the pipeline and hides the real error.
 This repository's own DOI checker is an example:
-`.github/scripts/check-bibliography-dois.R` uses `httr::RETRY()`
+`.github/scripts/check-bibliography-dois.R` uses
+[`{httr}`](https://httr.r-lib.org/)'s `RETRY()`
 with three attempts, exponential pauses,
 and `terminate_on = c(404, 410)`
 so that genuinely-missing DOIs fail immediately
