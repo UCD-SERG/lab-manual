@@ -40,6 +40,6 @@ and writing the test first is just that same discipline
 applied to new code as well.
 In R packages, the mechanics are light:
 `usethis::use_test()` creates the matching
-[`{testthat}`](https://testthat.r-lib.org/) test file for a function,
+[`{testthat}`](https://testthat.r-lib.org/) test file,
 and `devtools::test()` runs the suite
 (see [R Packages, ch. "Testing basics"](https://r-pkgs.org/testing-basics.html)).
