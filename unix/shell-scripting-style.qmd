@@ -50,10 +50,19 @@ so messages get a consistent format and severity level,
 and send diagnostics to stderr so stdout stays parseable:
 
 ```bash
-log() { printf '%s [%s] %s\n' "$(date -u +%FT%TZ)" "$1" "$2" >&2; }
+log() {
+  local level=$1
+  shift
+  printf '%s [%s] %s\n' "$(date -u +%FT%TZ)" "$level" "$*" >&2
+}
 log INFO "starting import"
 log ERROR "input file missing"
 ```
+
+The `shift` / `$*` pair joins every argument after the severity
+into the message,
+so a multi-word message is logged whole
+whether or not the caller quotes it.
 
 ### Security
 
@@ -61,9 +70,13 @@ log ERROR "input file missing"
   redact tokens before logging command lines that carry them.
 - Quote every variable expansion (`"$var"`, `"$@"`)
   to prevent word-splitting and glob surprises.
-- Pass untrusted values to tools like `curl` and `jq`
+- Pass untrusted values to `jq`
   as arguments (`jq --arg name "$value"`),
-  not by interpolating them into command strings.
+  not by interpolating them into the filter string.
+- Keep credentials out of `curl` command lines,
+  where any local process can read them from the process list:
+  prefer `--netrc` or headers read from a file (`--header @headers.txt`)
+  over a token expanded into an argument.
 
 ### Linting
 
