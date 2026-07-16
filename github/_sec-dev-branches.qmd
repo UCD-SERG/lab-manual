@@ -39,6 +39,11 @@ git push -u origin feat-cleaning-helpers
 # then open the PR from feat-cleaning-helpers onto main
 ```
 
+(`git switch` is the modern, branch-only successor to `git checkout`;
+`git checkout dev-ezra` and `git checkout -b feat-cleaning-helpers origin/main`,
+matching the commands used elsewhere in this chapter,
+do the same thing.)
+
 This way you can flow naturally while working ---
 no stopping to plan a minimal, modular pull request in advance ---
 and still deliver PRs that are minimal and modular,
