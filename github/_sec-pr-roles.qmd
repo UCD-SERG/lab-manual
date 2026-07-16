@@ -46,4 +46,4 @@ follows up on stalled reviews,
 and helps resolve disagreements between authors and reviewers.
 This is typically a rotating duty for a senior contributor or release manager.
 The p5.js project documents how it structures this role in its
-[contributor docs](https://github.com/processing/p5.js-website/blob/main/src/content/contributor-docs/en/steward_guidelines.mdx).
+[steward guidelines](https://p5js.org/contribute/steward_guidelines/).
