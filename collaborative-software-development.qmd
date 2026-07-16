@@ -10,3 +10,7 @@ reviewing each other's work and responding to review feedback.
 ### Responding to review comments {#sec-responding-to-review-comments}
 
 {{< include collaborative-software-development/responding-to-review-comments.qmd >}}
+
+### Avoid closing and restarting pull requests {#sec-avoid-closing-restarting-prs}
+
+{{< include collaborative-software-development/avoid-closing-and-restarting.qmd >}}
