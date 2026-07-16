@@ -19,7 +19,8 @@ with a few differences worth knowing:
 - **Command-line tool.** `glab` is the GitLab counterpart to `gh`;
   installation and authentication are covered in @sec-cli-tools.
 
-Two R packages help when working with GitLab from R:
+Two R packages help when working with GitLab from R
+(the second works across both forges):
 
 - [`{gitlabr}`](https://github.com/ThinkR-open/gitlabr)
   provides R access to the GitLab API,
