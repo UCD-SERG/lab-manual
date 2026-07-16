@@ -1,0 +1,34 @@
+Our lab primarily uses GitHub,
+but you may encounter [GitLab](https://about.gitlab.com/) ---
+most often when collaborating with a group
+that self-hosts its own GitLab instance.
+
+The two platforms support the same core workflow
+(clone, branch, push, review, merge),
+with a few differences worth knowing:
+
+- **Terminology.** A GitHub *pull request* is a GitLab *merge request* (MR);
+  the concept is identical.
+- **Hosting.** GitLab is open-core and designed for self-hosting,
+  so organizations often run their own instance behind their firewall;
+  GitHub repositories almost always live on github.com.
+- **Continuous integration.** GitLab ships a built-in CI/CD system
+  configured by a single `.gitlab-ci.yml` file at the repository root,
+  where GitHub uses GitHub Actions workflows under `.github/workflows/`
+  (see @sec-r-ci).
+- **Command-line tool.** `glab` is the GitLab counterpart to `gh`;
+  installation and authentication are covered in @sec-cli-tools.
+
+Two R packages help when working with GitLab from R:
+
+- [`{gitlabr}`](https://github.com/ThinkR-open/gitlabr)
+  provides R access to the GitLab API,
+  with convenience wrappers for common tasks
+  (repository file access, issue assignment and status, commenting).
+- [`{pr.helpers}`](https://github.com/d-morrison/pr.helpers),
+  our lab's own (experimental) package,
+  provides helpers for common pull/merge request workflows
+  from a local Git repository ---
+  creating and switching branches, fetching requests by number,
+  generating request URLs, and syncing with the default branch ---
+  and works across both GitHub and GitLab remotes.
