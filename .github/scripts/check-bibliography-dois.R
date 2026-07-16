@@ -58,53 +58,76 @@ check_doi_field <- function(entry) {
 
 #' Validate that a DOI resolves to a valid URL
 #'
+#' Requests are retried with exponential backoff so that a transient
+#' resolver hiccup (timeout, 5xx) does not fail the whole check (#358).
+#'
 #' @param doi DOI string
-#' @return List with is_valid, error_message, and status_code
+#' @return List with is_valid, error_message, status_code, and transient
+#'   (TRUE when the failure looks like resolver unavailability rather than
+#'   a genuinely broken DOI)
 validate_doi_url <- function(doi) {
   # Clean up DOI
   doi <- trimws(doi)
-  
+
   # Extract just the DOI identifier
   doi_match <- str_extract(doi, "10\\.\\d+/[^\\s]+")
-  
+
   if (is.na(doi_match)) {
     return(list(
       is_valid = FALSE,
       error = sprintf("Invalid DOI format: %s", doi),
-      status_code = NULL
+      status_code = NULL,
+      transient = FALSE
     ))
   }
-  
+
   doi_identifier <- doi_match
   doi_url <- sprintf("https://doi.org/%s", doi_identifier)
-  
+
   tryCatch({
-    response <- GET(
+    # RETRY with exponential backoff; a 404/410 is definitive (the DOI
+    # itself is wrong), so it terminates the retries immediately.
+    response <- RETRY(
+      "GET",
       doi_url,
-      timeout(10),
-      user_agent("Mozilla/5.0 (compatible; BibliographyChecker/1.0)")
+      timeout(30),
+      user_agent("Mozilla/5.0 (compatible; BibliographyChecker/1.0)"),
+      times = 3,
+      pause_base = 2,
+      pause_cap = 16,
+      terminate_on = c(404, 410),
+      quiet = TRUE
     )
-    
+
     status_code <- status_code(response)
-    
+
     if (status_code == 200) {
       return(list(
         is_valid = TRUE,
         error = NULL,
-        status_code = status_code
+        status_code = status_code,
+        transient = FALSE
       ))
     } else {
       return(list(
         is_valid = FALSE,
         error = sprintf("DOI URL returned status %d", status_code),
-        status_code = status_code
+        status_code = status_code,
+        # 404/410 mean the DOI is genuinely broken; any other non-200
+        # that survived the retries (5xx, 429, other 4xx from an
+        # overloaded or bot-blocking resolver) is treated as transient.
+        transient = !(status_code %in% c(404, 410))
       ))
     }
   }, error = function(e) {
+    # A request that still errors after retries (timeout, connection
+    # failure) means the resolver was unavailable, not that the DOI is
+    # wrong.
     return(list(
       is_valid = FALSE,
       error = sprintf("Error accessing DOI: %s", e$message),
-      status_code = NULL
+      status_code = NULL,
+      transient = TRUE
     ))
   })
 }
@@ -125,12 +148,18 @@ get_doi_metadata <- function(doi) {
   api_url <- sprintf("https://api.crossref.org/works/%s", doi_identifier)
   
   tryCatch({
-    response <- GET(
+    response <- RETRY(
+      "GET",
       api_url,
-      timeout(10),
-      user_agent("Mozilla/5.0 (compatible; BibliographyChecker/1.0)")
+      timeout(30),
+      user_agent("Mozilla/5.0 (compatible; BibliographyChecker/1.0)"),
+      times = 3,
+      pause_base = 2,
+      pause_cap = 16,
+      terminate_on = c(404, 410),
+      quiet = TRUE
     )
-    
+
     if (status_code(response) == 200) {
       data <- fromJSON(content(response, as = "text", encoding = "UTF-8"))
       return(data$message)
@@ -268,6 +297,7 @@ check_bibliography_file <- function(filepath, verify_metadata = TRUE) {
   }
   
   errors <- c()
+  resolver_warnings <- c()
   checked_count <- 0
   
   for (i in seq_len(nrow(bib_df))) {
@@ -303,6 +333,15 @@ check_bibliography_file <- function(filepath, verify_metadata = TRUE) {
     
     # Check 2: DOI URL is valid
     url_check <- validate_doi_url(doi)
+    if (!url_check$is_valid && url_check$transient) {
+      warning_msg <- sprintf(
+        "Entry '%s': %s (resolver unavailable after retries; not treated as an error)",
+        entry$BIBTEXKEY, url_check$error
+      )
+      resolver_warnings <- c(resolver_warnings, warning_msg)
+      cat(sprintf("    ⚠️  %s\n", warning_msg))
+      next
+    }
     if (!url_check$is_valid) {
       error_msg <- sprintf("Entry '%s': %s", entry$BIBTEXKEY, url_check$error)
       errors <- c(errors, error_msg)
@@ -338,7 +377,8 @@ check_bibliography_file <- function(filepath, verify_metadata = TRUE) {
   return(list(
     checked_count = checked_count,
     errors_count = length(errors),
-    errors = errors
+    errors = errors,
+    warnings = resolver_warnings
   ))
 }
 
@@ -368,19 +408,21 @@ run_doi_validation <- function() {
   total_checked <- 0
   total_errors <- 0
   all_errors <- c()
-  
+  all_warnings <- c()
+
   for (filepath in files) {
     if (!file.exists(filepath)) {
       cat(sprintf("Error: File %s does not exist\n", filepath))
       quit(status = 1)
     }
-    
+
     result <- check_bibliography_file(filepath, verify_metadata = !no_metadata_check)
     total_checked <- total_checked + result$checked_count
     total_errors <- total_errors + result$errors_count
     all_errors <- c(all_errors, result$errors)
+    all_warnings <- c(all_warnings, result$warnings)
   }
-  
+
   # Print summary
   cat("\n")
   cat(paste(rep("=", 70), collapse = ""), "\n")
@@ -388,7 +430,15 @@ run_doi_validation <- function() {
   cat(paste(rep("=", 70), collapse = ""), "\n")
   cat(sprintf("Total entries checked: %d\n", total_checked))
   cat(sprintf("Errors found: %d\n", total_errors))
-  
+  cat(sprintf("Transient resolver warnings: %d\n", length(all_warnings)))
+
+  if (length(all_warnings) > 0) {
+    cat("\nWARNINGS (resolver unavailable; not failing the check):\n")
+    for (w in all_warnings) {
+      cat(sprintf("  • %s\n", w))
+    }
+  }
+
   if (total_errors > 0) {
     cat("\nERRORS:\n")
     for (error in all_errors) {
