@@ -39,7 +39,7 @@ so they are versioned, reviewable, and greppable alongside the code.
 
 **How to reference them from code.**
 Point to the ADR with a terse inline comment ---
-`# see docs/adr-wip-lock.md, "Locking" section` ---
+`# see docs/adr-<topic>.md, "<section>" section` ---
 instead of duplicating the rationale in comments.
 This keeps scripts readable while making the full reasoning
 one hop away,
