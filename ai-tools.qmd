@@ -5,26 +5,22 @@ have moved to a dedicated site: **[Working with AI](https://d-morrison.github.io
 (source: <https://github.com/d-morrison/wai>).
 
 That site covers:
-
 []{#sec-ai-disclosure}[]{#sec-ai-journal-articles}
-
-- [**Policies for Using AI**](https://d-morrison.github.io/wai/chapters/ai-use-policies.html):
-  responsibility for validation, disclosure, attribution, and using AI for
-  journal articles
-
 []{#sec-ai-language-model}[]{#sec-ai-harnesses}[]{#sec-ai-agent-implementation}
 []{#sec-ai-harness-construction}[]{#sec-ai-agent-program-kind}
 []{#sec-ai-harness-agent-relationship}[]{#sec-ai-addressing-failing-workflows}
 []{#sec-ai-benefits-hazards}[]{#sec-ai-best-practices}[]{#sec-ai-offline}
 []{#sec-ai-copilot-settings}[]{#sec-ai-agent-skills}[]{#sec-ai-claude-cloud-env}
-[]{#sec-ai-when-to-use}[]{#sec-ai-claude-code-windows}
+[]{#sec-ai-when-to-use}[]{#sec-ai-claude-code-windows}[]{#sec-fully-clean}
+
+- [**Policies for Using AI**](https://d-morrison.github.io/wai/chapters/ai-use-policies.html):
+  responsibility for validation, disclosure, attribution, and using AI for
+  journal articles
 
 - [**Coding Agents**](https://d-morrison.github.io/wai/chapters/coding-agents.html):
   what language models, coding agents, and harnesses are; how to work with
   them; benefits, hazards, and best practices; and configuring your
   environment
-
-[]{#sec-fully-clean}
 
 - [**Pull-Request Workflow with Agents**](https://d-morrison.github.io/wai/chapters/pr-workflow-with-agents.html):
   filing issues, claiming work, and driving a pull request to a clean,
