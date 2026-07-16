@@ -1,0 +1,95 @@
+For shell scripts, we follow the
+[Google Shell Style Guide](https://google.github.io/styleguide/shellguide.html)
+as the base authority,
+the same way our R chapters defer to the
+[tidyverse style guide](https://style.tidyverse.org/).
+The points below are the lab's priorities and additions.
+
+### Error handling
+
+Start every bash script with strict mode:
+
+```bash
+#!/usr/bin/env bash
+set -euo pipefail
+```
+
+- `set -e` exits on the first failing command,
+  `set -u` errors on undefined variables,
+  and `set -o pipefail` makes a pipeline fail
+  when any stage fails, not just the last.
+- Use a `trap ... EXIT` handler for cleanup
+  (temporary files, lock release)
+  so it runs on failure as well as success.
+- Decide explicitly whether a step should fail the script (fail-closed)
+  or log and continue (fail-open),
+  and comment the choice when it isn't obvious.
+
+### Functions and naming
+
+Decompose scripts into functions the same way we decompose R code:
+small, single-purpose, and named in `snake_case`.
+Declare function-local variables with `local`
+so they don't leak into the global namespace,
+and return status with `return` codes
+(write data results to stdout).
+
+### Comments
+
+The same principle as our R guidance applies:
+explain *why*, not *what*.
+Keep inline comments brief,
+and point to an Architecture Decision Record
+for rationale too long for a comment
+(see @sec-adrs).
+
+### Logging
+
+Prefer a small log helper over scattered `echo` calls,
+so messages get a consistent format and severity level,
+and send diagnostics to stderr so stdout stays parseable:
+
+```bash
+log() { printf '%s [%s] %s\n' "$(date -u +%FT%TZ)" "$1" "$2" >&2; }
+log INFO "starting import"
+log ERROR "input file missing"
+```
+
+### Security
+
+- Never echo secrets;
+  redact tokens before logging command lines that carry them.
+- Quote every variable expansion (`"$var"`, `"$@"`)
+  to prevent word-splitting and glob surprises.
+- Pass untrusted values to tools like `curl` and `jq`
+  as arguments (`jq --arg name "$value"`),
+  not by interpolating them into command strings.
+
+### Linting
+
+[ShellCheck](https://www.shellcheck.net/) is the shell equivalent of
+[`{lintr}`](https://lintr.r-lib.org/):
+run `shellcheck script.sh` locally and in CI,
+and fix or explicitly disable (with a justifying comment)
+every finding.
+`bash -n script.sh` is a quick syntax-only check.
+
+### Portability
+
+Decide whether a script targets bash or POSIX `sh`,
+and match the shebang to the decision:
+bash-specific features (arrays, `[[ ]]`, `local -n`)
+need `#!/usr/bin/env bash`,
+while scripts that must run on minimal CI images
+(BusyBox, Alpine `ash`) should stick to POSIX constructs
+and use `#!/bin/sh`.
+ShellCheck understands both and checks against the declared shell.
+
+### Formatting
+
+Follow the same readability conventions as our R style:
+lines under about 80 characters,
+two-space indentation,
+and one logical step per line,
+breaking long pipelines after the `|`
+with the continuation indented.
