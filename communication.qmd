@@ -121,4 +121,4 @@ This allows you to check the room's availability before scheduling.
 ## Code Review {#code-review}
 
 Code review guidance has moved to its own chapter:
-see @sec-collab-dev.
+see [Collaborative Software Development](@sec-collab-dev).
