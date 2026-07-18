@@ -1,0 +1,6 @@
+Avoid closing a pull request and "starting over" on the same issue.
+Doing so disrupts the conversation between authors and reviewers,
+creates confusion,
+and leads to repeated work.
+Instead, keep iterating on the open pull request,
+where the review history stays attached to the code it discusses.
