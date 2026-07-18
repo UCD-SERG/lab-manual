@@ -1,0 +1,40 @@
+A Quarto document should read as narrative plus orchestration:
+each code chunk calls documented functions and displays their results,
+and the surrounding prose carries the analysis story.
+Complex logic belongs in named functions, not inline in chunks.
+
+When a chunk grows into substantial logic ---
+a multi-step data manipulation,
+a function defined inline,
+a non-trivial transformation,
+or the same block copied across chunks ---
+extract that logic into a function and have the chunk call it.
+Following the function-decomposition (@sec-function-decomposition)
+and length-limit (@sec-function-length-limits) principles,
+give the function its own file under `R/`,
+with full [`{roxygen2}`](https://roxygen2.r-lib.org/) documentation,
+the same way any other package function is written.
+The chunk then shrinks to a call
+plus whatever narrative or display wraps it.
+
+Why this matters:
+a function can be unit-tested,
+reused across chunks and analyses,
+and documented;
+inline chunk code can be none of these.
+Keeping logic inline also buries the analysis narrative
+under implementation detail,
+and duplicates code that should have one home.
+
+Our shared linter set enforces the function-definition half of this rule:
+`lms::function_location_linter()`
+(part of `lms::default_linters()`)
+flags a named function defined at the top level of any file
+outside the designated directories (`R/` and `tests/` by default),
+including inside a `.qmd` chunk.
+Loose chunk logic that was never wrapped in a function at all
+is not something a linter can catch,
+so watch for it when writing and reviewing analyses:
+a chunk carrying substantial inline logic is a decomposition finding,
+and the fix is to move the logic into `R/`
+and leave the chunk calling it.
