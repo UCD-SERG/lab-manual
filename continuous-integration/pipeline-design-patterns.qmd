@@ -1,0 +1,208 @@
+CI/CD pipelines are infrastructure code,
+and they face engineering challenges that application code rarely does:
+several pipeline runs can execute at once,
+any step can fail partway through,
+and a re-run must not repeat side effects the first run already performed.
+The patterns below apply to any CI system;
+the examples name the GitHub Actions and GitLab CI features that implement them.
+
+### Concurrency Control {#sec-ci-concurrency}
+
+Two pipeline runs can execute at the same time
+whenever two triggering events land close together ---
+two pushes, a push plus a scheduled run, or two merged pull requests.
+Runs that only *read* the repository (tests, lint, spell check)
+are safe to run in parallel.
+Runs that *write* to a shared resource ---
+a deployment environment, a `gh-pages` branch, a package registry, a bot comment ---
+must be serialized, or the runs will interleave and corrupt the resource.
+
+Prefer the CI system's built-in serialization
+over hand-rolled lock files:
+
+- GitHub Actions:
+  a [`concurrency:`](https://docs.github.com/en/actions/using-jobs/using-concurrency)
+  block assigns runs to a named group;
+  at most one run per group executes at a time,
+  and `cancel-in-progress: true` additionally cancels a superseded run
+  instead of queueing behind it.
+  Use cancellation for runs whose results only matter for the latest commit
+  (reviews, previews),
+  and plain queueing for runs that must all complete (deployments).
+- GitLab CI: a
+  [`resource_group`](https://docs.gitlab.com/ee/ci/resource_groups/)
+  serializes jobs that name the same group,
+  across pipelines.
+
+When the platform primitive doesn't fit ---
+for example, a lock that must span two different workflows,
+or one that a human must be able to hold ---
+an *advisory lock* (a label, a file committed to a branch, an issue assignment)
+can work,
+but it inherits the race condition described in the next section
+(@sec-ci-toctou):
+acquiring it is a check followed by an act,
+so two runs can both "acquire" it unless the acquisition step is atomic.
+
+### Fail-Open vs. Fail-Closed {#sec-ci-fail-open-closed}
+
+When a guard mechanism itself fails ---
+the lock service is down, the label query errors, a duplicate check times out ---
+the pipeline must choose between two failure modes:
+
+- **Fail-open**: proceed as if the guard had allowed it.
+  Risks duplicate work (two deploys, two bot comments),
+  but never stalls the pipeline.
+- **Fail-closed**: abort the run.
+  Never duplicates work,
+  but a broken guard now blocks all work behind it until someone intervenes.
+
+Choose based on the cost of each failure:
+fail-open when duplicates are cheap and annoying
+(a second copy of a bot comment),
+fail-closed when duplicates are expensive or irreversible
+(a production deploy, a package release, an email to a mailing list).
+Either way, make the choice explicit in the pipeline code and its comments,
+and log loudly when the guard misbehaves
+so the degraded mode is visible rather than silent.
+
+### Avoiding Time-of-Check to Time-of-Use Races {#sec-ci-toctou}
+
+A *TOCTOU* (time-of-check to time-of-use) race is the gap
+between checking a condition and acting on it:
+
+```
+check: is there already a "claimed" label?  # no
+                                            # <- another run claims here
+act:   add the label, start working         # both runs now think they own it
+```
+
+Under concurrency, `check -> act` sequences are unsafe no matter
+how small the gap,
+because another run can change the condition between the two steps.
+Closing the gap requires an *atomic* operation ---
+one the platform guarantees to check and act in a single step,
+such as a git push that fails if the remote ref moved
+(the push atomically verifies "my branch is current" and updates it),
+or creating a file with an exclusive-create flag.
+When no atomic primitive is available,
+fall back to the platform's serialization
+(@sec-ci-concurrency)
+so that only one run executes the `check -> act` sequence at a time,
+and design the action to be idempotent
+(@sec-ci-idempotency)
+so that losing the race is harmless rather than corrupting.
+
+### Idempotency {#sec-ci-idempotency}
+
+A pipeline step is *idempotent* when running it twice
+has the same effect as running it once.
+Idempotent steps make re-runs safe:
+after a transient failure, a canceled run, or a manual retry,
+nobody has to reason about what the first attempt already did.
+
+Common CI applications:
+
+- **Bot comments**: update one "sticky" comment in place
+  instead of appending a new comment per run
+  (see @sec-pr-comment-automation).
+- **Deploys**: overwrite the target with the built artifact
+  (`rsync --delete`, a force-push to `gh-pages`)
+  rather than applying increments to it.
+- **Releases and tags**: check whether the tag already exists
+  and skip cleanly, rather than failing on the collision.
+
+The test for idempotency is concrete:
+re-run the job from the CI interface and inspect the result ---
+one comment or two, one release or an error?
+
+### Retries and Timeouts {#sec-ci-retries}
+
+Pipelines call networks constantly
+(package installs, API queries, link checks),
+so transient failures are routine, not exceptional.
+Retry transient operations with **exponential backoff**
+(wait 2s, 4s, 8s, ... between attempts)
+and a **bounded number of attempts**,
+and do not retry *permanent* failures ---
+a `404 Not Found` will not succeed on attempt three,
+and retrying it just slows the pipeline and hides the real error.
+This repository's own DOI checker is an example:
+`.github/scripts/check-bibliography-dois.R` uses
+[`{httr}`](https://httr.r-lib.org/)'s `RETRY()`
+with three attempts, exponential pauses,
+and `terminate_on = c(404, 410)`
+so that genuinely-missing DOIs fail immediately
+while rate limits and timeouts are retried.
+
+Give every job an explicit timeout
+(`timeout-minutes:` in GitHub Actions,
+`timeout:` in GitLab CI)
+sized to a small multiple of its normal runtime.
+The platform defaults are generous
+(GitHub Actions allows a job six hours),
+so a hung job otherwise burns runner minutes for hours
+before anyone notices.
+
+### Pipeline Decomposition {#sec-ci-decomposition}
+
+The function-decomposition principles from @sec-r-coding-practices
+apply to pipelines:
+split a pipeline into jobs along the lines of
+**independent failure and re-run** ---
+if one part can fail while another succeeds,
+and re-running only the failed part would save meaningful time,
+they belong in separate jobs.
+Separate jobs also parallelize across runners
+and show up as separate checks on a pull request,
+which makes failures legible at a glance.
+
+Keep a pipeline monolithic when its steps share expensive setup
+(one job that restores an `renv` library and then lints, tests, and builds
+beats three jobs that each restore it)
+or when the steps are meaningless in isolation.
+
+Pass data between jobs through the platform's declared channels ---
+job `outputs` and `needs:` in GitHub Actions,
+artifacts in both systems ---
+not through side effects like pushing intermediate state to the repository.
+
+### Secret Management {#sec-ci-secrets}
+
+- Store credentials in the CI system's secret store
+  (repository or organization secrets in GitHub Actions,
+  masked CI/CD variables in GitLab),
+  never in the repository --- including its history.
+- Grant the least privilege that works:
+  prefer the ephemeral, automatically-scoped token
+  (`GITHUB_TOKEN` with an explicit `permissions:` block)
+  over a personal access token,
+  and scope any long-lived token to the one repository and permission it needs.
+- Never print secrets.
+  Masking hides known secret *values* from logs,
+  but not derived values (a URL that embeds the token, a `base64` encoding),
+  so don't echo variables that might contain them.
+- Rotate long-lived tokens on a schedule,
+  and immediately when a person with access leaves the project.
+
+### Observability {#sec-ci-observability}
+
+Debugging a failed pipeline run is archaeology:
+all evidence must have been captured at run time.
+
+- **Log decisions, not just actions.**
+  When a guard skips a step, a retry fires, or a fail-open path activates,
+  print *why* --- the condition checked and the value found.
+- **Structure long logs.**
+  Group related output
+  (`::group::` / `::endgroup::` in GitHub Actions,
+  collapsible sections in GitLab)
+  so a reader can scan to the failing step.
+- **Upload artifacts for anything a re-run can't reproduce** ---
+  rendered output, test snapshots, the exact `renv.lock` used ---
+  with a retention period matched to how long debugging normally lags
+  (the platform defaults, 90 days on GitHub, are usually more than enough).
+- **Summarize outcomes** where reviewers look:
+  a step summary (`$GITHUB_STEP_SUMMARY`) or a sticky PR comment
+  (@sec-pr-comment-automation)
+  beats a verdict buried in a thousand-line log.

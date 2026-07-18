@@ -24,6 +24,10 @@
 
 {{< include continuous-integration/workflow-files-and-security.qmd >}}
 
+## Pipeline Design Patterns {#sec-ci-design-patterns}
+
+{{< include continuous-integration/pipeline-design-patterns.qmd >}}
+
 ## Troubleshooting Failed Workflows
 
 {{< include continuous-integration/troubleshooting-workflows.qmd >}}
