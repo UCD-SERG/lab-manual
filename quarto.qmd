@@ -12,6 +12,10 @@
 
 {{< include quarto/books.qmd >}}
 
+## Dashboards {#sec-quarto-dashboards}
+
+{{< include quarto/dashboards.qmd >}}
+
 ## Quarto Profiles
 
 {{< include quarto/profiles.qmd >}}
