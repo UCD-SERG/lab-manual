@@ -16,6 +16,13 @@ The mindset in practice:
   following a fragile manual sequence,
   or avoiding something because it is tedious,
   treat that as a signal to build (or find) a tool for it.
+- **Look before you build --- then chip away.**
+  Check whether an existing tool already solves the problem
+  (see @sec-prefer-packaged-functions);
+  when nothing quite fits,
+  don't let "not worth the effort" stop you:
+  a tool that removes part of an annoying task
+  is already good enough to start with.
 - **Start small and grow the tool as it earns it.**
   A copy-pasted snippet becomes a function;
   a function used across analyses becomes a package
