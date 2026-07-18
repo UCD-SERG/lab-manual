@@ -48,6 +48,10 @@
 
 {{< include coding-practices/documenting-code.qmd >}}
 
+## Design Documentation with ADRs {#sec-adrs}
+
+{{< include coding-practices/architecture-decision-records.qmd >}}
+
 ## Object naming
 
 {{< include coding-practices/object-naming.qmd >}}
