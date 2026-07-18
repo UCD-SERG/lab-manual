@@ -4,6 +4,10 @@
 
 {{< include coding-practices/lab-protocols-for-code-and-data.qmd >}}
 
+## The Tool-Building Mindset {#sec-tool-building}
+
+{{< include coding-practices/tool-building-mindset.qmd >}}
+
 ## Essential R Package Development Tools {#sec-r-package-tools}
 
 {{< include coding-practices/essential-r-package-development-tools.qmd >}}

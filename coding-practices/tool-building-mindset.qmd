@@ -1,0 +1,47 @@
+A tool is anything that makes a task easier
+when that task would otherwise be repetitive, hard, or impossible ---
+a script, a function, a package, a spreadsheet,
+a checklist, or a CI workflow.
+Aaron Crosman's
+[Tool Building Mindset](https://spinningcode.org/2024/05/tool-building/)
+argues for taking that expansive view deliberately:
+everyone who works with technology should, can, and already does
+build tools for themselves,
+whether or not they think of themselves as a "developer."
+
+The mindset in practice:
+
+- **Notice the friction.**
+  When you catch yourself repeating a task,
+  following a fragile manual sequence,
+  or avoiding something because it is tedious,
+  treat that as a signal to build (or find) a tool for it.
+- **Look before you build --- then chip away.**
+  Check whether an existing tool already solves the problem
+  (see @sec-prefer-packaged-functions);
+  when nothing quite fits,
+  don't let "not worth the effort" stop you:
+  a tool that removes part of an annoying task
+  is already good enough to start with.
+- **Start small and grow the tool as it earns it.**
+  A copy-pasted snippet becomes a function;
+  a function used across analyses becomes a package
+  (see @sec-r-workflow);
+  a workflow copied between repositories becomes a shared,
+  reusable one.
+- **Build for your own repeated use first.**
+  A tool that saves you an hour a week justifies itself quickly,
+  and the discipline of packaging it (documentation, tests)
+  makes it usable by the next lab member too.
+- **Don't gold-plate.**
+  The tool only needs to beat doing the task by hand;
+  polish it further only when its use grows to warrant it.
+
+Much of our lab's shared infrastructure came from exactly this pattern:
+the [`{snapr}`](https://d-morrison.github.io/snapr/) package
+packages the lab's snapshot-testing helpers,
+the [`{lms}`](https://github.com/UCD-SERG/lab-manual/tree/main/lms)
+linter package packages our shared lint configuration,
+and the [d-morrison/gha](https://github.com/d-morrison/gha) repository
+collects reusable CI workflows and composite actions
+shared across the lab's repositories.
