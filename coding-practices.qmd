@@ -52,6 +52,10 @@
 
 {{< include coding-practices/documenting-code.qmd >}}
 
+## Design Documentation with ADRs {#sec-adrs}
+
+{{< include coding-practices/architecture-decision-records.qmd >}}
+
 ## Object naming
 
 {{< include coding-practices/object-naming.qmd >}}
@@ -68,6 +72,10 @@
 
 {{< include coding-practices/function-length-limits.qmd >}}
 
+## Keep It Short and Simple (KISS) {#sec-kiss}
+
+{{< include coding-practices/kiss-principle.qmd >}}
+
 ## The here package {#sec-here-package-practices}
 
 {{< include coding-practices/here-package.qmd >}}
@@ -79,6 +87,10 @@
 ## Integrating Box and Dropbox
 
 {{< include coding-practices/integrating-box-dropbox.qmd >}}
+
+## r-lib Packages {#sec-r-lib-packages}
+
+{{< include coding-practices/r-lib-packages.qmd >}}
 
 ## Tidyverse {#sec-tidyverse}
 

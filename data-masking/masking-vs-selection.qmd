@@ -1,0 +1,27 @@
+Many [`{tidyverse}`](https://www.tidyverse.org/) verbs use *two* different flavors of tidy evaluation,
+and the way you refer to a column stored in a string variable depends on which one you are in.
+
+- **Data-masking** contexts treat column names as values you compute *with*:
+  the [`{dplyr}`](https://dplyr.tidyverse.org/) verbs
+  `mutate()`, `filter()`, `summarize()`/`summarise()` (the summary expressions),
+  `group_by()`, and `arrange()`,
+  plus `aes()` in [`{ggplot2}`](https://ggplot2.tidyverse.org/).
+- **Tidy-selection** contexts treat column names as columns you *choose*:
+  `select()`, `rename()`, `relocate()`, `pull()`,
+  the `.cols` argument of `across()`,
+  the `.by` argument of `mutate()`/`summarize()`,
+  and the `cols`, `names_from`, `values_from`, and `id_cols`
+  arguments of `pivot_*()` in [`{tidyr}`](https://tidyr.tidyverse.org/).
+
+To refer to a column named by a string variable,
+use the tool that matches the context:
+
+| Context | Use | Avoid |
+|---------|-----|-------|
+| Data-masking | `!!sym(var)` or `.data[[var]]` | bare `var` (uses the string value itself, not the column it names) |
+| Tidy-selection | `all_of(var)` / `any_of(var)` | the `.data` pronoun (`.data[[var]]`, `.data$col`) |
+
+: Referring to a column named by a string variable {#tbl-masking-selection}
+
+Use `all_of()` when every selected name must exist (it errors if one is missing)
+and `any_of()` when names that are absent should simply be dropped.

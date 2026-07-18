@@ -1,0 +1,45 @@
+A common (and **silent**) mistake is reaching for the `.data` pronoun
+inside a tidy-selection context:
+
+```r
+# Soft-deprecated: .data used in selection contexts
+df |> select(.data$Subject, .data[[var]])
+df |> summarize(.by = c(.data$group), med = median(value))
+df |> tidyr::pivot_wider(names_from = .data$Parameter)
+```
+
+The `.data` pronoun is a *data-masking* tool, not a selection tool.
+Using it in a selection context was deprecated in
+[`{tidyselect}`](https://tidyselect.r-lib.org/) 1.2.0
+([release notes](https://www.tidyverse.org/blog/2022/10/tidyselect-1-2-0/)),
+but it is a **soft** deprecation,
+signaled through [`{lifecycle}`](https://lifecycle.r-lib.org/).
+Per the [`{lifecycle}` documentation](https://lifecycle.r-lib.org/articles/communicate.html),
+a soft-deprecated feature warns only users
+who trigger it from the global environment
+and developers who use it directly
+(for example when running [`{testthat}`](https://testthat.r-lib.org/) tests);
+there is *no warning when the deprecated feature
+is called indirectly by another package*.
+So in installed-package code it usually emits *no warning at all*,
+and it slips past interactive use, CI, and code review unnoticed.
+Rewrite these with `all_of()`/`any_of()` and plain strings:
+
+```r
+# Idiomatic tidy selection
+df |> select(all_of(c("Subject", var)))
+df |> summarize(.by = all_of("group"), med = median(value))
+df |> tidyr::pivot_wider(names_from = "Parameter")
+```
+
+To make this class of soft deprecation fail loudly,
+set `options(lifecycle_verbosity = "error")` in your tests
+(for example in `tests/testthat/setup.R`).
+This option promotes deprecation signals to errors
+regardless of the soft-versus-warning distinction
+([`{lifecycle}` reference](https://lifecycle.r-lib.org/reference/deprecate_soft.html)).
+Plain `options(warn = 2)` will *not* catch it,
+because `warn = 2` only converts warnings into errors
+once a warning is actually signaled,
+and for a soft deprecation in installed-package code
+no warning is signaled in the first place.

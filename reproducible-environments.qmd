@@ -70,6 +70,10 @@ If you're starting to work on an ongoing project that already has `renv` set up,
 
 {{< include reproducible-environments/r2u-ubuntu-alternative.qmd >}}
 
+## Managing R Versions with rig
+
+{{< include reproducible-environments/rig-r-installation-manager.qmd >}}
+
 ## Clearing Docker Cache
 
 {{< include reproducible-environments/docker-cache.qmd >}}
