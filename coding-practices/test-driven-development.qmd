@@ -1,0 +1,45 @@
+[Test-driven development (TDD)](https://en.wikipedia.org/wiki/Test-driven_development)
+inverts the usual order of coding and testing:
+you write the test for a behavior *before*
+writing the code that implements it.
+The practice was popularized by Kent Beck,
+who developed it as part of extreme programming
+and described it in
+*Test-Driven Development: By Example* (2002).
+
+Work proceeds in a short, repeated cycle
+(often called *red-green-refactor*):
+
+1. **Red.**
+   Write a small test for the next behavior you want,
+   and run it to confirm it fails ---
+   this proves the test can actually detect the missing behavior.
+2. **Green.**
+   Write the simplest code that makes the test pass,
+   resisting the urge to build ahead of the tests.
+3. **Refactor.**
+   Clean up the code (and the tests) while everything stays green,
+   leaning on the tests to catch anything the cleanup breaks.
+
+Why it helps:
+
+- The test pins down what the function *should* do
+  before you are invested in what it happens to do,
+  turning requirements into executable checks.
+- Every unit of behavior ends up covered by construction,
+  so later changes get regression protection for free.
+- Code written to be testable tends toward
+  small, single-purpose functions with explicit inputs and outputs ---
+  the same design our function-decomposition
+  (@sec-function-decomposition) guidance pushes toward.
+
+You do not have to practice strict TDD to benefit from it.
+Our testing guidance (@sec-r-testing) already applies its core move ---
+establish tests *before* modifying existing functions ---
+and writing the test first is just that same discipline
+applied to new code as well.
+In R packages, the mechanics are light:
+`usethis::use_test()` creates the matching
+[`{testthat}`](https://testthat.r-lib.org/) test file,
+and `devtools::test()` runs the suite
+(see [R Packages, ch. "Testing basics"](https://r-pkgs.org/testing-basics.html)).
