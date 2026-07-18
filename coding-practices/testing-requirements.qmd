@@ -77,7 +77,7 @@ Each style has a characteristic failure mode to guard against:
   Non-deterministic output (timestamps, random numbers, file paths)
   makes a snapshot fail on every run;
   seed or fix the inputs first
-  (see the seeding advice under Testing Best Practices below).
+  (see the seeding advice under @sec-testing-best-practices).
 - **Assertion sprawl.**
   Explicitly asserting every field of a large object
   takes a page of fragile code ---
@@ -98,7 +98,7 @@ The [`{testthat}` snapshotting vignette](https://testthat.r-lib.org/articles/sna
 covers the workflow --- recording, reviewing, and accepting snapshots ---
 in more depth.
 
-### Testing Best Practices
+### Testing Best Practices {#sec-testing-best-practices}
 
 - **Seed randomness**: Use `withr::local_seed()` for reproducible tests
 - **Use small test cases**: Keep tests fast
