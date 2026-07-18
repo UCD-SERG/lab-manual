@@ -40,7 +40,7 @@ The mindset in practice:
 Much of our lab's shared infrastructure came from exactly this pattern:
 the [`{snapr}`](https://d-morrison.github.io/snapr/) package
 packages the lab's snapshot-testing helpers,
-the [`lms`](https://github.com/UCD-SERG/lab-manual/tree/main/lms)
+the [`{lms}`](https://github.com/UCD-SERG/lab-manual/tree/main/lms)
 linter package packages our shared lint configuration,
 and the [d-morrison/gha](https://github.com/d-morrison/gha) repository
 collects reusable CI workflows and composite actions
