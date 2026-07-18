@@ -15,6 +15,23 @@ test_that("prep_study_data produces expected structure", {
 })
 ```
 
+Our lab's [`{snapr}`](https://d-morrison.github.io/snapr/) package
+(on [CRAN](https://cran.r-project.org/package=snapr))
+adds convenience wrappers on top of
+[`{testthat}`](https://testthat.r-lib.org/)'s snapshot functions:
+`expect_snapshot_data()` for data frames
+(adapted, with permission, from the
+[`{ssdtools}`](https://cran.r-project.org/package=ssdtools) package)
+and `expect_snapshot_object()`,
+which generalizes it to any R object.
+
+```r
+test_that("prep_study_data output is stable", {
+  result <- prep_study_data(raw_data)
+  snapr::expect_snapshot_data(result, name = "prepped_study_data")
+})
+```
+
 ### When to Use Explicit Value Tests
 
 Use explicit tests (`expect_equal()`, `expect_identical()`) when:

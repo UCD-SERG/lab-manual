@@ -1,0 +1,62 @@
+An Architecture Decision Record (ADR) is a short, versioned document
+that captures a significant design decision:
+the context that forced the choice,
+the alternatives considered,
+the decision itself,
+and its consequences.
+Function-level documentation and inline comments explain *code*;
+an ADR explains a *decision* that shapes many files at once
+and would otherwise live only in someone's memory
+or a long-merged pull request thread.
+
+### When to write one {#sec-adr-when}
+
+Write an ADR for a non-obvious design choice that affects
+multiple files or systems:
+a concurrency or security trade-off,
+a data layout or dependency choice with long-term consequences,
+or a naming convention that needs justification.
+Routine choices that any reader would make the same way
+do not need one.
+
+### Recommended format {#sec-adr-format}
+
+Use the four-part template from
+[Michael Nygard's "Documenting Architecture Decisions"](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions):
+
+- **Status**: proposed, accepted, deprecated, or superseded
+  (with a pointer to the successor).
+- **Context**: the forces at play ---
+  what problem existed and what constraints applied.
+- **Decision**: what was chosen, stated in full sentences
+  with an active voice ("We will ...").
+- **Consequences**: what becomes easier, what becomes harder,
+  and what future work the decision commits you to.
+
+### Where to store them {#sec-adr-storage}
+
+Keep ADRs in the repository they describe,
+as `docs/adr-<topic>.md` files
+(or a `docs/decisions/` directory once there are more than a few),
+so they are versioned, reviewable, and greppable alongside the code.
+
+### How to reference them from code {#sec-adr-code-pointers}
+
+Point to the ADR with a terse inline comment ---
+`# see docs/adr-<topic>.md, "<section>" section` ---
+instead of duplicating the rationale in comments.
+This keeps scripts readable while making the full reasoning
+one hop away,
+and it means the rationale has one home to update
+when the decision changes.
+
+### Relationship to pull request descriptions {#sec-adr-vs-pr}
+
+A PR description explains *why this change, now*,
+and effectively disappears from view once the PR merges;
+an ADR persists in the repository
+and keeps answering "why is it built this way?"
+long after the merge.
+When a PR implements a significant decision,
+write the ADR in that PR
+and let the PR description summarize and link to it.
