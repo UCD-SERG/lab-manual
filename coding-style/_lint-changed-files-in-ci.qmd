@@ -1,0 +1,28 @@
+A project can fall out of lint compliance
+without any change to its own source code or `.lintr` configuration:
+[`{lintr}`](https://lintr.r-lib.org/) releases sometimes add default linters
+or tighten existing ones,
+so code that passed yesterday can fail after a routine package update.
+
+When a continuous-integration job lints the whole project
+(for example, `lintr::lint_dir()` on every pull request),
+those newly introduced findings surface on whatever pull request
+happens to run CI next.
+That pull request then has to expand into unrelated files
+just to turn the lint check green,
+which conflicts with our expectation that a pull request
+stays scoped to one concern.
+
+In most cases,
+a better default is to lint **changed files only**,
+so pre-existing findings elsewhere in the project
+don't block unrelated work.
+[r-lib/actions](https://github.com/r-lib/actions/blob/v2-branch/examples/lint-changed-files.yaml)
+provides a ready-made `lint-changed-files` example workflow;
+install it with `usethis::use_github_action("lint-changed-files")`.
+
+Whole-project linting still has a place:
+run it on a schedule or as a manually triggered workflow,
+so that project-wide drift is still detected
+and cleaned up deliberately in its own dedicated pull request,
+rather than as a side effect of someone else's change.

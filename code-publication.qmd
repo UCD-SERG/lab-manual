@@ -242,3 +242,16 @@ Once CRAN accepts your package:
    git push
    ```
 
+4. **Track adoption over time**: the
+   [`{Visualize.CRAN.Downloads}`](https://github.com/mponce0/Visualize.CRAN.Downloads)
+   package plots a CRAN package's download counts
+   (retrieved via [`{cranlogs}`](https://r-hub.github.io/cranlogs/)),
+   producing static, interactive, and multi-package comparison plots,
+   with moving averages and confidence bands to make trends visible.
+   With no date range given,
+   it defaults to the year of downloads ending today:
+
+   ```r
+   Visualize.CRAN.Downloads::processPckg("yourpackage")
+   ```
+

@@ -1,0 +1,16 @@
+# Collaborative Software Development {#sec-collab-dev}
+
+This chapter covers the social side of writing code together:
+reviewing each other's work and responding to review feedback.
+
+## Code Review {#sec-code-review}
+
+{{< include collaborative-software-development/_code-review.qmd >}}
+
+### Responding to review comments {#sec-responding-to-review-comments}
+
+{{< include collaborative-software-development/_responding-to-review-comments.qmd >}}
+
+### Avoid closing and restarting pull requests {#sec-avoid-closing-restarting-prs}
+
+{{< include collaborative-software-development/_avoid-closing-and-restarting.qmd >}}

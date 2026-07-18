@@ -1,4 +1,5 @@
 Aiemjoy
+backoff
 Barratt
 Burkholderia
 CE
@@ -9,6 +10,8 @@ Drs
 Fanice
 GitLab
 Heitmann
+idempotency
+idempotent
 Jekyll
 Kunal
 LeCun
@@ -17,6 +20,7 @@ Melioidosis
 Mishra
 NonCommercial
 Nyatigo
+observability
 OpenDevin
 OpenHands
 Orientia
@@ -30,6 +34,7 @@ SeRG
 Seroepidemiology
 SHA
 Shigella
+TOCTOU
 Typhi
 UC
 UCD

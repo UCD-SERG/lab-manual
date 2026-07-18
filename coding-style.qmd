@@ -14,6 +14,18 @@ Follow these code style guidelines for all R code:
 
 {{< include .ai-config/shared/coding/avoid-nesting.md >}}
 
+## Prefer Existing Packaged Functions {#sec-prefer-packaged-functions}
+
+{{< include .ai-config/shared/coding/prefer-packaged-functions.md >}}
+
+## Prefer Per-Operation Grouping {#sec-per-operation-grouping}
+
+{{< include .ai-config/shared/coding/per-operation-grouping.md >}}
+
+## Avoid Hard-Coding Data with an External Source of Truth {#sec-avoid-hardcoding-external-data}
+
+{{< include .ai-config/shared/coding/avoid-hardcoding-external-data.md >}}
+
 ## Construct Complex Inputs Before the Call {#sec-construct-inputs}
 
 {{< include coding-style/construct-inputs.qmd >}}

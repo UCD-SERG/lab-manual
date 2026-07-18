@@ -10,4 +10,8 @@
    
 #### [`{lintr}`](https://lintr.r-lib.org/)
 
-{{< include coding-style/_lintr-summary.qmd >}} 
+{{< include coding-style/_lintr-summary.qmd >}}
+
+### Linting Changed Files vs. the Whole Project in CI
+
+{{< include coding-style/_lint-changed-files-in-ci.qmd >}} 
