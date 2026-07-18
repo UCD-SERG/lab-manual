@@ -54,7 +54,8 @@ A snapshot test asks
 "does this output still match what it looked like before?";
 an explicit test asks
 "does this specific property equal this exact value?".
-That difference drives every practical trade-off:
+That difference drives every practical trade-off,
+as @tbl-snapshot-vs-explicit summarizes:
 
 | | Snapshot test | Explicit test |
 |---|---------------|---------------|
