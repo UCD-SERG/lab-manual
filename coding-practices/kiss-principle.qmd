@@ -1,0 +1,35 @@
+The [KISS principle](https://en.wikipedia.org/wiki/KISS_principle) ---
+"Keep It Short and Simple" ---
+says that most systems work best when they are kept simple,
+so unnecessary complexity should be avoided rather than managed.
+A blunter phrasing ---
+the one aircraft engineer Kelly Johnson actually coined
+at the Lockheed Skunk Works ---
+is "keep it simple, stupid":
+his standing challenge was that his team's aircraft
+must be repairable by an average mechanic in the field
+with only a handful of common tools.
+
+The principle carries directly into software development:
+code is read, debugged, and modified far more often than it is written,
+and it is usually maintained by someone with less context
+than the original author had ---
+often your own future self.
+
+Rationales for keeping code short and simple:
+
+- **Fewer bugs.** Less code and simpler control flow leave fewer places
+  for defects to hide and make the remaining logic easier to reason about.
+- **Easier review.** A reviewer can hold a short, single-purpose function
+  in their head; they cannot do that with a sprawling one.
+- **Cheaper maintenance.** Simple code can be modified confidently;
+  complex code makes every change risky and slow.
+- **Faster onboarding.** New lab members become productive sooner
+  when the codebase does things the plain, expected way.
+
+Simplicity is not an excuse to drop requirements:
+the goal is the simplest solution that still does the whole job,
+not a simpler job.
+The preceding sections on function decomposition and function length limits,
+and the guidance on [avoiding deep nesting](@sec-avoid-nesting),
+are concrete applications of this principle.
