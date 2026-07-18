@@ -14,7 +14,9 @@ Start every bash script with strict mode:
 set -euo pipefail
 ```
 
-- `set -e` exits on the first failing command,
+- `set -e` exits when a command fails unhandled
+  (it deliberately skips commands tested in an `if`
+  or joined with `&&`/`||`),
   `set -u` errors on undefined variables,
   and `set -o pipefail` makes a pipeline fail
   when any stage fails, not just the last.
@@ -61,8 +63,11 @@ log ERROR "input file missing"
 
 The `shift` / `$*` pair joins every argument after the severity
 into the message,
-so a multi-word message is logged whole
-whether or not the caller quotes it.
+so a message that reaches the function as several words
+is still logged whole.
+Callers should still quote the message (`log ERROR "..."`) ---
+the shell expands globs and splits words *before* `log()` runs,
+so an unquoted message can be mangled on the way in.
 
 ### Security
 
