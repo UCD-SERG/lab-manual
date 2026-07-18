@@ -58,7 +58,7 @@ That difference drives every practical trade-off:
 
 | | Snapshot test | Explicit test |
 |---|---------------|---------------|
-| Setup effort | Low: the first run records the reference automatically | Higher: you write an assertion per property you care about |
+| Conciseness | High: one snapshot call pins the whole output, standing in for a long list of assertions, and the first run records the reference automatically | Lower: you write an assertion per property you care about, which adds up fast for complex outputs |
 | Readability | Lower: the test shows *that* output is pinned, not *why* | Higher: each assertion documents an intended behavior |
 | When output legitimately changes | One review-and-accept of the new snapshot | Rewrite the affected assertions by hand |
 | Failure diagnosis | A diff of the whole output; the relevant change may be buried | Points at the exact property that broke |
