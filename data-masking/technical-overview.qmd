@@ -1,0 +1,12 @@
+This section covers the R functions and tools that we often use in the context of data masking, focusing on the bang bang operator (` !!`) with symbol coercion (` sym()`) and the Walrus operator (`:=`). 
+
+The combined use of ` !!` and ` sym()` allows us to use strings, rather than data-variables, to reference column names within dplyr. Together, ` !!sym("column_name")` forces dplyr to recognize "column_name" as a data-variable prior to evaluating the rest of the expression, enabling the ability to perform calculations on the column while referring to it as a string.
+` sym()` is a function that turns strings into symbols. In the context of a dplyr pipe, these symbols are interpreted as data-variables.
+The ` !!` (bang bang) operator tells dplyr to evaluate the sym() expression first, e.g. to unquote its expression (e.g. "column_name") and evaluate it as a pre-existing object, first. This is helpful because often we use ` sym("column_name")` within a larger expression, and dplyr might evaluate other elements of the expression first without !!, causing errors. 
+
+When we want to create a new column (via mutate or summarize), the Walrus operator (` :=`) allows us to specify the new column's name using a string. For example, while ` df |> mutate("new_column" = values)` would yield an error, ` df |> mutate("new_column" := values)` will correctly create a new column called "new_column". 
+If we want to use a variable representing a string, we can use !! to force the variable to be evaluated before using ` :=` to assign the value of the new column. 
+```r
+col_name = "new_column"
+df |> mutate(!!col_name := values)
+```
