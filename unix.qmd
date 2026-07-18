@@ -46,6 +46,10 @@ When typing in directories or file names, quotes are necessary if the name inclu
 : Commands for running Bash scripts {#tbl-unix-bash-scripts}
 
 
+## Shell Scripting Style {#sec-shell-style}
+
+{{< include unix/shell-scripting-style.qmd >}}
+
 ## Running Rscripts in Windows
 **Note: This code seems to work only with Windows Command Prompt, not with Git Bash.**
 
