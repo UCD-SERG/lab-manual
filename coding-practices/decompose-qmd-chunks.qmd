@@ -18,9 +18,10 @@ The chunk then shrinks to a call
 plus whatever narrative or display wraps it.
 
 Why this matters:
-a function can be unit-tested, reused across chunks and analyses,
-documented, and linted;
-an inline code chunk can be none of these.
+a function can be unit-tested,
+reused across chunks and analyses,
+and documented;
+inline chunk code can be none of these.
 Keeping logic inline also buries the analysis narrative
 under implementation detail,
 and duplicates code that should have one home.
