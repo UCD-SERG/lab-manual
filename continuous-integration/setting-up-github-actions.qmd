@@ -41,3 +41,48 @@ usethis::use_github_action()
 #> 2: test-coverage: Compute test coverage and report to https://about.codecov.io
 #> 3: pr-commands: Add /document and /style commands for pull requests
 ```
+
+### Allowing Actions to Create Pull Requests
+
+Some workflows open pull requests themselves ---
+for example, a scheduled job that bumps a submodule pointer
+or updates generated files.
+By default, GitHub blocks workflows that authenticate
+with the built-in `GITHUB_TOKEN`
+from creating or approving pull requests,
+and such a workflow fails with a
+"GitHub Actions is not permitted to create or approve pull requests" error.
+
+To allow it, go to
+**Settings > Actions > General > Workflow permissions**
+in the repository
+and check **Allow GitHub Actions to create and approve pull requests**.
+
+A few related points:
+
+- The workflow also needs write access:
+  either select **Read and write permissions** on the same settings page,
+  or grant it per workflow with a `permissions:` block
+  (`contents: write` and `pull-requests: write`).
+- For repositories in an organization,
+  the same setting exists at the organization level,
+  and the organization setting must allow it
+  before the repository-level setting can take effect.
+- This governs only the built-in `GITHUB_TOKEN`;
+  workflows that authenticate with a personal access token
+  are governed by that token's own scopes instead.
+
+This repository's own `bump-ai-config.yml` workflow,
+which opens a weekly pull request to advance the `.ai-config` submodule,
+depends on this setting
+and grants itself the needed scopes with a job-level `permissions:` block
+(the block can sit either at the top of a workflow file
+or under an individual job, as here):
+
+```yaml
+jobs:
+  bump:
+    permissions:
+      contents: write
+      pull-requests: write
+```

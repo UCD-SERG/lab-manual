@@ -1,0 +1,272 @@
+The [r-lib](https://github.com/r-lib) GitHub organization, maintained primarily by the Posit team,
+hosts a collection of foundational R packages for package development, infrastructure, and general programming.
+These packages underpin much of the modern R ecosystem and are widely used in our lab's workflows.
+
+## Package Development
+
+### [`{usethis}`](https://usethis.r-lib.org/) {#sec-usethis}
+
+[`{usethis}`](https://usethis.r-lib.org/) automates repetitive tasks that arise during project setup and development,
+both for R packages and non-package projects.
+It provides functions for setting up testing, CI, licenses, Git, and GitHub integrations,
+making it the go-to companion for `devtools`.
+
+### [`{devtools}`](https://devtools.r-lib.org/) {#sec-devtools}
+
+[`{devtools}`](https://devtools.r-lib.org/) provides a suite of tools for the R package development workflow.
+It wraps many lower-level tools such as `pkgbuild`, `pkgload`, and `rcmdcheck` behind a convenient interface.
+Key functions include `load_all()`, `document()`, `test()`, `check()`, and `install()`.
+
+### [`{roxygen2}`](https://roxygen2.r-lib.org/) {#sec-roxygen2}
+
+[`{roxygen2}`](https://roxygen2.r-lib.org/) lets you write documentation in-source, alongside the code it documents,
+using `#'` comment blocks.
+It generates `.Rd` files for the `man/` directory and updates `NAMESPACE`.
+It is the standard approach to R package documentation.
+
+### [`{pkgdown}`](https://pkgdown.r-lib.org/) {#sec-pkgdown}
+
+[`{pkgdown}`](https://pkgdown.r-lib.org/) builds a documentation website for an R package from its source.
+It converts `README`, vignettes, and function documentation into a navigable website,
+and integrates with GitHub Actions for automatic deployment.
+
+### [`{pkgload}`](https://pkgload.r-lib.org/) {#sec-pkgload}
+
+[`{pkgload}`](https://pkgload.r-lib.org/) simulates the process of installing and loading a package,
+enabling rapid interactive development.
+It is the backend for `devtools::load_all()`.
+
+### [`{pkgbuild}`](https://pkgbuild.r-lib.org/) {#sec-pkgbuild}
+
+[`{pkgbuild}`](https://pkgbuild.r-lib.org/) provides tools for building R packages, finding compilers,
+and checking whether a build environment (such as Rtools on Windows) is available.
+
+### [`{rcmdcheck}`](https://rcmdcheck.r-lib.org/) {#sec-rcmdcheck}
+
+[`{rcmdcheck}`](https://rcmdcheck.r-lib.org/) runs `R CMD check` from within R and captures the results
+in a structured format.
+It is used by CI systems and `devtools::check()`.
+
+### [`{remotes}`](https://remotes.r-lib.org/) {#sec-remotes}
+
+[`{remotes}`](https://remotes.r-lib.org/) installs R packages from remote sources including GitHub, GitLab,
+Bitbucket, URLs, and local files.
+It is a lightweight alternative to `devtools::install_github()`.
+
+### [`{pak}`](https://pak.r-lib.org/) {#sec-pak}
+
+[`{pak}`](https://pak.r-lib.org/) installs R packages from CRAN, GitHub, and other sources,
+with fast parallel downloads and automatic system-dependency handling.
+It is r-lib's modern alternative to `install.packages()` and `remotes` for interactive use.
+
+### [`{revdepcheck}`](https://revdepcheck.r-lib.org/) {#sec-revdepcheck}
+
+[`{revdepcheck}`](https://revdepcheck.r-lib.org/) automates reverse dependency checking ---
+checking that changes to a package do not break packages that depend on it.
+It is used by package maintainers before CRAN releases.
+
+### [`{desc}`](https://desc.r-lib.org/) {#sec-desc}
+
+[`{desc}`](https://desc.r-lib.org/) provides tools for reading, writing, and manipulating `DESCRIPTION` files.
+It is used internally by `usethis` and other developer-facing tools.
+
+### [`{pkgcache}`](https://r-lib.github.io/pkgcache/) {#sec-pkgcache}
+
+[`{pkgcache}`](https://r-lib.github.io/pkgcache/) provides a local cache of CRAN-like metadata and package files,
+speeding up package installation.
+It is used internally by `pak`.
+
+### [`{lifecycle}`](https://lifecycle.r-lib.org/) {#sec-lifecycle}
+
+[`{lifecycle}`](https://lifecycle.r-lib.org/) manages the life cycle of functions and arguments,
+providing the experimental/superseded/deprecated badges and deprecation warnings
+used across the tidyverse and r-lib ecosystems.
+
+## Testing and Quality
+
+### [`{testthat}`](https://testthat.r-lib.org/) {#sec-testthat}
+
+[`{testthat}`](https://testthat.r-lib.org/) is the most widely used R testing framework.
+It provides a readable, expressive way to write unit tests for R packages,
+with functions like `expect_equal()`, `expect_error()`, and `expect_snapshot()`.
+
+### [`{covr}`](https://covr.r-lib.org/) {#sec-covr}
+
+[`{covr}`](https://covr.r-lib.org/) measures and reports test coverage for R packages.
+It can generate HTML reports, submit results to Codecov,
+and is commonly integrated into CI pipelines.
+
+### [`{waldo}`](https://waldo.r-lib.org/) {#sec-waldo}
+
+[`{waldo}`](https://waldo.r-lib.org/) finds and describes differences between R objects.
+It provides clearer, more informative output than `identical()` or `all.equal()`,
+and is used internally by `testthat` to display test failures.
+
+### [`{lintr}`](https://lintr.r-lib.org/) {#sec-lintr}
+
+[`{lintr}`](https://lintr.r-lib.org/) performs static code analysis (linting) for R.
+It checks for style issues, potential errors, and common anti-patterns,
+and integrates with RStudio, VS Code, and CI pipelines.
+
+## Core Language and Infrastructure
+
+### [`{rlang}`](https://rlang.r-lib.org/) {#sec-rlang}
+
+[`{rlang}`](https://rlang.r-lib.org/) provides a low-level API for working with R's core language features,
+including environments, quosures, symbols, and non-standard evaluation (tidy eval).
+It is a foundational dependency for tidyverse packages and tidy eval programming.
+
+### [`{vctrs}`](https://vctrs.r-lib.org/) {#sec-vctrs}
+
+[`{vctrs}`](https://vctrs.r-lib.org/) defines a principled type system for R vectors,
+providing tools for coercion, casting, and size-stability.
+It underpins the consistent behavior of `dplyr` and `tidyr` across vector types.
+
+### [`{withr}`](https://withr.r-lib.org/) {#sec-withr}
+
+[`{withr}`](https://withr.r-lib.org/) allows code to be run with temporarily modified global state ---
+changing options, environment variables, working directories, or random seeds ---
+and reliably restoring them afterward.
+Essential for writing side-effect-free tests.
+
+### [`{cli}`](https://cli.r-lib.org/) {#sec-cli}
+
+[`{cli}`](https://cli.r-lib.org/) provides a rich toolkit for building command-line interfaces in R.
+It supports color, ANSI styling, progress bars, spinners, and formatted messages.
+It is the modern replacement for `crayon` and is used throughout the tidyverse.
+
+### [`{R6}`](https://r6.r-lib.org/) {#sec-R6}
+
+[`{R6}`](https://r6.r-lib.org/) implements encapsulated, reference-based object-oriented programming in R.
+Unlike S3 or S4, R6 classes support mutable state and inheritance in a style familiar from Python or Java.
+
+### [`{cpp11}`](https://cpp11.r-lib.org/) {#sec-cpp11}
+
+[`{cpp11}`](https://cpp11.r-lib.org/) provides a modern C++11 interface for interacting with R's C API.
+It is a lightweight, header-only alternative to `Rcpp`,
+designed to simplify writing and debugging C++ extensions for R.
+
+## System and Process
+
+### [`{fs}`](https://fs.r-lib.org/) {#sec-fs}
+
+[`{fs}`](https://fs.r-lib.org/) provides a cross-platform, uniform interface to file system operations.
+It replaces inconsistent base R file functions with a tidy API using `path_*()`, `file_*()`,
+`dir_*()`, and `link_*()` functions that always return character vectors.
+
+### [`{processx}`](https://processx.r-lib.org/) {#sec-processx}
+
+[`{processx}`](https://processx.r-lib.org/) runs external system processes asynchronously or synchronously
+from R, with full control over stdin, stdout, and stderr.
+It is the backend for `callr`, and is used internally by `rcmdcheck`.
+
+### [`{callr}`](https://callr.r-lib.org/) {#sec-callr}
+
+[`{callr}`](https://callr.r-lib.org/) calls R functions in separate R processes.
+This is useful for running code in a clean environment, isolating side effects, or parallelizing work.
+It builds on top of `processx`.
+
+### [`{ps}`](https://ps.r-lib.org/) {#sec-ps}
+
+[`{ps}`](https://ps.r-lib.org/) provides a cross-platform API for listing, querying,
+and manipulating system processes from R.
+It is used internally by `processx` and `callr`.
+
+## HTTP and Web
+
+### [`{httr2}`](https://httr2.r-lib.org/) {#sec-httr2}
+
+[`{httr2}`](https://httr2.r-lib.org/) is a modern, pipe-friendly HTTP client for R.
+It replaces `httr` with a cleaner API, better support for OAuth, rate limiting,
+retries, and request/response bodies.
+Preferred for new code.
+
+### [`{httr}`](https://httr.r-lib.org/) {#sec-httr}
+
+[`{httr}`](https://httr.r-lib.org/) is a widely-used HTTP client for R, providing wrappers for `GET()`,
+`POST()`, `PUT()`, `DELETE()`, and other HTTP verbs, as well as OAuth support.
+It has been superseded by `httr2` for new development.
+
+### [`{gh}`](https://gh.r-lib.org/) {#sec-gh}
+
+[`{gh}`](https://gh.r-lib.org/) provides a minimal client for the GitHub REST API.
+It handles authentication and pagination, and is used internally by `usethis` for GitHub operations.
+
+### [`{gargle}`](https://gargle.r-lib.org/) {#sec-gargle}
+
+[`{gargle}`](https://gargle.r-lib.org/) provides authentication utilities for Google APIs,
+including OAuth 2.0, service accounts, and Application Default Credentials.
+It is used by `googledrive`, `googlesheets4`, and other Google-backed R packages.
+
+## Utilities
+
+### [`{here}`](https://here.r-lib.org/) {#sec-here-pkg}
+
+[`{here}`](https://here.r-lib.org/) builds file paths relative to the project root,
+so scripts work regardless of the current working directory.
+This manual requires `{here}` for file paths (see @sec-here-package-practices).
+
+### [`{memoise}`](https://memoise.r-lib.org/) {#sec-memoise}
+
+[`{memoise}`](https://memoise.r-lib.org/) adds memoisation (function-call caching) to R functions.
+Wrapping a function with `memoise()` causes it to cache results so repeated calls
+with the same arguments return the cached value instead of recomputing.
+
+### [`{scales}`](https://scales.r-lib.org/) {#sec-scales}
+
+[`{scales}`](https://scales.r-lib.org/) converts data values into perceptual properties
+and formats labels for dates, currencies, and percentages;
+it powers the scale system of [`{ggplot2}`](https://ggplot2.tidyverse.org/).
+
+### [`{sessioninfo}`](https://sessioninfo.r-lib.org/) {#sec-sessioninfo}
+
+[`{sessioninfo}`](https://sessioninfo.r-lib.org/) collects and prints detailed information about the
+current R session, including package versions and sources.
+It is a more informative replacement for base R's `sessionInfo()`.
+
+### [`{downlit}`](https://downlit.r-lib.org/) {#sec-downlit}
+
+[`{downlit}`](https://downlit.r-lib.org/) provides syntax highlighting for R code and
+automatically links function names to their documentation.
+It is used by `pkgdown` and Quarto for rendering R code in documentation websites.
+
+### [`{prettyunits}`](https://r-lib.github.io/prettyunits/) {#sec-prettyunits}
+
+[`{prettyunits}`](https://r-lib.github.io/prettyunits/) formats quantities such as file sizes,
+time durations, and byte counts in human-readable form.
+It is used internally by `devtools`, `remotes`, and progress-reporting packages.
+
+### [`{lobstr}`](https://lobstr.r-lib.org/) {#sec-lobstr}
+
+[`{lobstr}`](https://lobstr.r-lib.org/) provides tools for visualizing R data structures,
+including shared-reference trees (`ref()`), abstract syntax trees (`ast()`),
+and object sizes (`obj_size()`).
+It is a useful learning and debugging tool.
+
+### [`{crayon}`](https://r-lib.github.io/crayon/) {#sec-crayon}
+
+[`{crayon}`](https://r-lib.github.io/crayon/) adds color and formatting to terminal output in R using ANSI codes.
+It has been largely superseded by `cli` but remains widely used in older code and packages.
+
+### [`{styler}`](https://styler.r-lib.org/) {#sec-styler}
+
+[`{styler}`](https://styler.r-lib.org/) formats R code according to the tidyverse style guide.
+It provides an RStudio add-in and functions for styling individual files,
+packages, or projects.
+See @sec-auto-styling for more details.
+
+## GitHub Actions
+
+### [actions](https://github.com/r-lib/actions) {#sec-r-lib-actions}
+
+The [`r-lib/actions`](https://github.com/r-lib/actions) repository provides reusable
+GitHub Actions workflows for R package development.
+Commonly used actions include:
+
+- `r-lib/actions/setup-r` --- installs R
+- `r-lib/actions/setup-renv` --- restores an `renv` environment
+- `r-lib/actions/check-r-package` --- runs `R CMD check`
+- `r-lib/actions/setup-r-dependencies` --- installs package dependencies
+
+These actions are widely used across R packages hosted on GitHub,
+including this lab's repositories.

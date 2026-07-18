@@ -8,9 +8,13 @@
 
 {{< include continuous-integration/action-versioning.qmd >}}
 
-## Setting Up GitHub Actions
+## Setting Up GitHub Actions {#sec-setting-up-github-actions}
 
 {{< include continuous-integration/setting-up-github-actions.qmd >}}
+
+## Reusable Workflow Collections {#sec-reusable-workflow-collections}
+
+{{< include continuous-integration/reusable-workflow-collections.qmd >}}
 
 ## How GitHub Actions Workflows Work
 

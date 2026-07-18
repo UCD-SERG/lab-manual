@@ -1,0 +1,60 @@
+Suppose we want to write a function "generate_descriptive_table" to summarize how the prevalence of "outcome" varies under different levels of a "risk_factor" in a data frame "df" 
+
+We can start by writing the function shell:
+```r
+generate_descriptive_table <- function (df, outcome, rf) {
+outcome_dist_by_rf <- ….
+return(outcome_dist_by_rf)
+}
+```
+Next, we can filter the data frame for only rows in which "rf" and "outcome" are not missing. We can use !! and sym() within filter to evaluate the strings stored in "rf" and "outcome". Note that defining ` !!sym(outcome)` or ` !!sym(outcome)` in variables _outside of the dplyr pipeline_ will *not* work.
+
+```r
+generate_descriptive_table <- function (df, outcome, rf,) {
+  outcome_dist_by_rf <- df |> 
+  filter(!is.na(!!sym(outcome)), !is.na(!!sym(rf))) |>
+  ….
+  return(outcome_dist_by_rf)
+}
+```
+Similarly, we use !! and sym() in group_by to evaluate column name, stored as a string in the argument "rf"
+
+```r
+generate_descriptive_table <- function (df, outcome, rf,) {
+  outcome_dist_by_rf <- df |> 
+  filter(!is.na(!!sym(outcome)), !is.na(!!sym(rf))) |>
+  ….
+  return(outcome_dist_by_rf)
+}
+```
+Finally, we can use the walrus operator, !! and sym() with "summarize" to create a new column that takes the mean of the column referenced in "rf". We also use "glue" or "paste" to give the new column an informative name that includes the "outcome" it describes. 
+```r
+generate_descriptive_table <- function (df, outcome, rf,) {
+  outcome_dist_by_rf <- df |> 
+  filter(!is.na(!!sym(outcome)), !is.na(!!sym(rf))) |> 
+  group_by(!!sym(rf)) |>
+  summarize(!!(glue::glue("{outcome}_prev")) := mean(!!sym(outcome))) 
+  return(outcome_dist_by_rf)
+}
+```
+OR
+```r
+generate_descriptive_table <- function (df, outcome, rf,) {
+  outcome_dist_by_rf <- df |> 
+  filter(!is.na(!!sym(outcome)), !is.na(!!sym(rf))) |> 
+  group_by(!!sym(rf)) |>
+  summarize(!!(paste0(outcome, "_prev")) := mean(!!sym(outcome)))
+  return(outcome_dist_by_rf)
+}
+```
+OR
+```r
+generate_descriptive_table <- function (df, outcome, rf,) {
+  new_column_name = paste0(outcome, "_prev")
+  outcome_dist_by_rf <- df |> 
+  filter(!is.na(!!sym(outcome)), !is.na(!!sym(rf))) |> 
+  group_by(!!sym(rf)) |>
+  summarize(!!(new_column_name) := mean(!!sym(outcome))) 
+  return(outcome_dist_by_rf)
+}
+```
