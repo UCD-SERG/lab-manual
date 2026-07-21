@@ -143,6 +143,7 @@ default_linters <- function() {
     ),
     lintr::cyclocomp_linter(),
     function_length_linter(),
-    function_location_linter()
+    function_location_linter(),
+    condition_class_linter()
   )
 }
