@@ -4,7 +4,7 @@
 #' that assert on message text (`regexp =` or positional `regexp`) without
 #' also asserting on a condition `class =`.
 #'
-#' Matching only error or warning text is brittle:
+#' Matching only condition or message text is brittle:
 #' wording can change while the underlying condition type stays correct.
 #' Prefer asserting the class,
 #' and optionally add `regexp =` for extra precision.
