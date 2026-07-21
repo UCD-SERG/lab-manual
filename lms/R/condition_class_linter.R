@@ -6,7 +6,8 @@
 #'
 #' Matching only error or warning text is brittle:
 #' wording can change while the underlying condition type stays correct.
-#' Prefer asserting the class, and optionally add `regexp =` for extra precision.
+#' Prefer asserting the class,
+#' and optionally add `regexp =` for extra precision.
 #'
 #' @return A [lintr::Linter()] object.
 #' @noRd
