@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>12&nbsp; Collaborative Software Development – UCD-SeRG Lab Manual</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./continuous-integration.html" rel="next">
+<link href="./github.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-82cb5808e81da3454e8042d903791e03.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-9c42ed6baed5871d395e4db15611d42f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-82cb5808e81da3454e8042d903791e03.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./collaborative-software-development.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Collaborative Software Development</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">UCD-SeRG Lab Manual</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/UCD-SERG/lab-manual" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./UCD-SeRG-Lab-Manual.pdf">
+              <i class="bi bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./UCD-SeRG-Lab-Manual.epub">
+              <i class="bi bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./UCD-SeRG-Lab-Manual.docx">
+              <i class="bi bi-file-word pe-1"></i>
+            Download Docx
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome to UCD-SeRG!</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./culture-and-conduct.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Culture and conduct</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./communication.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Communication and coordination</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./reproducibility.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Reproducibility</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./code-repositories.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Code repositories</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./coding-practices.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">R Coding Practices</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./coding-style.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">R Code Style</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./big-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Big data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-masking.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data masking</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quarto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Quarto</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./github.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Github</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./collaborative-software-development.html" class="sidebar-item-text sidebar-link active" preview-toc-changed>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Collaborative Software Development</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./continuous-integration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Continuous Integration</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Unix</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./reproducible-environments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Reproducible Environments</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./code-publication.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Code Publication</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-publication.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Data Publication</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slurm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">High-performance computing (HPC)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ai-tools.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Working with AI</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./checklists.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Checklists</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Resources</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./professional-development.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Professional Development</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./writing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Writing</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./manuscript-preparation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Manuscript Preparation and Publication</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-copilot-instructions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Copilot Instructions File</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-copilot-setup-steps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Copilot Setup Steps File</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-document-metadata.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
+ <span class="menu-text">Document Generation Metadata</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-pull-requests" id="toc-sec-pull-requests" class="nav-link active" data-scroll-target="#sec-pull-requests"><span class="header-section-number">12.1</span> Pull Requests</a>
+  <ul class="collapse">
+  <li><a href="#sec-pr-roles" id="toc-sec-pr-roles" class="nav-link" data-scroll-target="#sec-pr-roles"><span class="header-section-number">12.1.1</span> Pull request roles</a></li>
+  <li><a href="#sec-opening-pull-requests" id="toc-sec-opening-pull-requests" class="nav-link" data-scroll-target="#sec-opening-pull-requests"><span class="header-section-number">12.1.2</span> Opening pull requests</a></li>
+  </ul></li>
+  <li><a href="#sec-code-review" id="toc-sec-code-review" class="nav-link" data-scroll-target="#sec-code-review"><span class="header-section-number">12.2</span> Code Review</a>
+  <ul class="collapse">
+  <li><a href="#sec-reviewing-pull-requests" id="toc-sec-reviewing-pull-requests" class="nav-link" data-scroll-target="#sec-reviewing-pull-requests"><span class="header-section-number">12.2.1</span> Reviewing pull requests</a></li>
+  <li><a href="#sec-responding-to-review-comments" id="toc-sec-responding-to-review-comments" class="nav-link" data-scroll-target="#sec-responding-to-review-comments"><span class="header-section-number">12.2.2</span> Responding to review comments</a></li>
+  <li><a href="#sec-avoid-closing-restarting-prs" id="toc-sec-avoid-closing-restarting-prs" class="nav-link" data-scroll-target="#sec-avoid-closing-restarting-prs"><span class="header-section-number">12.2.3</span> Avoid closing and restarting pull requests</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/collaborative-software-development.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/collaborative-software-development.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<div class="preview-home-changes-banner">
+    <p style="margin: 0;">
+        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="coding-practices.html">6. &nbsp; <span class="chapter-title">R Coding Practices</span></span></a>, <a href="appendix-document-metadata.html">appendix-document-metadata</a>, <a href="github.html">11. &nbsp; <span class="chapter-title">Github</span></span></a>, <a href="collaborative-software-development.html">12. &nbsp; <span class="chapter-title">Collaborative Software Development</span></span></a>
+        <br>
+        <strong>📄 DOCX with tracked changes:</strong> <a href="UCD-SeRG-Lab-Manual-tracked-changes.docx" download>Download UCD-SeRG-Lab-Manual-tracked-changes.docx</a>
+        <br>
+        <strong>💡 Tip:</strong> If change highlighting is glitchy, add the <code>no-preview-highlights</code> label to this PR to disable it.
+    </p>
+</div>
+
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-collab-dev" class="quarto-section-identifier"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Collaborative Software Development</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+
+<div class="preview-combined-banner">
+    <p style="margin: 0;">
+        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~76% of content changed).
+        <br>
+        <strong>🎨 Highlighting Legend:</strong> 
+        <mark class="preview-text-changed" style="display: inline; padding: 1px 3px;">Modified text (yellow)</mark> shows changed words/phrases with tooltips of original text, 
+        <mark class="preview-text-added" style="display: inline; padding: 1px 3px;">added text (green)</mark> shows new content, and 
+        <mark class="preview-element-added" style="display: inline; padding: 1px 3px;">new sections (blue)</mark> highlight entirely new paragraphs.
+    </p>
+</div>
+
+<p>This chapter covers the social side of writing code together: <mark class="preview-text-added">opening pull requests, </mark>reviewing each other’s <mark class="preview-text-changed">work,</mark> and responding to review feedback.</p>
+<section id="sec-pull-requests" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="sec-pull-requests"><span class="header-section-number">12.1</span> <mark class="preview-text-changed">Pull</mark> <mark class="preview-text-changed">Requests</mark></h2>
+<section id="sec-pr-roles" class="level3" data-number="12.1.1">
+<h3 data-number="12.1.1" class="anchored" data-anchor-id="sec-pr-roles"><mark class="preview-element-added"><span class="header-section-number">12.1.1</span> Pull request roles</mark></h3>
+<p><mark class="preview-element-added">Every pull request involves several people, each with a distinct role.</mark></p>
+<section id="sec-pr-issue-creator" class="level4" data-number="12.1.1.1">
+<h4 data-number="12.1.1.1" class="anchored" data-anchor-id="sec-pr-issue-creator"><mark class="preview-element-added"><span class="header-section-number">12.1.1.1</span> Issue Creator</mark></h4>
+<p><mark class="preview-element-added">The issue creator reports a bug, suggests a feature, or requests other improvements. In projects with external contributors, the issue creator often cannot assign issues to developers and is typically distinct from the PR author.</mark></p>
+</section>
+<section id="sec-pr-author" class="level4" data-number="12.1.1.2">
+<h4 data-number="12.1.1.2" class="anchored" data-anchor-id="sec-pr-author"><mark class="preview-element-added"><span class="header-section-number">12.1.1.2</span> Author</mark></h4>
+<p><mark class="preview-element-added">The author opens the PR, writes a clear description, and links it to the relevant issue with <code>Closes #N</code> in the PR body. The author implements review feedback and resolves merge conflicts before re-requesting review.</mark></p>
+</section>
+<section id="sec-pr-reviewer" class="level4" data-number="12.1.1.3">
+<h4 data-number="12.1.1.3" class="anchored" data-anchor-id="sec-pr-reviewer"><span class="header-section-number"><mark class="preview-text-changed">12.1.1.3</mark></span> <mark class="preview-text-changed">Reviewer</mark></h4>
+<p><mark class="preview-element-added">The reviewer reads the diff, checks the code for correctness and style, and either approves or requests changes.</mark></p>
+</section>
+<section id="sec-pr-merger" class="level4" data-number="12.1.1.4">
+<h4 data-number="12.1.1.4" class="anchored" data-anchor-id="sec-pr-merger"><mark class="preview-element-added"><span class="header-section-number">12.1.1.4</span> Merger</mark></h4>
+<p><mark class="preview-element-added">The merger executes the final merge once the PR is approved and all CI checks pass. This is often the same person as the reviewer.</mark></p>
+</section>
+<section id="sec-pr-assignee" class="level4" data-number="12.1.1.5">
+<h4 data-number="12.1.1.5" class="anchored" data-anchor-id="sec-pr-assignee"><mark class="preview-element-added"><span class="header-section-number">12.1.1.5</span> Assignee</mark></h4>
+<p><mark class="preview-element-added">The assignee is listed in the “Assignees” field on GitHub to indicate who is currently responsible for the PR. This field clarifies ownership and tracks who should be addressing open feedback.</mark></p>
+</section>
+<section id="sec-pr-steward" class="level4" data-number="12.1.1.6">
+<h4 data-number="12.1.1.6" class="anchored" data-anchor-id="sec-pr-steward"><mark class="preview-element-added"><span class="header-section-number">12.1.1.6</span> PR Steward</mark></h4>
+<p><mark class="preview-element-added">A PR steward keeps the review queue healthy. The steward monitors open PRs, assigns reviewers when none are assigned, follows up on stalled reviews, and helps resolve disagreements between authors and reviewers. This is typically a rotating duty for a senior contributor or release manager. The p5.js project documents how it structures this role in its <a href="https://p5js.org/contribute/steward_guidelines/">steward guidelines</a>.</mark></p>
+</section>
+</section>
+<section id="sec-opening-pull-requests" class="level3" data-number="12.1.2">
+<h3 data-number="12.1.2" class="anchored" data-anchor-id="sec-opening-pull-requests"><span class="header-section-number">12.1.2</span> <mark class="preview-text-changed">Opening</mark> pull requests</h3>
+<section id="write-focused-prs" class="level4" data-number="12.1.2.1">
+<h4 data-number="12.1.2.1" class="anchored" data-anchor-id="write-focused-prs"><mark class="preview-element-added"><span class="header-section-number">12.1.2.1</span> Write focused PRs</mark></h4>
+<p><mark class="preview-element-added">A focused pull request is <strong>one self-contained change</strong> that addresses just one thing. Writing focused PRs has several benefits:</mark></p>
+<ul>
+<li><mark class="preview-element-added"><strong>Faster reviews</strong>: It is easier for a reviewer to find 5-10 minutes for a single bug fix than to set aside an hour for one large PR.</mark></li>
+<li><mark class="preview-element-added"><strong>More thorough reviews</strong>: Large PRs can overwhelm reviewers, which makes it easier to miss important problems.</mark></li>
+<li><mark class="preview-element-added"><strong>Fewer bugs</strong>: Smaller changes are easier to reason about.</mark></li>
+<li><mark class="preview-element-added"><strong>Easier merges</strong>: Large PRs take longer and are more likely to develop merge conflicts.</mark></li>
+<li><mark class="preview-element-added"><strong>Less wasted work</strong>: If the overall direction is wrong, you lose less time on a small PR than on a large one.</mark></li>
+</ul>
+<p><mark class="preview-element-added">As a guideline, 100 lines is usually a reasonable size for a PR, and 1000 lines is usually too large. The number of files matters too: a 200-line change in one file might be fine, but the same change spread across 50 files is usually too large.</mark></p>
+</section>
+<section id="write-clear-pr-titles-and-descriptions" class="level4" data-number="12.1.2.2">
+<h4 data-number="12.1.2.2" class="anchored" data-anchor-id="write-clear-pr-titles-and-descriptions"><mark class="preview-element-added"><span class="header-section-number">12.1.2.2</span> Write clear PR titles and descriptions</mark></h4>
+<p><mark class="preview-element-added">When you submit a pull request, include a detailed title and description. A comprehensive description helps the reviewer and provides valuable historical context.</mark></p>
+<p><mark class="preview-element-added"><strong>PR title:</strong> The title should be a short summary, ideally under 72 characters, that is specific enough for future developers to understand the change without opening the full PR.</mark></p>
+<p><mark class="preview-element-added">Poor titles that lack context:</mark></p>
+<ul>
+<li><mark class="preview-element-added">“Fix bug”</mark></li>
+<li><mark class="preview-element-added">“Add patch”</mark></li>
+<li><mark class="preview-element-added">“Moving code from A to B”</mark></li>
+</ul>
+<p><mark class="preview-element-added">Better titles that summarize the actual change:</mark></p>
+<ul>
+<li><mark class="preview-element-added">“Fix missing value handling in data processing function”</mark></li>
+<li><mark class="preview-element-added">“Add support for custom date formats in import functions”</mark></li>
+</ul>
+<p><mark class="preview-element-added"><strong>PR description body:</strong> The description should give the reviewer the context they need to understand the change. Consider including:</mark></p>
+<ul>
+<li><mark class="preview-element-added">A brief description of the problem being solved</mark></li>
+<li><mark class="preview-element-added">Links to related issues, such as <code>Closes #123</code> or <code>Related to #456</code></mark></li>
+<li><mark class="preview-element-added">A before-and-after example that shows the changed behavior</mark></li>
+<li><mark class="preview-element-added">Possible shortcomings or trade-offs in the current approach</mark></li>
+<li><mark class="preview-element-added">For complex PRs, a suggested reading order for the reviewer</mark></li>
+</ul>
+<p><mark class="preview-element-added">The <strong>Files changed</strong> tab on GitHub also lets you add inline comments that explain non-obvious changes. Those notes live in the PR metadata, not in the source files, so they are a good place to explain <em>this change</em> without cluttering the code with temporary rationale.</mark></p>
+</section>
+<section id="explain-technical-reasoning-up-front" class="level4" data-number="12.1.2.3">
+<h4 data-number="12.1.2.3" class="anchored" data-anchor-id="explain-technical-reasoning-up-front"><mark class="preview-element-added"><span class="header-section-number">12.1.2.3</span> Explain technical reasoning up front</mark></h4>
+<p><mark class="preview-element-added">For non-obvious technical decisions, proactively explain your reasoning in commit messages and PR descriptions. Do not make reviewers ask why you chose a particular approach.</mark></p>
+<p><mark class="preview-element-added">Common situations that require explanation:</mark></p>
+<ul>
+<li><mark class="preview-element-added"><strong>Version pinning</strong>: Explain whether you are using floating tags (for example <code>@v2</code>), version tags (for example <code>@v2.9.4</code>), or commit SHA pins (for example <code>@abc1234...</code>) and why. For example: “Using <code>@v2</code> (moving tag) to receive bug fixes within the major version while maintaining stability.”</mark></li>
+<li><mark class="preview-element-added"><strong>Configuration changes</strong>: Explain the rationale behind non-obvious choices, such as why a boolean is set a certain way.</mark></li>
+<li><mark class="preview-element-added"><strong>Dependency updates</strong>: Explain why you are updating and what benefit or fix it brings.</mark></li>
+<li><mark class="preview-element-added"><strong>Workflow modifications</strong>: Describe the problem you are solving and why this approach is preferred.</mark></li>
+</ul>
+<p><mark class="preview-element-added">This proactive communication reduces review back-and-forth and helps future maintainers understand the decision later.</mark></p>
+</section>
+<section id="request-reviews-in-the-right-order" class="level4" data-number="12.1.2.4">
+<h4 data-number="12.1.2.4" class="anchored" data-anchor-id="request-reviews-in-the-right-order"><mark class="preview-element-added"><span class="header-section-number">12.1.2.4</span> Request reviews in the right order</mark></h4>
+<p><mark class="preview-element-added">Before requesting a pull request review from the PIs, obtain fresh approvals from:</mark></p>
+<ul>
+<li><mark class="preview-element-added">at least one other student</mark></li>
+<li><mark class="preview-element-added">at least one AI reviewer</mark></li>
+</ul>
+<p><mark class="preview-element-added">This requirement applies both to the initial PI review request and to later re-review requests after revisions.</mark></p>
+</section>
+<section id="include-tests-with-behavior-changes" class="level4" data-number="12.1.2.5">
+<h4 data-number="12.1.2.5" class="anchored" data-anchor-id="include-tests-with-behavior-changes"><mark class="preview-element-added"><span class="header-section-number">12.1.2.5</span> Include tests with behavior changes</mark></h4>
+<p><mark class="preview-element-added">Focused PRs should include related test code. A PR that adds or changes logic should add or update tests for the new behavior. Pure refactoring PRs should also be protected by tests. If tests do not already exist for code you are refactoring, add them in a separate PR first to confirm that behavior stays unchanged.</mark></p>
+</section>
+<section id="separate-refactorings-from-feature-work" class="level4" data-number="12.1.2.6">
+<h4 data-number="12.1.2.6" class="anchored" data-anchor-id="separate-refactorings-from-feature-work"><mark class="preview-element-added"><span class="header-section-number">12.1.2.6</span> Separate refactorings from feature work</mark></h4>
+<p><mark class="preview-element-added">It is usually best to do refactorings in a separate PR from feature changes or bug fixes. For example, moving and renaming a function should generally be separate from fixing a bug in that function. That separation makes it much easier for reviewers to understand what each PR actually changes.</mark></p>
+<p><mark class="preview-element-added">Small cleanups, such as a local variable rename, can travel with a feature or bug fix. Large refactorings should not.</mark></p>
+</section>
+<section id="standardize-pr-descriptions-with-a-template" class="level4" data-number="12.1.2.7">
+<h4 data-number="12.1.2.7" class="anchored" data-anchor-id="standardize-pr-descriptions-with-a-template"><mark class="preview-element-added"><span class="header-section-number">12.1.2.7</span> Standardize PR descriptions with a template</mark></h4>
+<p><mark class="preview-element-added">GitHub lets you create a pull request template in a repository so everyone starts with the same PR body structure.</mark></p>
+<p><mark class="preview-element-added">To add one:</mark></p>
+<ol type="1">
+<li><mark class="preview-element-added">On GitHub, navigate to the main page of the repository.</mark></li>
+<li><mark class="preview-element-added">Above the file list, click <code>Create new file</code>.</mark></li>
+<li><mark class="preview-element-added">Name the file <code>pull_request_template.md</code>. GitHub will not recognize a different filename. To store it in a hidden directory, use <code>.github/pull_request_template.md</code>.</mark></li>
+<li><mark class="preview-element-added">Add the template content to the file on the default branch.</mark></li>
+</ol>
+<p><mark class="preview-element-added">Here is an example template:</mark></p>
+<pre class="text"><mark class="preview-element-added"><code># Description
+
+## Summary of change
+
+Please include a summary of the change, including any new functions added and example usage.
+
+## Related Issues
+
+Closes #(issue number)
+Related to #(issue number)
+
+## Testing
+
+Describe how this change has been tested.
+
+## Checklist
+
+- [ ] Tests added/updated
+- [ ] Documentation updated
+- [ ] Code follows project style guidelines
+
+## Who should review the pull request?
+
+@username</code></pre>
+</section>
+</section>
+</section>
+<section id="sec-code-review" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="sec-code-review"><span class="header-section-number">12.2</span> Code Review</mark></h2>
+<section id="sec-reviewing-pull-requests" class="level3" data-number="12.2.1">
+<h3 data-number="12.2.1" class="anchored" data-anchor-id="sec-reviewing-pull-requests"><mark class="preview-element-added"><span class="header-section-number">12.2.1</span> Reviewing pull requests</mark></h3>
+<p><mark class="preview-element-added">When submitting code to colleagues or reviewing theirs, use practices that keep feedback constructive and specific. The <a href="https://code-review.tidyverse.org/">Tidyverse code review principles</a> <span class="citation" data-cites="tidyverse2023codereview">(<a href="references.html#ref-tidyverse2023codereview" role="doc-biblioref">Tidyverse Team 2023</a>)</span> are a strong baseline for R projects.</mark></p>
+<section id="purpose-of-code-review" class="level4" data-number="12.2.1.1">
+<h4 data-number="12.2.1.1" class="anchored" data-anchor-id="purpose-of-code-review"><mark class="preview-element-added"><span class="header-section-number">12.2.1.1</span> Purpose of code review</mark></h4>
+<p><mark class="preview-element-added">The primary purpose of code review is to improve the overall code health of the project over time. Reviewers should balance the need to make forward progress with the need to maintain code quality.</mark></p>
+<p><mark class="preview-element-added">The key principle is to approve a PR once it clearly improves the codebase, even if it is not perfect. There is no such thing as perfect code. There is only better code.</mark></p>
+</section>
+<section id="monitor-prs-awaiting-your-review" class="level4" data-number="12.2.1.2">
+<h4 data-number="12.2.1.2" class="anchored" data-anchor-id="monitor-prs-awaiting-your-review"><mark class="preview-element-added"><span class="header-section-number">12.2.1.2</span> Monitor PRs awaiting your review</mark></h4>
+<p><mark class="preview-element-added">To keep reviews moving, bookmark GitHub’s review-requested page and check it regularly, ideally at least daily:</mark></p>
+<ul>
+<li><mark class="preview-element-added"><strong>General bookmark</strong>: <a href="https://github.com/pulls/review-requested" class="uri">https://github.com/pulls/review-requested</a> shows all PRs across GitHub where you have been requested as a reviewer.</mark></li>
+<li><mark class="preview-element-added"><strong>Project-specific bookmark</strong>: for frequently reviewed repositories, bookmark the project-specific version. For this repository: <a href="https://github.com/UCD-SERG/lab-manual/pulls/review-requested/YOUR-USERNAME" class="uri">https://github.com/UCD-SERG/lab-manual/pulls/review-requested/YOUR-USERNAME</a> replacing <code>YOUR-USERNAME</code> with your GitHub username.</mark></li>
+</ul>
+<p><mark class="preview-element-added">Checking these pages regularly helps keep PRs from languishing in the queue.</mark></p>
+</section>
+<section id="write-review-comments-that-teach" class="level4" data-number="12.2.1.3">
+<h4 data-number="12.2.1.3" class="anchored" data-anchor-id="write-review-comments-that-teach"><mark class="preview-element-added"><span class="header-section-number">12.2.1.3</span> Write review comments that teach</mark></h4>
+<p><mark class="preview-element-added">When reviewing code, be courteous, clear, and helpful:</mark></p>
+<ul>
+<li><mark class="preview-element-added">Comment on the <strong>code</strong>, not the author.</mark></li>
+<li><mark class="preview-element-added">Explain <strong>why</strong> you are making a suggestion, referencing best practices, design patterns, or code health where appropriate.</mark></li>
+<li><mark class="preview-element-added">Balance problem finding with guidance, so the author can learn from the review.</mark></li>
+<li><mark class="preview-element-added">Highlight positive choices too, so good practices get reinforced.</mark></li>
+</ul>
+<p><mark class="preview-element-added"><strong>Poor comment:</strong> “Why did you use this approach when there is obviously a better way?”</mark></p>
+<p><mark class="preview-element-added"><strong>Better comment:</strong> “This approach adds complexity without clear benefits. Consider using [alternative approach] instead, which would simplify the logic and improve readability.”</mark></p>
+</section>
+<section id="use-review-as-mentoring" class="level4" data-number="12.2.1.4">
+<h4 data-number="12.2.1.4" class="anchored" data-anchor-id="use-review-as-mentoring"><mark class="preview-element-added"><span class="header-section-number">12.2.1.4</span> Use review as mentoring</mark></h4>
+<p><mark class="preview-element-added">Code review is also a mentoring tool. As a reviewer:</mark></p>
+<ul>
+<li><mark class="preview-element-added">Leave comments that help authors learn something new.</mark></li>
+<li><mark class="preview-element-added">Link to relevant style guides or best-practice documentation.</mark></li>
+<li><mark class="preview-element-added">For complex reviews, consider a live review or pair-programming session.</mark></li>
+</ul>
+</section>
+<section id="balance-direct-fixes-with-guidance" class="level4" data-number="12.2.1.5">
+<h4 data-number="12.2.1.5" class="anchored" data-anchor-id="balance-direct-fixes-with-guidance"><mark class="preview-element-added"><span class="header-section-number">12.2.1.5</span> Balance direct fixes with guidance</mark></h4>
+<p><mark class="preview-element-added">In general, the author is responsible for fixing the PR, not the reviewer. Point out problems clearly, but do not feel obligated to design every solution. Sometimes it is better to name the issue and let the author work out the implementation details.</mark></p>
+<p><mark class="preview-element-added">For very small tweaks, such as typo fixes or comment additions, use GitHub’s suggestion feature so the author can accept the change directly in the UI.</mark></p>
+<div id="fig-github-suggestion-feature" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-github-suggestion-feature-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/github-suggestion-feature.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-github-suggestion-feature-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.1: GitHub’s suggestion feature in a PR review comment
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="ignore-auto-generated-files-when-appropriate" class="level4" data-number="12.2.1.6">
+<h4 data-number="12.2.1.6" class="anchored" data-anchor-id="ignore-auto-generated-files-when-appropriate"><mark class="preview-element-added"><span class="header-section-number">12.2.1.6</span> Ignore auto-generated files when appropriate</mark></h4>
+<p><mark class="preview-element-added">When reviewing pull requests in R package repositories, you can usually ignore <code>.Rd</code> files in <code>man/</code>. These files are generated automatically by <a href="https://roxygen2.r-lib.org/"><code>{roxygen2}</code></a> from roxygen comments in the source.</mark></p>
+<p><mark class="preview-element-added">Why ignore <code>.Rd</code> files?</mark></p>
+<ul>
+<li><mark class="preview-element-added">They are generated files and should never be edited by hand.</mark></li>
+<li><mark class="preview-element-added">Their changes are already visible in the roxygen comments in the <code>.R</code> source files.</mark></li>
+<li><mark class="preview-element-added">Reviewing the source comments is more informative than reviewing the generated output.</mark></li>
+<li><mark class="preview-element-added">The files will be regenerated during the package build process.</mark></li>
+</ul>
+<p><mark class="preview-element-added">What to review instead:</mark></p>
+<p><mark class="preview-element-added">Review the roxygen comments in the <code>.R</code> source files. These begin with <code>#'</code> and appear immediately before function definitions.</mark></p>
+<p><mark class="preview-element-added">If the repository has a preview workflow such as <code>pkgdown</code> or Quarto, review the rendered preview as well. The workflow should post a PR comment with a link to the preview build.</mark></p>
+<div id="fig-preview-comment" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-preview-comment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/quarto-preview-comment.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-preview-comment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.2: Example of an automated PR preview comment posted by GitHub Actions
+</figcaption>
+</figure>
+</div>
+<p><mark class="preview-element-added">In GitHub’s <strong>Files changed</strong> view, you can click the three dots (<code>...</code>) next to a file and choose <strong>View file</strong> to hide it from the diff. That helps you focus on the meaningful changes.</mark></p>
+</section>
+<section id="reviewing-copilot-generated-pull-requests" class="level4" data-number="12.2.1.7">
+<h4 data-number="12.2.1.7" class="anchored" data-anchor-id="reviewing-copilot-generated-pull-requests"><mark class="preview-element-added"><span class="header-section-number">12.2.1.7</span> Reviewing Copilot-generated pull requests</mark></h4>
+<p><mark class="preview-element-added">Review pull requests created by GitHub Copilot coding agents using the same standards as any other PR, but watch for a few agent-specific issues.</mark></p>
+<p><mark class="preview-element-added"><strong>Workflow approval requirements:</strong></mark></p>
+<ul>
+<li><mark class="preview-element-added">You must manually approve GitHub Actions workflows for Copilot PRs.</mark></li>
+<li><mark class="preview-element-added">This is a security measure because Copilot can modify any file, including workflow files.</mark></li>
+<li><mark class="preview-element-added">Approve the workflow from the Actions tab or from the PR interface to start the checks.</mark></li>
+<li><mark class="preview-element-added">There is currently no way to bypass this manual approval, even if you own the repository.</mark></li>
+</ul>
+<p><mark class="preview-element-added"><strong>Review focus areas:</strong></mark></p>
+<ul>
+<li><mark class="preview-element-added">Verify that the solution actually addresses the issue.</mark></li>
+<li><mark class="preview-element-added">Check for over-engineering or extra features that were not requested.</mark></li>
+<li><mark class="preview-element-added">Review the test coverage for relevance and completeness.</mark></li>
+<li><mark class="preview-element-added">Check whether documentation is clear and follows repository conventions.</mark></li>
+<li><mark class="preview-element-added">Look for missed edge cases or incomplete error handling.</mark></li>
+</ul>
+<p><mark class="preview-element-added"><strong>Iterating on Copilot PRs:</strong></mark></p>
+<p><mark class="preview-element-added">When you find issues in a Copilot PR, you can either:</mark></p>
+<ol type="1">
+<li><mark class="preview-element-added">Leave review comments and ask Copilot to address them.</mark></li>
+<li><mark class="preview-element-added">Push commits directly to the Copilot PR branch yourself.</mark></li>
+</ol>
+<p><mark class="preview-element-added">Direct edits are often faster for small fixes such as typos, formatting, or tiny adjustments.</mark></p>
+<p><mark class="preview-element-added">Best practices:</mark></p>
+<ul>
+<li><mark class="preview-element-added">Do not push while Copilot is actively working on the branch.</mark></li>
+<li><mark class="preview-element-added">Review incrementally if the PR is large and the agent is updating it in stages.</mark></li>
+<li><mark class="preview-element-added">Trust the tool, but always verify the result with human review.</mark></li>
+</ul>
+</section>
+</section>
+<section id="sec-responding-to-review-comments" class="level3" data-number="12.2.2">
+<h3 data-number="12.2.2" class="anchored" data-anchor-id="sec-responding-to-review-comments"><mark class="preview-element-added"><span class="header-section-number">12.2.2</span> Responding to review comments</mark></h3>
+<p>Once you receive a review from a human reviewer, you are obligated to respond promptly: typically within a week, unless there are extenuating circumstances. Address each of the reviewer’s comments individually. You aren’t obligated to agree with every comment; you are entitled to ask clarifying questions, raise objections, or ask to defer it to a later pull request.</p>
+<p>When a reviewer leaves a comment on your code, respond to each one with exactly one of these:</p>
+<ul>
+<li><strong>Address it.</strong> Make the change the reviewer asked for.</li>
+<li><strong>Rebut it.</strong> If you think the code is correct as written, explain your reasoning and push back. You can disagree—just say why.</li>
+<li><strong>Defer it.</strong> If the comment is valid but out of scope for this change, file a tracking issue, assign it to yourself (or delegate it, if applicable), and link it in your reply so the reviewer can see you are taking their concern seriously. This keeps the work visible and ensures it is not lost.</li>
+<li><strong>Acknowledge it.</strong> For a comment that needs no action, a short acknowledgment is enough.</li>
+</ul>
+<p>Never ignore a review comment. Always reply—even if only to say you filed a follow-up issue.</p>
+</section>
+<section id="sec-avoid-closing-restarting-prs" class="level3" data-number="12.2.3">
+<h3 data-number="12.2.3" class="anchored" data-anchor-id="sec-avoid-closing-restarting-prs"><mark class="preview-element-added"><span class="header-section-number">12.2.3</span> Avoid closing and restarting pull requests</mark></h3>
+<p>Avoid closing a pull request and “starting over” on the same issue. Doing so disrupts the conversation between authors and reviewers, creates confusion, and leads to repeated work. Instead, keep iterating on the open pull request, where the review history stays attached to the code it discusses.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-tidyverse2023codereview" class="csl-entry" role="listitem">
+Tidyverse Team. 2023. <em>Tidyverse Code Review Principles</em>. <a href="https://code-review.tidyverse.org/">https://code-review.tidyverse.org/</a>.
+</div>
+</div>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./github.html" class="pagination-link" preview-toc-changed aria-label="Github">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Github</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./continuous-integration.html" class="pagination-link" aria-label="Continuous Integration">
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Continuous Integration</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/collaborative-software-development.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/collaborative-software-development.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
