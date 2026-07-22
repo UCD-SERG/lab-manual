@@ -38,12 +38,11 @@ condition_class_linter <- function() {
       has_class <- "class" %in% arg_names
       has_named_regexp <- "regexp" %in% arg_names
 
-      first_after_comma <- xml2::xml_find_first(
+      positional_regexp <- xml2::xml_find_first(
         call,
-        "./OP-COMMA[1]/following-sibling::*[1]"
+        "./expr[3][preceding-sibling::*[1][self::OP-COMMA]]"
       )
-      has_positional_regexp <- !inherits(first_after_comma, "xml_missing") &&
-        identical(xml2::xml_name(first_after_comma), "expr")
+      has_positional_regexp <- !inherits(positional_regexp, "xml_missing")
 
       !has_class && (has_named_regexp || has_positional_regexp)
     }, logical(1))

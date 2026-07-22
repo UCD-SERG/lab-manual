@@ -50,4 +50,8 @@ test_that("calls that do not match on regexp are not flagged", {
     'expect_error(f(), class = "my_pkg_error")',
     lms:::condition_class_linter()
   )
+  lintr::expect_no_lint(
+    'expect_error(f(), info = "details")',
+    lms:::condition_class_linter()
+  )
 })

@@ -118,14 +118,14 @@ test_that("prep_study_data handles edge cases", {
     prep_study_data(data.frame()),
     class = "prep_study_data_empty_input_error"
   )
-  
+
   # Missing required columns
   expect_error(
     prep_study_data(data.frame(x = 1)),
     class = "prep_study_data_missing_columns_error",
     regexp = "Missing required columns"
   )
-  
+
   # Valid input with missing values
   result <- prep_study_data(data.frame(id = 1:3, value = c(1, NA, 3)))
   expect_true(all(!is.na(result$value)))
