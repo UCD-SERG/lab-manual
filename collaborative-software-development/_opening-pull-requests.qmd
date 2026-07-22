@@ -153,10 +153,14 @@ To add one:
    navigate to the main page of the repository.
 2. Above the file list,
    click `Create new file`.
-3. Name the file `pull_request_template.md`.
-   GitHub will not recognize a different filename.
-   To store it in a hidden directory,
-   use `.github/pull_request_template.md`.
+3. Use one of GitHub's recognized pull request template locations:
+   `pull_request_template.md` or `PULL_REQUEST_TEMPLATE.md` in the repository root,
+   `.github/`,
+   or `docs/`.
+   For multiple templates,
+   use `.github/PULL_REQUEST_TEMPLATE/`.
+   See
+   [GitHub's pull request template documentation](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/creating-a-pull-request-template-for-your-repository).
 4. Add the template content to the file on the default branch.
 
 Here is an example template:
