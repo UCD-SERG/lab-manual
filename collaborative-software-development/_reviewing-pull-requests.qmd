@@ -1,0 +1,183 @@
+When submitting code to colleagues
+or reviewing theirs,
+use practices that keep feedback constructive and specific.
+The [Tidyverse code review principles](https://code-review.tidyverse.org/)
+[@tidyverse2023codereview]
+are a strong baseline for R projects.
+
+#### Purpose of code review
+
+The primary purpose of code review
+is to improve the overall code health of the project over time.
+Reviewers should balance the need to make forward progress
+with the need to maintain code quality.
+
+The key principle is to approve a PR
+once it clearly improves the codebase,
+even if it is not perfect.
+There is no such thing as perfect code.
+There is only better code.
+
+#### Monitor PRs awaiting your review
+
+To keep reviews moving,
+bookmark GitHub's review-requested page
+and check it regularly,
+ideally at least daily:
+
+- **General bookmark**:
+  <https://github.com/pulls/review-requested>
+  shows all PRs across GitHub
+  where you have been requested as a reviewer.
+- **Project-specific bookmark**:
+  for frequently reviewed repositories,
+  bookmark the project-specific version.
+  For this repository:
+  <https://github.com/UCD-SERG/lab-manual/pulls/review-requested/YOUR-USERNAME>
+  replacing `YOUR-USERNAME` with your GitHub username.
+
+Checking these pages regularly
+helps keep PRs from languishing in the queue.
+
+#### Write review comments that teach
+
+When reviewing code,
+be courteous,
+clear,
+and helpful:
+
+- Comment on the **code**,
+  not the author.
+- Explain **why** you are making a suggestion,
+  referencing best practices,
+  design patterns,
+  or code health where appropriate.
+- Balance problem finding with guidance,
+  so the author can learn from the review.
+- Highlight positive choices too,
+  so good practices get reinforced.
+
+**Poor comment:**
+"Why did you use this approach
+when there is obviously a better way?"
+
+**Better comment:**
+"This approach adds complexity without clear benefits.
+Consider using [alternative approach] instead,
+which would simplify the logic and improve readability."
+
+#### Use review as mentoring
+
+Code review is also a mentoring tool.
+As a reviewer:
+
+- Leave comments that help authors learn something new.
+- Link to relevant style guides
+  or best-practice documentation.
+- For complex reviews,
+  consider a live review or pair-programming session.
+
+#### Balance direct fixes with guidance
+
+In general,
+the author is responsible for fixing the PR,
+not the reviewer.
+Point out problems clearly,
+but do not feel obligated to design every solution.
+Sometimes it is better to name the issue
+and let the author work out the implementation details.
+
+For very small tweaks,
+such as typo fixes or comment additions,
+use GitHub's suggestion feature
+so the author can accept the change directly in the UI.
+
+![GitHub's suggestion feature in a PR review comment](assets/images/github-suggestion-feature.png){#fig-github-suggestion-feature}
+
+#### Ignore auto-generated files when appropriate
+
+When reviewing pull requests in R package repositories,
+you can usually ignore `.Rd` files in `man/`.
+These files are generated automatically by [`{roxygen2}`](https://roxygen2.r-lib.org/)
+from roxygen comments in the source.
+
+Why ignore `.Rd` files?
+
+- They are generated files
+  and should never be edited by hand.
+- Their changes are already visible
+  in the roxygen comments in the `.R` source files.
+- Reviewing the source comments is more informative
+  than reviewing the generated output.
+- The files will be regenerated during the package build process.
+
+What to review instead:
+
+Review the roxygen comments in the `.R` source files.
+These begin with `#'`
+and appear immediately before function definitions.
+
+If the repository has a preview workflow
+such as `pkgdown` or Quarto,
+review the rendered preview as well.
+The workflow should post a PR comment
+with a link to the preview build.
+
+![Example of an automated PR preview comment posted by GitHub Actions](assets/images/quarto-preview-comment.png){#fig-preview-comment}
+
+In GitHub's **Files changed** view,
+you can click the three dots (`...`) next to a file
+and choose **View file**
+to hide it from the diff.
+That helps you focus on the meaningful changes.
+
+#### Reviewing Copilot-generated pull requests
+
+Review pull requests created by GitHub Copilot coding agents
+using the same standards as any other PR,
+but watch for a few agent-specific issues.
+
+**Workflow approval requirements:**
+
+- You must manually approve GitHub Actions workflows for Copilot PRs.
+- This is a security measure
+  because Copilot can modify any file,
+  including workflow files.
+- Approve the workflow from the Actions tab
+  or from the PR interface to start the checks.
+- As of 2026-07-21,
+  this manual approval step cannot be bypassed,
+  including by repository owners.
+
+**Review focus areas:**
+
+- Verify that the solution actually addresses the issue.
+- Check for over-engineering
+  or extra features that were not requested.
+- Review the test coverage for relevance and completeness.
+- Check whether documentation is clear
+  and follows repository conventions.
+- Look for missed edge cases
+  or incomplete error handling.
+
+**Iterating on Copilot PRs:**
+
+When you find issues in a Copilot PR,
+you can either:
+
+1. Leave review comments
+   and ask Copilot to address them.
+2. Push commits directly to the Copilot PR branch yourself.
+
+Direct edits are often faster for small fixes
+such as typos,
+formatting,
+or tiny adjustments.
+
+Best practices:
+
+- Do not push while Copilot is actively working on the branch.
+- Review incrementally
+  if the PR is large and the agent is updating it in stages.
+- Trust the tool,
+  but always verify the result with human review.
