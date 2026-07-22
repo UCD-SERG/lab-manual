@@ -106,14 +106,26 @@ in more depth.
 - **Test edge cases**: Missing values, empty inputs, boundary conditions
 - **Test errors**: Verify functions fail appropriately with invalid input
 
+When testing conditions with [`{testthat}`](https://testthat.r-lib.org/),
+assert on the condition `class` whenever possible.
+Message text (`regexp`) can be checked as a secondary assertion,
+but should not be the only signal.
+
 ```r
 test_that("prep_study_data handles edge cases", {
   # Empty input
-  expect_error(prep_study_data(data.frame()))
-  
+  expect_error(
+    prep_study_data(data.frame()),
+    class = "prep_study_data_empty_input_error"
+  )
+
   # Missing required columns
-  expect_error(prep_study_data(data.frame(x = 1)))
-  
+  expect_error(
+    prep_study_data(data.frame(x = 1)),
+    class = "prep_study_data_missing_columns_error",
+    regexp = "Missing required columns"
+  )
+
   # Valid input with missing values
   result <- prep_study_data(data.frame(id = 1:3, value = c(1, NA, 3)))
   expect_true(all(!is.na(result$value)))

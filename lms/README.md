@@ -9,7 +9,8 @@ It lives in the `lms/` subdirectory of
 
 - `default_linters()` — the canonical linter set (`lintr::linters_with_defaults()`
   plus the lab's rules: `|>` pipe consistency, snake_case-with-acronyms object names,
-  and `cli::`-oriented undesirable functions).
+  `cli::`-oriented undesirable functions, function-location/length checks,
+  and condition-class assertions for `testthat` expectations that match `regexp`).
 - `undesirable_functions()` — the underlying undesirable-function map, if a repo needs
   to extend it.
 
