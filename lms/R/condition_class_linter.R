@@ -40,6 +40,8 @@ condition_class_linter <- function() {
 
       # The second positional argument is the third direct `expr` child:
       # function call, first argument, then unnamed `regexp`.
+      # Requiring an immediate preceding comma excludes named arguments,
+      # whose value expression is preceded by `EQ_SUB` instead.
       positional_regexp <- xml2::xml_find_first(
         call,
         "./expr[3][preceding-sibling::*[1][self::OP-COMMA]]"
