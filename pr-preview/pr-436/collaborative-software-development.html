@@ -385,13 +385,13 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./github.html" class="sidebar-item-text sidebar-link">
+  <a href="./github.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Github</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./collaborative-software-development.html" class="sidebar-item-text sidebar-link active">
+  <a href="./collaborative-software-development.html" class="sidebar-item-text sidebar-link active" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Collaborative Software Development</span></span></a>
   </div>
 </li>
@@ -512,10 +512,16 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-code-review" id="toc-sec-code-review" class="nav-link active" data-scroll-target="#sec-code-review"><span class="header-section-number">12.1</span> Code Review</a>
+  <li><a href="#sec-pull-requests" id="toc-sec-pull-requests" class="nav-link active" data-scroll-target="#sec-pull-requests"><span class="header-section-number">12.1</span> Pull Requests</a>
   <ul class="collapse">
-  <li><a href="#sec-responding-to-review-comments" id="toc-sec-responding-to-review-comments" class="nav-link" data-scroll-target="#sec-responding-to-review-comments"><span class="header-section-number">12.1.1</span> Responding to review comments</a></li>
-  <li><a href="#sec-avoid-closing-restarting-prs" id="toc-sec-avoid-closing-restarting-prs" class="nav-link" data-scroll-target="#sec-avoid-closing-restarting-prs"><span class="header-section-number">12.1.2</span> Avoid closing and restarting pull requests</a></li>
+  <li><a href="#sec-pr-roles" id="toc-sec-pr-roles" class="nav-link" data-scroll-target="#sec-pr-roles"><span class="header-section-number">12.1.1</span> Pull request roles</a></li>
+  <li><a href="#sec-opening-pull-requests" id="toc-sec-opening-pull-requests" class="nav-link" data-scroll-target="#sec-opening-pull-requests"><span class="header-section-number">12.1.2</span> Opening pull requests</a></li>
+  </ul></li>
+  <li><a href="#sec-code-review" id="toc-sec-code-review" class="nav-link" data-scroll-target="#sec-code-review"><span class="header-section-number">12.2</span> Code Review</a>
+  <ul class="collapse">
+  <li><a href="#sec-reviewing-pull-requests" id="toc-sec-reviewing-pull-requests" class="nav-link" data-scroll-target="#sec-reviewing-pull-requests"><span class="header-section-number">12.2.1</span> Reviewing pull requests</a></li>
+  <li><a href="#sec-responding-to-review-comments" id="toc-sec-responding-to-review-comments" class="nav-link" data-scroll-target="#sec-responding-to-review-comments"><span class="header-section-number">12.2.2</span> Responding to review comments</a></li>
+  <li><a href="#sec-avoid-closing-restarting-prs" id="toc-sec-avoid-closing-restarting-prs" class="nav-link" data-scroll-target="#sec-avoid-closing-restarting-prs"><span class="header-section-number">12.2.3</span> Avoid closing and restarting pull requests</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/collaborative-software-development.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/collaborative-software-development.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -524,7 +530,7 @@ div.csl-indent {
 <main class="content" id="quarto-document-content">
 <div class="preview-home-changes-banner">
     <p style="margin: 0;">
-        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="coding-practices.html">6. &nbsp; <span class="chapter-title">R Coding Practices</span></span></a>, <a href="appendix-document-metadata.html">appendix-document-metadata</a>
+        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="coding-practices.html">6. &nbsp; <span class="chapter-title">R Coding Practices</span></span></a>, <a href="appendix-document-metadata.html">appendix-document-metadata</a>, <a href="github.html">11. &nbsp; <span class="chapter-title">Github</span></span></a>, <a href="collaborative-software-development.html">12. &nbsp; <span class="chapter-title">Collaborative Software Development</span></span></a>
         <br>
         <strong>📄 DOCX with tracked changes:</strong> <a href="UCD-SeRG-Lab-Manual-tracked-changes.docx" download>Download UCD-SeRG-Lab-Manual-tracked-changes.docx</a>
         <br>
@@ -553,15 +559,271 @@ div.csl-indent {
 </header>
 
 
-<p>This chapter covers the social side of writing code together: reviewing each other’s work and responding to review feedback.</p>
-<section id="sec-code-review" class="level2" data-number="12.1">
-<h2 data-number="12.1" class="anchored" data-anchor-id="sec-code-review"><span class="header-section-number">12.1</span> Code Review</h2>
-<p>When submitting code to or reviewing code from colleagues, use best practices to provide and receive constructive feedback:</p>
+
+<div class="preview-combined-banner">
+    <p style="margin: 0;">
+        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~76% of content changed).
+        <br>
+        <strong>🎨 Highlighting Legend:</strong> 
+        <mark class="preview-text-changed" style="display: inline; padding: 1px 3px;">Modified text (yellow)</mark> shows changed words/phrases with tooltips of original text, 
+        <mark class="preview-text-added" style="display: inline; padding: 1px 3px;">added text (green)</mark> shows new content, and 
+        <mark class="preview-element-added" style="display: inline; padding: 1px 3px;">new sections (blue)</mark> highlight entirely new paragraphs.
+    </p>
+</div>
+
+<p>This chapter covers the social side of writing code together: <mark class="preview-text-added">opening pull requests, </mark>reviewing each other’s <mark class="preview-text-changed">work,</mark> and responding to review feedback.</p>
+<section id="sec-pull-requests" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="sec-pull-requests"><span class="header-section-number">12.1</span> <mark class="preview-text-changed">Pull</mark> <mark class="preview-text-changed">Requests</mark></h2>
+<section id="sec-pr-roles" class="level3" data-number="12.1.1">
+<h3 data-number="12.1.1" class="anchored" data-anchor-id="sec-pr-roles"><mark class="preview-element-added"><span class="header-section-number">12.1.1</span> Pull request roles</mark></h3>
+<p><mark class="preview-element-added">Every pull request involves several people, each with a distinct role.</mark></p>
+<section id="sec-pr-issue-creator" class="level4" data-number="12.1.1.1">
+<h4 data-number="12.1.1.1" class="anchored" data-anchor-id="sec-pr-issue-creator"><mark class="preview-element-added"><span class="header-section-number">12.1.1.1</span> Issue Creator</mark></h4>
+<p><mark class="preview-element-added">The issue creator reports a bug, suggests a feature, or requests other improvements. In projects with external contributors, the issue creator often cannot assign issues to developers and is typically distinct from the PR author.</mark></p>
+</section>
+<section id="sec-pr-author" class="level4" data-number="12.1.1.2">
+<h4 data-number="12.1.1.2" class="anchored" data-anchor-id="sec-pr-author"><mark class="preview-element-added"><span class="header-section-number">12.1.1.2</span> Author</mark></h4>
+<p><mark class="preview-element-added">The author opens the PR, writes a clear description, and links it to the relevant issue with <code>Closes #N</code> in the PR body. The author implements review feedback and resolves merge conflicts before re-requesting review.</mark></p>
+</section>
+<section id="sec-pr-reviewer" class="level4" data-number="12.1.1.3">
+<h4 data-number="12.1.1.3" class="anchored" data-anchor-id="sec-pr-reviewer"><span class="header-section-number"><mark class="preview-text-changed">12.1.1.3</mark></span> <mark class="preview-text-changed">Reviewer</mark></h4>
+<p><mark class="preview-element-added">The reviewer reads the diff, checks the code for correctness and style, and either approves or requests changes.</mark></p>
+</section>
+<section id="sec-pr-merger" class="level4" data-number="12.1.1.4">
+<h4 data-number="12.1.1.4" class="anchored" data-anchor-id="sec-pr-merger"><mark class="preview-element-added"><span class="header-section-number">12.1.1.4</span> Merger</mark></h4>
+<p><mark class="preview-element-added">The merger executes the final merge once the PR is approved and all CI checks pass. This is often the same person as the reviewer.</mark></p>
+</section>
+<section id="sec-pr-assignee" class="level4" data-number="12.1.1.5">
+<h4 data-number="12.1.1.5" class="anchored" data-anchor-id="sec-pr-assignee"><mark class="preview-element-added"><span class="header-section-number">12.1.1.5</span> Assignee</mark></h4>
+<p><mark class="preview-element-added">The assignee is listed in the “Assignees” field on GitHub to indicate who is currently responsible for the PR. This field clarifies ownership and tracks who should be addressing open feedback.</mark></p>
+</section>
+<section id="sec-pr-steward" class="level4" data-number="12.1.1.6">
+<h4 data-number="12.1.1.6" class="anchored" data-anchor-id="sec-pr-steward"><mark class="preview-element-added"><span class="header-section-number">12.1.1.6</span> PR Steward</mark></h4>
+<p><mark class="preview-element-added">A PR steward keeps the review queue healthy. The steward monitors open PRs, assigns reviewers when none are assigned, follows up on stalled reviews, and helps resolve disagreements between authors and reviewers. This is typically a rotating duty for a senior contributor or release manager. The p5.js project documents how it structures this role in its <a href="https://p5js.org/contribute/steward_guidelines/">steward guidelines</a>.</mark></p>
+</section>
+</section>
+<section id="sec-opening-pull-requests" class="level3" data-number="12.1.2">
+<h3 data-number="12.1.2" class="anchored" data-anchor-id="sec-opening-pull-requests"><span class="header-section-number">12.1.2</span> <mark class="preview-text-changed">Opening</mark> pull requests</h3>
+<section id="write-focused-prs" class="level4" data-number="12.1.2.1">
+<h4 data-number="12.1.2.1" class="anchored" data-anchor-id="write-focused-prs"><mark class="preview-element-added"><span class="header-section-number">12.1.2.1</span> Write focused PRs</mark></h4>
+<p><mark class="preview-element-added">A focused pull request is <strong>one self-contained change</strong> that addresses just one thing. Writing focused PRs has several benefits:</mark></p>
 <ul>
-<li><a href="https://code-review.tidyverse.org/">Tidyverse code review principles</a> <span class="citation" data-cites="tidyverse2023codereview">(<a href="references.html#ref-tidyverse2023codereview" role="doc-biblioref">Tidyverse Team 2023</a>)</span>: Best practices for reviewing R code, including what to look for and how to provide constructive feedback.</li>
+<li><mark class="preview-element-added"><strong>Faster reviews</strong>: It is easier for a reviewer to find 5-10 minutes for a single bug fix than to set aside an hour for one large PR.</mark></li>
+<li><mark class="preview-element-added"><strong>More thorough reviews</strong>: Large PRs can overwhelm reviewers, which makes it easier to miss important problems.</mark></li>
+<li><mark class="preview-element-added"><strong>Fewer bugs</strong>: Smaller changes are easier to reason about.</mark></li>
+<li><mark class="preview-element-added"><strong>Easier merges</strong>: Large PRs take longer and are more likely to develop merge conflicts.</mark></li>
+<li><mark class="preview-element-added"><strong>Less wasted work</strong>: If the overall direction is wrong, you lose less time on a small PR than on a large one.</mark></li>
 </ul>
-<section id="sec-responding-to-review-comments" class="level3" data-number="12.1.1">
-<h3 data-number="12.1.1" class="anchored" data-anchor-id="sec-responding-to-review-comments"><span class="header-section-number">12.1.1</span> Responding to review comments</h3>
+<p><mark class="preview-element-added">As a guideline, 100 lines is usually a reasonable size for a PR, and 1000 lines is usually too large. The number of files matters too: a 200-line change in one file might be fine, but the same change spread across 50 files is usually too large.</mark></p>
+</section>
+<section id="write-clear-pr-titles-and-descriptions" class="level4" data-number="12.1.2.2">
+<h4 data-number="12.1.2.2" class="anchored" data-anchor-id="write-clear-pr-titles-and-descriptions"><mark class="preview-element-added"><span class="header-section-number">12.1.2.2</span> Write clear PR titles and descriptions</mark></h4>
+<p><mark class="preview-element-added">When you submit a pull request, include a detailed title and description. A comprehensive description helps the reviewer and provides valuable historical context.</mark></p>
+<p><mark class="preview-element-added"><strong>PR title:</strong> The title should be a short summary, ideally under 72 characters, that is specific enough for future developers to understand the change without opening the full PR.</mark></p>
+<p><mark class="preview-element-added">Poor titles that lack context:</mark></p>
+<ul>
+<li><mark class="preview-element-added">“Fix bug”</mark></li>
+<li><mark class="preview-element-added">“Add patch”</mark></li>
+<li><mark class="preview-element-added">“Moving code from A to B”</mark></li>
+</ul>
+<p><mark class="preview-element-added">Better titles that summarize the actual change:</mark></p>
+<ul>
+<li><mark class="preview-element-added">“Fix missing value handling in data processing function”</mark></li>
+<li><mark class="preview-element-added">“Add support for custom date formats in import functions”</mark></li>
+</ul>
+<p><mark class="preview-element-added"><strong>PR description body:</strong> The description should give the reviewer the context they need to understand the change. Consider including:</mark></p>
+<ul>
+<li><mark class="preview-element-added">A brief description of the problem being solved</mark></li>
+<li><mark class="preview-element-added">Links to related issues, such as <code>Closes #123</code> or <code>Related to #456</code></mark></li>
+<li><mark class="preview-element-added">A before-and-after example that shows the changed behavior</mark></li>
+<li><mark class="preview-element-added">Possible shortcomings or trade-offs in the current approach</mark></li>
+<li><mark class="preview-element-added">For complex PRs, a suggested reading order for the reviewer</mark></li>
+</ul>
+<p><mark class="preview-element-added">The <strong>Files changed</strong> tab on GitHub also lets you add inline comments that explain non-obvious changes. Those notes live in the PR metadata, not in the source files, so they are a good place to explain <em>this change</em> without cluttering the code with temporary rationale.</mark></p>
+</section>
+<section id="explain-technical-reasoning-up-front" class="level4" data-number="12.1.2.3">
+<h4 data-number="12.1.2.3" class="anchored" data-anchor-id="explain-technical-reasoning-up-front"><mark class="preview-element-added"><span class="header-section-number">12.1.2.3</span> Explain technical reasoning up front</mark></h4>
+<p><mark class="preview-element-added">For non-obvious technical decisions, proactively explain your reasoning in commit messages and PR descriptions. Do not make reviewers ask why you chose a particular approach.</mark></p>
+<p><mark class="preview-element-added">Common situations that require explanation:</mark></p>
+<ul>
+<li><mark class="preview-element-added"><strong>Version pinning</strong>: Explain whether you are using floating tags (for example <code>@v2</code>), version tags (for example <code>@v2.9.4</code>), or commit SHA pins (for example <code>@abc1234...</code>) and why. For example: “Using <code>@v2</code> (moving tag) to receive bug fixes within the major version while maintaining stability.”</mark></li>
+<li><mark class="preview-element-added"><strong>Configuration changes</strong>: Explain the rationale behind non-obvious choices, such as why a boolean is set a certain way.</mark></li>
+<li><mark class="preview-element-added"><strong>Dependency updates</strong>: Explain why you are updating and what benefit or fix it brings.</mark></li>
+<li><mark class="preview-element-added"><strong>Workflow modifications</strong>: Describe the problem you are solving and why this approach is preferred.</mark></li>
+</ul>
+<p><mark class="preview-element-added">This proactive communication reduces review back-and-forth and helps future maintainers understand the decision later.</mark></p>
+</section>
+<section id="request-reviews-in-the-right-order" class="level4" data-number="12.1.2.4">
+<h4 data-number="12.1.2.4" class="anchored" data-anchor-id="request-reviews-in-the-right-order"><mark class="preview-element-added"><span class="header-section-number">12.1.2.4</span> Request reviews in the right order</mark></h4>
+<p><mark class="preview-element-added">Before requesting a pull request review from the PIs, obtain fresh approvals from:</mark></p>
+<ul>
+<li><mark class="preview-element-added">at least one other student</mark></li>
+<li><mark class="preview-element-added">at least one AI reviewer</mark></li>
+</ul>
+<p><mark class="preview-element-added">This requirement applies both to the initial PI review request and to later re-review requests after revisions.</mark></p>
+</section>
+<section id="include-tests-with-behavior-changes" class="level4" data-number="12.1.2.5">
+<h4 data-number="12.1.2.5" class="anchored" data-anchor-id="include-tests-with-behavior-changes"><mark class="preview-element-added"><span class="header-section-number">12.1.2.5</span> Include tests with behavior changes</mark></h4>
+<p><mark class="preview-element-added">Focused PRs should include related test code. A PR that adds or changes logic should add or update tests for the new behavior. Pure refactoring PRs should also be protected by tests. If tests do not already exist for code you are refactoring, add them in a separate PR first to confirm that behavior stays unchanged.</mark></p>
+</section>
+<section id="separate-refactorings-from-feature-work" class="level4" data-number="12.1.2.6">
+<h4 data-number="12.1.2.6" class="anchored" data-anchor-id="separate-refactorings-from-feature-work"><mark class="preview-element-added"><span class="header-section-number">12.1.2.6</span> Separate refactorings from feature work</mark></h4>
+<p><mark class="preview-element-added">It is usually best to do refactorings in a separate PR from feature changes or bug fixes. For example, moving and renaming a function should generally be separate from fixing a bug in that function. That separation makes it much easier for reviewers to understand what each PR actually changes.</mark></p>
+<p><mark class="preview-element-added">Small cleanups, such as a local variable rename, can travel with a feature or bug fix. Large refactorings should not.</mark></p>
+</section>
+<section id="standardize-pr-descriptions-with-a-template" class="level4" data-number="12.1.2.7">
+<h4 data-number="12.1.2.7" class="anchored" data-anchor-id="standardize-pr-descriptions-with-a-template"><mark class="preview-element-added"><span class="header-section-number">12.1.2.7</span> Standardize PR descriptions with a template</mark></h4>
+<p><mark class="preview-element-added">GitHub lets you create a pull request template in a repository so everyone starts with the same PR body structure.</mark></p>
+<p><mark class="preview-element-added">To add one:</mark></p>
+<ol type="1">
+<li><mark class="preview-element-added">On GitHub, navigate to the main page of the repository.</mark></li>
+<li><mark class="preview-element-added">Above the file list, click <code>Create new file</code>.</mark></li>
+<li><mark class="preview-element-added">Name the file <code>pull_request_template.md</code>. GitHub will not recognize a different filename. To store it in a hidden directory, use <code>.github/pull_request_template.md</code>.</mark></li>
+<li><mark class="preview-element-added">Add the template content to the file on the default branch.</mark></li>
+</ol>
+<p><mark class="preview-element-added">Here is an example template:</mark></p>
+<pre class="text"><mark class="preview-element-added"><code># Description
+
+## Summary of change
+
+Please include a summary of the change, including any new functions added and example usage.
+
+## Related Issues
+
+Closes #(issue number)
+Related to #(issue number)
+
+## Testing
+
+Describe how this change has been tested.
+
+## Checklist
+
+- [ ] Tests added/updated
+- [ ] Documentation updated
+- [ ] Code follows project style guidelines
+
+## Who should review the pull request?
+
+@username</code></pre>
+</section>
+</section>
+</section>
+<section id="sec-code-review" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="sec-code-review"><span class="header-section-number">12.2</span> Code Review</mark></h2>
+<section id="sec-reviewing-pull-requests" class="level3" data-number="12.2.1">
+<h3 data-number="12.2.1" class="anchored" data-anchor-id="sec-reviewing-pull-requests"><mark class="preview-element-added"><span class="header-section-number">12.2.1</span> Reviewing pull requests</mark></h3>
+<p><mark class="preview-element-added">When submitting code to colleagues or reviewing theirs, use practices that keep feedback constructive and specific. The <a href="https://code-review.tidyverse.org/">Tidyverse code review principles</a> <span class="citation" data-cites="tidyverse2023codereview">(<a href="references.html#ref-tidyverse2023codereview" role="doc-biblioref">Tidyverse Team 2023</a>)</span> are a strong baseline for R projects.</mark></p>
+<section id="purpose-of-code-review" class="level4" data-number="12.2.1.1">
+<h4 data-number="12.2.1.1" class="anchored" data-anchor-id="purpose-of-code-review"><mark class="preview-element-added"><span class="header-section-number">12.2.1.1</span> Purpose of code review</mark></h4>
+<p><mark class="preview-element-added">The primary purpose of code review is to improve the overall code health of the project over time. Reviewers should balance the need to make forward progress with the need to maintain code quality.</mark></p>
+<p><mark class="preview-element-added">The key principle is to approve a PR once it clearly improves the codebase, even if it is not perfect. There is no such thing as perfect code. There is only better code.</mark></p>
+</section>
+<section id="monitor-prs-awaiting-your-review" class="level4" data-number="12.2.1.2">
+<h4 data-number="12.2.1.2" class="anchored" data-anchor-id="monitor-prs-awaiting-your-review"><mark class="preview-element-added"><span class="header-section-number">12.2.1.2</span> Monitor PRs awaiting your review</mark></h4>
+<p><mark class="preview-element-added">To keep reviews moving, bookmark GitHub’s review-requested page and check it regularly, ideally at least daily:</mark></p>
+<ul>
+<li><mark class="preview-element-added"><strong>General bookmark</strong>: <a href="https://github.com/pulls/review-requested" class="uri">https://github.com/pulls/review-requested</a> shows all PRs across GitHub where you have been requested as a reviewer.</mark></li>
+<li><mark class="preview-element-added"><strong>Project-specific bookmark</strong>: for frequently reviewed repositories, bookmark the project-specific version. For this repository: <a href="https://github.com/UCD-SERG/lab-manual/pulls/review-requested/YOUR-USERNAME" class="uri">https://github.com/UCD-SERG/lab-manual/pulls/review-requested/YOUR-USERNAME</a> replacing <code>YOUR-USERNAME</code> with your GitHub username.</mark></li>
+</ul>
+<p><mark class="preview-element-added">Checking these pages regularly helps keep PRs from languishing in the queue.</mark></p>
+</section>
+<section id="write-review-comments-that-teach" class="level4" data-number="12.2.1.3">
+<h4 data-number="12.2.1.3" class="anchored" data-anchor-id="write-review-comments-that-teach"><mark class="preview-element-added"><span class="header-section-number">12.2.1.3</span> Write review comments that teach</mark></h4>
+<p><mark class="preview-element-added">When reviewing code, be courteous, clear, and helpful:</mark></p>
+<ul>
+<li><mark class="preview-element-added">Comment on the <strong>code</strong>, not the author.</mark></li>
+<li><mark class="preview-element-added">Explain <strong>why</strong> you are making a suggestion, referencing best practices, design patterns, or code health where appropriate.</mark></li>
+<li><mark class="preview-element-added">Balance problem finding with guidance, so the author can learn from the review.</mark></li>
+<li><mark class="preview-element-added">Highlight positive choices too, so good practices get reinforced.</mark></li>
+</ul>
+<p><mark class="preview-element-added"><strong>Poor comment:</strong> “Why did you use this approach when there is obviously a better way?”</mark></p>
+<p><mark class="preview-element-added"><strong>Better comment:</strong> “This approach adds complexity without clear benefits. Consider using [alternative approach] instead, which would simplify the logic and improve readability.”</mark></p>
+</section>
+<section id="use-review-as-mentoring" class="level4" data-number="12.2.1.4">
+<h4 data-number="12.2.1.4" class="anchored" data-anchor-id="use-review-as-mentoring"><mark class="preview-element-added"><span class="header-section-number">12.2.1.4</span> Use review as mentoring</mark></h4>
+<p><mark class="preview-element-added">Code review is also a mentoring tool. As a reviewer:</mark></p>
+<ul>
+<li><mark class="preview-element-added">Leave comments that help authors learn something new.</mark></li>
+<li><mark class="preview-element-added">Link to relevant style guides or best-practice documentation.</mark></li>
+<li><mark class="preview-element-added">For complex reviews, consider a live review or pair-programming session.</mark></li>
+</ul>
+</section>
+<section id="balance-direct-fixes-with-guidance" class="level4" data-number="12.2.1.5">
+<h4 data-number="12.2.1.5" class="anchored" data-anchor-id="balance-direct-fixes-with-guidance"><mark class="preview-element-added"><span class="header-section-number">12.2.1.5</span> Balance direct fixes with guidance</mark></h4>
+<p><mark class="preview-element-added">In general, the author is responsible for fixing the PR, not the reviewer. Point out problems clearly, but do not feel obligated to design every solution. Sometimes it is better to name the issue and let the author work out the implementation details.</mark></p>
+<p><mark class="preview-element-added">For very small tweaks, such as typo fixes or comment additions, use GitHub’s suggestion feature so the author can accept the change directly in the UI.</mark></p>
+<div id="fig-github-suggestion-feature" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-github-suggestion-feature-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/github-suggestion-feature.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-github-suggestion-feature-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.1: GitHub’s suggestion feature in a PR review comment
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="ignore-auto-generated-files-when-appropriate" class="level4" data-number="12.2.1.6">
+<h4 data-number="12.2.1.6" class="anchored" data-anchor-id="ignore-auto-generated-files-when-appropriate"><mark class="preview-element-added"><span class="header-section-number">12.2.1.6</span> Ignore auto-generated files when appropriate</mark></h4>
+<p><mark class="preview-element-added">When reviewing pull requests in R package repositories, you can usually ignore <code>.Rd</code> files in <code>man/</code>. These files are generated automatically by <a href="https://roxygen2.r-lib.org/"><code>{roxygen2}</code></a> from roxygen comments in the source.</mark></p>
+<p><mark class="preview-element-added">Why ignore <code>.Rd</code> files?</mark></p>
+<ul>
+<li><mark class="preview-element-added">They are generated files and should never be edited by hand.</mark></li>
+<li><mark class="preview-element-added">Their changes are already visible in the roxygen comments in the <code>.R</code> source files.</mark></li>
+<li><mark class="preview-element-added">Reviewing the source comments is more informative than reviewing the generated output.</mark></li>
+<li><mark class="preview-element-added">The files will be regenerated during the package build process.</mark></li>
+</ul>
+<p><mark class="preview-element-added">What to review instead:</mark></p>
+<p><mark class="preview-element-added">Review the roxygen comments in the <code>.R</code> source files. These begin with <code>#'</code> and appear immediately before function definitions.</mark></p>
+<p><mark class="preview-element-added">If the repository has a preview workflow such as <code>pkgdown</code> or Quarto, review the rendered preview as well. The workflow should post a PR comment with a link to the preview build.</mark></p>
+<div id="fig-preview-comment" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-preview-comment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/quarto-preview-comment.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-preview-comment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.2: Example of an automated PR preview comment posted by GitHub Actions
+</figcaption>
+</figure>
+</div>
+<p><mark class="preview-element-added">In GitHub’s <strong>Files changed</strong> view, you can click the three dots (<code>...</code>) next to a file and choose <strong>View file</strong> to hide it from the diff. That helps you focus on the meaningful changes.</mark></p>
+</section>
+<section id="reviewing-copilot-generated-pull-requests" class="level4" data-number="12.2.1.7">
+<h4 data-number="12.2.1.7" class="anchored" data-anchor-id="reviewing-copilot-generated-pull-requests"><mark class="preview-element-added"><span class="header-section-number">12.2.1.7</span> Reviewing Copilot-generated pull requests</mark></h4>
+<p><mark class="preview-element-added">Review pull requests created by GitHub Copilot coding agents using the same standards as any other PR, but watch for a few agent-specific issues.</mark></p>
+<p><mark class="preview-element-added"><strong>Workflow approval requirements:</strong></mark></p>
+<ul>
+<li><mark class="preview-element-added">You must manually approve GitHub Actions workflows for Copilot PRs.</mark></li>
+<li><mark class="preview-element-added">This is a security measure because Copilot can modify any file, including workflow files.</mark></li>
+<li><mark class="preview-element-added">Approve the workflow from the Actions tab or from the PR interface to start the checks.</mark></li>
+<li><mark class="preview-element-added">There is currently no way to bypass this manual approval, even if you own the repository.</mark></li>
+</ul>
+<p><mark class="preview-element-added"><strong>Review focus areas:</strong></mark></p>
+<ul>
+<li><mark class="preview-element-added">Verify that the solution actually addresses the issue.</mark></li>
+<li><mark class="preview-element-added">Check for over-engineering or extra features that were not requested.</mark></li>
+<li><mark class="preview-element-added">Review the test coverage for relevance and completeness.</mark></li>
+<li><mark class="preview-element-added">Check whether documentation is clear and follows repository conventions.</mark></li>
+<li><mark class="preview-element-added">Look for missed edge cases or incomplete error handling.</mark></li>
+</ul>
+<p><mark class="preview-element-added"><strong>Iterating on Copilot PRs:</strong></mark></p>
+<p><mark class="preview-element-added">When you find issues in a Copilot PR, you can either:</mark></p>
+<ol type="1">
+<li><mark class="preview-element-added">Leave review comments and ask Copilot to address them.</mark></li>
+<li><mark class="preview-element-added">Push commits directly to the Copilot PR branch yourself.</mark></li>
+</ol>
+<p><mark class="preview-element-added">Direct edits are often faster for small fixes such as typos, formatting, or tiny adjustments.</mark></p>
+<p><mark class="preview-element-added">Best practices:</mark></p>
+<ul>
+<li><mark class="preview-element-added">Do not push while Copilot is actively working on the branch.</mark></li>
+<li><mark class="preview-element-added">Review incrementally if the PR is large and the agent is updating it in stages.</mark></li>
+<li><mark class="preview-element-added">Trust the tool, but always verify the result with human review.</mark></li>
+</ul>
+</section>
+</section>
+<section id="sec-responding-to-review-comments" class="level3" data-number="12.2.2">
+<h3 data-number="12.2.2" class="anchored" data-anchor-id="sec-responding-to-review-comments"><mark class="preview-element-added"><span class="header-section-number">12.2.2</span> Responding to review comments</mark></h3>
 <p>Once you receive a review from a human reviewer, you are obligated to respond promptly: typically within a week, unless there are extenuating circumstances. Address each of the reviewer’s comments individually. You aren’t obligated to agree with every comment; you are entitled to ask clarifying questions, raise objections, or ask to defer it to a later pull request.</p>
 <p>When a reviewer leaves a comment on your code, respond to each one with exactly one of these:</p>
 <ul>
@@ -572,8 +834,8 @@ div.csl-indent {
 </ul>
 <p>Never ignore a review comment. Always reply—even if only to say you filed a follow-up issue.</p>
 </section>
-<section id="sec-avoid-closing-restarting-prs" class="level3" data-number="12.1.2">
-<h3 data-number="12.1.2" class="anchored" data-anchor-id="sec-avoid-closing-restarting-prs"><span class="header-section-number">12.1.2</span> Avoid closing and restarting pull requests</h3>
+<section id="sec-avoid-closing-restarting-prs" class="level3" data-number="12.2.3">
+<h3 data-number="12.2.3" class="anchored" data-anchor-id="sec-avoid-closing-restarting-prs"><mark class="preview-element-added"><span class="header-section-number">12.2.3</span> Avoid closing and restarting pull requests</mark></h3>
 <p>Avoid closing a pull request and “starting over” on the same issue. Doing so disrupts the conversation between authors and reviewers, creates confusion, and leads to repeated work. Instead, keep iterating on the open pull request, where the review history stays attached to the code it discusses.</p>
 
 
@@ -1001,7 +1263,7 @@ Tidyverse Team. 2023. <em>Tidyverse Code Review Principles</em>. <a href="https:
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./github.html" class="pagination-link" aria-label="Github">
+      <a href="./github.html" class="pagination-link" preview-toc-changed aria-label="Github">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Github</span></span>
       </a>          
   </div>

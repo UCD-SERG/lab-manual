@@ -449,13 +449,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./github.html" class="sidebar-item-text sidebar-link">
+  <a href="./github.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Github</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./collaborative-software-development.html" class="sidebar-item-text sidebar-link">
+  <a href="./collaborative-software-development.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Collaborative Software Development</span></span></a>
   </div>
 </li>
@@ -768,33 +768,13 @@ window.Quarto = {
   <li><a href="#parallel-processing-with-parallel-and-future-packages" id="toc-parallel-processing-with-parallel-and-future-packages" class="nav-link" data-scroll-target="#parallel-processing-with-parallel-and-future-packages"><span class="header-section-number">6.42.3</span> Parallel processing with <code>parallel</code> and <code>future</code> packages</a></li>
   </ul></li>
   <li><a href="#reviewing-code" id="toc-reviewing-code" class="nav-link" data-scroll-target="#reviewing-code"><span class="header-section-number">6.43</span> Reviewing Code</a></li>
-  <li><a href="#constructing-pull-requests" id="toc-constructing-pull-requests" class="nav-link" data-scroll-target="#constructing-pull-requests"><span class="header-section-number">6.44</span> Constructing Pull Requests</a>
+  <li><a href="#sec-getting-help-with-code" id="toc-sec-getting-help-with-code" class="nav-link" data-scroll-target="#sec-getting-help-with-code"><span class="header-section-number">6.44</span> Getting Help with Code</a></li>
+  <li><a href="#sec-r-resources" id="toc-sec-r-resources" class="nav-link" data-scroll-target="#sec-r-resources"><span class="header-section-number">6.45</span> Additional Resources</a>
   <ul class="collapse">
-  <li><a href="#write-focused-prs" id="toc-write-focused-prs" class="nav-link" data-scroll-target="#write-focused-prs"><span class="header-section-number">6.44.1</span> Write Focused PRs</a></li>
-  <li><a href="#writing-pr-descriptions" id="toc-writing-pr-descriptions" class="nav-link" data-scroll-target="#writing-pr-descriptions"><span class="header-section-number">6.44.2</span> Writing PR Descriptions</a></li>
-  <li><a href="#explaining-technical-reasoning" id="toc-explaining-technical-reasoning" class="nav-link" data-scroll-target="#explaining-technical-reasoning"><span class="header-section-number">6.44.3</span> Explaining Technical Reasoning</a></li>
-  <li><a href="#requesting-pi-reviews" id="toc-requesting-pi-reviews" class="nav-link" data-scroll-target="#requesting-pi-reviews"><span class="header-section-number">6.44.4</span> Requesting PI Reviews</a></li>
-  <li><a href="#add-tests" id="toc-add-tests" class="nav-link" data-scroll-target="#add-tests"><span class="header-section-number">6.44.5</span> Add Tests</a></li>
-  <li><a href="#separate-out-refactorings" id="toc-separate-out-refactorings" class="nav-link" data-scroll-target="#separate-out-refactorings"><span class="header-section-number">6.44.6</span> Separate Out Refactorings</a></li>
-  </ul></li>
-  <li><a href="#reviewing-pull-requests" id="toc-reviewing-pull-requests" class="nav-link" data-scroll-target="#reviewing-pull-requests"><span class="header-section-number">6.45</span> Reviewing Pull Requests</a>
-  <ul class="collapse">
-  <li><a href="#purpose-of-code-review" id="toc-purpose-of-code-review" class="nav-link" data-scroll-target="#purpose-of-code-review"><span class="header-section-number">6.45.1</span> Purpose of Code Review</a></li>
-  <li><a href="#monitoring-prs-awaiting-your-review" id="toc-monitoring-prs-awaiting-your-review" class="nav-link" data-scroll-target="#monitoring-prs-awaiting-your-review"><span class="header-section-number">6.45.2</span> Monitoring PRs Awaiting Your Review</a></li>
-  <li><a href="#writing-review-comments" id="toc-writing-review-comments" class="nav-link" data-scroll-target="#writing-review-comments"><span class="header-section-number">6.45.3</span> Writing Review Comments</a></li>
-  <li><a href="#mentoring-through-review" id="toc-mentoring-through-review" class="nav-link" data-scroll-target="#mentoring-through-review"><span class="header-section-number">6.45.4</span> Mentoring Through Review</a></li>
-  <li><a href="#giving-constructive-feedback" id="toc-giving-constructive-feedback" class="nav-link" data-scroll-target="#giving-constructive-feedback"><span class="header-section-number">6.45.5</span> Giving Constructive Feedback</a></li>
-  <li><a href="#ignoring-auto-generated-files" id="toc-ignoring-auto-generated-files" class="nav-link" data-scroll-target="#ignoring-auto-generated-files"><span class="header-section-number">6.45.6</span> Ignoring Auto-Generated Files</a></li>
-  <li><a href="#reviewing-copilot-generated-pull-requests" id="toc-reviewing-copilot-generated-pull-requests" class="nav-link" data-scroll-target="#reviewing-copilot-generated-pull-requests"><span class="header-section-number">6.45.7</span> Reviewing Copilot-Generated Pull Requests</a></li>
-  </ul></li>
-  <li><a href="#creating-a-pull-request-template" id="toc-creating-a-pull-request-template" class="nav-link" data-scroll-target="#creating-a-pull-request-template"><span class="header-section-number">6.46</span> Creating a Pull Request Template</a></li>
-  <li><a href="#sec-getting-help-with-code" id="toc-sec-getting-help-with-code" class="nav-link" data-scroll-target="#sec-getting-help-with-code"><span class="header-section-number">6.47</span> Getting Help with Code</a></li>
-  <li><a href="#sec-r-resources" id="toc-sec-r-resources" class="nav-link" data-scroll-target="#sec-r-resources"><span class="header-section-number">6.48</span> Additional Resources</a>
-  <ul class="collapse">
-  <li><a href="#r-package-development" id="toc-r-package-development" class="nav-link" data-scroll-target="#r-package-development"><span class="header-section-number">6.48.1</span> R Package Development</a></li>
-  <li><a href="#general-r-programming" id="toc-general-r-programming" class="nav-link" data-scroll-target="#general-r-programming"><span class="header-section-number">6.48.2</span> General R Programming</a></li>
-  <li><a href="#shiny-development" id="toc-shiny-development" class="nav-link" data-scroll-target="#shiny-development"><span class="header-section-number">6.48.3</span> Shiny Development</a></li>
-  <li><a href="#git-and-version-control" id="toc-git-and-version-control" class="nav-link" data-scroll-target="#git-and-version-control"><span class="header-section-number">6.48.4</span> Git and Version Control</a></li>
+  <li><a href="#r-package-development" id="toc-r-package-development" class="nav-link" data-scroll-target="#r-package-development"><span class="header-section-number">6.45.1</span> R Package Development</a></li>
+  <li><a href="#general-r-programming" id="toc-general-r-programming" class="nav-link" data-scroll-target="#general-r-programming"><span class="header-section-number">6.45.2</span> General R Programming</a></li>
+  <li><a href="#shiny-development" id="toc-shiny-development" class="nav-link" data-scroll-target="#shiny-development"><span class="header-section-number">6.45.3</span> Shiny Development</a></li>
+  <li><a href="#git-and-version-control" id="toc-git-and-version-control" class="nav-link" data-scroll-target="#git-and-version-control"><span class="header-section-number">6.45.4</span> Git and Version Control</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/coding-practices.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/coding-practices.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -803,7 +783,7 @@ window.Quarto = {
 <main class="content" id="quarto-document-content">
 <div class="preview-home-changes-banner">
     <p style="margin: 0;">
-        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="coding-practices.html">6. &nbsp; <span class="chapter-title">R Coding Practices</span></span></a>, <a href="appendix-document-metadata.html">appendix-document-metadata</a>
+        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="coding-practices.html">6. &nbsp; <span class="chapter-title">R Coding Practices</span></span></a>, <a href="appendix-document-metadata.html">appendix-document-metadata</a>, <a href="github.html">11. &nbsp; <span class="chapter-title">Github</span></span></a>, <a href="collaborative-software-development.html">12. &nbsp; <span class="chapter-title">Collaborative Software Development</span></span></a>
         <br>
         <strong>📄 DOCX with tracked changes:</strong> <a href="UCD-SeRG-Lab-Manual-tracked-changes.docx" download>Download UCD-SeRG-Lab-Manual-tracked-changes.docx</a>
         <br>
@@ -835,7 +815,7 @@ window.Quarto = {
 
 <div class="preview-combined-banner">
     <p style="margin: 0;">
-        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~0% of content changed).
+        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~5% of content changed).
         <br>
         <strong>🎨 Highlighting Legend:</strong> 
         <mark class="preview-text-changed" style="display: inline; padding: 1px 3px;">Modified text (yellow)</mark> shows changed words/phrases with tooltips of original text, 
@@ -2965,236 +2945,11 @@ future_lapply(x = mylist, FUN = func)</code></pre>
 </section>
 <section id="reviewing-code" class="level2" data-number="6.43">
 <h2 data-number="6.43" class="anchored" data-anchor-id="reviewing-code"><span class="header-section-number">6.43</span> Reviewing Code</h2>
-<p>Before publishing new changes, it is important to ensure that the code has been tested and well-documented. GitHub makes it possible to document all of these changes in a pull request. Pull requests can be used to describe changes in a branch that are ready to be merged with the base branch (more information in the <a href="#Github">GitHub</a> section).</p>
-<p>This section provides guidance on both constructing effective pull requests and reviewing code submitted by others. Much of the content in this section is adapted from the Tidyverse code review principles <span class="citation" data-cites="tidyverse2023codereview">(<a href="references.html#ref-tidyverse2023codereview" role="doc-biblioref">Tidyverse Team 2023</a>)</span>, which provides excellent principles for code review in R package development.</p>
+<p><mark class="preview-element-added">The lab’s pull request workflow, author and reviewer expectations, and response protocol are consolidated in <a href="collaborative-software-development.html" class="quarto-xref" preview-toc-changed><span>Chapter 12</span></a>.</mark></p>
+<p><mark class="preview-element-added">For code-specific prerequisites before requesting review, use the quality checks in <a href="#sec-r-qa-checklist" class="quarto-xref"><span>Section 6.12</span></a>, the documentation guidance in <a href="#sec-documenting-code" class="quarto-xref"><span>Section 6.14</span></a>, and the ADR guidance in <a href="#sec-adrs" class="quarto-xref"><span>Section 6.15</span></a> for design rationale that should outlive a merged PR thread.</mark></p>
 </section>
-<section id="constructing-pull-requests" class="level2" data-number="6.44">
-<h2 data-number="6.44" class="anchored" data-anchor-id="constructing-pull-requests"><span class="header-section-number">6.44</span> Constructing Pull Requests</h2>
-<section id="write-focused-prs" class="level3" data-number="6.44.1">
-<h3 data-number="6.44.1" class="anchored" data-anchor-id="write-focused-prs"><span class="header-section-number">6.44.1</span> Write Focused PRs</h3>
-<p>A focused pull request is <strong>one self-contained change</strong> that addresses just one thing. Writing focused PRs has several benefits:</p>
-<ul>
-<li><strong>Faster reviews</strong>: It’s easier for a reviewer to find 5-10 minutes to review a single bug fix than to set aside an hour for one large PR implementing many features.</li>
-<li><strong>More thorough reviews</strong>: Large PRs with many changes can overwhelm reviewers, leading to important points being missed.</li>
-<li><strong>Fewer bugs</strong>: Smaller changes make it easier to reason about impacts and identify potential issues.</li>
-<li><strong>Easier to merge</strong>: Large PRs take longer and are more likely to have merge conflicts.</li>
-<li><strong>Less wasted work</strong>: If the overall direction is wrong, you’ve wasted less time on a small PR.</li>
-</ul>
-<p>As a guideline, 100 lines is usually a reasonable size for a PR, and 1000 lines is usually too large. However, the number of files affected also matters—a 200-line change in one file might be fine, but the same change spread across 50 files is usually too large.</p>
-</section>
-<section id="writing-pr-descriptions" class="level3" data-number="6.44.2">
-<h3 data-number="6.44.2" class="anchored" data-anchor-id="writing-pr-descriptions"><span class="header-section-number">6.44.2</span> Writing PR Descriptions</h3>
-<p>When you submit a pull request, include a detailed PR title and description. A comprehensive description helps your reviewer and provides valuable historical context.</p>
-<p><strong>PR Title</strong>: The title should be a short summary (ideally under 72 characters) of what is being done. It should be informative enough that future developers can understand what the PR did without reading the full description.</p>
-<p>Poor titles that lack context:</p>
-<ul>
-<li>“Fix bug”</li>
-<li>“Add patch”</li>
-<li>“Moving code from A to B”</li>
-</ul>
-<p>Better titles that summarize the actual change:</p>
-<ul>
-<li>“Fix missing value handling in data processing function”</li>
-<li>“Add support for custom date formats in import functions”</li>
-</ul>
-<p><strong>PR Description Body</strong>: The description should provide context that helps the reviewer understand your PR. Consider including:</p>
-<ul>
-<li>A brief description of the problem being solved</li>
-<li>Links to related issues (e.g., “Closes #123” or “Related to #456”)</li>
-<li>A before/after example showing changed behavior</li>
-<li>Possible shortcomings of the approach being used</li>
-<li>For complex PRs, a suggested reading order for the reviewer</li>
-<li>The <code>Files</code> tab of a Pull Request page on GitHub allows you to annotate your pull request with inline comments. These comments are not part of the source files; they only exist in GitHub’s metadata. Use these comments to explain <em>changes</em> whose reasoning might not be self-apparent to a reviewer.</li>
-</ul>
-</section>
-<section id="explaining-technical-reasoning" class="level3" data-number="6.44.3">
-<h3 data-number="6.44.3" class="anchored" data-anchor-id="explaining-technical-reasoning"><span class="header-section-number">6.44.3</span> Explaining Technical Reasoning</h3>
-<p>For non-obvious technical decisions, <strong>proactively explain your reasoning</strong> in commit messages and PR descriptions. Don’t make reviewers ask why you made a particular choice.</p>
-<p>Common situations that require explanation:</p>
-<ul>
-<li><strong>Version pinning</strong>: Explain whether you’re using floating tags (e.g., <code>@v2</code>), version tags (e.g., <code>@v2.9.4</code>), or commit SHA pins (e.g., <code>@abc1234...</code> — most secure, since tags can be retargeted) and why. For example: “Using <code>@v2</code> (moving tag) to automatically receive bug fixes within the major version while maintaining stability.”</li>
-<li><strong>Configuration changes</strong>: Explain the rationale behind non-obvious choices (e.g., why a boolean is set to a particular value).</li>
-<li><strong>Dependency updates</strong>: Explain why you’re updating and what benefits or fixes it brings.</li>
-<li><strong>Workflow modifications</strong>: Describe what problem you’re solving and why your approach is preferred.</li>
-</ul>
-<p>This proactive communication reduces back-and-forth during review and helps future maintainers understand the decisions made.</p>
-</section>
-<section id="requesting-pi-reviews" class="level3" data-number="6.44.4">
-<h3 data-number="6.44.4" class="anchored" data-anchor-id="requesting-pi-reviews"><span class="header-section-number"><mark class="preview-text-changed">6.44.4</mark></span> <mark class="preview-text-changed">Requesting</mark> <mark class="preview-text-changed">PI</mark> <mark class="preview-text-changed">Reviews</mark></h3>
-<p>Before requesting a pull request <mark class="preview-text-changed">review</mark> <mark class="preview-text-changed">from</mark> <mark class="preview-text-changed">the</mark> <mark class="preview-text-changed">PIs, obtain fresh approvals from:</mark></p>
-<ul>
-<li><mark class="preview-element-added">at least one other student</mark></li>
-<li><mark class="preview-text-changed">at</mark> <mark class="preview-text-changed">least</mark> <mark class="preview-text-changed">one</mark> <mark class="preview-text-changed">AI reviewer</mark></li>
-</ul>
-<p><mark class="preview-element-added">This requirement applies to both:</mark></p>
-<ul>
-<li><mark class="preview-text-changed">initial</mark> <mark class="preview-text-changed">PI</mark> <mark class="preview-text-changed">review</mark> <mark class="preview-text-changed">requests</mark></li>
-<li><mark class="preview-element-added">re-review requests after revisions</mark></li>
-</ul>
-</section>
-<section id="add-tests" class="level3" data-number="6.44.5">
-<h3 data-number="6.44.5" class="anchored" data-anchor-id="add-tests"><span class="header-section-number"><mark class="preview-text-changed">6.44.5</mark></span> Add Tests</h3>
-<p>Focused PRs should include related test code. A PR that adds or changes logic should be accompanied by new or updated tests for the new behavior. Pure refactoring PRs should also be covered by tests—if tests don’t exist for code you’re refactoring, add them in a separate PR first to validate that behavior is unchanged.</p>
-</section>
-<section id="separate-out-refactorings" class="level3" data-number="6.44.6">
-<h3 data-number="6.44.6" class="anchored" data-anchor-id="separate-out-refactorings"><span class="header-section-number"><mark class="preview-text-changed">6.44.6</mark></span> Separate Out Refactorings</h3>
-<p>It’s usually best to do refactorings in a separate PR from feature changes or bug fixes. For example, moving and renaming a function should be in a different PR from fixing a bug in that function. This makes it much easier for reviewers to understand the changes introduced by each PR.</p>
-<p>Small cleanups (like fixing a local variable name) can be included in a feature change or bug fix PR, but large refactorings should be separate.</p>
-</section>
-</section>
-<section id="reviewing-pull-requests" class="level2" data-number="6.45">
-<h2 data-number="6.45" class="anchored" data-anchor-id="reviewing-pull-requests"><span class="header-section-number"><mark class="preview-text-changed">6.45</mark></span> Reviewing Pull Requests</h2>
-<section id="purpose-of-code-review" class="level3" data-number="6.45.1">
-<h3 data-number="6.45.1" class="anchored" data-anchor-id="purpose-of-code-review"><span class="header-section-number">6.45.1</span> Purpose of Code Review</h3>
-<p>The primary purpose of code review is to ensure that the overall code health of our projects improves over time. Reviewers should balance the need to make forward progress with the importance of maintaining code quality.</p>
-<p><strong>Key principle</strong>: Reviewers should favor approving a PR once it is in a state where it definitely improves the overall code health of the system, even if the PR isn’t perfect. There is no such thing as “perfect” code—there is only better code. Rather than seeking perfection, seek continuous improvement.</p>
-</section>
-<section id="monitoring-prs-awaiting-your-review" class="level3" data-number="6.45.2">
-<h3 data-number="6.45.2" class="anchored" data-anchor-id="monitoring-prs-awaiting-your-review"><span class="header-section-number">6.45.2</span> Monitoring PRs Awaiting Your Review</h3>
-<p>To ensure timely code reviews, bookmark GitHub’s review-requested page and check it regularly (at least daily):</p>
-<ul>
-<li><p><strong>General bookmark</strong>: <a href="https://github.com/pulls/review-requested" class="uri">https://github.com/pulls/review-requested</a> shows all PRs across GitHub where you’ve been requested as a reviewer</p></li>
-<li><p><strong>Project-specific bookmark</strong>: For frequently-reviewed repositories, you can bookmark project-specific versions using GitHub’s search syntax. For example, to see PRs awaiting your review in this repository: <a href="https://github.com/UCD-SERG/lab-manual/pulls/review-requested/YOUR-USERNAME" class="uri">https://github.com/UCD-SERG/lab-manual/pulls/review-requested/YOUR-USERNAME</a> (replace <code>YOUR-USERNAME</code> with your GitHub username)</p></li>
-</ul>
-<p>Checking these pages regularly helps ensure that PRs don’t languish waiting for review, which is important for maintaining team productivity and code quality.</p>
-</section>
-<section id="writing-review-comments" class="level3" data-number="6.45.3">
-<h3 data-number="6.45.3" class="anchored" data-anchor-id="writing-review-comments"><span class="header-section-number">6.45.3</span> Writing Review Comments</h3>
-<p>When reviewing code, maintain courtesy and respect while being clear and helpful:</p>
-<ul>
-<li>Comment on the <strong>code</strong>, not the author</li>
-<li>Explain <strong>why</strong> you’re making suggestions (reference best practices, design patterns, or how the suggestion improves code health)</li>
-<li>Balance pointing out problems with providing guidance (help authors learn while being constructive)</li>
-<li>Highlight positive aspects too—if you see good practices, comment on those to reinforce them</li>
-</ul>
-<p><strong>Poor comment</strong>: “Why did you use this approach when there’s obviously a better way?”</p>
-<p><strong>Better comment</strong>: “This approach adds complexity without clear benefits. Consider using [alternative approach] instead, which would simplify the logic and improve readability.”</p>
-</section>
-<section id="mentoring-through-review" class="level3" data-number="6.45.4">
-<h3 data-number="6.45.4" class="anchored" data-anchor-id="mentoring-through-review"><span class="header-section-number"><mark class="preview-text-changed">6.45.4</mark></span> <mark class="preview-text-changed">Mentoring</mark> <mark class="preview-text-changed">Through</mark> Review</h3>
-<p>Code review is an excellent opportunity for mentoring. As a reviewer:</p>
-<ul>
-<li>Leave comments that help authors learn something new</li>
-<li>Link to relevant sections of style guides or best practices documentation</li>
-<li>Consider pair programming for complex reviews—live review sessions can be very effective for teaching</li>
-</ul>
-</section>
-<section id="giving-constructive-feedback" class="level3" data-number="6.45.5">
-<h3 data-number="6.45.5" class="anchored" data-anchor-id="giving-constructive-feedback"><span class="header-section-number">6.45.5</span> Giving Constructive Feedback</h3>
-<p>In general, it is the author’s responsibility to fix a PR, not the reviewer’s. Strike a balance between pointing out problems and providing direct guidance. Sometimes pointing out issues and letting the author decide on a solution helps them learn and may result in a better solution since they are closer to the code.</p>
-<p>For very small tweaks (typos, comment additions), use GitHub’s suggestion feature to allow authors to quickly accept changes directly in the UI.</p>
-<div id="fig-github-suggestion-feature" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-github-suggestion-feature-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="assets/images/github-suggestion-feature.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-github-suggestion-feature-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.1: GitHub’s suggestion feature in a PR review comment
-</figcaption>
-</figure>
-</div>
-</section>
-<section id="ignoring-auto-generated-files" class="level3" data-number="6.45.6">
-<h3 data-number="6.45.6" class="anchored" data-anchor-id="ignoring-auto-generated-files"><span class="header-section-number">6.45.6</span> Ignoring Auto-Generated Files</h3>
-<p>When reviewing pull requests in R package repositories, you can typically ignore changes to <code>.Rd</code> files in the <code>man/</code> directory. These are R documentation files automatically generated by <a href="https://roxygen2.r-lib.org/"><code>{roxygen2}</code></a> from special comments in the R source code (see <a href="#sec-documenting-code" class="quarto-xref"><span>Section 6.14</span></a>).</p>
-<p><strong>Why ignore <code>.Rd</code> files?</strong></p>
-<ul>
-<li>They are auto-generated and should never be manually edited</li>
-<li>Changes to <code>.Rd</code> files simply reflect changes already visible in the roxygen2 comments</li>
-<li>Reviewing the source roxygen2 comments is more informative and efficient</li>
-<li>The <code>.Rd</code> files will be regenerated during the package build process</li>
-</ul>
-<p><strong><mark class="preview-text-changed">What to</mark> review <mark class="preview-text-changed">instead:</mark></strong></p>
-<p>Focus your review on the roxygen2 documentation comments in the actual R source files (<code>.R</code> files in the <code>R/</code> directory). These special comments start with <code>#'</code> and appear immediately before function definitions. Any changes to function documentation will be visible there.</p>
-<p>If the repository has a preview workflow (such as pkgdown for R packages or Quarto for documentation sites), you can also review the rendered documentation in the preview build. The preview workflow should automatically post a comment on the PR containing a link to a preview version of the revised documentation.</p>
-<div id="fig-preview-comment" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-preview-comment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="assets/images/quarto-preview-comment.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-preview-comment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.2: Example of an automated PR preview comment posted by GitHub Actions
-</figcaption>
-</figure>
-</div>
-<p><mark class="preview-element-added"><strong>GitHub review tip:</strong></mark></p>
-<p>In GitHub’s pull request “Files changed” view, you can click the three dots (<code>...</code>) next to a file and select “View file” to hide it from the diff view. This helps you focus on the meaningful changes.</p>
-</section>
-<section id="reviewing-copilot-generated-pull-requests" class="level3" data-number="6.45.7">
-<h3 data-number="6.45.7" class="anchored" data-anchor-id="reviewing-copilot-generated-pull-requests"><span class="header-section-number"><mark class="preview-text-changed">6.45.7</mark></span> <mark class="preview-text-changed">Reviewing</mark> <mark class="preview-text-changed">Copilot-Generated</mark> <mark class="preview-text-changed">Pull Requests</mark></h3>
-<p>When reviewing pull requests created by GitHub Copilot coding agents, apply the same standards and principles as any other PR, but be aware of some unique considerations:</p>
-<p><strong>Workflow approval requirements:</strong></p>
-<ul>
-<li><strong>You must manually approve GitHub Actions workflows</strong> for Copilot PRs</li>
-<li>This is a security measure because Copilot can modify any file, including workflow files themselves</li>
-<li>Click the approval button in the Actions tab or on the PR to trigger workflows</li>
-<li>There is currently no way to bypass this manual approval, even if you are the repository owner</li>
-</ul>
-<p><strong>Review focus areas:</strong></p>
-<ul>
-<li><strong>Verify the solution addresses the issue</strong>: Ensure Copilot understood the requirements correctly</li>
-<li><strong>Check for over-engineering</strong>: Copilot may sometimes add unnecessary complexity or features beyond what was requested</li>
-<li><strong>Review test coverage</strong>: Verify that tests are appropriate and comprehensive</li>
-<li><strong>Check documentation</strong>: Ensure documentation is clear and follows project conventions</li>
-<li><strong>Look for edge cases</strong>: AI-generated code may miss edge cases or error handling</li>
-</ul>
-<p><strong>Iterating on Copilot PRs:</strong></p>
-<p>When you find issues in a Copilot PR, you have two options:</p>
-<ol type="1">
-<li><p><strong>Request changes from Copilot</strong>: Leave review comments and ask Copilot to address them. This works well for complex changes or when you want to see how Copilot interprets your feedback.</p></li>
-<li><p><strong>Make direct changes yourself</strong>: Push commits directly to the Copilot PR branch. This is often faster for simple fixes like typos, formatting, or small adjustments.</p></li>
-</ol>
-<p>For quick fixes, you can often make changes faster than writing review comments and waiting for Copilot to respond.</p>
-<p><strong>Best practices:</strong></p>
-<ul>
-<li><strong>Don’t push while Copilot is working</strong>: Wait for Copilot to complete its current iteration before pushing your own changes to avoid merge conflicts</li>
-<li><strong>Review incrementally</strong>: If a Copilot PR is large, review it in stages as the agent updates it rather than waiting until the end</li>
-<li><strong>Trust but verify</strong>: Copilot is a powerful tool, but human review is essential for catching issues and ensuring quality</li>
-</ul>
-</section>
-</section>
-<section id="creating-a-pull-request-template" class="level2" data-number="6.46">
-<h2 data-number="6.46" class="anchored" data-anchor-id="creating-a-pull-request-template"><span class="header-section-number">6.46</span> Creating a Pull Request Template</h2>
-<p>GitHub allows you to create a pull request template in a repository to standardize the information in pull requests. When you add a template, everyone will automatically see its contents in the pull request body.</p>
-<p>Follow these steps to add a pull request template:</p>
-<ol type="1">
-<li>On GitHub, navigate to the main page of the repository.</li>
-<li>Above the file list, click <code>Create new file</code>.</li>
-<li>Name the file <code>pull_request_template.md</code>. GitHub will not recognize this as the template if it is named anything else. The file must be on the default branch.
-<ul>
-<li>To store the file in a hidden directory, name it <code>.github/pull_request_template.md</code>.</li>
-</ul></li>
-<li>In the body of the new file, add your pull request template.</li>
-</ol>
-<p>Here is an example pull request template:</p>
-<pre class="text"><code># Description
-
-## Summary of change
-
-Please include a summary of the change, including any new functions added and example usage.
-
-## Related Issues
-
-Closes #(issue number)
-Related to #(issue number)
-
-## Testing
-
-Describe how this change has been tested.
-
-## Checklist
-
-- [ ] Tests added/updated
-- [ ] Documentation updated
-- [ ] Code follows project style guidelines
-
-## Who should review the pull request?
-
-@username
-</code></pre>
-</section>
-<section id="sec-getting-help-with-code" class="level2" data-number="6.47">
-<h2 data-number="6.47" class="anchored" data-anchor-id="sec-getting-help-with-code"><span class="header-section-number">6.47</span> Getting Help with Code</h2>
+<section id="sec-getting-help-with-code" class="level2" data-number="6.44">
+<h2 data-number="6.44" class="anchored" data-anchor-id="sec-getting-help-with-code"><span class="header-section-number"><mark class="preview-text-changed">6.44</mark></span> <mark class="preview-text-changed">Getting Help with</mark> Code</h2>
 <p>When you encounter a coding problem, creating a <strong>reprex</strong> (minimal <strong>repr</strong>oducible <strong>ex</strong>ample) is one of the most effective ways to get help—and often helps you solve the problem yourself.</p>
 <p>A good reprex <span class="citation" data-cites="reprex">(<a href="references.html#ref-reprex" role="doc-biblioref">Bryan et al. 2024</a>)</span>:</p>
 <ul>
@@ -3214,10 +2969,10 @@ Describe how this change has been tested.
 <li><a href="https://r4ds.hadley.nz/workflow-help.html#making-a-reprex">R for Data Science: Making a reprex</a> <span class="citation" data-cites="wickham2023r4ds">(<a href="references.html#ref-wickham2023r4ds" role="doc-biblioref">Wickham et al. 2023</a>)</span>: Step-by-step guide to creating effective reproducible examples</li>
 </ul>
 </section>
-<section id="sec-r-resources" class="level2" data-number="6.48">
-<h2 data-number="6.48" class="anchored" data-anchor-id="sec-r-resources"><span class="header-section-number">6.48</span> Additional Resources</h2>
-<section id="r-package-development" class="level3" data-number="6.48.1">
-<h3 data-number="6.48.1" class="anchored" data-anchor-id="r-package-development"><span class="header-section-number">6.48.1</span> R Package Development</h3>
+<section id="sec-r-resources" class="level2" data-number="6.45">
+<h2 data-number="6.45" class="anchored" data-anchor-id="sec-r-resources"><span class="header-section-number"><mark class="preview-text-changed">6.45</mark></span> Additional Resources</h2>
+<section id="r-package-development" class="level3" data-number="6.45.1">
+<h3 data-number="6.45.1" class="anchored" data-anchor-id="r-package-development"><span class="header-section-number"><mark class="preview-text-changed">6.45.1</mark></span> R Package Development</h3>
 <ul>
 <li>R Packages <span class="citation" data-cites="wickham2023rpkgs">(<a href="references.html#ref-wickham2023rpkgs" role="doc-biblioref">Wickham and Bryan 2023</a>)</span> - comprehensive guide to R package development</li>
 <li>Tidyverse design guide <span class="citation" data-cites="wickham2023tidydesign">(<a href="references.html#ref-wickham2023tidydesign" role="doc-biblioref">Wickham 2023</a>)</span> - principles for designing R packages and APIs that are intuitive, composable, and consistent with tidyverse philosophy</li>
@@ -3227,22 +2982,22 @@ Describe how this change has been tested.
 <li><a href="https://testthat.r-lib.org/">testthat documentation</a> - unit testing framework</li>
 </ul>
 </section>
-<section id="general-r-programming" class="level3" data-number="6.48.2">
-<h3 data-number="6.48.2" class="anchored" data-anchor-id="general-r-programming"><span class="header-section-number">6.48.2</span> General R Programming</h3>
+<section id="general-r-programming" class="level3" data-number="6.45.2">
+<h3 data-number="6.45.2" class="anchored" data-anchor-id="general-r-programming"><span class="header-section-number"><mark class="preview-text-changed">6.45.2</mark></span> General R Programming</h3>
 <ul>
 <li>R for Data Science <span class="citation" data-cites="wickham2023r4ds">(<a href="references.html#ref-wickham2023r4ds" role="doc-biblioref">Wickham et al. 2023</a>)</span> - learn data science with the tidyverse</li>
 <li>Advanced R <span class="citation" data-cites="wickham2019advr">(<a href="references.html#ref-wickham2019advr" role="doc-biblioref">Wickham 2019</a>)</span> - deep dive into R programming and internals</li>
 </ul>
 </section>
-<section id="shiny-development" class="level3" data-number="6.48.3">
-<h3 data-number="6.48.3" class="anchored" data-anchor-id="shiny-development"><span class="header-section-number">6.48.3</span> Shiny Development</h3>
+<section id="shiny-development" class="level3" data-number="6.45.3">
+<h3 data-number="6.45.3" class="anchored" data-anchor-id="shiny-development"><span class="header-section-number"><mark class="preview-text-changed">6.45.3</mark></span> Shiny Development</h3>
 <ul>
 <li>Mastering Shiny <span class="citation" data-cites="wickham2021shiny">(<a href="references.html#ref-wickham2021shiny" role="doc-biblioref">Wickham 2021</a>)</span> - comprehensive guide to building web applications with Shiny</li>
 <li>Engineering Production-Grade Shiny Apps <span class="citation" data-cites="fay2021engineering">(<a href="references.html#ref-fay2021engineering" role="doc-biblioref">Fay et al. 2021</a>)</span> - best practices for production Shiny applications</li>
 </ul>
 </section>
-<section id="git-and-version-control" class="level3" data-number="6.48.4">
-<h3 data-number="6.48.4" class="anchored" data-anchor-id="git-and-version-control"><span class="header-section-number">6.48.4</span> Git and Version Control</h3>
+<section id="git-and-version-control" class="level3" data-number="6.45.4">
+<h3 data-number="6.45.4" class="anchored" data-anchor-id="git-and-version-control"><span class="header-section-number"><mark class="preview-text-changed">6.45.4</mark></span> Git and Version Control</h3>
 <ul>
 <li>Happy Git and GitHub for the useR <span class="citation" data-cites="bryan2023happygit">(<a href="references.html#ref-bryan2023happygit" role="doc-biblioref">Bryan 2023</a>)</span> - essential guide to using Git and GitHub with R</li>
 <li><a href="https://thinkr-open.github.io/gitdown/"><code>{gitdown}</code></a> - R package for documenting git commit history as a bookdown report, organized by patterns like tags or issues</li>
@@ -3258,9 +3013,6 @@ Bryan, Jennifer, Jim Hester, David Robinson, Hadley Wickham, and Christophe Derv
 </div>
 <div id="ref-fay2021engineering" class="csl-entry" role="listitem">
 Fay, Colin, Sébastien Rochette, Vincent Guyader, and Cervan Girard. 2021. <em>Engineering Production-Grade Shiny Apps</em>. Chapman; Hall/CRC. <a href="https://doi.org/10.1201/9781003029878">https://doi.org/10.1201/9781003029878</a>.
-</div>
-<div id="ref-tidyverse2023codereview" class="csl-entry" role="listitem">
-Tidyverse Team. 2023. <em>Tidyverse Code Review Principles</em>. <a href="https://code-review.tidyverse.org/">https://code-review.tidyverse.org/</a>.
 </div>
 <div id="ref-wickham2019advr" class="csl-entry" role="listitem">
 Wickham, Hadley. 2019. <em>Advanced r</em>. 2nd ed. Chapman; Hall/CRC. <a href="https://doi.org/10.1201/9781351201315">https://doi.org/10.1201/9781351201315</a>.
