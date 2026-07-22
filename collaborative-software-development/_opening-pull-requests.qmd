@@ -1,0 +1,189 @@
+#### Write focused PRs
+
+A focused pull request is **one self-contained change**
+that addresses just one thing.
+Writing focused PRs has several benefits:
+
+- **Faster reviews**:
+  It is easier for a reviewer to find 5-10 minutes
+  for a single bug fix
+  than to set aside an hour for one large PR.
+- **More thorough reviews**:
+  Large PRs can overwhelm reviewers,
+  which makes it easier to miss important problems.
+- **Fewer bugs**:
+  Smaller changes are easier to reason about.
+- **Easier merges**:
+  Large PRs take longer
+  and are more likely to develop merge conflicts.
+- **Less wasted work**:
+  If the overall direction is wrong,
+  you lose less time on a small PR than on a large one.
+
+As a guideline,
+100 lines is usually a reasonable size for a PR,
+and 1000 lines is usually too large.
+The number of files matters too:
+a 200-line change in one file might be fine,
+but the same change spread across 50 files is usually too large.
+
+#### Write clear PR titles and descriptions
+
+When you submit a pull request,
+include a detailed title and description.
+A comprehensive description helps the reviewer
+and provides valuable historical context.
+
+**PR title:**
+The title should be a short summary,
+ideally under 72 characters,
+that is specific enough for future developers
+to understand the change without opening the full PR.
+
+Poor titles that lack context:
+
+- "Fix bug"
+- "Add patch"
+- "Moving code from A to B"
+
+Better titles that summarize the actual change:
+
+- "Fix missing value handling in data processing function"
+- "Add support for custom date formats in import functions"
+
+**PR description body:**
+The description should give the reviewer
+the context they need to understand the change.
+Consider including:
+
+- A brief description of the problem being solved
+- Links to related issues,
+  such as `Closes #123` or `Related to #456`
+- A before-and-after example that shows the changed behavior
+- Possible shortcomings or trade-offs in the current approach
+- For complex PRs,
+  a suggested reading order for the reviewer
+
+The **Files changed** tab on GitHub also lets you add inline comments
+that explain non-obvious changes.
+Those notes live in the PR metadata,
+not in the source files,
+so they are a good place to explain *this change*
+without cluttering the code with temporary rationale.
+
+#### Explain technical reasoning up front
+
+For non-obvious technical decisions,
+proactively explain your reasoning
+in commit messages and PR descriptions.
+Do not make reviewers ask why you chose a particular approach.
+
+Common situations that require explanation:
+
+- **Version pinning**:
+  Explain whether you are using floating tags
+  (for example `@v2`),
+  version tags
+  (for example `@v2.9.4`),
+  or commit SHA pins
+  (for example `@abc1234...`)
+  and why.
+  For example:
+  "Using `@v2` (moving tag)
+  to receive bug fixes within the major version
+  while maintaining stability."
+- **Configuration changes**:
+  Explain the rationale behind non-obvious choices,
+  such as why a boolean is set a certain way.
+- **Dependency updates**:
+  Explain why you are updating
+  and what benefit or fix it brings.
+- **Workflow modifications**:
+  Describe the problem you are solving
+  and why this approach is preferred.
+
+This proactive communication reduces review back-and-forth
+and helps future maintainers understand the decision later.
+
+#### Request reviews in the right order
+
+Before requesting a pull request review from the PIs,
+obtain fresh approvals from:
+
+- at least one other student
+- at least one AI reviewer
+
+This requirement applies both to
+the initial PI review request
+and to later re-review requests after revisions.
+
+#### Include tests with behavior changes
+
+Focused PRs should include related test code.
+A PR that adds or changes logic
+should add or update tests for the new behavior.
+Pure refactoring PRs should also be protected by tests.
+If tests do not already exist for code you are refactoring,
+add them in a separate PR first
+to confirm that behavior stays unchanged.
+
+#### Separate refactorings from feature work
+
+It is usually best to do refactorings
+in a separate PR from feature changes or bug fixes.
+For example,
+moving and renaming a function
+should generally be separate from fixing a bug in that function.
+That separation makes it much easier for reviewers
+to understand what each PR actually changes.
+
+Small cleanups,
+such as a local variable rename,
+can travel with a feature or bug fix.
+Large refactorings should not.
+
+#### Standardize PR descriptions with a template
+
+GitHub lets you create a pull request template in a repository
+so everyone starts with the same PR body structure.
+
+To add one:
+
+1. On GitHub,
+   navigate to the main page of the repository.
+2. Above the file list,
+   click `Create new file`.
+3. Name the file `pull_request_template.md`.
+   GitHub will not recognize a different filename.
+   To store it in a hidden directory,
+   use `.github/pull_request_template.md`.
+4. Add the template content to the file on the default branch.
+
+Here is an example template:
+
+```text
+# Description
+
+## Summary of change
+
+Please include a summary of the change, including any new functions added and example usage.
+
+## Related Issues
+
+Closes #(issue number)
+Related to #(issue number)
+
+## Testing
+
+Describe how this change has been tested.
+
+## Checklist
+
+- [ ] Tests added/updated
+- [ ] Documentation updated
+- [ ] Code follows project style guidelines
+
+## Who should review the pull request?
+
+@username
+```

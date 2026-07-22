@@ -125,9 +125,14 @@ A standard workflow when starting on a new project and contributing code looks l
 
 : Standard Git workflow for new projects {#tbl-git-workflow}
 
-## Pull Request Roles {#sec-pr-roles}
+## Pull Request Roles and Protocol
 
-{{< include github/_sec-pr-roles.qmd >}}
+The lab's pull request roles,
+author and reviewer expectations,
+and review-response protocol
+are consolidated in @sec-collab-dev.
+This GitHub chapter focuses on Git mechanics
+and GitHub-specific platform features.
 
 ## Commonly Used Git Commands
 
