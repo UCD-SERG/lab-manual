@@ -562,15 +562,7 @@ div.csl-indent {
   <li><a href="#git-branching" id="toc-git-branching" class="nav-link" data-scroll-target="#git-branching"><span class="header-section-number">11.5</span> Git Branching</a></li>
   <li><a href="#sec-dev-branches" id="toc-sec-dev-branches" class="nav-link" data-scroll-target="#sec-dev-branches"><span class="header-section-number">11.6</span> Personal Dev Branches</a></li>
   <li><a href="#example-workflow" id="toc-example-workflow" class="nav-link" data-scroll-target="#example-workflow"><span class="header-section-number">11.7</span> Example Workflow</a></li>
-  <li><a href="#sec-pr-roles" id="toc-sec-pr-roles" class="nav-link" data-scroll-target="#sec-pr-roles"><span class="header-section-number">11.8</span> Pull Request Roles</a>
-  <ul class="collapse">
-  <li><a href="#sec-pr-issue-creator" id="toc-sec-pr-issue-creator" class="nav-link" data-scroll-target="#sec-pr-issue-creator"><span class="header-section-number">11.8.1</span> Issue Creator</a></li>
-  <li><a href="#sec-pr-author" id="toc-sec-pr-author" class="nav-link" data-scroll-target="#sec-pr-author"><span class="header-section-number">11.8.2</span> Author</a></li>
-  <li><a href="#sec-pr-reviewer" id="toc-sec-pr-reviewer" class="nav-link" data-scroll-target="#sec-pr-reviewer"><span class="header-section-number">11.8.3</span> Reviewer</a></li>
-  <li><a href="#sec-pr-merger" id="toc-sec-pr-merger" class="nav-link" data-scroll-target="#sec-pr-merger"><span class="header-section-number">11.8.4</span> Merger</a></li>
-  <li><a href="#sec-pr-assignee" id="toc-sec-pr-assignee" class="nav-link" data-scroll-target="#sec-pr-assignee"><span class="header-section-number">11.8.5</span> Assignee</a></li>
-  <li><a href="#sec-pr-steward" id="toc-sec-pr-steward" class="nav-link" data-scroll-target="#sec-pr-steward"><span class="header-section-number">11.8.6</span> PR Steward</a></li>
-  </ul></li>
+  <li><a href="#pull-request-roles-and-protocol" id="toc-pull-request-roles-and-protocol" class="nav-link" data-scroll-target="#pull-request-roles-and-protocol"><span class="header-section-number">11.8</span> Pull Request Roles and Protocol</a></li>
   <li><a href="#commonly-used-git-commands" id="toc-commonly-used-git-commands" class="nav-link" data-scroll-target="#commonly-used-git-commands"><span class="header-section-number">11.9</span> Commonly Used Git Commands</a></li>
   <li><a href="#how-often-should-i-commit" id="toc-how-often-should-i-commit" class="nav-link" data-scroll-target="#how-often-should-i-commit"><span class="header-section-number">11.10</span> How often should I commit?</a></li>
   <li><a href="#repeated-amend-workflow" id="toc-repeated-amend-workflow" class="nav-link" data-scroll-target="#repeated-amend-workflow"><span class="header-section-number">11.11</span> Repeated Amend Workflow</a>
@@ -834,33 +826,9 @@ Table&nbsp;11.1: Standard Git workflow for new projects
 </figure>
 </div>
 </section>
-<section id="sec-pr-roles" class="level2" data-number="11.8">
-<h2 data-number="11.8" class="anchored" data-anchor-id="sec-pr-roles"><span class="header-section-number">11.8</span> Pull Request Roles</h2>
-<p>Every pull request involves several people, each with a distinct role.</p>
-<section id="sec-pr-issue-creator" class="level3" data-number="11.8.1">
-<h3 data-number="11.8.1" class="anchored" data-anchor-id="sec-pr-issue-creator"><span class="header-section-number">11.8.1</span> Issue Creator</h3>
-<p>The issue creator reports a bug, suggests a feature, or requests other improvements. In projects with external contributors, the issue creator often cannot assign issues to developers and is typically distinct from the PR author.</p>
-</section>
-<section id="sec-pr-author" class="level3" data-number="11.8.2">
-<h3 data-number="11.8.2" class="anchored" data-anchor-id="sec-pr-author"><span class="header-section-number">11.8.2</span> Author</h3>
-<p>The author opens the PR, writes a clear description, and links it to the relevant issue with <code>Closes #N</code> in the PR body. The author implements review feedback and resolves merge conflicts before re-requesting review.</p>
-</section>
-<section id="sec-pr-reviewer" class="level3" data-number="11.8.3">
-<h3 data-number="11.8.3" class="anchored" data-anchor-id="sec-pr-reviewer"><span class="header-section-number">11.8.3</span> Reviewer</h3>
-<p>The reviewer reads the diff, checks the code for correctness and style, and either approves or requests changes.</p>
-</section>
-<section id="sec-pr-merger" class="level3" data-number="11.8.4">
-<h3 data-number="11.8.4" class="anchored" data-anchor-id="sec-pr-merger"><span class="header-section-number">11.8.4</span> Merger</h3>
-<p>The merger executes the final merge once the PR is approved and all CI checks pass. This is often the same person as the reviewer.</p>
-</section>
-<section id="sec-pr-assignee" class="level3" data-number="11.8.5">
-<h3 data-number="11.8.5" class="anchored" data-anchor-id="sec-pr-assignee"><span class="header-section-number">11.8.5</span> Assignee</h3>
-<p>The assignee is listed in the “Assignees” field on GitHub to indicate who is currently responsible for the PR. This field clarifies ownership and tracks who should be addressing open feedback.</p>
-</section>
-<section id="sec-pr-steward" class="level3" data-number="11.8.6">
-<h3 data-number="11.8.6" class="anchored" data-anchor-id="sec-pr-steward"><span class="header-section-number">11.8.6</span> PR Steward</h3>
-<p>A PR steward keeps the review queue healthy. The steward monitors open PRs, assigns reviewers when none are assigned, follows up on stalled reviews, and helps resolve disagreements between authors and reviewers. This is typically a rotating duty for a senior contributor or release manager. The p5.js project documents how it structures this role in its <a href="https://p5js.org/contribute/steward_guidelines/">steward guidelines</a>.</p>
-</section>
+<section id="pull-request-roles-and-protocol" class="level2" data-number="11.8">
+<h2 data-number="11.8" class="anchored" data-anchor-id="pull-request-roles-and-protocol"><span class="header-section-number">11.8</span> Pull Request Roles and Protocol</h2>
+<p>The lab’s pull request roles, author and reviewer expectations, and review-response protocol are consolidated in <a href="collaborative-software-development.html" class="quarto-xref"><span>Chapter 12</span></a>. This GitHub chapter focuses on Git mechanics and GitHub-specific platform features.</p>
 </section>
 <section id="commonly-used-git-commands" class="level2" data-number="11.9">
 <h2 data-number="11.9" class="anchored" data-anchor-id="commonly-used-git-commands"><span class="header-section-number">11.9</span> Commonly Used Git Commands</h2>
