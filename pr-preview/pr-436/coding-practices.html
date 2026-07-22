@@ -419,7 +419,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./coding-practices.html" class="sidebar-item-text sidebar-link active">
+  <a href="./coding-practices.html" class="sidebar-item-text sidebar-link active" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">R Coding Practices</span></span></a>
   </div>
 </li>
@@ -773,8 +773,9 @@ window.Quarto = {
   <li><a href="#write-focused-prs" id="toc-write-focused-prs" class="nav-link" data-scroll-target="#write-focused-prs"><span class="header-section-number">6.44.1</span> Write Focused PRs</a></li>
   <li><a href="#writing-pr-descriptions" id="toc-writing-pr-descriptions" class="nav-link" data-scroll-target="#writing-pr-descriptions"><span class="header-section-number">6.44.2</span> Writing PR Descriptions</a></li>
   <li><a href="#explaining-technical-reasoning" id="toc-explaining-technical-reasoning" class="nav-link" data-scroll-target="#explaining-technical-reasoning"><span class="header-section-number">6.44.3</span> Explaining Technical Reasoning</a></li>
-  <li><a href="#add-tests" id="toc-add-tests" class="nav-link" data-scroll-target="#add-tests"><span class="header-section-number">6.44.4</span> Add Tests</a></li>
-  <li><a href="#separate-out-refactorings" id="toc-separate-out-refactorings" class="nav-link" data-scroll-target="#separate-out-refactorings"><span class="header-section-number">6.44.5</span> Separate Out Refactorings</a></li>
+  <li><a href="#requesting-pi-reviews" id="toc-requesting-pi-reviews" class="nav-link" data-scroll-target="#requesting-pi-reviews"><span class="header-section-number">6.44.4</span> Requesting PI Reviews</a></li>
+  <li><a href="#add-tests" id="toc-add-tests" class="nav-link" data-scroll-target="#add-tests"><span class="header-section-number">6.44.5</span> Add Tests</a></li>
+  <li><a href="#separate-out-refactorings" id="toc-separate-out-refactorings" class="nav-link" data-scroll-target="#separate-out-refactorings"><span class="header-section-number">6.44.6</span> Separate Out Refactorings</a></li>
   </ul></li>
   <li><a href="#reviewing-pull-requests" id="toc-reviewing-pull-requests" class="nav-link" data-scroll-target="#reviewing-pull-requests"><span class="header-section-number">6.45</span> Reviewing Pull Requests</a>
   <ul class="collapse">
@@ -802,7 +803,7 @@ window.Quarto = {
 <main class="content" id="quarto-document-content">
 <div class="preview-home-changes-banner">
     <p style="margin: 0;">
-        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="appendix-document-metadata.html">appendix-document-metadata</a>
+        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="coding-practices.html">6. &nbsp; <span class="chapter-title">R Coding Practices</span></span></a>, <a href="appendix-document-metadata.html">appendix-document-metadata</a>
         <br>
         <strong>📄 DOCX with tracked changes:</strong> <a href="UCD-SeRG-Lab-Manual-tracked-changes.docx" download>Download UCD-SeRG-Lab-Manual-tracked-changes.docx</a>
         <br>
@@ -830,6 +831,18 @@ window.Quarto = {
 
 </header>
 
+
+
+<div class="preview-combined-banner">
+    <p style="margin: 0;">
+        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~0% of content changed).
+        <br>
+        <strong>🎨 Highlighting Legend:</strong> 
+        <mark class="preview-text-changed" style="display: inline; padding: 1px 3px;">Modified text (yellow)</mark> shows changed words/phrases with tooltips of original text, 
+        <mark class="preview-text-added" style="display: inline; padding: 1px 3px;">added text (green)</mark> shows new content, and 
+        <mark class="preview-element-added" style="display: inline; padding: 1px 3px;">new sections (blue)</mark> highlight entirely new paragraphs.
+    </p>
+</div>
 
 <section id="lab-protocols-for-code-and-data" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="lab-protocols-for-code-and-data"><span class="header-section-number">6.1</span> Lab Protocols for Code and Data</h2>
@@ -3006,18 +3019,31 @@ future_lapply(x = mylist, FUN = func)</code></pre>
 </ul>
 <p>This proactive communication reduces back-and-forth during review and helps future maintainers understand the decisions made.</p>
 </section>
-<section id="add-tests" class="level3" data-number="6.44.4">
-<h3 data-number="6.44.4" class="anchored" data-anchor-id="add-tests"><span class="header-section-number">6.44.4</span> Add Tests</h3>
+<section id="requesting-pi-reviews" class="level3" data-number="6.44.4">
+<h3 data-number="6.44.4" class="anchored" data-anchor-id="requesting-pi-reviews"><span class="header-section-number"><mark class="preview-text-changed">6.44.4</mark></span> <mark class="preview-text-changed">Requesting</mark> <mark class="preview-text-changed">PI</mark> <mark class="preview-text-changed">Reviews</mark></h3>
+<p>Before requesting a pull request <mark class="preview-text-changed">review</mark> <mark class="preview-text-changed">from</mark> <mark class="preview-text-changed">the</mark> <mark class="preview-text-changed">PIs, obtain fresh approvals from:</mark></p>
+<ul>
+<li><mark class="preview-element-added">at least one other student</mark></li>
+<li><mark class="preview-text-changed">at</mark> <mark class="preview-text-changed">least</mark> <mark class="preview-text-changed">one</mark> <mark class="preview-text-changed">AI reviewer</mark></li>
+</ul>
+<p><mark class="preview-element-added">This requirement applies to both:</mark></p>
+<ul>
+<li><mark class="preview-text-changed">initial</mark> <mark class="preview-text-changed">PI</mark> <mark class="preview-text-changed">review</mark> <mark class="preview-text-changed">requests</mark></li>
+<li><mark class="preview-element-added">re-review requests after revisions</mark></li>
+</ul>
+</section>
+<section id="add-tests" class="level3" data-number="6.44.5">
+<h3 data-number="6.44.5" class="anchored" data-anchor-id="add-tests"><span class="header-section-number"><mark class="preview-text-changed">6.44.5</mark></span> Add Tests</h3>
 <p>Focused PRs should include related test code. A PR that adds or changes logic should be accompanied by new or updated tests for the new behavior. Pure refactoring PRs should also be covered by tests—if tests don’t exist for code you’re refactoring, add them in a separate PR first to validate that behavior is unchanged.</p>
 </section>
-<section id="separate-out-refactorings" class="level3" data-number="6.44.5">
-<h3 data-number="6.44.5" class="anchored" data-anchor-id="separate-out-refactorings"><span class="header-section-number">6.44.5</span> Separate Out Refactorings</h3>
+<section id="separate-out-refactorings" class="level3" data-number="6.44.6">
+<h3 data-number="6.44.6" class="anchored" data-anchor-id="separate-out-refactorings"><span class="header-section-number"><mark class="preview-text-changed">6.44.6</mark></span> Separate Out Refactorings</h3>
 <p>It’s usually best to do refactorings in a separate PR from feature changes or bug fixes. For example, moving and renaming a function should be in a different PR from fixing a bug in that function. This makes it much easier for reviewers to understand the changes introduced by each PR.</p>
 <p>Small cleanups (like fixing a local variable name) can be included in a feature change or bug fix PR, but large refactorings should be separate.</p>
 </section>
 </section>
 <section id="reviewing-pull-requests" class="level2" data-number="6.45">
-<h2 data-number="6.45" class="anchored" data-anchor-id="reviewing-pull-requests"><span class="header-section-number">6.45</span> Reviewing Pull Requests</h2>
+<h2 data-number="6.45" class="anchored" data-anchor-id="reviewing-pull-requests"><span class="header-section-number"><mark class="preview-text-changed">6.45</mark></span> Reviewing Pull Requests</h2>
 <section id="purpose-of-code-review" class="level3" data-number="6.45.1">
 <h3 data-number="6.45.1" class="anchored" data-anchor-id="purpose-of-code-review"><span class="header-section-number">6.45.1</span> Purpose of Code Review</h3>
 <p>The primary purpose of code review is to ensure that the overall code health of our projects improves over time. Reviewers should balance the need to make forward progress with the importance of maintaining code quality.</p>
@@ -3045,7 +3071,7 @@ future_lapply(x = mylist, FUN = func)</code></pre>
 <p><strong>Better comment</strong>: “This approach adds complexity without clear benefits. Consider using [alternative approach] instead, which would simplify the logic and improve readability.”</p>
 </section>
 <section id="mentoring-through-review" class="level3" data-number="6.45.4">
-<h3 data-number="6.45.4" class="anchored" data-anchor-id="mentoring-through-review"><span class="header-section-number">6.45.4</span> Mentoring Through Review</h3>
+<h3 data-number="6.45.4" class="anchored" data-anchor-id="mentoring-through-review"><span class="header-section-number"><mark class="preview-text-changed">6.45.4</mark></span> <mark class="preview-text-changed">Mentoring</mark> <mark class="preview-text-changed">Through</mark> Review</h3>
 <p>Code review is an excellent opportunity for mentoring. As a reviewer:</p>
 <ul>
 <li>Leave comments that help authors learn something new</li>
@@ -3078,7 +3104,7 @@ Figure&nbsp;6.1: GitHub’s suggestion feature in a PR review comment
 <li>Reviewing the source roxygen2 comments is more informative and efficient</li>
 <li>The <code>.Rd</code> files will be regenerated during the package build process</li>
 </ul>
-<p><strong>What to review instead:</strong></p>
+<p><strong><mark class="preview-text-changed">What to</mark> review <mark class="preview-text-changed">instead:</mark></strong></p>
 <p>Focus your review on the roxygen2 documentation comments in the actual R source files (<code>.R</code> files in the <code>R/</code> directory). These special comments start with <code>#'</code> and appear immediately before function definitions. Any changes to function documentation will be visible there.</p>
 <p>If the repository has a preview workflow (such as pkgdown for R packages or Quarto for documentation sites), you can also review the rendered documentation in the preview build. The preview workflow should automatically post a comment on the PR containing a link to a preview version of the revised documentation.</p>
 <div id="fig-preview-comment" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -3091,11 +3117,11 @@ Figure&nbsp;6.2: Example of an automated PR preview comment posted by GitHub Act
 </figcaption>
 </figure>
 </div>
-<p><strong>GitHub review tip:</strong></p>
+<p><mark class="preview-element-added"><strong>GitHub review tip:</strong></mark></p>
 <p>In GitHub’s pull request “Files changed” view, you can click the three dots (<code>...</code>) next to a file and select “View file” to hide it from the diff view. This helps you focus on the meaningful changes.</p>
 </section>
 <section id="reviewing-copilot-generated-pull-requests" class="level3" data-number="6.45.7">
-<h3 data-number="6.45.7" class="anchored" data-anchor-id="reviewing-copilot-generated-pull-requests"><span class="header-section-number">6.45.7</span> Reviewing Copilot-Generated Pull Requests</h3>
+<h3 data-number="6.45.7" class="anchored" data-anchor-id="reviewing-copilot-generated-pull-requests"><span class="header-section-number"><mark class="preview-text-changed">6.45.7</mark></span> <mark class="preview-text-changed">Reviewing</mark> <mark class="preview-text-changed">Copilot-Generated</mark> <mark class="preview-text-changed">Pull Requests</mark></h3>
 <p>When reviewing pull requests created by GitHub Copilot coding agents, apply the same standards and principles as any other PR, but be aware of some unique considerations:</p>
 <p><strong>Workflow approval requirements:</strong></p>
 <ul>

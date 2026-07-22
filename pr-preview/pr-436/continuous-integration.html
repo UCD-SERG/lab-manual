@@ -371,7 +371,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./coding-practices.html" class="sidebar-item-text sidebar-link">
+  <a href="./coding-practices.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">R Coding Practices</span></span></a>
   </div>
 </li>
@@ -563,7 +563,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <main class="content" id="quarto-document-content">
 <div class="preview-home-changes-banner">
     <p style="margin: 0;">
-        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="appendix-document-metadata.html">appendix-document-metadata</a>
+        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="coding-practices.html">6. &nbsp; <span class="chapter-title">R Coding Practices</span></span></a>, <a href="appendix-document-metadata.html">appendix-document-metadata</a>
         <br>
         <strong>📄 DOCX with tracked changes:</strong> <a href="UCD-SeRG-Lab-Manual-tracked-changes.docx" download>Download UCD-SeRG-Lab-Manual-tracked-changes.docx</a>
         <br>
@@ -797,7 +797,7 @@ act:   add the label, start working         # both runs now think they own it</c
 </section>
 <section id="sec-ci-decomposition" class="level3" data-number="13.6.6">
 <h3 data-number="13.6.6" class="anchored" data-anchor-id="sec-ci-decomposition"><span class="header-section-number">13.6.6</span> Pipeline Decomposition</h3>
-<p>The function-decomposition principles from <a href="coding-practices.html" class="quarto-xref"><span>Chapter 6</span></a> apply to pipelines: split a pipeline into jobs along the lines of <strong>independent failure and re-run</strong> — if one part can fail while another succeeds, and re-running only the failed part would save meaningful time, they belong in separate jobs. Separate jobs also parallelize across runners and show up as separate checks on a pull request, which makes failures legible at a glance.</p>
+<p>The function-decomposition principles from <a href="coding-practices.html" class="quarto-xref" preview-toc-changed><span>Chapter 6</span></a> apply to pipelines: split a pipeline into jobs along the lines of <strong>independent failure and re-run</strong> — if one part can fail while another succeeds, and re-running only the failed part would save meaningful time, they belong in separate jobs. Separate jobs also parallelize across runners and show up as separate checks on a pull request, which makes failures legible at a glance.</p>
 <p>Keep a pipeline monolithic when its steps share expensive setup (one job that restores an <code>renv</code> library and then lints, tests, and builds beats three jobs that each restore it) or when the steps are meaningless in isolation.</p>
 <p>Pass data between jobs through the platform’s declared channels — job <code>outputs</code> and <code>needs:</code> in GitHub Actions, artifacts in both systems — not through side effects like pushing intermediate state to the repository.</p>
 </section>
