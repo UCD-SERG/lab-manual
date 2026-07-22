@@ -38,6 +38,8 @@ condition_class_linter <- function() {
       has_class <- "class" %in% arg_names
       has_named_regexp <- "regexp" %in% arg_names
 
+      # The second positional argument is the third direct `expr` child:
+      # function call, first argument, then unnamed `regexp`.
       positional_regexp <- xml2::xml_find_first(
         call,
         "./expr[3][preceding-sibling::*[1][self::OP-COMMA]]"
