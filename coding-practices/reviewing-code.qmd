@@ -68,6 +68,19 @@ Common situations that require explanation:
 This proactive communication reduces back-and-forth during review
 and helps future maintainers understand the decisions made.
 
+### Requesting PI Reviews
+
+Before requesting a pull request review from the PIs,
+obtain fresh approvals from:
+
+- at least one other student
+- at least one AI reviewer
+
+This requirement applies to both:
+
+- initial PI review requests
+- re-review requests after revisions
+
 ### Add Tests
 
 Focused PRs should include related test code. A PR that adds or changes logic should be accompanied by new or updated tests for the new behavior. Pure refactoring PRs should also be covered by tests---if tests don't exist for code you're refactoring, add them in a separate PR first to validate that behavior is unchanged.
