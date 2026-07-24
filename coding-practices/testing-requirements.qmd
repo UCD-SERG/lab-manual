@@ -1,5 +1,37 @@
 **ALWAYS establish tests BEFORE modifying functions.** This ensures changes preserve existing behavior and new behavior is correctly validated.
 
+### Add New Tests for New Features {#sec-dont-repurpose-tests}
+
+When a PR adds a feature, give it a new test rather than
+editing an existing test's inputs or expectations to also cover it.
+Repurposing a test this way folds two changes into one diff ---
+the reviewer can no longer tell,
+at a glance,
+whether the edited assertions still protect the old behavior
+or now only protect the new one.
+
+```r
+# Avoid --- repurposing an existing test to also cover a new method
+test_that("run_model produces expected output", {
+  result <- run_model(data, method = "exponential") # was "power"
+  expect_snapshot_value(result)
+})
+
+# Preferred --- a new test for the new feature
+test_that("run_model handles the exponential method", {
+  result <- run_model(data, method = "exponential")
+  expect_snapshot_value(result)
+})
+```
+
+If the new feature makes an existing test redundant,
+leave that redundancy alone for now.
+Remove or consolidate redundant tests in a separate, focused PR,
+so a reviewer can evaluate
+"does the new feature work"
+and "which old tests are now redundant"
+as two independent questions.
+
 ### When to Use Snapshot Tests
 
 Use snapshot tests (`expect_snapshot()`, `expect_snapshot_value()`) when:
