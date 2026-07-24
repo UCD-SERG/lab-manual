@@ -10,6 +10,10 @@ at a glance,
 whether the edited assertions still protect the old behavior
 or now only protect the new one.
 
+For example, suppose a `run_model()` test originally covered the
+`"power"` method and gets edited in place to cover `"exponential"`
+instead, rather than gaining a new test alongside it:
+
 ```r
 # Avoid --- repurposing an existing test to also cover a new method
 test_that("run_model produces expected output", {
