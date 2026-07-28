@@ -10,4 +10,4 @@ on:
 
 jobs:
   check-chars:
-    uses: d-morrison/gha/.github/workflows/check-non-standard-chars.yml@v2
+    uses: Morrison-Lab/gha/.github/workflows/check-non-standard-chars.yml@v2

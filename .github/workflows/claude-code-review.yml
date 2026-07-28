@@ -1,4 +1,4 @@
-# Calls the shared reusable Claude Code Review workflow in d-morrison/gha.
+# Calls the shared reusable Claude Code Review workflow in Morrison-Lab/gha.
 # Requires the CLAUDE_CODE_OAUTH_TOKEN repository secret. It is passed
 # explicitly (not `secrets: inherit`): the reusable workflow lives in the
 # d-morrison user account while this repo is in the UCD-SERG org, and GitHub
@@ -27,7 +27,7 @@ jobs:
       issues: write
       id-token: write
       actions: read   # lets the reviewer read CI status (github_ci MCP server)
-    uses: d-morrison/gha/.github/workflows/claude-code-review.yml@v1
+    uses: Morrison-Lab/gha/.github/workflows/claude-code-review.yml@v1
     # Pass secrets explicitly — cross-owner `secrets: inherit` drops them (see
     # the header comment). SUBMODULES_TOKEN is optional (empty when unset).
     secrets:
