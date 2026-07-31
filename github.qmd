@@ -205,3 +205,7 @@ There is a standardized `.gitignore` for `R` which you [can download](https://gi
 ## Customizing How Files Appear on GitHub {#sec-gitattributes}
 
 {{< include github/_sec-gitattributes.qmd >}}
+
+## Exporting Issue and Pull Request Conversations {#sec-export-conversations}
+
+{{< include github/_sec-export-conversations.qmd >}}

@@ -1,0 +1,167 @@
+Issue threads and pull request reviews hold a lot of the reasoning behind a project:
+why an approach was rejected,
+what a reviewer worried about,
+which alternative was tried first.
+That record lives on GitHub's servers,
+not in your Git history,
+so `git clone` does not capture any of it.
+
+Reasons to pull it out:
+
+- **Archiving** a project before a repository is transferred, made private, or deleted.
+- **Offline or full-text search** across years of discussion,
+  which is faster and more thorough than GitHub's search box.
+- **Supplementary material** documenting how an analysis evolved,
+  for a manuscript or a reproducibility appendix.
+- **Feeding context to an AI coding assistant**
+  that cannot browse the web
+  but can read files in the working directory.
+
+### A pull request holds three separate conversations {#sec-export-three-streams}
+
+This is the detail that most home-grown export scripts miss.
+What the GitHub web interface presents as one continuous thread
+is actually three different resources in the API:
+
+| Stream | What it is | Where it lives |
+| ------ | ---------- | -------------- |
+| Issue comments | Top-level comments in the "Conversation" tab | `/issues/{n}/comments` |
+| Reviews | The summary body attached to an Approve, Request changes, or Comment review | `/pulls/{n}/reviews` |
+| Review comments | Inline comments anchored to a line of the diff | `/pulls/{n}/comments` |
+
+Fetch only the first
+and you will silently drop
+every line-level review comment
+and every reviewer's summary --
+usually the most substantive part of the discussion.
+
+A fourth resource,
+the timeline (`/issues/{n}/timeline`),
+carries the non-prose events:
+labels applied,
+commits referenced,
+issues linked and closed,
+review requests.
+Export it too if you care about *what happened*
+and not only *what was said*.
+
+Note also that GitHub models pull requests as a kind of issue.
+The `/issues` endpoint returns both,
+with pull requests distinguished by a `pull_request` key,
+so filter deliberately rather than assuming you got only issues.
+
+### Exporting with `gh` {#sec-export-gh}
+
+The GitHub CLI (@sec-cli-tools) is the shortest route for a handful of repositories.
+Its `--json` flag will assemble the separate streams for you.
+
+Issues, with their comment threads inline:
+
+```sh
+gh issue list --repo UCD-SERG/serocalculator --state all --limit 1000 \
+  --json number,title,state,author,createdAt,closedAt,labels,body,comments \
+  > issues.json
+```
+
+Pull requests need all three streams named explicitly:
+
+```sh
+gh pr list --repo UCD-SERG/serocalculator --state all --limit 1000 \
+  --json number --jq '.[].number' |
+while read -r n; do
+  gh pr view "$n" --repo UCD-SERG/serocalculator \
+    --json number,title,state,author,createdAt,mergedAt,body,comments,reviews,reviewThreads \
+    > "pr-${n}.json"
+done
+```
+
+`reviewThreads` is the one to watch:
+it nests the inline comments under the thread they belong to
+and reports whether the thread was resolved,
+which a flat list of review comments cannot tell you.
+
+Note that `--limit` defaults to 30.
+Set it above your repository's issue count,
+or you will get a partial export with no warning.
+
+### Exporting with the REST API {#sec-export-rest}
+
+When you need a field `gh`'s `--json` flag does not expose,
+call the API directly.
+`gh api` handles authentication and pagination for you:
+
+```sh
+gh api --paginate /repos/OWNER/REPO/issues/123/comments
+gh api --paginate /repos/OWNER/REPO/pulls/123/comments
+gh api --paginate /repos/OWNER/REPO/pulls/123/reviews
+gh api --paginate /repos/OWNER/REPO/issues/123/timeline
+```
+
+Without `--paginate` you get the first 30 records and nothing to indicate more exist.
+
+The same endpoints work from R via the [`gh` package](https://gh.r-lib.org/),
+which is convenient if the export feeds directly into an analysis:
+
+```r
+comments <- gh::gh(
+  "/repos/{owner}/{repo}/issues/{number}/comments",
+  owner = "UCD-SERG",
+  repo = "serocalculator",
+  number = 123,
+  .limit = Inf
+)
+```
+
+`.limit = Inf` is that package's equivalent of `--paginate`.
+
+### Exporting with GraphQL {#sec-export-graphql}
+
+REST costs three or four requests per pull request.
+Across several hundred pull requests
+that is thousands of requests against a limit of 5000 per hour.
+GitHub's GraphQL API can return the comments, reviews, and review threads
+for a pull request in a single request,
+which is worth the extra complexity once a repository is large enough
+that the REST approach runs into the rate limit.
+Use `gh api graphql` to issue the query.
+
+### Whole-repository archives {#sec-export-migration}
+
+For a complete snapshot with no scripting,
+GitHub's migration API builds a downloadable archive
+containing issues, issue comments, pull requests, and pull request review comments as JSON.
+Start one with `POST /user/migrations` for repositories you own,
+or `POST /orgs/{org}/migrations` for an organization's repositories
+if you are an organization owner.
+Both are asynchronous:
+you poll the migration's status until it reports `exported`,
+then download the archive.
+
+The web interface offers a personal-account equivalent
+under **Settings > Account > Export account data**.
+
+This route is the right one for archiving a repository before it is deleted or transferred.
+The per-repository scripts above are better for
+ongoing exports or for a subset of the discussion.
+
+### Practical cautions {#sec-export-cautions}
+
+- **Attachments are not included.**
+  Images and files pasted into a comment appear as links to GitHub's asset servers.
+  The exported text keeps the URL,
+  not the file.
+  Download those separately if they matter,
+  and note that assets on a private repository require authentication to fetch.
+- **The authenticated rate limit is 5000 requests per hour.**
+  A few hundred pull requests exported through REST will get close.
+  Check your remaining budget with `gh api /rate_limit`.
+- **Reactions and thread resolution need to be requested.**
+  Neither comes along by default in a plain comment listing.
+- **Deleted and edited content is gone.**
+  An export captures the current state,
+  not the edit history of a comment.
+
+Whatever route you take,
+commit the export to a repository or deposit it somewhere durable.
+An archive that lives only on the laptop of whoever ran the script
+has not solved the problem it was made to solve.
