@@ -127,10 +127,8 @@ Use `gh api graphql` to issue the query.
 
 ### Whole-repository archives {#sec-export-migration}
 
-For a complete snapshot with no scripting,
 GitHub's migration API builds a downloadable archive of your data as JSON.
-This is the most complete of the routes here,
-and the only one that needs no code at all.
+It is the most complete of the routes here.
 
 The user migrations reference lists what the archive can hold
 [@githubusermigrations].
@@ -143,7 +141,7 @@ along with `issue_events`, `commit_comments`, `milestones`,
 Start a migration with `POST /user/migrations` for repositories you own,
 or `POST /orgs/{org}/migrations` for an organization's repositories
 if you are an organization owner
-([organization migrations](https://docs.github.com/en/rest/migrations/orgs)).
+[@githuborgmigrations].
 Both are asynchronous:
 you poll the migration's status until it reports `exported`,
 then download the archive,
@@ -157,8 +155,9 @@ and refers readers to the migrations API reference
 for what that data covers
 [@githubaccountarchive].
 Clicking through delivers the `.tar.gz` by emailed download link.
-So a lab member who wants the whole record and would rather not script anything
-can get it from Settings.
+That makes this the one route needing no code at all:
+a lab member who wants the whole record
+can click through Settings and skip everything above.
 
 This route is the right one for archiving a repository before it is deleted or transferred.
 The per-repository scripts above are better for
