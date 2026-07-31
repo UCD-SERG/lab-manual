@@ -128,26 +128,37 @@ Use `gh api graphql` to issue the query.
 ### Whole-repository archives {#sec-export-migration}
 
 For a complete snapshot with no scripting,
-GitHub's migration API builds a downloadable archive
-containing issues, issue comments, pull requests, and pull request review comments as JSON.
-Start one with `POST /user/migrations` for repositories you own
-([user migrations](https://docs.github.com/en/rest/migrations/users)),
+GitHub's migration API builds a downloadable archive of your data as JSON.
+This is the most complete of the routes here,
+and the only one that needs no code at all.
+
+The user migrations reference lists what the archive can hold
+[@githubusermigrations].
+Every stream named above is in it ---
+`issues`, `issue_comments`, `pull_requests`, `pull_request_reviews`,
+and `review_comments` ---
+along with `issue_events`, `commit_comments`, `milestones`,
+`releases`, `repositories`, and `users`.
+
+Start a migration with `POST /user/migrations` for repositories you own,
 or `POST /orgs/{org}/migrations` for an organization's repositories
 if you are an organization owner
 ([organization migrations](https://docs.github.com/en/rest/migrations/orgs)).
 Both are asynchronous:
 you poll the migration's status until it reports `exported`,
-then download the archive.
+then download the archive,
+which stays available for seven days.
 
-GitHub separately offers an account-level export
-under **Settings > Account > Export account data**,
-which delivers a `.tar.gz` through an emailed download link
-that expires after seven days by default;
-see
-[Requesting an archive of your personal account's data](https://docs.github.com/en/get-started/archiving-your-github-personal-account-and-public-repositories/requesting-an-archive-of-your-personal-accounts-data).
-That page is the place to check what the archive currently contains.
-The migration API above is the documented route
-for issue and pull request conversation data specifically.
+**Settings > Account > Export account data** is the web-interface route
+to this same export rather than a separate feature.
+GitHub's documentation states that you can export your personal account's data
+"through your account settings on GitHub or with the User Migration API",
+and refers readers to the migrations API reference
+for what that data covers
+[@githubaccountarchive].
+Clicking through delivers the `.tar.gz` by emailed download link.
+So a lab member who wants the whole record and would rather not script anything
+can get it from Settings.
 
 This route is the right one for archiving a repository before it is deleted or transferred.
 The per-repository scripts above are better for
@@ -155,12 +166,16 @@ ongoing exports or for a subset of the discussion.
 
 ### Practical cautions {#sec-export-cautions}
 
-- **Attachments are not included.**
-  Images and files pasted into a comment appear as links to GitHub's asset servers.
-  The exported text keeps the URL,
-  not the file.
+- **Whether you get attachment files depends on the route.**
+  Through `gh` or the REST API you get comment text,
+  in which a pasted image or file is a link to GitHub's asset servers ---
+  the URL, not the file.
   Download those separately if they matter,
   and note that assets on a private repository require authentication to fetch.
+  The migration archive is the exception:
+  it carries an `attachments` directory of the files themselves,
+  unless you ask for it to be left out
+  [@githubusermigrations].
 - **The authenticated rate limit is 5000 requests per hour.**
   A few hundred pull requests exported through REST will get close.
   Check your remaining budget with `gh api /rate_limit`.
