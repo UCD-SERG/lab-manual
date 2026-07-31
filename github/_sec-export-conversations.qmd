@@ -32,7 +32,7 @@ is actually three different resources in the API:
 Fetch only the first
 and you will silently drop
 every line-level review comment
-and every reviewer's summary --
+and every reviewer's summary ---
 usually the most substantive part of the discussion.
 
 A fourth resource,
@@ -130,15 +130,24 @@ Use `gh api graphql` to issue the query.
 For a complete snapshot with no scripting,
 GitHub's migration API builds a downloadable archive
 containing issues, issue comments, pull requests, and pull request review comments as JSON.
-Start one with `POST /user/migrations` for repositories you own,
+Start one with `POST /user/migrations` for repositories you own
+([user migrations](https://docs.github.com/en/rest/migrations/users)),
 or `POST /orgs/{org}/migrations` for an organization's repositories
-if you are an organization owner.
+if you are an organization owner
+([organization migrations](https://docs.github.com/en/rest/migrations/orgs)).
 Both are asynchronous:
 you poll the migration's status until it reports `exported`,
 then download the archive.
 
-The web interface offers a personal-account equivalent
-under **Settings > Account > Export account data**.
+GitHub separately offers an account-level export
+under **Settings > Account > Export account data**,
+which delivers a `.tar.gz` through an emailed download link
+that expires after seven days by default;
+see
+[Requesting an archive of your personal account's data](https://docs.github.com/en/get-started/archiving-your-github-personal-account-and-public-repositories/requesting-an-archive-of-your-personal-accounts-data).
+That page is the place to check what the archive currently contains.
+The migration API above is the documented route
+for issue and pull request conversation data specifically.
 
 This route is the right one for archiving a repository before it is deleted or transferred.
 The per-repository scripts above are better for
