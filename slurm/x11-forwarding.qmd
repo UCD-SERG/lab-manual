@@ -23,7 +23,8 @@ because only the page data crosses the network rather than every repainted pixel
 
 The cluster draws into an X server,
 and that server runs on your machine rather than on Shiva.
-macOS and Windows do not ship one.
+macOS and Windows do not ship one,
+so install the software listed in @tbl-x11-servers before your first attempt.
 
 | Your computer | What to install |
 |---------------|-----------------|
