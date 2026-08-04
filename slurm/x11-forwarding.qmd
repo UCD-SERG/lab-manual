@@ -1,0 +1,157 @@
+Shiva's SSH server permits X11 forwarding,
+so a graphical program started on the cluster can draw its window on your own computer.
+This is worth setting up when you want a GUI text editor on the cluster,
+or a web browser that sees the network from Shiva's position rather than from yours.
+
+X11 forwarding sends every window update across the network,
+so it suits a text editor much better than it suits a browser.
+When all you want is to view a web page that Shiva itself is serving,
+such as an [RStudio Server](https://posit.co/products/open-source/rstudio-server/) session
+or a rendered report,
+forward the port instead and use the browser already on your own computer:
+
+```bash
+# from your own computer, not from Shiva
+ssh -L 8787:localhost:8787 USERNAME@shiva.ucdavis.edu
+```
+
+With that running, `http://localhost:8787` in your local browser reaches the service on Shiva.
+This is far faster than forwarding a browser window,
+because only the page data crosses the network rather than every repainted pixel.
+
+### Install an X server on your own computer
+
+The cluster draws into an X server,
+and that server runs on your machine rather than on Shiva.
+macOS and Windows do not ship one.
+
+| Your computer | What to install |
+|---------------|-----------------|
+| macOS | [XQuartz](https://www.xquartz.org/). Log out and back in after installing, so that `DISPLAY` is set. |
+| Windows | [VcXsrv](https://sourceforge.net/projects/vcxsrv/), or [MobaXterm](https://mobaxterm.mobatek.net/), which bundles an X server together with an SSH client. |
+| Windows, using WSL2 | Nothing. [WSLg](https://learn.microsoft.com/en-us/windows/wsl/tutorials/gui-apps) supplies the X server. |
+| Linux | Nothing. Your desktop session is already an X server. |
+
+: Where to get an X server, by operating system {#tbl-x11-servers}
+
+### Connect with X11 forwarding enabled
+
+Ask for trusted X11 forwarding with `-Y`:
+
+```bash
+ssh -Y USERNAME@shiva.ucdavis.edu
+```
+
+Use `-Y` rather than `-X` here.
+`-X` requests *untrusted* forwarding,
+which OpenSSH shuts off twenty minutes into the session by default [@openssh-ssh-config],
+so a long editing session dies partway through for no visible reason.
+Many graphical toolkits also misbehave under the untrusted restrictions.
+
+The exception is a Linux client running Debian or Ubuntu,
+where `ForwardX11Trusted` defaults to `yes`
+and `-X` therefore already means the same thing as `-Y` [@openssh-ssh-config-debian].
+Passing `-Y` is correct on every platform, so prefer it and do not worry about which case you are in.
+
+Trusted forwarding is a real tradeoff rather than a free upgrade.
+It gives programs running on Shiva full access to your local display,
+which includes reading input directed at your other windows [@openssh-ssh-config].
+That is an acceptable risk for a cluster our lab administers and trusts;
+do not extend the same setting to machines you do not trust.
+
+To avoid retyping the flag, add an entry to `~/.ssh/config` on your own computer:
+
+```
+Host shiva
+  HostName shiva.ucdavis.edu
+  User USERNAME
+  ForwardX11 yes
+  ForwardX11Trusted yes
+  Compression yes
+```
+
+`ssh shiva` then forwards X11 automatically.
+`Compression yes` is worth setting because X11 traffic compresses well over a slow link.
+
+### Check that the forward is working
+
+After logging in, `DISPLAY` should be set:
+
+```bash
+echo $DISPLAY
+# localhost:10.0
+```
+
+An empty result means the forward did not happen.
+The usual causes are omitting `-Y`,
+or not having an X server running on your own computer.
+
+To confirm that the connection reaches your display, ask the display to describe itself:
+
+```bash
+xdpyinfo | head -3
+```
+
+Use `xdpyinfo` rather than `xeyes` for this test.
+Shiva has the `x11-utils` package, which provides `xdpyinfo`,
+but not `x11-apps`, which provides `xeyes` and `xclock` (checked August 2026).
+
+### Install graphical programs without `sudo`
+
+Lab accounts on Shiva are not in the `sudo` group,
+which is reserved for the system administrators (checked August 2026).
+Run `groups` to see your own.
+This means `apt install` is unavailable,
+and most installation instructions written for Ubuntu will not apply.
+Install into your home directory instead, which needs no special privileges.
+
+Note that this is necessary even for programs that appear to be present already.
+The system Emacs at `/usr/bin/emacs` is the `emacs-nox` build,
+which links no X libraries at all and so cannot open a window under any circumstances.
+No web browser is installed on Shiva.
+Nothing in `module avail` supplies either one.
+
+For Emacs, use [conda-forge](https://conda-forge.org/),
+whose build includes GTK and X11 support.
+If you do not already have conda,
+install [Miniforge](https://github.com/conda-forge/miniforge) into your home directory first.
+
+```bash
+conda create -y -n gui -c conda-forge emacs
+conda activate gui
+emacs &
+```
+
+For Firefox, use Mozilla's official Linux build,
+which is a self-contained directory that runs from anywhere:
+
+```bash
+mkdir -p ~/opt && cd ~/opt
+curl -L -o firefox.tar.xz \
+  'https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lang=en-US'
+tar xf firefox.tar.xz && rm firefox.tar.xz
+~/opt/firefox/firefox &
+```
+
+Adding `~/bin` to your `PATH` and putting small wrapper scripts there
+saves typing the full path each time.
+
+### Limitations
+
+**R cannot open plot windows on Shiva.**
+The installed R is built without X11 support,
+which you can confirm with `capabilities()["X11"]`.
+No amount of forwarding configuration changes this,
+because the R binary itself has no X11 device compiled in.
+Write plots to a file with [`{ragg}`](https://ragg.r-lib.org/) or `ggplot2::ggsave()`
+and copy them back with `scp`,
+or forward a port and use a browser-based graphics device such as
+[`{httpgd}`](https://cran.r-project.org/package=httpgd).
+
+**The faster remote-desktop tools are unavailable.**
+[Xpra](https://github.com/Xpra-org/xpra), VNC, and [X2Go](https://wiki.x2go.org/)
+all compress far better than plain X11 forwarding over a slow link.
+All of them need an X server installed on the cluster itself,
+which requires root,
+so none can be set up from a lab account.
+Contact the cluster administrators if the performance of plain forwarding is blocking your work.

@@ -196,6 +196,10 @@ if(Sys.getenv("LMOD_SYSHOST")!=""){
 }
 ```
 
+## Running graphical programs with X11 forwarding {#sec-x11-forwarding}
+
+{{< include slurm/x11-forwarding.qmd >}}
+
 ## Recovering a disconnected interactive session
 
 Interactive sessions on a SLURM cluster ---
