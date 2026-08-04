@@ -1,4 +1,4 @@
-Shiva's SSH server permits X11 forwarding,
+Shiva's SSH server permits X11 forwarding (checked August 2026),
 so a graphical program started on the cluster can draw its window on your own computer.
 This is worth setting up when you want a GUI text editor on the cluster,
 or a web browser that sees the network from Shiva's position rather than from yours.
@@ -45,9 +45,14 @@ ssh -Y USERNAME@shiva.ucdavis.edu
 
 Use `-Y` rather than `-X` here.
 `-X` requests *untrusted* forwarding,
-which OpenSSH shuts off twenty minutes into the session by default [@openssh-ssh-config],
-so a long editing session dies partway through for no visible reason.
-Many graphical toolkits also misbehave under the untrusted restrictions.
+and by default OpenSSH refuses untrusted X11 connections
+made more than twenty minutes into the session [@openssh-ssh-config].
+Windows already on screen keep working,
+so the symptom is that a program you launch later in the session simply never appears.
+Untrusted forwarding also restricts clients under the X11 SECURITY extension,
+to stop them reading or tampering with data belonging to trusted clients
+[@openssh-ssh-config],
+and some graphical toolkits fail outright under those restrictions.
 
 The exception is a Linux client running Debian or Ubuntu,
 where `ForwardX11Trusted` defaults to `yes`
@@ -100,8 +105,8 @@ but not `x11-apps`, which provides `xeyes` and `xclock` (checked August 2026).
 ### Install graphical programs without `sudo`
 
 Lab accounts on Shiva are not in the `sudo` group,
-which is reserved for the system administrators (checked August 2026).
-Run `groups` to see your own.
+which held only a handful of administrator accounts when this was checked in August 2026.
+Run `groups` to see which groups your own account belongs to.
 This means `apt install` is unavailable,
 and most installation instructions written for Ubuntu will not apply.
 Install into your home directory instead, which needs no special privileges.
@@ -110,7 +115,8 @@ Note that this is necessary even for programs that appear to be present already.
 The system Emacs at `/usr/bin/emacs` is the `emacs-nox` build,
 which links no X libraries at all and so cannot open a window under any circumstances.
 No web browser is installed on Shiva.
-Nothing in `module avail` supplies either one.
+`module avail` on the login node lists only MPI and numerical libraries,
+so it supplies neither one.
 
 For Emacs, use [conda-forge](https://conda-forge.org/),
 whose build includes GTK and X11 support.
