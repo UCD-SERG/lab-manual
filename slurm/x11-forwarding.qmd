@@ -47,7 +47,7 @@ Use `-Y` rather than `-X` here.
 `-X` requests *untrusted* forwarding,
 and by default OpenSSH refuses untrusted X11 connections
 made more than twenty minutes into the session [@openssh-ssh-config].
-Windows already on screen keep working,
+Any window already on screen keeps working,
 so the symptom is that a program you launch later in the session simply never appears.
 Untrusted forwarding also restricts clients under the X11 SECURITY extension,
 to stop them reading or tampering with data belonging to trusted clients
