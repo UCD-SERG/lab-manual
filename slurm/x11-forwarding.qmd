@@ -31,7 +31,7 @@ so install the software listed in @tbl-x11-servers before your first attempt.
 | macOS | [XQuartz](https://www.xquartz.org/). Log out and back in after installing, so that `DISPLAY` is set. |
 | Windows | [VcXsrv](https://sourceforge.net/projects/vcxsrv/), or [MobaXterm](https://mobaxterm.mobatek.net/), which bundles an X server together with an SSH client. |
 | Windows, using WSL2 | Nothing. [WSLg](https://learn.microsoft.com/en-us/windows/wsl/tutorials/gui-apps) supplies the X server. |
-| Linux | Nothing. Your desktop session is already an X server. |
+| Linux | Usually nothing. An X11 session is itself an X server; a Wayland session relies on [Xwayland](https://wiki.archlinux.org/title/Wayland) for X11 compatibility. Confirm `DISPLAY` is set locally before you connect. |
 
 : Where to get an X server, by operating system {#tbl-x11-servers}
 
