@@ -1,0 +1,134 @@
+The commands in the tables above work the same in any shell.
+This section is about which shell to use *interactively* ---
+the one that gives you a prompt, completes filenames, and remembers your history.
+It does not change how scripts run:
+a script beginning `#!/usr/bin/env bash` still runs under bash
+no matter which shell you launched it from.
+
+We recommend Z shell (`zsh`) with
+[Oh My Zsh](https://ohmyz.sh/),
+a configuration framework that supplies themes, completions, and a plugin system.
+Two reasons:
+
+- `zsh` has been the default login shell on macOS since 10.15 (Catalina),
+  so most of the lab is already running it.
+- The plugin pair below --- suggestions from your own history,
+  and syntax coloring that shows a typo before you press enter ---
+  removes a real class of command-line mistake.
+
+This applies to macOS, Linux, and Windows Subsystem for Linux (WSL).
+It does not apply to Git Bash on Windows, which is bash and has no `zsh` to switch to;
+Windows users who want this should work inside WSL.
+
+### Installing zsh
+
+Check whether you already have it:
+
+```bash
+zsh --version
+```
+
+If that errors, install it
+(`brew install zsh` on macOS,
+`sudo apt install zsh` on Ubuntu and WSL),
+then make it your login shell:
+
+```bash
+chsh -s "$(command -v zsh)"
+```
+
+`chsh` prompts for your own password,
+and refuses any shell not listed in `/etc/shells`.
+An `apt` install registers itself there;
+a Homebrew build does not, so append its path first:
+
+```bash
+command -v zsh | sudo tee -a /etc/shells
+```
+
+The change takes effect at your next login,
+so open a new terminal and confirm with `echo $SHELL`.
+On WSL, close every window for that distribution first ---
+or run `wsl --terminate <distro>` from PowerShell ---
+since the shell is chosen when the distribution starts.
+
+### Installing Oh My Zsh
+
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+The installer clones the framework to `~/.oh-my-zsh`,
+replaces `~/.zshrc` with its own template,
+and backs up whatever was there to `~/.zshrc.pre-oh-my-zsh`.
+Check that backup for anything worth carrying forward before you delete it.
+If you would rather it not touch your login shell or drop you into `zsh` immediately,
+append `"" --unattended` to that command;
+the installer documents that flag as setting both `CHSH` and `RUNZSH` to `no`,
+which leaves the `chsh` step above to you.
+
+### The two plugins we use
+
+[`zsh-autosuggestions`](https://github.com/zsh-users/zsh-autosuggestions)
+proposes the rest of a command in gray as you type it,
+drawn from your history;
+press the right arrow to accept it.
+[`zsh-syntax-highlighting`](https://github.com/zsh-users/zsh-syntax-highlighting)
+colors the command line as you type ---
+a command that does not exist stays red,
+so a misspelled `git ceckout` is visible before you run it.
+
+Neither ships with Oh My Zsh, so clone both into its custom-plugin directory:
+
+```bash
+git clone https://github.com/zsh-users/zsh-autosuggestions \
+  "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
+git clone https://github.com/zsh-users/zsh-syntax-highlighting \
+  "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
+```
+
+Then enable them in `~/.zshrc`:
+
+```bash
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+```
+
+**Keep `zsh-syntax-highlighting` last.**
+Its own installation guide states that it "must be the last plugin sourced".
+The reason, from its FAQ,
+is that it hooks into the Zsh Line Editor,
+and those hooks run in the order they were registered ---
+so it has to register after anything else that modifies the command-line buffer.
+The failure is quiet:
+a widget added by a later plugin still works,
+it just stops updating the highlighting,
+with no error to tell you why.
+
+Open a new terminal, or run `exec zsh`, to load the changes.
+
+### Startup files, and what breaks when you switch
+
+`zsh` does not read `~/.bashrc` or `~/.profile`.
+It reads `~/.zshenv` always,
+`~/.zprofile` at login,
+and `~/.zshrc` for every interactive shell ---
+so anything you had accumulated in your bash startup files
+is simply gone the first time you log in under `zsh`.
+
+The usual casualty is `PATH`.
+A line like
+
+```bash
+export PATH="$HOME/.local/bin:$PATH"
+```
+
+sitting at the bottom of `~/.bashrc`
+is what puts locally installed tools on your path,
+and nothing warns you when it stops being read ---
+the tool just reports as not found.
+Copy any such lines into `~/.zshrc` when you switch,
+and check that the commands you rely on still resolve:
+
+```bash
+command -v quarto Rscript
+```

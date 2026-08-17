@@ -2,6 +2,7 @@ Aiemjoy
 backoff
 Barratt
 Burkholderia
+Catalina
 CE
 ChatGPT
 Crosman
@@ -9,9 +10,11 @@ Dependabot
 Djajadi
 Drs
 Fanice
+FAQ
 GitLab
 GraphQL
 Heitmann
+Homebrew
 idempotency
 idempotent
 Jekyll
@@ -60,3 +63,4 @@ subagents
 tsutsugamushi
 ucdavis
 ucdserg
+zsh
