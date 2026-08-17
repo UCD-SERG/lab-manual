@@ -2,6 +2,7 @@ Aiemjoy
 backoff
 Barratt
 Burkholderia
+Catalina
 CE
 ChatGPT
 Crosman
@@ -9,9 +10,11 @@ Dependabot
 Djajadi
 Drs
 Fanice
+FAQ
 GitLab
 GraphQL
 Heitmann
+Homebrew
 idempotency
 idempotent
 Jekyll
@@ -19,7 +22,9 @@ Kunal
 LeCun
 LiteLLM
 Melioidosis
+MesloLGS
 Mishra
+NF
 NonCommercial
 Nyatigo
 observability
@@ -28,6 +33,7 @@ OpenHands
 Orientia
 Paratyphi
 Pokpongkiat
+Powerlevel
 REPL
 Rails
 SERG
@@ -35,6 +41,7 @@ SWE
 SeRG
 Seroepidemiology
 SHA
+Starship
 Shigella
 TOCTOU
 Typhi
@@ -60,3 +67,4 @@ subagents
 tsutsugamushi
 ucdavis
 ucdserg
+zsh
