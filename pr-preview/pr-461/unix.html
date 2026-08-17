@@ -533,34 +533,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#basics" id="toc-basics" class="nav-link active" data-scroll-target="#basics"><span class="header-section-number">14.1</span> Basics</a></li>
   <li><a href="#syntax-for-both-macwindows" id="toc-syntax-for-both-macwindows" class="nav-link" data-scroll-target="#syntax-for-both-macwindows"><span class="header-section-number">14.2</span> Syntax for both Mac/Windows</a></li>
-  <li><a href="#sec-zsh" id="toc-sec-zsh" class="nav-link" data-scroll-target="#sec-zsh"><span class="header-section-number">14.3</span> Zsh and Oh My Zsh</a>
+  <li><a href="#running-bash-scripts" id="toc-running-bash-scripts" class="nav-link" data-scroll-target="#running-bash-scripts"><span class="header-section-number">14.3</span> Running Bash Scripts</a></li>
+  <li><a href="#sec-shell-style" id="toc-sec-shell-style" class="nav-link" data-scroll-target="#sec-shell-style"><span class="header-section-number">14.4</span> Shell Scripting Style</a>
   <ul class="collapse">
-  <li><a href="#installing-zsh" id="toc-installing-zsh" class="nav-link" data-scroll-target="#installing-zsh"><span class="header-section-number">14.3.1</span> Installing zsh</a></li>
-  <li><a href="#installing-oh-my-zsh" id="toc-installing-oh-my-zsh" class="nav-link" data-scroll-target="#installing-oh-my-zsh"><span class="header-section-number">14.3.2</span> Installing Oh My Zsh</a></li>
-  <li><a href="#the-two-plugins-we-use" id="toc-the-two-plugins-we-use" class="nav-link" data-scroll-target="#the-two-plugins-we-use"><span class="header-section-number">14.3.3</span> The two plugins we use</a></li>
-  <li><a href="#startup-files-and-what-breaks-when-you-switch" id="toc-startup-files-and-what-breaks-when-you-switch" class="nav-link" data-scroll-target="#startup-files-and-what-breaks-when-you-switch"><span class="header-section-number">14.3.4</span> Startup files, and what breaks when you switch</a></li>
+  <li><a href="#error-handling" id="toc-error-handling" class="nav-link" data-scroll-target="#error-handling"><span class="header-section-number">14.4.1</span> Error handling</a></li>
+  <li><a href="#functions-and-naming" id="toc-functions-and-naming" class="nav-link" data-scroll-target="#functions-and-naming"><span class="header-section-number">14.4.2</span> Functions and naming</a></li>
+  <li><a href="#comments" id="toc-comments" class="nav-link" data-scroll-target="#comments"><span class="header-section-number">14.4.3</span> Comments</a></li>
+  <li><a href="#logging" id="toc-logging" class="nav-link" data-scroll-target="#logging"><span class="header-section-number">14.4.4</span> Logging</a></li>
+  <li><a href="#security" id="toc-security" class="nav-link" data-scroll-target="#security"><span class="header-section-number">14.4.5</span> Security</a></li>
+  <li><a href="#linting" id="toc-linting" class="nav-link" data-scroll-target="#linting"><span class="header-section-number">14.4.6</span> Linting</a></li>
+  <li><a href="#portability" id="toc-portability" class="nav-link" data-scroll-target="#portability"><span class="header-section-number">14.4.7</span> Portability</a></li>
+  <li><a href="#formatting" id="toc-formatting" class="nav-link" data-scroll-target="#formatting"><span class="header-section-number">14.4.8</span> Formatting</a></li>
   </ul></li>
-  <li><a href="#running-bash-scripts" id="toc-running-bash-scripts" class="nav-link" data-scroll-target="#running-bash-scripts"><span class="header-section-number">14.4</span> Running Bash Scripts</a></li>
-  <li><a href="#sec-shell-style" id="toc-sec-shell-style" class="nav-link" data-scroll-target="#sec-shell-style"><span class="header-section-number">14.5</span> Shell Scripting Style</a>
+  <li><a href="#running-rscripts-in-windows" id="toc-running-rscripts-in-windows" class="nav-link" data-scroll-target="#running-rscripts-in-windows"><span class="header-section-number">14.5</span> Running Rscripts in Windows</a>
   <ul class="collapse">
-  <li><a href="#error-handling" id="toc-error-handling" class="nav-link" data-scroll-target="#error-handling"><span class="header-section-number">14.5.1</span> Error handling</a></li>
-  <li><a href="#functions-and-naming" id="toc-functions-and-naming" class="nav-link" data-scroll-target="#functions-and-naming"><span class="header-section-number">14.5.2</span> Functions and naming</a></li>
-  <li><a href="#comments" id="toc-comments" class="nav-link" data-scroll-target="#comments"><span class="header-section-number">14.5.3</span> Comments</a></li>
-  <li><a href="#logging" id="toc-logging" class="nav-link" data-scroll-target="#logging"><span class="header-section-number">14.5.4</span> Logging</a></li>
-  <li><a href="#security" id="toc-security" class="nav-link" data-scroll-target="#security"><span class="header-section-number">14.5.5</span> Security</a></li>
-  <li><a href="#linting" id="toc-linting" class="nav-link" data-scroll-target="#linting"><span class="header-section-number">14.5.6</span> Linting</a></li>
-  <li><a href="#portability" id="toc-portability" class="nav-link" data-scroll-target="#portability"><span class="header-section-number">14.5.7</span> Portability</a></li>
-  <li><a href="#formatting" id="toc-formatting" class="nav-link" data-scroll-target="#formatting"><span class="header-section-number">14.5.8</span> Formatting</a></li>
+  <li><a href="#common-mistakes" id="toc-common-mistakes" class="nav-link" data-scroll-target="#common-mistakes"><span class="header-section-number">14.5.1</span> Common Mistakes</a></li>
   </ul></li>
-  <li><a href="#running-rscripts-in-windows" id="toc-running-rscripts-in-windows" class="nav-link" data-scroll-target="#running-rscripts-in-windows"><span class="header-section-number">14.6</span> Running Rscripts in Windows</a>
+  <li><a href="#checking-tasks-and-killing-jobs" id="toc-checking-tasks-and-killing-jobs" class="nav-link" data-scroll-target="#checking-tasks-and-killing-jobs"><span class="header-section-number">14.6</span> Checking tasks and killing jobs</a></li>
+  <li><a href="#running-big-jobs" id="toc-running-big-jobs" class="nav-link" data-scroll-target="#running-big-jobs"><span class="header-section-number">14.7</span> Running big jobs</a>
   <ul class="collapse">
-  <li><a href="#common-mistakes" id="toc-common-mistakes" class="nav-link" data-scroll-target="#common-mistakes"><span class="header-section-number">14.6.1</span> Common Mistakes</a></li>
-  </ul></li>
-  <li><a href="#checking-tasks-and-killing-jobs" id="toc-checking-tasks-and-killing-jobs" class="nav-link" data-scroll-target="#checking-tasks-and-killing-jobs"><span class="header-section-number">14.7</span> Checking tasks and killing jobs</a></li>
-  <li><a href="#running-big-jobs" id="toc-running-big-jobs" class="nav-link" data-scroll-target="#running-big-jobs"><span class="header-section-number">14.8</span> Running big jobs</a>
-  <ul class="collapse">
-  <li><a href="#example-code-for-runfilesavelogs" id="toc-example-code-for-runfilesavelogs" class="nav-link" data-scroll-target="#example-code-for-runfilesavelogs"><span class="header-section-number">14.8.1</span> Example code for <code>runfileSaveLogs</code></a></li>
-  <li><a href="#example-usage-for-runfilesavelogs" id="toc-example-usage-for-runfilesavelogs" class="nav-link" data-scroll-target="#example-usage-for-runfilesavelogs"><span class="header-section-number">14.8.2</span> Example usage for <code>runfileSaveLogs</code></a></li>
+  <li><a href="#example-code-for-runfilesavelogs" id="toc-example-code-for-runfilesavelogs" class="nav-link" data-scroll-target="#example-code-for-runfilesavelogs"><span class="header-section-number">14.7.1</span> Example code for <code>runfileSaveLogs</code></a></li>
+  <li><a href="#example-usage-for-runfilesavelogs" id="toc-example-usage-for-runfilesavelogs" class="nav-link" data-scroll-target="#example-usage-for-runfilesavelogs"><span class="header-section-number">14.7.2</span> Example usage for <code>runfileSaveLogs</code></a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/unix.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/unix.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -601,7 +594,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div class="preview-combined-banner">
     <p style="margin: 0;">
-        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~28% of content changed).
+        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~0% of content changed).
         <br>
         <strong>🎨 Highlighting Legend:</strong> 
         <mark class="preview-text-changed" style="display: inline; padding: 1px 3px;">Modified text (yellow)</mark> shows changed words/phrases with tooltips of original text, 
@@ -711,54 +704,8 @@ Figure&nbsp;14.2: Terminal output after executing basic Unix commands
 </figure>
 </div>
 </section>
-<section id="sec-zsh" class="level2" data-number="14.3">
-<h2 data-number="14.3" class="anchored" data-anchor-id="sec-zsh"><mark class="preview-element-added"><span class="header-section-number">14.3</span> Zsh and Oh My Zsh</mark></h2>
-<p><mark class="preview-element-added">The commands in the tables above work the same in any shell. This section is about which shell to use <em>interactively</em> — the one that gives you a prompt, completes filenames, and remembers your history. It does not change how scripts run: a script beginning <code>#!/usr/bin/env bash</code> still runs under bash no matter which shell you launched it from.</mark></p>
-<p><mark class="preview-element-added">We recommend Z shell (<code>zsh</code>) with <a href="https://ohmyz.sh/">Oh My Zsh</a>, a configuration framework that supplies themes, completions, and a plugin system. Two reasons:</mark></p>
-<ul>
-<li><mark class="preview-element-added"><code>zsh</code> has been the default login shell on macOS since 10.15 (Catalina), so most of the lab is already running it.</mark></li>
-<li><mark class="preview-element-added">The plugin pair below — suggestions from your own history, and syntax coloring that shows a typo before you press enter — removes a real class of command-line mistake.</mark></li>
-</ul>
-<p><mark class="preview-element-added">This applies to macOS, Linux, and Windows Subsystem for Linux (WSL). It does not apply to Git Bash on Windows, which is bash and has no <code>zsh</code> to switch to; Windows users who want this should work inside WSL.</mark></p>
-<section id="installing-zsh" class="level3" data-number="14.3.1">
-<h3 data-number="14.3.1" class="anchored" data-anchor-id="installing-zsh"><span class="header-section-number"><mark class="preview-text-changed">14.3.1</mark></span> <mark class="preview-text-changed">Installing zsh</mark></h3>
-<p><mark class="preview-element-added">Check whether you already have it:</mark></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><mark class="preview-element-added"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">zsh</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>If that errors, install it (<code>brew install zsh</code> on macOS, <code>sudo apt install zsh</code> on Ubuntu and WSL), then make it your login shell:</mark></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><mark class="preview-element-added"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chsh</span> <span class="at">-s</span> <span class="st">"</span><span class="va">$(</span><span class="bu">command</span> <span class="at">-v</span> zsh<span class="va">)</span><span class="st">"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><code>chsh</code> prompts for your own password, and refuses any shell not listed in <code>/etc/shells</code>. An <code>apt</code> install registers itself there; a Homebrew build does not, so append its path first:</mark></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><mark class="preview-element-added"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">command</span> <span class="at">-v</span> zsh <span class="kw">|</span> <span class="fu">sudo</span> tee <span class="at">-a</span> /etc/shells</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The change takes effect at your next login, so open a new terminal and confirm with <code>echo $SHELL</code>. On WSL, close every window for that distribution first — or run <code>wsl --terminate &lt;distro&gt;</code> from PowerShell — since the shell is chosen when the distribution starts.</mark></p>
-</section>
-<section id="installing-oh-my-zsh" class="level3" data-number="14.3.2">
-<h3 data-number="14.3.2" class="anchored" data-anchor-id="installing-oh-my-zsh"><mark class="preview-element-added"><span class="header-section-number">14.3.2</span> Installing Oh My Zsh</mark></h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><mark class="preview-element-added"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sh</span> <span class="at">-c</span> <span class="st">"</span><span class="va">$(</span><span class="ex">curl</span> <span class="at">-fsSL</span> https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class="va">)</span><span class="st">"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The installer clones the framework to <code>~/.oh-my-zsh</code>, replaces <code>~/.zshrc</code> with its own template, and backs up whatever was there to <code>~/.zshrc.pre-oh-my-zsh</code>. Check that backup for anything worth carrying forward before you delete it. If you would rather it not touch your login shell or drop you into <code>zsh</code> immediately, append <code>"" --unattended</code> to that command; the installer documents that flag as setting both <code>CHSH</code> and <code>RUNZSH</code> to <code>no</code>, which leaves the <code>chsh</code> step above to you.</mark></p>
-</section>
-<section id="the-two-plugins-we-use" class="level3" data-number="14.3.3">
-<h3 data-number="14.3.3" class="anchored" data-anchor-id="the-two-plugins-we-use"><mark class="preview-element-added"><span class="header-section-number">14.3.3</span> The two plugins we use</mark></h3>
-<p><mark class="preview-element-added"><a href="https://github.com/zsh-users/zsh-autosuggestions"><code>zsh-autosuggestions</code></a> proposes the rest of a command in gray as you type it, drawn from your history; press the right arrow to accept it. <a href="https://github.com/zsh-users/zsh-syntax-highlighting"><code>zsh-syntax-highlighting</code></a> colors the command line as you type — a command that does not exist stays red, so a misspelled <code>git ceckout</code> is visible before you run it.</mark></p>
-<p><mark class="preview-element-added">Neither ships with Oh My Zsh, so clone both into its custom-plugin directory:</mark></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><mark class="preview-element-added"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/zsh-users/zsh-autosuggestions <span class="dt">\</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"</span><span class="va">${ZSH_CUSTOM</span><span class="op">:-</span><span class="va">$HOME</span>/.oh-my-zsh/custom<span class="va">}</span><span class="st">/plugins/zsh-autosuggestions"</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/zsh-users/zsh-syntax-highlighting <span class="dt">\</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"</span><span class="va">${ZSH_CUSTOM</span><span class="op">:-</span><span class="va">$HOME</span>/.oh-my-zsh/custom<span class="va">}</span><span class="st">/plugins/zsh-syntax-highlighting"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Then enable them in <code>~/.zshrc</code>:</mark></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><mark class="preview-element-added"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="va">plugins</span><span class="op">=</span><span class="va">(</span>git zsh-autosuggestions zsh-syntax-highlighting<span class="va">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Keep <code>zsh-syntax-highlighting</code> last.</strong> Its own installation guide states that it “must be the last plugin sourced”. The reason, from its FAQ, is that it hooks into the Zsh Line Editor, and those hooks run in the order they were registered — so it has to register after anything else that modifies the command-line buffer. The failure is quiet: a widget added by a later plugin still works, it just stops updating the highlighting, with no error to tell you why.</mark></p>
-<p><mark class="preview-element-added">Open a new terminal, or run <code>exec zsh</code>, to load the changes.</mark></p>
-</section>
-<section id="startup-files-and-what-breaks-when-you-switch" class="level3" data-number="14.3.4">
-<h3 data-number="14.3.4" class="anchored" data-anchor-id="startup-files-and-what-breaks-when-you-switch"><mark class="preview-element-added"><span class="header-section-number">14.3.4</span> Startup files, and what breaks when you switch</mark></h3>
-<p><mark class="preview-element-added"><code>zsh</code> does not read <code>~/.bashrc</code> or <code>~/.profile</code>. It reads <code>~/.zshenv</code> always, <code>~/.zprofile</code> at login, and <code>~/.zshrc</code> for every interactive shell — so anything you had accumulated in your bash startup files is simply gone the first time you log in under <code>zsh</code>.</mark></p>
-<p><mark class="preview-element-added">The usual casualty is <code>PATH</code>. A line like</mark></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><mark class="preview-element-added"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PATH</span><span class="op">=</span><span class="st">"</span><span class="va">$HOME</span><span class="st">/.local/bin:</span><span class="va">$PATH</span><span class="st">"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>sitting at the bottom of <code>~/.bashrc</code> is what puts locally installed tools on your path, and nothing warns you when it stops being read — the tool just reports as not found. Copy any such lines into <code>~/.zshrc</code> when you switch, and check that the commands you rely on still resolve:</mark></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu"><mark class="preview-text-changed">command</mark></span> <span class="at"><mark class="preview-text-changed">-v</mark></span><mark class="preview-text-changed"> quarto Rscript</mark></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-</section>
-<section id="running-bash-scripts" class="level2" data-number="14.4">
-<h2 data-number="14.4" class="anchored" data-anchor-id="running-bash-scripts"><span class="header-section-number"><mark class="preview-text-changed">14.4</mark></span> Running Bash Scripts</h2>
+<section id="running-bash-scripts" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="running-bash-scripts"><span class="header-section-number">14.3</span> Running Bash Scripts</h2>
 <div id="tbl-unix-bash-scripts" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-unix-bash-scripts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -800,42 +747,42 @@ Table&nbsp;14.2: Commands for running Bash scripts
 </figure>
 </div>
 </section>
-<section id="sec-shell-style" class="level2" data-number="14.5">
-<h2 data-number="14.5" class="anchored" data-anchor-id="sec-shell-style"><span class="header-section-number"><mark class="preview-text-changed">14.5</mark></span> Shell Scripting Style</h2>
+<section id="sec-shell-style" class="level2" data-number="14.4">
+<h2 data-number="14.4" class="anchored" data-anchor-id="sec-shell-style"><span class="header-section-number">14.4</span> Shell Scripting Style</h2>
 <p>For shell scripts, we follow the <a href="https://google.github.io/styleguide/shellguide.html">Google Shell Style Guide</a> as the base authority, the same way our R chapters defer to the <a href="https://style.tidyverse.org/">tidyverse style guide</a>. The points below are the lab’s priorities and additions.</p>
-<section id="error-handling" class="level3" data-number="14.5.1">
-<h3 data-number="14.5.1" class="anchored" data-anchor-id="error-handling"><span class="header-section-number"><mark class="preview-text-changed">14.5.1</mark></span> Error handling</h3>
+<section id="error-handling" class="level3" data-number="14.4.1">
+<h3 data-number="14.4.1" class="anchored" data-anchor-id="error-handling"><span class="header-section-number">14.4.1</span> Error handling</h3>
 <p>Start every bash script with strict mode:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/env bash</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span> <span class="at">-euo</span> pipefail</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/env bash</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span> <span class="at">-euo</span> pipefail</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><code>set -e</code> exits when a command fails unhandled (it deliberately skips commands tested in an <code>if</code> or joined with <code>&amp;&amp;</code>/<code>||</code>), <code>set -u</code> errors on undefined variables, and <code>set -o pipefail</code> makes a pipeline fail when any stage fails, not just the last.</li>
 <li>Use a <code>trap ... EXIT</code> handler for cleanup (temporary files, lock release) so it runs on failure as well as success.</li>
 <li>Decide explicitly whether a step should fail the script (fail-closed) or log and continue (fail-open), and comment the choice when it isn’t obvious.</li>
 </ul>
 </section>
-<section id="functions-and-naming" class="level3" data-number="14.5.2">
-<h3 data-number="14.5.2" class="anchored" data-anchor-id="functions-and-naming"><span class="header-section-number"><mark class="preview-text-changed">14.5.2</mark></span> Functions and naming</h3>
+<section id="functions-and-naming" class="level3" data-number="14.4.2">
+<h3 data-number="14.4.2" class="anchored" data-anchor-id="functions-and-naming"><span class="header-section-number">14.4.2</span> Functions and naming</h3>
 <p>Decompose scripts into functions the same way we decompose R code: small, single-purpose, and named in <code>snake_case</code>. Declare function-local variables with <code>local</code> so they don’t leak into the global namespace, and return status with <code>return</code> codes (write data results to stdout).</p>
 </section>
-<section id="comments" class="level3" data-number="14.5.3">
-<h3 data-number="14.5.3" class="anchored" data-anchor-id="comments"><span class="header-section-number"><mark class="preview-text-changed">14.5.3</mark></span> Comments</h3>
+<section id="comments" class="level3" data-number="14.4.3">
+<h3 data-number="14.4.3" class="anchored" data-anchor-id="comments"><span class="header-section-number">14.4.3</span> Comments</h3>
 <p>The same principle as our R guidance applies: explain <em>why</em>, not <em>what</em>. Keep inline comments brief, and point to an Architecture Decision Record for rationale too long for a comment (see <a href="coding-practices.html#sec-adrs" class="quarto-xref" preview-toc-changed><span>Section 6.15</span></a>).</p>
 </section>
-<section id="logging" class="level3" data-number="14.5.4">
-<h3 data-number="14.5.4" class="anchored" data-anchor-id="logging"><span class="header-section-number"><mark class="preview-text-changed">14.5.4</mark></span> Logging</h3>
+<section id="logging" class="level3" data-number="14.4.4">
+<h3 data-number="14.4.4" class="anchored" data-anchor-id="logging"><span class="header-section-number">14.4.4</span> Logging</h3>
 <p>Prefer a small log helper over scattered <code>echo</code> calls, so messages get a consistent format and severity level, and send diagnostics to stderr so stdout stays parseable:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log()</span> <span class="kw">{</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">local</span> <span class="va">level</span><span class="op">=</span><span class="va">$1</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">shift</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">printf</span> <span class="st">'%s [%s] %s\n'</span> <span class="st">"</span><span class="va">$(</span><span class="fu">date</span> <span class="at">-u</span> +%FT%TZ<span class="va">)</span><span class="st">"</span> <span class="st">"</span><span class="va">$level</span><span class="st">"</span> <span class="st">"</span><span class="va">$*</span><span class="st">"</span> <span class="op">&gt;&amp;</span><span class="dv">2</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="kw">}</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="ex">log</span> INFO <span class="st">"starting import"</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="ex">log</span> ERROR <span class="st">"input file missing"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log()</span> <span class="kw">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">local</span> <span class="va">level</span><span class="op">=</span><span class="va">$1</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">shift</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">printf</span> <span class="st">'%s [%s] %s\n'</span> <span class="st">"</span><span class="va">$(</span><span class="fu">date</span> <span class="at">-u</span> +%FT%TZ<span class="va">)</span><span class="st">"</span> <span class="st">"</span><span class="va">$level</span><span class="st">"</span> <span class="st">"</span><span class="va">$*</span><span class="st">"</span> <span class="op">&gt;&amp;</span><span class="dv">2</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">}</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">log</span> INFO <span class="st">"starting import"</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ex">log</span> ERROR <span class="st">"input file missing"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The <code>shift</code> / <code>$*</code> pair joins every argument after the severity into the message, so a message that reaches the function as several words is still logged whole. Callers should still quote the message (<code>log ERROR "..."</code>) — the shell expands globs and splits words <em>before</em> <code>log()</code> runs, so an unquoted message can be mangled on the way in.</p>
 </section>
-<section id="security" class="level3" data-number="14.5.5">
-<h3 data-number="14.5.5" class="anchored" data-anchor-id="security"><span class="header-section-number"><mark class="preview-text-changed">14.5.5</mark></span> Security</h3>
+<section id="security" class="level3" data-number="14.4.5">
+<h3 data-number="14.4.5" class="anchored" data-anchor-id="security"><span class="header-section-number">14.4.5</span> Security</h3>
 <ul>
 <li>Never echo secrets; redact tokens before logging command lines that carry them.</li>
 <li>Quote every variable expansion (<code>"$var"</code>, <code>"$@"</code>) to prevent word-splitting and glob surprises.</li>
@@ -843,21 +790,21 @@ Table&nbsp;14.2: Commands for running Bash scripts
 <li>Keep credentials out of <code>curl</code> command lines, where any local process can read them from the process list: prefer <code>--netrc</code> or headers read from a file (<code>--header @headers.txt</code>) over a token expanded into an argument.</li>
 </ul>
 </section>
-<section id="linting" class="level3" data-number="14.5.6">
-<h3 data-number="14.5.6" class="anchored" data-anchor-id="linting"><span class="header-section-number"><mark class="preview-text-changed">14.5.6</mark></span> <mark class="preview-text-changed">Linting</mark></h3>
+<section id="linting" class="level3" data-number="14.4.6">
+<h3 data-number="14.4.6" class="anchored" data-anchor-id="linting"><span class="header-section-number">14.4.6</span> Linting</h3>
 <p><a href="https://www.shellcheck.net/">ShellCheck</a> is the shell equivalent of <a href="https://lintr.r-lib.org/"><code>{lintr}</code></a>: run <code>shellcheck script.sh</code> locally and in CI, and fix or explicitly disable (with a justifying comment) every finding. <code>bash -n script.sh</code> is a quick syntax-only check.</p>
 </section>
-<section id="portability" class="level3" data-number="14.5.7">
-<h3 data-number="14.5.7" class="anchored" data-anchor-id="portability"><span class="header-section-number"><mark class="preview-text-changed">14.5.7</mark></span> Portability</h3>
+<section id="portability" class="level3" data-number="14.4.7">
+<h3 data-number="14.4.7" class="anchored" data-anchor-id="portability"><span class="header-section-number">14.4.7</span> Portability</h3>
 <p>Decide whether a script targets bash or POSIX <code>sh</code>, and match the shebang to the decision: bash-specific features (arrays, <code>[[ ]]</code>, <code>local -n</code>) need <code>#!/usr/bin/env bash</code>, while scripts that must run on minimal CI images (BusyBox, Alpine <code>ash</code>) should stick to POSIX constructs and use <code>#!/bin/sh</code>. ShellCheck understands both and checks against the declared shell.</p>
 </section>
-<section id="formatting" class="level3" data-number="14.5.8">
-<h3 data-number="14.5.8" class="anchored" data-anchor-id="formatting"><mark class="preview-element-added"><span class="header-section-number">14.5.8</span> Formatting</mark></h3>
+<section id="formatting" class="level3" data-number="14.4.8">
+<h3 data-number="14.4.8" class="anchored" data-anchor-id="formatting"><span class="header-section-number">14.4.8</span> Formatting</h3>
 <p>Follow the same readability conventions as our R style: lines under about 80 characters, two-space indentation, and one logical step per line, breaking long pipelines after the <code>|</code> with the continuation indented.</p>
 </section>
 </section>
-<section id="running-rscripts-in-windows" class="level2" data-number="14.6">
-<h2 data-number="14.6" class="anchored" data-anchor-id="running-rscripts-in-windows"><span class="header-section-number"><mark class="preview-text-changed">14.6</mark></span> Running Rscripts in Windows</h2>
+<section id="running-rscripts-in-windows" class="level2" data-number="14.5">
+<h2 data-number="14.5" class="anchored" data-anchor-id="running-rscripts-in-windows"><span class="header-section-number">14.5</span> Running Rscripts in Windows</h2>
 <p><strong>Note: This code seems to work only with Windows Command Prompt, not with Git Bash.</strong></p>
 <p>When R is installed, it comes with a utility called Rscript. This allows you to run R commands from the command line. If Rscript is in your <code>PATH,</code> then typing Rscript into the command line, and pressing enter, will not error. Otherwise, to use Rscript, you will either need to add it to your PATH (as an environment variable), or append the full directory of the location of Rscript on your machine. To find the full directory, search for where R is installed your computer. For instance, it may be something like below (this will vary depending on what version of R you have installed):</p>
 <p><code>C:\Program Files\R\R-3.6.0\bin</code></p>
@@ -865,16 +812,16 @@ Table&nbsp;14.2: Commands for running Bash scripts
 <p>If you add the PATH as an environment variable, then you can run this line of code to test: <code>Rscript -e "cat('this is a test')"</code>, where the <code>-e</code> flag refers to the expression that will be executed.</p>
 <p>If you do not add the PATH as an environment variable, then you can run this line of code to replicate the results from above: <code>"C:\Program Files\R\R-3.6.0\bin\Rscript.exe" -e "cat('this is a test')"</code></p>
 <p>To run an R script from the command line, we can say: <code>Rscript -e "source('C:/path/to/script/some_code.R')"</code></p>
-<section id="common-mistakes" class="level3" data-number="14.6.1">
-<h3 data-number="14.6.1" class="anchored" data-anchor-id="common-mistakes"><span class="header-section-number"><mark class="preview-text-changed">14.6.1</mark></span> Common Mistakes</h3>
+<section id="common-mistakes" class="level3" data-number="14.5.1">
+<h3 data-number="14.5.1" class="anchored" data-anchor-id="common-mistakes"><span class="header-section-number">14.5.1</span> Common Mistakes</h3>
 <ul>
 <li>Remember to include all of the quotation marks around file paths that have a spaces.</li>
 <li>If you attempt to run an R script but run into <code>Error: '\U' used without hex digits in character string starting "'C:\U"</code>, try replacing all <code>\</code> with <code>\\</code> or <code>/</code>.</li>
 </ul>
 </section>
 </section>
-<section id="checking-tasks-and-killing-jobs" class="level2" data-number="14.7">
-<h2 data-number="14.7" class="anchored" data-anchor-id="checking-tasks-and-killing-jobs"><span class="header-section-number"><mark class="preview-text-changed">14.7</mark></span> Checking tasks and killing jobs</h2>
+<section id="checking-tasks-and-killing-jobs" class="level2" data-number="14.6">
+<h2 data-number="14.6" class="anchored" data-anchor-id="checking-tasks-and-killing-jobs"><span class="header-section-number">14.6</span> Checking tasks and killing jobs</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 25%">
@@ -933,125 +880,125 @@ Table&nbsp;14.2: Commands for running Bash scripts
 </table>
 <p>To kill a task in Windows, you can also go to Task Manager &gt; More details &gt; Select your desired app &gt; Click on End Task.</p>
 </section>
-<section id="running-big-jobs" class="level2" data-number="14.8">
-<h2 data-number="14.8" class="anchored" data-anchor-id="running-big-jobs"><span class="header-section-number"><mark class="preview-text-changed">14.8</mark></span> Running big jobs</h2>
+<section id="running-big-jobs" class="level2" data-number="14.7">
+<h2 data-number="14.7" class="anchored" data-anchor-id="running-big-jobs"><span class="header-section-number">14.7</span> Running big jobs</h2>
 <p>For big data workflows, the concept of “backgrounding” a bash script allows you to start a “job” (i.e.&nbsp;run the script) and leave it overnight to run. At the top level, a bash script (<code>0-run-project.sh</code>) that simply calls the directory-level bash scripts (i.e.&nbsp;<code>0-prep-data.sh</code>, <code>0-run-analysis.sh</code>, <code>0-run-figures.sh</code>, etc.) is a powerful tool to rerun every script in your project. See the included example bash scripts for more details.</p>
 <ul>
 <li><strong>Running Bash Scripts in Background</strong>: Running a long bash script is not trivial. Normally you would run a bash script by opening a terminal and typing something like <code>./run-project.sh</code>. But what if you leave your computer, log out of your server, or close the terminal? Normally, the bash script will exit and fail to complete. To run it in background, type <code>./run-project.sh &amp;; disown</code>. You can see the job running (and CPU utilization) with the command <code>top</code> or <code>ps -v</code> and check your memory with <code>free -h</code>.</li>
 </ul>
 <p>Alternatively, to keep code running in the background even when an SSH connection is broken, you can use <code>tmux</code>. In terminal or gitbash follow the steps below. This <a href="https://medium.com/@jeongwhanchoi/install-tmux-on-osx-and-basics-commands-for-beginners-be22520fd95e">site</a> has useful tips on using <code>tmux</code>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a new tmux session called session_name</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">tmux</span> new <span class="at">-ssession_name</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># run your job of interest</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> CMD BATCH myjob.R <span class="kw">&amp;</span> </span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># check that it is running</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ps</span> <span class="at">-v</span></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co"># to exit the tmux session (Mac)</span></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="ex">ctrl</span> + b </span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="ex">d</span></span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="co"># to reopen the tmux session to kill the job or </span></span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="co"># start another job</span></span>
-<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="ex">tmux</span> attach <span class="at">-tsession_name</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a new tmux session called session_name</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">tmux</span> new <span class="at">-ssession_name</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># run your job of interest</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> CMD BATCH myjob.R <span class="kw">&amp;</span> </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># check that it is running</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ps</span> <span class="at">-v</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># to exit the tmux session (Mac)</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="ex">ctrl</span> + b </span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="ex">d</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co"># to reopen the tmux session to kill the job or </span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co"># start another job</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="ex">tmux</span> attach <span class="at">-tsession_name</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><p><strong>Deleting Previously Computed Results</strong>: One helpful lesson we’ve learned is that your bash scripts should remove previous results (computed and saved by scripts run at a previous time) so that you never mix results from one run with a previous run. This can happen when an R script errors out before saving its result, and can be difficult to catch because your previously saved result exists (leading you to believe everything ran correctly).</p></li>
 <li><p><strong>Ensuring Things Ran Correctly</strong>: You should check the <code>.Rout</code> files generated by the R scripts run by your bash scripts for errors once things are run. A utility file is include in this repository, called <code>runFileSaveLogs</code>, and is used by the example bash scripts to… run files and save the generated logs. It is an awesome utility and one I definitely recommend using. Before using <code>runFileSaveLogs</code>, it is necessary to put the file in the home working directory. For help and documentation, you can use the command <code>./runFileSaveLogs -h</code>. See example code and example usage for <code>runFileSaveLogs</code> below.</p></li>
 </ul>
-<section id="example-code-for-runfilesavelogs" class="level3" data-number="14.8.1">
-<h3 data-number="14.8.1" class="anchored" data-anchor-id="example-code-for-runfilesavelogs"><span class="header-section-number"><mark class="preview-text-changed">14.8.1</mark></span> Example code for <code>runfileSaveLogs</code></h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/env python3</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Type "./runFileSaveLogs -h" for help</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> argparse</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> getpass</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> datetime</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> shutil</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> glob</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pathlib</span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Setting working directory to this script's current directory</span></span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>os.chdir(os.path.dirname(os.path.abspath(<span class="va">__file__</span>)))</span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Setting up argument parser</span></span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>parser <span class="op">=</span> argparse.ArgumentParser(description<span class="op">=</span><span class="st">'Runs the argument R script(s) - in parallel if specified - and moves the subsequent generated .Rout log files to a timestamped directory.'</span>)</span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Function ensuring that the file is valid</span></span>
-<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_valid_file(parser, arg):</span>
-<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> os.path.exists(arg):</span>
-<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>        parser.error(<span class="st">"The file </span><span class="sc">%s</span><span class="st"> does not exist!"</span> <span class="op">%</span> arg)</span>
-<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> arg</span>
-<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Function ensuring that the directory is valid</span></span>
-<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_valid_directory(parser, arg):</span>
-<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> os.path.isdir(arg):</span>
-<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>        parser.error(<span class="st">"The specified path (</span><span class="sc">%s</span><span class="st">) is not a directory!"</span> <span class="op">%</span> arg)</span>
-<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> arg</span>
-<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Additional arguments that can be added when running runFileSaveLogs</span></span>
-<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>parser.add_argument(<span class="st">'-p'</span>, <span class="st">'--parallel'</span>, action<span class="op">=</span><span class="st">'store_true'</span>, <span class="bu">help</span><span class="op">=</span><span class="st">"Runs the argument R scripts in parallel if specified"</span>)</span>
-<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>parser.add_argument(<span class="st">"-i"</span>, <span class="st">"--identifier"</span>, <span class="bu">help</span><span class="op">=</span><span class="st">"Adds an identifier to the directory name where this is saved"</span>)</span>
-<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a>parser.add_argument(<span class="st">'filenames'</span>, nargs<span class="op">=</span><span class="st">'+'</span>, <span class="bu">type</span><span class="op">=</span><span class="kw">lambda</span> x: is_valid_file(parser, x))</span>
-<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a>args <span class="op">=</span> parser.parse_args()</span>
-<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a>args_dict <span class="op">=</span> <span class="bu">vars</span>(args)</span>
-<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(args_dict)</span>
-<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Run given R Scripts</span></span>
-<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> filename <span class="kw">in</span> args_dict[<span class="st">"filenames"</span>]:</span>
-<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a>  system_call <span class="op">=</span> <span class="st">"R CMD BATCH"</span> <span class="op">+</span> <span class="st">" "</span> <span class="op">+</span> filename</span>
-<span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> args_dict[<span class="st">"parallel"</span>]: </span>
-<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a>    system_call <span class="op">=</span> <span class="st">"nohup"</span> <span class="op">+</span> <span class="st">" "</span> <span class="op">+</span> system_call <span class="op">+</span> <span class="st">" &amp;"</span></span>
-<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a>  os.system(system_call)</span>
-<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the directory (and any parents) of the log files</span></span>
-<span id="cb12-52"><a href="#cb12-52" aria-hidden="true" tabindex="-1"></a>currentUser <span class="op">=</span> getpass.getuser()</span>
-<span id="cb12-53"><a href="#cb12-53" aria-hidden="true" tabindex="-1"></a>currentTime <span class="op">=</span> datetime.datetime.now().strftime(<span class="st">"%Y-%m-</span><span class="sc">%d</span><span class="st"> %H:%M:%S"</span>)</span>
-<span id="cb12-54"><a href="#cb12-54" aria-hidden="true" tabindex="-1"></a>logDirPrefix <span class="op">=</span> <span class="st">"/home/kaiserData/logs/"</span> <span class="co"># Change to the directory where the logs should be saved</span></span>
-<span id="cb12-55"><a href="#cb12-55" aria-hidden="true" tabindex="-1"></a>logDir <span class="op">=</span> logDirPrefix <span class="op">+</span> currentTime <span class="op">+</span> <span class="st">"-"</span> <span class="op">+</span> currentUser </span>
-<span id="cb12-56"><a href="#cb12-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-57"><a href="#cb12-57" aria-hidden="true" tabindex="-1"></a><span class="co"># If specified, adds the identifier to the filename of the log</span></span>
-<span id="cb12-58"><a href="#cb12-58" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> args.identifier <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
-<span id="cb12-59"><a href="#cb12-59" aria-hidden="true" tabindex="-1"></a>  logDir <span class="op">+=</span> <span class="st">"-"</span> <span class="op">+</span> args.identifier</span>
-<span id="cb12-60"><a href="#cb12-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-61"><a href="#cb12-61" aria-hidden="true" tabindex="-1"></a>logDir <span class="op">+=</span> <span class="st">"/"</span></span>
-<span id="cb12-62"><a href="#cb12-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-63"><a href="#cb12-63" aria-hidden="true" tabindex="-1"></a>pathlib.Path(logDir).mkdir(parents<span class="op">=</span><span class="va">True</span>, exist_ok<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb12-64"><a href="#cb12-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-65"><a href="#cb12-65" aria-hidden="true" tabindex="-1"></a><span class="co"># Find and move all logs to this new directory</span></span>
-<span id="cb12-66"><a href="#cb12-66" aria-hidden="true" tabindex="-1"></a>currentLogPaths <span class="op">=</span> glob.glob(<span class="st">'./*.Rout'</span>)</span>
-<span id="cb12-67"><a href="#cb12-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-68"><a href="#cb12-68" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> currentLogPath <span class="kw">in</span> currentLogPaths:</span>
-<span id="cb12-69"><a href="#cb12-69" aria-hidden="true" tabindex="-1"></a>  filename <span class="op">=</span> currentLogPath.split(<span class="st">"/"</span>)[<span class="op">-</span><span class="dv">1</span>]</span>
-<span id="cb12-70"><a href="#cb12-70" aria-hidden="true" tabindex="-1"></a>  shutil.move(currentLogPath, logDir <span class="op">+</span> filename)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="example-code-for-runfilesavelogs" class="level3" data-number="14.7.1">
+<h3 data-number="14.7.1" class="anchored" data-anchor-id="example-code-for-runfilesavelogs"><span class="header-section-number">14.7.1</span> Example code for <code>runfileSaveLogs</code></h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/env python3</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Type "./runFileSaveLogs -h" for help</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> argparse</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> getpass</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> datetime</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> shutil</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> glob</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pathlib</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Setting working directory to this script's current directory</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>os.chdir(os.path.dirname(os.path.abspath(<span class="va">__file__</span>)))</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Setting up argument parser</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>parser <span class="op">=</span> argparse.ArgumentParser(description<span class="op">=</span><span class="st">'Runs the argument R script(s) - in parallel if specified - and moves the subsequent generated .Rout log files to a timestamped directory.'</span>)</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Function ensuring that the file is valid</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_valid_file(parser, arg):</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> os.path.exists(arg):</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>        parser.error(<span class="st">"The file </span><span class="sc">%s</span><span class="st"> does not exist!"</span> <span class="op">%</span> arg)</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> arg</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Function ensuring that the directory is valid</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_valid_directory(parser, arg):</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> os.path.isdir(arg):</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>        parser.error(<span class="st">"The specified path (</span><span class="sc">%s</span><span class="st">) is not a directory!"</span> <span class="op">%</span> arg)</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> arg</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Additional arguments that can be added when running runFileSaveLogs</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>parser.add_argument(<span class="st">'-p'</span>, <span class="st">'--parallel'</span>, action<span class="op">=</span><span class="st">'store_true'</span>, <span class="bu">help</span><span class="op">=</span><span class="st">"Runs the argument R scripts in parallel if specified"</span>)</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>parser.add_argument(<span class="st">"-i"</span>, <span class="st">"--identifier"</span>, <span class="bu">help</span><span class="op">=</span><span class="st">"Adds an identifier to the directory name where this is saved"</span>)</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>parser.add_argument(<span class="st">'filenames'</span>, nargs<span class="op">=</span><span class="st">'+'</span>, <span class="bu">type</span><span class="op">=</span><span class="kw">lambda</span> x: is_valid_file(parser, x))</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>args <span class="op">=</span> parser.parse_args()</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>args_dict <span class="op">=</span> <span class="bu">vars</span>(args)</span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(args_dict)</span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Run given R Scripts</span></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> filename <span class="kw">in</span> args_dict[<span class="st">"filenames"</span>]:</span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>  system_call <span class="op">=</span> <span class="st">"R CMD BATCH"</span> <span class="op">+</span> <span class="st">" "</span> <span class="op">+</span> filename</span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> args_dict[<span class="st">"parallel"</span>]: </span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>    system_call <span class="op">=</span> <span class="st">"nohup"</span> <span class="op">+</span> <span class="st">" "</span> <span class="op">+</span> system_call <span class="op">+</span> <span class="st">" &amp;"</span></span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>  os.system(system_call)</span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the directory (and any parents) of the log files</span></span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>currentUser <span class="op">=</span> getpass.getuser()</span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a>currentTime <span class="op">=</span> datetime.datetime.now().strftime(<span class="st">"%Y-%m-</span><span class="sc">%d</span><span class="st"> %H:%M:%S"</span>)</span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a>logDirPrefix <span class="op">=</span> <span class="st">"/home/kaiserData/logs/"</span> <span class="co"># Change to the directory where the logs should be saved</span></span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a>logDir <span class="op">=</span> logDirPrefix <span class="op">+</span> currentTime <span class="op">+</span> <span class="st">"-"</span> <span class="op">+</span> currentUser </span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a><span class="co"># If specified, adds the identifier to the filename of the log</span></span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> args.identifier <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a>  logDir <span class="op">+=</span> <span class="st">"-"</span> <span class="op">+</span> args.identifier</span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a>logDir <span class="op">+=</span> <span class="st">"/"</span></span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a>pathlib.Path(logDir).mkdir(parents<span class="op">=</span><span class="va">True</span>, exist_ok<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a><span class="co"># Find and move all logs to this new directory</span></span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a>currentLogPaths <span class="op">=</span> glob.glob(<span class="st">'./*.Rout'</span>)</span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> currentLogPath <span class="kw">in</span> currentLogPaths:</span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a>  filename <span class="op">=</span> currentLogPath.split(<span class="st">"/"</span>)[<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a>  shutil.move(currentLogPath, logDir <span class="op">+</span> filename)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="example-usage-for-runfilesavelogs" class="level3" data-number="14.8.2">
-<h3 data-number="14.8.2" class="anchored" data-anchor-id="example-usage-for-runfilesavelogs"><span class="header-section-number">14.8.2</span> Example usage for <code>runfileSaveLogs</code></h3>
+<section id="example-usage-for-runfilesavelogs" class="level3" data-number="14.7.2">
+<h3 data-number="14.7.2" class="anchored" data-anchor-id="example-usage-for-runfilesavelogs"><span class="header-section-number">14.7.2</span> Example usage for <code>runfileSaveLogs</code></h3>
 <p>This example bash script runs files and generates logs for five scripts in the <code>kaiserflu/3-figures</code> folder. Note that the <code>-i</code> flag is used as an identifier to add <code>figures</code> to the filename of each log.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Copy utility run script into this folder for concision in call</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> ~/kaiserflu/runFileSaveLogs ~/kaiserflu/3-figures/</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Run folder scripts and produce output</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/kaiserflu/3-figures/</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="ex">./runFileSaveLogs</span> <span class="at">-i</span> <span class="st">"figures"</span> <span class="dt">\</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>fig-mean-season-age.R <span class="dt">\</span></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>fig-monthly-rate.R <span class="dt">\</span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>fig-point-estimates-combined.R <span class="dt">\</span></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>fig-point-estimates.R <span class="dt">\</span></span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>fig-weekly-rate.R</span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove copied utility run script</span></span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> runFileSaveLogs</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Copy utility run script into this folder for concision in call</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> ~/kaiserflu/runFileSaveLogs ~/kaiserflu/3-figures/</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Run folder scripts and produce output</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/kaiserflu/3-figures/</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="ex">./runFileSaveLogs</span> <span class="at">-i</span> <span class="st">"figures"</span> <span class="dt">\</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>fig-mean-season-age.R <span class="dt">\</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>fig-monthly-rate.R <span class="dt">\</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>fig-point-estimates-combined.R <span class="dt">\</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>fig-point-estimates.R <span class="dt">\</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>fig-weekly-rate.R</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove copied utility run script</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> runFileSaveLogs</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section>
