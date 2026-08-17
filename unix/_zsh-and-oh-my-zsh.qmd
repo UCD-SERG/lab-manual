@@ -62,10 +62,19 @@ The installer clones the framework to `~/.oh-my-zsh`,
 replaces `~/.zshrc` with its own template,
 and backs up whatever was there to `~/.zshrc.pre-oh-my-zsh`.
 Check that backup for anything worth carrying forward before you delete it.
-If you would rather it not touch your login shell or drop you into `zsh` immediately,
-append `"" --unattended` to that command;
-the installer documents that flag as setting both `CHSH` and `RUNZSH` to `no`,
-which leaves the `chsh` step above to you.
+If you would rather it not touch your login shell or drop you into `zsh`
+immediately, run it unattended instead:
+
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+```
+
+The empty `""` is not a typo.
+`sh -c` treats the argument after the script as `$0`, so without a placeholder
+there `--unattended` would be consumed as the script's own name instead of
+reaching it as a flag.
+The installer's header documents that flag as setting both `CHSH` and `RUNZSH`
+to `no`, which leaves the `chsh` step above to you.
 
 ### The two plugins we use
 
@@ -87,7 +96,10 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting \
   "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
 ```
 
-Then enable them in `~/.zshrc`:
+Then enable them in `~/.zshrc`.
+Oh My Zsh's template ships `plugins=(git)`, so the line below is that default
+plus the two --- if you have already added others, append to your list rather
+than pasting over it:
 
 ```bash
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
@@ -131,9 +143,13 @@ These are the ones that earn their place for the work this manual describes:
 above.**
 Its own README says to load `zsh-syntax-highlighting` *before* it, which is the
 opposite of the "keep syntax-highlighting last" instruction, and both are
-correct: syntax-highlighting must come after everything that installs line-editor
-hooks *except* this one, which deliberately checks whether syntax-highlighting is
-already loaded and withdraws its own hooks if so.
+correct.
+The plugin handles the overlap itself rather than leaving you to.
+Its source, at
+`~/.oh-my-zsh/plugins/history-substring-search/history-substring-search.zsh`,
+tests `ZSH_HIGHLIGHT_VERSION` inside its own redraw hook and, under the comment
+"If the zsh-syntax-highlighting plugin has been loaded ... remove our hooks",
+unregisters both of its hooks with `add-zle-hook-widget -d`.
 So put it last of all:
 
 ```bash
