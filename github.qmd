@@ -74,7 +74,7 @@ GitHub Copilot settings page showing organization options
    follow the setup instructions to install and configure Copilot in your development environment
 
 For guidance on using GitHub Copilot effectively,
-see the [wai site's "Best Practices for Safe and Successful Use" section](https://d-morrison.github.io/wai/chapters/coding-agents.html#sec-ai-best-practices).
+see the [wai site's "Best Practices for Safe and Successful Use" section](https://morrison-lab.github.io/wai/chapters/coding-agents.html#sec-ai-best-practices).
 
 ## GitHub Desktop
 While knowing how to use Git on the command line will always be useful
