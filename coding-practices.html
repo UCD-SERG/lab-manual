@@ -1435,12 +1435,12 @@ Note
 <span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="co"># View results</span></span>
 <span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(results)</span>
-<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 3 × 6</span></span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 3 x 6</span></span>
 <span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   expression        min   median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;bch:expr&gt;   &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;</span></span>
 <span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 base_subset    1.2ms    1.4ms       714.    1.5MB     2.14</span></span>
 <span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 dplyr_filter   2.1ms    2.3ms       435.    2.1MB     4.35</span></span>
-<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 data.table   850.0µs  950.0µs      1053.  800.0KB     0.00</span></span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 data.table   850.0us  950.0us      1053.  800.0KB     0.00</span></span>
 <span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot results</span></span>
 <span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(results)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1532,10 +1532,10 @@ Note
 </ul>
 <p><strong>Common bottlenecks in epidemiology code:</strong></p>
 <ul>
-<li>Repeated subsetting operations → Use data.table or pre-filter</li>
-<li>Growing objects in loops → Pre-allocate vectors</li>
-<li>Complex joins on large datasets → Index properly or use data.table</li>
-<li>Unnecessary copies → Use reference semantics where appropriate</li>
+<li>Repeated subsetting operations -&gt; Use data.table or pre-filter</li>
+<li>Growing objects in loops -&gt; Pre-allocate vectors</li>
+<li>Complex joins on large datasets -&gt; Index properly or use data.table</li>
+<li>Unnecessary copies -&gt; Use reference semantics where appropriate</li>
 </ul>
 </section>
 <section id="integration-with-package-development-workflow" class="level3" data-number="6.8.5">
@@ -1738,13 +1738,13 @@ Note
 <span id="cb33-54"><a href="#cb33-54" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as.numeric</span>(result<span class="sc">$</span>median)</span>
 <span id="cb33-55"><a href="#cb33-55" aria-hidden="true" tabindex="-1"></a>  }, <span class="fu">numeric</span>(<span class="dv">1</span>))</span>
 <span id="cb33-56"><a href="#cb33-56" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb33-57"><a href="#cb33-57" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Check approximate linearity (R² &gt; 0.95)</span></span>
+<span id="cb33-57"><a href="#cb33-57" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Check approximate linearity (R^2 &gt; 0.95)</span></span>
 <span id="cb33-58"><a href="#cb33-58" aria-hidden="true" tabindex="-1"></a>  model <span class="ot">&lt;-</span> <span class="fu">lm</span>(timings <span class="sc">~</span> sizes)</span>
 <span id="cb33-59"><a href="#cb33-59" aria-hidden="true" tabindex="-1"></a>  r_squared <span class="ot">&lt;-</span> <span class="fu">summary</span>(model)<span class="sc">$</span>r.squared</span>
 <span id="cb33-60"><a href="#cb33-60" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb33-61"><a href="#cb33-61" aria-hidden="true" tabindex="-1"></a>  <span class="fu">expect_true</span>(</span>
 <span id="cb33-62"><a href="#cb33-62" aria-hidden="true" tabindex="-1"></a>    r_squared <span class="sc">&gt;</span> <span class="fl">0.95</span>,</span>
-<span id="cb33-63"><a href="#cb33-63" aria-hidden="true" tabindex="-1"></a>    <span class="at">info =</span> <span class="fu">sprintf</span>(<span class="st">"Scaling R² = %.3f (expected &gt; 0.95)"</span>, r_squared)</span>
+<span id="cb33-63"><a href="#cb33-63" aria-hidden="true" tabindex="-1"></a>    <span class="at">info =</span> <span class="fu">sprintf</span>(<span class="st">"Scaling R^2 = %.3f (expected &gt; 0.95)"</span>, r_squared)</span>
 <span id="cb33-64"><a href="#cb33-64" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb33-65"><a href="#cb33-65" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>When to use performance tests:</strong></p>
