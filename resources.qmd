@@ -44,6 +44,8 @@ The [UC Davis DataLab](https://github.com/ucdavisdatalab) provides extensive wor
 ## Resources for Git & Github
 
 - Happy Git and GitHub for the useR [@bryan2023happygit] - comprehensive guide to using Git and GitHub with R
+- [GitHub Learn](https://learn.github.com/) - official interactive courses,
+  Skills exercises, learning pathways, and credentials
 - [GitHub Skills: Introduction to GitHub](https://github.com/skills/introduction-to-github)
 - [UC Davis DataLab Git Sandbox](https://github.com/ucdavisdatalab/sandbox_git) - hands-on Git practice repository
 
