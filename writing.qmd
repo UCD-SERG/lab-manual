@@ -6,11 +6,11 @@
 
 ## Plain, Direct Prose {#sec-plain-prose}
 
-{{< include .ai-config/shared/writing/plain-prose.md >}}
+{{< include writing/plain-prose.qmd >}}
 
 ## Scanning for AI Tells {#sec-ai-tells}
 
 When AI tools draft or edit prose, the result often carries telltale signs of
 machine authorship.
 
-{{< include .ai-config/shared/writing/ai-tells.md >}}
+{{< include writing/ai-tells.qmd >}}

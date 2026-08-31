@@ -31,7 +31,6 @@ copilot-instructions.md wins. Read it before non-trivial content edits.
 - `inst/WORDLIST` - accepted spell-check terms
 - `lychee.toml` - link-checker config; `.lintr.R` - lint config
 - `.github/workflows/` - CI; `.github/scripts/` - R, Python, and shell helpers for preview/checks
-- `.ai-config/` - git submodule (`d-morrison/ai-config`); see below
 - `docs/`, `.quarto/`, `_freeze/`, `*_files/` - build outputs, git-ignored; do not edit
 
 ## Build, preview, render
@@ -46,49 +45,14 @@ Render a single chapter when verifying one page; render the full book before
 requesting review. CI publishes from `main` via `.github/workflows/publish.yml`;
 each PR gets a preview through `preview.yml`.
 
-The render depends on the `.ai-config` submodule (chapters transclude its
-`shared/` fragments), so populate it first:
-
-```bash
-git submodule update --init --recursive
-```
-
 R dependencies are managed with `renv` (`renv.lock`, activated by `.Rprofile`).
 Run `renv::restore()` once to install them before rendering or linting locally;
 CI does the same via `r-lib/actions/setup-renv`.
-
-## The `.ai-config` submodule
-
-`.ai-config` vendors `d-morrison/ai-config`. It supplies two things:
-
-- `shared/` guidance fragments that chapters transclude, e.g.
-  `{{< include .ai-config/shared/coding/avoid-nesting.md >}}` in `coding-style.qmd`
-  and the writing fragments in `writing.qmd`. The
-  fragment is the single source of truth, shared with ai-config's own CLAUDE.md.
-  (The PR-workflow fragments this repo used to transclude in `ai-tools.qmd`
-  moved along with that chapter's content to
-  [d-morrison/wai](https://github.com/d-morrison/wai).)
-- Reusable Claude skills, exposed as project skills through the symlink
-  `.claude/skills -> ../.ai-config/skills`.
-
-A plain clone leaves the submodule empty and the symlink dangling. The
-`bump-ai-config.yml` workflow advances the pointer to ai-config's `main` weekly
-and opens a PR. The build and `@claude` workflows check out with
-`submodules: recursive`.
-
-Note: this repo no longer has a top-level `shared/` directory --- the vendored
-`copilot-review-before-human.md` and `prompt-formats.md` files it held moved to
-[d-morrison/wai](https://github.com/d-morrison/wai) along with `ai-tools.qmd`'s
-content, which now vendors them directly.
 
 ## CI checks and how to satisfy them
 
 - Spellcheck (`check-spelling.yaml`, `insightsengineering/r-spellcheck-action`).
   Add genuine technical terms and names to `inst/WORDLIST`, one per line.
-  Note: this job checks out **without** the `.ai-config` submodule,
-  so prose in `.ai-config/shared/**/*.md` fragments is not scanned.
-  Don't assume a word passes just because it already appears in the rendered manual
-  via a transcluded fragment (e.g. "inspectable" in `avoid-nesting.md`).
   A new word you add to a file in this repo must be dictionary-valid
   or listed in `inst/WORDLIST`.
   Before pushing, grep any new proper noun, product name, or acronym you

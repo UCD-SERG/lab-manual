@@ -1,0 +1,71 @@
+When writing code, avoid nested function calls and nested function definitions where feasible:
+
+- Prefer named intermediate variables (or a pipe, e.g. `|>` in R)
+  over deeply nested calls like `f(g(h(x)))`.
+  Naming each step makes the data flow read top-to-bottom
+  and leaves intermediate values inspectable in a debugger.
+- Prefer standalone, top-level function definitions over functions defined inside other functions.
+  Nested definitions hide reusable logic, complicate unit testing, and obscure scope.
+
+This is a readability and maintainability default, not an absolute rule ---
+keep the nesting when flattening it would be more convoluted
+(a trivial one-argument wrapper, or a closure that genuinely needs the enclosing scope).
+
+### Prefer more, simpler steps over fewer, denser ones
+
+The named-intermediate rule above operates within one expression.
+The same trade runs one level up, across a pipeline:
+given a choice, do less per step and take more steps.
+
+*Advanced R* makes the observation while comparing a `purrr` pipeline
+against the base-R and `for`-loop versions of the same task, in
+[Purrr style](https://adv-r.hadley.nz/functionals.html#purrr-style):
+
+> It's interesting to note that as you move from purrr to base apply
+> functions to for loops you tend to do more and more in each iteration.
+> In purrr we iterate 3 times (`map()`, `map()`, `map_dbl()`), with apply
+> functions we iterate twice (`lapply()`, `vapply()`), and with a for loop
+> we iterate once.
+> I prefer more, but simpler, steps because I think it makes the code easier
+> to understand and later modify.
+
+The gain is the same one named intermediates buy:
+each step is separately readable, separately testable, and separately replaceable,
+and a change lands in one step rather than in the middle of a compound one.
+Cost only shows up when a step is traversed enough times for the extra passes to matter ---
+which is a claim to settle with performance benchmarking, not by assumption.
+
+### Lambdas in map() and apply-family calls
+
+The nested-definition rule applies to `purrr::map*()` / `pmap*()` / `lapply()`-family call sites too:
+do not wrap a named function in an anonymous function (lambda) just to fix constant arguments.
+Pass the mapped elements positionally and the constants through the mapping function's `...`:
+
+```r
+# Preferred --- hr/power match schoenfeld_events()'s leading parameters
+# positionally; the constant fractions ride along via map2's `...`
+purrr::map2_dbl(
+  df$hr, df$power, schoenfeld_events,
+  p1 = frac_op, p2 = frac_nonop
+)
+
+# Avoid --- a lambda that only fixes constant arguments
+purrr::map2_dbl(df$hr, df$power, function(h, p) {
+  schoenfeld_events(hr = h, power = p, p1 = frac_op, p2 = frac_nonop)
+})
+```
+
+`purrr`'s own documentation mildly recommends shorthand lambdas over `...`-passing.
+This preference deliberately overrides that:
+when the mapped elements line up with the callee's leading parameters,
+use `...` and skip the wrapper.
+
+When a wrapper genuinely is necessary ---
+the mapped element is not the callee's leading argument,
+is used more than once in the body,
+or the body is a real expression rather than a single call ---
+define a named wrapper function in its own file rather than an inline lambda.
+The one exception is a demonstrated performance reason to define the wrapper
+nested inside the calling function
+(e.g. it must close over a large enclosing-scope object that would otherwise be passed repeatedly);
+that is the same closure escape hatch as the nested-definition rule above.
