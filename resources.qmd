@@ -46,6 +46,7 @@ The [UC Davis DataLab](https://github.com/ucdavisdatalab) provides extensive wor
 - Happy Git and GitHub for the useR [@bryan2023happygit] - comprehensive guide to using Git and GitHub with R
 - [GitHub Skills: Introduction to GitHub](https://github.com/skills/introduction-to-github)
 - [UC Davis DataLab Git Sandbox](https://github.com/ucdavisdatalab/sandbox_git) - hands-on Git practice repository
+- [GitKraken](https://gitkraken.com/) - cross-platform Git client and developer platform with visual commit graphs, interactive rebasing, and [GitKraken Kepler](https://gitkraken.com/kepler) for agent-driven development workflows
 
 ## Resources for Python
 
