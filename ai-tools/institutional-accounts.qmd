@@ -1,0 +1,28 @@
+### UC Davis Health OpenAI access
+
+For lab members affiliated with UC Davis Health (UCDH)
+or conducting health sciences research,
+enterprise OpenAI accounts are provisioned
+through the UCDH IT Self-Service (ITSS) ServiceNow catalog.
+
+To request an account:
+
+1. Navigate to the [UCDH ServiceNow OpenAI catalog item](https://ucdh.service-now.com/itss?id=sc_cat_item&sys_id=738dd2ac93eba650c4dbb1847aba100d).
+2. Log in with your UC Davis Health credentials and complete Duo two-factor authentication if prompted.
+3. Fill out the request form with your department, contact details, and business or research justification.
+4. Submit the request for processing by UCDH IT.
+5. Once approved, follow the instructions in the confirmation email to join the UC Davis Health OpenAI workspace.
+
+### UC Davis campus OpenAI access
+
+For UC Davis campus affiliates,
+access to ChatGPT Edu is managed through Information and Educational Technology (IET) Aggie AI.
+See the [IET Aggie AI ChatGPT Edu documentation](https://iet.ucdavis.edu/aggie-ai/ai-tools/chatgpt-edu)
+for setup instructions and eligibility details.
+
+### Data security and compliance
+
+When using institutional AI accounts:
+
+- Never submit Protected Health Information (PHI), personally identifiable information (PII), or restricted research data to AI tools unless authorized under an approved protocol.
+- Follow all institutional data handling policies and the lab's guidelines on [Working with AI](https://morrison-lab.github.io/wai/chapters/ai-use-policies.html).

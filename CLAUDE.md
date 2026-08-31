@@ -67,7 +67,7 @@ CI does the same via `r-lib/actions/setup-renv`.
   fragment is the single source of truth, shared with ai-config's own CLAUDE.md.
   (The PR-workflow fragments this repo used to transclude in `ai-tools.qmd`
   moved along with that chapter's content to
-  [d-morrison/wai](https://github.com/d-morrison/wai).)
+  [Morrison-Lab/wai](https://github.com/Morrison-Lab/wai).)
 - Reusable Claude skills, exposed as project skills through the symlink
   `.claude/skills -> ../.ai-config/skills`.
 
@@ -78,7 +78,7 @@ and opens a PR. The build and `@claude` workflows check out with
 
 Note: this repo no longer has a top-level `shared/` directory --- the vendored
 `copilot-review-before-human.md` and `prompt-formats.md` files it held moved to
-[d-morrison/wai](https://github.com/d-morrison/wai) along with `ai-tools.qmd`'s
+[Morrison-Lab/wai](https://github.com/Morrison-Lab/wai) along with `ai-tools.qmd`'s
 content, which now vendors them directly.
 
 ## CI checks and how to satisfy them
