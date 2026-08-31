@@ -7,7 +7,6 @@
 - R for Data Science [@wickham2023r4ds] - comprehensive introduction to doing data science with R
 - R Packages [@wickham2023rpkgs] - complete guide to R package development
 - [Awesome R Package Development Tools](https://github.com/IndrajeetPatil/awesome-r-pkgtools) - curated list of tools for R package development
-- [Tidyverse data-dict](https://data-dict.tidyverse.org/) - open specification and CLI tool for creating, validating, and documenting data dictionaries in YAML format
 - Advanced R [@wickham2019advr] - deep dive into R programming and internals
 - Mastering Shiny [@wickham2021shiny] - comprehensive guide to building web applications with Shiny
 - Engineering Production-Grade Shiny Apps [@fay2021engineering] - best practices for production Shiny applications
@@ -33,6 +32,10 @@ The [UC Davis DataLab](https://github.com/ucdavisdatalab) provides extensive wor
 ### Style and Best Practices
 
 - [Hadley Wickham's R Style Guide](http://adv-r.had.co.nz/Style.html)
+
+### Data Documentation and Dictionaries
+
+- [Tidyverse data-dict](https://data-dict.tidyverse.org/) - open specification and CLI tool for creating, validating, and documenting data dictionaries in YAML format
 
 ### Tidy Evaluation Resources
 
