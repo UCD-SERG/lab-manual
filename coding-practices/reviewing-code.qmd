@@ -29,7 +29,7 @@ When reviewing a colleague's code, evaluate these key dimensions:
 2. **Code correctness and data integrity**:
    - Are data transformations and filtering steps logical and documented?
    - Are missing values (`NA`), edge cases, and empty groupings handled appropriately?
-   - Are key variables assigned descriptive labels and measurement units where applicable (see @sec-variable-labels)?
+   - Are key variables assigned descriptive labels and measurement units where applicable?
 3. **Style and structure**:
    - Does the code follow the lab's R code style (see @sec-r-code-style)?
    - Are long chunks broken into focused functions (see @sec-function-decomposition)?
