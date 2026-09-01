@@ -8,6 +8,7 @@
 ### Learning Resources
 
 - [R for Data Science - Quarto Chapter](https://r4ds.hadley.nz/quarto.html) [@wickham2023r4ds] - excellent introduction to using Quarto with R
+- [litedown: R Markdown Reimagined](https://pkg.yihui.org/litedown/book/) - a book by Yihui Xie on [`{litedown}`](https://pkg.yihui.org/litedown/), a lightweight R Markdown implementation aimed at simplicity and speed
 - [Regression Models for Epidemiology](https://d-morrison.github.io/rme/) - example of a Quarto book with profiles for rendering chapters as slides
 - [UCD-SeRG Lab Manual Source](https://github.com/UCD-SERG/lab-manual) - this manual's source code provides examples of:
   - Book structure and organization
