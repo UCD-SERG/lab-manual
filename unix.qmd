@@ -227,5 +227,5 @@ rm runFileSaveLogs
 For a comprehensive introduction to command-line tools,
 shell workflows,
 and practical computing environments,
-see [The Missing Semester of Your CS Education at UC Davis](https://missing.cs.ucdavis.edu/)
+see [The Missing CS Quarter at UC Davis](https://missing.cs.ucdavis.edu/)
 ([GitLab repository](https://gitlab.com/missing-cs-quarter-ucd/)).

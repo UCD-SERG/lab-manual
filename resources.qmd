@@ -56,7 +56,7 @@ The [UC Davis DataLab](https://github.com/ucdavisdatalab) provides extensive wor
 
 ## Practical Computing and Command Line
 
-- [The Missing Semester of Your CS Education at UC Davis](https://missing.cs.ucdavis.edu/) - practical computing skills,
+- [The Missing CS Quarter at UC Davis](https://missing.cs.ucdavis.edu/) - practical computing skills,
   shell tools,
   command-line workflows,
   and version control
