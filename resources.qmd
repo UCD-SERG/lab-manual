@@ -49,6 +49,7 @@ The [UC Davis DataLab](https://github.com/ucdavisdatalab) provides extensive wor
   Skills exercises, learning pathways, and credentials
 - [GitHub Skills: Introduction to GitHub](https://github.com/skills/introduction-to-github)
 - [UC Davis DataLab Git Sandbox](https://github.com/ucdavisdatalab/sandbox_git) - hands-on Git practice repository
+- [About stacked pull requests](https://docs.github.com/en/pull-requests/get-started/about-stacked-prs) - official GitHub guide to breaking large changes into stacked pull request chains
 
 ## Resources for Python
 
