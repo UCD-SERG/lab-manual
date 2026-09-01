@@ -1,0 +1,30 @@
+Accidentally committing credentials,
+API tokens,
+private keys,
+or sensitive patient data to a Git repository is a security incident that requires prompt remediation.
+
+Simply deleting the file in a subsequent commit does not remove it from Git history,
+as the data remains accessible in earlier commit snapshots.
+
+### Immediate steps
+
+1. **Rotate exposed secrets:**
+   Immediately revoke and rotate any leaked passwords,
+   API keys,
+   or tokens.
+   Assume that any credential pushed to a remote repository has been compromised.
+2. **Purge the file from history:**
+   Use tools like [`git-filter-repo`](https://github.com/newren/git-filter-repo) (officially recommended by Git and GitHub)
+   or [BFG Repo-Cleaner](https://rtyley.github.io/bfg-repo-cleaner/)
+   to scrub the sensitive file from all commits,
+   branches,
+   and tags in your local repository.
+3. **Force-push rewritten branches:**
+   Coordinate with your team before force-pushing rewritten branches
+   with lease (`--force-with-lease --force-if-includes`) to GitHub.
+4. **Contact GitHub Support to clear cached commits:**
+   Cached commits and pull request refs on GitHub may still retain the sensitive objects
+   until garbage collected.
+
+For detailed step-by-step instructions,
+see GitHub's guide on [Removing sensitive data from a repository](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository).
