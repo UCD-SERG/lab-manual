@@ -139,9 +139,23 @@ see the [Quarto Includes documentation](https://quarto.org/docs/authoring/includ
 
 When embedding raw source code from external files without executing them,
 the [`include-code-files`](https://github.com/quarto-ext/include-code-files) extension provides a filter
-to include code directly inside fenced code blocks with syntax highlighting,
-line numbers,
-and snippet selection:
+to include code directly into fenced code blocks with syntax highlighting
+and line or snippet selection.
+
+**Installation:**
+
+```bash
+quarto add quarto-ext/include-code-files
+```
+
+Add the filter to your document or `_quarto.yml`:
+
+```yaml
+filters:
+  - include-code-files
+```
+
+**Usage:**
 
 ````markdown
 ```{.r include="path/to/script.R"}
