@@ -8,7 +8,7 @@ We typically use Unix commands in Terminal (for Mac users) or Git Bash (for Wind
 
 ## User interfaces: CLI, TUI, and GUI {#sec-cli-tui-gui}
 
-{{< include unix/interfaces-cli-tui-gui.qmd >}}
+{{< include unix/_interfaces-cli-tui-gui.qmd >}}
 
 ## Basics
 
