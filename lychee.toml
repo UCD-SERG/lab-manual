@@ -39,6 +39,8 @@ exclude = [
   "https://support.posit.co/.*",
   # Stanford grant writing page times out in CI
   "https://grantwriting.stanford.edu/.*",
+  # ScienceCareers myIDP uses cookie-detection redirect loop that trips automated link checkers
+  "https://myidp\\.sciencecareers\\.org/.*",
   # GNU Screen homepage is valid for humans but reliably times out in CI
   "https://www\\.gnu\\.org/software/screen.*",
   # chmod tutorial is valid for humans but timed out in CI
