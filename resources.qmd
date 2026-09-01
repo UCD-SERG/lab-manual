@@ -54,9 +54,9 @@ The [UC Davis DataLab](https://github.com/ucdavisdatalab) provides extensive wor
 - [GitHub Skills: Introduction to GitHub](https://github.com/skills/introduction-to-github)
 - [UC Davis DataLab Git Sandbox](https://github.com/ucdavisdatalab/sandbox_git) - hands-on Git practice repository
 - [Claude Code on the Web: Auto-Fix Pull Requests](https://code.claude.com/docs/en/claude-code-on-the-web#auto-fix-pull-requests) -
-  documentation on Claude Code's web interface for automatically investigating and resolving CI test failures on pull requests
+  documentation on Claude Code's web interface for automatically investigating and resolving CI test failures and reviewer feedback on pull requests
 - [Claude Code Workflows](https://code.claude.com/docs/en/workflows) -
-  common development workflows and patterns with Claude Code
+  documentation on Claude Code's dynamic subagent orchestration feature for parallel codebase audits, migrations, and evaluations
 
 ## Resources for Python
 
