@@ -6,6 +6,10 @@ Follow these code style guidelines for all R code:
 
 {{< include coding-style/general-principles.qmd >}}
 
+## Clean Code Principles {#sec-clean-code}
+
+{{< include coding-style/clean-code.qmd >}}
+
 ## Function Structure and Documentation {#sec-function-docs}
 
 {{< include coding-style/function-structure-and-documentation.qmd >}}
