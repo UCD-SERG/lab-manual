@@ -85,8 +85,9 @@ validate_doi_url <- function(doi) {
   doi_url <- sprintf("https://doi.org/%s", doi_identifier)
 
   tryCatch({
-    # RETRY with exponential backoff; a 404/410 is definitive (the DOI
-    # itself is wrong), so it terminates the retries immediately.
+    # RETRY with exponential backoff. We avoid terminating immediately on
+    # 404/410 because publisher landing pages reached via redirect frequently
+    # rate-limit or block CI requests with 404/403 (#454).
     response <- RETRY(
       "GET",
       doi_url,
@@ -95,7 +96,6 @@ validate_doi_url <- function(doi) {
       times = 3,
       pause_base = 2,
       pause_cap = 16,
-      terminate_on = c(404, 410),
       quiet = TRUE
     )
 
@@ -109,17 +109,39 @@ validate_doi_url <- function(doi) {
         transient = FALSE
       ))
     } else {
+      # If GET to publisher redirect returned 404/410/403, verify if the DOI
+      # is registered in CrossRef before treating it as permanently dead (#454).
+      crossref_meta <- get_doi_metadata(doi_identifier)
+      if (!is.null(crossref_meta)) {
+        return(list(
+          is_valid = TRUE,
+          error = NULL,
+          status_code = status_code,
+          transient = FALSE
+        ))
+      }
+
       return(list(
         is_valid = FALSE,
         error = sprintf("DOI URL returned status %d", status_code),
         status_code = status_code,
-        # 404/410 mean the DOI is genuinely broken; any other non-200
-        # that survived the retries (5xx, 429, other 4xx from an
-        # overloaded or bot-blocking resolver) is treated as transient.
+        # 404/410 mean the DOI is genuinely broken unless registered in CrossRef;
+        # any other non-200 is treated as transient.
         transient = !(status_code %in% c(404, 410))
       ))
     }
   }, error = function(e) {
+    # Check CrossRef metadata if URL fetch encountered an error
+    crossref_meta <- get_doi_metadata(doi_identifier)
+    if (!is.null(crossref_meta)) {
+      return(list(
+        is_valid = TRUE,
+        error = NULL,
+        status_code = NULL,
+        transient = FALSE
+      ))
+    }
+
     # A request that still errors after retries (timeout, connection
     # failure) means the resolver was unavailable, not that the DOI is
     # wrong.
