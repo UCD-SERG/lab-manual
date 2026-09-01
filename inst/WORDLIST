@@ -2,6 +2,7 @@ Aiemjoy
 Barratt
 Bitbucket
 Burkholderia
+Catalina
 CE
 ChatGPT
 Crosman
@@ -10,11 +11,13 @@ DevOps
 Djajadi
 Drs
 Fanice
+FAQ
 GitKraken
 GitLab
 GitLens
 GraphQL
 Heitmann
+Homebrew
 Jekyll
 Jira
 Kepler
@@ -23,7 +26,9 @@ LeCun
 Linux
 LiteLLM
 Melioidosis
+MesloLGS
 Mishra
+NF
 NonCommercial
 Nyatigo
 OpenDevin
@@ -31,6 +36,7 @@ OpenHands
 Orientia
 Paratyphi
 Pokpongkiat
+Powerlevel
 REPL
 Rails
 SERG
@@ -39,12 +45,16 @@ SWE
 SeRG
 Seroepidemiology
 Shigella
+Starship
 TOCTOU
+Tufte
 Typhi
 UC
 UCD
 UCSF
 Vibrio
+Xie
+Yihui
 agentic
 aider
 backoff
@@ -58,6 +68,7 @@ idempotency
 idempotent
 io
 jadebc
+litedown
 macOS
 multiplexer
 observability
@@ -66,9 +77,11 @@ reattach
 rebasing
 scriptability
 seroepidemiologic
+sidenotes
 spp
 subagent
 subagents
 tsutsugamushi
 ucdavis
 ucdserg
+zsh

@@ -2,6 +2,8 @@
 
 ## Basics
 
+- [GitHub Learn](https://learn.github.com/) hosts official interactive courses,
+  Skills exercises, learning pathways, and credentials.
 - A detailed tutorial of Git can be found [here on the CS61B website](https://sp19.datastructur.es/materials/guides/using-git#b-local-repositories-narrative-introduction).
 - If you are already familiar with Git, you can reference the summary at the end of [Section B](https://sp19.datastructur.es/materials/guides/using-git#b-local-repositories-narrative-introduction).
 - If you have made a mistake in Git, you can refer to On undoing, fixing, or removing commits in git [@gitfixum] to undo, fix, or remove commits in git.
@@ -74,7 +76,7 @@ GitHub Copilot settings page showing organization options
    follow the setup instructions to install and configure Copilot in your development environment
 
 For guidance on using GitHub Copilot effectively,
-see the [wai site's "Best Practices for Safe and Successful Use" section](https://d-morrison.github.io/wai/chapters/coding-agents.html#sec-ai-best-practices).
+see the [wai site's "Best Practices for Safe and Successful Use" section](https://morrison-lab.github.io/wai/chapters/coding-agents.html#sec-ai-best-practices).
 
 ## Graphical Git Clients {#sec-git-gui-clients}
 
