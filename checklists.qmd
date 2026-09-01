@@ -5,7 +5,7 @@
 Welcome to the lab! New members should complete the following checklist during their first week:
 
 - **Account setup**: Request and confirm access to GitHub (join the `UCD-SERG` organization),
-  Slack, UC Davis email, and lab Box and Google Drive folders.
+  Microsoft Teams, UC Davis email, and lab Box and SharePoint folders.
 - **Required trainings**: Complete required CITI Human Subjects Biomedical Group 1 training
   and share your certificate with lab leadership (see @sec-protecting-human-subjects).
 - **Read the lab manual**: Review lab culture and conduct (@sec-culture-and-conduct),
@@ -15,7 +15,7 @@ Welcome to the lab! New members should complete the following checklist during t
   (see @sec-reproducible-environments).
 - **HPC access**: Confirm High-Performance Computing cluster access (Farm or Shiva)
   and verify SSH keys if your project involves cluster computing (see @sec-slurm).
-- **Team introductions**: Introduce yourself on the lab Slack channel and at the next weekly lab meeting.
+- **Team introductions**: Introduce yourself on Microsoft Teams and at the next weekly lab meeting.
 - **Initial 1:1 meeting**: Schedule a one-on-one meeting with lab leadership
   to align on project objectives, onboarding timeline, and initial milestones.
 
