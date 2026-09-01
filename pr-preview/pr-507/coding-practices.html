@@ -2282,7 +2282,7 @@ Note
 <section id="sec-variable-labels" class="level3" data-number="6.14.8">
 <h3 data-number="6.14.8" class="anchored" data-anchor-id="sec-variable-labels"><span class="header-section-number"><mark class="preview-text-changed">6.14.8</mark></span> <mark class="preview-text-changed">Variable</mark> <mark class="preview-text-changed">labels</mark></h3>
 <p><mark class="preview-element-added">Add a descriptive label as soon as you create each key variable (any variable that might end up in a figure, table, or output model). The label should explicitly include measurement units where applicable.</mark></p>
-<p><mark class="preview-element-added">In R, you can assign variable labels using attributes or labeling packages:</mark></p>
+<p><mark class="preview-element-added">In R, you can assign variable labels using base R attributes:</mark></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb58"><pre class="sourceCode r code-with-copy"><mark class="preview-element-added"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Attach a label with measurement units</span></span>
 <span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="co"># immediately upon variable creation</span></span>
 <span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="fu">attr</span>(data<span class="sc">$</span>blood_lead_level, <span class="st">"label"</span>) <span class="ot">&lt;-</span> <span class="st">"Blood lead concentration (ug/dL)"</span></span>
