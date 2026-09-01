@@ -12,7 +12,7 @@
 
 {{< include coding-style/_lintr-summary.qmd >}}
 
-#### [`{jarl}`](https://jarl.etiennebacher.com/)
+#### [`jarl`](https://jarl.etiennebacher.com/)
 
 {{< include coding-style/_jarl-summary.qmd >}}
 
