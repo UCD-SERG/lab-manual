@@ -2680,12 +2680,12 @@ drop_auth(rdstoken = "/path/to/tokenfile.RDS")
 </section>
 <section id="sec-rex" class="level3" data-number="6.35.10">
 <h3 data-number="6.35.10" class="anchored" data-anchor-id="sec-rex"><span class="header-section-number"><mark class="preview-text-changed">6.35.10</mark></span> <a href="https://rex.r-lib.org/"><code><mark class="preview-text-changed">{rex}</mark></code></a></h3>
-<p><mark class="preview-element-added"><a href="https://rex.r-lib.org/"><code>{rex}</code></a> provides a human-readable interface for constructing regular expressions in R without having to write complex, unreadable regex strings manually. It allows regular expressions to be composed modularly using functions such as <code>rex()</code>, <code>character_class()</code>, <code>capture()</code>, and <code>group()</code>.</mark></p>
+<p><mark class="preview-element-added"><a href="https://rex.r-lib.org/"><code>{rex}</code></a> provides a human-readable interface for constructing regular expressions in R without having to write complex, unreadable regex strings manually. It allows regular expressions to be composed modularly using functions such as <code>rex()</code>, <code>character_class()</code>, <code>capture()</code>, and <code>some_of()</code>.</mark></p>
 <p><mark class="preview-element-added">When using <code>{rex}</code> inside another R package:</mark></p>
 <ul>
 <li><mark class="preview-element-added">Add <code>rex</code> to <code>Imports</code> in the package <code>DESCRIPTION</code>.</mark></li>
-<li><mark class="preview-element-added">Call <code>rex::register_shortcuts("&lt;pkgname&gt;")</code> in <code>.onLoad()</code> to prevent <code>R CMD check</code> NOTEs regarding undefined global variables when using <code>rex</code> shortcuts in package code.</mark></li>
-<li><mark class="preview-element-added">Call <code>rex::rex(...)</code> to compile expressions into regular expression strings for use with functions like <code>grepl()</code>, <code>gsub()</code>, or <code>stringr</code> functions.</mark></li>
+<li><mark class="preview-element-added">Call <code>rex::register_shortcuts(pkgname)</code> in <code>.onLoad()</code> to prevent <code>R CMD check</code> NOTEs regarding undefined global variables when using <code>rex</code> shortcuts in package code.</mark></li>
+<li><mark class="preview-element-added">Call <code>rex::rex(...)</code> to compile expressions into regular expression strings for use with functions like <code>grepl()</code>, <code>gsub()</code>, or <a href="https://stringr.tidyverse.org/"><code>{stringr}</code></a> functions.</mark></li>
 </ul>
 </section>
 </section>
