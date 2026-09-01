@@ -14,3 +14,7 @@ When AI tools draft or edit prose, the result often carries telltale signs of
 machine authorship.
 
 {{< include .ai-config/shared/writing/ai-tells.md >}}
+
+## Show, Don't Tell {#sec-show-dont-tell}
+
+{{< include writing/show-dont-tell.qmd >}}
