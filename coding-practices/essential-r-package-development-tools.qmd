@@ -59,8 +59,8 @@ devtools::install()                 # Install package locally
 ::: {.callout-tip}
 ## Run `devtools::check()` locally before pushing
 
-Running `R CMD check` workflows on GitHub Actions is computationally expensive and slow,
-as runners spin up fresh virtual environments and install all dependencies from scratch each time.
+Running `R CMD check` workflows on GitHub Actions introduces runner startup overhead and delay,
+as virtual environments must be provisioned and system-level dependencies configured on each run.
 Always run `devtools::check()` locally before pushing to GitHub
 to catch errors, warnings, and NOTEs early while conserving CI resources.
 :::
