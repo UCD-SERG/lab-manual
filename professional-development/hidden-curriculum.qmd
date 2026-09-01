@@ -42,10 +42,14 @@ and manuscripts face rejection:
 
 Navigating scientific publication requires understanding the review lifecycle:
 
-- **Rejection is standard**: High-impact journals reject many submissions;
-  rejection is an invitation to refine arguments and submit to a better-matched venue.
-- **Approaching reviewer feedback**: Read peer reviews, step back for a day to process feedback,
-  and draft systematic, point-by-point response letters using the guidance in @sec-responding-to-peer-review.
+- **Rejection is a normal part of publishing**: In academic publishing,
+  manuscripts frequently undergo multiple rounds of submission;
+  rejection provides an opportunity to refine arguments
+  and submit to a better-matched venue.
+- **Approaching reviewer feedback**: Read peer reviews,
+  step back for a day to process feedback,
+  and draft systematic, point-by-point response letters
+  using the guidance in @sec-responding-to-peer-review.
 - **Authorship conversations**: Initiate discussions regarding authorship order
   and contribution roles early in every project and revisit them regularly.
 
@@ -58,4 +62,5 @@ Building professional connections expands research opportunities and career hori
 - **Engage with speakers**: Introduce yourself after departmental seminars
   or during poster sessions to ask focused questions about their work.
 - **Peer networks**: Cultivate strong relationships with cohort members and lab peers;
-  colleagues at your career stage will become future collaborators, reviewers, and lifelong allies.
+  colleagues at your career stage will become future collaborators,
+  reviewers, and lifelong allies.
