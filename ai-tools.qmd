@@ -32,13 +32,13 @@ there.
 ## Institutional AI Access {#sec-institutional-ai-access}
 
 UC Davis Health (UCDH) provides OpenAI / ChatGPT accounts for affiliated researchers and staff.
-As of 2026, account credit allocation follows institutional guidelines:
+Based on internal UCDH administrative rates (as of 2026):
 
 - 1 credit is valued at approximately 4.5 cents (\$0.045).
 - With a standard allocation of 2,000 credits per week,
   an active account receives the equivalent of approximately \$360 per month in credits.
 - Lab members should monitor their weekly credit usage against their project workflows
-  to plan computationally heavy tasks accordingly.
+  and consult lab leadership for updated rate schedules or quota increases.
 
 ::: {.callout-note collapse="true"}
 ## Looking for a specific section that used to be here?
