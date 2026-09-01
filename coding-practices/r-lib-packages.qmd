@@ -259,7 +259,7 @@ See @sec-auto-styling for more details.
 
 [`{rex}`](https://rex.r-lib.org/) provides a human-readable interface for constructing regular expressions in R
 without having to write complex, unreadable regex strings manually.
-It allows regular expressions to be composed modularly using functions such as `rex()`, `character_class()`, `capture()`, and `regex_group()`.
+It allows regular expressions to be composed modularly using functions such as `rex()`, `character_class()`, `capture()`, and `group()`.
 
 When using `{rex}` inside another R package:
 
