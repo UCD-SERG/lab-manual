@@ -56,6 +56,15 @@ devtools::build()                   # Build package bundle
 devtools::install()                 # Install package locally
 ```
 
+::: {.callout-tip}
+## Run `devtools::check()` locally before pushing
+
+Running `R CMD check` workflows on GitHub Actions is computationally expensive and slow,
+as runners spin up fresh virtual environments and install all dependencies from scratch each time.
+Always run `devtools::check()` locally before pushing to GitHub
+to catch errors, warnings, and NOTEs early while conserving CI resources.
+:::
+
 ### pkgdown: Package Websites
 
 `pkgdown` builds beautiful documentation websites from your package:
