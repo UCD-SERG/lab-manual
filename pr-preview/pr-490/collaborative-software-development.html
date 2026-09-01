@@ -752,8 +752,8 @@ main (default base branch)</code></pre>
 <p><mark class="preview-text-changed">GitHub</mark> <mark class="preview-text-changed">provides</mark> <mark class="preview-text-changed">native platform support for managing</mark> and <mark class="preview-text-changed">merging</mark> pull <mark class="preview-text-changed">request stacks:</mark></p>
 <ul>
 <li><mark class="preview-element-added"><strong>Rules and CI enforcement</strong>: Branch protection rules (such as required approvals) and GitHub Actions CI checks configured for <code>main</code> run on and apply to every pull request in the stack, ensuring consistent quality across every layer.</mark></li>
-<li><mark class="preview-element-added"><strong>Bottom-up merging</strong>: Pull requests merge in order from the bottom up. Merging a pull request automatically rebases subsequent branches or re-targets the next layer onto the base branch. Merging an upper pull request automatically merges all pull requests beneath it in the stack.</mark></li>
-<li><mark class="preview-element-added"><strong>Automated cascading rebases</strong>: When lower branches change, cascading rebases propagate updates up through the stack. Local branch management and stack navigation can be managed using the <code>gh stack</code> extension in the GitHub CLI.</mark></li>
+<li><mark class="preview-element-added"><strong>Bottom-up merging</strong>: Pull requests merge in sequential order from the bottom up. When the bottom-most pull request merges into the default branch, the pull request immediately above it automatically retargets onto the default branch so each successive layer can land cleanly in turn.</mark></li>
+<li><mark class="preview-element-added"><strong>Automated cascading rebases</strong>: When lower branches in a stack are updated with review revisions or upstream changes, rebasing or merging those updates propagates them upward through dependent branches to keep the entire stack in sync and resolve conflicts early.</mark></li>
 </ul>
 </section>
 </section>
