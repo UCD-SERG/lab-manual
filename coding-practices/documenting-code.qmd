@@ -59,7 +59,8 @@ attr(data$pm25_exposure, "label") <- "Annual average PM2.5 exposure (ug/m^3)"
 ```
 
 Labeling key variables at the point of creation ensures that
-downstream table generators (such as [`{gtsummary}`](https://www.danieldsjoberg.com/gtsummary/))
+downstream table generators
+(such as [`{gtsummary}`](https://www.danieldsjoberg.com/gtsummary/))
 can automatically display human-readable descriptions and correct units
 without error-prone manual relabeling.
 
