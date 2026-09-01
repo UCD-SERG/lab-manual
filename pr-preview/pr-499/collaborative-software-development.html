@@ -718,7 +718,7 @@ Describe how this change has been tested.
 <li><mark class="preview-element-added">Create your base feature branch from <code>main</code>.</mark></li>
 <li><mark class="preview-element-added">Create your second branch based on the first feature branch (rather than <code>main</code>).</mark></li>
 <li><mark class="preview-element-added">Open a pull request targeting the first feature branch as the base branch.</mark></li>
-<li><mark class="preview-element-added">When the base PR merges to <code>main</code>, update the stacked PR’s base branch to <code>main</code> (or rebase if needed).</mark></li>
+<li><mark class="preview-element-added">When the base PR merges into <code>main</code>, GitHub automatically retargets the stacked PR to <code>main</code> (if the base branch was deleted without auto-retargeting, update the base branch manually and rebase against <code>main</code>).</mark></li>
 </ol>
 <p><mark class="preview-element-added">For comprehensive GitHub workflow instructions and tips, see GitHub’s guide on <a href="https://docs.github.com/en/pull-requests/how-tos/stacked-pull-requests">Managing stacked pull requests</a>.</mark></p>
 </section>
