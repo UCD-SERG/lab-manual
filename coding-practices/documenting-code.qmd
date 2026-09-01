@@ -55,16 +55,15 @@ over raw base R attributes.
 
 ```r
 library(labelled)
-library(dplyr)
 
-# Set variable labels directly in a tidyverse pipeline
+# Set variable labels directly in a pipeline
 data <- data |>
   set_variable_labels(
     blood_lead_level = "Blood lead concentration (ug/dL)",
     pm25_exposure = "Annual average PM2.5 exposure (ug/m^3)"
   )
 
-# Or set or query a single variable label using var_label()
+# Set a single variable label using var_label()
 var_label(data$blood_lead_level) <- "Blood lead concentration (ug/dL)"
 ```
 
