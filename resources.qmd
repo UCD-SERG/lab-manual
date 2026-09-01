@@ -24,10 +24,11 @@ The [UC Davis DataLab](https://github.com/ucdavisdatalab) provides extensive wor
 
 ### Cheat Sheets
 
-- [dplyr and tidyr cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
-- [ggplot cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf)
-- [data table cheat sheet](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/datatable_Cheat_Sheet_R.pdf)
-- [RMarkdown cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+- [dplyr cheat sheet](https://rstudio.github.io/cheatsheets/html/data-transformation.html)
+- [tidyr cheat sheet](https://rstudio.github.io/cheatsheets/html/tidyr.html)
+- [ggplot2 cheat sheet](https://rstudio.github.io/cheatsheets/html/data-visualization.html)
+- [data.table cheat sheet](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/datatable_Cheat_Sheet_R.pdf)
+- [R Markdown cheat sheet](https://rstudio.github.io/cheatsheets/html/rmarkdown.html)
 
 ### Style and Best Practices
 
