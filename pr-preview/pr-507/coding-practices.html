@@ -2284,17 +2284,16 @@ Note
 <p><mark class="preview-element-added">Add a descriptive label as soon as you create each key variable (any variable that might end up in a figure, table, or output model). The label should explicitly include measurement units where applicable.</mark></p>
 <p><mark class="preview-element-added">In R, prefer the <a href="https://larmarange.github.io/labelled/"><code>{labelled}</code></a> package over raw base R attributes. <code>{labelled}</code> integrates seamlessly with tidyverse pipelines:</mark></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb58"><pre class="sourceCode r code-with-copy"><mark class="preview-element-added"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(labelled)</span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set variable labels directly in a tidyverse pipeline</span></span>
-<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span></span>
-<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(</span>
-<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">blood_lead_level =</span> <span class="st">"Blood lead concentration (ug/dL)"</span>,</span>
-<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">pm25_exposure =</span> <span class="st">"Annual average PM2.5 exposure (ug/m^3)"</span></span>
-<span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb58-10"><a href="#cb58-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-11"><a href="#cb58-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Or set or query a single variable label using var_label()</span></span>
-<span id="cb58-12"><a href="#cb58-12" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(data<span class="sc">$</span>blood_lead_level) <span class="ot">&lt;-</span> <span class="st">"Blood lead concentration (ug/dL)"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Set variable labels directly in a pipeline</span></span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span></span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(</span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">blood_lead_level =</span> <span class="st">"Blood lead concentration (ug/dL)"</span>,</span>
+<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">pm25_exposure =</span> <span class="st">"Annual average PM2.5 exposure (ug/m^3)"</span></span>
+<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-10"><a href="#cb58-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Set a single variable label using var_label()</span></span>
+<span id="cb58-11"><a href="#cb58-11" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(data<span class="sc">$</span>blood_lead_level) <span class="ot">&lt;-</span> <span class="st">"Blood lead concentration (ug/dL)"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Labeling key variables at the point of creation ensures that downstream table generators (such as <a href="https://www.danieldsjoberg.com/gtsummary/"><code>{gtsummary}</code></a>) can automatically display human-readable descriptions and correct units without error-prone manual relabeling.</mark></p>
 <p><em>See also <a href="coding-style.html#sec-function-docs" class="quarto-xref" preview-toc-changed><span>Section <mark class="preview-text-changed">7.2</mark></span></a> for <mark class="preview-text-changed">function documentation</mark> style <mark class="preview-text-changed">guidelines.</mark></em></p>
 </section>
