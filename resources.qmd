@@ -123,7 +123,8 @@ and align our open science standards with the broader computational biology and 
   The Contextual Dynamics Lab manual at Dartmouth,
   notable for requiring incoming lab members to make an interactive pull request
   to learn contribution workflows hands-on.
-- [Proctor-UCSF DCC Handbook](https://proctor-ucsf.github.io/dcc-handbook/) ---
+- [Proctor-UCSF DCC Handbook](https://proctor-ucsf.github.io/dcc-handbook/)
+  ([GitHub repository](https://github.com/proctor-ucsf/dcc-handbook)) ---
   A comprehensive handbook for the Data Coordinating Center at UCSF,
   focusing on clinical trial data management,
   REDCap workflows,
