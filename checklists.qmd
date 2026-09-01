@@ -9,7 +9,7 @@ Welcome to the lab! New members should complete the following checklist during t
 - **Required trainings**: Complete required CITI human subjects and HIPAA/IRB training modules
   (see @sec-protecting-human-subjects).
 - **Read the lab manual**: Review lab culture and conduct (@sec-culture-and-conduct),
-  coding style (@sec-coding-style), and collaborative development (@sec-collab-dev).
+  coding style (@sec-r-code-style), and collaborative development (@sec-collab-dev).
 - **Environment setup**: Configure your local R development environment,
   clone a starter repository, and run `renv::restore()` to verify reproducible package installation
   (see @sec-reproducible-environments).
