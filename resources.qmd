@@ -34,6 +34,10 @@ The [UC Davis DataLab](https://github.com/ucdavisdatalab) provides extensive wor
 
 - [Hadley Wickham's R Style Guide](http://adv-r.had.co.nz/Style.html)
 
+### Data Documentation and Dictionaries
+
+- [Tidyverse data-dict](https://data-dict.tidyverse.org/) - open specification and CLI tool for creating, validating, and documenting data dictionaries in YAML format
+
 ### Tidy Evaluation Resources
 
 - [Tidy Eval in 5 Minutes](https://www.youtube.com/watch?v=nERXS3ssntw) (video)
