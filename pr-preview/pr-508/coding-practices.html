@@ -915,7 +915,7 @@ window.Quarto = {
 </mark></div>
 </div>
 <div class="callout-body-container callout-body">
-<p><mark class="preview-text-changed">Running </mark><code><mark class="preview-text-changed">R CMD check</mark></code><mark class="preview-text-changed"> workflows on GitHub Actions is computationally expensive and slow, as runners spin up fresh virtual environments and install all dependencies from scratch each time. Always run </mark><code><mark class="preview-text-changed">devtools::check()</mark></code><mark class="preview-text-changed"> locally before pushing to GitHub to catch errors, warnings, and NOTEs early while conserving CI resources.</mark></p>
+<p><mark class="preview-text-changed">Running </mark><code><mark class="preview-text-changed">R CMD check</mark></code><mark class="preview-text-changed"> workflows on GitHub Actions introduces runner startup overhead and delay, as virtual environments must be provisioned and system-level dependencies configured on each run. Always run </mark><code><mark class="preview-text-changed">devtools::check()</mark></code><mark class="preview-text-changed"> locally before pushing to GitHub to catch errors, warnings, and NOTEs early while conserving CI resources.</mark></p>
 </div>
 </div>
 </section>
