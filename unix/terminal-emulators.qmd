@@ -35,7 +35,7 @@ and rich terminal features:
 - Built-in tabs and split panes
 - True color and modern terminal graphics protocol support
 - Available on macOS and Linux
-  (with Windows support in active development)
+  (Windows support in active development as of September 2026)
 
 #### [WezTerm](https://wezfurlong.org/wezterm/)
 
@@ -96,7 +96,7 @@ feature-packed terminal emulator built specifically for macOS:
 Windows Terminal is a modern,
 high-performance terminal emulator developed by Microsoft:
 
-- GPU-accelerated text rendering engine (DirectWrite)
+- GPU-accelerated text rendering engine (Direct3D-based AtlasEngine)
 - Tabbed interface supporting multiple shells simultaneously
   (PowerShell,
   Command Prompt,
