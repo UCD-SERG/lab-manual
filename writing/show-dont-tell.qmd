@@ -19,7 +19,7 @@ favor concrete visual evidence and direct demonstration over dense verbal exposi
   rather than exhaustively listing every number already legible in a table or plot.
 - **Use diagrams for conceptual models:**
   Directed acyclic graphs (DAGs),
-  consort diagrams,
+  CONSORT flow diagrams,
   and workflow schematics clarify methodological structures much faster than textual descriptions alone.
 
 ### In conference and lab presentations
