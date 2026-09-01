@@ -49,13 +49,23 @@ Add a descriptive label as soon as you create each key variable
 (any variable that might end up in a figure, table, or output model).
 The label should explicitly include measurement units where applicable.
 
-In R, you can assign variable labels using base R attributes:
+In R, prefer the [`{labelled}`](https://larmarange.github.io/labelled/) package
+over raw base R attributes.
+`{labelled}` integrates seamlessly with tidyverse pipelines:
 
 ```r
-# Attach a label with measurement units
-# immediately upon variable creation
-attr(data$blood_lead_level, "label") <- "Blood lead concentration (ug/dL)"
-attr(data$pm25_exposure, "label") <- "Annual average PM2.5 exposure (ug/m^3)"
+library(labelled)
+library(dplyr)
+
+# Set variable labels directly in a tidyverse pipeline
+data <- data |>
+  set_variable_labels(
+    blood_lead_level = "Blood lead concentration (ug/dL)",
+    pm25_exposure = "Annual average PM2.5 exposure (ug/m^3)"
+  )
+
+# Or set or query a single variable label using var_label()
+var_label(data$blood_lead_level) <- "Blood lead concentration (ug/dL)"
 ```
 
 Labeling key variables at the point of creation ensures that
