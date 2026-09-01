@@ -503,7 +503,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix-copilot-instructions.html" class="sidebar-item-text sidebar-link active">
+  <a href="./appendix-copilot-instructions.html" class="sidebar-item-text sidebar-link active" preview-toc-changed>
  <span class="menu-text">Copilot Instructions File</span></a>
   </div>
 </li>
@@ -533,7 +533,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <main class="content" id="quarto-document-content">
 <div class="preview-home-changes-banner">
     <p style="margin: 0;">
-        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="appendix-document-metadata.html">appendix-document-metadata</a>
+        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="appendix-document-metadata.html">appendix-document-metadata</a>, <a href="appendix-copilot-instructions.html">appendix-copilot-instructions</a>
         <br>
         <strong>📄 DOCX with tracked changes:</strong> <a href="UCD-SeRG-Lab-Manual-tracked-changes.docx" download>Download UCD-SeRG-Lab-Manual-tracked-changes.docx</a>
         <br>
@@ -561,6 +561,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+
+
+<div class="preview-combined-banner">
+    <p style="margin: 0;">
+        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~0% of content changed).
+        <br>
+        <strong>🎨 Highlighting Legend:</strong> 
+        <mark class="preview-text-changed" style="display: inline; padding: 1px 3px;">Modified text (yellow)</mark> shows changed words/phrases with tooltips of original text, 
+        <mark class="preview-text-added" style="display: inline; padding: 1px 3px;">added text (green)</mark> shows new content, and 
+        <mark class="preview-element-added" style="display: inline; padding: 1px 3px;">new sections (blue)</mark> highlight entirely new paragraphs.
+    </p>
+</div>
 
 <p>This appendix contains the complete <code>.github/copilot-instructions.md</code> file used in this repository to guide GitHub Copilot coding agents.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -875,7 +887,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Subdirectory: <code>##-chapter-name/</code> (matches the main file name)</li>
 <li>Include files: <code>descriptive-section-name.qmd</code> using kebab-case</li>
 <li>Use descriptive names that clearly indicate the content</li>
-<li>Prefix with underscore <code>_</code> for partial/helper files not directly included (e.g., <code>_lintr-summary.qmd</code>)</li>
+<li><mark class="preview-element-added">Leading underscore <code>_</code> is optional (in this book project, Quarto only renders chapters listed in <code>_quarto.yml</code> standalone)</mark></li>
 </ul>
 </section>
 <section id="git-history-benefits-example" class="level4">
