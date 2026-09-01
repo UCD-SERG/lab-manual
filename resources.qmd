@@ -116,8 +116,9 @@ and align our open science standards with the broader computational biology and 
 - [Fay Lab Manual](https://thefaylab.github.io/lab-manual/)
   ([GitHub repository](https://github.com/thefaylab/lab-manual)) ---
   An Openscapes-origin Quarto manual for quantitative fisheries ecology (UMass Dartmouth),
-  widely adapted across ecological and computational research groups
-  with detailed offboarding checklists and open communication philosophy.
+  featuring detailed offboarding checklists,
+  departure handoff protocols,
+  and an open science communication philosophy.
 - [ContextLab Lab Manual](https://contextlab.github.io/lab-manual/)
   ([GitHub repository](https://github.com/ContextLab/lab-manual)) ---
   The Contextual Dynamics Lab manual at Dartmouth,
