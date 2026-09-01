@@ -1,0 +1,105 @@
+Software tools expose different interaction models
+depending on whether they run in a terminal or a desktop window.
+Understanding the trade-offs between
+Command-Line Interfaces (CLIs),
+Terminal User Interfaces (TUIs),
+and Graphical User Interfaces (GUIs)
+helps developers choose the right tool for local development,
+remote server administration,
+and automated analysis pipelines.
+
+### Command-line interfaces (CLI)
+
+A Command-Line Interface (CLI) processes discrete text commands
+typed into a shell prompt.
+Commands execute sequentially,
+read arguments and configuration flags,
+and stream output to standard output (`stdout`)
+or standard error (`stderr`).
+
+Key characteristics:
+
+- **Scriptable and composable:**
+  Commands can be chained with Unix pipes (`|`),
+  redirected to files (`>`),
+  and automated in shell scripts or CI/CD pipelines without human interaction.
+- **Stateless execution:**
+  Each command runs to completion and exits,
+  returning control to the prompt.
+- **Low overhead:**
+  Requires minimal system memory and CPU,
+  making it suitable for headless servers and high-performance computing (HPC) nodes.
+- **Steep initial learning curve:**
+  Users must memorize command syntax, flags, and arguments
+  or consult manual pages (`man`) and `--help` output.
+
+Common data science examples: `git`, `quarto`, `Rscript`, `curl`, and `gh`.
+
+### Graphical user interfaces (GUI)
+
+A Graphical User Interface (GUI) presents visual controls
+such as windows, buttons, menus, and dialog boxes,
+typically navigated using a mouse pointer and keyboard shortcuts.
+
+Key characteristics:
+
+- **High discoverability:**
+  Menus, toolbars, and visual forms expose available actions
+  without requiring users to memorize commands in advance.
+- **Rich multi-panel layouts:**
+  Enables simultaneous side-by-side inspection of plots,
+  data tables,
+  code editors,
+  and environment variables.
+- **Difficult to automate:**
+  Actions taken by clicking buttons cannot be trivially replayed in batch pipelines
+  unless the application provides an underlying scripting API.
+- **Remote latency and display requirements:**
+  Running a remote GUI requires an active graphical display server,
+  such as X11 forwarding (see @sec-x11-forwarding)
+  or a web-based portal like RStudio Server on Mercury.
+
+Common data science examples: RStudio, VS Code, GitHub Desktop, and GitKraken.
+
+### Terminal user interfaces (TUI)
+
+A Terminal User Interface (TUI)---also called a text-based user interface---provides
+an interactive visual layout rendered entirely inside a text terminal.
+TUIs draw panels, borders, menus, and color highlights using ASCII or ANSI text grids
+rather than native windowing frameworks.
+
+Key characteristics:
+
+- **Interactive visual dashboards:**
+  Displays real-time lists, split views, and scrollable panels
+  while remaining inside the terminal.
+- **Keyboard-driven efficiency:**
+  Operates entirely via rapid keyboard shortcuts,
+  avoiding mouse context-switching.
+- **Full SSH and multiplexer compatibility:**
+  Runs seamlessly over lightweight SSH connections and inside terminal multiplexers
+  like `tmux` without X11 forwarding or browser overhead.
+- **Terminal constraints:**
+  Cannot display arbitrary high-resolution images or interactive plots
+  without specialized terminal graphics extensions.
+
+Common developer examples: `lazygit` (interactive Git client),
+`htop` / `btop` (interactive system process monitors),
+`ranger` (terminal file manager),
+and `tig` (text-mode Git repository browser).
+
+### Summary and trade-offs
+
+| Interface | Primary interaction | Visual feedback | Automation / Scripting | Remote SSH performance | Primary use case |
+|---|---|---|---|---|---|
+| **CLI** | Text commands and flags | Sequential text streams | High (shell scripts, CI pipelines) | Excellent (native text) | Automated batch jobs, pipelines, scripting |
+| **TUI** | Keyboard navigation and hotkeys | Interactive terminal dashboard | Low to moderate | Excellent (runs directly in shell or `tmux`) | Remote server inspection, fast staging, system monitoring |
+| **GUI** | Mouse pointer and keyboard shortcuts | Windows, menus, graphic plots | Low | Requires X11 or web server | Exploratory analysis, visual editing, multi-panel IDEs |
+
+: Comparison of CLI, TUI, and GUI interface models {#tbl-cli-tui-gui}
+
+In research computing,
+the three paradigms complement one another.
+A typical workflow uses a **GUI** (such as RStudio) for exploratory analysis and visualization,
+a **TUI** (such as `lazygit` or `htop`) for managing version control and monitoring remote cluster jobs,
+and a **CLI** (such as `quarto render` or `Rscript`) for reproducible scripts and automated pipelines.
