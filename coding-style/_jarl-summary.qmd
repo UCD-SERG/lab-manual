@@ -8,7 +8,7 @@ it performs static analysis significantly faster than standard R-based linters.
 ##### Key Features
 
 - **Fast execution:** Written in Rust to deliver near-instant linting feedback.
-- **lintr compatibility:** Implements many common `{lintr}` rules (such as unused variables, improper whitespace, indentation, object naming, and syntax checks).
+- **`{lintr}` compatibility:** Implements many common `{lintr}` rules (such as unused variables, improper whitespace, indentation, object naming, and syntax checks).
 - **Flexible invocation:** Can be run as a standalone CLI tool,
   via pre-commit hooks,
   or within editor extensions (VS Code, Positron, Zed).
@@ -34,13 +34,16 @@ jarl check . --fix
 | **Implementation** | R | Rust |
 | **Execution speed** | Standard | Extremely fast (Rust binary) |
 | **Ecosystem maturity** | Industry standard, wide rule coverage | Emerging, expanding rule set |
-| **Custom R linters** | Yes (e.g., [`lms`](https://github.com/UCD-SERG/lab-manual/tree/main/lms)) | No (Rust-only rule definitions) |
+| **Custom R linters** | Yes (e.g., [`{lms}`](https://github.com/UCD-SERG/lab-manual/tree/main/lms)) | No (Rust-only rule definitions) |
 | **Primary use case** | CI verification, custom lab rules | Fast pre-commit checks, local interactive editing |
 
 ::: {.callout-note}
 ### Lab Guidance
 
-Our lab uses [`{lintr}`](https://lintr.r-lib.org/) with our custom [`.lintr.R`](https://github.com/UCD-SERG/lab-manual/blob/main/.lintr.R) configuration and [`lms`](https://github.com/UCD-SERG/lab-manual/tree/main/lms) package as the primary standard for CI pipelines and package validation.
+Our lab uses [`{lintr}`](https://lintr.r-lib.org/) with our custom [`.lintr.R`](https://github.com/UCD-SERG/lab-manual/blob/main/.lintr.R) configuration
+and [`{lms}`](https://github.com/UCD-SERG/lab-manual/tree/main/lms) package
+as the primary standard for CI pipelines and package validation.
 However,
-`jarl` is an excellent choice for local pre-commit hooks and interactive developer workflows where instant lint feedback saves time on large repositories.
+`jarl` is an excellent choice for local pre-commit hooks and interactive developer workflows
+where instant lint feedback saves time on large repositories.
 :::
