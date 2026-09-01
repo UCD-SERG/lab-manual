@@ -62,7 +62,7 @@ check_doi_field <- function(entry) {
 #' resolver hiccup (timeout, 5xx) does not fail the whole check (#358).
 #'
 #' @param doi DOI string
-#' @return List with is_valid, error, status_code, and transient
+#' @return List with is_valid, error, status_code, metadata, and transient
 #'   (TRUE when the failure looks like resolver unavailability rather than
 #'   a genuinely broken DOI)
 validate_doi_url <- function(doi) {
@@ -77,6 +77,7 @@ validate_doi_url <- function(doi) {
       is_valid = FALSE,
       error = sprintf("Invalid DOI format: %s", doi),
       status_code = NULL,
+      metadata = NULL,
       transient = FALSE
     ))
   }
