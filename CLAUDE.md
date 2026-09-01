@@ -111,9 +111,11 @@ content, which now vendors them directly.
   existing root-level `"tests/testthat.R"` exclusion entry is for a
   different, not-yet-existing root-level tests directory and does not match
   nested paths.
-- Non-standard characters (`check-non-standard-chars.yaml`). `.qmd` and `.R`
-  files must use ASCII only - no curly quotes, no en/em dashes. Use `"`, `'`,
-  and `-` (or write the dash as `---` in prose, which Quarto renders as an em dash).
+- Non-standard characters (`check-non-standard-chars.yaml`). `.qmd`, `.R`,
+  and `.md` files must use ASCII punctuation only - no curly quotes, no
+  en/em dashes. Use `"`, `'`, and `-` (or write the dash as `---` in prose,
+  which Quarto renders as an em dash). The check scans the merge tree, not
+  only the PR diff, so a pre-existing hit in any scanned file fails every PR.
 - Render/deploy (`publish.yml`, `preview.yml`) and bibliography DOI checks
   (`check-bibliography-dois.yml`). The full-book render (HTML + PDF + DOCX +
   EPUB) plus PR-preview deploy legitimately takes 10-15 minutes; its check-run

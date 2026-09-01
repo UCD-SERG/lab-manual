@@ -11,6 +11,7 @@
 - Mastering Shiny [@wickham2021shiny] - comprehensive guide to building web applications with Shiny
 - Engineering Production-Grade Shiny Apps [@fay2021engineering] - best practices for production Shiny applications
 - Happy Git and GitHub for the useR [@bryan2023happygit] - guide to using Git and GitHub with R
+- [litedown: R Markdown Reimagined](https://pkg.yihui.org/litedown/book/) - a book by Yihui Xie on [`{litedown}`](https://pkg.yihui.org/litedown/), a lightweight R Markdown implementation aimed at simplicity and speed
 - [DataCamp](https://www.datacamp.com/) - email Kristen for access
 
 ### UC Davis DataLab Workshops and Tutorials
@@ -48,6 +49,8 @@ The [UC Davis DataLab](https://github.com/ucdavisdatalab) provides extensive wor
 ## Resources for Git & Github
 
 - Happy Git and GitHub for the useR [@bryan2023happygit] - comprehensive guide to using Git and GitHub with R
+- [GitHub Learn](https://learn.github.com/) - official interactive courses,
+  Skills exercises, learning pathways, and credentials
 - [GitHub Skills: Introduction to GitHub](https://github.com/skills/introduction-to-github)
 - [UC Davis DataLab Git Sandbox](https://github.com/ucdavisdatalab/sandbox_git) - hands-on Git practice repository
 
@@ -61,7 +64,10 @@ The [UC Davis DataLab](https://github.com/ucdavisdatalab) provides extensive wor
 - [UC Davis Julia Users Group Julia Basics Workshop](https://ucjug.github.io/workshop_julia_basics/) - foundational Julia programming
 
 ## Scientific figures
+
 - Ten Simple Rules for Better Figures [@rougier2014]
+- [Tufte CSS](https://edwardtufte.github.io/tufte-css/) - style HTML articles like Edward Tufte's books and handouts,
+  with sidenotes, typography, and tight integration of graphics with text
 
 ## Writing
 
