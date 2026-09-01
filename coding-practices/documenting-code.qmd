@@ -49,7 +49,7 @@ Add a descriptive label as soon as you create each key variable
 (any variable that might end up in a figure, table, or output model).
 The label should explicitly include measurement units where applicable.
 
-In R, you can assign variable labels using attributes or labeling packages:
+In R, you can assign variable labels using base R attributes:
 
 ```r
 # Attach a label with measurement units
@@ -58,8 +58,8 @@ attr(data$blood_lead_level, "label") <- "Blood lead concentration (ug/dL)"
 attr(data$pm25_exposure, "label") <- "Annual average PM2.5 exposure (ug/m^3)"
 ```
 
-Labeling key variables at the point of creation ensures that downstream table generators
-(such as [`{gtsummary}`](https://www.danieldsjoberg.com/gtsummary/))
+Labeling key variables at the point of creation ensures that
+downstream table generators (such as [`{gtsummary}`](https://www.danieldsjoberg.com/gtsummary/))
 can automatically display human-readable descriptions and correct units
 without error-prone manual relabeling.
 
