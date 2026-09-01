@@ -84,13 +84,11 @@ content, which now vendors them directly.
 ## CI checks and how to satisfy them
 
 - Spellcheck (`check-spelling.yaml`, `insightsengineering/r-spellcheck-action`).
-  The spellcheck action runs `spelling::spell_check_package()`
-  on the R package metadata (`DESCRIPTION`),
-  validated against `inst/WORDLIST`.
-  Add genuine technical terms and names introduced to `DESCRIPTION`
-  to `inst/WORDLIST`, one per line.
-  Note that root and subdirectory chapter `.qmd` prose is not scanned
-  by this R package spellchecker.
+  Validated against `inst/WORDLIST`.
+  Add genuine technical terms, proper nouns, pathogen names, and product names
+  introduced in the repository to `inst/WORDLIST`, one per line in alphabetical order.
+  Note: this job checks out without the `.ai-config` submodule,
+  so prose in `.ai-config/shared/**/*.md` fragments is not scanned.
 - Link check (`check-links.yml`, `lycheeverse/lychee-action`) over `.qmd`/`.md`/
   `.html`. Fix broken links; only add an exclusion to `lychee.toml` when a URL
   is valid for humans but trips the automated checker.
