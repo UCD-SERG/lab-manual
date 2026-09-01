@@ -103,9 +103,8 @@ The [UC Davis DataLab](https://github.com/ucdavisdatalab) provides extensive wor
 
 ## Open Science and Reproducibility Initiatives
 
-- [Openscapes](https://openscapes.org/) ---
-  An open science mentorship and community initiative founded by Dr. Julia Stewart Lowndes,
-  focused on helping research groups transition to data-intensive,
-  reproducible,
+- [Openscapes](https://openscapes.org/) -
+  an open science mentorship and community initiative founded by Dr. Julia Stewart Lowndes,
+  focused on helping research groups transition to data-intensive, reproducible,
   and collaborative scientific practices through cohort-based Champions programs
   and shared open tooling.
