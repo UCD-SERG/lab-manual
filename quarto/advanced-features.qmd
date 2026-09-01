@@ -138,17 +138,19 @@ see the [Quarto Includes documentation](https://quarto.org/docs/authoring/includ
 ### Including External Code Files
 
 When embedding raw source code from external files without executing them,
-the [`include-code-files`](https://github.com/quarto-ext/include-code-files) extension provides a shortcode
-to transclude code files with automatic syntax highlighting,
+the [`include-code-files`](https://github.com/quarto-ext/include-code-files) extension provides a filter
+to include code directly inside fenced code blocks with syntax highlighting,
 line numbers,
-and line-range selection:
+and snippet selection:
 
-```markdown
-{{</* include-code-files path/to/script.R */>}}
+````markdown
+```{.r include="path/to/script.R"}
 ```
+````
 
 **Key capabilities:**
 
 - Embed external scripts directly without copy-pasting
-- Slice specific line ranges with parameters (e.g., `snippet="main-function"`, `start-line=10`, `end-line=25`)
+- Slice specific line ranges (e.g., `start-line=10 end-line=25`)
+- Include labeled snippets (e.g., `snippet="main"`)
 - Keep documentation in sync with working standalone script files

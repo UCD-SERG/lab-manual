@@ -25,7 +25,7 @@
 ### Extensions and Tools
 
 - [include-code-files](https://github.com/quarto-ext/include-code-files) -
-  Quarto extension providing a shortcode to transclude external code files with syntax highlighting and line slicing
+  Quarto filter extension to include external code files directly inside fenced code blocks with syntax highlighting and line slicing
 
 ### Development Roadmap and Known Issues
 
