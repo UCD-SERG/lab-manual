@@ -23,8 +23,8 @@ When reviewing a colleague's code, evaluate these key dimensions:
 
 1. **Reproducibility**:
    - Does the script run cleanly from start to finish in a fresh R session?
-   - Are package dependencies managed reproducibly via `{renv}` (see @sec-reproducible-environments)?
-   - Are file paths relative and constructed with `{here}` (see @sec-here-package-practices),
+   - Are package dependencies managed reproducibly via [`{renv}`](https://rstudio.github.io/renv/) (see @sec-reproducible-environments)?
+   - Are file paths relative and constructed with [`{here}`](https://here.r-lib.org/) (see @sec-here-package-practices),
      avoiding machine-specific absolute paths?
 2. **Code correctness and data integrity**:
    - Are data transformations and filtering steps logical and documented?
