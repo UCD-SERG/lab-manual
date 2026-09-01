@@ -428,7 +428,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./coding-style.html" class="sidebar-item-text sidebar-link">
+  <a href="./coding-style.html" class="sidebar-item-text sidebar-link" preview-toc-changed>
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">R Code Style</span></span></a>
   </div>
 </li>
@@ -788,7 +788,7 @@ window.Quarto = {
 <main class="content" id="quarto-document-content">
 <div class="preview-home-changes-banner">
     <p style="margin: 0;">
-        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="coding-practices.html">6. &nbsp; <span class="chapter-title">R Coding Practices</span></span></a>, <a href="appendix-document-metadata.html">appendix-document-metadata</a>
+        <strong>📋 Changes in this PR:</strong> The following chapters have been modified: <a href="coding-style.html">7. &nbsp; <span class="chapter-title">R Code Style</span></span></a>, <a href="coding-practices.html">6. &nbsp; <span class="chapter-title">R Coding Practices</span></span></a>, <a href="appendix-document-metadata.html">appendix-document-metadata</a>
         <br>
         <strong>📄 DOCX with tracked changes:</strong> <a href="UCD-SeRG-Lab-Manual-tracked-changes.docx" download>Download UCD-SeRG-Lab-Manual-tracked-changes.docx</a>
         <br>
@@ -847,7 +847,7 @@ window.Quarto = {
 <p>The mindset in practice:</p>
 <ul>
 <li><strong>Notice the friction.</strong> When you catch yourself repeating a task, following a fragile manual sequence, or avoiding something because it is tedious, treat that as a signal to build (or find) a tool for it.</li>
-<li><strong>Look before you build — then chip away.</strong> Check whether an existing tool already solves the problem (see <a href="coding-style.html#sec-prefer-packaged-functions" class="quarto-xref"><span>Section 7.6</span></a>); when nothing quite fits, don’t let “not worth the effort” stop you: a tool that removes part of an annoying task is already good enough to start with.</li>
+<li><strong>Look before you build — then chip away.</strong> Check whether an existing tool already solves the problem (see <a href="coding-style.html#sec-prefer-packaged-functions" class="quarto-xref" preview-toc-changed><span>Section 7.6</span></a>); when nothing quite fits, don’t let “not worth the effort” stop you: a tool that removes part of an annoying task is already good enough to start with.</li>
 <li><strong>Start small and grow the tool as it earns it.</strong> A copy-pasted snippet becomes a function; a function used across analyses becomes a package (see <a href="#sec-r-workflow" class="quarto-xref"><span>Section 6.4</span></a>); a workflow copied between repositories becomes a shared, reusable one.</li>
 <li><strong>Build for your own repeated use first.</strong> A tool that saves you an hour a week justifies itself quickly, and the discipline of packaging it (documentation, tests) makes it usable by the next lab member too.</li>
 <li><strong>Don’t gold-plate.</strong> The tool only needs to beat doing the task by hand; polish it further only when its use grows to warrant it.</li>
@@ -2060,7 +2060,7 @@ Note
 <li>Style guide violations</li>
 </ul>
 <p>You can customize linting rules by creating a <code>.lintr</code> file in your project root.</p>
-<p>See also <a href="coding-style.html#sec-style-auto-style" class="quarto-xref"><span>Section 7.20</span></a>.</p>
+<p>See also <a href="coding-style.html#sec-style-auto-style" class="quarto-xref" preview-toc-changed><span>Section 7.20</span></a>.</p>
 </section>
 </section>
 <section id="sec-documenting-code" class="level2" data-number="6.14">
@@ -2282,13 +2282,21 @@ Note
 <section id="sec-variable-labels" class="level3" data-number="6.14.8">
 <h3 data-number="6.14.8" class="anchored" data-anchor-id="sec-variable-labels"><span class="header-section-number"><mark class="preview-text-changed">6.14.8</mark></span> <mark class="preview-text-changed">Variable</mark> <mark class="preview-text-changed">labels</mark></h3>
 <p><mark class="preview-element-added">Add a descriptive label as soon as you create each key variable (any variable that might end up in a figure, table, or output model). The label should explicitly include measurement units where applicable.</mark></p>
-<p><mark class="preview-element-added">In R, you can assign variable labels using base R attributes:</mark></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb58"><pre class="sourceCode r code-with-copy"><mark class="preview-element-added"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Attach a label with measurement units</span></span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="co"># immediately upon variable creation</span></span>
-<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="fu">attr</span>(data<span class="sc">$</span>blood_lead_level, <span class="st">"label"</span>) <span class="ot">&lt;-</span> <span class="st">"Blood lead concentration (ug/dL)"</span></span>
-<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a><span class="fu">attr</span>(data<span class="sc">$</span>pm25_exposure, <span class="st">"label"</span>) <span class="ot">&lt;-</span> <span class="st">"Annual average PM2.5 exposure (ug/m^3)"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><mark class="preview-element-added">In R, prefer the <a href="https://larmarange.github.io/labelled/"><code>{labelled}</code></a> package over raw base R attributes. <code>{labelled}</code> integrates seamlessly with tidyverse pipelines:</mark></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb58"><pre class="sourceCode r code-with-copy"><mark class="preview-element-added"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(labelled)</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set variable labels directly in a tidyverse pipeline</span></span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span></span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(</span>
+<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">blood_lead_level =</span> <span class="st">"Blood lead concentration (ug/dL)"</span>,</span>
+<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">pm25_exposure =</span> <span class="st">"Annual average PM2.5 exposure (ug/m^3)"</span></span>
+<span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb58-10"><a href="#cb58-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-11"><a href="#cb58-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Or set or query a single variable label using var_label()</span></span>
+<span id="cb58-12"><a href="#cb58-12" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(data<span class="sc">$</span>blood_lead_level) <span class="ot">&lt;-</span> <span class="st">"Blood lead concentration (ug/dL)"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Labeling key variables at the point of creation ensures that downstream table generators (such as <a href="https://www.danieldsjoberg.com/gtsummary/"><code>{gtsummary}</code></a>) can automatically display human-readable descriptions and correct units without error-prone manual relabeling.</mark></p>
-<p><em>See also <a href="coding-style.html#sec-function-docs" class="quarto-xref"><span>Section <mark class="preview-text-changed">7.2</mark></span></a> for <mark class="preview-text-changed">function documentation</mark> style <mark class="preview-text-changed">guidelines.</mark></em></p>
+<p><em>See also <a href="coding-style.html#sec-function-docs" class="quarto-xref" preview-toc-changed><span>Section <mark class="preview-text-changed">7.2</mark></span></a> for <mark class="preview-text-changed">function documentation</mark> style <mark class="preview-text-changed">guidelines.</mark></em></p>
 </section>
 </section>
 <section id="sec-adrs" class="level2" data-number="6.15">
@@ -2358,7 +2366,7 @@ Note
 <p>Again, it’s also worth noting there’s nothing inherently wrong with using <code>.</code> in variable names, just that it goes against style best practices that are cropping up in data science, so it’s worth getting rid of these bad habits now.</p>
 </div>
 </div>
-<p>See also <a href="coding-style.html#sec-object-naming" class="quarto-xref"><span>Section 7.19</span></a>.</p>
+<p>See also <a href="coding-style.html#sec-object-naming" class="quarto-xref" preview-toc-changed><span>Section 7.19</span></a>.</p>
 </section>
 <section id="function-calls" class="level2" data-number="6.17">
 <h2 data-number="6.17" class="anchored" data-anchor-id="function-calls"><span class="header-section-number">6.17</span> Function calls</h2>
@@ -2455,7 +2463,7 @@ Note
 <section id="sec-here-package-practices" class="level2" data-number="6.26">
 <h2 data-number="6.26" class="anchored" data-anchor-id="sec-here-package-practices"><span class="header-section-number">6.26</span> The here package</h2>
 <p>The <code>here</code> package is one great R package that helps multiple collaborators deal with the mess that is working directories within an R project structure. Let’s say we have an R project at the path <code>/home/oski/Some-R-Project</code>. My collaborator might clone the repository and work with it at some other path, such as <code>/home/bear/R-Code/Some-R-Project</code>. Dealing with working directories and paths explicitly can be a very large pain, and as you might imagine, setting up a Config with paths requires those paths to flexibly work for all contributors to a project. This is where the <code>here</code> package comes in and this a <a href="https://github.com/jennybc/here_here">great vignette describing it</a>.</p>
-<p><em>See<mark class="preview-text-added"> also</mark> <a href="coding-style.html#sec-here-package-style" class="quarto-xref"><span>Section <mark class="preview-text-changed">7.18</mark></span></a> for <mark class="preview-text-changed">code style guidelines</mark> on <mark class="preview-text-changed">using</mark> <mark class="preview-text-changed">the</mark> <mark class="preview-text-changed">here package.</mark></em></p>
+<p><em>See<mark class="preview-text-added"> also</mark> <a href="coding-style.html#sec-here-package-style" class="quarto-xref" preview-toc-changed><span>Section <mark class="preview-text-changed">7.18</mark></span></a> for <mark class="preview-text-changed">code style guidelines</mark> on <mark class="preview-text-changed">using</mark> <mark class="preview-text-changed">the</mark> <mark class="preview-text-changed">here package.</mark></em></p>
 </section>
 <section id="readingsaving-data" class="level2" data-number="6.27">
 <h2 data-number="6.27" class="anchored" data-anchor-id="readingsaving-data"><span class="header-section-number">6.27</span> Reading/Saving Data</h2>
@@ -2884,7 +2892,7 @@ drop_auth(rdstoken = "/path/to/tokenfile.RDS")
 <li><a href="https://www.brodrigues.co/blog/2016-07-18-data-frame-columns-as-arguments-to-dplyr-functions/">Data Frame Columns as Arguments to Dplyr Functions</a> (blog)</li>
 <li><a href="https://stackoverflow.com/questions/28125816/r-standard-evaluation-for-join-dplyr">Standard Evaluation for *_join</a> (stackoverflow)</li>
 </ul>
-<p>See also <a href="coding-style.html#sec-tidyverse-replacements" class="quarto-xref"><span>Section 7.17</span></a></p>
+<p>See also <a href="coding-style.html#sec-tidyverse-replacements" class="quarto-xref" preview-toc-changed><span>Section 7.17</span></a></p>
 </section>
 <section id="coding-with-r-and-python" class="level2" data-number="6.41">
 <h2 data-number="6.41" class="anchored" data-anchor-id="coding-with-r-and-python"><span class="header-section-number">6.41</span> Coding with R and Python</h2>
@@ -3497,7 +3505,7 @@ Wickham, Hadley, Peter Danenberg, Gábor Csárdi, and Manuel Eugster. 2024. <em>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./coding-style.html" class="pagination-link" aria-label="R Code Style">
+      <a href="./coding-style.html" class="pagination-link" preview-toc-changed aria-label="R Code Style">
         <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">R Code Style</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
