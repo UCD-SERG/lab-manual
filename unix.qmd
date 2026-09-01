@@ -221,3 +221,11 @@ fig-weekly-rate.R
 # Remove copied utility run script
 rm runFileSaveLogs
 ```
+
+## External Resources
+
+For a comprehensive introduction to command-line tools,
+shell workflows,
+and practical computing environments,
+see [The Missing Semester of Your CS Education at UC Davis](https://missing.cs.ucdavis.edu/)
+([GitLab repository](https://gitlab.com/missing-cs-quarter-ucd/)).

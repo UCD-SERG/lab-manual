@@ -54,6 +54,14 @@ The [UC Davis DataLab](https://github.com/ucdavisdatalab) provides extensive wor
 - [GitHub Skills: Introduction to GitHub](https://github.com/skills/introduction-to-github)
 - [UC Davis DataLab Git Sandbox](https://github.com/ucdavisdatalab/sandbox_git) - hands-on Git practice repository
 
+## Practical Computing and Command Line
+
+- [The Missing Semester of Your CS Education at UC Davis](https://missing.cs.ucdavis.edu/) - practical computing skills,
+  shell tools,
+  command-line workflows,
+  and version control
+  ([GitLab repository](https://gitlab.com/missing-cs-quarter-ucd/))
+
 ## Resources for Python
 
 - [UC Davis DataLab Python Basics Workshop](https://github.com/ucdavisdatalab/workshop_python_basics) - foundational Python programming
