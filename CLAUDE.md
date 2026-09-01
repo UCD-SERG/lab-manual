@@ -84,17 +84,13 @@ content, which now vendors them directly.
 ## CI checks and how to satisfy them
 
 - Spellcheck (`check-spelling.yaml`, `insightsengineering/r-spellcheck-action`).
-  Add genuine technical terms and names to `inst/WORDLIST`, one per line.
-  Note: this job checks out **without** the `.ai-config` submodule,
-  so prose in `.ai-config/shared/**/*.md` fragments is not scanned.
-  Don't assume a word passes just because it already appears in the rendered manual
-  via a transcluded fragment (e.g. "inspectable" in `avoid-nesting.md`).
-  A new word you add to a file in this repo must be dictionary-valid
-  or listed in `inst/WORDLIST`.
-  Before pushing, grep any new proper noun, product name, or acronym you
-  introduced against `inst/WORDLIST` yourself --- catching it up front avoids
-  a spellcheck-fail-then-fix round trip per term (all-caps acronyms are not
-  reliably auto-skipped).
+  The spellcheck action runs `spelling::spell_check_package()`
+  on the R package metadata (`DESCRIPTION`),
+  validated against `inst/WORDLIST`.
+  Add genuine technical terms and names introduced to `DESCRIPTION`
+  to `inst/WORDLIST`, one per line.
+  Note that root and subdirectory chapter `.qmd` prose is not scanned
+  by this R package spellchecker.
 - Link check (`check-links.yml`, `lycheeverse/lychee-action`) over `.qmd`/`.md`/
   `.html`. Fix broken links; only add an exclusion to `lychee.toml` when a URL
   is valid for humans but trips the automated checker.
