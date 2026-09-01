@@ -1934,7 +1934,7 @@
     "href": "checklists.html#sec-onboarding-checklist",
     "title": "20  Checklists",
     "section": "",
-    "text": "Account setup: Request and confirm access to GitHub (join the UCD-SERG organization), Slack, UC Davis email, and lab Box and Google Drive folders.\nRequired trainings: Complete required CITI Human Subjects Biomedical Group 1 training and share your certificate with lab leadership (see Section 2.3).\nRead the lab manual: Review lab culture and conduct (Chapter 2), coding style (Chapter 7), and collaborative development (Chapter 12).\nEnvironment setup: Configure your local R development environment, clone a starter repository, and run renv::restore() to verify reproducible package installation (see Chapter 15).\nHPC access: Confirm High-Performance Computing cluster access (Farm or Shiva) and verify SSH keys if your project involves cluster computing (see Chapter 18).\nTeam introductions: Introduce yourself on the lab Slack channel and at the next weekly lab meeting.\nInitial 1:1 meeting: Schedule a one-on-one meeting with lab leadership to align on project objectives, onboarding timeline, and initial milestones.",
+    "text": "Account setup: Request and confirm access to GitHub (join the UCD-SERG organization), Microsoft Teams, UC Davis email, and lab Box and SharePoint folders.\nRequired trainings: Complete required CITI Human Subjects Biomedical Group 1 training and share your certificate with lab leadership (see Section 2.3).\nRead the lab manual: Review lab culture and conduct (Chapter 2), coding style (Chapter 7), and collaborative development (Chapter 12).\nEnvironment setup: Configure your local R development environment, clone a starter repository, and run renv::restore() to verify reproducible package installation (see Chapter 15).\nHPC access: Confirm High-Performance Computing cluster access (Farm or Shiva) and verify SSH keys if your project involves cluster computing (see Chapter 18).\nTeam introductions: Introduce yourself on Microsoft Teams and at the next weekly lab meeting.\nInitial 1:1 meeting: Schedule a one-on-one meeting with lab leadership to align on project objectives, onboarding timeline, and initial milestones.",
     "crumbs": [
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>Checklists</span>"
     ]
@@ -2402,7 +2402,7 @@
     "href": "appendix-document-metadata.html",
     "title": "Document Generation Metadata",
     "section": "",
-    "text": "PREVIEW_BANNER_PLACEHOLDER\n\nThis document was generated from the following git commit:\n\nBranch: HEAD\nCommit: b35dc64\nFull commit hash: b35dc644c71351708131ebe608f6762bd9ccbf22\nCommit date: 2026-09-01 17:35:26 +0000\n\nWhen transferring edits from this DOCX file back to the Quarto source files, use this commit information to set up the PR correctly and account for any commits that have been added since this document was generated.",
+    "text": "PREVIEW_BANNER_PLACEHOLDER\n\nThis document was generated from the following git commit:\n\nBranch: HEAD\nCommit: 6779ccc\nFull commit hash: 6779ccc50ee8bd39019bf3337d2a44ce956530f8\nCommit date: 2026-09-01 17:40:22 +0000\n\nWhen transferring edits from this DOCX file back to the Quarto source files, use this commit information to set up the PR correctly and account for any commits that have been added since this document was generated.",
     "crumbs": [
       "Appendices",
       "Document Generation Metadata"
