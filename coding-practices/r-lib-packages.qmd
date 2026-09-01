@@ -264,8 +264,8 @@ It allows regular expressions to be composed modularly using functions such as `
 When using `{rex}` inside another R package:
 
 - Add `rex` to `Imports` in the package `DESCRIPTION`.
-- Call `rex::rex()` or selectively import specific helper verbs into the package namespace to avoid collisions.
-- Use `rex::rex(..., regex)` to compile expressions into standard regular expression strings for use with functions like `grepl()`, `gsub()`, or `stringr` functions.
+- Call `rex::register_shortcuts("<pkgname>")` in `.onLoad()` to prevent `R CMD check` NOTEs regarding undefined global variables when using `rex` shortcuts in package code.
+- Call `rex::rex(...)` to compile expressions into regular expression strings for use with functions like `grepl()`, `gsub()`, or `stringr` functions.
 
 ## GitHub Actions
 
