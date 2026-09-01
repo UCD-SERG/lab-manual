@@ -50,8 +50,8 @@
     ]
   },
   {
-    "objectID": "culture-and-conduct.html#protecting-human-subjects",
-    "href": "culture-and-conduct.html#protecting-human-subjects",
+    "objectID": "culture-and-conduct.html#sec-protecting-human-subjects",
+    "href": "culture-and-conduct.html#sec-protecting-human-subjects",
     "title": "2  Culture and conduct",
     "section": "2.3 Protecting human subjects",
     "text": "2.3 Protecting human subjects\nAll lab members must complete CITI Human Subjects Biomedical Group 1 training and share their certificate with the lab leadership. Team members will be added to relevant Institutional Review Board protocols prior to their start date to ensure they have permission to work with identifiable datasets.\nOne of the most relevant aspects of protecting human subjects in our work is maintaining confidentiality. For students supporting our data science efforts, in practice this means:\n\nBe sure to understand and comply with project-specific policies about where data can be saved, particularly if the data include personal identifiers.\nDo not share data with anyone without permission, including to other members of the group, who might not be on the same IRB protocol as you (check with lab leadership first).\n\nRemember, data that looks like it does not contain identifiers to you might still be classified as data that requires special protection by our IRB or under HIPAA, so always proceed with caution and ask for help if you have any concerns about how to maintain study participant confidentiality.",
@@ -1934,7 +1934,17 @@
     "href": "checklists.html",
     "title": "20  Checklists",
     "section": "",
-    "text": "20.1 Pre-analysis plan checklist",
+    "text": "20.1 Onboarding checklist\nWelcome to the lab! New members should complete the following checklist during their first week:",
+    "crumbs": [
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Checklists</span>"
+    ]
+  },
+  {
+    "objectID": "checklists.html#sec-onboarding-checklist",
+    "href": "checklists.html#sec-onboarding-checklist",
+    "title": "20  Checklists",
+    "section": "",
+    "text": "Account setup: Request and confirm access to GitHub (join the UCD-SERG organization), Microsoft Teams, UC Davis email, and lab Box and SharePoint folders.\nRequired trainings: Complete required CITI Human Subjects Biomedical Group 1 training and share your certificate with lab leadership (see Section 2.3).\nRead the lab manual: Review lab culture and conduct (Chapter 2), coding style (Chapter 7), and collaborative development (Chapter 12).\nEnvironment setup: Configure your local R development environment, clone a starter repository, and run renv::restore() to verify reproducible package installation (see Chapter 15).\nHPC access: Confirm High-Performance Computing cluster access (Farm or Shiva) and verify SSH keys if your project involves cluster computing (see Chapter 18).\nTeam introductions: Introduce yourself on Microsoft Teams and at the next weekly lab meeting.\nInitial 1:1 meeting: Schedule a one-on-one meeting with lab leadership to align on project objectives, onboarding timeline, and initial milestones.",
     "crumbs": [
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>Checklists</span>"
     ]
@@ -1943,8 +1953,8 @@
     "objectID": "checklists.html#pre-analysis-plan-checklist",
     "href": "checklists.html#pre-analysis-plan-checklist",
     "title": "20  Checklists",
-    "section": "",
-    "text": "Brief background on the study (a condensed version of the introduction section of the paper)\nHypotheses / objectives\nStudy design\nDescription of data\nDefinition of outcomes\nDefinition of interventions / exposures\nDefinition of covariates\nStatistical power calculation\nStatistical model description\nCovariate selection / screening\nStandard error estimation method\nMissing data analysis\nAssessment of effect modification / subgroup analyses\nSensitivity analyses\nNegative control analyses",
+    "section": "20.2 Pre-analysis plan checklist",
+    "text": "20.2 Pre-analysis plan checklist\n\nBrief background on the study (a condensed version of the introduction section of the paper)\nHypotheses / objectives\nStudy design\nDescription of data\nDefinition of outcomes\nDefinition of interventions / exposures\nDefinition of covariates\nStatistical power calculation\nStatistical model description\nCovariate selection / screening\nStandard error estimation method\nMissing data analysis\nAssessment of effect modification / subgroup analyses\nSensitivity analyses\nNegative control analyses",
     "crumbs": [
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>Checklists</span>"
     ]
@@ -1953,8 +1963,8 @@
     "objectID": "checklists.html#code-checklist",
     "href": "checklists.html#code-checklist",
     "title": "20  Checklists",
-    "section": "20.2 Code checklist",
-    "text": "20.2 Code checklist\n\nDoes the script run without errors?\nIs code self-contained within repo and/or associated Box folder?\nIs all commented out code / remarks removed?\nDoes the header accurately describe the process completed in the script?\nIs the script pushed to its github repository?\nDoes the code adhere to the coding style guide?\nAre all warnings ignorable? Should any warnings be intentionally suppressed or addressed?",
+    "section": "20.3 Code checklist",
+    "text": "20.3 Code checklist\n\nDoes the script run without errors?\nIs code self-contained within repo and/or associated Box folder?\nIs all commented out code / remarks removed?\nDoes the header accurately describe the process completed in the script?\nIs the script pushed to its github repository?\nDoes the code adhere to the coding style guide?\nAre all warnings ignorable? Should any warnings be intentionally suppressed or addressed?",
     "crumbs": [
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>Checklists</span>"
     ]
@@ -1963,8 +1973,8 @@
     "objectID": "checklists.html#manuscript-checklist",
     "href": "checklists.html#manuscript-checklist",
     "title": "20  Checklists",
-    "section": "20.3 Manuscript checklist",
-    "text": "20.3 Manuscript checklist\nThis is adapted in part from How to tackle the reproducibility crisis in ten steps (Baker 2019).\n\nHave you completed the relevant reporting checklist, if applicable? (See EQUATOR Network (“EQUATOR Network,” n.d.) for a collection of checklists)\nAre the study results within the manuscript replicable (i.e., if you rerun the code in the study’s repository, the tables and figures will be exactly replicated?)\nIs a target journal selected?\nIs the title declarative, in other words, does it state the object/findings rather than suggest them?\nIs the word count of the manuscript close to the target journal’s allowance?\nDoes the manuscript adhere to the formatting guide of the target journal?\nDoes the manuscript use a consistent voice (passive or active – usually active is preferred … pun intended)?\nIs each figure and table (including supplementary material) referenced in the main text?\nIs there a caption for each figure and table (including supplementary material)?\nAre tables/figures and supplementary material numbered in accordance with their appearance in the main text?\nDoes the text use past tense if it is reporting research findings or future tense if it is a study protocol?\nDoes the text avoid subjective wording (e.g., “interesting”, “dramatic”)?\nDoes the text use minimal abbreviations, and are all abbreviations defined at first use?\nDoes the text avoid directionless words? (e.g., instead of writing, ‘Precipitation influences disease risk’, write, ‘Precipitation was associated with increased disease risk’).\nDoes the text avoid making causal claims that are not supported by the study design? Be careful about the words “effect”, “increase”, and “decrease”, which are often interpreted as causal.\nDoes the text avoid describing results with the word “significant”, which can easily be confused with statistical significance? (see references on this topic here)\nHave you drafted author contributions? Do they follow the CRediT: Contributor Roles Taxonomy (“CRediT,” n.d.) for author contributions?",
+    "section": "20.4 Manuscript checklist",
+    "text": "20.4 Manuscript checklist\nThis is adapted in part from How to tackle the reproducibility crisis in ten steps (Baker 2019).\n\nHave you completed the relevant reporting checklist, if applicable? (See EQUATOR Network (“EQUATOR Network,” n.d.) for a collection of checklists)\nAre the study results within the manuscript replicable (i.e., if you rerun the code in the study’s repository, the tables and figures will be exactly replicated?)\nIs a target journal selected?\nIs the title declarative, in other words, does it state the object/findings rather than suggest them?\nIs the word count of the manuscript close to the target journal’s allowance?\nDoes the manuscript adhere to the formatting guide of the target journal?\nDoes the manuscript use a consistent voice (passive or active – usually active is preferred … pun intended)?\nIs each figure and table (including supplementary material) referenced in the main text?\nIs there a caption for each figure and table (including supplementary material)?\nAre tables/figures and supplementary material numbered in accordance with their appearance in the main text?\nDoes the text use past tense if it is reporting research findings or future tense if it is a study protocol?\nDoes the text avoid subjective wording (e.g., “interesting”, “dramatic”)?\nDoes the text use minimal abbreviations, and are all abbreviations defined at first use?\nDoes the text avoid directionless words? (e.g., instead of writing, ‘Precipitation influences disease risk’, write, ‘Precipitation was associated with increased disease risk’).\nDoes the text avoid making causal claims that are not supported by the study design? Be careful about the words “effect”, “increase”, and “decrease”, which are often interpreted as causal.\nDoes the text avoid describing results with the word “significant”, which can easily be confused with statistical significance? (see references on this topic here)\nHave you drafted author contributions? Do they follow the CRediT: Contributor Roles Taxonomy (“CRediT,” n.d.) for author contributions?",
     "crumbs": [
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>Checklists</span>"
     ]
@@ -1973,8 +1983,8 @@
     "objectID": "checklists.html#figure-checklist",
     "href": "checklists.html#figure-checklist",
     "title": "20  Checklists",
-    "section": "20.4 Figure checklist",
-    "text": "20.4 Figure checklist\n\nAre the x-axis and y-axis labeled?\nIf the figure includes panels, is each panel labeled?\nAre there sufficient numerical / text labels and breaks on the x-axis and y-axis?\nIs the font size appropriate (i.e., large enough to read, not so large that it distracts from the data presented in the figure?)\nAre the colors used colorblind friendly? See a colorblind-friendly palette here, a neat palette generator with colorblind options here, and an article on why this matters: The misuse of colour in science communication (Crameri et al. 2020)\nAre colors/shapes/line types defined in a legend?\nAre the legends and other labels easy to understand with minimal abbreviations?\nIf there is overplotting, is transparency used to show overlapping data?\nAre 95% confidence intervals or other measures of precision shown, if applicable?\n\n\n\n\n\nBaker, Monya. 2019. “How to Tackle the Reproducibility Crisis in Ten Steps.” Nature, ahead of print. https://doi.org/10.1038/d41586-019-01431-z.\n\n\nCrameri, Fabio, Grace E. Shephard, and Philip J. Heron. 2020. “The Misuse of Colour in Science Communication.” Nature Communications 11. https://doi.org/10.1038/s41467-020-19160-7.\n\n\n“CRediT: Contributor Roles Taxonomy.” n.d. PLOS ONE. https://journals.plos.org/plosone/s/authorship.\n\n\n“EQUATOR Network: Enhancing the QUAlity and Transparency of Health Research.” n.d. EQUATOR Network. https://www.equator-network.org/.",
+    "section": "20.5 Figure checklist",
+    "text": "20.5 Figure checklist\n\nAre the x-axis and y-axis labeled?\nIf the figure includes panels, is each panel labeled?\nAre there sufficient numerical / text labels and breaks on the x-axis and y-axis?\nIs the font size appropriate (i.e., large enough to read, not so large that it distracts from the data presented in the figure?)\nAre the colors used colorblind friendly? See a colorblind-friendly palette here, a neat palette generator with colorblind options here, and an article on why this matters: The misuse of colour in science communication (Crameri et al. 2020)\nAre colors/shapes/line types defined in a legend?\nAre the legends and other labels easy to understand with minimal abbreviations?\nIf there is overplotting, is transparency used to show overlapping data?\nAre 95% confidence intervals or other measures of precision shown, if applicable?\n\n\n\n\n\nBaker, Monya. 2019. “How to Tackle the Reproducibility Crisis in Ten Steps.” Nature, ahead of print. https://doi.org/10.1038/d41586-019-01431-z.\n\n\nCrameri, Fabio, Grace E. Shephard, and Philip J. Heron. 2020. “The Misuse of Colour in Science Communication.” Nature Communications 11. https://doi.org/10.1038/s41467-020-19160-7.\n\n\n“CRediT: Contributor Roles Taxonomy.” n.d. PLOS ONE. https://journals.plos.org/plosone/s/authorship.\n\n\n“EQUATOR Network: Enhancing the QUAlity and Transparency of Health Research.” n.d. EQUATOR Network. https://www.equator-network.org/.",
     "crumbs": [
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>Checklists</span>"
     ]
@@ -2412,7 +2422,7 @@
     "href": "appendix-document-metadata.html",
     "title": "Document Generation Metadata",
     "section": "",
-    "text": "This document was generated from the following git commit:\n\nBranch: main\nCommit: 20a6410\nFull commit hash: 20a641070c2cc5b3821d53a767d8f978a045cb27\nCommit date: 2026-09-01 16:44:13 -0700\n\nWhen transferring edits from this DOCX file back to the Quarto source files, use this commit information to set up the PR correctly and account for any commits that have been added since this document was generated.",
+    "text": "This document was generated from the following git commit:\n\nBranch: main\nCommit: 0a52836\nFull commit hash: 0a52836df57f4f743dc38c7cb48188ec698bf89b\nCommit date: 2026-09-01 16:44:41 -0700\n\nWhen transferring edits from this DOCX file back to the Quarto source files, use this commit information to set up the PR correctly and account for any commits that have been added since this document was generated.",
     "crumbs": [
       "Appendices",
       "Document Generation Metadata"
