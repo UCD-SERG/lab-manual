@@ -29,14 +29,16 @@ That site covers:
 Lab members who use AI tools must still adhere to the guidelines described
 there.
 
-## Institutional AI Access
+## Institutional AI Access {#sec-institutional-ai-access}
 
 UC Davis Health (UCDH) provides OpenAI / ChatGPT accounts for affiliated researchers and staff.
-When tracking compute quotas and credit allocation:
+As of 2026, when tracking compute quotas and credit allocation:
 
 - 1 credit is valued at approximately 4.5 cents (\$0.045).
-- With a standard allocation of 2,000 credits per week, an active account receives the equivalent of approximately \$360 per month in API/model credits.
-- Lab members should monitor their weekly credit usage against their project workflows to plan large batch tasks or evaluations accordingly.
+- With a standard allocation of 2,000 credits per week,
+  an active account receives the equivalent of approximately \$360 per month in API and model credits.
+- Lab members should monitor their weekly credit usage against their project workflows
+  to plan large batch tasks or evaluations accordingly.
 
 ::: {.callout-note collapse="true"}
 ## Looking for a specific section that used to be here?
