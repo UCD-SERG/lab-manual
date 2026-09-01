@@ -2392,7 +2392,7 @@
     "href": "appendix-document-metadata.html",
     "title": "Document Generation Metadata",
     "section": "",
-    "text": "This document was generated from the following git commit:\n\nBranch: main\nCommit: 80f5e80\nFull commit hash: 80f5e80bee8075b8ceaf551f47b0b11f9e7f356b\nCommit date: 2026-08-31 20:13:16 -0700\n\nWhen transferring edits from this DOCX file back to the Quarto source files, use this commit information to set up the PR correctly and account for any commits that have been added since this document was generated.",
+    "text": "This document was generated from the following git commit:\n\nBranch: main\nCommit: 859b9f6\nFull commit hash: 859b9f6574a012a43fc4f754aeccd1f640f1ba33\nCommit date: 2026-09-01 16:40:39 -0700\n\nWhen transferring edits from this DOCX file back to the Quarto source files, use this commit information to set up the PR correctly and account for any commits that have been added since this document was generated.",
     "crumbs": [
       "Appendices",
       "Document Generation Metadata"
