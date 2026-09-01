@@ -6,8 +6,8 @@ Welcome to the lab! New members should complete the following checklist during t
 
 - **Account setup**: Request and confirm access to GitHub (join the `UCD-SERG` organization),
   Slack, UC Davis email, and lab Box and Google Drive folders.
-- **Required trainings**: Complete required CITI human subjects and HIPAA/IRB training modules
-  (see @sec-protecting-human-subjects).
+- **Required trainings**: Complete required CITI Human Subjects Biomedical Group 1 training
+  and share your certificate with lab leadership (see @sec-protecting-human-subjects).
 - **Read the lab manual**: Review lab culture and conduct (@sec-culture-and-conduct),
   coding style (@sec-r-code-style), and collaborative development (@sec-collab-dev).
 - **Environment setup**: Configure your local R development environment,
