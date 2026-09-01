@@ -63,6 +63,13 @@ The [UC Davis DataLab](https://github.com/ucdavisdatalab) provides extensive wor
 
 - [UC Davis Julia Users Group Julia Basics Workshop](https://ucjug.github.io/workshop_julia_basics/) - foundational Julia programming
 
+## Artificial Intelligence and Machine Learning
+
+- [Working with AI (wai)](https://morrison-lab.github.io/wai/) - our lab's comprehensive guide
+  to AI coding agents, harnesses, policies, and workflows
+- [Reflections on Recursive Self-Improvement](https://www.anthropic.com/institute/recursive-self-improvement) - Anthropic Institute
+  analysis of recursive self-improvement mechanisms, AI capability trajectories, and safety considerations
+
 ## Scientific figures
 
 - Ten Simple Rules for Better Figures [@rougier2014]
