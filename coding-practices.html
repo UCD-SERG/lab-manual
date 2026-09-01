@@ -744,6 +744,7 @@ window.Quarto = {
   <li><a href="#sec-lobstr" id="toc-sec-lobstr" class="nav-link" data-scroll-target="#sec-lobstr"><span class="header-section-number">6.35.7</span> <code>{lobstr}</code></a></li>
   <li><a href="#sec-crayon" id="toc-sec-crayon" class="nav-link" data-scroll-target="#sec-crayon"><span class="header-section-number">6.35.8</span> <code>{crayon}</code></a></li>
   <li><a href="#sec-styler" id="toc-sec-styler" class="nav-link" data-scroll-target="#sec-styler"><span class="header-section-number">6.35.9</span> <code>{styler}</code></a></li>
+  <li><a href="#sec-rex" id="toc-sec-rex" class="nav-link" data-scroll-target="#sec-rex"><span class="header-section-number">6.35.10</span> <code>{rex}</code></a></li>
   </ul></li>
   <li><a href="#github-actions" id="toc-github-actions" class="nav-link" data-scroll-target="#github-actions"><span class="header-section-number">6.36</span> GitHub Actions</a>
   <ul class="collapse">
@@ -2654,6 +2655,16 @@ drop_auth(rdstoken = "/path/to/tokenfile.RDS")
 <section id="sec-styler" class="level3" data-number="6.35.9">
 <h3 data-number="6.35.9" class="anchored" data-anchor-id="sec-styler"><span class="header-section-number">6.35.9</span> <a href="https://styler.r-lib.org/"><code>{styler}</code></a></h3>
 <p><a href="https://styler.r-lib.org/"><code>{styler}</code></a> formats R code according to the tidyverse style guide. It provides an RStudio add-in and functions for styling individual files, packages, or projects. See <a href="#sec-auto-styling" class="quarto-xref"><span>Section 6.13</span></a> for more details.</p>
+</section>
+<section id="sec-rex" class="level3" data-number="6.35.10">
+<h3 data-number="6.35.10" class="anchored" data-anchor-id="sec-rex"><span class="header-section-number">6.35.10</span> <a href="https://rex.r-lib.org/"><code>{rex}</code></a></h3>
+<p><a href="https://rex.r-lib.org/"><code>{rex}</code></a> provides a human-readable interface for constructing regular expressions in R without having to write complex, unreadable regex strings manually. It allows regular expressions to be composed modularly using functions such as <code>rex()</code>, <code>character_class()</code>, <code>capture()</code>, and <code>some_of()</code>.</p>
+<p>When using <code>{rex}</code> inside another R package:</p>
+<ul>
+<li>Add <code>rex</code> to <code>Imports</code> in the package <code>DESCRIPTION</code>.</li>
+<li>Call <code>rex::register_shortcuts(pkgname)</code> in <code>.onLoad()</code> to prevent <code>R CMD check</code> NOTEs regarding undefined global variables when using <code>rex</code> shortcuts in package code.</li>
+<li>Call <code>rex::rex(...)</code> to compile expressions into regular expression strings for use with functions like <code>grepl()</code>, <code>gsub()</code>, or <a href="https://stringr.tidyverse.org/"><code>{stringr}</code></a> functions.</li>
+</ul>
 </section>
 </section>
 <section id="github-actions" class="level2" data-number="6.36">
