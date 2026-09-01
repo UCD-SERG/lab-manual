@@ -45,7 +45,7 @@ Navigating scientific publication requires understanding the review lifecycle:
 - **Rejection is standard**: High-impact journals reject many submissions;
   rejection is an invitation to refine arguments and submit to a better-matched venue.
 - **Approaching reviewer feedback**: Read peer reviews, step back for a day to process feedback,
-  and draft systematic, point-by-point response letters using the principles in @sec-collab-dev.
+  and draft systematic, point-by-point response letters using the guidance in @sec-responding-to-peer-review.
 - **Authorship conversations**: Initiate discussions regarding authorship order
   and contribution roles early in every project and revisit them regularly.
 
