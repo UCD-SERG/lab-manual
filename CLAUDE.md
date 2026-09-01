@@ -128,8 +128,10 @@ Don't bypass a failing check; fix the underlying issue.
 ## Content conventions (see copilot-instructions.md for the full set)
 
 - Decompose chapters with `{{< include <chapter>/<section>.qmd >}}`. Keep the
-  `##` heading in the main chapter file, a blank line, then the include. Prefix
-  partial/helper files with `_` so Quarto doesn't render them standalone.
+  `##` heading in the main chapter file, a blank line, then the include.
+  (In a `type: book` project, only chapters listed in `_quarto.yml` render standalone,
+  so chapter include fragments do not require an underscore prefix; `_` prefix is
+  optional for second-level helper fragments).
 - Leave a blank line before every bullet or numbered list.
 - One sentence or phrase per source line (semantic line breaks) in prose,
   comments, and docstrings.
