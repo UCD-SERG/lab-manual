@@ -653,7 +653,7 @@ div.csl-indent {
 
 <div class="preview-combined-banner">
     <p style="margin: 0;">
-        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~3% of content changed).
+        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~4% of content changed).
         <br>
         <strong>🎨 Highlighting Legend:</strong> 
         <mark class="preview-text-changed" style="display: inline; padding: 1px 3px;">Modified text (yellow)</mark> shows changed words/phrases with tooltips of original text, 
@@ -1061,9 +1061,15 @@ div.csl-indent {
 </section>
 <section id="including-external-code-files" class="level3" data-number="10.6.3">
 <h3 data-number="10.6.3" class="anchored" data-anchor-id="including-external-code-files"><mark class="preview-element-added"><span class="header-section-number">10.6.3</span> Including External Code Files</mark></h3>
-<p><mark class="preview-element-added">When embedding raw source code from external files without executing them, the <a href="https://github.com/quarto-ext/include-code-files"><code>include-code-files</code></a> extension provides a filter to include code directly inside fenced code blocks with syntax highlighting, line numbers, and snippet selection:</mark></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode markdown code-with-copy"><mark class="preview-element-added"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{.r include="path/to/script.R"}</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><mark class="preview-element-added">When embedding raw source code from external files without executing them, the <a href="https://github.com/quarto-ext/include-code-files"><code>include-code-files</code></a> extension provides a filter to include code directly into fenced code blocks with syntax highlighting and line or snippet selection.</mark></p>
+<p><mark class="preview-element-added"><strong>Installation:</strong></mark></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><mark class="preview-element-added"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> add quarto-ext/include-code-files</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Add the filter to your document or <code>_quarto.yml</code>:</mark></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode yaml code-with-copy"><mark class="preview-element-added"><code class="sourceCode yaml"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filters</span><span class="kw">:</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> include-code-files</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Usage:</strong></mark></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode markdown code-with-copy"><mark class="preview-element-added"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{.r include="path/to/script.R"}</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>Key capabilities:</strong></mark></p>
 <ul>
 <li><mark class="preview-element-added">Embed external scripts directly without copy-pasting</mark></li>
@@ -1079,12 +1085,12 @@ div.csl-indent {
 <section id="creating-mermaid-diagrams" class="level3" data-number="10.7.1">
 <h3 data-number="10.7.1" class="anchored" data-anchor-id="creating-mermaid-diagrams"><span class="header-section-number">10.7.1</span> Creating Mermaid Diagrams</h3>
 <p>Mermaid diagrams are created using fenced code blocks with the <code>mermaid</code> language tag:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>flowchart LR</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  A[Start] --&gt; B{Decision}</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  B --&gt;|Yes| C[Result <span class="dv">1</span>]</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  B --&gt;|No| D[Result <span class="dv">2</span>]</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>flowchart LR</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  A[Start] --&gt; B{Decision}</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  B --&gt;|Yes| C[Result <span class="dv">1</span>]</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  B --&gt;|No| D[Result <span class="dv">2</span>]</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This creates a simple flowchart that renders beautifully in HTML output.</p>
 </section>
 <section id="known-issues-with-docx-and-pdf-output" class="level3" data-number="10.7.2">
@@ -1126,28 +1132,28 @@ div.csl-indent {
 <li>Include the exported images in your Quarto document using standard markdown syntax</li>
 </ol>
 <p><strong>Example:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Workflow diagram description](assets/images/workflow-diagram.png)</span>{#fig-workflow}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Workflow diagram description](assets/images/workflow-diagram.png)</span>{#fig-workflow}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This approach guarantees compatibility with all output formats and gives you full control over image quality.</p>
 </section>
 <section id="conditional-content-for-different-formats" class="level4" data-number="10.7.3.2">
 <h4 data-number="10.7.3.2" class="anchored" data-anchor-id="conditional-content-for-different-formats"><span class="header-section-number">10.7.3.2</span> 2. Conditional Content for Different Formats</h4>
 <p>Use Quarto’s conditional content features to show different content based on output format:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>::: {.content-visible when-format="html"}</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>flowchart LR</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  A[Start] --&gt; B[End]</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>::: {.content-visible unless-format="html"}</span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="al">![Workflow diagram](assets/images/workflow-diagram.png)</span></span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>::: {.content-visible when-format="html"}</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>flowchart LR</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  A[Start] --&gt; B[End]</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>::: {.content-visible unless-format="html"}</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="al">![Workflow diagram](assets/images/workflow-diagram.png)</span></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This shows the live mermaid diagram in HTML output and a static image in DOCX/PDF outputs.</p>
 </section>
 <section id="ensure-chromium-is-installed-partial-solution" class="level4" data-number="10.7.3.3">
 <h4 data-number="10.7.3.3" class="anchored" data-anchor-id="ensure-chromium-is-installed-partial-solution"><span class="header-section-number">10.7.3.3</span> 3. Ensure Chromium is Installed (Partial Solution)</h4>
 <p>If you want to attempt rendering mermaid diagrams to DOCX, ensure you have Chrome or Edge installed. You can install Chromium via Quarto:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> tools install chromium</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> tools install chromium</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>However, this does not guarantee successful rendering and may still result in hangs or failures.</p>
 </section>
 <section id="prefer-html-output-when-possible" class="level4" data-number="10.7.3.4">
@@ -1188,7 +1194,7 @@ div.csl-indent {
 <section id="checking-your-setup" class="level3" data-number="10.8.1">
 <h3 data-number="10.8.1" class="anchored" data-anchor-id="checking-your-setup"><span class="header-section-number">10.8.1</span> Checking Your Setup</h3>
 <p>Use <code>quarto check</code> to verify your installation and dependencies:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> check</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> check</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This command checks for:</p>
 <ul>
 <li>Quarto version and binary dependencies (Pandoc, Dart Sass, Deno, Typst)</li>
@@ -1203,20 +1209,20 @@ div.csl-indent {
 <h3 data-number="10.8.2" class="anchored" data-anchor-id="diagnostic-tools"><span class="header-section-number">10.8.2</span> Diagnostic Tools</h3>
 <p><strong>Enable verbose logging</strong> to see detailed rendering information.</p>
 <p>On Unix-like systems (macOS, Linux):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">QUARTO_LOG_LEVEL</span><span class="op">=</span>DEBUG</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render document.qmd</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">QUARTO_LOG_LEVEL</span><span class="op">=</span>DEBUG</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render document.qmd</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>On Windows PowerShell:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="va">$env</span><span class="op">:</span><span class="va">QUARTO_LOG_LEVEL</span><span class="op">=</span><span class="st">"DEBUG"</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>quarto render document<span class="op">.</span><span class="fu">qmd</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="va">$env</span><span class="op">:</span><span class="va">QUARTO_LOG_LEVEL</span><span class="op">=</span><span class="st">"DEBUG"</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>quarto render document<span class="op">.</span><span class="fu">qmd</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Or pass at command line (all platforms):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render document.qmd <span class="at">--log-level</span> debug</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render document.qmd <span class="at">--log-level</span> debug</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>Get stack traces</strong> for better error messages.</p>
 <p>On Unix-like systems (macOS, Linux):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">QUARTO_PRINT_STACK</span><span class="op">=</span><span class="st">"true"</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render document.qmd</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">QUARTO_PRINT_STACK</span><span class="op">=</span><span class="st">"true"</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render document.qmd</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>On Windows PowerShell:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="va">$env</span><span class="op">:</span><span class="va">QUARTO_PRINT_STACK</span><span class="op">=</span><span class="st">"true"</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>quarto render document<span class="op">.</span><span class="fu">qmd</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="va">$env</span><span class="op">:</span><span class="va">QUARTO_PRINT_STACK</span><span class="op">=</span><span class="st">"true"</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>quarto render document<span class="op">.</span><span class="fu">qmd</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>Inspect log files</strong> for diagnostic information. Log file locations:</p>
 <ul>
 <li><strong>Windows:</strong> <code>%LOCALAPPDATA%\quarto\logs</code></li>
@@ -1228,13 +1234,13 @@ div.csl-indent {
 <h3 data-number="10.8.3" class="anchored" data-anchor-id="common-issues"><span class="header-section-number">10.8.3</span> Common Issues</h3>
 <p><strong>Out-of-memory errors:</strong> When building large projects, increase memory allocation (example sets 8GB limit).</p>
 <p>On Unix-like systems (macOS, Linux):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">QUARTO_DENO_V8_OPTIONS</span><span class="op">=</span><span class="st">"--max-old-space-size=8192"</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">QUARTO_DENO_V8_OPTIONS</span><span class="op">=</span><span class="st">"--max-old-space-size=8192"</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>On Windows PowerShell:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="va">$env</span><span class="op">:</span><span class="va">QUARTO_DENO_V8_OPTIONS</span><span class="op">=</span><span class="st">"--max-old-space-size=8192"</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>quarto render</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="va">$env</span><span class="op">:</span><span class="va">QUARTO_DENO_V8_OPTIONS</span><span class="op">=</span><span class="st">"--max-old-space-size=8192"</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>quarto render</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>PDF rendering issues:</strong> If you encounter PDF rendering problems, ensure you have an up-to-date LaTeX installation, or install Quarto’s TinyTeX:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> install tinytex</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> install tinytex</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>Environment conflicts:</strong> If Quarto finds the wrong R or Python installation, use <code>quarto check</code> output to verify which installation Quarto is using. For R, you can render a diagnostic document with <code>sessionInfo()</code> to compare Quarto’s environment with your interactive R session.</p>
 </section>
 <section id="advanced-troubleshooting" class="level3" data-number="10.8.4">
@@ -1288,7 +1294,7 @@ div.csl-indent {
 <section id="extensions-and-tools" class="level3" data-number="10.9.4">
 <h3 data-number="10.9.4" class="anchored" data-anchor-id="extensions-and-tools"><span class="header-section-number"><mark class="preview-text-changed">10.9.4</mark></span> <mark class="preview-text-changed">Extensions and</mark> Tools</h3>
 <ul>
-<li><mark class="preview-element-added"><a href="https://github.com/quarto-ext/include-code-files">include-code-files</a> - Quarto filter extension to include external code files directly inside fenced code blocks with syntax highlighting and line slicing</mark></li>
+<li><mark class="preview-element-added"><a href="https://github.com/quarto-ext/include-code-files"><code>include-code-files</code></a> - Quarto filter extension to include external code files directly inside fenced code blocks with syntax highlighting and line slicing</mark></li>
 </ul>
 </section>
 <section id="development-roadmap-and-known-issues" class="level3" data-number="10.9.5">
