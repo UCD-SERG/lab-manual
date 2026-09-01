@@ -41,6 +41,8 @@ exclude = [
   "https://grantwriting.stanford.edu/.*",
   # GNU Screen homepage is valid for humans but reliably times out in CI
   "https://www\\.gnu\\.org/software/screen.*",
+  # chmod tutorial is valid for humans but timed out in CI
+  "https://www\\.chriswrites\\.com/how-to-change-file-permissions-using-the-terminal/.*",
   # Publisher cookie-consent interstitials: resolve fine for humans but
   # intermittently fail automated checks because the redirect chain ends on a
   # "cookies_not_supported" page (same rationale as the timeouts above).
