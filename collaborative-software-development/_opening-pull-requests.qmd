@@ -203,8 +203,10 @@ To stack a PR:
 1. Create your base feature branch from `main`.
 2. Create your second branch based on the first feature branch (rather than `main`).
 3. Open a pull request targeting the first feature branch as the base branch.
-4. When the base PR merges to `main`,
-   update the stacked PR's base branch to `main` (or rebase if needed).
+4. When the base PR merges into `main`,
+   GitHub automatically retargets the stacked PR to `main`
+   (if the base branch was deleted without auto-retargeting,
+   update the base branch manually and rebase against `main`).
 
 For comprehensive GitHub workflow instructions and tips,
 see GitHub's guide on [Managing stacked pull requests](https://docs.github.com/en/pull-requests/how-tos/stacked-pull-requests).
