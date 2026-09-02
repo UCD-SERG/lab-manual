@@ -575,7 +575,7 @@ div.csl-indent {
   </ul></li>
   <li><a href="#where-the-rule-stops-text-that-records-what-was-observed" id="toc-where-the-rule-stops-text-that-records-what-was-observed" class="nav-link" data-scroll-target="#where-the-rule-stops-text-that-records-what-was-observed"><span class="header-section-number">7.11</span> Where the rule stops: text that records what was observed</a></li>
   <li><a href="#sec-construct-inputs" id="toc-sec-construct-inputs" class="nav-link" data-scroll-target="#sec-construct-inputs"><span class="header-section-number">7.12</span> Construct Complex Inputs Before the Call</a></li>
-  <li><a href="#comments-1" id="toc-comments-1" class="nav-link" data-scroll-target="#comments-1"><span class="header-section-number">7.13</span> Comments</a></li>
+  <li><a href="#sec-comments" id="toc-sec-comments" class="nav-link" data-scroll-target="#sec-comments"><span class="header-section-number">7.13</span> Comments</a></li>
   <li><a href="#line-breaks-and-formatting" id="toc-line-breaks-and-formatting" class="nav-link" data-scroll-target="#line-breaks-and-formatting"><span class="header-section-number">7.14</span> Line Breaks and Formatting</a>
   <ul class="collapse">
   <li><a href="#blank-lines-before-lists" id="toc-blank-lines-before-lists" class="nav-link" data-scroll-target="#blank-lines-before-lists"><span class="header-section-number">7.14.1</span> Blank Lines Before Lists</a></li>
@@ -587,7 +587,7 @@ div.csl-indent {
   <li><a href="#writing-about-code-in-quarto-documents" id="toc-writing-about-code-in-quarto-documents" class="nav-link" data-scroll-target="#writing-about-code-in-quarto-documents"><span class="header-section-number">7.15.1</span> Writing about code in Quarto documents</a></li>
   </ul></li>
   <li><a href="#messaging-and-user-communication" id="toc-messaging-and-user-communication" class="nav-link" data-scroll-target="#messaging-and-user-communication"><span class="header-section-number">7.16</span> Messaging and User Communication</a></li>
-  <li><a href="#package-code-practices" id="toc-package-code-practices" class="nav-link" data-scroll-target="#package-code-practices"><span class="header-section-number">7.17</span> Package Code Practices</a></li>
+  <li><a href="#sec-package-code-practices" id="toc-sec-package-code-practices" class="nav-link" data-scroll-target="#sec-package-code-practices"><span class="header-section-number">7.17</span> Package Code Practices</a></li>
   <li><a href="#sec-tidyverse-replacements" id="toc-sec-tidyverse-replacements" class="nav-link" data-scroll-target="#sec-tidyverse-replacements"><span class="header-section-number">7.18</span> Tidyverse Replacements</a></li>
   <li><a href="#sec-here-package-style" id="toc-sec-here-package-style" class="nav-link" data-scroll-target="#sec-here-package-style"><span class="header-section-number">7.19</span> The here Package</a></li>
   <li><a href="#sec-object-naming" id="toc-sec-object-naming" class="nav-link" data-scroll-target="#sec-object-naming"><span class="header-section-number">7.20</span> Object Naming</a></li>
@@ -638,7 +638,7 @@ div.csl-indent {
 
 <div class="preview-combined-banner">
     <p style="margin: 0;">
-        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~6% of content changed).
+        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~7% of content changed).
         <br>
         <strong>🎨 Highlighting Legend:</strong> 
         <mark class="preview-text-changed" style="display: inline; padding: 1px 3px;">Modified text (yellow)</mark> shows changed words/phrases with tooltips of original text, 
@@ -685,7 +685,7 @@ div.csl-indent {
 <section id="comments" class="level3" data-number="7.2.3">
 <h3 data-number="7.2.3" class="anchored" data-anchor-id="comments"><span class="header-section-number"><mark class="preview-text-changed">7.2.3</mark></span> Comments</h3>
 <ul>
-<li><mark class="preview-element-added"><strong>Explain why, not what</strong>: Code should explain what it does through clear naming and structure. Use comments to document the reasoning, statistical rationale, edge cases, or scientific domain decisions behind an implementation.</mark></li>
+<li><mark class="preview-element-added"><strong>Explain why, not what</strong>: As detailed in <a href="#sec-comments" class="quarto-xref"><span>Section 7.13</span></a>, code should explain what it does through expressive naming and clear structure. Use comments to document the reasoning, statistical rationale, edge cases, or scientific domain decisions behind an implementation.</mark></li>
 <li><mark class="preview-element-added"><strong>Do not leave commented-out code</strong>: Rely on version control (Git) to preserve historical code rather than leaving dead blocks in source files.</mark></li>
 </ul>
 </section>
@@ -698,7 +698,7 @@ div.csl-indent {
 <section id="dont-repeat-yourself-dry" class="level3" data-number="7.2.5">
 <h3 data-number="7.2.5" class="anchored" data-anchor-id="dont-repeat-yourself-dry"><mark class="preview-element-added"><span class="header-section-number">7.2.5</span> Don’t Repeat Yourself (DRY)</mark></h3>
 <ul>
-<li><mark class="preview-element-added"><strong>Eliminate duplication</strong>: Duplicate logic is a primary source of bugs and maintenance overhead. When the same transformation or calculation appears in multiple places, extract it into a reusable helper function.</mark></li>
+<li><mark class="preview-element-added"><strong>Eliminate duplication</strong>: Originating in <em>The Pragmatic Programmer</em> <span class="citation" data-cites="hunt1999pragmatic">(<a href="references.html#ref-hunt1999pragmatic" role="doc-biblioref">Hunt and Thomas 1999</a>)</span> and emphasized in <em>Clean Code</em>, the DRY principle states that every piece of knowledge must have a single, unambiguous representation. Duplicate logic is a primary source of bugs and maintenance overhead. When the same transformation or calculation appears in multiple places, extract it into a reusable helper function (see also <a href="#sec-package-code-practices" class="quarto-xref"><span>Section 7.17</span></a>).</mark></li>
 </ul>
 </section>
 </section>
@@ -880,8 +880,8 @@ div.csl-indent {
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This is the same readability goal as <a href="#sec-avoid-nesting" class="quarto-xref"><span>Section 7.4</span></a>: prefer named steps you can read and check over one dense expression.</p>
 </section>
-<section id="comments-1" class="level2" data-number="7.13">
-<h2 data-number="7.13" class="anchored" data-anchor-id="comments-1"><mark class="preview-element-added"><span class="header-section-number">7.13</span> Comments</mark></h2>
+<section id="sec-comments" class="level2" data-number="7.13">
+<h2 data-number="7.13" class="anchored" data-anchor-id="sec-comments"><mark class="preview-element-added"><span class="header-section-number">7.13</span> Comments</mark></h2>
 <p>Use comments to explain <em>why</em>, not <em>what</em>:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Good: Explains reasoning</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Use log scale because distribution is highly skewed</span></span>
@@ -1062,8 +1062,8 @@ Note
 <span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="fu">warning</span>(<span class="st">"Missing data detected"</span>)</span>
 <span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="fu">stop</span>(<span class="st">"Invalid input"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="package-code-practices" class="level2" data-number="7.17">
-<h2 data-number="7.17" class="anchored" data-anchor-id="package-code-practices"><span class="header-section-number">7.17</span> Package Code Practices</h2>
+<section id="sec-package-code-practices" class="level2" data-number="7.17">
+<h2 data-number="7.17" class="anchored" data-anchor-id="sec-package-code-practices"><span class="header-section-number">7.17</span> Package Code Practices</h2>
 <ul>
 <li><strong>No <code>library()</code> in package code</strong>: Use <code>::</code> notation or declare in DESCRIPTION Imports. This is enforced by our <code>.lintr.R</code> configuration via <code>undesirable_function_linter()</code>. Instead, use:
 <ul>
@@ -1100,8 +1100,11 @@ Note
 <span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Date/time operations</span></span>
 <span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>lubridate<span class="sc">::</span>NA_Date_        <span class="co"># instead of as.Date(NA)</span></span>
 <span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Session info</span></span>
-<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>sessioninfo<span class="sc">::</span><span class="fu">session_info</span>() <span class="co"># instead of sessionInfo()</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Variable labels</span></span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>labelled<span class="sc">::</span><span class="fu">set_variable_labels</span>() <span class="co"># instead of attr(x, "label") &lt;- ...</span></span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Session info</span></span>
+<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a>sessioninfo<span class="sc">::</span><span class="fu">session_info</span>() <span class="co"># instead of sessionInfo()</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>See also <a href="coding-practices.html#sec-tidyverse" class="quarto-xref" preview-toc-changed><span>Section 6.37</span></a>.</p>
 </section>
 <section id="sec-here-package-style" class="level2" data-number="7.19">
@@ -1390,6 +1393,9 @@ Note
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-hunt1999pragmatic" class="csl-entry" role="listitem">
+Hunt, Andrew, and David Thomas. 1999. <em>The Pragmatic Programmer: From Journeyman to Master</em>. Addison-Wesley.
+</div>
 <div id="ref-martin2008cleancode" class="csl-entry" role="listitem">
 Martin, Robert C. 2008. <em>Clean Code: A Handbook of Agile Software Craftsmanship</em>. Prentice Hall.
 </div>
