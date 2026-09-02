@@ -3,7 +3,7 @@ A terminal emulator is the application window that runs your shell
 `bash`,
 or `fish`).
 While macOS ships with Terminal.app and Windows includes Command Prompt,
-modern third-party terminal emulators provide significant advantages:
+modern terminal emulators provide significant advantages:
 
 - **GPU acceleration**:
   Rendering text on the GPU keeps scrolling and large output streams smooth and responsive.
