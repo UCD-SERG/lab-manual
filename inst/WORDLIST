@@ -7,6 +7,7 @@ AtlasEngine
 BFG
 Bacher
 Barratt
+Bitbucket
 Burkholderia
 CE
 CLI
@@ -35,6 +36,7 @@ GUIs
 Ghostty
 GitKraken
 GitLab
+GitLens
 GraphQL
 Hashimoto
 Heitmann
@@ -43,10 +45,13 @@ IDEs
 IET
 ITSS
 Jekyll
+Jira
+Kepler
 Kitty
 Kunal
 LLM
 LeCun
+Linux
 LiteLLM
 Lowndes
 Lua
@@ -96,10 +101,12 @@ WSL
 WezTerm
 Xie
 Yihui
+agentic
 aider
 backoff
 btop
 cholerae
+diffing
 edu
 gh
 github
@@ -115,6 +122,7 @@ jarl
 keybindings
 lazygit
 litedown
+macOS
 multiplexer
 multiplexing
 munging
@@ -124,6 +132,8 @@ powerline
 pseudomallei
 ranger
 reattach
+rebasing
+scriptability
 scriptable
 seroepidemiologic
 sidenotes

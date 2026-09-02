@@ -1,0 +1,51 @@
+While knowing how to use Git on the command line remains essential
+because it provides the full power,
+flexibility,
+and scriptability of Git,
+graphical Git clients offer visual representations of repository history,
+interactive branch visualization,
+and simplified merge conflict resolution.
+
+### GitHub Desktop {#sec-github-desktop}
+
+[GitHub Desktop](https://desktop.github.com/) [@githubdesktop]
+is a free,
+open-source graphical interface developed by GitHub.
+It simplifies basic Git workflows
+such as staging changes,
+creating commits,
+branching,
+and opening pull requests.
+It is an accessible starting point
+for beginners or for developers who prefer a visual interface
+for routine Git operations.
+
+### GitKraken {#sec-gitkraken}
+
+[GitKraken](https://gitkraken.com/) [@gitkraken]
+is a cross-platform (macOS, Windows, Linux) Git client
+and developer experience platform.
+Key features include:
+
+- An interactive, visual commit graph that simplifies navigating complex branch histories
+- Drag-and-drop interactive rebasing and visual branch merging
+- An in-app merge conflict editor with side-by-side diffing
+- Multi-repository workspaces for tracking and managing multiple repositories together
+- Integrations with major Git hosting providers (GitHub, GitLab, Bitbucket, and Azure DevOps)
+  and issue trackers such as Jira
+
+Beyond the standalone GitKraken Desktop client,
+the GitKraken ecosystem includes the GitLens extension for Visual Studio Code
+and terminal CLI integrations.
+
+### GitKraken Kepler {#sec-gitkraken-kepler}
+
+[GitKraken Kepler](https://gitkraken.com/kepler) [@gitkraken-kepler]
+is GitKraken's agentic development environment
+and workspace intelligence platform.
+It is designed to coordinate and manage agent-driven development workflows,
+providing a unified interface to:
+
+- Plan implementation work and orchestrate parallel AI coding agents at scale
+- Generate context-aware commits, pull request summaries, and code reviews
+- Inspect and review diffs and generated changes before shipping code
