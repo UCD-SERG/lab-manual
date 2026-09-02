@@ -774,7 +774,13 @@ window.Quarto = {
   <li><a href="#mapply-and-pmap" id="toc-mapply-and-pmap" class="nav-link" data-scroll-target="#mapply-and-pmap"><span class="header-section-number">6.42.2</span> <code>mapply()</code> and <code>pmap()</code></a></li>
   <li><a href="#parallel-processing-with-parallel-and-future-packages" id="toc-parallel-processing-with-parallel-and-future-packages" class="nav-link" data-scroll-target="#parallel-processing-with-parallel-and-future-packages"><span class="header-section-number">6.42.3</span> Parallel processing with <code>parallel</code> and <code>future</code> packages</a></li>
   </ul></li>
-  <li><a href="#reviewing-code" id="toc-reviewing-code" class="nav-link" data-scroll-target="#reviewing-code"><span class="header-section-number">6.43</span> Reviewing Code</a></li>
+  <li><a href="#sec-reviewing-code" id="toc-sec-reviewing-code" class="nav-link" data-scroll-target="#sec-reviewing-code"><span class="header-section-number">6.43</span> Reviewing Code</a>
+  <ul class="collapse">
+  <li><a href="#sec-why-review-code" id="toc-sec-why-review-code" class="nav-link" data-scroll-target="#sec-why-review-code"><span class="header-section-number">6.43.1</span> Why We Review Code</a></li>
+  <li><a href="#sec-what-to-look-for" id="toc-sec-what-to-look-for" class="nav-link" data-scroll-target="#sec-what-to-look-for"><span class="header-section-number">6.43.2</span> What Reviewers Look For</a></li>
+  <li><a href="#sec-constructive-feedback" id="toc-sec-constructive-feedback" class="nav-link" data-scroll-target="#sec-constructive-feedback"><span class="header-section-number">6.43.3</span> How to Give Constructive Feedback</a></li>
+  <li><a href="#sec-when-to-approve" id="toc-sec-when-to-approve" class="nav-link" data-scroll-target="#sec-when-to-approve"><span class="header-section-number">6.43.4</span> When to Approve</a></li>
+  </ul></li>
   <li><a href="#sec-getting-help-with-code" id="toc-sec-getting-help-with-code" class="nav-link" data-scroll-target="#sec-getting-help-with-code"><span class="header-section-number">6.44</span> Getting Help with Code</a></li>
   <li><a href="#sec-r-resources" id="toc-sec-r-resources" class="nav-link" data-scroll-target="#sec-r-resources"><span class="header-section-number">6.45</span> Additional Resources</a>
   <ul class="collapse">
@@ -2997,10 +3003,68 @@ future_lapply(x = mylist, FUN = func)</code></pre>
 </section>
 </section>
 </section>
-<section id="reviewing-code" class="level2" data-number="6.43">
-<h2 data-number="6.43" class="anchored" data-anchor-id="reviewing-code"><span class="header-section-number">6.43</span> Reviewing Code</h2>
-<p>The lab’s pull request workflow, author and reviewer expectations, and response protocol are consolidated in <a href="collaborative-software-development.html" class="quarto-xref"><span>Chapter 12</span></a>.</p>
-<p>For code-specific prerequisites before requesting review, use the quality checks in <a href="#sec-r-qa-checklist" class="quarto-xref"><span>Section 6.12</span></a>, the documentation guidance in <a href="#sec-documenting-code" class="quarto-xref"><span>Section 6.14</span></a>, and the ADR guidance in <a href="#sec-adrs" class="quarto-xref"><span>Section 6.15</span></a> for design rationale that should outlive a merged PR thread.</p>
+<section id="sec-reviewing-code" class="level2" data-number="6.43">
+<h2 data-number="6.43" class="anchored" data-anchor-id="sec-reviewing-code"><span class="header-section-number">6.43</span> Reviewing Code</h2>
+<p>Peer code review is a collaborative practice that improves scientific rigor, fosters shared understanding, and catches bugs before analysis results are shared or published. The lab’s pull request workflow, author and reviewer expectations, and response protocol are consolidated in <a href="collaborative-software-development.html" class="quarto-xref"><span>Chapter 12</span></a>.</p>
+<section id="sec-why-review-code" class="level3" data-number="6.43.1">
+<h3 data-number="6.43.1" class="anchored" data-anchor-id="sec-why-review-code"><span class="header-section-number">6.43.1</span> Why We Review Code</h3>
+<p>Code review serves several vital purposes:</p>
+<ul>
+<li><strong>Error prevention</strong>: Catching data processing and analytical bugs early, before findings enter manuscripts or reports.</li>
+<li><strong>Reproducibility</strong>: Verifying that scripts execute cleanly from scratch without undocumented manual interventions or environment-specific dependencies.</li>
+<li><strong>Knowledge transfer</strong>: Sharing analytical methods, R idioms, and package features across the lab team.</li>
+<li><strong>Maintainability</strong>: Ensuring that analysis pipelines can be understood, modified, and extended by other lab members in the future.</li>
+</ul>
+</section>
+<section id="sec-what-to-look-for" class="level3" data-number="6.43.2">
+<h3 data-number="6.43.2" class="anchored" data-anchor-id="sec-what-to-look-for"><span class="header-section-number">6.43.2</span> What Reviewers Look For</h3>
+<p>When reviewing a colleague’s code, evaluate these key dimensions:</p>
+<ol type="1">
+<li><strong>Reproducibility</strong>:
+<ul>
+<li>Does the script run cleanly from start to finish in a fresh R session?</li>
+<li>Are package dependencies managed reproducibly via <a href="https://rstudio.github.io/renv/"><code>{renv}</code></a> (see <a href="reproducible-environments.html" class="quarto-xref"><span>Chapter 15</span></a>)?</li>
+<li>Are file paths relative and constructed with <a href="https://here.r-lib.org/"><code>{here}</code></a> (see <a href="#sec-here-package-practices" class="quarto-xref"><span>Section 6.26</span></a>), avoiding machine-specific absolute paths?</li>
+</ul></li>
+<li><strong>Code correctness and data integrity</strong>:
+<ul>
+<li>Are data transformations and filtering steps logical and documented?</li>
+<li>Are missing values (<code>NA</code>), edge cases, and empty groupings handled appropriately?</li>
+<li>Are key variables assigned descriptive labels and measurement units where applicable (see <a href="#sec-variable-labels" class="quarto-xref"><span>Section 6.14.8</span></a>)?</li>
+</ul></li>
+<li><strong>Style and structure</strong>:
+<ul>
+<li>Does the code follow the lab’s R code style (see <a href="coding-style.html" class="quarto-xref"><span>Chapter 7</span></a>)?</li>
+<li>Are long chunks broken into focused functions (see 1)?</li>
+<li>Are variable and function names self-describing (see <a href="coding-style.html#sec-object-naming" class="quarto-xref"><span>Section 7.20</span></a>)?</li>
+</ul></li>
+<li><strong>Documentation</strong>:
+<ul>
+<li>Do comments explain non-obvious design choices or statistical assumptions (see <a href="#sec-documenting-code" class="quarto-xref"><span>Section 6.14</span></a>)?</li>
+<li>Are architectural or analytical decisions documented with an ADR where appropriate (see <a href="#sec-adrs" class="quarto-xref"><span>Section 6.15</span></a>)?</li>
+</ul></li>
+</ol>
+</section>
+<section id="sec-constructive-feedback" class="level3" data-number="6.43.3">
+<h3 data-number="6.43.3" class="anchored" data-anchor-id="sec-constructive-feedback"><span class="header-section-number">6.43.3</span> How to Give Constructive Feedback</h3>
+<p>Effective code review builds a supportive, high-trust research culture:</p>
+<ul>
+<li><strong>Be kind and respectful</strong>: Critique the code, not the author. Assume positive intent and acknowledge elegant solutions or clear documentation.</li>
+<li><strong>Be specific and actionable</strong>: Explain why a change is recommended and provide concrete code suggestions or examples where possible.</li>
+<li><strong>Distinguish blocking vs.&nbsp;non-blocking comments</strong>: Clearly separate essential correctness or reproducibility issues (blocking) from optional stylistic preferences or ideas for future exploration (non-blocking nits).</li>
+<li><strong>Ask clarifying questions</strong>: When logic is unclear, ask the author to explain their intent before proposing a rewrite.</li>
+</ul>
+</section>
+<section id="sec-when-to-approve" class="level3" data-number="6.43.4">
+<h3 data-number="6.43.4" class="anchored" data-anchor-id="sec-when-to-approve"><span class="header-section-number">6.43.4</span> When to Approve</h3>
+<p>Approve a pull request when:</p>
+<ul>
+<li>All automated CI checks and workflows pass cleanly.</li>
+<li>The code runs end-to-end and produces expected outputs.</li>
+<li>All blocking review findings have been resolved or explicitly deferred to a tracked follow-up issue.</li>
+<li>The author has completed the pre-review quality checks in <a href="#sec-r-qa-checklist" class="quarto-xref"><span>Section 6.12</span></a>.</li>
+</ul>
+</section>
 </section>
 <section id="sec-getting-help-with-code" class="level2" data-number="6.44">
 <h2 data-number="6.44" class="anchored" data-anchor-id="sec-getting-help-with-code"><span class="header-section-number">6.44</span> Getting Help with Code</h2>
