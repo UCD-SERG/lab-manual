@@ -151,3 +151,7 @@ Don't bypass a failing check; fix the underlying issue.
   version-pinning and workflow choices.
 - Don't commit build outputs (`docs/`, `_freeze/`, rendered previews).
 - Render the affected pages and clear the CI checks before requesting review.
+- Automated code review is handled by `.github/workflows/claude-code-review.yml`
+  (triggered on pull request events and manual workflow dispatch).
+  Do not request `copilot-pull-request-reviewer[bot]` via API
+  as Copilot PR code review is not active on this repository.
