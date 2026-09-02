@@ -87,6 +87,8 @@ content, which now vendors them directly.
   Validated against `inst/WORDLIST`.
   Add genuine technical terms, proper nouns, pathogen names, and product names
   introduced in the repository to `inst/WORDLIST`, one per line in alphabetical order.
+  All-caps acronyms are not reliably auto-skipped and may need an entry.
+  Grep any new proper noun or acronym against `inst/WORDLIST` before pushing.
   Note: this job checks out without the `.ai-config` submodule,
   so prose in `.ai-config/shared/**/*.md` fragments is not scanned.
 - Link check (`check-links.yml`, `lycheeverse/lychee-action`) over `.qmd`/`.md`/
