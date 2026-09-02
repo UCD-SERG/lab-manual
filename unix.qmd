@@ -6,12 +6,19 @@ We typically use Unix commands in Terminal (for Mac users) or Git Bash (for Wind
 2. To check on the progress of a batch of jobs
 3. To use git and push to github 
 
+## User interfaces: CLI, TUI, and GUI {#sec-cli-tui-gui}
+
+{{< include unix/_interfaces-cli-tui-gui.qmd >}}
+
 ## Basics
 
 On the computer, there is a desktop with two folders, `folder1` and `folder2`, and a file called `file1.` Inside `folder1`, we have a file called `file2.` Mac users can run these commands on their terminal; it is recommended that Windows users use Git Bash, not Windows PowerShell.
 
 ![Example desktop with folders and files](assets/images/ex-desktop.jpg){#fig-unix-desktop}
 
+## Terminal Emulators {#sec-terminal-emulators}
+
+{{< include unix/terminal-emulators.qmd >}}
 
 ## Syntax for both Mac/Windows
 When typing in directories or file names, quotes are necessary if the name includes spaces.
@@ -221,3 +228,12 @@ fig-weekly-rate.R
 # Remove copied utility run script
 rm runFileSaveLogs
 ```
+
+## External Resources
+
+For a comprehensive introduction to practical computing skills,
+shell tools,
+command-line workflows,
+and version control,
+see [The Missing CS Quarter at UC Davis](https://missing.cs.ucdavis.edu/)
+([GitLab repository](https://gitlab.com/missing-cs-quarter-ucd/)).

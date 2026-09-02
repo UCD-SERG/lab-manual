@@ -1,5 +1,24 @@
 # Checklists
 
+## Onboarding checklist {#sec-onboarding-checklist}
+
+Welcome to the lab! New members should complete the following checklist during their first week:
+
+- **Account setup**: Request and confirm access to GitHub (join the `UCD-SERG` organization),
+  Microsoft Teams, UC Davis email, and lab Box and SharePoint folders.
+- **Required trainings**: Complete required CITI Human Subjects Biomedical Group 1 training
+  and share your certificate with lab leadership (see @sec-protecting-human-subjects).
+- **Read the lab manual**: Review lab culture and conduct (@sec-culture-and-conduct),
+  coding style (@sec-r-code-style), and collaborative development (@sec-collab-dev).
+- **Environment setup**: Configure your local R development environment,
+  clone a starter repository, and run `renv::restore()` to verify reproducible package installation
+  (see @sec-reproducible-environments).
+- **HPC access**: Confirm High-Performance Computing cluster access (Farm or Shiva)
+  and verify SSH keys if your project involves cluster computing (see @sec-slurm).
+- **Team introductions**: Introduce yourself on Microsoft Teams and at the next weekly lab meeting.
+- **Initial 1:1 meeting**: Schedule a one-on-one meeting with lab leadership
+  to align on project objectives, onboarding timeline, and initial milestones.
+
 ## Pre-analysis plan checklist
 
 - Brief background on the study (a condensed version of the introduction section of the paper)
@@ -59,3 +78,23 @@
 - Are the legends and other labels easy to understand with minimal abbreviations? 
 - If there is overplotting, is transparency used to show overlapping data? 
 - Are 95% confidence intervals or other measures of precision shown, if applicable?
+
+## Offboarding checklist {#sec-offboarding-checklist}
+
+When preparing to depart the lab, members should complete this offboarding checklist to ensure project continuity:
+
+- **Code handoff**: Ensure all analysis code is committed, pushed to GitHub (`UCD-SERG` organization),
+  and documented with a self-contained `README` and reproducible execution instructions (see @sec-code-repositories).
+- **Data archiving**: Archive or transfer large datasets, raw files,
+  and simulation outputs per lab storage protocols (see @sec-data-publication and @sec-slurm).
+  Ensure all shared Drive and Box datasets have clear data dictionaries and codebooks.
+- **Repository ownership**: Transfer any remaining repository or branch administrative permissions
+  to the `UCD-SERG` organization and lab leadership.
+- **Publication plan**: Coordinate with lab leadership on outstanding manuscripts,
+  co-authorship agreements, remaining revisions, and target submission timelines.
+- **Account transition**: Coordinate with lab leadership to transition or revoke personal access to shared lab accounts,
+  server credentials, and IRB protocols.
+- **Equipment return**: Return any lab-issued equipment (keys, hardware, storage media)
+  and report any known hardware or configuration issues.
+- **Exit interview**: Complete a departure check-in with lab leadership
+  to provide feedback and share forward contact details for future manuscript correspondence.

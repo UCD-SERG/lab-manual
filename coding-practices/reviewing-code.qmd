@@ -1,10 +1,62 @@
-The lab's pull request workflow,
-author and reviewer expectations,
-and response protocol
+Peer code review is a collaborative practice that improves scientific rigor,
+fosters shared understanding,
+and catches bugs before analysis results are shared or published.
+The lab's pull request workflow, author and reviewer expectations, and response protocol
 are consolidated in @sec-collab-dev.
 
-For code-specific prerequisites before requesting review,
-use the quality checks in @sec-r-qa-checklist,
-the documentation guidance in @sec-documenting-code,
-and the ADR guidance in @sec-adrs
-for design rationale that should outlive a merged PR thread.
+### Why We Review Code {#sec-why-review-code}
+
+Code review serves several vital purposes:
+
+- **Error prevention**: Catching data processing and analytical bugs early,
+  before findings enter manuscripts or reports.
+- **Reproducibility**: Verifying that scripts execute cleanly from scratch
+  without undocumented manual interventions or environment-specific dependencies.
+- **Knowledge transfer**: Sharing analytical methods, R idioms,
+  and package features across the lab team.
+- **Maintainability**: Ensuring that analysis pipelines can be understood,
+  modified, and extended by other lab members in the future.
+
+### What Reviewers Look For {#sec-what-to-look-for}
+
+When reviewing a colleague's code, evaluate these key dimensions:
+
+1. **Reproducibility**:
+   - Does the script run cleanly from start to finish in a fresh R session?
+   - Are package dependencies managed reproducibly via [`{renv}`](https://rstudio.github.io/renv/) (see @sec-reproducible-environments)?
+   - Are file paths relative and constructed with [`{here}`](https://here.r-lib.org/) (see @sec-here-package-practices),
+     avoiding machine-specific absolute paths?
+2. **Code correctness and data integrity**:
+   - Are data transformations and filtering steps logical and documented?
+   - Are missing values (`NA`), edge cases, and empty groupings handled appropriately?
+   - Are key variables assigned descriptive labels and measurement units where applicable (see @sec-variable-labels)?
+3. **Style and structure**:
+   - Does the code follow the lab's R code style (see @sec-r-code-style)?
+   - Are long chunks broken into focused functions (see @sec-function-decomposition)?
+   - Are variable and function names self-describing (see @sec-object-naming)?
+4. **Documentation**:
+   - Do comments explain non-obvious design choices or statistical assumptions (see @sec-documenting-code)?
+   - Are architectural or analytical decisions documented with an ADR where appropriate (see @sec-adrs)?
+
+### How to Give Constructive Feedback {#sec-constructive-feedback}
+
+Effective code review builds a supportive, high-trust research culture:
+
+- **Be kind and respectful**: Critique the code, not the author.
+  Assume positive intent and acknowledge elegant solutions or clear documentation.
+- **Be specific and actionable**: Explain why a change is recommended
+  and provide concrete code suggestions or examples where possible.
+- **Distinguish blocking vs. non-blocking comments**:
+  Clearly separate essential correctness or reproducibility issues (blocking)
+  from optional stylistic preferences or ideas for future exploration (non-blocking nits).
+- **Ask clarifying questions**: When logic is unclear,
+  ask the author to explain their intent before proposing a rewrite.
+
+### When to Approve {#sec-when-to-approve}
+
+Approve a pull request when:
+
+- All automated CI checks and workflows pass cleanly.
+- The code runs end-to-end and produces expected outputs.
+- All blocking review findings have been resolved or explicitly deferred to a tracked follow-up issue.
+- The author has completed the pre-review quality checks in @sec-r-qa-checklist.
