@@ -646,6 +646,7 @@ window.Quarto = {
   <li><a href="#rstudio-built-in-formatting" id="toc-rstudio-built-in-formatting" class="nav-link" data-scroll-target="#rstudio-built-in-formatting"><span class="header-section-number">6.13.1</span> RStudio Built-in Formatting</a></li>
   <li><a href="#styler-package" id="toc-styler-package" class="nav-link" data-scroll-target="#styler-package"><span class="header-section-number">6.13.2</span> styler Package</a></li>
   <li><a href="#lintr-package" id="toc-lintr-package" class="nav-link" data-scroll-target="#lintr-package"><span class="header-section-number">6.13.3</span> lintr Package</a></li>
+  <li><a href="#jarl-fast-rust-powered-linter" id="toc-jarl-fast-rust-powered-linter" class="nav-link" data-scroll-target="#jarl-fast-rust-powered-linter"><span class="header-section-number">6.13.4</span> jarl (Fast Rust-Powered Linter)</a></li>
   </ul></li>
   <li><a href="#sec-documenting-code" id="toc-sec-documenting-code" class="nav-link" data-scroll-target="#sec-documenting-code"><span class="header-section-number">6.14</span> Documenting your code</a>
   <ul class="collapse">
@@ -2039,7 +2040,11 @@ Note
 <li>Style guide violations</li>
 </ul>
 <p>You can customize linting rules by creating a <code>.lintr</code> file in your project root.</p>
-<p>See also <a href="coding-style.html#sec-style-auto-style" class="quarto-xref"><span>Section 7.21</span></a>.</p>
+</section>
+<section id="jarl-fast-rust-powered-linter" class="level3" data-number="6.13.4">
+<h3 data-number="6.13.4" class="anchored" data-anchor-id="jarl-fast-rust-powered-linter"><span class="header-section-number">6.13.4</span> jarl (Fast Rust-Powered Linter)</h3>
+<p><a href="https://jarl.etiennebacher.com/"><code>{jarl}</code></a> is a high-performance R linter written in Rust by Etienne Bacher. It checks many common style and syntax rules significantly faster than <code>{lintr}</code>, making it well-suited for fast pre-commit hooks and large codebases.</p>
+<p>See also <a href="@sec-style-auto-style">Automated Tools</a>.</p>
 </section>
 </section>
 <section id="sec-documenting-code" class="level2" data-number="6.14">
