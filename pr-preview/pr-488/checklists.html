@@ -515,10 +515,11 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#pre-analysis-plan-checklist" id="toc-pre-analysis-plan-checklist" class="nav-link active" data-scroll-target="#pre-analysis-plan-checklist"><span class="header-section-number">20.1</span> Pre-analysis plan checklist</a></li>
-  <li><a href="#code-checklist" id="toc-code-checklist" class="nav-link" data-scroll-target="#code-checklist"><span class="header-section-number">20.2</span> Code checklist</a></li>
-  <li><a href="#manuscript-checklist" id="toc-manuscript-checklist" class="nav-link" data-scroll-target="#manuscript-checklist"><span class="header-section-number">20.3</span> Manuscript checklist</a></li>
-  <li><a href="#figure-checklist" id="toc-figure-checklist" class="nav-link" data-scroll-target="#figure-checklist"><span class="header-section-number">20.4</span> Figure checklist</a></li>
+  <li><a href="#sec-onboarding-checklist" id="toc-sec-onboarding-checklist" class="nav-link active" data-scroll-target="#sec-onboarding-checklist"><span class="header-section-number">20.1</span> Onboarding checklist</a></li>
+  <li><a href="#pre-analysis-plan-checklist" id="toc-pre-analysis-plan-checklist" class="nav-link" data-scroll-target="#pre-analysis-plan-checklist"><span class="header-section-number">20.2</span> Pre-analysis plan checklist</a></li>
+  <li><a href="#code-checklist" id="toc-code-checklist" class="nav-link" data-scroll-target="#code-checklist"><span class="header-section-number">20.3</span> Code checklist</a></li>
+  <li><a href="#manuscript-checklist" id="toc-manuscript-checklist" class="nav-link" data-scroll-target="#manuscript-checklist"><span class="header-section-number">20.4</span> Manuscript checklist</a></li>
+  <li><a href="#figure-checklist" id="toc-figure-checklist" class="nav-link" data-scroll-target="#figure-checklist"><span class="header-section-number">20.5</span> Figure checklist</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/checklists.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/checklists.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -555,8 +556,21 @@ div.csl-indent {
 </header>
 
 
-<section id="pre-analysis-plan-checklist" class="level2" data-number="20.1">
-<h2 data-number="20.1" class="anchored" data-anchor-id="pre-analysis-plan-checklist"><span class="header-section-number">20.1</span> Pre-analysis plan checklist</h2>
+<section id="sec-onboarding-checklist" class="level2" data-number="20.1">
+<h2 data-number="20.1" class="anchored" data-anchor-id="sec-onboarding-checklist"><span class="header-section-number">20.1</span> Onboarding checklist</h2>
+<p>Welcome to the lab! New members should complete the following checklist during their first week:</p>
+<ul>
+<li><strong>Account setup</strong>: Request and confirm access to GitHub (join the <code>UCD-SERG</code> organization), Microsoft Teams, UC Davis email, and lab Box and SharePoint folders.</li>
+<li><strong>Required trainings</strong>: Complete required CITI Human Subjects Biomedical Group 1 training and share your certificate with lab leadership (see <a href="culture-and-conduct.html#sec-protecting-human-subjects" class="quarto-xref"><span>Section 2.3</span></a>).</li>
+<li><strong>Read the lab manual</strong>: Review lab culture and conduct (<a href="culture-and-conduct.html" class="quarto-xref"><span>Chapter 2</span></a>), coding style (<a href="coding-style.html" class="quarto-xref"><span>Chapter 7</span></a>), and collaborative development (<a href="collaborative-software-development.html" class="quarto-xref" preview-toc-changed><span>Chapter 12</span></a>).</li>
+<li><strong>Environment setup</strong>: Configure your local R development environment, clone a starter repository, and run <code>renv::restore()</code> to verify reproducible package installation (see <a href="reproducible-environments.html" class="quarto-xref"><span>Chapter 15</span></a>).</li>
+<li><strong>HPC access</strong>: Confirm High-Performance Computing cluster access (Farm or Shiva) and verify SSH keys if your project involves cluster computing (see <a href="slurm.html" class="quarto-xref"><span>Chapter 18</span></a>).</li>
+<li><strong>Team introductions</strong>: Introduce yourself on Microsoft Teams and at the next weekly lab meeting.</li>
+<li><strong>Initial 1:1 meeting</strong>: Schedule a one-on-one meeting with lab leadership to align on project objectives, onboarding timeline, and initial milestones.</li>
+</ul>
+</section>
+<section id="pre-analysis-plan-checklist" class="level2" data-number="20.2">
+<h2 data-number="20.2" class="anchored" data-anchor-id="pre-analysis-plan-checklist"><span class="header-section-number">20.2</span> Pre-analysis plan checklist</h2>
 <ul>
 <li>Brief background on the study (a condensed version of the introduction section of the paper)</li>
 <li>Hypotheses / objectives</li>
@@ -575,8 +589,8 @@ div.csl-indent {
 <li>Negative control analyses</li>
 </ul>
 </section>
-<section id="code-checklist" class="level2" data-number="20.2">
-<h2 data-number="20.2" class="anchored" data-anchor-id="code-checklist"><span class="header-section-number">20.2</span> Code checklist</h2>
+<section id="code-checklist" class="level2" data-number="20.3">
+<h2 data-number="20.3" class="anchored" data-anchor-id="code-checklist"><span class="header-section-number">20.3</span> Code checklist</h2>
 <ul>
 <li>Does the script run without errors?</li>
 <li>Is code self-contained within repo and/or associated Box folder?</li>
@@ -587,8 +601,8 @@ div.csl-indent {
 <li>Are all warnings ignorable? Should any warnings be intentionally suppressed or addressed?</li>
 </ul>
 </section>
-<section id="manuscript-checklist" class="level2" data-number="20.3">
-<h2 data-number="20.3" class="anchored" data-anchor-id="manuscript-checklist"><span class="header-section-number">20.3</span> Manuscript checklist</h2>
+<section id="manuscript-checklist" class="level2" data-number="20.4">
+<h2 data-number="20.4" class="anchored" data-anchor-id="manuscript-checklist"><span class="header-section-number">20.4</span> Manuscript checklist</h2>
 <p><em>This is adapted in part from How to tackle the reproducibility crisis in ten steps <span class="citation" data-cites="baker2019">(<a href="references.html#ref-baker2019" role="doc-biblioref">Baker 2019</a>)</span>.</em></p>
 <ul>
 <li>Have you completed the relevant reporting checklist, if applicable? (See EQUATOR Network <span class="citation" data-cites="equatornetwork">(<a href="references.html#ref-equatornetwork" role="doc-biblioref"><span>“EQUATOR Network,”</span> n.d.</a>)</span> for a collection of checklists)</li>
@@ -610,8 +624,8 @@ div.csl-indent {
 <li>Have you drafted author contributions? Do they follow the CRediT: Contributor Roles Taxonomy <span class="citation" data-cites="credit">(<a href="references.html#ref-credit" role="doc-biblioref"><span>“CRediT,”</span> n.d.</a>)</span> for author contributions?</li>
 </ul>
 </section>
-<section id="figure-checklist" class="level2" data-number="20.4">
-<h2 data-number="20.4" class="anchored" data-anchor-id="figure-checklist"><span class="header-section-number">20.4</span> Figure checklist</h2>
+<section id="figure-checklist" class="level2" data-number="20.5">
+<h2 data-number="20.5" class="anchored" data-anchor-id="figure-checklist"><span class="header-section-number">20.5</span> Figure checklist</h2>
 <ul>
 <li>Are the x-axis and y-axis labeled?</li>
 <li>If the figure includes panels, is each panel labeled?</li>
