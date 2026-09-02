@@ -67,7 +67,7 @@ CI does the same via `r-lib/actions/setup-renv`.
   fragment is the single source of truth, shared with ai-config's own CLAUDE.md.
   (The PR-workflow fragments this repo used to transclude in `ai-tools.qmd`
   moved along with that chapter's content to
-  [d-morrison/wai](https://github.com/d-morrison/wai).)
+  [morrison-lab/wai](https://github.com/morrison-lab/wai).)
 - Reusable Claude skills, exposed as project skills through the symlink
   `.claude/skills -> ../.ai-config/skills`.
 
@@ -78,23 +78,19 @@ and opens a PR. The build and `@claude` workflows check out with
 
 Note: this repo no longer has a top-level `shared/` directory --- the vendored
 `copilot-review-before-human.md` and `prompt-formats.md` files it held moved to
-[d-morrison/wai](https://github.com/d-morrison/wai) along with `ai-tools.qmd`'s
+[morrison-lab/wai](https://github.com/morrison-lab/wai) along with `ai-tools.qmd`'s
 content, which now vendors them directly.
 
 ## CI checks and how to satisfy them
 
 - Spellcheck (`check-spelling.yaml`, `insightsengineering/r-spellcheck-action`).
-  Add genuine technical terms and names to `inst/WORDLIST`, one per line.
-  Note: this job checks out **without** the `.ai-config` submodule,
+  Validated against `inst/WORDLIST`.
+  Add genuine technical terms, proper nouns, pathogen names, and product names
+  introduced in the repository to `inst/WORDLIST`, one per line in alphabetical order.
+  All-caps acronyms are not reliably auto-skipped and may need an entry.
+  Grep any new proper noun or acronym against `inst/WORDLIST` before pushing.
+  Note: this job checks out without the `.ai-config` submodule,
   so prose in `.ai-config/shared/**/*.md` fragments is not scanned.
-  Don't assume a word passes just because it already appears in the rendered manual
-  via a transcluded fragment (e.g. "inspectable" in `avoid-nesting.md`).
-  A new word you add to a file in this repo must be dictionary-valid
-  or listed in `inst/WORDLIST`.
-  Before pushing, grep any new proper noun, product name, or acronym you
-  introduced against `inst/WORDLIST` yourself --- catching it up front avoids
-  a spellcheck-fail-then-fix round trip per term (all-caps acronyms are not
-  reliably auto-skipped).
 - Link check (`check-links.yml`, `lycheeverse/lychee-action`) over `.qmd`/`.md`/
   `.html`. Fix broken links; only add an exclusion to `lychee.toml` when a URL
   is valid for humans but trips the automated checker.
@@ -111,9 +107,11 @@ content, which now vendors them directly.
   existing root-level `"tests/testthat.R"` exclusion entry is for a
   different, not-yet-existing root-level tests directory and does not match
   nested paths.
-- Non-standard characters (`check-non-standard-chars.yaml`). `.qmd` and `.R`
-  files must use ASCII only - no curly quotes, no en/em dashes. Use `"`, `'`,
-  and `-` (or write the dash as `---` in prose, which Quarto renders as an em dash).
+- Non-standard characters (`check-non-standard-chars.yaml`). `.qmd`, `.R`,
+  and `.md` files must use ASCII punctuation only - no curly quotes, no
+  en/em dashes. Use `"`, `'`, and `-` (or write the dash as `---` in prose,
+  which Quarto renders as an em dash). The check scans the merge tree, not
+  only the PR diff, so a pre-existing hit in any scanned file fails every PR.
 - Render/deploy (`publish.yml`, `preview.yml`) and bibliography DOI checks
   (`check-bibliography-dois.yml`). The full-book render (HTML + PDF + DOCX +
   EPUB) plus PR-preview deploy legitimately takes 10-15 minutes; its check-run
@@ -126,8 +124,11 @@ Don't bypass a failing check; fix the underlying issue.
 ## Content conventions (see copilot-instructions.md for the full set)
 
 - Decompose chapters with `{{< include <chapter>/<section>.qmd >}}`. Keep the
-  `##` heading in the main chapter file, a blank line, then the include. Prefix
-  partial/helper files with `_` so Quarto doesn't render them standalone.
+  `##` heading in the main chapter file, a blank line, then the include.
+  (In a `type: book` project, only chapters listed in `_quarto.yml` render standalone,
+  so chapter include fragments do not require an underscore prefix.
+  The `_` prefix has no functional effect in this book project;
+  follow the naming convention already in use in the chapter subdirectory you are editing).
 - Leave a blank line before every bullet or numbered list.
 - One sentence or phrase per source line (semantic line breaks) in prose,
   comments, and docstrings.
@@ -149,3 +150,7 @@ Don't bypass a failing check; fix the underlying issue.
   version-pinning and workflow choices.
 - Don't commit build outputs (`docs/`, `_freeze/`, rendered previews).
 - Render the affected pages and clear the CI checks before requesting review.
+- Automated code review is handled by `.github/workflows/claude-code-review.yml`
+  (triggered on pull request events and manual workflow dispatch).
+  Do not request `copilot-pull-request-reviewer[bot]` via API
+  as Copilot PR code review is not active on this repository.

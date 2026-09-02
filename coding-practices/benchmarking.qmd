@@ -97,12 +97,12 @@ results <- bench::mark(
 
 # View results
 print(results)
-#> # A tibble: 3 × 6
+#> # A tibble: 3 x 6
 #>   expression        min   median `itr/sec` mem_alloc `gc/sec`
 #>   <bch:expr>   <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
 #> 1 base_subset    1.2ms    1.4ms       714.    1.5MB     2.14
 #> 2 dplyr_filter   2.1ms    2.3ms       435.    2.1MB     4.35
-#> 3 data.table   850.0µs  950.0µs      1053.  800.0KB     0.00
+#> 3 data.table   850.0us  950.0us      1053.  800.0KB     0.00
 
 # Plot results
 plot(results)
@@ -210,10 +210,10 @@ profvis({
 
 **Common bottlenecks in epidemiology code:**
 
-- Repeated subsetting operations → Use data.table or pre-filter
-- Growing objects in loops → Pre-allocate vectors
-- Complex joins on large datasets → Index properly or use data.table
-- Unnecessary copies → Use reference semantics where appropriate
+- Repeated subsetting operations -> Use data.table or pre-filter
+- Growing objects in loops -> Pre-allocate vectors
+- Complex joins on large datasets -> Index properly or use data.table
+- Unnecessary copies -> Use reference semantics where appropriate
 
 ### Integration with Package Development Workflow
 
@@ -368,7 +368,7 @@ jobs:
 - **Manual triggers**: Use `workflow_dispatch` for on-demand benchmarking
 - **Security**: For production workflows, consider pinning action versions to
   commit SHAs instead of tags
-  (see the [wai site's "Best Practices for Safe and Successful Use" section](https://d-morrison.github.io/wai/chapters/coding-agents.html#sec-ai-best-practices))
+  (see the [wai site's "Best Practices for Safe and Successful Use" section](https://morrison-lab.github.io/wai/chapters/coding-agents.html#sec-ai-best-practices))
 
 **Alternative: Comment benchmark results on PRs:**
 
@@ -439,13 +439,13 @@ test_that("analysis scales linearly with sample size", {
     as.numeric(result$median)
   }, numeric(1))
   
-  # Check approximate linearity (R² > 0.95)
+  # Check approximate linearity (R^2 > 0.95)
   model <- lm(timings ~ sizes)
   r_squared <- summary(model)$r.squared
   
   expect_true(
     r_squared > 0.95,
-    info = sprintf("Scaling R² = %.3f (expected > 0.95)", r_squared)
+    info = sprintf("Scaling R^2 = %.3f (expected > 0.95)", r_squared)
   )
 })
 ```

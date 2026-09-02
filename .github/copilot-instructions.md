@@ -245,7 +245,7 @@ See the "Best Practices" section for more details.
 - Use native pipe `|>` instead of `%>%`
 - Use `snake_case` for variable and function names
 - Use `.qmd` files exclusively (not `.Rmd`),
-  **except** for `README.Rmd` — see the [README.Rmd and README.md](#readmermd-and-readmemd) section below for that intentional exception
+  **except** for `README.Rmd` --- see the [README.Rmd and README.md](#readmermd-and-readmemd) section below for that intentional exception
 - All R projects should use R package structure
 - **Avoid redundant logical comparisons**: Use logical variables directly in conditional statements (e.g., `if (x)` instead of `if (x == TRUE)` or `if (x == 1)`)
 - Use `lubridate::NA_Date_` instead of `as.Date(NA)` for missing date values
@@ -321,7 +321,7 @@ choose between floating tags and pinned versions deliberately:
   Note: tags can be retargeted, so this is a convenience tradeoff,
   not a strong security guarantee.
 - **Commit SHA pins** (e.g., `uses: actions/checkout@abc1234...`):
-  The most secure option — immutably locks the action to a specific commit.
+  The most secure option --- immutably locks the action to a specific commit.
   Use when supply-chain security is a priority.
 
 Always document your choice in the PR description or commit message.
@@ -336,7 +336,7 @@ Always document your choice in the PR description or commit message.
 
 1. **Better Git History**: When sections are reordered, only the main chapter file changes (moving include statements), making it immediately clear that content was reorganized rather than edited. When content is edited, only the specific include file changes. This makes reviews focused and precise.
 
-2. **Easier Code Review**: Reviewers can see exactly what changed—either the organization (main file) or the content (include file)—without having to parse through large diffs.
+2. **Easier Code Review**: Reviewers can see exactly what changed---either the organization (main file) or the content (include file)---without having to parse through large diffs.
 
 3. **Modular Maintenance**: Each section lives in its own file, making it easier to:
    - Find and edit specific content
@@ -393,7 +393,7 @@ The heading must be in the main file, followed by a blank line, then the include
 - Subdirectory: `##-chapter-name/` (matches the main file name)
 - Include files: `descriptive-section-name.qmd` using kebab-case
 - Use descriptive names that clearly indicate the content
-- Prefix with underscore `_` for partial/helper files not directly included (e.g., `_lintr-summary.qmd`)
+- Leading underscore `_` is optional (in this book project, Quarto only renders chapters listed in `_quarto.yml` standalone; follow the naming convention already in use in the chapter subdirectory you are editing)
 
 #### Git History Benefits Example
 
@@ -411,7 +411,7 @@ The heading must be in the main file, followed by a blank line, then the include
 -{{< include demo-folder/section-2.qmd >}}
 +{{< include demo-folder/section-name.qmd >}}
 ```
-This diff clearly shows a reordering (swapping two sections) with no content changes—only the main chapter file changes.
+This diff clearly shows a reordering (swapping two sections) with no content changes---only the main chapter file changes.
 
 **When editing content:**
 Only the specific include file (e.g., `05-coding-practices/function-calls.qmd`) appears in the git diff, making it easy to review the actual content changes without distraction.

@@ -1,4 +1,4 @@
-# lms — Lab Manual Style
+# lms --- Lab Manual Style
 
 `lms` ("lab manual style") is the shared UCD-SERG [`{lintr}`](https://lintr.r-lib.org/)
 configuration, packaged as a small R package so every lab repository enforces the
@@ -7,11 +7,11 @@ configuration, packaged as a small R package so every lab repository enforces th
 It lives in the `lms/` subdirectory of
 [`UCD-SERG/lab-manual`](https://github.com/UCD-SERG/lab-manual) and exports:
 
-- `default_linters()` — the canonical linter set (`lintr::linters_with_defaults()`
+- `default_linters()` --- the canonical linter set (`lintr::linters_with_defaults()`
   plus the lab's rules: `|>` pipe consistency, snake_case-with-acronyms object names,
   `cli::`-oriented undesirable functions, function-location/length checks,
   and condition-class assertions for `testthat` expectations that match `regexp`).
-- `undesirable_functions()` — the underlying undesirable-function map, if a repo needs
+- `undesirable_functions()` --- the underlying undesirable-function map, if a repo needs
   to extend it.
 
 ## Using lms in a repository
@@ -31,7 +31,7 @@ if (!requireNamespace("lms", quietly = TRUE)) {
 }
 linters <- lms::default_linters()
 
-# Exclusions are repo-specific and stay LOCAL — do not move them into lms.
+# Exclusions are repo-specific and stay LOCAL --- do not move them into lms.
 exclusions <- list(
   `data-raw` = list(pipe_consistency_linter = Inf)
 )
@@ -52,7 +52,7 @@ For local linting, install `lms` once the same way:
 
 ## Do NOT declare lms in DESCRIPTION
 
-`lms` is **lint-only tooling, not a runtime dependency** — a linter configuration, not
+`lms` is **lint-only tooling, not a runtime dependency** --- a linter configuration, not
 something your package calls. Keep it out of `Imports`/`Suggests`, and do not
 add a `Remotes:` entry for it. Two reasons:
 
@@ -63,7 +63,7 @@ add a `Remotes:` entry for it. Two reasons:
    lms`. If `lms` is in `Suggests`, that failure breaks *every* `{pak}`-based workflow in
    the consuming repo (e.g. a bibliography/DOI check), even ones unrelated to linting.
 2. **CRAN hygiene.** `.lintr.R` is a dev-time config file, not test code, so
-   `R CMD check` never executes it — there's no CRAN footprint, and a linter config
+   `R CMD check` never executes it --- there's no CRAN footprint, and a linter config
    has no place in a package's declared dependency graph.
 
 The version pin lives in the CI `install_github(...@<tag>)` step, not in DESCRIPTION.

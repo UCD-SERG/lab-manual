@@ -1,8 +1,8 @@
 # Working with AI
 
 Our notes on working responsibly and effectively with AI coding assistants
-have moved to a dedicated site: **[Working with AI](https://d-morrison.github.io/wai/)**
-(source: <https://github.com/d-morrison/wai>).
+have moved to a dedicated site: **[Working with AI](https://morrison-lab.github.io/wai/)**
+(source: <https://github.com/morrison-lab/wai>).
 
 That site covers:
 []{#sec-ai-disclosure}[]{#sec-ai-journal-articles}
@@ -13,21 +13,32 @@ That site covers:
 []{#sec-ai-copilot-settings}[]{#sec-ai-agent-skills}[]{#sec-ai-claude-cloud-env}
 []{#sec-ai-when-to-use}[]{#sec-ai-claude-code-windows}[]{#sec-fully-clean}
 
-- [**Policies for Using AI**](https://d-morrison.github.io/wai/chapters/ai-use-policies.html):
+- [**Policies for Using AI**](https://morrison-lab.github.io/wai/chapters/ai-use-policies.html):
   responsibility for validation, disclosure, attribution, and using AI for
   journal articles
 
-- [**Coding Agents**](https://d-morrison.github.io/wai/chapters/coding-agents.html):
+- [**Coding Agents**](https://morrison-lab.github.io/wai/chapters/coding-agents.html):
   what language models, coding agents, and harnesses are; how to work with
   them; benefits, hazards, and best practices; and configuring your
   environment
 
-- [**Pull-Request Workflow with Agents**](https://d-morrison.github.io/wai/chapters/pr-workflow-with-agents.html):
+- [**Pull-Request Workflow with Agents**](https://morrison-lab.github.io/wai/chapters/pr-workflow-with-agents.html):
   filing issues, claiming work, and driving a pull request to a clean,
   mergeable state
 
 Lab members who use AI tools must still adhere to the guidelines described
 there.
+
+## Institutional AI Access {#sec-institutional-ai-access}
+
+UC Davis Health (UCDH) provides OpenAI / ChatGPT accounts for affiliated researchers and staff.
+Based on internal UCDH administrative rates (as of 2026):
+
+- 1 credit is valued at approximately 4.5 cents (\$0.045).
+- With a standard allocation of 2,000 credits per week,
+  an active account receives the equivalent of approximately \$360 per month in credits.
+- Lab members should monitor their weekly credit usage against their project workflows
+  and consult lab leadership for updated rate schedules or quota increases.
 
 ::: {.callout-note collapse="true"}
 ## Looking for a specific section that used to be here?
