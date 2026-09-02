@@ -117,6 +117,13 @@ This requirement applies both to
 the initial PI review request
 and to later re-review requests after revisions.
 
+When requesting a review (whether in Microsoft Teams,
+email,
+or GitHub),
+always provide a direct hyperlink to the pull request
+(see [Direct Hyperlinks in Internal Correspondence](@sec-direct-hyperlinks)).
+Do not make reviewers search for the PR they are asked to review.
+
 #### Include tests with behavior changes
 
 Focused PRs should include related test code.
@@ -191,3 +198,9 @@ Describe how this change has been tested.
 
 @username
 ```
+
+#### Stacked pull requests
+
+When implementing a sequence of interdependent features or multi-stage refactorings,
+stack pull requests to keep each change small and focused
+(see @sec-stacked-pull-requests for detailed stack creation, CI, and merging guidelines).

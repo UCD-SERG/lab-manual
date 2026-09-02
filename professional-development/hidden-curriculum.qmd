@@ -1,0 +1,66 @@
+The "hidden curriculum" refers to the unspoken norms,
+unwritten expectations,
+and cultural practices in graduate school and academic research
+that are rarely taught in formal coursework
+but are critical for long-term success and well-being.
+Demystifying these implicit rules ensures equitable access
+to academic opportunities for scholars from all backgrounds.
+
+### Managing Up and Mentoring Relationships {#sec-managing-up}
+
+Mentorship is a collaborative partnership.
+Taking active ownership of your mentoring relationships helps ensure you receive
+the guidance and feedback you need:
+
+- **Set clear meeting agendas**: Send a brief bulleted agenda
+  and updated materials at least 24 hours before 1-on-1 meetings.
+- **Clarify priorities and timelines**: Agree on concrete milestones,
+  deadlines, and expectations for feedback turnarounds.
+- **Build a mentoring team**: Seek guidance from multiple mentors,
+  including thesis committee members, peer mentors, senior graduate students,
+  and external collaborators.
+  No single mentor can meet all training, professional, and personal needs.
+
+### Normalizing Setbacks and Imposter Feelings {#sec-imposter-feelings}
+
+Graduate training involves tackling open-ended scientific problems
+where methods fail, experiments yield inconclusive results,
+and manuscripts face rejection:
+
+- **Imposter feelings are common**: Experiencing self-doubt or feeling underqualified
+  is a widely shared experience in high-rigor research environments,
+  especially during early transitions.
+  It reflects the challenging nature of scientific discovery,
+  not personal inadequacy.
+- **Analytical iterations are normal**: Bugs, refactored data pipelines,
+  and revisions are standard components of the scientific process.
+- **Establish healthy boundaries**: Sustainable productivity requires rest,
+  structured time off, and hobbies outside academia.
+  Seek out campus health and counseling resources when facing persistent stress.
+
+### Demystifying Publishing and Peer Review {#sec-demystifying-publishing}
+
+Navigating scientific publication requires understanding the review lifecycle:
+
+- **Rejection is a normal part of publishing**: In academic publishing,
+  manuscripts frequently undergo multiple rounds of submission;
+  rejection provides an opportunity to refine arguments
+  and submit to a better-matched venue.
+- **Approaching reviewer feedback**: Read peer reviews,
+  step back for a day to process feedback,
+  and draft systematic, point-by-point response letters
+  using the guidance in @sec-responding-to-peer-review.
+- **Authorship conversations**: Initiate discussions regarding authorship order
+  and contribution roles early in every project and revisit them regularly.
+
+### Strategic Networking and Visibility {#sec-strategic-networking}
+
+Building professional connections expands research opportunities and career horizons:
+
+- **Conferences as networking venues**: Prepare a clear 60-second summary
+  of your research question, key methods, and scientific impact.
+- **Engage with speakers**: Introduce yourself after departmental seminars
+  or during poster sessions to ask focused questions about their work.
+- **Peer networks**: Cultivate strong relationships with cohort members and lab peers;
+  colleagues at your career stage will become future collaborators,
+  reviewers, and lifelong allies.

@@ -13,7 +13,7 @@ The typical workflow for manuscript preparation and publication:
 7. **Revisions**: Lead author coordinates response to peer reviewers
 8. **Publication**: Celebrate and share!
 
-## Responding to Peer Review
+## Responding to Peer Review {#sec-responding-to-peer-review}
 
 {{< include manuscript-preparation/responding-to-peer-review.qmd >}}
 

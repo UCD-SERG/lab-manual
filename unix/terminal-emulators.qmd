@@ -1,0 +1,121 @@
+A terminal emulator is the application window that runs your shell
+(such as `zsh`,
+`bash`,
+or `fish`).
+While macOS ships with Terminal.app and Windows includes Command Prompt,
+modern terminal emulators provide significant advantages:
+
+- **GPU acceleration**:
+  Rendering text on the GPU keeps scrolling and large output streams smooth and responsive.
+- **Modern font rendering**:
+  Full support for true color,
+  ligatures,
+  and powerline or nerd font symbols.
+- **Window management**:
+  Native support for tabs,
+  split panes,
+  and multiple windows without requiring a separate multiplexer like `tmux`.
+- **Cross-platform consistency**:
+  Several modern emulators use identical configuration files across macOS,
+  Linux,
+  and Windows.
+
+### Recommended Options
+
+#### [Ghostty](https://ghostty.org/)
+
+Ghostty is a fast,
+GPU-accelerated terminal emulator developed by Mitchell Hashimoto.
+It focuses on native platform integration,
+performance,
+and rich terminal features:
+
+- Native user interface on macOS and Linux
+- Cross-platform configuration using a simple plain-text configuration file
+- Built-in tabs and split panes
+- True color and modern terminal graphics protocol support
+- Available on macOS and Linux
+  (Windows support in active development as of September 2026)
+
+#### [WezTerm](https://wezfurlong.org/wezterm/)
+
+WezTerm is a GPU-accelerated terminal emulator and multiplexer written in Rust:
+
+- Configured using Lua,
+  enabling powerful custom keybindings and automation scripts
+- Built-in multiplexing across tabs,
+  splits,
+  and workspaces
+- Support for SSH domains to seamlessly reconnect to remote servers
+- Rich graphics support including iTerm2 and Sixel image protocols
+- Cross-platform support on macOS,
+  Linux,
+  and Windows
+
+#### [Alacritty](https://alacritty.org/)
+
+Alacritty is a minimalist,
+GPU-accelerated terminal emulator written in Rust:
+
+- Focused strictly on raw rendering speed and simplicity
+- Configured using TOML
+- Omits built-in tabs and split panes by design;
+  often paired with `tmux` for multiplexing
+- Cross-platform support on macOS,
+  Linux,
+  and Windows
+
+#### [Kitty](https://sw.kovidgoyal.net/kitty/)
+
+Kitty is a GPU-accelerated terminal emulator designed for keyboard-driven power users:
+
+- Rich graphics protocol for rendering images directly in the terminal
+- Built-in support for window layouts,
+  tabs,
+  and startup sessions
+- Configured via plain text configuration files
+- Highly scriptable from the command line
+- Available on Linux and macOS
+
+#### [iTerm2](https://iterm2.com/)
+
+iTerm2 is a mature,
+feature-packed terminal emulator built specifically for macOS:
+
+- Extensive GUI settings alongside scriptable configuration
+- Native split panes,
+  tab management,
+  and search features
+- Rich shell integration,
+  inline image support,
+  and paste history
+- Available exclusively on macOS
+
+#### [Windows Terminal](https://github.com/microsoft/terminal)
+
+Windows Terminal is a modern,
+high-performance terminal emulator developed by Microsoft:
+
+- GPU-accelerated text rendering engine (Direct3D-based AtlasEngine)
+- Tabbed interface supporting multiple shells simultaneously
+  (PowerShell,
+  Command Prompt,
+  Git Bash,
+  and WSL)
+- Customizable themes,
+  color schemes,
+  and keybindings via GUI or JSON
+- Available on Windows 10 and Windows 11
+
+### Comparison Summary
+
+| Terminal Emulator | Platforms | GPU Accelerated | Built-in Tabs/Splits | Configuration |
+|---|---|---|---|---|
+| [Ghostty](https://ghostty.org/) | macOS, Linux | Yes | Yes | Plain text |
+| [WezTerm](https://wezfurlong.org/wezterm/) | macOS, Linux, Windows | Yes | Yes | Lua |
+| [Alacritty](https://alacritty.org/) | macOS, Linux, Windows | Yes | No (use `tmux`) | TOML |
+| [Kitty](https://sw.kovidgoyal.net/kitty/) | macOS, Linux | Yes | Yes | Plain text |
+| [iTerm2](https://iterm2.com/) | macOS | Yes | Yes | GUI / Property list |
+| [Windows Terminal](https://github.com/microsoft/terminal) | Windows | Yes | Yes | JSON / GUI |
+
+: Modern terminal emulator comparison {#tbl-terminal-emulators}
