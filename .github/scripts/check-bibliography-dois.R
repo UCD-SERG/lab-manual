@@ -64,7 +64,7 @@ check_doi_field <- function(entry) {
 #' resolver hiccup (timeout, 5xx) does not fail the whole check (#358).
 #'
 #' @param doi DOI string
-#' @return List with is_valid, error, status_code, and transient
+#' @return List with is_valid, error, status_code, metadata, and transient
 #'   (TRUE when the failure looks like resolver unavailability rather than
 #'   a genuinely broken DOI)
 validate_doi_url <- function(doi) {
@@ -79,6 +79,7 @@ validate_doi_url <- function(doi) {
       is_valid = FALSE,
       error = sprintf("Invalid DOI format: %s", doi),
       status_code = NULL,
+      metadata = NULL,
       transient = FALSE
     ))
   }
@@ -87,8 +88,9 @@ validate_doi_url <- function(doi) {
   doi_url <- sprintf("https://doi.org/%s", doi_identifier)
 
   tryCatch({
-    # RETRY with exponential backoff; a 404/410 is definitive (the DOI
-    # itself is wrong), so it terminates the retries immediately.
+    # RETRY with exponential backoff on transient errors.
+    # Note: 404/403 landing pages from publisher redirects are handled
+    # below by consulting the CrossRef API before failing (#454).
     response <- RETRY(
       "GET",
       doi_url,
@@ -97,7 +99,6 @@ validate_doi_url <- function(doi) {
       times = 3,
       pause_base = 2,
       pause_cap = 16,
-      terminate_on = c(404, 410),
       quiet = TRUE
     )
 
@@ -108,20 +109,47 @@ validate_doi_url <- function(doi) {
         is_valid = TRUE,
         error = NULL,
         status_code = status_code,
+        metadata = NULL,
         transient = FALSE
       ))
     } else {
+      # If GET to publisher redirect returned a non-200 (e.g. 404/403 due to
+      # bot-blocking or rate limiting), verify if the DOI is registered in
+      # CrossRef before treating it as permanently dead (#454).
+      crossref_meta <- get_doi_metadata(doi_identifier)
+      if (!is.null(crossref_meta)) {
+        return(list(
+          is_valid = TRUE,
+          error = NULL,
+          status_code = status_code,
+          metadata = crossref_meta,
+          transient = FALSE
+        ))
+      }
+
       return(list(
         is_valid = FALSE,
         error = sprintf("DOI URL returned status %d", status_code),
         status_code = status_code,
-        # 404/410 mean the DOI is genuinely broken; any other non-200
-        # that survived the retries (5xx, 429, other 4xx from an
-        # overloaded or bot-blocking resolver) is treated as transient.
+        metadata = NULL,
+        # 404/410 mean the DOI is genuinely broken unless registered in CrossRef;
+        # any other non-200 is treated as transient.
         transient = !(status_code %in% c(404, 410))
       ))
     }
   }, error = function(e) {
+    # Check CrossRef metadata if URL fetch encountered an error
+    crossref_meta <- get_doi_metadata(doi_identifier)
+    if (!is.null(crossref_meta)) {
+      return(list(
+        is_valid = TRUE,
+        error = NULL,
+        status_code = NULL,
+        metadata = crossref_meta,
+        transient = FALSE
+      ))
+    }
+
     # A request that still errors after retries (timeout, connection
     # failure) means the resolver was unavailable, not that the DOI is
     # wrong.
@@ -129,6 +157,7 @@ validate_doi_url <- function(doi) {
       is_valid = FALSE,
       error = sprintf("Error accessing DOI: %s", e$message),
       status_code = NULL,
+      metadata = NULL,
       transient = TRUE
     ))
   })
@@ -149,6 +178,9 @@ get_doi_metadata <- function(doi) {
   doi_identifier <- doi_match
   api_url <- sprintf("https://api.crossref.org/works/%s", doi_identifier)
   
+  # Rate limiting for CrossRef API
+  Sys.sleep(0.5)
+
   tryCatch({
     response <- RETRY(
       "GET",
@@ -355,13 +387,24 @@ check_bibliography_file <- function(filepath, verify_metadata = TRUE) {
       cat(sprintf("    ❌ %s\n", error_msg))
       next
     } else {
-      cat(sprintf("    ✓ DOI URL is valid (status %d)\n", url_check$status_code))
+      if (!is.null(url_check$metadata)) {
+        cat(sprintf(
+          "    ✓ DOI verified via CrossRef metadata (publisher redirect returned %s)\n",
+          ifelse(is.null(url_check$status_code), "error", sprintf("status %d", url_check$status_code))
+        ))
+      } else {
+        cat(sprintf("    ✓ DOI URL is valid (status %d)\n", url_check$status_code))
+      }
     }
     
     # Check 3: Metadata matches (if enabled)
     if (verify_metadata) {
-      cat("    Fetching DOI metadata...\n")
-      metadata <- get_doi_metadata(doi)
+      if (!is.null(url_check$metadata)) {
+        metadata <- url_check$metadata
+      } else {
+        cat("    Fetching DOI metadata...\n")
+        metadata <- get_doi_metadata(doi)
+      }
       
       if (!is.null(metadata)) {
         comparison <- compare_metadata(entry, metadata)
@@ -375,9 +418,6 @@ check_bibliography_file <- function(filepath, verify_metadata = TRUE) {
       } else {
         cat("    ⚠️  Could not fetch metadata from CrossRef API\n")
       }
-      
-      # Small delay to be nice to the API
-      Sys.sleep(0.5)
     }
   }
   
