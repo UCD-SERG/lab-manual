@@ -2,7 +2,7 @@
 
 Our notes on working responsibly and effectively with AI coding assistants
 have moved to a dedicated site: **[Working with AI](https://morrison-lab.github.io/wai/)**
-(source: <https://github.com/d-morrison/wai>).
+(source: <https://github.com/morrison-lab/wai>).
 
 That site covers:
 []{#sec-ai-disclosure}[]{#sec-ai-journal-articles}
