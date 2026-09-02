@@ -1385,14 +1385,14 @@ Note
 <ul>
 <li><mark class="preview-element-added"><strong>Fast execution:</strong> Written in Rust to deliver near-instant linting feedback.</mark></li>
 <li><mark class="preview-element-added"><strong><code>{lintr}</code> compatibility:</strong> Implements many common <code>{lintr}</code> rules (such as unused variables, improper whitespace, indentation, object naming, and syntax checks).</mark></li>
-<li><mark class="preview-element-added"><strong>Flexible invocation:</strong> Can be run as a standalone CLI tool, via pre-commit hooks, or integrated into editors via its <a href="https://jarl.etiennebacher.com/lsp">Language Server Protocol (LSP)</a>.</mark></li>
+<li><mark class="preview-element-added"><strong>Flexible invocation:</strong> Can be run as a standalone CLI tool, via pre-commit hooks, or integrated into editors supporting its Language Server Protocol (LSP).</mark></li>
 <li><mark class="preview-element-added"><strong>Auto-fixing:</strong> Can automatically fix supported rule violations via <code>--fix</code>.</mark></li>
-<li><mark class="preview-element-added"><strong>Project configuration:</strong> Configured using a <a href="https://jarl.etiennebacher.com/configuration"><code>jarl.toml</code></a> file in the project root.</mark></li>
+<li><mark class="preview-element-added"><strong>Project configuration:</strong> Configured using a <code>jarl.toml</code> file in the project root.</mark></li>
 </ul>
 </section>
 <section id="basic-usage" class="level5" data-number="7.21.3.1.2">
 <h5 data-number="7.21.3.1.2" class="anchored" data-anchor-id="basic-usage"><span class="header-section-number">7.21.3.1.2</span> Basic Usage</h5>
-<p><mark class="preview-element-added">Run the standalone <a href="https://jarl.etiennebacher.com/cli">CLI</a>:</mark></p>
+<p><mark class="preview-element-added">Run the standalone CLI:</mark></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode sh code-with-copy"><mark class="preview-element-added"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lint all R files in the current project</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="ex">jarl</span> check .</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
