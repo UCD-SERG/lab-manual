@@ -123,6 +123,14 @@ The [UC Davis DataLab](https://github.com/ucdavisdatalab) provides extensive wor
 - Addressing power asymmetries in global health [@abimbola2022]
 - [Transforming Global Health Partnerships](https://link.springer.com/book/9783031537929)
 
+## Open Science and Reproducibility Initiatives
+
+- [Openscapes](https://openscapes.org/) -
+  an open science mentorship and community initiative founded by Dr. Julia Stewart Lowndes,
+  focused on helping research groups transition to data-intensive, reproducible,
+  and collaborative scientific practices through cohort-based Champions programs
+  and shared open tooling.
+
 ## Comparable Lab Manuals
 
 Exploring lab manuals from peer research groups helps us identify best practices,
