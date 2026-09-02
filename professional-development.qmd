@@ -36,6 +36,7 @@ We encourage lab members to present their work at conferences and seminars:
 - Discuss conference opportunities with PIs early
 - Submit abstracts with PI approval
 - Practice presentations in lab meeting before the conference
+- Prioritize clear visuals over text-dense slides following our [Show, Don't Tell](@sec-show-dont-tell) principle
 - Funding for conferences depends on availability and should be discussed in advance
 
 **Resources for effective presentations:**
