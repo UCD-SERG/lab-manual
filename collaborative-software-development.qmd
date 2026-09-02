@@ -15,6 +15,10 @@ and responding to review feedback.
 
 {{< include collaborative-software-development/_opening-pull-requests.qmd >}}
 
+### Stacked pull requests {#sec-stacked-pull-requests}
+
+{{< include collaborative-software-development/_stacked-pull-requests.qmd >}}
+
 ## Code Review {#sec-code-review}
 
 ### Reviewing pull requests {#sec-reviewing-pull-requests}

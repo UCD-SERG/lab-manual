@@ -2,7 +2,7 @@
 
 Our notes on working responsibly and effectively with AI coding assistants
 have moved to a dedicated site: **[Working with AI](https://morrison-lab.github.io/wai/)**
-(source: <https://github.com/d-morrison/wai>).
+(source: <https://github.com/Morrison-Lab/wai>).
 
 That site covers:
 []{#sec-ai-disclosure}[]{#sec-ai-journal-articles}
@@ -35,5 +35,9 @@ there.
 This chapter previously had section anchors like `#sec-ai-best-practices` or
 `#sec-ai-disclosure` for each subtopic. Those anchors still resolve on this
 page (so old bookmarks and links won't 404), but the content itself now
-lives on the linked wai pages above -- follow the matching bullet to find it.
+lives on the linked wai pages above --- follow the matching bullet to find it.
 :::
+
+## Institutional AI account access {#sec-institutional-ai-access}
+
+{{< include ai-tools/institutional-accounts.qmd >}}

@@ -6,31 +6,35 @@ Follow these code style guidelines for all R code:
 
 {{< include coding-style/general-principles.qmd >}}
 
+## Clean Code Principles {#sec-clean-code}
+
+{{< include coding-style/clean-code.qmd >}}
+
 ## Function Structure and Documentation {#sec-function-docs}
 
 {{< include coding-style/function-structure-and-documentation.qmd >}}
 
 ## Avoiding Deep Nesting {#sec-avoid-nesting}
 
-{{< include .ai-config/shared/coding/avoid-nesting.md >}}
+{{< include coding-style/avoid-nesting.qmd >}}
 
 ## Prefer Existing Packaged Functions {#sec-prefer-packaged-functions}
 
-{{< include .ai-config/shared/coding/prefer-packaged-functions.md >}}
+{{< include coding-style/prefer-packaged-functions.qmd >}}
 
 ## Prefer Per-Operation Grouping {#sec-per-operation-grouping}
 
-{{< include .ai-config/shared/coding/per-operation-grouping.md >}}
+{{< include coding-style/per-operation-grouping.qmd >}}
 
 ## Avoid Hard-Coding Data with an External Source of Truth {#sec-avoid-hardcoding-external-data}
 
-{{< include .ai-config/shared/coding/avoid-hardcoding-external-data.md >}}
+{{< include coding-style/avoid-hardcoding-external-data.qmd >}}
 
 ## Construct Complex Inputs Before the Call {#sec-construct-inputs}
 
 {{< include coding-style/construct-inputs.qmd >}}
 
-## Comments
+## Comments {#sec-comments}
 
 {{< include coding-style/comments.qmd >}}
 
@@ -56,7 +60,7 @@ Always use Quarto/markdown link syntax instead.
 
 {{< include coding-style/messaging-and-user-communication.qmd >}}
 
-## Package Code Practices
+## Package Code Practices {#sec-package-code-practices}
 
 {{< include coding-style/package-code-practices.qmd >}}
 
