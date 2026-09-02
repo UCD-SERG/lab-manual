@@ -12,6 +12,10 @@
 
 {{< include coding-style/_lintr-summary.qmd >}}
 
+#### [`{jarl}`](https://jarl.etiennebacher.com/)
+
+{{< include coding-style/_jarl-summary.qmd >}}
+
 ### Linting Changed Files vs. the Whole Project in CI
 
 {{< include coding-style/_lint-changed-files-in-ci.qmd >}} 
