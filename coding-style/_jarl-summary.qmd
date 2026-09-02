@@ -10,13 +10,13 @@ it performs static analysis significantly faster than standard R-based linters.
 - **`{lintr}` compatibility:** Implements many common `{lintr}` rules (such as unused variables, improper whitespace, indentation, object naming, and syntax checks).
 - **Flexible invocation:** Can be run as a standalone CLI tool,
   via pre-commit hooks,
-  or integrated into editors via its [Language Server Protocol (LSP)](https://jarl.etiennebacher.com/lsp).
+  or integrated into editors supporting its Language Server Protocol (LSP).
 - **Auto-fixing:** Can automatically fix supported rule violations via `--fix`.
-- **Project configuration:** Configured using a [`jarl.toml`](https://jarl.etiennebacher.com/configuration) file in the project root.
+- **Project configuration:** Configured using a `jarl.toml` file in the project root.
 
 ##### Basic Usage
 
-Run the standalone [CLI](https://jarl.etiennebacher.com/cli):
+Run the standalone CLI:
 
 ```sh
 # Lint all R files in the current project
