@@ -128,8 +128,11 @@ Don't bypass a failing check; fix the underlying issue.
 ## Content conventions (see copilot-instructions.md for the full set)
 
 - Decompose chapters with `{{< include <chapter>/<section>.qmd >}}`. Keep the
-  `##` heading in the main chapter file, a blank line, then the include. Prefix
-  partial/helper files with `_` so Quarto doesn't render them standalone.
+  `##` heading in the main chapter file, a blank line, then the include.
+  (In a `type: book` project, only chapters listed in `_quarto.yml` render standalone,
+  so chapter include fragments do not require an underscore prefix.
+  The `_` prefix has no functional effect in this book project;
+  follow the naming convention already in use in the chapter subdirectory you are editing).
 - Leave a blank line before every bullet or numbered list.
 - One sentence or phrase per source line (semantic line breaks) in prose,
   comments, and docstrings.
@@ -151,3 +154,7 @@ Don't bypass a failing check; fix the underlying issue.
   version-pinning and workflow choices.
 - Don't commit build outputs (`docs/`, `_freeze/`, rendered previews).
 - Render the affected pages and clear the CI checks before requesting review.
+- Automated code review is handled by `.github/workflows/claude-code-review.yml`
+  (triggered on pull request events and manual workflow dispatch).
+  Do not request `copilot-pull-request-reviewer[bot]` via API
+  as Copilot PR code review is not active on this repository.

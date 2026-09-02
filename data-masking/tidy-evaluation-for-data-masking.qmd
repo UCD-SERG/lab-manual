@@ -7,13 +7,17 @@ Using base R, which does not mask data, heavyrain must have quotes to be treated
 df[["outcome"]] = as.factor(df[["heavyrain"]])
 ```
 
-In a dplyr pipe,  heavyrain is being masked using tidy evaluation and will be correctly interpreted as a column because it is recognized as a data-variable:
+In a dplyr pipe, heavyrain is being masked using tidy evaluation and will be correctly interpreted as a column because it is recognized as a data-variable:
+
+```r
 df |> mutate(outcome = as.factor(heavyrain))
+```
 
 With modified data masking, heavyrain is a string that is coerced into being recognized as a data-variable:
+
 ```r
 var_name = "heavyrain"
-df |> mutate(outcome = as.factor(!!sym(var_name)) 
+df |> mutate(outcome = as.factor(!!sym(var_name)))
 ```
 
 While cleaner and often more convenient, the data frame that var_name is in is now "masked" and we refer to the vectors in the dataframe (data-variables) as though it is an object of its own (an environmental-variable). This is why we can just say the variable's name in the context of a pipe -- we treat it as though it's an object defined in our environment. Within normal scripts, this is usually fine, because the data frame is "held on to" in the pipe. However, it can cause some programming hurdles when writing functions that take strings of variable/column names as arguments. In the next section, we briefly describe how to troubleshoot common errors in data masking, as relevant to our lab's work.
