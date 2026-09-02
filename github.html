@@ -103,9 +103,9 @@ div.csl-indent {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3d497cff885f6278d37568d0ef0763f8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-1186ef8162c3c73f68abd6432a9e86e2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-3d497cff885f6278d37568d0ef0763f8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-ed7344add5f1663e434276306a2aa159.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-3686e73f2b10d5e0866cac69e1e072da.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-ed7344add5f1663e434276306a2aa159.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -559,7 +559,12 @@ div.csl-indent {
   <li><a href="#github-education-benefits" id="toc-github-education-benefits" class="nav-link" data-scroll-target="#github-education-benefits"><span class="header-section-number">11.2.1</span> GitHub Education Benefits</a></li>
   <li><a href="#github-copilot-access-for-uc-davis-members" id="toc-github-copilot-access-for-uc-davis-members" class="nav-link" data-scroll-target="#github-copilot-access-for-uc-davis-members"><span class="header-section-number">11.2.2</span> GitHub Copilot Access for UC Davis Members</a></li>
   </ul></li>
-  <li><a href="#github-desktop" id="toc-github-desktop" class="nav-link" data-scroll-target="#github-desktop"><span class="header-section-number">11.3</span> GitHub Desktop</a></li>
+  <li><a href="#sec-git-gui-clients" id="toc-sec-git-gui-clients" class="nav-link" data-scroll-target="#sec-git-gui-clients"><span class="header-section-number">11.3</span> Graphical Git Clients</a>
+  <ul class="collapse">
+  <li><a href="#sec-github-desktop" id="toc-sec-github-desktop" class="nav-link" data-scroll-target="#sec-github-desktop"><span class="header-section-number">11.3.1</span> GitHub Desktop</a></li>
+  <li><a href="#sec-gitkraken" id="toc-sec-gitkraken" class="nav-link" data-scroll-target="#sec-gitkraken"><span class="header-section-number">11.3.2</span> GitKraken</a></li>
+  <li><a href="#sec-gitkraken-kepler" id="toc-sec-gitkraken-kepler" class="nav-link" data-scroll-target="#sec-gitkraken-kepler"><span class="header-section-number">11.3.3</span> GitKraken Kepler</a></li>
+  </ul></li>
   <li><a href="#sec-cli-tools" id="toc-sec-cli-tools" class="nav-link" data-scroll-target="#sec-cli-tools"><span class="header-section-number">11.4</span> GitHub CLI and GitLab CLI</a>
   <ul class="collapse">
   <li><a href="#sec-install-gh" id="toc-sec-install-gh" class="nav-link" data-scroll-target="#sec-install-gh"><span class="header-section-number">11.4.1</span> Installing <code>gh</code></a></li>
@@ -697,9 +702,34 @@ Figure&nbsp;11.2: GitHub Copilot settings page showing organization options
 <p>For guidance on using GitHub Copilot effectively, see the <a href="https://morrison-lab.github.io/wai/chapters/coding-agents.html#sec-ai-best-practices">wai site’s “Best Practices for Safe and Successful Use” section</a>.</p>
 </section>
 </section>
-<section id="github-desktop" class="level2" data-number="11.3">
-<h2 data-number="11.3" class="anchored" data-anchor-id="github-desktop"><span class="header-section-number">11.3</span> GitHub Desktop</h2>
-<p>While knowing how to use Git on the command line will always be useful since the full power of Git and its customizations and flexibility is designed for use with the command line, GitHub also provides GitHub Desktop <span class="citation" data-cites="githubdesktop">(<a href="references.html#ref-githubdesktop" role="doc-biblioref"><span>“GitHub Desktop,”</span> n.d.</a>)</span> as a graphical interface to do basic git commands; you can do all of the basic functions of Git using this desktop app. Feel free to use this as an alternative to Git on the command line if you prefer.</p>
+<section id="sec-git-gui-clients" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="sec-git-gui-clients"><span class="header-section-number">11.3</span> Graphical Git Clients</h2>
+<p>While knowing how to use Git on the command line remains essential because it provides the full power, flexibility, and scriptability of Git, graphical Git clients offer visual representations of repository history, interactive branch visualization, and simplified merge conflict resolution.</p>
+<section id="sec-github-desktop" class="level3" data-number="11.3.1">
+<h3 data-number="11.3.1" class="anchored" data-anchor-id="sec-github-desktop"><span class="header-section-number">11.3.1</span> GitHub Desktop</h3>
+<p><a href="https://desktop.github.com/">GitHub Desktop</a> <span class="citation" data-cites="githubdesktop">(<a href="references.html#ref-githubdesktop" role="doc-biblioref"><span>“GitHub Desktop,”</span> n.d.</a>)</span> is a free, open-source graphical interface developed by GitHub. It simplifies basic Git workflows such as staging changes, creating commits, branching, and opening pull requests. It is an accessible starting point for beginners or for developers who prefer a visual interface for routine Git operations.</p>
+</section>
+<section id="sec-gitkraken" class="level3" data-number="11.3.2">
+<h3 data-number="11.3.2" class="anchored" data-anchor-id="sec-gitkraken"><span class="header-section-number">11.3.2</span> GitKraken</h3>
+<p><a href="https://gitkraken.com/">GitKraken</a> <span class="citation" data-cites="gitkraken">(<a href="references.html#ref-gitkraken" role="doc-biblioref"><span>“GitKraken,”</span> n.d.</a>)</span> is a cross-platform (macOS, Windows, Linux) Git client and developer experience platform. Key features include:</p>
+<ul>
+<li>An interactive, visual commit graph that simplifies navigating complex branch histories</li>
+<li>Drag-and-drop interactive rebasing and visual branch merging</li>
+<li>An in-app merge conflict editor with side-by-side diffing</li>
+<li>Multi-repository workspaces for tracking and managing multiple repositories together</li>
+<li>Integrations with major Git hosting providers (GitHub, GitLab, Bitbucket, and Azure DevOps) and issue trackers such as Jira</li>
+</ul>
+<p>Beyond the standalone GitKraken Desktop client, the GitKraken ecosystem includes the GitLens extension for Visual Studio Code and terminal CLI integrations.</p>
+</section>
+<section id="sec-gitkraken-kepler" class="level3" data-number="11.3.3">
+<h3 data-number="11.3.3" class="anchored" data-anchor-id="sec-gitkraken-kepler"><span class="header-section-number">11.3.3</span> GitKraken Kepler</h3>
+<p><a href="https://gitkraken.com/kepler">GitKraken Kepler</a> <span class="citation" data-cites="gitkraken-kepler">(<a href="references.html#ref-gitkraken-kepler" role="doc-biblioref"><span>“GitKraken Kepler,”</span> n.d.</a>)</span> is GitKraken’s agentic development environment and workspace intelligence platform. It is designed to coordinate and manage agent-driven development workflows, providing a unified interface to:</p>
+<ul>
+<li>Plan implementation work and orchestrate parallel AI coding agents at scale</li>
+<li>Generate context-aware commits, pull request summaries, and code reviews</li>
+<li>Inspect and review diffs and generated changes before shipping code</li>
+</ul>
+</section>
 </section>
 <section id="sec-cli-tools" class="level2" data-number="11.4">
 <h2 data-number="11.4" class="anchored" data-anchor-id="sec-cli-tools"><span class="header-section-number">11.4</span> GitHub CLI and GitLab CLI</h2>
@@ -1189,6 +1219,12 @@ docs/* linguist-documentation
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
 <div id="ref-githubdesktop" class="csl-entry" role="listitem">
 <span>“GitHub Desktop.”</span> n.d. GitHub. <a href="https://desktop.github.com/">https://desktop.github.com/</a>.
+</div>
+<div id="ref-gitkraken" class="csl-entry" role="listitem">
+<span>“GitKraken.”</span> n.d. GitKraken. <a href="https://gitkraken.com/">https://gitkraken.com/</a>.
+</div>
+<div id="ref-gitkraken-kepler" class="csl-entry" role="listitem">
+<span>“GitKraken Kepler: Mission Control for Agent-Driven Development.”</span> n.d. GitKraken. <a href="https://gitkraken.com/kepler">https://gitkraken.com/kepler</a>.
 </div>
 <div id="ref-githubaccountarchive" class="csl-entry" role="listitem">
 <span>“Requesting an Archive of Your Personal Account’s Data.”</span> n.d. GitHub. <a href="https://docs.github.com/en/get-started/archiving-your-github-personal-account-and-public-repositories/requesting-an-archive-of-your-personal-accounts-data">https://docs.github.com/en/get-started/archiving-your-github-personal-account-and-public-repositories/requesting-an-archive-of-your-personal-accounts-data</a>.
