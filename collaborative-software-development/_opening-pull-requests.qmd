@@ -191,3 +191,9 @@ Describe how this change has been tested.
 
 @username
 ```
+
+#### Stacked pull requests
+
+When implementing a sequence of interdependent features or multi-stage refactorings,
+stack pull requests to keep each change small and focused
+(see @sec-stacked-pull-requests for detailed stack creation, CI, and merging guidelines).
