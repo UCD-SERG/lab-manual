@@ -404,8 +404,6 @@ check_bibliography_file <- function(filepath, verify_metadata = TRUE) {
       } else {
         cat("    Fetching DOI metadata...\n")
         metadata <- get_doi_metadata(doi)
-        # Small delay to be nice to the API
-        Sys.sleep(0.5)
       }
       
       if (!is.null(metadata)) {
