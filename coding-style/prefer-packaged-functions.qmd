@@ -1,0 +1,32 @@
+Before writing a function, look for an existing packaged one that already does the job ---
+and prefer it over rolling your own:
+
+- Check, roughly in this order:
+  base R and the tidyverse / r-lib packages,
+  then a focused, well-maintained CRAN package,
+  then our own lab packages
+  (e.g. `{bcs}`, `{ettbc}`, `{gha}`, and the shared workflows there).
+  Packages can depend on each other, so reuse across our repos is fine.
+- Reach for the packaged version unless it is genuinely unfit ---
+  the wrong API, a heavy dependency for a one-liner, or it does not quite do what you need.
+
+Packaged functions are tested, documented, and maintained by other people;
+hand-rolling an equivalent duplicates that work, adds surface area to maintain,
+and risks subtle bugs the package already fixed.
+For example, use `withr::with_seed()` to set a seed and restore the RNG stream,
+rather than hand-rolling a `.Random.seed` save/restore.
+
+This is a default, not an absolute rule.
+A tiny, dependency-free helper can beat pulling in a package,
+and sometimes nothing fits ---
+but look first, and prefer the standard, well-known way over a bespoke one.
+
+One reason to skip a packaged function does not count:
+an environment your own change chose.
+"The script runs on a bare R, so `rlang` is unreachable" is not evidence that
+`rlang` does not fit when this change is what decided the script would run that way.
+Install the package, fix the CI job, and re-run the comparison.
+
+- **Do:** say whether a constraint ruling out a package is external or one of ours,
+  before letting it decide.
+- **Don't:** verify a self-imposed constraint and report that as having justified the hand-rolled version.

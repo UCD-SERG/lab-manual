@@ -112,7 +112,7 @@
 
 {{< include coding-practices/repeating-analyses.qmd >}}
 
-## Reviewing Code
+## Reviewing Code {#sec-reviewing-code}
 
 {{< include coding-practices/reviewing-code.qmd >}}
 

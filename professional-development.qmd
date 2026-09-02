@@ -25,6 +25,10 @@ Update your IDP at least annually and discuss it with your PI. Useful resources:
 - [myIDP - Individual Development Plan tool](https://myidp.sciencecareers.org/)
 - [NIH OITE Career Resources](https://www.training.nih.gov/career-services/)
 
+## Navigating the Hidden Curriculum {#sec-hidden-curriculum}
+
+{{< include professional-development/hidden-curriculum.qmd >}}
+
 ## Presentations and Conferences
 
 We encourage lab members to present their work at conferences and seminars:
@@ -32,6 +36,7 @@ We encourage lab members to present their work at conferences and seminars:
 - Discuss conference opportunities with PIs early
 - Submit abstracts with PI approval
 - Practice presentations in lab meeting before the conference
+- Prioritize clear visuals over text-dense slides following our [Show, Don't Tell](@sec-show-dont-tell) principle
 - Funding for conferences depends on availability and should be discussed in advance
 
 **Resources for effective presentations:**

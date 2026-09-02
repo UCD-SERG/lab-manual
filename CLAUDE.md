@@ -31,7 +31,6 @@ copilot-instructions.md wins. Read it before non-trivial content edits.
 - `inst/WORDLIST` - accepted spell-check terms
 - `lychee.toml` - link-checker config; `.lintr.R` - lint config
 - `.github/workflows/` - CI; `.github/scripts/` - R, Python, and shell helpers for preview/checks
-- `.ai-config/` - git submodule (`d-morrison/ai-config`); see below
 - `docs/`, `.quarto/`, `_freeze/`, `*_files/` - build outputs, git-ignored; do not edit
 
 ## Build, preview, render
@@ -46,55 +45,18 @@ Render a single chapter when verifying one page; render the full book before
 requesting review. CI publishes from `main` via `.github/workflows/publish.yml`;
 each PR gets a preview through `preview.yml`.
 
-The render depends on the `.ai-config` submodule (chapters transclude its
-`shared/` fragments), so populate it first:
-
-```bash
-git submodule update --init --recursive
-```
-
 R dependencies are managed with `renv` (`renv.lock`, activated by `.Rprofile`).
 Run `renv::restore()` once to install them before rendering or linting locally;
 CI does the same via `r-lib/actions/setup-renv`.
 
-## The `.ai-config` submodule
-
-`.ai-config` vendors `d-morrison/ai-config`. It supplies two things:
-
-- `shared/` guidance fragments that chapters transclude, e.g.
-  `{{< include .ai-config/shared/coding/avoid-nesting.md >}}` in `coding-style.qmd`
-  and the writing fragments in `writing.qmd`. The
-  fragment is the single source of truth, shared with ai-config's own CLAUDE.md.
-  (The PR-workflow fragments this repo used to transclude in `ai-tools.qmd`
-  moved along with that chapter's content to
-  [Morrison-Lab/wai](https://github.com/Morrison-Lab/wai).)
-- Reusable Claude skills, exposed as project skills through the symlink
-  `.claude/skills -> ../.ai-config/skills`.
-
-A plain clone leaves the submodule empty and the symlink dangling. The
-`bump-ai-config.yml` workflow advances the pointer to ai-config's `main` weekly
-and opens a PR. The build and `@claude` workflows check out with
-`submodules: recursive`.
-
-Note: this repo no longer has a top-level `shared/` directory --- the vendored
-`copilot-review-before-human.md` and `prompt-formats.md` files it held moved to
-[Morrison-Lab/wai](https://github.com/Morrison-Lab/wai) along with `ai-tools.qmd`'s
-content, which now vendors them directly.
-
 ## CI checks and how to satisfy them
 
 - Spellcheck (`check-spelling.yaml`, `insightsengineering/r-spellcheck-action`).
-  Add genuine technical terms and names to `inst/WORDLIST`, one per line.
-  Note: this job checks out **without** the `.ai-config` submodule,
-  so prose in `.ai-config/shared/**/*.md` fragments is not scanned.
-  Don't assume a word passes just because it already appears in the rendered manual
-  via a transcluded fragment (e.g. "inspectable" in `avoid-nesting.md`).
-  A new word you add to a file in this repo must be dictionary-valid
-  or listed in `inst/WORDLIST`.
-  Before pushing, grep any new proper noun, product name, or acronym you
-  introduced against `inst/WORDLIST` yourself --- catching it up front avoids
-  a spellcheck-fail-then-fix round trip per term (all-caps acronyms are not
-  reliably auto-skipped).
+  Validated against `inst/WORDLIST`.
+  Add genuine technical terms, proper nouns, pathogen names, and product names
+  introduced in the repository to `inst/WORDLIST`, one per line in alphabetical order.
+  All-caps acronyms are not reliably auto-skipped and may need an entry.
+  Grep any new proper noun or acronym against `inst/WORDLIST` before pushing.
 - Link check (`check-links.yml`, `lycheeverse/lychee-action`) over `.qmd`/`.md`/
   `.html`. Fix broken links; only add an exclusion to `lychee.toml` when a URL
   is valid for humans but trips the automated checker.
@@ -128,8 +90,11 @@ Don't bypass a failing check; fix the underlying issue.
 ## Content conventions (see copilot-instructions.md for the full set)
 
 - Decompose chapters with `{{< include <chapter>/<section>.qmd >}}`. Keep the
-  `##` heading in the main chapter file, a blank line, then the include. Prefix
-  partial/helper files with `_` so Quarto doesn't render them standalone.
+  `##` heading in the main chapter file, a blank line, then the include.
+  (In a `type: book` project, only chapters listed in `_quarto.yml` render standalone,
+  so chapter include fragments do not require an underscore prefix.
+  The `_` prefix has no functional effect in this book project;
+  follow the naming convention already in use in the chapter subdirectory you are editing).
 - Leave a blank line before every bullet or numbered list.
 - One sentence or phrase per source line (semantic line breaks) in prose,
   comments, and docstrings.
@@ -151,3 +116,7 @@ Don't bypass a failing check; fix the underlying issue.
   version-pinning and workflow choices.
 - Don't commit build outputs (`docs/`, `_freeze/`, rendered previews).
 - Render the affected pages and clear the CI checks before requesting review.
+- Automated code review is handled by `.github/workflows/claude-code-review.yml`
+  (triggered on pull request events and manual workflow dispatch).
+  Do not request `copilot-pull-request-reviewer[bot]` via API
+  as Copilot PR code review is not active on this repository.

@@ -131,6 +131,7 @@ A standard workflow when starting on a new project and contributing code looks l
 
 The lab's pull request roles,
 author and reviewer expectations,
+stacked pull requests (@sec-stacked-pull-requests),
 and review-response protocol
 are consolidated in @sec-collab-dev.
 This GitHub chapter focuses on Git mechanics
@@ -211,3 +212,7 @@ There is a standardized `.gitignore` for `R` which you [can download](https://gi
 ## Exporting Issue and Pull Request Conversations {#sec-export-conversations}
 
 {{< include github/_sec-export-conversations.qmd >}}
+
+## Removing Sensitive Data from a Repository {#sec-removing-sensitive-data}
+
+{{< include github/_sec-removing-sensitive-data.qmd >}}
