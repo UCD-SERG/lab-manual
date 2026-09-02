@@ -1924,7 +1924,7 @@
     "href": "ai-tools.html",
     "title": "19  Working with AI",
     "section": "",
-    "text": "19.1 Institutional AI Access\nOur notes on working responsibly and effectively with AI coding assistants have moved to a dedicated site: Working with AI (source: https://github.com/morrison-lab/wai).\nThat site covers:\nLab members who use AI tools must still adhere to the guidelines described there.\nUC Davis Health (UCDH) provides OpenAI / ChatGPT accounts for affiliated researchers and staff. Based on internal UCDH administrative rates (as of 2026):",
+    "text": "19.1 Institutional AI account access\nOur notes on working responsibly and effectively with AI coding assistants have moved to a dedicated site: Working with AI (source: https://github.com/Morrison-Lab/wai).\nThat site covers:\nLab members who use AI tools must still adhere to the guidelines described there.",
     "crumbs": [
       "<span class='chapter-number'>19</span>  <span class='chapter-title'>Working with AI</span>"
     ]
@@ -1934,7 +1934,7 @@
     "href": "ai-tools.html#sec-institutional-ai-access",
     "title": "19  Working with AI",
     "section": "",
-    "text": "1 credit is valued at approximately 4.5 cents ($0.045).\nWith a standard allocation of 2,000 credits per week, an active account receives the equivalent of approximately $360 per month in credits.\nLab members should monitor their weekly credit usage against their project workflows and consult lab leadership for updated rate schedules or quota increases.\n\n\n\n\n\n\n\nNoteLooking for a specific section that used to be here?\n\n\n\n\n\nThis chapter previously had section anchors like #sec-ai-best-practices or #sec-ai-disclosure for each subtopic. Those anchors still resolve on this page (so old bookmarks and links won’t 404), but the content itself now lives on the linked wai pages above – follow the matching bullet to find it.",
+    "text": "19.1.1 UC Davis Health OpenAI access\nFor lab members affiliated with UC Davis Health (UCDH) or conducting health sciences research, enterprise OpenAI accounts are provisioned through the UCDH IT Self-Service (ITSS) ServiceNow catalog.\nTo request an account:\n\nNavigate to the UCDH ServiceNow OpenAI catalog item.\nLog in with your UC Davis Health credentials and complete Duo two-factor authentication if prompted.\nFill out the request form with your department, contact details, and business or research justification.\nSubmit the request for processing by UCDH IT.\nOnce approved, follow the instructions in the confirmation email to join the UC Davis Health OpenAI workspace.\n\n\n\n19.1.2 UC Davis campus OpenAI access\nFor UC Davis campus affiliates, access to ChatGPT Edu is managed through Information and Educational Technology (IET) Aggie AI. See the IET Aggie AI ChatGPT Edu documentation for setup instructions and eligibility details.\n\n\n19.1.3 Data security and compliance\nWhen using institutional AI accounts:\n\nNever submit Protected Health Information (PHI), personally identifiable information (PII), or restricted research data to AI tools unless authorized under an approved protocol.\nFollow all institutional data handling policies and the lab’s guidelines on Working with AI.",
     "crumbs": [
       "<span class='chapter-number'>19</span>  <span class='chapter-title'>Working with AI</span>"
     ]
@@ -2492,7 +2492,7 @@
     "href": "appendix-document-metadata.html",
     "title": "Document Generation Metadata",
     "section": "",
-    "text": "This document was generated from the following git commit:\n\nBranch: main\nCommit: 16bba68\nFull commit hash: 16bba687f747ee7c4ac88ab8fd627f4cf8d002f7\nCommit date: 2026-09-02 14:40:16 -0700\n\nWhen transferring edits from this DOCX file back to the Quarto source files, use this commit information to set up the PR correctly and account for any commits that have been added since this document was generated.",
+    "text": "This document was generated from the following git commit:\n\nBranch: main\nCommit: a9f4dc1\nFull commit hash: a9f4dc1c3449ecb3769dc4eda320ee66cc36324b\nCommit date: 2026-09-02 14:58:39 -0700\n\nWhen transferring edits from this DOCX file back to the Quarto source files, use this commit information to set up the PR correctly and account for any commits that have been added since this document was generated.",
     "crumbs": [
       "Appendices",
       "Document Generation Metadata"
