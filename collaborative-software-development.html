@@ -68,9 +68,9 @@ div.csl-indent {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3d497cff885f6278d37568d0ef0763f8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-1186ef8162c3c73f68abd6432a9e86e2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-3d497cff885f6278d37568d0ef0763f8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-ed7344add5f1663e434276306a2aa159.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-3686e73f2b10d5e0866cac69e1e072da.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-ed7344add5f1663e434276306a2aa159.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -690,6 +690,18 @@ Describe how this change has been tested.
 ## Who should review the pull request?
 
 @username</code></pre>
+</section>
+<section id="manage-stacked-pull-requests" class="level4" data-number="12.1.2.8">
+<h4 data-number="12.1.2.8" class="anchored" data-anchor-id="manage-stacked-pull-requests"><span class="header-section-number">12.1.2.8</span> Manage stacked pull requests</h4>
+<p>When implementing a sequence of interdependent features or multi-stage refactorings, stacking pull requests allows you to keep each change small and focused without waiting for upstream PRs to merge before continuing development.</p>
+<p>To stack a PR:</p>
+<ol type="1">
+<li>Create your base feature branch from <code>main</code>.</li>
+<li>Create your second branch based on the first feature branch (rather than <code>main</code>).</li>
+<li>Open a pull request targeting the first feature branch as the base branch.</li>
+<li>When the base PR merges into <code>main</code>, GitHub automatically retargets the stacked PR to <code>main</code> (if GitHub closes the PR upon branch deletion instead of retargeting, re-open the PR, update the base branch to <code>main</code>, and rebase).</li>
+</ol>
+<p>For comprehensive GitHub workflow instructions and tips, see GitHub’s guide on <a href="https://docs.github.com/en/pull-requests/how-tos/stacked-pull-requests">Managing stacked pull requests</a>.</p>
 </section>
 </section>
 </section>
