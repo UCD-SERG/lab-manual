@@ -12,7 +12,7 @@ it performs static analysis significantly faster than standard R-based linters.
   via pre-commit hooks,
   or integrated into editors via its [editor integrations](https://jarl.etiennebacher.com/howto/editors).
 - **Auto-fixing:** Can automatically fix supported rule violations via `--fix`.
-- **Project configuration:** Configured using a `jarl.toml` file in the project root.
+- **Project configuration:** Configured using a [`jarl.toml`](https://jarl.etiennebacher.com/reference/config-file) file in the project root.
 
 ##### Basic Usage
 
