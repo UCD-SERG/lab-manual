@@ -35,7 +35,8 @@ these core tenets translate directly to scientific computing and R programming:
 ### Comments
 
 - **Explain why, not what**:
-  Code should explain what it does through clear naming and structure.
+  As detailed in @sec-comments,
+  code should explain what it does through expressive naming and clear structure.
   Use comments to document the reasoning,
   statistical rationale,
   edge cases,
@@ -56,6 +57,10 @@ these core tenets translate directly to scientific computing and R programming:
 ### Don't Repeat Yourself (DRY)
 
 - **Eliminate duplication**:
+  Originating in *The Pragmatic Programmer* [@hunt1999pragmatic] and emphasized in *Clean Code*,
+  the DRY principle states that every piece of knowledge must have a single,
+  unambiguous representation.
   Duplicate logic is a primary source of bugs and maintenance overhead.
   When the same transformation or calculation appears in multiple places,
-  extract it into a reusable helper function.
+  extract it into a reusable helper function
+  (see also @sec-package-code-practices).

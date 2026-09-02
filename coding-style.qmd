@@ -34,7 +34,7 @@ Follow these code style guidelines for all R code:
 
 {{< include coding-style/construct-inputs.qmd >}}
 
-## Comments
+## Comments {#sec-comments}
 
 {{< include coding-style/comments.qmd >}}
 
@@ -60,7 +60,7 @@ Always use Quarto/markdown link syntax instead.
 
 {{< include coding-style/messaging-and-user-communication.qmd >}}
 
-## Package Code Practices
+## Package Code Practices {#sec-package-code-practices}
 
 {{< include coding-style/package-code-practices.qmd >}}
 

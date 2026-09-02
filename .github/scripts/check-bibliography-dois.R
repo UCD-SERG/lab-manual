@@ -20,7 +20,8 @@ DOI_EXEMPT <- c(
   "wickham2023rpkgs",  # R Packages (O'Reilly, online: r-pkgs.org)
   "wickham2021shiny",  # Mastering Shiny (O'Reilly, online: mastering-shiny.org)
   "bryan2023happygit", # Happy Git and GitHub for the useR (self-published online)
-  "martin2008cleancode" # Clean Code (Prentice Hall, trade book with no DOI)
+  "martin2008cleancode", # Clean Code (Prentice Hall, trade book with no DOI)
+  "hunt1999pragmatic"   # The Pragmatic Programmer (Addison-Wesley, trade book with no DOI)
 )
 
 #' Parse BibTeX file and extract entries
