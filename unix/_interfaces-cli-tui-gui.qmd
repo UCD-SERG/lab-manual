@@ -35,32 +35,6 @@ Key characteristics:
 
 Common data science examples: `git`, `quarto`, `Rscript`, `curl`, and `gh`.
 
-### Graphical user interfaces (GUI)
-
-A Graphical User Interface (GUI) presents visual controls
-such as windows, buttons, menus, and dialog boxes,
-typically navigated using a mouse pointer and keyboard shortcuts.
-
-Key characteristics:
-
-- **High discoverability:**
-  Menus, toolbars, and visual forms expose available actions
-  without requiring users to memorize commands in advance.
-- **Rich multi-panel layouts:**
-  Enables simultaneous side-by-side inspection of plots,
-  data tables,
-  code editors,
-  and environment variables.
-- **Difficult to automate:**
-  Actions taken by clicking buttons cannot be trivially replayed in batch pipelines
-  unless the application provides an underlying scripting API.
-- **Remote latency and display requirements:**
-  Running a remote GUI requires an active graphical display server,
-  such as X11 forwarding (see @sec-x11-forwarding)
-  or a web-based portal like RStudio Server on Mercury.
-
-Common data science examples: RStudio, VS Code, GitHub Desktop, and GitKraken.
-
 ### Terminal user interfaces (TUI)
 
 A Terminal User Interface (TUI)---also called a text-based user interface---provides
@@ -87,6 +61,32 @@ Common developer examples: `lazygit` (interactive Git client),
 `htop` / `btop` (interactive system process monitors),
 `ranger` (terminal file manager),
 and `tig` (text-mode Git repository browser).
+
+### Graphical user interfaces (GUI)
+
+A Graphical User Interface (GUI) presents visual controls
+such as windows, buttons, menus, and dialog boxes,
+typically navigated using a mouse pointer and keyboard shortcuts.
+
+Key characteristics:
+
+- **High discoverability:**
+  Menus, toolbars, and visual forms expose available actions
+  without requiring users to memorize commands in advance.
+- **Rich multi-panel layouts:**
+  Enables simultaneous side-by-side inspection of plots,
+  data tables,
+  code editors,
+  and environment variables.
+- **Difficult to automate:**
+  Actions taken by clicking buttons cannot be trivially replayed in batch pipelines
+  unless the application provides an underlying scripting API.
+- **Remote latency and display requirements:**
+  Running a remote GUI requires an active graphical display server,
+  such as X11 forwarding (see @sec-x11-forwarding)
+  or a web-based portal like RStudio Server on Mercury.
+
+Common data science examples: RStudio, VS Code, GitHub Desktop, and GitKraken.
 
 ### Summary and trade-offs
 

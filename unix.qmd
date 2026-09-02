@@ -16,6 +16,9 @@ On the computer, there is a desktop with two folders, `folder1` and `folder2`, a
 
 ![Example desktop with folders and files](assets/images/ex-desktop.jpg){#fig-unix-desktop}
 
+## Terminal Emulators {#sec-terminal-emulators}
+
+{{< include unix/terminal-emulators.qmd >}}
 
 ## Syntax for both Mac/Windows
 When typing in directories or file names, quotes are necessary if the name includes spaces.
