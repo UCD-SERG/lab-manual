@@ -40,7 +40,5 @@ jarl check . --fix
 ### Lab Guidance
 
 Our lab uses [`{lintr}`](https://lintr.r-lib.org/) with our custom [`.lintr.R`](https://github.com/UCD-SERG/lab-manual/blob/main/.lintr.R) configuration and [`{lms}`](https://github.com/UCD-SERG/lab-manual/tree/main/lms) package as the primary standard for CI pipelines and package validation.
-However,
-`{jarl}` is an excellent choice for local pre-commit hooks and interactive developer workflows
-where instant lint feedback saves time on large repositories.
+However, `{jarl}` is an excellent choice for local pre-commit hooks and interactive developer workflows where instant lint feedback saves time on large repositories.
 :::
