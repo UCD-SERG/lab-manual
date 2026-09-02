@@ -491,8 +491,19 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-institutional-ai-access" id="toc-sec-institutional-ai-access" class="nav-link active" data-scroll-target="#sec-institutional-ai-access"><span class="header-section-number">19.1</span> Institutional AI account access</a>
+  <ul class="collapse">
+  <li><a href="#uc-davis-health-openai-access" id="toc-uc-davis-health-openai-access" class="nav-link" data-scroll-target="#uc-davis-health-openai-access"><span class="header-section-number">19.1.1</span> UC Davis Health OpenAI access</a></li>
+  <li><a href="#uc-davis-campus-openai-access" id="toc-uc-davis-campus-openai-access" class="nav-link" data-scroll-target="#uc-davis-campus-openai-access"><span class="header-section-number">19.1.2</span> UC Davis campus OpenAI access</a></li>
+  <li><a href="#data-security-and-compliance" id="toc-data-security-and-compliance" class="nav-link" data-scroll-target="#data-security-and-compliance"><span class="header-section-number">19.1.3</span> Data security and compliance</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/ai-tools.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/ai-tools.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -527,7 +538,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Our notes on working responsibly and effectively with AI coding assistants have moved to a dedicated site: <strong><a href="https://morrison-lab.github.io/wai/">Working with AI</a></strong> (source: <a href="https://github.com/d-morrison/wai" class="uri">https://github.com/d-morrison/wai</a>).</p>
+<p>Our notes on working responsibly and effectively with AI coding assistants have moved to a dedicated site: <strong><a href="https://morrison-lab.github.io/wai/">Working with AI</a></strong> (source: <a href="https://github.com/Morrison-Lab/wai" class="uri">https://github.com/Morrison-Lab/wai</a>).</p>
 <p>That site covers: <span id="sec-ai-disclosure"></span><span id="sec-ai-journal-articles"></span> <span id="sec-ai-language-model"></span><span id="sec-ai-harnesses"></span><span id="sec-ai-agent-implementation"></span> <span id="sec-ai-harness-construction"></span><span id="sec-ai-agent-program-kind"></span> <span id="sec-ai-harness-agent-relationship"></span><span id="sec-ai-addressing-failing-workflows"></span> <span id="sec-ai-benefits-hazards"></span><span id="sec-ai-best-practices"></span><span id="sec-ai-offline"></span> <span id="sec-ai-copilot-settings"></span><span id="sec-ai-agent-skills"></span><span id="sec-ai-claude-cloud-env"></span> <span id="sec-ai-when-to-use"></span><span id="sec-ai-claude-code-windows"></span><span id="sec-fully-clean"></span></p>
 <ul>
 <li><p><a href="https://morrison-lab.github.io/wai/chapters/ai-use-policies.html"><strong>Policies for Using AI</strong></a>: responsibility for validation, disclosure, attribution, and using AI for journal articles</p></li>
@@ -547,12 +558,39 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>This chapter previously had section anchors like <code>#sec-ai-best-practices</code> or <code>#sec-ai-disclosure</code> for each subtopic. Those anchors still resolve on this page (so old bookmarks and links won’t 404), but the content itself now lives on the linked wai pages above – follow the matching bullet to find it.</p>
+<p>This chapter previously had section anchors like <code>#sec-ai-best-practices</code> or <code>#sec-ai-disclosure</code> for each subtopic. Those anchors still resolve on this page (so old bookmarks and links won’t 404), but the content itself now lives on the linked wai pages above — follow the matching bullet to find it.</p>
 </div>
 </div>
 </div>
+<section id="sec-institutional-ai-access" class="level2" data-number="19.1">
+<h2 data-number="19.1" class="anchored" data-anchor-id="sec-institutional-ai-access"><span class="header-section-number">19.1</span> Institutional AI account access</h2>
+<section id="uc-davis-health-openai-access" class="level3" data-number="19.1.1">
+<h3 data-number="19.1.1" class="anchored" data-anchor-id="uc-davis-health-openai-access"><span class="header-section-number">19.1.1</span> UC Davis Health OpenAI access</h3>
+<p>For lab members affiliated with UC Davis Health (UCDH) or conducting health sciences research, enterprise OpenAI accounts are provisioned through the UCDH IT Self-Service (ITSS) ServiceNow catalog.</p>
+<p>To request an account:</p>
+<ol type="1">
+<li>Navigate to the <a href="https://ucdh.service-now.com/itss?id=sc_cat_item&amp;sys_id=738dd2ac93eba650c4dbb1847aba100d">UCDH ServiceNow OpenAI catalog item</a>.</li>
+<li>Log in with your UC Davis Health credentials and complete Duo two-factor authentication if prompted.</li>
+<li>Fill out the request form with your department, contact details, and business or research justification.</li>
+<li>Submit the request for processing by UCDH IT.</li>
+<li>Once approved, follow the instructions in the confirmation email to join the UC Davis Health OpenAI workspace.</li>
+</ol>
+</section>
+<section id="uc-davis-campus-openai-access" class="level3" data-number="19.1.2">
+<h3 data-number="19.1.2" class="anchored" data-anchor-id="uc-davis-campus-openai-access"><span class="header-section-number">19.1.2</span> UC Davis campus OpenAI access</h3>
+<p>For UC Davis campus affiliates, access to ChatGPT Edu is managed through Information and Educational Technology (IET) Aggie AI. See the <a href="https://iet.ucdavis.edu/aggie-ai/ai-tools/chatgpt-edu">IET Aggie AI ChatGPT Edu documentation</a> for setup instructions and eligibility details.</p>
+</section>
+<section id="data-security-and-compliance" class="level3" data-number="19.1.3">
+<h3 data-number="19.1.3" class="anchored" data-anchor-id="data-security-and-compliance"><span class="header-section-number">19.1.3</span> Data security and compliance</h3>
+<p>When using institutional AI accounts:</p>
+<ul>
+<li>Never submit Protected Health Information (PHI), personally identifiable information (PII), or restricted research data to AI tools unless authorized under an approved protocol.</li>
+<li>Follow all institutional data handling policies and the lab’s guidelines on <a href="https://morrison-lab.github.io/wai/chapters/ai-use-policies.html">Working with AI</a>.</li>
+</ul>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -985,4 +1023,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/ai-tools.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/ai-tools.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/ai-tools.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/ai-tools.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
