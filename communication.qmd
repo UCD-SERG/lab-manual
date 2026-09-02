@@ -20,6 +20,12 @@ even if a message arrives outside of those hours.
 - If you are unusually busy (e.g., preparing for QE/grant deadline, taking two exams) or on vacation please alert the team in advance so we can expect you not to respond at all / as quickly as usual.
 Please also set your status in Teams (e.g., it could say "On vacation") so we know not to expect to see you online. 
 - Please thread messages in Teams as much as possible.
+- When referencing a pull request,
+  issue,
+  commit,
+  or file,
+  always include a direct hyperlink to where you want your teammates to look
+  (see [Direct Hyperlinks in Internal Correspondence](@sec-direct-hyperlinks)).
 - Don't wait for meetings to ask questions.
   As soon as a question comes up,
   write it out in Teams.
@@ -29,12 +35,51 @@ Please also set your status in Teams (e.g., it could say "On vacation") so we kn
 ## Email
 
 - Use email for longer messages (>200 words) or messages that merit preservation. 
+- When discussing specific code,
+  pull requests,
+  or documents in emails,
+  include direct hyperlinks so recipients do not have to search for the relevant items
+  (see [Direct Hyperlinks in Internal Correspondence](@sec-direct-hyperlinks)).
 - Generally, strive to respond within a work day when you are directly addressed in an email.
   Again because we work across many timezones,
   this means responding within a work day in your own timezone.
   If you're on vacation, you're not expected to respond until the end of your first work day back
   (or possibly longer, if you've been out for a while and have a backlog).
 - As noted above, if you are unusually busy or on vacation please alert the team in advance and via an away message, so we can expect you not to respond at all / as quickly as usual.
+
+## Direct Hyperlinks in Internal Correspondence {#sec-direct-hyperlinks}
+
+In all internal correspondence---including Microsoft Teams messages,
+emails,
+GitHub issues,
+and pull request comments---always provide direct hyperlinks to the exact place you want your audience to look.
+
+- **Link directly to the target:**
+  Provide a direct,
+  clickable URL or markdown link to the specific pull request,
+  issue,
+  commit,
+  branch,
+  file,
+  or line number.
+- **Do not make your audience search:**
+  Avoid vague references (such as "I opened a PR",
+  "see the latest changes on my branch",
+  or "look at the helper script")
+  or bare unlinked identifiers (such as `#123` in emails or chat).
+  Your audience should never have to search repositories,
+  branches,
+  or directory trees to find what you are referring to.
+- **Use descriptive markdown links:**
+  Format links with descriptive anchor text
+  (for example,
+  `[PR #123: Add data validation](https://github.com/UCD-SERG/lab-manual/pull/123)`
+  or `[cleaning-script.R lines 45-60](https://github.com/...)`)
+  so collaborators know where the link leads before clicking.
+- **Reduce friction for collaborators:**
+  Direct links save everyone time,
+  prevent confusion about which branch or version is being discussed,
+  and allow reviewers to immediately jump into context with a single click.
 
 ## Managing Notifications and Work-Life Balance
 
