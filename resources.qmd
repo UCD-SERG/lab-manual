@@ -59,6 +59,14 @@ The [UC Davis DataLab](https://github.com/ucdavisdatalab) provides extensive wor
 - [Claude Code Workflows](https://code.claude.com/docs/en/workflows) -
   documentation on Claude Code's dynamic subagent orchestration feature for parallel codebase audits, migrations, and evaluations
 
+## Practical Computing and Command Line
+
+- [The Missing CS Quarter at UC Davis](https://missing.cs.ucdavis.edu/) - practical computing skills,
+  shell tools,
+  command-line workflows,
+  and version control
+  ([GitLab repository](https://gitlab.com/missing-cs-quarter-ucd/))
+
 ## Resources for Python
 
 - [UC Davis DataLab Python Basics Workshop](https://github.com/ucdavisdatalab/workshop_python_basics) - foundational Python programming
