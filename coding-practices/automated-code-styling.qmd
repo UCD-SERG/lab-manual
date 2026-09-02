@@ -50,7 +50,7 @@ You can customize linting rules by creating a `.lintr` file in your project root
 
 ### jarl (Fast Rust-Powered Linter)
 
-[`jarl`](https://jarl.etiennebacher.com/) is a high-performance R linter written in Rust by Etienne Bacher.
+[`{jarl}`](https://jarl.etiennebacher.com/) is a high-performance R linter written in Rust by Etienne Bacher.
 It checks many common style and syntax rules significantly faster than `{lintr}`,
 making it well-suited for fast pre-commit hooks and large codebases.
 

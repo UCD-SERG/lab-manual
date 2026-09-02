@@ -1,0 +1,66 @@
+Robert C. Martin's *Clean Code* [@martin2008cleancode] provides timeless principles
+for writing readable, maintainable, and robust software.
+While originally framed in object-oriented languages,
+these core tenets translate directly to scientific computing and R programming:
+
+### Meaningful Names
+
+- **Use intention-revealing names**:
+  A variable or function name should tell you why it exists,
+  what it does,
+  and how it is used (e.g., `days_since_exposure` rather than `d`).
+- **Make meaningful distinctions**:
+  Avoid arbitrary suffixes like `data1` and `data2` or `info` and `data`.
+- **Use pronounceable and searchable names**:
+  Names should be easily communicated in conversations and found via search tools.
+- **Functions should use verbs**:
+  Function names should describe actions (e.g., `calculate_incidence()`, `fit_model()`, `plot_titers()`).
+
+### Functions
+
+- **Small and focused**:
+  Functions should do one thing,
+  do it well,
+  and do it only.
+- **Single level of abstraction**:
+  Keep operations in a function at the same conceptual level
+  rather than mixing high-level orchestration with low-level data munging.
+- **Few arguments**:
+  Aim for 0 to 2 arguments where practical;
+  if a function requires many parameters,
+  group them into a configuration object or list.
+- **Avoid side effects**:
+  Functions should return values predictably without unexpectedly mutating global state.
+
+### Comments
+
+- **Explain why, not what**:
+  As detailed in @sec-comments,
+  code should explain what it does through expressive naming and clear structure.
+  Use comments to document the reasoning,
+  statistical rationale,
+  edge cases,
+  or scientific domain decisions behind an implementation.
+- **Do not leave commented-out code**:
+  Rely on version control (Git) to preserve historical code rather than leaving dead blocks in source files.
+
+### The Boy Scout Rule
+
+- **Leave the codebase cleaner than you found it**:
+  When editing a script or chapter,
+  make small improvements in stride---fix typos,
+  improve a variable name,
+  or break up a long expression.
+  Over time,
+  continuous incremental cleanup prevents code degradation.
+
+### Don't Repeat Yourself (DRY)
+
+- **Eliminate duplication**:
+  Originating in *The Pragmatic Programmer* [@hunt1999pragmatic] and emphasized in *Clean Code*,
+  the DRY principle states that every piece of knowledge must have a single,
+  unambiguous representation.
+  Duplicate logic is a primary source of bugs and maintenance overhead.
+  When the same transformation or calculation appears in multiple places,
+  extract it into a reusable helper function
+  (see also @sec-package-code-practices).

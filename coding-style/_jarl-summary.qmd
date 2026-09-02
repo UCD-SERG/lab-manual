@@ -1,8 +1,7 @@
-[`jarl`](https://jarl.etiennebacher.com/) (Just Another R Linter) is a fast,
-standalone R linter written in Rust by Etienne Bacher.
+[`{jarl}`](https://jarl.etiennebacher.com/) (Just Another R Linter) is a fast, standalone R linter written in Rust by Etienne Bacher.
 It is designed to provide high-speed static analysis for R code with minimal overhead.
 
-Because `jarl` is implemented in Rust,
+Because `{jarl}` is implemented in Rust,
 it performs static analysis significantly faster than standard R-based linters.
 
 ##### Key Features
@@ -11,7 +10,7 @@ it performs static analysis significantly faster than standard R-based linters.
 - **`{lintr}` compatibility:** Implements many common `{lintr}` rules (such as unused variables, improper whitespace, indentation, object naming, and syntax checks).
 - **Flexible invocation:** Can be run as a standalone CLI tool,
   via pre-commit hooks,
-  or within editor extensions (VS Code, Positron, Zed).
+  or integrated into editors supporting its Language Server Protocol (LSP).
 - **Auto-fixing:** Can automatically fix supported rule violations via `--fix`.
 - **Project configuration:** Configured using a `jarl.toml` file in the project root.
 
@@ -29,7 +28,7 @@ jarl check . --fix
 
 ##### Comparison with `{lintr}`
 
-| Feature | `{lintr}` | `jarl` |
+| Feature | `{lintr}` | `{jarl}` |
 |---|---|---|
 | **Implementation** | R | Rust |
 | **Execution speed** | Standard | Extremely fast (Rust binary) |
@@ -40,10 +39,8 @@ jarl check . --fix
 ::: {.callout-note}
 ### Lab Guidance
 
-Our lab uses [`{lintr}`](https://lintr.r-lib.org/) with our custom [`.lintr.R`](https://github.com/UCD-SERG/lab-manual/blob/main/.lintr.R) configuration
-and [`{lms}`](https://github.com/UCD-SERG/lab-manual/tree/main/lms) package
-as the primary standard for CI pipelines and package validation.
+Our lab uses [`{lintr}`](https://lintr.r-lib.org/) with our custom [`.lintr.R`](https://github.com/UCD-SERG/lab-manual/blob/main/.lintr.R) configuration and [`{lms}`](https://github.com/UCD-SERG/lab-manual/tree/main/lms) package as the primary standard for CI pipelines and package validation.
 However,
-`jarl` is an excellent choice for local pre-commit hooks and interactive developer workflows
+`{jarl}` is an excellent choice for local pre-commit hooks and interactive developer workflows
 where instant lint feedback saves time on large repositories.
 :::
