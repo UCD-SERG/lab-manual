@@ -1964,7 +1964,7 @@
     "href": "ai-tools.html",
     "title": "19  Working with AI",
     "section": "",
-    "text": "19.1 Institutional AI Access\nOur notes on working responsibly and effectively with AI coding assistants have moved to a dedicated site: Working with AI (source: https://github.com/d-morrison/wai).\nThat site covers:\nLab members who use AI tools must still adhere to the guidelines described there.\nUC Davis Health (UCDH) provides OpenAI / ChatGPT accounts for affiliated researchers and staff. Based on internal UCDH administrative rates (as of 2026):",
+    "text": "19.1 Institutional AI Access\nOur notes on working responsibly and effectively with AI coding assistants have moved to a dedicated site: Working with AI (source: https://github.com/morrison-lab/wai).\nThat site covers:\nLab members who use AI tools must still adhere to the guidelines described there.\nUC Davis Health (UCDH) provides OpenAI / ChatGPT accounts for affiliated researchers and staff. Based on internal UCDH administrative rates (as of 2026):",
     "crumbs": [
       "<span class='chapter-number'>19</span>  <span class='chapter-title'>Working with AI</span>"
     ]
@@ -2100,11 +2100,21 @@
     ]
   },
   {
+    "objectID": "resources.html#artificial-intelligence-coding-agents",
+    "href": "resources.html#artificial-intelligence-coding-agents",
+    "title": "21  Resources",
+    "section": "21.6 Artificial Intelligence & Coding Agents",
+    "text": "21.6 Artificial Intelligence & Coding Agents\n\nWorking with AI (wai) - our lab’s comprehensive guide to AI coding agents, harnesses, policies, and workflows\npi - minimalist, extensible AI agent toolkit providing a unified LLM API, interactive TUI, and terminal coding agent CLI",
+    "crumbs": [
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Resources</span>"
+    ]
+  },
+  {
     "objectID": "resources.html#scientific-figures",
     "href": "resources.html#scientific-figures",
     "title": "21  Resources",
-    "section": "21.6 Scientific figures",
-    "text": "21.6 Scientific figures\n\nTen Simple Rules for Better Figures (Rougier et al. 2014)\nTufte CSS - style HTML articles like Edward Tufte’s books and handouts, with sidenotes, typography, and tight integration of graphics with text",
+    "section": "21.7 Scientific figures",
+    "text": "21.7 Scientific figures\n\nTen Simple Rules for Better Figures (Rougier et al. 2014)\nTufte CSS - style HTML articles like Edward Tufte’s books and handouts, with sidenotes, typography, and tight integration of graphics with text",
     "crumbs": [
       "<span class='chapter-number'>21</span>  <span class='chapter-title'>Resources</span>"
     ]
@@ -2113,8 +2123,8 @@
     "objectID": "resources.html#writing",
     "href": "resources.html#writing",
     "title": "21  Resources",
-    "section": "21.7 Writing",
-    "text": "21.7 Writing\n\nUnpacking the Scientific Toolbox (Silbiger and Stubler 2019)\nICMJE Definition of authorship (International Committee of Medical Journal Editors, n.d.)\nComputational science: …why scientific programming does not compute (Merali and Giles 2010)\nThe Pathway to Publishing: A Guide to Quantitative Writing in the Health Sciences\nPrinciples of Scientific Writing - a handbook covering scientific writing principles including citations and evidence, word choice, and conciseness\nSecret, actionable writing tips",
+    "section": "21.8 Writing",
+    "text": "21.8 Writing\n\nUnpacking the Scientific Toolbox (Silbiger and Stubler 2019)\nICMJE Definition of authorship (International Committee of Medical Journal Editors, n.d.)\nComputational science: …why scientific programming does not compute (Merali and Giles 2010)\nThe Pathway to Publishing: A Guide to Quantitative Writing in the Health Sciences\nPrinciples of Scientific Writing - a handbook covering scientific writing principles including citations and evidence, word choice, and conciseness\nSecret, actionable writing tips",
     "crumbs": [
       "<span class='chapter-number'>21</span>  <span class='chapter-title'>Resources</span>"
     ]
@@ -2123,8 +2133,8 @@
     "objectID": "resources.html#presentations",
     "href": "resources.html#presentations",
     "title": "21  Resources",
-    "section": "21.8 Presentations",
-    "text": "21.8 Presentations\n\nHow to tell a compelling story in scientific presentations (Van Noorden 2021)\nHow to give a killer narratively-driven scientific talk\nHow to make a better poster\nHow to make an even better poster",
+    "section": "21.9 Presentations",
+    "text": "21.9 Presentations\n\nHow to tell a compelling story in scientific presentations (Van Noorden 2021)\nHow to give a killer narratively-driven scientific talk\nHow to make a better poster\nHow to make an even better poster",
     "crumbs": [
       "<span class='chapter-number'>21</span>  <span class='chapter-title'>Resources</span>"
     ]
@@ -2133,8 +2143,8 @@
     "objectID": "resources.html#professional-advice",
     "href": "resources.html#professional-advice",
     "title": "21  Resources",
-    "section": "21.9 Professional advice",
-    "text": "21.9 Professional advice\n\nProfessional advice, especially for your first job\nTeam Public Health Substack",
+    "section": "21.10 Professional advice",
+    "text": "21.10 Professional advice\n\nProfessional advice, especially for your first job\nTeam Public Health Substack",
     "crumbs": [
       "<span class='chapter-number'>21</span>  <span class='chapter-title'>Resources</span>"
     ]
@@ -2143,8 +2153,8 @@
     "objectID": "resources.html#funding",
     "href": "resources.html#funding",
     "title": "21  Resources",
-    "section": "21.10 Funding",
-    "text": "21.10 Funding\n\nBuilding Your Funding Train\nNIH Grant Writing Resources",
+    "section": "21.11 Funding",
+    "text": "21.11 Funding\n\nBuilding Your Funding Train\nNIH Grant Writing Resources",
     "crumbs": [
       "<span class='chapter-number'>21</span>  <span class='chapter-title'>Resources</span>"
     ]
@@ -2153,8 +2163,8 @@
     "objectID": "resources.html#ethics-and-global-health-research",
     "href": "resources.html#ethics-and-global-health-research",
     "title": "21  Resources",
-    "section": "21.11 Ethics and global health research",
-    "text": "21.11 Ethics and global health research\n\nGlobal Code of Conduct For Research in Resource-Poor Settings\nAddressing power asymmetries in global health (Abimbola et al. 2022)\nTransforming Global Health Partnerships\n\n\n\n\n\nAbimbola, Seye, Sheena Asthana, Cristina Montenegro, et al. 2022. “Addressing Power Asymmetries in Global Health: Imperatives in the Wake of the COVID-19 Pandemic.” PLOS Global Public Health 2 (10). https://doi.org/10.1371/journal.pgph.0002269.\n\n\nBryan, Jennifer. 2023. Happy Git and GitHub for the useR. https://happygitwithr.com/.\n\n\nFay, Colin, Sébastien Rochette, Vincent Guyader, and Cervan Girard. 2021. Engineering Production-Grade Shiny Apps. Chapman; Hall/CRC. https://doi.org/10.1201/9781003029878.\n\n\nInternational Committee of Medical Journal Editors. n.d. “Defining the Role of Authors and Contributors.” ICMJE. http://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html.\n\n\nMerali, Zeeya, and Jim Giles. 2010. “Computational Science: Error ... Why Scientific Programming Does Not Compute.” Nature 467: 775–77. https://doi.org/10.1038/467775a.\n\n\nRougier, Nicolas P., Michael Droettboom, and Philip E. Bourne. 2014. “Ten Simple Rules for Better Figures.” PLOS Computational Biology 10 (9). https://doi.org/10.1371/journal.pcbi.1003833.\n\n\nSilbiger, Nyssa J., and Ariel D. Stubler. 2019. “Unpacking the Scientific Toolbox: Five Skills for the Modern Scientist.” Nature, ahead of print. https://doi.org/10.1038/d41586-019-02918-5.\n\n\nVan Noorden, Richard. 2021. “Scientists and Science Communicators Swap Tips on How to Tell Compelling Stories.” Nature, ahead of print. https://doi.org/10.1038/d41586-021-03603-2.\n\n\nWickham, Hadley. 2019. Advanced r. 2nd ed. Chapman; Hall/CRC. https://doi.org/10.1201/9781351201315.\n\n\nWickham, Hadley. 2021. Mastering Shiny. O’Reilly Media. https://mastering-shiny.org/.\n\n\nWickham, Hadley, and Jennifer Bryan. 2023. R Packages. 2nd ed. O’Reilly Media. https://r-pkgs.org/.\n\n\nWickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund. 2023. R for Data Science. 2nd ed. O’Reilly Media. https://r4ds.hadley.nz/.",
+    "section": "21.12 Ethics and global health research",
+    "text": "21.12 Ethics and global health research\n\nGlobal Code of Conduct For Research in Resource-Poor Settings\nAddressing power asymmetries in global health (Abimbola et al. 2022)\nTransforming Global Health Partnerships\n\n\n\n\n\nAbimbola, Seye, Sheena Asthana, Cristina Montenegro, et al. 2022. “Addressing Power Asymmetries in Global Health: Imperatives in the Wake of the COVID-19 Pandemic.” PLOS Global Public Health 2 (10). https://doi.org/10.1371/journal.pgph.0002269.\n\n\nBryan, Jennifer. 2023. Happy Git and GitHub for the useR. https://happygitwithr.com/.\n\n\nFay, Colin, Sébastien Rochette, Vincent Guyader, and Cervan Girard. 2021. Engineering Production-Grade Shiny Apps. Chapman; Hall/CRC. https://doi.org/10.1201/9781003029878.\n\n\nInternational Committee of Medical Journal Editors. n.d. “Defining the Role of Authors and Contributors.” ICMJE. http://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html.\n\n\nMerali, Zeeya, and Jim Giles. 2010. “Computational Science: Error ... Why Scientific Programming Does Not Compute.” Nature 467: 775–77. https://doi.org/10.1038/467775a.\n\n\nRougier, Nicolas P., Michael Droettboom, and Philip E. Bourne. 2014. “Ten Simple Rules for Better Figures.” PLOS Computational Biology 10 (9). https://doi.org/10.1371/journal.pcbi.1003833.\n\n\nSilbiger, Nyssa J., and Ariel D. Stubler. 2019. “Unpacking the Scientific Toolbox: Five Skills for the Modern Scientist.” Nature, ahead of print. https://doi.org/10.1038/d41586-019-02918-5.\n\n\nVan Noorden, Richard. 2021. “Scientists and Science Communicators Swap Tips on How to Tell Compelling Stories.” Nature, ahead of print. https://doi.org/10.1038/d41586-021-03603-2.\n\n\nWickham, Hadley. 2019. Advanced r. 2nd ed. Chapman; Hall/CRC. https://doi.org/10.1201/9781351201315.\n\n\nWickham, Hadley. 2021. Mastering Shiny. O’Reilly Media. https://mastering-shiny.org/.\n\n\nWickham, Hadley, and Jennifer Bryan. 2023. R Packages. 2nd ed. O’Reilly Media. https://r-pkgs.org/.\n\n\nWickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund. 2023. R for Data Science. 2nd ed. O’Reilly Media. https://r4ds.hadley.nz/.",
     "crumbs": [
       "<span class='chapter-number'>21</span>  <span class='chapter-title'>Resources</span>"
     ]
@@ -2482,7 +2492,7 @@
     "href": "appendix-document-metadata.html",
     "title": "Document Generation Metadata",
     "section": "",
-    "text": "This document was generated from the following git commit:\n\nBranch: main\nCommit: ed1d2d0\nFull commit hash: ed1d2d09adff222f59566876d738c9ea94085c8e\nCommit date: 2026-09-02 10:31:34 -0700\n\nWhen transferring edits from this DOCX file back to the Quarto source files, use this commit information to set up the PR correctly and account for any commits that have been added since this document was generated.",
+    "text": "This document was generated from the following git commit:\n\nBranch: main\nCommit: 9c8dc86\nFull commit hash: 9c8dc862309e734f61f97e4491856745ea689633\nCommit date: 2026-09-02 11:07:16 -0700\n\nWhen transferring edits from this DOCX file back to the Quarto source files, use this commit information to set up the PR correctly and account for any commits that have been added since this document was generated.",
     "crumbs": [
       "Appendices",
       "Document Generation Metadata"
