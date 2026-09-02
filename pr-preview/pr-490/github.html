@@ -106,6 +106,9 @@ div.csl-indent {
 <link href="site_libs/bootstrap/bootstrap-3d497cff885f6278d37568d0ef0763f8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-1186ef8162c3c73f68abd6432a9e86e2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="site_libs/bootstrap/bootstrap-3d497cff885f6278d37568d0ef0763f8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -590,6 +593,10 @@ div.csl-indent {
   <li><a href="#sec-export-migration" id="toc-sec-export-migration" class="nav-link" data-scroll-target="#sec-export-migration"><span class="header-section-number">11.15.5</span> Whole-repository archives</a></li>
   <li><a href="#sec-export-cautions" id="toc-sec-export-cautions" class="nav-link" data-scroll-target="#sec-export-cautions"><span class="header-section-number">11.15.6</span> Practical cautions</a></li>
   </ul></li>
+  <li><a href="#sec-removing-sensitive-data" id="toc-sec-removing-sensitive-data" class="nav-link" data-scroll-target="#sec-removing-sensitive-data"><span class="header-section-number">11.16</span> Removing Sensitive Data from a Repository</a>
+  <ul class="collapse">
+  <li><a href="#immediate-steps" id="toc-immediate-steps" class="nav-link" data-scroll-target="#immediate-steps"><span class="header-section-number">11.16.1</span> Immediate steps</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/github.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/github.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -678,7 +685,7 @@ div.csl-indent {
 <div id="fig-request-copilot-seat" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-request-copilot-seat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="assets/images/github-copilot-invitation-email.png" class="img-fluid figure-img">
+<a href="assets/images/github-copilot-invitation-email.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;11.1: UC Davis GitHub invitation with Copilot seat option"><img src="assets/images/github-copilot-invitation-email.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-request-copilot-seat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;11.1: UC Davis GitHub invitation with Copilot seat option
@@ -698,7 +705,7 @@ Figure&nbsp;11.1: UC Davis GitHub invitation with Copilot seat option
 <div id="fig-copilot-settings-org-options" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-copilot-settings-org-options-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="assets/images/github-copilot-settings-page.png" class="img-fluid figure-img">
+<a href="assets/images/github-copilot-settings-page.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;11.2: GitHub Copilot settings page showing organization options"><img src="assets/images/github-copilot-settings-page.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-copilot-settings-org-options-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;11.2: GitHub Copilot settings page showing organization options
@@ -1183,6 +1190,22 @@ docs/* linguist-documentation
 <li><strong>Deleted and edited content is gone.</strong> An export captures the current state, not the edit history of a comment.</li>
 </ul>
 <p>Whatever route you take, commit the export to a repository or deposit it somewhere durable. An archive that lives only on the laptop of whoever ran the script has not solved the problem it was made to solve.</p>
+</section>
+</section>
+<section id="sec-removing-sensitive-data" class="level2" data-number="11.16">
+<h2 data-number="11.16" class="anchored" data-anchor-id="sec-removing-sensitive-data"><span class="header-section-number">11.16</span> Removing Sensitive Data from a Repository</h2>
+<p>Accidentally committing credentials, API tokens, private keys, or sensitive patient data to a Git repository is a security incident that requires prompt remediation.</p>
+<p>Simply deleting the file in a subsequent commit does not remove it from Git history, as the data remains accessible in earlier commit snapshots.</p>
+<section id="immediate-steps" class="level3" data-number="11.16.1">
+<h3 data-number="11.16.1" class="anchored" data-anchor-id="immediate-steps"><span class="header-section-number">11.16.1</span> Immediate steps</h3>
+<ol type="1">
+<li><strong>Rotate exposed secrets:</strong> Immediately revoke and rotate any leaked passwords, API keys, or tokens. Assume that any credential pushed to a remote repository has been compromised.</li>
+<li><strong>Purge the file from history:</strong> Use tools like <a href="https://github.com/newren/git-filter-repo"><code>git-filter-repo</code></a> (officially recommended by Git and GitHub) or <a href="https://rtyley.github.io/bfg-repo-cleaner/">BFG Repo-Cleaner</a> to scrub the sensitive file from all commits, branches, and tags in your local repository.</li>
+<li><strong>Force-push rewritten branches:</strong> Coordinate with your team before force-pushing rewritten branches with lease (<code>--force-with-lease --force-if-includes</code>) to GitHub.</li>
+<li><strong>Notify all collaborators:</strong> All collaborators must discard old clones or rebase (never merge) their local branches onto the rewritten history; merging an old branch will re-introduce the sensitive data into the repository.</li>
+<li><strong>Contact GitHub Support to clear cached views (optional):</strong> Cached commits and pull request views on GitHub may retain sensitive objects until they are garbage-collected; contact GitHub Support if you need cached views purged immediately.</li>
+</ol>
+<p>For detailed step-by-step instructions, see GitHub’s guide on <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository">Removing sensitive data from a repository</a>.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
@@ -1632,8 +1655,40 @@ Robertson, Seth. n.d. <span>“On Undoing, Fixing, or Removing Commits in Git.�
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/github.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/github.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/github.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/github.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+</body></html>
