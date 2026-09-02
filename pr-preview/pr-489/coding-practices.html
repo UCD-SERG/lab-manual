@@ -656,6 +656,7 @@ window.Quarto = {
   <li><a href="#sections-and-subsections" id="toc-sections-and-subsections" class="nav-link" data-scroll-target="#sections-and-subsections"><span class="header-section-number">6.14.5</span> Sections and subsections</a></li>
   <li><a href="#code-folding" id="toc-code-folding" class="nav-link" data-scroll-target="#code-folding"><span class="header-section-number">6.14.6</span> Code folding</a></li>
   <li><a href="#comments-in-the-body-of-your-code" id="toc-comments-in-the-body-of-your-code" class="nav-link" data-scroll-target="#comments-in-the-body-of-your-code"><span class="header-section-number">6.14.7</span> Comments in the body of your code</a></li>
+  <li><a href="#sec-variable-labels" id="toc-sec-variable-labels" class="nav-link" data-scroll-target="#sec-variable-labels"><span class="header-section-number">6.14.8</span> Variable labels</a></li>
   </ul></li>
   <li><a href="#sec-adrs" id="toc-sec-adrs" class="nav-link" data-scroll-target="#sec-adrs"><span class="header-section-number">6.15</span> Design Documentation with ADRs</a>
   <ul class="collapse">
@@ -744,6 +745,7 @@ window.Quarto = {
   <li><a href="#sec-lobstr" id="toc-sec-lobstr" class="nav-link" data-scroll-target="#sec-lobstr"><span class="header-section-number">6.35.7</span> <code>{lobstr}</code></a></li>
   <li><a href="#sec-crayon" id="toc-sec-crayon" class="nav-link" data-scroll-target="#sec-crayon"><span class="header-section-number">6.35.8</span> <code>{crayon}</code></a></li>
   <li><a href="#sec-styler" id="toc-sec-styler" class="nav-link" data-scroll-target="#sec-styler"><span class="header-section-number">6.35.9</span> <code>{styler}</code></a></li>
+  <li><a href="#sec-rex" id="toc-sec-rex" class="nav-link" data-scroll-target="#sec-rex"><span class="header-section-number">6.35.10</span> <code>{rex}</code></a></li>
   </ul></li>
   <li><a href="#github-actions" id="toc-github-actions" class="nav-link" data-scroll-target="#github-actions"><span class="header-section-number">6.36</span> GitHub Actions</a>
   <ul class="collapse">
@@ -2265,6 +2267,23 @@ Note
 <h3 data-number="6.14.7" class="anchored" data-anchor-id="comments-in-the-body-of-your-code"><span class="header-section-number">6.14.7</span> Comments in the body of your code</h3>
 <p>Commenting your code is an important part of reproducibility and helps document your code for the future. When things change or break, you’ll be thankful for comments. There’s no need to comment excessively or unnecessarily, but a comment describing what a large or complex chunk of code does is always helpful. See <a href="https://github.com/kmishra9/Flu-Absenteeism/blob/master/Master's%20Thesis%20-%20Spatial%20Epidemiology%20of%20Influenza/1b%20-%20Map-Management.R">this file</a> for an example of how to comment your code and notice that comments are always in the form of:</p>
 <pre><code># This is a comment -- first letter is capitalized and spaced away from the pound sign</code></pre>
+</section>
+<section id="sec-variable-labels" class="level3" data-number="6.14.8">
+<h3 data-number="6.14.8" class="anchored" data-anchor-id="sec-variable-labels"><span class="header-section-number">6.14.8</span> Variable labels</h3>
+<p>Add a descriptive label as soon as you create each key variable (any variable that might end up in a figure, table, or output model). The label should explicitly include measurement units where applicable.</p>
+<p>In R, prefer the <a href="https://larmarange.github.io/labelled/"><code>{labelled}</code></a> package over raw base R attributes. <code>{labelled}</code> integrates seamlessly with tidyverse pipelines:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(labelled)</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Set variable labels directly in a pipeline</span></span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span></span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(</span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">blood_lead_level =</span> <span class="st">"Blood lead concentration (ug/dL)"</span>,</span>
+<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">pm25_exposure =</span> <span class="st">"Annual average PM2.5 exposure (ug/m^3)"</span></span>
+<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-10"><a href="#cb58-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Set a single variable label using var_label()</span></span>
+<span id="cb58-11"><a href="#cb58-11" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(data<span class="sc">$</span>blood_lead_level) <span class="ot">&lt;-</span> <span class="st">"Blood lead concentration (ug/dL)"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Labeling key variables at the point of creation ensures that downstream table generators (such as <a href="https://www.danieldsjoberg.com/gtsummary/"><code>{gtsummary}</code></a>) can automatically display human-readable descriptions and correct units without error-prone manual relabeling.</p>
 <p><em>See also <a href="coding-style.html#sec-function-docs" class="quarto-xref"><span>Section 7.2</span></a> for function documentation style guidelines.</em></p>
 </section>
 </section>
@@ -2664,6 +2683,16 @@ drop_auth(rdstoken = "/path/to/tokenfile.RDS")
 <section id="sec-styler" class="level3" data-number="6.35.9">
 <h3 data-number="6.35.9" class="anchored" data-anchor-id="sec-styler"><span class="header-section-number">6.35.9</span> <a href="https://styler.r-lib.org/"><code>{styler}</code></a></h3>
 <p><a href="https://styler.r-lib.org/"><code>{styler}</code></a> formats R code according to the tidyverse style guide. It provides an RStudio add-in and functions for styling individual files, packages, or projects. See <a href="#sec-auto-styling" class="quarto-xref"><span>Section 6.13</span></a> for more details.</p>
+</section>
+<section id="sec-rex" class="level3" data-number="6.35.10">
+<h3 data-number="6.35.10" class="anchored" data-anchor-id="sec-rex"><span class="header-section-number">6.35.10</span> <a href="https://rex.r-lib.org/"><code>{rex}</code></a></h3>
+<p><a href="https://rex.r-lib.org/"><code>{rex}</code></a> provides a human-readable interface for constructing regular expressions in R without having to write complex, unreadable regex strings manually. It allows regular expressions to be composed modularly using functions such as <code>rex()</code>, <code>character_class()</code>, <code>capture()</code>, and <code>some_of()</code>.</p>
+<p>When using <code>{rex}</code> inside another R package:</p>
+<ul>
+<li>Add <code>rex</code> to <code>Imports</code> in the package <code>DESCRIPTION</code>.</li>
+<li>Call <code>rex::register_shortcuts(pkgname)</code> in <code>.onLoad()</code> to prevent <code>R CMD check</code> NOTEs regarding undefined global variables when using <code>rex</code> shortcuts in package code.</li>
+<li>Call <code>rex::rex(...)</code> to compile expressions into regular expression strings for use with functions like <code>grepl()</code>, <code>gsub()</code>, or <a href="https://stringr.tidyverse.org/"><code>{stringr}</code></a> functions.</li>
+</ul>
 </section>
 </section>
 <section id="github-actions" class="level2" data-number="6.36">
