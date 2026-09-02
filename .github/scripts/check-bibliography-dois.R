@@ -176,6 +176,9 @@ get_doi_metadata <- function(doi) {
   doi_identifier <- doi_match
   api_url <- sprintf("https://api.crossref.org/works/%s", doi_identifier)
   
+  # Rate limiting for CrossRef API
+  Sys.sleep(0.5)
+
   tryCatch({
     response <- RETRY(
       "GET",
