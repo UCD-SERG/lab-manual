@@ -255,6 +255,18 @@ It provides an RStudio add-in and functions for styling individual files,
 packages, or projects.
 See @sec-auto-styling for more details.
 
+### [`{rex}`](https://rex.r-lib.org/) {#sec-rex}
+
+[`{rex}`](https://rex.r-lib.org/) provides a human-readable interface for constructing regular expressions in R
+without having to write complex, unreadable regex strings manually.
+It allows regular expressions to be composed modularly using functions such as `rex()`, `character_class()`, `capture()`, and `some_of()`.
+
+When using `{rex}` inside another R package:
+
+- Add `rex` to `Imports` in the package `DESCRIPTION`.
+- Call `rex::register_shortcuts(pkgname)` in `.onLoad()` to prevent `R CMD check` NOTEs regarding undefined global variables when using `rex` shortcuts in package code.
+- Call `rex::rex(...)` to compile expressions into regular expression strings for use with functions like `grepl()`, `gsub()`, or [`{stringr}`](https://stringr.tidyverse.org/) functions.
+
 ## GitHub Actions
 
 ### [actions](https://github.com/r-lib/actions) {#sec-r-lib-actions}
