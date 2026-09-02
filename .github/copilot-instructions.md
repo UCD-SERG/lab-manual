@@ -393,7 +393,7 @@ The heading must be in the main file, followed by a blank line, then the include
 - Subdirectory: `##-chapter-name/` (matches the main file name)
 - Include files: `descriptive-section-name.qmd` using kebab-case
 - Use descriptive names that clearly indicate the content
-- Leading underscore `_` is optional (in this book project, Quarto only renders chapters listed in `_quarto.yml` standalone)
+- Leading underscore `_` is optional (in this book project, Quarto only renders chapters listed in `_quarto.yml` standalone; follow the naming convention already in use in the chapter subdirectory you are editing)
 
 #### Git History Benefits Example
 
