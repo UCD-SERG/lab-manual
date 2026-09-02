@@ -1,0 +1,40 @@
+The adage "show, don't tell" (or "a picture is worth a thousand words")
+is a foundational communication principle across research manuscripts,
+technical documentation,
+and oral presentations.
+
+Whenever conveying complex concepts,
+workflows,
+data patterns,
+or system architectures,
+favor concrete visual evidence and direct demonstration over dense verbal exposition.
+
+### In scientific manuscripts and reports
+
+- **Lead with clear figures and tables:**
+  Instead of describing multi-step analytical pipelines or multi-group comparative trends in lengthy paragraphs,
+  present the data in a well-labeled plot or diagram.
+- **Support visuals with interpretation, not repetition:**
+  Use the narrative text to guide the reader through the key insights and takeaways of a figure
+  rather than exhaustively listing every number already legible in a table or plot.
+- **Use diagrams for conceptual models:**
+  Directed acyclic graphs (DAGs),
+  CONSORT flow diagrams,
+  and workflow schematics clarify methodological structures much faster than textual descriptions alone.
+
+### In conference and lab presentations
+
+- **Minimize text on slides:**
+  Audiences cannot read dense bulleted paragraphs while simultaneously listening to a speaker.
+  Replace text-heavy slides with clean visuals,
+  diagrams,
+  or summary charts.
+- **Highlight key focal points:**
+  Use callouts,
+  annotations,
+  or sequential visual reveals to focus attention on the specific relationship being discussed.
+- **Demonstrate rather than assert:**
+  When presenting software tools or analytical pipelines,
+  show live output,
+  reproducible code snippets,
+  or screenshots rather than merely listing features.

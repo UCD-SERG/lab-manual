@@ -1,4 +1,4 @@
-# Culture and conduct
+# Culture and conduct {#sec-culture-and-conduct}
 
 ## Lab culture
 
@@ -10,7 +10,7 @@ We encourage students / staff of all experience levels to respectfully share the
 
 UCD-SeRG recognizes the importance of and is committed to cultivating a culture of diversity, equity, and inclusion. This means being a safe, supportive, and anti-racist environment in which students from diverse backgrounds are equally and inclusively supported in their education and training. Diversity takes many forms, and includes, but is not limited to, differences in race, ethnicity, gender, sexuality, socioeconomic status, religion, disability, and political affiliation. 
 
-## Protecting human subjects
+## Protecting human subjects {#sec-protecting-human-subjects}
 
 All lab members must complete [CITI Human Subjects Biomedical Group 1](https://research.ucdavis.edu/policiescompliance/irb-admin/education/) training and share their certificate with the lab leadership. Team members will be added to relevant Institutional Review Board protocols prior to their start date to ensure they have permission to work with identifiable datasets. 
 

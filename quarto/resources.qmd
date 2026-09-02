@@ -22,6 +22,11 @@
 - [Coatless Tutorials Quarto Book Template](https://github.com/coatless-tutorials/quarto-book-template) - another frequently-used template with helpful examples
 - [DataLab Quarto Template](https://github.com/d-rug/datalab_template_quarto) - template from the UC Davis DataLab and Davis R Users Group
 
+### Extensions and Tools
+
+- [`include-code-files`](https://github.com/quarto-ext/include-code-files) -
+  Quarto filter extension to include external code files directly inside fenced code blocks with syntax highlighting and line slicing
+
 ### Development Roadmap and Known Issues
 
 The Quarto development team uses GitHub "epics" to track collections of

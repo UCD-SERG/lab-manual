@@ -76,6 +76,7 @@ format:
     toc: true
     number-sections: true
     embed-resources: false
+    lightbox: auto
     filters:
       - _extensions/preview-highlight.lua
   pdf:
