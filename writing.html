@@ -68,9 +68,9 @@ div.csl-indent {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3d497cff885f6278d37568d0ef0763f8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-1186ef8162c3c73f68abd6432a9e86e2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-3d497cff885f6278d37568d0ef0763f8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-ed7344add5f1663e434276306a2aa159.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-3686e73f2b10d5e0866cac69e1e072da.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-ed7344add5f1663e434276306a2aa159.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -561,11 +561,11 @@ div.csl-indent {
 </section>
 <section id="sec-plain-prose" class="level2" data-number="23.2">
 <h2 data-number="23.2" class="anchored" data-anchor-id="sec-plain-prose"><span class="header-section-number">23.2</span> Plain, Direct Prose</h2>
-<p>Write user-facing prose in a plain, direct style. This applies to everything a reader sees — PR/issue/commit text, docs, READMEs, code comments, release notes, emails, and chat replies. Apply it by default to your own drafts, not just when asked.</p>
+<p>Write user-facing prose in a plain, direct style. This applies to everything a reader sees — pull request, issue, and commit text, docs, READMEs, code comments, release notes, and messages.</p>
 <p>The guide of record is the lab’s <strong>Principles of Scientific Writing (PSW)</strong>: <a href="https://morrison-lab.github.io/psw/" class="uri">https://morrison-lab.github.io/psw/</a>. The rules below operationalize it. When PSW and this guidance disagree, PSW wins.</p>
 <ul>
 <li><strong>Limit dependent (subordinate) clauses.</strong> One per sentence is plenty. When two or more stack up, split the sentence.</li>
-<li><strong>Cut low-content filler and jargon.</strong> Delete words that add no information (“it’s worth noting”, “in order to” -&gt; “to”, “due to the fact that” -&gt; “because”).</li>
+<li><strong>Cut low-content filler and jargon.</strong> Delete words that add no information (“it is worth noting”, “in order to” -&gt; “to”, “due to the fact that” -&gt; “because”).</li>
 <li><strong>Prefer plain (Anglish) words over Latin-derived ones</strong> (PSW, “Word choice”). “before”, not “prior to”; “needed”, not “necessary”; “use”, not “utilize”. A heuristic, not a purity rule.</li>
 <li><strong>Prefer simple declarative sentences and active voice.</strong> Subject, verb, point. Name the actor, then the action.</li>
 <li><strong>Join independent clauses with coordinating conjunctions</strong> (and, but, so, or) over subordinate constructions. Prefer “X is fast, but Y is correct” over “While X is fast, Y is correct.”</li>
@@ -575,14 +575,14 @@ div.csl-indent {
 <section id="sec-ai-tells" class="level2" data-number="23.3">
 <h2 data-number="23.3" class="anchored" data-anchor-id="sec-ai-tells"><span class="header-section-number">23.3</span> Scanning for AI Tells</h2>
 <p>When AI tools draft or edit prose, the result often carries telltale signs of machine authorship.</p>
-<p>Write plainly up front, then <strong>scan the draft for AI tells before sending</strong>. Before presenting non-trivial prose — PR/issue descriptions, commit bodies, README/doc/vignette text, or a long answer meant as deliverable prose — self-check it and cut the tells. Apply the same catalog <strong>when reviewing someone else’s prose</strong> too — a PR/MR diff, a doc change, any non-code narrative content — not just your own drafts; flag each tell found rather than waving a plausible-sounding paragraph through unchecked. Watch for:</p>
+<p>Write plainly up front, then scan the draft for AI tells before sending. Before presenting non-trivial prose — pull request and issue descriptions, commit bodies, README, doc, and vignette text, or long answers — self-check it and cut the tells. Apply the same catalog when reviewing someone else’s prose too:</p>
 <ul>
-<li><strong>Overused vocabulary:</strong> actionable (→ “to act on”), delve, leverage, utilize, tapestry, testament, realm, robust, seamless, holistic, nuanced, multifaceted, pivotal, crucial, “in today’s fast-paced world”, “stands as a testament to”.</li>
-<li><strong>Rhetorical reflexes:</strong> the “it’s not just X, it’s Y” antithesis (the biggest tell), mechanical rule-of-three lists, signposting filler (“it’s worth noting that”, “importantly”), hedging stacks, hollow “in conclusion” restatements.</li>
-<li><strong>Structural/typographic:</strong> em-dash overuse as a default connector, bold-leading <code>**Term:**</code> bullets applied mechanically, emoji section headers, conspicuously uniform paragraph rhythm.</li>
+<li><strong>Overused vocabulary:</strong> actionable (-&gt; “to act on”), delve, leverage, utilize, tapestry, testament, realm, robust, seamless, holistic, nuanced, multifaceted, pivotal, crucial, “in today’s fast-paced world”, “stands as a testament to”.</li>
+<li><strong>Rhetorical reflexes:</strong> the “it’s not just X, it’s Y” antithesis (the biggest tell), mechanical rule-of-three lists, signposting filler (“it is worth noting that”, “importantly”), hedging stacks, hollow “in conclusion” restatements.</li>
+<li><strong>Structural and typographic:</strong> em-dash overuse as a default connector, bold-leading <code>**Term:**</code> bullets applied mechanically, emoji section headers, conspicuously uniform paragraph rhythm.</li>
 <li><strong>Tonal:</strong> promotional register, reflexive both-sidesing, vague universals with no concrete names or numbers.</li>
 </ul>
-<p>De-slop — cut the filler and the reflexes — but <strong>don’t</strong> ban words outright or sand the text into a flat, voiceless register. Any single tell is innocent; clustering and mechanical repetition are the signal. Code, terse status lines, and short conversational replies are exempt.</p>
+<p>De-slop — cut the filler and the reflexes — but do not ban words outright or sand the text into a flat, voiceless register. Any single tell is innocent; clustering and mechanical repetition are the signal. Code, terse status lines, and short conversational replies are exempt.</p>
 </section>
 <section id="sec-show-dont-tell" class="level2" data-number="23.4">
 <h2 data-number="23.4" class="anchored" data-anchor-id="sec-show-dont-tell"><span class="header-section-number">23.4</span> Show, Don’t Tell</h2>
