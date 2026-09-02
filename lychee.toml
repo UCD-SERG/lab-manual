@@ -18,7 +18,8 @@ user_agent = "Mozilla/5.0 (compatible; Lychee/0.15; +https://github.com/lycheeve
 # Service Unavailable but are otherwise valid
 # 415 is added because some sites (e.g. equator-network.org) reject lychee's request
 # media type but serve fine for humans
-accept = [200, 201, 202, 203, 204, 206, 301, 302, 303, 307, 308, 403, 415, 429, 502, 503]
+# 405 is added because some servers (e.g. niaid.nih.gov) reject HEAD requests but serve GET requests fine
+accept = [200, 201, 202, 203, 204, 206, 301, 302, 303, 307, 308, 403, 405, 415, 429, 502, 503]
 
 # Timeout per request (in seconds)
 timeout = 20
@@ -39,10 +40,16 @@ exclude = [
   "https://support.posit.co/.*",
   # Stanford grant writing page times out in CI
   "https://grantwriting.stanford.edu/.*",
+  # ScienceCareers myIDP uses cookie-detection redirect loop that trips automated link checkers
+  "https://myidp\\.sciencecareers\\.org/.*",
   # GNU Screen homepage is valid for humans but reliably times out in CI
   "https://www\\.gnu\\.org/software/screen.*",
+  # X2Go wiki reliably times out in CI
+  "https://wiki\\.x2go\\.org/.*",
   # chmod tutorial is valid for humans but timed out in CI
   "https://www\\.chriswrites\\.com/how-to-change-file-permissions-using-the-terminal/.*",
+  # How-To Geek throws HTTP/2 protocol errors on automated checkers
+  "https://www\\.howtogeek\\.com/.*",
   # Publisher cookie-consent interstitials: resolve fine for humans but
   # intermittently fail automated checks because the redirect chain ends on a
   # "cookies_not_supported" page (same rationale as the timeouts above).

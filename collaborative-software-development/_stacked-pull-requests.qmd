@@ -71,10 +71,10 @@ GitHub provides native platform support
 for managing and merging pull request stacks:
 
 - **Rules and CI enforcement**:
-  Branch protection rules (such as required approvals)
-  and GitHub Actions CI checks configured for `main`
-  run on and apply to every pull request in the stack,
-  ensuring consistent quality across every layer.
+  Branch protection rules and CI checks apply to each pull request
+  based on its own base branch configuration,
+  allowing the same quality gates to be enforced across all layers
+  when rules are configured consistently.
 - **Bottom-up merging**:
   Pull requests merge in sequential order from the bottom up.
   When the bottom-most pull request merges into the default branch,
