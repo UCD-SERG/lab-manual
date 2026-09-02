@@ -131,6 +131,7 @@ A standard workflow when starting on a new project and contributing code looks l
 
 The lab's pull request roles,
 author and reviewer expectations,
+stacked pull requests (@sec-stacked-pull-requests),
 and review-response protocol
 are consolidated in @sec-collab-dev.
 This GitHub chapter focuses on Git mechanics

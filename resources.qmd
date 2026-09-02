@@ -54,6 +54,7 @@ The [UC Davis DataLab](https://github.com/ucdavisdatalab) provides extensive wor
   Skills exercises, learning pathways, and credentials
 - [GitHub Skills: Introduction to GitHub](https://github.com/skills/introduction-to-github)
 - [UC Davis DataLab Git Sandbox](https://github.com/ucdavisdatalab/sandbox_git) - hands-on Git practice repository
+- [About stacked pull requests](https://docs.github.com/en/pull-requests/get-started/about-stacked-prs) - official GitHub guide to breaking large changes into stacked pull request chains
 - [Claude Code on the Web: Auto-Fix Pull Requests](https://code.claude.com/docs/en/claude-code-on-the-web#auto-fix-pull-requests) -
   documentation on Claude Code's web interface for automatically investigating and resolving check failures and review comments on pull requests
 - [Claude Code Workflows](https://code.claude.com/docs/en/workflows) -

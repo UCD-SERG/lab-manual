@@ -1,0 +1,86 @@
+#### What are stacked pull requests?
+
+A stacked pull request workflow breaks large or multi-step code changes
+into a linear chain (or stack) of smaller,
+dependent pull requests [@githubstackedprs].
+
+In a pull request stack:
+
+- The bottom pull request targets the repository default branch
+  (typically `main`).
+- Each subsequent pull request targets the branch
+  of the pull request immediately below it.
+
+```text
+ +-- feat/frontend-ui    -> PR #3 (base: feat/api-endpoints) [top]
+ +-- feat/api-endpoints  -> PR #2 (base: feat/auth-layer)
+ +-- feat/auth-layer     -> PR #1 (base: main)               [bottom]
+main (default base branch)
+```
+
+Each pull request in the stack isolates the diff for its specific layer,
+displaying only the changes between its branch
+and the layer beneath it.
+
+#### Benefits of stacked pull requests
+
+Stacked pull requests provide several practical advantages:
+
+- **Unblocked continuous development**:
+  You can begin and publish changes that build upon unmerged work
+  without waiting for prior pull requests to complete review.
+- **Smaller, faster code reviews**:
+  Reviewers inspect focused,
+  self-contained layers instead of reviewing an overwhelming monolithic diff.
+- **Structured dependency tracking**:
+  Foundational changes (such as database schemas,
+  data structures,
+  or shared utilities)
+  live in lower layers,
+  while dependent features (such as API endpoints,
+  UI components,
+  or specialized tests)
+  live in higher layers.
+- **Agent and high-volume compatibility**:
+  When coding agents or developers generate modular increments in sequence,
+  stacks give each logical task a dedicated,
+  isolated pull request.
+
+#### Core principles for stacking
+
+When using stacked pull requests,
+follow these guidelines:
+
+- **Enforce dependency order**:
+  If code in one layer relies on code from another,
+  that dependency must reside in the same branch
+  or a lower branch in the stack.
+- **Split at distinct concerns**:
+  Start a new layer whenever shifting to a different concern
+  (for example,
+  moving from core data models to analysis scripts,
+  or from backend logic to documentation and tests)
+  or when the diff exceeds reviewable size guidelines.
+- **Keep branches in the same repository**:
+  Stacked pull requests require all branches to live in the same repository;
+  cross-fork stacks are not supported.
+
+#### CI, rebasing, and merging
+
+GitHub provides native platform support
+for managing and merging pull request stacks:
+
+- **Rules and CI enforcement**:
+  Branch protection rules (such as required approvals)
+  and GitHub Actions CI checks configured for the base branch (`main`)
+  automatically apply to every pull request in the stack,
+  ensuring consistent quality across every layer.
+- **Bottom-up merging**:
+  Pull requests merge in sequential order from the bottom up.
+  When the bottom-most pull request merges into the default branch,
+  the pull request immediately above it automatically retargets onto the default branch
+  so each successive layer can land cleanly in turn.
+- **Automated cascading rebases**:
+  When lower branches in a stack are updated with review revisions or upstream changes,
+  rebasing or merging those updates propagates them upward through dependent branches
+  to keep the entire stack in sync and resolve conflicts early.
