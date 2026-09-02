@@ -22,6 +22,9 @@ stringr::str_replace()     # instead of gsub()
 # Date/time operations
 lubridate::NA_Date_        # instead of as.Date(NA)
 
+# Variable labels
+labelled::set_variable_labels() # instead of attr(x, "label") <- ...
+
 # Session info
 sessioninfo::session_info() # instead of sessionInfo()
 ```
