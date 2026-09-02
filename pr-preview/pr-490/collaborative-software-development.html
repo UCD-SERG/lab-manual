@@ -569,7 +569,7 @@ div.csl-indent {
 
 <div class="preview-combined-banner">
     <p style="margin: 0;">
-        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~9% of content changed).
+        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~11% of content changed).
         <br>
         <strong>🎨 Highlighting Legend:</strong> 
         <mark class="preview-text-changed" style="display: inline; padding: 1px 3px;">Modified text (yellow)</mark> shows changed words/phrases with tooltips of original text, 
@@ -714,17 +714,9 @@ Describe how this change has been tested.
 
 @username</code></pre>
 </section>
-<section id="manage-stacked-pull-requests" class="level4" data-number="12.1.2.8">
-<h4 data-number="12.1.2.8" class="anchored" data-anchor-id="manage-stacked-pull-requests"><span class="header-section-number">12.1.2.8</span> Manage stacked pull requests</h4>
-<p>When implementing a sequence of interdependent features or multi-stage refactorings, stacking pull requests allows you to keep each change small and focused without waiting for upstream PRs to merge before continuing development.</p>
-<p>To stack a PR:</p>
-<ol type="1">
-<li>Create your base feature branch from <code>main</code>.</li>
-<li>Create your second branch based on the first feature branch (rather than <code>main</code>).</li>
-<li>Open a pull request targeting the first feature branch as the base branch.</li>
-<li>When the base PR merges into <code>main</code>, GitHub automatically retargets the stacked PR to <code>main</code> (if GitHub closes the PR upon branch deletion instead of retargeting, re-open the PR, update the base branch to <code>main</code>, and rebase).</li>
-</ol>
-<p>For comprehensive GitHub workflow instructions and tips, see GitHub’s guide on <a href="https://docs.github.com/en/pull-requests/how-tos/stacked-pull-requests">Managing stacked pull requests</a>.</p>
+<section id="stacked-pull-requests" class="level4" data-number="12.1.2.8">
+<h4 data-number="12.1.2.8" class="anchored" data-anchor-id="stacked-pull-requests"><span class="header-section-number">12.1.2.8</span> Stacked pull requests</h4>
+<p>When implementing a sequence of interdependent features or multi-stage refactorings, <mark class="preview-text-changed">stack</mark> pull requests to keep each change small and focused <mark class="preview-text-changed">(see</mark> <a href="#sec-stacked-pull-requests" class="quarto-xref"><span><mark class="preview-text-changed">Section 12.1.3</mark></span></a> for <mark class="preview-text-changed">detailed</mark> <mark class="preview-text-changed">stack</mark> <mark class="preview-text-changed">creation,</mark> <mark class="preview-text-changed">CI,</mark> <mark class="preview-text-changed">and</mark> <mark class="preview-text-changed">merging</mark> <mark class="preview-text-changed">guidelines).</mark></p>
 </section>
 </section>
 <section id="sec-stacked-pull-requests" class="level3" data-number="12.1.3">
@@ -766,7 +758,7 @@ main (default base branch)</code></pre>
 <h4 data-number="12.1.3.4" class="anchored" data-anchor-id="ci-rebasing-and-merging"><span class="header-section-number"><mark class="preview-text-changed">12.1.3.4</mark></span> <mark class="preview-text-changed">CI,</mark> <mark class="preview-text-changed">rebasing,</mark> <mark class="preview-text-changed">and</mark> <mark class="preview-text-changed">merging</mark></h4>
 <p><mark class="preview-text-changed">GitHub</mark> <mark class="preview-text-changed">provides</mark> <mark class="preview-text-changed">native platform support for managing</mark> and <mark class="preview-text-changed">merging</mark> pull <mark class="preview-text-changed">request stacks:</mark></p>
 <ul>
-<li><mark class="preview-element-added"><strong>Rules and CI enforcement</strong>: Branch protection rules and CI checks apply to each pull request based on its own base branch configuration, allowing the same quality gates to be enforced across all layers when rules are configured consistently.</mark></li>
+<li><mark class="preview-element-added"><strong>Rules and CI enforcement</strong>: Branch protection rules (such as required approvals) and GitHub Actions CI checks configured for the base branch (<code>main</code>) automatically apply to every pull request in the stack, ensuring consistent quality across every layer.</mark></li>
 <li><mark class="preview-element-added"><strong>Bottom-up merging</strong>: Pull requests merge in sequential order from the bottom up. When the bottom-most pull request merges into the default branch, the pull request immediately above it automatically retargets onto the default branch so each successive layer can land cleanly in turn.</mark></li>
 <li><mark class="preview-element-added"><strong>Automated cascading rebases</strong>: When lower branches in a stack are updated with review revisions or upstream changes, rebasing or merging those updates propagates them upward through dependent branches to keep the entire stack in sync and resolve conflicts early.</mark></li>
 </ul>
