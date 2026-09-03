@@ -58,7 +58,7 @@ The [UC Davis DataLab](https://github.com/ucdavisdatalab) provides extensive wor
   for porting packages from GitHub to Codeberg
 - [Woodpecker CI](https://woodpecker-ci.org/) -
   community-driven, container-based continuous integration system
-  popular on Codeberg, Forgejo, and Gitea
+  that integrates with Codeberg, Forgejo, and Gitea
   for running automated R package checks and pipeline workflows
 
 ## Resources for Git & Github
