@@ -6,4 +6,9 @@
 - [r-ci: Easy and portable CI for R packages](https://eddelbuettel.github.io/r-ci/) -
   a portable shell script by Dirk Eddelbuettel
   for running R package CI across GitHub Actions, Azure Pipelines, CircleCI, and Docker
+- [r-codeberg migration guide](https://codeberg.org/r-codeberg/migration-guide) -
+  step-by-step tutorial on porting R package development, documentation, and CI workflows from GitHub to Codeberg
+- [Woodpecker CI](https://woodpecker-ci.org/) -
+  community-driven, container-based continuous integration engine
+  frequently paired with Codeberg, Forgejo, and Gitea for R package checks
 - [GitHub Status](https://www.githubstatus.com/) - real-time status of GitHub services
