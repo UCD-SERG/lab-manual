@@ -16,6 +16,7 @@ CONSORT
 Catalina
 ChatGPT
 CircleCI
+Codeberg
 ContextLab
 Crosman
 DAGs
@@ -32,6 +33,7 @@ Edu
 Etienne
 FAQ
 Fanice
+Forgejo
 GPU
 GUI
 GUIs
@@ -39,6 +41,7 @@ Ghostty
 GitKraken
 GitLab
 GitLens
+Gitea
 GraphQL
 Hashimoto
 Heitmann
@@ -101,6 +104,7 @@ UNH
 Vibrio
 WSL
 WezTerm
+Woodpecker
 Xie
 Yihui
 agentic
