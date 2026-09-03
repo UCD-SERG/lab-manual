@@ -60,6 +60,9 @@ The [UC Davis DataLab](https://github.com/ucdavisdatalab) provides extensive wor
   community-driven, container-based continuous integration system
   that integrates with Codeberg, Forgejo, and Gitea
   for running automated R package checks and pipeline workflows
+- [shinycoreci: CI Testing for shiny](https://rstudio.github.io/shinycoreci/) -
+  R package developed by the Posit Shiny team
+  for testing the Shiny ecosystem across GitHub Actions runner environments
 
 ## Resources for Git & Github
 
