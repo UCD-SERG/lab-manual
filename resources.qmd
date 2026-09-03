@@ -47,6 +47,12 @@ The [UC Davis DataLab](https://github.com/ucdavisdatalab) provides extensive wor
 - [Standard Evaluation for *_join](https://stackoverflow.com/questions/28125816/r-standard-evaluation-for-join-dplyr) (stackoverflow)
 - [Programming with dplyr](https://dplyr.tidyverse.org/articles/programming.html) (package vignette)
 
+### Continuous Integration for R
+
+- [r-ci: Easy and portable CI for R packages](https://eddelbuettel.github.io/r-ci/) -
+  a portable shell script by Dirk Eddelbuettel
+  for testing R packages across GitHub Actions, Azure Pipelines, CircleCI, and local Docker environments
+
 ## Resources for Git & Github
 
 - Happy Git and GitHub for the useR [@bryan2023happygit] - comprehensive guide to using Git and GitHub with R

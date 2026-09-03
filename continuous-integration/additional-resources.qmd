@@ -3,4 +3,7 @@
 - [R Packages book: Continuous Integration](https://r-pkgs.org/software-development-practices.html#sec-sw-dev-practices-ci)
 - [GitHub Actions documentation](https://docs.github.com/en/actions)
 - [Where to find help with r-lib/actions](https://github.com/r-lib/actions#where-to-find-help)
+- [r-ci: Easy and portable CI for R packages](https://eddelbuettel.github.io/r-ci/) -
+  a portable shell script by Dirk Eddelbuettel
+  for running R package CI across GitHub Actions, Azure Pipelines, CircleCI, and Docker
 - [GitHub Status](https://www.githubstatus.com/) - real-time status of GitHub services
