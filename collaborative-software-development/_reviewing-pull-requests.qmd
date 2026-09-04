@@ -4,9 +4,9 @@ use practices that keep feedback constructive and specific.
 The [Tidyverse code review principles](https://code-review.tidyverse.org/)
 [@tidyverse2023codereview]
 are a strong baseline for R projects.
-As noted in its [acknowledgements](https://code-review.tidyverse.org/#acknowledgements),
-the Tidyverse guide is a modified fork of
-[Google's code review guide](https://google.github.io/eng-practices/review/).
+As noted in the Tidyverse guide's [acknowledgments](https://code-review.tidyverse.org/#acknowledgements),
+the guide is a modified fork of
+[Google's Code Review Developer Guide](https://google.github.io/eng-practices/review/).
 
 #### Purpose of code review
 
