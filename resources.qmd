@@ -189,6 +189,6 @@ and align our open science standards with the broader computational biology and 
 ## Reading and Watching List {#sec-reading-watching-list}
 
 - [*Good Luck, Have Fun, Don't Die*](https://en.wikipedia.org/wiki/Good_Luck,_Have_Fun,_Don%27t_Die) ---
-  science fiction film directed by Gore Verbinski
+  A science fiction film directed by Gore Verbinski
   following a traveler from the future who recruits patrons at a Los Angeles diner
   to prevent a rogue artificial intelligence from destroying the world.
