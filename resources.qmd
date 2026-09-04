@@ -77,6 +77,10 @@ The [UC Davis DataLab](https://github.com/ucdavisdatalab) provides extensive wor
   documentation on Claude Code's web interface for automatically investigating and resolving check failures and review comments on pull requests
 - [Claude Code Workflows](https://code.claude.com/docs/en/workflows) -
   documentation on Claude Code's dynamic subagent orchestration feature for parallel codebase audits, migrations, and evaluations
+- [Google Code Review Developer Guide](https://google.github.io/eng-practices/review/) -
+  comprehensive guidelines on code review standards and pull request authoring;
+  the upstream source for the [Tidyverse code review principles](https://code-review.tidyverse.org/)
+  (see [acknowledgments](https://code-review.tidyverse.org/#acknowledgements))
 
 ## Practical Computing and Command Line
 
