@@ -12,4 +12,7 @@
 - [Woodpecker CI](https://woodpecker-ci.org/) -
   community-driven, container-based continuous integration system
   that integrates with Codeberg, Forgejo, and Gitea for R package checks
+- [shinycoreci: CI Testing for shiny](https://rstudio.github.io/shinycoreci/) -
+  R package developed by the Posit Shiny team
+  for testing the Shiny ecosystem across GitHub Actions runner environments
 - [GitHub Status](https://www.githubstatus.com/) - real-time status of GitHub services
