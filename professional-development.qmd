@@ -41,7 +41,9 @@ We encourage lab members to present their work at conferences and seminars:
 
 ### Guidelines for Slide Decks {#sec-slide-deck-guidelines}
 
-When preparing slide presentations for lab meetings, conferences, qualifying exams, or thesis defenses, follow these practical guidelines:
+When preparing slide presentations for lab meetings,
+conferences, qualifying exams, or thesis defenses,
+follow these practical guidelines:
 
 - **Always include slide numbers**:
   Slide numbers are essential for receiving constructive feedback.
@@ -70,7 +72,7 @@ When preparing slide presentations for lab meetings, conferences, qualifying exa
   Verify that axis labels, legends, and annotations remain easily readable
   from the back of a large room or on low-resolution projector displays.
 
-**Resources for effective presentations:**
+### Presentation and Poster Resources {#sec-presentation-resources}
 
 - [How to tell a compelling story in scientific presentations](https://www.nature.com/articles/d41586-021-03603-2)
 - [How to give a killer narratively-driven scientific talk](https://www.sciencedirect.com/science/article/pii/S1471491423000928)
