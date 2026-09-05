@@ -41,36 +41,7 @@ We encourage lab members to present their work at conferences and seminars:
 
 ### Guidelines for Slide Decks {#sec-slide-deck-guidelines}
 
-When preparing slide presentations for lab meetings,
-conferences, qualifying exams, or thesis defenses,
-follow these practical guidelines:
-
-- **Always include slide numbers**:
-  Slide numbers are essential for receiving constructive feedback.
-  During question-and-answer periods or practice feedback sessions,
-  collaborators and audience members need to refer back to specific slides quickly
-  (e.g., "On slide 14, how was that variable defined?")
-  without fumbling through visual descriptions or guessing where a topic occurred.
-- **Complete, record, and review practice runs**:
-  Before any significant presentation,
-  rehearse the complete talk out loud,
-  record the practice run (using screen recording software, a webcam, or your phone),
-  and review the recording.
-  Watching your own practice run provides invaluable, objective feedback
-  on pacing, timing, verbal filler habits, transition clarity,
-  and whether slide text and figures remain legible when viewed on screen.
-  Both students and faculty benefit substantially from this practice.
-- **One primary takeaway per slide**:
-  Limit the cognitive load of each slide.
-  If a slide presents multiple distinct findings or complex arguments,
-  split them across sequential slides so the audience can focus on each point.
-- **Prioritize visual evidence**:
-  Audiences cannot read dense paragraphs while simultaneously listening to a speaker.
-  Favor clean charts, diagrams, and annotated figures over text-heavy bulleted lists.
-- **Ensure high contrast and readability**:
-  Use large, legible fonts and high-contrast color palettes.
-  Verify that axis labels, legends, and annotations remain easily readable
-  from the back of a large room or on low-resolution projector displays.
+{{< include professional-development/slide-deck-guidelines.qmd >}}
 
 ### Presentation and Poster Resources {#sec-presentation-resources}
 
