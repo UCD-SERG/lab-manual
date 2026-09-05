@@ -139,7 +139,11 @@ We use a combination of tools to track and manage project tasks:
 
 - Our meetings start on the hour.
 - If you are going to be late, please send a message in our Teams channel. 
-- If you are regularly not able to come on the hour, notify the team and we might choose the modify the agenda order or the start time.
+- If you are regularly not able to come on the hour, notify the team and we might choose to modify the agenda order or the start time.
+
+### Developing Meeting Agendas {#sec-meeting-agendas}
+
+{{< include communication/meeting-agendas.qmd >}}
 
 ## Conference Room Booking
 
