@@ -24,3 +24,52 @@ message("Analysis complete")
 warning("Missing data detected")
 stop("Invalid input")
 ```
+
+### CLI Styling: Progress Notes vs. Outcomes {#sec-cli-styling-progress-outcomes}
+
+When writing command-line tools, pipeline scripts, or package messaging,
+maintain a clear visual distinction between intermediate progress updates and terminal outcomes:
+
+- **Progress updates should use neutral, non-emphatic styling**:
+  Routine status notes describing in-flight actions
+  (such as "Starting to compute...",
+  "Loading input data...",
+  or "Querying remote endpoint...")
+  should remain quiet and plain.
+  Avoid bold fonts, bright highlight colors, or heavy icons for intermediate steps.
+  Applying emphatic styling to routine progress causes visual fatigue
+  and desensitizes users to important messages.
+- **Outcomes should receive emphatic styling**:
+  Definitive conclusions and status transitions
+  (such as "Succeeded",
+  "Failed",
+  or "Warning")
+  signal results that require user awareness or intervention.
+  Emphasize these outcomes with bold text,
+  standard semantic colors
+  (such as green for success,
+  yellow for warning,
+  and red for failure),
+  or recognizable status indicators (such as check marks or crosses).
+
+This separation creates an effective visual hierarchy:
+users can scan terminal output quickly without getting bogged down by intermediate noise,
+while immediately noticing whether a process succeeded or encountered issues.
+
+**Examples:**
+
+```r
+# Good: quiet progress note, emphatic outcome
+cli::cli_inform("Computing bootstrap estimates...")
+cli::cli_inform(c("v" = "{.strong Succeeded:} computed {.val 1000} replicates."))
+
+# Good: emphatic warning when an edge case is detected
+cli::cli_warn(c("!" = "{.strong Warning:} {.val 12} missing observations dropped."))
+
+# Bad: over-emphasized progress note (distracting and noisy)
+cli::cli_inform(c("*" = "{.strong STARTING TO COMPUTE ESTIMATES...}"))
+
+# Bad: quiet plain failure (easily lost in terminal output)
+cli::cli_inform("failed: check inputs")
+```
+
