@@ -63,7 +63,7 @@ while immediately noticing whether a process succeeded or encountered issues.
 cli::cli_inform("Computing bootstrap estimates...")
 cli::cli_inform(c("v" = "{.strong Succeeded:} computed {.val {n_reps}} replicates."))
 
-# Good: emphatic warning status in pipeline reporting (non-condition)
+# Good: emphatic warning status in pipeline reporting (does not signal an R warning condition)
 # (use cli_warn() in package code to signal an R warning condition)
 cli::cli_inform(c("!" = "{.strong Warning:} {.val {n_dropped}} missing observations dropped."))
 
@@ -76,7 +76,7 @@ cli::cli_abort("Failed to converge after {.val {max_iter}} iterations.")
 # Bad: over-emphasized progress note (distracting and noisy)
 cli::cli_inform(c("*" = "{.strong STARTING TO COMPUTE ESTIMATES...}"))
 
-# Bad: wrong function and unstyled failure (plain text blends in; use cli_abort() to halt)
+# Bad: plain unstyled failure (and wrong function if execution should halt; use cli_abort())
 cli::cli_inform("failed: check inputs")
 ```
 
