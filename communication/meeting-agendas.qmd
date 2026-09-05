@@ -1,0 +1,69 @@
+An effective meeting agenda ensures that collaborative time is productive,
+focused, and respectful of everyone's schedule.
+Whether organizing a weekly lab meeting,
+a project synchronization check-in,
+or a one-on-one advising session,
+follow these guidelines when preparing agendas.
+
+#### Why agendas are important
+
+- **Clear purpose and focus**:
+  Meetings without an agenda easily drift into unstructured conversation or unfocused status updates.
+  A written agenda clarifies the meeting's objective before bringing people together.
+- **Preparation and respect for time**:
+  Circulating an agenda in advance allows participants to review relevant materials,
+  gather required data,
+  and arrive ready to contribute substantive insights.
+- **Accountability and action items**:
+  A structured agenda provides a natural framework for tracking decisions,
+  assigning clear ownership for action items,
+  and reviewing progress at subsequent meetings.
+
+#### Core content: Inform, Discuss, Ask
+
+Organize your agenda items using three distinct functional categories:
+
+- **Inform**:
+  Brief announcements, status summaries, or project milestone updates.
+  These items share essential context that requires little to no debate.
+  Whenever possible,
+  share background details asynchronously before the meeting so live time can focus on deeper discussion.
+- **Discuss**:
+  Topics requiring collaborative problem-solving,
+  methodological debate,
+  troubleshooting,
+  or synthesis of differing viewpoints.
+  These items benefit most from synchronous conversation.
+- **Ask**:
+  Specific requests for decisions,
+  approvals,
+  feedback,
+  or resources from advisors, PIs, or team members.
+  Clearly framing what you need (for example,
+  "Decision on primary analysis model" or "Approval to submit abstract")
+  helps attendees provide decisive guidance.
+
+#### Formatting and style guidelines
+
+- **Use clear category tags**:
+  Prefix each bullet point with its category tag
+  (such as `[Inform]`, `[Discuss]`, or `[Ask]`)
+  so participants immediately understand their expected role for each topic.
+- **Include direct links**:
+  Always include direct hyperlinks to relevant draft manuscripts,
+  code repositories,
+  pull requests,
+  or data summaries rather than requiring attendees to search for materials.
+- **Allocate time estimates**:
+  Assign estimated time allocations to each major agenda topic
+  (for example,
+  `[Discuss] Simulation study edge cases (15 min)`).
+  This prevents early topics from crowding out crucial decisions scheduled at the end.
+- **Distribute in advance**:
+  Share the agenda in the calendar invitation,
+  by email,
+  or in the relevant Microsoft Teams channel at least 24 hours before the meeting.
+- **Record action items**:
+  Conclude every meeting by summarizing agreed-upon next steps,
+  assigned owners,
+  and target completion dates.
