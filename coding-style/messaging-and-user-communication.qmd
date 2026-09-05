@@ -63,8 +63,12 @@ while immediately noticing whether a process succeeded or encountered issues.
 cli::cli_inform("Computing bootstrap estimates...")
 cli::cli_inform(c("v" = "{.strong Succeeded:} computed {.val 1000} replicates."))
 
-# Good: emphatic warning when an edge case is detected
-cli::cli_warn(c("!" = "{.strong Warning:} {.val 12} missing observations dropped."))
+# Good: emphatic warning status in pipeline reporting
+cli::cli_inform(c("!" = "{.strong Warning:} {.val 12} missing observations dropped."))
+
+# Good: emphatic failure status in batch scripts or condition abort
+cli::cli_inform(c("x" = "{.strong Failed:} input file {.file data.csv} not found."))
+cli::cli_abort("Failed to converge after {.val 500} iterations.")
 
 # Bad: over-emphasized progress note (distracting and noisy)
 cli::cli_inform(c("*" = "{.strong STARTING TO COMPUTE ESTIMATES...}"))
