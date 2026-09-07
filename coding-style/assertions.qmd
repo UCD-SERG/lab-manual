@@ -1,0 +1,103 @@
+Validating function arguments and preconditions early
+(often called "failing fast")
+prevents bugs from propagating deep into analysis pipelines or statistical models.
+R offers several strategies and packages for writing assertions,
+each suited to different stages of development:
+
+### Base R: `stopifnot()`
+
+Base R provides `stopifnot()`,
+which halts execution if any of the supplied expressions are not all `TRUE`:
+
+```r
+calculate_rate <- function(count, person_years) {
+  stopifnot(
+    is.numeric(count),
+    length(count) == 1,
+    !is.na(count),
+    count >= 0,
+    is.numeric(person_years),
+    length(person_years) == 1,
+    !is.na(person_years),
+    person_years > 0
+  )
+  return(count / person_years)
+}
+```
+
+- **Pros**: Zero dependencies; built into every R installation.
+- **Cons**: Error messages can be cryptic in older R versions
+  (though R 4.0+ improved messages to display the failing expression);
+  does not provide prepackaged assertion helpers for complex data types.
+
+### `{checkmate}`: Fast, comprehensive argument checks
+
+The [`{checkmate}`](https://mllg.github.io/checkmate/) package
+(on [CRAN](https://cran.r-project.org/package=checkmate))
+is widely recommended for package development and production pipelines:
+
+```r
+calculate_rate <- function(count, person_years) {
+  checkmate::assert_number(count, lower = 0)
+  # lower bound is inclusive; use smallest positive double to require person_years > 0
+  checkmate::assert_number(person_years, lower = .Machine$double.xmin, finite = TRUE)
+  return(count / person_years)
+}
+```
+
+- **Pros**: Extremely fast (written in C);
+  comprehensive family of assertion functions (`assert_*`, `check_*`, `test_*`);
+  generates clear, informative error messages automatically.
+- **Cons**: Adds a package dependency.
+
+### `{cli}` and `{rlang}`: Custom, friendly error conditions
+
+Within the Tidyverse,
+[`{cli}`](https://cli.r-lib.org/) and [`{rlang}`](https://rlang.r-lib.org/)
+are the modern standard for emitting structured, formatted error messages:
+
+```r
+calculate_rate <- function(count, person_years, call = rlang::caller_env()) {
+  if (!is.numeric(count) || length(count) != 1 || is.na(count)) {
+    cli::cli_abort(
+      "{.arg count} must be a single non-missing number, not {.obj_type_friendly {count}}.",
+      call = call
+    )
+  }
+  if (count < 0) {
+    cli::cli_abort(
+      "{.arg count} must be non-negative ({.val {count}} was provided).",
+      call = call
+    )
+  }
+  if (!is.numeric(person_years) || length(person_years) != 1 || is.na(person_years)) {
+    cli::cli_abort(
+      "{.arg person_years} must be a single non-missing number, not {.obj_type_friendly {person_years}}.",
+      call = call
+    )
+  }
+  if (person_years <= 0) {
+    cli::cli_abort(
+      "{.arg person_years} must be positive ({.val {person_years}} was provided).",
+      call = call
+    )
+  }
+  return(count / person_years)
+}
+```
+
+- **Pros**: Outstanding user feedback with inline formatting (`{.arg}`, `{.val}`);
+  properly attributes the error to the caller environment via `call = rlang::caller_env()`;
+  supports signaling custom condition classes (via `class = ...`) that callers can catch programmatically.
+- **Cons**: Requires writing manual validation branches rather than one-line assertion calls.
+
+### Note on `{assertthat}`
+
+The [`{assertthat}`](https://cran.r-project.org/package=assertthat) package,
+created by Hadley Wickham,
+popularized user-friendly assertions in R.
+While still widely used across existing codebases,
+it has not seen active development since 2019.
+For new code,
+prefer [`{checkmate}`](https://mllg.github.io/checkmate/) for comprehensive argument checking
+or [`{cli}`](https://cli.r-lib.org/) paired with `cli::cli_abort()` for custom error messages.

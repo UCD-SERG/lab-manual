@@ -14,6 +14,10 @@ Follow these code style guidelines for all R code:
 
 {{< include coding-style/function-structure-and-documentation.qmd >}}
 
+## Assertions and Input Validation {#sec-assertions-input-validation}
+
+{{< include coding-style/assertions.qmd >}}
+
 ## Avoiding Deep Nesting {#sec-avoid-nesting}
 
 {{< include coding-style/avoid-nesting.qmd >}}
