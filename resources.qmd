@@ -148,6 +148,11 @@ The [UC Davis DataLab](https://github.com/ucdavisdatalab) provides extensive wor
 
 ## Open Science and Reproducibility Initiatives
 
+- [The Open Science Manual](https://arca-dpss.github.io/manual-open-science/) -
+  an open-source guide from the [ARCA group](https://github.com/arca-dpss) at the University of Padova
+  covering programming good practices,
+  version control,
+  and reproducible workflow tools.
 - [Openscapes](https://openscapes.org/) -
   an open science mentorship and community initiative founded by Dr. Julia Stewart Lowndes,
   focused on helping research groups transition to data-intensive, reproducible,
