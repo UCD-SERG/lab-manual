@@ -4,97 +4,99 @@
 
 Welcome to the lab! New members should complete the following checklist during their first week:
 
-- **Account setup**: Request and confirm access to GitHub (join the `UCD-SERG` organization),
+- [ ] **Account setup**: Request and confirm access to GitHub (join the `UCD-SERG` organization),
   Microsoft Teams, UC Davis email, and lab Box and SharePoint folders.
-- **Required trainings**: Complete required CITI Human Subjects Biomedical Group 1 training
+- [ ] **Required trainings**: Complete required CITI Human Subjects Biomedical Group 1 training
   and share your certificate with lab leadership (see @sec-protecting-human-subjects).
-- **Read the lab manual**: Review lab culture and conduct (@sec-culture-and-conduct),
+- [ ] **Read the lab manual**: Review lab culture and conduct (@sec-culture-and-conduct),
   coding style (@sec-r-code-style), and collaborative development (@sec-collab-dev).
-- **Environment setup**: Configure your local R development environment,
+- [ ] **Environment setup**: Configure your local R development environment,
   clone a starter repository, and run `renv::restore()` to verify reproducible package installation
   (see @sec-reproducible-environments).
-- **HPC access**: Confirm High-Performance Computing cluster access (Farm or Shiva)
+- [ ] **HPC access**: Confirm High-Performance Computing cluster access (Farm or Shiva)
   and verify SSH keys if your project involves cluster computing (see @sec-slurm).
-- **Team introductions**: Introduce yourself on Microsoft Teams and at the next weekly lab meeting.
-- **Initial 1:1 meeting**: Schedule a one-on-one meeting with lab leadership
+- [ ] **Team introductions**: Introduce yourself on Microsoft Teams and at the next weekly lab meeting.
+- [ ] **Initial 1:1 meeting**: Schedule a one-on-one meeting with lab leadership
   to align on project objectives, onboarding timeline, and initial milestones.
 
 ## Pre-analysis plan checklist
 
-- Brief background on the study (a condensed version of the introduction section of the paper)
-- Hypotheses / objectives
-- Study design
-- Description of data
-- Definition of outcomes
-- Definition of interventions / exposures
-- Definition of covariates 
-- Statistical power calculation 
-- Statistical model description
-- Covariate selection / screening
-- Standard error estimation method
-- Missing data analysis
-- Assessment of effect modification / subgroup analyses
-- Sensitivity analyses
-- Negative control analyses
+- [ ] Brief background on the study (a condensed version of the introduction section of the paper)
+- [ ] Hypotheses / objectives
+- [ ] Study design
+- [ ] Description of data
+- [ ] Definition of outcomes
+- [ ] Definition of interventions / exposures
+- [ ] Definition of covariates 
+- [ ] Statistical power calculation 
+- [ ] Statistical model description
+- [ ] Covariate selection / screening
+- [ ] Standard error estimation method
+- [ ] Missing data analysis
+- [ ] Assessment of effect modification / subgroup analyses
+- [ ] Sensitivity analyses
+- [ ] Negative control analyses
 
 ## Code checklist
-- Does the script run without errors?
-- Is code self-contained within repo and/or associated Box folder?
-- Is all commented out code / remarks removed? 
-- Does the header accurately describe the process completed in the script? 
-- Is the script pushed to its github repository?
-- Does the code adhere to the [coding style guide](https://ucd-serg.github.io/lab-manual/coding-style.html)? 
-- Are all warnings ignorable? Should any warnings be intentionally suppressed or addressed?
 
+- [ ] Does the script run without errors?
+- [ ] Is code self-contained within repo and/or associated Box folder?
+- [ ] Is all commented out code / remarks removed? 
+- [ ] Does the header accurately describe the process completed in the script? 
+- [ ] Is the script pushed to its github repository?
+- [ ] Does the code adhere to the [coding style guide](https://ucd-serg.github.io/lab-manual/coding-style.html)? 
+- [ ] Are all warnings ignorable? Should any warnings be intentionally suppressed or addressed?
 
 ## Manuscript checklist
+
 *This is adapted in part from How to tackle the reproducibility crisis in ten steps [@baker2019].*
 
-- Have you completed the relevant reporting checklist, if applicable? (See EQUATOR Network [@equatornetwork] for a collection of checklists)
-- Are the study results within the manuscript replicable (i.e., if you rerun the code in the study's repository, the tables and figures will be exactly replicated?)
-- Is a target journal selected?
-- Is the title declarative, in other words, does it state the object/findings rather than suggest them?
-- Is the word count of the manuscript close to the target journal's allowance?
-- Does the manuscript adhere to the formatting guide of the target journal?
-- Does the manuscript use a consistent voice (passive or active -- usually active is preferred ... pun intended)?
-- Is each figure and table (including supplementary material) referenced in the main text?
-- Is there a caption for each figure and table (including supplementary material)?
-- Are tables/figures and supplementary material numbered in accordance with their appearance in the main text? 
-- Does the text use past tense if it is reporting research findings or future tense if it is a study protocol? 
-- Does the text avoid subjective wording (e.g., "interesting", "dramatic")?
-- Does the text use minimal abbreviations, and are all abbreviations defined at first use?
-- Does the text avoid directionless words? (e.g., instead of writing, 'Precipitation influences disease risk', write, 'Precipitation was associated with increased disease risk'). 
-- Does the text avoid making causal claims that are not supported by the study design? Be careful about the words "effect", "increase", and "decrease", which are often interpreted as causal. 
-- Does the text avoid describing results with the word "significant", which can easily be confused with statistical significance? (see references on this topic [here](https://journals.lww.com/epidem/Fulltext/2001/05000/The_Value_of_P.2.aspx))
-- Have you drafted author contributions? Do they follow the CRediT: Contributor Roles Taxonomy [@credit] for author contributions?
+- [ ] Have you completed the relevant reporting checklist, if applicable? (See EQUATOR Network [@equatornetwork] for a collection of checklists)
+- [ ] Are the study results within the manuscript replicable (i.e., if you rerun the code in the study's repository, the tables and figures will be exactly replicated?)
+- [ ] Is a target journal selected?
+- [ ] Is the title declarative, in other words, does it state the object/findings rather than suggest them?
+- [ ] Is the word count of the manuscript close to the target journal's allowance?
+- [ ] Does the manuscript adhere to the formatting guide of the target journal?
+- [ ] Does the manuscript use a consistent voice (passive or active -- usually active is preferred ... pun intended)?
+- [ ] Is each figure and table (including supplementary material) referenced in the main text?
+- [ ] Is there a caption for each figure and table (including supplementary material)?
+- [ ] Are tables/figures and supplementary material numbered in accordance with their appearance in the main text? 
+- [ ] Does the text use past tense if it is reporting research findings or future tense if it is a study protocol? 
+- [ ] Does the text avoid subjective wording (e.g., "interesting", "dramatic")?
+- [ ] Does the text use minimal abbreviations, and are all abbreviations defined at first use?
+- [ ] Does the text avoid directionless words? (e.g., instead of writing, 'Precipitation influences disease risk', write, 'Precipitation was associated with increased disease risk'). 
+- [ ] Does the text avoid making causal claims that are not supported by the study design? Be careful about the words "effect", "increase", and "decrease", which are often interpreted as causal. 
+- [ ] Does the text avoid describing results with the word "significant", which can easily be confused with statistical significance? (see references on this topic [here](https://journals.lww.com/epidem/Fulltext/2001/05000/The_Value_of_P.2.aspx))
+- [ ] Have you drafted author contributions? Do they follow the CRediT: Contributor Roles Taxonomy [@credit] for author contributions?
 
 ## Figure checklist
-- Are the x-axis and y-axis labeled?
-- If the figure includes panels, is each panel labeled?
-- Are there sufficient numerical / text labels and breaks on the x-axis and y-axis? 
-- Is the font size appropriate (i.e., large enough to read, not so large that it distracts from the data presented in the figure?)
-- Are the colors used colorblind friendly? See a colorblind-friendly palette [here](http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/#a-colorblind-friendly-palette), a neat palette generator with colorblind options [here](https://medialab.github.io/iwanthue/?utm_source=Nature+Briefing&utm_campaign=2c68711076-briefing-dy-20211006&utm_medium=email&utm_term=0_c9dfd39373-2c68711076-44335685), and an article on why this matters: The misuse of colour in science communication [@crameri2020]
-- Are colors/shapes/line types defined in a legend?
-- Are the legends and other labels easy to understand with minimal abbreviations? 
-- If there is overplotting, is transparency used to show overlapping data? 
-- Are 95% confidence intervals or other measures of precision shown, if applicable?
+
+- [ ] Are the x-axis and y-axis labeled?
+- [ ] If the figure includes panels, is each panel labeled?
+- [ ] Are there sufficient numerical / text labels and breaks on the x-axis and y-axis? 
+- [ ] Is the font size appropriate (i.e., large enough to read, not so large that it distracts from the data presented in the figure?)
+- [ ] Are the colors used colorblind friendly? See a colorblind-friendly palette [here](http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/#a-colorblind-friendly-palette), a neat palette generator with colorblind options [here](https://medialab.github.io/iwanthue/?utm_source=Nature+Briefing&utm_campaign=2c68711076-briefing-dy-20211006&utm_medium=email&utm_term=0_c9dfd39373-2c68711076-44335685), and an article on why this matters: The misuse of colour in science communication [@crameri2020]
+- [ ] Are colors/shapes/line types defined in a legend?
+- [ ] Are the legends and other labels easy to understand with minimal abbreviations? 
+- [ ] If there is overplotting, is transparency used to show overlapping data? 
+- [ ] Are 95% confidence intervals or other measures of precision shown, if applicable?
 
 ## Offboarding checklist {#sec-offboarding-checklist}
 
 When preparing to depart the lab, members should complete this offboarding checklist to ensure project continuity:
 
-- **Code handoff**: Ensure all analysis code is committed, pushed to GitHub (`UCD-SERG` organization),
+- [ ] **Code handoff**: Ensure all analysis code is committed, pushed to GitHub (`UCD-SERG` organization),
   and documented with a self-contained `README` and reproducible execution instructions (see @sec-code-repositories).
-- **Data archiving**: Archive or transfer large datasets, raw files,
+- [ ] **Data archiving**: Archive or transfer large datasets, raw files,
   and simulation outputs per lab storage protocols (see @sec-data-publication and @sec-slurm).
   Ensure all shared Drive and Box datasets have clear data dictionaries and codebooks.
-- **Repository ownership**: Transfer any remaining repository or branch administrative permissions
+- [ ] **Repository ownership**: Transfer any remaining repository or branch administrative permissions
   to the `UCD-SERG` organization and lab leadership.
-- **Publication plan**: Coordinate with lab leadership on outstanding manuscripts,
+- [ ] **Publication plan**: Coordinate with lab leadership on outstanding manuscripts,
   co-authorship agreements, remaining revisions, and target submission timelines.
-- **Account transition**: Coordinate with lab leadership to transition or revoke personal access to shared lab accounts,
+- [ ] **Account transition**: Coordinate with lab leadership to transition or revoke personal access to shared lab accounts,
   server credentials, and IRB protocols.
-- **Equipment return**: Return any lab-issued equipment (keys, hardware, storage media)
+- [ ] **Equipment return**: Return any lab-issued equipment (keys, hardware, storage media)
   and report any known hardware or configuration issues.
-- **Exit interview**: Complete a departure check-in with lab leadership
+- [ ] **Exit interview**: Complete a departure check-in with lab leadership
   to provide feedback and share forward contact details for future manuscript correspondence.
