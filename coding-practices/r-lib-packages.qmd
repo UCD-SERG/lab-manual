@@ -215,14 +215,16 @@ so repeated calls with identical arguments return instantly from cache instead o
 It supports multiple storage backends via the `cache` argument
 (such as `cachem::cache_mem()` for in-memory caching
 and `cachem::cache_disk()` for persistent disk caching across sessions),
-and provides `memoise::forget()` and `memoise::is.memoised()` to manage and inspect cache state.
+and provides `memoise::forget()` to clear caches,
+`memoise::is.memoised()` to test whether a function is memoised,
+and `memoise::has_cache()` to check whether specific arguments have cached results.
 Use `{memoise}` only for deterministic functions without side effects
 (such as pure mathematical evaluations,
 stable API queries,
 or idempotent data processing pipelines).
-Do not memoise stochastic simulation routines or pseudorandom number generators
-unless the random seed or iteration index is explicitly included in the formal arguments,
-as memoisation will otherwise suppress stochastic variability and return identical draws.
+Do not memoise stochastic simulation routines or functions that draw pseudorandom numbers;
+memoisation suppresses stochastic variation across calls with identical arguments,
+returning identical pseudorandom draws unless an explicit RNG seed argument is passed and sets the generator state deterministically.
 
 ### [`{scales}`](https://scales.r-lib.org/) {#sec-scales}
 
