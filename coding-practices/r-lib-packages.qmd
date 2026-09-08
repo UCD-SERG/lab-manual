@@ -208,9 +208,27 @@ This manual requires `{here}` for file paths (see @sec-here-package-practices).
 
 ### [`{memoise}`](https://memoise.r-lib.org/) {#sec-memoise}
 
-[`{memoise}`](https://memoise.r-lib.org/) adds memoisation (function-call caching) to R functions.
-Wrapping a function with `memoise()` causes it to cache results so repeated calls
-with the same arguments return the cached value instead of recomputing.
+[`{memoise}`](https://memoise.r-lib.org/) adds memoisation
+(function-call caching) to R functions.
+Wrapping an expensive, pure function with `memoise::memoise()`
+causes it to cache computed return values in memory or on disk,
+so repeated calls with identical arguments return instantly from cache
+instead of recomputing.
+It supports multiple storage backends via the `cache` argument
+(such as `cachem::cache_mem()` for in-memory caching
+and `cachem::cache_disk()` for persistent disk caching across sessions),
+and provides `memoise::forget()` to clear caches,
+`memoise::is.memoised()` to test whether a function is memoised,
+and `memoise::has_cache()` to check whether specific arguments
+have cached results.
+Use `{memoise}` only for deterministic functions without side effects
+(such as pure mathematical evaluations,
+stable API queries,
+or idempotent data processing pipelines).
+Never memoise stochastic simulation routines
+or functions that generate pseudorandom numbers;
+memoisation suppresses stochastic variation across repeated calls,
+silently collapsing random variability by returning stale cached draws.
 
 ### [`{scales}`](https://scales.r-lib.org/) {#sec-scales}
 

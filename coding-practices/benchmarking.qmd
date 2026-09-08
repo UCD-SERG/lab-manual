@@ -542,6 +542,7 @@ n_iterations <- 1000
 
 - [`{bench}`](https://bench.r-lib.org/) - Accurate benchmarking
 - [`{profvis}`](https://profvis.r-lib.org/) - Interactive profiling
+- [`{memoise}`](https://memoise.r-lib.org/) - Function-call caching to eliminate repeated bottlenecks (@sec-memoise)
 - [Measuring Performance](https://adv-r.hadley.nz/perf-measure.html) chapter in Advanced R
 - [Improving Performance](https://adv-r.hadley.nz/perf-improve.html) chapter in Advanced R
 - [`{touchstone}`](https://github.com/lorenzwalthert/touchstone) - CI benchmarking with PR comments
