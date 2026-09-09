@@ -1,3 +1,43 @@
+### Git Branches and Tags {#sec-git-branches-and-tags}
+
+To understand how Git tracks history,
+think of commits as Polaroid snapshots of your repository connected to their parent snapshots by strings.
+Branches and tags are both lightweight labels (like sticky notes) pointing to specific snapshots in this history graph:
+
+- **Branches are movable labels**:
+  A branch label points to the latest commit in a line of development.
+  When you make a new commit while working on a branch,
+  Git automatically advances the branch label forward to point to the new commit.
+  Think of a branch as a sticky note that moves automatically as history grows.
+- **Tags are permanent labels**:
+  A tag marks a specific point in time
+  (such as a published release like `v1.0.0` or a manuscript submission).
+  Tags do not move when new commits are added;
+  they remain anchored to their specific commit unless explicitly deleted or reassigned.
+  Think of a tag as a sticky note with extra-strong adhesive intended to stay in place.
+
+#### Practical branch and tag commands
+
+```bash
+# Create and switch to a new feature branch
+git switch -c feat/new-analysis
+
+# View all local and remote-tracking branches
+git branch -a
+
+# Create a lightweight tag at the current commit
+git tag v0.1.0
+
+# Create an annotated tag with a message (recommended for releases)
+git tag -a v1.0.0 -m "Release version 1.0.0"
+
+# Push a specific tag to GitHub
+git push origin v1.0.0
+
+# Push all local tags to GitHub
+git push origin --tags
+```
+
 ### Version Numbers
 
 Follow semantic versioning (MAJOR.MINOR.PATCH):
