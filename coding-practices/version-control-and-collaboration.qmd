@@ -24,7 +24,8 @@ pointing to specific snapshots in this history graph:
   recommended for official versions and public releases).
 
 For deeper background on Git's object model and branching mechanisms,
-consult the official [Git Branching in a Nutshell](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell)
+consult the official
+[Git Branching in a Nutshell](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell)
 and [Git Tagging](https://git-scm.com/book/en/v2/Git-Basics-Tagging)
 guides in *Pro Git* by Scott Chacon and Ben Straub.
 
