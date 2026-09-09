@@ -77,7 +77,7 @@ See my video on this topic: [https://www.youtube.com/watch?v=WoYkY9MkbRE](https:
 Using reporting checklists helps ensure
 that peer-reviewed articles contain the information needed
 for readers to assess the validity of your work
-and attempt to reproduce it.
+and/or attempt to reproduce it.
 A collection of reporting checklists is available
 from the [EQUATOR Network](https://www.equator-network.org/) [@equatornetwork].
 Commonly used checklists in our lab include:
