@@ -27,9 +27,9 @@ spanning both implementation progress and ongoing maintenance commitment:
   the authors intend to resume work in the future.
 - **Abandoned:** Work started but stopped before a stable release;
   the authors do not intend to resume development.
-- **Unsupported:** The project reached a stable release
-  but all maintenance has ceased;
-  a new maintainer may be sought.
+- **Unsupported:** The project reached a stable release,
+  but the person or organization responsible for it has retired it;
+  the project may be left unsupported.
 - **Moved:** The project has relocated to a new repository URL;
   refer to that location for the current and authoritative version.
 
