@@ -22,3 +22,21 @@ respond to each one with exactly one of these:
 
 Never ignore a review comment.
 Always reply---even if only to say you filed a follow-up issue.
+
+#### Resolving review comment threads {#sec-resolving-review-threads}
+
+Before requesting a new review round,
+resolve every comment thread whose underlying item is settled:
+
+- **When addressing an item:** Resolve the thread after pushing the commit that implements the fix.
+  Include the commit hash in your thread reply so the reviewer can trace the change.
+- **When deferring an item:** Resolve the thread after creating the tracking issue
+  and linking it in your reply.
+- **When acknowledging an item:** Resolve the thread after posting a brief acknowledgment.
+- **When rebutting an item:** Leave the thread open initially with your explanation and evidence.
+  If the reviewer agrees or does not re-raise the item in the subsequent round,
+  resolve the thread.
+
+If you need the reviewer to weigh in or clarify a specific point,
+leave that thread open
+and state explicitly in your reply that you are awaiting their guidance.
