@@ -18,7 +18,7 @@ spanning both implementation progress and ongoing maintenance commitment:
   but the project has not yet reached a stable, usable release
   suitable for general use.
 - **Active:** The project has reached a stable, usable state
-  and is being actively developed or maintained.
+  and is being actively developed.
 - **Inactive:** The project has reached a stable, usable state
   but is no longer under active feature development;
   bug fixes or maintenance are provided as time allows.
@@ -26,7 +26,7 @@ spanning both implementation progress and ongoing maintenance commitment:
   but development has paused before reaching a stable release;
   the project has been put on hold.
 - **Abandoned:** Work started but stopped before a stable release;
-  the authors do not intend to resume development.
+  the project is no longer being worked on.
 - **Unsupported:** The project reached a stable release,
   but the person or organization responsible for it has retired it;
   the project may be left unsupported.
