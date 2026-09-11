@@ -24,7 +24,7 @@ spanning both implementation progress and ongoing maintenance commitment:
   bug fixes or maintenance are provided as time allows.
 - **Suspended:** Work started,
   but development has paused before reaching a stable release;
-  the authors intend to resume work in the future.
+  the project has been put on hold.
 - **Abandoned:** Work started but stopped before a stable release;
   the authors do not intend to resume development.
 - **Unsupported:** The project reached a stable release,
