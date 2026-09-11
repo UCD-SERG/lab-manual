@@ -20,14 +20,14 @@ spanning both implementation progress and ongoing maintenance commitment:
   but there has not yet been a stable, usable release;
   the project has been put on hold or stopped.
 - **Abandoned:** Initial development has started,
-  but there has not yet been a stable, usable release;
-  the project has been abandoned.
+  but has been abandoned;
+  the project is no longer being worked on.
 - **Active:** The project has reached a stable, usable state
   and is being actively developed.
 - **Inactive:** The project has reached a stable, usable state
   but is no longer being actively developed;
   support/maintenance will be provided as time allows.
-- **Unsupported:** The project has reached a stable, usable state
+- **Unsupported:** The project has reached a stable, usable release,
   but the person or organization responsible for it
   has decided to abandon it or drop support for it permanently.
 - **Moved:** The project has been moved to a new location,
