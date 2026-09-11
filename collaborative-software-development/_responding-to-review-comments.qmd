@@ -29,7 +29,7 @@ Before requesting a new review round,
 resolve every comment thread whose underlying item is settled:
 
 - **When addressing an item:** Resolve the thread after pushing the commit that implements the fix.
-  Name the commit hash in your thread reply so the reviewer can trace the change.
+  Include the commit hash in your thread reply so the reviewer can trace the change.
 - **When deferring an item:** Resolve the thread after creating the tracking issue
   and linking it in your reply.
 - **When acknowledging an item:** Resolve the thread after posting a brief acknowledgment.
