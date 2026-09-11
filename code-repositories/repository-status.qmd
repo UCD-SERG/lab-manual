@@ -20,7 +20,7 @@ spanning both implementation progress and ongoing maintenance commitment:
 - **Active:** The project has reached a stable, usable state
   and is being actively developed.
 - **Inactive:** The project has reached a stable, usable state
-  but is no longer under active feature development;
+  but is no longer being actively developed;
   bug fixes or maintenance are provided as time allows.
 - **Suspended:** Work started,
   but development has paused before reaching a stable release;
@@ -29,7 +29,7 @@ spanning both implementation progress and ongoing maintenance commitment:
   the project is no longer being worked on.
 - **Unsupported:** The project reached a stable release,
   but the person or organization responsible for it has retired it;
-  the project may be left unsupported.
+  the project has been permanently abandoned or its support permanently dropped.
 - **Moved:** The project has relocated to a new repository URL;
   refer to that location for the current and authoritative version.
 
