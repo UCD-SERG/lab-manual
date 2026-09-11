@@ -41,7 +41,7 @@ from [repostatus.org](https://www.repostatus.org/)
 near the top of the file
 to communicate whether the codebase is actively maintained,
 a work in progress,
-or an archived publication (@sec-repostatus).
+or an archived analysis (see @sec-repostatus).
 This file also includes a Project Overview and a Directory Structure,
 along with contributor names and the project license.
 See below for a template:
