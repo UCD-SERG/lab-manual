@@ -20,3 +20,7 @@ This provides benefits for reproducibility, collaboration, and code quality even
 ## Organizing the `data-raw` folder
 
 {{< include code-repositories/project-structure.qmd >}}
+
+## Repository Status Badges {#sec-repostatus}
+
+{{< include code-repositories/repository-status.qmd >}}
