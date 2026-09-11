@@ -30,8 +30,8 @@ spanning both implementation progress and ongoing maintenance commitment:
 - **Unsupported:** The project reached a stable release
   but all maintenance has ceased;
   a new maintainer may be sought.
-- **Moved:** The project has relocated to a new repository URL,
-  where development continues.
+- **Moved:** The project has relocated to a new repository URL;
+  refer to that location for the current and authoritative version.
 
 ### Adding a status badge
 
@@ -58,6 +58,10 @@ that is stable but no longer actively adding features:
 [![Project Status: Inactive - The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive)
 ```
 
+*(Note: An ASCII hyphen `-` is used in the badge alt text above
+as an ASCII-safe approximation of repostatus.org's Unicode en-dash
+to ensure compatibility across all plain-text and build tools.)*
+
 ### Lifecycle management
 
 Update the status badge as your project evolves through its lifecycle:
@@ -66,7 +70,8 @@ Update the status badge as your project evolves through its lifecycle:
    (for early prototypes)
    or `WIP` (when building an analysis pipeline or package).
 2. **Promote to Active:** Switch to `Active` once the codebase reaches
-   a functional, reproducible state with working scripts and tests.
+   a functional, reproducible state with working scripts
+   (and, where applicable, tests).
 3. **Transition upon project completion:** When an epidemiology study or
    manuscript is published and the analysis code is finalized,
    update the badge to `Inactive` or `Unsupported`
