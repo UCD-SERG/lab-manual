@@ -85,6 +85,10 @@ Benefits of this pattern:
 - Adding a new data source requires one new call, not a copy-pasted block.
 - Error message formatting stays consistent across all sources.
 
+Place each extracted helper in its own file
+(@sec-one-function-per-file),
+not above or below the caller in the same file.
+
 ## Examples borrowed from lab package PRs
 
 In [`UCD-SERG/rpt` PR #100](https://github.com/UCD-SERG/rpt/pull/100),

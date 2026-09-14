@@ -72,6 +72,10 @@
 
 {{< include coding-practices/function-decomposition.qmd >}}
 
+## One function per file {#sec-one-function-per-file}
+
+{{< include coding-practices/one-function-per-file.qmd >}}
+
 ## Function length limits {#sec-function-length-limits}
 
 {{< include coding-practices/function-length-limits.qmd >}}

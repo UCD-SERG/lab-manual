@@ -9,7 +9,8 @@ a function defined inline,
 a non-trivial transformation,
 or the same block copied across chunks ---
 extract that logic into a function and have the chunk call it.
-Following the function-decomposition (@sec-function-decomposition)
+Following the function-decomposition (@sec-function-decomposition),
+one-function-per-file (@sec-one-function-per-file),
 and length-limit (@sec-function-length-limits) principles,
 give the function its own file under `R/`,
 with full [`{roxygen2}`](https://roxygen2.r-lib.org/) documentation,
