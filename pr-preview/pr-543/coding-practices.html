@@ -676,120 +676,127 @@ window.Quarto = {
   <li><a href="#sec-decompose-validation" id="toc-sec-decompose-validation" class="nav-link" data-scroll-target="#sec-decompose-validation"><span class="header-section-number">6.21</span> Decomposing validation blocks</a></li>
   <li><a href="#examples-borrowed-from-lab-package-prs" id="toc-examples-borrowed-from-lab-package-prs" class="nav-link" data-scroll-target="#examples-borrowed-from-lab-package-prs"><span class="header-section-number">6.22</span> Examples borrowed from lab package PRs</a></li>
   <li><a href="#related-references" id="toc-related-references" class="nav-link" data-scroll-target="#related-references"><span class="header-section-number">6.23</span> Related references</a></li>
-  <li><a href="#sec-function-length-limits" id="toc-sec-function-length-limits" class="nav-link" data-scroll-target="#sec-function-length-limits"><span class="header-section-number">6.24</span> Function length limits</a></li>
-  <li><a href="#sec-kiss" id="toc-sec-kiss" class="nav-link" data-scroll-target="#sec-kiss"><span class="header-section-number">6.25</span> Keep It Short and Simple (KISS)</a></li>
-  <li><a href="#sec-decompose-qmd-chunks" id="toc-sec-decompose-qmd-chunks" class="nav-link" data-scroll-target="#sec-decompose-qmd-chunks"><span class="header-section-number">6.26</span> Decomposing Code Chunks in Quarto Documents</a></li>
-  <li><a href="#sec-here-package-practices" id="toc-sec-here-package-practices" class="nav-link" data-scroll-target="#sec-here-package-practices"><span class="header-section-number">6.27</span> The here package</a></li>
-  <li><a href="#readingsaving-data" id="toc-readingsaving-data" class="nav-link" data-scroll-target="#readingsaving-data"><span class="header-section-number">6.28</span> Reading/Saving Data</a>
+  <li><a href="#sec-one-function-per-file" id="toc-sec-one-function-per-file" class="nav-link" data-scroll-target="#sec-one-function-per-file"><span class="header-section-number">6.24</span> One function per file</a>
   <ul class="collapse">
-  <li><a href="#rds-vs-.rdata-files" id="toc-rds-vs-.rdata-files" class="nav-link" data-scroll-target="#rds-vs-.rdata-files"><span class="header-section-number">6.28.1</span> <code>.RDS</code> vs <code>.RData</code> Files</a></li>
-  <li><a href="#csvs" id="toc-csvs" class="nav-link" data-scroll-target="#csvs"><span class="header-section-number">6.28.2</span> CSVs</a></li>
+  <li><a href="#r-packages" id="toc-r-packages" class="nav-link" data-scroll-target="#r-packages"><span class="header-section-number">6.24.1</span> R packages</a></li>
+  <li><a href="#why" id="toc-why" class="nav-link" data-scroll-target="#why"><span class="header-section-number">6.24.2</span> Why</a></li>
+  <li><a href="#adding-to-an-existing-multi-function-file" id="toc-adding-to-an-existing-multi-function-file" class="nav-link" data-scroll-target="#adding-to-an-existing-multi-function-file"><span class="header-section-number">6.24.3</span> Adding to an existing multi-function file</a></li>
+  <li><a href="#relationship-to-function-decomposition" id="toc-relationship-to-function-decomposition" class="nav-link" data-scroll-target="#relationship-to-function-decomposition"><span class="header-section-number">6.24.4</span> Relationship to function decomposition</a></li>
   </ul></li>
-  <li><a href="#integrating-box-and-dropbox" id="toc-integrating-box-and-dropbox" class="nav-link" data-scroll-target="#integrating-box-and-dropbox"><span class="header-section-number">6.29</span> Integrating Box and Dropbox</a>
+  <li><a href="#sec-function-length-limits" id="toc-sec-function-length-limits" class="nav-link" data-scroll-target="#sec-function-length-limits"><span class="header-section-number">6.25</span> Function length limits</a></li>
+  <li><a href="#sec-kiss" id="toc-sec-kiss" class="nav-link" data-scroll-target="#sec-kiss"><span class="header-section-number">6.26</span> Keep It Short and Simple (KISS)</a></li>
+  <li><a href="#sec-decompose-qmd-chunks" id="toc-sec-decompose-qmd-chunks" class="nav-link" data-scroll-target="#sec-decompose-qmd-chunks"><span class="header-section-number">6.27</span> Decomposing Code Chunks in Quarto Documents</a></li>
+  <li><a href="#sec-here-package-practices" id="toc-sec-here-package-practices" class="nav-link" data-scroll-target="#sec-here-package-practices"><span class="header-section-number">6.28</span> The here package</a></li>
+  <li><a href="#readingsaving-data" id="toc-readingsaving-data" class="nav-link" data-scroll-target="#readingsaving-data"><span class="header-section-number">6.29</span> Reading/Saving Data</a>
   <ul class="collapse">
-  <li><a href="#box" id="toc-box" class="nav-link" data-scroll-target="#box"><span class="header-section-number">6.29.1</span> Box</a></li>
-  <li><a href="#dropbox" id="toc-dropbox" class="nav-link" data-scroll-target="#dropbox"><span class="header-section-number">6.29.2</span> Dropbox</a></li>
+  <li><a href="#rds-vs-.rdata-files" id="toc-rds-vs-.rdata-files" class="nav-link" data-scroll-target="#rds-vs-.rdata-files"><span class="header-section-number">6.29.1</span> <code>.RDS</code> vs <code>.RData</code> Files</a></li>
+  <li><a href="#csvs" id="toc-csvs" class="nav-link" data-scroll-target="#csvs"><span class="header-section-number">6.29.2</span> CSVs</a></li>
   </ul></li>
-  <li><a href="#sec-r-lib-packages" id="toc-sec-r-lib-packages" class="nav-link" data-scroll-target="#sec-r-lib-packages"><span class="header-section-number">6.30</span> r-lib Packages</a></li>
-  <li><a href="#package-development" id="toc-package-development" class="nav-link" data-scroll-target="#package-development"><span class="header-section-number">6.31</span> Package Development</a>
+  <li><a href="#integrating-box-and-dropbox" id="toc-integrating-box-and-dropbox" class="nav-link" data-scroll-target="#integrating-box-and-dropbox"><span class="header-section-number">6.30</span> Integrating Box and Dropbox</a>
   <ul class="collapse">
-  <li><a href="#sec-usethis" id="toc-sec-usethis" class="nav-link" data-scroll-target="#sec-usethis"><span class="header-section-number">6.31.1</span> <code>{usethis}</code></a></li>
-  <li><a href="#sec-devtools" id="toc-sec-devtools" class="nav-link" data-scroll-target="#sec-devtools"><span class="header-section-number">6.31.2</span> <code>{devtools}</code></a></li>
-  <li><a href="#sec-roxygen2" id="toc-sec-roxygen2" class="nav-link" data-scroll-target="#sec-roxygen2"><span class="header-section-number">6.31.3</span> <code>{roxygen2}</code></a></li>
-  <li><a href="#sec-pkgdown" id="toc-sec-pkgdown" class="nav-link" data-scroll-target="#sec-pkgdown"><span class="header-section-number">6.31.4</span> <code>{pkgdown}</code></a></li>
-  <li><a href="#sec-pkgload" id="toc-sec-pkgload" class="nav-link" data-scroll-target="#sec-pkgload"><span class="header-section-number">6.31.5</span> <code>{pkgload}</code></a></li>
-  <li><a href="#sec-pkgbuild" id="toc-sec-pkgbuild" class="nav-link" data-scroll-target="#sec-pkgbuild"><span class="header-section-number">6.31.6</span> <code>{pkgbuild}</code></a></li>
-  <li><a href="#sec-rcmdcheck" id="toc-sec-rcmdcheck" class="nav-link" data-scroll-target="#sec-rcmdcheck"><span class="header-section-number">6.31.7</span> <code>{rcmdcheck}</code></a></li>
-  <li><a href="#sec-remotes" id="toc-sec-remotes" class="nav-link" data-scroll-target="#sec-remotes"><span class="header-section-number">6.31.8</span> <code>{remotes}</code></a></li>
-  <li><a href="#sec-pak" id="toc-sec-pak" class="nav-link" data-scroll-target="#sec-pak"><span class="header-section-number">6.31.9</span> <code>{pak}</code></a></li>
-  <li><a href="#sec-revdepcheck" id="toc-sec-revdepcheck" class="nav-link" data-scroll-target="#sec-revdepcheck"><span class="header-section-number">6.31.10</span> <code>{revdepcheck}</code></a></li>
-  <li><a href="#sec-desc" id="toc-sec-desc" class="nav-link" data-scroll-target="#sec-desc"><span class="header-section-number">6.31.11</span> <code>{desc}</code></a></li>
-  <li><a href="#sec-pkgcache" id="toc-sec-pkgcache" class="nav-link" data-scroll-target="#sec-pkgcache"><span class="header-section-number">6.31.12</span> <code>{pkgcache}</code></a></li>
-  <li><a href="#sec-lifecycle" id="toc-sec-lifecycle" class="nav-link" data-scroll-target="#sec-lifecycle"><span class="header-section-number">6.31.13</span> <code>{lifecycle}</code></a></li>
+  <li><a href="#box" id="toc-box" class="nav-link" data-scroll-target="#box"><span class="header-section-number">6.30.1</span> Box</a></li>
+  <li><a href="#dropbox" id="toc-dropbox" class="nav-link" data-scroll-target="#dropbox"><span class="header-section-number">6.30.2</span> Dropbox</a></li>
   </ul></li>
-  <li><a href="#testing-and-quality" id="toc-testing-and-quality" class="nav-link" data-scroll-target="#testing-and-quality"><span class="header-section-number">6.32</span> Testing and Quality</a>
+  <li><a href="#sec-r-lib-packages" id="toc-sec-r-lib-packages" class="nav-link" data-scroll-target="#sec-r-lib-packages"><span class="header-section-number">6.31</span> r-lib Packages</a></li>
+  <li><a href="#package-development" id="toc-package-development" class="nav-link" data-scroll-target="#package-development"><span class="header-section-number">6.32</span> Package Development</a>
   <ul class="collapse">
-  <li><a href="#sec-testthat" id="toc-sec-testthat" class="nav-link" data-scroll-target="#sec-testthat"><span class="header-section-number">6.32.1</span> <code>{testthat}</code></a></li>
-  <li><a href="#sec-covr" id="toc-sec-covr" class="nav-link" data-scroll-target="#sec-covr"><span class="header-section-number">6.32.2</span> <code>{covr}</code></a></li>
-  <li><a href="#sec-waldo" id="toc-sec-waldo" class="nav-link" data-scroll-target="#sec-waldo"><span class="header-section-number">6.32.3</span> <code>{waldo}</code></a></li>
-  <li><a href="#sec-lintr" id="toc-sec-lintr" class="nav-link" data-scroll-target="#sec-lintr"><span class="header-section-number">6.32.4</span> <code>{lintr}</code></a></li>
+  <li><a href="#sec-usethis" id="toc-sec-usethis" class="nav-link" data-scroll-target="#sec-usethis"><span class="header-section-number">6.32.1</span> <code>{usethis}</code></a></li>
+  <li><a href="#sec-devtools" id="toc-sec-devtools" class="nav-link" data-scroll-target="#sec-devtools"><span class="header-section-number">6.32.2</span> <code>{devtools}</code></a></li>
+  <li><a href="#sec-roxygen2" id="toc-sec-roxygen2" class="nav-link" data-scroll-target="#sec-roxygen2"><span class="header-section-number">6.32.3</span> <code>{roxygen2}</code></a></li>
+  <li><a href="#sec-pkgdown" id="toc-sec-pkgdown" class="nav-link" data-scroll-target="#sec-pkgdown"><span class="header-section-number">6.32.4</span> <code>{pkgdown}</code></a></li>
+  <li><a href="#sec-pkgload" id="toc-sec-pkgload" class="nav-link" data-scroll-target="#sec-pkgload"><span class="header-section-number">6.32.5</span> <code>{pkgload}</code></a></li>
+  <li><a href="#sec-pkgbuild" id="toc-sec-pkgbuild" class="nav-link" data-scroll-target="#sec-pkgbuild"><span class="header-section-number">6.32.6</span> <code>{pkgbuild}</code></a></li>
+  <li><a href="#sec-rcmdcheck" id="toc-sec-rcmdcheck" class="nav-link" data-scroll-target="#sec-rcmdcheck"><span class="header-section-number">6.32.7</span> <code>{rcmdcheck}</code></a></li>
+  <li><a href="#sec-remotes" id="toc-sec-remotes" class="nav-link" data-scroll-target="#sec-remotes"><span class="header-section-number">6.32.8</span> <code>{remotes}</code></a></li>
+  <li><a href="#sec-pak" id="toc-sec-pak" class="nav-link" data-scroll-target="#sec-pak"><span class="header-section-number">6.32.9</span> <code>{pak}</code></a></li>
+  <li><a href="#sec-revdepcheck" id="toc-sec-revdepcheck" class="nav-link" data-scroll-target="#sec-revdepcheck"><span class="header-section-number">6.32.10</span> <code>{revdepcheck}</code></a></li>
+  <li><a href="#sec-desc" id="toc-sec-desc" class="nav-link" data-scroll-target="#sec-desc"><span class="header-section-number">6.32.11</span> <code>{desc}</code></a></li>
+  <li><a href="#sec-pkgcache" id="toc-sec-pkgcache" class="nav-link" data-scroll-target="#sec-pkgcache"><span class="header-section-number">6.32.12</span> <code>{pkgcache}</code></a></li>
+  <li><a href="#sec-lifecycle" id="toc-sec-lifecycle" class="nav-link" data-scroll-target="#sec-lifecycle"><span class="header-section-number">6.32.13</span> <code>{lifecycle}</code></a></li>
   </ul></li>
-  <li><a href="#core-language-and-infrastructure" id="toc-core-language-and-infrastructure" class="nav-link" data-scroll-target="#core-language-and-infrastructure"><span class="header-section-number">6.33</span> Core Language and Infrastructure</a>
+  <li><a href="#testing-and-quality" id="toc-testing-and-quality" class="nav-link" data-scroll-target="#testing-and-quality"><span class="header-section-number">6.33</span> Testing and Quality</a>
   <ul class="collapse">
-  <li><a href="#sec-rlang" id="toc-sec-rlang" class="nav-link" data-scroll-target="#sec-rlang"><span class="header-section-number">6.33.1</span> <code>{rlang}</code></a></li>
-  <li><a href="#sec-vctrs" id="toc-sec-vctrs" class="nav-link" data-scroll-target="#sec-vctrs"><span class="header-section-number">6.33.2</span> <code>{vctrs}</code></a></li>
-  <li><a href="#sec-withr" id="toc-sec-withr" class="nav-link" data-scroll-target="#sec-withr"><span class="header-section-number">6.33.3</span> <code>{withr}</code></a></li>
-  <li><a href="#sec-cli" id="toc-sec-cli" class="nav-link" data-scroll-target="#sec-cli"><span class="header-section-number">6.33.4</span> <code>{cli}</code></a></li>
-  <li><a href="#sec-R6" id="toc-sec-R6" class="nav-link" data-scroll-target="#sec-R6"><span class="header-section-number">6.33.5</span> <code>{R6}</code></a></li>
-  <li><a href="#sec-cpp11" id="toc-sec-cpp11" class="nav-link" data-scroll-target="#sec-cpp11"><span class="header-section-number">6.33.6</span> <code>{cpp11}</code></a></li>
+  <li><a href="#sec-testthat" id="toc-sec-testthat" class="nav-link" data-scroll-target="#sec-testthat"><span class="header-section-number">6.33.1</span> <code>{testthat}</code></a></li>
+  <li><a href="#sec-covr" id="toc-sec-covr" class="nav-link" data-scroll-target="#sec-covr"><span class="header-section-number">6.33.2</span> <code>{covr}</code></a></li>
+  <li><a href="#sec-waldo" id="toc-sec-waldo" class="nav-link" data-scroll-target="#sec-waldo"><span class="header-section-number">6.33.3</span> <code>{waldo}</code></a></li>
+  <li><a href="#sec-lintr" id="toc-sec-lintr" class="nav-link" data-scroll-target="#sec-lintr"><span class="header-section-number">6.33.4</span> <code>{lintr}</code></a></li>
   </ul></li>
-  <li><a href="#system-and-process" id="toc-system-and-process" class="nav-link" data-scroll-target="#system-and-process"><span class="header-section-number">6.34</span> System and Process</a>
+  <li><a href="#core-language-and-infrastructure" id="toc-core-language-and-infrastructure" class="nav-link" data-scroll-target="#core-language-and-infrastructure"><span class="header-section-number">6.34</span> Core Language and Infrastructure</a>
   <ul class="collapse">
-  <li><a href="#sec-fs" id="toc-sec-fs" class="nav-link" data-scroll-target="#sec-fs"><span class="header-section-number">6.34.1</span> <code>{fs}</code></a></li>
-  <li><a href="#sec-processx" id="toc-sec-processx" class="nav-link" data-scroll-target="#sec-processx"><span class="header-section-number">6.34.2</span> <code>{processx}</code></a></li>
-  <li><a href="#sec-callr" id="toc-sec-callr" class="nav-link" data-scroll-target="#sec-callr"><span class="header-section-number">6.34.3</span> <code>{callr}</code></a></li>
-  <li><a href="#sec-ps" id="toc-sec-ps" class="nav-link" data-scroll-target="#sec-ps"><span class="header-section-number">6.34.4</span> <code>{ps}</code></a></li>
+  <li><a href="#sec-rlang" id="toc-sec-rlang" class="nav-link" data-scroll-target="#sec-rlang"><span class="header-section-number">6.34.1</span> <code>{rlang}</code></a></li>
+  <li><a href="#sec-vctrs" id="toc-sec-vctrs" class="nav-link" data-scroll-target="#sec-vctrs"><span class="header-section-number">6.34.2</span> <code>{vctrs}</code></a></li>
+  <li><a href="#sec-withr" id="toc-sec-withr" class="nav-link" data-scroll-target="#sec-withr"><span class="header-section-number">6.34.3</span> <code>{withr}</code></a></li>
+  <li><a href="#sec-cli" id="toc-sec-cli" class="nav-link" data-scroll-target="#sec-cli"><span class="header-section-number">6.34.4</span> <code>{cli}</code></a></li>
+  <li><a href="#sec-R6" id="toc-sec-R6" class="nav-link" data-scroll-target="#sec-R6"><span class="header-section-number">6.34.5</span> <code>{R6}</code></a></li>
+  <li><a href="#sec-cpp11" id="toc-sec-cpp11" class="nav-link" data-scroll-target="#sec-cpp11"><span class="header-section-number">6.34.6</span> <code>{cpp11}</code></a></li>
   </ul></li>
-  <li><a href="#http-and-web" id="toc-http-and-web" class="nav-link" data-scroll-target="#http-and-web"><span class="header-section-number">6.35</span> HTTP and Web</a>
+  <li><a href="#system-and-process" id="toc-system-and-process" class="nav-link" data-scroll-target="#system-and-process"><span class="header-section-number">6.35</span> System and Process</a>
   <ul class="collapse">
-  <li><a href="#sec-httr2" id="toc-sec-httr2" class="nav-link" data-scroll-target="#sec-httr2"><span class="header-section-number">6.35.1</span> <code>{httr2}</code></a></li>
-  <li><a href="#sec-httr" id="toc-sec-httr" class="nav-link" data-scroll-target="#sec-httr"><span class="header-section-number">6.35.2</span> <code>{httr}</code></a></li>
-  <li><a href="#sec-gh" id="toc-sec-gh" class="nav-link" data-scroll-target="#sec-gh"><span class="header-section-number">6.35.3</span> <code>{gh}</code></a></li>
-  <li><a href="#sec-gargle" id="toc-sec-gargle" class="nav-link" data-scroll-target="#sec-gargle"><span class="header-section-number">6.35.4</span> <code>{gargle}</code></a></li>
+  <li><a href="#sec-fs" id="toc-sec-fs" class="nav-link" data-scroll-target="#sec-fs"><span class="header-section-number">6.35.1</span> <code>{fs}</code></a></li>
+  <li><a href="#sec-processx" id="toc-sec-processx" class="nav-link" data-scroll-target="#sec-processx"><span class="header-section-number">6.35.2</span> <code>{processx}</code></a></li>
+  <li><a href="#sec-callr" id="toc-sec-callr" class="nav-link" data-scroll-target="#sec-callr"><span class="header-section-number">6.35.3</span> <code>{callr}</code></a></li>
+  <li><a href="#sec-ps" id="toc-sec-ps" class="nav-link" data-scroll-target="#sec-ps"><span class="header-section-number">6.35.4</span> <code>{ps}</code></a></li>
   </ul></li>
-  <li><a href="#utilities" id="toc-utilities" class="nav-link" data-scroll-target="#utilities"><span class="header-section-number">6.36</span> Utilities</a>
+  <li><a href="#http-and-web" id="toc-http-and-web" class="nav-link" data-scroll-target="#http-and-web"><span class="header-section-number">6.36</span> HTTP and Web</a>
   <ul class="collapse">
-  <li><a href="#sec-here-pkg" id="toc-sec-here-pkg" class="nav-link" data-scroll-target="#sec-here-pkg"><span class="header-section-number">6.36.1</span> <code>{here}</code></a></li>
-  <li><a href="#sec-memoise" id="toc-sec-memoise" class="nav-link" data-scroll-target="#sec-memoise"><span class="header-section-number">6.36.2</span> <code>{memoise}</code></a></li>
-  <li><a href="#sec-scales" id="toc-sec-scales" class="nav-link" data-scroll-target="#sec-scales"><span class="header-section-number">6.36.3</span> <code>{scales}</code></a></li>
-  <li><a href="#sec-sessioninfo" id="toc-sec-sessioninfo" class="nav-link" data-scroll-target="#sec-sessioninfo"><span class="header-section-number">6.36.4</span> <code>{sessioninfo}</code></a></li>
-  <li><a href="#sec-downlit" id="toc-sec-downlit" class="nav-link" data-scroll-target="#sec-downlit"><span class="header-section-number">6.36.5</span> <code>{downlit}</code></a></li>
-  <li><a href="#sec-prettyunits" id="toc-sec-prettyunits" class="nav-link" data-scroll-target="#sec-prettyunits"><span class="header-section-number">6.36.6</span> <code>{prettyunits}</code></a></li>
-  <li><a href="#sec-lobstr" id="toc-sec-lobstr" class="nav-link" data-scroll-target="#sec-lobstr"><span class="header-section-number">6.36.7</span> <code>{lobstr}</code></a></li>
-  <li><a href="#sec-crayon" id="toc-sec-crayon" class="nav-link" data-scroll-target="#sec-crayon"><span class="header-section-number">6.36.8</span> <code>{crayon}</code></a></li>
-  <li><a href="#sec-styler" id="toc-sec-styler" class="nav-link" data-scroll-target="#sec-styler"><span class="header-section-number">6.36.9</span> <code>{styler}</code></a></li>
-  <li><a href="#sec-rex" id="toc-sec-rex" class="nav-link" data-scroll-target="#sec-rex"><span class="header-section-number">6.36.10</span> <code>{rex}</code></a></li>
+  <li><a href="#sec-httr2" id="toc-sec-httr2" class="nav-link" data-scroll-target="#sec-httr2"><span class="header-section-number">6.36.1</span> <code>{httr2}</code></a></li>
+  <li><a href="#sec-httr" id="toc-sec-httr" class="nav-link" data-scroll-target="#sec-httr"><span class="header-section-number">6.36.2</span> <code>{httr}</code></a></li>
+  <li><a href="#sec-gh" id="toc-sec-gh" class="nav-link" data-scroll-target="#sec-gh"><span class="header-section-number">6.36.3</span> <code>{gh}</code></a></li>
+  <li><a href="#sec-gargle" id="toc-sec-gargle" class="nav-link" data-scroll-target="#sec-gargle"><span class="header-section-number">6.36.4</span> <code>{gargle}</code></a></li>
   </ul></li>
-  <li><a href="#github-actions" id="toc-github-actions" class="nav-link" data-scroll-target="#github-actions"><span class="header-section-number">6.37</span> GitHub Actions</a>
+  <li><a href="#utilities" id="toc-utilities" class="nav-link" data-scroll-target="#utilities"><span class="header-section-number">6.37</span> Utilities</a>
   <ul class="collapse">
-  <li><a href="#sec-r-lib-actions" id="toc-sec-r-lib-actions" class="nav-link" data-scroll-target="#sec-r-lib-actions"><span class="header-section-number">6.37.1</span> actions</a></li>
+  <li><a href="#sec-here-pkg" id="toc-sec-here-pkg" class="nav-link" data-scroll-target="#sec-here-pkg"><span class="header-section-number">6.37.1</span> <code>{here}</code></a></li>
+  <li><a href="#sec-memoise" id="toc-sec-memoise" class="nav-link" data-scroll-target="#sec-memoise"><span class="header-section-number">6.37.2</span> <code>{memoise}</code></a></li>
+  <li><a href="#sec-scales" id="toc-sec-scales" class="nav-link" data-scroll-target="#sec-scales"><span class="header-section-number">6.37.3</span> <code>{scales}</code></a></li>
+  <li><a href="#sec-sessioninfo" id="toc-sec-sessioninfo" class="nav-link" data-scroll-target="#sec-sessioninfo"><span class="header-section-number">6.37.4</span> <code>{sessioninfo}</code></a></li>
+  <li><a href="#sec-downlit" id="toc-sec-downlit" class="nav-link" data-scroll-target="#sec-downlit"><span class="header-section-number">6.37.5</span> <code>{downlit}</code></a></li>
+  <li><a href="#sec-prettyunits" id="toc-sec-prettyunits" class="nav-link" data-scroll-target="#sec-prettyunits"><span class="header-section-number">6.37.6</span> <code>{prettyunits}</code></a></li>
+  <li><a href="#sec-lobstr" id="toc-sec-lobstr" class="nav-link" data-scroll-target="#sec-lobstr"><span class="header-section-number">6.37.7</span> <code>{lobstr}</code></a></li>
+  <li><a href="#sec-crayon" id="toc-sec-crayon" class="nav-link" data-scroll-target="#sec-crayon"><span class="header-section-number">6.37.8</span> <code>{crayon}</code></a></li>
+  <li><a href="#sec-styler" id="toc-sec-styler" class="nav-link" data-scroll-target="#sec-styler"><span class="header-section-number">6.37.9</span> <code>{styler}</code></a></li>
+  <li><a href="#sec-rex" id="toc-sec-rex" class="nav-link" data-scroll-target="#sec-rex"><span class="header-section-number">6.37.10</span> <code>{rex}</code></a></li>
   </ul></li>
-  <li><a href="#sec-tidyverse" id="toc-sec-tidyverse" class="nav-link" data-scroll-target="#sec-tidyverse"><span class="header-section-number">6.38</span> Tidyverse</a></li>
-  <li><a href="#core-tidyverse-packages" id="toc-core-tidyverse-packages" class="nav-link" data-scroll-target="#core-tidyverse-packages"><span class="header-section-number">6.39</span> Core Tidyverse Packages</a>
+  <li><a href="#github-actions" id="toc-github-actions" class="nav-link" data-scroll-target="#github-actions"><span class="header-section-number">6.38</span> GitHub Actions</a>
   <ul class="collapse">
-  <li><a href="#sec-ggplot2" id="toc-sec-ggplot2" class="nav-link" data-scroll-target="#sec-ggplot2"><span class="header-section-number">6.39.1</span> ggplot2</a></li>
-  <li><a href="#sec-dplyr" id="toc-sec-dplyr" class="nav-link" data-scroll-target="#sec-dplyr"><span class="header-section-number">6.39.2</span> dplyr</a></li>
-  <li><a href="#sec-tidyr" id="toc-sec-tidyr" class="nav-link" data-scroll-target="#sec-tidyr"><span class="header-section-number">6.39.3</span> tidyr</a></li>
-  <li><a href="#sec-readr" id="toc-sec-readr" class="nav-link" data-scroll-target="#sec-readr"><span class="header-section-number">6.39.4</span> readr</a></li>
-  <li><a href="#sec-purrr" id="toc-sec-purrr" class="nav-link" data-scroll-target="#sec-purrr"><span class="header-section-number">6.39.5</span> purrr</a></li>
-  <li><a href="#sec-tibble" id="toc-sec-tibble" class="nav-link" data-scroll-target="#sec-tibble"><span class="header-section-number">6.39.6</span> tibble</a></li>
-  <li><a href="#sec-stringr" id="toc-sec-stringr" class="nav-link" data-scroll-target="#sec-stringr"><span class="header-section-number">6.39.7</span> stringr</a></li>
-  <li><a href="#sec-forcats" id="toc-sec-forcats" class="nav-link" data-scroll-target="#sec-forcats"><span class="header-section-number">6.39.8</span> forcats</a></li>
-  <li><a href="#sec-lubridate" id="toc-sec-lubridate" class="nav-link" data-scroll-target="#sec-lubridate"><span class="header-section-number">6.39.9</span> lubridate</a></li>
+  <li><a href="#sec-r-lib-actions" id="toc-sec-r-lib-actions" class="nav-link" data-scroll-target="#sec-r-lib-actions"><span class="header-section-number">6.38.1</span> actions</a></li>
   </ul></li>
-  <li><a href="#base-r-to-tidyverse-translation" id="toc-base-r-to-tidyverse-translation" class="nav-link" data-scroll-target="#base-r-to-tidyverse-translation"><span class="header-section-number">6.40</span> Base R to Tidyverse Translation</a></li>
-  <li><a href="#programming-with-tidyverse" id="toc-programming-with-tidyverse" class="nav-link" data-scroll-target="#programming-with-tidyverse"><span class="header-section-number">6.41</span> Programming with Tidyverse</a></li>
-  <li><a href="#coding-with-r-and-python" id="toc-coding-with-r-and-python" class="nav-link" data-scroll-target="#coding-with-r-and-python"><span class="header-section-number">6.42</span> Coding with R and Python</a></li>
-  <li><a href="#repeating-analyses-with-different-variations" id="toc-repeating-analyses-with-different-variations" class="nav-link" data-scroll-target="#repeating-analyses-with-different-variations"><span class="header-section-number">6.43</span> Repeating analyses with different variations</a>
+  <li><a href="#sec-tidyverse" id="toc-sec-tidyverse" class="nav-link" data-scroll-target="#sec-tidyverse"><span class="header-section-number">6.39</span> Tidyverse</a></li>
+  <li><a href="#core-tidyverse-packages" id="toc-core-tidyverse-packages" class="nav-link" data-scroll-target="#core-tidyverse-packages"><span class="header-section-number">6.40</span> Core Tidyverse Packages</a>
   <ul class="collapse">
-  <li><a href="#lapply-and-sapply-1" id="toc-lapply-and-sapply-1" class="nav-link" data-scroll-target="#lapply-and-sapply-1"><span class="header-section-number">6.43.1</span> <code>lapply()</code> and <code>sapply()</code></a></li>
-  <li><a href="#mapply-and-pmap" id="toc-mapply-and-pmap" class="nav-link" data-scroll-target="#mapply-and-pmap"><span class="header-section-number">6.43.2</span> <code>mapply()</code> and <code>pmap()</code></a></li>
-  <li><a href="#parallel-processing-with-parallel-and-future-packages" id="toc-parallel-processing-with-parallel-and-future-packages" class="nav-link" data-scroll-target="#parallel-processing-with-parallel-and-future-packages"><span class="header-section-number">6.43.3</span> Parallel processing with <code>parallel</code> and <code>future</code> packages</a></li>
+  <li><a href="#sec-ggplot2" id="toc-sec-ggplot2" class="nav-link" data-scroll-target="#sec-ggplot2"><span class="header-section-number">6.40.1</span> ggplot2</a></li>
+  <li><a href="#sec-dplyr" id="toc-sec-dplyr" class="nav-link" data-scroll-target="#sec-dplyr"><span class="header-section-number">6.40.2</span> dplyr</a></li>
+  <li><a href="#sec-tidyr" id="toc-sec-tidyr" class="nav-link" data-scroll-target="#sec-tidyr"><span class="header-section-number">6.40.3</span> tidyr</a></li>
+  <li><a href="#sec-readr" id="toc-sec-readr" class="nav-link" data-scroll-target="#sec-readr"><span class="header-section-number">6.40.4</span> readr</a></li>
+  <li><a href="#sec-purrr" id="toc-sec-purrr" class="nav-link" data-scroll-target="#sec-purrr"><span class="header-section-number">6.40.5</span> purrr</a></li>
+  <li><a href="#sec-tibble" id="toc-sec-tibble" class="nav-link" data-scroll-target="#sec-tibble"><span class="header-section-number">6.40.6</span> tibble</a></li>
+  <li><a href="#sec-stringr" id="toc-sec-stringr" class="nav-link" data-scroll-target="#sec-stringr"><span class="header-section-number">6.40.7</span> stringr</a></li>
+  <li><a href="#sec-forcats" id="toc-sec-forcats" class="nav-link" data-scroll-target="#sec-forcats"><span class="header-section-number">6.40.8</span> forcats</a></li>
+  <li><a href="#sec-lubridate" id="toc-sec-lubridate" class="nav-link" data-scroll-target="#sec-lubridate"><span class="header-section-number">6.40.9</span> lubridate</a></li>
   </ul></li>
-  <li><a href="#sec-reviewing-code" id="toc-sec-reviewing-code" class="nav-link" data-scroll-target="#sec-reviewing-code"><span class="header-section-number">6.44</span> Reviewing Code</a>
+  <li><a href="#base-r-to-tidyverse-translation" id="toc-base-r-to-tidyverse-translation" class="nav-link" data-scroll-target="#base-r-to-tidyverse-translation"><span class="header-section-number">6.41</span> Base R to Tidyverse Translation</a></li>
+  <li><a href="#programming-with-tidyverse" id="toc-programming-with-tidyverse" class="nav-link" data-scroll-target="#programming-with-tidyverse"><span class="header-section-number">6.42</span> Programming with Tidyverse</a></li>
+  <li><a href="#coding-with-r-and-python" id="toc-coding-with-r-and-python" class="nav-link" data-scroll-target="#coding-with-r-and-python"><span class="header-section-number">6.43</span> Coding with R and Python</a></li>
+  <li><a href="#repeating-analyses-with-different-variations" id="toc-repeating-analyses-with-different-variations" class="nav-link" data-scroll-target="#repeating-analyses-with-different-variations"><span class="header-section-number">6.44</span> Repeating analyses with different variations</a>
   <ul class="collapse">
-  <li><a href="#sec-why-review-code" id="toc-sec-why-review-code" class="nav-link" data-scroll-target="#sec-why-review-code"><span class="header-section-number">6.44.1</span> Why We Review Code</a></li>
-  <li><a href="#sec-what-to-look-for" id="toc-sec-what-to-look-for" class="nav-link" data-scroll-target="#sec-what-to-look-for"><span class="header-section-number">6.44.2</span> What Reviewers Look For</a></li>
-  <li><a href="#sec-constructive-feedback" id="toc-sec-constructive-feedback" class="nav-link" data-scroll-target="#sec-constructive-feedback"><span class="header-section-number">6.44.3</span> How to Give Constructive Feedback</a></li>
-  <li><a href="#sec-when-to-approve" id="toc-sec-when-to-approve" class="nav-link" data-scroll-target="#sec-when-to-approve"><span class="header-section-number">6.44.4</span> When to Approve</a></li>
+  <li><a href="#lapply-and-sapply-1" id="toc-lapply-and-sapply-1" class="nav-link" data-scroll-target="#lapply-and-sapply-1"><span class="header-section-number">6.44.1</span> <code>lapply()</code> and <code>sapply()</code></a></li>
+  <li><a href="#mapply-and-pmap" id="toc-mapply-and-pmap" class="nav-link" data-scroll-target="#mapply-and-pmap"><span class="header-section-number">6.44.2</span> <code>mapply()</code> and <code>pmap()</code></a></li>
+  <li><a href="#parallel-processing-with-parallel-and-future-packages" id="toc-parallel-processing-with-parallel-and-future-packages" class="nav-link" data-scroll-target="#parallel-processing-with-parallel-and-future-packages"><span class="header-section-number">6.44.3</span> Parallel processing with <code>parallel</code> and <code>future</code> packages</a></li>
   </ul></li>
-  <li><a href="#sec-getting-help-with-code" id="toc-sec-getting-help-with-code" class="nav-link" data-scroll-target="#sec-getting-help-with-code"><span class="header-section-number">6.45</span> Getting Help with Code</a></li>
-  <li><a href="#sec-r-resources" id="toc-sec-r-resources" class="nav-link" data-scroll-target="#sec-r-resources"><span class="header-section-number">6.46</span> Additional Resources</a>
+  <li><a href="#sec-reviewing-code" id="toc-sec-reviewing-code" class="nav-link" data-scroll-target="#sec-reviewing-code"><span class="header-section-number">6.45</span> Reviewing Code</a>
   <ul class="collapse">
-  <li><a href="#r-package-development" id="toc-r-package-development" class="nav-link" data-scroll-target="#r-package-development"><span class="header-section-number">6.46.1</span> R Package Development</a></li>
-  <li><a href="#general-r-programming" id="toc-general-r-programming" class="nav-link" data-scroll-target="#general-r-programming"><span class="header-section-number">6.46.2</span> General R Programming</a></li>
-  <li><a href="#shiny-development" id="toc-shiny-development" class="nav-link" data-scroll-target="#shiny-development"><span class="header-section-number">6.46.3</span> Shiny Development</a></li>
-  <li><a href="#git-and-version-control" id="toc-git-and-version-control" class="nav-link" data-scroll-target="#git-and-version-control"><span class="header-section-number">6.46.4</span> Git and Version Control</a></li>
+  <li><a href="#sec-why-review-code" id="toc-sec-why-review-code" class="nav-link" data-scroll-target="#sec-why-review-code"><span class="header-section-number">6.45.1</span> Why We Review Code</a></li>
+  <li><a href="#sec-what-to-look-for" id="toc-sec-what-to-look-for" class="nav-link" data-scroll-target="#sec-what-to-look-for"><span class="header-section-number">6.45.2</span> What Reviewers Look For</a></li>
+  <li><a href="#sec-constructive-feedback" id="toc-sec-constructive-feedback" class="nav-link" data-scroll-target="#sec-constructive-feedback"><span class="header-section-number">6.45.3</span> How to Give Constructive Feedback</a></li>
+  <li><a href="#sec-when-to-approve" id="toc-sec-when-to-approve" class="nav-link" data-scroll-target="#sec-when-to-approve"><span class="header-section-number">6.45.4</span> When to Approve</a></li>
+  </ul></li>
+  <li><a href="#sec-getting-help-with-code" id="toc-sec-getting-help-with-code" class="nav-link" data-scroll-target="#sec-getting-help-with-code"><span class="header-section-number">6.46</span> Getting Help with Code</a></li>
+  <li><a href="#sec-r-resources" id="toc-sec-r-resources" class="nav-link" data-scroll-target="#sec-r-resources"><span class="header-section-number">6.47</span> Additional Resources</a>
+  <ul class="collapse">
+  <li><a href="#r-package-development" id="toc-r-package-development" class="nav-link" data-scroll-target="#r-package-development"><span class="header-section-number">6.47.1</span> R Package Development</a></li>
+  <li><a href="#general-r-programming" id="toc-general-r-programming" class="nav-link" data-scroll-target="#general-r-programming"><span class="header-section-number">6.47.2</span> General R Programming</a></li>
+  <li><a href="#shiny-development" id="toc-shiny-development" class="nav-link" data-scroll-target="#shiny-development"><span class="header-section-number">6.47.3</span> Shiny Development</a></li>
+  <li><a href="#git-and-version-control" id="toc-git-and-version-control" class="nav-link" data-scroll-target="#git-and-version-control"><span class="header-section-number">6.47.4</span> Git and Version Control</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/coding-practices.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/coding-practices.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -830,7 +837,7 @@ window.Quarto = {
 
 <div class="preview-combined-banner">
     <p style="margin: 0;">
-        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~10% of content changed).
+        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~9% of content changed).
         <br>
         <strong>🎨 Highlighting Legend:</strong> 
         <mark class="preview-text-changed" style="display: inline; padding: 1px 3px;">Modified text (yellow)</mark> shows changed words/phrases with tooltips of original text, 
@@ -1864,7 +1871,7 @@ Note
 <ul>
 <li><a href="https://bench.r-lib.org/"><code>{bench}</code></a> - Accurate benchmarking</li>
 <li><a href="https://profvis.r-lib.org/"><code>{profvis}</code></a> - Interactive profiling</li>
-<li><a href="https://memoise.r-lib.org/"><code>{memoise}</code></a> - Function-call caching to eliminate repeated bottlenecks (<a href="#sec-memoise" class="quarto-xref"><span>Section <mark class="preview-text-changed">6.36.2</mark></span></a><mark class="preview-text-changed">)</mark></li>
+<li><a href="https://memoise.r-lib.org/"><code>{memoise}</code></a> - Function-call caching to eliminate repeated bottlenecks (<a href="#sec-memoise" class="quarto-xref"><span>Section <mark class="preview-text-changed">6.37.2</mark></span></a><mark class="preview-text-changed">)</mark></li>
 <li><a href="https://adv-r.hadley.nz/perf-measure.html">Measuring Performance</a> chapter in Advanced R</li>
 <li><a href="https://adv-r.hadley.nz/perf-improve.html">Improving Performance</a> chapter in Advanced R</li>
 <li><a href="https://github.com/lorenzwalthert/touchstone"><code>{touchstone}</code></a> - CI benchmarking with PR comments</li>
@@ -2517,6 +2524,7 @@ Note
 <li><mark class="preview-element-added">Adding a new data source requires one new call, not a copy-pasted block.</mark></li>
 <li><mark class="preview-element-added">Error message formatting stays consistent across all sources.</mark></li>
 </ul>
+<p><mark class="preview-element-added">Place each extracted helper in its own file (<a href="#sec-one-function-per-file" class="quarto-xref"><span>Section 6.24</span></a>), not above or below the caller in the same file.</mark></p>
 </section>
 <section id="examples-borrowed-from-lab-package-prs" class="level2" data-number="6.22">
 <h2 data-number="6.22" class="anchored" data-anchor-id="examples-borrowed-from-lab-package-prs"><span class="header-section-number"><mark class="preview-text-changed">6.22</mark></span> Examples borrowed from lab package PRs</h2>
@@ -2527,8 +2535,28 @@ Note
 <h2 data-number="6.23" class="anchored" data-anchor-id="related-references"><span class="header-section-number"><mark class="preview-text-changed">6.23</mark></span> Related references</h2>
 <p>For background and related ideas, see <a href="https://en.wikipedia.org/wiki/Decomposition_(computer_science)">Decomposition (computer science)</a>, <a href="https://en.wikipedia.org/wiki/Code_refactoring">Code refactoring</a>, and <a href="https://en.wikipedia.org/wiki/Functional_decomposition">Functional decomposition</a>.</p>
 </section>
-<section id="sec-function-length-limits" class="level2" data-number="6.24">
-<h2 data-number="6.24" class="anchored" data-anchor-id="sec-function-length-limits"><span class="header-section-number"><mark class="preview-text-changed">6.24</mark></span> Function length limits</h2>
+<section id="sec-one-function-per-file" class="level2" data-number="6.24">
+<h2 data-number="6.24" class="anchored" data-anchor-id="sec-one-function-per-file"><span class="header-section-number"><mark class="preview-text-changed">6.24</mark></span> <mark class="preview-text-changed">One</mark> <mark class="preview-text-changed">function per file</mark></h2>
+<p><mark class="preview-element-added">Give each function its own file rather than bundling multiple functions into one file. This applies to exported functions, internal helpers, and test helpers alike — the only exception is a trivial two-line wrapper that is inseparable from its caller.</mark></p>
+<section id="r-packages" class="level3" data-number="6.24.1">
+<h3 data-number="6.24.1" class="anchored" data-anchor-id="r-packages"><span class="header-section-number"><mark class="preview-text-changed">6.24.1</mark></span> <mark class="preview-text-changed">R</mark> <mark class="preview-text-changed">packages</mark></h3>
+<p><mark class="preview-element-added">Under <code>R/</code>, name the file after the function it contains: <code>simulate_data()</code> lives in <code>R/simulate_data.R</code>. A private helper that is more than a two-liner still gets its own file, named after the helper, even if only one caller uses it.</mark></p>
+</section>
+<section id="why" class="level3" data-number="6.24.2">
+<h3 data-number="6.24.2" class="anchored" data-anchor-id="why"><span class="header-section-number"><mark class="preview-text-changed">6.24.2</mark></span> <mark class="preview-text-changed">Why</mark></h3>
+<p><mark class="preview-element-added">A file with one function is easier to find, easier to diff (a change to one function does not sit inside an unrelated grep hit for a different one), and matches how <code>git blame</code> and code-review tools attribute changes. Bundling unrelated functions into one file — because they were added in the same PR, or because an existing file happened to be open — accumulates unrelated concerns over time.</mark></p>
+</section>
+<section id="adding-to-an-existing-multi-function-file" class="level3" data-number="6.24.3">
+<h3 data-number="6.24.3" class="anchored" data-anchor-id="adding-to-an-existing-multi-function-file"><mark class="preview-element-added"><span class="header-section-number">6.24.3</span> Adding to an existing multi-function file</mark></h3>
+<p><mark class="preview-element-added">When adding a function to a file that already holds others (common in older code that predates this convention), put the <strong>new</strong> function in its own file so at least new code follows the convention going forward. Splitting every pre-existing function out is a separate, larger refactor.</mark></p>
+</section>
+<section id="relationship-to-function-decomposition" class="level3" data-number="6.24.4">
+<h3 data-number="6.24.4" class="anchored" data-anchor-id="relationship-to-function-decomposition"><span class="header-section-number"><mark class="preview-text-changed">6.24.4</mark></span> Relationship to <mark class="preview-text-changed">function</mark> <mark class="preview-text-changed">decomposition</mark></h3>
+<p><mark class="preview-element-added">When decomposing a large function (1), place each extracted helper in its own file rather than above or below the caller in the same file. The caller file then contains only the orchestration function, and each helper is independently findable and testable.</mark></p>
+</section>
+</section>
+<section id="sec-function-length-limits" class="level2" data-number="6.25">
+<h2 data-number="6.25" class="anchored" data-anchor-id="sec-function-length-limits"><span class="header-section-number"><mark class="preview-text-changed">6.25</mark></span> Function length limits</h2>
 <p>Function length matters because very long functions can hide workflow intent, increase maintenance burden, and make targeted testing harder. The sources below combine community discussions (opinion-based) with a formal complexity reference. Use the community links for examples of practitioner viewpoints, and the complexity reference for a formal metric.</p>
 <p>Sources:</p>
 <ul>
@@ -2545,8 +2573,8 @@ Note
 <li>Decompose when the top-level story is hard to follow or hard to test.</li>
 </ol>
 </section>
-<section id="sec-kiss" class="level2" data-number="6.25">
-<h2 data-number="6.25" class="anchored" data-anchor-id="sec-kiss"><span class="header-section-number"><mark class="preview-text-changed">6.25</mark></span> Keep It Short and Simple (KISS)</h2>
+<section id="sec-kiss" class="level2" data-number="6.26">
+<h2 data-number="6.26" class="anchored" data-anchor-id="sec-kiss"><span class="header-section-number"><mark class="preview-text-changed">6.26</mark></span> Keep It Short and Simple (KISS)</h2>
 <p>The <a href="https://en.wikipedia.org/wiki/KISS_principle">KISS principle</a> — “Keep It Short and Simple” — says that most systems work best when they are kept simple, so unnecessary complexity should be avoided rather than managed. A blunter phrasing — the one aircraft engineer Kelly Johnson actually coined at the Lockheed Skunk Works — is “keep it simple, stupid”: his standing challenge was that his team’s aircraft must be repairable by an average mechanic in the field with only a handful of common tools.</p>
 <p>The principle carries directly into software development: code is read, debugged, and modified far more often than it is written, and it is usually maintained by someone with less context than the original author had — often your own future self.</p>
 <p>Rationales for keeping code short and simple:</p>
@@ -2558,22 +2586,22 @@ Note
 </ul>
 <p>Simplicity is not an excuse to drop requirements: the goal is the simplest solution that still does the whole job, not a simpler job. The preceding sections on function decomposition and function length limits, and the guidance on <a href="@sec-avoid-nesting">avoiding deep nesting</a>, are concrete applications of this principle.</p>
 </section>
-<section id="sec-decompose-qmd-chunks" class="level2" data-number="6.26">
-<h2 data-number="6.26" class="anchored" data-anchor-id="sec-decompose-qmd-chunks"><span class="header-section-number"><mark class="preview-text-changed">6.26</mark></span> Decomposing Code Chunks in Quarto Documents</h2>
+<section id="sec-decompose-qmd-chunks" class="level2" data-number="6.27">
+<h2 data-number="6.27" class="anchored" data-anchor-id="sec-decompose-qmd-chunks"><span class="header-section-number"><mark class="preview-text-changed">6.27</mark></span> Decomposing Code Chunks in Quarto Documents</h2>
 <p>A Quarto document should read as narrative plus orchestration: each code chunk calls documented functions and displays their results, and the surrounding prose carries the analysis story. Complex logic belongs in named functions, not inline in chunks.</p>
-<p>When a chunk grows into substantial logic — a multi-step data manipulation, a function defined inline, a non-trivial transformation, or the same block copied across chunks — extract that logic into a function and have the chunk call it. Following the function-decomposition (1) and length-limit (<a href="#sec-function-length-limits" class="quarto-xref"><span>Section 6.24</span></a>) principles, give the function its own file under <code>R/</code>, with full <a href="https://roxygen2.r-lib.org/"><code>{roxygen2}</code></a> documentation, the same way any other package function is written. The chunk then shrinks to a call plus whatever narrative or display wraps it.</p>
+<p>When a chunk grows into substantial logic — a multi-step data manipulation, a function defined inline, a non-trivial transformation, or the same block copied across chunks — extract that logic into a function and have the chunk call it. Following the function-decomposition <mark class="preview-text-changed">(1), one-function-per-file (</mark><a href="#sec-one-function-per-file" class="quarto-xref"><span><mark class="preview-text-changed">Section 6.24</mark></span></a><mark class="preview-text-changed">),</mark> and length-limit (<a href="#sec-function-length-limits" class="quarto-xref"><span>Section <mark class="preview-text-changed">6.25</mark></span></a><mark class="preview-text-changed">)</mark> principles, give the function its own file under <code>R/</code>, with full <a href="https://roxygen2.r-lib.org/"><code>{roxygen2}</code></a> documentation, the same way any other package function is written. The chunk then shrinks to a call plus whatever narrative or display wraps it.</p>
 <p>Why this matters: a function can be unit-tested, reused across chunks and analyses, and documented; inline chunk code can be none of these. Keeping logic inline also buries the analysis narrative under implementation detail, and duplicates code that should have one home.</p>
 <p>Our shared linter set enforces the function-definition half of this rule: <code>lms::function_location_linter()</code> (part of <code>lms::default_linters()</code>) flags a named function defined at the top level of any file outside the designated directories (<code>R/</code> and <code>tests/</code> by default), including inside a <code>.qmd</code> chunk. Loose chunk logic that was never wrapped in a function at all is not something a linter can catch, so watch for it when writing and reviewing analyses: a chunk carrying substantial inline logic is a decomposition finding, and the fix is to move the logic into <code>R/</code> and leave the chunk calling it.</p>
 </section>
-<section id="sec-here-package-practices" class="level2" data-number="6.27">
-<h2 data-number="6.27" class="anchored" data-anchor-id="sec-here-package-practices"><span class="header-section-number"><mark class="preview-text-changed">6.27</mark></span> The here package</h2>
+<section id="sec-here-package-practices" class="level2" data-number="6.28">
+<h2 data-number="6.28" class="anchored" data-anchor-id="sec-here-package-practices"><span class="header-section-number"><mark class="preview-text-changed">6.28</mark></span> <mark class="preview-text-changed">The</mark> <mark class="preview-text-changed">here package</mark></h2>
 <p>The <code>here</code> package is one great R package that helps multiple collaborators deal with the mess that is working directories within an R project structure. Let’s say we have an R project at the path <code>/home/oski/Some-R-Project</code>. My collaborator might clone the repository and work with it at some other path, such as <code>/home/bear/R-Code/Some-R-Project</code>. Dealing with working directories and paths explicitly can be a very large pain, and as you might imagine, setting up a Config with paths requires those paths to flexibly work for all contributors to a project. This is where the <code>here</code> package comes in and this a <a href="https://github.com/jennybc/here_here">great vignette describing it</a>.</p>
 <p><em>See also <a href="coding-style.html#sec-here-package-style" class="quarto-xref" preview-toc-changed><span>Section 7.16</span></a> for code style guidelines on using the here package.</em></p>
 </section>
-<section id="readingsaving-data" class="level2" data-number="6.28">
-<h2 data-number="6.28" class="anchored" data-anchor-id="readingsaving-data"><span class="header-section-number"><mark class="preview-text-changed">6.28</mark></span> Reading/Saving Data</h2>
-<section id="rds-vs-.rdata-files" class="level3" data-number="6.28.1">
-<h3 data-number="6.28.1" class="anchored" data-anchor-id="rds-vs-.rdata-files"><span class="header-section-number"><mark class="preview-text-changed">6.28.1</mark></span> <code>.RDS</code> vs <code>.RData</code> Files</h3>
+<section id="readingsaving-data" class="level2" data-number="6.29">
+<h2 data-number="6.29" class="anchored" data-anchor-id="readingsaving-data"><span class="header-section-number"><mark class="preview-text-changed">6.29</mark></span> Reading/Saving Data</h2>
+<section id="rds-vs-.rdata-files" class="level3" data-number="6.29.1">
+<h3 data-number="6.29.1" class="anchored" data-anchor-id="rds-vs-.rdata-files"><span class="header-section-number"><mark class="preview-text-changed">6.29.1</mark></span> <code>.RDS</code> vs <code>.RData</code> Files</h3>
 <p>One of the most common ways to load and save data in Base R is with the <code>load()</code> and <code>save()</code> functions to serialize multiple objects in a single <code>.RData</code> file. The biggest problems with this practice include an inability to control the names of things getting loaded in, the inherent confusion this creates in understanding older code, and the inability to load individual elements of a saved file. For this, we recommend using the RDS format to save R objects.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -2589,23 +2617,23 @@ Note
 </div>
 </div>
 </section>
-<section id="csvs" class="level3" data-number="6.28.2">
-<h3 data-number="6.28.2" class="anchored" data-anchor-id="csvs"><span class="header-section-number"><mark class="preview-text-changed">6.28.2</mark></span> CSVs</h3>
+<section id="csvs" class="level3" data-number="6.29.2">
+<h3 data-number="6.29.2" class="anchored" data-anchor-id="csvs"><span class="header-section-number"><mark class="preview-text-changed">6.29.2</mark></span> CSVs</h3>
 <p>Once again, the <code>readr</code> package as part of the Tidvyerse is great, with a much faster <code>read_csv()</code> than Base R’s <code>read.csv()</code>. For massive CSVs (&gt; 5 GB), you’ll find <code>data.table::fread()</code> to be the fastest CSV reader in any data science language out there. For writing CSVs, <code>readr::write_csv()</code> and <code>data.table::fwrite()</code> outclass Base R’s <code>write.csv()</code> by a significant margin as well.</p>
 </section>
 </section>
-<section id="integrating-box-and-dropbox" class="level2" data-number="6.29">
-<h2 data-number="6.29" class="anchored" data-anchor-id="integrating-box-and-dropbox"><span class="header-section-number"><mark class="preview-text-changed">6.29</mark></span> Integrating Box and Dropbox</h2>
+<section id="integrating-box-and-dropbox" class="level2" data-number="6.30">
+<h2 data-number="6.30" class="anchored" data-anchor-id="integrating-box-and-dropbox"><span class="header-section-number"><mark class="preview-text-changed">6.30</mark></span> Integrating Box and Dropbox</h2>
 <p>Box and Dropbox are cloud-based file sharing systems that are useful when dealing with large files. When our scripts generate large output files, the files can slow down the workflow if they are pushed to GitHub. This makes collaboration difficult when not everyone has a copy of the file, unless we decide to duplicate files and share them manually. The files might also take up a lot of local storage. Box and Dropbox help us avoid these issues by automatically storing the files, reading data, and writing data back to the cloud.</p>
 <p>Box and Dropbox are separate platforms, but we can use either one to store and share files. To use them, we can install the packages that have been created to integrate Box and Dropbox into R. The set-up instructions are detailed below.</p>
 <p>Make sure to authenticate before reading and writing from either Box or Dropbox. The authentication commands should go in the configuration file; it only needs to be done once. This will prompt you to give your login credentials for Box and Dropbox and will allow your application to access your shared folders.</p>
-<section id="box" class="level3" data-number="6.29.1">
-<h3 data-number="6.29.1" class="anchored" data-anchor-id="box"><span class="header-section-number"><mark class="preview-text-changed">6.29.1</mark></span> Box</h3>
+<section id="box" class="level3" data-number="6.30.1">
+<h3 data-number="6.30.1" class="anchored" data-anchor-id="box"><span class="header-section-number"><mark class="preview-text-changed">6.30.1</mark></span> Box</h3>
 <p>Follow the instructions in this section to use the <code>boxr</code> package. Note that there are a few setup steps that need to be done on the box website before you can use the <code>boxr</code> package, <a href="https://r-box.github.io/boxr/articles/boxr-app-interactive.html#create">explained here</a> in the section “Creating an Interactive App.” This gets the authentication keys that must be put in box. Once that is done, add the authentication keys to your code in the configuration file, with <code>box_auth(client_id = "&lt;your_client_id&gt;", client_secret = "&lt;your_client_secret_id&gt;")</code>. It is also important to set the default working directory so that the code can reference the correct folder in box: <code>box_setwd(&lt;folder_id&gt;)</code>. The folder ID is the sequence of digits at the end of the URL.</p>
 <p>Further details can be found <a href="https://github.com/r-box/boxr">here</a>.</p>
 </section>
-<section id="dropbox" class="level3" data-number="6.29.2">
-<h3 data-number="6.29.2" class="anchored" data-anchor-id="dropbox"><span class="header-section-number"><mark class="preview-text-changed">6.29.2</mark></span> Dropbox</h3>
+<section id="dropbox" class="level3" data-number="6.30.2">
+<h3 data-number="6.30.2" class="anchored" data-anchor-id="dropbox"><span class="header-section-number"><mark class="preview-text-changed">6.30.2</mark></span> Dropbox</h3>
 <p>Follow the instructions at <a href="https://github.com/karthik/rdrop2">this link</a> to use the <code>rdrop2</code> package. Similar to the <code>boxr</code> package, you must authenticate before reading and writing from Dropbox, which can be done by adding <code>drop_auth()</code> to the configuration file.</p>
 <p>Saving the authentication token is not required, although it may be useful if you plan on using Dropbox frequently. To do so, save the token with the following commands. Tokens are valid until they are manually revoked.</p>
 <pre><code># first time only
@@ -2620,189 +2648,189 @@ drop_auth(rdstoken = "/path/to/tokenfile.RDS")
 </code></pre>
 </section>
 </section>
-<section id="sec-r-lib-packages" class="level2" data-number="6.30">
-<h2 data-number="6.30" class="anchored" data-anchor-id="sec-r-lib-packages"><span class="header-section-number">6.30</span> r-lib Packages</h2>
+<section id="sec-r-lib-packages" class="level2" data-number="6.31">
+<h2 data-number="6.31" class="anchored" data-anchor-id="sec-r-lib-packages"><span class="header-section-number">6.31</span> r-lib Packages</h2>
 <p>The <a href="https://github.com/r-lib">r-lib</a> GitHub organization, maintained primarily by the Posit team, hosts a collection of foundational R packages for package development, infrastructure, and general programming. These packages underpin much of the modern R ecosystem and are widely used in our lab’s workflows.</p>
 </section>
-<section id="package-development" class="level2" data-number="6.31">
-<h2 data-number="6.31" class="anchored" data-anchor-id="package-development"><span class="header-section-number"><mark class="preview-text-changed">6.31</mark></span> Package Development</h2>
-<section id="sec-usethis" class="level3" data-number="6.31.1">
-<h3 data-number="6.31.1" class="anchored" data-anchor-id="sec-usethis"><span class="header-section-number"><mark class="preview-text-changed">6.31.1</mark></span> <a href="https://usethis.r-lib.org/"><code>{usethis}</code></a></h3>
+<section id="package-development" class="level2" data-number="6.32">
+<h2 data-number="6.32" class="anchored" data-anchor-id="package-development"><span class="header-section-number"><mark class="preview-text-changed">6.32</mark></span> Package Development</h2>
+<section id="sec-usethis" class="level3" data-number="6.32.1">
+<h3 data-number="6.32.1" class="anchored" data-anchor-id="sec-usethis"><span class="header-section-number"><mark class="preview-text-changed">6.32.1</mark></span> <a href="https://usethis.r-lib.org/"><code>{usethis}</code></a></h3>
 <p><a href="https://usethis.r-lib.org/"><code>{usethis}</code></a> automates repetitive tasks that arise during project setup and development, both for R packages and non-package projects. It provides functions for setting up testing, CI, licenses, Git, and GitHub integrations, making it the go-to companion for <code>devtools</code>.</p>
 </section>
-<section id="sec-devtools" class="level3" data-number="6.31.2">
-<h3 data-number="6.31.2" class="anchored" data-anchor-id="sec-devtools"><span class="header-section-number"><mark class="preview-text-changed">6.31.2</mark></span> <a href="https://devtools.r-lib.org/"><code>{devtools}</code></a></h3>
+<section id="sec-devtools" class="level3" data-number="6.32.2">
+<h3 data-number="6.32.2" class="anchored" data-anchor-id="sec-devtools"><span class="header-section-number"><mark class="preview-text-changed">6.32.2</mark></span> <a href="https://devtools.r-lib.org/"><code>{devtools}</code></a></h3>
 <p><a href="https://devtools.r-lib.org/"><code>{devtools}</code></a> provides a suite of tools for the R package development workflow. It wraps many lower-level tools such as <code>pkgbuild</code>, <code>pkgload</code>, and <code>rcmdcheck</code> behind a convenient interface. Key functions include <code>load_all()</code>, <code>document()</code>, <code>test()</code>, <code>check()</code>, and <code>install()</code>.</p>
 </section>
-<section id="sec-roxygen2" class="level3" data-number="6.31.3">
-<h3 data-number="6.31.3" class="anchored" data-anchor-id="sec-roxygen2"><span class="header-section-number"><mark class="preview-text-changed">6.31.3</mark></span> <a href="https://roxygen2.r-lib.org/"><code>{roxygen2}</code></a></h3>
+<section id="sec-roxygen2" class="level3" data-number="6.32.3">
+<h3 data-number="6.32.3" class="anchored" data-anchor-id="sec-roxygen2"><span class="header-section-number"><mark class="preview-text-changed">6.32.3</mark></span> <a href="https://roxygen2.r-lib.org/"><code>{roxygen2}</code></a></h3>
 <p><a href="https://roxygen2.r-lib.org/"><code>{roxygen2}</code></a> lets you write documentation in-source, alongside the code it documents, using <code>#'</code> comment blocks. It generates <code>.Rd</code> files for the <code>man/</code> directory and updates <code>NAMESPACE</code>. It is the standard approach to R package documentation.</p>
 </section>
-<section id="sec-pkgdown" class="level3" data-number="6.31.4">
-<h3 data-number="6.31.4" class="anchored" data-anchor-id="sec-pkgdown"><span class="header-section-number"><mark class="preview-text-changed">6.31.4</mark></span> <a href="https://pkgdown.r-lib.org/"><code>{pkgdown}</code></a></h3>
+<section id="sec-pkgdown" class="level3" data-number="6.32.4">
+<h3 data-number="6.32.4" class="anchored" data-anchor-id="sec-pkgdown"><span class="header-section-number"><mark class="preview-text-changed">6.32.4</mark></span> <a href="https://pkgdown.r-lib.org/"><code>{pkgdown}</code></a></h3>
 <p><a href="https://pkgdown.r-lib.org/"><code>{pkgdown}</code></a> builds a documentation website for an R package from its source. It converts <code>README</code>, vignettes, and function documentation into a navigable website, and integrates with GitHub Actions for automatic deployment.</p>
 </section>
-<section id="sec-pkgload" class="level3" data-number="6.31.5">
-<h3 data-number="6.31.5" class="anchored" data-anchor-id="sec-pkgload"><span class="header-section-number"><mark class="preview-text-changed">6.31.5</mark></span> <a href="https://pkgload.r-lib.org/"><code>{pkgload}</code></a></h3>
+<section id="sec-pkgload" class="level3" data-number="6.32.5">
+<h3 data-number="6.32.5" class="anchored" data-anchor-id="sec-pkgload"><span class="header-section-number"><mark class="preview-text-changed">6.32.5</mark></span> <a href="https://pkgload.r-lib.org/"><code>{pkgload}</code></a></h3>
 <p><a href="https://pkgload.r-lib.org/"><code>{pkgload}</code></a> simulates the process of installing and loading a package, enabling rapid interactive development. It is the backend for <code>devtools::load_all()</code>.</p>
 </section>
-<section id="sec-pkgbuild" class="level3" data-number="6.31.6">
-<h3 data-number="6.31.6" class="anchored" data-anchor-id="sec-pkgbuild"><span class="header-section-number"><mark class="preview-text-changed">6.31.6</mark></span> <a href="https://pkgbuild.r-lib.org/"><code>{pkgbuild}</code></a></h3>
+<section id="sec-pkgbuild" class="level3" data-number="6.32.6">
+<h3 data-number="6.32.6" class="anchored" data-anchor-id="sec-pkgbuild"><span class="header-section-number"><mark class="preview-text-changed">6.32.6</mark></span> <a href="https://pkgbuild.r-lib.org/"><code>{pkgbuild}</code></a></h3>
 <p><a href="https://pkgbuild.r-lib.org/"><code>{pkgbuild}</code></a> provides tools for building R packages, finding compilers, and checking whether a build environment (such as Rtools on Windows) is available.</p>
 </section>
-<section id="sec-rcmdcheck" class="level3" data-number="6.31.7">
-<h3 data-number="6.31.7" class="anchored" data-anchor-id="sec-rcmdcheck"><span class="header-section-number"><mark class="preview-text-changed">6.31.7</mark></span> <a href="https://rcmdcheck.r-lib.org/"><code>{rcmdcheck}</code></a></h3>
+<section id="sec-rcmdcheck" class="level3" data-number="6.32.7">
+<h3 data-number="6.32.7" class="anchored" data-anchor-id="sec-rcmdcheck"><span class="header-section-number"><mark class="preview-text-changed">6.32.7</mark></span> <a href="https://rcmdcheck.r-lib.org/"><code>{rcmdcheck}</code></a></h3>
 <p><a href="https://rcmdcheck.r-lib.org/"><code>{rcmdcheck}</code></a> runs <code>R CMD check</code> from within R and captures the results in a structured format. It is used by CI systems and <code>devtools::check()</code>.</p>
 </section>
-<section id="sec-remotes" class="level3" data-number="6.31.8">
-<h3 data-number="6.31.8" class="anchored" data-anchor-id="sec-remotes"><span class="header-section-number"><mark class="preview-text-changed">6.31.8</mark></span> <a href="https://remotes.r-lib.org/"><code>{remotes}</code></a></h3>
+<section id="sec-remotes" class="level3" data-number="6.32.8">
+<h3 data-number="6.32.8" class="anchored" data-anchor-id="sec-remotes"><span class="header-section-number"><mark class="preview-text-changed">6.32.8</mark></span> <a href="https://remotes.r-lib.org/"><code>{remotes}</code></a></h3>
 <p><a href="https://remotes.r-lib.org/"><code>{remotes}</code></a> installs R packages from remote sources including GitHub, GitLab, Bitbucket, URLs, and local files. It is a lightweight alternative to <code>devtools::install_github()</code>.</p>
 </section>
-<section id="sec-pak" class="level3" data-number="6.31.9">
-<h3 data-number="6.31.9" class="anchored" data-anchor-id="sec-pak"><span class="header-section-number"><mark class="preview-text-changed">6.31.9</mark></span> <a href="https://pak.r-lib.org/"><code>{pak}</code></a></h3>
+<section id="sec-pak" class="level3" data-number="6.32.9">
+<h3 data-number="6.32.9" class="anchored" data-anchor-id="sec-pak"><span class="header-section-number"><mark class="preview-text-changed">6.32.9</mark></span> <a href="https://pak.r-lib.org/"><code>{pak}</code></a></h3>
 <p><a href="https://pak.r-lib.org/"><code>{pak}</code></a> installs R packages from CRAN, GitHub, and other sources, with fast parallel downloads and automatic system-dependency handling. It is r-lib’s modern alternative to <code>install.packages()</code> and <code>remotes</code> for interactive use.</p>
 </section>
-<section id="sec-revdepcheck" class="level3" data-number="6.31.10">
-<h3 data-number="6.31.10" class="anchored" data-anchor-id="sec-revdepcheck"><span class="header-section-number"><mark class="preview-text-changed">6.31.10</mark></span> <a href="https://revdepcheck.r-lib.org/"><code>{revdepcheck}</code></a></h3>
+<section id="sec-revdepcheck" class="level3" data-number="6.32.10">
+<h3 data-number="6.32.10" class="anchored" data-anchor-id="sec-revdepcheck"><span class="header-section-number"><mark class="preview-text-changed">6.32.10</mark></span> <a href="https://revdepcheck.r-lib.org/"><code>{revdepcheck}</code></a></h3>
 <p><a href="https://revdepcheck.r-lib.org/"><code>{revdepcheck}</code></a> automates reverse dependency checking — checking that changes to a package do not break packages that depend on it. It is used by package maintainers before CRAN releases.</p>
 </section>
-<section id="sec-desc" class="level3" data-number="6.31.11">
-<h3 data-number="6.31.11" class="anchored" data-anchor-id="sec-desc"><span class="header-section-number"><mark class="preview-text-changed">6.31.11</mark></span> <a href="https://desc.r-lib.org/"><code>{desc}</code></a></h3>
+<section id="sec-desc" class="level3" data-number="6.32.11">
+<h3 data-number="6.32.11" class="anchored" data-anchor-id="sec-desc"><span class="header-section-number"><mark class="preview-text-changed">6.32.11</mark></span> <a href="https://desc.r-lib.org/"><code>{desc}</code></a></h3>
 <p><a href="https://desc.r-lib.org/"><code>{desc}</code></a> provides tools for reading, writing, and manipulating <code>DESCRIPTION</code> files. It is used internally by <code>usethis</code> and other developer-facing tools.</p>
 </section>
-<section id="sec-pkgcache" class="level3" data-number="6.31.12">
-<h3 data-number="6.31.12" class="anchored" data-anchor-id="sec-pkgcache"><span class="header-section-number"><mark class="preview-text-changed">6.31.12</mark></span> <a href="https://r-lib.github.io/pkgcache/"><code>{pkgcache}</code></a></h3>
+<section id="sec-pkgcache" class="level3" data-number="6.32.12">
+<h3 data-number="6.32.12" class="anchored" data-anchor-id="sec-pkgcache"><span class="header-section-number"><mark class="preview-text-changed">6.32.12</mark></span> <a href="https://r-lib.github.io/pkgcache/"><code>{pkgcache}</code></a></h3>
 <p><a href="https://r-lib.github.io/pkgcache/"><code>{pkgcache}</code></a> provides a local cache of CRAN-like metadata and package files, speeding up package installation. It is used internally by <code>pak</code>.</p>
 </section>
-<section id="sec-lifecycle" class="level3" data-number="6.31.13">
-<h3 data-number="6.31.13" class="anchored" data-anchor-id="sec-lifecycle"><span class="header-section-number"><mark class="preview-text-changed">6.31.13</mark></span> <a href="https://lifecycle.r-lib.org/"><code>{lifecycle}</code></a></h3>
+<section id="sec-lifecycle" class="level3" data-number="6.32.13">
+<h3 data-number="6.32.13" class="anchored" data-anchor-id="sec-lifecycle"><span class="header-section-number"><mark class="preview-text-changed">6.32.13</mark></span> <a href="https://lifecycle.r-lib.org/"><code>{lifecycle}</code></a></h3>
 <p><a href="https://lifecycle.r-lib.org/"><code>{lifecycle}</code></a> manages the life cycle of functions and arguments, providing the experimental/superseded/deprecated badges and deprecation warnings used across the tidyverse and r-lib ecosystems.</p>
 </section>
 </section>
-<section id="testing-and-quality" class="level2" data-number="6.32">
-<h2 data-number="6.32" class="anchored" data-anchor-id="testing-and-quality"><span class="header-section-number"><mark class="preview-text-changed">6.32</mark></span> Testing and Quality</h2>
-<section id="sec-testthat" class="level3" data-number="6.32.1">
-<h3 data-number="6.32.1" class="anchored" data-anchor-id="sec-testthat"><span class="header-section-number"><mark class="preview-text-changed">6.32.1</mark></span> <a href="https://testthat.r-lib.org/"><code>{testthat}</code></a></h3>
+<section id="testing-and-quality" class="level2" data-number="6.33">
+<h2 data-number="6.33" class="anchored" data-anchor-id="testing-and-quality"><span class="header-section-number"><mark class="preview-text-changed">6.33</mark></span> Testing and Quality</h2>
+<section id="sec-testthat" class="level3" data-number="6.33.1">
+<h3 data-number="6.33.1" class="anchored" data-anchor-id="sec-testthat"><span class="header-section-number"><mark class="preview-text-changed">6.33.1</mark></span> <a href="https://testthat.r-lib.org/"><code>{testthat}</code></a></h3>
 <p><a href="https://testthat.r-lib.org/"><code>{testthat}</code></a> is the most widely used R testing framework. It provides a readable, expressive way to write unit tests for R packages, with functions like <code>expect_equal()</code>, <code>expect_error()</code>, and <code>expect_snapshot()</code>.</p>
 </section>
-<section id="sec-covr" class="level3" data-number="6.32.2">
-<h3 data-number="6.32.2" class="anchored" data-anchor-id="sec-covr"><span class="header-section-number"><mark class="preview-text-changed">6.32.2</mark></span> <a href="https://covr.r-lib.org/"><code>{covr}</code></a></h3>
+<section id="sec-covr" class="level3" data-number="6.33.2">
+<h3 data-number="6.33.2" class="anchored" data-anchor-id="sec-covr"><span class="header-section-number"><mark class="preview-text-changed">6.33.2</mark></span> <a href="https://covr.r-lib.org/"><code>{covr}</code></a></h3>
 <p><a href="https://covr.r-lib.org/"><code>{covr}</code></a> measures and reports test coverage for R packages. It can generate HTML reports, submit results to Codecov, and is commonly integrated into CI pipelines.</p>
 </section>
-<section id="sec-waldo" class="level3" data-number="6.32.3">
-<h3 data-number="6.32.3" class="anchored" data-anchor-id="sec-waldo"><span class="header-section-number"><mark class="preview-text-changed">6.32.3</mark></span> <a href="https://waldo.r-lib.org/"><code>{waldo}</code></a></h3>
+<section id="sec-waldo" class="level3" data-number="6.33.3">
+<h3 data-number="6.33.3" class="anchored" data-anchor-id="sec-waldo"><span class="header-section-number"><mark class="preview-text-changed">6.33.3</mark></span> <a href="https://waldo.r-lib.org/"><code>{waldo}</code></a></h3>
 <p><a href="https://waldo.r-lib.org/"><code>{waldo}</code></a> finds and describes differences between R objects. It provides clearer, more informative output than <code>identical()</code> or <code>all.equal()</code>, and is used internally by <code>testthat</code> to display test failures.</p>
 </section>
-<section id="sec-lintr" class="level3" data-number="6.32.4">
-<h3 data-number="6.32.4" class="anchored" data-anchor-id="sec-lintr"><span class="header-section-number"><mark class="preview-text-changed">6.32.4</mark></span> <a href="https://lintr.r-lib.org/"><code>{lintr}</code></a></h3>
+<section id="sec-lintr" class="level3" data-number="6.33.4">
+<h3 data-number="6.33.4" class="anchored" data-anchor-id="sec-lintr"><span class="header-section-number"><mark class="preview-text-changed">6.33.4</mark></span> <a href="https://lintr.r-lib.org/"><code>{lintr}</code></a></h3>
 <p><a href="https://lintr.r-lib.org/"><code>{lintr}</code></a> performs static code analysis (linting) for R. It checks for style issues, potential errors, and common anti-patterns, and integrates with RStudio, VS Code, and CI pipelines.</p>
 </section>
 </section>
-<section id="core-language-and-infrastructure" class="level2" data-number="6.33">
-<h2 data-number="6.33" class="anchored" data-anchor-id="core-language-and-infrastructure"><span class="header-section-number"><mark class="preview-text-changed">6.33</mark></span> Core Language and Infrastructure</h2>
-<section id="sec-rlang" class="level3" data-number="6.33.1">
-<h3 data-number="6.33.1" class="anchored" data-anchor-id="sec-rlang"><span class="header-section-number"><mark class="preview-text-changed">6.33.1</mark></span> <a href="https://rlang.r-lib.org/"><code>{rlang}</code></a></h3>
+<section id="core-language-and-infrastructure" class="level2" data-number="6.34">
+<h2 data-number="6.34" class="anchored" data-anchor-id="core-language-and-infrastructure"><span class="header-section-number"><mark class="preview-text-changed">6.34</mark></span> Core Language and Infrastructure</h2>
+<section id="sec-rlang" class="level3" data-number="6.34.1">
+<h3 data-number="6.34.1" class="anchored" data-anchor-id="sec-rlang"><span class="header-section-number"><mark class="preview-text-changed">6.34.1</mark></span> <a href="https://rlang.r-lib.org/"><code>{rlang}</code></a></h3>
 <p><a href="https://rlang.r-lib.org/"><code>{rlang}</code></a> provides a low-level API for working with R’s core language features, including environments, quosures, symbols, and non-standard evaluation (tidy eval). It is a foundational dependency for tidyverse packages and tidy eval programming.</p>
 </section>
-<section id="sec-vctrs" class="level3" data-number="6.33.2">
-<h3 data-number="6.33.2" class="anchored" data-anchor-id="sec-vctrs"><span class="header-section-number"><mark class="preview-text-changed">6.33.2</mark></span> <a href="https://vctrs.r-lib.org/"><code>{vctrs}</code></a></h3>
+<section id="sec-vctrs" class="level3" data-number="6.34.2">
+<h3 data-number="6.34.2" class="anchored" data-anchor-id="sec-vctrs"><span class="header-section-number"><mark class="preview-text-changed">6.34.2</mark></span> <a href="https://vctrs.r-lib.org/"><code>{vctrs}</code></a></h3>
 <p><a href="https://vctrs.r-lib.org/"><code>{vctrs}</code></a> defines a principled type system for R vectors, providing tools for coercion, casting, and size-stability. It underpins the consistent behavior of <code>dplyr</code> and <code>tidyr</code> across vector types.</p>
 </section>
-<section id="sec-withr" class="level3" data-number="6.33.3">
-<h3 data-number="6.33.3" class="anchored" data-anchor-id="sec-withr"><span class="header-section-number"><mark class="preview-text-changed">6.33.3</mark></span> <a href="https://withr.r-lib.org/"><code>{withr}</code></a></h3>
+<section id="sec-withr" class="level3" data-number="6.34.3">
+<h3 data-number="6.34.3" class="anchored" data-anchor-id="sec-withr"><span class="header-section-number"><mark class="preview-text-changed">6.34.3</mark></span> <a href="https://withr.r-lib.org/"><code>{withr}</code></a></h3>
 <p><a href="https://withr.r-lib.org/"><code>{withr}</code></a> allows code to be run with temporarily modified global state — changing options, environment variables, working directories, or random seeds — and reliably restoring them afterward. Essential for writing side-effect-free tests.</p>
 </section>
-<section id="sec-cli" class="level3" data-number="6.33.4">
-<h3 data-number="6.33.4" class="anchored" data-anchor-id="sec-cli"><span class="header-section-number"><mark class="preview-text-changed">6.33.4</mark></span> <a href="https://cli.r-lib.org/"><code>{cli}</code></a></h3>
+<section id="sec-cli" class="level3" data-number="6.34.4">
+<h3 data-number="6.34.4" class="anchored" data-anchor-id="sec-cli"><span class="header-section-number"><mark class="preview-text-changed">6.34.4</mark></span> <a href="https://cli.r-lib.org/"><code>{cli}</code></a></h3>
 <p><a href="https://cli.r-lib.org/"><code>{cli}</code></a> provides a rich toolkit for building command-line interfaces in R. It supports color, ANSI styling, progress bars, spinners, and formatted messages. It is the modern replacement for <code>crayon</code> and is used throughout the tidyverse.</p>
 </section>
-<section id="sec-R6" class="level3" data-number="6.33.5">
-<h3 data-number="6.33.5" class="anchored" data-anchor-id="sec-R6"><span class="header-section-number"><mark class="preview-text-changed">6.33.5</mark></span> <a href="https://r6.r-lib.org/"><code>{R6}</code></a></h3>
+<section id="sec-R6" class="level3" data-number="6.34.5">
+<h3 data-number="6.34.5" class="anchored" data-anchor-id="sec-R6"><span class="header-section-number"><mark class="preview-text-changed">6.34.5</mark></span> <a href="https://r6.r-lib.org/"><code>{R6}</code></a></h3>
 <p><a href="https://r6.r-lib.org/"><code>{R6}</code></a> implements encapsulated, reference-based object-oriented programming in R. Unlike S3 or S4, R6 classes support mutable state and inheritance in a style familiar from Python or Java.</p>
 </section>
-<section id="sec-cpp11" class="level3" data-number="6.33.6">
-<h3 data-number="6.33.6" class="anchored" data-anchor-id="sec-cpp11"><span class="header-section-number"><mark class="preview-text-changed">6.33.6</mark></span> <a href="https://cpp11.r-lib.org/"><code>{cpp11}</code></a></h3>
+<section id="sec-cpp11" class="level3" data-number="6.34.6">
+<h3 data-number="6.34.6" class="anchored" data-anchor-id="sec-cpp11"><span class="header-section-number"><mark class="preview-text-changed">6.34.6</mark></span> <a href="https://cpp11.r-lib.org/"><code>{cpp11}</code></a></h3>
 <p><a href="https://cpp11.r-lib.org/"><code>{cpp11}</code></a> provides a modern C++11 interface for interacting with R’s C API. It is a lightweight, header-only alternative to <code>Rcpp</code>, designed to simplify writing and debugging C++ extensions for R.</p>
 </section>
 </section>
-<section id="system-and-process" class="level2" data-number="6.34">
-<h2 data-number="6.34" class="anchored" data-anchor-id="system-and-process"><span class="header-section-number"><mark class="preview-text-changed">6.34</mark></span> System and Process</h2>
-<section id="sec-fs" class="level3" data-number="6.34.1">
-<h3 data-number="6.34.1" class="anchored" data-anchor-id="sec-fs"><span class="header-section-number"><mark class="preview-text-changed">6.34.1</mark></span> <a href="https://fs.r-lib.org/"><code>{fs}</code></a></h3>
+<section id="system-and-process" class="level2" data-number="6.35">
+<h2 data-number="6.35" class="anchored" data-anchor-id="system-and-process"><span class="header-section-number"><mark class="preview-text-changed">6.35</mark></span> System and Process</h2>
+<section id="sec-fs" class="level3" data-number="6.35.1">
+<h3 data-number="6.35.1" class="anchored" data-anchor-id="sec-fs"><span class="header-section-number"><mark class="preview-text-changed">6.35.1</mark></span> <a href="https://fs.r-lib.org/"><code>{fs}</code></a></h3>
 <p><a href="https://fs.r-lib.org/"><code>{fs}</code></a> provides a cross-platform, uniform interface to file system operations. It replaces inconsistent base R file functions with a tidy API using <code>path_*()</code>, <code>file_*()</code>, <code>dir_*()</code>, and <code>link_*()</code> functions that always return character vectors.</p>
 </section>
-<section id="sec-processx" class="level3" data-number="6.34.2">
-<h3 data-number="6.34.2" class="anchored" data-anchor-id="sec-processx"><span class="header-section-number"><mark class="preview-text-changed">6.34.2</mark></span> <a href="https://processx.r-lib.org/"><code>{processx}</code></a></h3>
+<section id="sec-processx" class="level3" data-number="6.35.2">
+<h3 data-number="6.35.2" class="anchored" data-anchor-id="sec-processx"><span class="header-section-number"><mark class="preview-text-changed">6.35.2</mark></span> <a href="https://processx.r-lib.org/"><code>{processx}</code></a></h3>
 <p><a href="https://processx.r-lib.org/"><code>{processx}</code></a> runs external system processes asynchronously or synchronously from R, with full control over stdin, stdout, and stderr. It is the backend for <code>callr</code>, and is used internally by <code>rcmdcheck</code>.</p>
 </section>
-<section id="sec-callr" class="level3" data-number="6.34.3">
-<h3 data-number="6.34.3" class="anchored" data-anchor-id="sec-callr"><span class="header-section-number"><mark class="preview-text-changed">6.34.3</mark></span> <a href="https://callr.r-lib.org/"><code>{callr}</code></a></h3>
+<section id="sec-callr" class="level3" data-number="6.35.3">
+<h3 data-number="6.35.3" class="anchored" data-anchor-id="sec-callr"><span class="header-section-number"><mark class="preview-text-changed">6.35.3</mark></span> <a href="https://callr.r-lib.org/"><code>{callr}</code></a></h3>
 <p><a href="https://callr.r-lib.org/"><code>{callr}</code></a> calls R functions in separate R processes. This is useful for running code in a clean environment, isolating side effects, or parallelizing work. It builds on top of <code>processx</code>.</p>
 </section>
-<section id="sec-ps" class="level3" data-number="6.34.4">
-<h3 data-number="6.34.4" class="anchored" data-anchor-id="sec-ps"><span class="header-section-number"><mark class="preview-text-changed">6.34.4</mark></span> <a href="https://ps.r-lib.org/"><code>{ps}</code></a></h3>
+<section id="sec-ps" class="level3" data-number="6.35.4">
+<h3 data-number="6.35.4" class="anchored" data-anchor-id="sec-ps"><span class="header-section-number"><mark class="preview-text-changed">6.35.4</mark></span> <a href="https://ps.r-lib.org/"><code>{ps}</code></a></h3>
 <p><a href="https://ps.r-lib.org/"><code>{ps}</code></a> provides a cross-platform API for listing, querying, and manipulating system processes from R. It is used internally by <code>processx</code> and <code>callr</code>.</p>
 </section>
 </section>
-<section id="http-and-web" class="level2" data-number="6.35">
-<h2 data-number="6.35" class="anchored" data-anchor-id="http-and-web"><span class="header-section-number"><mark class="preview-text-changed">6.35</mark></span> HTTP and Web</h2>
-<section id="sec-httr2" class="level3" data-number="6.35.1">
-<h3 data-number="6.35.1" class="anchored" data-anchor-id="sec-httr2"><span class="header-section-number"><mark class="preview-text-changed">6.35.1</mark></span> <a href="https://httr2.r-lib.org/"><code>{httr2}</code></a></h3>
+<section id="http-and-web" class="level2" data-number="6.36">
+<h2 data-number="6.36" class="anchored" data-anchor-id="http-and-web"><span class="header-section-number"><mark class="preview-text-changed">6.36</mark></span> HTTP and Web</h2>
+<section id="sec-httr2" class="level3" data-number="6.36.1">
+<h3 data-number="6.36.1" class="anchored" data-anchor-id="sec-httr2"><span class="header-section-number"><mark class="preview-text-changed">6.36.1</mark></span> <a href="https://httr2.r-lib.org/"><code>{httr2}</code></a></h3>
 <p><a href="https://httr2.r-lib.org/"><code>{httr2}</code></a> is a modern, pipe-friendly HTTP client for R. It replaces <code>httr</code> with a cleaner API, better support for OAuth, rate limiting, retries, and request/response bodies. Preferred for new code.</p>
 </section>
-<section id="sec-httr" class="level3" data-number="6.35.2">
-<h3 data-number="6.35.2" class="anchored" data-anchor-id="sec-httr"><span class="header-section-number"><mark class="preview-text-changed">6.35.2</mark></span> <a href="https://httr.r-lib.org/"><code>{httr}</code></a></h3>
+<section id="sec-httr" class="level3" data-number="6.36.2">
+<h3 data-number="6.36.2" class="anchored" data-anchor-id="sec-httr"><span class="header-section-number"><mark class="preview-text-changed">6.36.2</mark></span> <a href="https://httr.r-lib.org/"><code><mark class="preview-text-changed">{httr}</mark></code></a></h3>
 <p><a href="https://httr.r-lib.org/"><code>{httr}</code></a> is a widely-used HTTP client for R, providing wrappers for <code>GET()</code>, <code>POST()</code>, <code>PUT()</code>, <code>DELETE()</code>, and other HTTP verbs, as well as OAuth support. It has been superseded by <code>httr2</code> for new development.</p>
 </section>
-<section id="sec-gh" class="level3" data-number="6.35.3">
-<h3 data-number="6.35.3" class="anchored" data-anchor-id="sec-gh"><span class="header-section-number"><mark class="preview-text-changed">6.35.3</mark></span> <a href="https://gh.r-lib.org/"><code>{gh}</code></a></h3>
+<section id="sec-gh" class="level3" data-number="6.36.3">
+<h3 data-number="6.36.3" class="anchored" data-anchor-id="sec-gh"><span class="header-section-number"><mark class="preview-text-changed">6.36.3</mark></span> <a href="https://gh.r-lib.org/"><code>{gh}</code></a></h3>
 <p><a href="https://gh.r-lib.org/"><code>{gh}</code></a> provides a minimal client for the GitHub REST API. It handles authentication and pagination, and is used internally by <code>usethis</code> for GitHub operations.</p>
 </section>
-<section id="sec-gargle" class="level3" data-number="6.35.4">
-<h3 data-number="6.35.4" class="anchored" data-anchor-id="sec-gargle"><span class="header-section-number"><mark class="preview-text-changed">6.35.4</mark></span> <a href="https://gargle.r-lib.org/"><code>{gargle}</code></a></h3>
+<section id="sec-gargle" class="level3" data-number="6.36.4">
+<h3 data-number="6.36.4" class="anchored" data-anchor-id="sec-gargle"><span class="header-section-number"><mark class="preview-text-changed">6.36.4</mark></span> <a href="https://gargle.r-lib.org/"><code>{gargle}</code></a></h3>
 <p><a href="https://gargle.r-lib.org/"><code>{gargle}</code></a> provides authentication utilities for Google APIs, including OAuth 2.0, service accounts, and Application Default Credentials. It is used by <code>googledrive</code>, <code>googlesheets4</code>, and other Google-backed R packages.</p>
 </section>
 </section>
-<section id="utilities" class="level2" data-number="6.36">
-<h2 data-number="6.36" class="anchored" data-anchor-id="utilities"><span class="header-section-number"><mark class="preview-text-changed">6.36</mark></span> Utilities</h2>
-<section id="sec-here-pkg" class="level3" data-number="6.36.1">
-<h3 data-number="6.36.1" class="anchored" data-anchor-id="sec-here-pkg"><span class="header-section-number"><mark class="preview-text-changed">6.36.1</mark></span> <a href="https://here.r-lib.org/"><code>{here}</code></a></h3>
-<p><a href="https://here.r-lib.org/"><code>{here}</code></a> builds file paths relative to the project root, so scripts work regardless of the current working directory. This manual requires <code>{here}</code> for file paths (see <a href="#sec-here-package-practices" class="quarto-xref"><span>Section 6.27</span></a>).</p>
+<section id="utilities" class="level2" data-number="6.37">
+<h2 data-number="6.37" class="anchored" data-anchor-id="utilities"><span class="header-section-number"><mark class="preview-text-changed">6.37</mark></span> Utilities</h2>
+<section id="sec-here-pkg" class="level3" data-number="6.37.1">
+<h3 data-number="6.37.1" class="anchored" data-anchor-id="sec-here-pkg"><span class="header-section-number"><mark class="preview-text-changed">6.37.1</mark></span> <a href="https://here.r-lib.org/"><code><mark class="preview-text-changed">{here}</mark></code></a></h3>
+<p><a href="https://here.r-lib.org/"><code>{here}</code></a> builds file paths relative to the project root, so scripts work regardless of the current working directory. This manual requires <code>{here}</code> for file paths (see <a href="#sec-here-package-practices" class="quarto-xref"><span>Section 6.28</span></a>).</p>
 </section>
-<section id="sec-memoise" class="level3" data-number="6.36.2">
-<h3 data-number="6.36.2" class="anchored" data-anchor-id="sec-memoise"><span class="header-section-number"><mark class="preview-text-changed">6.36.2</mark></span> <a href="https://memoise.r-lib.org/"><code>{memoise}</code></a></h3>
+<section id="sec-memoise" class="level3" data-number="6.37.2">
+<h3 data-number="6.37.2" class="anchored" data-anchor-id="sec-memoise"><span class="header-section-number"><mark class="preview-text-changed">6.37.2</mark></span> <a href="https://memoise.r-lib.org/"><code>{memoise}</code></a></h3>
 <p><a href="https://memoise.r-lib.org/"><code>{memoise}</code></a> adds memoisation (function-call caching) to R functions. Wrapping an expensive, pure function with <code>memoise::memoise()</code> causes it to cache computed return values in memory or on disk, so repeated calls with identical arguments return instantly from cache instead of recomputing. It supports multiple storage backends via the <code>cache</code> argument (such as <code>cachem::cache_mem()</code> for in-memory caching and <code>cachem::cache_disk()</code> for persistent disk caching across sessions), and provides <code>memoise::forget()</code> to clear caches, <code>memoise::is.memoised()</code> to test whether a function is memoised, and <code>memoise::has_cache()</code> to check whether specific arguments have cached results. Use <code>{memoise}</code> only for deterministic functions without side effects (such as pure mathematical evaluations, stable API queries, or idempotent data processing pipelines). Never memoise stochastic simulation routines or functions that generate pseudorandom numbers; memoisation suppresses stochastic variation across repeated calls, silently collapsing random variability by returning stale cached draws.</p>
 </section>
-<section id="sec-scales" class="level3" data-number="6.36.3">
-<h3 data-number="6.36.3" class="anchored" data-anchor-id="sec-scales"><span class="header-section-number"><mark class="preview-text-changed">6.36.3</mark></span> <a href="https://scales.r-lib.org/"><code>{scales}</code></a></h3>
+<section id="sec-scales" class="level3" data-number="6.37.3">
+<h3 data-number="6.37.3" class="anchored" data-anchor-id="sec-scales"><span class="header-section-number"><mark class="preview-text-changed">6.37.3</mark></span> <a href="https://scales.r-lib.org/"><code>{scales}</code></a></h3>
 <p><a href="https://scales.r-lib.org/"><code>{scales}</code></a> converts data values into perceptual properties and formats labels for dates, currencies, and percentages; it powers the scale system of <a href="https://ggplot2.tidyverse.org/"><code>{ggplot2}</code></a>.</p>
 </section>
-<section id="sec-sessioninfo" class="level3" data-number="6.36.4">
-<h3 data-number="6.36.4" class="anchored" data-anchor-id="sec-sessioninfo"><span class="header-section-number"><mark class="preview-text-changed">6.36.4</mark></span> <a href="https://sessioninfo.r-lib.org/"><code>{sessioninfo}</code></a></h3>
+<section id="sec-sessioninfo" class="level3" data-number="6.37.4">
+<h3 data-number="6.37.4" class="anchored" data-anchor-id="sec-sessioninfo"><span class="header-section-number"><mark class="preview-text-changed">6.37.4</mark></span> <a href="https://sessioninfo.r-lib.org/"><code>{sessioninfo}</code></a></h3>
 <p><a href="https://sessioninfo.r-lib.org/"><code>{sessioninfo}</code></a> collects and prints detailed information about the current R session, including package versions and sources. It is a more informative replacement for base R’s <code>sessionInfo()</code>.</p>
 </section>
-<section id="sec-downlit" class="level3" data-number="6.36.5">
-<h3 data-number="6.36.5" class="anchored" data-anchor-id="sec-downlit"><span class="header-section-number"><mark class="preview-text-changed">6.36.5</mark></span> <a href="https://downlit.r-lib.org/"><code>{downlit}</code></a></h3>
+<section id="sec-downlit" class="level3" data-number="6.37.5">
+<h3 data-number="6.37.5" class="anchored" data-anchor-id="sec-downlit"><span class="header-section-number"><mark class="preview-text-changed">6.37.5</mark></span> <a href="https://downlit.r-lib.org/"><code>{downlit}</code></a></h3>
 <p><a href="https://downlit.r-lib.org/"><code>{downlit}</code></a> provides syntax highlighting for R code and automatically links function names to their documentation. It is used by <code>pkgdown</code> and Quarto for rendering R code in documentation websites.</p>
 </section>
-<section id="sec-prettyunits" class="level3" data-number="6.36.6">
-<h3 data-number="6.36.6" class="anchored" data-anchor-id="sec-prettyunits"><span class="header-section-number"><mark class="preview-text-changed">6.36.6</mark></span> <a href="https://r-lib.github.io/prettyunits/"><code>{prettyunits}</code></a></h3>
+<section id="sec-prettyunits" class="level3" data-number="6.37.6">
+<h3 data-number="6.37.6" class="anchored" data-anchor-id="sec-prettyunits"><span class="header-section-number"><mark class="preview-text-changed">6.37.6</mark></span> <a href="https://r-lib.github.io/prettyunits/"><code>{prettyunits}</code></a></h3>
 <p><a href="https://r-lib.github.io/prettyunits/"><code>{prettyunits}</code></a> formats quantities such as file sizes, time durations, and byte counts in human-readable form. It is used internally by <code>devtools</code>, <code>remotes</code>, and progress-reporting packages.</p>
 </section>
-<section id="sec-lobstr" class="level3" data-number="6.36.7">
-<h3 data-number="6.36.7" class="anchored" data-anchor-id="sec-lobstr"><span class="header-section-number"><mark class="preview-text-changed">6.36.7</mark></span> <a href="https://lobstr.r-lib.org/"><code>{lobstr}</code></a></h3>
+<section id="sec-lobstr" class="level3" data-number="6.37.7">
+<h3 data-number="6.37.7" class="anchored" data-anchor-id="sec-lobstr"><span class="header-section-number"><mark class="preview-text-changed">6.37.7</mark></span> <a href="https://lobstr.r-lib.org/"><code>{lobstr}</code></a></h3>
 <p><a href="https://lobstr.r-lib.org/"><code>{lobstr}</code></a> provides tools for visualizing R data structures, including shared-reference trees (<code>ref()</code>), abstract syntax trees (<code>ast()</code>), and object sizes (<code>obj_size()</code>). It is a useful learning and debugging tool.</p>
 </section>
-<section id="sec-crayon" class="level3" data-number="6.36.8">
-<h3 data-number="6.36.8" class="anchored" data-anchor-id="sec-crayon"><span class="header-section-number"><mark class="preview-text-changed">6.36.8</mark></span> <a href="https://r-lib.github.io/crayon/"><code>{crayon}</code></a></h3>
+<section id="sec-crayon" class="level3" data-number="6.37.8">
+<h3 data-number="6.37.8" class="anchored" data-anchor-id="sec-crayon"><span class="header-section-number"><mark class="preview-text-changed">6.37.8</mark></span> <a href="https://r-lib.github.io/crayon/"><code>{crayon}</code></a></h3>
 <p><a href="https://r-lib.github.io/crayon/"><code>{crayon}</code></a> adds color and formatting to terminal output in R using ANSI codes. It has been largely superseded by <code>cli</code> but remains widely used in older code and packages.</p>
 </section>
-<section id="sec-styler" class="level3" data-number="6.36.9">
-<h3 data-number="6.36.9" class="anchored" data-anchor-id="sec-styler"><span class="header-section-number"><mark class="preview-text-changed">6.36.9</mark></span> <a href="https://styler.r-lib.org/"><code>{styler}</code></a></h3>
+<section id="sec-styler" class="level3" data-number="6.37.9">
+<h3 data-number="6.37.9" class="anchored" data-anchor-id="sec-styler"><span class="header-section-number"><mark class="preview-text-changed">6.37.9</mark></span> <a href="https://styler.r-lib.org/"><code>{styler}</code></a></h3>
 <p><a href="https://styler.r-lib.org/"><code>{styler}</code></a> formats R code according to the tidyverse style guide. It provides an RStudio add-in and functions for styling individual files, packages, or projects. See <a href="#sec-auto-styling" class="quarto-xref"><span>Section 6.13</span></a> for more details.</p>
 </section>
-<section id="sec-rex" class="level3" data-number="6.36.10">
-<h3 data-number="6.36.10" class="anchored" data-anchor-id="sec-rex"><span class="header-section-number"><mark class="preview-text-changed">6.36.10</mark></span> <a href="https://rex.r-lib.org/"><code>{rex}</code></a></h3>
+<section id="sec-rex" class="level3" data-number="6.37.10">
+<h3 data-number="6.37.10" class="anchored" data-anchor-id="sec-rex"><span class="header-section-number"><mark class="preview-text-changed">6.37.10</mark></span> <a href="https://rex.r-lib.org/"><code><mark class="preview-text-changed">{rex}</mark></code></a></h3>
 <p><a href="https://rex.r-lib.org/"><code>{rex}</code></a> provides a human-readable interface for constructing regular expressions in R without having to write complex, unreadable regex strings manually. It allows regular expressions to be composed modularly using functions such as <code>rex()</code>, <code>character_class()</code>, <code>capture()</code>, and <code>some_of()</code>.</p>
 <p>When using <code>{rex}</code> inside another R package:</p>
 <ul>
@@ -2812,10 +2840,10 @@ drop_auth(rdstoken = "/path/to/tokenfile.RDS")
 </ul>
 </section>
 </section>
-<section id="github-actions" class="level2" data-number="6.37">
-<h2 data-number="6.37" class="anchored" data-anchor-id="github-actions"><span class="header-section-number"><mark class="preview-text-changed">6.37</mark></span> GitHub Actions</h2>
-<section id="sec-r-lib-actions" class="level3" data-number="6.37.1">
-<h3 data-number="6.37.1" class="anchored" data-anchor-id="sec-r-lib-actions"><span class="header-section-number"><mark class="preview-text-changed">6.37.1</mark></span> <a href="https://github.com/r-lib/actions">actions</a></h3>
+<section id="github-actions" class="level2" data-number="6.38">
+<h2 data-number="6.38" class="anchored" data-anchor-id="github-actions"><span class="header-section-number"><mark class="preview-text-changed">6.38</mark></span> GitHub Actions</h2>
+<section id="sec-r-lib-actions" class="level3" data-number="6.38.1">
+<h3 data-number="6.38.1" class="anchored" data-anchor-id="sec-r-lib-actions"><span class="header-section-number"><mark class="preview-text-changed">6.38.1</mark></span> <a href="https://github.com/r-lib/actions">actions</a></h3>
 <p>The <a href="https://github.com/r-lib/actions"><code>r-lib/actions</code></a> repository provides reusable GitHub Actions workflows for R package development. Commonly used actions include:</p>
 <ul>
 <li><code>r-lib/actions/setup-r</code> — installs R</li>
@@ -2826,27 +2854,27 @@ drop_auth(rdstoken = "/path/to/tokenfile.RDS")
 <p>These actions are widely used across R packages hosted on GitHub, including this lab’s repositories.</p>
 </section>
 </section>
-<section id="sec-tidyverse" class="level2" data-number="6.38">
-<h2 data-number="6.38" class="anchored" data-anchor-id="sec-tidyverse"><span class="header-section-number"><mark class="preview-text-changed">6.38</mark></span> Tidyverse</h2>
+<section id="sec-tidyverse" class="level2" data-number="6.39">
+<h2 data-number="6.39" class="anchored" data-anchor-id="sec-tidyverse"><span class="header-section-number"><mark class="preview-text-changed">6.39</mark></span> Tidyverse</h2>
 <p>Throughout this document there have been references to the Tidyverse, but this section is to explicitly show you how to transform your Base R tendencies to Tidyverse (or Data.Table, Tidyverse’s performance-optimized competitor). For most of our work that does not utilize very large datasets, we recommend that you code in Tidyverse rather than Base R. Tidyverse is quickly becoming <a href="https://rviews.rstudio.com/2017/06/08/what-is-the-tidyverse/">the gold standard</a> in R data analysis and modern data science packages and code should use Tidyverse style and packages unless there’s a significant reason not to (i.e.&nbsp;big data pipelines that would benefit from Data.Table’s performance optimizations). Note that <a href="https://dtplyr.tidyverse.org/"><code>{dtplyr}</code></a> provides a data.table backend for dplyr, enabling you to use most of dplyr’s tidy syntax with data.table’s performance optimizations.</p>
 <p>The package author has published R for Data Science <span class="citation" data-cites="wickham2023r4ds">(<a href="references.html#ref-wickham2023r4ds" role="doc-biblioref">Wickham et al. 2023</a>)</span>, which leans heavily on many Tidyverse packages and may be worth checking out.</p>
 </section>
-<section id="core-tidyverse-packages" class="level2" data-number="6.39">
-<h2 data-number="6.39" class="anchored" data-anchor-id="core-tidyverse-packages"><span class="header-section-number"><mark class="preview-text-changed">6.39</mark></span> Core Tidyverse Packages</h2>
+<section id="core-tidyverse-packages" class="level2" data-number="6.40">
+<h2 data-number="6.40" class="anchored" data-anchor-id="core-tidyverse-packages"><span class="header-section-number"><mark class="preview-text-changed">6.40</mark></span> Core Tidyverse Packages</h2>
 <p>The <a href="https://www.tidyverse.org/">tidyverse</a> is a collection of R packages designed for data science that share an underlying design philosophy, grammar, and data structures. As of tidyverse 1.3.0, the following nine packages are included in the core tidyverse and are loaded automatically when you run <code>library(tidyverse)</code>:</p>
-<section id="sec-ggplot2" class="level3" data-number="6.39.1">
-<h3 data-number="6.39.1" class="anchored" data-anchor-id="sec-ggplot2"><span class="header-section-number"><mark class="preview-text-changed">6.39.1</mark></span> <a href="https://ggplot2.tidyverse.org/">ggplot2</a></h3>
+<section id="sec-ggplot2" class="level3" data-number="6.40.1">
+<h3 data-number="6.40.1" class="anchored" data-anchor-id="sec-ggplot2"><span class="header-section-number"><mark class="preview-text-changed">6.40.1</mark></span> <a href="https://ggplot2.tidyverse.org/">ggplot2</a></h3>
 <p><a href="https://ggplot2.tidyverse.org/"><code>{ggplot2}</code></a> is a system for declaratively creating graphics, based on The Grammar of Graphics. You provide the data, tell ggplot2 how to map variables to aesthetics and what graphical primitives to use, and it takes care of the details.</p>
 </section>
-<section id="sec-dplyr" class="level3" data-number="6.39.2">
-<h3 data-number="6.39.2" class="anchored" data-anchor-id="sec-dplyr"><span class="header-section-number"><mark class="preview-text-changed">6.39.2</mark></span> <a href="https://dplyr.tidyverse.org/">dplyr</a></h3>
+<section id="sec-dplyr" class="level3" data-number="6.40.2">
+<h3 data-number="6.40.2" class="anchored" data-anchor-id="sec-dplyr"><span class="header-section-number"><mark class="preview-text-changed">6.40.2</mark></span> <a href="https://dplyr.tidyverse.org/">dplyr</a></h3>
 <p><a href="https://dplyr.tidyverse.org/"><code>{dplyr}</code></a> provides a grammar of data manipulation, providing a consistent set of verbs that solve the most common data manipulation challenges. Key functions include <code>filter()</code>, <code>select()</code>, <code>mutate()</code>, <code>summarize()</code>, and <code>arrange()</code>.</p>
 </section>
-<section id="sec-tidyr" class="level3" data-number="6.39.3">
-<h3 data-number="6.39.3" class="anchored" data-anchor-id="sec-tidyr"><span class="header-section-number"><mark class="preview-text-changed">6.39.3</mark></span> <a href="https://tidyr.tidyverse.org/">tidyr</a></h3>
+<section id="sec-tidyr" class="level3" data-number="6.40.3">
+<h3 data-number="6.40.3" class="anchored" data-anchor-id="sec-tidyr"><span class="header-section-number"><mark class="preview-text-changed">6.40.3</mark></span> <a href="https://tidyr.tidyverse.org/">tidyr</a></h3>
 <p><a href="https://tidyr.tidyverse.org/"><code>{tidyr}</code></a> provides a set of functions that help you get to tidy data. Tidy data is data with a consistent form: in brief, every variable goes in a column, and every column is a variable. Key functions include <code>pivot_longer()</code>, <code>pivot_wider()</code>, <code>separate()</code>, and <code>unite()</code>.</p>
-<section id="when-to-use-dplyr-vs-tidyr" class="level4" data-number="6.39.3.1">
-<h4 data-number="6.39.3.1" class="anchored" data-anchor-id="when-to-use-dplyr-vs-tidyr"><span class="header-section-number"><mark class="preview-text-changed">6.39.3.1</mark></span> When to use dplyr vs tidyr</h4>
+<section id="when-to-use-dplyr-vs-tidyr" class="level4" data-number="6.40.3.1">
+<h4 data-number="6.40.3.1" class="anchored" data-anchor-id="when-to-use-dplyr-vs-tidyr"><span class="header-section-number"><mark class="preview-text-changed">6.40.3.1</mark></span> When to use dplyr vs tidyr</h4>
 <p>While both <a href="https://dplyr.tidyverse.org/"><code>{dplyr}</code></a> and <a href="https://tidyr.tidyverse.org/"><code>{tidyr}</code></a> work with data frames, they serve different purposes:</p>
 <ul>
 <li><p><strong>Use dplyr</strong> for data manipulation within the current structure: filtering rows, selecting columns, creating new variables, summarizing data, or joining datasets. These operations work with your data as-is.</p></li>
@@ -2855,33 +2883,33 @@ drop_auth(rdstoken = "/path/to/tokenfile.RDS")
 <p>These packages work together seamlessly in data analysis workflows. A typical pattern is to use tidyr to reshape your data into the right structure, then use dplyr to manipulate and analyze it.</p>
 </section>
 </section>
-<section id="sec-readr" class="level3" data-number="6.39.4">
-<h3 data-number="6.39.4" class="anchored" data-anchor-id="sec-readr"><span class="header-section-number"><mark class="preview-text-changed">6.39.4</mark></span> <a href="https://readr.tidyverse.org/">readr</a></h3>
+<section id="sec-readr" class="level3" data-number="6.40.4">
+<h3 data-number="6.40.4" class="anchored" data-anchor-id="sec-readr"><span class="header-section-number"><mark class="preview-text-changed">6.40.4</mark></span> <a href="https://readr.tidyverse.org/"><mark class="preview-text-changed">readr</mark></a></h3>
 <p><a href="https://readr.tidyverse.org/"><code>{readr}</code></a> provides a fast and friendly way to read rectangular data (like csv, tsv, and fwf). It is designed to flexibly parse many types of data found in the wild, while still cleanly failing when data unexpectedly changes.</p>
 </section>
-<section id="sec-purrr" class="level3" data-number="6.39.5">
-<h3 data-number="6.39.5" class="anchored" data-anchor-id="sec-purrr"><span class="header-section-number"><mark class="preview-text-changed">6.39.5</mark></span> <a href="https://purrr.tidyverse.org/">purrr</a></h3>
+<section id="sec-purrr" class="level3" data-number="6.40.5">
+<h3 data-number="6.40.5" class="anchored" data-anchor-id="sec-purrr"><span class="header-section-number"><mark class="preview-text-changed">6.40.5</mark></span> <a href="https://purrr.tidyverse.org/">purrr</a></h3>
 <p><a href="https://purrr.tidyverse.org/"><code>{purrr}</code></a> enhances R’s <a href="https://en.wikipedia.org/wiki/Functional_programming">functional programming</a> (FP) toolkit by providing a complete and consistent set of tools for working with functions and vectors. Once you master the basic concepts, purrr allows you to replace many for loops with code that is easier to write and more expressive. See <a href="#sec-iteration" class="quarto-xref"><span>Section 6.9</span></a> for more details on using purrr.</p>
 </section>
-<section id="sec-tibble" class="level3" data-number="6.39.6">
-<h3 data-number="6.39.6" class="anchored" data-anchor-id="sec-tibble"><span class="header-section-number"><mark class="preview-text-changed">6.39.6</mark></span> <a href="https://tibble.tidyverse.org/">tibble</a></h3>
+<section id="sec-tibble" class="level3" data-number="6.40.6">
+<h3 data-number="6.40.6" class="anchored" data-anchor-id="sec-tibble"><span class="header-section-number"><mark class="preview-text-changed">6.40.6</mark></span> <a href="https://tibble.tidyverse.org/">tibble</a></h3>
 <p><a href="https://tibble.tidyverse.org/"><code>{tibble}</code></a> is a modern re-imagining of the data frame, keeping what time has proven to be effective, and throwing out what it has not. Tibbles are data.frames that are lazy and surly: they do less and complain more forcing you to confront problems earlier, typically leading to cleaner, more expressive code.</p>
 </section>
-<section id="sec-stringr" class="level3" data-number="6.39.7">
-<h3 data-number="6.39.7" class="anchored" data-anchor-id="sec-stringr"><span class="header-section-number"><mark class="preview-text-changed">6.39.7</mark></span> <a href="https://stringr.tidyverse.org/">stringr</a></h3>
+<section id="sec-stringr" class="level3" data-number="6.40.7">
+<h3 data-number="6.40.7" class="anchored" data-anchor-id="sec-stringr"><span class="header-section-number"><mark class="preview-text-changed">6.40.7</mark></span> <a href="https://stringr.tidyverse.org/">stringr</a></h3>
 <p><a href="https://stringr.tidyverse.org/"><code>{stringr}</code></a> provides a cohesive set of functions designed to make working with strings as easy as possible. It is built on top of stringi, which uses the ICU C library to provide fast, correct implementations of common string manipulations.</p>
 </section>
-<section id="sec-forcats" class="level3" data-number="6.39.8">
-<h3 data-number="6.39.8" class="anchored" data-anchor-id="sec-forcats"><span class="header-section-number"><mark class="preview-text-changed">6.39.8</mark></span> <a href="https://forcats.tidyverse.org/">forcats</a></h3>
+<section id="sec-forcats" class="level3" data-number="6.40.8">
+<h3 data-number="6.40.8" class="anchored" data-anchor-id="sec-forcats"><span class="header-section-number"><mark class="preview-text-changed">6.40.8</mark></span> <a href="https://forcats.tidyverse.org/">forcats</a></h3>
 <p><a href="https://forcats.tidyverse.org/"><code>{forcats}</code></a> provides a suite of useful tools that solve common problems with factors. R uses factors to handle categorical variables, variables that have a fixed and known set of possible values.</p>
 </section>
-<section id="sec-lubridate" class="level3" data-number="6.39.9">
-<h3 data-number="6.39.9" class="anchored" data-anchor-id="sec-lubridate"><span class="header-section-number"><mark class="preview-text-changed">6.39.9</mark></span> <a href="https://lubridate.tidyverse.org/">lubridate</a></h3>
+<section id="sec-lubridate" class="level3" data-number="6.40.9">
+<h3 data-number="6.40.9" class="anchored" data-anchor-id="sec-lubridate"><span class="header-section-number"><mark class="preview-text-changed">6.40.9</mark></span> <a href="https://lubridate.tidyverse.org/">lubridate</a></h3>
 <p><a href="https://lubridate.tidyverse.org/"><code>{lubridate}</code></a> provides a set of functions for working with date-times, extending and improving on R’s existing support for them. Key functions include <code>ymd()</code>, <code>mdy()</code>, <code>dmy()</code> for parsing dates, and <code>year()</code>, <code>month()</code>, <code>day()</code> for extracting components.</p>
 </section>
 </section>
-<section id="base-r-to-tidyverse-translation" class="level2" data-number="6.40">
-<h2 data-number="6.40" class="anchored" data-anchor-id="base-r-to-tidyverse-translation"><span class="header-section-number"><mark class="preview-text-changed">6.40</mark></span> Base R to Tidyverse Translation</h2>
+<section id="base-r-to-tidyverse-translation" class="level2" data-number="6.41">
+<h2 data-number="6.41" class="anchored" data-anchor-id="base-r-to-tidyverse-translation"><span class="header-section-number"><mark class="preview-text-changed">6.41</mark></span> Base R to Tidyverse Translation</h2>
 <p>The following list is not exhaustive, but is a compact overview to begin to translate Base R into something better:</p>
 <table class="caption-top table">
 <colgroup>
@@ -2995,8 +3023,8 @@ drop_auth(rdstoken = "/path/to/tokenfile.RDS")
 </table>
 <p>For a more extensive set of syntactical translations to Tidyverse, you can check out <a href="https://tavareshugo.github.io/data_carpentry_extras/base-r_tidyverse_equivalents/base-r_tidyverse_equivalents.html">this document</a>.</p>
 </section>
-<section id="programming-with-tidyverse" class="level2" data-number="6.41">
-<h2 data-number="6.41" class="anchored" data-anchor-id="programming-with-tidyverse"><span class="header-section-number"><mark class="preview-text-changed">6.41</mark></span> Programming with Tidyverse</h2>
+<section id="programming-with-tidyverse" class="level2" data-number="6.42">
+<h2 data-number="6.42" class="anchored" data-anchor-id="programming-with-tidyverse"><span class="header-section-number"><mark class="preview-text-changed">6.42</mark></span> Programming with Tidyverse</h2>
 <p>Working with Tidyverse within functions can be somewhat of a pain due to non-standard evaluation (NSE) semantics. If you’re an avid function writer, we’d recommend checking out the following resources:</p>
 <ul>
 <li><a href="https://dplyr.tidyverse.org/articles/programming.html">Programming with dplyr</a> (package vignette)</li>
@@ -3009,22 +3037,22 @@ drop_auth(rdstoken = "/path/to/tokenfile.RDS")
 </ul>
 <p>See also <a href="coding-style.html#sec-tidyverse-replacements" class="quarto-xref" preview-toc-changed><span>Section 7.15</span></a></p>
 </section>
-<section id="coding-with-r-and-python" class="level2" data-number="6.42">
-<h2 data-number="6.42" class="anchored" data-anchor-id="coding-with-r-and-python"><span class="header-section-number"><mark class="preview-text-changed">6.42</mark></span> Coding with R and Python</h2>
+<section id="coding-with-r-and-python" class="level2" data-number="6.43">
+<h2 data-number="6.43" class="anchored" data-anchor-id="coding-with-r-and-python"><span class="header-section-number"><mark class="preview-text-changed">6.43</mark></span> Coding with R and Python</h2>
 <p>If you’re using both R and Python, you may wish to check out the <a href="https://www.rdocumentation.org/packages/feather/versions/0.3.3">Feather package</a> for exchanging data between the two languages <a href="https://blog.rstudio.com/2016/03/29/feather/">extremely quickly</a>.</p>
 </section>
-<section id="repeating-analyses-with-different-variations" class="level2" data-number="6.43">
-<h2 data-number="6.43" class="anchored" data-anchor-id="repeating-analyses-with-different-variations"><span class="header-section-number"><mark class="preview-text-changed">6.43</mark></span> Repeating analyses with different variations</h2>
+<section id="repeating-analyses-with-different-variations" class="level2" data-number="6.44">
+<h2 data-number="6.44" class="anchored" data-anchor-id="repeating-analyses-with-different-variations"><span class="header-section-number"><mark class="preview-text-changed">6.44</mark></span> Repeating analyses with different variations</h2>
 <p>In many cases, we will need to apply our modeling on different combinations of interests (outcomes, exposures, etc.). We can certainly use a <code>for</code> loop to repeat the execution of a wrapper function, but generally, <code>for</code> loops request high memory usage and produce the results in long computation time.</p>
 <p>Fortunately, R has some functions which implement looping in a compact form to help repeating your analyses with different variations (subgroups, outcomes, covariate sets, etc.) with better performances.</p>
-<section id="lapply-and-sapply-1" class="level3" data-number="6.43.1">
-<h3 data-number="6.43.1" class="anchored" data-anchor-id="lapply-and-sapply-1"><span class="header-section-number"><mark class="preview-text-changed">6.43.1</mark></span> <code>lapply()</code> and <code>sapply()</code></h3>
+<section id="lapply-and-sapply-1" class="level3" data-number="6.44.1">
+<h3 data-number="6.44.1" class="anchored" data-anchor-id="lapply-and-sapply-1"><span class="header-section-number"><mark class="preview-text-changed">6.44.1</mark></span> <code>lapply()</code> and <code>sapply()</code></h3>
 <p><code>lapply()</code> is a function in the base R package that applies a function to each element of a list and returns a list. It’s typically faster than <code>for</code>. Here is a simple generic example:</p>
 <pre><code>result &lt;- lapply(X = mylist, FUN = func)</code></pre>
 <p>There is another very similar function called <code>sapply()</code>. It also takes a list as its input, but if the output of the <code>func</code> is of the same length for each element in the input list, then <code>sapply()</code> will simplify the output to the simplest data structure possible, which will usually be a vector.</p>
 </section>
-<section id="mapply-and-pmap" class="level3" data-number="6.43.2">
-<h3 data-number="6.43.2" class="anchored" data-anchor-id="mapply-and-pmap"><span class="header-section-number"><mark class="preview-text-changed">6.43.2</mark></span> <code>mapply()</code> and <code>pmap()</code></h3>
+<section id="mapply-and-pmap" class="level3" data-number="6.44.2">
+<h3 data-number="6.44.2" class="anchored" data-anchor-id="mapply-and-pmap"><span class="header-section-number"><mark class="preview-text-changed">6.44.2</mark></span> <code>mapply()</code> and <code>pmap()</code></h3>
 <p>Sometimes, we’d like to employ a wrapper function that takes arguments from multiple different lists/vectors. Then, we can consider using <code>mapply()</code> from the base R package or <code>pmap()</code> from the <code>purrr</code> package.</p>
 <p>Please see the simple specific example below where the two input lists are of the same length and we are doing a pairwise calculation:</p>
 <pre><code>mylist1 = list(0:3)
@@ -3066,13 +3094,13 @@ for (i in seq_along(mylist1[[1]])) {
 <p>This example doesn’t work in the way that 0 is paired to 6, 1 is paired to 7, and so on. Instead, every element in <code>mylist1</code> will be paired with every element in <code>mylist2</code>. Thus, the “unlisted” results from the example will have <span class="math inline">\(4*7 = 28\)</span> elements.</p>
 <p>We can use <code>flatten()</code> or <code>unlist()</code> functions to decrease the depths of our results. If the results are data frames, then we will need to use <code>bind_rows()</code> to combine them.</p>
 </section>
-<section id="parallel-processing-with-parallel-and-future-packages" class="level3" data-number="6.43.3">
-<h3 data-number="6.43.3" class="anchored" data-anchor-id="parallel-processing-with-parallel-and-future-packages"><span class="header-section-number"><mark class="preview-text-changed">6.43.3</mark></span> Parallel processing with <code>parallel</code> and <code>future</code> packages</h3>
+<section id="parallel-processing-with-parallel-and-future-packages" class="level3" data-number="6.44.3">
+<h3 data-number="6.44.3" class="anchored" data-anchor-id="parallel-processing-with-parallel-and-future-packages"><span class="header-section-number"><mark class="preview-text-changed">6.44.3</mark></span> Parallel processing with <code>parallel</code> and <code>future</code> packages</h3>
 <p>One big drawback of <code>lapply()</code> is its long computation time, especially when the list length is long. Fortunately, computers nowadays must have multiple cores which makes parallel processing possible to help make computation much faster.</p>
 <p>Assume you have a list called <code>mylist</code> of length 1000, and <code>lapply(X = mylist, FUN = func)</code> applies the function to each of the 1000 elements one by one in <span class="math inline">\(T\)</span> seconds. If we could execute the <code>func</code> in <span class="math inline">\(n\)</span> processors simultaneously, then ideally, we would shrink the computation time to <span class="math inline">\(T/n\)</span> seconds.</p>
 <p>In practice, using functions under the <code>parallel</code> and the <code>future</code> packages, we can split <code>mylist</code> into smaller chunks and apply the function to each element of the several chunks in parallel in different cores to significantly reduce the run time.</p>
-<section id="parlapply" class="level4" data-number="6.43.3.1">
-<h4 data-number="6.43.3.1" class="anchored" data-anchor-id="parlapply"><span class="header-section-number"><mark class="preview-text-changed">6.43.3.1</mark></span> <code>parLapply()</code></h4>
+<section id="parlapply" class="level4" data-number="6.44.3.1">
+<h4 data-number="6.44.3.1" class="anchored" data-anchor-id="parlapply"><span class="header-section-number"><mark class="preview-text-changed">6.44.3.1</mark></span> <code>parLapply()</code></h4>
 <p>Below is a generic example of <code>parLapply()</code>:</p>
 <pre><code>library(parallel)
 
@@ -3089,8 +3117,8 @@ stopCluster(cl)</code></pre>
 <p>You can use <code>parallel::detectCores()</code> to test how many cores your machine has and to help decide what to put for <code>n_cores</code>. It would be a good idea to leave at least one core free for the operating system to use.</p>
 <p>We will always start <code>parLapply()</code> with <code>makeCluster()</code>. <strong><code>stopCluster()</code> is not fully necessary but follows the best practices.</strong> If not stopped, the processing will continue in the back end and consuming the computation capacity for other software in your machine. But keep in mind that stopping the cluster is similar quitting R, meaning that you will need to re-load the packages needed when you need to do parallel processing use <code>parLapply()</code> again.</p>
 </section>
-<section id="future.lapply" class="level4" data-number="6.43.3.2">
-<h4 data-number="6.43.3.2" class="anchored" data-anchor-id="future.lapply"><span class="header-section-number"><mark class="preview-text-changed">6.43.3.2</mark></span> <code>future.lapply()</code></h4>
+<section id="future.lapply" class="level4" data-number="6.44.3.2">
+<h4 data-number="6.44.3.2" class="anchored" data-anchor-id="future.lapply"><span class="header-section-number"><mark class="preview-text-changed">6.44.3.2</mark></span> <code>future.lapply()</code></h4>
 <p>Below is a generic example of <code>future.lapply()</code>:</p>
 <pre><code>library(future)
 library(future.apply)
@@ -3106,11 +3134,11 @@ future_lapply(x = mylist, FUN = func)</code></pre>
 </section>
 </section>
 </section>
-<section id="sec-reviewing-code" class="level2" data-number="6.44">
-<h2 data-number="6.44" class="anchored" data-anchor-id="sec-reviewing-code"><span class="header-section-number"><mark class="preview-text-changed">6.44</mark></span> Reviewing Code</h2>
+<section id="sec-reviewing-code" class="level2" data-number="6.45">
+<h2 data-number="6.45" class="anchored" data-anchor-id="sec-reviewing-code"><span class="header-section-number"><mark class="preview-text-changed">6.45</mark></span> Reviewing Code</h2>
 <p>Peer code review is a collaborative practice that improves scientific rigor, fosters shared understanding, and catches bugs before analysis results are shared or published. The lab’s pull request workflow, author and reviewer expectations, and response protocol are consolidated in <a href="collaborative-software-development.html" class="quarto-xref"><span>Chapter 12</span></a>.</p>
-<section id="sec-why-review-code" class="level3" data-number="6.44.1">
-<h3 data-number="6.44.1" class="anchored" data-anchor-id="sec-why-review-code"><span class="header-section-number"><mark class="preview-text-changed">6.44.1</mark></span> Why We Review Code</h3>
+<section id="sec-why-review-code" class="level3" data-number="6.45.1">
+<h3 data-number="6.45.1" class="anchored" data-anchor-id="sec-why-review-code"><span class="header-section-number"><mark class="preview-text-changed">6.45.1</mark></span> Why We Review Code</h3>
 <p>Code review serves several vital purposes:</p>
 <ul>
 <li><strong>Error prevention</strong>: Catching data processing and analytical bugs early, before findings enter manuscripts or reports.</li>
@@ -3119,15 +3147,15 @@ future_lapply(x = mylist, FUN = func)</code></pre>
 <li><strong>Maintainability</strong>: Ensuring that analysis pipelines can be understood, modified, and extended by other lab members in the future.</li>
 </ul>
 </section>
-<section id="sec-what-to-look-for" class="level3" data-number="6.44.2">
-<h3 data-number="6.44.2" class="anchored" data-anchor-id="sec-what-to-look-for"><span class="header-section-number"><mark class="preview-text-changed">6.44.2</mark></span> What Reviewers Look For</h3>
+<section id="sec-what-to-look-for" class="level3" data-number="6.45.2">
+<h3 data-number="6.45.2" class="anchored" data-anchor-id="sec-what-to-look-for"><span class="header-section-number"><mark class="preview-text-changed">6.45.2</mark></span> What Reviewers Look For</h3>
 <p>When reviewing a colleague’s code, evaluate these key dimensions:</p>
 <ol type="1">
 <li><strong>Reproducibility</strong>:
 <ul>
 <li>Does the script run cleanly from start to finish in a fresh R session?</li>
 <li>Are package dependencies managed reproducibly via <a href="https://rstudio.github.io/renv/"><code>{renv}</code></a> (see <a href="reproducible-environments.html" class="quarto-xref"><span>Chapter 15</span></a>)?</li>
-<li>Are file paths relative and constructed with <a href="https://here.r-lib.org/"><code>{here}</code></a> (see <a href="#sec-here-package-practices" class="quarto-xref"><span>Section 6.27</span></a>), avoiding machine-specific absolute paths?</li>
+<li>Are file paths relative and constructed with <a href="https://here.r-lib.org/"><code>{here}</code></a> (see <a href="#sec-here-package-practices" class="quarto-xref"><span>Section 6.28</span></a>), avoiding machine-specific absolute paths?</li>
 </ul></li>
 <li><strong>Code correctness and data integrity</strong>:
 <ul>
@@ -3148,8 +3176,8 @@ future_lapply(x = mylist, FUN = func)</code></pre>
 </ul></li>
 </ol>
 </section>
-<section id="sec-constructive-feedback" class="level3" data-number="6.44.3">
-<h3 data-number="6.44.3" class="anchored" data-anchor-id="sec-constructive-feedback"><span class="header-section-number"><mark class="preview-text-changed">6.44.3</mark></span> How to Give Constructive Feedback</h3>
+<section id="sec-constructive-feedback" class="level3" data-number="6.45.3">
+<h3 data-number="6.45.3" class="anchored" data-anchor-id="sec-constructive-feedback"><span class="header-section-number"><mark class="preview-text-changed">6.45.3</mark></span> How to Give Constructive Feedback</h3>
 <p>Effective code review builds a supportive, high-trust research culture:</p>
 <ul>
 <li><strong>Be kind and respectful</strong>: Critique the code, not the author. Assume positive intent and acknowledge elegant solutions or clear documentation.</li>
@@ -3158,8 +3186,8 @@ future_lapply(x = mylist, FUN = func)</code></pre>
 <li><strong>Ask clarifying questions</strong>: When logic is unclear, ask the author to explain their intent before proposing a rewrite.</li>
 </ul>
 </section>
-<section id="sec-when-to-approve" class="level3" data-number="6.44.4">
-<h3 data-number="6.44.4" class="anchored" data-anchor-id="sec-when-to-approve"><span class="header-section-number"><mark class="preview-text-changed">6.44.4</mark></span> When to Approve</h3>
+<section id="sec-when-to-approve" class="level3" data-number="6.45.4">
+<h3 data-number="6.45.4" class="anchored" data-anchor-id="sec-when-to-approve"><span class="header-section-number"><mark class="preview-text-changed">6.45.4</mark></span> When to Approve</h3>
 <p>Approve a pull request when:</p>
 <ul>
 <li>All automated CI checks and workflows pass cleanly.</li>
@@ -3169,8 +3197,8 @@ future_lapply(x = mylist, FUN = func)</code></pre>
 </ul>
 </section>
 </section>
-<section id="sec-getting-help-with-code" class="level2" data-number="6.45">
-<h2 data-number="6.45" class="anchored" data-anchor-id="sec-getting-help-with-code"><span class="header-section-number"><mark class="preview-text-changed">6.45</mark></span> Getting Help with Code</h2>
+<section id="sec-getting-help-with-code" class="level2" data-number="6.46">
+<h2 data-number="6.46" class="anchored" data-anchor-id="sec-getting-help-with-code"><span class="header-section-number"><mark class="preview-text-changed">6.46</mark></span> Getting Help with Code</h2>
 <p>When you encounter a coding problem, creating a <strong>reprex</strong> (minimal <strong>repr</strong>oducible <strong>ex</strong>ample) is one of the most effective ways to get help—and often helps you solve the problem yourself.</p>
 <p>A good reprex <span class="citation" data-cites="reprex">(<a href="references.html#ref-reprex" role="doc-biblioref">Bryan et al. 2024</a>)</span>:</p>
 <ul>
@@ -3190,10 +3218,10 @@ future_lapply(x = mylist, FUN = func)</code></pre>
 <li><a href="https://r4ds.hadley.nz/workflow-help.html#making-a-reprex">R for Data Science: Making a reprex</a> <span class="citation" data-cites="wickham2023r4ds">(<a href="references.html#ref-wickham2023r4ds" role="doc-biblioref">Wickham et al. 2023</a>)</span>: Step-by-step guide to creating effective reproducible examples</li>
 </ul>
 </section>
-<section id="sec-r-resources" class="level2" data-number="6.46">
-<h2 data-number="6.46" class="anchored" data-anchor-id="sec-r-resources"><span class="header-section-number"><mark class="preview-text-changed">6.46</mark></span> Additional Resources</h2>
-<section id="r-package-development" class="level3" data-number="6.46.1">
-<h3 data-number="6.46.1" class="anchored" data-anchor-id="r-package-development"><span class="header-section-number"><mark class="preview-text-changed">6.46.1</mark></span> R Package Development</h3>
+<section id="sec-r-resources" class="level2" data-number="6.47">
+<h2 data-number="6.47" class="anchored" data-anchor-id="sec-r-resources"><span class="header-section-number"><mark class="preview-text-changed">6.47</mark></span> Additional Resources</h2>
+<section id="r-package-development" class="level3" data-number="6.47.1">
+<h3 data-number="6.47.1" class="anchored" data-anchor-id="r-package-development"><span class="header-section-number"><mark class="preview-text-changed">6.47.1</mark></span> R Package Development</h3>
 <ul>
 <li>R Packages <span class="citation" data-cites="wickham2023rpkgs">(<a href="references.html#ref-wickham2023rpkgs" role="doc-biblioref">Wickham and Bryan 2023</a>)</span> - comprehensive guide to R package development</li>
 <li>Tidyverse design guide <span class="citation" data-cites="wickham2023tidydesign">(<a href="references.html#ref-wickham2023tidydesign" role="doc-biblioref">Wickham 2023</a>)</span> - principles for designing R packages and APIs that are intuitive, composable, and consistent with tidyverse philosophy</li>
@@ -3203,22 +3231,22 @@ future_lapply(x = mylist, FUN = func)</code></pre>
 <li><a href="https://testthat.r-lib.org/">testthat documentation</a> - unit testing framework</li>
 </ul>
 </section>
-<section id="general-r-programming" class="level3" data-number="6.46.2">
-<h3 data-number="6.46.2" class="anchored" data-anchor-id="general-r-programming"><span class="header-section-number"><mark class="preview-text-changed">6.46.2</mark></span> General R Programming</h3>
+<section id="general-r-programming" class="level3" data-number="6.47.2">
+<h3 data-number="6.47.2" class="anchored" data-anchor-id="general-r-programming"><span class="header-section-number"><mark class="preview-text-changed">6.47.2</mark></span> General R Programming</h3>
 <ul>
 <li>R for Data Science <span class="citation" data-cites="wickham2023r4ds">(<a href="references.html#ref-wickham2023r4ds" role="doc-biblioref">Wickham et al. 2023</a>)</span> - learn data science with the tidyverse</li>
 <li>Advanced R <span class="citation" data-cites="wickham2019advr">(<a href="references.html#ref-wickham2019advr" role="doc-biblioref">Wickham 2019</a>)</span> - deep dive into R programming and internals</li>
 </ul>
 </section>
-<section id="shiny-development" class="level3" data-number="6.46.3">
-<h3 data-number="6.46.3" class="anchored" data-anchor-id="shiny-development"><span class="header-section-number"><mark class="preview-text-changed">6.46.3</mark></span> Shiny Development</h3>
+<section id="shiny-development" class="level3" data-number="6.47.3">
+<h3 data-number="6.47.3" class="anchored" data-anchor-id="shiny-development"><span class="header-section-number"><mark class="preview-text-changed">6.47.3</mark></span> Shiny Development</h3>
 <ul>
 <li>Mastering Shiny <span class="citation" data-cites="wickham2021shiny">(<a href="references.html#ref-wickham2021shiny" role="doc-biblioref">Wickham 2021</a>)</span> - comprehensive guide to building web applications with Shiny</li>
 <li>Engineering Production-Grade Shiny Apps <span class="citation" data-cites="fay2021engineering">(<a href="references.html#ref-fay2021engineering" role="doc-biblioref">Fay et al. 2021</a>)</span> - best practices for production Shiny applications</li>
 </ul>
 </section>
-<section id="git-and-version-control" class="level3" data-number="6.46.4">
-<h3 data-number="6.46.4" class="anchored" data-anchor-id="git-and-version-control"><span class="header-section-number"><mark class="preview-text-changed">6.46.4</mark></span> Git and Version Control</h3>
+<section id="git-and-version-control" class="level3" data-number="6.47.4">
+<h3 data-number="6.47.4" class="anchored" data-anchor-id="git-and-version-control"><span class="header-section-number"><mark class="preview-text-changed">6.47.4</mark></span> Git and Version Control</h3>
 <ul>
 <li>Happy Git and GitHub for the useR <span class="citation" data-cites="bryan2023happygit">(<a href="references.html#ref-bryan2023happygit" role="doc-biblioref">Bryan 2023</a>)</span> - essential guide to using Git and GitHub with R</li>
 <li><a href="https://thinkr-open.github.io/gitdown/"><code>{gitdown}</code></a> - R package for documenting git commit history as a bookdown report, organized by patterns like tags or issues</li>
