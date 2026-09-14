@@ -16,4 +16,24 @@ The `here` package handles this automatically.
 This works regardless of where collaborators clone the repository. 
 For more details, see the [here package vignette](https://github.com/jennybc/here_here).
 
+### Pass subpath components directly to `here()` {#sec-here-subpath}
+
+`here::here()` already accepts path components as arguments
+and joins them with the project root.
+Do not wrap `here::here()` in `file.path()` or `fs::path()`:
+
+```r
+# Good: pass subpath components directly
+rds_path <- here::here("inst", "extdata", "mapping.rds")
+
+# Bad: redundant wrapping adds noise and defeats the purpose
+rds_path <- file.path(here::here(), "inst", "extdata", "mapping.rds")
+rds_path <- fs::path(here::here(), "inst", "extdata")
+```
+
+The wrapped form is functionally equivalent
+but harder to read and obscures the intent.
+`here()` was designed to replace `file.path()` for project-relative paths,
+so let it do its job.
+
 *See also @sec-here-package-practices for detailed explanation of the here package.*
