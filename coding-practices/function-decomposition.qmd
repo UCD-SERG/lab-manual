@@ -41,7 +41,10 @@ extract it into a helper:
 
 ```r
 # Before: repeated validation blocks inline
-build_analysis_cache <- function(signal_files, finance_files, ...) {
+build_analysis_cache <- function(
+    rebuild_signal, signal_files, signal_dir,
+    rebuild_finance, finance_files, finance_dir,
+    ...) {
   if (rebuild_signal && length(signal_files) == 0L) {
     cli::cli_abort(c(
       "Cannot rebuild Signal source data.",
@@ -60,16 +63,28 @@ build_analysis_cache <- function(signal_files, finance_files, ...) {
 }
 
 # After: extract the repeated pattern into a helper
-validate_source_rebuild <- function(rebuild, source_files, label, search_path) {
+validate_source_rebuild <- function(
+    rebuild,
+    source_files,
+    label,
+    search_path,
+    call = rlang::caller_env()) {
   if (!rebuild || length(source_files) > 0L) return(invisible(NULL))
-  cli::cli_abort(c(
-    "Cannot rebuild {label} source data.",
-    "x" = "No raw {label} files were found in {.path {search_path}}.",
-    "i" = "Use {.val auto} to reuse an existing source RDS."
-  ))
+  cli::cli_abort(
+    c(
+      "Cannot rebuild {label} source data.",
+      "x" = "No raw {label} files were found in {.path {search_path}}.",
+      "i" = "Use {.val auto} to reuse an existing source RDS."
+    ),
+    call = call
+  )
 }
 
-build_analysis_cache <- function(signal_files, finance_files, ...) {
+build_analysis_cache <- function(
+    rebuild_signal, signal_files, signal_dir,
+    rebuild_finance, finance_files, finance_dir,
+    rebuild_mapping, mapping_files, s_drive_path,
+    ...) {
   validate_source_rebuild(rebuild_signal, signal_files, "Signal", signal_dir)
   validate_source_rebuild(rebuild_finance, finance_files, "finance", finance_dir)
   validate_source_rebuild(rebuild_mapping, mapping_files, "mapping", s_drive_path)

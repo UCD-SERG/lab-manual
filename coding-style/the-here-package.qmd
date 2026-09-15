@@ -28,7 +28,7 @@ rds_path <- here::here("inst", "extdata", "mapping.rds")
 
 # Bad: redundant wrapping adds noise and defeats the purpose
 rds_path <- file.path(here::here(), "inst", "extdata", "mapping.rds")
-rds_path <- fs::path(here::here(), "inst", "extdata")
+rds_path <- fs::path(here::here(), "inst", "extdata", "mapping.rds")
 ```
 
 The wrapped form is functionally equivalent
