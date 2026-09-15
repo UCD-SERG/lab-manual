@@ -32,6 +32,78 @@ A practical sequence is:
 4. Keep the orchestration function short, so it reads like a workflow outline.
 5. Add or update tests around each helper and the top-level function.
 
+## Decomposing validation blocks {#sec-decompose-validation}
+
+A common case for decomposition is a function
+that opens with a long sequence of input-validation checks.
+When the same validation pattern repeats for multiple inputs,
+extract it into a helper:
+
+```r
+# Before: repeated validation blocks inline
+build_analysis_cache <- function(
+    rebuild_signal, signal_files, signal_dir,
+    rebuild_finance, finance_files, finance_dir,
+    ...) {
+  if (rebuild_signal && length(signal_files) == 0L) {
+    cli::cli_abort(c(
+      "Cannot rebuild Signal source data.",
+      "x" = "No raw files found in {.path {signal_dir}}.",
+      "i" = "Use {.val auto} to reuse an existing RDS."
+    ))
+  }
+  if (rebuild_finance && length(finance_files) == 0L) {
+    cli::cli_abort(c(
+      "Cannot rebuild finance source data.",
+      "x" = "No raw files found in {.path {finance_dir}}.",
+      "i" = "Use {.val auto} to reuse an existing RDS."
+    ))
+  }
+  # ... same pattern for mapping, then more for cached-RDS checks ...
+}
+
+# After: extract the repeated pattern into a helper
+validate_source_rebuild <- function(
+    rebuild,
+    source_files,
+    label,
+    search_path,
+    call = rlang::caller_env()) {
+  if (!rebuild || length(source_files) > 0L) return(invisible(NULL))
+  cli::cli_abort(
+    c(
+      "Cannot rebuild {label} source data.",
+      "x" = "No raw {label} files were found in {.path {search_path}}.",
+      "i" = "Use {.val auto} to reuse an existing source RDS."
+    ),
+    call = call
+  )
+}
+
+build_analysis_cache <- function(
+    rebuild_signal, signal_files, signal_dir,
+    rebuild_finance, finance_files, finance_dir,
+    rebuild_mapping, mapping_files, s_drive_path,
+    ...) {
+  validate_source_rebuild(rebuild_signal, signal_files, "Signal", signal_dir)
+  validate_source_rebuild(rebuild_finance, finance_files, "finance", finance_dir)
+  validate_source_rebuild(rebuild_mapping, mapping_files, "mapping", s_drive_path)
+  # ... main logic is now immediately visible
+}
+```
+
+Benefits of this pattern:
+
+- The main function reads as a workflow outline
+  rather than a wall of `if`/`cli_abort` blocks.
+- Each validation rule is defined once and tested once.
+- Adding a new data source requires one new call, not a copy-pasted block.
+- Error message formatting stays consistent across all sources.
+
+Place each extracted helper in its own file
+(@sec-one-function-per-file),
+not above or below the caller in the same file.
+
 ## Examples borrowed from lab package PRs
 
 In [`UCD-SERG/rpt` PR #100](https://github.com/UCD-SERG/rpt/pull/100),
