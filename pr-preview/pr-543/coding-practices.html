@@ -837,7 +837,7 @@ window.Quarto = {
 
 <div class="preview-combined-banner">
     <p style="margin: 0;">
-        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~9% of content changed).
+        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~10% of content changed).
         <br>
         <strong>🎨 Highlighting Legend:</strong> 
         <mark class="preview-text-changed" style="display: inline; padding: 1px 3px;">Modified text (yellow)</mark> shows changed words/phrases with tooltips of original text, 
@@ -2483,40 +2483,55 @@ Note
 <h2 data-number="6.21" class="anchored" data-anchor-id="sec-decompose-validation"><span class="header-section-number"><mark class="preview-text-changed">6.21</mark></span> <mark class="preview-text-changed">Decomposing</mark> <mark class="preview-text-changed">validation</mark> <mark class="preview-text-changed">blocks</mark></h2>
 <p><mark class="preview-element-added">A common case for decomposition is a function that opens with a long sequence of input-validation checks. When the same validation pattern repeats for multiple inputs, extract it into a helper:</mark></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb62"><pre class="sourceCode r code-with-copy"><mark class="preview-element-added"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Before: repeated validation blocks inline</span></span>
-<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>build_analysis_cache <span class="ot">&lt;-</span> <span class="cf">function</span>(signal_files, finance_files, ...) {</span>
-<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (rebuild_signal <span class="sc">&amp;&amp;</span> <span class="fu">length</span>(signal_files) <span class="sc">==</span> <span class="dv">0</span>L) {</span>
-<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>    cli<span class="sc">::</span><span class="fu">cli_abort</span>(<span class="fu">c</span>(</span>
-<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Cannot rebuild Signal source data."</span>,</span>
-<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a>      <span class="st">"x"</span> <span class="ot">=</span> <span class="st">"No raw files found in {.path {signal_dir}}."</span>,</span>
-<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a>      <span class="st">"i"</span> <span class="ot">=</span> <span class="st">"Use {.val auto} to reuse an existing RDS."</span></span>
-<span id="cb62-8"><a href="#cb62-8" aria-hidden="true" tabindex="-1"></a>    ))</span>
-<span id="cb62-9"><a href="#cb62-9" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb62-10"><a href="#cb62-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (rebuild_finance <span class="sc">&amp;&amp;</span> <span class="fu">length</span>(finance_files) <span class="sc">==</span> <span class="dv">0</span>L) {</span>
-<span id="cb62-11"><a href="#cb62-11" aria-hidden="true" tabindex="-1"></a>    cli<span class="sc">::</span><span class="fu">cli_abort</span>(<span class="fu">c</span>(</span>
-<span id="cb62-12"><a href="#cb62-12" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Cannot rebuild finance source data."</span>,</span>
-<span id="cb62-13"><a href="#cb62-13" aria-hidden="true" tabindex="-1"></a>      <span class="st">"x"</span> <span class="ot">=</span> <span class="st">"No raw files found in {.path {finance_dir}}."</span>,</span>
-<span id="cb62-14"><a href="#cb62-14" aria-hidden="true" tabindex="-1"></a>      <span class="st">"i"</span> <span class="ot">=</span> <span class="st">"Use {.val auto} to reuse an existing RDS."</span></span>
-<span id="cb62-15"><a href="#cb62-15" aria-hidden="true" tabindex="-1"></a>    ))</span>
-<span id="cb62-16"><a href="#cb62-16" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb62-17"><a href="#cb62-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ... same pattern for mapping, then more for cached-RDS checks ...</span></span>
-<span id="cb62-18"><a href="#cb62-18" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb62-19"><a href="#cb62-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb62-20"><a href="#cb62-20" aria-hidden="true" tabindex="-1"></a><span class="co"># After: extract the repeated pattern into a helper</span></span>
-<span id="cb62-21"><a href="#cb62-21" aria-hidden="true" tabindex="-1"></a>validate_source_rebuild <span class="ot">&lt;-</span> <span class="cf">function</span>(rebuild, source_files, label, search_path) {</span>
-<span id="cb62-22"><a href="#cb62-22" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span>rebuild <span class="sc">||</span> <span class="fu">length</span>(source_files) <span class="sc">&gt;</span> <span class="dv">0</span>L) <span class="fu">return</span>(<span class="fu">invisible</span>(<span class="cn">NULL</span>))</span>
-<span id="cb62-23"><a href="#cb62-23" aria-hidden="true" tabindex="-1"></a>  cli<span class="sc">::</span><span class="fu">cli_abort</span>(<span class="fu">c</span>(</span>
-<span id="cb62-24"><a href="#cb62-24" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Cannot rebuild {label} source data."</span>,</span>
-<span id="cb62-25"><a href="#cb62-25" aria-hidden="true" tabindex="-1"></a>    <span class="st">"x"</span> <span class="ot">=</span> <span class="st">"No raw {label} files were found in {.path {search_path}}."</span>,</span>
-<span id="cb62-26"><a href="#cb62-26" aria-hidden="true" tabindex="-1"></a>    <span class="st">"i"</span> <span class="ot">=</span> <span class="st">"Use {.val auto} to reuse an existing source RDS."</span></span>
-<span id="cb62-27"><a href="#cb62-27" aria-hidden="true" tabindex="-1"></a>  ))</span>
-<span id="cb62-28"><a href="#cb62-28" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb62-29"><a href="#cb62-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb62-30"><a href="#cb62-30" aria-hidden="true" tabindex="-1"></a>build_analysis_cache <span class="ot">&lt;-</span> <span class="cf">function</span>(signal_files, finance_files, ...) {</span>
-<span id="cb62-31"><a href="#cb62-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">validate_source_rebuild</span>(rebuild_signal, signal_files, <span class="st">"Signal"</span>, signal_dir)</span>
-<span id="cb62-32"><a href="#cb62-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">validate_source_rebuild</span>(rebuild_finance, finance_files, <span class="st">"finance"</span>, finance_dir)</span>
-<span id="cb62-33"><a href="#cb62-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">validate_source_rebuild</span>(rebuild_mapping, mapping_files, <span class="st">"mapping"</span>, s_drive_path)</span>
-<span id="cb62-34"><a href="#cb62-34" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ... main logic is now immediately visible</span></span>
-<span id="cb62-35"><a href="#cb62-35" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>build_analysis_cache <span class="ot">&lt;-</span> <span class="cf">function</span>(</span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>    rebuild_signal, signal_files, signal_dir,</span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>    rebuild_finance, finance_files, finance_dir,</span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>    ...) {</span>
+<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (rebuild_signal <span class="sc">&amp;&amp;</span> <span class="fu">length</span>(signal_files) <span class="sc">==</span> <span class="dv">0</span>L) {</span>
+<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a>    cli<span class="sc">::</span><span class="fu">cli_abort</span>(<span class="fu">c</span>(</span>
+<span id="cb62-8"><a href="#cb62-8" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Cannot rebuild Signal source data."</span>,</span>
+<span id="cb62-9"><a href="#cb62-9" aria-hidden="true" tabindex="-1"></a>      <span class="st">"x"</span> <span class="ot">=</span> <span class="st">"No raw files found in {.path {signal_dir}}."</span>,</span>
+<span id="cb62-10"><a href="#cb62-10" aria-hidden="true" tabindex="-1"></a>      <span class="st">"i"</span> <span class="ot">=</span> <span class="st">"Use {.val auto} to reuse an existing RDS."</span></span>
+<span id="cb62-11"><a href="#cb62-11" aria-hidden="true" tabindex="-1"></a>    ))</span>
+<span id="cb62-12"><a href="#cb62-12" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb62-13"><a href="#cb62-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (rebuild_finance <span class="sc">&amp;&amp;</span> <span class="fu">length</span>(finance_files) <span class="sc">==</span> <span class="dv">0</span>L) {</span>
+<span id="cb62-14"><a href="#cb62-14" aria-hidden="true" tabindex="-1"></a>    cli<span class="sc">::</span><span class="fu">cli_abort</span>(<span class="fu">c</span>(</span>
+<span id="cb62-15"><a href="#cb62-15" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Cannot rebuild finance source data."</span>,</span>
+<span id="cb62-16"><a href="#cb62-16" aria-hidden="true" tabindex="-1"></a>      <span class="st">"x"</span> <span class="ot">=</span> <span class="st">"No raw files found in {.path {finance_dir}}."</span>,</span>
+<span id="cb62-17"><a href="#cb62-17" aria-hidden="true" tabindex="-1"></a>      <span class="st">"i"</span> <span class="ot">=</span> <span class="st">"Use {.val auto} to reuse an existing RDS."</span></span>
+<span id="cb62-18"><a href="#cb62-18" aria-hidden="true" tabindex="-1"></a>    ))</span>
+<span id="cb62-19"><a href="#cb62-19" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb62-20"><a href="#cb62-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ... same pattern for mapping, then more for cached-RDS checks ...</span></span>
+<span id="cb62-21"><a href="#cb62-21" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb62-22"><a href="#cb62-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-23"><a href="#cb62-23" aria-hidden="true" tabindex="-1"></a><span class="co"># After: extract the repeated pattern into a helper</span></span>
+<span id="cb62-24"><a href="#cb62-24" aria-hidden="true" tabindex="-1"></a>validate_source_rebuild <span class="ot">&lt;-</span> <span class="cf">function</span>(</span>
+<span id="cb62-25"><a href="#cb62-25" aria-hidden="true" tabindex="-1"></a>    rebuild,</span>
+<span id="cb62-26"><a href="#cb62-26" aria-hidden="true" tabindex="-1"></a>    source_files,</span>
+<span id="cb62-27"><a href="#cb62-27" aria-hidden="true" tabindex="-1"></a>    label,</span>
+<span id="cb62-28"><a href="#cb62-28" aria-hidden="true" tabindex="-1"></a>    search_path,</span>
+<span id="cb62-29"><a href="#cb62-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">call =</span> rlang<span class="sc">::</span><span class="fu">caller_env</span>()) {</span>
+<span id="cb62-30"><a href="#cb62-30" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span>rebuild <span class="sc">||</span> <span class="fu">length</span>(source_files) <span class="sc">&gt;</span> <span class="dv">0</span>L) <span class="fu">return</span>(<span class="fu">invisible</span>(<span class="cn">NULL</span>))</span>
+<span id="cb62-31"><a href="#cb62-31" aria-hidden="true" tabindex="-1"></a>  cli<span class="sc">::</span><span class="fu">cli_abort</span>(</span>
+<span id="cb62-32"><a href="#cb62-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">c</span>(</span>
+<span id="cb62-33"><a href="#cb62-33" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Cannot rebuild {label} source data."</span>,</span>
+<span id="cb62-34"><a href="#cb62-34" aria-hidden="true" tabindex="-1"></a>      <span class="st">"x"</span> <span class="ot">=</span> <span class="st">"No raw {label} files were found in {.path {search_path}}."</span>,</span>
+<span id="cb62-35"><a href="#cb62-35" aria-hidden="true" tabindex="-1"></a>      <span class="st">"i"</span> <span class="ot">=</span> <span class="st">"Use {.val auto} to reuse an existing source RDS."</span></span>
+<span id="cb62-36"><a href="#cb62-36" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb62-37"><a href="#cb62-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">call =</span> call</span>
+<span id="cb62-38"><a href="#cb62-38" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb62-39"><a href="#cb62-39" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb62-40"><a href="#cb62-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-41"><a href="#cb62-41" aria-hidden="true" tabindex="-1"></a>build_analysis_cache <span class="ot">&lt;-</span> <span class="cf">function</span>(</span>
+<span id="cb62-42"><a href="#cb62-42" aria-hidden="true" tabindex="-1"></a>    rebuild_signal, signal_files, signal_dir,</span>
+<span id="cb62-43"><a href="#cb62-43" aria-hidden="true" tabindex="-1"></a>    rebuild_finance, finance_files, finance_dir,</span>
+<span id="cb62-44"><a href="#cb62-44" aria-hidden="true" tabindex="-1"></a>    rebuild_mapping, mapping_files, s_drive_path,</span>
+<span id="cb62-45"><a href="#cb62-45" aria-hidden="true" tabindex="-1"></a>    ...) {</span>
+<span id="cb62-46"><a href="#cb62-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">validate_source_rebuild</span>(rebuild_signal, signal_files, <span class="st">"Signal"</span>, signal_dir)</span>
+<span id="cb62-47"><a href="#cb62-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">validate_source_rebuild</span>(rebuild_finance, finance_files, <span class="st">"finance"</span>, finance_dir)</span>
+<span id="cb62-48"><a href="#cb62-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">validate_source_rebuild</span>(rebuild_mapping, mapping_files, <span class="st">"mapping"</span>, s_drive_path)</span>
+<span id="cb62-49"><a href="#cb62-49" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ... main logic is now immediately visible</span></span>
+<span id="cb62-50"><a href="#cb62-50" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Benefits of this pattern:</mark></p>
 <ul>
 <li><mark class="preview-text-changed">The</mark> <mark class="preview-text-changed">main</mark> function reads <mark class="preview-text-changed">as</mark> a workflow <mark class="preview-text-changed">outline rather than a wall of </mark><code><mark class="preview-text-changed">if</mark></code><mark class="preview-text-changed">/</mark><code><mark class="preview-text-changed">cli_abort</mark></code><mark class="preview-text-changed"> blocks.</mark></li>
