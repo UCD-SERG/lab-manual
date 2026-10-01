@@ -1,0 +1,45 @@
+Give each function its own file
+rather than bundling multiple functions into one file.
+This applies to exported functions, internal helpers,
+and test helpers alike ---
+the only exception is a trivial two-line wrapper
+that is inseparable from its caller.
+
+### R packages
+
+Under `R/`, name the file after the function it contains:
+`simulate_data()` lives in `R/simulate_data.R`.
+A private helper that is more than a two-liner
+still gets its own file, named after the helper,
+even if only one caller uses it.
+
+### Why
+
+A file with one function is easier to find,
+easier to diff
+(a change to one function does not sit inside
+an unrelated grep hit for a different one),
+and matches how `git blame` and code-review tools
+attribute changes.
+Bundling unrelated functions into one file ---
+because they were added in the same PR,
+or because an existing file happened to be open ---
+accumulates unrelated concerns over time.
+
+### Adding to an existing multi-function file
+
+When adding a function to a file that already holds others
+(common in older code that predates this convention),
+put the **new** function in its own file
+so at least new code follows the convention going forward.
+Splitting every pre-existing function out
+is a separate, larger refactor.
+
+### Relationship to function decomposition
+
+When decomposing a large function
+(@sec-function-decomposition),
+place each extracted helper in its own file
+rather than above or below the caller in the same file.
+The caller file then contains only the orchestration function,
+and each helper is independently findable and testable.

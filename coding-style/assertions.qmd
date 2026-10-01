@@ -91,6 +91,13 @@ calculate_rate <- function(count, person_years, call = rlang::caller_env()) {
   supports signaling custom condition classes (via `class = ...`) that callers can catch programmatically.
 - **Cons**: Requires writing manual validation branches rather than one-line assertion calls.
 
+### Decomposing validation into helpers
+
+When a function validates multiple inputs with the same pattern,
+extract the repeated checks into a helper function
+rather than repeating the `if`/`cli_abort` block for each input.
+See @sec-decompose-validation for a worked example.
+
 ### Note on `{assertthat}`
 
 The [`{assertthat}`](https://cran.r-project.org/package=assertthat) package,
