@@ -654,7 +654,7 @@ div.csl-indent {
 
 <div class="preview-combined-banner">
     <p style="margin: 0;">
-        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~6% of content changed).
+        <strong>📝 Preview Changes:</strong> This page has been modified in this pull request (~7% of content changed).
         <br>
         <strong>🎨 Highlighting Legend:</strong> 
         <mark class="preview-text-changed" style="display: inline; padding: 1px 3px;">Modified text (yellow)</mark> shows changed words/phrases with tooltips of original text, 
@@ -853,15 +853,16 @@ div.csl-indent {
 <h3 data-number="7.5.1" class="anchored" data-anchor-id="sec-precompute-conditions"><span class="header-section-number"><mark class="preview-text-changed">7.5.1</mark></span> <mark class="preview-text-changed">Name</mark> <code><mark class="preview-text-changed">if()</mark></code> <mark class="preview-text-changed">conditions before testing them</mark></h3>
 <p><mark class="preview-element-added">Compute every <code>if()</code> and <code>while()</code> condition ahead of the test: assign it to a named logical variable first, then test that name, so the condition inside the parentheses is always a bare name. This holds even for a condition with no nested call, such as <code>is.na(strat)</code>, because the name is what documents the test.</mark></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><mark class="preview-element-added"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Good: the name states what the test means</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>single_plot <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">lengths</span>(trace_strat_list)) <span class="sc">==</span> <span class="dv">1</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (single_plot) {</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ...</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Avoid: the inline expression hides a misplaced parenthesis</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">sum</span>(<span class="fu">lengths</span>(trace_strat_list) <span class="sc">==</span> <span class="dv">1</span>)) {</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ...</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>n_plots <span class="ot">&lt;-</span> trace_strat_list <span class="sc">|&gt;</span> <span class="fu">lengths</span>() <span class="sc">|&gt;</span> <span class="fu">sum</span>()</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>single_plot <span class="ot">&lt;-</span> n_plots <span class="sc">==</span> <span class="dv">1</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (single_plot) {</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ...</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Avoid: the inline expression hides a misplaced parenthesis</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">sum</span>(<span class="fu">lengths</span>(trace_strat_list) <span class="sc">==</span> <span class="dv">1</span>)) {</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ...</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>For a <code>while()</code> loop, compute the named condition before the loop and recompute it at the end of the loop body.</mark></p>
 <p><mark class="preview-element-added">The inline form above was a real bug, fixed in <a href="https://github.com/UCD-SERG/serodynamics/pull/326"><code>{serodynamics}</code> PR #326</a>. <code>sum(lengths(x) == 1)</code> counts the strata that hold exactly one plot, so the single-plot branch ran whenever any stratum held one plot, not only when the whole result was one plot. Naming the condition makes the author say what it should mean (<code>single_plot</code>), which makes a misplaced parenthesis visible in review, and the named value can be inspected in a debugger before the branch runs.</mark></p>
 </section>
