@@ -1,5 +1,5 @@
-When writing code, do not nest function calls,
-and avoid nested function definitions where feasible:
+When writing code, do not nest function calls.
+Where feasible, also avoid nested function definitions:
 
 - Do not pass one function call's result straight into another call,
   as in `f(g(h(x)))`.
@@ -13,8 +13,10 @@ and avoid nested function definitions where feasible:
 
 The nested-call rule is a policy, not a default:
 a nested call is a code-review finding.
-It covers a call whose result is a value handed to the outer call.
-It does not cover an argument the outer function captures and interprets itself:
+It covers a call whose result is a value handed to the outer call as an argument.
+It does not cover the steps of a pipe chain,
+which already name their order,
+nor an argument the outer function captures and interprets itself:
 [`{tidyselect}`](https://tidyselect.r-lib.org/) helpers (`all_of()`, `any_of()`, `starts_with()`),
 data-masked expressions inside data-masking verbs such as `mutate()`, `filter()`, or `summarise()`,
 `aes()` mappings, and formulas.
@@ -25,7 +27,7 @@ The nested-definition rule is a readability and maintainability default, not an 
 keep the nesting when flattening it would be more convoluted
 (a trivial one-argument wrapper, or a closure that genuinely needs the enclosing scope).
 
-### Name `if()` conditions before testing them {#sec-precompute-conditions}
+### Name `if()` and `while()` conditions before testing them {#sec-precompute-conditions}
 
 Compute every `if()` and `while()` condition ahead of the test:
 assign it to a named logical variable first,
@@ -58,8 +60,8 @@ fixed in [`{serodynamics}` PR #326](https://github.com/UCD-SERG/serodynamics/pul
 `sum(lengths(x) == 1)` counts the strata that hold exactly one plot,
 so the single-plot branch ran whenever any stratum held one plot,
 not only when the whole result was one plot.
-Naming the condition makes the author say what it should mean (`single_plot`),
-which makes a misplaced parenthesis visible in review,
+Splitting the condition into named steps makes the author say what each step should mean (`n_plots`, then `single_plot`),
+which puts the comparison on its own line where a misplaced parenthesis is visible in review,
 and the named value can be inspected in a debugger before the branch runs.
 
 ### Prefer more, simpler steps over fewer, denser ones
