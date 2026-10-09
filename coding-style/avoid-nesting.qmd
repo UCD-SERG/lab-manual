@@ -36,7 +36,8 @@ because the name is what documents the test.
 
 ```r
 # Good: the name states what the test means
-single_plot <- sum(lengths(trace_strat_list)) == 1
+n_plots <- trace_strat_list |> lengths() |> sum()
+single_plot <- n_plots == 1
 if (single_plot) {
   # ...
 }
