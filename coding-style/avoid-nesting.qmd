@@ -16,7 +16,7 @@ a nested call is a code-review finding.
 It covers a call whose result is a value handed to the outer call.
 It does not cover an argument the outer function captures and interprets itself:
 [`{tidyselect}`](https://tidyselect.r-lib.org/) helpers (`all_of()`, `any_of()`, `starts_with()`),
-data-masked expressions inside `mutate()`, `filter()`, or `summarise()`,
+data-masked expressions inside data-masking verbs such as `mutate()`, `filter()`, or `summarise()`,
 `aes()` mappings, and formulas.
 Those are part of the outer call's own syntax,
 and pulling them out would break or obscure it.
@@ -30,7 +30,8 @@ keep the nesting when flattening it would be more convoluted
 Compute every `if()` and `while()` condition ahead of the test:
 assign it to a named logical variable first,
 then test that name,
-so the condition inside the parentheses is always a bare name.
+so the condition inside the parentheses is always a bare name
+(or a literal, as in `while (TRUE)`).
 This holds even for a condition with no nested call, such as `is.na(strat)`,
 because the name is what documents the test.
 
