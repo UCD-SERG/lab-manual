@@ -2,6 +2,16 @@
 
 This file contains guidelines for GitHub Copilot and other AI assistants when working with the lab manual.
 
+## Content That Stays in This Manual
+
+Content that Kristen Aiemjoy contributed stays in this manual.
+Don't move it to another repository or replace it with a stub.
+Other repositories (such as `Morrison-Lab/psc`, `Morrison-Lab/psw`, and `Morrison-Lab/wai`)
+may adapt it, with visible attribution to this manual and to her.
+To find her contributions, check `git log` (author `kaiemjoy`, or a
+`Co-authored-by: kaiemjoy` trailer) and the tracked changes listed in
+[issue #209](https://github.com/UCD-SERG/lab-manual/issues/209).
+
 ## Markdown and Quarto Formatting
 
 ### Talking about code

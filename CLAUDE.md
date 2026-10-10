@@ -19,6 +19,13 @@ edit coding guidance there, not here.
 The one exception is `github.qmd`'s UC Davis section
 (`#sec-github-education`), which stays and is edited here.
 
+Content that Kristen Aiemjoy contributed stays in this manual.
+Don't move it to another repo or replace it with a stub.
+Other repos (psc, psw, wai, and the like) may adapt it, with visible attribution
+to this manual and to her.
+To find her contributions, check `git log` (author `kaiemjoy`, or a
+`Co-authored-by: kaiemjoy` trailer) and the tracked changes listed in #209.
+
 `.github/copilot-instructions.md` is the source of truth for repository-specific
 style and workflow. This file is a short orientation; when the two disagree,
 copilot-instructions.md wins. Read it before non-trivial content edits.
