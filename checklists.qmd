@@ -9,7 +9,9 @@ Welcome to the lab! New members should complete the following checklist during t
 - [ ] **Required trainings**: Complete required CITI Human Subjects Biomedical Group 1 training
   and share your certificate with lab leadership (see @sec-protecting-human-subjects).
 - [ ] **Read the lab manual**: Review lab culture and conduct (@sec-culture-and-conduct),
-  coding style (@sec-r-code-style), and collaborative development (@sec-collab-dev).
+  then the [coding style](https://morrison-lab.github.io/psc/chapters/coding-style.html)
+  and [collaborative development](https://morrison-lab.github.io/psc/chapters/collaborative-software-development.html)
+  chapters of *Principles of Scientific Computing*.
 - [ ] **Environment setup**: Configure your local R development environment,
   clone a starter repository, and run `renv::restore()` to verify reproducible package installation
   (see @sec-reproducible-environments).
@@ -44,7 +46,7 @@ Welcome to the lab! New members should complete the following checklist during t
 - [ ] Is all commented out code / remarks removed? 
 - [ ] Does the header accurately describe the process completed in the script? 
 - [ ] Is the script pushed to its github repository?
-- [ ] Does the code adhere to the [coding style guide](https://ucd-serg.github.io/lab-manual/coding-style.html)? 
+- [ ] Does the code adhere to the [coding style guide](https://morrison-lab.github.io/psc/chapters/coding-style.html)? 
 - [ ] Are all warnings ignorable? Should any warnings be intentionally suppressed or addressed?
 
 ## Manuscript checklist

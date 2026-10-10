@@ -14,22 +14,22 @@ the Morrison Lab's general-purpose guide to coding for research projects:
 That page covers:
 
 - [User interfaces: CLI, TUI, and GUI](https://morrison-lab.github.io/psc/chapters/unix.html#sec-cli-tui-gui)
-- [Basics](https://morrison-lab.github.io/psc/chapters/unix.html)
+- [Basics](https://morrison-lab.github.io/psc/chapters/unix.html#basics)
 - [Terminal Emulators](https://morrison-lab.github.io/psc/chapters/unix.html#sec-terminal-emulators)
-- [Syntax for both Mac/Windows](https://morrison-lab.github.io/psc/chapters/unix.html)
+- [Syntax for both Mac/Windows](https://morrison-lab.github.io/psc/chapters/unix.html#syntax-for-both-macwindows)
 - [Zsh and Oh My Zsh](https://morrison-lab.github.io/psc/chapters/unix.html#sec-zsh)
-- [Running Bash Scripts](https://morrison-lab.github.io/psc/chapters/unix.html)
+- [Running Bash Scripts](https://morrison-lab.github.io/psc/chapters/unix.html#running-bash-scripts)
 - [Shell Scripting Style](https://morrison-lab.github.io/psc/chapters/unix.html#sec-shell-style)
-- [Running Rscripts in Windows](https://morrison-lab.github.io/psc/chapters/unix.html)
-- [Checking tasks and killing jobs](https://morrison-lab.github.io/psc/chapters/unix.html)
-- [Running big jobs](https://morrison-lab.github.io/psc/chapters/unix.html)
-- [External Resources](https://morrison-lab.github.io/psc/chapters/unix.html)
+- [Running Rscripts in Windows](https://morrison-lab.github.io/psc/chapters/unix.html#running-rscripts-in-windows)
+- [Checking tasks and killing jobs](https://morrison-lab.github.io/psc/chapters/unix.html#checking-tasks-and-killing-jobs)
+- [Running big jobs](https://morrison-lab.github.io/psc/chapters/unix.html#running-big-jobs)
+- [External Resources](https://morrison-lab.github.io/psc/chapters/unix.html#external-resources)
 
 ::: {.callout-note collapse="true"}
 ## Looking for a specific section that used to be here?
 
-This chapter's old section anchors still resolve on this page,
-so old bookmarks and links won't 404,
+This chapter's old `#sec-` anchors still resolve on this page,
+so old bookmarks and links land here,
 but the content now lives on the page linked above,
 under the same anchor.
 For example, `#sec-foo` here is `unix.html#sec-foo` there.

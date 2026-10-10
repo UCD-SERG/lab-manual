@@ -8,7 +8,7 @@ the Morrison Lab's general-purpose guide to coding for research projects:
 
 That page covers:
 
-- [Package Version Control with renv](https://morrison-lab.github.io/psc/chapters/reproducible-environments.html)
-- [Fast Package Installation on Ubuntu with r2u](https://morrison-lab.github.io/psc/chapters/reproducible-environments.html)
-- [Managing R Versions with rig](https://morrison-lab.github.io/psc/chapters/reproducible-environments.html)
-- [Clearing Docker Cache](https://morrison-lab.github.io/psc/chapters/reproducible-environments.html)
+- [Package Version Control with renv](https://morrison-lab.github.io/psc/chapters/reproducible-environments.html#package-version-control-with-renv)
+- [Fast Package Installation on Ubuntu with r2u](https://morrison-lab.github.io/psc/chapters/reproducible-environments.html#fast-package-installation-on-ubuntu-with-r2u)
+- [Managing R Versions with rig](https://morrison-lab.github.io/psc/chapters/reproducible-environments.html#managing-r-versions-with-rig)
+- [Clearing Docker Cache](https://morrison-lab.github.io/psc/chapters/reproducible-environments.html#clearing-docker-cache)

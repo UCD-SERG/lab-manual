@@ -10,21 +10,21 @@ the Morrison Lab's general-purpose guide to coding for research projects:
 
 That page covers:
 
-- [Introduction](https://morrison-lab.github.io/psc/chapters/quarto.html)
-- [Quarto Basics](https://morrison-lab.github.io/psc/chapters/quarto.html)
-- [Building Quarto Books](https://morrison-lab.github.io/psc/chapters/quarto.html)
+- [Introduction](https://morrison-lab.github.io/psc/chapters/quarto.html#introduction)
+- [Quarto Basics](https://morrison-lab.github.io/psc/chapters/quarto.html#quarto-basics)
+- [Building Quarto Books](https://morrison-lab.github.io/psc/chapters/quarto.html#building-quarto-books)
 - [Dashboards](https://morrison-lab.github.io/psc/chapters/quarto.html#sec-quarto-dashboards)
-- [Quarto Profiles](https://morrison-lab.github.io/psc/chapters/quarto.html)
-- [Advanced Features](https://morrison-lab.github.io/psc/chapters/quarto.html)
-- [Mermaid Diagrams](https://morrison-lab.github.io/psc/chapters/quarto.html)
-- [Troubleshooting](https://morrison-lab.github.io/psc/chapters/quarto.html)
-- [Additional Resources](https://morrison-lab.github.io/psc/chapters/quarto.html)
+- [Quarto Profiles](https://morrison-lab.github.io/psc/chapters/quarto.html#quarto-profiles)
+- [Advanced Features](https://morrison-lab.github.io/psc/chapters/quarto.html#advanced-features)
+- [Mermaid Diagrams](https://morrison-lab.github.io/psc/chapters/quarto.html#mermaid-diagrams)
+- [Troubleshooting](https://morrison-lab.github.io/psc/chapters/quarto.html#troubleshooting)
+- [Additional Resources](https://morrison-lab.github.io/psc/chapters/quarto.html#additional-resources)
 
 ::: {.callout-note collapse="true"}
 ## Looking for a specific section that used to be here?
 
-This chapter's old section anchors still resolve on this page,
-so old bookmarks and links won't 404,
+This chapter's old `#sec-` anchors still resolve on this page,
+so old bookmarks and links land here,
 but the content now lives on the page linked above,
 under the same anchor.
 For example, `#sec-foo` here is `quarto.html#sec-foo` there.

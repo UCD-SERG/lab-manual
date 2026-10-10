@@ -99,11 +99,11 @@ the Morrison Lab's general-purpose guide to coding for research projects:
 
 That page covers:
 
-- [Lab Protocols for Code and Data](https://morrison-lab.github.io/psc/chapters/coding-practices.html)
+- [Lab Protocols for Code and Data](https://morrison-lab.github.io/psc/chapters/coding-practices.html#lab-protocols-for-code-and-data)
 - [The Tool-Building Mindset](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-tool-building)
 - [Essential R Package Development Tools](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-r-package-tools)
 - [Complete Package Development Workflow](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-r-workflow)
-- [Organizing scripts](https://morrison-lab.github.io/psc/chapters/coding-practices.html)
+- [Organizing scripts](https://morrison-lab.github.io/psc/chapters/coding-practices.html#organizing-scripts)
 - [Testing Requirements](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-r-testing)
 - [Test-Driven Development](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-tdd)
 - [Benchmarking](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-benchmarking)
@@ -114,20 +114,20 @@ That page covers:
 - [Automated Code Styling](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-auto-styling)
 - [Documenting your code](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-documenting-code)
 - [Design Documentation with ADRs](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-adrs)
-- [Object naming](https://morrison-lab.github.io/psc/chapters/coding-practices.html)
-- [Function calls](https://morrison-lab.github.io/psc/chapters/coding-practices.html)
+- [Object naming](https://morrison-lab.github.io/psc/chapters/coding-practices.html#object-naming)
+- [Function calls](https://morrison-lab.github.io/psc/chapters/coding-practices.html#function-calls)
 - [Function decomposition](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-function-decomposition)
 - [One function per file](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-one-function-per-file)
 - [Function length limits](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-function-length-limits)
 - [Keep It Short and Simple (KISS)](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-kiss)
 - [Decomposing Code Chunks in Quarto Documents](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-decompose-qmd-chunks)
 - [The here package](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-here-package-practices)
-- [Reading/Saving Data](https://morrison-lab.github.io/psc/chapters/coding-practices.html)
-- [Integrating Box and Dropbox](https://morrison-lab.github.io/psc/chapters/coding-practices.html)
+- [Reading/Saving Data](https://morrison-lab.github.io/psc/chapters/coding-practices.html#readingsaving-data)
+- [Integrating Box and Dropbox](https://morrison-lab.github.io/psc/chapters/coding-practices.html#integrating-box-and-dropbox)
 - [r-lib Packages](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-r-lib-packages)
 - [Tidyverse](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-tidyverse)
-- [Coding with R and Python](https://morrison-lab.github.io/psc/chapters/coding-practices.html)
-- [Repeating analyses with different variations](https://morrison-lab.github.io/psc/chapters/coding-practices.html)
+- [Coding with R and Python](https://morrison-lab.github.io/psc/chapters/coding-practices.html#coding-with-r-and-python)
+- [Repeating analyses with different variations](https://morrison-lab.github.io/psc/chapters/coding-practices.html#repeating-analyses-with-different-variations)
 - [Reviewing Code](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-reviewing-code)
 - [Getting Help with Code](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-getting-help-with-code)
 - [Additional Resources](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-r-resources)
@@ -135,8 +135,8 @@ That page covers:
 ::: {.callout-note collapse="true"}
 ## Looking for a specific section that used to be here?
 
-This chapter's old section anchors still resolve on this page,
-so old bookmarks and links won't 404,
+This chapter's old `#sec-` anchors still resolve on this page,
+so old bookmarks and links land here,
 but the content now lives on the page linked above,
 under the same anchor.
 For example, `#sec-foo` here is `coding-practices.html#sec-foo` there.

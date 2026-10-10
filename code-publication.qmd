@@ -11,22 +11,22 @@ the Morrison Lab's general-purpose guide to coding for research projects:
 
 That page covers:
 
-- [Checklist overview](https://morrison-lab.github.io/psc/chapters/code-publication.html)
-- [Fill out file headers](https://morrison-lab.github.io/psc/chapters/code-publication.html)
-- [Clean up comments](https://morrison-lab.github.io/psc/chapters/code-publication.html)
-- [Document functions](https://morrison-lab.github.io/psc/chapters/code-publication.html)
-- [Remove deprecated filepaths](https://morrison-lab.github.io/psc/chapters/code-publication.html)
-- [Ensure project runs via bash](https://morrison-lab.github.io/psc/chapters/code-publication.html)
-- [Complete the README](https://morrison-lab.github.io/psc/chapters/code-publication.html)
-- [Clean up feature branches](https://morrison-lab.github.io/psc/chapters/code-publication.html)
+- [Checklist overview](https://morrison-lab.github.io/psc/chapters/code-publication.html#checklist-overview)
+- [Fill out file headers](https://morrison-lab.github.io/psc/chapters/code-publication.html#fill-out-file-headers)
+- [Clean up comments](https://morrison-lab.github.io/psc/chapters/code-publication.html#clean-up-comments)
+- [Document functions](https://morrison-lab.github.io/psc/chapters/code-publication.html#document-functions)
+- [Remove deprecated filepaths](https://morrison-lab.github.io/psc/chapters/code-publication.html#remove-deprecated-filepaths)
+- [Ensure project runs via bash](https://morrison-lab.github.io/psc/chapters/code-publication.html#ensure-project-runs-via-bash)
+- [Complete the README](https://morrison-lab.github.io/psc/chapters/code-publication.html#complete-the-readme)
+- [Clean up feature branches](https://morrison-lab.github.io/psc/chapters/code-publication.html#clean-up-feature-branches)
 - [Create GitHub release](https://morrison-lab.github.io/psc/chapters/code-publication.html#sec-create-github-release)
 - [Releasing to CRAN](https://morrison-lab.github.io/psc/chapters/code-publication.html#sec-cran-release)
 
 ::: {.callout-note collapse="true"}
 ## Looking for a specific section that used to be here?
 
-This chapter's old section anchors still resolve on this page,
-so old bookmarks and links won't 404,
+This chapter's old `#sec-` anchors still resolve on this page,
+so old bookmarks and links land here,
 but the content now lives on the page linked above,
 under the same anchor.
 For example, `#sec-foo` here is `code-publication.html#sec-foo` there.

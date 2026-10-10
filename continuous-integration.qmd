@@ -21,22 +21,22 @@ the Morrison Lab's general-purpose guide to coding for research projects:
 
 That page covers:
 
-- [Understanding GitHub Actions](https://morrison-lab.github.io/psc/chapters/continuous-integration.html)
+- [Understanding GitHub Actions](https://morrison-lab.github.io/psc/chapters/continuous-integration.html#understanding-github-actions)
 - [Setting Up GitHub Actions](https://morrison-lab.github.io/psc/chapters/continuous-integration.html#sec-setting-up-github-actions)
 - [Reusable Workflow Collections](https://morrison-lab.github.io/psc/chapters/continuous-integration.html#sec-reusable-workflow-collections)
-- [How GitHub Actions Workflows Work](https://morrison-lab.github.io/psc/chapters/continuous-integration.html)
-- [Workflow Files and Security](https://morrison-lab.github.io/psc/chapters/continuous-integration.html)
+- [How GitHub Actions Workflows Work](https://morrison-lab.github.io/psc/chapters/continuous-integration.html#how-github-actions-workflows-work)
+- [Workflow Files and Security](https://morrison-lab.github.io/psc/chapters/continuous-integration.html#workflow-files-and-security)
 - [Pipeline Design Patterns](https://morrison-lab.github.io/psc/chapters/continuous-integration.html#sec-ci-design-patterns)
-- [Troubleshooting Failed Workflows](https://morrison-lab.github.io/psc/chapters/continuous-integration.html)
+- [Troubleshooting Failed Workflows](https://morrison-lab.github.io/psc/chapters/continuous-integration.html#troubleshooting-failed-workflows)
 - [Pull Request Comment Automation](https://morrison-lab.github.io/psc/chapters/continuous-integration.html#sec-pr-comment-automation)
-- [Fast Package Installation with r2u](https://morrison-lab.github.io/psc/chapters/continuous-integration.html)
-- [Additional Resources](https://morrison-lab.github.io/psc/chapters/continuous-integration.html)
+- [Fast Package Installation with r2u](https://morrison-lab.github.io/psc/chapters/continuous-integration.html#fast-package-installation-with-r2u)
+- [Additional Resources](https://morrison-lab.github.io/psc/chapters/continuous-integration.html#additional-resources)
 
 ::: {.callout-note collapse="true"}
 ## Looking for a specific section that used to be here?
 
-This chapter's old section anchors still resolve on this page,
-so old bookmarks and links won't 404,
+This chapter's old `#sec-` anchors still resolve on this page,
+so old bookmarks and links land here,
 but the content now lives on the page linked above,
 under the same anchor.
 For example, `#sec-foo` here is `continuous-integration.html#sec-foo` there.

@@ -10,15 +10,15 @@ the Morrison Lab's general-purpose guide to coding for research projects:
 
 That page covers:
 
-- [General Overview](https://morrison-lab.github.io/psc/chapters/data-masking.html)
+- [General Overview](https://morrison-lab.github.io/psc/chapters/data-masking.html#general-overview)
 - [Data masking vs. tidy selection](https://morrison-lab.github.io/psc/chapters/data-masking.html#sec-data-masking-vs-tidy-selection)
-- [Technical Overview](https://morrison-lab.github.io/psc/chapters/data-masking.html)
+- [Technical Overview](https://morrison-lab.github.io/psc/chapters/data-masking.html#technical-overview)
 
 ::: {.callout-note collapse="true"}
 ## Looking for a specific section that used to be here?
 
-This chapter's old section anchors still resolve on this page,
-so old bookmarks and links won't 404,
+This chapter's old `#sec-` anchors still resolve on this page,
+so old bookmarks and links land here,
 but the content now lives on the page linked above,
 under the same anchor.
 For example, `#sec-foo` here is `data-masking.html#sec-foo` there.

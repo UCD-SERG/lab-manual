@@ -16,6 +16,8 @@ CI, Quarto, Unix, and others) moved to
 ([`Morrison-Lab/psc`](https://github.com/Morrison-Lab/psc)).
 Their files here are stubs that keep the old `#sec-` anchors and link to psc;
 edit coding guidance there, not here.
+The one exception is `github.qmd`'s UC Davis section
+(`#sec-github-education`), which stays and is edited here.
 
 `.github/copilot-instructions.md` is the source of truth for repository-specific
 style and workflow. This file is a short orientation; when the two disagree,

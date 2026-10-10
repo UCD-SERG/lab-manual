@@ -48,8 +48,9 @@ jobs:
       # would also need the preview workflow's system libraries.
       install-quarto: true
       prompt-addendum: |
-        This is the UCD-SERG lab manual, a Quarto book. Follow the manual's own
-        coding-style and coding-practices conventions. Keep prose ASCII: the
+        This is the UCD-SERG lab manual, a Quarto book. Follow the coding-style
+        and coding-practices conventions in Principles of Scientific Computing
+        (https://morrison-lab.github.io/psc/), where those chapters moved. Keep prose ASCII: the
         check-non-standard-chars workflow flags non-standard characters such as
         curly quotes and en/em dashes. Before committing a changed chapter, run
         spelling::spell_check_files() on it and, where feasible, `quarto render`

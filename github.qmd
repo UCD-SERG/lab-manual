@@ -27,17 +27,17 @@ the Morrison Lab's general-purpose guide to coding for research projects:
 
 That page covers:
 
-- [Basics](https://morrison-lab.github.io/psc/chapters/github.html)
+- [Basics](https://morrison-lab.github.io/psc/chapters/github.html#basics)
 - [Graphical Git Clients](https://morrison-lab.github.io/psc/chapters/github.html#sec-git-gui-clients)
 - [GitHub CLI and GitLab CLI](https://morrison-lab.github.io/psc/chapters/github.html#sec-cli-tools)
-- [Git Branching](https://morrison-lab.github.io/psc/chapters/github.html)
+- [Git Branching](https://morrison-lab.github.io/psc/chapters/github.html#git-branching)
 - [Personal Dev Branches](https://morrison-lab.github.io/psc/chapters/github.html#sec-dev-branches)
-- [Example Workflow](https://morrison-lab.github.io/psc/chapters/github.html)
-- [Pull Request Roles and Protocol](https://morrison-lab.github.io/psc/chapters/github.html)
-- [Commonly Used Git Commands](https://morrison-lab.github.io/psc/chapters/github.html)
-- [How often should I commit?](https://morrison-lab.github.io/psc/chapters/github.html)
-- [Repeated Amend Workflow](https://morrison-lab.github.io/psc/chapters/github.html)
-- [What should be pushed to Github?](https://morrison-lab.github.io/psc/chapters/github.html)
+- [Example Workflow](https://morrison-lab.github.io/psc/chapters/github.html#example-workflow)
+- [Pull Request Roles and Protocol](https://morrison-lab.github.io/psc/chapters/github.html#pull-request-roles-and-protocol)
+- [Commonly Used Git Commands](https://morrison-lab.github.io/psc/chapters/github.html#commonly-used-git-commands)
+- [How often should I commit?](https://morrison-lab.github.io/psc/chapters/github.html#how-often-should-i-commit)
+- [Repeated Amend Workflow](https://morrison-lab.github.io/psc/chapters/github.html#repeated-amend-workflow)
+- [What should be pushed to Github?](https://morrison-lab.github.io/psc/chapters/github.html#what-should-be-pushed-to-github)
 - [GitLab](https://morrison-lab.github.io/psc/chapters/github.html#sec-gitlab)
 - [Customizing How Files Appear on GitHub](https://morrison-lab.github.io/psc/chapters/github.html#sec-gitattributes)
 - [Exporting Issue and Pull Request Conversations](https://morrison-lab.github.io/psc/chapters/github.html#sec-export-conversations)
@@ -46,8 +46,8 @@ That page covers:
 ::: {.callout-note collapse="true"}
 ## Looking for a specific section that used to be here?
 
-This chapter's old section anchors still resolve on this page,
-so old bookmarks and links won't 404,
+This chapter's old `#sec-` anchors still resolve on this page,
+so old bookmarks and links land here,
 but the content now lives on the page linked above,
 under the same anchor.
 For example, `#sec-foo` here is `github.html#sec-foo` there.

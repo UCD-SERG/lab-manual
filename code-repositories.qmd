@@ -11,17 +11,17 @@ the Morrison Lab's general-purpose guide to coding for research projects:
 
 That page covers:
 
-- [Template repositories](https://morrison-lab.github.io/psc/chapters/code-repositories.html)
-- [Package Structure](https://morrison-lab.github.io/psc/chapters/code-repositories.html)
-- [`.Rproj` files](https://morrison-lab.github.io/psc/chapters/code-repositories.html)
-- [Organizing the `data-raw` folder](https://morrison-lab.github.io/psc/chapters/code-repositories.html)
+- [Template repositories](https://morrison-lab.github.io/psc/chapters/code-repositories.html#template-repositories)
+- [Package Structure](https://morrison-lab.github.io/psc/chapters/code-repositories.html#package-structure)
+- [`.Rproj` files](https://morrison-lab.github.io/psc/chapters/code-repositories.html#rproj-files)
+- [Organizing the `data-raw` folder](https://morrison-lab.github.io/psc/chapters/code-repositories.html#organizing-the-data-raw-folder)
 - [Repository Status Badges](https://morrison-lab.github.io/psc/chapters/code-repositories.html#sec-repostatus)
 
 ::: {.callout-note collapse="true"}
 ## Looking for a specific section that used to be here?
 
-This chapter's old section anchors still resolve on this page,
-so old bookmarks and links won't 404,
+This chapter's old `#sec-` anchors still resolve on this page,
+so old bookmarks and links land here,
 but the content now lives on the page linked above,
 under the same anchor.
 For example, `#sec-foo` here is `code-repositories.html#sec-foo` there.

@@ -77,7 +77,8 @@ snake_case_acros_regex <- function() {
 #'
 #' Flags function definitions (including `\(...)` lambdas) that span more
 #' lines than `length_limit`, matching the provisional heuristic documented
-#' in the lab manual's `coding-practices/function-length-limits.qmd`
+#' in "Function Length Limits" in *Principles of Scientific Computing*
+#' (<https://morrison-lab.github.io/psc/>)
 #' ("use `<150` lines... as a trigger to reassess decomposition, not a hard
 #' constraint"). lintr has no built-in linter for this
 #' (see <https://github.com/r-lib/lintr/issues/361>); `cyclocomp_linter()`
@@ -106,7 +107,7 @@ function_length_linter <- function(length_limit = 150L) {
       fun_defs[n_lines > length_limit],
       source_expression = source_expression,
       lint_message = sprintf(
-        "Function spans more than %d lines; consider decomposing it (see coding-practices/function-length-limits.qmd).", # nolint: line_length_linter.
+        "Function spans more than %d lines; consider decomposing it (see https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-function-length-limits).", # nolint: line_length_linter.
         length_limit
       ),
       type = "warning"

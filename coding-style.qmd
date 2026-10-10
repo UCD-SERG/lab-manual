@@ -27,7 +27,7 @@ the Morrison Lab's general-purpose guide to coding for research projects:
 
 That page covers:
 
-- [General Principles](https://morrison-lab.github.io/psc/chapters/coding-style.html)
+- [General Principles](https://morrison-lab.github.io/psc/chapters/coding-style.html#general-principles)
 - [Clean Code Principles](https://morrison-lab.github.io/psc/chapters/coding-style.html#sec-clean-code)
 - [Function Structure and Documentation](https://morrison-lab.github.io/psc/chapters/coding-style.html#sec-function-docs)
 - [Assertions and Input Validation](https://morrison-lab.github.io/psc/chapters/coding-style.html#sec-assertions-input-validation)
@@ -37,9 +37,9 @@ That page covers:
 - [Avoid Hard-Coding Data with an External Source of Truth](https://morrison-lab.github.io/psc/chapters/coding-style.html#sec-avoid-hardcoding-external-data)
 - [Construct Complex Inputs Before the Call](https://morrison-lab.github.io/psc/chapters/coding-style.html#sec-construct-inputs)
 - [Comments](https://morrison-lab.github.io/psc/chapters/coding-style.html#sec-comments)
-- [Line Breaks and Formatting](https://morrison-lab.github.io/psc/chapters/coding-style.html)
-- [Markdown and Quarto Formatting](https://morrison-lab.github.io/psc/chapters/coding-style.html)
-- [Messaging and User Communication](https://morrison-lab.github.io/psc/chapters/coding-style.html)
+- [Line Breaks and Formatting](https://morrison-lab.github.io/psc/chapters/coding-style.html#line-breaks-and-formatting)
+- [Markdown and Quarto Formatting](https://morrison-lab.github.io/psc/chapters/coding-style.html#markdown-and-quarto-formatting)
+- [Messaging and User Communication](https://morrison-lab.github.io/psc/chapters/coding-style.html#messaging-and-user-communication)
 - [Package Code Practices](https://morrison-lab.github.io/psc/chapters/coding-style.html#sec-package-code-practices)
 - [Tidyverse Replacements](https://morrison-lab.github.io/psc/chapters/coding-style.html#sec-tidyverse-replacements)
 - [The here Package](https://morrison-lab.github.io/psc/chapters/coding-style.html#sec-here-package-style)
@@ -50,8 +50,8 @@ That page covers:
 ::: {.callout-note collapse="true"}
 ## Looking for a specific section that used to be here?
 
-This chapter's old section anchors still resolve on this page,
-so old bookmarks and links won't 404,
+This chapter's old `#sec-` anchors still resolve on this page,
+so old bookmarks and links land here,
 but the content now lives on the page linked above,
 under the same anchor.
 For example, `#sec-foo` here is `coding-style.html#sec-foo` there.

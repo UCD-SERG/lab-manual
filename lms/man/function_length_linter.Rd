@@ -17,7 +17,8 @@ A \code{\link[lintr:Linter]{lintr::Linter()}} object.
 \description{
 Flags function definitions (including \verb{\\(...)} lambdas) that span more
 lines than \code{length_limit}, matching the provisional heuristic documented
-in the lab manual's \verb{coding-practices/function-length-limits.qmd}
+in "Function Length Limits" in \emph{Principles of Scientific Computing}
+(\url{https://morrison-lab.github.io/psc/})
 ("use \verb{<150} lines... as a trigger to reassess decomposition, not a hard
 constraint"). lintr has no built-in linter for this
 (see \url{https://github.com/r-lib/lintr/issues/361}); \code{cyclocomp_linter()}
