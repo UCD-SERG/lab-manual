@@ -50,7 +50,7 @@ This chapter's old section anchors still resolve on this page,
 so old bookmarks and links won't 404,
 but the content now lives on the page linked above,
 under the same anchor.
-For example, `#sec-foo` here is `https://morrison-lab.github.io/psc/chapters/github.html#sec-foo` there.
+For example, `#sec-foo` here is `github.html#sec-foo` there.
 :::
 
 ## GitHub Education and Copilot Access {#sec-github-education}
