@@ -38,6 +38,8 @@ the Morrison Lab's general-purpose guide to coding for research projects:
 []{#using-.gitattributes}
 []{#other-useful-linguist-attributes}
 []{#immediate-steps}
+[]{#tbl-git-workflow}
+[]{#tbl-git-commands}
 
 That page covers:
 

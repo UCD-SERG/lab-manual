@@ -185,6 +185,8 @@ the Morrison Lab's general-purpose guide to coding for research projects:
 []{#general-r-programming}
 []{#shiny-development}
 []{#git-and-version-control}
+[]{#tbl-snapshot-vs-explicit}
+[]{#tbl-keywords-internal-vs-nord}
 
 That page covers:
 

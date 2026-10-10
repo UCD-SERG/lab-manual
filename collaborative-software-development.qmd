@@ -40,6 +40,8 @@ the Morrison Lab's general-purpose guide to coding for research projects:
 []{#balance-direct-fixes-with-guidance}
 []{#ignore-auto-generated-files-when-appropriate}
 []{#reviewing-copilot-generated-pull-requests}
+[]{#fig-github-suggestion-feature}
+[]{#fig-preview-comment}
 
 That page covers:
 

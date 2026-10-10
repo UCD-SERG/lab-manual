@@ -47,6 +47,14 @@ the Morrison Lab's general-purpose guide to coding for research projects:
 []{#example-code-for-runfilesavelogs}
 []{#example-usage-for-runfilesavelogs}
 []{#external-resources}
+[]{#tbl-cli-tui-gui}
+[]{#fig-unix-desktop}
+[]{#tbl-terminal-emulators}
+[]{#tbl-unix-basic-commands}
+[]{#fig-unix-terminal}
+[]{#tbl-unix-omz-plugins}
+[]{#tbl-unix-cli-tools}
+[]{#tbl-unix-bash-scripts}
 
 That page covers:
 

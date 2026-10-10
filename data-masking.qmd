@@ -13,6 +13,8 @@ the Morrison Lab's general-purpose guide to coding for research projects:
 []{#the-.data-pronoun-does-not-belong-in-tidy-selection}
 []{#technical-overview}
 []{#example}
+[]{#fig-data-masking}
+[]{#tbl-masking-selection}
 
 That page covers:
 
