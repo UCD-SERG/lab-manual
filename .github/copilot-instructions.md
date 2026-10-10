@@ -134,7 +134,7 @@ See [Quarto Cross-References documentation](https://quarto.org/docs/authoring/cr
 **Required label prefixes:**
 
 - Figures: `#fig-` (e.g., `#fig-workflow-diagram`)
-- Tables: `#tbl-` (e.g., `#tbl-git-commands`, `#tbl-summary-stats`)
+- Tables: `#tbl-` (e.g., `#tbl-summary-stats`)
 - Equations: `#eq-` (e.g., `#eq-regression-model`)
 - Sections: `#sec-` (e.g., `#sec-introduction`) - already in use throughout manual
 - Theorems: `#thm-` (e.g., `#thm-central-limit`)

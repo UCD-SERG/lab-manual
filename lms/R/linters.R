@@ -107,7 +107,11 @@ function_length_linter <- function(length_limit = 150L) {
       fun_defs[n_lines > length_limit],
       source_expression = source_expression,
       lint_message = sprintf(
-        "Function spans more than %d lines; consider decomposing it (see https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-function-length-limits).", # nolint: line_length_linter.
+        paste0(
+          "Function spans more than %d lines; consider decomposing it (see ",
+          "https://morrison-lab.github.io/psc/chapters/",
+          "coding-practices.html#sec-function-length-limits)."
+        ),
         length_limit
       ),
       type = "warning"
