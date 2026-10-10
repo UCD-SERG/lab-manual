@@ -1101,6 +1101,17 @@
     ]
   },
   {
+    "objectID": "appendix-copilot-instructions.html#content-that-stays-in-this-manual",
+    "href": "appendix-copilot-instructions.html#content-that-stays-in-this-manual",
+    "title": "Copilot Instructions File",
+    "section": "Content That Stays in This Manual",
+    "text": "Content That Stays in This Manual\nContent that Kristen Aiemjoy contributed stays in this manual. Don’t move it to another repository or replace it with a stub. Other repositories (such as Morrison-Lab/psc, Morrison-Lab/psw, and Morrison-Lab/wai) may adapt it, with visible attribution to this manual and to her. To find her contributions, run git log --author=kaiemjoy and git log --grep='Co-authored-by: kaiemjoy', and see the tracked changes listed in issue #209.",
+    "crumbs": [
+      "Appendices",
+      "Copilot Instructions File"
+    ]
+  },
+  {
     "objectID": "appendix-copilot-instructions.html#markdown-and-quarto-formatting",
     "href": "appendix-copilot-instructions.html#markdown-and-quarto-formatting",
     "title": "Copilot Instructions File",
@@ -1182,7 +1193,7 @@
     "href": "appendix-document-metadata.html",
     "title": "Document Generation Metadata",
     "section": "",
-    "text": "PREVIEW_BANNER_PLACEHOLDER\n\nThis document was generated from the following git commit:\n\nBranch: HEAD\nCommit: de33cbe\nFull commit hash: de33cbe0ccf22472f9f0d8a07f378e2d2eb21acb\nCommit date: 2026-10-10 09:15:22 +0000\n\nWhen transferring edits from this DOCX file back to the Quarto source files, use this commit information to set up the PR correctly and account for any commits that have been added since this document was generated.",
+    "text": "PREVIEW_BANNER_PLACEHOLDER\n\nThis document was generated from the following git commit:\n\nBranch: HEAD\nCommit: 54907b8\nFull commit hash: 54907b802e28c125ef72e3ed5aa98aefa82c227f\nCommit date: 2026-10-10 18:57:36 +0000\n\nWhen transferring edits from this DOCX file back to the Quarto source files, use this commit information to set up the PR correctly and account for any commits that have been added since this document was generated.",
     "crumbs": [
       "Appendices",
       "Document Generation Metadata"
