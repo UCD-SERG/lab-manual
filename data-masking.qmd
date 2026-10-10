@@ -7,6 +7,12 @@ the Morrison Lab's general-purpose guide to coding for research projects:
 (source: <https://github.com/Morrison-Lab/psc>).
 
 []{#sec-data-masking-vs-tidy-selection}
+[]{#general-overview}
+[]{#what-is-data-masking}
+[]{#using-tidy-evaluation-for-data-masking}
+[]{#the-.data-pronoun-does-not-belong-in-tidy-selection}
+[]{#technical-overview}
+[]{#example}
 
 That page covers:
 
@@ -17,7 +23,7 @@ That page covers:
 ::: {.callout-note collapse="true"}
 ## Looking for a specific section that used to be here?
 
-This chapter's old `#sec-` anchors still resolve on this page,
+This chapter's old section anchors still resolve on this page,
 so old bookmarks and links land here,
 but the content now lives on the page linked above,
 under the same anchor.

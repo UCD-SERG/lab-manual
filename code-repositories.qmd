@@ -8,6 +8,25 @@ the Morrison Lab's general-purpose guide to coding for research projects:
 
 []{#sec-analysis-file-placement}
 []{#sec-repostatus}
+[]{#template-repositories}
+[]{#a-note-on-gitlab}
+[]{#package-structure}
+[]{#why-use-r-package-structure}
+[]{#basic-package-structure}
+[]{#vignettes-vs-articles}
+[]{#public-analyses-vignettes}
+[]{#analyses-with-restricted-data-instanalyses}
+[]{#keep-analysis-workbooks-tidy}
+[]{#shell-scripts-and-automation}
+[]{#storing-analysis-outputs}
+[]{#rproj-files}
+[]{#organizing-the-data-raw-folder}
+[]{#configuration-config-file}
+[]{#order-files-and-directories}
+[]{#using-bash-scripts-to-ensure-reproducibility}
+[]{#standard-repository-statuses}
+[]{#adding-a-status-badge}
+[]{#lifecycle-management}
 
 That page covers:
 
@@ -20,7 +39,7 @@ That page covers:
 ::: {.callout-note collapse="true"}
 ## Looking for a specific section that used to be here?
 
-This chapter's old `#sec-` anchors still resolve on this page,
+This chapter's old section anchors still resolve on this page,
 so old bookmarks and links land here,
 but the content now lives on the page linked above,
 under the same anchor.

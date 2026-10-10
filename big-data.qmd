@@ -6,6 +6,10 @@ the Morrison Lab's general-purpose guide to coding for research projects:
 **[Big data](https://morrison-lab.github.io/psc/chapters/big-data.html)**
 (source: <https://github.com/Morrison-Lab/psc>).
 
+[]{#the-data.table-package}
+[]{#using-downsampled-data}
+[]{#optimal-rstudio-set-up}
+
 That page covers:
 
 - [The data.table package](https://morrison-lab.github.io/psc/chapters/big-data.html#the-data.table-package)

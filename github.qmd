@@ -24,6 +24,20 @@ the Morrison Lab's general-purpose guide to coding for research projects:
 []{#sec-install-gh}
 []{#sec-install-glab}
 []{#sec-removing-sensitive-data}
+[]{#basics}
+[]{#git-branching}
+[]{#example-workflow}
+[]{#pull-request-roles-and-protocol}
+[]{#commonly-used-git-commands}
+[]{#how-often-should-i-commit}
+[]{#repeated-amend-workflow}
+[]{#basic-workflow}
+[]{#key-points}
+[]{#what-should-be-pushed-to-github}
+[]{#the-linguist-generated-attribute}
+[]{#using-.gitattributes}
+[]{#other-useful-linguist-attributes}
+[]{#immediate-steps}
 
 That page covers:
 
@@ -46,7 +60,7 @@ That page covers:
 ::: {.callout-note collapse="true"}
 ## Looking for a specific section that used to be here?
 
-This chapter's old `#sec-` anchors still resolve on this page,
+This chapter's old section anchors still resolve on this page,
 so old bookmarks and links land here,
 but the content now lives on the page linked above,
 under the same anchor.

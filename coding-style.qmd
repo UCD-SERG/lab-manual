@@ -24,6 +24,41 @@ the Morrison Lab's general-purpose guide to coding for research projects:
 []{#sec-semantic-line-breaks}
 []{#sec-style-auto-style}
 []{#sec-tidyverse-replacements}
+[]{#general-principles}
+[]{#meaningful-names}
+[]{#functions}
+[]{#comments}
+[]{#the-boy-scout-rule}
+[]{#dont-repeat-yourself-dry}
+[]{#explicit-return-statements}
+[]{#base-r-stopifnot}
+[]{#checkmate-fast-comprehensive-argument-checks}
+[]{#cli-and-rlang-custom-friendly-error-conditions}
+[]{#decomposing-validation-into-helpers}
+[]{#note-on-assertthat}
+[]{#prefer-more-simpler-steps-over-fewer-denser-ones}
+[]{#lambdas-in-map-and-apply-family-calls}
+[]{#prose-enumerations-count-and-they-are-the-ones-that-rot-unnoticed}
+[]{#a-count-in-the-prose-above-a-block-is-the-same-duplicate-one-line-away}
+[]{#a-qualitative-generalization-above-a-block-goes-unchecked-where-a-count-would-be-re-derived}
+[]{#where-the-rule-stops-text-that-records-what-was-observed}
+[]{#line-breaks-and-formatting}
+[]{#blank-lines-before-lists}
+[]{#line-breaks-in-code}
+[]{#markdown-and-quarto-formatting}
+[]{#writing-about-code-in-quarto-documents}
+[]{#messaging-and-user-communication}
+[]{#styling}
+[]{#rstudio-shortcuts}
+[]{#styler}
+[]{#lintr}
+[]{#using-lintr}
+[]{#our-labs-lintr-configuration}
+[]{#jarl}
+[]{#key-features}
+[]{#basic-usage}
+[]{#comparison-with-lintr}
+[]{#linting-changed-files-vs.-the-whole-project-in-ci}
 
 That page covers:
 
@@ -50,7 +85,7 @@ That page covers:
 ::: {.callout-note collapse="true"}
 ## Looking for a specific section that used to be here?
 
-This chapter's old `#sec-` anchors still resolve on this page,
+This chapter's old section anchors still resolve on this page,
 so old bookmarks and links land here,
 but the content now lives on the page linked above,
 under the same anchor.

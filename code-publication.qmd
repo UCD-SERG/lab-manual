@@ -8,6 +8,18 @@ the Morrison Lab's general-purpose guide to coding for research projects:
 
 []{#sec-cran-release}
 []{#sec-create-github-release}
+[]{#checklist-overview}
+[]{#fill-out-file-headers}
+[]{#clean-up-comments}
+[]{#document-functions}
+[]{#remove-deprecated-filepaths}
+[]{#ensure-project-runs-via-bash}
+[]{#complete-the-readme}
+[]{#clean-up-feature-branches}
+[]{#versioning}
+[]{#pre-release-checklist}
+[]{#submitting-to-cran}
+[]{#after-cran-acceptance}
 
 That page covers:
 
@@ -25,7 +37,7 @@ That page covers:
 ::: {.callout-note collapse="true"}
 ## Looking for a specific section that used to be here?
 
-This chapter's old `#sec-` anchors still resolve on this page,
+This chapter's old section anchors still resolve on this page,
 so old bookmarks and links land here,
 but the content now lives on the page linked above,
 under the same anchor.

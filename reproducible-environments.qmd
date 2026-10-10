@@ -6,6 +6,16 @@ the Morrison Lab's general-purpose guide to coding for research projects:
 **[Reproducible Environments](https://morrison-lab.github.io/psc/chapters/reproducible-environments.html)**
 (source: <https://github.com/Morrison-Lab/psc>).
 
+[]{#package-version-control-with-renv}
+[]{#introduction}
+[]{#implementing-renv-in-projects}
+[]{#configuring-renv-settings}
+[]{#reducing-startup-messages}
+[]{#using-projects-with-renv}
+[]{#fast-package-installation-on-ubuntu-with-r2u}
+[]{#managing-r-versions-with-rig}
+[]{#clearing-docker-cache}
+
 That page covers:
 
 - [Package Version Control with renv](https://morrison-lab.github.io/psc/chapters/reproducible-environments.html#package-version-control-with-renv)

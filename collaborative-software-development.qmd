@@ -21,6 +21,25 @@ the Morrison Lab's general-purpose guide to coding for research projects:
 []{#sec-responding-to-review-comments}
 []{#sec-reviewing-pull-requests}
 []{#sec-stacked-pull-requests}
+[]{#write-focused-prs}
+[]{#write-clear-pr-titles-and-descriptions}
+[]{#explain-technical-reasoning-up-front}
+[]{#request-reviews-in-the-right-order}
+[]{#include-tests-with-behavior-changes}
+[]{#separate-refactorings-from-feature-work}
+[]{#standardize-pr-descriptions-with-a-template}
+[]{#stacked-pull-requests}
+[]{#what-are-stacked-pull-requests}
+[]{#benefits-of-stacked-pull-requests}
+[]{#core-principles-for-stacking}
+[]{#ci-rebasing-and-merging}
+[]{#purpose-of-code-review}
+[]{#monitor-prs-awaiting-your-review}
+[]{#write-review-comments-that-teach}
+[]{#use-review-as-mentoring}
+[]{#balance-direct-fixes-with-guidance}
+[]{#ignore-auto-generated-files-when-appropriate}
+[]{#reviewing-copilot-generated-pull-requests}
 
 That page covers:
 
@@ -30,7 +49,7 @@ That page covers:
 ::: {.callout-note collapse="true"}
 ## Looking for a specific section that used to be here?
 
-This chapter's old `#sec-` anchors still resolve on this page,
+This chapter's old section anchors still resolve on this page,
 so old bookmarks and links land here,
 but the content now lives on the page linked above,
 under the same anchor.

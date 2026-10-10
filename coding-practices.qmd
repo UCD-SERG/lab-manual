@@ -96,6 +96,95 @@ the Morrison Lab's general-purpose guide to coding for research projects:
 []{#sec-when-to-approve}
 []{#sec-why-review-code}
 []{#sec-withr}
+[]{#lab-protocols-for-code-and-data}
+[]{#usethis-package-setup-and-management}
+[]{#devtools-development-workflow}
+[]{#pkgdown-package-websites}
+[]{#alternatives-to-pkgdown}
+[]{#altdoc}
+[]{#pkgsite}
+[]{#quarto-for-package-documentation}
+[]{#comparison-summary}
+[]{#initial-setup}
+[]{#add-dependencies}
+[]{#write-functions}
+[]{#document}
+[]{#test}
+[]{#check}
+[]{#build-documentation-site}
+[]{#share-and-publish}
+[]{#organizing-scripts}
+[]{#when-to-use-snapshot-tests}
+[]{#when-to-use-explicit-value-tests}
+[]{#when-to-benchmark}
+[]{#setting-up-benchmarking-infrastructure}
+[]{#using-bench-for-performance-comparisons}
+[]{#using-profvis-for-memory-and-cpu-profiling}
+[]{#integration-with-package-development-workflow}
+[]{#cicd-integration-for-automated-benchmarking}
+[]{#performance-testing-with-testthat}
+[]{#best-practices}
+[]{#additional-resources}
+[]{#lapply-and-sapply}
+[]{#purrrmap-family}
+[]{#basevectorize-vs-purrrmap_}
+[]{#purrrpmap-for-multiple-arguments}
+[]{#parallel-processing}
+[]{#rds-files-preferred}
+[]{#csv-files}
+[]{#practical-branch-and-tag-commands}
+[]{#version-numbers}
+[]{#news-file}
+[]{#readme.rmd-and-readme.md}
+[]{#rstudio-built-in-formatting}
+[]{#styler-package}
+[]{#lintr-package}
+[]{#jarl-fast-rust-powered-linter}
+[]{#function-headers}
+[]{#using-...-dots-and-inheritdotparams}
+[]{#documenting-internal-helpers-keywords-internal-over-nord}
+[]{#script-headers}
+[]{#sections-and-subsections}
+[]{#code-folding}
+[]{#comments-in-the-body-of-your-code}
+[]{#object-naming}
+[]{#function-calls}
+[]{#when-to-decompose-a-function}
+[]{#how-to-decompose-in-practice}
+[]{#examples-borrowed-from-lab-package-prs}
+[]{#related-references}
+[]{#r-packages}
+[]{#why}
+[]{#adding-to-an-existing-multi-function-file}
+[]{#relationship-to-function-decomposition}
+[]{#readingsaving-data}
+[]{#rds-vs-.rdata-files}
+[]{#csvs}
+[]{#integrating-box-and-dropbox}
+[]{#box}
+[]{#dropbox}
+[]{#package-development}
+[]{#testing-and-quality}
+[]{#core-language-and-infrastructure}
+[]{#system-and-process}
+[]{#http-and-web}
+[]{#utilities}
+[]{#github-actions}
+[]{#core-tidyverse-packages}
+[]{#when-to-use-dplyr-vs-tidyr}
+[]{#base-r-to-tidyverse-translation}
+[]{#programming-with-tidyverse}
+[]{#coding-with-r-and-python}
+[]{#repeating-analyses-with-different-variations}
+[]{#lapply-and-sapply-1}
+[]{#mapply-and-pmap}
+[]{#parallel-processing-with-parallel-and-future-packages}
+[]{#parlapply}
+[]{#future.lapply}
+[]{#r-package-development}
+[]{#general-r-programming}
+[]{#shiny-development}
+[]{#git-and-version-control}
 
 That page covers:
 
@@ -135,7 +224,7 @@ That page covers:
 ::: {.callout-note collapse="true"}
 ## Looking for a specific section that used to be here?
 
-This chapter's old `#sec-` anchors still resolve on this page,
+This chapter's old section anchors still resolve on this page,
 so old bookmarks and links land here,
 but the content now lives on the page linked above,
 under the same anchor.

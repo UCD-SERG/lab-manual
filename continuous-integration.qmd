@@ -18,6 +18,24 @@ the Morrison Lab's general-purpose guide to coding for research projects:
 []{#sec-pr-comment-automation}
 []{#sec-reusable-workflow-collections}
 []{#sec-setting-up-github-actions}
+[]{#understanding-github-actions}
+[]{#action-versioning}
+[]{#floating-mutable-tags}
+[]{#how-a-floating-tag-differs-from-a-branch}
+[]{#the-reproducibility-tradeoff}
+[]{#essential-workflows}
+[]{#interactive-setup}
+[]{#allowing-actions-to-create-pull-requests}
+[]{#how-github-actions-workflows-work}
+[]{#workflow-files-and-security}
+[]{#troubleshooting-failed-workflows}
+[]{#common-use-cases}
+[]{#comparison-of-popular-actions}
+[]{#tbl-pr-comment-features}
+[]{#choosing-the-right-action}
+[]{#security-considerations}
+[]{#fast-package-installation-with-r2u}
+[]{#additional-resources}
 
 That page covers:
 
@@ -35,7 +53,7 @@ That page covers:
 ::: {.callout-note collapse="true"}
 ## Looking for a specific section that used to be here?
 
-This chapter's old `#sec-` anchors still resolve on this page,
+This chapter's old section anchors still resolve on this page,
 so old bookmarks and links land here,
 but the content now lives on the page linked above,
 under the same anchor.

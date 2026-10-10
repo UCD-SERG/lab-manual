@@ -10,6 +10,43 @@ the Morrison Lab's general-purpose guide to coding for research projects:
 []{#sec-shell-style}
 []{#sec-terminal-emulators}
 []{#sec-zsh}
+[]{#command-line-interfaces-cli}
+[]{#terminal-user-interfaces-tui}
+[]{#graphical-user-interfaces-gui}
+[]{#summary-and-trade-offs}
+[]{#basics}
+[]{#recommended-options}
+[]{#ghostty}
+[]{#wezterm}
+[]{#alacritty}
+[]{#kitty}
+[]{#iterm2}
+[]{#windows-terminal}
+[]{#comparison-summary}
+[]{#syntax-for-both-macwindows}
+[]{#installing-zsh}
+[]{#installing-oh-my-zsh}
+[]{#the-two-plugins-we-use}
+[]{#more-plugins-at-no-install-cost}
+[]{#prompt-themes}
+[]{#command-line-tools-that-pair-with-the-shell}
+[]{#startup-files-and-what-breaks-when-you-switch}
+[]{#running-bash-scripts}
+[]{#error-handling}
+[]{#functions-and-naming}
+[]{#comments}
+[]{#logging}
+[]{#security}
+[]{#linting}
+[]{#portability}
+[]{#formatting}
+[]{#running-rscripts-in-windows}
+[]{#common-mistakes}
+[]{#checking-tasks-and-killing-jobs}
+[]{#running-big-jobs}
+[]{#example-code-for-runfilesavelogs}
+[]{#example-usage-for-runfilesavelogs}
+[]{#external-resources}
 
 That page covers:
 
@@ -28,7 +65,7 @@ That page covers:
 ::: {.callout-note collapse="true"}
 ## Looking for a specific section that used to be here?
 
-This chapter's old `#sec-` anchors still resolve on this page,
+This chapter's old section anchors still resolve on this page,
 so old bookmarks and links land here,
 but the content now lives on the page linked above,
 under the same anchor.
