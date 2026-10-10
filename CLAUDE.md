@@ -23,8 +23,10 @@ Content that Kristen Aiemjoy contributed stays in this manual.
 Don't move it to another repo or replace it with a stub.
 Other repos (psc, psw, wai, and the like) may adapt it, with visible attribution
 to this manual and to her.
-To find her contributions, check `git log` (author `kaiemjoy`, or a
-`Co-authored-by: kaiemjoy` trailer) and the tracked changes listed in #209.
+To find her contributions,
+run `git log --author=kaiemjoy` and `git log --grep='Co-authored-by: kaiemjoy'`,
+and see the tracked changes listed in
+[issue #209](https://github.com/UCD-SERG/lab-manual/issues/209).
 
 `.github/copilot-instructions.md` is the source of truth for repository-specific
 style and workflow. This file is a short orientation; when the two disagree,
