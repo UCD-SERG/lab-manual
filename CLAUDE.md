@@ -10,6 +10,13 @@ on coding, reproducibility, and collaboration conventions. It is built with
 <https://ucd-serg.github.io/lab-manual/>. The repo is also a small R package
 (`labmanual`, see `DESCRIPTION`) so it can carry R dependencies and a wordlist.
 
+General-purpose coding chapters (coding style and practices, Git and GitHub,
+CI, Quarto, Unix, and others) moved to
+[Principles of Scientific Computing](https://morrison-lab.github.io/psc/)
+([`Morrison-Lab/psc`](https://github.com/Morrison-Lab/psc)).
+Their files here are stubs that keep the old `#sec-` anchors and link to psc;
+edit coding guidance there, not here.
+
 `.github/copilot-instructions.md` is the source of truth for repository-specific
 style and workflow. This file is a short orientation; when the two disagree,
 copilot-instructions.md wins. Read it before non-trivial content edits.
@@ -18,7 +25,7 @@ copilot-instructions.md wins. Read it before non-trivial content edits.
 
 - `index.qmd`, `*.qmd` at the root - chapter sources, listed in `_quarto.yml`
 - `<chapter-name>/` subdirectories - Quarto `{{< include >}}` fragments for each
-  chapter (e.g. `coding-style/`, `coding-practices/`)
+  chapter (e.g. `communication/`, `slurm/`)
 - `appendix-*.qmd` - appendices, also wired into `_quarto.yml`
 - `_quarto.yml` - the only Quarto config; `type: book`, `output-dir: docs`,
   HTML + PDF + DOCX + EPUB formats, chapter and appendix lists
@@ -38,7 +45,7 @@ copilot-instructions.md wins. Read it before non-trivial content edits.
 ```bash
 quarto render                          # full book, all formats -> docs/
 quarto preview                         # live-reload local preview
-quarto render coding-style.qmd --to html   # one chapter, HTML only
+quarto render communication.qmd --to html   # one chapter, HTML only
 ```
 
 Render a single chapter when verifying one page; render the full book before
@@ -65,7 +72,8 @@ CI does the same via `r-lib/actions/setup-renv`.
   `R CMD INSTALL lms`. Repo-specific exclusions stay in `.lintr.R`, not in `lms`.
   `default_linters()` includes `cyclocomp_linter()` and a custom
   `function_length_linter()` (the `<150` line heuristic from
-  `coding-practices/function-length-limits.qmd`; lintr has no built-in
+  [Function Length Limits](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-function-length-limits)
+  in psc; lintr has no built-in
   line-count linter). `lms/tests/testthat.R` already has its own `.lintr.R`
   exclusion entry; the same pattern applies to any nested path --- the
   standard testthat boilerplate's `library()` calls need an explicit entry

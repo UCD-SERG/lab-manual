@@ -1,129 +1,143 @@
 # R Coding Practices {#sec-r-coding-practices}
 
-## Lab Protocols for Code and Data
+This chapter has moved to
+[*Principles of Scientific Computing*](https://morrison-lab.github.io/psc/),
+the Morrison Lab's general-purpose guide to coding for research projects:
+**[R Coding Practices](https://morrison-lab.github.io/psc/chapters/coding-practices.html)**
+(source: <https://github.com/Morrison-Lab/psc>).
 
-{{< include coding-practices/lab-protocols-for-code-and-data.qmd >}}
+[]{#sec-R6}
+[]{#sec-adr-code-pointers}
+[]{#sec-adr-format}
+[]{#sec-adr-storage}
+[]{#sec-adr-vs-pr}
+[]{#sec-adr-when}
+[]{#sec-adrs}
+[]{#sec-auto-styling}
+[]{#sec-benchmarking}
+[]{#sec-callr}
+[]{#sec-cli}
+[]{#sec-constructive-feedback}
+[]{#sec-covr}
+[]{#sec-cpp11}
+[]{#sec-crayon}
+[]{#sec-data-io}
+[]{#sec-decompose-qmd-chunks}
+[]{#sec-decompose-validation}
+[]{#sec-desc}
+[]{#sec-devtools}
+[]{#sec-documenting-code}
+[]{#sec-dont-repurpose-tests}
+[]{#sec-downlit}
+[]{#sec-dplyr}
+[]{#sec-forcats}
+[]{#sec-fs}
+[]{#sec-function-decomposition}
+[]{#sec-function-length-limits}
+[]{#sec-gargle}
+[]{#sec-getting-help-with-code}
+[]{#sec-ggplot2}
+[]{#sec-gh}
+[]{#sec-git-branches-and-tags}
+[]{#sec-here-package-practices}
+[]{#sec-here-pkg}
+[]{#sec-httr}
+[]{#sec-httr2}
+[]{#sec-iteration}
+[]{#sec-kiss}
+[]{#sec-lifecycle}
+[]{#sec-lintr}
+[]{#sec-lobstr}
+[]{#sec-lubridate}
+[]{#sec-memoise}
+[]{#sec-one-function-per-file}
+[]{#sec-pak}
+[]{#sec-pkgbuild}
+[]{#sec-pkgcache}
+[]{#sec-pkgdown}
+[]{#sec-pkgload}
+[]{#sec-prettyunits}
+[]{#sec-processx}
+[]{#sec-ps}
+[]{#sec-purrr}
+[]{#sec-r-lib-actions}
+[]{#sec-r-lib-packages}
+[]{#sec-r-package-tools}
+[]{#sec-r-qa-checklist}
+[]{#sec-r-resources}
+[]{#sec-r-testing}
+[]{#sec-r-version-control}
+[]{#sec-r-workflow}
+[]{#sec-rcmdcheck}
+[]{#sec-readr}
+[]{#sec-remotes}
+[]{#sec-revdepcheck}
+[]{#sec-reviewing-code}
+[]{#sec-rex}
+[]{#sec-rlang}
+[]{#sec-roxygen2}
+[]{#sec-scales}
+[]{#sec-sessioninfo}
+[]{#sec-snapshot-vs-explicit}
+[]{#sec-stringr}
+[]{#sec-styler}
+[]{#sec-tdd}
+[]{#sec-testing-best-practices}
+[]{#sec-testthat}
+[]{#sec-tibble}
+[]{#sec-tidyr}
+[]{#sec-tidyverse}
+[]{#sec-tool-building}
+[]{#sec-usethis}
+[]{#sec-variable-labels}
+[]{#sec-vctrs}
+[]{#sec-waldo}
+[]{#sec-what-to-look-for}
+[]{#sec-when-to-approve}
+[]{#sec-why-review-code}
+[]{#sec-withr}
 
-## The Tool-Building Mindset {#sec-tool-building}
+That page covers:
 
-{{< include coding-practices/tool-building-mindset.qmd >}}
+- [Lab Protocols for Code and Data](https://morrison-lab.github.io/psc/chapters/coding-practices.html)
+- [The Tool-Building Mindset](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-tool-building)
+- [Essential R Package Development Tools](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-r-package-tools)
+- [Complete Package Development Workflow](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-r-workflow)
+- [Organizing scripts](https://morrison-lab.github.io/psc/chapters/coding-practices.html)
+- [Testing Requirements](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-r-testing)
+- [Test-Driven Development](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-tdd)
+- [Benchmarking](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-benchmarking)
+- [Iterative Operations](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-iteration)
+- [Reading and Saving Data](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-data-io)
+- [Version Control and Collaboration](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-r-version-control)
+- [Quality Assurance Checklist](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-r-qa-checklist)
+- [Automated Code Styling](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-auto-styling)
+- [Documenting your code](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-documenting-code)
+- [Design Documentation with ADRs](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-adrs)
+- [Object naming](https://morrison-lab.github.io/psc/chapters/coding-practices.html)
+- [Function calls](https://morrison-lab.github.io/psc/chapters/coding-practices.html)
+- [Function decomposition](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-function-decomposition)
+- [One function per file](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-one-function-per-file)
+- [Function length limits](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-function-length-limits)
+- [Keep It Short and Simple (KISS)](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-kiss)
+- [Decomposing Code Chunks in Quarto Documents](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-decompose-qmd-chunks)
+- [The here package](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-here-package-practices)
+- [Reading/Saving Data](https://morrison-lab.github.io/psc/chapters/coding-practices.html)
+- [Integrating Box and Dropbox](https://morrison-lab.github.io/psc/chapters/coding-practices.html)
+- [r-lib Packages](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-r-lib-packages)
+- [Tidyverse](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-tidyverse)
+- [Coding with R and Python](https://morrison-lab.github.io/psc/chapters/coding-practices.html)
+- [Repeating analyses with different variations](https://morrison-lab.github.io/psc/chapters/coding-practices.html)
+- [Reviewing Code](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-reviewing-code)
+- [Getting Help with Code](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-getting-help-with-code)
+- [Additional Resources](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-r-resources)
 
-## Essential R Package Development Tools {#sec-r-package-tools}
+::: {.callout-note collapse="true"}
+## Looking for a specific section that used to be here?
 
-{{< include coding-practices/essential-r-package-development-tools.qmd >}}
-
-## Complete Package Development Workflow {#sec-r-workflow}
-
-{{< include coding-practices/complete-package-development-workflow.qmd >}}
-
-## Organizing scripts
-
-{{< include coding-practices/organizing-scripts.qmd >}}
-
-## Testing Requirements {#sec-r-testing}
-
-{{< include coding-practices/testing-requirements.qmd >}}
-
-## Test-Driven Development {#sec-tdd}
-
-{{< include coding-practices/test-driven-development.qmd >}}
-
-## Benchmarking {#sec-benchmarking}
-
-{{< include coding-practices/benchmarking.qmd >}}
-
-## Iterative Operations {#sec-iteration}
-
-{{< include coding-practices/iterative-operations.qmd >}}
-
-## Reading and Saving Data {#sec-data-io}
-
-{{< include coding-practices/reading-and-saving-data.qmd >}}
-
-## Version Control and Collaboration {#sec-r-version-control}
-
-{{< include coding-practices/version-control-and-collaboration.qmd >}}
-
-## Quality Assurance Checklist {#sec-r-qa-checklist}
-
-{{< include coding-practices/quality-assurance-checklist.qmd >}}
-
-## Automated Code Styling {#sec-auto-styling}
-
-{{< include coding-practices/automated-code-styling.qmd >}}
-
-## Documenting your code {#sec-documenting-code}
-
-{{< include coding-practices/documenting-code.qmd >}}
-
-## Design Documentation with ADRs {#sec-adrs}
-
-{{< include coding-practices/architecture-decision-records.qmd >}}
-
-## Object naming
-
-{{< include coding-practices/object-naming.qmd >}}
-
-## Function calls
-
-{{< include coding-practices/function-calls.qmd >}}
-
-## Function decomposition {#sec-function-decomposition}
-
-{{< include coding-practices/function-decomposition.qmd >}}
-
-## One function per file {#sec-one-function-per-file}
-
-{{< include coding-practices/one-function-per-file.qmd >}}
-
-## Function length limits {#sec-function-length-limits}
-
-{{< include coding-practices/function-length-limits.qmd >}}
-
-## Keep It Short and Simple (KISS) {#sec-kiss}
-
-{{< include coding-practices/kiss-principle.qmd >}}
-
-## Decomposing Code Chunks in Quarto Documents {#sec-decompose-qmd-chunks}
-
-{{< include coding-practices/decompose-qmd-chunks.qmd >}}
-
-## The here package {#sec-here-package-practices}
-
-{{< include coding-practices/here-package.qmd >}}
-
-## Reading/Saving Data
-
-{{< include coding-practices/reading-saving-data.qmd >}}
-
-## Integrating Box and Dropbox
-
-{{< include coding-practices/integrating-box-dropbox.qmd >}}
-
-## r-lib Packages {#sec-r-lib-packages}
-
-{{< include coding-practices/r-lib-packages.qmd >}}
-
-## Tidyverse {#sec-tidyverse}
-
-{{< include coding-practices/tidyverse.qmd >}}
-
-## Coding with R and Python
-
-{{< include coding-practices/coding-r-python.qmd >}}
-
-## Repeating analyses with different variations
-
-{{< include coding-practices/repeating-analyses.qmd >}}
-
-## Reviewing Code {#sec-reviewing-code}
-
-{{< include coding-practices/reviewing-code.qmd >}}
-
-## Getting Help with Code {#sec-getting-help-with-code}
-
-{{< include coding-practices/getting-help-with-code.qmd >}}
-
-## Additional Resources {#sec-r-resources}
-
-{{< include coding-practices/additional-resources.qmd >}}
+This chapter's old section anchors still resolve on this page,
+so old bookmarks and links won't 404,
+but the content now lives on the page linked above,
+under the same anchor.
+For example, `#sec-foo` here is `https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-foo` there.
+:::

@@ -1,45 +1,43 @@
 # Continuous Integration {#sec-r-ci}
 
-## Understanding GitHub Actions
+This chapter has moved to
+[*Principles of Scientific Computing*](https://morrison-lab.github.io/psc/),
+the Morrison Lab's general-purpose guide to coding for research projects:
+**[Continuous Integration](https://morrison-lab.github.io/psc/chapters/continuous-integration.html)**
+(source: <https://github.com/Morrison-Lab/psc>).
 
-{{< include continuous-integration/understanding-github-actions.qmd >}}
+[]{#sec-ci-concurrency}
+[]{#sec-ci-decomposition}
+[]{#sec-ci-design-patterns}
+[]{#sec-ci-fail-open-closed}
+[]{#sec-ci-idempotency}
+[]{#sec-ci-observability}
+[]{#sec-ci-retries}
+[]{#sec-ci-secrets}
+[]{#sec-ci-toctou}
+[]{#sec-pr-comment-automation}
+[]{#sec-reusable-workflow-collections}
+[]{#sec-setting-up-github-actions}
 
-### Action Versioning
+That page covers:
 
-{{< include continuous-integration/action-versioning.qmd >}}
+- [Understanding GitHub Actions](https://morrison-lab.github.io/psc/chapters/continuous-integration.html)
+- [Setting Up GitHub Actions](https://morrison-lab.github.io/psc/chapters/continuous-integration.html#sec-setting-up-github-actions)
+- [Reusable Workflow Collections](https://morrison-lab.github.io/psc/chapters/continuous-integration.html#sec-reusable-workflow-collections)
+- [How GitHub Actions Workflows Work](https://morrison-lab.github.io/psc/chapters/continuous-integration.html)
+- [Workflow Files and Security](https://morrison-lab.github.io/psc/chapters/continuous-integration.html)
+- [Pipeline Design Patterns](https://morrison-lab.github.io/psc/chapters/continuous-integration.html#sec-ci-design-patterns)
+- [Troubleshooting Failed Workflows](https://morrison-lab.github.io/psc/chapters/continuous-integration.html)
+- [Pull Request Comment Automation](https://morrison-lab.github.io/psc/chapters/continuous-integration.html#sec-pr-comment-automation)
+- [Fast Package Installation with r2u](https://morrison-lab.github.io/psc/chapters/continuous-integration.html)
+- [Additional Resources](https://morrison-lab.github.io/psc/chapters/continuous-integration.html)
 
-## Setting Up GitHub Actions {#sec-setting-up-github-actions}
+::: {.callout-note collapse="true"}
+## Looking for a specific section that used to be here?
 
-{{< include continuous-integration/setting-up-github-actions.qmd >}}
-
-## Reusable Workflow Collections {#sec-reusable-workflow-collections}
-
-{{< include continuous-integration/reusable-workflow-collections.qmd >}}
-
-## How GitHub Actions Workflows Work
-
-{{< include continuous-integration/how-workflows-work.qmd >}}
-
-## Workflow Files and Security
-
-{{< include continuous-integration/workflow-files-and-security.qmd >}}
-
-## Pipeline Design Patterns {#sec-ci-design-patterns}
-
-{{< include continuous-integration/pipeline-design-patterns.qmd >}}
-
-## Troubleshooting Failed Workflows
-
-{{< include continuous-integration/troubleshooting-workflows.qmd >}}
-
-## Pull Request Comment Automation {#sec-pr-comment-automation}
-
-{{< include continuous-integration/pull-request-comment-automation.qmd >}}
-
-## Fast Package Installation with r2u
-
-{{< include continuous-integration/r2u-for-fast-ci.qmd >}}
-
-## Additional Resources
-
-{{< include continuous-integration/additional-resources.qmd >}}
+This chapter's old section anchors still resolve on this page,
+so old bookmarks and links won't 404,
+but the content now lives on the page linked above,
+under the same anchor.
+For example, `#sec-foo` here is `https://morrison-lab.github.io/psc/chapters/continuous-integration.html#sec-foo` there.
+:::

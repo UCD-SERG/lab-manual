@@ -1,37 +1,31 @@
 # Quarto {#sec-quarto}
 
-## Introduction
+This chapter has moved to
+[*Principles of Scientific Computing*](https://morrison-lab.github.io/psc/),
+the Morrison Lab's general-purpose guide to coding for research projects:
+**[Quarto](https://morrison-lab.github.io/psc/chapters/quarto.html)**
+(source: <https://github.com/Morrison-Lab/psc>).
 
-{{< include quarto/introduction.qmd >}}
+[]{#sec-quarto-dashboards}
 
-## Quarto Basics
+That page covers:
 
-{{< include quarto/basics.qmd >}}
+- [Introduction](https://morrison-lab.github.io/psc/chapters/quarto.html)
+- [Quarto Basics](https://morrison-lab.github.io/psc/chapters/quarto.html)
+- [Building Quarto Books](https://morrison-lab.github.io/psc/chapters/quarto.html)
+- [Dashboards](https://morrison-lab.github.io/psc/chapters/quarto.html#sec-quarto-dashboards)
+- [Quarto Profiles](https://morrison-lab.github.io/psc/chapters/quarto.html)
+- [Advanced Features](https://morrison-lab.github.io/psc/chapters/quarto.html)
+- [Mermaid Diagrams](https://morrison-lab.github.io/psc/chapters/quarto.html)
+- [Troubleshooting](https://morrison-lab.github.io/psc/chapters/quarto.html)
+- [Additional Resources](https://morrison-lab.github.io/psc/chapters/quarto.html)
 
-## Building Quarto Books
+::: {.callout-note collapse="true"}
+## Looking for a specific section that used to be here?
 
-{{< include quarto/books.qmd >}}
-
-## Dashboards {#sec-quarto-dashboards}
-
-{{< include quarto/dashboards.qmd >}}
-
-## Quarto Profiles
-
-{{< include quarto/profiles.qmd >}}
-
-## Advanced Features
-
-{{< include quarto/advanced-features.qmd >}}
-
-## Mermaid Diagrams
-
-{{< include quarto/mermaid-diagrams.qmd >}}
-
-## Troubleshooting
-
-{{< include quarto/troubleshooting.qmd >}}
-
-## Additional Resources
-
-{{< include quarto/resources.qmd >}}
+This chapter's old section anchors still resolve on this page,
+so old bookmarks and links won't 404,
+but the content now lives on the page linked above,
+under the same anchor.
+For example, `#sec-foo` here is `https://morrison-lab.github.io/psc/chapters/quarto.html#sec-foo` there.
+:::
