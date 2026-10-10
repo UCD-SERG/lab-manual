@@ -27,5 +27,5 @@ This chapter's old `#sec-` anchors still resolve on this page,
 so old bookmarks and links land here,
 but the content now lives on the page linked above,
 under the same anchor.
-For example, `#sec-foo` here is `quarto.html#sec-foo` on the psc site.
+For example, `#sec-foo` here is `chapters/quarto.html#sec-foo` on the psc site.
 :::

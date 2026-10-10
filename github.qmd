@@ -50,7 +50,7 @@ This chapter's old `#sec-` anchors still resolve on this page,
 so old bookmarks and links land here,
 but the content now lives on the page linked above,
 under the same anchor.
-For example, `#sec-foo` here is `github.html#sec-foo` on the psc site.
+For example, `#sec-foo` here is `chapters/github.html#sec-foo` on the psc site.
 :::
 
 ## GitHub Education and Copilot Access {#sec-github-education}
