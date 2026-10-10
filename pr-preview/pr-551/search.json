@@ -1,0 +1,1191 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "UCD-SeRG Lab Manual",
+    "section": "",
+    "text": "1 Welcome to UCD-SeRG!",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Welcome to UCD-SeRG!</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#about-the-lab",
+    "href": "index.html#about-the-lab",
+    "title": "UCD-SeRG Lab Manual",
+    "section": "1.1 About the lab",
+    "text": "1.1 About the lab\nWelcome to the UC Davis Seroepidemiology Research Group (SeRG), led by Drs. Kristen Aiemjoy and Ezra Morrison. Accurate methods to measure infectious disease burden are essential for guiding public health decisions, yet many infectious diseases remain under-recognized due to limited diagnostics and costly, resource-intensive surveillance systems. Our work addresses this gap by developing seroepidemiologic methods to characterize infection burden in populations. Currently, we focus on enteric fever (Salmonella Typhi and Paratyphi), Scrub Typhus (Orientia tsutsugamushi), Melioidosis (Burkholderia pseudomallei), Shigella (Shigella spp.), and Cholera (Vibrio cholerae). We are supported by the US National Institutes of Health, the Bill and Melinda Gates Foundation, and the Department of Defense, and collaborate with partners around the world. To learn more about the lab, visit ucdserg.ucdavis.edu.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Welcome to UCD-SeRG!</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#about-this-lab-manual",
+    "href": "index.html#about-this-lab-manual",
+    "title": "UCD-SeRG Lab Manual",
+    "section": "1.2 About this lab manual",
+    "text": "1.2 About this lab manual\nThis lab manual covers our communication strategy, code of conduct, and best practices for reproducibility of computational workflows. It is a living document that is updated regularly.\nThis manual is a fork of the Benjamin-Chung Lab Manual (Benjamin-Chung et al. 2024), adapted for UCD-SeRG. We are grateful to Dr. Jade Benjamin-Chung and her team for developing and openly sharing their excellent lab manual. You can view the original manual at jadebc.github.io/lab-manual. Original contributors include Jade Benjamin-Chung, Kunal Mishra, Stephanie Djajadi, Nolan Pokpongkiat, Anna Nguyen, Iris Tong, and Gabby Barratt Heitmann. The Data Publication chapter also draws from Fanice Nyatigo and Ben Arnold’s public-data chapter in the Proctor Lab at UCSF handbook.\nFeel free to draw from this manual (and please cite it if you do!).\n\n\n  This work is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License (“Creative Commons Attribution-NonCommercial 4.0 International License,” n.d.).\n\n\n\n\nBenjamin-Chung, Jade, Kunal Mishra, Stephanie Djajadi, et al. 2024. Benjamin-Chung Lab Manual. https://jadebc.github.io/lab-manual/.\n\n\n“Creative Commons Attribution-NonCommercial 4.0 International License.” n.d. Creative Commons. http://creativecommons.org/licenses/by-nc/4.0/.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Welcome to UCD-SeRG!</span>"
+    ]
+  },
+  {
+    "objectID": "culture-and-conduct.html",
+    "href": "culture-and-conduct.html",
+    "title": "2  Culture and conduct",
+    "section": "",
+    "text": "2.1 Lab culture\nWe are committed to a lab culture that is collaborative, supportive, inclusive, open, and free from discrimination and harassment.\nWe encourage students / staff of all experience levels to respectfully share their honest opinions and ideas on any topic. Our group has thrived upon such respectful honest input from team members over the years, and this document is a product of years of student and staff input (and even debate) that has gradually improved our productivity and overall quality of our work.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Culture and conduct</span>"
+    ]
+  },
+  {
+    "objectID": "culture-and-conduct.html#diversity-equity-and-inclusion",
+    "href": "culture-and-conduct.html#diversity-equity-and-inclusion",
+    "title": "2  Culture and conduct",
+    "section": "2.2 Diversity, equity, and inclusion",
+    "text": "2.2 Diversity, equity, and inclusion\nUCD-SeRG recognizes the importance of and is committed to cultivating a culture of diversity, equity, and inclusion. This means being a safe, supportive, and anti-racist environment in which students from diverse backgrounds are equally and inclusively supported in their education and training. Diversity takes many forms, and includes, but is not limited to, differences in race, ethnicity, gender, sexuality, socioeconomic status, religion, disability, and political affiliation.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Culture and conduct</span>"
+    ]
+  },
+  {
+    "objectID": "culture-and-conduct.html#sec-protecting-human-subjects",
+    "href": "culture-and-conduct.html#sec-protecting-human-subjects",
+    "title": "2  Culture and conduct",
+    "section": "2.3 Protecting human subjects",
+    "text": "2.3 Protecting human subjects\nAll lab members must complete CITI Human Subjects Biomedical Group 1 training and share their certificate with the lab leadership. Team members will be added to relevant Institutional Review Board protocols prior to their start date to ensure they have permission to work with identifiable datasets.\nOne of the most relevant aspects of protecting human subjects in our work is maintaining confidentiality. For students supporting our data science efforts, in practice this means:\n\nBe sure to understand and comply with project-specific policies about where data can be saved, particularly if the data include personal identifiers.\nDo not share data with anyone without permission, including to other members of the group, who might not be on the same IRB protocol as you (check with lab leadership first).\n\nRemember, data that looks like it does not contain identifiers to you might still be classified as data that requires special protection by our IRB or under HIPAA, so always proceed with caution and ask for help if you have any concerns about how to maintain study participant confidentiality.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Culture and conduct</span>"
+    ]
+  },
+  {
+    "objectID": "culture-and-conduct.html#authorship",
+    "href": "culture-and-conduct.html#authorship",
+    "title": "2  Culture and conduct",
+    "section": "2.4 Authorship",
+    "text": "2.4 Authorship\nWe adhere to the ICMJE Definition of authorship (International Committee of Medical Journal Editors, n.d.) and are happy for team members who meet the definition of authorship to be included as co-authors on scientific manuscripts. To qualify for authorship, individuals must meet all four criteria:\n\nSubstantial contributions to conception/design, or acquisition/analysis/interpretation of data\nDrafting the work or revising it critically for important intellectual content\nFinal approval of the version to be published\nAgreement to be accountable for all aspects of the work\n\nAuthorship practices:\n\nFirst authorship: Typically goes to the person who led the work\nCorresponding author: Usually the PI, unless otherwise agreed\nCo-authorship: Determined by substantial intellectual contributions\nAuthor order: Should be discussed and agreed upon by all authors\nAcknowledgments: For contributions that don’t meet authorship criteria\n\nAuthorship should be discussed early in a project and revisited as the work evolves to ensure transparency and fairness. We encourage using the CRediT Taxonomy to document specific author contributions.\n\n\n\n\nInternational Committee of Medical Journal Editors. n.d. “Defining the Role of Authors and Contributors.” ICMJE. http://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Culture and conduct</span>"
+    ]
+  },
+  {
+    "objectID": "communication.html",
+    "href": "communication.html",
+    "title": "3  Communication and coordination",
+    "section": "",
+    "text": "3.1 Microsoft Teams\nOne benefit of the academic environment is its schedule flexibility and autonomy. This means that lab members may choose to work in the early morning, afternoon, evening, or weekends. Lab members should manage their own notification schedules to ensure they can maintain healthy work-life boundaries. We do not expect lab members to respond outside of normal business hours (unless there are special circumstances). Because of the nature of our work across time zones, frequent travel, and international collaborations, there are no set working hours. Team members are not expected to reply to messages outside their own working hours, even if a message arrives outside of those hours.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Communication and coordination</span>"
+    ]
+  },
+  {
+    "objectID": "communication.html#microsoft-teams",
+    "href": "communication.html#microsoft-teams",
+    "title": "3  Communication and coordination",
+    "section": "",
+    "text": "Use Microsoft Teams for scheduling, coding related questions, quick check ins, etc. If your Teams message exceeds 200 words, it might be time to use email.\nUse channels instead of direct messages unless you need to discuss something private.\nPlease make an effort to respond to messages that mention you (e.g., @username) as quickly as possible.\nIf you are unusually busy (e.g., preparing for QE/grant deadline, taking two exams) or on vacation please alert the team in advance so we can expect you not to respond at all / as quickly as usual. Please also set your status in Teams (e.g., it could say “On vacation”) so we know not to expect to see you online.\nPlease thread messages in Teams as much as possible.\nWhen referencing a pull request, issue, commit, or file, always include a direct hyperlink to where you want your teammates to look (see Direct Hyperlinks in Internal Correspondence).\nDon’t wait for meetings to ask questions. As soon as a question comes up, write it out in Teams. This benefits both you (by clarifying your thinking, as discussed in Chapter 23) and the team (by getting the conversation started earlier).",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Communication and coordination</span>"
+    ]
+  },
+  {
+    "objectID": "communication.html#email",
+    "href": "communication.html#email",
+    "title": "3  Communication and coordination",
+    "section": "3.2 Email",
+    "text": "3.2 Email\n\nUse email for longer messages (&gt;200 words) or messages that merit preservation.\nWhen discussing specific code, pull requests, or documents in emails, include direct hyperlinks so recipients do not have to search for the relevant items (see Direct Hyperlinks in Internal Correspondence).\nGenerally, strive to respond within a work day when you are directly addressed in an email. Again because we work across many timezones, this means responding within a work day in your own timezone. If you’re on vacation, you’re not expected to respond until the end of your first work day back (or possibly longer, if you’ve been out for a while and have a backlog).\nAs noted above, if you are unusually busy or on vacation please alert the team in advance and via an away message, so we can expect you not to respond at all / as quickly as usual.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Communication and coordination</span>"
+    ]
+  },
+  {
+    "objectID": "communication.html#sec-direct-hyperlinks",
+    "href": "communication.html#sec-direct-hyperlinks",
+    "title": "3  Communication and coordination",
+    "section": "3.3 Direct Hyperlinks in Internal Correspondence",
+    "text": "3.3 Direct Hyperlinks in Internal Correspondence\nIn all internal correspondence—including Microsoft Teams messages, emails, GitHub issues, and pull request comments—always provide direct hyperlinks to the exact place you want your audience to look.\n\nLink directly to the target: Provide a direct, clickable URL or markdown link to the specific pull request, issue, commit, branch, file, or line number.\nDo not make your audience search: Avoid vague references (such as “I opened a PR”, “see the latest changes on my branch”, or “look at the helper script”) or bare unlinked identifiers (such as #123 in emails or chat). Your audience should never have to search repositories, branches, or directory trees to find what you are referring to.\nUse descriptive markdown links: Format links with descriptive anchor text (for example, [PR #123: Add data validation](https://github.com/UCD-SERG/lab-manual/pull/123) or [cleaning-script.R lines 45-60](https://github.com/...)) so collaborators know where the link leads before clicking.\nReduce friction for collaborators: Direct links save everyone time, prevent confusion about which branch or version is being discussed, and allow reviewers to immediately jump into context with a single click.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Communication and coordination</span>"
+    ]
+  },
+  {
+    "objectID": "communication.html#managing-notifications-and-work-life-balance",
+    "href": "communication.html#managing-notifications-and-work-life-balance",
+    "title": "3  Communication and coordination",
+    "section": "3.4 Managing Notifications and Work-Life Balance",
+    "text": "3.4 Managing Notifications and Work-Life Balance\nLab members should actively manage their notification schedules, especially if they receive work email or Teams notifications on their phones.\n\nBlock notifications outside of work hours: We recommend configuring your devices and applications to prevent work notifications during non-work time. We all need uninterrupted rest and relaxation time in order to stay healthy and productive in the medium and long term.\nSending messages outside work hours: There’s no expectation to only send emails or messages during normal work hours. Feel free to send messages whenever you compose them—don’t spend effort scheduling messages for later delivery. Recipients will manage their own notification schedules, and they may be working different hours or want the information sooner.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Communication and coordination</span>"
+    ]
+  },
+  {
+    "objectID": "communication.html#setting-away-status-and-autoresponse-checklist",
+    "href": "communication.html#setting-away-status-and-autoresponse-checklist",
+    "title": "3  Communication and coordination",
+    "section": "3.5 Setting Away Status and Autoresponse Checklist",
+    "text": "3.5 Setting Away Status and Autoresponse Checklist\nWhen you’ll be away from work (vacation, conference, sick leave, etc.), please help the team stay coordinated by setting appropriate away indicators:\n\nOutlook calendar: Mark yourself as away on your Outlook calendar for the dates you’ll be unavailable.\nAutoresponse: Set an autoresponse message that indicates when you expect to be back at work.\nTeams status: Update your Teams status to indicate you’re away (e.g., “On vacation until [date]”).",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Communication and coordination</span>"
+    ]
+  },
+  {
+    "objectID": "communication.html#task-management",
+    "href": "communication.html#task-management",
+    "title": "3  Communication and coordination",
+    "section": "3.6 Task Management",
+    "text": "3.6 Task Management\nWe use a combination of tools to track and manage project tasks:\n\nGitHub Issues and Projects: For code-related tasks, feature requests, and bug tracking. Lab leadership will assign issues and organize them in GitHub Projects. Issues are prioritized within projects, and you can track your assigned tasks there.\nMicrosoft Teams & Planner: For general lab tasks and personal task management. Lab leadership may assign tasks through these tools, which integrate with Microsoft Teams. Lab members are expected to set up a Teams page for important degree requirements (QE) and projects (grant proposals, papers, etc.). Invite both Dr Morrison and Aiemjoy to the Teams page and assign them to review tasks with the deadline you need the review by. We appreciate 2 weeks’ notice for letters and larger review projects.\nGenerally, strive to complete assigned tasks by the date listed.\nUse checklists to break down tasks into smaller chunks. Sometimes leadership will create these for you, but you can also add them yourself.\nUpdate task status as you make progress so the team can stay coordinated.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Communication and coordination</span>"
+    ]
+  },
+  {
+    "objectID": "communication.html#shared-documents",
+    "href": "communication.html#shared-documents",
+    "title": "3  Communication and coordination",
+    "section": "3.7 Shared Documents",
+    "text": "3.7 Shared Documents\n\nWe mostly use Microsoft 365 to collaborate and write internally and GoogleDocs when working with external collaborators. These documents may be linked to in GitHub Issues or other task tracking tools. Lab leadership often shares these with the whole team since tasks are overlapping, and even if a task is assigned to one person, others may have valuable insights.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Communication and coordination</span>"
+    ]
+  },
+  {
+    "objectID": "communication.html#uc-davis-box-and-sharepoint",
+    "href": "communication.html#uc-davis-box-and-sharepoint",
+    "title": "3  Communication and coordination",
+    "section": "3.8 UC Davis Box and SharePoint",
+    "text": "3.8 UC Davis Box and SharePoint\n\nHuman subjects data for research studies are generally stored in UC Davis Box or SharePoint. Please check with lab leadership about whether there are special storage and transfer requirements for the datasets you are working with for each study.\nYou can access Box via your UC Davis credentials. For more information, visit UC Davis Box Support.\nSharePoint is also used for collaborative document storage and team file sharing. Access SharePoint through your UC Davis Microsoft 365 account.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Communication and coordination</span>"
+    ]
+  },
+  {
+    "objectID": "communication.html#meetings",
+    "href": "communication.html#meetings",
+    "title": "3  Communication and coordination",
+    "section": "3.9 Meetings",
+    "text": "3.9 Meetings\n\nOur meetings start on the hour.\nIf you are going to be late, please send a message in our Teams channel.\nIf you are regularly not able to come on the hour, notify the team and we might choose to modify the agenda order or the start time.\n\n\n3.9.1 Developing Meeting Agendas\nAn effective meeting agenda ensures that collaborative time is productive, focused, and respectful of everyone’s schedule. Whether organizing a weekly lab meeting, a project synchronization check-in, or a one-on-one advising session, follow these guidelines when preparing agendas.\n\n3.9.1.1 Why agendas are important\n\nClear purpose and focus: Meetings without an agenda easily drift into unstructured conversation or unfocused status updates. A written agenda clarifies the meeting’s objective before bringing people together.\nPreparation and respect for time: Circulating an agenda in advance allows participants to review relevant materials, gather required data, and arrive ready to contribute substantive insights.\nAccountability and action items: A structured agenda provides a natural framework for tracking decisions, assigning clear ownership for action items, and reviewing progress at subsequent meetings.\n\n\n\n3.9.1.2 Core content: Inform, Discuss, Ask\nOrganize your agenda items using three distinct functional categories:\n\nInform: Brief announcements, status summaries, or project milestone updates. These items share essential context that requires little to no debate. Whenever possible, share background details asynchronously before the meeting so live time can focus on deeper discussion.\nDiscuss: Topics requiring collaborative problem-solving, methodological debate, troubleshooting, or synthesis of differing viewpoints. These items benefit most from synchronous conversation.\nAsk: Specific requests for decisions, approvals, feedback, or resources from advisors, PIs, or team members. Clearly framing what you need (for example, “Decision on primary analysis model” or “Approval to submit abstract”) helps attendees provide decisive guidance.\n\n\n\n3.9.1.3 Formatting and style guidelines\n\nUse clear category tags: Prefix each bullet point with its category tag (such as [Inform], [Discuss], or [Ask]) so participants immediately understand their expected role for each topic.\nInclude direct links: Always include direct hyperlinks to relevant draft manuscripts, code repositories, pull requests, or data summaries rather than requiring attendees to search for materials.\nAllocate time estimates: Assign estimated time allocations to each major agenda topic (for example, [Discuss] Simulation study edge cases (15 min)). This prevents early topics from crowding out crucial decisions scheduled at the end.\nDistribute in advance: Share the agenda in the calendar invitation, by email, or in the relevant Microsoft Teams channel at least 24 hours before the meeting.\nRecord action items: Conclude every meeting by summarizing agreed-upon next steps, assigned owners, and target completion dates.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Communication and coordination</span>"
+    ]
+  },
+  {
+    "objectID": "communication.html#conference-room-booking",
+    "href": "communication.html#conference-room-booking",
+    "title": "3  Communication and coordination",
+    "section": "3.10 Conference Room Booking",
+    "text": "3.10 Conference Room Booking\nThe MS1C Conference Room can be booked through its Outlook calendar.\nTo book the room:\n\nCreate a new event in Outlook Calendar\nAdd the conference room as an attendee by typing “ms1c”\nSelect “MS1C Conference Room” from the results\nSend the meeting invitation\n\nThe room will automatically accept or decline based on its availability.\nTo view the room’s calendar:\n\nIn Outlook Calendar, click “Add Calendar”\nSelect “Add Shared Calendar…” or use “Open Calendar…”\nSearch for “ms1c”\nSelect “MS1C Conference Room” to add it to your calendar view\n\nThis allows you to check the room’s availability before scheduling.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Communication and coordination</span>"
+    ]
+  },
+  {
+    "objectID": "communication.html#code-review",
+    "href": "communication.html#code-review",
+    "title": "3  Communication and coordination",
+    "section": "3.11 Code Review",
+    "text": "3.11 Code Review\nCode review guidance has moved to its own chapter: see Collaborative Software Development.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Communication and coordination</span>"
+    ]
+  },
+  {
+    "objectID": "reproducibility.html",
+    "href": "reproducibility.html",
+    "title": "4  Reproducibility",
+    "section": "",
+    "text": "4.1 What is the reproducibility crisis?\nOur lab adopts the following practices to maximize the reproducibility of our work.\nIn the past decade, an increasing number of studies have found that published study findings could not be reproduced. Researchers found that it was not possible to reproduce estimates from published studies: 1) with the same data and same or similar code and 2) with newly collected data using the same (or similar) study design. These “failures” of reproducibility were frequent enough and broad enough in scope, occurring across a range of disciplines (epidemiology, psychology, economics, and others) to be deeply troubling. Program and policy decisions based on erroneous research findings could lead to wasted resources, and at worst, could harm intended beneficiaries. This crisis has motivated new practices in reproducibility, transparency, and openness. Our lab is committed to adopting these best practices, and much of the remainder of the lab manual focuses on how to do so.\nRecommended readings on the “reproducibility crisis”:",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Reproducibility</span>"
+    ]
+  },
+  {
+    "objectID": "reproducibility.html#what-is-the-reproducibility-crisis",
+    "href": "reproducibility.html#what-is-the-reproducibility-crisis",
+    "title": "4  Reproducibility",
+    "section": "",
+    "text": "Nuzzo R. How scientists fool themselves – and how they can stop (Nuzzo 2015)\nStoddart C. Is there a reproducibility crisis in science? (Stoddart 2019)\nMunafò MR, et al. A manifesto for reproducible science (Munafò et al. 2017)",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Reproducibility</span>"
+    ]
+  },
+  {
+    "objectID": "reproducibility.html#study-design",
+    "href": "reproducibility.html#study-design",
+    "title": "4  Reproducibility",
+    "section": "4.2 Study design",
+    "text": "4.2 Study design\nAppropriate study design is beyond the scope of this lab manual and is something trainees develop through their coursework and mentoring.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Reproducibility</span>"
+    ]
+  },
+  {
+    "objectID": "reproducibility.html#register-study-protocols",
+    "href": "reproducibility.html#register-study-protocols",
+    "title": "4  Reproducibility",
+    "section": "4.3 Register study protocols",
+    "text": "4.3 Register study protocols\nWe register all randomized trials on clinicaltrials.gov, and in some cases register observational studies as well.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Reproducibility</span>"
+    ]
+  },
+  {
+    "objectID": "reproducibility.html#write-and-register-pre-analysis-plans",
+    "href": "reproducibility.html#write-and-register-pre-analysis-plans",
+    "title": "4  Reproducibility",
+    "section": "4.4 Write and register pre-analysis plans",
+    "text": "4.4 Write and register pre-analysis plans\nWe write pre-analysis plans for most original research projects that are not exploratory in nature, although in some cases, we write pre-analysis plans for exploratory studies as well. The format and content of pre-analysis plans can vary from project to project. Here is an example of one: https://osf.io/tgbxr/. Generally, these include:\n\nBrief background on the study (a condensed version of the introduction section of the paper)\nHypotheses / objectives\nStudy design\nDescription of data\nDefinition of outcomes\nDefinition of interventions / exposures\nDefinition of covariates\nStatistical power calculation\nStatistical analysis:\n\n\nType of model\nCovariate selection / screening\nStandard error estimation method\nMissing data analysis\nAssessment of effect modification / subgroup analyses\nSensitivity analyses\nNegative control analyses",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Reproducibility</span>"
+    ]
+  },
+  {
+    "objectID": "reproducibility.html#create-reproducible-workflows",
+    "href": "reproducibility.html#create-reproducible-workflows",
+    "title": "4  Reproducibility",
+    "section": "4.5 Create reproducible workflows",
+    "text": "4.5 Create reproducible workflows\nReproducible workflows allow a user to reproduce study estimates and ideally figures and tables with a “single click”. In practice, this typically means running a single bash script that sources all replication scripts in a repository. These replication scripts complete data processing, data analysis, and figure/table generation. The following chapters provide detailed guidance on this topic:\n\nChapter 5: Code repositories\nChapter 6: Coding practices\nChapter 7: Coding style\nChapter 8: Code publication\nChapter 9: Working with big data\nChapter 10: Github\nChapter 11: Unix\n\nFor additional learning resources on reproducible research practices, see the UC Davis DataLab workshop on reproducible research.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Reproducibility</span>"
+    ]
+  },
+  {
+    "objectID": "reproducibility.html#process-and-analyze-data-with-internal-replication-and-masking",
+    "href": "reproducibility.html#process-and-analyze-data-with-internal-replication-and-masking",
+    "title": "4  Reproducibility",
+    "section": "4.6 Process and analyze data with internal replication and masking",
+    "text": "4.6 Process and analyze data with internal replication and masking\nSee my video on this topic: https://www.youtube.com/watch?v=WoYkY9MkbRE",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Reproducibility</span>"
+    ]
+  },
+  {
+    "objectID": "reproducibility.html#use-reporting-checklists-with-manuscripts",
+    "href": "reproducibility.html#use-reporting-checklists-with-manuscripts",
+    "title": "4  Reproducibility",
+    "section": "4.7 Use reporting checklists with manuscripts",
+    "text": "4.7 Use reporting checklists with manuscripts\nUsing reporting checklists helps ensure that peer-reviewed articles contain the information needed for readers to assess the validity of your work and/or attempt to reproduce it. A collection of reporting checklists is available from the EQUATOR Network (“EQUATOR Network,” n.d.). Commonly used checklists in our lab include:\n\nCONSORT (Consolidated Standards of Reporting Trials) for randomized trials\nSTROBE (Strengthening the Reporting of Observational Studies in Epidemiology) for observational studies\nSTARD (Standards for Reporting Diagnostic Accuracy Studies) for diagnostic accuracy studies\n\nPlease ensure that your manuscript follows these reporting guidelines before sending it for review.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Reproducibility</span>"
+    ]
+  },
+  {
+    "objectID": "reproducibility.html#publish-preprints",
+    "href": "reproducibility.html#publish-preprints",
+    "title": "4  Reproducibility",
+    "section": "4.8 Publish preprints",
+    "text": "4.8 Publish preprints\nA preprint is a scientific manuscript that has not been peer reviewed. Preprint servers create digital object identifiers (DOIs) and can be cited in other articles and in grant applications. Because the peer review process can take many months, publishing preprints prior to or during peer review enables other scientists to immediately learn from and build on your work. Importantly, NIH allows applicants to include preprint citations in their biosketches. In most cases, we publish preprints on medRxiv (“medRxiv,” n.d.).",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Reproducibility</span>"
+    ]
+  },
+  {
+    "objectID": "reproducibility.html#publish-data-when-possible-and-replication-scripts",
+    "href": "reproducibility.html#publish-data-when-possible-and-replication-scripts",
+    "title": "4  Reproducibility",
+    "section": "4.9 Publish data (when possible) and replication scripts",
+    "text": "4.9 Publish data (when possible) and replication scripts\nPublishing data and replication scripts allows other scientists to reproduce your work and to build upon it. We typically publish data on the Open Science Framework (“Open Science Framework,” n.d.), share links to Github repositories, and archive code on Zenodo.\n\n\n\n\n“EQUATOR Network: Enhancing the QUAlity and Transparency of Health Research.” n.d. EQUATOR Network. https://www.equator-network.org/.\n\n\n“medRxiv: The Preprint Server for Health Sciences.” n.d. Cold Spring Harbor Laboratory. https://www.medrxiv.org/.\n\n\nMunafò, Marcus R., Brian A. Nosek, Dorothy V. M. Bishop, et al. 2017. “A Manifesto for Reproducible Science.” Nature Human Behaviour 1. https://doi.org/10.1038/s41562-016-0021.\n\n\nNuzzo, Regina. 2015. “How Scientists Fool Themselves – and How They Can Stop.” Nature 526: 182–85. https://doi.org/10.1038/526182a.\n\n\n“Open Science Framework.” n.d. Center for Open Science. https://osf.io/.\n\n\nStoddart, Charlotte. 2019. “Is There a Reproducibility Crisis in Science?” Nature, ahead of print. https://doi.org/10.1038/d41586-019-00067-3.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Reproducibility</span>"
+    ]
+  },
+  {
+    "objectID": "code-repositories.html",
+    "href": "code-repositories.html",
+    "title": "5  Code repositories",
+    "section": "",
+    "text": "PREVIEW_BANNER_PLACEHOLDER\n\nThis chapter has moved to Principles of Scientific Computing, the Morrison Lab’s general-purpose guide to coding for research projects: Code repositories (source: https://github.com/Morrison-Lab/psc).\n \nThat page covers:\n\nTemplate repositories\nPackage Structure\n.Rproj files\nOrganizing the data-raw folder\nRepository Status Badges\n\n\n\n\n\n\n\nNoteLooking for a specific section that used to be here?\n\n\n\n\n\nThis chapter’s old section anchors still resolve on this page, so old bookmarks and links won’t 404, but the content now lives on the page linked above, under the same anchor. For example, #sec-foo here is https://morrison-lab.github.io/psc/chapters/code-repositories.html#sec-foo there.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Code repositories</span>"
+    ]
+  },
+  {
+    "objectID": "coding-practices.html",
+    "href": "coding-practices.html",
+    "title": "6  R Coding Practices",
+    "section": "",
+    "text": "PREVIEW_BANNER_PLACEHOLDER\n\nThis chapter has moved to Principles of Scientific Computing, the Morrison Lab’s general-purpose guide to coding for research projects: R Coding Practices (source: https://github.com/Morrison-Lab/psc).\n                                                                                         \nThat page covers:\n\nLab Protocols for Code and Data\nThe Tool-Building Mindset\nEssential R Package Development Tools\nComplete Package Development Workflow\nOrganizing scripts\nTesting Requirements\nTest-Driven Development\nBenchmarking\nIterative Operations\nReading and Saving Data\nVersion Control and Collaboration\nQuality Assurance Checklist\nAutomated Code Styling\nDocumenting your code\nDesign Documentation with ADRs\nObject naming\nFunction calls\nFunction decomposition\nOne function per file\nFunction length limits\nKeep It Short and Simple (KISS)\nDecomposing Code Chunks in Quarto Documents\nThe here package\nReading/Saving Data\nIntegrating Box and Dropbox\nr-lib Packages\nTidyverse\nCoding with R and Python\nRepeating analyses with different variations\nReviewing Code\nGetting Help with Code\nAdditional Resources\n\n\n\n\n\n\n\nNoteLooking for a specific section that used to be here?\n\n\n\n\n\nThis chapter’s old section anchors still resolve on this page, so old bookmarks and links won’t 404, but the content now lives on the page linked above, under the same anchor. For example, #sec-foo here is https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-foo there.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>R Coding Practices</span>"
+    ]
+  },
+  {
+    "objectID": "coding-style.html",
+    "href": "coding-style.html",
+    "title": "7  R Code Style",
+    "section": "",
+    "text": "PREVIEW_BANNER_PLACEHOLDER\n\nThis chapter has moved to Principles of Scientific Computing, the Morrison Lab’s general-purpose guide to coding for research projects: R Code Style (source: https://github.com/Morrison-Lab/psc).\n                 \nThat page covers:\n\nGeneral Principles\nClean Code Principles\nFunction Structure and Documentation\nAssertions and Input Validation\nAvoiding Deep Nesting\nPrefer Existing Packaged Functions\nPrefer Per-Operation Grouping\nAvoid Hard-Coding Data with an External Source of Truth\nConstruct Complex Inputs Before the Call\nComments\nLine Breaks and Formatting\nMarkdown and Quarto Formatting\nMessaging and User Communication\nPackage Code Practices\nTidyverse Replacements\nThe here Package\nObject Naming\nAutomated Tools for Style and Project Workflow\nAdditional Resources\n\n\n\n\n\n\n\nNoteLooking for a specific section that used to be here?\n\n\n\n\n\nThis chapter’s old section anchors still resolve on this page, so old bookmarks and links won’t 404, but the content now lives on the page linked above, under the same anchor. For example, #sec-foo here is https://morrison-lab.github.io/psc/chapters/coding-style.html#sec-foo there.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>R Code Style</span>"
+    ]
+  },
+  {
+    "objectID": "big-data.html",
+    "href": "big-data.html",
+    "title": "8  Big data",
+    "section": "",
+    "text": "PREVIEW_BANNER_PLACEHOLDER\n\nThis chapter has moved to Principles of Scientific Computing, the Morrison Lab’s general-purpose guide to coding for research projects: Big data (source: https://github.com/Morrison-Lab/psc).\nThat page covers:\n\nThe data.table package\nUsing downsampled data\nOptimal RStudio set up",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Big data</span>"
+    ]
+  },
+  {
+    "objectID": "data-masking.html",
+    "href": "data-masking.html",
+    "title": "9  Data masking",
+    "section": "",
+    "text": "PREVIEW_BANNER_PLACEHOLDER\n\nThis chapter has moved to Principles of Scientific Computing, the Morrison Lab’s general-purpose guide to coding for research projects: Data masking (source: https://github.com/Morrison-Lab/psc).\n\nThat page covers:\n\nGeneral Overview\nData masking vs. tidy selection\nTechnical Overview\n\n\n\n\n\n\n\nNoteLooking for a specific section that used to be here?\n\n\n\n\n\nThis chapter’s old section anchors still resolve on this page, so old bookmarks and links won’t 404, but the content now lives on the page linked above, under the same anchor. For example, #sec-foo here is https://morrison-lab.github.io/psc/chapters/data-masking.html#sec-foo there.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data masking</span>"
+    ]
+  },
+  {
+    "objectID": "quarto.html",
+    "href": "quarto.html",
+    "title": "10  Quarto",
+    "section": "",
+    "text": "PREVIEW_BANNER_PLACEHOLDER\n\nThis chapter has moved to Principles of Scientific Computing, the Morrison Lab’s general-purpose guide to coding for research projects: Quarto (source: https://github.com/Morrison-Lab/psc).\n\nThat page covers:\n\nIntroduction\nQuarto Basics\nBuilding Quarto Books\nDashboards\nQuarto Profiles\nAdvanced Features\nMermaid Diagrams\nTroubleshooting\nAdditional Resources\n\n\n\n\n\n\n\nNoteLooking for a specific section that used to be here?\n\n\n\n\n\nThis chapter’s old section anchors still resolve on this page, so old bookmarks and links won’t 404, but the content now lives on the page linked above, under the same anchor. For example, #sec-foo here is https://morrison-lab.github.io/psc/chapters/quarto.html#sec-foo there.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "github.html",
+    "href": "github.html",
+    "title": "11  Github",
+    "section": "",
+    "text": "11.1 GitHub Education and Copilot Access\nThis chapter has moved to Principles of Scientific Computing, the Morrison Lab’s general-purpose guide to coding for research projects: Git and GitHub (source: https://github.com/Morrison-Lab/psc).\nThat page covers:",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Github</span>"
+    ]
+  },
+  {
+    "objectID": "github.html#sec-github-education",
+    "href": "github.html#sec-github-education",
+    "title": "11  Github",
+    "section": "",
+    "text": "11.1.1 GitHub Education Benefits\nStudents, faculty, and researchers at UC Davis can access GitHub Education benefits, which include free access to GitHub Pro features and various developer tools.\nTo sign up for GitHub Education:\n\nVisit the GitHub Education website\nClick “Get benefits” or “Join GitHub Education”\nSign in with your GitHub account (or create one if you don’t have one)\nComplete the application form using your UC Davis email address (ending in ucdavis.edu)\nProvide proof of your academic affiliation (e.g., upload a photo of your student ID or university letter)\nWait for approval (typically takes a few days)\n\nOnce approved, you’ll have access to the GitHub Student Developer Pack (for students) or GitHub Teacher Toolbox (for faculty), which includes numerous free tools and services for learning and development.\n\n\n11.1.2 GitHub Copilot Access for UC Davis Members\nGitHub Copilot is an AI-powered coding assistant that can significantly accelerate your work. As a member of the UC Davis GitHub organization, you may be eligible for a free Copilot seat.\nTo request a Copilot seat:\nIf you are not yet a member of the UC Davis GitHub organization:\n\nEnsure you have a GitHub account and have signed up for GitHub Education (see above)\nGo to the UC Davis IT ServiceHub GitHub page\nClick the blue “Get GitHub!” button near the top right\nWhen you receive the invitation email, make sure to check the “Ask for a GitHub Copilot seat (optional)” checkbox before joining (Figure 11.1)\n\n\n\n\n\n\n\nFigure 11.1: UC Davis GitHub invitation with Copilot seat option\n\n\n\n\nClick “Join UC Davis” to accept the invitation\nFollow the setup instructions to install and configure Copilot in your development environment\n\nIf you are already a member of the UC Davis GitHub organization:\n\nGo to your GitHub Copilot settings\nScroll to the “Get Copilot from an organization” section at the bottom\nFind the “ucdavis” entry and click the request button\n\n\n\n\n\n\n\nFigure 11.2: GitHub Copilot settings page showing organization options\n\n\n\n\nWait for approval from the UC Davis GitHub organization administrators\nOnce approved, follow the setup instructions to install and configure Copilot in your development environment\n\nFor guidance on using GitHub Copilot effectively, see the wai site’s “Best Practices for Safe and Successful Use” section.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Github</span>"
+    ]
+  },
+  {
+    "objectID": "collaborative-software-development.html",
+    "href": "collaborative-software-development.html",
+    "title": "12  Collaborative Software Development",
+    "section": "",
+    "text": "PREVIEW_BANNER_PLACEHOLDER\n\nThis chapter has moved to Principles of Scientific Computing, the Morrison Lab’s general-purpose guide to coding for research projects: Collaborative Software Development (source: https://github.com/Morrison-Lab/psc).\n              \nThat page covers:\n\nPull Requests\nCode Review\n\n\n\n\n\n\n\nNoteLooking for a specific section that used to be here?\n\n\n\n\n\nThis chapter’s old section anchors still resolve on this page, so old bookmarks and links won’t 404, but the content now lives on the page linked above, under the same anchor. For example, #sec-foo here is https://morrison-lab.github.io/psc/chapters/collaborative-software-development.html#sec-foo there.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Collaborative Software Development</span>"
+    ]
+  },
+  {
+    "objectID": "continuous-integration.html",
+    "href": "continuous-integration.html",
+    "title": "13  Continuous Integration",
+    "section": "",
+    "text": "PREVIEW_BANNER_PLACEHOLDER\n\nThis chapter has moved to Principles of Scientific Computing, the Morrison Lab’s general-purpose guide to coding for research projects: Continuous Integration (source: https://github.com/Morrison-Lab/psc).\n           \nThat page covers:\n\nUnderstanding GitHub Actions\nSetting Up GitHub Actions\nReusable Workflow Collections\nHow GitHub Actions Workflows Work\nWorkflow Files and Security\nPipeline Design Patterns\nTroubleshooting Failed Workflows\nPull Request Comment Automation\nFast Package Installation with r2u\nAdditional Resources\n\n\n\n\n\n\n\nNoteLooking for a specific section that used to be here?\n\n\n\n\n\nThis chapter’s old section anchors still resolve on this page, so old bookmarks and links won’t 404, but the content now lives on the page linked above, under the same anchor. For example, #sec-foo here is https://morrison-lab.github.io/psc/chapters/continuous-integration.html#sec-foo there.",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Continuous Integration</span>"
+    ]
+  },
+  {
+    "objectID": "unix.html",
+    "href": "unix.html",
+    "title": "14  Unix",
+    "section": "",
+    "text": "PREVIEW_BANNER_PLACEHOLDER\n\nThis chapter has moved to Principles of Scientific Computing, the Morrison Lab’s general-purpose guide to coding for research projects: Unix (source: https://github.com/Morrison-Lab/psc).\n   \nThat page covers:\n\nUser interfaces: CLI, TUI, and GUI\nBasics\nTerminal Emulators\nSyntax for both Mac/Windows\nZsh and Oh My Zsh\nRunning Bash Scripts\nShell Scripting Style\nRunning Rscripts in Windows\nChecking tasks and killing jobs\nRunning big jobs\nExternal Resources\n\n\n\n\n\n\n\nNoteLooking for a specific section that used to be here?\n\n\n\n\n\nThis chapter’s old section anchors still resolve on this page, so old bookmarks and links won’t 404, but the content now lives on the page linked above, under the same anchor. For example, #sec-foo here is https://morrison-lab.github.io/psc/chapters/unix.html#sec-foo there.",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Unix</span>"
+    ]
+  },
+  {
+    "objectID": "reproducible-environments.html",
+    "href": "reproducible-environments.html",
+    "title": "15  Reproducible Environments",
+    "section": "",
+    "text": "PREVIEW_BANNER_PLACEHOLDER\n\nThis chapter has moved to Principles of Scientific Computing, the Morrison Lab’s general-purpose guide to coding for research projects: Reproducible Environments (source: https://github.com/Morrison-Lab/psc).\nThat page covers:\n\nPackage Version Control with renv\nFast Package Installation on Ubuntu with r2u\nManaging R Versions with rig\nClearing Docker Cache",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Reproducible Environments</span>"
+    ]
+  },
+  {
+    "objectID": "code-publication.html",
+    "href": "code-publication.html",
+    "title": "16  Code Publication",
+    "section": "",
+    "text": "PREVIEW_BANNER_PLACEHOLDER\n\nThis chapter has moved to Principles of Scientific Computing, the Morrison Lab’s general-purpose guide to coding for research projects: Code Publication (source: https://github.com/Morrison-Lab/psc).\n \nThat page covers:\n\nChecklist overview\nFill out file headers\nClean up comments\nDocument functions\nRemove deprecated filepaths\nEnsure project runs via bash\nComplete the README\nClean up feature branches\nCreate GitHub release\nReleasing to CRAN\n\n\n\n\n\n\n\nNoteLooking for a specific section that used to be here?\n\n\n\n\n\nThis chapter’s old section anchors still resolve on this page, so old bookmarks and links won’t 404, but the content now lives on the page linked above, under the same anchor. For example, #sec-foo here is https://morrison-lab.github.io/psc/chapters/code-publication.html#sec-foo there.",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Code Publication</span>"
+    ]
+  },
+  {
+    "objectID": "data-publication.html",
+    "href": "data-publication.html",
+    "title": "17  Data Publication",
+    "section": "",
+    "text": "17.1 Overview\nIf you are releasing data into the public domain, then consider making available at minimum a .csv file and a codebook of the same name (note: you should have a codebook for internal data as well). We often also make available .rds files as well. For example, your mystudy/data/public directory could include three files for a single dataset, two with the actual data in .rds and .csv formats, and a third that describes their contents:\nIn general, datasets are usually too big to save on GitHub, but occasionally they are small. Here is an example of where we actually pushed the data directly to GitHub: https://github.com/ben-arnold/enterics-seroepi/tree/master/data .\nIf the data are bigger, then maintaining them under version control in your git repository can be unwieldy. Instead, we recommend using another stable repository that has version control, such as the Open Science Framework (“Open Science Framework,” n.d.). For example, all of the data from the WASH Benefits trials (led by investigators at Berkeley, icddr,b, IPA-Kenya and others) are all stored through data components nested within in OSF projects: https://osf.io/tprw2/. Another good option is Dryad Digital Repository (“Dryad Digital Repository,” n.d.) or institutional digital repositories.\nWe recommend cross-linking public files in GitHub (scripts/notebooks only) and OSF/Dryad/institutional digital repositories.\nBelow are the main steps to making data public, after finalizing the analysis datasets and scripts:\n1. Remove Protected Health Information (PHI)\n2. Create public IDs or join already created public IDs to the data\n3. Create an OSF repository and/or Dryad/institutional digital repository\n4. Edit analysis scripts to run using the public datasets and test (optional)\n5. Create a public github page for analysis scripts and link to OSF and/or Dryad/Zenodo\n6. Go live",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Data Publication</span>"
+    ]
+  },
+  {
+    "objectID": "data-publication.html#overview",
+    "href": "data-publication.html#overview",
+    "title": "17  Data Publication",
+    "section": "",
+    "text": "Warning!  NEVER push a dataset into the public domain (e.g., GitHub, OSF) without first checking with lab leadership to ensure that it is appropriately de-identified and we have approval from the sponsor and/or human subjects review board to do so. For example, we will need to re-code participant IDs (even if they contain no identifying information) before making data public to completely break the link between IDs and identifiable information stored on our servers. \n\n\n\nanalysis_data_public.csv\nanalysis_data_public.rds\nanalysis_data_public_codebook.txt",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Data Publication</span>"
+    ]
+  },
+  {
+    "objectID": "data-publication.html#removing-phi",
+    "href": "data-publication.html#removing-phi",
+    "title": "17  Data Publication",
+    "section": "17.2 Removing PHI",
+    "text": "17.2 Removing PHI\nOnce the data is finalized for analysis, the first step is to strip it of Protected Health Information (PHI), or any other data that could be used to link back to specific participants, such as names, birth dates, or GPS coordinates at the village/neighborhood level or below. PHI includes, but is not limited to:\n\n17.2.1 Personal information\nThese are identifiers that directly point to specific individuals, such as:\n- Names, addresses, photographs, date of birth\n- A combination of age, sex, and geographic location (below population 20,000) is considered identifiable\n\n\n17.2.2 Dates\nAny specific dates (e.g., study visit dates, birth dates, treatment dates) are usually problematic.\n- If a dataset requires high resolution temporal information, coarsen visit or measurement dates to be two variables: year and week of the year (1-52).\n- If a dataset requires age, provide that information without a birth date (typically month resolution is sufficient)\n\n\nCaution! If making changes to the format of dates or ages, make sure your analysis code runs on these modified versions of the data (step 3)! \n\n\n\n\n17.2.3 Geographic information\nDo not include GPS coordinates (longitude, latitude) except in special circumstances where they have been obfuscated/shifted. Reach out to lab leadership before doing this because it can be complicated.\nDo not include place names or codes (e.g., US Zip Codes) if the place contains &lt;20,000 people. For villages or neighborhoods, code them with uninformative IDs. For sub-districts or districts, names are fine.\nIf an analysis requires GPS locations (e.g., to make a map), then typically we include a disclaimer in the article’s data availability statement that explains we cannot make GPS locations public to protect participant confidentiality. As a middle ground, we typically make our code public that runs on the geo-located data for transparency, even if independent researchers can’t actually run that code (although please be careful to ensure the code itself does not in any way include geographic identifiers).\nFor more examples of what constitutes PHI, please refer to this link: https://cphs.berkeley.edu/hipaa/hipaa18.html\nFor learning about working with geospatial data, see the UC Davis DataLab GIS workshops, including resources on QGIS and spatial SQL.",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Data Publication</span>"
+    ]
+  },
+  {
+    "objectID": "data-publication.html#create-public-ids",
+    "href": "data-publication.html#create-public-ids",
+    "title": "17  Data Publication",
+    "section": "17.3 Create public IDs",
+    "text": "17.3 Create public IDs\n\n17.3.1 Rationale\nThe UC Davis IRB requires that public datasets not include the original study IDs to identify participants or other units in the study. The reason is that those IDs are linked in our private datasets to PHI. By creating a new set of public IDs, the public dataset is one step further removed from the potential to link to PHI.\n\n\n17.3.2 A single set of public IDs for each study\nFor each study, it is ideal to create a single set of public IDs whenever possible. We could create a new set of public IDs for every public dataset, but the downside is that independent researchers could no longer link data that might be related. By creating a single set of public IDs associated with each internal study ID, public files retain the link.\nMaintaining a single set of public IDs requires a shared “bridge” dataset, that includes a row for each study ID and has the associated public ID. For studies with multiple levels of ID, we would typically have separate bridge datasets for each type of ID (e.g,. cluster ID, participant ID, etc.)\nCreate a public ID that can be used to uniquely identify participants and that can internally be linked to the original study IDs. We recommend creating a subdirectory in the study’s shared data directory to store the public IDs. The shared location enables multiple projects to use the same IDs. Create the IDs using a script that reads in the study IDs, creates a unique (uninformative) public ID for the study IDs, and then saves the bridge dataset. The script should be saved in the same directory as the public ID files.\n\n\nCaution! Note that small differences may arise if the new public IDs do not necessarily order participants in the same way as the internal IDs. The small differences are all in estimates that rely on resampling, such as Bootstrap CIs, permutation P-values, and TMLE, as the resampling process may lead tp slightly different re-samples. The key here, to ensure the results are consistent irrespective of the dataset used, is simply to not assign public IDs randomly. Use rank() on the internal ID instead of row_number() to ensure that the order is always the same. \n\n\n\n\n17.3.3 Example scripts\nPlease see the reproducible example provided by the Proctor Lab at UCSF that you can run and replicate when making data public for your projects. The example contains the following files and folders:\n\ndata/final/- folder containing the projects final data in both csv and rds formats\n\ncode/DEMO_generate_public_IDs.R- creates randomly generated public IDs that can be matched to the trial’s assigned patient IDs.\n\ndata/make_public/DEMO_internal_to_publicID.csv- the output from step #2, a bridge dataset with two variables- the new public ID and the patient’s assigned ID.\n\ncode/DEMO_create_public_datasets.R- joins the public IDs to the trial’s full dataset, and strips it of the assigned patient ID.\ndata/public/- folder containing the output from step #3- de-identified public dataset, in csv and rds formats, with uniquely identifying public IDs that cannot be easily linked back to the patient’s ID.\n\nThe example workflow is accessible via GitHub: https://github.com/proctor-ucsf/dcc-handbook/tree/master/templates/making-data-public",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Data Publication</span>"
+    ]
+  },
+  {
+    "objectID": "data-publication.html#create-a-data-repository",
+    "href": "data-publication.html#create-a-data-repository",
+    "title": "17  Data Publication",
+    "section": "17.4 Create a data repository",
+    "text": "17.4 Create a data repository\nFirst, ensure that you create a codebook and metadata file for each public dataset (see the DCC guide on Documenting datasets). Use the same name as the datasets, but with -codebook.txt, -codebook.html, or -codebook.csv at the end (depending on the file format for the codebook). One option is the R codebook package, which also generates JSON output that is machine-readable.\nFor modern, standardized data dictionaries, consider the Tidyverse data-dict project. The data-dict.yaml specification defines an open, lightweight, plain-text YAML format for describing tabular datasets—including table schemas, column data types, descriptions, relationships, and validation constraints. Because data dictionaries are defined in plain-text YAML files, they can be version-controlled directly in Git alongside your analysis code. The companion data-dict command-line tool can draft dictionaries from existing data files, validate dataset values against your dictionary rules, and render self-contained HTML documentation reports.\nFor additional guidance on data documentation best practices, see the UC Davis DataLab workshop on data documentation.\n\n17.4.1 Steps for creating an Open Science Framework (OSF) repository:\n\nCreate a new OSF project per these instructions: https://help.osf.io/article/252-create-a-project\nCreate a data component and upload the datasets in .csv and .rds format along with the codebooks. The primary format for public dissemination is .csv but we make the .rds files available too as auxiliary files for convenience.\nCreate a notebook component and upload the final .html files (which will not be on github… but see optional item below)\nOn the OSF landing Wiki, provide some context. Here is a recent example: https://osf.io/954bt/\nCreate a Digital Object Identifier (DOI) for the repository. A DOI is a unique identifier that provides a persistent link to content, such as a dataset in this case. Learn more about DOIs\nOptional: Complete the software checklist and system requirement guide for the analysis to guide others. Include it on the GitHub README for the project: https://github.com/proctor-ucsf/mordor-antibody",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Data Publication</span>"
+    ]
+  },
+  {
+    "objectID": "data-publication.html#edit-and-test-analysis-scripts",
+    "href": "data-publication.html#edit-and-test-analysis-scripts",
+    "title": "17  Data Publication",
+    "section": "17.5 Edit and test analysis scripts",
+    "text": "17.5 Edit and test analysis scripts\nMake minor changes to the analysis scripts so that they run on public data. If using version control in GitHub, the most straight-forward way is to create a branch from the main git branch that reads in the public files, and then renames the new public ID variable, e.g., “id_public” to the internally recognized ID variable name, e.g. “recordID”, when reading in the public data. Re-run all the analysis scripts to ensure that they still work with the public version of the dataset.",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Data Publication</span>"
+    ]
+  },
+  {
+    "objectID": "data-publication.html#create-a-public-github-page-for-public-scripts",
+    "href": "data-publication.html#create-a-public-github-page-for-public-scripts",
+    "title": "17  Data Publication",
+    "section": "17.6 Create a public GitHub page for public scripts",
+    "text": "17.6 Create a public GitHub page for public scripts\nAt minimum, we should include all of the scripts required to run the analyses. IMPORTANT: ensure you have taken a snapshot and saved your computing environment using the renv package (see Reproducible Environments).\nSee examples:\n- ACTION - https://github.com/proctor-ucsf/ACTION-public\n- NAITRE - https://github.com/proctor-ucsf/NAITRE-primary\n\n\nCaution! Read through the scripts carefully to ensure there is no PHI in the code itself \n\n\nOnce a public GitHub page exists, you can create a new component on an OSF project (step 3, above) and link it to the public version of the GitHub repo.",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Data Publication</span>"
+    ]
+  },
+  {
+    "objectID": "data-publication.html#go-live",
+    "href": "data-publication.html#go-live",
+    "title": "17  Data Publication",
+    "section": "17.7 Go live",
+    "text": "17.7 Go live\nOn GitHub, it is useful to create an official “release” version to freeze the repository, where you can have “associated files” with each version. Include the .html notebook output as additional files — since they aren’t tracked in GitHub, it does provide a way of freezing / saving the HTML output for us and others. OSF examples of studies from UCSF’s Proctor Foundation:\n\nACTION - https://osf.io/ca3pe/\n\nNAITRE - https://osf.io/ujeyb/\n\nMORDOR Niger antibody study - https://osf.io/dgsq3/\n\nFurther reading on end-to-end data management: How to Store and Manage Your Data - PLOS (“How to Store and Manage Your Data,” n.d.)\n\n\n\n\n“Dryad Digital Repository.” n.d. Dryad. https://datadryad.org/.\n\n\n“How to Store and Manage Your Data.” n.d. PLOS. https://plos.org/resource/how-to-store-and-manage-your-data/.\n\n\n“Open Science Framework.” n.d. Center for Open Science. https://osf.io/.",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Data Publication</span>"
+    ]
+  },
+  {
+    "objectID": "slurm.html",
+    "href": "slurm.html",
+    "title": "18  High-performance computing (HPC)",
+    "section": "",
+    "text": "18.1 UC Davis Computing Resources\nWhen you need to run a script that requires a large amount of RAM, large files, or that uses parallelization, UC Davis provides several high-performance computing (HPC) resources.",
+    "crumbs": [
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>High-performance computing (HPC)</span>"
+    ]
+  },
+  {
+    "objectID": "slurm.html#uc-davis-computing-resources",
+    "href": "slurm.html#uc-davis-computing-resources",
+    "title": "18  High-performance computing (HPC)",
+    "section": "",
+    "text": "18.1.1 Available Resources\nUC Davis HPC Clusters: - Farm Cluster (hpc.ucdavis.edu): UC Davis’s primary HPC cluster providing shared computing resources for research\nPHS Shared Compute Environments: For lab members affiliated with the School of Public Health Sciences (PHS), additional shared computing environments are available. These environments provide secure, HIPAA-compliant computing resources suitable for working with sensitive health data.\n\nShiva (shiva.ucdavis.edu): SLURM-based cluster for computational work\nMercury (mercury.ucdavis.edu): RStudio GUI computing environment\n\nFor detailed information about PHS shared compute environments, including access procedures, security guidelines, and usage policies, please refer to the PHS Shared Compute Environments Guide.\nContact lab leadership for assistance with: - Requesting access to computing resources - Choosing the appropriate computing environment for your project - Setting up your computing environment",
+    "crumbs": [
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>High-performance computing (HPC)</span>"
+    ]
+  },
+  {
+    "objectID": "slurm.html#getting-started-with-slurm-clusters",
+    "href": "slurm.html#getting-started-with-slurm-clusters",
+    "title": "18  High-performance computing (HPC)",
+    "section": "18.2 Getting started with SLURM clusters",
+    "text": "18.2 Getting started with SLURM clusters\nTo access a UC Davis HPC cluster, in terminal, log in using SSH. For example, to access shiva:\nssh USERNAME@shiva.ucdavis.edu\nYou will be prompted to enter your UC Davis credentials and may need to complete two-factor authentication.\nOnce you log in, you can view the contents of your home directory in command line by entering cd $HOME. You can create subfolders within this directory using the mkdir command. For example, you could make a “code” subdirectory and clone a Github repository there using the following code:\ncd $HOME\nmkdir code\ngit clone https://github.com/jadebc/covid19-infections.git\n\n18.2.1 One-Time System Set-Up\nTo keep the install packages consistent across different nodes, you will need to explicitly set the pathway to your R library directory.\nOpen your ~/.Renviron file (vi ~/.Renviron) and append the following line:\nNote: Once you open the file using vi [file_name], you must press i (on Mac OS) or Insert (on Windows) to make edits. After you finish, hit Esc to exit editing mode and type :wq to save and close the file.\nR_LIBS=~/R/x86_64-pc-linux-gnu-library/4.0.2\nAlternatively, run an R script with the following code on the cluster:\nr_environ_file_path = file.path(Sys.getenv(\"HOME\"), \".Renviron\")\nif (!file.exists(r_environ_file_path)) file.create(r_environ_file_path)\n\ncat(\"\\nR_LIBS=~/R/x86_64-pc-linux-gnu-library/4.0.2\",\n    file = r_environ_file_path, sep = \"\\n\", append = TRUE)\nTo load packages that run off of C++, you’ll need to set the correct compiler options in your R environment.\nOpen the Makevars file (vi ~/.R/Makevars) and append the following lines\nCXX14FLAGS=-O3 -march=native -mtune=native -fPIC\nCXX14=g++\nAlternatively, create an R script with the following code, and run it on the cluster:\ndotR = file.path(Sys.getenv(\"HOME\"), \".R\")\nif (!file.exists(dotR)) dir.create(dotR)\n\nM = file.path(dotR, \"Makevars\")\nif (!file.exists(M)) file.create(M)\n\ncat(\"\\nCXX14FLAGS=-O3 -march=native -mtune=native -fPIC\",\n    \"CXX14=g++\",\n    file = M, sep = \"\\n\", append = TRUE)",
+    "crumbs": [
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>High-performance computing (HPC)</span>"
+    ]
+  },
+  {
+    "objectID": "slurm.html#moving-files-to-the-cluster",
+    "href": "slurm.html#moving-files-to-the-cluster",
+    "title": "18  High-performance computing (HPC)",
+    "section": "18.3 Moving files to the cluster",
+    "text": "18.3 Moving files to the cluster\nThe $HOME directory is a good place to store code and small test files. Save large files to the $SCRATCH directory or other designated storage areas. Check with the UC Davis HPC documentation for specific quotas and retention policies. It’s best to create a bash script that records the file transfer process for a given project. See example code below:\n# note: the following steps should be done from your local \n# (not after ssh-ing into the cluster)\n\n# securely transfer folders from Box to cluster home directory\n# note: the -r option is for folders and is not needed for files\nscp -r \"Box/project-folder/folder-1/\" USERNAME@shiva.ucdavis.edu:/home/users/USERNAME/\n\n# securely transfer folders from Box to your cluster scratch directory\nscp -r \"Box/project-folder/folder-2/\" USERNAME@shiva.ucdavis.edu:/scratch/users/USERNAME/\n\n# securely transfer folders from Box to shared scratch directory\nscp -r \"Box/project-folder/folder-3/\" USERNAME@shiva.ucdavis.edu:/scratch/group/GROUPNAME/",
+    "crumbs": [
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>High-performance computing (HPC)</span>"
+    ]
+  },
+  {
+    "objectID": "slurm.html#installing-packages-on-the-cluster",
+    "href": "slurm.html#installing-packages-on-the-cluster",
+    "title": "18  High-performance computing (HPC)",
+    "section": "18.4 Installing packages on the cluster",
+    "text": "18.4 Installing packages on the cluster\nWhen you begin working on a cluster, you will most likely encounter problems with installing packages. To install packages, login to the cluster on the command line and open a development node. Do not attempt to do this in RStudio Server, as you will have to re-do it for every new session you open.\nssh USERNAME@shiva.ucdavis.edu\n\nsdev\nYou should only have to install packages once. The cluster may require that you specify the repository where the package is downloaded from. You may also need to add an additional argument to install.packages to prevent the packages from locking after installation:\ninstall.packages(&lt;PACKAGE NAME&gt;, repos=\"https://cran.r-project.org\", \n                  INSTALL_opts = \"--no-lock\")\nIn order for some R packages to work on clusters, it is necessary to load specific software modules before running R. These must be loaded each time you want to use the package in R. For example, for spatial and random effects analyses, you may need the modules/packages below. These modules must also be loaded on the command line prior to opening R in order for package installation to work.\nmodule --force purge # remove any previously loaded modules, including math and devel\nmodule load math\nmodule load math gmp/6.1.2\nmodule load devel\nmodule load gcc/10\nmodule load system\nmodule load json-glib/1.4.4\nmodule load curl/7.81.0\nmodule load physics\nmodule load physics udunits geos\nmodule load physics gdal/2.2.1 # for R/4.0.2\nmodule load physics proj/4.9.3 # for R/4.0.2\nmodule load pandoc/2.7.3\n\nmodule load R/4.0.2\n\nR # Open R in the Shell window to install individual packages or test code\nRscript install-packages.R # Alternatively, run a package installation script in the Shell window\nFiguring out the issues with some packages will require some trial and error. If you are still encountering problems installing a package, you may have to install other dependencies manually by reading through the error messages. If you try to install a dependency from CRAN and it isn’t working, it may be a module. You can search for it using the module spider command:\nmodule spider DEPENDENCY NAME\nYou can also reach out to UC Davis HPC support for help. Visit hpc.ucdavis.edu for support information.",
+    "crumbs": [
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>High-performance computing (HPC)</span>"
+    ]
+  },
+  {
+    "objectID": "slurm.html#testing-your-code",
+    "href": "slurm.html#testing-your-code",
+    "title": "18  High-performance computing (HPC)",
+    "section": "18.5 Testing your code",
+    "text": "18.5 Testing your code\nBoth of the following ways to test code on a cluster are recommended for making small changes, such as editing file paths and making sure the packages and source files load. You should write and test the functionality of your script locally, only testing on the cluster once major bugs are out.\n\n18.5.1 The command line\nThere are two main ways to explore and test code on computing clusters. The first way is best for users who are comfortable working on the command line and editing code in base R. Even if you are not comfortable yet, this is probably the better way because these commands will transfer between different cluster computers using Slurm.\nTypically, you will want to initially test your scripts by initiating a development node using the command sdev. This will allocate a small amount of computing resources for 1 hour. You can access R via command line using the following code.\n# open development node\nsdev\n\n# Load all the modules required by the packages you are using\nmodule load MODULE NAME  \n\n# Load R (default version)*\nmodule load R \n\n# initiate R in command line\nR\n*Note: for collaboration purposes, it’s best for everyone to work with one version of R. Check what version is being used for the project you are working on. Some packages only work with some versions of R, so it’s best to keep it consistent.\n\n\n18.5.2 RStudio Server\nFor RStudio GUI computing, UC Davis provides mercury.ucdavis.edu. This is accessed through a web browser and provides an RStudio interface. You will be prompted to authenticate with your UC Davis credentials. This is the best way to work with R for people who are not comfortable accessing & editing in base R in a Shell application.\nNote that mercury does not have SLURM, so it’s best suited for interactive work and smaller computations. For large-scale computations requiring SLURM job scheduling, use shiva.ucdavis.edu instead.\nWhen using RStudio Server, you can test your code interactively. However, do NOT use the RStudio Server’s Terminal to install packages and configure your environment for SLURM-based clusters, as you will likely need to re-do it for every session/project. For SLURM clusters, use the command line approach described earlier.\n\n\n18.5.3 Filepaths & configuration on the cluster\nIn most cases, you will want to test that the file paths work correctly on the cluster. You will likely need to add code to the configuration file in the project repository that specifies cluster-specific file paths. Here is an example:\n# set cluster-specific file paths\nif(Sys.getenv(\"LMOD_SYSHOST\")!=\"\"){\n  \n  cluster_path = paste0(Sys.getenv(\"HOME\"), \"/project-name/\")\n  \n  data_path = paste0(cluster_path, \"data/\")\n  results_path = paste0(cluster_path, \"results/\")\n}",
+    "crumbs": [
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>High-performance computing (HPC)</span>"
+    ]
+  },
+  {
+    "objectID": "slurm.html#sec-x11-forwarding",
+    "href": "slurm.html#sec-x11-forwarding",
+    "title": "18  High-performance computing (HPC)",
+    "section": "18.6 Running graphical programs with X11 forwarding",
+    "text": "18.6 Running graphical programs with X11 forwarding\nShiva’s SSH server permits X11 forwarding (checked August 2026), so a graphical program started on the cluster can draw its window on your own computer. This is worth setting up when you want a GUI text editor on the cluster, or a web browser that sees the network from Shiva’s position rather than from yours.\nX11 forwarding sends every window update across the network, so it suits a text editor much better than it suits a browser. When all you want is to view a web page that Shiva itself is serving, such as an RStudio Server session or a rendered report, forward the port instead and use the browser already on your own computer:\n# from your own computer, not from Shiva\nssh -L 8787:localhost:8787 USERNAME@shiva.ucdavis.edu\nWith that running, http://localhost:8787 in your local browser reaches the service on Shiva. This is far faster than forwarding a browser window, because only the page data crosses the network rather than every repainted pixel.\n\n18.6.1 Install an X server on your own computer\nThe cluster draws into an X server, and that server runs on your machine rather than on Shiva. macOS and Windows do not ship one, so install the software listed in Table 18.1 before your first attempt.\n\n\n\nTable 18.1: Where to get an X server, by operating system\n\n\n\n\n\nYour computer\nWhat to install\n\n\n\n\nmacOS\nXQuartz. Log out and back in after installing, so that DISPLAY is set.\n\n\nWindows\nVcXsrv, or MobaXterm, which bundles an X server together with an SSH client.\n\n\nWindows, using WSL2\nNothing. WSLg supplies the X server.\n\n\nLinux\nUsually nothing. An X11 session is itself an X server; a Wayland session relies on Xwayland for X11 compatibility. Confirm DISPLAY is set locally before you connect.\n\n\n\n\n\n\n\n\n18.6.2 Connect with X11 forwarding enabled\nAsk for trusted X11 forwarding with -Y:\nssh -Y USERNAME@shiva.ucdavis.edu\nUse -Y rather than -X here. -X requests untrusted forwarding, and by default OpenSSH refuses untrusted X11 connections made more than twenty minutes into the session (“Ssh_config(5) Manual Page,” n.d.). Any window already on screen keeps working, so the symptom is that a program you launch later in the session simply never appears. Untrusted forwarding also restricts clients under the X11 SECURITY extension, to stop them reading or tampering with data belonging to trusted clients (“Ssh_config(5) Manual Page,” n.d.), and some graphical toolkits fail outright under those restrictions.\nThe exception is a Linux client running Debian or Ubuntu, where ForwardX11Trusted defaults to yes and -X therefore already means the same thing as -Y (“Ssh_config(5) Manual Page, Debian Edition,” n.d.). Passing -Y is correct on every platform, so prefer it and do not worry about which case you are in.\nTrusted forwarding is a real tradeoff rather than a free upgrade. It gives programs running on Shiva full access to your local display, which includes reading input directed at your other windows (“Ssh_config(5) Manual Page,” n.d.). That is an acceptable risk for a cluster our lab administers and trusts; do not extend the same setting to machines you do not trust.\nTo avoid retyping the flag, add an entry to ~/.ssh/config on your own computer:\nHost shiva\n  HostName shiva.ucdavis.edu\n  User USERNAME\n  ForwardX11 yes\n  ForwardX11Trusted yes\n  Compression yes\nssh shiva then forwards X11 automatically. Compression yes is worth setting because X11 traffic compresses well over a slow link.\n\n\n18.6.3 Check that the forward is working\nAfter logging in, DISPLAY should be set:\necho $DISPLAY\n# localhost:10.0\nAn empty result means the forward did not happen. The usual causes are omitting -Y, or not having an X server running on your own computer.\nTo confirm that the connection reaches your display, ask the display to describe itself:\nxdpyinfo | head -3\nUse xdpyinfo rather than xeyes for this test. Shiva has the x11-utils package, which provides xdpyinfo, but not x11-apps, which provides xeyes and xclock (checked August 2026).\n\n\n18.6.4 Install graphical programs without sudo\nLab accounts on Shiva are not in the sudo group, which held only a handful of administrator accounts when this was checked in August 2026. Run groups to see which groups your own account belongs to. This means apt install is unavailable, and most installation instructions written for Ubuntu will not apply. Install into your home directory instead, which needs no special privileges.\nNote that this is necessary even for programs that appear to be present already. The system Emacs at /usr/bin/emacs is the emacs-nox build, which links no X libraries at all and so cannot open a window under any circumstances. No web browser is installed on Shiva. module avail on the login node lists only MPI and numerical libraries, so it supplies neither one.\nFor Emacs, use conda-forge, whose build includes GTK and X11 support. If you do not already have conda, install Miniforge into your home directory first.\nconda create -y -n gui -c conda-forge emacs\nconda activate gui\nemacs &\nFor Firefox, use Mozilla’s official Linux build, which is a self-contained directory that runs from anywhere:\nmkdir -p ~/opt && cd ~/opt\ncurl -L -o firefox.tar.xz \\\n  'https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lang=en-US'\ntar xf firefox.tar.xz && rm firefox.tar.xz\n~/opt/firefox/firefox &\nAdding ~/bin to your PATH and putting small wrapper scripts there saves typing the full path each time.\n\n\n18.6.5 Limitations\nR cannot open plot windows on Shiva. The installed R is built without X11 support, which you can confirm with capabilities()[\"X11\"]. No amount of forwarding configuration changes this, because the R binary itself has no X11 device compiled in. Write plots to a file with {ragg} or ggplot2::ggsave() and copy them back with scp, or forward a port and use a browser-based graphics device such as {httpgd}.\nThe faster remote-desktop tools are unavailable. Xpra, VNC, and X2Go all compress far better than plain X11 forwarding over a slow link. All of them need an X server installed on the cluster itself, which requires root, so none can be set up from a lab account. Contact the cluster administrators if the performance of plain forwarding is blocking your work.",
+    "crumbs": [
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>High-performance computing (HPC)</span>"
+    ]
+  },
+  {
+    "objectID": "slurm.html#recovering-a-disconnected-interactive-session",
+    "href": "slurm.html#recovering-a-disconnected-interactive-session",
+    "title": "18  High-performance computing (HPC)",
+    "section": "18.7 Recovering a disconnected interactive session",
+    "text": "18.7 Recovering a disconnected interactive session\nInteractive sessions on a SLURM cluster — a development node opened with sdev, or a session started with srun --pty (“Slurm Workload Manager,” n.d.-e) or salloc (“Slurm Workload Manager,” n.d.-a) — are tied to the terminal that launched them. If your SSH connection drops (a broken pipe, a network blip, or closing your laptop), SLURM usually sends the launching process a hang-up signal and tears down the whole job allocation, not just your shell. When that happens there is nothing left to reconnect to, and any unsaved work in that session is lost.\nThere is no way to reattach to the identical shell once the allocation has been released. The reliable strategy is to prevent the drop in the first place; if the allocation does happen to survive, you can open a new shell inside it.\n\n18.7.1 Prevent drops with a terminal multiplexer (recommended)\nStart a terminal multiplexer such as tmux or screen on the login node, then launch your interactive session from inside it:\nssh USERNAME@shiva.ucdavis.edu\n\n# start a tmux session on the login node\ntmux\n\n# request your interactive allocation from inside tmux\nsdev          # or: srun --pty bash\nBecause tmux keeps running on the login node even after your SSH connection drops, the launching process survives and the allocation stays alive. When you reconnect, reattach to your multiplexer and you are back where you left off:\nssh USERNAME@shiva.ucdavis.edu\ntmux ls         # list existing sessions\ntmux attach     # reattach to the most recent session\n\n\n18.7.2 Reconnect to a surviving allocation\nIf you did not use a multiplexer, you can still open a new shell on the nodes of a job that is already running — most commonly a batch job submitted with sbatch, or an interactive allocation that happened to survive. This gives you a new shell (a new job step), not the original session.\nFirst, find the job ID (“Slurm Workload Manager,” n.d.-d):\nsqueue --me        # or: squeue -u $USER\nThen launch a new interactive step inside that allocation, replacing JOBID with the ID reported by squeue (“Slurm Workload Manager,” n.d.-e):\nsrun --jobid=JOBID --overlap --pty bash\n\n\n\n\n\n\nImportantThe --overlap flag is required on recent SLURM\n\n\n\nSince SLURM 20.11, a new job step requests exclusive use of the job’s resources by default, so without --overlap the srun above will simply hang waiting for resources the running step already holds. Always include --overlap when attaching to a running job.\n\n\nIf you only need to reattach to the input and output streams of an existing step (rather than start a fresh shell), sattach JOBID.STEPID does that instead (“Slurm Workload Manager,” n.d.-b).\n\n\n\n\n\n\nNote\n\n\n\nExact behavior varies by cluster: some sites disable srun into running jobs, wrap it in a local helper, or require different flags. When in doubt, check the UC Davis HPC documentation or contact HPC support.",
+    "crumbs": [
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>High-performance computing (HPC)</span>"
+    ]
+  },
+  {
+    "objectID": "slurm.html#storage-group-storage-access",
+    "href": "slurm.html#storage-group-storage-access",
+    "title": "18  High-performance computing (HPC)",
+    "section": "18.8 Storage & group storage access",
+    "text": "18.8 Storage & group storage access\n\n18.8.1 Individual storage\nThere are multiple places to store your files on computing clusters. Each user has their own $HOME directory as well as a $SCRATCH directory. These are directories that can be accessed via the command line once you’ve logged in to the cluster:\ncd $HOME \ncd /home/users/USERNAME # Alternatively, use the full path\n\ncd $SCRATCH\ncd /scratch/users/USERNAME # Full path\nYou can also navigate to these using the File Explorer if available through a web interface.\n$HOME typically has a volume quota (e.g., 15 GB). $SCRATCH typically has a larger volume quota (e.g., 100 TB), but files here may get deleted after a certain period of inactivity. Thus, use $SCRATCH for test files, exploratory analyses, and temporary storage. Use $HOME for long-term storage of important files and more finalized analyses.\nCheck with the UC Davis HPC documentation for specific storage options and quotas.\n\n\n18.8.2 Group storage\nThe lab may have shared $GROUP_HOME and $GROUP_SCRATCH directories to store files for collaborative use. These typically have larger quotas and may have different retention policies. You can access these via the command line or navigate to them using the File Explorer:\ncd $GROUP_HOME\ncd /home/groups/GROUPNAME\n\ncd $GROUP_SCRATCH\ncd /scratch/groups/GROUPNAME\nHowever, saving files to group storage can be tricky. You can try using the scp command in the section “Moving files to the cluster” to see if you have permission to add files to group directories. Read the next section to ensure any directories you create have the right permissions.\n\n\n18.8.3 Folder permissions\nGenerally, when we put folders in $GROUP_HOME or $GROUP_SCRATCH, it is so that we can collaborate on an analysis within the research group, so multiple people need to be able to access the folders. If you create a new folder in $GROUP_HOME or $GROUP_SCRATCH, please check the folder’s permissions to ensure that other group members are able to access its contents. For example, you can inspect a folder’s permissions by running ls -l from the level above it. For a quick refresher on interpreting the permission bits and updating them with chmod, see this guide.",
+    "crumbs": [
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>High-performance computing (HPC)</span>"
+    ]
+  },
+  {
+    "objectID": "slurm.html#running-big-jobs",
+    "href": "slurm.html#running-big-jobs",
+    "title": "18  High-performance computing (HPC)",
+    "section": "18.9 Running big jobs",
+    "text": "18.9 Running big jobs\nOnce your test scripts run successfully, you can submit an sbatch script for larger jobs. These are text files with a .sh suffix. Use a text editor like Sublime to create such a script. Documentation on sbatch options is available from Slurm Workload Manager (“Slurm Workload Manager,” n.d.-c). Here is an example of an sbatch script with the following options:\n\njob-name=run_inc: Job name that will show up in the SLURM system\nbegin=now: Requests to start the job as soon as the requested resources are available\ndependency=singleton: Jobs can begin after all previously launched jobs with the same name and user have ended.\nmail-type=ALL: Receive all types of email notification (e.g., when job starts, fails, ends)\ncpus-per-task=16: Request 16 processors per task. The default is one processor per task.\nmem=64G: Request 64 GB memory per node.\noutput=00-run_inc_log.out: Create a log file called 00-run_inc_log.out that contains information about the Slurm session\ntime=47:59:00: Set maximum run time to 47 hours and 59 minutes. If you don’t include this option, the cluster will automatically exit scripts after 2 hours of run time (default may vary by cluster).\n\nThe file analysis.out will contain the log file for the R script analysis.R.\n#!/bin/bash\n\n#SBATCH --job-name=run_inc\n#SBATCH --begin=now\n#SBATCH --dependency=singleton\n#SBATCH --mail-type=ALL\n#SBATCH --cpus-per-task=16\n#SBATCH --mem=64G\n#SBATCH --mem=64G\n#SBATCH --output=00-run_inc_log.out\n#SBATCH --time=47:59:00\n\ncd $HOME/project-code-repo/2-analysis/\n\nmodule purge \n\n# load R version 4.0.2 (required for certain packages)\nmodule load R/4.0.2\n\n# load gcc, a C++ compiler (required for certain packages)\nmodule load gcc/10\n\n# load software required for spatial analyses in R\nmodule load physics gdal\nmodule load physics proj\n\nR CMD BATCH --no-save analysis.R analysis.out\nTo submit this job, save the code in the chunk above in a script called myjob.sh and then enter the following command into terminal:\nsbatch myjob.sh \nTo check on the status of your job, enter the following code into terminal:\nsqueue -u $USERNAME\n\n\n\n\n“Slurm Workload Manager: Salloc Documentation.” n.d.-a. SchedMD. https://slurm.schedmd.com/salloc.html.\n\n\n“Slurm Workload Manager: Sattach Documentation.” n.d.-b. SchedMD. https://slurm.schedmd.com/sattach.html.\n\n\n“Slurm Workload Manager: Sbatch Documentation.” n.d.-c. SchedMD. https://slurm.schedmd.com/sbatch.html.\n\n\n“Slurm Workload Manager: Squeue Documentation.” n.d.-d. SchedMD. https://slurm.schedmd.com/squeue.html.\n\n\n“Slurm Workload Manager: Srun Documentation.” n.d.-e. SchedMD. https://slurm.schedmd.com/srun.html.\n\n\n“Ssh_config(5) Manual Page.” n.d. OpenBSD. https://man.openbsd.org/ssh_config.\n\n\n“Ssh_config(5) Manual Page, Debian Edition.” n.d. Debian Project. https://manpages.debian.org/stable/openssh-client/ssh_config.5.en.html.",
+    "crumbs": [
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>High-performance computing (HPC)</span>"
+    ]
+  },
+  {
+    "objectID": "ai-tools.html",
+    "href": "ai-tools.html",
+    "title": "19  Working with AI",
+    "section": "",
+    "text": "19.1 Institutional AI account access\nOur notes on working responsibly and effectively with AI coding assistants have moved to a dedicated site: Working with AI (source: https://github.com/Morrison-Lab/wai).\nThat site covers:\nLab members who use AI tools must still adhere to the guidelines described there.",
+    "crumbs": [
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Working with AI</span>"
+    ]
+  },
+  {
+    "objectID": "ai-tools.html#sec-institutional-ai-access",
+    "href": "ai-tools.html#sec-institutional-ai-access",
+    "title": "19  Working with AI",
+    "section": "",
+    "text": "19.1.1 UC Davis Health OpenAI access\nFor lab members affiliated with UC Davis Health (UCDH) or conducting health sciences research, enterprise OpenAI accounts are provisioned through the UCDH IT Self-Service (ITSS) ServiceNow catalog.\nTo request an account:\n\nNavigate to the UCDH ServiceNow OpenAI catalog item.\nLog in with your UC Davis Health credentials and complete Duo two-factor authentication if prompted.\nFill out the request form with your department, contact details, and business or research justification.\nSubmit the request for processing by UCDH IT.\nOnce approved, follow the instructions in the confirmation email to join the UC Davis Health OpenAI workspace.\n\n\n\n19.1.2 UC Davis campus OpenAI access\nFor UC Davis campus affiliates, access to ChatGPT Edu is managed through Information and Educational Technology (IET) Aggie AI. See the IET Aggie AI ChatGPT Edu documentation for setup instructions and eligibility details.\n\n\n19.1.3 Data security and compliance\nWhen using institutional AI accounts:\n\nNever submit Protected Health Information (PHI), personally identifiable information (PII), or restricted research data to AI tools unless authorized under an approved protocol.\nFollow all institutional data handling policies and the lab’s guidelines on Working with AI.",
+    "crumbs": [
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Working with AI</span>"
+    ]
+  },
+  {
+    "objectID": "checklists.html",
+    "href": "checklists.html",
+    "title": "20  Checklists",
+    "section": "",
+    "text": "20.1 Onboarding checklist\nWelcome to the lab! New members should complete the following checklist during their first week:",
+    "crumbs": [
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Checklists</span>"
+    ]
+  },
+  {
+    "objectID": "checklists.html#sec-onboarding-checklist",
+    "href": "checklists.html#sec-onboarding-checklist",
+    "title": "20  Checklists",
+    "section": "",
+    "text": "Account setup: Request and confirm access to GitHub (join the UCD-SERG organization), Microsoft Teams, UC Davis email, and lab Box and SharePoint folders.\nRequired trainings: Complete required CITI Human Subjects Biomedical Group 1 training and share your certificate with lab leadership (see Section 2.3).\nRead the lab manual: Review lab culture and conduct (Chapter 2), coding style (Chapter 7), and collaborative development (Chapter 12).\nEnvironment setup: Configure your local R development environment, clone a starter repository, and run renv::restore() to verify reproducible package installation (see Chapter 15).\nHPC access: Confirm High-Performance Computing cluster access (Farm or Shiva) and verify SSH keys if your project involves cluster computing (see Chapter 18).\nTeam introductions: Introduce yourself on Microsoft Teams and at the next weekly lab meeting.\nInitial 1:1 meeting: Schedule a one-on-one meeting with lab leadership to align on project objectives, onboarding timeline, and initial milestones.",
+    "crumbs": [
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Checklists</span>"
+    ]
+  },
+  {
+    "objectID": "checklists.html#pre-analysis-plan-checklist",
+    "href": "checklists.html#pre-analysis-plan-checklist",
+    "title": "20  Checklists",
+    "section": "20.2 Pre-analysis plan checklist",
+    "text": "20.2 Pre-analysis plan checklist\n\nBrief background on the study (a condensed version of the introduction section of the paper)\nHypotheses / objectives\nStudy design\nDescription of data\nDefinition of outcomes\nDefinition of interventions / exposures\nDefinition of covariates\nStatistical power calculation\nStatistical model description\nCovariate selection / screening\nStandard error estimation method\nMissing data analysis\nAssessment of effect modification / subgroup analyses\nSensitivity analyses\nNegative control analyses",
+    "crumbs": [
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Checklists</span>"
+    ]
+  },
+  {
+    "objectID": "checklists.html#code-checklist",
+    "href": "checklists.html#code-checklist",
+    "title": "20  Checklists",
+    "section": "20.3 Code checklist",
+    "text": "20.3 Code checklist\n\nDoes the script run without errors?\nIs code self-contained within repo and/or associated Box folder?\nIs all commented out code / remarks removed?\nDoes the header accurately describe the process completed in the script?\nIs the script pushed to its github repository?\nDoes the code adhere to the coding style guide?\nAre all warnings ignorable? Should any warnings be intentionally suppressed or addressed?",
+    "crumbs": [
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Checklists</span>"
+    ]
+  },
+  {
+    "objectID": "checklists.html#manuscript-checklist",
+    "href": "checklists.html#manuscript-checklist",
+    "title": "20  Checklists",
+    "section": "20.4 Manuscript checklist",
+    "text": "20.4 Manuscript checklist\nThis is adapted in part from How to tackle the reproducibility crisis in ten steps (Baker 2019).\n\nHave you completed the relevant reporting checklist, if applicable? (See EQUATOR Network (“EQUATOR Network,” n.d.) for a collection of checklists)\nAre the study results within the manuscript replicable (i.e., if you rerun the code in the study’s repository, the tables and figures will be exactly replicated?)\nIs a target journal selected?\nIs the title declarative, in other words, does it state the object/findings rather than suggest them?\nIs the word count of the manuscript close to the target journal’s allowance?\nDoes the manuscript adhere to the formatting guide of the target journal?\nDoes the manuscript use a consistent voice (passive or active – usually active is preferred … pun intended)?\nIs each figure and table (including supplementary material) referenced in the main text?\nIs there a caption for each figure and table (including supplementary material)?\nAre tables/figures and supplementary material numbered in accordance with their appearance in the main text?\nDoes the text use past tense if it is reporting research findings or future tense if it is a study protocol?\nDoes the text avoid subjective wording (e.g., “interesting”, “dramatic”)?\nDoes the text use minimal abbreviations, and are all abbreviations defined at first use?\nDoes the text avoid directionless words? (e.g., instead of writing, ‘Precipitation influences disease risk’, write, ‘Precipitation was associated with increased disease risk’).\nDoes the text avoid making causal claims that are not supported by the study design? Be careful about the words “effect”, “increase”, and “decrease”, which are often interpreted as causal.\nDoes the text avoid describing results with the word “significant”, which can easily be confused with statistical significance? (see references on this topic here)\nHave you drafted author contributions? Do they follow the CRediT: Contributor Roles Taxonomy (“CRediT,” n.d.) for author contributions?",
+    "crumbs": [
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Checklists</span>"
+    ]
+  },
+  {
+    "objectID": "checklists.html#figure-checklist",
+    "href": "checklists.html#figure-checklist",
+    "title": "20  Checklists",
+    "section": "20.5 Figure checklist",
+    "text": "20.5 Figure checklist\n\nAre the x-axis and y-axis labeled?\nIf the figure includes panels, is each panel labeled?\nAre there sufficient numerical / text labels and breaks on the x-axis and y-axis?\nIs the font size appropriate (i.e., large enough to read, not so large that it distracts from the data presented in the figure?)\nAre the colors used colorblind friendly? See a colorblind-friendly palette here, a neat palette generator with colorblind options here, and an article on why this matters: The misuse of colour in science communication (Crameri et al. 2020)\nAre colors/shapes/line types defined in a legend?\nAre the legends and other labels easy to understand with minimal abbreviations?\nIf there is overplotting, is transparency used to show overlapping data?\nAre 95% confidence intervals or other measures of precision shown, if applicable?",
+    "crumbs": [
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Checklists</span>"
+    ]
+  },
+  {
+    "objectID": "checklists.html#sec-offboarding-checklist",
+    "href": "checklists.html#sec-offboarding-checklist",
+    "title": "20  Checklists",
+    "section": "20.6 Offboarding checklist",
+    "text": "20.6 Offboarding checklist\nWhen preparing to depart the lab, members should complete this offboarding checklist to ensure project continuity:\n\nCode handoff: Ensure all analysis code is committed, pushed to GitHub (UCD-SERG organization), and documented with a self-contained README and reproducible execution instructions (see Chapter 5).\nData archiving: Archive or transfer large datasets, raw files, and simulation outputs per lab storage protocols (see Chapter 17 and Chapter 18). Ensure all shared Drive and Box datasets have clear data dictionaries and codebooks.\nRepository ownership: Transfer any remaining repository or branch administrative permissions to the UCD-SERG organization and lab leadership.\nPublication plan: Coordinate with lab leadership on outstanding manuscripts, co-authorship agreements, remaining revisions, and target submission timelines.\nAccount transition: Coordinate with lab leadership to transition or revoke personal access to shared lab accounts, server credentials, and IRB protocols.\nEquipment return: Return any lab-issued equipment (keys, hardware, storage media) and report any known hardware or configuration issues.\nExit interview: Complete a departure check-in with lab leadership to provide feedback and share forward contact details for future manuscript correspondence.\n\n\n\n\n\nBaker, Monya. 2019. “How to Tackle the Reproducibility Crisis in Ten Steps.” Nature, ahead of print. https://doi.org/10.1038/d41586-019-01431-z.\n\n\nCrameri, Fabio, Grace E. Shephard, and Philip J. Heron. 2020. “The Misuse of Colour in Science Communication.” Nature Communications 11. https://doi.org/10.1038/s41467-020-19160-7.\n\n\n“CRediT: Contributor Roles Taxonomy.” n.d. PLOS ONE. https://journals.plos.org/plosone/s/authorship.\n\n\n“EQUATOR Network: Enhancing the QUAlity and Transparency of Health Research.” n.d. EQUATOR Network. https://www.equator-network.org/.",
+    "crumbs": [
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Checklists</span>"
+    ]
+  },
+  {
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "21  Resources",
+    "section": "",
+    "text": "21.1 Resources for R",
+    "crumbs": [
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Resources</span>"
+    ]
+  },
+  {
+    "objectID": "resources.html#resources-for-r",
+    "href": "resources.html#resources-for-r",
+    "title": "21  Resources",
+    "section": "",
+    "text": "21.1.1 Books and Comprehensive Guides\n\nR for Data Science (Wickham et al. 2023) - comprehensive introduction to doing data science with R\nR Packages (Wickham and Bryan 2023) - complete guide to R package development\nAwesome R Package Development Tools - curated list of tools for R package development\nAdvanced R (Wickham 2019) - deep dive into R programming and internals\nMastering Shiny (Wickham 2021) - comprehensive guide to building web applications with Shiny\nEngineering Production-Grade Shiny Apps (Fay et al. 2021) - best practices for production Shiny applications\nHappy Git and GitHub for the useR (Bryan 2023) - guide to using Git and GitHub with R\nlitedown: R Markdown Reimagined - a book by Yihui Xie on {litedown}, a lightweight R Markdown implementation aimed at simplicity and speed\nDataCamp - email Kristen for access\n\n\n\n21.1.2 UC Davis DataLab Workshops and Tutorials\nThe UC Davis DataLab provides extensive workshops and learning materials for data science:\n\nWorkshop Index - comprehensive catalog of all DataLab workshops\nR Basics Workshop - foundational R programming for beginners\nResearch Toolkits - in-depth guides for research tools and methods\nInstall Guides - setup instructions for data science software\n\n\n\n21.1.3 Cheat Sheets\n\nData transformation with dplyr cheat sheet\nData tidying with tidyr cheat sheet\nData visualization with ggplot2 cheat sheet\ndata table cheat sheet\nR Markdown cheat sheet\n\n\n\n21.1.4 Style and Best Practices\n\nHadley Wickham’s R Style Guide\n\n\n\n21.1.5 Data Documentation and Dictionaries\n\nTidyverse data-dict - open specification and CLI tool for creating, validating, and documenting data dictionaries in YAML format\n\n\n\n21.1.6 Tidy Evaluation Resources\n\nTidy Eval in 5 Minutes (video)\nTidy Evaluation (e-book)\nData Frame Columns as Arguments to Dplyr Functions (blog)\nStandard Evaluation for *_join (stackoverflow)\nProgramming with dplyr (package vignette)\n\n\n\n21.1.7 Continuous Integration for R\n\nr-ci: Easy and portable CI for R packages - a portable shell script by Dirk Eddelbuettel for testing R packages across GitHub Actions, Azure Pipelines, CircleCI, and local Docker environments\nr-codeberg - community organization supporting R package development and hosting on Codeberg, including the r-codeberg migration guide for porting packages from GitHub to Codeberg\nWoodpecker CI - community-driven, container-based continuous integration system that integrates with Codeberg, Forgejo, and Gitea for running automated R package checks and pipeline workflows\nshinycoreci: CI Testing for shiny - R package developed by the Posit Shiny team for testing the Shiny ecosystem across GitHub Actions runner environments",
+    "crumbs": [
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Resources</span>"
+    ]
+  },
+  {
+    "objectID": "resources.html#resources-for-git-github",
+    "href": "resources.html#resources-for-git-github",
+    "title": "21  Resources",
+    "section": "21.2 Resources for Git & Github",
+    "text": "21.2 Resources for Git & Github\n\nHappy Git and GitHub for the useR (Bryan 2023) - comprehensive guide to using Git and GitHub with R\nGitHub Learn - official interactive courses, Skills exercises, learning pathways, and credentials\nGitHub Skills: Introduction to GitHub\nUC Davis DataLab Git Sandbox - hands-on Git practice repository\nGitKraken - cross-platform Git client and developer platform with visual commit graphs, interactive rebasing, and GitKraken Kepler for agent-driven development workflows\nAbout stacked pull requests - official GitHub guide to breaking large changes into stacked pull request chains\nClaude Code on the Web: Auto-Fix Pull Requests - documentation on Claude Code’s web interface for automatically investigating and resolving check failures and review comments on pull requests\nClaude Code Workflows - documentation on Claude Code’s dynamic subagent orchestration feature for parallel codebase audits, migrations, and evaluations\nGoogle Code Review Developer Guide - comprehensive guidelines on code review standards and pull request authoring; the upstream source for the Tidyverse code review principles (see acknowledgments)",
+    "crumbs": [
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Resources</span>"
+    ]
+  },
+  {
+    "objectID": "resources.html#practical-computing-and-command-line",
+    "href": "resources.html#practical-computing-and-command-line",
+    "title": "21  Resources",
+    "section": "21.3 Practical Computing and Command Line",
+    "text": "21.3 Practical Computing and Command Line\n\nThe Missing CS Quarter at UC Davis - practical computing skills, shell tools, command-line workflows, and version control (GitLab repository)",
+    "crumbs": [
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Resources</span>"
+    ]
+  },
+  {
+    "objectID": "resources.html#resources-for-python",
+    "href": "resources.html#resources-for-python",
+    "title": "21  Resources",
+    "section": "21.4 Resources for Python",
+    "text": "21.4 Resources for Python\n\nUC Davis DataLab Python Basics Workshop - foundational Python programming\nNatural Language Processing with Python - text analysis and NLP techniques\nJupyter Notebooks in a Git Repository - guide by Matthias Geier on managing Jupyter notebooks in Git repositories, including workflows for stripping cell outputs before committing and strategies for sharing executed notebooks",
+    "crumbs": [
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Resources</span>"
+    ]
+  },
+  {
+    "objectID": "resources.html#resources-for-julia",
+    "href": "resources.html#resources-for-julia",
+    "title": "21  Resources",
+    "section": "21.5 Resources for Julia",
+    "text": "21.5 Resources for Julia\n\nUC Davis Julia Users Group Julia Basics Workshop - foundational Julia programming",
+    "crumbs": [
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Resources</span>"
+    ]
+  },
+  {
+    "objectID": "resources.html#artificial-intelligence-coding-agents",
+    "href": "resources.html#artificial-intelligence-coding-agents",
+    "title": "21  Resources",
+    "section": "21.6 Artificial Intelligence & Coding Agents",
+    "text": "21.6 Artificial Intelligence & Coding Agents\n\nWorking with AI (wai) - our lab’s comprehensive guide to AI coding agents, harnesses, policies, and workflows\nWhen AI builds itself: Recursive self-improvement in practice - Anthropic Institute analysis of recursive self-improvement mechanisms, AI capability trajectories, and safety considerations\npi - minimalist, extensible AI agent toolkit providing a unified LLM API, interactive TUI, and terminal coding agent CLI",
+    "crumbs": [
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Resources</span>"
+    ]
+  },
+  {
+    "objectID": "resources.html#scientific-figures",
+    "href": "resources.html#scientific-figures",
+    "title": "21  Resources",
+    "section": "21.7 Scientific figures",
+    "text": "21.7 Scientific figures\n\nTen Simple Rules for Better Figures (Rougier et al. 2014)\nTufte CSS - style HTML articles like Edward Tufte’s books and handouts, with sidenotes, typography, and tight integration of graphics with text",
+    "crumbs": [
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Resources</span>"
+    ]
+  },
+  {
+    "objectID": "resources.html#writing",
+    "href": "resources.html#writing",
+    "title": "21  Resources",
+    "section": "21.8 Writing",
+    "text": "21.8 Writing\n\nUnpacking the Scientific Toolbox (Silbiger and Stubler 2019)\nICMJE Definition of authorship (International Committee of Medical Journal Editors, n.d.)\nComputational science: …why scientific programming does not compute (Merali and Giles 2010)\nThe Pathway to Publishing: A Guide to Quantitative Writing in the Health Sciences\nPrinciples of Scientific Writing - a handbook covering scientific writing principles including citations and evidence, word choice, and conciseness\nSecret, actionable writing tips",
+    "crumbs": [
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Resources</span>"
+    ]
+  },
+  {
+    "objectID": "resources.html#presentations",
+    "href": "resources.html#presentations",
+    "title": "21  Resources",
+    "section": "21.9 Presentations",
+    "text": "21.9 Presentations\n\nHow to tell a compelling story in scientific presentations (Van Noorden 2021)\nHow to give a killer narratively-driven scientific talk\nHow to make a better poster\nHow to make an even better poster",
+    "crumbs": [
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Resources</span>"
+    ]
+  },
+  {
+    "objectID": "resources.html#professional-advice",
+    "href": "resources.html#professional-advice",
+    "title": "21  Resources",
+    "section": "21.10 Professional advice",
+    "text": "21.10 Professional advice\n\nProfessional advice, especially for your first job\nTeam Public Health Substack",
+    "crumbs": [
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Resources</span>"
+    ]
+  },
+  {
+    "objectID": "resources.html#funding",
+    "href": "resources.html#funding",
+    "title": "21  Resources",
+    "section": "21.11 Funding",
+    "text": "21.11 Funding\n\nBuilding Your Funding Train\nNIH Grant Writing Resources",
+    "crumbs": [
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Resources</span>"
+    ]
+  },
+  {
+    "objectID": "resources.html#ethics-and-global-health-research",
+    "href": "resources.html#ethics-and-global-health-research",
+    "title": "21  Resources",
+    "section": "21.12 Ethics and global health research",
+    "text": "21.12 Ethics and global health research\n\nGlobal Code of Conduct For Research in Resource-Poor Settings\nAddressing power asymmetries in global health (Abimbola et al. 2022)\nTransforming Global Health Partnerships",
+    "crumbs": [
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Resources</span>"
+    ]
+  },
+  {
+    "objectID": "resources.html#open-science-and-reproducibility-initiatives",
+    "href": "resources.html#open-science-and-reproducibility-initiatives",
+    "title": "21  Resources",
+    "section": "21.13 Open Science and Reproducibility Initiatives",
+    "text": "21.13 Open Science and Reproducibility Initiatives\n\nThe Open Science Manual - an open-source guide from the ARCA group at the University of Padova covering programming good practices, version control, and reproducible workflow tools.\nOpenscapes - an open science mentorship and community initiative founded by Dr. Julia Stewart Lowndes, focused on helping research groups transition to data-intensive, reproducible, and collaborative scientific practices through cohort-based Champions programs and shared open tooling.",
+    "crumbs": [
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Resources</span>"
+    ]
+  },
+  {
+    "objectID": "resources.html#comparable-lab-manuals",
+    "href": "resources.html#comparable-lab-manuals",
+    "title": "21  Resources",
+    "section": "21.14 Comparable Lab Manuals",
+    "text": "21.14 Comparable Lab Manuals\nExploring lab manuals from peer research groups helps us identify best practices, adapt proven onboarding workflows, and align our open science standards with the broader computational biology and epidemiology communities:\n\nBenjamin-Chung Lab Manual (GitHub repository) — The computational epidemiology manual from which our manual originally adapted its structure, covering reproducible R workflows, collaborative development, and computational research practices.\nFay Lab Manual (GitHub repository) — An Openscapes-origin Quarto manual for quantitative fisheries ecology (UMass Dartmouth), featuring detailed offboarding checklists, departure handoff protocols, and an open science communication philosophy.\nContextLab Lab Manual (GitHub repository) — The Contextual Dynamics Lab manual at Dartmouth, notable for requiring incoming lab members to make an interactive pull request to learn contribution workflows hands-on.\nProctor-UCSF DCC Handbook (GitHub repository) — A comprehensive handbook for the Data Coordinating Center at UCSF, focusing on clinical trial data management, REDCap workflows, quality assurance, and public data curation in global health settings.\nQuantitative Marine Ecology Lab Manual (GitHub repository) — A Quarto-based manual for Easton White’s research group at UNH, featuring role-specific administrative checklists and curated reading lists organized by career stage.",
+    "crumbs": [
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Resources</span>"
+    ]
+  },
+  {
+    "objectID": "resources.html#sec-reading-watching-list",
+    "href": "resources.html#sec-reading-watching-list",
+    "title": "21  Resources",
+    "section": "21.15 Reading and Watching List",
+    "text": "21.15 Reading and Watching List\n\nGood Luck, Have Fun, Don’t Die — A science fiction film directed by Gore Verbinski following a traveler from the future who recruits patrons at a Los Angeles diner to prevent a rogue artificial intelligence from destroying the world.\n\n\n\n\n\nAbimbola, Seye, Sheena Asthana, Cristina Montenegro, et al. 2022. “Addressing Power Asymmetries in Global Health: Imperatives in the Wake of the COVID-19 Pandemic.” PLOS Global Public Health 2 (10). https://doi.org/10.1371/journal.pgph.0002269.\n\n\nBryan, Jennifer. 2023. Happy Git and GitHub for the useR. https://happygitwithr.com/.\n\n\nFay, Colin, Sébastien Rochette, Vincent Guyader, and Cervan Girard. 2021. Engineering Production-Grade Shiny Apps. Chapman; Hall/CRC. https://doi.org/10.1201/9781003029878.\n\n\nInternational Committee of Medical Journal Editors. n.d. “Defining the Role of Authors and Contributors.” ICMJE. http://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html.\n\n\nMerali, Zeeya, and Jim Giles. 2010. “Computational Science: Error ... Why Scientific Programming Does Not Compute.” Nature 467: 775–77. https://doi.org/10.1038/467775a.\n\n\nRougier, Nicolas P., Michael Droettboom, and Philip E. Bourne. 2014. “Ten Simple Rules for Better Figures.” PLOS Computational Biology 10 (9). https://doi.org/10.1371/journal.pcbi.1003833.\n\n\nSilbiger, Nyssa J., and Ariel D. Stubler. 2019. “Unpacking the Scientific Toolbox: Five Skills for the Modern Scientist.” Nature, ahead of print. https://doi.org/10.1038/d41586-019-02918-5.\n\n\nVan Noorden, Richard. 2021. “Scientists and Science Communicators Swap Tips on How to Tell Compelling Stories.” Nature, ahead of print. https://doi.org/10.1038/d41586-021-03603-2.\n\n\nWickham, Hadley. 2019. Advanced r. 2nd ed. Chapman; Hall/CRC. https://doi.org/10.1201/9781351201315.\n\n\nWickham, Hadley. 2021. Mastering Shiny. O’Reilly Media. https://mastering-shiny.org/.\n\n\nWickham, Hadley, and Jennifer Bryan. 2023. R Packages. 2nd ed. O’Reilly Media. https://r-pkgs.org/.\n\n\nWickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund. 2023. R for Data Science. 2nd ed. O’Reilly Media. https://r4ds.hadley.nz/.",
+    "crumbs": [
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Resources</span>"
+    ]
+  },
+  {
+    "objectID": "professional-development.html",
+    "href": "professional-development.html",
+    "title": "22  Professional Development",
+    "section": "",
+    "text": "22.1 Mentoring Philosophy\nWe believe in individualized mentoring that supports each person’s unique career goals. Effective mentoring requires:",
+    "crumbs": [
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Professional Development</span>"
+    ]
+  },
+  {
+    "objectID": "professional-development.html#mentoring-philosophy",
+    "href": "professional-development.html#mentoring-philosophy",
+    "title": "22  Professional Development",
+    "section": "",
+    "text": "Regular, open communication between mentees and mentors\nMutual respect and trust\nClear expectations and goals\nConstructive feedback\nSupport for both research and career development",
+    "crumbs": [
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Professional Development</span>"
+    ]
+  },
+  {
+    "objectID": "professional-development.html#individual-development-plans",
+    "href": "professional-development.html#individual-development-plans",
+    "title": "22  Professional Development",
+    "section": "22.2 Individual Development Plans",
+    "text": "22.2 Individual Development Plans\nAll graduate students and postdocs should maintain an Individual Development Plan (IDP) that outlines:\n\nShort-term and long-term career goals\nSkills to develop\nTraining needs and opportunities\nTimeline and milestones\nProgress toward goals\n\nUpdate your IDP at least annually and discuss it with your PI. Useful resources:\n\nmyIDP - Individual Development Plan tool\nNIH OITE Career Resources",
+    "crumbs": [
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Professional Development</span>"
+    ]
+  },
+  {
+    "objectID": "professional-development.html#sec-hidden-curriculum",
+    "href": "professional-development.html#sec-hidden-curriculum",
+    "title": "22  Professional Development",
+    "section": "22.3 Navigating the Hidden Curriculum",
+    "text": "22.3 Navigating the Hidden Curriculum\nThe “hidden curriculum” refers to the unspoken norms, unwritten expectations, and cultural practices in graduate school and academic research that are rarely taught in formal coursework but are critical for long-term success and well-being. Demystifying these implicit rules ensures equitable access to academic opportunities for scholars from all backgrounds.\n\n22.3.1 Managing Up and Mentoring Relationships\nMentorship is a collaborative partnership. Taking active ownership of your mentoring relationships helps ensure you receive the guidance and feedback you need:\n\nSet clear meeting agendas: Send a brief bulleted agenda and updated materials at least 24 hours before 1-on-1 meetings.\nClarify priorities and timelines: Agree on concrete milestones, deadlines, and expectations for feedback turnarounds.\nBuild a mentoring team: Seek guidance from multiple mentors, including thesis committee members, peer mentors, senior graduate students, and external collaborators. No single mentor can meet all training, professional, and personal needs.\n\n\n\n22.3.2 Normalizing Setbacks and Imposter Feelings\nGraduate training involves tackling open-ended scientific problems where methods fail, experiments yield inconclusive results, and manuscripts face rejection:\n\nImposter feelings are common: Experiencing self-doubt or feeling underqualified is a widely shared experience in high-rigor research environments, especially during early transitions. It reflects the challenging nature of scientific discovery, not personal inadequacy.\nAnalytical iterations are normal: Bugs, refactored data pipelines, and revisions are standard components of the scientific process.\nEstablish healthy boundaries: Sustainable productivity requires rest, structured time off, and hobbies outside academia. Seek out campus health and counseling resources when facing persistent stress.\n\n\n\n22.3.3 Demystifying Publishing and Peer Review\nNavigating scientific publication requires understanding the review lifecycle:\n\nRejection is a normal part of publishing: In academic publishing, manuscripts frequently undergo multiple rounds of submission; rejection provides an opportunity to refine arguments and submit to a better-matched venue.\nApproaching reviewer feedback: Read peer reviews, step back for a day to process feedback, and draft systematic, point-by-point response letters using the guidance in Section 24.2.\nAuthorship conversations: Initiate discussions regarding authorship order and contribution roles early in every project and revisit them regularly.\n\n\n\n22.3.4 Strategic Networking and Visibility\nBuilding professional connections expands research opportunities and career horizons:\n\nConferences as networking venues: Prepare a clear 60-second summary of your research question, key methods, and scientific impact.\nEngage with speakers: Introduce yourself after departmental seminars or during poster sessions to ask focused questions about their work.\nPeer networks: Cultivate strong relationships with cohort members and lab peers; colleagues at your career stage will become future collaborators, reviewers, and lifelong allies.",
+    "crumbs": [
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Professional Development</span>"
+    ]
+  },
+  {
+    "objectID": "professional-development.html#presentations-and-conferences",
+    "href": "professional-development.html#presentations-and-conferences",
+    "title": "22  Professional Development",
+    "section": "22.4 Presentations and Conferences",
+    "text": "22.4 Presentations and Conferences\nWe encourage lab members to present their work at conferences and seminars:\n\nDiscuss conference opportunities with PIs early\nSubmit abstracts with PI approval\nPractice presentations in lab meeting before the conference\nPrioritize clear visuals over text-dense slides following our Show, Don’t Tell principle\nFunding for conferences depends on availability and should be discussed in advance\n\n\n22.4.1 Guidelines for Slide Decks\nWhen preparing slide presentations for lab meetings, conferences, qualifying exams, or thesis defenses, follow these practical guidelines:\n\nAlways include slide numbers: Slide numbers are essential for receiving constructive feedback. During question-and-answer periods or practice feedback sessions, collaborators and audience members need to refer back to specific slides quickly (e.g., “On slide 14, how was that variable defined?”) without fumbling through visual descriptions or guessing where a topic occurred.\nComplete, record, and review practice runs: Before any significant presentation, rehearse the complete talk out loud, record the practice run (using screen recording software, a webcam, or your phone), and review the recording. Watching your own practice run provides invaluable, objective feedback on pacing, timing, verbal filler habits, transition clarity, and whether slide text and figures remain legible when viewed on screen. Both students and faculty benefit substantially from this practice.\nOne primary takeaway per slide: Limit the cognitive load of each slide. If a slide presents multiple distinct findings or complex arguments, split them across sequential slides so the audience can focus on each point.\nPrioritize visual evidence: Audiences cannot read dense paragraphs while simultaneously listening to a speaker. Favor clean charts, diagrams, and annotated figures over text-heavy bulleted lists.\nEnsure high contrast and readability: Use large, legible fonts and high-contrast color palettes. Verify that axis labels, legends, and annotations remain easily readable from the back of a large room or on low-resolution projector displays.\n\n\n\n22.4.2 Presentation and Poster Resources\n\nHow to tell a compelling story in scientific presentations\nHow to give a killer narratively-driven scientific talk\nHow to make a better poster\nHow to make an even better poster",
+    "crumbs": [
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Professional Development</span>"
+    ]
+  },
+  {
+    "objectID": "professional-development.html#scientific-figures",
+    "href": "professional-development.html#scientific-figures",
+    "title": "22  Professional Development",
+    "section": "22.5 Scientific Figures",
+    "text": "22.5 Scientific Figures\nCreating clear, effective figures is essential for communicating research findings:\n\nLabel x-axis and y-axis clearly\nUse panel labels when including multiple subplots\nInclude sufficient tick marks and labels\nUse appropriate font sizes (readable but not distracting)\nUse colorblind-friendly palettes (see ColorBrewer or iwanthue)\nDefine colors, shapes, and line types in legends\nMinimize abbreviations in labels and legends\nUse transparency to show overlapping data\nShow measures of precision (e.g., 95% confidence intervals)\n\nResources:\n\nTen Simple Rules for Better Figures",
+    "crumbs": [
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Professional Development</span>"
+    ]
+  },
+  {
+    "objectID": "professional-development.html#grant-writing",
+    "href": "professional-development.html#grant-writing",
+    "title": "22  Professional Development",
+    "section": "22.6 Grant Writing",
+    "text": "22.6 Grant Writing\n\nGraduate students and postdocs are encouraged to apply for fellowships (e.g., NIH F31, NSF GRFP, K awards)\nPIs will support fellowship applications with feedback, letters of support, and mentoring\nStart planning fellowship applications well in advance of deadlines (typically 3-6 months)\nAttend grant writing workshops and seek feedback from multiple sources\n\nResources:\n\nBuilding Your Funding Train\nNIH Funding Opportunities\nNIH Grant Writing Resources",
+    "crumbs": [
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Professional Development</span>"
+    ]
+  },
+  {
+    "objectID": "professional-development.html#sec-dissertation-requirements",
+    "href": "professional-development.html#sec-dissertation-requirements",
+    "title": "22  Professional Development",
+    "section": "22.7 PhD Dissertation Requirements",
+    "text": "22.7 PhD Dissertation Requirements\nUnderstanding what constitutes a sufficient PhD dissertation is crucial for setting realistic expectations and timelines. The dissertation represents an important milestone, but it doesn’t need to be your magnum opus.\n\n22.7.1 Review Previous Dissertations\nBefore setting your dissertation goals, read previous dissertations from students in your program. This helps you:\n\nUnderstand the typical scope and depth expected\nSee different approaches to structure and presentation\nCalibrate your expectations based on successful examples\nIdentify common patterns and standards in your field\n\nMost universities maintain electronic dissertation repositories, making it easy to access recent examples from your program.\n\n\n22.7.2 Publication Requirements\nThree first-author papers typically suffice for a dissertation in public health and biomedical sciences. If academic peers in reputable journals have approved your work through peer review, this demonstrates that your research meets professional standards. Your dissertation committee should recognize this external validation.\nThe specific publication requirements may vary by program and institution, so consult your program’s guidelines and discuss expectations with your committee early. However, three substantial first-author publications generally demonstrate:\n\nIndependent research capability\nAbility to communicate findings effectively\nContribution to the scientific literature\nReadiness for an academic or research career\n\n\n\n22.7.3 External Validation and Fast-Tracking\nIf you have a job offer waiting, you can usually get fast-tracked through the dissertation process. The reasoning is straightforward: your work has been externally validated as worthwhile by prospective employers.\nSince most post-PhD positions offer better compensation than graduate stipends, it’s difficult to justify prolonging your graduation when you’ve already demonstrated professional competence. This applies whether the job offer is in academia, industry, government, or nonprofit sectors.\n\n\n22.7.4 Historical Context: The Masterpiece Tradition\nThe dissertation (or thesis), a requirement for earning a PhD, is a spiritual successor to an apprentice’s masterpiece in craft guilds. Historically, a masterpiece was the piece of work that demonstrated an apprentice had achieved sufficient skill to join the guild as a master craftsperson. It was not meant to be the best work they would ever produce—it was meant to prove they were ready to work independently.\nSimilarly, your dissertation should demonstrate that you’re ready to conduct independent research. It’s your first professional-level work, not your career highlight. This perspective helps set appropriate expectations:\n\nThe dissertation proves you can conduct rigorous research\nIt doesn’t need to solve every problem in your field\nIt doesn’t need to be flawless\nIt doesn’t need to be all-encompassing\nIt just needs to constitute incremental progress in your field\n\n\n\n22.7.5 Setting Realistic Expectations\nMany PhD students struggle with perfectionism or “scope creep” in their dissertations. Remember:\n\nDone is better than perfect when it comes to dissertations\nYou’ll have your entire career to refine and expand on these ideas\nThe goal is to finish and move forward, not to write the definitive work on your topic\nYour committee wants to see you succeed and graduate\n\nFocus on making a solid, incremental contribution to knowledge in your field. That’s what a dissertation is meant to be—no more, no less.\n\n\n22.7.6 Resources\nDissertation writing tools:\n\nquarto-thesis - Quarto extension for creating masters or PhD theses with professional LaTeX formatting",
+    "crumbs": [
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Professional Development</span>"
+    ]
+  },
+  {
+    "objectID": "professional-development.html#teaching-and-outreach",
+    "href": "professional-development.html#teaching-and-outreach",
+    "title": "22  Professional Development",
+    "section": "22.8 Teaching and Outreach",
+    "text": "22.8 Teaching and Outreach\nTeaching and outreach are valuable professional development opportunities:\n\nGraduate students are encouraged to gain teaching experience\nWe support science communication and outreach activities\nDiscuss opportunities with PIs\n\nThe UC Davis DataLab offers various workshops and learning materials that can support your teaching and professional development. Their workshop index provides a comprehensive catalog of available resources.",
+    "crumbs": [
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Professional Development</span>"
+    ]
+  },
+  {
+    "objectID": "professional-development.html#networking",
+    "href": "professional-development.html#networking",
+    "title": "22  Professional Development",
+    "section": "22.9 Networking",
+    "text": "22.9 Networking\nBuilding a professional network is important for your career:\n\nAttend seminars and departmental events\nConnect with researchers in your field\nJoin professional societies\nUse professional social media platforms to share research and engage with the scientific community",
+    "crumbs": [
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Professional Development</span>"
+    ]
+  },
+  {
+    "objectID": "writing.html",
+    "href": "writing.html",
+    "title": "23  Writing",
+    "section": "",
+    "text": "23.1 Writing to Clarify Your Thinking\nWriting is a powerful tool for clarifying your thoughts, even before you start searching for answers. When questions or ideas come up, it’s good practice to write them down immediately—this helps you:\nAs Leslie Lamport, a Turing Award winner and computer scientist, states: “If you think you understand something, and don’t write down your ideas, you only think you’re thinking” (Lamport 2019).",
+    "crumbs": [
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Writing</span>"
+    ]
+  },
+  {
+    "objectID": "writing.html#writing-to-clarify-your-thinking",
+    "href": "writing.html#writing-to-clarify-your-thinking",
+    "title": "23  Writing",
+    "section": "",
+    "text": "Organize your thoughts and identify what you actually need to know\nArticulate the problem more precisely\nOften realize the answer yourself through the process of writing",
+    "crumbs": [
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Writing</span>"
+    ]
+  },
+  {
+    "objectID": "writing.html#sec-plain-prose",
+    "href": "writing.html#sec-plain-prose",
+    "title": "23  Writing",
+    "section": "23.2 Plain, Direct Prose",
+    "text": "23.2 Plain, Direct Prose\nWrite user-facing prose in a plain, direct style. This applies to everything a reader sees — pull request, issue, and commit text, docs, READMEs, code comments, release notes, and messages.\nThe guide of record is the lab’s Principles of Scientific Writing (PSW): https://morrison-lab.github.io/psw/. The rules below operationalize it. When PSW and this guidance disagree, PSW wins.\n\nLimit dependent (subordinate) clauses. One per sentence is plenty. When two or more stack up, split the sentence.\nCut low-content filler and jargon. Delete words that add no information (“it is worth noting”, “in order to” -&gt; “to”, “due to the fact that” -&gt; “because”).\nPrefer plain (Anglish) words over Latin-derived ones (PSW, “Word choice”). “before”, not “prior to”; “needed”, not “necessary”; “use”, not “utilize”. A heuristic, not a purity rule.\nPrefer simple declarative sentences and active voice. Subject, verb, point. Name the actor, then the action.\nJoin independent clauses with coordinating conjunctions (and, but, so, or) over subordinate constructions. Prefer “X is fast, but Y is correct” over “While X is fast, Y is correct.”\n\nThis is a default, not an absolute rule. Keep a clause or a technical term when removing it would lose meaning or precision. Never trade an honest hedge for false confidence.",
+    "crumbs": [
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Writing</span>"
+    ]
+  },
+  {
+    "objectID": "writing.html#sec-ai-tells",
+    "href": "writing.html#sec-ai-tells",
+    "title": "23  Writing",
+    "section": "23.3 Scanning for AI Tells",
+    "text": "23.3 Scanning for AI Tells\nWhen AI tools draft or edit prose, the result often carries telltale signs of machine authorship.\nWrite plainly up front, then scan the draft for AI tells before sending. Before presenting non-trivial prose — pull request and issue descriptions, commit bodies, README, doc, and vignette text, or long answers — self-check it and cut the tells. Apply the same catalog when reviewing someone else’s prose too:\n\nOverused vocabulary: actionable (-&gt; “to act on”), delve, leverage, utilize, tapestry, testament, realm, robust, seamless, holistic, nuanced, multifaceted, pivotal, crucial, “in today’s fast-paced world”, “stands as a testament to”.\nRhetorical reflexes: the “it’s not just X, it’s Y” antithesis (the biggest tell), mechanical rule-of-three lists, signposting filler (“it is worth noting that”, “importantly”), hedging stacks, hollow “in conclusion” restatements.\nStructural and typographic: em-dash overuse as a default connector, bold-leading **Term:** bullets applied mechanically, emoji section headers, conspicuously uniform paragraph rhythm.\nTonal: promotional register, reflexive both-sidesing, vague universals with no concrete names or numbers.\n\nDe-slop — cut the filler and the reflexes — but do not ban words outright or sand the text into a flat, voiceless register. Any single tell is innocent; clustering and mechanical repetition are the signal. Code, terse status lines, and short conversational replies are exempt.",
+    "crumbs": [
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Writing</span>"
+    ]
+  },
+  {
+    "objectID": "writing.html#sec-show-dont-tell",
+    "href": "writing.html#sec-show-dont-tell",
+    "title": "23  Writing",
+    "section": "23.4 Show, Don’t Tell",
+    "text": "23.4 Show, Don’t Tell\nThe adage “show, don’t tell” (or “a picture is worth a thousand words”) is a foundational communication principle across research manuscripts, technical documentation, and oral presentations.\nWhenever conveying complex concepts, workflows, data patterns, or system architectures, favor concrete visual evidence and direct demonstration over dense verbal exposition.\n\n23.4.1 In scientific manuscripts and reports\n\nLead with clear figures and tables: Instead of describing multi-step analytical pipelines or multi-group comparative trends in lengthy paragraphs, present the data in a well-labeled plot or diagram.\nSupport visuals with interpretation, not repetition: Use the narrative text to guide the reader through the key insights and takeaways of a figure rather than exhaustively listing every number already legible in a table or plot.\nUse diagrams for conceptual models: Directed acyclic graphs (DAGs), CONSORT flow diagrams, and workflow schematics clarify methodological structures much faster than textual descriptions alone.\n\n\n\n23.4.2 In conference and lab presentations\n\nMinimize text on slides: Audiences cannot read dense bulleted paragraphs while simultaneously listening to a speaker. Replace text-heavy slides with clean visuals, diagrams, or summary charts.\nHighlight key focal points: Use callouts, annotations, or sequential visual reveals to focus attention on the specific relationship being discussed.\nDemonstrate rather than assert: When presenting software tools or analytical pipelines, show live output, reproducible code snippets, or screenshots rather than merely listing features.\n\n\n\n\n\nLamport, Leslie. 2019. Think and Write with Leslie Lamport. Podcast interview. https://mentors.fm/2019/08/13/think-and-write-with-leslie-lamport/.",
+    "crumbs": [
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Writing</span>"
+    ]
+  },
+  {
+    "objectID": "manuscript-preparation.html",
+    "href": "manuscript-preparation.html",
+    "title": "24  Manuscript Preparation and Publication",
+    "section": "",
+    "text": "24.1 Publication Process\nThe typical workflow for manuscript preparation and publication:",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Manuscript Preparation and Publication</span>"
+    ]
+  },
+  {
+    "objectID": "manuscript-preparation.html#publication-process",
+    "href": "manuscript-preparation.html#publication-process",
+    "title": "24  Manuscript Preparation and Publication",
+    "section": "",
+    "text": "Planning: Discuss target journals, outline, and timeline with PIs\nDrafting: Lead author prepares initial draft\nInternal review: Co-authors review and provide feedback\nRevision: Lead author incorporates feedback iteratively\nPI approval: Obtain final approval from PIs before submission\nSubmission: Submit to journal\nRevisions: Lead author coordinates response to peer reviewers\nPublication: Celebrate and share!",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Manuscript Preparation and Publication</span>"
+    ]
+  },
+  {
+    "objectID": "manuscript-preparation.html#sec-responding-to-peer-review",
+    "href": "manuscript-preparation.html#sec-responding-to-peer-review",
+    "title": "24  Manuscript Preparation and Publication",
+    "section": "24.2 Responding to Peer Review",
+    "text": "24.2 Responding to Peer Review\nWhen a journal asks for revisions, you will typically need to provide a point-by-point response to the reviewers’ comments. The key strategy is to use the “yes-and” approach from improvisational theater—building on what reviewers say rather than contradicting them. Try to avoid explicitly disagreeing with reviewers if at all possible.\nStandard response format:\nThe typical response follows this pattern:\n\n“Thank you for raising this important point. We agree, and now state (page ##):\n[quote a section of the revised manuscript here]”\n\nBalancing direct response and manuscript content:\nThere can be some overlap between the direct response to the reviewer (the sentences before “now state”) and what goes into the revised manuscript (the part after “(page ##)”). This is acceptable, but we usually try to put as much of the content into the revised manuscript as possible, and minimize the direct response section. The goal is to make the manuscript self-contained while showing the reviewer that you’ve addressed their concern.\nWhen content already exists:\nSometimes, a reviewer asks for content that was already in the manuscript. In these cases, first see if there’s anything you can elaborate or clarify. Even if you don’t see room for improvement, you can usually respond with:\n\n“We agree, and now state (page ##):\n[quote the content that was already there before]”\n\nThe reviewer doesn’t need to know that they missed it the last time (see also: implicature.\nAdditional tips:\n\nAlways thank reviewers for their time and feedback\nQuote page numbers from the revised manuscript\nUse direct quotes from your revised text when possible\nMaintain a respectful and collaborative tone throughout\nIf you make changes beyond what the reviewer requested, mention them briefly",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Manuscript Preparation and Publication</span>"
+    ]
+  },
+  {
+    "objectID": "manuscript-preparation.html#preprints-and-open-access",
+    "href": "manuscript-preparation.html#preprints-and-open-access",
+    "title": "24  Manuscript Preparation and Publication",
+    "section": "24.3 Preprints and Open Access",
+    "text": "24.3 Preprints and Open Access\n\nWe encourage posting preprints prior to or during peer review on platforms like medRxiv or bioRxiv\nPreprints allow rapid dissemination of findings and can be cited in grant applications\nWe support publishing in open access journals when possible to maximize accessibility\nMany funders, including NIH, have public access policies that require making publications freely available\n\nA preprint is a scientific manuscript that has not been peer reviewed. Preprint servers create digital object identifiers (DOIs) and can be cited in other articles and in grant applications. Because the peer review process can take many months, publishing preprints prior to or during peer review enables other scientists to immediately learn from and build on your work. Importantly, NIH allows applicants to include preprint citations in their biosketches. In most cases, we publish preprints on medRxiv.",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Manuscript Preparation and Publication</span>"
+    ]
+  },
+  {
+    "objectID": "manuscript-preparation.html#reporting-checklists",
+    "href": "manuscript-preparation.html#reporting-checklists",
+    "title": "24  Manuscript Preparation and Publication",
+    "section": "24.4 Reporting Checklists",
+    "text": "24.4 Reporting Checklists\nUsing reporting checklists ensures that publications contain information needed for readers to assess validity and reproducibility. We use checklists appropriate to study design:\n\nCONSORT for randomized trials\nSTROBE for observational studies\nPRISMA for systematic reviews\nOthers as appropriate (see EQUATOR Network)",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Manuscript Preparation and Publication</span>"
+    ]
+  },
+  {
+    "objectID": "manuscript-preparation.html#manuscript-checklist",
+    "href": "manuscript-preparation.html#manuscript-checklist",
+    "title": "24  Manuscript Preparation and Publication",
+    "section": "24.5 Manuscript Checklist",
+    "text": "24.5 Manuscript Checklist\nBefore submitting a manuscript:\n\nCompleted relevant reporting checklist\nResults are reproducible (rerunning code replicates tables/figures exactly)\nTarget journal selected\nTitle is declarative and states findings clearly\nWord count meets journal requirements\nManuscript follows journal formatting guidelines\nConsistent voice throughout (typically active voice)\nAll figures and tables referenced in main text\nCaptions for all figures and tables\nTables/figures numbered by order of appearance\nAbbreviations defined at first use and used sparingly\nAvoid subjective wording (e.g., “interesting”, “dramatic”)\nAvoid directionless statements (specify direction of associations)\nCausal language only when supported by study design\nAvoid “significant” (easily confused with statistical significance)\nAuthor contributions drafted using CRediT Taxonomy",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Manuscript Preparation and Publication</span>"
+    ]
+  },
+  {
+    "objectID": "manuscript-preparation.html#formatting-tables-with-gtsummary-flextable-flexlsx",
+    "href": "manuscript-preparation.html#formatting-tables-with-gtsummary-flextable-flexlsx",
+    "title": "24  Manuscript Preparation and Publication",
+    "section": "24.6 Formatting tables with gtsummary + flextable + flexlsx",
+    "text": "24.6 Formatting tables with gtsummary + flextable + flexlsx\nOne practical workflow for publication-ready tables is to use {gtsummary} to create summary/regression tables, convert to {flextable} for styling, and export to Excel with {flexlsx}.\n```{r}\n#| eval: false\n\ntbl1 &lt;-\n  trial |&gt;\n  gtsummary::tbl_summary(by = trt) |&gt;\n  gtsummary::as_flex_table() |&gt;\n  flextable::autofit()\n\nflexlsx::write_xlsx(tbl1, path = here::here(\"results\", \"table-1.xlsx\"))\n```\nThis gives you a reproducible table pipeline:\n\nDefine table content with gtsummary::tbl_summary() (or gtsummary::tbl_regression() for model tables).\nApply presentation formatting with flextable verbs.\nExport an .xlsx file for collaborator review while preserving your R workflow.",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Manuscript Preparation and Publication</span>"
+    ]
+  },
+  {
+    "objectID": "manuscript-preparation.html#scientific-writing-claims-and-evidence",
+    "href": "manuscript-preparation.html#scientific-writing-claims-and-evidence",
+    "title": "24  Manuscript Preparation and Publication",
+    "section": "24.7 Scientific Writing: Claims and Evidence",
+    "text": "24.7 Scientific Writing: Claims and Evidence\nAll factual claims in scientific writing should be supported by appropriate evidence.\nCitation requirements:\n\nCite primary sources for factual statements about established knowledge, methods, or findings\nCite official documentation when describing how software, tools, or systems work\nLink to authoritative sources like peer-reviewed publications, official repositories, or technical specifications\nAvoid citing secondary sources when primary sources are available\n\nWhen you can’t find a citation:\n\nDemonstrate directly: Show the behavior through experiments, data, or explicit examples\nAcknowledge uncertainty: Use appropriate hedging language (“may”, “appears to”, “in our experience”) when evidence is limited\nRemove the claim: If you cannot substantiate a claim with either citations or direct evidence, consider whether it needs to be included\n\nWhy this matters:\n\nBuilds reader trust and credibility\nEnables readers to verify information independently\nMaintains scientific rigor in all communications\nPrevents propagation of misinformation\n\nThis principle applies to all lab writing, including: manuscripts, documentation, grant applications, and technical reports.\nUsing AI tools for writing:\nWhen using AI tools to help develop manuscripts or other academic writing, follow the special guidance in the wai site’s “Using AI for Journal Articles” section to ensure transparency, maintain intellectual ownership, and avoid plagiarism.",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Manuscript Preparation and Publication</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "PREVIEW_BANNER_PLACEHOLDER\n\n\n\nAbimbola, Seye, Sheena Asthana, Cristina\nMontenegro, et al. 2022. “Addressing Power Asymmetries in\nGlobal Health: Imperatives in the Wake of the COVID-19 Pandemic.”\nPLOS Global Public Health 2 (10). https://doi.org/10.1371/journal.pgph.0002269.\n\n\nBaker, Monya. 2019. “How to Tackle the Reproducibility Crisis in\nTen Steps.” Nature, ahead of print. https://doi.org/10.1038/d41586-019-01431-z.\n\n\nBenjamin-Chung, Jade, Kunal Mishra, Stephanie Djajadi, et al. 2024.\nBenjamin-Chung Lab Manual. https://jadebc.github.io/lab-manual/.\n\n\nBryan, Jennifer. 2023. Happy Git and GitHub for the useR. https://happygitwithr.com/.\n\n\nCrameri, Fabio, Grace E. Shephard, and Philip J. Heron. 2020. “The\nMisuse of Colour in Science Communication.” Nature\nCommunications 11. https://doi.org/10.1038/s41467-020-19160-7.\n\n\n“Creative Commons Attribution-NonCommercial 4.0 International\nLicense.” n.d. Creative Commons. http://creativecommons.org/licenses/by-nc/4.0/.\n\n\n“CRediT: Contributor Roles Taxonomy.” n.d. PLOS ONE. https://journals.plos.org/plosone/s/authorship.\n\n\n“Dryad Digital Repository.” n.d. Dryad. https://datadryad.org/.\n\n\n“EQUATOR Network: Enhancing the QUAlity and Transparency of Health\nResearch.” n.d. EQUATOR Network. https://www.equator-network.org/.\n\n\nFay, Colin, Sébastien Rochette, Vincent Guyader, and Cervan Girard.\n2021. Engineering Production-Grade Shiny Apps. Chapman;\nHall/CRC. https://doi.org/10.1201/9781003029878.\n\n\n“How to Store and Manage Your Data.” n.d. PLOS. https://plos.org/resource/how-to-store-and-manage-your-data/.\n\n\nInternational Committee of Medical Journal Editors. n.d. “Defining\nthe Role of Authors and Contributors.” ICMJE. http://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html.\n\n\nLamport, Leslie. 2019. Think and Write with Leslie Lamport.\nPodcast interview. https://mentors.fm/2019/08/13/think-and-write-with-leslie-lamport/.\n\n\n“medRxiv: The Preprint Server for Health Sciences.” n.d.\nCold Spring Harbor Laboratory. https://www.medrxiv.org/.\n\n\nMerali, Zeeya, and Jim Giles. 2010. “Computational Science: Error\n... Why Scientific Programming Does Not Compute.” Nature\n467: 775–77. https://doi.org/10.1038/467775a.\n\n\nMunafò, Marcus R., Brian A. Nosek, Dorothy V. M. Bishop, et al. 2017.\n“A Manifesto for Reproducible Science.” Nature Human\nBehaviour 1. https://doi.org/10.1038/s41562-016-0021.\n\n\nNuzzo, Regina. 2015. “How Scientists Fool Themselves – and How\nThey Can Stop.” Nature 526: 182–85. https://doi.org/10.1038/526182a.\n\n\n“Open Science Framework.” n.d. Center for Open Science. https://osf.io/.\n\n\nRougier, Nicolas P., Michael Droettboom, and Philip E. Bourne. 2014.\n“Ten Simple Rules for Better Figures.” PLOS\nComputational Biology 10 (9). https://doi.org/10.1371/journal.pcbi.1003833.\n\n\nSilbiger, Nyssa J., and Ariel D. Stubler. 2019. “Unpacking the\nScientific Toolbox: Five Skills for the Modern Scientist.”\nNature, ahead of print. https://doi.org/10.1038/d41586-019-02918-5.\n\n\n“Slurm Workload Manager: Salloc Documentation.” n.d.-a.\nSchedMD. https://slurm.schedmd.com/salloc.html.\n\n\n“Slurm Workload Manager: Sattach Documentation.” n.d.-b.\nSchedMD. https://slurm.schedmd.com/sattach.html.\n\n\n“Slurm Workload Manager: Sbatch Documentation.” n.d.-c.\nSchedMD. https://slurm.schedmd.com/sbatch.html.\n\n\n“Slurm Workload Manager: Squeue Documentation.” n.d.-d.\nSchedMD. https://slurm.schedmd.com/squeue.html.\n\n\n“Slurm Workload Manager: Srun Documentation.” n.d.-e.\nSchedMD. https://slurm.schedmd.com/srun.html.\n\n\n“Ssh_config(5) Manual Page.” n.d. OpenBSD. https://man.openbsd.org/ssh_config.\n\n\n“Ssh_config(5) Manual Page, Debian Edition.” n.d. Debian\nProject. https://manpages.debian.org/stable/openssh-client/ssh_config.5.en.html.\n\n\nStoddart, Charlotte. 2019. “Is There a Reproducibility Crisis in\nScience?” Nature, ahead of print. https://doi.org/10.1038/d41586-019-00067-3.\n\n\nVan Noorden, Richard. 2021. “Scientists and Science Communicators\nSwap Tips on How to Tell Compelling Stories.” Nature,\nahead of print. https://doi.org/10.1038/d41586-021-03603-2.\n\n\nWickham, Hadley. 2019. Advanced r. 2nd ed. Chapman; Hall/CRC.\nhttps://doi.org/10.1201/9781351201315.\n\n\nWickham, Hadley. 2021. Mastering Shiny. O’Reilly Media. https://mastering-shiny.org/.\n\n\nWickham, Hadley, and Jennifer Bryan. 2023. R Packages. 2nd ed.\nO’Reilly Media. https://r-pkgs.org/.\n\n\nWickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund. 2023.\nR for Data Science. 2nd ed. O’Reilly Media. https://r4ds.hadley.nz/.",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "appendix-copilot-instructions.html",
+    "href": "appendix-copilot-instructions.html",
+    "title": "Copilot Instructions File",
+    "section": "",
+    "text": "This appendix contains the complete .github/copilot-instructions.md file used in this repository to guide GitHub Copilot coding agents.",
+    "crumbs": [
+      "Appendices",
+      "Copilot Instructions File"
+    ]
+  },
+  {
+    "objectID": "appendix-copilot-instructions.html#markdown-and-quarto-formatting",
+    "href": "appendix-copilot-instructions.html#markdown-and-quarto-formatting",
+    "title": "Copilot Instructions File",
+    "section": "Markdown and Quarto Formatting",
+    "text": "Markdown and Quarto Formatting\n\nTalking about code\nWhen talking about code in prose sections, use backticks to apply code formatting: for example, dplyr::mutate()\nWhen talking about packages in prose, use backticks and curly-braces with a hyperlink to the package website. For example: {dplyr}\nDo not use raw HTML (&lt;a href=\"...\"&gt;) in .qmd files. Always use Quarto/markdown link syntax instead.\nCommon package URLs:\n\n{dplyr}\n{ggplot2}\n{tidyr}\n{readr}\n{purrr}\n{tibble}\n{stringr}\n{forcats}\n{styler}\n{lintr}\n{roxygen2}\n{testthat}\n{usethis}\n{devtools}\n{renv}\n{targets}\n{data.table}\n{assertthat}\n{lubridate}\n\n\n\nBlank Lines Before Lists\nALWAYS include a blank line before bullet lists and numbered lists in markdown and Quarto (.qmd) files.\nCorrect:\nHere are the key points:\n\n- First item\n- Second item\n- Third item\nIncorrect:\nHere are the key points:\n- First item\n- Second item\n- Third item\nThis applies to:\n\nBullet lists (starting with - or *)\nNumbered lists (starting with 1., 2., etc.)\nLists in all .qmd files throughout the repository\n\n\n\nLine Breaks in Plain Text\nALWAYS line-break at the ends of sentences and long phrases in:\n\nPlain-text paragraphs in .qmd files\nSource code text: comments, documentation strings, and error messages\n\nAdd a newline at the end of every phrase or logical unit of text. Each phrase should be on its own line in the source. A phrase is typically a complete thought, clause, or sentence.\nCorrect (prose in .qmd):\nWhen talking about code in prose sections,\nuse backticks to apply code formatting.\nThis helps maintain readability in source files\nand makes diffs easier to review.\nIncorrect (prose in .qmd):\nWhen talking about code in prose sections, use backticks to apply code formatting. This helps maintain readability in source files and makes diffs easier to review.\nCorrect (R code comment):\n# First, check if the input is valid.\n# Then, process the data.\n# Finally, return the result.\nIncorrect (R code comment):\n# First, check if the input is valid. Then, process the data. Finally, return the result.\nBenefits:\n\nImproves readability of source files\nMakes git diffs clearer and easier to review\nHelps identify specific changes in version control\nPrevents horizontal scrolling when editing\nFollows semantic line breaks best practice\n\nGuidelines:\n\nBreak after complete sentences (at periods)\nBreak after long phrases or clauses (at commas or conjunctions)\nBreak after approximately 60-80 characters when appropriate\nKeep related short phrases together on one line\nDon’t break in the middle of inline code, links, or formatting\n\n\n\nWhy This Matters\n\nEnsures consistent markdown rendering across different platforms\nImproves readability in both source and rendered forms\nPrevents rendering issues in Quarto books\nFollows markdown best practices\n\n\n\nCross-References for Figures and Tables\nALWAYS use Quarto’s cross-reference system for figures, tables, and other captioned content. See Quarto Cross-References documentation for complete details.\nRequired label prefixes:\n\nFigures: #fig- (e.g., #fig-data-masking, #fig-workflow-diagram)\nTables: #tbl- (e.g., #tbl-git-commands, #tbl-summary-stats)\nEquations: #eq- (e.g., #eq-regression-model)\nSections: #sec- (e.g., #sec-introduction) - already in use throughout manual\nTheorems: #thm- (e.g., #thm-central-limit)\nLemmas: #lem- (e.g., #lem-auxiliary-result)\nCorollaries: #cor- (e.g., #cor-special-case)\nPropositions: #prp- (e.g., #prp-main-result)\nExamples: #exm- (e.g., #exm-simple-case)\nExercises: #exr- (e.g., #exr-practice-problem)\n\nFor figures (images):\n![Caption text](path/to/image.png){#fig-label}\nImportant: Store images locally in the repository\nDO NOT link to external image URLs (especially https://github.com/user-attachments/assets/). Always save images locally in the assets/images/ directory and reference them using relative paths.\nExternal image links can break over time, are not included in repository archives, and may fail to render in PDF or other output formats.\nCorrect:\n![Screenshot description](assets/images/my-screenshot.png)\nIncorrect:\n![Screenshot description](https://github.com/user-attachments/assets/...)\nFor tables (markdown tables):\n| Column 1 | Column 2 |\n|----------|----------|\n| Data     | Data     |\n\n: Caption text {#tbl-label}\nFor code-generated figures:\n```{r}\n#| label: fig-plot-name\n#| fig-cap: \"Caption text\"\n\n# R code to generate plot\n```\nFor code-generated tables:\n```{r}\n#| label: tbl-table-name\n#| tbl-cap: \"Caption text\"\n\n# R code to generate table\n```\nReferencing in text:\n\nFigures: @fig-label produces “Figure X”\nTables: @tbl-label produces “Table X”\nEquations: @eq-label produces “Equation X”\nSections: @sec-label produces “Section X”\n\nImportant: Always use cross-references for sections\nWhen referring to other sections within the manual, always use the Quarto cross-reference system (@sec-label) instead of plain text references like “the section above” or “see the X section”.\nCorrect:\nSee @sec-r-ci for setting up GitHub Actions workflows.\nSee @sec-github for GitHub workflow guidance.\nIncorrect:\nSee the \"Continuous Integration\" section above.\nSee the \"Best Practices\" section for more details.\nBenefits of using cross-references:\n\nAutomatically generates proper section titles and numbers\nCreates clickable links in HTML output\nUpdates automatically if section titles change\nWorks correctly across all output formats (HTML, PDF, DOCX, EPUB)\nQuarto will warn you if a reference is broken\n\nBenefits:\n\nAutomatic numbering of figures, tables, and equations\nAutomatic updates when content is reordered\nClickable cross-references in HTML and PDF output\nConsistent formatting across all output formats\nBetter accessibility for screen readers",
+    "crumbs": [
+      "Appendices",
+      "Copilot Instructions File"
+    ]
+  },
+  {
+    "objectID": "appendix-copilot-instructions.html#r-code-style",
+    "href": "appendix-copilot-instructions.html#r-code-style",
+    "title": "Copilot Instructions File",
+    "section": "R Code Style",
+    "text": "R Code Style\n\nFollow the tidyverse style guide: https://style.tidyverse.org\nUse native pipe |&gt; instead of %&gt;%\nUse snake_case for variable and function names\nUse .qmd files exclusively (not .Rmd), except for README.Rmd — see the README.Rmd and README.md section below for that intentional exception\nAll R projects should use R package structure\nAvoid redundant logical comparisons: Use logical variables directly in conditional statements (e.g., if (x) instead of if (x == TRUE) or if (x == 1))\nUse lubridate::NA_Date_ instead of as.Date(NA) for missing date values\nUse pipes to emphasize primary inputs: When writing functions and code, use the pipe operator to clearly show transformations on a primary object. The primary input should flow as the first argument to each function in the chain. Design functions so the most important argument (usually data) comes first, enabling natural pipeline composition.\n\n\nQuarto Code Chunk Options\nUse code-fold: true for chunks where the output is important to the narrative, not the code used to produce it.\nThis option allows interested readers to expand and view the code while keeping the document focused on results.\nExample:\n```{r}\n#| code-fold: true\n#| fig-cap: \"Distribution of variable X\"\n\nggplot(data, aes(x = variable)) +\n  geom_histogram()\n```\nThis is particularly useful for:\n\nComplex data manipulation code that produces important summary tables\nPlot generation code where the visualization is the key message\nLengthy setup or configuration code that supports the narrative but isn’t central to it\n\nDo not use code-fold: true when the code itself is being taught or demonstrated.",
+    "crumbs": [
+      "Appendices",
+      "Copilot Instructions File"
+    ]
+  },
+  {
+    "objectID": "appendix-copilot-instructions.html#communication-and-documentation",
+    "href": "appendix-copilot-instructions.html#communication-and-documentation",
+    "title": "Copilot Instructions File",
+    "section": "Communication and Documentation",
+    "text": "Communication and Documentation\n\nExplaining Changes in Pull Requests\nWhen making changes to code or workflows, proactively explain your reasoning in commit messages and PR descriptions.\n\nFor version pinning decisions: Explain whether you’re using floating tags (e.g., @v2) vs. specific versions (e.g., @v2.9.4) and why\nFor configuration changes: Explain the rationale behind boolean vs. string values, or other non-obvious choices\nFor workflow modifications: Describe what problem you’re solving and why your approach is the best solution\nFor dependency updates: Explain why you’re updating and what benefits or fixes it brings\n\nExample: Instead of just changing @v2.9.4 to @v2, include in your commit message or PR description:\n\n“Using @v2 (moving tag) instead of @v2.9.4 (pinned version) to automatically receive bug fixes and updates within the v2 major version while maintaining stability.”\n\nThis proactive communication prevents reviewers from needing to ask clarifying questions and helps future maintainers understand the decisions made.\n\n\nGitHub Actions Version Pinning\nWhen referencing GitHub Actions in workflow files, choose between floating tags and pinned versions deliberately:\n\nFloating tags (e.g., @v2): Automatically receive minor updates and bug fixes within the major version. Use when stability within a major version is acceptable.\nVersion tags (e.g., @v2.9.4): Lock to a specific release for reproducibility. Note: tags can be retargeted, so this is a convenience tradeoff, not a strong security guarantee.\nCommit SHA pins (e.g., uses: actions/checkout@abc1234...): The most secure option — immutably locks the action to a specific commit. Use when supply-chain security is a priority.\n\nAlways document your choice in the PR description or commit message.",
+    "crumbs": [
+      "Appendices",
+      "Copilot Instructions File"
+    ]
+  },
+  {
+    "objectID": "appendix-copilot-instructions.html#file-organization",
+    "href": "appendix-copilot-instructions.html#file-organization",
+    "title": "Copilot Instructions File",
+    "section": "File Organization",
+    "text": "File Organization\n\nUsing Quarto Includes for Modular Content\nAll chapters should use Quarto includes to decompose content into separate files. This modular approach provides significant benefits for version control, collaboration, and content management.\n\nWhy Use Includes?\n\nBetter Git History: When sections are reordered, only the main chapter file changes (moving include statements), making it immediately clear that content was reorganized rather than edited. When content is edited, only the specific include file changes. This makes reviews focused and precise.\nEasier Code Review: Reviewers can see exactly what changed—either the organization (main file) or the content (include file)—without having to parse through large diffs.\nModular Maintenance: Each section lives in its own file, making it easier to:\n\nFind and edit specific content\nReuse sections across chapters if needed\nWork on different sections simultaneously without merge conflicts\nTest and preview individual sections\n\nClear Structure: The main chapter file becomes a table of contents showing the organization at a glance.\n\n\n\nStructure Pattern\nMain chapter file (e.g., 05-coding-practices.qmd):\n\nContains the chapter title and introduction\nContains section headings (##, ###, etc.)\nUses the include shortcode to pull in content (see https://quarto.org/docs/authoring/includes.html for details)\nShows the organization/outline of the chapter\n\nInclude files (e.g., 05-coding-practices/lab-protocols-for-code-and-data.qmd):\n\nStored in a subdirectory matching the chapter name\nContains only the content for that section (no heading)\nThe heading stays in the main chapter file\nNamed descriptively using kebab-case\n\n\n\nRequired Pattern\nAlways follow this pattern:\n## Section Heading\n\n{{&lt; include folder/section-name.qmd &gt;}}\n\nCorrect example:\n## Section heading\n\n{{&lt; include folder/section-name.qmd &gt;}}\n\nIncorrect (don’t do this):\n{{&lt; include folder/section-name.qmd &gt;}}\n\nThe heading must be in the main file, followed by a blank line, then the include statement.\n\n\nFile Naming Conventions\n\nMain chapter files: ##-chapter-name.qmd (e.g., 05-coding-practices.qmd)\nSubdirectory: ##-chapter-name/ (matches the main file name)\nInclude files: descriptive-section-name.qmd using kebab-case\nUse descriptive names that clearly indicate the content\nLeading underscore _ is optional (in this book project, Quarto only renders chapters listed in _quarto.yml standalone; follow the naming convention already in use in the chapter subdirectory you are editing)\n\n\n\nGit History Benefits Example\nWhen reordering sections:\n-## Object naming\n+## Function calls\n \n-{{&lt; include demo-folder/section-name.qmd &gt;}}\n+{{&lt; include demo-folder/section-2.qmd &gt;}}\n \n-## Function calls\n+## Object naming\n \n-{{&lt; include demo-folder/section-2.qmd &gt;}}\n+{{&lt; include demo-folder/section-name.qmd &gt;}}\nThis diff clearly shows a reordering (swapping two sections) with no content changes—only the main chapter file changes.\nWhen editing content: Only the specific include file (e.g., 05-coding-practices/function-calls.qmd) appears in the git diff, making it easy to review the actual content changes without distraction.\n\n\nWhen to Create a New Include File\nCreate a new include file when:\n\nAdding a new section to a chapter\nA section becomes long enough to benefit from being in its own file (&gt;20-30 lines)\nContent might be reused elsewhere\nYou want to work on a section independently\n\n\n\n\n\n\n\nImportant\n\n\n\nImportant: New subsections should usually use includes\nWhen adding new subsections (### headings) to existing chapters, usually create a separate include file for the content. Consider these factors when deciding:\n\nSubsections with substantial content (&gt;50 lines)\nSubsections that are “big and distinctive enough” to stand on their own\nContent that forms a cohesive, self-contained topic\nLikelihood of future growth or expansion\nCurrent size of the parent file (keep source files under 100 lines when practical)\n\nFor shorter subsections (&lt;30 lines) in files that are well under 100 lines, inline content may be appropriate if the section is unlikely to grow significantly.\nThis practice ensures better git history, easier code review, and clearer organization from the start.\n\n\n\n\nMigration Strategy\nWhen working with chapters that don’t yet use includes:\n\nCreate a subdirectory matching the chapter name\nExtract each section into its own include file\nUpdate the main chapter file to use includes\nKeep headings in the main file\nEnsure blank lines before include statements\nTest that rendering still works correctly\n\n\n\nUsing Includes for Code Examples and Reusable Content\nPrefer using Quarto’s include shortcode over copy-pasting content whenever feasible. This applies to code examples, configuration files, and any content that exists elsewhere in the repository.\nBenefits:\n\nSingle source of truth: Changes to the original file automatically propagate\nReduces maintenance burden and sync issues\nEnsures examples stay current and accurate\nBetter git history (changes appear in one place)\n\nFor including code files:\nUse the include shortcode inside a code fence with the appropriate language. For example, to include a YAML workflow file:\n```{.yaml filename=\"demo-folder/yml.yml\"}\n{{&lt; include demo-folder/yml.yml &gt;}}\n\n\n```\nWhen you need to show the include shortcode syntax itself in documentation (without it being processed), add an extra pair of curly braces: {{&lt; include path/to/file &gt;}}. This prevents Quarto from recognizing it as a shortcode, allowing the literal syntax to appear in the rendered output.\nWhen to copy-paste instead:\nOnly copy-paste when:\n\nThe content is a simplified example that doesn’t exist elsewhere\nYou need to show a partial excerpt with modifications\nThe source file contains content that shouldn’t be fully shown\nYou need to demonstrate different variations of similar code\n\nFile naming for included code:\n\nPrefix standalone code files with _ so Quarto doesn’t try to render them (e.g., _helper-functions.R)\nUse descriptive names that indicate the purpose\nKeep included files in appropriate subdirectories",
+    "crumbs": [
+      "Appendices",
+      "Copilot Instructions File"
+    ]
+  },
+  {
+    "objectID": "appendix-copilot-instructions.html#working-with-docx-files",
+    "href": "appendix-copilot-instructions.html#working-with-docx-files",
+    "title": "Copilot Instructions File",
+    "section": "Working with DOCX Files",
+    "text": "Working with DOCX Files\nGitHub Copilot can read and process Microsoft Word (.docx) files, which is useful for translating edits made in Word back to Quarto format.\nWhen working with DOCX files:\n\nCheck git metadata first: DOCX files generated from this repository include a “Document Generation Metadata” section at the end with the branch name, commit hash, and commit date. Use this information to:\n\nIdentify which commit generated the original DOCX\nSet up the resulting PR correctly with the appropriate base branch\nAccount for any commits that have been added since the DOCX was generated\nUnderstand the state of the repository when the DOCX was created\n\nAlways examine tracked changes: Use the view tool to read DOCX files and pay special attention to any tracked changes (insertions, deletions, formatting changes)\nReview comments: Look for and address any comments in the DOCX file that may provide context or instructions for edits\nTranslate edits to Quarto: When edits have been made in a DOCX file, apply the equivalent changes to the corresponding .qmd files\nPreserve formatting: Ensure that formatting, citations, and cross-references are properly converted to Quarto/markdown syntax\nVerify completeness: Check that all edits, including those in tracked changes and comments, have been addressed\n\nThis workflow enables a hybrid editing process where collaborators can make edits in familiar Word format, and Copilot can translate those edits back to the Quarto source files.",
+    "crumbs": [
+      "Appendices",
+      "Copilot Instructions File"
+    ]
+  },
+  {
+    "objectID": "appendix-copilot-instructions.html#additional-guidelines",
+    "href": "appendix-copilot-instructions.html#additional-guidelines",
+    "title": "Copilot Instructions File",
+    "section": "Additional Guidelines",
+    "text": "Additional Guidelines\n\nMaintain consistency with existing code style\nPreserve all existing content when refactoring\nAdd blank lines before all lists\nFollow the lab’s R package development workflow (as described throughout this repo)\nDo not commit rendered artifacts produced during validation (for example, temporary rendered previews or screenshots generated only for review). Keep only source files under version control.\nWhen discussing current world conditions or technology capabilities: Always mention the date or time period to provide temporal context and prevent content from becoming misleading as time passes\nDetermining the current date: Do not assume you know what the current date is. Instead, use the Unix command line to determine the actual date (e.g., date +\"%Y-%m-%d\" or date +\"%B %Y\"), and use that when discussing current conditions, recent events, or the state of technology “as of” a particular time period. ALWAYS check the date using the command line before writing any temporal references (e.g., “as of early 2026”, “in 2026”, etc.). Never guess or assume the current year.\n\n\nREADME.Rmd and README.md\nIf a repository contains both README.Rmd and README.md, always edit README.Rmd, never README.md directly. README.md is auto-generated from README.Rmd.\nTo regenerate README.md after editing README.Rmd, use devtools::build_readme() (preferred for R packages):\ndevtools::build_readme()\nAlternatively, you can use {rmarkdown} via rmarkdown::render(\"README.Rmd\") if {devtools} is not available.\n\n\nCitations and Evidence for Claims\nAll factual claims should be backed by either citations or direct evidence.\nWhen writing documentation:\n\nCite sources for factual statements about how tools, systems, or processes work\nProvide direct evidence by demonstrating behavior yourself (e.g., showing command output, testing functionality)\nRemove unverified explanations rather than including speculative or unsubstantiated claims\nLink to authoritative sources like official documentation, GitHub issues, or peer-reviewed materials\nFor comparative or popularity claims: Provide specific metrics (e.g., GitHub stars, download counts, usage statistics) with dates rather than subjective terms like “most popular” or “widely used” without evidence\nFor all factual claims: you must provide supporting evidence, either directly or by explicitly citing credible sources;\nDo not phrase claims as facts when they are really merely assumptions or common opinions that may not be universally agreed on.\n\nWhen adding links to external resources:\n\nAlways verify the content of linked pages before adding them to the manual\nRead the repository README, DESCRIPTION file, or website content to understand what the resource actually contains\nUse accurate descriptions based on the actual content, not assumptions based on the URL or name\nFor GitHub repositories, check key files like README.md, DESCRIPTION, index.qmd, or _quarto.yml to understand the project’s purpose\n\nExample of what NOT to do:\nIn PR #151, the initial approach failed to verify the actual content of the linked repository: - Assumed “PSW” meant “Propensity Score Weighting” based on the acronym - Created a mischaracterized description: “R package for propensity score weighting and related methods for causal inference in observational studies” - Placed the link in an incorrect section (“Useful R Packages”)\nExample of what TO do:\nAfter reviewing the actual repository files (DESCRIPTION, _quarto.yml, index.qmd): - Verified that PSW stands for “Principles of Scientific Writing” - Determined it’s a Quarto book (later revised to “handbook”) about scientific writing principles - Placed the link in the appropriate “Writing” section - Used an accurate description based on the actual content: “a handbook covering scientific writing principles including citations and evidence, word choice, and conciseness”\nThis practice ensures accuracy, builds trust, and helps readers verify information independently.\n\n\nTesting and Validation\nALWAYS render the full Quarto book before requesting code review or finalizing your work.\nRun quarto render to ensure the book builds successfully in all output formats (HTML, PDF, DOCX, EPUB). This validates that:\n\nAll cross-references are valid\nAll images can be properly converted for PDF output (use PNG format for images, not SVG)\nAll code chunks execute without errors\nThe book structure is correct\n\nIf the render fails, fix the issues before committing or requesting review. Common issues include:\n\nSVG images that cannot be converted to PDF (use PNG instead)\nInvalid cross-references\nMissing or incorrect file paths\nSyntax errors in code chunks",
+    "crumbs": [
+      "Appendices",
+      "Copilot Instructions File"
+    ]
+  },
+  {
+    "objectID": "appendix-copilot-setup-steps.html",
+    "href": "appendix-copilot-setup-steps.html",
+    "title": "Copilot Setup Steps File",
+    "section": "",
+    "text": "PREVIEW_BANNER_PLACEHOLDER\n\nThis appendix contains the complete .github/workflows/copilot-setup-steps.yml file used to configure the GitHub Copilot coding agent’s environment.\n\n\n\n\n\n\nNoteView .github/workflows/copilot-setup-steps.yml\n\n\n\n\n\n\n\n.github/workflows/copilot-setup-steps.yml\n\n# GitHub Copilot Setup Steps for lab-manual\n#\n# This workflow configures the GitHub Copilot coding agent's environment\n# by preinstalling R, Quarto and TinyTeX for rendering the lab manual.\n#\n# See: https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-environment\n#\n# This workflow sets up:\n# - R for executing R code chunks in Quarto documents\n# - Quarto CLI for rendering\n# - TinyTeX for PDF output\n\nname: \"Copilot Setup Steps\"\n\n# Automatically run the setup steps when they are changed to allow for easy validation,\n# and allow manual testing through the repository's \"Actions\" tab\non:\n  workflow_dispatch:\n  push:\n    paths:\n      - .github/workflows/copilot-setup-steps.yml\n  pull_request:\n    paths:\n      - .github/workflows/copilot-setup-steps.yml\n\njobs:\n  # The job MUST be called `copilot-setup-steps` or it will not be picked up by Copilot.\n  copilot-setup-steps:\n    runs-on: ubuntu-latest\n\n    # Set the permissions to the lowest permissions possible needed for your steps.\n    # Copilot will be given its own token for its operations.\n    permissions:\n      contents: read\n\n    # Timeout after 55 minutes (max is 59 for copilot-setup-steps)\n    timeout-minutes: 55\n\n    steps:\n      # Checkout code - Copilot will do this automatically if we don't,\n      # but we need it to install dependencies from renv.lock\n      - name: Checkout code\n        uses: actions/checkout@v4\n\n      # R and renv setup steps disabled for now - we don't have any R code to run yet\n      # When R code is needed, uncomment the following steps:\n\n      # Install system dependencies required for R packages\n      - name: Install system dependencies\n        run: |\n          sudo apt-get update\n          sudo apt-get install -y \\\n            libcurl4-openssl-dev \\\n            libssl-dev \\\n            libxml2-dev \\\n            libfontconfig1-dev \\\n            libharfbuzz-dev \\\n            libfribidi-dev \\\n            libfreetype6-dev \\\n            libpng-dev \\\n            libtiff5-dev \\\n            libjpeg-dev\n\n      # Set up pandoc for documentation\n      - name: Set up Pandoc\n        uses: r-lib/actions/setup-pandoc@v2\n\n      # Set up R using the standard GitHub Actions setup\n      - name: Set up R\n        uses: r-lib/actions/setup-r@v2\n        with:\n          r-version: 'release'\n          use-public-rspm: true\n\n      - name: Install system dependencies\n        run: |\n          sudo apt-get update\n          sudo apt-get install -y jags libcurl4-openssl-dev libpng-dev libfontconfig1-dev libjpeg-dev\n\n      - uses: r-lib/actions/setup-renv@v2\n\n      # Set up Quarto - required for rendering the website\n      - name: Set up Quarto\n        uses: quarto-dev/quarto-actions/setup@v2\n        with:\n          tinytex: true\n\n      # # Install R dependencies using renv (disabled for now - no renv.lock file yet)\n      # - name: Install R dependencies via renv\n      #   uses: r-lib/actions/setup-renv@v2\n      #   with:\n      #     cache-version: 1\n\n      # Verify development environment\n      - name: Verify development environment\n        run: |\n          echo \"=== Development Environment Status ===\"\n\n          # Verify R is installed and working\n          echo \"\"\n          echo \"=== R Status ===\"\n          R --version\n\n          # Verify Quarto is installed and working\n          echo \"\"\n          echo \"=== Quarto Status ===\"\n          quarto --version\n          quarto list tools\n\n          echo \"\"\n          echo \"Development environment setup complete!\"",
+    "crumbs": [
+      "Appendices",
+      "Copilot Setup Steps File"
+    ]
+  },
+  {
+    "objectID": "appendix-document-metadata.html",
+    "href": "appendix-document-metadata.html",
+    "title": "Document Generation Metadata",
+    "section": "",
+    "text": "PREVIEW_BANNER_PLACEHOLDER\n\nThis document was generated from the following git commit:\n\nBranch: HEAD\nCommit: 423da20\nFull commit hash: 423da205a2ac47fcad5bec08785aa4a75e4664d1\nCommit date: 2026-10-10 00:19:35 -0700\n\nWhen transferring edits from this DOCX file back to the Quarto source files, use this commit information to set up the PR correctly and account for any commits that have been added since this document was generated.",
+    "crumbs": [
+      "Appendices",
+      "Document Generation Metadata"
+    ]
+  }
+]
