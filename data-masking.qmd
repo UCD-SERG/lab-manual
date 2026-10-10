@@ -1,31 +1,33 @@
 # Data masking
 
-For information about UC Davis computing resources for data-intensive work, see @sec-slurm.
+This chapter has moved to
+[*Principles of Scientific Computing*](https://morrison-lab.github.io/psc/),
+the Morrison Lab's general-purpose guide to coding for research projects:
+**[Data masking](https://morrison-lab.github.io/psc/chapters/data-masking.html)**
+(source: <https://github.com/Morrison-Lab/psc>).
 
-## General Overview
+[]{#sec-data-masking-vs-tidy-selection}
+[]{#general-overview}
+[]{#what-is-data-masking}
+[]{#using-tidy-evaluation-for-data-masking}
+[]{#the-.data-pronoun-does-not-belong-in-tidy-selection}
+[]{#technical-overview}
+[]{#example}
+[]{#fig-data-masking}
+[]{#tbl-masking-selection}
 
-{{< include data-masking/general-overview.qmd >}}
+That page covers:
 
-### What is Data Masking?
+- [General Overview](https://morrison-lab.github.io/psc/chapters/data-masking.html#general-overview)
+- [Data masking vs. tidy selection](https://morrison-lab.github.io/psc/chapters/data-masking.html#sec-data-masking-vs-tidy-selection)
+- [Technical Overview](https://morrison-lab.github.io/psc/chapters/data-masking.html#technical-overview)
 
-{{< include data-masking/what-is-data-masking.qmd >}}
+::: {.callout-note collapse="true"}
+## Looking for a specific section that used to be here?
 
-### Using tidy evaluation for data masking
-
-{{< include data-masking/tidy-evaluation-for-data-masking.qmd >}}
-
-## Data masking vs. tidy selection {#sec-data-masking-vs-tidy-selection}
-
-{{< include data-masking/masking-vs-selection.qmd >}}
-
-### The `.data` pronoun does not belong in tidy selection
-
-{{< include data-masking/data-pronoun-tidy-selection.qmd >}}
-
-## Technical Overview
-
-{{< include data-masking/technical-overview.qmd >}}
-
-### Example
-
-{{< include data-masking/descriptive-table-example.qmd >}}
+This chapter's old section anchors still resolve on this page,
+so old bookmarks and links land here,
+but the content now lives on the page linked above,
+under the same anchor.
+For example, `#sec-foo` here is `chapters/data-masking.html#sec-foo` on the psc site.
+:::

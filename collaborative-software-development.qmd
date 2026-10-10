@@ -1,34 +1,59 @@
 # Collaborative Software Development {#sec-collab-dev}
 
-This chapter covers the social side of writing code together:
-opening pull requests,
-reviewing each other's work,
-and responding to review feedback.
+This chapter has moved to
+[*Principles of Scientific Computing*](https://morrison-lab.github.io/psc/),
+the Morrison Lab's general-purpose guide to coding for research projects:
+**[Collaborative Software Development](https://morrison-lab.github.io/psc/chapters/collaborative-software-development.html)**
+(source: <https://github.com/Morrison-Lab/psc>).
 
-## Pull Requests {#sec-pull-requests}
+[]{#sec-avoid-closing-restarting-prs}
+[]{#sec-code-review}
+[]{#sec-opening-pull-requests}
+[]{#sec-pr-assignee}
+[]{#sec-pr-author}
+[]{#sec-pr-issue-creator}
+[]{#sec-pr-merger}
+[]{#sec-pr-reviewer}
+[]{#sec-pr-roles}
+[]{#sec-pr-steward}
+[]{#sec-pull-requests}
+[]{#sec-resolving-review-threads}
+[]{#sec-responding-to-review-comments}
+[]{#sec-reviewing-pull-requests}
+[]{#sec-stacked-pull-requests}
+[]{#write-focused-prs}
+[]{#write-clear-pr-titles-and-descriptions}
+[]{#explain-technical-reasoning-up-front}
+[]{#request-reviews-in-the-right-order}
+[]{#include-tests-with-behavior-changes}
+[]{#separate-refactorings-from-feature-work}
+[]{#standardize-pr-descriptions-with-a-template}
+[]{#stacked-pull-requests}
+[]{#what-are-stacked-pull-requests}
+[]{#benefits-of-stacked-pull-requests}
+[]{#core-principles-for-stacking}
+[]{#ci-rebasing-and-merging}
+[]{#purpose-of-code-review}
+[]{#monitor-prs-awaiting-your-review}
+[]{#write-review-comments-that-teach}
+[]{#use-review-as-mentoring}
+[]{#balance-direct-fixes-with-guidance}
+[]{#ignore-auto-generated-files-when-appropriate}
+[]{#reviewing-copilot-generated-pull-requests}
+[]{#fig-github-suggestion-feature}
+[]{#fig-preview-comment}
 
-### Pull request roles {#sec-pr-roles}
+That page covers:
 
-{{< include collaborative-software-development/_pull-request-roles.qmd >}}
+- [Pull Requests](https://morrison-lab.github.io/psc/chapters/collaborative-software-development.html#sec-pull-requests)
+- [Code Review](https://morrison-lab.github.io/psc/chapters/collaborative-software-development.html#sec-code-review)
 
-### Opening pull requests {#sec-opening-pull-requests}
+::: {.callout-note collapse="true"}
+## Looking for a specific section that used to be here?
 
-{{< include collaborative-software-development/_opening-pull-requests.qmd >}}
-
-### Stacked pull requests {#sec-stacked-pull-requests}
-
-{{< include collaborative-software-development/_stacked-pull-requests.qmd >}}
-
-## Code Review {#sec-code-review}
-
-### Reviewing pull requests {#sec-reviewing-pull-requests}
-
-{{< include collaborative-software-development/_reviewing-pull-requests.qmd >}}
-
-### Responding to review comments {#sec-responding-to-review-comments}
-
-{{< include collaborative-software-development/_responding-to-review-comments.qmd >}}
-
-### Avoid closing and restarting pull requests {#sec-avoid-closing-restarting-prs}
-
-{{< include collaborative-software-development/_avoid-closing-and-restarting.qmd >}}
+This chapter's old section anchors still resolve on this page,
+so old bookmarks and links land here,
+but the content now lives on the page linked above,
+under the same anchor.
+For example, `#sec-foo` here is `chapters/collaborative-software-development.html#sec-foo` on the psc site.
+:::

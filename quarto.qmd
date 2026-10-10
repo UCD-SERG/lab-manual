@@ -1,37 +1,84 @@
 # Quarto {#sec-quarto}
 
-## Introduction
+This chapter has moved to
+[*Principles of Scientific Computing*](https://morrison-lab.github.io/psc/),
+the Morrison Lab's general-purpose guide to coding for research projects:
+**[Quarto](https://morrison-lab.github.io/psc/chapters/quarto.html)**
+(source: <https://github.com/Morrison-Lab/psc>).
 
-{{< include quarto/introduction.qmd >}}
+[]{#sec-quarto-dashboards}
+[]{#introduction}
+[]{#key-features}
+[]{#why-quarto}
+[]{#getting-started}
+[]{#quarto-basics}
+[]{#creating-a-new-quarto-document}
+[]{#visual-vs.-source-editor}
+[]{#rendering-documents}
+[]{#code-chunks}
+[]{#format-specific-settings}
+[]{#text-formatting}
+[]{#building-quarto-books}
+[]{#creating-a-quarto-book}
+[]{#building-and-previewing}
+[]{#book-structure}
+[]{#book-features}
+[]{#example-this-lab-manual}
+[]{#resources}
+[]{#quarto-profiles}
+[]{#what-are-profiles}
+[]{#example-rendering-chapters-as-slides}
+[]{#creating-a-profile}
+[]{#common-use-cases}
+[]{#resources-1}
+[]{#advanced-features}
+[]{#cross-references}
+[]{#using-includes-for-modular-content}
+[]{#including-external-code-files}
+[]{#mermaid-diagrams}
+[]{#creating-mermaid-diagrams}
+[]{#known-issues-with-docx-and-pdf-output}
+[]{#rendering-failures-and-hangs}
+[]{#image-quality-issues}
+[]{#recommended-workarounds}
+[]{#manual-export-and-embedding-most-reliable}
+[]{#conditional-content-for-different-formats}
+[]{#ensure-chromium-is-installed-partial-solution}
+[]{#prefer-html-output-when-possible}
+[]{#real-world-example}
+[]{#future-outlook}
+[]{#summary}
+[]{#troubleshooting}
+[]{#checking-your-setup}
+[]{#diagnostic-tools}
+[]{#common-issues}
+[]{#advanced-troubleshooting}
+[]{#additional-resources}
+[]{#official-documentation}
+[]{#learning-resources}
+[]{#templates}
+[]{#extensions-and-tools}
+[]{#development-roadmap-and-known-issues}
+[]{#related-lab-manual-chapters}
 
-## Quarto Basics
+That page covers:
 
-{{< include quarto/basics.qmd >}}
+- [Introduction](https://morrison-lab.github.io/psc/chapters/quarto.html#introduction)
+- [Quarto Basics](https://morrison-lab.github.io/psc/chapters/quarto.html#quarto-basics)
+- [Building Quarto Books](https://morrison-lab.github.io/psc/chapters/quarto.html#building-quarto-books)
+- [Dashboards](https://morrison-lab.github.io/psc/chapters/quarto.html#sec-quarto-dashboards)
+- [Quarto Profiles](https://morrison-lab.github.io/psc/chapters/quarto.html#quarto-profiles)
+- [Advanced Features](https://morrison-lab.github.io/psc/chapters/quarto.html#advanced-features)
+- [Mermaid Diagrams](https://morrison-lab.github.io/psc/chapters/quarto.html#mermaid-diagrams)
+- [Troubleshooting](https://morrison-lab.github.io/psc/chapters/quarto.html#troubleshooting)
+- [Additional Resources](https://morrison-lab.github.io/psc/chapters/quarto.html#additional-resources)
 
-## Building Quarto Books
+::: {.callout-note collapse="true"}
+## Looking for a specific section that used to be here?
 
-{{< include quarto/books.qmd >}}
-
-## Dashboards {#sec-quarto-dashboards}
-
-{{< include quarto/dashboards.qmd >}}
-
-## Quarto Profiles
-
-{{< include quarto/profiles.qmd >}}
-
-## Advanced Features
-
-{{< include quarto/advanced-features.qmd >}}
-
-## Mermaid Diagrams
-
-{{< include quarto/mermaid-diagrams.qmd >}}
-
-## Troubleshooting
-
-{{< include quarto/troubleshooting.qmd >}}
-
-## Additional Resources
-
-{{< include quarto/resources.qmd >}}
+This chapter's old section anchors still resolve on this page,
+so old bookmarks and links land here,
+but the content now lives on the page linked above,
+usually under the same anchor.
+For example, `#sec-foo` here is `chapters/quarto.html#sec-foo` on the psc site.
+:::
