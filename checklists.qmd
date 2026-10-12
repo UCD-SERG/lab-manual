@@ -51,7 +51,7 @@ Welcome to the lab! New members should complete the following checklist during t
 
 ## Manuscript checklist
 
-*This is adapted in part from How to tackle the reproducibility crisis in ten steps [@baker2019].*
+*This is adapted in part from How small changes to a paper can help to smooth the review process [@white2019].*
 
 - [ ] Have you completed the relevant reporting checklist, if applicable? (See EQUATOR Network [@equatornetwork] for a collection of checklists)
 - [ ] Are the study results within the manuscript replicable (i.e., if you rerun the code in the study's repository, the tables and figures will be exactly replicated?)

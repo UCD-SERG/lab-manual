@@ -39,34 +39,17 @@ We encourage lab members to present their work at conferences and seminars:
 - Prioritize clear visuals over text-dense slides following our [Show, Don't Tell](@sec-show-dont-tell) principle
 - Funding for conferences depends on availability and should be discussed in advance
 
-### Guidelines for Slide Decks {#sec-slide-deck-guidelines}
+### Slides, posters, and figures {#sec-slide-deck-guidelines}
 
-{{< include professional-development/slide-deck-guidelines.qmd >}}
+Our guidelines for slide decks,
+our presentation and poster resources,
+and our checklist for scientific figures
+have moved to
+[Slides, posters, and figures](https://morrison-lab.github.io/psw/chapters/slides-posters-figures.html)
+in [*Principles of Scientific Writing*](https://morrison-lab.github.io/psw/).
 
-### Presentation and Poster Resources {#sec-presentation-resources}
-
-- [How to tell a compelling story in scientific presentations](https://www.nature.com/articles/d41586-021-03603-2)
-- [How to give a killer narratively-driven scientific talk](https://www.sciencedirect.com/science/article/pii/S1471491423000928)
-- [How to make a better poster](https://www.youtube.com/watch?v=1RwJbhkCA58)
-- [How to make an even better poster](https://mitcommlab.mit.edu/be/2023/09/27/toward-an-evenbetterposter-improving-the-betterposter-template/)
-
-## Scientific Figures
-
-Creating clear, effective figures is essential for communicating research findings:
-
-- Label x-axis and y-axis clearly
-- Use panel labels when including multiple subplots
-- Include sufficient tick marks and labels
-- Use appropriate font sizes (readable but not distracting)
-- Use colorblind-friendly palettes (see [ColorBrewer](http://colorbrewer2.org/) or [iwanthue](https://medialab.github.io/iwanthue/))
-- Define colors, shapes, and line types in legends
-- Minimize abbreviations in labels and legends
-- Use transparency to show overlapping data
-- Show measures of precision (e.g., 95% confidence intervals)
-
-**Resources:**
-
-- [Ten Simple Rules for Better Figures](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833)
+[]{#sec-presentation-resources}
+[]{#scientific-figures}
 
 ## Grant Writing
 
