@@ -235,7 +235,7 @@ See the "Best Practices" section for more details.
 ```
 
 **Custom link text:**
-when the sentence needs its own link text instead of "Section X",
+When the sentence needs its own link text instead of "Section X",
 write `[text](#sec-label)`;
 Quarto resolves it to the right chapter.
 Never write `[text](@sec-label)`:
