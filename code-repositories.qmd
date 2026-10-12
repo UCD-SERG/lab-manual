@@ -1,26 +1,47 @@
 # Code repositories {#sec-code-repositories}
 
-Each study has at least one code repository that typically holds R code, shell scripts with Unix code, and research outputs (results .RDS files, tables, figures). Repositories may also include datasets. This chapter outlines how to organize these files. Adhering to a standard format makes it easier for us to efficiently collaborate across projects. 
+This chapter has moved to
+[*Principles of Scientific Computing*](https://morrison-lab.github.io/psc/),
+the Morrison Lab's general-purpose guide to coding for research projects:
+**[Code repositories](https://morrison-lab.github.io/psc/chapters/code-repositories.html)**
+(source: <https://github.com/Morrison-Lab/psc>).
 
-UCD-SeRG projects use R package structure for most R-based work.
-This provides benefits for reproducibility, collaboration, and code quality even for analysis-only projects.
+[]{#sec-analysis-file-placement}
+[]{#sec-repostatus}
+[]{#template-repositories}
+[]{#a-note-on-gitlab}
+[]{#package-structure}
+[]{#why-use-r-package-structure}
+[]{#basic-package-structure}
+[]{#vignettes-vs-articles}
+[]{#public-analyses-vignettes}
+[]{#analyses-with-restricted-data-instanalyses}
+[]{#keep-analysis-workbooks-tidy}
+[]{#shell-scripts-and-automation}
+[]{#storing-analysis-outputs}
+[]{#rproj-files}
+[]{#organizing-the-data-raw-folder}
+[]{#configuration-config-file}
+[]{#order-files-and-directories}
+[]{#using-bash-scripts-to-ensure-reproducibility}
+[]{#standard-repository-statuses}
+[]{#adding-a-status-badge}
+[]{#lifecycle-management}
 
-## Template repositories
+That page covers:
 
-{{< include code-repositories/template-repositories.qmd >}}
+- [Template repositories](https://morrison-lab.github.io/psc/chapters/code-repositories.html#template-repositories)
+- [Package Structure](https://morrison-lab.github.io/psc/chapters/code-repositories.html#package-structure)
+- [`.Rproj` files](https://morrison-lab.github.io/psc/chapters/code-repositories.html#rproj-files)
+- [Organizing the `data-raw` folder](https://morrison-lab.github.io/psc/chapters/code-repositories.html#organizing-the-data-raw-folder)
+- [Repository Status Badges](https://morrison-lab.github.io/psc/chapters/code-repositories.html#sec-repostatus)
 
-## Package Structure
+::: {.callout-note collapse="true"}
+## Looking for a specific section that used to be here?
 
-{{< include code-repositories/package-structure.qmd >}}
-
-## `.Rproj` files
-
-{{< include code-repositories/rproj-files.qmd >}}
-
-## Organizing the `data-raw` folder
-
-{{< include code-repositories/project-structure.qmd >}}
-
-## Repository Status Badges {#sec-repostatus}
-
-{{< include code-repositories/repository-status.qmd >}}
+This chapter's old section anchors still resolve on this page,
+so old bookmarks and links land here,
+but the content now lives on the page linked above,
+under the same anchor.
+For example, `#sec-foo` here is `chapters/code-repositories.html#sec-foo` on the psc site.
+:::

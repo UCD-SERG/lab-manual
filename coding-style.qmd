@@ -1,89 +1,93 @@
 # R Code Style {#sec-r-code-style}
 
-Follow these code style guidelines for all R code:
+This chapter has moved to
+[*Principles of Scientific Computing*](https://morrison-lab.github.io/psc/),
+the Morrison Lab's general-purpose guide to coding for research projects:
+**[R Code Style](https://morrison-lab.github.io/psc/chapters/coding-style.html)**
+(source: <https://github.com/Morrison-Lab/psc>).
 
-## General Principles
+[]{#sec-assertions-input-validation}
+[]{#sec-avoid-hardcoding-external-data}
+[]{#sec-avoid-nesting}
+[]{#sec-clean-code}
+[]{#sec-cli-styling-progress-outcomes}
+[]{#sec-comments}
+[]{#sec-construct-inputs}
+[]{#sec-function-docs}
+[]{#sec-here-package-style}
+[]{#sec-here-subpath}
+[]{#sec-object-naming}
+[]{#sec-package-code-practices}
+[]{#sec-per-operation-grouping}
+[]{#sec-prefer-packaged-functions}
+[]{#sec-r-resources-style}
+[]{#sec-semantic-line-breaks}
+[]{#sec-style-auto-style}
+[]{#sec-tidyverse-replacements}
+[]{#general-principles}
+[]{#meaningful-names}
+[]{#functions}
+[]{#comments}
+[]{#the-boy-scout-rule}
+[]{#dont-repeat-yourself-dry}
+[]{#explicit-return-statements}
+[]{#base-r-stopifnot}
+[]{#checkmate-fast-comprehensive-argument-checks}
+[]{#cli-and-rlang-custom-friendly-error-conditions}
+[]{#decomposing-validation-into-helpers}
+[]{#note-on-assertthat}
+[]{#prefer-more-simpler-steps-over-fewer-denser-ones}
+[]{#lambdas-in-map-and-apply-family-calls}
+[]{#prose-enumerations-count-and-they-are-the-ones-that-rot-unnoticed}
+[]{#a-count-in-the-prose-above-a-block-is-the-same-duplicate-one-line-away}
+[]{#a-qualitative-generalization-above-a-block-goes-unchecked-where-a-count-would-be-re-derived}
+[]{#where-the-rule-stops-text-that-records-what-was-observed}
+[]{#line-breaks-and-formatting}
+[]{#blank-lines-before-lists}
+[]{#line-breaks-in-code}
+[]{#markdown-and-quarto-formatting}
+[]{#writing-about-code-in-quarto-documents}
+[]{#messaging-and-user-communication}
+[]{#styling}
+[]{#rstudio-shortcuts}
+[]{#styler}
+[]{#lintr}
+[]{#using-lintr}
+[]{#our-labs-lintr-configuration}
+[]{#jarl}
+[]{#key-features}
+[]{#basic-usage}
+[]{#comparison-with-lintr}
+[]{#linting-changed-files-vs.-the-whole-project-in-ci}
 
-{{< include coding-style/general-principles.qmd >}}
+That page covers:
 
-## Clean Code Principles {#sec-clean-code}
+- [General Principles](https://morrison-lab.github.io/psc/chapters/coding-style.html#general-principles)
+- [Clean Code Principles](https://morrison-lab.github.io/psc/chapters/coding-style.html#sec-clean-code)
+- [Function Structure and Documentation](https://morrison-lab.github.io/psc/chapters/coding-style.html#sec-function-docs)
+- [Assertions and Input Validation](https://morrison-lab.github.io/psc/chapters/coding-style.html#sec-assertions-input-validation)
+- [Avoiding Deep Nesting](https://morrison-lab.github.io/psc/chapters/coding-style.html#sec-avoid-nesting)
+- [Prefer Existing Packaged Functions](https://morrison-lab.github.io/psc/chapters/coding-style.html#sec-prefer-packaged-functions)
+- [Prefer Per-Operation Grouping](https://morrison-lab.github.io/psc/chapters/coding-style.html#sec-per-operation-grouping)
+- [Avoid Hard-Coding Data with an External Source of Truth](https://morrison-lab.github.io/psc/chapters/coding-style.html#sec-avoid-hardcoding-external-data)
+- [Construct Complex Inputs Before the Call](https://morrison-lab.github.io/psc/chapters/coding-style.html#sec-construct-inputs)
+- [Comments](https://morrison-lab.github.io/psc/chapters/coding-style.html#sec-comments)
+- [Line Breaks and Formatting](https://morrison-lab.github.io/psc/chapters/coding-style.html#line-breaks-and-formatting)
+- [Markdown and Quarto Formatting](https://morrison-lab.github.io/psc/chapters/coding-style.html#markdown-and-quarto-formatting)
+- [Messaging and User Communication](https://morrison-lab.github.io/psc/chapters/coding-style.html#messaging-and-user-communication)
+- [Package Code Practices](https://morrison-lab.github.io/psc/chapters/coding-style.html#sec-package-code-practices)
+- [Tidyverse Replacements](https://morrison-lab.github.io/psc/chapters/coding-style.html#sec-tidyverse-replacements)
+- [The here Package](https://morrison-lab.github.io/psc/chapters/coding-style.html#sec-here-package-style)
+- [Object Naming](https://morrison-lab.github.io/psc/chapters/coding-style.html#sec-object-naming)
+- [Automated Tools for Style and Project Workflow](https://morrison-lab.github.io/psc/chapters/coding-style.html#sec-style-auto-style)
+- [Additional Resources](https://morrison-lab.github.io/psc/chapters/coding-style.html#sec-r-resources-style)
 
-{{< include coding-style/clean-code.qmd >}}
+::: {.callout-note collapse="true"}
+## Looking for a specific section that used to be here?
 
-## Function Structure and Documentation {#sec-function-docs}
-
-{{< include coding-style/function-structure-and-documentation.qmd >}}
-
-## Assertions and Input Validation {#sec-assertions-input-validation}
-
-{{< include coding-style/assertions.qmd >}}
-
-## Avoiding Deep Nesting {#sec-avoid-nesting}
-
-{{< include coding-style/avoid-nesting.qmd >}}
-
-## Prefer Existing Packaged Functions {#sec-prefer-packaged-functions}
-
-{{< include coding-style/prefer-packaged-functions.qmd >}}
-
-## Prefer Per-Operation Grouping {#sec-per-operation-grouping}
-
-{{< include coding-style/per-operation-grouping.qmd >}}
-
-## Avoid Hard-Coding Data with an External Source of Truth {#sec-avoid-hardcoding-external-data}
-
-{{< include coding-style/avoid-hardcoding-external-data.qmd >}}
-
-## Construct Complex Inputs Before the Call {#sec-construct-inputs}
-
-{{< include coding-style/construct-inputs.qmd >}}
-
-## Comments {#sec-comments}
-
-{{< include coding-style/comments.qmd >}}
-
-## Line Breaks and Formatting
-
-{{< include coding-style/line-breaks.qmd >}}
-
-## Markdown and Quarto Formatting
-
-### Writing about code in Quarto documents
-
-When writing about code in prose sections of quarto documents, 
-use backticks to apply a code style:
-for example, `dplyr::mutate()`.
-When talking about packages,
-use backticks and curly-braces with a hyperlink to the package website.
-For example: [`{dplyr}`](https://dplyr.tidyverse.org/).
-
-**Important:** Do not use raw HTML (`<a href="...">`) in `.qmd` files.
-Always use Quarto/markdown link syntax instead.
-
-## Messaging and User Communication
-
-{{< include coding-style/messaging-and-user-communication.qmd >}}
-
-## Package Code Practices {#sec-package-code-practices}
-
-{{< include coding-style/package-code-practices.qmd >}}
-
-## Tidyverse Replacements {#sec-tidyverse-replacements}
-
-{{< include coding-style/tidyverse-replacements.qmd >}}
-
-## The here Package {#sec-here-package-style}
-
-{{< include coding-style/the-here-package.qmd >}}
-
-## Object Naming {#sec-object-naming}
-
-{{< include coding-style/object-naming.qmd >}}
-
-## Automated Tools for Style and Project Workflow {#sec-style-auto-style}
-
-{{< include coding-style/automated-tools.qmd >}}
-
-## Additional Resources {#sec-r-resources-style}
-
-- Tidyverse style guide [@wickham2023tidyverse]: Detailed coding style conventions for writing clear, consistent R code. Covers naming, syntax, pipes, functions, and more.
+This chapter's old section anchors still resolve on this page,
+so old bookmarks and links land here,
+but the content now lives on the page linked above,
+under the same anchor.
+For example, `#sec-foo` here is `chapters/coding-style.html#sec-foo` on the psc site.
+:::

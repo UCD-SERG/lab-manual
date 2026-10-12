@@ -2,8 +2,9 @@
 #'
 #' Flags **top-level named function definitions** in files outside the
 #' allowed directories. The lab convention is that named functions belong in a
-#' package's `R/` directory, one per file (see the lab manual's
-#' `coding-practices/complete-package-development-workflow.qmd`), so a function
+#' package's `R/` directory, one per file (see "Complete Package Development
+#' Workflow" in *Principles of Scientific Computing*,
+#' <https://morrison-lab.github.io/psc/>), so a function
 #' defined inline in a `data-raw/` script, a vignette, or `inst/` is usually
 #' misplaced.
 #'
@@ -65,7 +66,10 @@ function_location_linter <- function(allowed_dirs = c("R", "tests")) {
       lint_message = paste(
         "Define named functions in the package's `R/` directory (one per",
         "file), not in this file; see",
-        "coding-practices/complete-package-development-workflow.qmd."
+        paste0(
+          "https://morrison-lab.github.io/psc/chapters/",
+          "coding-practices.html#sec-r-workflow"
+        )
       ),
       type = "warning"
     )

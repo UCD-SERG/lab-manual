@@ -19,8 +19,9 @@ A \code{\link[lintr:Linter]{lintr::Linter()}} object.
 \description{
 Flags \strong{top-level named function definitions} in files outside the
 allowed directories. The lab convention is that named functions belong in a
-package's \verb{R/} directory, one per file (see the lab manual's
-\code{coding-practices/complete-package-development-workflow.qmd}), so a function
+package's \verb{R/} directory, one per file (see "Complete Package Development
+Workflow" in \emph{Principles of Scientific Computing},
+\url{https://morrison-lab.github.io/psc/}), so a function
 defined inline in a \verb{data-raw/} script, a vignette, or \verb{inst/} is usually
 misplaced.
 }

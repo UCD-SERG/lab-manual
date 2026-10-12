@@ -140,7 +140,7 @@ Make minor changes to the analysis scripts so that they run on public data. If u
 
 ## Create a public GitHub page for public scripts
 
-At minimum, we should include all of the scripts required to run the analyses. **IMPORTANT**: ensure you have taken a snapshot and saved your computing environment using the `renv` package ([`renv`](#renv)).
+At minimum, we should include all of the scripts required to run the analyses. **IMPORTANT**: ensure you have taken a snapshot and saved your computing environment using the `renv` package (see [Reproducible Environments](https://morrison-lab.github.io/psc/chapters/reproducible-environments.html)).
 
 See examples:   
 - ACTION - https://github.com/proctor-ucsf/ACTION-public     
