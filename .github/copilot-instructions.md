@@ -234,6 +234,18 @@ See the "Continuous Integration" section above.
 See the "Best Practices" section for more details.
 ```
 
+**Custom link text:**
+When the sentence needs its own link text instead of "Section X",
+write `[text](#sec-label)`;
+Quarto resolves it to the right chapter.
+Never write `[text](@sec-label)`:
+Quarto leaves that target as written,
+so the rendered page links to the literal path `@sec-label`, which goes nowhere.
+
+```markdown
+See [Show, Don't Tell](#sec-show-dont-tell).
+```
+
 **Benefits of using cross-references:**
 
 - Automatically generates proper section titles and numbers
