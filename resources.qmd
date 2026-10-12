@@ -48,7 +48,7 @@ General-purpose resources have moved to the Morrison Lab's sister sites:
 ## Ethics and global health research
 
 - [Global Code of Conduct For Research in Resource-Poor Settings](https://www.globalcodeofconduct.org/)
-- Addressing power asymmetries in global health [@abimbola2022]
+- Who is a global health expert? [@ojiako2023]
 - [Transforming Global Health Partnerships](https://link.springer.com/book/9783031537929)
 
 ## Comparable Lab Manuals
