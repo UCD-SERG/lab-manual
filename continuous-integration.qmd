@@ -39,16 +39,16 @@ the Morrison Lab's general-purpose guide to coding for research projects:
 
 That page covers:
 
-- [Understanding GitHub Actions](https://morrison-lab.github.io/psc/chapters/continuous-integration.html#understanding-github-actions)
+- [Understanding GitHub Actions](https://morrison-lab.github.io/psc/chapters/continuous-integration.html#sec-understanding-github-actions)
 - [Setting Up GitHub Actions](https://morrison-lab.github.io/psc/chapters/continuous-integration.html#sec-setting-up-github-actions)
 - [Reusable Workflow Collections](https://morrison-lab.github.io/psc/chapters/continuous-integration.html#sec-reusable-workflow-collections)
-- [How GitHub Actions Workflows Work](https://morrison-lab.github.io/psc/chapters/continuous-integration.html#how-github-actions-workflows-work)
-- [Workflow Files and Security](https://morrison-lab.github.io/psc/chapters/continuous-integration.html#workflow-files-and-security)
+- [How GitHub Actions Workflows Work](https://morrison-lab.github.io/psc/chapters/continuous-integration.html#sec-how-github-actions-workflows-work)
+- [Workflow Files and Security](https://morrison-lab.github.io/psc/chapters/continuous-integration.html#sec-workflow-files-and-security)
 - [Pipeline Design Patterns](https://morrison-lab.github.io/psc/chapters/continuous-integration.html#sec-ci-design-patterns)
-- [Troubleshooting Failed Workflows](https://morrison-lab.github.io/psc/chapters/continuous-integration.html#troubleshooting-failed-workflows)
+- [Troubleshooting Failed Workflows](https://morrison-lab.github.io/psc/chapters/continuous-integration.html#sec-troubleshooting-failed-workflows)
 - [Pull Request Comment Automation](https://morrison-lab.github.io/psc/chapters/continuous-integration.html#sec-pr-comment-automation)
-- [Fast Package Installation with r2u](https://morrison-lab.github.io/psc/chapters/continuous-integration.html#fast-package-installation-with-r2u)
-- [Additional Resources](https://morrison-lab.github.io/psc/chapters/continuous-integration.html#additional-resources)
+- [Fast Package Installation with r2u](https://morrison-lab.github.io/psc/chapters/continuous-integration.html#sec-fast-package-installation-with-r2u)
+- [Additional Resources](https://morrison-lab.github.io/psc/chapters/continuous-integration.html#sec-continuous-integration-additional-resources)
 
 ::: {.callout-note collapse="true"}
 ## Looking for a specific section that used to be here?

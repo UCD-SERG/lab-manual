@@ -23,14 +23,14 @@ the Morrison Lab's general-purpose guide to coding for research projects:
 
 That page covers:
 
-- [Checklist overview](https://morrison-lab.github.io/psc/chapters/code-publication.html#checklist-overview)
-- [Fill out file headers](https://morrison-lab.github.io/psc/chapters/code-publication.html#fill-out-file-headers)
-- [Clean up comments](https://morrison-lab.github.io/psc/chapters/code-publication.html#clean-up-comments)
-- [Document functions](https://morrison-lab.github.io/psc/chapters/code-publication.html#document-functions)
-- [Remove deprecated filepaths](https://morrison-lab.github.io/psc/chapters/code-publication.html#remove-deprecated-filepaths)
-- [Ensure project runs via bash](https://morrison-lab.github.io/psc/chapters/code-publication.html#ensure-project-runs-via-bash)
-- [Complete the README](https://morrison-lab.github.io/psc/chapters/code-publication.html#complete-the-readme)
-- [Clean up feature branches](https://morrison-lab.github.io/psc/chapters/code-publication.html#clean-up-feature-branches)
+- [Checklist overview](https://morrison-lab.github.io/psc/chapters/code-publication.html#sec-checklist-overview)
+- [Fill out file headers](https://morrison-lab.github.io/psc/chapters/code-publication.html#sec-fill-out-file-headers)
+- [Clean up comments](https://morrison-lab.github.io/psc/chapters/code-publication.html#sec-clean-up-comments)
+- [Document functions](https://morrison-lab.github.io/psc/chapters/code-publication.html#sec-document-functions)
+- [Remove deprecated filepaths](https://morrison-lab.github.io/psc/chapters/code-publication.html#sec-remove-deprecated-filepaths)
+- [Ensure project runs via bash](https://morrison-lab.github.io/psc/chapters/code-publication.html#sec-ensure-project-runs-via-bash)
+- [Complete the README](https://morrison-lab.github.io/psc/chapters/code-publication.html#sec-complete-the-readme)
+- [Clean up feature branches](https://morrison-lab.github.io/psc/chapters/code-publication.html#sec-clean-up-feature-branches)
 - [Create GitHub release](https://morrison-lab.github.io/psc/chapters/code-publication.html#sec-create-github-release)
 - [Releasing to CRAN](https://morrison-lab.github.io/psc/chapters/code-publication.html#sec-cran-release)
 

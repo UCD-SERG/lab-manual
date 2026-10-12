@@ -12,6 +12,6 @@ the Morrison Lab's general-purpose guide to coding for research projects:
 
 That page covers:
 
-- [The data.table package](https://morrison-lab.github.io/psc/chapters/big-data.html#the-data.table-package)
-- [Using downsampled data](https://morrison-lab.github.io/psc/chapters/big-data.html#using-downsampled-data)
-- [Optimal RStudio set up](https://morrison-lab.github.io/psc/chapters/big-data.html#optimal-rstudio-set-up)
+- [The data.table package](https://morrison-lab.github.io/psc/chapters/big-data.html#sec-the-data-table-package)
+- [Using downsampled data](https://morrison-lab.github.io/psc/chapters/big-data.html#sec-using-downsampled-data)
+- [Optimal RStudio set up](https://morrison-lab.github.io/psc/chapters/big-data.html#sec-optimal-rstudio-set-up)
