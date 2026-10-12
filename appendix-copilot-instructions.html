@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -79,9 +79,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b626d73c4c936ccc3cb08be7d45d1df6.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-fd0503e23dce65854c81c5baaade3bdf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -567,6 +567,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="copilot-instructions-for-ucd-serg-lab-manual" class="level1 callout-body-container callout-body">
 <h1>Copilot Instructions for UCD-SeRG Lab Manual</h1>
 <p>This file contains guidelines for GitHub Copilot and other AI assistants when working with the lab manual.</p>
+<section id="content-that-stays-in-this-manual" class="level2">
+<h2 class="anchored" data-anchor-id="content-that-stays-in-this-manual">Content That Stays in This Manual</h2>
+<p>Content that Kristen Aiemjoy contributed stays in this manual. Don’t move it to another repository or replace it with a stub. Other repositories (such as <code>Morrison-Lab/psc</code>, <code>Morrison-Lab/psw</code>, and <code>Morrison-Lab/wai</code>) may adapt it, with visible attribution to this manual and to her. To find her contributions, run <code>git log --author=kaiemjoy</code> and <code>git log --grep='Co-authored-by: kaiemjoy'</code>, and see the tracked changes listed in <a href="https://github.com/UCD-SERG/lab-manual/issues/209">issue #209</a>.</p>
+</section>
 <section id="markdown-and-quarto-formatting" class="level2">
 <h2 class="anchored" data-anchor-id="markdown-and-quarto-formatting">Markdown and Quarto Formatting</h2>
 <section id="talking-about-code" class="level3">
@@ -670,8 +674,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>ALWAYS use Quarto’s cross-reference system for figures, tables, and other captioned content.</strong> See <a href="https://quarto.org/docs/authoring/cross-references.html">Quarto Cross-References documentation</a> for complete details.</p>
 <p><strong>Required label prefixes:</strong></p>
 <ul>
-<li>Figures: <code>#fig-</code> (e.g., <code>#fig-data-masking</code>, <code>#fig-workflow-diagram</code>)</li>
-<li>Tables: <code>#tbl-</code> (e.g., <code>#tbl-git-commands</code>, <code>#tbl-summary-stats</code>)</li>
+<li>Figures: <code>#fig-</code> (e.g., <code>#fig-workflow-diagram</code>)</li>
+<li>Tables: <code>#tbl-</code> (e.g., <code>#tbl-summary-stats</code>)</li>
 <li>Equations: <code>#eq-</code> (e.g., <code>#eq-regression-model</code>)</li>
 <li>Sections: <code>#sec-</code> (e.g., <code>#sec-introduction</code>) - already in use throughout manual</li>
 <li>Theorems: <code>#thm-</code> (e.g., <code>#thm-central-limit</code>)</li>

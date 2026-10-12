@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -26,41 +26,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -79,17 +44,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b626d73c4c936ccc3cb08be7d45d1df6.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-fd0503e23dce65854c81c5baaade3bdf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-4dc5810a0ca2761c5abee21657872ed5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="site_libs/bootstrap/bootstrap-fd0503e23dce65854c81c5baaade3bdf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -529,26 +491,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#general-overview" id="toc-general-overview" class="nav-link active" data-scroll-target="#general-overview"><span class="header-section-number">9.1</span> General Overview</a>
-  <ul class="collapse">
-  <li><a href="#what-is-data-masking" id="toc-what-is-data-masking" class="nav-link" data-scroll-target="#what-is-data-masking"><span class="header-section-number">9.1.1</span> What is Data Masking?</a></li>
-  <li><a href="#using-tidy-evaluation-for-data-masking" id="toc-using-tidy-evaluation-for-data-masking" class="nav-link" data-scroll-target="#using-tidy-evaluation-for-data-masking"><span class="header-section-number">9.1.2</span> Using tidy evaluation for data masking</a></li>
-  </ul></li>
-  <li><a href="#sec-data-masking-vs-tidy-selection" id="toc-sec-data-masking-vs-tidy-selection" class="nav-link" data-scroll-target="#sec-data-masking-vs-tidy-selection"><span class="header-section-number">9.2</span> Data masking vs.&nbsp;tidy selection</a>
-  <ul class="collapse">
-  <li><a href="#the-.data-pronoun-does-not-belong-in-tidy-selection" id="toc-the-.data-pronoun-does-not-belong-in-tidy-selection" class="nav-link" data-scroll-target="#the-.data-pronoun-does-not-belong-in-tidy-selection"><span class="header-section-number">9.2.1</span> The <code>.data</code> pronoun does not belong in tidy selection</a></li>
-  </ul></li>
-  <li><a href="#technical-overview" id="toc-technical-overview" class="nav-link" data-scroll-target="#technical-overview"><span class="header-section-number">9.3</span> Technical Overview</a>
-  <ul class="collapse">
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">9.3.1</span> Example</a></li>
-  </ul></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/data-masking.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/data-masking.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -573,157 +517,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>For information about UC Davis computing resources for data-intensive work, see <a href="slurm.html" class="quarto-xref"><span>Chapter 18</span></a>.</p>
-<section id="general-overview" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="general-overview"><span class="header-section-number">9.1</span> General Overview</h2>
-<p>This chapter covers data masking, a unique process in R in which columns are treated as distinct objects within their dataframe’s environment. In our lab, data masking most frequently comes up when writing wrapper functions where arguments to indicate column names are supplied as strings. We often do this when we repeat the same code on multiple columns, and want to apply a function to a vector of strings that correspond to column names in a dataframe. For example, we might want to clean multiple columns using the same function or estimate the same model under different feature sets. Here, we try to break down what data masking is, why this error comes up, and common approaches to solve this problem.</p>
-<section id="what-is-data-masking" class="level3" data-number="9.1.1">
-<h3 data-number="9.1.1" class="anchored" data-anchor-id="what-is-data-masking"><span class="header-section-number">9.1.1</span> What is Data Masking?</h3>
-<p>Within certain tidyverse operations, columns are called as if they were variables. For example, while running <code>df |&gt; mutate(X = …)</code> R recognizes that <code>X</code> specifically references a column in <code>df</code> without explicitly stating its membership <code>df |&gt; mutate(df$X = …)</code> or calling the column name as a string <code>df |&gt; mutate("X" = …)</code>.</p>
-<div id="fig-data-masking" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-data-masking-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="assets/images/data-masking.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;9.1: Data masking in tidyverse operations"><img src="assets/images/data-masking.PNG" class="img-fluid figure-img" style="width:50.0%"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-masking-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;9.1: Data masking in tidyverse operations
-</figcaption>
-</figure>
-</div>
-<p>However, this behavior may introduce errors when we attempt to incorporate variables from the global environment within these tidyverse pipelines. In the example shown in <a href="#fig-data-masking" class="quarto-xref">Figure&nbsp;<span>9.1</span></a>, <code>column_name = "X"</code> followed by <code>df |&gt; mutate(X2 = column_name + 1)</code> would yield an error, since <code>column_name</code> is not a column in <code>df</code> and the variable <code>column_name</code> is not defined within the environment of <code>df</code></p>
-</section>
-<section id="using-tidy-evaluation-for-data-masking" class="level3" data-number="9.1.2">
-<h3 data-number="9.1.2" class="anchored" data-anchor-id="using-tidy-evaluation-for-data-masking"><span class="header-section-number">9.1.2</span> Using tidy evaluation for data masking</h3>
-<p>In dplyr-based R programming, we make use of tidy evaluation. This allows us to avoid using base R syntax to reference specific columns in a data frame. By leveraging Tidy evaluation-based data masking, we can employ long pipes with several dplyr verbs to manipulate our data using stand-alone variables that store column names as strings.</p>
-<p>For example, consider a data frame “df” that contains a column called “heavyrain” that we want to manipulate. Suppose we wanted to convert the values of “heavyrain” into a factor.</p>
-<p>Using base R, which does not mask data, heavyrain must have quotes to be treated as a data-variable:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">"outcome"</span>]] <span class="ot">=</span> <span class="fu">as.factor</span>(df[[<span class="st">"heavyrain"</span>]])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>In a dplyr pipe, heavyrain is being masked using tidy evaluation and will be correctly interpreted as a column because it is recognized as a data-variable:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">outcome =</span> <span class="fu">as.factor</span>(heavyrain))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>With modified data masking, heavyrain is a string that is coerced into being recognized as a data-variable:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>var_name <span class="ot">=</span> <span class="st">"heavyrain"</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">outcome =</span> <span class="fu">as.factor</span>(<span class="sc">!!</span><span class="fu">sym</span>(var_name)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>While cleaner and often more convenient, the data frame that var_name is in is now “masked” and we refer to the vectors in the dataframe (data-variables) as though it is an object of its own (an environmental-variable). This is why we can just say the variable’s name in the context of a pipe – we treat it as though it’s an object defined in our environment. Within normal scripts, this is usually fine, because the data frame is “held on to” in the pipe. However, it can cause some programming hurdles when writing functions that take strings of variable/column names as arguments. In the next section, we briefly describe how to troubleshoot common errors in data masking, as relevant to our lab’s work.</p>
-</section>
-</section>
-<section id="sec-data-masking-vs-tidy-selection" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="sec-data-masking-vs-tidy-selection"><span class="header-section-number">9.2</span> Data masking vs.&nbsp;tidy selection</h2>
-<p>Many <a href="https://www.tidyverse.org/"><code>{tidyverse}</code></a> verbs use <em>two</em> different flavors of tidy evaluation, and the way you refer to a column stored in a string variable depends on which one you are in.</p>
+<p>This chapter has moved to <a href="https://morrison-lab.github.io/psc/"><em>Principles of Scientific Computing</em></a>, the Morrison Lab’s general-purpose guide to coding for research projects: <strong><a href="https://morrison-lab.github.io/psc/chapters/data-masking.html">Data masking</a></strong> (source: <a href="https://github.com/Morrison-Lab/psc" class="uri">https://github.com/Morrison-Lab/psc</a>).</p>
+<p><span id="sec-data-masking-vs-tidy-selection"></span> <span id="general-overview"></span> <span id="what-is-data-masking"></span> <span id="using-tidy-evaluation-for-data-masking"></span> <span id="the-.data-pronoun-does-not-belong-in-tidy-selection"></span> <span id="technical-overview"></span> <span id="example"></span> <span id="fig-data-masking"></span> <span id="tbl-masking-selection"></span></p>
+<p>That page covers:</p>
 <ul>
-<li><strong>Data-masking</strong> contexts treat column names as values you compute <em>with</em>: the <a href="https://dplyr.tidyverse.org/"><code>{dplyr}</code></a> verbs <code>mutate()</code>, <code>filter()</code>, <code>summarize()</code>/<code>summarise()</code> (the summary expressions), <code>group_by()</code>, and <code>arrange()</code>, plus <code>aes()</code> in <a href="https://ggplot2.tidyverse.org/"><code>{ggplot2}</code></a>.</li>
-<li><strong>Tidy-selection</strong> contexts treat column names as columns you <em>choose</em>: <code>select()</code>, <code>rename()</code>, <code>relocate()</code>, <code>pull()</code>, the <code>.cols</code> argument of <code>across()</code>, the <code>.by</code> argument of <code>mutate()</code>/<code>summarize()</code>, and the <code>cols</code>, <code>names_from</code>, <code>values_from</code>, and <code>id_cols</code> arguments of <code>pivot_*()</code> in <a href="https://tidyr.tidyverse.org/"><code>{tidyr}</code></a>.</li>
+<li><a href="https://morrison-lab.github.io/psc/chapters/data-masking.html#general-overview">General Overview</a></li>
+<li><a href="https://morrison-lab.github.io/psc/chapters/data-masking.html#sec-data-masking-vs-tidy-selection">Data masking vs.&nbsp;tidy selection</a></li>
+<li><a href="https://morrison-lab.github.io/psc/chapters/data-masking.html#technical-overview">Technical Overview</a></li>
 </ul>
-<p>To refer to a column named by a string variable, use the tool that matches the context:</p>
-<div id="tbl-masking-selection" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-masking-selection-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;9.1: Referring to a column named by a string variable
-</figcaption>
-<div aria-describedby="tbl-masking-selection-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 42%">
-<col style="width: 23%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Context</th>
-<th>Use</th>
-<th>Avoid</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Data-masking</td>
-<td><code>!!sym(var)</code> or <code>.data[[var]]</code></td>
-<td>bare <code>var</code> (uses the string value itself, not the column it names)</td>
-</tr>
-<tr class="even">
-<td>Tidy-selection</td>
-<td><code>all_of(var)</code> / <code>any_of(var)</code></td>
-<td>the <code>.data</code> pronoun (<code>.data[[var]]</code>, <code>.data$col</code>)</td>
-</tr>
-</tbody>
-</table>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-</figure>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Looking for a specific section that used to be here?
 </div>
-<p>Use <code>all_of()</code> when every selected name must exist (it errors if one is missing) and <code>any_of()</code> when names that are absent should simply be dropped.</p>
-<section id="the-.data-pronoun-does-not-belong-in-tidy-selection" class="level3" data-number="9.2.1">
-<h3 data-number="9.2.1" class="anchored" data-anchor-id="the-.data-pronoun-does-not-belong-in-tidy-selection"><span class="header-section-number">9.2.1</span> The <code>.data</code> pronoun does not belong in tidy selection</h3>
-<p>A common (and <strong>silent</strong>) mistake is reaching for the <code>.data</code> pronoun inside a tidy-selection context:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Soft-deprecated: .data used in selection contexts</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span> <span class="fu">select</span>(.data<span class="sc">$</span>Subject, .data[[var]])</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span> <span class="fu">summarize</span>(<span class="at">.by =</span> <span class="fu">c</span>(.data<span class="sc">$</span>group), <span class="at">med =</span> <span class="fu">median</span>(value))</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span> tidyr<span class="sc">::</span><span class="fu">pivot_wider</span>(<span class="at">names_from =</span> .data<span class="sc">$</span>Parameter)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The <code>.data</code> pronoun is a <em>data-masking</em> tool, not a selection tool. Using it in a selection context was deprecated in <a href="https://tidyselect.r-lib.org/"><code>{tidyselect}</code></a> 1.2.0 (<a href="https://www.tidyverse.org/blog/2022/10/tidyselect-1-2-0/">release notes</a>), but it is a <strong>soft</strong> deprecation, signaled through <a href="https://lifecycle.r-lib.org/"><code>{lifecycle}</code></a>. Per the <a href="https://lifecycle.r-lib.org/articles/communicate.html"><code>{lifecycle}</code> documentation</a>, a soft-deprecated feature warns only users who trigger it from the global environment and developers who use it directly (for example when running <a href="https://testthat.r-lib.org/"><code>{testthat}</code></a> tests); there is <em>no warning when the deprecated feature is called indirectly by another package</em>. So in installed-package code it usually emits <em>no warning at all</em>, and it slips past interactive use, CI, and code review unnoticed. Rewrite these with <code>all_of()</code>/<code>any_of()</code> and plain strings:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Idiomatic tidy selection</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span> <span class="fu">select</span>(<span class="fu">all_of</span>(<span class="fu">c</span>(<span class="st">"Subject"</span>, var)))</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span> <span class="fu">summarize</span>(<span class="at">.by =</span> <span class="fu">all_of</span>(<span class="st">"group"</span>), <span class="at">med =</span> <span class="fu">median</span>(value))</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span> tidyr<span class="sc">::</span><span class="fu">pivot_wider</span>(<span class="at">names_from =</span> <span class="st">"Parameter"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>To make this class of soft deprecation fail loudly, set <code>options(lifecycle_verbosity = "error")</code> in your tests (for example in <code>tests/testthat/setup.R</code>). This option promotes deprecation signals to errors regardless of the soft-versus-warning distinction (<a href="https://lifecycle.r-lib.org/reference/deprecate_soft.html"><code>{lifecycle}</code> reference</a>). Plain <code>options(warn = 2)</code> will <em>not</em> catch it, because <code>warn = 2</code> only converts warnings into errors once a warning is actually signaled, and for a soft deprecation in installed-package code no warning is signaled in the first place.</p>
-</section>
-</section>
-<section id="technical-overview" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="technical-overview"><span class="header-section-number">9.3</span> Technical Overview</h2>
-<p>This section covers the R functions and tools that we often use in the context of data masking, focusing on the bang bang operator (<code>!!</code>) with symbol coercion (<code>sym()</code>) and the Walrus operator (<code>:=</code>).</p>
-<p>The combined use of <code>!!</code> and <code>sym()</code> allows us to use strings, rather than data-variables, to reference column names within dplyr. Together, <code>!!sym("column_name")</code> forces dplyr to recognize “column_name” as a data-variable prior to evaluating the rest of the expression, enabling the ability to perform calculations on the column while referring to it as a string. <code>sym()</code> is a function that turns strings into symbols. In the context of a dplyr pipe, these symbols are interpreted as data-variables. The <code>!!</code> (bang bang) operator tells dplyr to evaluate the sym() expression first, e.g.&nbsp;to unquote its expression (e.g.&nbsp;“column_name”) and evaluate it as a pre-existing object, first. This is helpful because often we use <code>sym("column_name")</code> within a larger expression, and dplyr might evaluate other elements of the expression first without !!, causing errors.</p>
-<p>When we want to create a new column (via mutate or summarize), the Walrus operator (<code>:=</code>) allows us to specify the new column’s name using a string. For example, while <code>df |&gt; mutate("new_column" = values)</code> would yield an error, <code>df |&gt; mutate("new_column" := values)</code> will correctly create a new column called “new_column”. If we want to use a variable representing a string, we can use !! to force the variable to be evaluated before using <code>:=</code> to assign the value of the new column.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>col_name <span class="ot">=</span> <span class="st">"new_column"</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="sc">!!</span><span class="at">col_name :=</span> values)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<section id="example" class="level3" data-number="9.3.1">
-<h3 data-number="9.3.1" class="anchored" data-anchor-id="example"><span class="header-section-number">9.3.1</span> Example</h3>
-<p>Suppose we want to write a function “generate_descriptive_table” to summarize how the prevalence of “outcome” varies under different levels of a “risk_factor” in a data frame “df”</p>
-<p>We can start by writing the function shell:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>generate_descriptive_table <span class="ot">&lt;-</span> <span class="cf">function</span> (df, outcome, rf) {</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>outcome_dist_by_rf <span class="ot">&lt;-</span> ….</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">return</span>(outcome_dist_by_rf)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Next, we can filter the data frame for only rows in which “rf” and “outcome” are not missing. We can use !! and sym() within filter to evaluate the strings stored in “rf” and “outcome”. Note that defining <code>!!sym(outcome)</code> or <code>!!sym(rf)</code> in variables <em>outside of the dplyr pipeline</em> will <em>not</em> work.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>generate_descriptive_table <span class="ot">&lt;-</span> <span class="cf">function</span>(df, outcome, rf) {</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  outcome_dist_by_rf <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> </span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(<span class="sc">!!</span><span class="fu">sym</span>(outcome)), <span class="sc">!</span><span class="fu">is.na</span>(<span class="sc">!!</span><span class="fu">sym</span>(rf))) <span class="sc">|&gt;</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    ….</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(outcome_dist_by_rf)</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Similarly, we use !! and sym() in group_by to evaluate column name, stored as a string in the argument “rf”</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>generate_descriptive_table <span class="ot">&lt;-</span> <span class="cf">function</span>(df, outcome, rf) {</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  outcome_dist_by_rf <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> </span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(<span class="sc">!!</span><span class="fu">sym</span>(outcome)), <span class="sc">!</span><span class="fu">is.na</span>(<span class="sc">!!</span><span class="fu">sym</span>(rf))) <span class="sc">|&gt;</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(<span class="sc">!!</span><span class="fu">sym</span>(rf)) <span class="sc">|&gt;</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    ….</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(outcome_dist_by_rf)</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Finally, we can use the walrus operator, !! and sym() with “summarize” to create a new column that takes the mean of the column referenced in “rf”. We also use “glue” or “paste” to give the new column an informative name that includes the “outcome” it describes.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>generate_descriptive_table <span class="ot">&lt;-</span> <span class="cf">function</span>(df, outcome, rf) {</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  outcome_dist_by_rf <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> </span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(<span class="sc">!!</span><span class="fu">sym</span>(outcome)), <span class="sc">!</span><span class="fu">is.na</span>(<span class="sc">!!</span><span class="fu">sym</span>(rf))) <span class="sc">|&gt;</span> </span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(<span class="sc">!!</span><span class="fu">sym</span>(rf)) <span class="sc">|&gt;</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="sc">!!</span>(glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"{outcome}_prev"</span>)) <span class="sc">:</span><span class="er">=</span> <span class="fu">mean</span>(<span class="sc">!!</span><span class="fu">sym</span>(outcome))) </span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(outcome_dist_by_rf)</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>OR</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>generate_descriptive_table <span class="ot">&lt;-</span> <span class="cf">function</span>(df, outcome, rf) {</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  outcome_dist_by_rf <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> </span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(<span class="sc">!!</span><span class="fu">sym</span>(outcome)), <span class="sc">!</span><span class="fu">is.na</span>(<span class="sc">!!</span><span class="fu">sym</span>(rf))) <span class="sc">|&gt;</span> </span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(<span class="sc">!!</span><span class="fu">sym</span>(rf)) <span class="sc">|&gt;</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="sc">!!</span>(<span class="fu">paste0</span>(outcome, <span class="st">"_prev"</span>)) <span class="sc">:</span><span class="er">=</span> <span class="fu">mean</span>(<span class="sc">!!</span><span class="fu">sym</span>(outcome)))</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(outcome_dist_by_rf)</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>OR</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>generate_descriptive_table <span class="ot">&lt;-</span> <span class="cf">function</span>(df, outcome, rf) {</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  new_column_name <span class="ot">=</span> <span class="fu">paste0</span>(outcome, <span class="st">"_prev"</span>)</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  outcome_dist_by_rf <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> </span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(<span class="sc">!!</span><span class="fu">sym</span>(outcome)), <span class="sc">!</span><span class="fu">is.na</span>(<span class="sc">!!</span><span class="fu">sym</span>(rf))) <span class="sc">|&gt;</span> </span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(<span class="sc">!!</span><span class="fu">sym</span>(rf)) <span class="sc">|&gt;</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="sc">!!</span>(new_column_name) <span class="sc">:</span><span class="er">=</span> <span class="fu">mean</span>(<span class="sc">!!</span><span class="fu">sym</span>(outcome))) </span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(outcome_dist_by_rf)</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>This chapter’s old section anchors still resolve on this page, so old bookmarks and links land here, but the content now lives on the page linked above, under the same anchor. For example, <code>#sec-foo</code> here is <code>chapters/data-masking.html#sec-foo</code> on the psc site.</p>
+</div>
+</div>
+</div>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1152,40 +971,8 @@ Table&nbsp;9.1: Referring to a column named by a string variable
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/data-masking.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/data-masking.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 
 
-</body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/data-masking.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/data-masking.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

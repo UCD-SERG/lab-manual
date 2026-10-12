@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -26,41 +26,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -79,9 +44,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b626d73c4c936ccc3cb08be7d45d1df6.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-fd0503e23dce65854c81c5baaade3bdf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -526,23 +491,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#package-version-control-with-renv" id="toc-package-version-control-with-renv" class="nav-link active" data-scroll-target="#package-version-control-with-renv"><span class="header-section-number">15.1</span> Package Version Control with renv</a>
-  <ul class="collapse">
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">15.1.1</span> Introduction</a></li>
-  <li><a href="#implementing-renv-in-projects" id="toc-implementing-renv-in-projects" class="nav-link" data-scroll-target="#implementing-renv-in-projects"><span class="header-section-number">15.1.2</span> Implementing renv in projects</a></li>
-  <li><a href="#configuring-renv-settings" id="toc-configuring-renv-settings" class="nav-link" data-scroll-target="#configuring-renv-settings"><span class="header-section-number">15.1.3</span> Configuring renv settings</a></li>
-  <li><a href="#using-projects-with-renv" id="toc-using-projects-with-renv" class="nav-link" data-scroll-target="#using-projects-with-renv"><span class="header-section-number">15.1.4</span> Using projects with renv</a></li>
-  </ul></li>
-  <li><a href="#fast-package-installation-on-ubuntu-with-r2u" id="toc-fast-package-installation-on-ubuntu-with-r2u" class="nav-link" data-scroll-target="#fast-package-installation-on-ubuntu-with-r2u"><span class="header-section-number">15.2</span> Fast Package Installation on Ubuntu with r2u</a></li>
-  <li><a href="#managing-r-versions-with-rig" id="toc-managing-r-versions-with-rig" class="nav-link" data-scroll-target="#managing-r-versions-with-rig"><span class="header-section-number">15.3</span> Managing R Versions with rig</a></li>
-  <li><a href="#clearing-docker-cache" id="toc-clearing-docker-cache" class="nav-link" data-scroll-target="#clearing-docker-cache"><span class="header-section-number">15.4</span> Clearing Docker Cache</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/reproducible-environments.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/reproducible-environments.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -567,142 +517,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="package-version-control-with-renv" class="level2" data-number="15.1">
-<h2 data-number="15.1" class="anchored" data-anchor-id="package-version-control-with-renv"><span class="header-section-number">15.1</span> Package Version Control with renv</h2>
-<section id="introduction" class="level3" data-number="15.1.1">
-<h3 data-number="15.1.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">15.1.1</span> Introduction</h3>
-<p>Replicable code should produce the same results, regardless of when or where it’s run. However, our analyses often leverage open-source R packages that are developed by other teams. These packages continue to be developed after research projects are completed, which may include changes to analysis functions that could impact how code runs for both other team members and external replicators.</p>
-<p>For example, suppose we had used a function that took in one argument, such that our code contained <code>example_function(arg_a = "a")</code>. A few months after we publish our code, the package developers update the function to take in another mandatory argument <code>arg_b</code>. If someone runs our code, but has the most recent version of the package, they’ll receive an error message that the argument <code>arg_b</code> is missing and will not be able to fully reproduce our results.</p>
-<p>To ensure that the right functions are used in replication efforts, it is important for us to keep track of package versions used in each project.</p>
-<p><code>renv</code> can be to promote reproducible environments within R projects. <code>renv</code> creates individual package libraries for each project instead of having all projects, which may use different versions of the same package, share the same package library. However, for projects that use many packages, this process can be memory intensive and increase the time needed for a new users to start running code.</p>
-<p>In this lab manual chapter, we provide a quick tutorial for integrating <code>renv</code> into research workflows. For more detailed instructions, please refer to the <code>renv</code> package vignette.</p>
-</section>
-<section id="implementing-renv-in-projects" class="level3" data-number="15.1.2">
-<h3 data-number="15.1.2" class="anchored" data-anchor-id="implementing-renv-in-projects"><span class="header-section-number">15.1.2</span> Implementing renv in projects</h3>
-<p>Ideally, <code>renv</code> should be initiated at the start of projects and updated continuously when new packages are introduced in the codebase. However, this process can be initiated at any point in a project</p>
-<p>To add <code>renv</code> to your workflow, follow these steps:</p>
-<ol type="1">
-<li>Install the <code>renv</code> package by running <code>install.packages("renv")</code></li>
-<li>Create an RProject file and ensure that your working directory is set to the correct folder</li>
-<li>In the R console, run <code>renv::init()</code> to initialize renv in your R Project</li>
-<li>This will create the following files: <code>renv.lock</code>, <code>.Rprofile</code>, <code>renv/settings.json</code> and <code>renv/activate.R</code>. Commit and push these files to GitHub so that they’re accessible to other users.</li>
-<li>As you write code, update the project’s R library by running <code>renv::snapshot()</code> in the R console</li>
-<li>Add <code>renv::restore()</code> to the head of your config file, to make sure that all users that run your code are on the same package versions.</li>
-</ol>
-</section>
-<section id="configuring-renv-settings" class="level3" data-number="15.1.3">
-<h3 data-number="15.1.3" class="anchored" data-anchor-id="configuring-renv-settings"><span class="header-section-number">15.1.3</span> Configuring renv settings</h3>
-<p>The <code>renv/settings.json</code> file created during initialization allows you to customize how <code>renv</code> behaves in your project. One useful setting is <code>snapshot.dev</code>, which controls whether development dependencies are included by default when calling <code>renv::snapshot()</code> or <code>renv::status()</code>.</p>
-<section id="reducing-startup-messages" class="level4" data-number="15.1.3.1">
-<h4 data-number="15.1.3.1" class="anchored" data-anchor-id="reducing-startup-messages"><span class="header-section-number">15.1.3.1</span> Reducing startup messages</h4>
-<p>When working on projects, you may encounter startup messages indicating that <code>renv</code> is out of sync with the lockfile. To reduce these messages in most projects, add the following setting to <code>renv/settings.json</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="st">"snapshot.dev"</span><span class="er">:</span> <span class="kw">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This setting (available in <code>renv</code> version 1.1.6 and later) includes development dependencies in snapshots by default, which helps keep the lockfile aligned with your actual usage and eliminates many synchronization warnings.</p>
-<p>If startup messages about being out of sync persist after enabling this setting, use <code>renv::restore()</code> to sync your local library with the lockfile, or <code>renv::snapshot()</code> to update the lockfile with your current package versions.</p>
-<p>For more details on <code>renv</code> configuration options, see the <a href="https://rstudio.github.io/renv/">official renv documentation</a>.</p>
-</section>
-</section>
-<section id="using-projects-with-renv" class="level3" data-number="15.1.4">
-<h3 data-number="15.1.4" class="anchored" data-anchor-id="using-projects-with-renv"><span class="header-section-number">15.1.4</span> Using projects with renv</h3>
-<p>If you’re starting to work on an ongoing project that already has <code>renv</code> set up, follow these steps to ensure that you’re using the same project versions.</p>
-<ol type="1">
-<li>Install the <code>renv</code> package by running <code>install.packages("renv")</code></li>
-<li>Pull the most updated version of the project from GitHub</li>
-<li>Open the project’s RProject file</li>
-<li>Run <code>renv::restore()</code>. In our lab’s projects, this is often already found at the top of the config file, so you can just run scripts as is.</li>
-<li>This will pull up a list of the project’s packages that need to be updated for you to be consistent with the project. The console will ask if you want to proceed with updating these packages - type “Y” to continue.</li>
-<li>Wait for the correct versions of each package to install/update. This may take some time, depending on how many packages the project uses.</li>
-<li>Your R environment should now be using the same package versions as specified in the <code>renv</code> lock file. You should now be able to replicate the code.</li>
-<li>If you make edits to the code and introduce new/updated packages, see the section above for instructions on how to make updates.</li>
-</ol>
-</section>
-</section>
-<section id="fast-package-installation-on-ubuntu-with-r2u" class="level2" data-number="15.2">
-<h2 data-number="15.2" class="anchored" data-anchor-id="fast-package-installation-on-ubuntu-with-r2u"><span class="header-section-number">15.2</span> Fast Package Installation on Ubuntu with r2u</h2>
-<p>For users working on Ubuntu Linux systems, <a href="https://eddelbuettel.github.io/r2u/">r2u</a> provides an alternative approach to package management that complements or replaces <code>renv</code> in certain workflows.</p>
-<p><strong>What is r2u?</strong></p>
-<p>r2u integrates R package installation with Ubuntu’s <code>apt</code> package manager, providing pre-compiled binary packages for all CRAN packages. This integration offers several advantages over traditional R package installation:</p>
+<p>This chapter has moved to <a href="https://morrison-lab.github.io/psc/"><em>Principles of Scientific Computing</em></a>, the Morrison Lab’s general-purpose guide to coding for research projects: <strong><a href="https://morrison-lab.github.io/psc/chapters/reproducible-environments.html">Reproducible Environments</a></strong> (source: <a href="https://github.com/Morrison-Lab/psc" class="uri">https://github.com/Morrison-Lab/psc</a>).</p>
+<p><span id="package-version-control-with-renv"></span> <span id="introduction"></span> <span id="implementing-renv-in-projects"></span> <span id="configuring-renv-settings"></span> <span id="reducing-startup-messages"></span> <span id="using-projects-with-renv"></span> <span id="fast-package-installation-on-ubuntu-with-r2u"></span> <span id="managing-r-versions-with-rig"></span> <span id="clearing-docker-cache"></span></p>
+<p>That page covers:</p>
 <ul>
-<li><strong>Fast installation</strong>: Binary packages install in seconds, not minutes</li>
-<li><strong>Automatic dependency resolution</strong>: System dependencies are handled automatically</li>
-<li><strong>System-level integration</strong>: Packages integrate with Ubuntu’s package management</li>
-<li><strong>No compilation required</strong>: Eliminates the need for build tools and compilers</li>
+<li><a href="https://morrison-lab.github.io/psc/chapters/reproducible-environments.html#package-version-control-with-renv">Package Version Control with renv</a></li>
+<li><a href="https://morrison-lab.github.io/psc/chapters/reproducible-environments.html#fast-package-installation-on-ubuntu-with-r2u">Fast Package Installation on Ubuntu with r2u</a></li>
+<li><a href="https://morrison-lab.github.io/psc/chapters/reproducible-environments.html#managing-r-versions-with-rig">Managing R Versions with rig</a></li>
+<li><a href="https://morrison-lab.github.io/psc/chapters/reproducible-environments.html#clearing-docker-cache">Clearing Docker Cache</a></li>
 </ul>
-<p><strong>Supported Ubuntu versions (as of early 2025):</strong></p>
-<ul>
-<li>Ubuntu 24.04 “noble” (amd64 and arm64)</li>
-<li>Ubuntu 22.04 “jammy” (amd64)</li>
-<li>Ubuntu 20.04 “focal” (amd64, archived - no new updates)</li>
-</ul>
-<p><strong>When to use r2u vs.&nbsp;renv:</strong></p>
-<ul>
-<li><strong>Use r2u when</strong>: You work primarily on Ubuntu systems, want fast package installation, or need system-level package management</li>
-<li><strong>Use renv when</strong>: You need cross-platform reproducibility, work on macOS/Windows, or require project-specific package libraries</li>
-<li><strong>Use both when</strong>: You want fast installation on Ubuntu while maintaining reproducibility through renv lockfiles</li>
-</ul>
-<p><strong>Basic setup:</strong></p>
-<p>r2u requires a one-time system setup. See the <a href="https://eddelbuettel.github.io/r2u/">r2u website</a> for detailed installation instructions.</p>
-<p>Once configured, R’s <code>install.packages()</code> automatically uses binary packages from r2u, making package installation much faster.</p>
-<p><strong>Docker containers:</strong></p>
-<p>The Rocker Project provides <code>rocker/r2u</code> Docker containers with r2u pre-configured, ideal for reproducible containerized workflows.</p>
-<p>For complete documentation and setup instructions, see the <a href="https://eddelbuettel.github.io/r2u/">r2u website</a>.</p>
-</section>
-<section id="managing-r-versions-with-rig" class="level2" data-number="15.3">
-<h2 data-number="15.3" class="anchored" data-anchor-id="managing-r-versions-with-rig"><span class="header-section-number">15.3</span> Managing R Versions with rig</h2>
-<p><a href="https://github.com/r-lib/rig">rig</a> is an R installation manager that makes it easy to install, manage, and switch between multiple versions of R on macOS, Windows, and Linux.</p>
-<p>When working across projects that require different R versions, or when you need to match a specific R version for reproducibility, <code>rig</code> provides a simple command-line interface to handle R version management.</p>
-<p>Key features:</p>
-<ul>
-<li><strong>Multi-version support</strong>: Install and switch between multiple R versions</li>
-<li><strong>Cross-platform</strong>: Works on macOS, Windows, and Linux</li>
-<li><strong>Simple CLI</strong>: Install a version with <code>rig add release</code>, list installed versions with <code>rig list</code></li>
-<li><strong>RStudio / Positron integration</strong>: Registered R versions are automatically available in RStudio and Positron</li>
-<li><strong>Handles permissions for you</strong>: switches to the root/administrator user as needed when installing R versions</li>
-</ul>
-<p><strong>When to use rig:</strong></p>
-<ul>
-<li>You need a specific older R version to reproduce results from a published analysis</li>
-<li>You want to test code against multiple R versions</li>
-<li>You are setting up a new machine and want a streamlined R installation process</li>
-</ul>
-<p><strong>Basic usage:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install the latest release of R</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">rig</span> add release</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Install a specific version</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">rig</span> add 4.3.3</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># List installed versions</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ex">rig</span> list</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Switch the default R version</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="ex">rig</span> default 4.3.3</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>For full installation instructions and documentation, see the <a href="https://github.com/r-lib/rig">rig GitHub repository</a>.</p>
-</section>
-<section id="clearing-docker-cache" class="level2" data-number="15.4">
-<h2 data-number="15.4" class="anchored" data-anchor-id="clearing-docker-cache"><span class="header-section-number">15.4</span> Clearing Docker Cache</h2>
-<p>When Docker images and containers accumulate on a server, they can consume significant disk space. To reclaim disk space by removing unused Docker data:</p>
-<ol type="1">
-<li>SSH into the Docker server.</li>
-<li>Run <code>docker system prune -a</code>.</li>
-</ol>
-<p>This command removes all stopped containers, all unused networks, all unused images (not just dangling ones), and all build cache.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><code>docker system prune -a</code> removes <strong>all</strong> unused images, not just dangling ones. Confirm that no important containers are currently stopped before running it, as their associated images will also be removed.</p>
-</div>
-</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1135,4 +960,4 @@ Warning
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/reproducible-environments.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/reproducible-environments.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/reproducible-environments.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/reproducible-environments.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
