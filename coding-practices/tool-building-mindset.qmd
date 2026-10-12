@@ -38,7 +38,7 @@ The mindset in practice:
   polish it further only when its use grows to warrant it.
 
 Much of our lab's shared infrastructure came from exactly this pattern:
-the [`{snapr}`](https://d-morrison.github.io/snapr/) package
+the [`{snapr}`](https://morrison-lab.github.io/snapr/) package
 packages the lab's snapshot-testing helpers,
 the [`{lms}`](https://github.com/UCD-SERG/lab-manual/tree/main/lms)
 linter package packages our shared lint configuration,
