@@ -51,7 +51,7 @@ test_that("prep_study_data produces expected structure", {
 })
 ```
 
-Our lab's [`{snapr}`](https://d-morrison.github.io/snapr/) package
+Our lab's [`{snapr}`](https://morrison-lab.github.io/snapr/) package
 (on [CRAN](https://cran.r-project.org/package=snapr))
 adds convenience wrappers on top of
 [`{testthat}`](https://testthat.r-lib.org/)'s snapshot functions:
