@@ -121,10 +121,10 @@ Don't bypass a failing check; fix the underlying issue.
   [`{dplyr}`](https://dplyr.tidyverse.org/). No raw HTML in `.qmd`.
 - Use Quarto cross-references: `#fig-`, `#tbl-`, `#sec-`, etc., referenced with
   `@fig-label`. Store images locally under `assets/images/`, not external URLs.
-  A bare markdown anchor link like `[text](#sec-foo)` is **not** the same
-  thing and will pass a render but fail review --- always use `[text](@sec-foo)`
-  for an internal cross-reference, even when linking custom prose text rather
-  than the auto-generated "Section N".
+  When you need custom link text instead of the auto-generated "Section N",
+  write `[text](#sec-foo)`; Quarto resolves it to the right chapter.
+  Never write `[text](@sec-foo)`: Quarto leaves that target as written,
+  so the rendered page links to the literal path `@sec-foo`, which goes nowhere.
 - Use `#| code-fold: true` when the output is the point and the code is incidental.
 - R style: tidyverse, native `|>` pipe, `snake_case`, `.qmd` not `.Rmd`.
 
