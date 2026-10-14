@@ -123,7 +123,7 @@ We use a combination of tools to track and manage project tasks:
 
 ## Shared Documents
 
-- We mostly use Microsoft 365 to collaborate and write documents internally and GoogleDocs when working with external collaborators.
+- We mostly use Microsoft 365 to collaborate and write documents internally and Google Docs when working with external collaborators.
   These documents may be linked to in GitHub Issues or other task tracking tools.
   Lab leadership often shares these with the whole team since tasks are overlapping,
   and even if a task is assigned to one person, others may have valuable insights. 

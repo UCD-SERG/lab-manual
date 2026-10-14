@@ -23,6 +23,7 @@ One of the most relevant aspects of protecting human subjects in our work is mai
 
 Remember, data that looks like it does not contain identifiers to you might still be classified as data that requires special protection by our IRB or under HIPAA, so always proceed with caution and ask for help if you have any concerns about how to maintain study participant confidentiality. 
 
+## Authorship {#authorship}
+
 Our authorship policy has moved to [Authorship](#sec-authorship) in the Manuscript Preparation chapter.
-[]{#authorship}
 
