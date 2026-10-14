@@ -26,4 +26,3 @@ Remember, data that looks like it does not contain identifiers to you might stil
 ## Authorship {#authorship}
 
 Our authorship policy has moved to [Authorship](#sec-authorship) in the Manuscript Preparation chapter.
-
