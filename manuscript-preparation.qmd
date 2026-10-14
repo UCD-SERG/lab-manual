@@ -13,6 +13,30 @@ The typical workflow for manuscript preparation and publication:
 7. **Revisions**: Lead author coordinates response to peer reviewers
 8. **Publication**: Celebrate and share!
 
+## Authorship {#sec-authorship}
+
+We adhere to the [ICMJE Definition of authorship](http://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html) [@icmje]
+and are happy for team members who meet the definition of authorship to be included as co-authors on scientific manuscripts.
+To qualify for authorship, individuals must meet all four criteria:
+
+1. Substantial contributions to conception/design, or acquisition/analysis/interpretation of data
+2. Drafting the work or revising it critically for important intellectual content
+3. Final approval of the version to be published
+4. Agreement to be accountable for all aspects of the work
+
+**Authorship practices:**
+
+- **First authorship**: Typically goes to the person who led the work.
+  For international collaborative projects,
+  first authorship is often shared between the people who lead data collection and analysis.
+- **Corresponding author**: Usually Dr. Morrison or Dr. Aiemjoy, unless otherwise agreed
+- **Co-authorship**: Determined by substantial intellectual contributions
+- **Author order**: Should be discussed and agreed upon by all authors
+- **Acknowledgments**: For contributions that don't meet authorship criteria
+
+Authorship should be discussed early in a project and revisited as the work evolves to ensure transparency and fairness.
+We encourage using the [CRediT Taxonomy](https://credit.niso.org/) to document specific author contributions.
+
 ## Responding to Peer Review {#sec-responding-to-peer-review}
 
 {{< include manuscript-preparation/responding-to-peer-review.qmd >}}

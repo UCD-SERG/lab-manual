@@ -40,9 +40,7 @@ Please also set your status in Teams (e.g., it could say "On vacation") so we kn
   or documents in emails,
   include direct hyperlinks so recipients do not have to search for the relevant items
   (see [Direct Hyperlinks in Internal Correspondence](#sec-direct-hyperlinks)).
-- Generally, strive to respond within a work day when you are directly addressed in an email.
-  Again because we work across many timezones,
-  this means responding within a work day in your own timezone.
+- Generally, strive to respond within two working days when you are directly addressed in an email.
   If you're on vacation, you're not expected to respond until the end of your first work day back
   (or possibly longer, if you've been out for a while and have a backlog).
 - As noted above, if you are unusually busy or on vacation please alert the team in advance and via an away message, so we can expect you not to respond at all / as quickly as usual.
@@ -90,7 +88,8 @@ especially if they receive work email or Teams notifications on their phones.
   We recommend configuring your devices and applications to prevent work notifications during non-work time.
   We all need uninterrupted rest and relaxation time in order to stay healthy and productive in the medium and long term.
 - **Sending messages outside work hours**:
-  There's no expectation to only send emails or messages during normal work hours.
+  Because we work across many time zones,
+  there's no expectation to only send emails or messages during normal work hours.
   Feel free to send messages whenever you compose them---don't spend effort scheduling messages for later delivery.
   Recipients will manage their own notification schedules,
   and they may be working different hours or want the information sooner.
@@ -124,7 +123,7 @@ We use a combination of tools to track and manage project tasks:
 
 ## Shared Documents
 
-- We mostly use Microsoft 365 to collaborate and write internally and GoogleDocs when working with external collaborators.
+- We mostly use Microsoft 365 to collaborate and write documents internally and GoogleDocs when working with external collaborators.
   These documents may be linked to in GitHub Issues or other task tracking tools.
   Lab leadership often shares these with the whole team since tasks are overlapping,
   and even if a task is assigned to one person, others may have valuable insights. 
