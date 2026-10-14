@@ -5,6 +5,13 @@ on:
 
 name: Quarto Publish
 
+# Serialize deploys so two quick merges to main cannot publish out of order
+# (#559). Queue rather than cancel, so a run mid-deploy always finishes;
+# GitHub keeps only the newest pending run, so the latest main wins.
+concurrency:
+  group: publish-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
