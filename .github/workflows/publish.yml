@@ -8,6 +8,11 @@ name: Quarto Publish
 # Serialize deploys so two quick merges to main cannot publish out of order
 # (#559). Queue rather than cancel, so a run mid-deploy always finishes;
 # GitHub keeps only the newest pending run, so the latest main wins.
+# preview.yml deliberately stays out of this group. A shared group keeps one
+# pending run across both workflows, so a preview could cancel a queued main
+# publish. The two cannot overwrite each other anyway: publish skips
+# pr-preview/ (clean-exclude) and each preview writes only pr-preview/pr-<N>/,
+# both through github-pages-deploy-action with force: false.
 concurrency:
   group: publish-${{ github.ref }}
   cancel-in-progress: false
