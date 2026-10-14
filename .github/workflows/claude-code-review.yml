@@ -1,7 +1,7 @@
 # Calls the shared reusable Claude Code Review workflow in Morrison-Lab/gha.
 # Requires the CLAUDE_CODE_OAUTH_TOKEN repository secret. It is passed
 # explicitly (not `secrets: inherit`): the reusable workflow lives in the
-# d-morrison user account while this repo is in the UCD-SERG org, and GitHub
+# Morrison-Lab org while this repo is in the UCD-SERG org, and GitHub
 # only inherits secrets into a reusable workflow owned by the same org/user.
 # Cross-owner `secrets: inherit` silently passes an empty token, so the
 # reviewer dies with "Either ANTHROPIC_API_KEY, CLAUDE_CODE_OAUTH_TOKEN, ...
@@ -23,11 +23,11 @@ jobs:
   review:
     permissions:
       contents: read
-      pull-requests: write
+      pull-requests: write   # posting job; the model job itself is read-only
       issues: write
-      id-token: write
-      actions: read   # lets the reviewer read CI status (github_ci MCP server)
-    uses: Morrison-Lab/gha/.github/workflows/claude-code-review.yml@v1
+      actions: read   # post-review artifact download; reviewer reads CI status
+      checks: read    # not used by @v2 today; granted ahead of gha#833
+    uses: Morrison-Lab/gha/.github/workflows/claude-code-review.yml@v2
     # Pass secrets explicitly — cross-owner `secrets: inherit` drops them (see
     # the header comment). SUBMODULES_TOKEN is optional (empty when unset).
     secrets:
