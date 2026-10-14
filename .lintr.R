@@ -1,13 +1,14 @@
-# Shared UCD-SERG linter set, defined once in the lms package (this repo's
-# lms/ subdirectory). To lint this repo locally, first install it:
+# Shared linter set, defined once in the lms package, which lives in the
+# lms/ subdirectory of Morrison-Lab/psc (moved there from this repo in
+# October 2026). To lint this repo locally, first install it:
 #
-#   R CMD INSTALL lms        # or: pak::local_install("lms")
+#   remotes::install_github("Morrison-Lab/psc/lms@lms-v0.1.1")
 #
-# CI installs lms from the local subdir before running lintr.
+# CI installs the same tag before running lintr.
 if (!requireNamespace("lms", quietly = TRUE)) {
   stop(
     "Package 'lms' is required to lint this repo. Install it with:\n",
-    "  R CMD INSTALL lms   (or pak::local_install('lms'))",
+    "  remotes::install_github('Morrison-Lab/psc/lms@lms-v0.1.1')",
     call. = FALSE
   )
 }
@@ -27,9 +28,6 @@ exclusions <- list(
     undesirable_function_linter = Inf
   ),
   "tests/testthat.R" = list(
-    undesirable_function_linter = Inf
-  ),
-  "lms/tests/testthat.R" = list(
     undesirable_function_linter = Inf
   )
 )

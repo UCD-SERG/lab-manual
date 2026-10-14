@@ -44,8 +44,9 @@ copilot-instructions.md wins. Read it before non-trivial content edits.
 - `_extensions/` - vendored Quarto Lua filters; do not edit
 - `DESCRIPTION` - declares the book's R dependencies (package `labmanual`,
   `Type: Book`); the only R-package file at the root
-- `lms/` - the shared UCD-SERG linter package (a proper R package with `R/`,
-  `man/`, `NAMESPACE`, `DESCRIPTION`), installed locally for linting
+- `lms/` - only a pointer: the shared linter package moved to
+  [`Morrison-Lab/psc`](https://github.com/Morrison-Lab/psc/tree/main/lms)
+  in October 2026; edit it there
 - `inst/WORDLIST` - accepted spell-check terms
 - `lychee.toml` - link-checker config; `.lintr.R` - lint config
 - `.github/workflows/` - CI; `.github/scripts/` - R, Python, and shell helpers for preview/checks
@@ -79,19 +80,14 @@ CI does the same via `r-lib/actions/setup-renv`.
   `.html`. Fix broken links; only add an exclusion to `lychee.toml` when a URL
   is valid for humans but trips the automated checker.
 - Lint (`lint-project.yaml`, `lintr::lint_dir()`). The root `.lintr.R` calls
-  `lms::default_linters()`, so install the local `lms` package first:
-  `R CMD INSTALL lms`. Repo-specific exclusions stay in `.lintr.R`, not in `lms`.
+  `lms::default_linters()`, so install `lms` from psc first:
+  `remotes::install_github("Morrison-Lab/psc/lms@lms-v0.1.1")`
+  (CI pins the same tag).
+  Repo-specific exclusions stay in `.lintr.R`, not in `lms`.
   `default_linters()` includes `cyclocomp_linter()` and a custom
   `function_length_linter()` (the `<150` line heuristic from
   [Function Length Limits](https://morrison-lab.github.io/psc/chapters/coding-practices.html#sec-function-length-limits)
-  in psc; lintr has no built-in
-  line-count linter). `lms/tests/testthat.R` already has its own `.lintr.R`
-  exclusion entry; the same pattern applies to any nested path --- the
-  standard testthat boilerplate's `library()` calls need an explicit entry
-  keyed to the nested path (e.g. `"lms/tests/testthat.R"`), since the
-  existing root-level `"tests/testthat.R"` exclusion entry is for a
-  different, not-yet-existing root-level tests directory and does not match
-  nested paths.
+  in psc; lintr has no built-in line-count linter).
 - Non-standard characters (`check-non-standard-chars.yaml`). `.qmd`, `.R`,
   and `.md` files must use ASCII punctuation only - no curly quotes, no
   en/em dashes. Use `"`, `'`, and `-` (or write the dash as `---` in prose,

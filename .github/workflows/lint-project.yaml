@@ -29,12 +29,20 @@ jobs:
 
       - uses: r-lib/actions/setup-renv@v2
 
-      - name: Install lms (shared linter config) from local subdir
+      - name: Install lms (shared linter config) from Morrison-Lab/psc
         # The root .lintr.R calls lms::default_linters(), so lms must be
-        # installed before linting. lms's deps (lintr, rex) are restored
-        # from renv.lock by setup-renv above, so no extra install is needed.
-        run: R CMD INSTALL lms
-        shell: bash
+        # installed before linting. lms moved to Morrison-Lab/psc in
+        # October 2026; pin a release tag there so edits to psc never
+        # churn this repo's linting. lms's deps (lintr, rex, cyclocomp,
+        # xml2) and remotes are restored from renv.lock by setup-renv
+        # above, so install lms alone and upgrade nothing.
+        run: |
+          remotes::install_github(
+            "Morrison-Lab/psc/lms@lms-v0.1.1",
+            dependencies = FALSE,
+            upgrade = "never"
+          )
+        shell: Rscript {0}
 
       - name: Lint root directory
         run: lintr::lint_dir()
