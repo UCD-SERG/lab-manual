@@ -8,7 +8,9 @@ We encourage students / staff of all experience levels to respectfully share the
 
 ## Diversity, equity, and inclusion
 
-UCD-SeRG recognizes the importance of and is committed to cultivating a culture of diversity, equity, and inclusion. This means being a safe and supportive environment in which students from diverse backgrounds are equally and inclusively supported in their education and training. Diversity takes many forms, and includes, but is not limited to, differences in race, ethnicity, gender, sexuality, socioeconomic status, religion, disability, and political affiliation. 
+UCD-SeRG recognizes the importance of and is committed to cultivating a culture of diversity, equity, and inclusion.
+This means being a safe and supportive environment in which students from diverse backgrounds are equally and inclusively supported in their education and training.
+Diversity takes many forms, and includes, but is not limited to, differences in race, ethnicity, gender, sexuality, socioeconomic status, religion, disability, and political affiliation.
 
 ## Protecting human subjects {#sec-protecting-human-subjects}
 
@@ -21,7 +23,6 @@ One of the most relevant aspects of protecting human subjects in our work is mai
 
 Remember, data that looks like it does not contain identifiers to you might still be classified as data that requires special protection by our IRB or under HIPAA, so always proceed with caution and ask for help if you have any concerns about how to maintain study participant confidentiality. 
 
-## Authorship {#authorship}
-
 Our authorship policy has moved to [Authorship](#sec-authorship) in the Manuscript Preparation chapter.
+[]{#authorship}
 

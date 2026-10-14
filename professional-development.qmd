@@ -58,7 +58,8 @@ in [*Principles of Scientific Writing*](https://morrison-lab.github.io/psw/).
 - Start planning fellowship applications well in advance of deadlines (typically 3-6 months)
 - Attend grant writing workshops and seek feedback from multiple sources
 - We recommend that all our UC Davis graduate students enroll in the
-  [F fellowship preparation course](https://health.ucdavis.edu/cancer/research/education-training/fellow-award)
+  [Fellowship Award Writing course](https://health.ucdavis.edu/cancer/research/education-training/fellow-award)
+  for NIH F31 and F32 applications
 
 **Resources:**
 

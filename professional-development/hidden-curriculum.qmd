@@ -51,7 +51,8 @@ Navigating scientific publication requires understanding the review lifecycle:
   and draft systematic, point-by-point response letters
   using the guidance in @sec-responding-to-peer-review.
 - **Authorship conversations**: Initiate discussions regarding authorship order
-  and contribution roles early in every project and revisit them regularly.
+  and contribution roles early in every project and revisit them regularly
+  (see @sec-authorship).
 
 ### Strategic Networking and Visibility {#sec-strategic-networking}
 
