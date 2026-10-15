@@ -2,13 +2,17 @@
 # lms/ subdirectory of Morrison-Lab/psc (moved there from this repo in
 # October 2026). To lint this repo locally, first install it:
 #
-#   remotes::install_github("Morrison-Lab/psc/lms@lms-v0.1.1")
+#   remotes::install_github(
+#     "Morrison-Lab/psc/lms@3d92ab2bb1115231ebee5ef071e2f4669b160945"
+#   )
 #
-# CI installs the same tag before running lintr.
+# CI installs the same commit before running lintr.
 if (!requireNamespace("lms", quietly = TRUE)) {
   stop(
     "Package 'lms' is required to lint this repo. Install it with:\n",
-    "  remotes::install_github('Morrison-Lab/psc/lms@lms-v0.1.1')",
+    "  remotes::install_github(\n",
+    "    'Morrison-Lab/psc/lms@3d92ab2bb1115231ebee5ef071e2f4669b160945'\n",
+    "  )",
     call. = FALSE
   )
 }
