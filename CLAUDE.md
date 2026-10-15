@@ -82,7 +82,7 @@ CI does the same via `r-lib/actions/setup-renv`.
 - Lint (`lint-project.yaml`, `lintr::lint_dir()`). The root `.lintr.R` calls
   `lms::default_linters()`, so install `lms` from psc first:
   `remotes::install_github("Morrison-Lab/psc/lms@3d92ab2bb1115231ebee5ef071e2f4669b160945", upgrade = "never", build = FALSE)`
-  (CI pins the same commit with the same arguments;
+  (CI pins the same commit this way and also passes `dependencies = FALSE`;
   `upgrade = "never"` leaves the renv-restored packages alone).
   Repo-specific exclusions stay in `.lintr.R`, not in `lms`.
   `default_linters()` includes `cyclocomp_linter()` and a custom

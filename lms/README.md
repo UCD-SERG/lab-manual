@@ -7,7 +7,7 @@ the repository behind
 It moved there with its history in October 2026.
 
 Install the version this manual lints with (lms 0.1.1),
-using the same arguments as CI:
+as CI installs it (CI also passes `dependencies = FALSE`):
 
 ```r
 remotes::install_github(

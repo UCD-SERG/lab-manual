@@ -8,7 +8,7 @@
 #     build = FALSE
 #   )
 #
-# CI installs the same commit, with the same arguments, before linting.
+# CI installs the same commit this way, adding dependencies = FALSE.
 if (!requireNamespace("lms", quietly = TRUE)) {
   stop(
     "Package 'lms' is required to lint this repo. Install it with:\n",
