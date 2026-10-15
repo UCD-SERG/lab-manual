@@ -6,11 +6,18 @@ the repository behind
 [Principles of Scientific Computing](https://morrison-lab.github.io/psc/).
 It moved there with its history in October 2026.
 
-Install the version this manual lints with:
+Install the version this manual lints with (lms 0.1.1),
+using the same arguments as CI:
 
 ```r
-remotes::install_github("Morrison-Lab/psc/lms@3d92ab2bb1115231ebee5ef071e2f4669b160945")
+remotes::install_github(
+  "Morrison-Lab/psc/lms@3d92ab2bb1115231ebee5ef071e2f4669b160945",
+  upgrade = "never",
+  build = FALSE
+)
 ```
 
-The `v0.1.0` tag on this repository still installs the version from before the move
+`upgrade = "never"` leaves alone the packages that `renv::restore()` installed.
+The `v0.1.0` tag on this repository still installs lms 0.1.0,
+an earlier version than the 0.1.1 that moved
 (`remotes::install_github("UCD-SERG/lab-manual/lms@v0.1.0")`).

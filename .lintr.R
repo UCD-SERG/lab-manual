@@ -3,15 +3,19 @@
 # October 2026). To lint this repo locally, first install it:
 #
 #   remotes::install_github(
-#     "Morrison-Lab/psc/lms@3d92ab2bb1115231ebee5ef071e2f4669b160945"
+#     "Morrison-Lab/psc/lms@3d92ab2bb1115231ebee5ef071e2f4669b160945",
+#     upgrade = "never",
+#     build = FALSE
 #   )
 #
-# CI installs the same commit before running lintr.
+# CI installs the same commit, with the same arguments, before linting.
 if (!requireNamespace("lms", quietly = TRUE)) {
   stop(
     "Package 'lms' is required to lint this repo. Install it with:\n",
     "  remotes::install_github(\n",
-    "    'Morrison-Lab/psc/lms@3d92ab2bb1115231ebee5ef071e2f4669b160945'\n",
+    "    'Morrison-Lab/psc/lms@3d92ab2bb1115231ebee5ef071e2f4669b160945',\n",
+    "    upgrade = 'never',\n",
+    "    build = FALSE\n",
     "  )",
     call. = FALSE
   )
