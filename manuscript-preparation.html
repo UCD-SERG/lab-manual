@@ -61,7 +61,26 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -532,12 +551,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#publication-process" id="toc-publication-process" class="nav-link active" data-scroll-target="#publication-process"><span class="header-section-number">24.1</span> Publication Process</a></li>
-  <li><a href="#sec-responding-to-peer-review" id="toc-sec-responding-to-peer-review" class="nav-link" data-scroll-target="#sec-responding-to-peer-review"><span class="header-section-number">24.2</span> Responding to Peer Review</a></li>
-  <li><a href="#preprints-and-open-access" id="toc-preprints-and-open-access" class="nav-link" data-scroll-target="#preprints-and-open-access"><span class="header-section-number">24.3</span> Preprints and Open Access</a></li>
-  <li><a href="#reporting-checklists" id="toc-reporting-checklists" class="nav-link" data-scroll-target="#reporting-checklists"><span class="header-section-number">24.4</span> Reporting Checklists</a></li>
-  <li><a href="#manuscript-checklist" id="toc-manuscript-checklist" class="nav-link" data-scroll-target="#manuscript-checklist"><span class="header-section-number">24.5</span> Manuscript Checklist</a></li>
-  <li><a href="#formatting-tables-with-gtsummary-flextable-flexlsx" id="toc-formatting-tables-with-gtsummary-flextable-flexlsx" class="nav-link" data-scroll-target="#formatting-tables-with-gtsummary-flextable-flexlsx"><span class="header-section-number">24.6</span> Formatting tables with <code>gtsummary</code> + <code>flextable</code> + <code>flexlsx</code></a></li>
-  <li><a href="#scientific-writing-claims-and-evidence" id="toc-scientific-writing-claims-and-evidence" class="nav-link" data-scroll-target="#scientific-writing-claims-and-evidence"><span class="header-section-number">24.7</span> Scientific Writing: Claims and Evidence</a></li>
+  <li><a href="#sec-authorship" id="toc-sec-authorship" class="nav-link" data-scroll-target="#sec-authorship"><span class="header-section-number">24.2</span> Authorship</a></li>
+  <li><a href="#sec-responding-to-peer-review" id="toc-sec-responding-to-peer-review" class="nav-link" data-scroll-target="#sec-responding-to-peer-review"><span class="header-section-number">24.3</span> Responding to Peer Review</a></li>
+  <li><a href="#preprints-and-open-access" id="toc-preprints-and-open-access" class="nav-link" data-scroll-target="#preprints-and-open-access"><span class="header-section-number">24.4</span> Preprints and Open Access</a></li>
+  <li><a href="#reporting-checklists" id="toc-reporting-checklists" class="nav-link" data-scroll-target="#reporting-checklists"><span class="header-section-number">24.5</span> Reporting Checklists</a></li>
+  <li><a href="#manuscript-checklist" id="toc-manuscript-checklist" class="nav-link" data-scroll-target="#manuscript-checklist"><span class="header-section-number">24.6</span> Manuscript Checklist</a></li>
+  <li><a href="#formatting-tables-with-gtsummary-flextable-flexlsx" id="toc-formatting-tables-with-gtsummary-flextable-flexlsx" class="nav-link" data-scroll-target="#formatting-tables-with-gtsummary-flextable-flexlsx"><span class="header-section-number">24.7</span> Formatting tables with <code>gtsummary</code> + <code>flextable</code> + <code>flexlsx</code></a></li>
+  <li><a href="#scientific-writing-claims-and-evidence" id="toc-scientific-writing-claims-and-evidence" class="nav-link" data-scroll-target="#scientific-writing-claims-and-evidence"><span class="header-section-number">24.8</span> Scientific Writing: Claims and Evidence</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UCD-SERG/lab-manual/edit/main/manuscript-preparation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/blob/main/manuscript-preparation.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UCD-SERG/lab-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -578,8 +598,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Publication</strong>: Celebrate and share!</li>
 </ol>
 </section>
-<section id="sec-responding-to-peer-review" class="level2" data-number="24.2">
-<h2 data-number="24.2" class="anchored" data-anchor-id="sec-responding-to-peer-review"><span class="header-section-number">24.2</span> Responding to Peer Review</h2>
+<section id="sec-authorship" class="level2" data-number="24.2">
+<h2 data-number="24.2" class="anchored" data-anchor-id="sec-authorship"><span class="header-section-number">24.2</span> Authorship</h2>
+<p>We adhere to the <a href="https://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html">ICMJE Definition of authorship</a> <span class="citation" data-cites="icmje">(<a href="references.html#ref-icmje" role="doc-biblioref">International Committee of Medical Journal Editors, n.d.</a>)</span> and are happy for team members who meet the definition of authorship to be included as co-authors on scientific manuscripts. To qualify for authorship, individuals must meet all four criteria:</p>
+<ol type="1">
+<li>Substantial contributions to conception/design, or acquisition/analysis/interpretation of data</li>
+<li>Drafting the work or revising it critically for important intellectual content</li>
+<li>Final approval of the version to be published</li>
+<li>Agreement to be accountable for all aspects of the work</li>
+</ol>
+<p><strong>Authorship practices:</strong></p>
+<ul>
+<li><strong>First authorship</strong>: Typically goes to the person who led the work. For international collaborative projects, first authorship is often shared between the people who lead data collection and analysis.</li>
+<li><strong>Corresponding author</strong>: Usually Dr.&nbsp;Morrison or Dr.&nbsp;Aiemjoy, unless otherwise agreed.</li>
+<li><strong>Co-authorship</strong>: Determined by substantial intellectual contributions.</li>
+<li><strong>Author order</strong>: Should be discussed and agreed upon by all authors.</li>
+<li><strong>Acknowledgments</strong>: For contributions that don’t meet authorship criteria.</li>
+</ul>
+<p>Authorship should be discussed early in a project and revisited as the work evolves to ensure transparency and fairness. We encourage using the <a href="https://credit.niso.org/">CRediT Taxonomy</a> to document specific author contributions.</p>
+</section>
+<section id="sec-responding-to-peer-review" class="level2" data-number="24.3">
+<h2 data-number="24.3" class="anchored" data-anchor-id="sec-responding-to-peer-review"><span class="header-section-number">24.3</span> Responding to Peer Review</h2>
 <p>When a journal asks for revisions, you will typically need to provide a point-by-point response to the reviewers’ comments. The key strategy is to use the <a href="https://en.wikipedia.org/wiki/Yes,_and_...">“yes-and” approach</a> from improvisational theater—building on what reviewers say rather than contradicting them. Try to avoid explicitly disagreeing with reviewers if at all possible.</p>
 <p><strong>Standard response format:</strong></p>
 <p>The typical response follows this pattern:</p>
@@ -605,8 +644,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>If you make changes beyond what the reviewer requested, mention them briefly</li>
 </ul>
 </section>
-<section id="preprints-and-open-access" class="level2" data-number="24.3">
-<h2 data-number="24.3" class="anchored" data-anchor-id="preprints-and-open-access"><span class="header-section-number">24.3</span> Preprints and Open Access</h2>
+<section id="preprints-and-open-access" class="level2" data-number="24.4">
+<h2 data-number="24.4" class="anchored" data-anchor-id="preprints-and-open-access"><span class="header-section-number">24.4</span> Preprints and Open Access</h2>
 <ul>
 <li>We encourage posting preprints prior to or during peer review on platforms like <a href="https://www.medrxiv.org/">medRxiv</a> or <a href="https://www.biorxiv.org/">bioRxiv</a></li>
 <li>Preprints allow rapid dissemination of findings and can be cited in grant applications</li>
@@ -615,8 +654,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>A preprint is a scientific manuscript that has not been peer reviewed. Preprint servers create digital object identifiers (DOIs) and can be cited in other articles and in grant applications. Because the peer review process can take many months, publishing preprints prior to or during peer review enables other scientists to immediately learn from and build on your work. Importantly, NIH allows applicants to include preprint citations in their biosketches. In most cases, we publish preprints on <a href="https://www.medrxiv.org/">medRxiv</a>.</p>
 </section>
-<section id="reporting-checklists" class="level2" data-number="24.4">
-<h2 data-number="24.4" class="anchored" data-anchor-id="reporting-checklists"><span class="header-section-number">24.4</span> Reporting Checklists</h2>
+<section id="reporting-checklists" class="level2" data-number="24.5">
+<h2 data-number="24.5" class="anchored" data-anchor-id="reporting-checklists"><span class="header-section-number">24.5</span> Reporting Checklists</h2>
 <p>Using reporting checklists ensures that publications contain information needed for readers to assess validity and reproducibility. We use checklists appropriate to study design:</p>
 <ul>
 <li>CONSORT for randomized trials</li>
@@ -625,8 +664,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Others as appropriate (see <a href="https://www.equator-network.org/">EQUATOR Network</a>)</li>
 </ul>
 </section>
-<section id="manuscript-checklist" class="level2" data-number="24.5">
-<h2 data-number="24.5" class="anchored" data-anchor-id="manuscript-checklist"><span class="header-section-number">24.5</span> Manuscript Checklist</h2>
+<section id="manuscript-checklist" class="level2" data-number="24.6">
+<h2 data-number="24.6" class="anchored" data-anchor-id="manuscript-checklist"><span class="header-section-number">24.6</span> Manuscript Checklist</h2>
 <p>Before submitting a manuscript:</p>
 <ul class="task-list">
 <li><label><input type="checkbox">Completed relevant reporting checklist</label></li>
@@ -647,8 +686,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><label><input type="checkbox">Author contributions drafted using CRediT Taxonomy</label></li>
 </ul>
 </section>
-<section id="formatting-tables-with-gtsummary-flextable-flexlsx" class="level2" data-number="24.6">
-<h2 data-number="24.6" class="anchored" data-anchor-id="formatting-tables-with-gtsummary-flextable-flexlsx"><span class="header-section-number">24.6</span> Formatting tables with <code>gtsummary</code> + <code>flextable</code> + <code>flexlsx</code></h2>
+<section id="formatting-tables-with-gtsummary-flextable-flexlsx" class="level2" data-number="24.7">
+<h2 data-number="24.7" class="anchored" data-anchor-id="formatting-tables-with-gtsummary-flextable-flexlsx"><span class="header-section-number">24.7</span> Formatting tables with <code>gtsummary</code> + <code>flextable</code> + <code>flexlsx</code></h2>
 <p>One practical workflow for publication-ready tables is to use <a href="https://www.danieldsjoberg.com/gtsummary/"><code>{gtsummary}</code></a> to create summary/regression tables, convert to <a href="https://davidgohel.github.io/flextable/"><code>{flextable}</code></a> for styling, and export to Excel with <a href="https://cran.r-project.org/package=flexlsx"><code>{flexlsx}</code></a>.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
@@ -668,8 +707,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Export an <code>.xlsx</code> file for collaborator review while preserving your R workflow.</li>
 </ul>
 </section>
-<section id="scientific-writing-claims-and-evidence" class="level2" data-number="24.7">
-<h2 data-number="24.7" class="anchored" data-anchor-id="scientific-writing-claims-and-evidence"><span class="header-section-number">24.7</span> Scientific Writing: Claims and Evidence</h2>
+<section id="scientific-writing-claims-and-evidence" class="level2" data-number="24.8">
+<h2 data-number="24.8" class="anchored" data-anchor-id="scientific-writing-claims-and-evidence"><span class="header-section-number">24.8</span> Scientific Writing: Claims and Evidence</h2>
 <p>All factual claims in scientific writing should be supported by appropriate evidence.</p>
 <p><strong>Citation requirements:</strong></p>
 <ul>
@@ -696,6 +735,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>When using AI tools to help develop manuscripts or other academic writing, follow the special guidance in the <a href="https://morrison-lab.github.io/wai/chapters/ai-use-policies.html#sec-ai-journal-articles">wai site’s “Using AI for Journal Articles” section</a> to ensure transparency, maintain intellectual ownership, and avoid plagiarism.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-icmje" class="csl-entry" role="listitem">
+International Committee of Medical Journal Editors. n.d. <span>“Defining the Role of Authors and Contributors.”</span> ICMJE. <a href="https://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html">https://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
